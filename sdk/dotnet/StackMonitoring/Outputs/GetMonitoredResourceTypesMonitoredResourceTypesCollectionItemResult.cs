@@ -18,6 +18,10 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> AdditionalNamespaceMap;
         /// <summary>
+        /// Availability metrics details.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigResult> AvailabilityMetricsConfigs;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy for which  monitored resource types should be listed.
         /// </summary>
         public readonly string CompartmentId;
@@ -38,9 +42,17 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
+        /// Specific resource mapping configurations for Agent Extension Handlers.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigResult> HandlerConfigs;
+        /// <summary>
         /// Monitored resource type identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// If boolean flag is true, then the resource type cannot be modified or deleted.
+        /// </summary>
+        public readonly bool IsSystemDefined;
         /// <summary>
         /// The metadata details for resource type.
         /// </summary>
@@ -54,11 +66,11 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// Resource Category to indicate the kind of resource type.
+        /// A filter to return only resources with matching resource category.
         /// </summary>
         public readonly string ResourceCategory;
         /// <summary>
-        /// Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+        /// A filter to return only resources with matching source type.
         /// </summary>
         public readonly string SourceType;
         /// <summary>
@@ -69,6 +81,10 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
+        /// <summary>
+        /// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// </summary>
+        public readonly string TenancyId;
         /// <summary>
         /// The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         /// </summary>
@@ -82,6 +98,8 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         private GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemResult(
             ImmutableDictionary<string, string> additionalNamespaceMap,
 
+            ImmutableArray<Outputs.GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigResult> availabilityMetricsConfigs,
+
             string compartmentId,
 
             ImmutableDictionary<string, string> definedTags,
@@ -92,7 +110,11 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
 
             ImmutableDictionary<string, string> freeformTags,
 
+            ImmutableArray<Outputs.GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigResult> handlerConfigs,
+
             string id,
+
+            bool isSystemDefined,
 
             ImmutableArray<Outputs.GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataResult> metadatas,
 
@@ -108,17 +130,22 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
 
             ImmutableDictionary<string, string> systemTags,
 
+            string tenancyId,
+
             string timeCreated,
 
             string timeUpdated)
         {
             AdditionalNamespaceMap = additionalNamespaceMap;
+            AvailabilityMetricsConfigs = availabilityMetricsConfigs;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             Description = description;
             DisplayName = displayName;
             FreeformTags = freeformTags;
+            HandlerConfigs = handlerConfigs;
             Id = id;
+            IsSystemDefined = isSystemDefined;
             Metadatas = metadatas;
             MetricNamespace = metricNamespace;
             Name = name;
@@ -126,6 +153,7 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
             SourceType = sourceType;
             State = state;
             SystemTags = systemTags;
+            TenancyId = tenancyId;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
         }

@@ -462,14 +462,14 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.osPatchVersion);
     }
     /**
-     * (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+     * (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
      * 
      */
     @Export(name="removeNode", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> removeNode;
 
     /**
-     * @return (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+     * @return (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
      * 
      */
     public Output<Optional<String>> removeNode() {

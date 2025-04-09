@@ -25,6 +25,12 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Job{}
 	case "oci:DataScience/jobRun:JobRun":
 		r = &JobRun{}
+	case "oci:DataScience/mlApplication:MlApplication":
+		r = &MlApplication{}
+	case "oci:DataScience/mlApplicationImplementation:MlApplicationImplementation":
+		r = &MlApplicationImplementation{}
+	case "oci:DataScience/mlApplicationInstance:MlApplicationInstance":
+		r = &MlApplicationInstance{}
 	case "oci:DataScience/model:Model":
 		r = &Model{}
 	case "oci:DataScience/modelArtifactExport:ModelArtifactExport":
@@ -74,6 +80,21 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DataScience/jobRun",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataScience/mlApplication",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataScience/mlApplicationImplementation",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataScience/mlApplicationInstance",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

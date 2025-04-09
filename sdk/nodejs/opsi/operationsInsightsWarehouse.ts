@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     cpuAllocated: operationsInsightsWarehouseCpuAllocated,
  *     displayName: operationsInsightsWarehouseDisplayName,
+ *     computeModel: operationsInsightsWarehouseComputeModel,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
@@ -72,7 +73,11 @@ export class OperationsInsightsWarehouse extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
-     * (Updatable) Number of OCPUs allocated to OPSI Warehouse ADW.
+     * (Updatable) The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+     */
+    public readonly computeModel!: pulumi.Output<string>;
+    /**
+     * (Updatable) Number of CPUs allocated to OPSI Warehouse ADW.
      */
     public readonly cpuAllocated!: pulumi.Output<number>;
     /**
@@ -150,6 +155,7 @@ export class OperationsInsightsWarehouse extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as OperationsInsightsWarehouseState | undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
+            resourceInputs["computeModel"] = state ? state.computeModel : undefined;
             resourceInputs["cpuAllocated"] = state ? state.cpuAllocated : undefined;
             resourceInputs["cpuUsed"] = state ? state.cpuUsed : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
@@ -177,6 +183,7 @@ export class OperationsInsightsWarehouse extends pulumi.CustomResource {
                 throw new Error("Missing required property 'displayName'");
             }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
+            resourceInputs["computeModel"] = args ? args.computeModel : undefined;
             resourceInputs["cpuAllocated"] = args ? args.cpuAllocated : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
@@ -207,7 +214,11 @@ export interface OperationsInsightsWarehouseState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * (Updatable) Number of OCPUs allocated to OPSI Warehouse ADW.
+     * (Updatable) The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+     */
+    computeModel?: pulumi.Input<string>;
+    /**
+     * (Updatable) Number of CPUs allocated to OPSI Warehouse ADW.
      */
     cpuAllocated?: pulumi.Input<number>;
     /**
@@ -281,7 +292,11 @@ export interface OperationsInsightsWarehouseArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * (Updatable) Number of OCPUs allocated to OPSI Warehouse ADW.
+     * (Updatable) The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+     */
+    computeModel?: pulumi.Input<string>;
+    /**
+     * (Updatable) Number of CPUs allocated to OPSI Warehouse ADW.
      */
     cpuAllocated: pulumi.Input<number>;
     /**

@@ -4518,18 +4518,26 @@ func (o MonitoredResourcePropertyArrayOutput) Index(i pulumi.IntInput) Monitored
 }
 
 type MonitoredResourceTaskTaskDetails struct {
+	// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	AgentId *string `pulumi:"agentId"`
 	// Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
 	AvailabilityProxyMetricCollectionInterval *int `pulumi:"availabilityProxyMetricCollectionInterval"`
-	// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property 'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+	// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionInterval'. If no metrics are specified, availability will not be calculated for the resource.
 	AvailabilityProxyMetrics []string `pulumi:"availabilityProxyMetrics"`
 	// The console path prefix to use for providing service home url page navigation.  For example if the prefix provided is 'security/bastion/bastions', the URL used for navigation will be https://<cloudhostname>/security/bastion/bastions/<resourceOcid>. If not provided, service home page link  will not be shown in the stack monitoring home page.
 	ConsolePathPrefix *string `pulumi:"consolePathPrefix"`
 	// The external resource identifier property in the metric dimensions.  Resources imported will be using this property value for external id.
 	ExternalIdMapping *string `pulumi:"externalIdMapping"`
+	// Type of the handler.
+	HandlerType *string `pulumi:"handlerType"`
+	// True to enable the receiver and false to disable the receiver on the agent.
+	IsEnable *bool `pulumi:"isEnable"`
 	// Lifecycle states of the external resource which reflects the status of the resource being up.
 	LifecycleStatusMappingsForUpStatuses []string `pulumi:"lifecycleStatusMappingsForUpStatuses"`
 	// Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
+	// Properties for agent receiver.
+	ReceiverProperties *MonitoredResourceTaskTaskDetailsReceiverProperties `pulumi:"receiverProperties"`
 	// The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
 	ResourceGroup *string `pulumi:"resourceGroup"`
 	// The resource name filter. Resources matching with the resource name filter will be imported. Regular expressions will be accepted.
@@ -4540,6 +4548,8 @@ type MonitoredResourceTaskTaskDetails struct {
 	ResourceTypeFilter *string `pulumi:"resourceTypeFilter"`
 	// The resource type property in the metric dimensions.  Resources imported will be using this property value for resource type. If not specified, namespace will be used for resource type.
 	ResourceTypeMapping *string `pulumi:"resourceTypeMapping"`
+	// A collection of resource type configuration details. User can provide  availability proxy metrics list for resource types along with the  telegraf/collectd handler configuration for the resource types.
+	ResourceTypesConfigurations []MonitoredResourceTaskTaskDetailsResourceTypesConfiguration `pulumi:"resourceTypesConfigurations"`
 	// The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
 	ServiceBaseUrl *string `pulumi:"serviceBaseUrl"`
 	// Flag to indicate whether status is calculated using metrics or  LifeCycleState attribute of the resource in Oracle Cloud Infrastructure service.
@@ -4547,7 +4557,9 @@ type MonitoredResourceTaskTaskDetails struct {
 	// Source from where the metrics pushed to telemetry. Possible values:
 	// * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
 	// * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
-	Source string `pulumi:"source"`
+	// * OCI_TELEMETRY_TELEGRAF    - The metrics are pushed to telemetry from Telegraf receiver.
+	// * OCI_TELEMETRY_COLLECTD    - The metrics are pushed to telemetry from CollectD receiver.
+	Source *string `pulumi:"source"`
 	// Task type.
 	//
 	// ** IMPORTANT **
@@ -4567,18 +4579,26 @@ type MonitoredResourceTaskTaskDetailsInput interface {
 }
 
 type MonitoredResourceTaskTaskDetailsArgs struct {
+	// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	AgentId pulumi.StringPtrInput `pulumi:"agentId"`
 	// Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
 	AvailabilityProxyMetricCollectionInterval pulumi.IntPtrInput `pulumi:"availabilityProxyMetricCollectionInterval"`
-	// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property 'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+	// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionInterval'. If no metrics are specified, availability will not be calculated for the resource.
 	AvailabilityProxyMetrics pulumi.StringArrayInput `pulumi:"availabilityProxyMetrics"`
 	// The console path prefix to use for providing service home url page navigation.  For example if the prefix provided is 'security/bastion/bastions', the URL used for navigation will be https://<cloudhostname>/security/bastion/bastions/<resourceOcid>. If not provided, service home page link  will not be shown in the stack monitoring home page.
 	ConsolePathPrefix pulumi.StringPtrInput `pulumi:"consolePathPrefix"`
 	// The external resource identifier property in the metric dimensions.  Resources imported will be using this property value for external id.
 	ExternalIdMapping pulumi.StringPtrInput `pulumi:"externalIdMapping"`
+	// Type of the handler.
+	HandlerType pulumi.StringPtrInput `pulumi:"handlerType"`
+	// True to enable the receiver and false to disable the receiver on the agent.
+	IsEnable pulumi.BoolPtrInput `pulumi:"isEnable"`
 	// Lifecycle states of the external resource which reflects the status of the resource being up.
 	LifecycleStatusMappingsForUpStatuses pulumi.StringArrayInput `pulumi:"lifecycleStatusMappingsForUpStatuses"`
 	// Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+	// Properties for agent receiver.
+	ReceiverProperties MonitoredResourceTaskTaskDetailsReceiverPropertiesPtrInput `pulumi:"receiverProperties"`
 	// The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
 	ResourceGroup pulumi.StringPtrInput `pulumi:"resourceGroup"`
 	// The resource name filter. Resources matching with the resource name filter will be imported. Regular expressions will be accepted.
@@ -4589,6 +4609,8 @@ type MonitoredResourceTaskTaskDetailsArgs struct {
 	ResourceTypeFilter pulumi.StringPtrInput `pulumi:"resourceTypeFilter"`
 	// The resource type property in the metric dimensions.  Resources imported will be using this property value for resource type. If not specified, namespace will be used for resource type.
 	ResourceTypeMapping pulumi.StringPtrInput `pulumi:"resourceTypeMapping"`
+	// A collection of resource type configuration details. User can provide  availability proxy metrics list for resource types along with the  telegraf/collectd handler configuration for the resource types.
+	ResourceTypesConfigurations MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArrayInput `pulumi:"resourceTypesConfigurations"`
 	// The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
 	ServiceBaseUrl pulumi.StringPtrInput `pulumi:"serviceBaseUrl"`
 	// Flag to indicate whether status is calculated using metrics or  LifeCycleState attribute of the resource in Oracle Cloud Infrastructure service.
@@ -4596,7 +4618,9 @@ type MonitoredResourceTaskTaskDetailsArgs struct {
 	// Source from where the metrics pushed to telemetry. Possible values:
 	// * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
 	// * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
-	Source pulumi.StringInput `pulumi:"source"`
+	// * OCI_TELEMETRY_TELEGRAF    - The metrics are pushed to telemetry from Telegraf receiver.
+	// * OCI_TELEMETRY_COLLECTD    - The metrics are pushed to telemetry from CollectD receiver.
+	Source pulumi.StringPtrInput `pulumi:"source"`
 	// Task type.
 	//
 	// ** IMPORTANT **
@@ -4681,12 +4705,17 @@ func (o MonitoredResourceTaskTaskDetailsOutput) ToMonitoredResourceTaskTaskDetai
 	}).(MonitoredResourceTaskTaskDetailsPtrOutput)
 }
 
+// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o MonitoredResourceTaskTaskDetailsOutput) AgentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetails) *string { return v.AgentId }).(pulumi.StringPtrOutput)
+}
+
 // Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
 func (o MonitoredResourceTaskTaskDetailsOutput) AvailabilityProxyMetricCollectionInterval() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v MonitoredResourceTaskTaskDetails) *int { return v.AvailabilityProxyMetricCollectionInterval }).(pulumi.IntPtrOutput)
 }
 
-// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property 'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionInterval'. If no metrics are specified, availability will not be calculated for the resource.
 func (o MonitoredResourceTaskTaskDetailsOutput) AvailabilityProxyMetrics() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v MonitoredResourceTaskTaskDetails) []string { return v.AvailabilityProxyMetrics }).(pulumi.StringArrayOutput)
 }
@@ -4701,14 +4730,31 @@ func (o MonitoredResourceTaskTaskDetailsOutput) ExternalIdMapping() pulumi.Strin
 	return o.ApplyT(func(v MonitoredResourceTaskTaskDetails) *string { return v.ExternalIdMapping }).(pulumi.StringPtrOutput)
 }
 
+// Type of the handler.
+func (o MonitoredResourceTaskTaskDetailsOutput) HandlerType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetails) *string { return v.HandlerType }).(pulumi.StringPtrOutput)
+}
+
+// True to enable the receiver and false to disable the receiver on the agent.
+func (o MonitoredResourceTaskTaskDetailsOutput) IsEnable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetails) *bool { return v.IsEnable }).(pulumi.BoolPtrOutput)
+}
+
 // Lifecycle states of the external resource which reflects the status of the resource being up.
 func (o MonitoredResourceTaskTaskDetailsOutput) LifecycleStatusMappingsForUpStatuses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v MonitoredResourceTaskTaskDetails) []string { return v.LifecycleStatusMappingsForUpStatuses }).(pulumi.StringArrayOutput)
 }
 
 // Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
-func (o MonitoredResourceTaskTaskDetailsOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v MonitoredResourceTaskTaskDetails) string { return v.Namespace }).(pulumi.StringOutput)
+func (o MonitoredResourceTaskTaskDetailsOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetails) *string { return v.Namespace }).(pulumi.StringPtrOutput)
+}
+
+// Properties for agent receiver.
+func (o MonitoredResourceTaskTaskDetailsOutput) ReceiverProperties() MonitoredResourceTaskTaskDetailsReceiverPropertiesPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetails) *MonitoredResourceTaskTaskDetailsReceiverProperties {
+		return v.ReceiverProperties
+	}).(MonitoredResourceTaskTaskDetailsReceiverPropertiesPtrOutput)
 }
 
 // The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
@@ -4736,6 +4782,13 @@ func (o MonitoredResourceTaskTaskDetailsOutput) ResourceTypeMapping() pulumi.Str
 	return o.ApplyT(func(v MonitoredResourceTaskTaskDetails) *string { return v.ResourceTypeMapping }).(pulumi.StringPtrOutput)
 }
 
+// A collection of resource type configuration details. User can provide  availability proxy metrics list for resource types along with the  telegraf/collectd handler configuration for the resource types.
+func (o MonitoredResourceTaskTaskDetailsOutput) ResourceTypesConfigurations() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArrayOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetails) []MonitoredResourceTaskTaskDetailsResourceTypesConfiguration {
+		return v.ResourceTypesConfigurations
+	}).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArrayOutput)
+}
+
 // The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
 func (o MonitoredResourceTaskTaskDetailsOutput) ServiceBaseUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourceTaskTaskDetails) *string { return v.ServiceBaseUrl }).(pulumi.StringPtrOutput)
@@ -4749,8 +4802,10 @@ func (o MonitoredResourceTaskTaskDetailsOutput) ShouldUseMetricsFlowForStatus() 
 // Source from where the metrics pushed to telemetry. Possible values:
 // * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
 // * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
-func (o MonitoredResourceTaskTaskDetailsOutput) Source() pulumi.StringOutput {
-	return o.ApplyT(func(v MonitoredResourceTaskTaskDetails) string { return v.Source }).(pulumi.StringOutput)
+// * OCI_TELEMETRY_TELEGRAF    - The metrics are pushed to telemetry from Telegraf receiver.
+// * OCI_TELEMETRY_COLLECTD    - The metrics are pushed to telemetry from CollectD receiver.
+func (o MonitoredResourceTaskTaskDetailsOutput) Source() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetails) *string { return v.Source }).(pulumi.StringPtrOutput)
 }
 
 // Task type.
@@ -4785,6 +4840,16 @@ func (o MonitoredResourceTaskTaskDetailsPtrOutput) Elem() MonitoredResourceTaskT
 	}).(MonitoredResourceTaskTaskDetailsOutput)
 }
 
+// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o MonitoredResourceTaskTaskDetailsPtrOutput) AgentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AgentId
+	}).(pulumi.StringPtrOutput)
+}
+
 // Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
 func (o MonitoredResourceTaskTaskDetailsPtrOutput) AvailabilityProxyMetricCollectionInterval() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetails) *int {
@@ -4795,7 +4860,7 @@ func (o MonitoredResourceTaskTaskDetailsPtrOutput) AvailabilityProxyMetricCollec
 	}).(pulumi.IntPtrOutput)
 }
 
-// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property 'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionInterval'. If no metrics are specified, availability will not be calculated for the resource.
 func (o MonitoredResourceTaskTaskDetailsPtrOutput) AvailabilityProxyMetrics() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetails) []string {
 		if v == nil {
@@ -4825,6 +4890,26 @@ func (o MonitoredResourceTaskTaskDetailsPtrOutput) ExternalIdMapping() pulumi.St
 	}).(pulumi.StringPtrOutput)
 }
 
+// Type of the handler.
+func (o MonitoredResourceTaskTaskDetailsPtrOutput) HandlerType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.HandlerType
+	}).(pulumi.StringPtrOutput)
+}
+
+// True to enable the receiver and false to disable the receiver on the agent.
+func (o MonitoredResourceTaskTaskDetailsPtrOutput) IsEnable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetails) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsEnable
+	}).(pulumi.BoolPtrOutput)
+}
+
 // Lifecycle states of the external resource which reflects the status of the resource being up.
 func (o MonitoredResourceTaskTaskDetailsPtrOutput) LifecycleStatusMappingsForUpStatuses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetails) []string {
@@ -4841,8 +4926,18 @@ func (o MonitoredResourceTaskTaskDetailsPtrOutput) Namespace() pulumi.StringPtrO
 		if v == nil {
 			return nil
 		}
-		return &v.Namespace
+		return v.Namespace
 	}).(pulumi.StringPtrOutput)
+}
+
+// Properties for agent receiver.
+func (o MonitoredResourceTaskTaskDetailsPtrOutput) ReceiverProperties() MonitoredResourceTaskTaskDetailsReceiverPropertiesPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetails) *MonitoredResourceTaskTaskDetailsReceiverProperties {
+		if v == nil {
+			return nil
+		}
+		return v.ReceiverProperties
+	}).(MonitoredResourceTaskTaskDetailsReceiverPropertiesPtrOutput)
 }
 
 // The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
@@ -4895,6 +4990,16 @@ func (o MonitoredResourceTaskTaskDetailsPtrOutput) ResourceTypeMapping() pulumi.
 	}).(pulumi.StringPtrOutput)
 }
 
+// A collection of resource type configuration details. User can provide  availability proxy metrics list for resource types along with the  telegraf/collectd handler configuration for the resource types.
+func (o MonitoredResourceTaskTaskDetailsPtrOutput) ResourceTypesConfigurations() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArrayOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetails) []MonitoredResourceTaskTaskDetailsResourceTypesConfiguration {
+		if v == nil {
+			return nil
+		}
+		return v.ResourceTypesConfigurations
+	}).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArrayOutput)
+}
+
 // The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
 func (o MonitoredResourceTaskTaskDetailsPtrOutput) ServiceBaseUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetails) *string {
@@ -4918,12 +5023,14 @@ func (o MonitoredResourceTaskTaskDetailsPtrOutput) ShouldUseMetricsFlowForStatus
 // Source from where the metrics pushed to telemetry. Possible values:
 // * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
 // * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+// * OCI_TELEMETRY_TELEGRAF    - The metrics are pushed to telemetry from Telegraf receiver.
+// * OCI_TELEMETRY_COLLECTD    - The metrics are pushed to telemetry from CollectD receiver.
 func (o MonitoredResourceTaskTaskDetailsPtrOutput) Source() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetails) *string {
 		if v == nil {
 			return nil
 		}
-		return &v.Source
+		return v.Source
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -4938,6 +5045,2318 @@ func (o MonitoredResourceTaskTaskDetailsPtrOutput) Type() pulumi.StringPtrOutput
 		}
 		return &v.Type
 	}).(pulumi.StringPtrOutput)
+}
+
+type MonitoredResourceTaskTaskDetailsReceiverProperties struct {
+	// Receiver listener port.
+	ListenerPort *int `pulumi:"listenerPort"`
+}
+
+// MonitoredResourceTaskTaskDetailsReceiverPropertiesInput is an input type that accepts MonitoredResourceTaskTaskDetailsReceiverPropertiesArgs and MonitoredResourceTaskTaskDetailsReceiverPropertiesOutput values.
+// You can construct a concrete instance of `MonitoredResourceTaskTaskDetailsReceiverPropertiesInput` via:
+//
+//	MonitoredResourceTaskTaskDetailsReceiverPropertiesArgs{...}
+type MonitoredResourceTaskTaskDetailsReceiverPropertiesInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceTaskTaskDetailsReceiverPropertiesOutput() MonitoredResourceTaskTaskDetailsReceiverPropertiesOutput
+	ToMonitoredResourceTaskTaskDetailsReceiverPropertiesOutputWithContext(context.Context) MonitoredResourceTaskTaskDetailsReceiverPropertiesOutput
+}
+
+type MonitoredResourceTaskTaskDetailsReceiverPropertiesArgs struct {
+	// Receiver listener port.
+	ListenerPort pulumi.IntPtrInput `pulumi:"listenerPort"`
+}
+
+func (MonitoredResourceTaskTaskDetailsReceiverPropertiesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceTaskTaskDetailsReceiverProperties)(nil)).Elem()
+}
+
+func (i MonitoredResourceTaskTaskDetailsReceiverPropertiesArgs) ToMonitoredResourceTaskTaskDetailsReceiverPropertiesOutput() MonitoredResourceTaskTaskDetailsReceiverPropertiesOutput {
+	return i.ToMonitoredResourceTaskTaskDetailsReceiverPropertiesOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceTaskTaskDetailsReceiverPropertiesArgs) ToMonitoredResourceTaskTaskDetailsReceiverPropertiesOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsReceiverPropertiesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTaskTaskDetailsReceiverPropertiesOutput)
+}
+
+func (i MonitoredResourceTaskTaskDetailsReceiverPropertiesArgs) ToMonitoredResourceTaskTaskDetailsReceiverPropertiesPtrOutput() MonitoredResourceTaskTaskDetailsReceiverPropertiesPtrOutput {
+	return i.ToMonitoredResourceTaskTaskDetailsReceiverPropertiesPtrOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceTaskTaskDetailsReceiverPropertiesArgs) ToMonitoredResourceTaskTaskDetailsReceiverPropertiesPtrOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsReceiverPropertiesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTaskTaskDetailsReceiverPropertiesOutput).ToMonitoredResourceTaskTaskDetailsReceiverPropertiesPtrOutputWithContext(ctx)
+}
+
+// MonitoredResourceTaskTaskDetailsReceiverPropertiesPtrInput is an input type that accepts MonitoredResourceTaskTaskDetailsReceiverPropertiesArgs, MonitoredResourceTaskTaskDetailsReceiverPropertiesPtr and MonitoredResourceTaskTaskDetailsReceiverPropertiesPtrOutput values.
+// You can construct a concrete instance of `MonitoredResourceTaskTaskDetailsReceiverPropertiesPtrInput` via:
+//
+//	        MonitoredResourceTaskTaskDetailsReceiverPropertiesArgs{...}
+//
+//	or:
+//
+//	        nil
+type MonitoredResourceTaskTaskDetailsReceiverPropertiesPtrInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceTaskTaskDetailsReceiverPropertiesPtrOutput() MonitoredResourceTaskTaskDetailsReceiverPropertiesPtrOutput
+	ToMonitoredResourceTaskTaskDetailsReceiverPropertiesPtrOutputWithContext(context.Context) MonitoredResourceTaskTaskDetailsReceiverPropertiesPtrOutput
+}
+
+type monitoredResourceTaskTaskDetailsReceiverPropertiesPtrType MonitoredResourceTaskTaskDetailsReceiverPropertiesArgs
+
+func MonitoredResourceTaskTaskDetailsReceiverPropertiesPtr(v *MonitoredResourceTaskTaskDetailsReceiverPropertiesArgs) MonitoredResourceTaskTaskDetailsReceiverPropertiesPtrInput {
+	return (*monitoredResourceTaskTaskDetailsReceiverPropertiesPtrType)(v)
+}
+
+func (*monitoredResourceTaskTaskDetailsReceiverPropertiesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MonitoredResourceTaskTaskDetailsReceiverProperties)(nil)).Elem()
+}
+
+func (i *monitoredResourceTaskTaskDetailsReceiverPropertiesPtrType) ToMonitoredResourceTaskTaskDetailsReceiverPropertiesPtrOutput() MonitoredResourceTaskTaskDetailsReceiverPropertiesPtrOutput {
+	return i.ToMonitoredResourceTaskTaskDetailsReceiverPropertiesPtrOutputWithContext(context.Background())
+}
+
+func (i *monitoredResourceTaskTaskDetailsReceiverPropertiesPtrType) ToMonitoredResourceTaskTaskDetailsReceiverPropertiesPtrOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsReceiverPropertiesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTaskTaskDetailsReceiverPropertiesPtrOutput)
+}
+
+type MonitoredResourceTaskTaskDetailsReceiverPropertiesOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceTaskTaskDetailsReceiverPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceTaskTaskDetailsReceiverProperties)(nil)).Elem()
+}
+
+func (o MonitoredResourceTaskTaskDetailsReceiverPropertiesOutput) ToMonitoredResourceTaskTaskDetailsReceiverPropertiesOutput() MonitoredResourceTaskTaskDetailsReceiverPropertiesOutput {
+	return o
+}
+
+func (o MonitoredResourceTaskTaskDetailsReceiverPropertiesOutput) ToMonitoredResourceTaskTaskDetailsReceiverPropertiesOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsReceiverPropertiesOutput {
+	return o
+}
+
+func (o MonitoredResourceTaskTaskDetailsReceiverPropertiesOutput) ToMonitoredResourceTaskTaskDetailsReceiverPropertiesPtrOutput() MonitoredResourceTaskTaskDetailsReceiverPropertiesPtrOutput {
+	return o.ToMonitoredResourceTaskTaskDetailsReceiverPropertiesPtrOutputWithContext(context.Background())
+}
+
+func (o MonitoredResourceTaskTaskDetailsReceiverPropertiesOutput) ToMonitoredResourceTaskTaskDetailsReceiverPropertiesPtrOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsReceiverPropertiesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MonitoredResourceTaskTaskDetailsReceiverProperties) *MonitoredResourceTaskTaskDetailsReceiverProperties {
+		return &v
+	}).(MonitoredResourceTaskTaskDetailsReceiverPropertiesPtrOutput)
+}
+
+// Receiver listener port.
+func (o MonitoredResourceTaskTaskDetailsReceiverPropertiesOutput) ListenerPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetailsReceiverProperties) *int { return v.ListenerPort }).(pulumi.IntPtrOutput)
+}
+
+type MonitoredResourceTaskTaskDetailsReceiverPropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceTaskTaskDetailsReceiverPropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MonitoredResourceTaskTaskDetailsReceiverProperties)(nil)).Elem()
+}
+
+func (o MonitoredResourceTaskTaskDetailsReceiverPropertiesPtrOutput) ToMonitoredResourceTaskTaskDetailsReceiverPropertiesPtrOutput() MonitoredResourceTaskTaskDetailsReceiverPropertiesPtrOutput {
+	return o
+}
+
+func (o MonitoredResourceTaskTaskDetailsReceiverPropertiesPtrOutput) ToMonitoredResourceTaskTaskDetailsReceiverPropertiesPtrOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsReceiverPropertiesPtrOutput {
+	return o
+}
+
+func (o MonitoredResourceTaskTaskDetailsReceiverPropertiesPtrOutput) Elem() MonitoredResourceTaskTaskDetailsReceiverPropertiesOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetailsReceiverProperties) MonitoredResourceTaskTaskDetailsReceiverProperties {
+		if v != nil {
+			return *v
+		}
+		var ret MonitoredResourceTaskTaskDetailsReceiverProperties
+		return ret
+	}).(MonitoredResourceTaskTaskDetailsReceiverPropertiesOutput)
+}
+
+// Receiver listener port.
+func (o MonitoredResourceTaskTaskDetailsReceiverPropertiesPtrOutput) ListenerPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetailsReceiverProperties) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ListenerPort
+	}).(pulumi.IntPtrOutput)
+}
+
+type MonitoredResourceTaskTaskDetailsResourceTypesConfiguration struct {
+	// Availability metrics details.
+	AvailabilityMetricsConfig *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfig `pulumi:"availabilityMetricsConfig"`
+	// Specific resource mapping configurations for Agent Extension Handlers.
+	HandlerConfig *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfig `pulumi:"handlerConfig"`
+	// Resource type.
+	ResourceType *string `pulumi:"resourceType"`
+}
+
+// MonitoredResourceTaskTaskDetailsResourceTypesConfigurationInput is an input type that accepts MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArgs and MonitoredResourceTaskTaskDetailsResourceTypesConfigurationOutput values.
+// You can construct a concrete instance of `MonitoredResourceTaskTaskDetailsResourceTypesConfigurationInput` via:
+//
+//	MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArgs{...}
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationOutput
+	ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationOutputWithContext(context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationOutput
+}
+
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArgs struct {
+	// Availability metrics details.
+	AvailabilityMetricsConfig MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrInput `pulumi:"availabilityMetricsConfig"`
+	// Specific resource mapping configurations for Agent Extension Handlers.
+	HandlerConfig MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrInput `pulumi:"handlerConfig"`
+	// Resource type.
+	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
+}
+
+func (MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceTaskTaskDetailsResourceTypesConfiguration)(nil)).Elem()
+}
+
+func (i MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArgs) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationOutput {
+	return i.ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArgs) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationOutput)
+}
+
+// MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArrayInput is an input type that accepts MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArray and MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArrayOutput values.
+// You can construct a concrete instance of `MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArrayInput` via:
+//
+//	MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArray{ MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArgs{...} }
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationArrayOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArrayOutput
+	ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationArrayOutputWithContext(context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArrayOutput
+}
+
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArray []MonitoredResourceTaskTaskDetailsResourceTypesConfigurationInput
+
+func (MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MonitoredResourceTaskTaskDetailsResourceTypesConfiguration)(nil)).Elem()
+}
+
+func (i MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArray) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationArrayOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArrayOutput {
+	return i.ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArray) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationArrayOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArrayOutput)
+}
+
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceTaskTaskDetailsResourceTypesConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceTaskTaskDetailsResourceTypesConfiguration)(nil)).Elem()
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationOutput {
+	return o
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationOutput {
+	return o
+}
+
+// Availability metrics details.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationOutput) AvailabilityMetricsConfig() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetailsResourceTypesConfiguration) *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfig {
+		return v.AvailabilityMetricsConfig
+	}).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrOutput)
+}
+
+// Specific resource mapping configurations for Agent Extension Handlers.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationOutput) HandlerConfig() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetailsResourceTypesConfiguration) *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfig {
+		return v.HandlerConfig
+	}).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutput)
+}
+
+// Resource type.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationOutput) ResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetailsResourceTypesConfiguration) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
+}
+
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MonitoredResourceTaskTaskDetailsResourceTypesConfiguration)(nil)).Elem()
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArrayOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationArrayOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArrayOutput {
+	return o
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArrayOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationArrayOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArrayOutput {
+	return o
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArrayOutput) Index(i pulumi.IntInput) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MonitoredResourceTaskTaskDetailsResourceTypesConfiguration {
+		return vs[0].([]MonitoredResourceTaskTaskDetailsResourceTypesConfiguration)[vs[1].(int)]
+	}).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationOutput)
+}
+
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfig struct {
+	// Availability metric collection internal in seconds.
+	CollectionIntervalInSeconds *int `pulumi:"collectionIntervalInSeconds"`
+	// List of metrics used for availability calculation for the resource.
+	Metrics []string `pulumi:"metrics"`
+}
+
+// MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigInput is an input type that accepts MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigArgs and MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigOutput values.
+// You can construct a concrete instance of `MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigInput` via:
+//
+//	MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigArgs{...}
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigOutput
+	ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigOutputWithContext(context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigOutput
+}
+
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigArgs struct {
+	// Availability metric collection internal in seconds.
+	CollectionIntervalInSeconds pulumi.IntPtrInput `pulumi:"collectionIntervalInSeconds"`
+	// List of metrics used for availability calculation for the resource.
+	Metrics pulumi.StringArrayInput `pulumi:"metrics"`
+}
+
+func (MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfig)(nil)).Elem()
+}
+
+func (i MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigArgs) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigOutput {
+	return i.ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigArgs) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigOutput)
+}
+
+func (i MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigArgs) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrOutput {
+	return i.ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigArgs) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigOutput).ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrOutputWithContext(ctx)
+}
+
+// MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrInput is an input type that accepts MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigArgs, MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtr and MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrOutput values.
+// You can construct a concrete instance of `MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrInput` via:
+//
+//	        MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrOutput
+	ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrOutputWithContext(context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrOutput
+}
+
+type monitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrType MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigArgs
+
+func MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtr(v *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigArgs) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrInput {
+	return (*monitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrType)(v)
+}
+
+func (*monitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfig)(nil)).Elem()
+}
+
+func (i *monitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrType) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrOutput {
+	return i.ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *monitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrType) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrOutput)
+}
+
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfig)(nil)).Elem()
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigOutput {
+	return o
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigOutput {
+	return o
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrOutput {
+	return o.ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrOutputWithContext(context.Background())
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfig) *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfig {
+		return &v
+	}).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrOutput)
+}
+
+// Availability metric collection internal in seconds.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigOutput) CollectionIntervalInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfig) *int {
+		return v.CollectionIntervalInSeconds
+	}).(pulumi.IntPtrOutput)
+}
+
+// List of metrics used for availability calculation for the resource.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigOutput) Metrics() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfig) []string {
+		return v.Metrics
+	}).(pulumi.StringArrayOutput)
+}
+
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfig)(nil)).Elem()
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrOutput {
+	return o
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrOutput {
+	return o
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrOutput) Elem() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfig) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfig {
+		if v != nil {
+			return *v
+		}
+		var ret MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfig
+		return ret
+	}).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigOutput)
+}
+
+// Availability metric collection internal in seconds.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrOutput) CollectionIntervalInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.CollectionIntervalInSeconds
+	}).(pulumi.IntPtrOutput)
+}
+
+// List of metrics used for availability calculation for the resource.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrOutput) Metrics() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfig) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Metrics
+	}).(pulumi.StringArrayOutput)
+}
+
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfig struct {
+	// Resource name generation overriding configurations for collectd resource types.
+	CollectdResourceNameConfig *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig `pulumi:"collectdResourceNameConfig"`
+	// List of collector/plugin names.
+	CollectorTypes []string `pulumi:"collectorTypes"`
+	// List of handler configuration properties
+	HandlerProperties []MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerProperty `pulumi:"handlerProperties"`
+	// List of AgentExtensionHandlerMetricMappingDetails.
+	MetricMappings []MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMapping `pulumi:"metricMappings"`
+	// Metric name generation overriding configurations.
+	MetricNameConfig *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfig `pulumi:"metricNameConfig"`
+	// Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+	MetricUploadIntervalInSeconds *int `pulumi:"metricUploadIntervalInSeconds"`
+	// Resource name generation overriding configurations for telegraf resource types.
+	TelegrafResourceNameConfig *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig `pulumi:"telegrafResourceNameConfig"`
+	// Resource group string; if not specified, the resource group string will be generated by the handler.
+	TelemetryResourceGroup *string `pulumi:"telemetryResourceGroup"`
+}
+
+// MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigInput is an input type that accepts MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigArgs and MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigOutput values.
+// You can construct a concrete instance of `MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigInput` via:
+//
+//	MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigArgs{...}
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigOutput
+	ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigOutputWithContext(context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigOutput
+}
+
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigArgs struct {
+	// Resource name generation overriding configurations for collectd resource types.
+	CollectdResourceNameConfig MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrInput `pulumi:"collectdResourceNameConfig"`
+	// List of collector/plugin names.
+	CollectorTypes pulumi.StringArrayInput `pulumi:"collectorTypes"`
+	// List of handler configuration properties
+	HandlerProperties MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArrayInput `pulumi:"handlerProperties"`
+	// List of AgentExtensionHandlerMetricMappingDetails.
+	MetricMappings MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArrayInput `pulumi:"metricMappings"`
+	// Metric name generation overriding configurations.
+	MetricNameConfig MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrInput `pulumi:"metricNameConfig"`
+	// Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+	MetricUploadIntervalInSeconds pulumi.IntPtrInput `pulumi:"metricUploadIntervalInSeconds"`
+	// Resource name generation overriding configurations for telegraf resource types.
+	TelegrafResourceNameConfig MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrInput `pulumi:"telegrafResourceNameConfig"`
+	// Resource group string; if not specified, the resource group string will be generated by the handler.
+	TelemetryResourceGroup pulumi.StringPtrInput `pulumi:"telemetryResourceGroup"`
+}
+
+func (MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfig)(nil)).Elem()
+}
+
+func (i MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigArgs) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigOutput {
+	return i.ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigArgs) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigOutput)
+}
+
+func (i MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigArgs) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutput {
+	return i.ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigArgs) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigOutput).ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutputWithContext(ctx)
+}
+
+// MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrInput is an input type that accepts MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigArgs, MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtr and MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutput values.
+// You can construct a concrete instance of `MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrInput` via:
+//
+//	        MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutput
+	ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutputWithContext(context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutput
+}
+
+type monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrType MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigArgs
+
+func MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtr(v *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigArgs) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrInput {
+	return (*monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrType)(v)
+}
+
+func (*monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfig)(nil)).Elem()
+}
+
+func (i *monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrType) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutput {
+	return i.ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrType) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutput)
+}
+
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfig)(nil)).Elem()
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigOutput {
+	return o
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigOutput {
+	return o
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutput {
+	return o.ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutputWithContext(context.Background())
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfig) *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfig {
+		return &v
+	}).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutput)
+}
+
+// Resource name generation overriding configurations for collectd resource types.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigOutput) CollectdResourceNameConfig() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfig) *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig {
+		return v.CollectdResourceNameConfig
+	}).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutput)
+}
+
+// List of collector/plugin names.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigOutput) CollectorTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfig) []string {
+		return v.CollectorTypes
+	}).(pulumi.StringArrayOutput)
+}
+
+// List of handler configuration properties
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigOutput) HandlerProperties() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfig) []MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerProperty {
+		return v.HandlerProperties
+	}).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput)
+}
+
+// List of AgentExtensionHandlerMetricMappingDetails.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigOutput) MetricMappings() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfig) []MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMapping {
+		return v.MetricMappings
+	}).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput)
+}
+
+// Metric name generation overriding configurations.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigOutput) MetricNameConfig() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfig) *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfig {
+		return v.MetricNameConfig
+	}).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutput)
+}
+
+// Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigOutput) MetricUploadIntervalInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfig) *int {
+		return v.MetricUploadIntervalInSeconds
+	}).(pulumi.IntPtrOutput)
+}
+
+// Resource name generation overriding configurations for telegraf resource types.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigOutput) TelegrafResourceNameConfig() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfig) *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig {
+		return v.TelegrafResourceNameConfig
+	}).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutput)
+}
+
+// Resource group string; if not specified, the resource group string will be generated by the handler.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigOutput) TelemetryResourceGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfig) *string {
+		return v.TelemetryResourceGroup
+	}).(pulumi.StringPtrOutput)
+}
+
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfig)(nil)).Elem()
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutput {
+	return o
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutput {
+	return o
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutput) Elem() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfig) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfig {
+		if v != nil {
+			return *v
+		}
+		var ret MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfig
+		return ret
+	}).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigOutput)
+}
+
+// Resource name generation overriding configurations for collectd resource types.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutput) CollectdResourceNameConfig() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfig) *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig {
+		if v == nil {
+			return nil
+		}
+		return v.CollectdResourceNameConfig
+	}).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutput)
+}
+
+// List of collector/plugin names.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutput) CollectorTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfig) []string {
+		if v == nil {
+			return nil
+		}
+		return v.CollectorTypes
+	}).(pulumi.StringArrayOutput)
+}
+
+// List of handler configuration properties
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutput) HandlerProperties() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfig) []MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerProperty {
+		if v == nil {
+			return nil
+		}
+		return v.HandlerProperties
+	}).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput)
+}
+
+// List of AgentExtensionHandlerMetricMappingDetails.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutput) MetricMappings() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfig) []MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMapping {
+		if v == nil {
+			return nil
+		}
+		return v.MetricMappings
+	}).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput)
+}
+
+// Metric name generation overriding configurations.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutput) MetricNameConfig() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfig) *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfig {
+		if v == nil {
+			return nil
+		}
+		return v.MetricNameConfig
+	}).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutput)
+}
+
+// Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutput) MetricUploadIntervalInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MetricUploadIntervalInSeconds
+	}).(pulumi.IntPtrOutput)
+}
+
+// Resource name generation overriding configurations for telegraf resource types.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutput) TelegrafResourceNameConfig() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfig) *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig {
+		if v == nil {
+			return nil
+		}
+		return v.TelegrafResourceNameConfig
+	}).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutput)
+}
+
+// Resource group string; if not specified, the resource group string will be generated by the handler.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutput) TelemetryResourceGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TelemetryResourceGroup
+	}).(pulumi.StringPtrOutput)
+}
+
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig struct {
+	// List of property names to be excluded.
+	ExcludeProperties []string `pulumi:"excludeProperties"`
+	// List of property names to be included.
+	IncludeProperties []string `pulumi:"includeProperties"`
+	// String to be suffixed to the resource name.
+	Suffix *string `pulumi:"suffix"`
+}
+
+// MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigInput is an input type that accepts MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs and MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput values.
+// You can construct a concrete instance of `MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigInput` via:
+//
+//	MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs{...}
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput
+	ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutputWithContext(context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput
+}
+
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs struct {
+	// List of property names to be excluded.
+	ExcludeProperties pulumi.StringArrayInput `pulumi:"excludeProperties"`
+	// List of property names to be included.
+	IncludeProperties pulumi.StringArrayInput `pulumi:"includeProperties"`
+	// String to be suffixed to the resource name.
+	Suffix pulumi.StringPtrInput `pulumi:"suffix"`
+}
+
+func (MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig)(nil)).Elem()
+}
+
+func (i MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput {
+	return i.ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput)
+}
+
+func (i MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutput {
+	return i.ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput).ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutputWithContext(ctx)
+}
+
+// MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrInput is an input type that accepts MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs, MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtr and MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutput values.
+// You can construct a concrete instance of `MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrInput` via:
+//
+//	        MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutput
+	ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutputWithContext(context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutput
+}
+
+type monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrType MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs
+
+func MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtr(v *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrInput {
+	return (*monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrType)(v)
+}
+
+func (*monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig)(nil)).Elem()
+}
+
+func (i *monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrType) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutput {
+	return i.ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrType) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutput)
+}
+
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig)(nil)).Elem()
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput {
+	return o
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput {
+	return o
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutput {
+	return o.ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutputWithContext(context.Background())
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig) *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig {
+		return &v
+	}).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutput)
+}
+
+// List of property names to be excluded.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput) ExcludeProperties() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig) []string {
+		return v.ExcludeProperties
+	}).(pulumi.StringArrayOutput)
+}
+
+// List of property names to be included.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput) IncludeProperties() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig) []string {
+		return v.IncludeProperties
+	}).(pulumi.StringArrayOutput)
+}
+
+// String to be suffixed to the resource name.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput) Suffix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig) *string {
+		return v.Suffix
+	}).(pulumi.StringPtrOutput)
+}
+
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig)(nil)).Elem()
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutput {
+	return o
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutput {
+	return o
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutput) Elem() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig {
+		if v != nil {
+			return *v
+		}
+		var ret MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig
+		return ret
+	}).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput)
+}
+
+// List of property names to be excluded.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutput) ExcludeProperties() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig) []string {
+		if v == nil {
+			return nil
+		}
+		return v.ExcludeProperties
+	}).(pulumi.StringArrayOutput)
+}
+
+// List of property names to be included.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutput) IncludeProperties() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig) []string {
+		if v == nil {
+			return nil
+		}
+		return v.IncludeProperties
+	}).(pulumi.StringArrayOutput)
+}
+
+// String to be suffixed to the resource name.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutput) Suffix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Suffix
+	}).(pulumi.StringPtrOutput)
+}
+
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerProperty struct {
+	// Property name.
+	Name *string `pulumi:"name"`
+	// Property value.
+	Value *string `pulumi:"value"`
+}
+
+// MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyInput is an input type that accepts MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArgs and MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyOutput values.
+// You can construct a concrete instance of `MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyInput` via:
+//
+//	MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArgs{...}
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyOutput
+	ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyOutputWithContext(context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyOutput
+}
+
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArgs struct {
+	// Property name.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// Property value.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerProperty)(nil)).Elem()
+}
+
+func (i MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArgs) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyOutput {
+	return i.ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArgs) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyOutput)
+}
+
+// MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArrayInput is an input type that accepts MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArray and MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput values.
+// You can construct a concrete instance of `MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArrayInput` via:
+//
+//	MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArray{ MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArgs{...} }
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArrayInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput
+	ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutputWithContext(context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput
+}
+
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArray []MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyInput
+
+func (MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerProperty)(nil)).Elem()
+}
+
+func (i MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArray) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput {
+	return i.ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArray) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput)
+}
+
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerProperty)(nil)).Elem()
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyOutput {
+	return o
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyOutput {
+	return o
+}
+
+// Property name.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerProperty) *string {
+		return v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+// Property value.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerProperty) *string {
+		return v.Value
+	}).(pulumi.StringPtrOutput)
+}
+
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerProperty)(nil)).Elem()
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput {
+	return o
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput {
+	return o
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput) Index(i pulumi.IntInput) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerProperty {
+		return vs[0].([]MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerProperty)[vs[1].(int)]
+	}).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyOutput)
+}
+
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMapping struct {
+	// Metric name as defined by the collector.
+	CollectorMetricName *string `pulumi:"collectorMetricName"`
+	// Is ignoring this metric.
+	IsSkipUpload *bool `pulumi:"isSkipUpload"`
+	// Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+	MetricUploadIntervalInSeconds *int `pulumi:"metricUploadIntervalInSeconds"`
+	// Metric name to be upload to telemetry.
+	TelemetryMetricName *string `pulumi:"telemetryMetricName"`
+}
+
+// MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingInput is an input type that accepts MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArgs and MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingOutput values.
+// You can construct a concrete instance of `MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingInput` via:
+//
+//	MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArgs{...}
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingOutput
+	ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingOutputWithContext(context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingOutput
+}
+
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArgs struct {
+	// Metric name as defined by the collector.
+	CollectorMetricName pulumi.StringPtrInput `pulumi:"collectorMetricName"`
+	// Is ignoring this metric.
+	IsSkipUpload pulumi.BoolPtrInput `pulumi:"isSkipUpload"`
+	// Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+	MetricUploadIntervalInSeconds pulumi.IntPtrInput `pulumi:"metricUploadIntervalInSeconds"`
+	// Metric name to be upload to telemetry.
+	TelemetryMetricName pulumi.StringPtrInput `pulumi:"telemetryMetricName"`
+}
+
+func (MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMapping)(nil)).Elem()
+}
+
+func (i MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArgs) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingOutput {
+	return i.ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArgs) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingOutput)
+}
+
+// MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArrayInput is an input type that accepts MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArray and MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput values.
+// You can construct a concrete instance of `MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArrayInput` via:
+//
+//	MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArray{ MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArgs{...} }
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArrayInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput
+	ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArrayOutputWithContext(context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput
+}
+
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArray []MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingInput
+
+func (MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMapping)(nil)).Elem()
+}
+
+func (i MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArray) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput {
+	return i.ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArrayOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArray) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArrayOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput)
+}
+
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMapping)(nil)).Elem()
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingOutput {
+	return o
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingOutput {
+	return o
+}
+
+// Metric name as defined by the collector.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingOutput) CollectorMetricName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMapping) *string {
+		return v.CollectorMetricName
+	}).(pulumi.StringPtrOutput)
+}
+
+// Is ignoring this metric.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingOutput) IsSkipUpload() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMapping) *bool {
+		return v.IsSkipUpload
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingOutput) MetricUploadIntervalInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMapping) *int {
+		return v.MetricUploadIntervalInSeconds
+	}).(pulumi.IntPtrOutput)
+}
+
+// Metric name to be upload to telemetry.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingOutput) TelemetryMetricName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMapping) *string {
+		return v.TelemetryMetricName
+	}).(pulumi.StringPtrOutput)
+}
+
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMapping)(nil)).Elem()
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput {
+	return o
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArrayOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput {
+	return o
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput) Index(i pulumi.IntInput) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMapping {
+		return vs[0].([]MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMapping)[vs[1].(int)]
+	}).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingOutput)
+}
+
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfig struct {
+	// String pattern to be removed from the prefix of the metric name.
+	ExcludePatternOnPrefix *string `pulumi:"excludePatternOnPrefix"`
+	// is prefixing the metric with collector type.
+	IsPrefixWithCollectorType *bool `pulumi:"isPrefixWithCollectorType"`
+}
+
+// MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigInput is an input type that accepts MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigArgs and MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigOutput values.
+// You can construct a concrete instance of `MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigInput` via:
+//
+//	MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigArgs{...}
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigOutput
+	ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigOutputWithContext(context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigOutput
+}
+
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigArgs struct {
+	// String pattern to be removed from the prefix of the metric name.
+	ExcludePatternOnPrefix pulumi.StringPtrInput `pulumi:"excludePatternOnPrefix"`
+	// is prefixing the metric with collector type.
+	IsPrefixWithCollectorType pulumi.BoolPtrInput `pulumi:"isPrefixWithCollectorType"`
+}
+
+func (MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfig)(nil)).Elem()
+}
+
+func (i MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigArgs) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigOutput {
+	return i.ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigArgs) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigOutput)
+}
+
+func (i MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigArgs) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutput {
+	return i.ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigArgs) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigOutput).ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutputWithContext(ctx)
+}
+
+// MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrInput is an input type that accepts MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigArgs, MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtr and MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutput values.
+// You can construct a concrete instance of `MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrInput` via:
+//
+//	        MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutput
+	ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutputWithContext(context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutput
+}
+
+type monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrType MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigArgs
+
+func MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtr(v *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigArgs) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrInput {
+	return (*monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrType)(v)
+}
+
+func (*monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfig)(nil)).Elem()
+}
+
+func (i *monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrType) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutput {
+	return i.ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrType) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutput)
+}
+
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfig)(nil)).Elem()
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigOutput {
+	return o
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigOutput {
+	return o
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutput {
+	return o.ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutputWithContext(context.Background())
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfig) *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfig {
+		return &v
+	}).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutput)
+}
+
+// String pattern to be removed from the prefix of the metric name.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigOutput) ExcludePatternOnPrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfig) *string {
+		return v.ExcludePatternOnPrefix
+	}).(pulumi.StringPtrOutput)
+}
+
+// is prefixing the metric with collector type.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigOutput) IsPrefixWithCollectorType() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfig) *bool {
+		return v.IsPrefixWithCollectorType
+	}).(pulumi.BoolPtrOutput)
+}
+
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfig)(nil)).Elem()
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutput {
+	return o
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutput {
+	return o
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutput) Elem() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfig) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfig {
+		if v != nil {
+			return *v
+		}
+		var ret MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfig
+		return ret
+	}).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigOutput)
+}
+
+// String pattern to be removed from the prefix of the metric name.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutput) ExcludePatternOnPrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ExcludePatternOnPrefix
+	}).(pulumi.StringPtrOutput)
+}
+
+// is prefixing the metric with collector type.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutput) IsPrefixWithCollectorType() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfig) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsPrefixWithCollectorType
+	}).(pulumi.BoolPtrOutput)
+}
+
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig struct {
+	// List of tag names to be excluded.
+	ExcludeTags []string `pulumi:"excludeTags"`
+	// List of tag names to be included.
+	IncludeTags []string `pulumi:"includeTags"`
+	// Flag to indicate if only tags will be used for resource name generation.
+	IsUseTagsOnly *bool `pulumi:"isUseTagsOnly"`
+}
+
+// MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigInput is an input type that accepts MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs and MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput values.
+// You can construct a concrete instance of `MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigInput` via:
+//
+//	MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs{...}
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput
+	ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutputWithContext(context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput
+}
+
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs struct {
+	// List of tag names to be excluded.
+	ExcludeTags pulumi.StringArrayInput `pulumi:"excludeTags"`
+	// List of tag names to be included.
+	IncludeTags pulumi.StringArrayInput `pulumi:"includeTags"`
+	// Flag to indicate if only tags will be used for resource name generation.
+	IsUseTagsOnly pulumi.BoolPtrInput `pulumi:"isUseTagsOnly"`
+}
+
+func (MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig)(nil)).Elem()
+}
+
+func (i MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput {
+	return i.ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput)
+}
+
+func (i MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutput {
+	return i.ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput).ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutputWithContext(ctx)
+}
+
+// MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrInput is an input type that accepts MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs, MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtr and MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutput values.
+// You can construct a concrete instance of `MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrInput` via:
+//
+//	        MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutput
+	ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutputWithContext(context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutput
+}
+
+type monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrType MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs
+
+func MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtr(v *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrInput {
+	return (*monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrType)(v)
+}
+
+func (*monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig)(nil)).Elem()
+}
+
+func (i *monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrType) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutput {
+	return i.ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrType) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutput)
+}
+
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig)(nil)).Elem()
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput {
+	return o
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput {
+	return o
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutput {
+	return o.ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutputWithContext(context.Background())
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig) *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig {
+		return &v
+	}).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutput)
+}
+
+// List of tag names to be excluded.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput) ExcludeTags() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig) []string {
+		return v.ExcludeTags
+	}).(pulumi.StringArrayOutput)
+}
+
+// List of tag names to be included.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput) IncludeTags() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig) []string {
+		return v.IncludeTags
+	}).(pulumi.StringArrayOutput)
+}
+
+// Flag to indicate if only tags will be used for resource name generation.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput) IsUseTagsOnly() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig) *bool {
+		return v.IsUseTagsOnly
+	}).(pulumi.BoolPtrOutput)
+}
+
+type MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig)(nil)).Elem()
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutput() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutput {
+	return o
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutput) ToMonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutput {
+	return o
+}
+
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutput) Elem() MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig) MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig {
+		if v != nil {
+			return *v
+		}
+		var ret MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig
+		return ret
+	}).(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput)
+}
+
+// List of tag names to be excluded.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutput) ExcludeTags() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig) []string {
+		if v == nil {
+			return nil
+		}
+		return v.ExcludeTags
+	}).(pulumi.StringArrayOutput)
+}
+
+// List of tag names to be included.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutput) IncludeTags() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig) []string {
+		if v == nil {
+			return nil
+		}
+		return v.IncludeTags
+	}).(pulumi.StringArrayOutput)
+}
+
+// Flag to indicate if only tags will be used for resource name generation.
+func (o MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutput) IsUseTagsOnly() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsUseTagsOnly
+	}).(pulumi.BoolPtrOutput)
+}
+
+type MonitoredResourceTypeAvailabilityMetricsConfig struct {
+	// Availability metric collection internal in seconds.
+	CollectionIntervalInSeconds *int `pulumi:"collectionIntervalInSeconds"`
+	// List of metrics used for availability calculation for the resource.
+	Metrics []string `pulumi:"metrics"`
+}
+
+// MonitoredResourceTypeAvailabilityMetricsConfigInput is an input type that accepts MonitoredResourceTypeAvailabilityMetricsConfigArgs and MonitoredResourceTypeAvailabilityMetricsConfigOutput values.
+// You can construct a concrete instance of `MonitoredResourceTypeAvailabilityMetricsConfigInput` via:
+//
+//	MonitoredResourceTypeAvailabilityMetricsConfigArgs{...}
+type MonitoredResourceTypeAvailabilityMetricsConfigInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceTypeAvailabilityMetricsConfigOutput() MonitoredResourceTypeAvailabilityMetricsConfigOutput
+	ToMonitoredResourceTypeAvailabilityMetricsConfigOutputWithContext(context.Context) MonitoredResourceTypeAvailabilityMetricsConfigOutput
+}
+
+type MonitoredResourceTypeAvailabilityMetricsConfigArgs struct {
+	// Availability metric collection internal in seconds.
+	CollectionIntervalInSeconds pulumi.IntPtrInput `pulumi:"collectionIntervalInSeconds"`
+	// List of metrics used for availability calculation for the resource.
+	Metrics pulumi.StringArrayInput `pulumi:"metrics"`
+}
+
+func (MonitoredResourceTypeAvailabilityMetricsConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceTypeAvailabilityMetricsConfig)(nil)).Elem()
+}
+
+func (i MonitoredResourceTypeAvailabilityMetricsConfigArgs) ToMonitoredResourceTypeAvailabilityMetricsConfigOutput() MonitoredResourceTypeAvailabilityMetricsConfigOutput {
+	return i.ToMonitoredResourceTypeAvailabilityMetricsConfigOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceTypeAvailabilityMetricsConfigArgs) ToMonitoredResourceTypeAvailabilityMetricsConfigOutputWithContext(ctx context.Context) MonitoredResourceTypeAvailabilityMetricsConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTypeAvailabilityMetricsConfigOutput)
+}
+
+// MonitoredResourceTypeAvailabilityMetricsConfigArrayInput is an input type that accepts MonitoredResourceTypeAvailabilityMetricsConfigArray and MonitoredResourceTypeAvailabilityMetricsConfigArrayOutput values.
+// You can construct a concrete instance of `MonitoredResourceTypeAvailabilityMetricsConfigArrayInput` via:
+//
+//	MonitoredResourceTypeAvailabilityMetricsConfigArray{ MonitoredResourceTypeAvailabilityMetricsConfigArgs{...} }
+type MonitoredResourceTypeAvailabilityMetricsConfigArrayInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceTypeAvailabilityMetricsConfigArrayOutput() MonitoredResourceTypeAvailabilityMetricsConfigArrayOutput
+	ToMonitoredResourceTypeAvailabilityMetricsConfigArrayOutputWithContext(context.Context) MonitoredResourceTypeAvailabilityMetricsConfigArrayOutput
+}
+
+type MonitoredResourceTypeAvailabilityMetricsConfigArray []MonitoredResourceTypeAvailabilityMetricsConfigInput
+
+func (MonitoredResourceTypeAvailabilityMetricsConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MonitoredResourceTypeAvailabilityMetricsConfig)(nil)).Elem()
+}
+
+func (i MonitoredResourceTypeAvailabilityMetricsConfigArray) ToMonitoredResourceTypeAvailabilityMetricsConfigArrayOutput() MonitoredResourceTypeAvailabilityMetricsConfigArrayOutput {
+	return i.ToMonitoredResourceTypeAvailabilityMetricsConfigArrayOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceTypeAvailabilityMetricsConfigArray) ToMonitoredResourceTypeAvailabilityMetricsConfigArrayOutputWithContext(ctx context.Context) MonitoredResourceTypeAvailabilityMetricsConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTypeAvailabilityMetricsConfigArrayOutput)
+}
+
+type MonitoredResourceTypeAvailabilityMetricsConfigOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceTypeAvailabilityMetricsConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceTypeAvailabilityMetricsConfig)(nil)).Elem()
+}
+
+func (o MonitoredResourceTypeAvailabilityMetricsConfigOutput) ToMonitoredResourceTypeAvailabilityMetricsConfigOutput() MonitoredResourceTypeAvailabilityMetricsConfigOutput {
+	return o
+}
+
+func (o MonitoredResourceTypeAvailabilityMetricsConfigOutput) ToMonitoredResourceTypeAvailabilityMetricsConfigOutputWithContext(ctx context.Context) MonitoredResourceTypeAvailabilityMetricsConfigOutput {
+	return o
+}
+
+// Availability metric collection internal in seconds.
+func (o MonitoredResourceTypeAvailabilityMetricsConfigOutput) CollectionIntervalInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTypeAvailabilityMetricsConfig) *int { return v.CollectionIntervalInSeconds }).(pulumi.IntPtrOutput)
+}
+
+// List of metrics used for availability calculation for the resource.
+func (o MonitoredResourceTypeAvailabilityMetricsConfigOutput) Metrics() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v MonitoredResourceTypeAvailabilityMetricsConfig) []string { return v.Metrics }).(pulumi.StringArrayOutput)
+}
+
+type MonitoredResourceTypeAvailabilityMetricsConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceTypeAvailabilityMetricsConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MonitoredResourceTypeAvailabilityMetricsConfig)(nil)).Elem()
+}
+
+func (o MonitoredResourceTypeAvailabilityMetricsConfigArrayOutput) ToMonitoredResourceTypeAvailabilityMetricsConfigArrayOutput() MonitoredResourceTypeAvailabilityMetricsConfigArrayOutput {
+	return o
+}
+
+func (o MonitoredResourceTypeAvailabilityMetricsConfigArrayOutput) ToMonitoredResourceTypeAvailabilityMetricsConfigArrayOutputWithContext(ctx context.Context) MonitoredResourceTypeAvailabilityMetricsConfigArrayOutput {
+	return o
+}
+
+func (o MonitoredResourceTypeAvailabilityMetricsConfigArrayOutput) Index(i pulumi.IntInput) MonitoredResourceTypeAvailabilityMetricsConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MonitoredResourceTypeAvailabilityMetricsConfig {
+		return vs[0].([]MonitoredResourceTypeAvailabilityMetricsConfig)[vs[1].(int)]
+	}).(MonitoredResourceTypeAvailabilityMetricsConfigOutput)
+}
+
+type MonitoredResourceTypeHandlerConfig struct {
+	// Resource name generation overriding configurations for collectd resource types.
+	CollectdResourceNameConfigs []MonitoredResourceTypeHandlerConfigCollectdResourceNameConfig `pulumi:"collectdResourceNameConfigs"`
+	// List of collector/plugin names.
+	CollectorTypes []string `pulumi:"collectorTypes"`
+	// List of handler configuration properties
+	HandlerProperties []MonitoredResourceTypeHandlerConfigHandlerProperty `pulumi:"handlerProperties"`
+	// List of AgentExtensionHandlerMetricMappingDetails.
+	MetricMappings []MonitoredResourceTypeHandlerConfigMetricMapping `pulumi:"metricMappings"`
+	// Metric name generation overriding configurations.
+	MetricNameConfigs []MonitoredResourceTypeHandlerConfigMetricNameConfig `pulumi:"metricNameConfigs"`
+	// Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+	MetricUploadIntervalInSeconds *int `pulumi:"metricUploadIntervalInSeconds"`
+	// Resource name generation overriding configurations for telegraf resource types.
+	TelegrafResourceNameConfigs []MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfig `pulumi:"telegrafResourceNameConfigs"`
+	// Resource group string; if not specified, the resource group string will be generated by the handler.
+	TelemetryResourceGroup *string `pulumi:"telemetryResourceGroup"`
+}
+
+// MonitoredResourceTypeHandlerConfigInput is an input type that accepts MonitoredResourceTypeHandlerConfigArgs and MonitoredResourceTypeHandlerConfigOutput values.
+// You can construct a concrete instance of `MonitoredResourceTypeHandlerConfigInput` via:
+//
+//	MonitoredResourceTypeHandlerConfigArgs{...}
+type MonitoredResourceTypeHandlerConfigInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceTypeHandlerConfigOutput() MonitoredResourceTypeHandlerConfigOutput
+	ToMonitoredResourceTypeHandlerConfigOutputWithContext(context.Context) MonitoredResourceTypeHandlerConfigOutput
+}
+
+type MonitoredResourceTypeHandlerConfigArgs struct {
+	// Resource name generation overriding configurations for collectd resource types.
+	CollectdResourceNameConfigs MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayInput `pulumi:"collectdResourceNameConfigs"`
+	// List of collector/plugin names.
+	CollectorTypes pulumi.StringArrayInput `pulumi:"collectorTypes"`
+	// List of handler configuration properties
+	HandlerProperties MonitoredResourceTypeHandlerConfigHandlerPropertyArrayInput `pulumi:"handlerProperties"`
+	// List of AgentExtensionHandlerMetricMappingDetails.
+	MetricMappings MonitoredResourceTypeHandlerConfigMetricMappingArrayInput `pulumi:"metricMappings"`
+	// Metric name generation overriding configurations.
+	MetricNameConfigs MonitoredResourceTypeHandlerConfigMetricNameConfigArrayInput `pulumi:"metricNameConfigs"`
+	// Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+	MetricUploadIntervalInSeconds pulumi.IntPtrInput `pulumi:"metricUploadIntervalInSeconds"`
+	// Resource name generation overriding configurations for telegraf resource types.
+	TelegrafResourceNameConfigs MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayInput `pulumi:"telegrafResourceNameConfigs"`
+	// Resource group string; if not specified, the resource group string will be generated by the handler.
+	TelemetryResourceGroup pulumi.StringPtrInput `pulumi:"telemetryResourceGroup"`
+}
+
+func (MonitoredResourceTypeHandlerConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceTypeHandlerConfig)(nil)).Elem()
+}
+
+func (i MonitoredResourceTypeHandlerConfigArgs) ToMonitoredResourceTypeHandlerConfigOutput() MonitoredResourceTypeHandlerConfigOutput {
+	return i.ToMonitoredResourceTypeHandlerConfigOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceTypeHandlerConfigArgs) ToMonitoredResourceTypeHandlerConfigOutputWithContext(ctx context.Context) MonitoredResourceTypeHandlerConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTypeHandlerConfigOutput)
+}
+
+// MonitoredResourceTypeHandlerConfigArrayInput is an input type that accepts MonitoredResourceTypeHandlerConfigArray and MonitoredResourceTypeHandlerConfigArrayOutput values.
+// You can construct a concrete instance of `MonitoredResourceTypeHandlerConfigArrayInput` via:
+//
+//	MonitoredResourceTypeHandlerConfigArray{ MonitoredResourceTypeHandlerConfigArgs{...} }
+type MonitoredResourceTypeHandlerConfigArrayInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceTypeHandlerConfigArrayOutput() MonitoredResourceTypeHandlerConfigArrayOutput
+	ToMonitoredResourceTypeHandlerConfigArrayOutputWithContext(context.Context) MonitoredResourceTypeHandlerConfigArrayOutput
+}
+
+type MonitoredResourceTypeHandlerConfigArray []MonitoredResourceTypeHandlerConfigInput
+
+func (MonitoredResourceTypeHandlerConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MonitoredResourceTypeHandlerConfig)(nil)).Elem()
+}
+
+func (i MonitoredResourceTypeHandlerConfigArray) ToMonitoredResourceTypeHandlerConfigArrayOutput() MonitoredResourceTypeHandlerConfigArrayOutput {
+	return i.ToMonitoredResourceTypeHandlerConfigArrayOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceTypeHandlerConfigArray) ToMonitoredResourceTypeHandlerConfigArrayOutputWithContext(ctx context.Context) MonitoredResourceTypeHandlerConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTypeHandlerConfigArrayOutput)
+}
+
+type MonitoredResourceTypeHandlerConfigOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceTypeHandlerConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceTypeHandlerConfig)(nil)).Elem()
+}
+
+func (o MonitoredResourceTypeHandlerConfigOutput) ToMonitoredResourceTypeHandlerConfigOutput() MonitoredResourceTypeHandlerConfigOutput {
+	return o
+}
+
+func (o MonitoredResourceTypeHandlerConfigOutput) ToMonitoredResourceTypeHandlerConfigOutputWithContext(ctx context.Context) MonitoredResourceTypeHandlerConfigOutput {
+	return o
+}
+
+// Resource name generation overriding configurations for collectd resource types.
+func (o MonitoredResourceTypeHandlerConfigOutput) CollectdResourceNameConfigs() MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutput {
+	return o.ApplyT(func(v MonitoredResourceTypeHandlerConfig) []MonitoredResourceTypeHandlerConfigCollectdResourceNameConfig {
+		return v.CollectdResourceNameConfigs
+	}).(MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutput)
+}
+
+// List of collector/plugin names.
+func (o MonitoredResourceTypeHandlerConfigOutput) CollectorTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v MonitoredResourceTypeHandlerConfig) []string { return v.CollectorTypes }).(pulumi.StringArrayOutput)
+}
+
+// List of handler configuration properties
+func (o MonitoredResourceTypeHandlerConfigOutput) HandlerProperties() MonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutput {
+	return o.ApplyT(func(v MonitoredResourceTypeHandlerConfig) []MonitoredResourceTypeHandlerConfigHandlerProperty {
+		return v.HandlerProperties
+	}).(MonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutput)
+}
+
+// List of AgentExtensionHandlerMetricMappingDetails.
+func (o MonitoredResourceTypeHandlerConfigOutput) MetricMappings() MonitoredResourceTypeHandlerConfigMetricMappingArrayOutput {
+	return o.ApplyT(func(v MonitoredResourceTypeHandlerConfig) []MonitoredResourceTypeHandlerConfigMetricMapping {
+		return v.MetricMappings
+	}).(MonitoredResourceTypeHandlerConfigMetricMappingArrayOutput)
+}
+
+// Metric name generation overriding configurations.
+func (o MonitoredResourceTypeHandlerConfigOutput) MetricNameConfigs() MonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutput {
+	return o.ApplyT(func(v MonitoredResourceTypeHandlerConfig) []MonitoredResourceTypeHandlerConfigMetricNameConfig {
+		return v.MetricNameConfigs
+	}).(MonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutput)
+}
+
+// Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+func (o MonitoredResourceTypeHandlerConfigOutput) MetricUploadIntervalInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTypeHandlerConfig) *int { return v.MetricUploadIntervalInSeconds }).(pulumi.IntPtrOutput)
+}
+
+// Resource name generation overriding configurations for telegraf resource types.
+func (o MonitoredResourceTypeHandlerConfigOutput) TelegrafResourceNameConfigs() MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutput {
+	return o.ApplyT(func(v MonitoredResourceTypeHandlerConfig) []MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfig {
+		return v.TelegrafResourceNameConfigs
+	}).(MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutput)
+}
+
+// Resource group string; if not specified, the resource group string will be generated by the handler.
+func (o MonitoredResourceTypeHandlerConfigOutput) TelemetryResourceGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTypeHandlerConfig) *string { return v.TelemetryResourceGroup }).(pulumi.StringPtrOutput)
+}
+
+type MonitoredResourceTypeHandlerConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceTypeHandlerConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MonitoredResourceTypeHandlerConfig)(nil)).Elem()
+}
+
+func (o MonitoredResourceTypeHandlerConfigArrayOutput) ToMonitoredResourceTypeHandlerConfigArrayOutput() MonitoredResourceTypeHandlerConfigArrayOutput {
+	return o
+}
+
+func (o MonitoredResourceTypeHandlerConfigArrayOutput) ToMonitoredResourceTypeHandlerConfigArrayOutputWithContext(ctx context.Context) MonitoredResourceTypeHandlerConfigArrayOutput {
+	return o
+}
+
+func (o MonitoredResourceTypeHandlerConfigArrayOutput) Index(i pulumi.IntInput) MonitoredResourceTypeHandlerConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MonitoredResourceTypeHandlerConfig {
+		return vs[0].([]MonitoredResourceTypeHandlerConfig)[vs[1].(int)]
+	}).(MonitoredResourceTypeHandlerConfigOutput)
+}
+
+type MonitoredResourceTypeHandlerConfigCollectdResourceNameConfig struct {
+	// List of property names to be excluded.
+	ExcludeProperties []string `pulumi:"excludeProperties"`
+	// List of property names to be included.
+	IncludeProperties []string `pulumi:"includeProperties"`
+	// String to be suffixed to the resource name.
+	Suffix *string `pulumi:"suffix"`
+}
+
+// MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigInput is an input type that accepts MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArgs and MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput values.
+// You can construct a concrete instance of `MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigInput` via:
+//
+//	MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArgs{...}
+type MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput() MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput
+	ToMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutputWithContext(context.Context) MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput
+}
+
+type MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArgs struct {
+	// List of property names to be excluded.
+	ExcludeProperties pulumi.StringArrayInput `pulumi:"excludeProperties"`
+	// List of property names to be included.
+	IncludeProperties pulumi.StringArrayInput `pulumi:"includeProperties"`
+	// String to be suffixed to the resource name.
+	Suffix pulumi.StringPtrInput `pulumi:"suffix"`
+}
+
+func (MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceTypeHandlerConfigCollectdResourceNameConfig)(nil)).Elem()
+}
+
+func (i MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArgs) ToMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput() MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput {
+	return i.ToMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArgs) ToMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutputWithContext(ctx context.Context) MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput)
+}
+
+// MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayInput is an input type that accepts MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArray and MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutput values.
+// You can construct a concrete instance of `MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayInput` via:
+//
+//	MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArray{ MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArgs{...} }
+type MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutput() MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutput
+	ToMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutputWithContext(context.Context) MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutput
+}
+
+type MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArray []MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigInput
+
+func (MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MonitoredResourceTypeHandlerConfigCollectdResourceNameConfig)(nil)).Elem()
+}
+
+func (i MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArray) ToMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutput() MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutput {
+	return i.ToMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArray) ToMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutputWithContext(ctx context.Context) MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutput)
+}
+
+type MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceTypeHandlerConfigCollectdResourceNameConfig)(nil)).Elem()
+}
+
+func (o MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput) ToMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput() MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput {
+	return o
+}
+
+func (o MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput) ToMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutputWithContext(ctx context.Context) MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput {
+	return o
+}
+
+// List of property names to be excluded.
+func (o MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput) ExcludeProperties() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v MonitoredResourceTypeHandlerConfigCollectdResourceNameConfig) []string {
+		return v.ExcludeProperties
+	}).(pulumi.StringArrayOutput)
+}
+
+// List of property names to be included.
+func (o MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput) IncludeProperties() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v MonitoredResourceTypeHandlerConfigCollectdResourceNameConfig) []string {
+		return v.IncludeProperties
+	}).(pulumi.StringArrayOutput)
+}
+
+// String to be suffixed to the resource name.
+func (o MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput) Suffix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTypeHandlerConfigCollectdResourceNameConfig) *string { return v.Suffix }).(pulumi.StringPtrOutput)
+}
+
+type MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MonitoredResourceTypeHandlerConfigCollectdResourceNameConfig)(nil)).Elem()
+}
+
+func (o MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutput) ToMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutput() MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutput {
+	return o
+}
+
+func (o MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutput) ToMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutputWithContext(ctx context.Context) MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutput {
+	return o
+}
+
+func (o MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutput) Index(i pulumi.IntInput) MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MonitoredResourceTypeHandlerConfigCollectdResourceNameConfig {
+		return vs[0].([]MonitoredResourceTypeHandlerConfigCollectdResourceNameConfig)[vs[1].(int)]
+	}).(MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput)
+}
+
+type MonitoredResourceTypeHandlerConfigHandlerProperty struct {
+	// A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
+	Name *string `pulumi:"name"`
+	// Property value.
+	Value *string `pulumi:"value"`
+}
+
+// MonitoredResourceTypeHandlerConfigHandlerPropertyInput is an input type that accepts MonitoredResourceTypeHandlerConfigHandlerPropertyArgs and MonitoredResourceTypeHandlerConfigHandlerPropertyOutput values.
+// You can construct a concrete instance of `MonitoredResourceTypeHandlerConfigHandlerPropertyInput` via:
+//
+//	MonitoredResourceTypeHandlerConfigHandlerPropertyArgs{...}
+type MonitoredResourceTypeHandlerConfigHandlerPropertyInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceTypeHandlerConfigHandlerPropertyOutput() MonitoredResourceTypeHandlerConfigHandlerPropertyOutput
+	ToMonitoredResourceTypeHandlerConfigHandlerPropertyOutputWithContext(context.Context) MonitoredResourceTypeHandlerConfigHandlerPropertyOutput
+}
+
+type MonitoredResourceTypeHandlerConfigHandlerPropertyArgs struct {
+	// A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// Property value.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (MonitoredResourceTypeHandlerConfigHandlerPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceTypeHandlerConfigHandlerProperty)(nil)).Elem()
+}
+
+func (i MonitoredResourceTypeHandlerConfigHandlerPropertyArgs) ToMonitoredResourceTypeHandlerConfigHandlerPropertyOutput() MonitoredResourceTypeHandlerConfigHandlerPropertyOutput {
+	return i.ToMonitoredResourceTypeHandlerConfigHandlerPropertyOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceTypeHandlerConfigHandlerPropertyArgs) ToMonitoredResourceTypeHandlerConfigHandlerPropertyOutputWithContext(ctx context.Context) MonitoredResourceTypeHandlerConfigHandlerPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTypeHandlerConfigHandlerPropertyOutput)
+}
+
+// MonitoredResourceTypeHandlerConfigHandlerPropertyArrayInput is an input type that accepts MonitoredResourceTypeHandlerConfigHandlerPropertyArray and MonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutput values.
+// You can construct a concrete instance of `MonitoredResourceTypeHandlerConfigHandlerPropertyArrayInput` via:
+//
+//	MonitoredResourceTypeHandlerConfigHandlerPropertyArray{ MonitoredResourceTypeHandlerConfigHandlerPropertyArgs{...} }
+type MonitoredResourceTypeHandlerConfigHandlerPropertyArrayInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutput() MonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutput
+	ToMonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutputWithContext(context.Context) MonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutput
+}
+
+type MonitoredResourceTypeHandlerConfigHandlerPropertyArray []MonitoredResourceTypeHandlerConfigHandlerPropertyInput
+
+func (MonitoredResourceTypeHandlerConfigHandlerPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MonitoredResourceTypeHandlerConfigHandlerProperty)(nil)).Elem()
+}
+
+func (i MonitoredResourceTypeHandlerConfigHandlerPropertyArray) ToMonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutput() MonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutput {
+	return i.ToMonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceTypeHandlerConfigHandlerPropertyArray) ToMonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutputWithContext(ctx context.Context) MonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutput)
+}
+
+type MonitoredResourceTypeHandlerConfigHandlerPropertyOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceTypeHandlerConfigHandlerPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceTypeHandlerConfigHandlerProperty)(nil)).Elem()
+}
+
+func (o MonitoredResourceTypeHandlerConfigHandlerPropertyOutput) ToMonitoredResourceTypeHandlerConfigHandlerPropertyOutput() MonitoredResourceTypeHandlerConfigHandlerPropertyOutput {
+	return o
+}
+
+func (o MonitoredResourceTypeHandlerConfigHandlerPropertyOutput) ToMonitoredResourceTypeHandlerConfigHandlerPropertyOutputWithContext(ctx context.Context) MonitoredResourceTypeHandlerConfigHandlerPropertyOutput {
+	return o
+}
+
+// A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
+func (o MonitoredResourceTypeHandlerConfigHandlerPropertyOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTypeHandlerConfigHandlerProperty) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// Property value.
+func (o MonitoredResourceTypeHandlerConfigHandlerPropertyOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTypeHandlerConfigHandlerProperty) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type MonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MonitoredResourceTypeHandlerConfigHandlerProperty)(nil)).Elem()
+}
+
+func (o MonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutput) ToMonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutput() MonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutput {
+	return o
+}
+
+func (o MonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutput) ToMonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutputWithContext(ctx context.Context) MonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutput {
+	return o
+}
+
+func (o MonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutput) Index(i pulumi.IntInput) MonitoredResourceTypeHandlerConfigHandlerPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MonitoredResourceTypeHandlerConfigHandlerProperty {
+		return vs[0].([]MonitoredResourceTypeHandlerConfigHandlerProperty)[vs[1].(int)]
+	}).(MonitoredResourceTypeHandlerConfigHandlerPropertyOutput)
+}
+
+type MonitoredResourceTypeHandlerConfigMetricMapping struct {
+	// Metric name as defined by the collector.
+	CollectorMetricName *string `pulumi:"collectorMetricName"`
+	// Is ignoring this metric.
+	IsSkipUpload *bool `pulumi:"isSkipUpload"`
+	// Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+	MetricUploadIntervalInSeconds *int `pulumi:"metricUploadIntervalInSeconds"`
+	// Metric name to be upload to telemetry.
+	TelemetryMetricName *string `pulumi:"telemetryMetricName"`
+}
+
+// MonitoredResourceTypeHandlerConfigMetricMappingInput is an input type that accepts MonitoredResourceTypeHandlerConfigMetricMappingArgs and MonitoredResourceTypeHandlerConfigMetricMappingOutput values.
+// You can construct a concrete instance of `MonitoredResourceTypeHandlerConfigMetricMappingInput` via:
+//
+//	MonitoredResourceTypeHandlerConfigMetricMappingArgs{...}
+type MonitoredResourceTypeHandlerConfigMetricMappingInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceTypeHandlerConfigMetricMappingOutput() MonitoredResourceTypeHandlerConfigMetricMappingOutput
+	ToMonitoredResourceTypeHandlerConfigMetricMappingOutputWithContext(context.Context) MonitoredResourceTypeHandlerConfigMetricMappingOutput
+}
+
+type MonitoredResourceTypeHandlerConfigMetricMappingArgs struct {
+	// Metric name as defined by the collector.
+	CollectorMetricName pulumi.StringPtrInput `pulumi:"collectorMetricName"`
+	// Is ignoring this metric.
+	IsSkipUpload pulumi.BoolPtrInput `pulumi:"isSkipUpload"`
+	// Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+	MetricUploadIntervalInSeconds pulumi.IntPtrInput `pulumi:"metricUploadIntervalInSeconds"`
+	// Metric name to be upload to telemetry.
+	TelemetryMetricName pulumi.StringPtrInput `pulumi:"telemetryMetricName"`
+}
+
+func (MonitoredResourceTypeHandlerConfigMetricMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceTypeHandlerConfigMetricMapping)(nil)).Elem()
+}
+
+func (i MonitoredResourceTypeHandlerConfigMetricMappingArgs) ToMonitoredResourceTypeHandlerConfigMetricMappingOutput() MonitoredResourceTypeHandlerConfigMetricMappingOutput {
+	return i.ToMonitoredResourceTypeHandlerConfigMetricMappingOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceTypeHandlerConfigMetricMappingArgs) ToMonitoredResourceTypeHandlerConfigMetricMappingOutputWithContext(ctx context.Context) MonitoredResourceTypeHandlerConfigMetricMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTypeHandlerConfigMetricMappingOutput)
+}
+
+// MonitoredResourceTypeHandlerConfigMetricMappingArrayInput is an input type that accepts MonitoredResourceTypeHandlerConfigMetricMappingArray and MonitoredResourceTypeHandlerConfigMetricMappingArrayOutput values.
+// You can construct a concrete instance of `MonitoredResourceTypeHandlerConfigMetricMappingArrayInput` via:
+//
+//	MonitoredResourceTypeHandlerConfigMetricMappingArray{ MonitoredResourceTypeHandlerConfigMetricMappingArgs{...} }
+type MonitoredResourceTypeHandlerConfigMetricMappingArrayInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceTypeHandlerConfigMetricMappingArrayOutput() MonitoredResourceTypeHandlerConfigMetricMappingArrayOutput
+	ToMonitoredResourceTypeHandlerConfigMetricMappingArrayOutputWithContext(context.Context) MonitoredResourceTypeHandlerConfigMetricMappingArrayOutput
+}
+
+type MonitoredResourceTypeHandlerConfigMetricMappingArray []MonitoredResourceTypeHandlerConfigMetricMappingInput
+
+func (MonitoredResourceTypeHandlerConfigMetricMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MonitoredResourceTypeHandlerConfigMetricMapping)(nil)).Elem()
+}
+
+func (i MonitoredResourceTypeHandlerConfigMetricMappingArray) ToMonitoredResourceTypeHandlerConfigMetricMappingArrayOutput() MonitoredResourceTypeHandlerConfigMetricMappingArrayOutput {
+	return i.ToMonitoredResourceTypeHandlerConfigMetricMappingArrayOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceTypeHandlerConfigMetricMappingArray) ToMonitoredResourceTypeHandlerConfigMetricMappingArrayOutputWithContext(ctx context.Context) MonitoredResourceTypeHandlerConfigMetricMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTypeHandlerConfigMetricMappingArrayOutput)
+}
+
+type MonitoredResourceTypeHandlerConfigMetricMappingOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceTypeHandlerConfigMetricMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceTypeHandlerConfigMetricMapping)(nil)).Elem()
+}
+
+func (o MonitoredResourceTypeHandlerConfigMetricMappingOutput) ToMonitoredResourceTypeHandlerConfigMetricMappingOutput() MonitoredResourceTypeHandlerConfigMetricMappingOutput {
+	return o
+}
+
+func (o MonitoredResourceTypeHandlerConfigMetricMappingOutput) ToMonitoredResourceTypeHandlerConfigMetricMappingOutputWithContext(ctx context.Context) MonitoredResourceTypeHandlerConfigMetricMappingOutput {
+	return o
+}
+
+// Metric name as defined by the collector.
+func (o MonitoredResourceTypeHandlerConfigMetricMappingOutput) CollectorMetricName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTypeHandlerConfigMetricMapping) *string { return v.CollectorMetricName }).(pulumi.StringPtrOutput)
+}
+
+// Is ignoring this metric.
+func (o MonitoredResourceTypeHandlerConfigMetricMappingOutput) IsSkipUpload() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTypeHandlerConfigMetricMapping) *bool { return v.IsSkipUpload }).(pulumi.BoolPtrOutput)
+}
+
+// Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+func (o MonitoredResourceTypeHandlerConfigMetricMappingOutput) MetricUploadIntervalInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTypeHandlerConfigMetricMapping) *int { return v.MetricUploadIntervalInSeconds }).(pulumi.IntPtrOutput)
+}
+
+// Metric name to be upload to telemetry.
+func (o MonitoredResourceTypeHandlerConfigMetricMappingOutput) TelemetryMetricName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTypeHandlerConfigMetricMapping) *string { return v.TelemetryMetricName }).(pulumi.StringPtrOutput)
+}
+
+type MonitoredResourceTypeHandlerConfigMetricMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceTypeHandlerConfigMetricMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MonitoredResourceTypeHandlerConfigMetricMapping)(nil)).Elem()
+}
+
+func (o MonitoredResourceTypeHandlerConfigMetricMappingArrayOutput) ToMonitoredResourceTypeHandlerConfigMetricMappingArrayOutput() MonitoredResourceTypeHandlerConfigMetricMappingArrayOutput {
+	return o
+}
+
+func (o MonitoredResourceTypeHandlerConfigMetricMappingArrayOutput) ToMonitoredResourceTypeHandlerConfigMetricMappingArrayOutputWithContext(ctx context.Context) MonitoredResourceTypeHandlerConfigMetricMappingArrayOutput {
+	return o
+}
+
+func (o MonitoredResourceTypeHandlerConfigMetricMappingArrayOutput) Index(i pulumi.IntInput) MonitoredResourceTypeHandlerConfigMetricMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MonitoredResourceTypeHandlerConfigMetricMapping {
+		return vs[0].([]MonitoredResourceTypeHandlerConfigMetricMapping)[vs[1].(int)]
+	}).(MonitoredResourceTypeHandlerConfigMetricMappingOutput)
+}
+
+type MonitoredResourceTypeHandlerConfigMetricNameConfig struct {
+	// String pattern to be removed from the prefix of the metric name.
+	ExcludePatternOnPrefix *string `pulumi:"excludePatternOnPrefix"`
+	// is prefixing the metric with collector type.
+	IsPrefixWithCollectorType *bool `pulumi:"isPrefixWithCollectorType"`
+}
+
+// MonitoredResourceTypeHandlerConfigMetricNameConfigInput is an input type that accepts MonitoredResourceTypeHandlerConfigMetricNameConfigArgs and MonitoredResourceTypeHandlerConfigMetricNameConfigOutput values.
+// You can construct a concrete instance of `MonitoredResourceTypeHandlerConfigMetricNameConfigInput` via:
+//
+//	MonitoredResourceTypeHandlerConfigMetricNameConfigArgs{...}
+type MonitoredResourceTypeHandlerConfigMetricNameConfigInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceTypeHandlerConfigMetricNameConfigOutput() MonitoredResourceTypeHandlerConfigMetricNameConfigOutput
+	ToMonitoredResourceTypeHandlerConfigMetricNameConfigOutputWithContext(context.Context) MonitoredResourceTypeHandlerConfigMetricNameConfigOutput
+}
+
+type MonitoredResourceTypeHandlerConfigMetricNameConfigArgs struct {
+	// String pattern to be removed from the prefix of the metric name.
+	ExcludePatternOnPrefix pulumi.StringPtrInput `pulumi:"excludePatternOnPrefix"`
+	// is prefixing the metric with collector type.
+	IsPrefixWithCollectorType pulumi.BoolPtrInput `pulumi:"isPrefixWithCollectorType"`
+}
+
+func (MonitoredResourceTypeHandlerConfigMetricNameConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceTypeHandlerConfigMetricNameConfig)(nil)).Elem()
+}
+
+func (i MonitoredResourceTypeHandlerConfigMetricNameConfigArgs) ToMonitoredResourceTypeHandlerConfigMetricNameConfigOutput() MonitoredResourceTypeHandlerConfigMetricNameConfigOutput {
+	return i.ToMonitoredResourceTypeHandlerConfigMetricNameConfigOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceTypeHandlerConfigMetricNameConfigArgs) ToMonitoredResourceTypeHandlerConfigMetricNameConfigOutputWithContext(ctx context.Context) MonitoredResourceTypeHandlerConfigMetricNameConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTypeHandlerConfigMetricNameConfigOutput)
+}
+
+// MonitoredResourceTypeHandlerConfigMetricNameConfigArrayInput is an input type that accepts MonitoredResourceTypeHandlerConfigMetricNameConfigArray and MonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutput values.
+// You can construct a concrete instance of `MonitoredResourceTypeHandlerConfigMetricNameConfigArrayInput` via:
+//
+//	MonitoredResourceTypeHandlerConfigMetricNameConfigArray{ MonitoredResourceTypeHandlerConfigMetricNameConfigArgs{...} }
+type MonitoredResourceTypeHandlerConfigMetricNameConfigArrayInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutput() MonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutput
+	ToMonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutputWithContext(context.Context) MonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutput
+}
+
+type MonitoredResourceTypeHandlerConfigMetricNameConfigArray []MonitoredResourceTypeHandlerConfigMetricNameConfigInput
+
+func (MonitoredResourceTypeHandlerConfigMetricNameConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MonitoredResourceTypeHandlerConfigMetricNameConfig)(nil)).Elem()
+}
+
+func (i MonitoredResourceTypeHandlerConfigMetricNameConfigArray) ToMonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutput() MonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutput {
+	return i.ToMonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceTypeHandlerConfigMetricNameConfigArray) ToMonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutputWithContext(ctx context.Context) MonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutput)
+}
+
+type MonitoredResourceTypeHandlerConfigMetricNameConfigOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceTypeHandlerConfigMetricNameConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceTypeHandlerConfigMetricNameConfig)(nil)).Elem()
+}
+
+func (o MonitoredResourceTypeHandlerConfigMetricNameConfigOutput) ToMonitoredResourceTypeHandlerConfigMetricNameConfigOutput() MonitoredResourceTypeHandlerConfigMetricNameConfigOutput {
+	return o
+}
+
+func (o MonitoredResourceTypeHandlerConfigMetricNameConfigOutput) ToMonitoredResourceTypeHandlerConfigMetricNameConfigOutputWithContext(ctx context.Context) MonitoredResourceTypeHandlerConfigMetricNameConfigOutput {
+	return o
+}
+
+// String pattern to be removed from the prefix of the metric name.
+func (o MonitoredResourceTypeHandlerConfigMetricNameConfigOutput) ExcludePatternOnPrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTypeHandlerConfigMetricNameConfig) *string { return v.ExcludePatternOnPrefix }).(pulumi.StringPtrOutput)
+}
+
+// is prefixing the metric with collector type.
+func (o MonitoredResourceTypeHandlerConfigMetricNameConfigOutput) IsPrefixWithCollectorType() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTypeHandlerConfigMetricNameConfig) *bool { return v.IsPrefixWithCollectorType }).(pulumi.BoolPtrOutput)
+}
+
+type MonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MonitoredResourceTypeHandlerConfigMetricNameConfig)(nil)).Elem()
+}
+
+func (o MonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutput) ToMonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutput() MonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutput {
+	return o
+}
+
+func (o MonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutput) ToMonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutputWithContext(ctx context.Context) MonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutput {
+	return o
+}
+
+func (o MonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutput) Index(i pulumi.IntInput) MonitoredResourceTypeHandlerConfigMetricNameConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MonitoredResourceTypeHandlerConfigMetricNameConfig {
+		return vs[0].([]MonitoredResourceTypeHandlerConfigMetricNameConfig)[vs[1].(int)]
+	}).(MonitoredResourceTypeHandlerConfigMetricNameConfigOutput)
+}
+
+type MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfig struct {
+	// List of tag names to be excluded.
+	ExcludeTags []string `pulumi:"excludeTags"`
+	// List of tag names to be included.
+	IncludeTags []string `pulumi:"includeTags"`
+	// Flag to indicate if only tags will be used for resource name generation.
+	IsUseTagsOnly *bool `pulumi:"isUseTagsOnly"`
+}
+
+// MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigInput is an input type that accepts MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArgs and MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput values.
+// You can construct a concrete instance of `MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigInput` via:
+//
+//	MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArgs{...}
+type MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput() MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput
+	ToMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutputWithContext(context.Context) MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput
+}
+
+type MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArgs struct {
+	// List of tag names to be excluded.
+	ExcludeTags pulumi.StringArrayInput `pulumi:"excludeTags"`
+	// List of tag names to be included.
+	IncludeTags pulumi.StringArrayInput `pulumi:"includeTags"`
+	// Flag to indicate if only tags will be used for resource name generation.
+	IsUseTagsOnly pulumi.BoolPtrInput `pulumi:"isUseTagsOnly"`
+}
+
+func (MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfig)(nil)).Elem()
+}
+
+func (i MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArgs) ToMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput() MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput {
+	return i.ToMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArgs) ToMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutputWithContext(ctx context.Context) MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput)
+}
+
+// MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayInput is an input type that accepts MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArray and MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutput values.
+// You can construct a concrete instance of `MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayInput` via:
+//
+//	MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArray{ MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArgs{...} }
+type MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutput() MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutput
+	ToMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutputWithContext(context.Context) MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutput
+}
+
+type MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArray []MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigInput
+
+func (MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfig)(nil)).Elem()
+}
+
+func (i MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArray) ToMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutput() MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutput {
+	return i.ToMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArray) ToMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutputWithContext(ctx context.Context) MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutput)
+}
+
+type MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfig)(nil)).Elem()
+}
+
+func (o MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput) ToMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput() MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput {
+	return o
+}
+
+func (o MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput) ToMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutputWithContext(ctx context.Context) MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput {
+	return o
+}
+
+// List of tag names to be excluded.
+func (o MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput) ExcludeTags() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfig) []string { return v.ExcludeTags }).(pulumi.StringArrayOutput)
+}
+
+// List of tag names to be included.
+func (o MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput) IncludeTags() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfig) []string { return v.IncludeTags }).(pulumi.StringArrayOutput)
+}
+
+// Flag to indicate if only tags will be used for resource name generation.
+func (o MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput) IsUseTagsOnly() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfig) *bool { return v.IsUseTagsOnly }).(pulumi.BoolPtrOutput)
+}
+
+type MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfig)(nil)).Elem()
+}
+
+func (o MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutput) ToMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutput() MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutput {
+	return o
+}
+
+func (o MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutput) ToMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutputWithContext(ctx context.Context) MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutput {
+	return o
+}
+
+func (o MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutput) Index(i pulumi.IntInput) MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfig {
+		return vs[0].([]MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfig)[vs[1].(int)]
+	}).(MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput)
 }
 
 type MonitoredResourceTypeMetadata struct {
@@ -15872,18 +18291,26 @@ func (o GetMonitoredResourcePropertyArrayOutput) Index(i pulumi.IntInput) GetMon
 }
 
 type GetMonitoredResourceTaskTaskDetail struct {
+	// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	AgentId string `pulumi:"agentId"`
 	// Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
 	AvailabilityProxyMetricCollectionInterval int `pulumi:"availabilityProxyMetricCollectionInterval"`
-	// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property 'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+	// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionInterval'. If no metrics are specified, availability will not be calculated for the resource.
 	AvailabilityProxyMetrics []string `pulumi:"availabilityProxyMetrics"`
 	// The console path prefix to use for providing service home url page navigation.  For example if the prefix provided is 'security/bastion/bastions', the URL used for navigation will be https://<cloudhostname>/security/bastion/bastions/<resourceOcid>. If not provided, service home page link  will not be shown in the stack monitoring home page.
 	ConsolePathPrefix string `pulumi:"consolePathPrefix"`
 	// The external resource identifier property in the metric dimensions.  Resources imported will be using this property value for external id.
 	ExternalIdMapping string `pulumi:"externalIdMapping"`
+	// Type of the handler.
+	HandlerType string `pulumi:"handlerType"`
+	// True to enable the receiver and false to disable the receiver on the agent.
+	IsEnable bool `pulumi:"isEnable"`
 	// Lifecycle states of the external resource which reflects the status of the resource being up.
 	LifecycleStatusMappingsForUpStatuses []string `pulumi:"lifecycleStatusMappingsForUpStatuses"`
 	// Name space to be used for Oracle Cloud Infrastructure Native service resources' import.
 	Namespace string `pulumi:"namespace"`
+	// Properties for agent receiver.
+	ReceiverProperties []GetMonitoredResourceTaskTaskDetailReceiverProperty `pulumi:"receiverProperties"`
 	// The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
 	ResourceGroup string `pulumi:"resourceGroup"`
 	// The resource name filter. Resources matching with the resource name filter will be imported. Regular expressions will be accepted.
@@ -15894,6 +18321,8 @@ type GetMonitoredResourceTaskTaskDetail struct {
 	ResourceTypeFilter string `pulumi:"resourceTypeFilter"`
 	// The resource type property in the metric dimensions.  Resources imported will be using this property value for resource type. If not specified, namespace will be used for resource type.
 	ResourceTypeMapping string `pulumi:"resourceTypeMapping"`
+	// A collection of resource type configuration details. User can provide  availability proxy metrics list for resource types along with the  telegraf/collectd handler configuration for the resource types.
+	ResourceTypesConfigurations []GetMonitoredResourceTaskTaskDetailResourceTypesConfiguration `pulumi:"resourceTypesConfigurations"`
 	// The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
 	ServiceBaseUrl string `pulumi:"serviceBaseUrl"`
 	// Flag to indicate whether status is calculated using metrics or  LifeCycleState attribute of the resource in Oracle Cloud Infrastructure service.
@@ -15901,8 +18330,10 @@ type GetMonitoredResourceTaskTaskDetail struct {
 	// Source from where the metrics pushed to telemetry. Possible values:
 	// * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
 	// * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+	// * OCI_TELEMETRY_TELEGRAF    - The metrics are pushed to telemetry from Telegraf receiver.
+	// * OCI_TELEMETRY_COLLECTD    - The metrics are pushed to telemetry from CollectD receiver.
 	Source string `pulumi:"source"`
-	// Task type.
+	// Type of the task.
 	Type string `pulumi:"type"`
 }
 
@@ -15918,18 +18349,26 @@ type GetMonitoredResourceTaskTaskDetailInput interface {
 }
 
 type GetMonitoredResourceTaskTaskDetailArgs struct {
+	// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	AgentId pulumi.StringInput `pulumi:"agentId"`
 	// Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
 	AvailabilityProxyMetricCollectionInterval pulumi.IntInput `pulumi:"availabilityProxyMetricCollectionInterval"`
-	// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property 'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+	// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionInterval'. If no metrics are specified, availability will not be calculated for the resource.
 	AvailabilityProxyMetrics pulumi.StringArrayInput `pulumi:"availabilityProxyMetrics"`
 	// The console path prefix to use for providing service home url page navigation.  For example if the prefix provided is 'security/bastion/bastions', the URL used for navigation will be https://<cloudhostname>/security/bastion/bastions/<resourceOcid>. If not provided, service home page link  will not be shown in the stack monitoring home page.
 	ConsolePathPrefix pulumi.StringInput `pulumi:"consolePathPrefix"`
 	// The external resource identifier property in the metric dimensions.  Resources imported will be using this property value for external id.
 	ExternalIdMapping pulumi.StringInput `pulumi:"externalIdMapping"`
+	// Type of the handler.
+	HandlerType pulumi.StringInput `pulumi:"handlerType"`
+	// True to enable the receiver and false to disable the receiver on the agent.
+	IsEnable pulumi.BoolInput `pulumi:"isEnable"`
 	// Lifecycle states of the external resource which reflects the status of the resource being up.
 	LifecycleStatusMappingsForUpStatuses pulumi.StringArrayInput `pulumi:"lifecycleStatusMappingsForUpStatuses"`
 	// Name space to be used for Oracle Cloud Infrastructure Native service resources' import.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Properties for agent receiver.
+	ReceiverProperties GetMonitoredResourceTaskTaskDetailReceiverPropertyArrayInput `pulumi:"receiverProperties"`
 	// The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
 	ResourceGroup pulumi.StringInput `pulumi:"resourceGroup"`
 	// The resource name filter. Resources matching with the resource name filter will be imported. Regular expressions will be accepted.
@@ -15940,6 +18379,8 @@ type GetMonitoredResourceTaskTaskDetailArgs struct {
 	ResourceTypeFilter pulumi.StringInput `pulumi:"resourceTypeFilter"`
 	// The resource type property in the metric dimensions.  Resources imported will be using this property value for resource type. If not specified, namespace will be used for resource type.
 	ResourceTypeMapping pulumi.StringInput `pulumi:"resourceTypeMapping"`
+	// A collection of resource type configuration details. User can provide  availability proxy metrics list for resource types along with the  telegraf/collectd handler configuration for the resource types.
+	ResourceTypesConfigurations GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArrayInput `pulumi:"resourceTypesConfigurations"`
 	// The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
 	ServiceBaseUrl pulumi.StringInput `pulumi:"serviceBaseUrl"`
 	// Flag to indicate whether status is calculated using metrics or  LifeCycleState attribute of the resource in Oracle Cloud Infrastructure service.
@@ -15947,8 +18388,10 @@ type GetMonitoredResourceTaskTaskDetailArgs struct {
 	// Source from where the metrics pushed to telemetry. Possible values:
 	// * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
 	// * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+	// * OCI_TELEMETRY_TELEGRAF    - The metrics are pushed to telemetry from Telegraf receiver.
+	// * OCI_TELEMETRY_COLLECTD    - The metrics are pushed to telemetry from CollectD receiver.
 	Source pulumi.StringInput `pulumi:"source"`
-	// Task type.
+	// Type of the task.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -16003,12 +18446,17 @@ func (o GetMonitoredResourceTaskTaskDetailOutput) ToGetMonitoredResourceTaskTask
 	return o
 }
 
+// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetMonitoredResourceTaskTaskDetailOutput) AgentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetail) string { return v.AgentId }).(pulumi.StringOutput)
+}
+
 // Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
 func (o GetMonitoredResourceTaskTaskDetailOutput) AvailabilityProxyMetricCollectionInterval() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetail) int { return v.AvailabilityProxyMetricCollectionInterval }).(pulumi.IntOutput)
 }
 
-// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property 'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionInterval'. If no metrics are specified, availability will not be calculated for the resource.
 func (o GetMonitoredResourceTaskTaskDetailOutput) AvailabilityProxyMetrics() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetail) []string { return v.AvailabilityProxyMetrics }).(pulumi.StringArrayOutput)
 }
@@ -16023,6 +18471,16 @@ func (o GetMonitoredResourceTaskTaskDetailOutput) ExternalIdMapping() pulumi.Str
 	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetail) string { return v.ExternalIdMapping }).(pulumi.StringOutput)
 }
 
+// Type of the handler.
+func (o GetMonitoredResourceTaskTaskDetailOutput) HandlerType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetail) string { return v.HandlerType }).(pulumi.StringOutput)
+}
+
+// True to enable the receiver and false to disable the receiver on the agent.
+func (o GetMonitoredResourceTaskTaskDetailOutput) IsEnable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetail) bool { return v.IsEnable }).(pulumi.BoolOutput)
+}
+
 // Lifecycle states of the external resource which reflects the status of the resource being up.
 func (o GetMonitoredResourceTaskTaskDetailOutput) LifecycleStatusMappingsForUpStatuses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetail) []string { return v.LifecycleStatusMappingsForUpStatuses }).(pulumi.StringArrayOutput)
@@ -16031,6 +18489,13 @@ func (o GetMonitoredResourceTaskTaskDetailOutput) LifecycleStatusMappingsForUpSt
 // Name space to be used for Oracle Cloud Infrastructure Native service resources' import.
 func (o GetMonitoredResourceTaskTaskDetailOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetail) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// Properties for agent receiver.
+func (o GetMonitoredResourceTaskTaskDetailOutput) ReceiverProperties() GetMonitoredResourceTaskTaskDetailReceiverPropertyArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetail) []GetMonitoredResourceTaskTaskDetailReceiverProperty {
+		return v.ReceiverProperties
+	}).(GetMonitoredResourceTaskTaskDetailReceiverPropertyArrayOutput)
 }
 
 // The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
@@ -16058,6 +18523,13 @@ func (o GetMonitoredResourceTaskTaskDetailOutput) ResourceTypeMapping() pulumi.S
 	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetail) string { return v.ResourceTypeMapping }).(pulumi.StringOutput)
 }
 
+// A collection of resource type configuration details. User can provide  availability proxy metrics list for resource types along with the  telegraf/collectd handler configuration for the resource types.
+func (o GetMonitoredResourceTaskTaskDetailOutput) ResourceTypesConfigurations() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetail) []GetMonitoredResourceTaskTaskDetailResourceTypesConfiguration {
+		return v.ResourceTypesConfigurations
+	}).(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArrayOutput)
+}
+
 // The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
 func (o GetMonitoredResourceTaskTaskDetailOutput) ServiceBaseUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetail) string { return v.ServiceBaseUrl }).(pulumi.StringOutput)
@@ -16071,11 +18543,13 @@ func (o GetMonitoredResourceTaskTaskDetailOutput) ShouldUseMetricsFlowForStatus(
 // Source from where the metrics pushed to telemetry. Possible values:
 // * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
 // * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+// * OCI_TELEMETRY_TELEGRAF    - The metrics are pushed to telemetry from Telegraf receiver.
+// * OCI_TELEMETRY_COLLECTD    - The metrics are pushed to telemetry from CollectD receiver.
 func (o GetMonitoredResourceTaskTaskDetailOutput) Source() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetail) string { return v.Source }).(pulumi.StringOutput)
 }
 
-// Task type.
+// Type of the task.
 func (o GetMonitoredResourceTaskTaskDetailOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetail) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -16100,8 +18574,1104 @@ func (o GetMonitoredResourceTaskTaskDetailArrayOutput) Index(i pulumi.IntInput) 
 	}).(GetMonitoredResourceTaskTaskDetailOutput)
 }
 
+type GetMonitoredResourceTaskTaskDetailReceiverProperty struct {
+	// Receiver listener port.
+	ListenerPort int `pulumi:"listenerPort"`
+}
+
+// GetMonitoredResourceTaskTaskDetailReceiverPropertyInput is an input type that accepts GetMonitoredResourceTaskTaskDetailReceiverPropertyArgs and GetMonitoredResourceTaskTaskDetailReceiverPropertyOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTaskTaskDetailReceiverPropertyInput` via:
+//
+//	GetMonitoredResourceTaskTaskDetailReceiverPropertyArgs{...}
+type GetMonitoredResourceTaskTaskDetailReceiverPropertyInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTaskTaskDetailReceiverPropertyOutput() GetMonitoredResourceTaskTaskDetailReceiverPropertyOutput
+	ToGetMonitoredResourceTaskTaskDetailReceiverPropertyOutputWithContext(context.Context) GetMonitoredResourceTaskTaskDetailReceiverPropertyOutput
+}
+
+type GetMonitoredResourceTaskTaskDetailReceiverPropertyArgs struct {
+	// Receiver listener port.
+	ListenerPort pulumi.IntInput `pulumi:"listenerPort"`
+}
+
+func (GetMonitoredResourceTaskTaskDetailReceiverPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailReceiverProperty)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTaskTaskDetailReceiverPropertyArgs) ToGetMonitoredResourceTaskTaskDetailReceiverPropertyOutput() GetMonitoredResourceTaskTaskDetailReceiverPropertyOutput {
+	return i.ToGetMonitoredResourceTaskTaskDetailReceiverPropertyOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTaskTaskDetailReceiverPropertyArgs) ToGetMonitoredResourceTaskTaskDetailReceiverPropertyOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailReceiverPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTaskTaskDetailReceiverPropertyOutput)
+}
+
+// GetMonitoredResourceTaskTaskDetailReceiverPropertyArrayInput is an input type that accepts GetMonitoredResourceTaskTaskDetailReceiverPropertyArray and GetMonitoredResourceTaskTaskDetailReceiverPropertyArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTaskTaskDetailReceiverPropertyArrayInput` via:
+//
+//	GetMonitoredResourceTaskTaskDetailReceiverPropertyArray{ GetMonitoredResourceTaskTaskDetailReceiverPropertyArgs{...} }
+type GetMonitoredResourceTaskTaskDetailReceiverPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTaskTaskDetailReceiverPropertyArrayOutput() GetMonitoredResourceTaskTaskDetailReceiverPropertyArrayOutput
+	ToGetMonitoredResourceTaskTaskDetailReceiverPropertyArrayOutputWithContext(context.Context) GetMonitoredResourceTaskTaskDetailReceiverPropertyArrayOutput
+}
+
+type GetMonitoredResourceTaskTaskDetailReceiverPropertyArray []GetMonitoredResourceTaskTaskDetailReceiverPropertyInput
+
+func (GetMonitoredResourceTaskTaskDetailReceiverPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTaskTaskDetailReceiverProperty)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTaskTaskDetailReceiverPropertyArray) ToGetMonitoredResourceTaskTaskDetailReceiverPropertyArrayOutput() GetMonitoredResourceTaskTaskDetailReceiverPropertyArrayOutput {
+	return i.ToGetMonitoredResourceTaskTaskDetailReceiverPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTaskTaskDetailReceiverPropertyArray) ToGetMonitoredResourceTaskTaskDetailReceiverPropertyArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailReceiverPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTaskTaskDetailReceiverPropertyArrayOutput)
+}
+
+type GetMonitoredResourceTaskTaskDetailReceiverPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTaskTaskDetailReceiverPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailReceiverProperty)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTaskTaskDetailReceiverPropertyOutput) ToGetMonitoredResourceTaskTaskDetailReceiverPropertyOutput() GetMonitoredResourceTaskTaskDetailReceiverPropertyOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTaskTaskDetailReceiverPropertyOutput) ToGetMonitoredResourceTaskTaskDetailReceiverPropertyOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailReceiverPropertyOutput {
+	return o
+}
+
+// Receiver listener port.
+func (o GetMonitoredResourceTaskTaskDetailReceiverPropertyOutput) ListenerPort() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetailReceiverProperty) int { return v.ListenerPort }).(pulumi.IntOutput)
+}
+
+type GetMonitoredResourceTaskTaskDetailReceiverPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTaskTaskDetailReceiverPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTaskTaskDetailReceiverProperty)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTaskTaskDetailReceiverPropertyArrayOutput) ToGetMonitoredResourceTaskTaskDetailReceiverPropertyArrayOutput() GetMonitoredResourceTaskTaskDetailReceiverPropertyArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTaskTaskDetailReceiverPropertyArrayOutput) ToGetMonitoredResourceTaskTaskDetailReceiverPropertyArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailReceiverPropertyArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTaskTaskDetailReceiverPropertyArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTaskTaskDetailReceiverPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTaskTaskDetailReceiverProperty {
+		return vs[0].([]GetMonitoredResourceTaskTaskDetailReceiverProperty)[vs[1].(int)]
+	}).(GetMonitoredResourceTaskTaskDetailReceiverPropertyOutput)
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfiguration struct {
+	// Availability metrics details.
+	AvailabilityMetricsConfigs []GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfig `pulumi:"availabilityMetricsConfigs"`
+	// Specific resource mapping configurations for Agent Extension Handlers.
+	HandlerConfigs []GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfig `pulumi:"handlerConfigs"`
+	// Resource type.
+	ResourceType string `pulumi:"resourceType"`
+}
+
+// GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationInput is an input type that accepts GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArgs and GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationInput` via:
+//
+//	GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArgs{...}
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationOutput
+	ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationOutputWithContext(context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationOutput
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArgs struct {
+	// Availability metrics details.
+	AvailabilityMetricsConfigs GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayInput `pulumi:"availabilityMetricsConfigs"`
+	// Specific resource mapping configurations for Agent Extension Handlers.
+	HandlerConfigs GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArrayInput `pulumi:"handlerConfigs"`
+	// Resource type.
+	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+}
+
+func (GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailResourceTypesConfiguration)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArgs) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationOutput {
+	return i.ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArgs) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationOutput)
+}
+
+// GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArrayInput is an input type that accepts GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArray and GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArrayInput` via:
+//
+//	GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArray{ GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArgs{...} }
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArrayOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArrayOutput
+	ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArrayOutputWithContext(context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArrayOutput
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArray []GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationInput
+
+func (GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTaskTaskDetailResourceTypesConfiguration)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArray) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArrayOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArrayOutput {
+	return i.ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArray) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArrayOutput)
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailResourceTypesConfiguration)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationOutput) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationOutput) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationOutput {
+	return o
+}
+
+// Availability metrics details.
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationOutput) AvailabilityMetricsConfigs() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetailResourceTypesConfiguration) []GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfig {
+		return v.AvailabilityMetricsConfigs
+	}).(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutput)
+}
+
+// Specific resource mapping configurations for Agent Extension Handlers.
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationOutput) HandlerConfigs() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetailResourceTypesConfiguration) []GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfig {
+		return v.HandlerConfigs
+	}).(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArrayOutput)
+}
+
+// Resource type.
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetailResourceTypesConfiguration) string { return v.ResourceType }).(pulumi.StringOutput)
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTaskTaskDetailResourceTypesConfiguration)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArrayOutput) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArrayOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArrayOutput) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTaskTaskDetailResourceTypesConfiguration {
+		return vs[0].([]GetMonitoredResourceTaskTaskDetailResourceTypesConfiguration)[vs[1].(int)]
+	}).(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationOutput)
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfig struct {
+	// Availability metric collection internal in seconds.
+	CollectionIntervalInSeconds int `pulumi:"collectionIntervalInSeconds"`
+	// List of metrics used for availability calculation for the resource.
+	Metrics []string `pulumi:"metrics"`
+}
+
+// GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigInput is an input type that accepts GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArgs and GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigInput` via:
+//
+//	GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArgs{...}
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput
+	ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutputWithContext(context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArgs struct {
+	// Availability metric collection internal in seconds.
+	CollectionIntervalInSeconds pulumi.IntInput `pulumi:"collectionIntervalInSeconds"`
+	// List of metrics used for availability calculation for the resource.
+	Metrics pulumi.StringArrayInput `pulumi:"metrics"`
+}
+
+func (GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArgs) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput {
+	return i.ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArgs) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput)
+}
+
+// GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayInput is an input type that accepts GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArray and GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayInput` via:
+//
+//	GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArray{ GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArgs{...} }
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutput
+	ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutputWithContext(context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutput
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArray []GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigInput
+
+func (GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArray) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutput {
+	return i.ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArray) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutput)
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput {
+	return o
+}
+
+// Availability metric collection internal in seconds.
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput) CollectionIntervalInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfig) int {
+		return v.CollectionIntervalInSeconds
+	}).(pulumi.IntOutput)
+}
+
+// List of metrics used for availability calculation for the resource.
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput) Metrics() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfig) []string {
+		return v.Metrics
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutput) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutput) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfig {
+		return vs[0].([]GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfig)[vs[1].(int)]
+	}).(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput)
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfig struct {
+	// Resource name generation overriding configurations for collectd resource types.
+	CollectdResourceNameConfigs []GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig `pulumi:"collectdResourceNameConfigs"`
+	// List of collector/plugin names.
+	CollectorTypes []string `pulumi:"collectorTypes"`
+	// List of handler configuration properties
+	HandlerProperties []GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerProperty `pulumi:"handlerProperties"`
+	// List of AgentExtensionHandlerMetricMappingDetails.
+	MetricMappings []GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMapping `pulumi:"metricMappings"`
+	// Metric name generation overriding configurations.
+	MetricNameConfigs []GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfig `pulumi:"metricNameConfigs"`
+	// Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+	MetricUploadIntervalInSeconds int `pulumi:"metricUploadIntervalInSeconds"`
+	// Resource name generation overriding configurations for telegraf resource types.
+	TelegrafResourceNameConfigs []GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig `pulumi:"telegrafResourceNameConfigs"`
+	// Resource group string; if not specified, the resource group string will be generated by the handler.
+	TelemetryResourceGroup string `pulumi:"telemetryResourceGroup"`
+}
+
+// GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigInput is an input type that accepts GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArgs and GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigInput` via:
+//
+//	GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArgs{...}
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigOutput
+	ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigOutputWithContext(context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigOutput
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArgs struct {
+	// Resource name generation overriding configurations for collectd resource types.
+	CollectdResourceNameConfigs GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayInput `pulumi:"collectdResourceNameConfigs"`
+	// List of collector/plugin names.
+	CollectorTypes pulumi.StringArrayInput `pulumi:"collectorTypes"`
+	// List of handler configuration properties
+	HandlerProperties GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayInput `pulumi:"handlerProperties"`
+	// List of AgentExtensionHandlerMetricMappingDetails.
+	MetricMappings GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayInput `pulumi:"metricMappings"`
+	// Metric name generation overriding configurations.
+	MetricNameConfigs GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayInput `pulumi:"metricNameConfigs"`
+	// Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+	MetricUploadIntervalInSeconds pulumi.IntInput `pulumi:"metricUploadIntervalInSeconds"`
+	// Resource name generation overriding configurations for telegraf resource types.
+	TelegrafResourceNameConfigs GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayInput `pulumi:"telegrafResourceNameConfigs"`
+	// Resource group string; if not specified, the resource group string will be generated by the handler.
+	TelemetryResourceGroup pulumi.StringInput `pulumi:"telemetryResourceGroup"`
+}
+
+func (GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArgs) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigOutput {
+	return i.ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArgs) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigOutput)
+}
+
+// GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArrayInput is an input type that accepts GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArray and GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArrayInput` via:
+//
+//	GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArray{ GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArgs{...} }
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArrayOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArrayOutput
+	ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArrayOutputWithContext(context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArrayOutput
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArray []GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigInput
+
+func (GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArray) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArrayOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArrayOutput {
+	return i.ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArray) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArrayOutput)
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigOutput) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigOutput) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigOutput {
+	return o
+}
+
+// Resource name generation overriding configurations for collectd resource types.
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigOutput) CollectdResourceNameConfigs() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfig) []GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig {
+		return v.CollectdResourceNameConfigs
+	}).(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutput)
+}
+
+// List of collector/plugin names.
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigOutput) CollectorTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfig) []string {
+		return v.CollectorTypes
+	}).(pulumi.StringArrayOutput)
+}
+
+// List of handler configuration properties
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigOutput) HandlerProperties() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfig) []GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerProperty {
+		return v.HandlerProperties
+	}).(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput)
+}
+
+// List of AgentExtensionHandlerMetricMappingDetails.
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigOutput) MetricMappings() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfig) []GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMapping {
+		return v.MetricMappings
+	}).(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput)
+}
+
+// Metric name generation overriding configurations.
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigOutput) MetricNameConfigs() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfig) []GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfig {
+		return v.MetricNameConfigs
+	}).(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutput)
+}
+
+// Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigOutput) MetricUploadIntervalInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfig) int {
+		return v.MetricUploadIntervalInSeconds
+	}).(pulumi.IntOutput)
+}
+
+// Resource name generation overriding configurations for telegraf resource types.
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigOutput) TelegrafResourceNameConfigs() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfig) []GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig {
+		return v.TelegrafResourceNameConfigs
+	}).(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutput)
+}
+
+// Resource group string; if not specified, the resource group string will be generated by the handler.
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigOutput) TelemetryResourceGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfig) string {
+		return v.TelemetryResourceGroup
+	}).(pulumi.StringOutput)
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArrayOutput) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArrayOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArrayOutput) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfig {
+		return vs[0].([]GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfig)[vs[1].(int)]
+	}).(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigOutput)
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig struct {
+	// List of property names to be excluded.
+	ExcludeProperties []string `pulumi:"excludeProperties"`
+	// List of property names to be included.
+	IncludeProperties []string `pulumi:"includeProperties"`
+	// String to be suffixed to the resource name.
+	Suffix string `pulumi:"suffix"`
+}
+
+// GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigInput is an input type that accepts GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs and GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigInput` via:
+//
+//	GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs{...}
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput
+	ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutputWithContext(context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs struct {
+	// List of property names to be excluded.
+	ExcludeProperties pulumi.StringArrayInput `pulumi:"excludeProperties"`
+	// List of property names to be included.
+	IncludeProperties pulumi.StringArrayInput `pulumi:"includeProperties"`
+	// String to be suffixed to the resource name.
+	Suffix pulumi.StringInput `pulumi:"suffix"`
+}
+
+func (GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput {
+	return i.ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput)
+}
+
+// GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayInput is an input type that accepts GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArray and GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayInput` via:
+//
+//	GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArray{ GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs{...} }
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutput
+	ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutputWithContext(context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutput
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArray []GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigInput
+
+func (GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArray) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutput {
+	return i.ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArray) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutput)
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput {
+	return o
+}
+
+// List of property names to be excluded.
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput) ExcludeProperties() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig) []string {
+		return v.ExcludeProperties
+	}).(pulumi.StringArrayOutput)
+}
+
+// List of property names to be included.
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput) IncludeProperties() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig) []string {
+		return v.IncludeProperties
+	}).(pulumi.StringArrayOutput)
+}
+
+// String to be suffixed to the resource name.
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput) Suffix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig) string {
+		return v.Suffix
+	}).(pulumi.StringOutput)
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutput) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutput) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig {
+		return vs[0].([]GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig)[vs[1].(int)]
+	}).(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput)
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerProperty struct {
+	// Property name.
+	Name string `pulumi:"name"`
+	// Property value.
+	Value string `pulumi:"value"`
+}
+
+// GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyInput is an input type that accepts GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArgs and GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyInput` via:
+//
+//	GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArgs{...}
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput
+	ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutputWithContext(context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArgs struct {
+	// Property name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Property value.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerProperty)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArgs) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput {
+	return i.ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArgs) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput)
+}
+
+// GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayInput is an input type that accepts GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArray and GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayInput` via:
+//
+//	GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArray{ GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArgs{...} }
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput
+	ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutputWithContext(context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArray []GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyInput
+
+func (GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerProperty)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArray) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput {
+	return i.ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArray) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput)
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerProperty)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput {
+	return o
+}
+
+// Property name.
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerProperty) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// Property value.
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerProperty) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerProperty)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerProperty {
+		return vs[0].([]GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerProperty)[vs[1].(int)]
+	}).(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput)
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMapping struct {
+	// Metric name as defined by the collector.
+	CollectorMetricName string `pulumi:"collectorMetricName"`
+	// Is ignoring this metric.
+	IsSkipUpload bool `pulumi:"isSkipUpload"`
+	// Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+	MetricUploadIntervalInSeconds int `pulumi:"metricUploadIntervalInSeconds"`
+	// Metric name to be upload to telemetry.
+	TelemetryMetricName string `pulumi:"telemetryMetricName"`
+}
+
+// GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingInput is an input type that accepts GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArgs and GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingInput` via:
+//
+//	GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArgs{...}
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput
+	ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutputWithContext(context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArgs struct {
+	// Metric name as defined by the collector.
+	CollectorMetricName pulumi.StringInput `pulumi:"collectorMetricName"`
+	// Is ignoring this metric.
+	IsSkipUpload pulumi.BoolInput `pulumi:"isSkipUpload"`
+	// Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+	MetricUploadIntervalInSeconds pulumi.IntInput `pulumi:"metricUploadIntervalInSeconds"`
+	// Metric name to be upload to telemetry.
+	TelemetryMetricName pulumi.StringInput `pulumi:"telemetryMetricName"`
+}
+
+func (GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMapping)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArgs) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput {
+	return i.ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArgs) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput)
+}
+
+// GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayInput is an input type that accepts GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArray and GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayInput` via:
+//
+//	GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArray{ GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArgs{...} }
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput
+	ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutputWithContext(context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArray []GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingInput
+
+func (GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMapping)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArray) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput {
+	return i.ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArray) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput)
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMapping)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput {
+	return o
+}
+
+// Metric name as defined by the collector.
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput) CollectorMetricName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMapping) string {
+		return v.CollectorMetricName
+	}).(pulumi.StringOutput)
+}
+
+// Is ignoring this metric.
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput) IsSkipUpload() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMapping) bool {
+		return v.IsSkipUpload
+	}).(pulumi.BoolOutput)
+}
+
+// Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput) MetricUploadIntervalInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMapping) int {
+		return v.MetricUploadIntervalInSeconds
+	}).(pulumi.IntOutput)
+}
+
+// Metric name to be upload to telemetry.
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput) TelemetryMetricName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMapping) string {
+		return v.TelemetryMetricName
+	}).(pulumi.StringOutput)
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMapping)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMapping {
+		return vs[0].([]GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMapping)[vs[1].(int)]
+	}).(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput)
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfig struct {
+	// String pattern to be removed from the prefix of the metric name.
+	ExcludePatternOnPrefix string `pulumi:"excludePatternOnPrefix"`
+	// is prefixing the metric with collector type.
+	IsPrefixWithCollectorType bool `pulumi:"isPrefixWithCollectorType"`
+}
+
+// GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigInput is an input type that accepts GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArgs and GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigInput` via:
+//
+//	GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArgs{...}
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput
+	ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutputWithContext(context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArgs struct {
+	// String pattern to be removed from the prefix of the metric name.
+	ExcludePatternOnPrefix pulumi.StringInput `pulumi:"excludePatternOnPrefix"`
+	// is prefixing the metric with collector type.
+	IsPrefixWithCollectorType pulumi.BoolInput `pulumi:"isPrefixWithCollectorType"`
+}
+
+func (GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArgs) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput {
+	return i.ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArgs) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput)
+}
+
+// GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayInput is an input type that accepts GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArray and GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayInput` via:
+//
+//	GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArray{ GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArgs{...} }
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutput
+	ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutputWithContext(context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutput
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArray []GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigInput
+
+func (GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArray) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutput {
+	return i.ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArray) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutput)
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput {
+	return o
+}
+
+// String pattern to be removed from the prefix of the metric name.
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput) ExcludePatternOnPrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfig) string {
+		return v.ExcludePatternOnPrefix
+	}).(pulumi.StringOutput)
+}
+
+// is prefixing the metric with collector type.
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput) IsPrefixWithCollectorType() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfig) bool {
+		return v.IsPrefixWithCollectorType
+	}).(pulumi.BoolOutput)
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutput) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutput) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfig {
+		return vs[0].([]GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfig)[vs[1].(int)]
+	}).(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput)
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig struct {
+	// List of tag names to be excluded.
+	ExcludeTags []string `pulumi:"excludeTags"`
+	// List of tag names to be included.
+	IncludeTags []string `pulumi:"includeTags"`
+	// Flag to indicate if only tags will be used for resource name generation.
+	IsUseTagsOnly bool `pulumi:"isUseTagsOnly"`
+}
+
+// GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigInput is an input type that accepts GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs and GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigInput` via:
+//
+//	GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs{...}
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput
+	ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutputWithContext(context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs struct {
+	// List of tag names to be excluded.
+	ExcludeTags pulumi.StringArrayInput `pulumi:"excludeTags"`
+	// List of tag names to be included.
+	IncludeTags pulumi.StringArrayInput `pulumi:"includeTags"`
+	// Flag to indicate if only tags will be used for resource name generation.
+	IsUseTagsOnly pulumi.BoolInput `pulumi:"isUseTagsOnly"`
+}
+
+func (GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput {
+	return i.ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput)
+}
+
+// GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayInput is an input type that accepts GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArray and GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayInput` via:
+//
+//	GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArray{ GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs{...} }
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutput
+	ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutputWithContext(context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutput
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArray []GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigInput
+
+func (GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArray) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutput {
+	return i.ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArray) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutput)
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput {
+	return o
+}
+
+// List of tag names to be excluded.
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput) ExcludeTags() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig) []string {
+		return v.ExcludeTags
+	}).(pulumi.StringArrayOutput)
+}
+
+// List of tag names to be included.
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput) IncludeTags() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig) []string {
+		return v.IncludeTags
+	}).(pulumi.StringArrayOutput)
+}
+
+// Flag to indicate if only tags will be used for resource name generation.
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput) IsUseTagsOnly() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig) bool {
+		return v.IsUseTagsOnly
+	}).(pulumi.BoolOutput)
+}
+
+type GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutput) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutput() GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutput) ToGetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig {
+		return vs[0].([]GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig)[vs[1].(int)]
+	}).(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput)
+}
+
 type GetMonitoredResourceTasksFilter struct {
-	// Name of the task.
+	// Property name.
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
 	Values []string `pulumi:"values"`
@@ -16119,7 +19689,7 @@ type GetMonitoredResourceTasksFilterInput interface {
 }
 
 type GetMonitoredResourceTasksFilterArgs struct {
-	// Name of the task.
+	// Property name.
 	Name   pulumi.StringInput      `pulumi:"name"`
 	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
 	Values pulumi.StringArrayInput `pulumi:"values"`
@@ -16176,7 +19746,7 @@ func (o GetMonitoredResourceTasksFilterOutput) ToGetMonitoredResourceTasksFilter
 	return o
 }
 
-// Name of the task.
+// Property name.
 func (o GetMonitoredResourceTasksFilterOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourceTasksFilter) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -16314,7 +19884,7 @@ type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Task identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id string `pulumi:"id"`
-	// Name of the task.
+	// Property name.
 	Name string `pulumi:"name"`
 	// The current state of the stack monitoring resource task.
 	State string `pulumi:"state"`
@@ -16328,6 +19898,8 @@ type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time when the stack monitoring resource task was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 	TimeUpdated string `pulumi:"timeUpdated"`
+	// Type of the task.
+	Type string `pulumi:"type"`
 	// Identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for work requests submitted for this task.
 	WorkRequestIds []string `pulumi:"workRequestIds"`
 }
@@ -16352,7 +19924,7 @@ type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArgs struct {
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Task identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id pulumi.StringInput `pulumi:"id"`
-	// Name of the task.
+	// Property name.
 	Name pulumi.StringInput `pulumi:"name"`
 	// The current state of the stack monitoring resource task.
 	State pulumi.StringInput `pulumi:"state"`
@@ -16366,6 +19938,8 @@ type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArgs struct {
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time when the stack monitoring resource task was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// Type of the task.
+	Type pulumi.StringInput `pulumi:"type"`
 	// Identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for work requests submitted for this task.
 	WorkRequestIds pulumi.StringArrayInput `pulumi:"workRequestIds"`
 }
@@ -16445,7 +20019,7 @@ func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput) Id(
 	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Name of the task.
+// Property name.
 func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -16484,6 +20058,11 @@ func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput) Tim
 	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
+// Type of the task.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem) string { return v.Type }).(pulumi.StringOutput)
+}
+
 // Identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for work requests submitted for this task.
 func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput) WorkRequestIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem) []string {
@@ -16512,18 +20091,26 @@ func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayOutput
 }
 
 type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail struct {
+	// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	AgentId string `pulumi:"agentId"`
 	// Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
 	AvailabilityProxyMetricCollectionInterval int `pulumi:"availabilityProxyMetricCollectionInterval"`
-	// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property 'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+	// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionInterval'. If no metrics are specified, availability will not be calculated for the resource.
 	AvailabilityProxyMetrics []string `pulumi:"availabilityProxyMetrics"`
 	// The console path prefix to use for providing service home url page navigation.  For example if the prefix provided is 'security/bastion/bastions', the URL used for navigation will be https://<cloudhostname>/security/bastion/bastions/<resourceOcid>. If not provided, service home page link  will not be shown in the stack monitoring home page.
 	ConsolePathPrefix string `pulumi:"consolePathPrefix"`
 	// The external resource identifier property in the metric dimensions.  Resources imported will be using this property value for external id.
 	ExternalIdMapping string `pulumi:"externalIdMapping"`
+	// Type of the handler.
+	HandlerType string `pulumi:"handlerType"`
+	// True to enable the receiver and false to disable the receiver on the agent.
+	IsEnable bool `pulumi:"isEnable"`
 	// Lifecycle states of the external resource which reflects the status of the resource being up.
 	LifecycleStatusMappingsForUpStatuses []string `pulumi:"lifecycleStatusMappingsForUpStatuses"`
 	// Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
 	Namespace string `pulumi:"namespace"`
+	// Properties for agent receiver.
+	ReceiverProperties []GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverProperty `pulumi:"receiverProperties"`
 	// The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
 	ResourceGroup string `pulumi:"resourceGroup"`
 	// The resource name filter. Resources matching with the resource name filter will be imported. Regular expressions will be accepted.
@@ -16534,6 +20121,8 @@ type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail str
 	ResourceTypeFilter string `pulumi:"resourceTypeFilter"`
 	// The resource type property in the metric dimensions.  Resources imported will be using this property value for resource type. If not specified, namespace will be used for resource type.
 	ResourceTypeMapping string `pulumi:"resourceTypeMapping"`
+	// A collection of resource type configuration details. User can provide  availability proxy metrics list for resource types along with the  telegraf/collectd handler configuration for the resource types.
+	ResourceTypesConfigurations []GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfiguration `pulumi:"resourceTypesConfigurations"`
 	// The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
 	ServiceBaseUrl string `pulumi:"serviceBaseUrl"`
 	// Flag to indicate whether status is calculated using metrics or  LifeCycleState attribute of the resource in Oracle Cloud Infrastructure service.
@@ -16541,8 +20130,10 @@ type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail str
 	// Source from where the metrics pushed to telemetry. Possible values:
 	// * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
 	// * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+	// * OCI_TELEMETRY_TELEGRAF    - The metrics are pushed to telemetry from Telegraf receiver.
+	// * OCI_TELEMETRY_COLLECTD    - The metrics are pushed to telemetry from CollectD receiver.
 	Source string `pulumi:"source"`
-	// Task type.
+	// Type of the task.
 	Type string `pulumi:"type"`
 }
 
@@ -16558,18 +20149,26 @@ type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailInpu
 }
 
 type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArgs struct {
+	// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	AgentId pulumi.StringInput `pulumi:"agentId"`
 	// Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
 	AvailabilityProxyMetricCollectionInterval pulumi.IntInput `pulumi:"availabilityProxyMetricCollectionInterval"`
-	// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property 'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+	// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionInterval'. If no metrics are specified, availability will not be calculated for the resource.
 	AvailabilityProxyMetrics pulumi.StringArrayInput `pulumi:"availabilityProxyMetrics"`
 	// The console path prefix to use for providing service home url page navigation.  For example if the prefix provided is 'security/bastion/bastions', the URL used for navigation will be https://<cloudhostname>/security/bastion/bastions/<resourceOcid>. If not provided, service home page link  will not be shown in the stack monitoring home page.
 	ConsolePathPrefix pulumi.StringInput `pulumi:"consolePathPrefix"`
 	// The external resource identifier property in the metric dimensions.  Resources imported will be using this property value for external id.
 	ExternalIdMapping pulumi.StringInput `pulumi:"externalIdMapping"`
+	// Type of the handler.
+	HandlerType pulumi.StringInput `pulumi:"handlerType"`
+	// True to enable the receiver and false to disable the receiver on the agent.
+	IsEnable pulumi.BoolInput `pulumi:"isEnable"`
 	// Lifecycle states of the external resource which reflects the status of the resource being up.
 	LifecycleStatusMappingsForUpStatuses pulumi.StringArrayInput `pulumi:"lifecycleStatusMappingsForUpStatuses"`
 	// Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Properties for agent receiver.
+	ReceiverProperties GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArrayInput `pulumi:"receiverProperties"`
 	// The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
 	ResourceGroup pulumi.StringInput `pulumi:"resourceGroup"`
 	// The resource name filter. Resources matching with the resource name filter will be imported. Regular expressions will be accepted.
@@ -16580,6 +20179,8 @@ type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArgs
 	ResourceTypeFilter pulumi.StringInput `pulumi:"resourceTypeFilter"`
 	// The resource type property in the metric dimensions.  Resources imported will be using this property value for resource type. If not specified, namespace will be used for resource type.
 	ResourceTypeMapping pulumi.StringInput `pulumi:"resourceTypeMapping"`
+	// A collection of resource type configuration details. User can provide  availability proxy metrics list for resource types along with the  telegraf/collectd handler configuration for the resource types.
+	ResourceTypesConfigurations GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArrayInput `pulumi:"resourceTypesConfigurations"`
 	// The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
 	ServiceBaseUrl pulumi.StringInput `pulumi:"serviceBaseUrl"`
 	// Flag to indicate whether status is calculated using metrics or  LifeCycleState attribute of the resource in Oracle Cloud Infrastructure service.
@@ -16587,8 +20188,10 @@ type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArgs
 	// Source from where the metrics pushed to telemetry. Possible values:
 	// * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
 	// * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+	// * OCI_TELEMETRY_TELEGRAF    - The metrics are pushed to telemetry from Telegraf receiver.
+	// * OCI_TELEMETRY_COLLECTD    - The metrics are pushed to telemetry from CollectD receiver.
 	Source pulumi.StringInput `pulumi:"source"`
-	// Task type.
+	// Type of the task.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -16643,6 +20246,13 @@ func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailO
 	return o
 }
 
+// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput) AgentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail) string {
+		return v.AgentId
+	}).(pulumi.StringOutput)
+}
+
 // Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
 func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput) AvailabilityProxyMetricCollectionInterval() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail) int {
@@ -16650,7 +20260,7 @@ func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailO
 	}).(pulumi.IntOutput)
 }
 
-// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property 'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionInterval'. If no metrics are specified, availability will not be calculated for the resource.
 func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput) AvailabilityProxyMetrics() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail) []string {
 		return v.AvailabilityProxyMetrics
@@ -16671,6 +20281,20 @@ func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailO
 	}).(pulumi.StringOutput)
 }
 
+// Type of the handler.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput) HandlerType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail) string {
+		return v.HandlerType
+	}).(pulumi.StringOutput)
+}
+
+// True to enable the receiver and false to disable the receiver on the agent.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput) IsEnable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail) bool {
+		return v.IsEnable
+	}).(pulumi.BoolOutput)
+}
+
 // Lifecycle states of the external resource which reflects the status of the resource being up.
 func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput) LifecycleStatusMappingsForUpStatuses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail) []string {
@@ -16683,6 +20307,13 @@ func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailO
 	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail) string {
 		return v.Namespace
 	}).(pulumi.StringOutput)
+}
+
+// Properties for agent receiver.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput) ReceiverProperties() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail) []GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverProperty {
+		return v.ReceiverProperties
+	}).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArrayOutput)
 }
 
 // The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
@@ -16720,6 +20351,13 @@ func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailO
 	}).(pulumi.StringOutput)
 }
 
+// A collection of resource type configuration details. User can provide  availability proxy metrics list for resource types along with the  telegraf/collectd handler configuration for the resource types.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput) ResourceTypesConfigurations() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail) []GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfiguration {
+		return v.ResourceTypesConfigurations
+	}).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArrayOutput)
+}
+
 // The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
 func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput) ServiceBaseUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail) string {
@@ -16737,13 +20375,15 @@ func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailO
 // Source from where the metrics pushed to telemetry. Possible values:
 // * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
 // * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+// * OCI_TELEMETRY_TELEGRAF    - The metrics are pushed to telemetry from Telegraf receiver.
+// * OCI_TELEMETRY_COLLECTD    - The metrics are pushed to telemetry from CollectD receiver.
 func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput) Source() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail) string {
 		return v.Source
 	}).(pulumi.StringOutput)
 }
 
-// Task type.
+// Type of the task.
 func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -16766,6 +20406,1952 @@ func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailA
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail {
 		return vs[0].([]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail)[vs[1].(int)]
 	}).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput)
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverProperty struct {
+	// Receiver listener port.
+	ListenerPort int `pulumi:"listenerPort"`
+}
+
+// GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyInput is an input type that accepts GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArgs and GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyInput` via:
+//
+//	GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArgs{...}
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyOutput
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyOutputWithContext(context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyOutput
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArgs struct {
+	// Receiver listener port.
+	ListenerPort pulumi.IntInput `pulumi:"listenerPort"`
+}
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverProperty)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArgs) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyOutput {
+	return i.ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArgs) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyOutput)
+}
+
+// GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArrayInput is an input type that accepts GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArray and GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArrayInput` via:
+//
+//	GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArray{ GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArgs{...} }
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArrayOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArrayOutput
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArrayOutputWithContext(context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArrayOutput
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArray []GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyInput
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverProperty)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArray) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArrayOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArrayOutput {
+	return i.ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArray) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArrayOutput)
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverProperty)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyOutput {
+	return o
+}
+
+// Receiver listener port.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyOutput) ListenerPort() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverProperty) int {
+		return v.ListenerPort
+	}).(pulumi.IntOutput)
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverProperty)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArrayOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArrayOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArrayOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverProperty {
+		return vs[0].([]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverProperty)[vs[1].(int)]
+	}).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyOutput)
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfiguration struct {
+	// Availability metrics details.
+	AvailabilityMetricsConfigs []GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfig `pulumi:"availabilityMetricsConfigs"`
+	// Specific resource mapping configurations for Agent Extension Handlers.
+	HandlerConfigs []GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfig `pulumi:"handlerConfigs"`
+	// Resource type.
+	ResourceType string `pulumi:"resourceType"`
+}
+
+// GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationInput is an input type that accepts GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArgs and GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationInput` via:
+//
+//	GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArgs{...}
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationOutput
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationOutputWithContext(context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationOutput
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArgs struct {
+	// Availability metrics details.
+	AvailabilityMetricsConfigs GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayInput `pulumi:"availabilityMetricsConfigs"`
+	// Specific resource mapping configurations for Agent Extension Handlers.
+	HandlerConfigs GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArrayInput `pulumi:"handlerConfigs"`
+	// Resource type.
+	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+}
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfiguration)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArgs) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationOutput {
+	return i.ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArgs) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationOutput)
+}
+
+// GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArrayInput is an input type that accepts GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArray and GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArrayInput` via:
+//
+//	GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArray{ GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArgs{...} }
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArrayOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArrayOutput
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArrayOutputWithContext(context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArrayOutput
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArray []GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationInput
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfiguration)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArray) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArrayOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArrayOutput {
+	return i.ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArray) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArrayOutput)
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfiguration)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationOutput {
+	return o
+}
+
+// Availability metrics details.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationOutput) AvailabilityMetricsConfigs() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfiguration) []GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfig {
+		return v.AvailabilityMetricsConfigs
+	}).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutput)
+}
+
+// Specific resource mapping configurations for Agent Extension Handlers.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationOutput) HandlerConfigs() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfiguration) []GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfig {
+		return v.HandlerConfigs
+	}).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArrayOutput)
+}
+
+// Resource type.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfiguration) string {
+		return v.ResourceType
+	}).(pulumi.StringOutput)
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfiguration)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArrayOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArrayOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArrayOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfiguration {
+		return vs[0].([]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfiguration)[vs[1].(int)]
+	}).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationOutput)
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfig struct {
+	// Availability metric collection internal in seconds.
+	CollectionIntervalInSeconds int `pulumi:"collectionIntervalInSeconds"`
+	// List of metrics used for availability calculation for the resource.
+	Metrics []string `pulumi:"metrics"`
+}
+
+// GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigInput is an input type that accepts GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArgs and GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigInput` via:
+//
+//	GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArgs{...}
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutputWithContext(context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArgs struct {
+	// Availability metric collection internal in seconds.
+	CollectionIntervalInSeconds pulumi.IntInput `pulumi:"collectionIntervalInSeconds"`
+	// List of metrics used for availability calculation for the resource.
+	Metrics pulumi.StringArrayInput `pulumi:"metrics"`
+}
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArgs) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput {
+	return i.ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArgs) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput)
+}
+
+// GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayInput is an input type that accepts GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArray and GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayInput` via:
+//
+//	GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArray{ GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArgs{...} }
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutput
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutputWithContext(context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutput
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArray []GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigInput
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArray) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutput {
+	return i.ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArray) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutput)
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput {
+	return o
+}
+
+// Availability metric collection internal in seconds.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput) CollectionIntervalInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfig) int {
+		return v.CollectionIntervalInSeconds
+	}).(pulumi.IntOutput)
+}
+
+// List of metrics used for availability calculation for the resource.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput) Metrics() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfig) []string {
+		return v.Metrics
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfig {
+		return vs[0].([]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfig)[vs[1].(int)]
+	}).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput)
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfig struct {
+	// Resource name generation overriding configurations for collectd resource types.
+	CollectdResourceNameConfigs []GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig `pulumi:"collectdResourceNameConfigs"`
+	// List of collector/plugin names.
+	CollectorTypes []string `pulumi:"collectorTypes"`
+	// List of handler configuration properties
+	HandlerProperties []GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerProperty `pulumi:"handlerProperties"`
+	// List of AgentExtensionHandlerMetricMappingDetails.
+	MetricMappings []GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMapping `pulumi:"metricMappings"`
+	// Metric name generation overriding configurations.
+	MetricNameConfigs []GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfig `pulumi:"metricNameConfigs"`
+	// Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+	MetricUploadIntervalInSeconds int `pulumi:"metricUploadIntervalInSeconds"`
+	// Resource name generation overriding configurations for telegraf resource types.
+	TelegrafResourceNameConfigs []GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig `pulumi:"telegrafResourceNameConfigs"`
+	// Resource group string; if not specified, the resource group string will be generated by the handler.
+	TelemetryResourceGroup string `pulumi:"telemetryResourceGroup"`
+}
+
+// GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigInput is an input type that accepts GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArgs and GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigInput` via:
+//
+//	GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArgs{...}
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigOutput
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigOutputWithContext(context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigOutput
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArgs struct {
+	// Resource name generation overriding configurations for collectd resource types.
+	CollectdResourceNameConfigs GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayInput `pulumi:"collectdResourceNameConfigs"`
+	// List of collector/plugin names.
+	CollectorTypes pulumi.StringArrayInput `pulumi:"collectorTypes"`
+	// List of handler configuration properties
+	HandlerProperties GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayInput `pulumi:"handlerProperties"`
+	// List of AgentExtensionHandlerMetricMappingDetails.
+	MetricMappings GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayInput `pulumi:"metricMappings"`
+	// Metric name generation overriding configurations.
+	MetricNameConfigs GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayInput `pulumi:"metricNameConfigs"`
+	// Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+	MetricUploadIntervalInSeconds pulumi.IntInput `pulumi:"metricUploadIntervalInSeconds"`
+	// Resource name generation overriding configurations for telegraf resource types.
+	TelegrafResourceNameConfigs GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayInput `pulumi:"telegrafResourceNameConfigs"`
+	// Resource group string; if not specified, the resource group string will be generated by the handler.
+	TelemetryResourceGroup pulumi.StringInput `pulumi:"telemetryResourceGroup"`
+}
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArgs) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigOutput {
+	return i.ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArgs) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigOutput)
+}
+
+// GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArrayInput is an input type that accepts GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArray and GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArrayInput` via:
+//
+//	GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArray{ GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArgs{...} }
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArrayOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArrayOutput
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArrayOutputWithContext(context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArrayOutput
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArray []GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigInput
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArray) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArrayOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArrayOutput {
+	return i.ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArray) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArrayOutput)
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigOutput {
+	return o
+}
+
+// Resource name generation overriding configurations for collectd resource types.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigOutput) CollectdResourceNameConfigs() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfig) []GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig {
+		return v.CollectdResourceNameConfigs
+	}).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutput)
+}
+
+// List of collector/plugin names.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigOutput) CollectorTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfig) []string {
+		return v.CollectorTypes
+	}).(pulumi.StringArrayOutput)
+}
+
+// List of handler configuration properties
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigOutput) HandlerProperties() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfig) []GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerProperty {
+		return v.HandlerProperties
+	}).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput)
+}
+
+// List of AgentExtensionHandlerMetricMappingDetails.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigOutput) MetricMappings() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfig) []GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMapping {
+		return v.MetricMappings
+	}).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput)
+}
+
+// Metric name generation overriding configurations.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigOutput) MetricNameConfigs() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfig) []GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfig {
+		return v.MetricNameConfigs
+	}).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutput)
+}
+
+// Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigOutput) MetricUploadIntervalInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfig) int {
+		return v.MetricUploadIntervalInSeconds
+	}).(pulumi.IntOutput)
+}
+
+// Resource name generation overriding configurations for telegraf resource types.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigOutput) TelegrafResourceNameConfigs() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfig) []GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig {
+		return v.TelegrafResourceNameConfigs
+	}).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutput)
+}
+
+// Resource group string; if not specified, the resource group string will be generated by the handler.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigOutput) TelemetryResourceGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfig) string {
+		return v.TelemetryResourceGroup
+	}).(pulumi.StringOutput)
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArrayOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArrayOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArrayOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfig {
+		return vs[0].([]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfig)[vs[1].(int)]
+	}).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigOutput)
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig struct {
+	// List of property names to be excluded.
+	ExcludeProperties []string `pulumi:"excludeProperties"`
+	// List of property names to be included.
+	IncludeProperties []string `pulumi:"includeProperties"`
+	// String to be suffixed to the resource name.
+	Suffix string `pulumi:"suffix"`
+}
+
+// GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigInput is an input type that accepts GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs and GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigInput` via:
+//
+//	GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs{...}
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutputWithContext(context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs struct {
+	// List of property names to be excluded.
+	ExcludeProperties pulumi.StringArrayInput `pulumi:"excludeProperties"`
+	// List of property names to be included.
+	IncludeProperties pulumi.StringArrayInput `pulumi:"includeProperties"`
+	// String to be suffixed to the resource name.
+	Suffix pulumi.StringInput `pulumi:"suffix"`
+}
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput {
+	return i.ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput)
+}
+
+// GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayInput is an input type that accepts GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArray and GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayInput` via:
+//
+//	GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArray{ GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs{...} }
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutput
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutputWithContext(context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutput
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArray []GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigInput
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArray) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutput {
+	return i.ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArray) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutput)
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput {
+	return o
+}
+
+// List of property names to be excluded.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput) ExcludeProperties() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig) []string {
+		return v.ExcludeProperties
+	}).(pulumi.StringArrayOutput)
+}
+
+// List of property names to be included.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput) IncludeProperties() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig) []string {
+		return v.IncludeProperties
+	}).(pulumi.StringArrayOutput)
+}
+
+// String to be suffixed to the resource name.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput) Suffix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig) string {
+		return v.Suffix
+	}).(pulumi.StringOutput)
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig {
+		return vs[0].([]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig)[vs[1].(int)]
+	}).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput)
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerProperty struct {
+	// Property name.
+	Name string `pulumi:"name"`
+	// Property value.
+	Value string `pulumi:"value"`
+}
+
+// GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyInput is an input type that accepts GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArgs and GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyInput` via:
+//
+//	GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArgs{...}
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutputWithContext(context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArgs struct {
+	// Property name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Property value.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerProperty)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArgs) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput {
+	return i.ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArgs) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput)
+}
+
+// GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayInput is an input type that accepts GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArray and GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayInput` via:
+//
+//	GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArray{ GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArgs{...} }
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutputWithContext(context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArray []GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyInput
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerProperty)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArray) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput {
+	return i.ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArray) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput)
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerProperty)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput {
+	return o
+}
+
+// Property name.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerProperty) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// Property value.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerProperty) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerProperty)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerProperty {
+		return vs[0].([]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerProperty)[vs[1].(int)]
+	}).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput)
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMapping struct {
+	// Metric name as defined by the collector.
+	CollectorMetricName string `pulumi:"collectorMetricName"`
+	// Is ignoring this metric.
+	IsSkipUpload bool `pulumi:"isSkipUpload"`
+	// Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+	MetricUploadIntervalInSeconds int `pulumi:"metricUploadIntervalInSeconds"`
+	// Metric name to be upload to telemetry.
+	TelemetryMetricName string `pulumi:"telemetryMetricName"`
+}
+
+// GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingInput is an input type that accepts GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArgs and GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingInput` via:
+//
+//	GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArgs{...}
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutputWithContext(context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArgs struct {
+	// Metric name as defined by the collector.
+	CollectorMetricName pulumi.StringInput `pulumi:"collectorMetricName"`
+	// Is ignoring this metric.
+	IsSkipUpload pulumi.BoolInput `pulumi:"isSkipUpload"`
+	// Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+	MetricUploadIntervalInSeconds pulumi.IntInput `pulumi:"metricUploadIntervalInSeconds"`
+	// Metric name to be upload to telemetry.
+	TelemetryMetricName pulumi.StringInput `pulumi:"telemetryMetricName"`
+}
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMapping)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArgs) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput {
+	return i.ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArgs) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput)
+}
+
+// GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayInput is an input type that accepts GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArray and GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayInput` via:
+//
+//	GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArray{ GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArgs{...} }
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutputWithContext(context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArray []GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingInput
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMapping)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArray) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput {
+	return i.ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArray) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput)
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMapping)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput {
+	return o
+}
+
+// Metric name as defined by the collector.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput) CollectorMetricName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMapping) string {
+		return v.CollectorMetricName
+	}).(pulumi.StringOutput)
+}
+
+// Is ignoring this metric.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput) IsSkipUpload() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMapping) bool {
+		return v.IsSkipUpload
+	}).(pulumi.BoolOutput)
+}
+
+// Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput) MetricUploadIntervalInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMapping) int {
+		return v.MetricUploadIntervalInSeconds
+	}).(pulumi.IntOutput)
+}
+
+// Metric name to be upload to telemetry.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput) TelemetryMetricName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMapping) string {
+		return v.TelemetryMetricName
+	}).(pulumi.StringOutput)
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMapping)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMapping {
+		return vs[0].([]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMapping)[vs[1].(int)]
+	}).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput)
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfig struct {
+	// String pattern to be removed from the prefix of the metric name.
+	ExcludePatternOnPrefix string `pulumi:"excludePatternOnPrefix"`
+	// is prefixing the metric with collector type.
+	IsPrefixWithCollectorType bool `pulumi:"isPrefixWithCollectorType"`
+}
+
+// GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigInput is an input type that accepts GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArgs and GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigInput` via:
+//
+//	GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArgs{...}
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutputWithContext(context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArgs struct {
+	// String pattern to be removed from the prefix of the metric name.
+	ExcludePatternOnPrefix pulumi.StringInput `pulumi:"excludePatternOnPrefix"`
+	// is prefixing the metric with collector type.
+	IsPrefixWithCollectorType pulumi.BoolInput `pulumi:"isPrefixWithCollectorType"`
+}
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArgs) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput {
+	return i.ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArgs) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput)
+}
+
+// GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayInput is an input type that accepts GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArray and GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayInput` via:
+//
+//	GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArray{ GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArgs{...} }
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutput
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutputWithContext(context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutput
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArray []GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigInput
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArray) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutput {
+	return i.ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArray) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutput)
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput {
+	return o
+}
+
+// String pattern to be removed from the prefix of the metric name.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput) ExcludePatternOnPrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfig) string {
+		return v.ExcludePatternOnPrefix
+	}).(pulumi.StringOutput)
+}
+
+// is prefixing the metric with collector type.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput) IsPrefixWithCollectorType() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfig) bool {
+		return v.IsPrefixWithCollectorType
+	}).(pulumi.BoolOutput)
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfig {
+		return vs[0].([]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfig)[vs[1].(int)]
+	}).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput)
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig struct {
+	// List of tag names to be excluded.
+	ExcludeTags []string `pulumi:"excludeTags"`
+	// List of tag names to be included.
+	IncludeTags []string `pulumi:"includeTags"`
+	// Flag to indicate if only tags will be used for resource name generation.
+	IsUseTagsOnly bool `pulumi:"isUseTagsOnly"`
+}
+
+// GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigInput is an input type that accepts GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs and GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigInput` via:
+//
+//	GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs{...}
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutputWithContext(context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs struct {
+	// List of tag names to be excluded.
+	ExcludeTags pulumi.StringArrayInput `pulumi:"excludeTags"`
+	// List of tag names to be included.
+	IncludeTags pulumi.StringArrayInput `pulumi:"includeTags"`
+	// Flag to indicate if only tags will be used for resource name generation.
+	IsUseTagsOnly pulumi.BoolInput `pulumi:"isUseTagsOnly"`
+}
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput {
+	return i.ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput)
+}
+
+// GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayInput is an input type that accepts GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArray and GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayInput` via:
+//
+//	GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArray{ GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs{...} }
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutput
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutputWithContext(context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutput
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArray []GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigInput
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArray) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutput {
+	return i.ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArray) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutput)
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput {
+	return o
+}
+
+// List of tag names to be excluded.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput) ExcludeTags() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig) []string {
+		return v.ExcludeTags
+	}).(pulumi.StringArrayOutput)
+}
+
+// List of tag names to be included.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput) IncludeTags() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig) []string {
+		return v.IncludeTags
+	}).(pulumi.StringArrayOutput)
+}
+
+// Flag to indicate if only tags will be used for resource name generation.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput) IsUseTagsOnly() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig) bool {
+		return v.IsUseTagsOnly
+	}).(pulumi.BoolOutput)
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig {
+		return vs[0].([]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig)[vs[1].(int)]
+	}).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput)
+}
+
+type GetMonitoredResourceTypeAvailabilityMetricsConfig struct {
+	// Availability metric collection internal in seconds.
+	CollectionIntervalInSeconds int `pulumi:"collectionIntervalInSeconds"`
+	// List of metrics used for availability calculation for the resource.
+	Metrics []string `pulumi:"metrics"`
+}
+
+// GetMonitoredResourceTypeAvailabilityMetricsConfigInput is an input type that accepts GetMonitoredResourceTypeAvailabilityMetricsConfigArgs and GetMonitoredResourceTypeAvailabilityMetricsConfigOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypeAvailabilityMetricsConfigInput` via:
+//
+//	GetMonitoredResourceTypeAvailabilityMetricsConfigArgs{...}
+type GetMonitoredResourceTypeAvailabilityMetricsConfigInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypeAvailabilityMetricsConfigOutput() GetMonitoredResourceTypeAvailabilityMetricsConfigOutput
+	ToGetMonitoredResourceTypeAvailabilityMetricsConfigOutputWithContext(context.Context) GetMonitoredResourceTypeAvailabilityMetricsConfigOutput
+}
+
+type GetMonitoredResourceTypeAvailabilityMetricsConfigArgs struct {
+	// Availability metric collection internal in seconds.
+	CollectionIntervalInSeconds pulumi.IntInput `pulumi:"collectionIntervalInSeconds"`
+	// List of metrics used for availability calculation for the resource.
+	Metrics pulumi.StringArrayInput `pulumi:"metrics"`
+}
+
+func (GetMonitoredResourceTypeAvailabilityMetricsConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypeAvailabilityMetricsConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypeAvailabilityMetricsConfigArgs) ToGetMonitoredResourceTypeAvailabilityMetricsConfigOutput() GetMonitoredResourceTypeAvailabilityMetricsConfigOutput {
+	return i.ToGetMonitoredResourceTypeAvailabilityMetricsConfigOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypeAvailabilityMetricsConfigArgs) ToGetMonitoredResourceTypeAvailabilityMetricsConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTypeAvailabilityMetricsConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypeAvailabilityMetricsConfigOutput)
+}
+
+// GetMonitoredResourceTypeAvailabilityMetricsConfigArrayInput is an input type that accepts GetMonitoredResourceTypeAvailabilityMetricsConfigArray and GetMonitoredResourceTypeAvailabilityMetricsConfigArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypeAvailabilityMetricsConfigArrayInput` via:
+//
+//	GetMonitoredResourceTypeAvailabilityMetricsConfigArray{ GetMonitoredResourceTypeAvailabilityMetricsConfigArgs{...} }
+type GetMonitoredResourceTypeAvailabilityMetricsConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypeAvailabilityMetricsConfigArrayOutput() GetMonitoredResourceTypeAvailabilityMetricsConfigArrayOutput
+	ToGetMonitoredResourceTypeAvailabilityMetricsConfigArrayOutputWithContext(context.Context) GetMonitoredResourceTypeAvailabilityMetricsConfigArrayOutput
+}
+
+type GetMonitoredResourceTypeAvailabilityMetricsConfigArray []GetMonitoredResourceTypeAvailabilityMetricsConfigInput
+
+func (GetMonitoredResourceTypeAvailabilityMetricsConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypeAvailabilityMetricsConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypeAvailabilityMetricsConfigArray) ToGetMonitoredResourceTypeAvailabilityMetricsConfigArrayOutput() GetMonitoredResourceTypeAvailabilityMetricsConfigArrayOutput {
+	return i.ToGetMonitoredResourceTypeAvailabilityMetricsConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypeAvailabilityMetricsConfigArray) ToGetMonitoredResourceTypeAvailabilityMetricsConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypeAvailabilityMetricsConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypeAvailabilityMetricsConfigArrayOutput)
+}
+
+type GetMonitoredResourceTypeAvailabilityMetricsConfigOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypeAvailabilityMetricsConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypeAvailabilityMetricsConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypeAvailabilityMetricsConfigOutput) ToGetMonitoredResourceTypeAvailabilityMetricsConfigOutput() GetMonitoredResourceTypeAvailabilityMetricsConfigOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypeAvailabilityMetricsConfigOutput) ToGetMonitoredResourceTypeAvailabilityMetricsConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTypeAvailabilityMetricsConfigOutput {
+	return o
+}
+
+// Availability metric collection internal in seconds.
+func (o GetMonitoredResourceTypeAvailabilityMetricsConfigOutput) CollectionIntervalInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypeAvailabilityMetricsConfig) int { return v.CollectionIntervalInSeconds }).(pulumi.IntOutput)
+}
+
+// List of metrics used for availability calculation for the resource.
+func (o GetMonitoredResourceTypeAvailabilityMetricsConfigOutput) Metrics() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypeAvailabilityMetricsConfig) []string { return v.Metrics }).(pulumi.StringArrayOutput)
+}
+
+type GetMonitoredResourceTypeAvailabilityMetricsConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypeAvailabilityMetricsConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypeAvailabilityMetricsConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypeAvailabilityMetricsConfigArrayOutput) ToGetMonitoredResourceTypeAvailabilityMetricsConfigArrayOutput() GetMonitoredResourceTypeAvailabilityMetricsConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypeAvailabilityMetricsConfigArrayOutput) ToGetMonitoredResourceTypeAvailabilityMetricsConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypeAvailabilityMetricsConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypeAvailabilityMetricsConfigArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTypeAvailabilityMetricsConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTypeAvailabilityMetricsConfig {
+		return vs[0].([]GetMonitoredResourceTypeAvailabilityMetricsConfig)[vs[1].(int)]
+	}).(GetMonitoredResourceTypeAvailabilityMetricsConfigOutput)
+}
+
+type GetMonitoredResourceTypeHandlerConfig struct {
+	// Resource name generation overriding configurations for collectd resource types.
+	CollectdResourceNameConfigs []GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfig `pulumi:"collectdResourceNameConfigs"`
+	// List of collector/plugin names.
+	CollectorTypes []string `pulumi:"collectorTypes"`
+	// List of handler configuration properties
+	HandlerProperties []GetMonitoredResourceTypeHandlerConfigHandlerProperty `pulumi:"handlerProperties"`
+	// List of AgentExtensionHandlerMetricMappingDetails.
+	MetricMappings []GetMonitoredResourceTypeHandlerConfigMetricMapping `pulumi:"metricMappings"`
+	// Metric name generation overriding configurations.
+	MetricNameConfigs []GetMonitoredResourceTypeHandlerConfigMetricNameConfig `pulumi:"metricNameConfigs"`
+	// Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+	MetricUploadIntervalInSeconds int `pulumi:"metricUploadIntervalInSeconds"`
+	// Resource name generation overriding configurations for telegraf resource types.
+	TelegrafResourceNameConfigs []GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfig `pulumi:"telegrafResourceNameConfigs"`
+	// Resource group string; if not specified, the resource group string will be generated by the handler.
+	TelemetryResourceGroup string `pulumi:"telemetryResourceGroup"`
+}
+
+// GetMonitoredResourceTypeHandlerConfigInput is an input type that accepts GetMonitoredResourceTypeHandlerConfigArgs and GetMonitoredResourceTypeHandlerConfigOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypeHandlerConfigInput` via:
+//
+//	GetMonitoredResourceTypeHandlerConfigArgs{...}
+type GetMonitoredResourceTypeHandlerConfigInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypeHandlerConfigOutput() GetMonitoredResourceTypeHandlerConfigOutput
+	ToGetMonitoredResourceTypeHandlerConfigOutputWithContext(context.Context) GetMonitoredResourceTypeHandlerConfigOutput
+}
+
+type GetMonitoredResourceTypeHandlerConfigArgs struct {
+	// Resource name generation overriding configurations for collectd resource types.
+	CollectdResourceNameConfigs GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayInput `pulumi:"collectdResourceNameConfigs"`
+	// List of collector/plugin names.
+	CollectorTypes pulumi.StringArrayInput `pulumi:"collectorTypes"`
+	// List of handler configuration properties
+	HandlerProperties GetMonitoredResourceTypeHandlerConfigHandlerPropertyArrayInput `pulumi:"handlerProperties"`
+	// List of AgentExtensionHandlerMetricMappingDetails.
+	MetricMappings GetMonitoredResourceTypeHandlerConfigMetricMappingArrayInput `pulumi:"metricMappings"`
+	// Metric name generation overriding configurations.
+	MetricNameConfigs GetMonitoredResourceTypeHandlerConfigMetricNameConfigArrayInput `pulumi:"metricNameConfigs"`
+	// Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+	MetricUploadIntervalInSeconds pulumi.IntInput `pulumi:"metricUploadIntervalInSeconds"`
+	// Resource name generation overriding configurations for telegraf resource types.
+	TelegrafResourceNameConfigs GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayInput `pulumi:"telegrafResourceNameConfigs"`
+	// Resource group string; if not specified, the resource group string will be generated by the handler.
+	TelemetryResourceGroup pulumi.StringInput `pulumi:"telemetryResourceGroup"`
+}
+
+func (GetMonitoredResourceTypeHandlerConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypeHandlerConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypeHandlerConfigArgs) ToGetMonitoredResourceTypeHandlerConfigOutput() GetMonitoredResourceTypeHandlerConfigOutput {
+	return i.ToGetMonitoredResourceTypeHandlerConfigOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypeHandlerConfigArgs) ToGetMonitoredResourceTypeHandlerConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTypeHandlerConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypeHandlerConfigOutput)
+}
+
+// GetMonitoredResourceTypeHandlerConfigArrayInput is an input type that accepts GetMonitoredResourceTypeHandlerConfigArray and GetMonitoredResourceTypeHandlerConfigArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypeHandlerConfigArrayInput` via:
+//
+//	GetMonitoredResourceTypeHandlerConfigArray{ GetMonitoredResourceTypeHandlerConfigArgs{...} }
+type GetMonitoredResourceTypeHandlerConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypeHandlerConfigArrayOutput() GetMonitoredResourceTypeHandlerConfigArrayOutput
+	ToGetMonitoredResourceTypeHandlerConfigArrayOutputWithContext(context.Context) GetMonitoredResourceTypeHandlerConfigArrayOutput
+}
+
+type GetMonitoredResourceTypeHandlerConfigArray []GetMonitoredResourceTypeHandlerConfigInput
+
+func (GetMonitoredResourceTypeHandlerConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypeHandlerConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypeHandlerConfigArray) ToGetMonitoredResourceTypeHandlerConfigArrayOutput() GetMonitoredResourceTypeHandlerConfigArrayOutput {
+	return i.ToGetMonitoredResourceTypeHandlerConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypeHandlerConfigArray) ToGetMonitoredResourceTypeHandlerConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypeHandlerConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypeHandlerConfigArrayOutput)
+}
+
+type GetMonitoredResourceTypeHandlerConfigOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypeHandlerConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypeHandlerConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypeHandlerConfigOutput) ToGetMonitoredResourceTypeHandlerConfigOutput() GetMonitoredResourceTypeHandlerConfigOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypeHandlerConfigOutput) ToGetMonitoredResourceTypeHandlerConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTypeHandlerConfigOutput {
+	return o
+}
+
+// Resource name generation overriding configurations for collectd resource types.
+func (o GetMonitoredResourceTypeHandlerConfigOutput) CollectdResourceNameConfigs() GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypeHandlerConfig) []GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfig {
+		return v.CollectdResourceNameConfigs
+	}).(GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutput)
+}
+
+// List of collector/plugin names.
+func (o GetMonitoredResourceTypeHandlerConfigOutput) CollectorTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypeHandlerConfig) []string { return v.CollectorTypes }).(pulumi.StringArrayOutput)
+}
+
+// List of handler configuration properties
+func (o GetMonitoredResourceTypeHandlerConfigOutput) HandlerProperties() GetMonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypeHandlerConfig) []GetMonitoredResourceTypeHandlerConfigHandlerProperty {
+		return v.HandlerProperties
+	}).(GetMonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutput)
+}
+
+// List of AgentExtensionHandlerMetricMappingDetails.
+func (o GetMonitoredResourceTypeHandlerConfigOutput) MetricMappings() GetMonitoredResourceTypeHandlerConfigMetricMappingArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypeHandlerConfig) []GetMonitoredResourceTypeHandlerConfigMetricMapping {
+		return v.MetricMappings
+	}).(GetMonitoredResourceTypeHandlerConfigMetricMappingArrayOutput)
+}
+
+// Metric name generation overriding configurations.
+func (o GetMonitoredResourceTypeHandlerConfigOutput) MetricNameConfigs() GetMonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypeHandlerConfig) []GetMonitoredResourceTypeHandlerConfigMetricNameConfig {
+		return v.MetricNameConfigs
+	}).(GetMonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutput)
+}
+
+// Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+func (o GetMonitoredResourceTypeHandlerConfigOutput) MetricUploadIntervalInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypeHandlerConfig) int { return v.MetricUploadIntervalInSeconds }).(pulumi.IntOutput)
+}
+
+// Resource name generation overriding configurations for telegraf resource types.
+func (o GetMonitoredResourceTypeHandlerConfigOutput) TelegrafResourceNameConfigs() GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypeHandlerConfig) []GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfig {
+		return v.TelegrafResourceNameConfigs
+	}).(GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutput)
+}
+
+// Resource group string; if not specified, the resource group string will be generated by the handler.
+func (o GetMonitoredResourceTypeHandlerConfigOutput) TelemetryResourceGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypeHandlerConfig) string { return v.TelemetryResourceGroup }).(pulumi.StringOutput)
+}
+
+type GetMonitoredResourceTypeHandlerConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypeHandlerConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypeHandlerConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypeHandlerConfigArrayOutput) ToGetMonitoredResourceTypeHandlerConfigArrayOutput() GetMonitoredResourceTypeHandlerConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypeHandlerConfigArrayOutput) ToGetMonitoredResourceTypeHandlerConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypeHandlerConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypeHandlerConfigArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTypeHandlerConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTypeHandlerConfig {
+		return vs[0].([]GetMonitoredResourceTypeHandlerConfig)[vs[1].(int)]
+	}).(GetMonitoredResourceTypeHandlerConfigOutput)
+}
+
+type GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfig struct {
+	// List of property names to be excluded.
+	ExcludeProperties []string `pulumi:"excludeProperties"`
+	// List of property names to be included.
+	IncludeProperties []string `pulumi:"includeProperties"`
+	// String to be suffixed to the resource name.
+	Suffix string `pulumi:"suffix"`
+}
+
+// GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigInput is an input type that accepts GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArgs and GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigInput` via:
+//
+//	GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArgs{...}
+type GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput() GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput
+	ToGetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutputWithContext(context.Context) GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput
+}
+
+type GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArgs struct {
+	// List of property names to be excluded.
+	ExcludeProperties pulumi.StringArrayInput `pulumi:"excludeProperties"`
+	// List of property names to be included.
+	IncludeProperties pulumi.StringArrayInput `pulumi:"includeProperties"`
+	// String to be suffixed to the resource name.
+	Suffix pulumi.StringInput `pulumi:"suffix"`
+}
+
+func (GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArgs) ToGetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput() GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput {
+	return i.ToGetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArgs) ToGetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput)
+}
+
+// GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayInput is an input type that accepts GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArray and GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayInput` via:
+//
+//	GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArray{ GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArgs{...} }
+type GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutput() GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutput
+	ToGetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutputWithContext(context.Context) GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutput
+}
+
+type GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArray []GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigInput
+
+func (GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArray) ToGetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutput() GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutput {
+	return i.ToGetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArray) ToGetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutput)
+}
+
+type GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput) ToGetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput() GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput) ToGetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput {
+	return o
+}
+
+// List of property names to be excluded.
+func (o GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput) ExcludeProperties() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfig) []string {
+		return v.ExcludeProperties
+	}).(pulumi.StringArrayOutput)
+}
+
+// List of property names to be included.
+func (o GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput) IncludeProperties() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfig) []string {
+		return v.IncludeProperties
+	}).(pulumi.StringArrayOutput)
+}
+
+// String to be suffixed to the resource name.
+func (o GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput) Suffix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfig) string { return v.Suffix }).(pulumi.StringOutput)
+}
+
+type GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutput) ToGetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutput() GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutput) ToGetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfig {
+		return vs[0].([]GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfig)[vs[1].(int)]
+	}).(GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput)
+}
+
+type GetMonitoredResourceTypeHandlerConfigHandlerProperty struct {
+	// A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
+	Name string `pulumi:"name"`
+	// Property value.
+	Value string `pulumi:"value"`
+}
+
+// GetMonitoredResourceTypeHandlerConfigHandlerPropertyInput is an input type that accepts GetMonitoredResourceTypeHandlerConfigHandlerPropertyArgs and GetMonitoredResourceTypeHandlerConfigHandlerPropertyOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypeHandlerConfigHandlerPropertyInput` via:
+//
+//	GetMonitoredResourceTypeHandlerConfigHandlerPropertyArgs{...}
+type GetMonitoredResourceTypeHandlerConfigHandlerPropertyInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypeHandlerConfigHandlerPropertyOutput() GetMonitoredResourceTypeHandlerConfigHandlerPropertyOutput
+	ToGetMonitoredResourceTypeHandlerConfigHandlerPropertyOutputWithContext(context.Context) GetMonitoredResourceTypeHandlerConfigHandlerPropertyOutput
+}
+
+type GetMonitoredResourceTypeHandlerConfigHandlerPropertyArgs struct {
+	// A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Property value.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetMonitoredResourceTypeHandlerConfigHandlerPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypeHandlerConfigHandlerProperty)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypeHandlerConfigHandlerPropertyArgs) ToGetMonitoredResourceTypeHandlerConfigHandlerPropertyOutput() GetMonitoredResourceTypeHandlerConfigHandlerPropertyOutput {
+	return i.ToGetMonitoredResourceTypeHandlerConfigHandlerPropertyOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypeHandlerConfigHandlerPropertyArgs) ToGetMonitoredResourceTypeHandlerConfigHandlerPropertyOutputWithContext(ctx context.Context) GetMonitoredResourceTypeHandlerConfigHandlerPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypeHandlerConfigHandlerPropertyOutput)
+}
+
+// GetMonitoredResourceTypeHandlerConfigHandlerPropertyArrayInput is an input type that accepts GetMonitoredResourceTypeHandlerConfigHandlerPropertyArray and GetMonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypeHandlerConfigHandlerPropertyArrayInput` via:
+//
+//	GetMonitoredResourceTypeHandlerConfigHandlerPropertyArray{ GetMonitoredResourceTypeHandlerConfigHandlerPropertyArgs{...} }
+type GetMonitoredResourceTypeHandlerConfigHandlerPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutput() GetMonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutput
+	ToGetMonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutputWithContext(context.Context) GetMonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutput
+}
+
+type GetMonitoredResourceTypeHandlerConfigHandlerPropertyArray []GetMonitoredResourceTypeHandlerConfigHandlerPropertyInput
+
+func (GetMonitoredResourceTypeHandlerConfigHandlerPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypeHandlerConfigHandlerProperty)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypeHandlerConfigHandlerPropertyArray) ToGetMonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutput() GetMonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutput {
+	return i.ToGetMonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypeHandlerConfigHandlerPropertyArray) ToGetMonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutput)
+}
+
+type GetMonitoredResourceTypeHandlerConfigHandlerPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypeHandlerConfigHandlerPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypeHandlerConfigHandlerProperty)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypeHandlerConfigHandlerPropertyOutput) ToGetMonitoredResourceTypeHandlerConfigHandlerPropertyOutput() GetMonitoredResourceTypeHandlerConfigHandlerPropertyOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypeHandlerConfigHandlerPropertyOutput) ToGetMonitoredResourceTypeHandlerConfigHandlerPropertyOutputWithContext(ctx context.Context) GetMonitoredResourceTypeHandlerConfigHandlerPropertyOutput {
+	return o
+}
+
+// A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
+func (o GetMonitoredResourceTypeHandlerConfigHandlerPropertyOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypeHandlerConfigHandlerProperty) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Property value.
+func (o GetMonitoredResourceTypeHandlerConfigHandlerPropertyOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypeHandlerConfigHandlerProperty) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetMonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypeHandlerConfigHandlerProperty)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutput) ToGetMonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutput() GetMonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutput) ToGetMonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTypeHandlerConfigHandlerPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTypeHandlerConfigHandlerProperty {
+		return vs[0].([]GetMonitoredResourceTypeHandlerConfigHandlerProperty)[vs[1].(int)]
+	}).(GetMonitoredResourceTypeHandlerConfigHandlerPropertyOutput)
+}
+
+type GetMonitoredResourceTypeHandlerConfigMetricMapping struct {
+	// Metric name as defined by the collector.
+	CollectorMetricName string `pulumi:"collectorMetricName"`
+	// Is ignoring this metric.
+	IsSkipUpload bool `pulumi:"isSkipUpload"`
+	// Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+	MetricUploadIntervalInSeconds int `pulumi:"metricUploadIntervalInSeconds"`
+	// Metric name to be upload to telemetry.
+	TelemetryMetricName string `pulumi:"telemetryMetricName"`
+}
+
+// GetMonitoredResourceTypeHandlerConfigMetricMappingInput is an input type that accepts GetMonitoredResourceTypeHandlerConfigMetricMappingArgs and GetMonitoredResourceTypeHandlerConfigMetricMappingOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypeHandlerConfigMetricMappingInput` via:
+//
+//	GetMonitoredResourceTypeHandlerConfigMetricMappingArgs{...}
+type GetMonitoredResourceTypeHandlerConfigMetricMappingInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypeHandlerConfigMetricMappingOutput() GetMonitoredResourceTypeHandlerConfigMetricMappingOutput
+	ToGetMonitoredResourceTypeHandlerConfigMetricMappingOutputWithContext(context.Context) GetMonitoredResourceTypeHandlerConfigMetricMappingOutput
+}
+
+type GetMonitoredResourceTypeHandlerConfigMetricMappingArgs struct {
+	// Metric name as defined by the collector.
+	CollectorMetricName pulumi.StringInput `pulumi:"collectorMetricName"`
+	// Is ignoring this metric.
+	IsSkipUpload pulumi.BoolInput `pulumi:"isSkipUpload"`
+	// Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+	MetricUploadIntervalInSeconds pulumi.IntInput `pulumi:"metricUploadIntervalInSeconds"`
+	// Metric name to be upload to telemetry.
+	TelemetryMetricName pulumi.StringInput `pulumi:"telemetryMetricName"`
+}
+
+func (GetMonitoredResourceTypeHandlerConfigMetricMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypeHandlerConfigMetricMapping)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypeHandlerConfigMetricMappingArgs) ToGetMonitoredResourceTypeHandlerConfigMetricMappingOutput() GetMonitoredResourceTypeHandlerConfigMetricMappingOutput {
+	return i.ToGetMonitoredResourceTypeHandlerConfigMetricMappingOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypeHandlerConfigMetricMappingArgs) ToGetMonitoredResourceTypeHandlerConfigMetricMappingOutputWithContext(ctx context.Context) GetMonitoredResourceTypeHandlerConfigMetricMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypeHandlerConfigMetricMappingOutput)
+}
+
+// GetMonitoredResourceTypeHandlerConfigMetricMappingArrayInput is an input type that accepts GetMonitoredResourceTypeHandlerConfigMetricMappingArray and GetMonitoredResourceTypeHandlerConfigMetricMappingArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypeHandlerConfigMetricMappingArrayInput` via:
+//
+//	GetMonitoredResourceTypeHandlerConfigMetricMappingArray{ GetMonitoredResourceTypeHandlerConfigMetricMappingArgs{...} }
+type GetMonitoredResourceTypeHandlerConfigMetricMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypeHandlerConfigMetricMappingArrayOutput() GetMonitoredResourceTypeHandlerConfigMetricMappingArrayOutput
+	ToGetMonitoredResourceTypeHandlerConfigMetricMappingArrayOutputWithContext(context.Context) GetMonitoredResourceTypeHandlerConfigMetricMappingArrayOutput
+}
+
+type GetMonitoredResourceTypeHandlerConfigMetricMappingArray []GetMonitoredResourceTypeHandlerConfigMetricMappingInput
+
+func (GetMonitoredResourceTypeHandlerConfigMetricMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypeHandlerConfigMetricMapping)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypeHandlerConfigMetricMappingArray) ToGetMonitoredResourceTypeHandlerConfigMetricMappingArrayOutput() GetMonitoredResourceTypeHandlerConfigMetricMappingArrayOutput {
+	return i.ToGetMonitoredResourceTypeHandlerConfigMetricMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypeHandlerConfigMetricMappingArray) ToGetMonitoredResourceTypeHandlerConfigMetricMappingArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypeHandlerConfigMetricMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypeHandlerConfigMetricMappingArrayOutput)
+}
+
+type GetMonitoredResourceTypeHandlerConfigMetricMappingOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypeHandlerConfigMetricMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypeHandlerConfigMetricMapping)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypeHandlerConfigMetricMappingOutput) ToGetMonitoredResourceTypeHandlerConfigMetricMappingOutput() GetMonitoredResourceTypeHandlerConfigMetricMappingOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypeHandlerConfigMetricMappingOutput) ToGetMonitoredResourceTypeHandlerConfigMetricMappingOutputWithContext(ctx context.Context) GetMonitoredResourceTypeHandlerConfigMetricMappingOutput {
+	return o
+}
+
+// Metric name as defined by the collector.
+func (o GetMonitoredResourceTypeHandlerConfigMetricMappingOutput) CollectorMetricName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypeHandlerConfigMetricMapping) string { return v.CollectorMetricName }).(pulumi.StringOutput)
+}
+
+// Is ignoring this metric.
+func (o GetMonitoredResourceTypeHandlerConfigMetricMappingOutput) IsSkipUpload() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypeHandlerConfigMetricMapping) bool { return v.IsSkipUpload }).(pulumi.BoolOutput)
+}
+
+// Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+func (o GetMonitoredResourceTypeHandlerConfigMetricMappingOutput) MetricUploadIntervalInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypeHandlerConfigMetricMapping) int { return v.MetricUploadIntervalInSeconds }).(pulumi.IntOutput)
+}
+
+// Metric name to be upload to telemetry.
+func (o GetMonitoredResourceTypeHandlerConfigMetricMappingOutput) TelemetryMetricName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypeHandlerConfigMetricMapping) string { return v.TelemetryMetricName }).(pulumi.StringOutput)
+}
+
+type GetMonitoredResourceTypeHandlerConfigMetricMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypeHandlerConfigMetricMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypeHandlerConfigMetricMapping)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypeHandlerConfigMetricMappingArrayOutput) ToGetMonitoredResourceTypeHandlerConfigMetricMappingArrayOutput() GetMonitoredResourceTypeHandlerConfigMetricMappingArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypeHandlerConfigMetricMappingArrayOutput) ToGetMonitoredResourceTypeHandlerConfigMetricMappingArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypeHandlerConfigMetricMappingArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypeHandlerConfigMetricMappingArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTypeHandlerConfigMetricMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTypeHandlerConfigMetricMapping {
+		return vs[0].([]GetMonitoredResourceTypeHandlerConfigMetricMapping)[vs[1].(int)]
+	}).(GetMonitoredResourceTypeHandlerConfigMetricMappingOutput)
+}
+
+type GetMonitoredResourceTypeHandlerConfigMetricNameConfig struct {
+	// String pattern to be removed from the prefix of the metric name.
+	ExcludePatternOnPrefix string `pulumi:"excludePatternOnPrefix"`
+	// is prefixing the metric with collector type.
+	IsPrefixWithCollectorType bool `pulumi:"isPrefixWithCollectorType"`
+}
+
+// GetMonitoredResourceTypeHandlerConfigMetricNameConfigInput is an input type that accepts GetMonitoredResourceTypeHandlerConfigMetricNameConfigArgs and GetMonitoredResourceTypeHandlerConfigMetricNameConfigOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypeHandlerConfigMetricNameConfigInput` via:
+//
+//	GetMonitoredResourceTypeHandlerConfigMetricNameConfigArgs{...}
+type GetMonitoredResourceTypeHandlerConfigMetricNameConfigInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypeHandlerConfigMetricNameConfigOutput() GetMonitoredResourceTypeHandlerConfigMetricNameConfigOutput
+	ToGetMonitoredResourceTypeHandlerConfigMetricNameConfigOutputWithContext(context.Context) GetMonitoredResourceTypeHandlerConfigMetricNameConfigOutput
+}
+
+type GetMonitoredResourceTypeHandlerConfigMetricNameConfigArgs struct {
+	// String pattern to be removed from the prefix of the metric name.
+	ExcludePatternOnPrefix pulumi.StringInput `pulumi:"excludePatternOnPrefix"`
+	// is prefixing the metric with collector type.
+	IsPrefixWithCollectorType pulumi.BoolInput `pulumi:"isPrefixWithCollectorType"`
+}
+
+func (GetMonitoredResourceTypeHandlerConfigMetricNameConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypeHandlerConfigMetricNameConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypeHandlerConfigMetricNameConfigArgs) ToGetMonitoredResourceTypeHandlerConfigMetricNameConfigOutput() GetMonitoredResourceTypeHandlerConfigMetricNameConfigOutput {
+	return i.ToGetMonitoredResourceTypeHandlerConfigMetricNameConfigOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypeHandlerConfigMetricNameConfigArgs) ToGetMonitoredResourceTypeHandlerConfigMetricNameConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTypeHandlerConfigMetricNameConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypeHandlerConfigMetricNameConfigOutput)
+}
+
+// GetMonitoredResourceTypeHandlerConfigMetricNameConfigArrayInput is an input type that accepts GetMonitoredResourceTypeHandlerConfigMetricNameConfigArray and GetMonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypeHandlerConfigMetricNameConfigArrayInput` via:
+//
+//	GetMonitoredResourceTypeHandlerConfigMetricNameConfigArray{ GetMonitoredResourceTypeHandlerConfigMetricNameConfigArgs{...} }
+type GetMonitoredResourceTypeHandlerConfigMetricNameConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutput() GetMonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutput
+	ToGetMonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutputWithContext(context.Context) GetMonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutput
+}
+
+type GetMonitoredResourceTypeHandlerConfigMetricNameConfigArray []GetMonitoredResourceTypeHandlerConfigMetricNameConfigInput
+
+func (GetMonitoredResourceTypeHandlerConfigMetricNameConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypeHandlerConfigMetricNameConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypeHandlerConfigMetricNameConfigArray) ToGetMonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutput() GetMonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutput {
+	return i.ToGetMonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypeHandlerConfigMetricNameConfigArray) ToGetMonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutput)
+}
+
+type GetMonitoredResourceTypeHandlerConfigMetricNameConfigOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypeHandlerConfigMetricNameConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypeHandlerConfigMetricNameConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypeHandlerConfigMetricNameConfigOutput) ToGetMonitoredResourceTypeHandlerConfigMetricNameConfigOutput() GetMonitoredResourceTypeHandlerConfigMetricNameConfigOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypeHandlerConfigMetricNameConfigOutput) ToGetMonitoredResourceTypeHandlerConfigMetricNameConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTypeHandlerConfigMetricNameConfigOutput {
+	return o
+}
+
+// String pattern to be removed from the prefix of the metric name.
+func (o GetMonitoredResourceTypeHandlerConfigMetricNameConfigOutput) ExcludePatternOnPrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypeHandlerConfigMetricNameConfig) string { return v.ExcludePatternOnPrefix }).(pulumi.StringOutput)
+}
+
+// is prefixing the metric with collector type.
+func (o GetMonitoredResourceTypeHandlerConfigMetricNameConfigOutput) IsPrefixWithCollectorType() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypeHandlerConfigMetricNameConfig) bool { return v.IsPrefixWithCollectorType }).(pulumi.BoolOutput)
+}
+
+type GetMonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypeHandlerConfigMetricNameConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutput) ToGetMonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutput() GetMonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutput) ToGetMonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTypeHandlerConfigMetricNameConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTypeHandlerConfigMetricNameConfig {
+		return vs[0].([]GetMonitoredResourceTypeHandlerConfigMetricNameConfig)[vs[1].(int)]
+	}).(GetMonitoredResourceTypeHandlerConfigMetricNameConfigOutput)
+}
+
+type GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfig struct {
+	// List of tag names to be excluded.
+	ExcludeTags []string `pulumi:"excludeTags"`
+	// List of tag names to be included.
+	IncludeTags []string `pulumi:"includeTags"`
+	// Flag to indicate if only tags will be used for resource name generation.
+	IsUseTagsOnly bool `pulumi:"isUseTagsOnly"`
+}
+
+// GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigInput is an input type that accepts GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArgs and GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigInput` via:
+//
+//	GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArgs{...}
+type GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput() GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput
+	ToGetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutputWithContext(context.Context) GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput
+}
+
+type GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArgs struct {
+	// List of tag names to be excluded.
+	ExcludeTags pulumi.StringArrayInput `pulumi:"excludeTags"`
+	// List of tag names to be included.
+	IncludeTags pulumi.StringArrayInput `pulumi:"includeTags"`
+	// Flag to indicate if only tags will be used for resource name generation.
+	IsUseTagsOnly pulumi.BoolInput `pulumi:"isUseTagsOnly"`
+}
+
+func (GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArgs) ToGetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput() GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput {
+	return i.ToGetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArgs) ToGetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput)
+}
+
+// GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayInput is an input type that accepts GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArray and GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayInput` via:
+//
+//	GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArray{ GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArgs{...} }
+type GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutput() GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutput
+	ToGetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutputWithContext(context.Context) GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutput
+}
+
+type GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArray []GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigInput
+
+func (GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArray) ToGetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutput() GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutput {
+	return i.ToGetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArray) ToGetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutput)
+}
+
+type GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput) ToGetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput() GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput) ToGetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput {
+	return o
+}
+
+// List of tag names to be excluded.
+func (o GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput) ExcludeTags() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfig) []string { return v.ExcludeTags }).(pulumi.StringArrayOutput)
+}
+
+// List of tag names to be included.
+func (o GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput) IncludeTags() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfig) []string { return v.IncludeTags }).(pulumi.StringArrayOutput)
+}
+
+// Flag to indicate if only tags will be used for resource name generation.
+func (o GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput) IsUseTagsOnly() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfig) bool { return v.IsUseTagsOnly }).(pulumi.BoolOutput)
+}
+
+type GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutput) ToGetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutput() GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutput) ToGetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfig {
+		return vs[0].([]GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfig)[vs[1].(int)]
+	}).(GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput)
 }
 
 type GetMonitoredResourceTypeMetadata struct {
@@ -17238,6 +22824,8 @@ func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayOutput) In
 type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem struct {
 	// Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
 	AdditionalNamespaceMap map[string]string `pulumi:"additionalNamespaceMap"`
+	// Availability metrics details.
+	AvailabilityMetricsConfigs []GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfig `pulumi:"availabilityMetricsConfigs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy for which  monitored resource types should be listed.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -17248,22 +22836,28 @@ type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem struct {
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Specific resource mapping configurations for Agent Extension Handlers.
+	HandlerConfigs []GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfig `pulumi:"handlerConfigs"`
 	// Monitored resource type identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id string `pulumi:"id"`
+	// If boolean flag is true, then the resource type cannot be modified or deleted.
+	IsSystemDefined bool `pulumi:"isSystemDefined"`
 	// The metadata details for resource type.
 	Metadatas []GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata `pulumi:"metadatas"`
 	// A filter to return monitored resource types that has the matching namespace.
 	MetricNamespace string `pulumi:"metricNamespace"`
 	// A filter to return monitored resource types that match exactly with the resource type name given.
 	Name string `pulumi:"name"`
-	// Resource Category to indicate the kind of resource type.
+	// A filter to return only resources with matching resource category.
 	ResourceCategory string `pulumi:"resourceCategory"`
-	// Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+	// A filter to return only resources with matching source type.
 	SourceType string `pulumi:"sourceType"`
 	// Lifecycle state of the monitored resource type.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
+	// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	TenancyId string `pulumi:"tenancyId"`
 	// The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time when the monitored resource was updated, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -17284,6 +22878,8 @@ type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemInput interfac
 type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArgs struct {
 	// Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
 	AdditionalNamespaceMap pulumi.StringMapInput `pulumi:"additionalNamespaceMap"`
+	// Availability metrics details.
+	AvailabilityMetricsConfigs GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArrayInput `pulumi:"availabilityMetricsConfigs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy for which  monitored resource types should be listed.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -17294,22 +22890,28 @@ type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// Specific resource mapping configurations for Agent Extension Handlers.
+	HandlerConfigs GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArrayInput `pulumi:"handlerConfigs"`
 	// Monitored resource type identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id pulumi.StringInput `pulumi:"id"`
+	// If boolean flag is true, then the resource type cannot be modified or deleted.
+	IsSystemDefined pulumi.BoolInput `pulumi:"isSystemDefined"`
 	// The metadata details for resource type.
 	Metadatas GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayInput `pulumi:"metadatas"`
 	// A filter to return monitored resource types that has the matching namespace.
 	MetricNamespace pulumi.StringInput `pulumi:"metricNamespace"`
 	// A filter to return monitored resource types that match exactly with the resource type name given.
 	Name pulumi.StringInput `pulumi:"name"`
-	// Resource Category to indicate the kind of resource type.
+	// A filter to return only resources with matching resource category.
 	ResourceCategory pulumi.StringInput `pulumi:"resourceCategory"`
-	// Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+	// A filter to return only resources with matching source type.
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
 	// Lifecycle state of the monitored resource type.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	TenancyId pulumi.StringInput `pulumi:"tenancyId"`
 	// The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time when the monitored resource was updated, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -17374,6 +22976,13 @@ func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) Add
 	}).(pulumi.StringMapOutput)
 }
 
+// Availability metrics details.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) AvailabilityMetricsConfigs() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem) []GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfig {
+		return v.AvailabilityMetricsConfigs
+	}).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArrayOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy for which  monitored resource types should be listed.
 func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -17403,9 +23012,21 @@ func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) Fre
 	}).(pulumi.StringMapOutput)
 }
 
+// Specific resource mapping configurations for Agent Extension Handlers.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) HandlerConfigs() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem) []GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfig {
+		return v.HandlerConfigs
+	}).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArrayOutput)
+}
+
 // Monitored resource type identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// If boolean flag is true, then the resource type cannot be modified or deleted.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) IsSystemDefined() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem) bool { return v.IsSystemDefined }).(pulumi.BoolOutput)
 }
 
 // The metadata details for resource type.
@@ -17425,14 +23046,14 @@ func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) Nam
 	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// Resource Category to indicate the kind of resource type.
+// A filter to return only resources with matching resource category.
 func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) ResourceCategory() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem) string {
 		return v.ResourceCategory
 	}).(pulumi.StringOutput)
 }
 
-// Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+// A filter to return only resources with matching source type.
 func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) SourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem) string { return v.SourceType }).(pulumi.StringOutput)
 }
@@ -17447,6 +23068,11 @@ func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) Sys
 	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem) map[string]string {
 		return v.SystemTags
 	}).(pulumi.StringMapOutput)
+}
+
+// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) TenancyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem) string { return v.TenancyId }).(pulumi.StringOutput)
 }
 
 // The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -17477,6 +23103,886 @@ func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayOutput
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem {
 		return vs[0].([]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem)[vs[1].(int)]
 	}).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput)
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfig struct {
+	// Availability metric collection internal in seconds.
+	CollectionIntervalInSeconds int `pulumi:"collectionIntervalInSeconds"`
+	// List of metrics used for availability calculation for the resource.
+	Metrics []string `pulumi:"metrics"`
+}
+
+// GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigInput is an input type that accepts GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArgs and GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigInput` via:
+//
+//	GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArgs{...}
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigOutput
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigOutputWithContext(context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigOutput
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArgs struct {
+	// Availability metric collection internal in seconds.
+	CollectionIntervalInSeconds pulumi.IntInput `pulumi:"collectionIntervalInSeconds"`
+	// List of metrics used for availability calculation for the resource.
+	Metrics pulumi.StringArrayInput `pulumi:"metrics"`
+}
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArgs) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigOutput {
+	return i.ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArgs) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigOutput)
+}
+
+// GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArrayInput is an input type that accepts GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArray and GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArrayInput` via:
+//
+//	GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArray{ GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArgs{...} }
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArrayOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArrayOutput
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArrayOutputWithContext(context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArrayOutput
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArray []GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigInput
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArray) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArrayOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArrayOutput {
+	return i.ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArray) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArrayOutput)
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigOutput {
+	return o
+}
+
+// Availability metric collection internal in seconds.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigOutput) CollectionIntervalInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfig) int {
+		return v.CollectionIntervalInSeconds
+	}).(pulumi.IntOutput)
+}
+
+// List of metrics used for availability calculation for the resource.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigOutput) Metrics() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfig) []string {
+		return v.Metrics
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArrayOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArrayOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArrayOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfig {
+		return vs[0].([]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfig)[vs[1].(int)]
+	}).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigOutput)
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfig struct {
+	// Resource name generation overriding configurations for collectd resource types.
+	CollectdResourceNameConfigs []GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfig `pulumi:"collectdResourceNameConfigs"`
+	// List of collector/plugin names.
+	CollectorTypes []string `pulumi:"collectorTypes"`
+	// List of handler configuration properties
+	HandlerProperties []GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerProperty `pulumi:"handlerProperties"`
+	// List of AgentExtensionHandlerMetricMappingDetails.
+	MetricMappings []GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMapping `pulumi:"metricMappings"`
+	// Metric name generation overriding configurations.
+	MetricNameConfigs []GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfig `pulumi:"metricNameConfigs"`
+	// Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+	MetricUploadIntervalInSeconds int `pulumi:"metricUploadIntervalInSeconds"`
+	// Resource name generation overriding configurations for telegraf resource types.
+	TelegrafResourceNameConfigs []GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfig `pulumi:"telegrafResourceNameConfigs"`
+	// Resource group string; if not specified, the resource group string will be generated by the handler.
+	TelemetryResourceGroup string `pulumi:"telemetryResourceGroup"`
+}
+
+// GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigInput is an input type that accepts GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArgs and GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigInput` via:
+//
+//	GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArgs{...}
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigOutput
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigOutputWithContext(context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigOutput
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArgs struct {
+	// Resource name generation overriding configurations for collectd resource types.
+	CollectdResourceNameConfigs GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArrayInput `pulumi:"collectdResourceNameConfigs"`
+	// List of collector/plugin names.
+	CollectorTypes pulumi.StringArrayInput `pulumi:"collectorTypes"`
+	// List of handler configuration properties
+	HandlerProperties GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArrayInput `pulumi:"handlerProperties"`
+	// List of AgentExtensionHandlerMetricMappingDetails.
+	MetricMappings GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArrayInput `pulumi:"metricMappings"`
+	// Metric name generation overriding configurations.
+	MetricNameConfigs GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArrayInput `pulumi:"metricNameConfigs"`
+	// Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+	MetricUploadIntervalInSeconds pulumi.IntInput `pulumi:"metricUploadIntervalInSeconds"`
+	// Resource name generation overriding configurations for telegraf resource types.
+	TelegrafResourceNameConfigs GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArrayInput `pulumi:"telegrafResourceNameConfigs"`
+	// Resource group string; if not specified, the resource group string will be generated by the handler.
+	TelemetryResourceGroup pulumi.StringInput `pulumi:"telemetryResourceGroup"`
+}
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArgs) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigOutput {
+	return i.ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArgs) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigOutput)
+}
+
+// GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArrayInput is an input type that accepts GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArray and GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArrayInput` via:
+//
+//	GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArray{ GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArgs{...} }
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArrayOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArrayOutput
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArrayOutputWithContext(context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArrayOutput
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArray []GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigInput
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArray) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArrayOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArrayOutput {
+	return i.ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArray) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArrayOutput)
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigOutput {
+	return o
+}
+
+// Resource name generation overriding configurations for collectd resource types.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigOutput) CollectdResourceNameConfigs() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfig) []GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfig {
+		return v.CollectdResourceNameConfigs
+	}).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArrayOutput)
+}
+
+// List of collector/plugin names.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigOutput) CollectorTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfig) []string {
+		return v.CollectorTypes
+	}).(pulumi.StringArrayOutput)
+}
+
+// List of handler configuration properties
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigOutput) HandlerProperties() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfig) []GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerProperty {
+		return v.HandlerProperties
+	}).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArrayOutput)
+}
+
+// List of AgentExtensionHandlerMetricMappingDetails.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigOutput) MetricMappings() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfig) []GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMapping {
+		return v.MetricMappings
+	}).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArrayOutput)
+}
+
+// Metric name generation overriding configurations.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigOutput) MetricNameConfigs() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfig) []GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfig {
+		return v.MetricNameConfigs
+	}).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArrayOutput)
+}
+
+// Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigOutput) MetricUploadIntervalInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfig) int {
+		return v.MetricUploadIntervalInSeconds
+	}).(pulumi.IntOutput)
+}
+
+// Resource name generation overriding configurations for telegraf resource types.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigOutput) TelegrafResourceNameConfigs() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfig) []GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfig {
+		return v.TelegrafResourceNameConfigs
+	}).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArrayOutput)
+}
+
+// Resource group string; if not specified, the resource group string will be generated by the handler.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigOutput) TelemetryResourceGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfig) string {
+		return v.TelemetryResourceGroup
+	}).(pulumi.StringOutput)
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArrayOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArrayOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArrayOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfig {
+		return vs[0].([]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfig)[vs[1].(int)]
+	}).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigOutput)
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfig struct {
+	// List of property names to be excluded.
+	ExcludeProperties []string `pulumi:"excludeProperties"`
+	// List of property names to be included.
+	IncludeProperties []string `pulumi:"includeProperties"`
+	// String to be suffixed to the resource name.
+	Suffix string `pulumi:"suffix"`
+}
+
+// GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigInput is an input type that accepts GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArgs and GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigInput` via:
+//
+//	GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArgs{...}
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigOutput
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigOutputWithContext(context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigOutput
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArgs struct {
+	// List of property names to be excluded.
+	ExcludeProperties pulumi.StringArrayInput `pulumi:"excludeProperties"`
+	// List of property names to be included.
+	IncludeProperties pulumi.StringArrayInput `pulumi:"includeProperties"`
+	// String to be suffixed to the resource name.
+	Suffix pulumi.StringInput `pulumi:"suffix"`
+}
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArgs) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigOutput {
+	return i.ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArgs) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigOutput)
+}
+
+// GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArrayInput is an input type that accepts GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArray and GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArrayInput` via:
+//
+//	GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArray{ GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArgs{...} }
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArrayOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArrayOutput
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArrayOutputWithContext(context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArrayOutput
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArray []GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigInput
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArray) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArrayOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArrayOutput {
+	return i.ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArray) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArrayOutput)
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigOutput {
+	return o
+}
+
+// List of property names to be excluded.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigOutput) ExcludeProperties() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfig) []string {
+		return v.ExcludeProperties
+	}).(pulumi.StringArrayOutput)
+}
+
+// List of property names to be included.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigOutput) IncludeProperties() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfig) []string {
+		return v.IncludeProperties
+	}).(pulumi.StringArrayOutput)
+}
+
+// String to be suffixed to the resource name.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigOutput) Suffix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfig) string {
+		return v.Suffix
+	}).(pulumi.StringOutput)
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArrayOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArrayOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArrayOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfig {
+		return vs[0].([]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfig)[vs[1].(int)]
+	}).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigOutput)
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerProperty struct {
+	// A filter to return monitored resource types that match exactly with the resource type name given.
+	Name string `pulumi:"name"`
+	// Property value.
+	Value string `pulumi:"value"`
+}
+
+// GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyInput is an input type that accepts GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArgs and GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyInput` via:
+//
+//	GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArgs{...}
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyOutput
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyOutputWithContext(context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyOutput
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArgs struct {
+	// A filter to return monitored resource types that match exactly with the resource type name given.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Property value.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerProperty)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArgs) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyOutput {
+	return i.ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArgs) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyOutput)
+}
+
+// GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArrayInput is an input type that accepts GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArray and GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArrayInput` via:
+//
+//	GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArray{ GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArgs{...} }
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArrayOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArrayOutput
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArrayOutputWithContext(context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArrayOutput
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArray []GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyInput
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerProperty)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArray) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArrayOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArrayOutput {
+	return i.ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArray) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArrayOutput)
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerProperty)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyOutput {
+	return o
+}
+
+// A filter to return monitored resource types that match exactly with the resource type name given.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerProperty) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// Property value.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerProperty) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerProperty)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArrayOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArrayOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArrayOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerProperty {
+		return vs[0].([]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerProperty)[vs[1].(int)]
+	}).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyOutput)
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMapping struct {
+	// Metric name as defined by the collector.
+	CollectorMetricName string `pulumi:"collectorMetricName"`
+	// Is ignoring this metric.
+	IsSkipUpload bool `pulumi:"isSkipUpload"`
+	// Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+	MetricUploadIntervalInSeconds int `pulumi:"metricUploadIntervalInSeconds"`
+	// Metric name to be upload to telemetry.
+	TelemetryMetricName string `pulumi:"telemetryMetricName"`
+}
+
+// GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingInput is an input type that accepts GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArgs and GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingInput` via:
+//
+//	GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArgs{...}
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingOutput
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingOutputWithContext(context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingOutput
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArgs struct {
+	// Metric name as defined by the collector.
+	CollectorMetricName pulumi.StringInput `pulumi:"collectorMetricName"`
+	// Is ignoring this metric.
+	IsSkipUpload pulumi.BoolInput `pulumi:"isSkipUpload"`
+	// Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+	MetricUploadIntervalInSeconds pulumi.IntInput `pulumi:"metricUploadIntervalInSeconds"`
+	// Metric name to be upload to telemetry.
+	TelemetryMetricName pulumi.StringInput `pulumi:"telemetryMetricName"`
+}
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMapping)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArgs) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingOutput {
+	return i.ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArgs) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingOutput)
+}
+
+// GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArrayInput is an input type that accepts GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArray and GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArrayInput` via:
+//
+//	GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArray{ GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArgs{...} }
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArrayOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArrayOutput
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArrayOutputWithContext(context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArrayOutput
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArray []GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingInput
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMapping)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArray) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArrayOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArrayOutput {
+	return i.ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArray) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArrayOutput)
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMapping)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingOutput {
+	return o
+}
+
+// Metric name as defined by the collector.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingOutput) CollectorMetricName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMapping) string {
+		return v.CollectorMetricName
+	}).(pulumi.StringOutput)
+}
+
+// Is ignoring this metric.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingOutput) IsSkipUpload() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMapping) bool {
+		return v.IsSkipUpload
+	}).(pulumi.BoolOutput)
+}
+
+// Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingOutput) MetricUploadIntervalInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMapping) int {
+		return v.MetricUploadIntervalInSeconds
+	}).(pulumi.IntOutput)
+}
+
+// Metric name to be upload to telemetry.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingOutput) TelemetryMetricName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMapping) string {
+		return v.TelemetryMetricName
+	}).(pulumi.StringOutput)
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMapping)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArrayOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArrayOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArrayOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMapping {
+		return vs[0].([]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMapping)[vs[1].(int)]
+	}).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingOutput)
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfig struct {
+	// String pattern to be removed from the prefix of the metric name.
+	ExcludePatternOnPrefix string `pulumi:"excludePatternOnPrefix"`
+	// is prefixing the metric with collector type.
+	IsPrefixWithCollectorType bool `pulumi:"isPrefixWithCollectorType"`
+}
+
+// GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigInput is an input type that accepts GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArgs and GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigInput` via:
+//
+//	GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArgs{...}
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigOutput
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigOutputWithContext(context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigOutput
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArgs struct {
+	// String pattern to be removed from the prefix of the metric name.
+	ExcludePatternOnPrefix pulumi.StringInput `pulumi:"excludePatternOnPrefix"`
+	// is prefixing the metric with collector type.
+	IsPrefixWithCollectorType pulumi.BoolInput `pulumi:"isPrefixWithCollectorType"`
+}
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArgs) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigOutput {
+	return i.ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArgs) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigOutput)
+}
+
+// GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArrayInput is an input type that accepts GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArray and GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArrayInput` via:
+//
+//	GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArray{ GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArgs{...} }
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArrayOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArrayOutput
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArrayOutputWithContext(context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArrayOutput
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArray []GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigInput
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArray) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArrayOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArrayOutput {
+	return i.ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArray) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArrayOutput)
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigOutput {
+	return o
+}
+
+// String pattern to be removed from the prefix of the metric name.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigOutput) ExcludePatternOnPrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfig) string {
+		return v.ExcludePatternOnPrefix
+	}).(pulumi.StringOutput)
+}
+
+// is prefixing the metric with collector type.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigOutput) IsPrefixWithCollectorType() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfig) bool {
+		return v.IsPrefixWithCollectorType
+	}).(pulumi.BoolOutput)
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArrayOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArrayOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArrayOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfig {
+		return vs[0].([]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfig)[vs[1].(int)]
+	}).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigOutput)
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfig struct {
+	// List of tag names to be excluded.
+	ExcludeTags []string `pulumi:"excludeTags"`
+	// List of tag names to be included.
+	IncludeTags []string `pulumi:"includeTags"`
+	// Flag to indicate if only tags will be used for resource name generation.
+	IsUseTagsOnly bool `pulumi:"isUseTagsOnly"`
+}
+
+// GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigInput is an input type that accepts GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArgs and GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigInput` via:
+//
+//	GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArgs{...}
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigOutput
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigOutputWithContext(context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigOutput
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArgs struct {
+	// List of tag names to be excluded.
+	ExcludeTags pulumi.StringArrayInput `pulumi:"excludeTags"`
+	// List of tag names to be included.
+	IncludeTags pulumi.StringArrayInput `pulumi:"includeTags"`
+	// Flag to indicate if only tags will be used for resource name generation.
+	IsUseTagsOnly pulumi.BoolInput `pulumi:"isUseTagsOnly"`
+}
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArgs) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigOutput {
+	return i.ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArgs) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigOutput)
+}
+
+// GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArrayInput is an input type that accepts GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArray and GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArrayInput` via:
+//
+//	GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArray{ GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArgs{...} }
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArrayOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArrayOutput
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArrayOutputWithContext(context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArrayOutput
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArray []GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigInput
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfig)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArray) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArrayOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArrayOutput {
+	return i.ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArray) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArrayOutput)
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigOutput {
+	return o
+}
+
+// List of tag names to be excluded.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigOutput) ExcludeTags() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfig) []string {
+		return v.ExcludeTags
+	}).(pulumi.StringArrayOutput)
+}
+
+// List of tag names to be included.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigOutput) IncludeTags() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfig) []string {
+		return v.IncludeTags
+	}).(pulumi.StringArrayOutput)
+}
+
+// Flag to indicate if only tags will be used for resource name generation.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigOutput) IsUseTagsOnly() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfig) bool {
+		return v.IsUseTagsOnly
+	}).(pulumi.BoolOutput)
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfig)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArrayOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArrayOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArrayOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfig {
+		return vs[0].([]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfig)[vs[1].(int)]
+	}).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigOutput)
 }
 
 type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata struct {
@@ -21913,6 +28419,38 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourcePropertyArrayInput)(nil)).Elem(), MonitoredResourcePropertyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTaskTaskDetailsInput)(nil)).Elem(), MonitoredResourceTaskTaskDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTaskTaskDetailsPtrInput)(nil)).Elem(), MonitoredResourceTaskTaskDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTaskTaskDetailsReceiverPropertiesInput)(nil)).Elem(), MonitoredResourceTaskTaskDetailsReceiverPropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTaskTaskDetailsReceiverPropertiesPtrInput)(nil)).Elem(), MonitoredResourceTaskTaskDetailsReceiverPropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTaskTaskDetailsResourceTypesConfigurationInput)(nil)).Elem(), MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArrayInput)(nil)).Elem(), MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigInput)(nil)).Elem(), MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrInput)(nil)).Elem(), MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigInput)(nil)).Elem(), MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrInput)(nil)).Elem(), MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigInput)(nil)).Elem(), MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrInput)(nil)).Elem(), MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyInput)(nil)).Elem(), MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArrayInput)(nil)).Elem(), MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingInput)(nil)).Elem(), MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArrayInput)(nil)).Elem(), MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigInput)(nil)).Elem(), MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrInput)(nil)).Elem(), MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigInput)(nil)).Elem(), MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrInput)(nil)).Elem(), MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTypeAvailabilityMetricsConfigInput)(nil)).Elem(), MonitoredResourceTypeAvailabilityMetricsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTypeAvailabilityMetricsConfigArrayInput)(nil)).Elem(), MonitoredResourceTypeAvailabilityMetricsConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTypeHandlerConfigInput)(nil)).Elem(), MonitoredResourceTypeHandlerConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTypeHandlerConfigArrayInput)(nil)).Elem(), MonitoredResourceTypeHandlerConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigInput)(nil)).Elem(), MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayInput)(nil)).Elem(), MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTypeHandlerConfigHandlerPropertyInput)(nil)).Elem(), MonitoredResourceTypeHandlerConfigHandlerPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTypeHandlerConfigHandlerPropertyArrayInput)(nil)).Elem(), MonitoredResourceTypeHandlerConfigHandlerPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTypeHandlerConfigMetricMappingInput)(nil)).Elem(), MonitoredResourceTypeHandlerConfigMetricMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTypeHandlerConfigMetricMappingArrayInput)(nil)).Elem(), MonitoredResourceTypeHandlerConfigMetricMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTypeHandlerConfigMetricNameConfigInput)(nil)).Elem(), MonitoredResourceTypeHandlerConfigMetricNameConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTypeHandlerConfigMetricNameConfigArrayInput)(nil)).Elem(), MonitoredResourceTypeHandlerConfigMetricNameConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigInput)(nil)).Elem(), MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayInput)(nil)).Elem(), MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTypeMetadataInput)(nil)).Elem(), MonitoredResourceTypeMetadataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTypeMetadataPtrInput)(nil)).Elem(), MonitoredResourceTypeMetadataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTypeMetadataUniquePropertySetInput)(nil)).Elem(), MonitoredResourceTypeMetadataUniquePropertySetArgs{})
@@ -22079,6 +28617,24 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourcePropertyArrayInput)(nil)).Elem(), GetMonitoredResourcePropertyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailInput)(nil)).Elem(), GetMonitoredResourceTaskTaskDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailArrayInput)(nil)).Elem(), GetMonitoredResourceTaskTaskDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailReceiverPropertyInput)(nil)).Elem(), GetMonitoredResourceTaskTaskDetailReceiverPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailReceiverPropertyArrayInput)(nil)).Elem(), GetMonitoredResourceTaskTaskDetailReceiverPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationInput)(nil)).Elem(), GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArrayInput)(nil)).Elem(), GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigInput)(nil)).Elem(), GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayInput)(nil)).Elem(), GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigInput)(nil)).Elem(), GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArrayInput)(nil)).Elem(), GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigInput)(nil)).Elem(), GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayInput)(nil)).Elem(), GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyInput)(nil)).Elem(), GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayInput)(nil)).Elem(), GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingInput)(nil)).Elem(), GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayInput)(nil)).Elem(), GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigInput)(nil)).Elem(), GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayInput)(nil)).Elem(), GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigInput)(nil)).Elem(), GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayInput)(nil)).Elem(), GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTasksFilterInput)(nil)).Elem(), GetMonitoredResourceTasksFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTasksFilterArrayInput)(nil)).Elem(), GetMonitoredResourceTasksFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionInput)(nil)).Elem(), GetMonitoredResourceTasksMonitoredResourceTasksCollectionArgs{})
@@ -22087,6 +28643,38 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayInput)(nil)).Elem(), GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailInput)(nil)).Elem(), GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayInput)(nil)).Elem(), GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyInput)(nil)).Elem(), GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArrayInput)(nil)).Elem(), GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationInput)(nil)).Elem(), GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArrayInput)(nil)).Elem(), GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigInput)(nil)).Elem(), GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayInput)(nil)).Elem(), GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigInput)(nil)).Elem(), GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArrayInput)(nil)).Elem(), GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigInput)(nil)).Elem(), GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayInput)(nil)).Elem(), GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyInput)(nil)).Elem(), GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayInput)(nil)).Elem(), GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingInput)(nil)).Elem(), GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayInput)(nil)).Elem(), GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigInput)(nil)).Elem(), GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayInput)(nil)).Elem(), GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigInput)(nil)).Elem(), GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayInput)(nil)).Elem(), GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypeAvailabilityMetricsConfigInput)(nil)).Elem(), GetMonitoredResourceTypeAvailabilityMetricsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypeAvailabilityMetricsConfigArrayInput)(nil)).Elem(), GetMonitoredResourceTypeAvailabilityMetricsConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypeHandlerConfigInput)(nil)).Elem(), GetMonitoredResourceTypeHandlerConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypeHandlerConfigArrayInput)(nil)).Elem(), GetMonitoredResourceTypeHandlerConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigInput)(nil)).Elem(), GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayInput)(nil)).Elem(), GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypeHandlerConfigHandlerPropertyInput)(nil)).Elem(), GetMonitoredResourceTypeHandlerConfigHandlerPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypeHandlerConfigHandlerPropertyArrayInput)(nil)).Elem(), GetMonitoredResourceTypeHandlerConfigHandlerPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypeHandlerConfigMetricMappingInput)(nil)).Elem(), GetMonitoredResourceTypeHandlerConfigMetricMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypeHandlerConfigMetricMappingArrayInput)(nil)).Elem(), GetMonitoredResourceTypeHandlerConfigMetricMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypeHandlerConfigMetricNameConfigInput)(nil)).Elem(), GetMonitoredResourceTypeHandlerConfigMetricNameConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypeHandlerConfigMetricNameConfigArrayInput)(nil)).Elem(), GetMonitoredResourceTypeHandlerConfigMetricNameConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigInput)(nil)).Elem(), GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayInput)(nil)).Elem(), GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypeMetadataInput)(nil)).Elem(), GetMonitoredResourceTypeMetadataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypeMetadataArrayInput)(nil)).Elem(), GetMonitoredResourceTypeMetadataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypeMetadataUniquePropertySetInput)(nil)).Elem(), GetMonitoredResourceTypeMetadataUniquePropertySetArgs{})
@@ -22097,6 +28685,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayInput)(nil)).Elem(), GetMonitoredResourceTypesMonitoredResourceTypesCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemInput)(nil)).Elem(), GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayInput)(nil)).Elem(), GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigInput)(nil)).Elem(), GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArrayInput)(nil)).Elem(), GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigInput)(nil)).Elem(), GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArrayInput)(nil)).Elem(), GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigInput)(nil)).Elem(), GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArrayInput)(nil)).Elem(), GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyInput)(nil)).Elem(), GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArrayInput)(nil)).Elem(), GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingInput)(nil)).Elem(), GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArrayInput)(nil)).Elem(), GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigInput)(nil)).Elem(), GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArrayInput)(nil)).Elem(), GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigInput)(nil)).Elem(), GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArrayInput)(nil)).Elem(), GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataInput)(nil)).Elem(), GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayInput)(nil)).Elem(), GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetInput)(nil)).Elem(), GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArgs{})
@@ -22219,6 +28821,38 @@ func init() {
 	pulumi.RegisterOutputType(MonitoredResourcePropertyArrayOutput{})
 	pulumi.RegisterOutputType(MonitoredResourceTaskTaskDetailsOutput{})
 	pulumi.RegisterOutputType(MonitoredResourceTaskTaskDetailsPtrOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceTaskTaskDetailsReceiverPropertiesOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceTaskTaskDetailsReceiverPropertiesPtrOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigPtrOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigPtrOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigPtrOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigPtrOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigPtrOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceTypeAvailabilityMetricsConfigOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceTypeAvailabilityMetricsConfigArrayOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceTypeHandlerConfigOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceTypeHandlerConfigArrayOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceTypeHandlerConfigHandlerPropertyOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceTypeHandlerConfigMetricMappingOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceTypeHandlerConfigMetricMappingArrayOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceTypeHandlerConfigMetricNameConfigOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutput{})
 	pulumi.RegisterOutputType(MonitoredResourceTypeMetadataOutput{})
 	pulumi.RegisterOutputType(MonitoredResourceTypeMetadataPtrOutput{})
 	pulumi.RegisterOutputType(MonitoredResourceTypeMetadataUniquePropertySetOutput{})
@@ -22385,6 +29019,24 @@ func init() {
 	pulumi.RegisterOutputType(GetMonitoredResourcePropertyArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitoredResourceTaskTaskDetailOutput{})
 	pulumi.RegisterOutputType(GetMonitoredResourceTaskTaskDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTaskTaskDetailReceiverPropertyOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTaskTaskDetailReceiverPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTaskTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitoredResourceTasksFilterOutput{})
 	pulumi.RegisterOutputType(GetMonitoredResourceTasksFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitoredResourceTasksMonitoredResourceTasksCollectionOutput{})
@@ -22393,6 +29045,38 @@ func init() {
 	pulumi.RegisterOutputType(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput{})
 	pulumi.RegisterOutputType(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationAvailabilityMetricsConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigHandlerPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigMetricNameConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypeAvailabilityMetricsConfigOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypeAvailabilityMetricsConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypeHandlerConfigOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypeHandlerConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypeHandlerConfigHandlerPropertyOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypeHandlerConfigHandlerPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypeHandlerConfigMetricMappingOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypeHandlerConfigMetricMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypeHandlerConfigMetricNameConfigOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypeHandlerConfigMetricNameConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitoredResourceTypeMetadataOutput{})
 	pulumi.RegisterOutputType(GetMonitoredResourceTypeMetadataArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitoredResourceTypeMetadataUniquePropertySetOutput{})
@@ -22403,6 +29087,20 @@ func init() {
 	pulumi.RegisterOutputType(GetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemAvailabilityMetricsConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigCollectdResourceNameConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigHandlerPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigMetricNameConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemHandlerConfigTelegrafResourceNameConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput{})
 	pulumi.RegisterOutputType(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetOutput{})

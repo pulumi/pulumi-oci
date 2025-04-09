@@ -152,6 +152,8 @@ if typing.TYPE_CHECKING:
     loganalytics = __loganalytics
     import pulumi_oci.logging as __logging
     logging = __logging
+    import pulumi_oci.lustre as __lustre
+    lustre = __lustre
     import pulumi_oci.managementagent as __managementagent
     managementagent = __managementagent
     import pulumi_oci.managementdashboard as __managementdashboard
@@ -176,6 +178,8 @@ if typing.TYPE_CHECKING:
     objectstorage = __objectstorage
     import pulumi_oci.oce as __oce
     oce = __oce
+    import pulumi_oci.oci as __oci
+    oci = __oci
     import pulumi_oci.ocvp as __ocvp
     ocvp = __ocvp
     import pulumi_oci.oda as __oda
@@ -330,6 +334,7 @@ else:
     loadbalancer = _utilities.lazy_import('pulumi_oci.loadbalancer')
     loganalytics = _utilities.lazy_import('pulumi_oci.loganalytics')
     logging = _utilities.lazy_import('pulumi_oci.logging')
+    lustre = _utilities.lazy_import('pulumi_oci.lustre')
     managementagent = _utilities.lazy_import('pulumi_oci.managementagent')
     managementdashboard = _utilities.lazy_import('pulumi_oci.managementdashboard')
     marketplace = _utilities.lazy_import('pulumi_oci.marketplace')
@@ -342,6 +347,7 @@ else:
     nosql = _utilities.lazy_import('pulumi_oci.nosql')
     objectstorage = _utilities.lazy_import('pulumi_oci.objectstorage')
     oce = _utilities.lazy_import('pulumi_oci.oce')
+    oci = _utilities.lazy_import('pulumi_oci.oci')
     ocvp = _utilities.lazy_import('pulumi_oci.ocvp')
     oda = _utilities.lazy_import('pulumi_oci.oda')
     onesubsription = _utilities.lazy_import('pulumi_oci.onesubsription')
@@ -2457,6 +2463,30 @@ _utilities.register(
   "fqn": "pulumi_oci.datascience",
   "classes": {
    "oci:DataScience/jobRun:JobRun": "JobRun"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataScience/mlApplication",
+  "fqn": "pulumi_oci.datascience",
+  "classes": {
+   "oci:DataScience/mlApplication:MlApplication": "MlApplication"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataScience/mlApplicationImplementation",
+  "fqn": "pulumi_oci.datascience",
+  "classes": {
+   "oci:DataScience/mlApplicationImplementation:MlApplicationImplementation": "MlApplicationImplementation"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataScience/mlApplicationInstance",
+  "fqn": "pulumi_oci.datascience",
+  "classes": {
+   "oci:DataScience/mlApplicationInstance:MlApplicationInstance": "MlApplicationInstance"
   }
  },
  {
@@ -5157,6 +5187,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Lustre/fileStorageLustreFileSystem",
+  "fqn": "pulumi_oci.lustre",
+  "classes": {
+   "oci:Lustre/fileStorageLustreFileSystem:FileStorageLustreFileSystem": "FileStorageLustreFileSystem"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "ManagementAgent/managementAgent",
   "fqn": "pulumi_oci.managementagent",
   "classes": {
@@ -6833,6 +6871,14 @@ _utilities.register(
   "fqn": "pulumi_oci.zpr",
   "classes": {
    "oci:Zpr/zprPolicy:ZprPolicy": "ZprPolicy"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/lustreFileStorageLustreFileSystem",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/lustreFileStorageLustreFileSystem:LustreFileStorageLustreFileSystem": "LustreFileStorageLustreFileSystem"
   }
  }
 ]

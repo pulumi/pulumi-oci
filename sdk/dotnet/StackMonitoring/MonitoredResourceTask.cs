@@ -29,21 +29,81 @@ namespace Pulumi.Oci.StackMonitoring
     ///         CompartmentId = compartmentId,
     ///         TaskDetails = new Oci.StackMonitoring.Inputs.MonitoredResourceTaskTaskDetailsArgs
     ///         {
-    ///             Namespace = monitoredResourceTaskTaskDetailsNamespace,
-    ///             Source = monitoredResourceTaskTaskDetailsSource,
     ///             Type = monitoredResourceTaskTaskDetailsType,
+    ///             AgentId = testAgent.Id,
     ///             AvailabilityProxyMetricCollectionInterval = monitoredResourceTaskTaskDetailsAvailabilityProxyMetricCollectionInterval,
     ///             AvailabilityProxyMetrics = monitoredResourceTaskTaskDetailsAvailabilityProxyMetrics,
     ///             ConsolePathPrefix = monitoredResourceTaskTaskDetailsConsolePathPrefix,
     ///             ExternalIdMapping = monitoredResourceTaskTaskDetailsExternalIdMapping,
+    ///             HandlerType = monitoredResourceTaskTaskDetailsHandlerType,
+    ///             IsEnable = monitoredResourceTaskTaskDetailsIsEnable,
     ///             LifecycleStatusMappingsForUpStatuses = monitoredResourceTaskTaskDetailsLifecycleStatusMappingsForUpStatus,
+    ///             Namespace = monitoredResourceTaskTaskDetailsNamespace,
+    ///             ReceiverProperties = new Oci.StackMonitoring.Inputs.MonitoredResourceTaskTaskDetailsReceiverPropertiesArgs
+    ///             {
+    ///                 ListenerPort = monitoredResourceTaskTaskDetailsReceiverPropertiesListenerPort,
+    ///             },
     ///             ResourceGroup = monitoredResourceTaskTaskDetailsResourceGroup,
     ///             ResourceNameFilter = monitoredResourceTaskTaskDetailsResourceNameFilter,
     ///             ResourceNameMapping = monitoredResourceTaskTaskDetailsResourceNameMapping,
     ///             ResourceTypeFilter = monitoredResourceTaskTaskDetailsResourceTypeFilter,
     ///             ResourceTypeMapping = monitoredResourceTaskTaskDetailsResourceTypeMapping,
+    ///             ResourceTypesConfigurations = new[]
+    ///             {
+    ///                 new Oci.StackMonitoring.Inputs.MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArgs
+    ///                 {
+    ///                     AvailabilityMetricsConfig = new Oci.StackMonitoring.Inputs.MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigArgs
+    ///                     {
+    ///                         CollectionIntervalInSeconds = monitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigCollectionIntervalInSeconds,
+    ///                         Metrics = monitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigMetrics,
+    ///                     },
+    ///                     HandlerConfig = new Oci.StackMonitoring.Inputs.MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigArgs
+    ///                     {
+    ///                         CollectdResourceNameConfig = new Oci.StackMonitoring.Inputs.MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs
+    ///                         {
+    ///                             ExcludeProperties = monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigExcludeProperties,
+    ///                             IncludeProperties = monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigIncludeProperties,
+    ///                             Suffix = monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigSuffix,
+    ///                         },
+    ///                         CollectorTypes = monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectorTypes,
+    ///                         HandlerProperties = new[]
+    ///                         {
+    ///                             new Oci.StackMonitoring.Inputs.MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArgs
+    ///                             {
+    ///                                 Name = monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertiesName,
+    ///                                 Value = monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertiesValue,
+    ///                             },
+    ///                         },
+    ///                         MetricMappings = new[]
+    ///                         {
+    ///                             new Oci.StackMonitoring.Inputs.MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArgs
+    ///                             {
+    ///                                 CollectorMetricName = testMetric.Name,
+    ///                                 IsSkipUpload = monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingsIsSkipUpload,
+    ///                                 MetricUploadIntervalInSeconds = monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingsMetricUploadIntervalInSeconds,
+    ///                                 TelemetryMetricName = testMetric.Name,
+    ///                             },
+    ///                         },
+    ///                         MetricNameConfig = new Oci.StackMonitoring.Inputs.MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigArgs
+    ///                         {
+    ///                             ExcludePatternOnPrefix = monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigExcludePatternOnPrefix,
+    ///                             IsPrefixWithCollectorType = monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigIsPrefixWithCollectorType,
+    ///                         },
+    ///                         MetricUploadIntervalInSeconds = monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricUploadIntervalInSeconds,
+    ///                         TelegrafResourceNameConfig = new Oci.StackMonitoring.Inputs.MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs
+    ///                         {
+    ///                             ExcludeTags = monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigExcludeTags,
+    ///                             IncludeTags = monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigIncludeTags,
+    ///                             IsUseTagsOnly = monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigIsUseTagsOnly,
+    ///                         },
+    ///                         TelemetryResourceGroup = monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelemetryResourceGroup,
+    ///                     },
+    ///                     ResourceType = monitoredResourceTaskTaskDetailsResourceTypesConfigurationResourceType,
+    ///                 },
+    ///             },
     ///             ServiceBaseUrl = monitoredResourceTaskTaskDetailsServiceBaseUrl,
     ///             ShouldUseMetricsFlowForStatus = monitoredResourceTaskTaskDetailsShouldUseMetricsFlowForStatus,
+    ///             Source = monitoredResourceTaskTaskDetailsSource,
     ///         },
     ///         DefinedTags = 
     ///         {
@@ -129,6 +189,12 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
+
+        /// <summary>
+        /// Type of the task.
+        /// </summary>
+        [Output("type")]
+        public Output<string> Type { get; private set; } = null!;
 
         /// <summary>
         /// Identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for work requests submitted for this task.
@@ -309,6 +375,12 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
+
+        /// <summary>
+        /// Type of the task.
+        /// </summary>
+        [Input("type")]
+        public Input<string>? Type { get; set; }
 
         [Input("workRequestIds")]
         private InputList<string>? _workRequestIds;

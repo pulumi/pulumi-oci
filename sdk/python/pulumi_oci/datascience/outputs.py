@@ -30,6 +30,18 @@ __all__ = [
     'JobRunJobLogConfigurationOverrideDetails',
     'JobRunJobStorageMountConfigurationDetailsList',
     'JobRunLogDetail',
+    'MlApplicationImplementationApplicationComponent',
+    'MlApplicationImplementationConfigurationSchema',
+    'MlApplicationImplementationLogging',
+    'MlApplicationImplementationLoggingAggregatedInstanceViewLog',
+    'MlApplicationImplementationLoggingImplementationLog',
+    'MlApplicationImplementationLoggingTriggerLog',
+    'MlApplicationImplementationMlApplicationPackageArgument',
+    'MlApplicationImplementationMlApplicationPackageArgumentArgument',
+    'MlApplicationInstanceAuthConfiguration',
+    'MlApplicationInstanceConfiguration',
+    'MlApplicationInstancePredictionEndpointDetail',
+    'MlApplicationInstancePredictionEndpointDetailPredictionUri',
     'ModelBackupOperationDetail',
     'ModelBackupSetting',
     'ModelCustomMetadataList',
@@ -139,6 +151,39 @@ __all__ = [
     'GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult',
     'GetJobsJobJobLogConfigurationDetailResult',
     'GetJobsJobJobStorageMountConfigurationDetailsListResult',
+    'GetMlApplicationImplementationApplicationComponentResult',
+    'GetMlApplicationImplementationConfigurationSchemaResult',
+    'GetMlApplicationImplementationLoggingResult',
+    'GetMlApplicationImplementationLoggingAggregatedInstanceViewLogResult',
+    'GetMlApplicationImplementationLoggingImplementationLogResult',
+    'GetMlApplicationImplementationLoggingTriggerLogResult',
+    'GetMlApplicationImplementationMlApplicationPackageArgumentResult',
+    'GetMlApplicationImplementationMlApplicationPackageArgumentArgumentResult',
+    'GetMlApplicationImplementationsFilterResult',
+    'GetMlApplicationImplementationsMlApplicationImplementationCollectionResult',
+    'GetMlApplicationImplementationsMlApplicationImplementationCollectionItemResult',
+    'GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentResult',
+    'GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaResult',
+    'GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingResult',
+    'GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogResult',
+    'GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogResult',
+    'GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogResult',
+    'GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentResult',
+    'GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentResult',
+    'GetMlApplicationInstanceAuthConfigurationResult',
+    'GetMlApplicationInstanceConfigurationResult',
+    'GetMlApplicationInstancePredictionEndpointDetailResult',
+    'GetMlApplicationInstancePredictionEndpointDetailPredictionUriResult',
+    'GetMlApplicationInstancesFilterResult',
+    'GetMlApplicationInstancesMlApplicationInstanceCollectionResult',
+    'GetMlApplicationInstancesMlApplicationInstanceCollectionItemResult',
+    'GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationResult',
+    'GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationResult',
+    'GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailResult',
+    'GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriResult',
+    'GetMlApplicationsFilterResult',
+    'GetMlApplicationsMlApplicationCollectionResult',
+    'GetMlApplicationsMlApplicationCollectionItemResult',
     'GetModelBackupOperationDetailResult',
     'GetModelBackupSettingResult',
     'GetModelCustomMetadataListResult',
@@ -1388,6 +1433,830 @@ class JobRunLogDetail(dict):
         The log id of the log object the job run logs will be shipped to.
         """
         return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class MlApplicationImplementationApplicationComponent(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "applicationId":
+            suggest = "application_id"
+        elif key == "componentName":
+            suggest = "component_name"
+        elif key == "jobId":
+            suggest = "job_id"
+        elif key == "modelId":
+            suggest = "model_id"
+        elif key == "pipelineId":
+            suggest = "pipeline_id"
+        elif key == "resourceType":
+            suggest = "resource_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MlApplicationImplementationApplicationComponent. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MlApplicationImplementationApplicationComponent.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MlApplicationImplementationApplicationComponent.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 application_id: Optional[builtins.str] = None,
+                 component_name: Optional[builtins.str] = None,
+                 id: Optional[builtins.str] = None,
+                 job_id: Optional[builtins.str] = None,
+                 model_id: Optional[builtins.str] = None,
+                 name: Optional[builtins.str] = None,
+                 pipeline_id: Optional[builtins.str] = None,
+                 resource_type: Optional[builtins.str] = None,
+                 type: Optional[builtins.str] = None):
+        """
+        :param builtins.str application_id: OCID of Data Flow Application
+        :param builtins.str component_name: Name of application component
+        :param builtins.str id: The OCID of the MlApplicationImplementation. Unique identifier that is immutable after creation.
+        :param builtins.str job_id: OCID of Data Science Job
+        :param builtins.str model_id: OCID of Data Science Model
+        :param builtins.str name: ML Application Implementation name which is unique for given ML Application.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param builtins.str pipeline_id: OCID of Data Science Pipeline
+        :param builtins.str resource_type: Type of the resource
+        :param builtins.str type: type of the argument
+        """
+        if application_id is not None:
+            pulumi.set(__self__, "application_id", application_id)
+        if component_name is not None:
+            pulumi.set(__self__, "component_name", component_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if job_id is not None:
+            pulumi.set(__self__, "job_id", job_id)
+        if model_id is not None:
+            pulumi.set(__self__, "model_id", model_id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if pipeline_id is not None:
+            pulumi.set(__self__, "pipeline_id", pipeline_id)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="applicationId")
+    def application_id(self) -> Optional[builtins.str]:
+        """
+        OCID of Data Flow Application
+        """
+        return pulumi.get(self, "application_id")
+
+    @property
+    @pulumi.getter(name="componentName")
+    def component_name(self) -> Optional[builtins.str]:
+        """
+        Name of application component
+        """
+        return pulumi.get(self, "component_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[builtins.str]:
+        """
+        The OCID of the MlApplicationImplementation. Unique identifier that is immutable after creation.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="jobId")
+    def job_id(self) -> Optional[builtins.str]:
+        """
+        OCID of Data Science Job
+        """
+        return pulumi.get(self, "job_id")
+
+    @property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> Optional[builtins.str]:
+        """
+        OCID of Data Science Model
+        """
+        return pulumi.get(self, "model_id")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[builtins.str]:
+        """
+        ML Application Implementation name which is unique for given ML Application.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="pipelineId")
+    def pipeline_id(self) -> Optional[builtins.str]:
+        """
+        OCID of Data Science Pipeline
+        """
+        return pulumi.get(self, "pipeline_id")
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[builtins.str]:
+        """
+        Type of the resource
+        """
+        return pulumi.get(self, "resource_type")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        type of the argument
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class MlApplicationImplementationConfigurationSchema(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "defaultValue":
+            suggest = "default_value"
+        elif key == "isMandatory":
+            suggest = "is_mandatory"
+        elif key == "keyName":
+            suggest = "key_name"
+        elif key == "sampleValue":
+            suggest = "sample_value"
+        elif key == "validationRegexp":
+            suggest = "validation_regexp"
+        elif key == "valueType":
+            suggest = "value_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MlApplicationImplementationConfigurationSchema. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MlApplicationImplementationConfigurationSchema.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MlApplicationImplementationConfigurationSchema.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 default_value: Optional[builtins.str] = None,
+                 description: Optional[builtins.str] = None,
+                 is_mandatory: Optional[builtins.bool] = None,
+                 key_name: Optional[builtins.str] = None,
+                 sample_value: Optional[builtins.str] = None,
+                 validation_regexp: Optional[builtins.str] = None,
+                 value_type: Optional[builtins.str] = None):
+        """
+        :param builtins.str default_value: The default value for the optional configuration property (it must not be specified for mandatory configuration properties)
+        :param builtins.str description: short description of the argument
+        :param builtins.bool is_mandatory: argument is mandatory or not
+        :param builtins.str key_name: Name of key (parameter name)
+        :param builtins.str sample_value: Sample property value (it must match validationRegexp if it is specified)
+        :param builtins.str validation_regexp: A regular expression will be used for the validation of property value.
+        :param builtins.str value_type: Type of value
+        """
+        if default_value is not None:
+            pulumi.set(__self__, "default_value", default_value)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if is_mandatory is not None:
+            pulumi.set(__self__, "is_mandatory", is_mandatory)
+        if key_name is not None:
+            pulumi.set(__self__, "key_name", key_name)
+        if sample_value is not None:
+            pulumi.set(__self__, "sample_value", sample_value)
+        if validation_regexp is not None:
+            pulumi.set(__self__, "validation_regexp", validation_regexp)
+        if value_type is not None:
+            pulumi.set(__self__, "value_type", value_type)
+
+    @property
+    @pulumi.getter(name="defaultValue")
+    def default_value(self) -> Optional[builtins.str]:
+        """
+        The default value for the optional configuration property (it must not be specified for mandatory configuration properties)
+        """
+        return pulumi.get(self, "default_value")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[builtins.str]:
+        """
+        short description of the argument
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="isMandatory")
+    def is_mandatory(self) -> Optional[builtins.bool]:
+        """
+        argument is mandatory or not
+        """
+        return pulumi.get(self, "is_mandatory")
+
+    @property
+    @pulumi.getter(name="keyName")
+    def key_name(self) -> Optional[builtins.str]:
+        """
+        Name of key (parameter name)
+        """
+        return pulumi.get(self, "key_name")
+
+    @property
+    @pulumi.getter(name="sampleValue")
+    def sample_value(self) -> Optional[builtins.str]:
+        """
+        Sample property value (it must match validationRegexp if it is specified)
+        """
+        return pulumi.get(self, "sample_value")
+
+    @property
+    @pulumi.getter(name="validationRegexp")
+    def validation_regexp(self) -> Optional[builtins.str]:
+        """
+        A regular expression will be used for the validation of property value.
+        """
+        return pulumi.get(self, "validation_regexp")
+
+    @property
+    @pulumi.getter(name="valueType")
+    def value_type(self) -> Optional[builtins.str]:
+        """
+        Type of value
+        """
+        return pulumi.get(self, "value_type")
+
+
+@pulumi.output_type
+class MlApplicationImplementationLogging(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "aggregatedInstanceViewLog":
+            suggest = "aggregated_instance_view_log"
+        elif key == "implementationLog":
+            suggest = "implementation_log"
+        elif key == "triggerLog":
+            suggest = "trigger_log"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MlApplicationImplementationLogging. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MlApplicationImplementationLogging.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MlApplicationImplementationLogging.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 aggregated_instance_view_log: Optional['outputs.MlApplicationImplementationLoggingAggregatedInstanceViewLog'] = None,
+                 implementation_log: Optional['outputs.MlApplicationImplementationLoggingImplementationLog'] = None,
+                 trigger_log: Optional['outputs.MlApplicationImplementationLoggingTriggerLog'] = None):
+        """
+        :param 'MlApplicationImplementationLoggingAggregatedInstanceViewLogArgs' aggregated_instance_view_log: (Updatable) Log configuration details for particular areas of ML Application Implementation.
+        :param 'MlApplicationImplementationLoggingImplementationLogArgs' implementation_log: (Updatable) Log configuration details for particular areas of ML Application Implementation.
+        :param 'MlApplicationImplementationLoggingTriggerLogArgs' trigger_log: (Updatable) Log configuration details for particular areas of ML Application Implementation.
+        """
+        if aggregated_instance_view_log is not None:
+            pulumi.set(__self__, "aggregated_instance_view_log", aggregated_instance_view_log)
+        if implementation_log is not None:
+            pulumi.set(__self__, "implementation_log", implementation_log)
+        if trigger_log is not None:
+            pulumi.set(__self__, "trigger_log", trigger_log)
+
+    @property
+    @pulumi.getter(name="aggregatedInstanceViewLog")
+    def aggregated_instance_view_log(self) -> Optional['outputs.MlApplicationImplementationLoggingAggregatedInstanceViewLog']:
+        """
+        (Updatable) Log configuration details for particular areas of ML Application Implementation.
+        """
+        return pulumi.get(self, "aggregated_instance_view_log")
+
+    @property
+    @pulumi.getter(name="implementationLog")
+    def implementation_log(self) -> Optional['outputs.MlApplicationImplementationLoggingImplementationLog']:
+        """
+        (Updatable) Log configuration details for particular areas of ML Application Implementation.
+        """
+        return pulumi.get(self, "implementation_log")
+
+    @property
+    @pulumi.getter(name="triggerLog")
+    def trigger_log(self) -> Optional['outputs.MlApplicationImplementationLoggingTriggerLog']:
+        """
+        (Updatable) Log configuration details for particular areas of ML Application Implementation.
+        """
+        return pulumi.get(self, "trigger_log")
+
+
+@pulumi.output_type
+class MlApplicationImplementationLoggingAggregatedInstanceViewLog(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "enableLogging":
+            suggest = "enable_logging"
+        elif key == "logGroupId":
+            suggest = "log_group_id"
+        elif key == "logId":
+            suggest = "log_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MlApplicationImplementationLoggingAggregatedInstanceViewLog. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MlApplicationImplementationLoggingAggregatedInstanceViewLog.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MlApplicationImplementationLoggingAggregatedInstanceViewLog.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enable_logging: Optional[builtins.bool] = None,
+                 log_group_id: Optional[builtins.str] = None,
+                 log_id: Optional[builtins.str] = None):
+        """
+        :param builtins.bool enable_logging: (Updatable) If logging is enabled.
+        :param builtins.str log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        :param builtins.str log_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        if enable_logging is not None:
+            pulumi.set(__self__, "enable_logging", enable_logging)
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_id is not None:
+            pulumi.set(__self__, "log_id", log_id)
+
+    @property
+    @pulumi.getter(name="enableLogging")
+    def enable_logging(self) -> Optional[builtins.bool]:
+        """
+        (Updatable) If logging is enabled.
+        """
+        return pulumi.get(self, "enable_logging")
+
+    @property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class MlApplicationImplementationLoggingImplementationLog(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "enableLogging":
+            suggest = "enable_logging"
+        elif key == "logGroupId":
+            suggest = "log_group_id"
+        elif key == "logId":
+            suggest = "log_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MlApplicationImplementationLoggingImplementationLog. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MlApplicationImplementationLoggingImplementationLog.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MlApplicationImplementationLoggingImplementationLog.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enable_logging: Optional[builtins.bool] = None,
+                 log_group_id: Optional[builtins.str] = None,
+                 log_id: Optional[builtins.str] = None):
+        """
+        :param builtins.bool enable_logging: (Updatable) If logging is enabled.
+        :param builtins.str log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        :param builtins.str log_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        if enable_logging is not None:
+            pulumi.set(__self__, "enable_logging", enable_logging)
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_id is not None:
+            pulumi.set(__self__, "log_id", log_id)
+
+    @property
+    @pulumi.getter(name="enableLogging")
+    def enable_logging(self) -> Optional[builtins.bool]:
+        """
+        (Updatable) If logging is enabled.
+        """
+        return pulumi.get(self, "enable_logging")
+
+    @property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class MlApplicationImplementationLoggingTriggerLog(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "enableLogging":
+            suggest = "enable_logging"
+        elif key == "logGroupId":
+            suggest = "log_group_id"
+        elif key == "logId":
+            suggest = "log_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MlApplicationImplementationLoggingTriggerLog. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MlApplicationImplementationLoggingTriggerLog.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MlApplicationImplementationLoggingTriggerLog.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enable_logging: Optional[builtins.bool] = None,
+                 log_group_id: Optional[builtins.str] = None,
+                 log_id: Optional[builtins.str] = None):
+        """
+        :param builtins.bool enable_logging: (Updatable) If logging is enabled.
+        :param builtins.str log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        :param builtins.str log_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        if enable_logging is not None:
+            pulumi.set(__self__, "enable_logging", enable_logging)
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_id is not None:
+            pulumi.set(__self__, "log_id", log_id)
+
+    @property
+    @pulumi.getter(name="enableLogging")
+    def enable_logging(self) -> Optional[builtins.bool]:
+        """
+        (Updatable) If logging is enabled.
+        """
+        return pulumi.get(self, "enable_logging")
+
+    @property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class MlApplicationImplementationMlApplicationPackageArgument(dict):
+    def __init__(__self__, *,
+                 arguments: Optional[Sequence['outputs.MlApplicationImplementationMlApplicationPackageArgumentArgument']] = None):
+        """
+        :param Sequence['MlApplicationImplementationMlApplicationPackageArgumentArgumentArgs'] arguments: Array of the ML Application package arguments
+        """
+        if arguments is not None:
+            pulumi.set(__self__, "arguments", arguments)
+
+    @property
+    @pulumi.getter
+    def arguments(self) -> Optional[Sequence['outputs.MlApplicationImplementationMlApplicationPackageArgumentArgument']]:
+        """
+        Array of the ML Application package arguments
+        """
+        return pulumi.get(self, "arguments")
+
+
+@pulumi.output_type
+class MlApplicationImplementationMlApplicationPackageArgumentArgument(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isMandatory":
+            suggest = "is_mandatory"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MlApplicationImplementationMlApplicationPackageArgumentArgument. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MlApplicationImplementationMlApplicationPackageArgumentArgument.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MlApplicationImplementationMlApplicationPackageArgumentArgument.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 description: Optional[builtins.str] = None,
+                 is_mandatory: Optional[builtins.bool] = None,
+                 name: Optional[builtins.str] = None,
+                 type: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str description: short description of the argument
+        :param builtins.bool is_mandatory: argument is mandatory or not
+        :param builtins.str name: ML Application Implementation name which is unique for given ML Application.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param builtins.str type: type of the argument
+        :param builtins.str value: Argument value
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if is_mandatory is not None:
+            pulumi.set(__self__, "is_mandatory", is_mandatory)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[builtins.str]:
+        """
+        short description of the argument
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="isMandatory")
+    def is_mandatory(self) -> Optional[builtins.bool]:
+        """
+        argument is mandatory or not
+        """
+        return pulumi.get(self, "is_mandatory")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[builtins.str]:
+        """
+        ML Application Implementation name which is unique for given ML Application.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        type of the argument
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        Argument value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class MlApplicationInstanceAuthConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "applicationName":
+            suggest = "application_name"
+        elif key == "domainId":
+            suggest = "domain_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MlApplicationInstanceAuthConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MlApplicationInstanceAuthConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MlApplicationInstanceAuthConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: builtins.str,
+                 application_name: Optional[builtins.str] = None,
+                 domain_id: Optional[builtins.str] = None):
+        """
+        :param builtins.str type: Type of AuthN/Z
+        :param builtins.str application_name: Name of the IDCS application
+        :param builtins.str domain_id: Identity Domain OCID
+        """
+        pulumi.set(__self__, "type", type)
+        if application_name is not None:
+            pulumi.set(__self__, "application_name", application_name)
+        if domain_id is not None:
+            pulumi.set(__self__, "domain_id", domain_id)
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        Type of AuthN/Z
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="applicationName")
+    def application_name(self) -> Optional[builtins.str]:
+        """
+        Name of the IDCS application
+        """
+        return pulumi.get(self, "application_name")
+
+    @property
+    @pulumi.getter(name="domainId")
+    def domain_id(self) -> Optional[builtins.str]:
+        """
+        Identity Domain OCID
+        """
+        return pulumi.get(self, "domain_id")
+
+
+@pulumi.output_type
+class MlApplicationInstanceConfiguration(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: (Updatable) Key of configuration property
+        :param builtins.str value: (Updatable) Value of configuration property
+        """
+        pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        (Updatable) Key of configuration property
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        (Updatable) Value of configuration property
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class MlApplicationInstancePredictionEndpointDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "basePredictionUri":
+            suggest = "base_prediction_uri"
+        elif key == "predictionUris":
+            suggest = "prediction_uris"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MlApplicationInstancePredictionEndpointDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MlApplicationInstancePredictionEndpointDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MlApplicationInstancePredictionEndpointDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 base_prediction_uri: Optional[builtins.str] = None,
+                 prediction_uris: Optional[Sequence['outputs.MlApplicationInstancePredictionEndpointDetailPredictionUri']] = None):
+        """
+        :param builtins.str base_prediction_uri: Base URI of prediction router.
+        :param Sequence['MlApplicationInstancePredictionEndpointDetailPredictionUriArgs'] prediction_uris: Array of all prediction URIs per use-case.
+        """
+        if base_prediction_uri is not None:
+            pulumi.set(__self__, "base_prediction_uri", base_prediction_uri)
+        if prediction_uris is not None:
+            pulumi.set(__self__, "prediction_uris", prediction_uris)
+
+    @property
+    @pulumi.getter(name="basePredictionUri")
+    def base_prediction_uri(self) -> Optional[builtins.str]:
+        """
+        Base URI of prediction router.
+        """
+        return pulumi.get(self, "base_prediction_uri")
+
+    @property
+    @pulumi.getter(name="predictionUris")
+    def prediction_uris(self) -> Optional[Sequence['outputs.MlApplicationInstancePredictionEndpointDetailPredictionUri']]:
+        """
+        Array of all prediction URIs per use-case.
+        """
+        return pulumi.get(self, "prediction_uris")
+
+
+@pulumi.output_type
+class MlApplicationInstancePredictionEndpointDetailPredictionUri(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "useCase":
+            suggest = "use_case"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MlApplicationInstancePredictionEndpointDetailPredictionUri. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MlApplicationInstancePredictionEndpointDetailPredictionUri.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MlApplicationInstancePredictionEndpointDetailPredictionUri.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 uri: Optional[builtins.str] = None,
+                 use_case: Optional[builtins.str] = None):
+        """
+        :param builtins.str uri: Prediction URI.
+        :param builtins.str use_case: Prediction use-case.
+        """
+        if uri is not None:
+            pulumi.set(__self__, "uri", uri)
+        if use_case is not None:
+            pulumi.set(__self__, "use_case", use_case)
+
+    @property
+    @pulumi.getter
+    def uri(self) -> Optional[builtins.str]:
+        """
+        Prediction URI.
+        """
+        return pulumi.get(self, "uri")
+
+    @property
+    @pulumi.getter(name="useCase")
+    def use_case(self) -> Optional[builtins.str]:
+        """
+        Prediction use-case.
+        """
+        return pulumi.get(self, "use_case")
 
 
 @pulumi.output_type
@@ -9557,6 +10426,1827 @@ class GetJobsJobJobStorageMountConfigurationDetailsListResult(dict):
         The type of storage.
         """
         return pulumi.get(self, "storage_type")
+
+
+@pulumi.output_type
+class GetMlApplicationImplementationApplicationComponentResult(dict):
+    def __init__(__self__, *,
+                 application_id: builtins.str,
+                 component_name: builtins.str,
+                 id: builtins.str,
+                 job_id: builtins.str,
+                 model_id: builtins.str,
+                 name: builtins.str,
+                 pipeline_id: builtins.str,
+                 resource_type: builtins.str,
+                 type: builtins.str):
+        """
+        :param builtins.str application_id: OCID of Data Flow Application
+        :param builtins.str component_name: Name of application component
+        :param builtins.str id: The OCID of the MlApplicationImplementation. Unique identifier that is immutable after creation.
+        :param builtins.str job_id: OCID of Data Science Job
+        :param builtins.str model_id: OCID of Data Science Model
+        :param builtins.str name: ML Application Implementation name which is unique for given ML Application.
+        :param builtins.str pipeline_id: OCID of Data Science Pipeline
+        :param builtins.str resource_type: Type of the resource
+        :param builtins.str type: type of the argument
+        """
+        pulumi.set(__self__, "application_id", application_id)
+        pulumi.set(__self__, "component_name", component_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "job_id", job_id)
+        pulumi.set(__self__, "model_id", model_id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "pipeline_id", pipeline_id)
+        pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="applicationId")
+    def application_id(self) -> builtins.str:
+        """
+        OCID of Data Flow Application
+        """
+        return pulumi.get(self, "application_id")
+
+    @property
+    @pulumi.getter(name="componentName")
+    def component_name(self) -> builtins.str:
+        """
+        Name of application component
+        """
+        return pulumi.get(self, "component_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> builtins.str:
+        """
+        The OCID of the MlApplicationImplementation. Unique identifier that is immutable after creation.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="jobId")
+    def job_id(self) -> builtins.str:
+        """
+        OCID of Data Science Job
+        """
+        return pulumi.get(self, "job_id")
+
+    @property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> builtins.str:
+        """
+        OCID of Data Science Model
+        """
+        return pulumi.get(self, "model_id")
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        ML Application Implementation name which is unique for given ML Application.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="pipelineId")
+    def pipeline_id(self) -> builtins.str:
+        """
+        OCID of Data Science Pipeline
+        """
+        return pulumi.get(self, "pipeline_id")
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> builtins.str:
+        """
+        Type of the resource
+        """
+        return pulumi.get(self, "resource_type")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        type of the argument
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetMlApplicationImplementationConfigurationSchemaResult(dict):
+    def __init__(__self__, *,
+                 default_value: builtins.str,
+                 description: builtins.str,
+                 is_mandatory: builtins.bool,
+                 key_name: builtins.str,
+                 sample_value: builtins.str,
+                 validation_regexp: builtins.str,
+                 value_type: builtins.str):
+        """
+        :param builtins.str default_value: The default value for the optional configuration property (it must not be specified for mandatory configuration properties)
+        :param builtins.str description: short description of the argument
+        :param builtins.bool is_mandatory: argument is mandatory or not
+        :param builtins.str key_name: Name of key (parameter name)
+        :param builtins.str sample_value: Sample property value (it must match validationRegexp if it is specified)
+        :param builtins.str validation_regexp: A regular expression will be used for the validation of property value.
+        :param builtins.str value_type: Type of value
+        """
+        pulumi.set(__self__, "default_value", default_value)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "is_mandatory", is_mandatory)
+        pulumi.set(__self__, "key_name", key_name)
+        pulumi.set(__self__, "sample_value", sample_value)
+        pulumi.set(__self__, "validation_regexp", validation_regexp)
+        pulumi.set(__self__, "value_type", value_type)
+
+    @property
+    @pulumi.getter(name="defaultValue")
+    def default_value(self) -> builtins.str:
+        """
+        The default value for the optional configuration property (it must not be specified for mandatory configuration properties)
+        """
+        return pulumi.get(self, "default_value")
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        short description of the argument
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="isMandatory")
+    def is_mandatory(self) -> builtins.bool:
+        """
+        argument is mandatory or not
+        """
+        return pulumi.get(self, "is_mandatory")
+
+    @property
+    @pulumi.getter(name="keyName")
+    def key_name(self) -> builtins.str:
+        """
+        Name of key (parameter name)
+        """
+        return pulumi.get(self, "key_name")
+
+    @property
+    @pulumi.getter(name="sampleValue")
+    def sample_value(self) -> builtins.str:
+        """
+        Sample property value (it must match validationRegexp if it is specified)
+        """
+        return pulumi.get(self, "sample_value")
+
+    @property
+    @pulumi.getter(name="validationRegexp")
+    def validation_regexp(self) -> builtins.str:
+        """
+        A regular expression will be used for the validation of property value.
+        """
+        return pulumi.get(self, "validation_regexp")
+
+    @property
+    @pulumi.getter(name="valueType")
+    def value_type(self) -> builtins.str:
+        """
+        Type of value
+        """
+        return pulumi.get(self, "value_type")
+
+
+@pulumi.output_type
+class GetMlApplicationImplementationLoggingResult(dict):
+    def __init__(__self__, *,
+                 aggregated_instance_view_logs: Sequence['outputs.GetMlApplicationImplementationLoggingAggregatedInstanceViewLogResult'],
+                 implementation_logs: Sequence['outputs.GetMlApplicationImplementationLoggingImplementationLogResult'],
+                 trigger_logs: Sequence['outputs.GetMlApplicationImplementationLoggingTriggerLogResult']):
+        """
+        :param Sequence['GetMlApplicationImplementationLoggingAggregatedInstanceViewLogArgs'] aggregated_instance_view_logs: Log configuration details for particular areas of ML Application Implementation.
+        :param Sequence['GetMlApplicationImplementationLoggingImplementationLogArgs'] implementation_logs: Log configuration details for particular areas of ML Application Implementation.
+        :param Sequence['GetMlApplicationImplementationLoggingTriggerLogArgs'] trigger_logs: Log configuration details for particular areas of ML Application Implementation.
+        """
+        pulumi.set(__self__, "aggregated_instance_view_logs", aggregated_instance_view_logs)
+        pulumi.set(__self__, "implementation_logs", implementation_logs)
+        pulumi.set(__self__, "trigger_logs", trigger_logs)
+
+    @property
+    @pulumi.getter(name="aggregatedInstanceViewLogs")
+    def aggregated_instance_view_logs(self) -> Sequence['outputs.GetMlApplicationImplementationLoggingAggregatedInstanceViewLogResult']:
+        """
+        Log configuration details for particular areas of ML Application Implementation.
+        """
+        return pulumi.get(self, "aggregated_instance_view_logs")
+
+    @property
+    @pulumi.getter(name="implementationLogs")
+    def implementation_logs(self) -> Sequence['outputs.GetMlApplicationImplementationLoggingImplementationLogResult']:
+        """
+        Log configuration details for particular areas of ML Application Implementation.
+        """
+        return pulumi.get(self, "implementation_logs")
+
+    @property
+    @pulumi.getter(name="triggerLogs")
+    def trigger_logs(self) -> Sequence['outputs.GetMlApplicationImplementationLoggingTriggerLogResult']:
+        """
+        Log configuration details for particular areas of ML Application Implementation.
+        """
+        return pulumi.get(self, "trigger_logs")
+
+
+@pulumi.output_type
+class GetMlApplicationImplementationLoggingAggregatedInstanceViewLogResult(dict):
+    def __init__(__self__, *,
+                 enable_logging: builtins.bool,
+                 log_group_id: builtins.str,
+                 log_id: builtins.str):
+        """
+        :param builtins.bool enable_logging: If logging is enabled.
+        :param builtins.str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        :param builtins.str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        pulumi.set(__self__, "enable_logging", enable_logging)
+        pulumi.set(__self__, "log_group_id", log_group_id)
+        pulumi.set(__self__, "log_id", log_id)
+
+    @property
+    @pulumi.getter(name="enableLogging")
+    def enable_logging(self) -> builtins.bool:
+        """
+        If logging is enabled.
+        """
+        return pulumi.get(self, "enable_logging")
+
+    @property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class GetMlApplicationImplementationLoggingImplementationLogResult(dict):
+    def __init__(__self__, *,
+                 enable_logging: builtins.bool,
+                 log_group_id: builtins.str,
+                 log_id: builtins.str):
+        """
+        :param builtins.bool enable_logging: If logging is enabled.
+        :param builtins.str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        :param builtins.str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        pulumi.set(__self__, "enable_logging", enable_logging)
+        pulumi.set(__self__, "log_group_id", log_group_id)
+        pulumi.set(__self__, "log_id", log_id)
+
+    @property
+    @pulumi.getter(name="enableLogging")
+    def enable_logging(self) -> builtins.bool:
+        """
+        If logging is enabled.
+        """
+        return pulumi.get(self, "enable_logging")
+
+    @property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class GetMlApplicationImplementationLoggingTriggerLogResult(dict):
+    def __init__(__self__, *,
+                 enable_logging: builtins.bool,
+                 log_group_id: builtins.str,
+                 log_id: builtins.str):
+        """
+        :param builtins.bool enable_logging: If logging is enabled.
+        :param builtins.str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        :param builtins.str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        pulumi.set(__self__, "enable_logging", enable_logging)
+        pulumi.set(__self__, "log_group_id", log_group_id)
+        pulumi.set(__self__, "log_id", log_id)
+
+    @property
+    @pulumi.getter(name="enableLogging")
+    def enable_logging(self) -> builtins.bool:
+        """
+        If logging is enabled.
+        """
+        return pulumi.get(self, "enable_logging")
+
+    @property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class GetMlApplicationImplementationMlApplicationPackageArgumentResult(dict):
+    def __init__(__self__, *,
+                 arguments: Sequence['outputs.GetMlApplicationImplementationMlApplicationPackageArgumentArgumentResult']):
+        """
+        :param Sequence['GetMlApplicationImplementationMlApplicationPackageArgumentArgumentArgs'] arguments: Array of the ML Application package arguments
+        """
+        pulumi.set(__self__, "arguments", arguments)
+
+    @property
+    @pulumi.getter
+    def arguments(self) -> Sequence['outputs.GetMlApplicationImplementationMlApplicationPackageArgumentArgumentResult']:
+        """
+        Array of the ML Application package arguments
+        """
+        return pulumi.get(self, "arguments")
+
+
+@pulumi.output_type
+class GetMlApplicationImplementationMlApplicationPackageArgumentArgumentResult(dict):
+    def __init__(__self__, *,
+                 description: builtins.str,
+                 is_mandatory: builtins.bool,
+                 name: builtins.str,
+                 type: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str description: short description of the argument
+        :param builtins.bool is_mandatory: argument is mandatory or not
+        :param builtins.str name: ML Application Implementation name which is unique for given ML Application.
+        :param builtins.str type: type of the argument
+        :param builtins.str value: Argument value
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "is_mandatory", is_mandatory)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        short description of the argument
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="isMandatory")
+    def is_mandatory(self) -> builtins.bool:
+        """
+        argument is mandatory or not
+        """
+        return pulumi.get(self, "is_mandatory")
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        ML Application Implementation name which is unique for given ML Application.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        type of the argument
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        Argument value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetMlApplicationImplementationsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        """
+        :param builtins.str name: A filter to return only resources that match the entire name given.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        A filter to return only resources that match the entire name given.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetMlApplicationImplementationsMlApplicationImplementationCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetMlApplicationImplementationsMlApplicationImplementationCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetMlApplicationImplementationsMlApplicationImplementationCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetMlApplicationImplementationsMlApplicationImplementationCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 allowed_migration_destinations: Sequence[builtins.str],
+                 application_components: Sequence['outputs.GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentResult'],
+                 compartment_id: builtins.str,
+                 configuration_schemas: Sequence['outputs.GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaResult'],
+                 defined_tags: Mapping[str, builtins.str],
+                 description: builtins.str,
+                 freeform_tags: Mapping[str, builtins.str],
+                 id: builtins.str,
+                 lifecycle_details: builtins.str,
+                 loggings: Sequence['outputs.GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingResult'],
+                 ml_application_id: builtins.str,
+                 ml_application_name: builtins.str,
+                 ml_application_package: Mapping[str, builtins.str],
+                 ml_application_package_arguments: Sequence['outputs.GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentResult'],
+                 name: builtins.str,
+                 opc_ml_app_package_args: Mapping[str, builtins.str],
+                 package_version: builtins.str,
+                 state: builtins.str,
+                 system_tags: Mapping[str, builtins.str],
+                 time_created: builtins.str,
+                 time_updated: builtins.str):
+        """
+        :param Sequence[builtins.str] allowed_migration_destinations: List of ML Application Implementation OCIDs for which migration from this implementation is allowed. Migration means that if consumers change implementation for their instances to implementation with OCID from this list, instance components will be updated in place otherwise new instance components are created based on the new implementation and old instance components are removed.
+        :param Sequence['GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArgs'] application_components: List of application components (OCI resources shared for all MlApplicationInstances). These have been created automatically based on their definitions in the ML Application package.
+        :param builtins.str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Sequence['GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArgs'] configuration_schemas: Schema of configuration which needs to be provided for each ML Application Instance. It is defined in the ML Application package descriptor.
+        :param Mapping[str, builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param builtins.str description: short description of the argument
+        :param Mapping[str, builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param builtins.str id: The OCID of the MlApplicationImplementation. Unique identifier that is immutable after creation.
+        :param builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param Sequence['GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArgs'] loggings: Configuration of Logging for ML Application Implementation.
+        :param builtins.str ml_application_id: unique MlApplication identifier
+        :param builtins.str ml_application_name: The name of ML Application (based on mlApplicationId)
+        :param Mapping[str, builtins.str] ml_application_package: Specifies the ML application package as a map of key-value pairs. Valid keys include 'source_type', 'path', and 'uri'. Use 'file://' for local paths or 'https://' for object storage URIs.
+        :param Sequence['GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgs'] ml_application_package_arguments: List of ML Application package arguments provided during ML Application package upload.
+        :param builtins.str name: A filter to return only resources that match the entire name given.
+        :param builtins.str package_version: The version of ML Application Package (e.g. "1.2" or "2.0.4") defined in ML Application package descriptor. Value is not mandatory only for CREATING state otherwise it must be always presented.
+        :param builtins.str state: A filter to return only resources with lifecycleState matching the given lifecycleState.
+        :param Mapping[str, builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param builtins.str time_created: Creation time of MlApplicationImplementation creation in the format defined by RFC 3339.
+        :param builtins.str time_updated: Time of last MlApplicationImplementation update in the format defined by RFC 3339.
+        """
+        pulumi.set(__self__, "allowed_migration_destinations", allowed_migration_destinations)
+        pulumi.set(__self__, "application_components", application_components)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "configuration_schemas", configuration_schemas)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "loggings", loggings)
+        pulumi.set(__self__, "ml_application_id", ml_application_id)
+        pulumi.set(__self__, "ml_application_name", ml_application_name)
+        pulumi.set(__self__, "ml_application_package", ml_application_package)
+        pulumi.set(__self__, "ml_application_package_arguments", ml_application_package_arguments)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "opc_ml_app_package_args", opc_ml_app_package_args)
+        pulumi.set(__self__, "package_version", package_version)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="allowedMigrationDestinations")
+    def allowed_migration_destinations(self) -> Sequence[builtins.str]:
+        """
+        List of ML Application Implementation OCIDs for which migration from this implementation is allowed. Migration means that if consumers change implementation for their instances to implementation with OCID from this list, instance components will be updated in place otherwise new instance components are created based on the new implementation and old instance components are removed.
+        """
+        return pulumi.get(self, "allowed_migration_destinations")
+
+    @property
+    @pulumi.getter(name="applicationComponents")
+    def application_components(self) -> Sequence['outputs.GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentResult']:
+        """
+        List of application components (OCI resources shared for all MlApplicationInstances). These have been created automatically based on their definitions in the ML Application package.
+        """
+        return pulumi.get(self, "application_components")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> builtins.str:
+        """
+        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="configurationSchemas")
+    def configuration_schemas(self) -> Sequence['outputs.GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaResult']:
+        """
+        Schema of configuration which needs to be provided for each ML Application Instance. It is defined in the ML Application package descriptor.
+        """
+        return pulumi.get(self, "configuration_schemas")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        short description of the argument
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> builtins.str:
+        """
+        The OCID of the MlApplicationImplementation. Unique identifier that is immutable after creation.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> builtins.str:
+        """
+        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def loggings(self) -> Sequence['outputs.GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingResult']:
+        """
+        Configuration of Logging for ML Application Implementation.
+        """
+        return pulumi.get(self, "loggings")
+
+    @property
+    @pulumi.getter(name="mlApplicationId")
+    def ml_application_id(self) -> builtins.str:
+        """
+        unique MlApplication identifier
+        """
+        return pulumi.get(self, "ml_application_id")
+
+    @property
+    @pulumi.getter(name="mlApplicationName")
+    def ml_application_name(self) -> builtins.str:
+        """
+        The name of ML Application (based on mlApplicationId)
+        """
+        return pulumi.get(self, "ml_application_name")
+
+    @property
+    @pulumi.getter(name="mlApplicationPackage")
+    def ml_application_package(self) -> Mapping[str, builtins.str]:
+        """
+        Specifies the ML application package as a map of key-value pairs. Valid keys include 'source_type', 'path', and 'uri'. Use 'file://' for local paths or 'https://' for object storage URIs.
+        """
+        return pulumi.get(self, "ml_application_package")
+
+    @property
+    @pulumi.getter(name="mlApplicationPackageArguments")
+    def ml_application_package_arguments(self) -> Sequence['outputs.GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentResult']:
+        """
+        List of ML Application package arguments provided during ML Application package upload.
+        """
+        return pulumi.get(self, "ml_application_package_arguments")
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        A filter to return only resources that match the entire name given.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="opcMlAppPackageArgs")
+    def opc_ml_app_package_args(self) -> Mapping[str, builtins.str]:
+        return pulumi.get(self, "opc_ml_app_package_args")
+
+    @property
+    @pulumi.getter(name="packageVersion")
+    def package_version(self) -> builtins.str:
+        """
+        The version of ML Application Package (e.g. "1.2" or "2.0.4") defined in ML Application package descriptor. Value is not mandatory only for CREATING state otherwise it must be always presented.
+        """
+        return pulumi.get(self, "package_version")
+
+    @property
+    @pulumi.getter
+    def state(self) -> builtins.str:
+        """
+        A filter to return only resources with lifecycleState matching the given lifecycleState.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> builtins.str:
+        """
+        Creation time of MlApplicationImplementation creation in the format defined by RFC 3339.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> builtins.str:
+        """
+        Time of last MlApplicationImplementation update in the format defined by RFC 3339.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentResult(dict):
+    def __init__(__self__, *,
+                 application_id: builtins.str,
+                 component_name: builtins.str,
+                 id: builtins.str,
+                 job_id: builtins.str,
+                 model_id: builtins.str,
+                 name: builtins.str,
+                 pipeline_id: builtins.str,
+                 resource_type: builtins.str,
+                 type: builtins.str):
+        """
+        :param builtins.str application_id: OCID of Data Flow Application
+        :param builtins.str component_name: Name of application component
+        :param builtins.str id: The OCID of the MlApplicationImplementation. Unique identifier that is immutable after creation.
+        :param builtins.str job_id: OCID of Data Science Job
+        :param builtins.str model_id: OCID of Data Science Model
+        :param builtins.str name: A filter to return only resources that match the entire name given.
+        :param builtins.str pipeline_id: OCID of Data Science Pipeline
+        :param builtins.str resource_type: Type of the resource
+        :param builtins.str type: type of the argument
+        """
+        pulumi.set(__self__, "application_id", application_id)
+        pulumi.set(__self__, "component_name", component_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "job_id", job_id)
+        pulumi.set(__self__, "model_id", model_id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "pipeline_id", pipeline_id)
+        pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="applicationId")
+    def application_id(self) -> builtins.str:
+        """
+        OCID of Data Flow Application
+        """
+        return pulumi.get(self, "application_id")
+
+    @property
+    @pulumi.getter(name="componentName")
+    def component_name(self) -> builtins.str:
+        """
+        Name of application component
+        """
+        return pulumi.get(self, "component_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> builtins.str:
+        """
+        The OCID of the MlApplicationImplementation. Unique identifier that is immutable after creation.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="jobId")
+    def job_id(self) -> builtins.str:
+        """
+        OCID of Data Science Job
+        """
+        return pulumi.get(self, "job_id")
+
+    @property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> builtins.str:
+        """
+        OCID of Data Science Model
+        """
+        return pulumi.get(self, "model_id")
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        A filter to return only resources that match the entire name given.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="pipelineId")
+    def pipeline_id(self) -> builtins.str:
+        """
+        OCID of Data Science Pipeline
+        """
+        return pulumi.get(self, "pipeline_id")
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> builtins.str:
+        """
+        Type of the resource
+        """
+        return pulumi.get(self, "resource_type")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        type of the argument
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaResult(dict):
+    def __init__(__self__, *,
+                 default_value: builtins.str,
+                 description: builtins.str,
+                 is_mandatory: builtins.bool,
+                 key_name: builtins.str,
+                 sample_value: builtins.str,
+                 validation_regexp: builtins.str,
+                 value_type: builtins.str):
+        """
+        :param builtins.str default_value: The default value for the optional configuration property (it must not be specified for mandatory configuration properties)
+        :param builtins.str description: short description of the argument
+        :param builtins.bool is_mandatory: argument is mandatory or not
+        :param builtins.str key_name: Name of key (parameter name)
+        :param builtins.str sample_value: Sample property value (it must match validationRegexp if it is specified)
+        :param builtins.str validation_regexp: A regular expression will be used for the validation of property value.
+        :param builtins.str value_type: Type of value
+        """
+        pulumi.set(__self__, "default_value", default_value)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "is_mandatory", is_mandatory)
+        pulumi.set(__self__, "key_name", key_name)
+        pulumi.set(__self__, "sample_value", sample_value)
+        pulumi.set(__self__, "validation_regexp", validation_regexp)
+        pulumi.set(__self__, "value_type", value_type)
+
+    @property
+    @pulumi.getter(name="defaultValue")
+    def default_value(self) -> builtins.str:
+        """
+        The default value for the optional configuration property (it must not be specified for mandatory configuration properties)
+        """
+        return pulumi.get(self, "default_value")
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        short description of the argument
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="isMandatory")
+    def is_mandatory(self) -> builtins.bool:
+        """
+        argument is mandatory or not
+        """
+        return pulumi.get(self, "is_mandatory")
+
+    @property
+    @pulumi.getter(name="keyName")
+    def key_name(self) -> builtins.str:
+        """
+        Name of key (parameter name)
+        """
+        return pulumi.get(self, "key_name")
+
+    @property
+    @pulumi.getter(name="sampleValue")
+    def sample_value(self) -> builtins.str:
+        """
+        Sample property value (it must match validationRegexp if it is specified)
+        """
+        return pulumi.get(self, "sample_value")
+
+    @property
+    @pulumi.getter(name="validationRegexp")
+    def validation_regexp(self) -> builtins.str:
+        """
+        A regular expression will be used for the validation of property value.
+        """
+        return pulumi.get(self, "validation_regexp")
+
+    @property
+    @pulumi.getter(name="valueType")
+    def value_type(self) -> builtins.str:
+        """
+        Type of value
+        """
+        return pulumi.get(self, "value_type")
+
+
+@pulumi.output_type
+class GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingResult(dict):
+    def __init__(__self__, *,
+                 aggregated_instance_view_logs: Sequence['outputs.GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogResult'],
+                 implementation_logs: Sequence['outputs.GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogResult'],
+                 trigger_logs: Sequence['outputs.GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogResult']):
+        """
+        :param Sequence['GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArgs'] aggregated_instance_view_logs: Log configuration details for particular areas of ML Application Implementation.
+        :param Sequence['GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArgs'] implementation_logs: Log configuration details for particular areas of ML Application Implementation.
+        :param Sequence['GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArgs'] trigger_logs: Log configuration details for particular areas of ML Application Implementation.
+        """
+        pulumi.set(__self__, "aggregated_instance_view_logs", aggregated_instance_view_logs)
+        pulumi.set(__self__, "implementation_logs", implementation_logs)
+        pulumi.set(__self__, "trigger_logs", trigger_logs)
+
+    @property
+    @pulumi.getter(name="aggregatedInstanceViewLogs")
+    def aggregated_instance_view_logs(self) -> Sequence['outputs.GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogResult']:
+        """
+        Log configuration details for particular areas of ML Application Implementation.
+        """
+        return pulumi.get(self, "aggregated_instance_view_logs")
+
+    @property
+    @pulumi.getter(name="implementationLogs")
+    def implementation_logs(self) -> Sequence['outputs.GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogResult']:
+        """
+        Log configuration details for particular areas of ML Application Implementation.
+        """
+        return pulumi.get(self, "implementation_logs")
+
+    @property
+    @pulumi.getter(name="triggerLogs")
+    def trigger_logs(self) -> Sequence['outputs.GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogResult']:
+        """
+        Log configuration details for particular areas of ML Application Implementation.
+        """
+        return pulumi.get(self, "trigger_logs")
+
+
+@pulumi.output_type
+class GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogResult(dict):
+    def __init__(__self__, *,
+                 enable_logging: builtins.bool,
+                 log_group_id: builtins.str,
+                 log_id: builtins.str):
+        """
+        :param builtins.bool enable_logging: If logging is enabled.
+        :param builtins.str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        :param builtins.str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        pulumi.set(__self__, "enable_logging", enable_logging)
+        pulumi.set(__self__, "log_group_id", log_group_id)
+        pulumi.set(__self__, "log_id", log_id)
+
+    @property
+    @pulumi.getter(name="enableLogging")
+    def enable_logging(self) -> builtins.bool:
+        """
+        If logging is enabled.
+        """
+        return pulumi.get(self, "enable_logging")
+
+    @property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogResult(dict):
+    def __init__(__self__, *,
+                 enable_logging: builtins.bool,
+                 log_group_id: builtins.str,
+                 log_id: builtins.str):
+        """
+        :param builtins.bool enable_logging: If logging is enabled.
+        :param builtins.str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        :param builtins.str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        pulumi.set(__self__, "enable_logging", enable_logging)
+        pulumi.set(__self__, "log_group_id", log_group_id)
+        pulumi.set(__self__, "log_id", log_id)
+
+    @property
+    @pulumi.getter(name="enableLogging")
+    def enable_logging(self) -> builtins.bool:
+        """
+        If logging is enabled.
+        """
+        return pulumi.get(self, "enable_logging")
+
+    @property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogResult(dict):
+    def __init__(__self__, *,
+                 enable_logging: builtins.bool,
+                 log_group_id: builtins.str,
+                 log_id: builtins.str):
+        """
+        :param builtins.bool enable_logging: If logging is enabled.
+        :param builtins.str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        :param builtins.str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        pulumi.set(__self__, "enable_logging", enable_logging)
+        pulumi.set(__self__, "log_group_id", log_group_id)
+        pulumi.set(__self__, "log_id", log_id)
+
+    @property
+    @pulumi.getter(name="enableLogging")
+    def enable_logging(self) -> builtins.bool:
+        """
+        If logging is enabled.
+        """
+        return pulumi.get(self, "enable_logging")
+
+    @property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentResult(dict):
+    def __init__(__self__, *,
+                 arguments: Sequence['outputs.GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentResult']):
+        """
+        :param Sequence['GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArgs'] arguments: Array of the ML Application package arguments
+        """
+        pulumi.set(__self__, "arguments", arguments)
+
+    @property
+    @pulumi.getter
+    def arguments(self) -> Sequence['outputs.GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentResult']:
+        """
+        Array of the ML Application package arguments
+        """
+        return pulumi.get(self, "arguments")
+
+
+@pulumi.output_type
+class GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentResult(dict):
+    def __init__(__self__, *,
+                 description: builtins.str,
+                 is_mandatory: builtins.bool,
+                 name: builtins.str,
+                 type: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str description: short description of the argument
+        :param builtins.bool is_mandatory: argument is mandatory or not
+        :param builtins.str name: A filter to return only resources that match the entire name given.
+        :param builtins.str type: type of the argument
+        :param builtins.str value: Argument value
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "is_mandatory", is_mandatory)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        short description of the argument
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="isMandatory")
+    def is_mandatory(self) -> builtins.bool:
+        """
+        argument is mandatory or not
+        """
+        return pulumi.get(self, "is_mandatory")
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        A filter to return only resources that match the entire name given.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        type of the argument
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        Argument value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetMlApplicationInstanceAuthConfigurationResult(dict):
+    def __init__(__self__, *,
+                 application_name: builtins.str,
+                 domain_id: builtins.str,
+                 type: builtins.str):
+        """
+        :param builtins.str application_name: Name of the IDCS application
+        :param builtins.str domain_id: Identity Domain OCID
+        :param builtins.str type: Type of AuthN/Z
+        """
+        pulumi.set(__self__, "application_name", application_name)
+        pulumi.set(__self__, "domain_id", domain_id)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="applicationName")
+    def application_name(self) -> builtins.str:
+        """
+        Name of the IDCS application
+        """
+        return pulumi.get(self, "application_name")
+
+    @property
+    @pulumi.getter(name="domainId")
+    def domain_id(self) -> builtins.str:
+        """
+        Identity Domain OCID
+        """
+        return pulumi.get(self, "domain_id")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        Type of AuthN/Z
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetMlApplicationInstanceConfigurationResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: Key of configuration property
+        :param builtins.str value: Value of configuration property
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        Key of configuration property
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        Value of configuration property
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetMlApplicationInstancePredictionEndpointDetailResult(dict):
+    def __init__(__self__, *,
+                 base_prediction_uri: builtins.str,
+                 prediction_uris: Sequence['outputs.GetMlApplicationInstancePredictionEndpointDetailPredictionUriResult']):
+        """
+        :param builtins.str base_prediction_uri: Base URI of prediction router.
+        :param Sequence['GetMlApplicationInstancePredictionEndpointDetailPredictionUriArgs'] prediction_uris: Array of all prediction URIs per use-case.
+        """
+        pulumi.set(__self__, "base_prediction_uri", base_prediction_uri)
+        pulumi.set(__self__, "prediction_uris", prediction_uris)
+
+    @property
+    @pulumi.getter(name="basePredictionUri")
+    def base_prediction_uri(self) -> builtins.str:
+        """
+        Base URI of prediction router.
+        """
+        return pulumi.get(self, "base_prediction_uri")
+
+    @property
+    @pulumi.getter(name="predictionUris")
+    def prediction_uris(self) -> Sequence['outputs.GetMlApplicationInstancePredictionEndpointDetailPredictionUriResult']:
+        """
+        Array of all prediction URIs per use-case.
+        """
+        return pulumi.get(self, "prediction_uris")
+
+
+@pulumi.output_type
+class GetMlApplicationInstancePredictionEndpointDetailPredictionUriResult(dict):
+    def __init__(__self__, *,
+                 uri: builtins.str,
+                 use_case: builtins.str):
+        """
+        :param builtins.str uri: Prediction URI.
+        :param builtins.str use_case: Prediction use-case.
+        """
+        pulumi.set(__self__, "uri", uri)
+        pulumi.set(__self__, "use_case", use_case)
+
+    @property
+    @pulumi.getter
+    def uri(self) -> builtins.str:
+        """
+        Prediction URI.
+        """
+        return pulumi.get(self, "uri")
+
+    @property
+    @pulumi.getter(name="useCase")
+    def use_case(self) -> builtins.str:
+        """
+        Prediction use-case.
+        """
+        return pulumi.get(self, "use_case")
+
+
+@pulumi.output_type
+class GetMlApplicationInstancesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetMlApplicationInstancesMlApplicationInstanceCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetMlApplicationInstancesMlApplicationInstanceCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetMlApplicationInstancesMlApplicationInstanceCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetMlApplicationInstancesMlApplicationInstanceCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 auth_configurations: Sequence['outputs.GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationResult'],
+                 compartment_id: builtins.str,
+                 configurations: Sequence['outputs.GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationResult'],
+                 defined_tags: Mapping[str, builtins.str],
+                 display_name: builtins.str,
+                 freeform_tags: Mapping[str, builtins.str],
+                 id: builtins.str,
+                 is_enabled: builtins.bool,
+                 lifecycle_details: builtins.str,
+                 lifecycle_substate: builtins.str,
+                 ml_application_id: builtins.str,
+                 ml_application_implementation_id: builtins.str,
+                 ml_application_implementation_name: builtins.str,
+                 ml_application_name: builtins.str,
+                 prediction_endpoint_details: Sequence['outputs.GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailResult'],
+                 state: builtins.str,
+                 system_tags: Mapping[str, builtins.str],
+                 time_created: builtins.str,
+                 time_updated: builtins.str):
+        """
+        :param Sequence['GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArgs'] auth_configurations: AuthN/Z configuration for online prediction
+        :param builtins.str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Sequence['GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArgs'] configurations: Data that are used for provisioning of the given MlApplicationInstance. These are validated against configurationSchema defined in referenced MlApplicationImplementation.
+        :param Mapping[str, builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param builtins.str display_name: <b>Filter</b> results by its user-friendly name.
+        :param Mapping[str, builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param builtins.str id: The OCID of the MlApplicationInstance. Unique identifier that is immutable after creation
+        :param builtins.bool is_enabled: States whether the MlApplicationInstance is supposed to be in ACTIVE lifecycle state.
+        :param builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param builtins.str lifecycle_substate: The current substate of the MlApplicationInstance. The substate has MlApplicationInstance specific values in comparison with lifecycleState which has standard values common for all Oracle Cloud Infrastructure resources. The NEEDS_ATTENTION and FAILED substates are deprecated in favor of (NON_)?RECOVERABLE_(PROVIDER|SERVICE)_ISSUE and will be removed in next release.
+        :param builtins.str ml_application_id: unique MlApplication identifier
+        :param builtins.str ml_application_implementation_id: The OCID of ML Application Implementation selected as a certain solution for a given ML problem (ML Application)
+        :param builtins.str ml_application_implementation_name: The name of Ml Application Implementation (based on mlApplicationImplementationId)
+        :param builtins.str ml_application_name: The name of ML Application (based on mlApplicationId).
+        :param Sequence['GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArgs'] prediction_endpoint_details: Prediction endpoint related information.
+        :param builtins.str state: A filter to return only resources matching the given lifecycleState.
+        :param Mapping[str, builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param builtins.str time_created: The time the the MlApplication was created. An RFC3339 formatted datetime string
+        :param builtins.str time_updated: Time of last MlApplicationInstance update in the format defined by RFC 3339.
+        """
+        pulumi.set(__self__, "auth_configurations", auth_configurations)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "configurations", configurations)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "lifecycle_substate", lifecycle_substate)
+        pulumi.set(__self__, "ml_application_id", ml_application_id)
+        pulumi.set(__self__, "ml_application_implementation_id", ml_application_implementation_id)
+        pulumi.set(__self__, "ml_application_implementation_name", ml_application_implementation_name)
+        pulumi.set(__self__, "ml_application_name", ml_application_name)
+        pulumi.set(__self__, "prediction_endpoint_details", prediction_endpoint_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="authConfigurations")
+    def auth_configurations(self) -> Sequence['outputs.GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationResult']:
+        """
+        AuthN/Z configuration for online prediction
+        """
+        return pulumi.get(self, "auth_configurations")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> builtins.str:
+        """
+        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def configurations(self) -> Sequence['outputs.GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationResult']:
+        """
+        Data that are used for provisioning of the given MlApplicationInstance. These are validated against configurationSchema defined in referenced MlApplicationImplementation.
+        """
+        return pulumi.get(self, "configurations")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> builtins.str:
+        """
+        <b>Filter</b> results by its user-friendly name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> builtins.str:
+        """
+        The OCID of the MlApplicationInstance. Unique identifier that is immutable after creation
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> builtins.bool:
+        """
+        States whether the MlApplicationInstance is supposed to be in ACTIVE lifecycle state.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> builtins.str:
+        """
+        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="lifecycleSubstate")
+    def lifecycle_substate(self) -> builtins.str:
+        """
+        The current substate of the MlApplicationInstance. The substate has MlApplicationInstance specific values in comparison with lifecycleState which has standard values common for all Oracle Cloud Infrastructure resources. The NEEDS_ATTENTION and FAILED substates are deprecated in favor of (NON_)?RECOVERABLE_(PROVIDER|SERVICE)_ISSUE and will be removed in next release.
+        """
+        return pulumi.get(self, "lifecycle_substate")
+
+    @property
+    @pulumi.getter(name="mlApplicationId")
+    def ml_application_id(self) -> builtins.str:
+        """
+        unique MlApplication identifier
+        """
+        return pulumi.get(self, "ml_application_id")
+
+    @property
+    @pulumi.getter(name="mlApplicationImplementationId")
+    def ml_application_implementation_id(self) -> builtins.str:
+        """
+        The OCID of ML Application Implementation selected as a certain solution for a given ML problem (ML Application)
+        """
+        return pulumi.get(self, "ml_application_implementation_id")
+
+    @property
+    @pulumi.getter(name="mlApplicationImplementationName")
+    def ml_application_implementation_name(self) -> builtins.str:
+        """
+        The name of Ml Application Implementation (based on mlApplicationImplementationId)
+        """
+        return pulumi.get(self, "ml_application_implementation_name")
+
+    @property
+    @pulumi.getter(name="mlApplicationName")
+    def ml_application_name(self) -> builtins.str:
+        """
+        The name of ML Application (based on mlApplicationId).
+        """
+        return pulumi.get(self, "ml_application_name")
+
+    @property
+    @pulumi.getter(name="predictionEndpointDetails")
+    def prediction_endpoint_details(self) -> Sequence['outputs.GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailResult']:
+        """
+        Prediction endpoint related information.
+        """
+        return pulumi.get(self, "prediction_endpoint_details")
+
+    @property
+    @pulumi.getter
+    def state(self) -> builtins.str:
+        """
+        A filter to return only resources matching the given lifecycleState.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> builtins.str:
+        """
+        The time the the MlApplication was created. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> builtins.str:
+        """
+        Time of last MlApplicationInstance update in the format defined by RFC 3339.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationResult(dict):
+    def __init__(__self__, *,
+                 application_name: builtins.str,
+                 domain_id: builtins.str,
+                 type: builtins.str):
+        """
+        :param builtins.str application_name: Name of the IDCS application
+        :param builtins.str domain_id: Identity Domain OCID
+        :param builtins.str type: Type of AuthN/Z
+        """
+        pulumi.set(__self__, "application_name", application_name)
+        pulumi.set(__self__, "domain_id", domain_id)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="applicationName")
+    def application_name(self) -> builtins.str:
+        """
+        Name of the IDCS application
+        """
+        return pulumi.get(self, "application_name")
+
+    @property
+    @pulumi.getter(name="domainId")
+    def domain_id(self) -> builtins.str:
+        """
+        Identity Domain OCID
+        """
+        return pulumi.get(self, "domain_id")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        Type of AuthN/Z
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: Key of configuration property
+        :param builtins.str value: Value of configuration property
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        Key of configuration property
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        Value of configuration property
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailResult(dict):
+    def __init__(__self__, *,
+                 base_prediction_uri: builtins.str,
+                 prediction_uris: Sequence['outputs.GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriResult']):
+        """
+        :param builtins.str base_prediction_uri: Base URI of prediction router.
+        :param Sequence['GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArgs'] prediction_uris: Array of all prediction URIs per use-case.
+        """
+        pulumi.set(__self__, "base_prediction_uri", base_prediction_uri)
+        pulumi.set(__self__, "prediction_uris", prediction_uris)
+
+    @property
+    @pulumi.getter(name="basePredictionUri")
+    def base_prediction_uri(self) -> builtins.str:
+        """
+        Base URI of prediction router.
+        """
+        return pulumi.get(self, "base_prediction_uri")
+
+    @property
+    @pulumi.getter(name="predictionUris")
+    def prediction_uris(self) -> Sequence['outputs.GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriResult']:
+        """
+        Array of all prediction URIs per use-case.
+        """
+        return pulumi.get(self, "prediction_uris")
+
+
+@pulumi.output_type
+class GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriResult(dict):
+    def __init__(__self__, *,
+                 uri: builtins.str,
+                 use_case: builtins.str):
+        """
+        :param builtins.str uri: Prediction URI.
+        :param builtins.str use_case: Prediction use-case.
+        """
+        pulumi.set(__self__, "uri", uri)
+        pulumi.set(__self__, "use_case", use_case)
+
+    @property
+    @pulumi.getter
+    def uri(self) -> builtins.str:
+        """
+        Prediction URI.
+        """
+        return pulumi.get(self, "uri")
+
+    @property
+    @pulumi.getter(name="useCase")
+    def use_case(self) -> builtins.str:
+        """
+        Prediction use-case.
+        """
+        return pulumi.get(self, "use_case")
+
+
+@pulumi.output_type
+class GetMlApplicationsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        """
+        :param builtins.str name: A filter to return only resources that match the entire name given.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        A filter to return only resources that match the entire name given.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetMlApplicationsMlApplicationCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetMlApplicationsMlApplicationCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetMlApplicationsMlApplicationCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetMlApplicationsMlApplicationCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: builtins.str,
+                 defined_tags: Mapping[str, builtins.str],
+                 description: builtins.str,
+                 freeform_tags: Mapping[str, builtins.str],
+                 id: builtins.str,
+                 lifecycle_details: builtins.str,
+                 name: builtins.str,
+                 state: builtins.str,
+                 system_tags: Mapping[str, builtins.str],
+                 time_created: builtins.str,
+                 time_updated: builtins.str):
+        """
+        :param builtins.str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Mapping[str, builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param builtins.str description: Optional description of the ML Application
+        :param Mapping[str, builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param builtins.str id: The OCID of the MlApplication. Unique identifier that is immutable after creation.
+        :param builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param builtins.str name: A filter to return only resources that match the entire name given.
+        :param builtins.str state: A filter to return only resources with lifecycleState matching the given lifecycleState.
+        :param Mapping[str, builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param builtins.str time_created: Creation time of MlApplication in the format defined by RFC 3339.
+        :param builtins.str time_updated: Time of last MlApplication update in the format defined by RFC 3339.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> builtins.str:
+        """
+        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        Optional description of the ML Application
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> builtins.str:
+        """
+        The OCID of the MlApplication. Unique identifier that is immutable after creation.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> builtins.str:
+        """
+        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        A filter to return only resources that match the entire name given.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def state(self) -> builtins.str:
+        """
+        A filter to return only resources with lifecycleState matching the given lifecycleState.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> builtins.str:
+        """
+        Creation time of MlApplication in the format defined by RFC 3339.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> builtins.str:
+        """
+        Time of last MlApplication update in the format defined by RFC 3339.
+        """
+        return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type

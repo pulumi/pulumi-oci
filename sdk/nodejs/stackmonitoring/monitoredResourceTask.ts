@@ -20,21 +20,63 @@ import * as utilities from "../utilities";
  * const testMonitoredResourceTask = new oci.stackmonitoring.MonitoredResourceTask("test_monitored_resource_task", {
  *     compartmentId: compartmentId,
  *     taskDetails: {
- *         namespace: monitoredResourceTaskTaskDetailsNamespace,
- *         source: monitoredResourceTaskTaskDetailsSource,
  *         type: monitoredResourceTaskTaskDetailsType,
+ *         agentId: testAgent.id,
  *         availabilityProxyMetricCollectionInterval: monitoredResourceTaskTaskDetailsAvailabilityProxyMetricCollectionInterval,
  *         availabilityProxyMetrics: monitoredResourceTaskTaskDetailsAvailabilityProxyMetrics,
  *         consolePathPrefix: monitoredResourceTaskTaskDetailsConsolePathPrefix,
  *         externalIdMapping: monitoredResourceTaskTaskDetailsExternalIdMapping,
+ *         handlerType: monitoredResourceTaskTaskDetailsHandlerType,
+ *         isEnable: monitoredResourceTaskTaskDetailsIsEnable,
  *         lifecycleStatusMappingsForUpStatuses: monitoredResourceTaskTaskDetailsLifecycleStatusMappingsForUpStatus,
+ *         namespace: monitoredResourceTaskTaskDetailsNamespace,
+ *         receiverProperties: {
+ *             listenerPort: monitoredResourceTaskTaskDetailsReceiverPropertiesListenerPort,
+ *         },
  *         resourceGroup: monitoredResourceTaskTaskDetailsResourceGroup,
  *         resourceNameFilter: monitoredResourceTaskTaskDetailsResourceNameFilter,
  *         resourceNameMapping: monitoredResourceTaskTaskDetailsResourceNameMapping,
  *         resourceTypeFilter: monitoredResourceTaskTaskDetailsResourceTypeFilter,
  *         resourceTypeMapping: monitoredResourceTaskTaskDetailsResourceTypeMapping,
+ *         resourceTypesConfigurations: [{
+ *             availabilityMetricsConfig: {
+ *                 collectionIntervalInSeconds: monitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigCollectionIntervalInSeconds,
+ *                 metrics: monitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigMetrics,
+ *             },
+ *             handlerConfig: {
+ *                 collectdResourceNameConfig: {
+ *                     excludeProperties: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigExcludeProperties,
+ *                     includeProperties: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigIncludeProperties,
+ *                     suffix: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigSuffix,
+ *                 },
+ *                 collectorTypes: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectorTypes,
+ *                 handlerProperties: [{
+ *                     name: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertiesName,
+ *                     value: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertiesValue,
+ *                 }],
+ *                 metricMappings: [{
+ *                     collectorMetricName: testMetric.name,
+ *                     isSkipUpload: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingsIsSkipUpload,
+ *                     metricUploadIntervalInSeconds: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingsMetricUploadIntervalInSeconds,
+ *                     telemetryMetricName: testMetric.name,
+ *                 }],
+ *                 metricNameConfig: {
+ *                     excludePatternOnPrefix: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigExcludePatternOnPrefix,
+ *                     isPrefixWithCollectorType: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigIsPrefixWithCollectorType,
+ *                 },
+ *                 metricUploadIntervalInSeconds: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricUploadIntervalInSeconds,
+ *                 telegrafResourceNameConfig: {
+ *                     excludeTags: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigExcludeTags,
+ *                     includeTags: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigIncludeTags,
+ *                     isUseTagsOnly: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigIsUseTagsOnly,
+ *                 },
+ *                 telemetryResourceGroup: monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelemetryResourceGroup,
+ *             },
+ *             resourceType: monitoredResourceTaskTaskDetailsResourceTypesConfigurationResourceType,
+ *         }],
  *         serviceBaseUrl: monitoredResourceTaskTaskDetailsServiceBaseUrl,
  *         shouldUseMetricsFlowForStatus: monitoredResourceTaskTaskDetailsShouldUseMetricsFlowForStatus,
+ *         source: monitoredResourceTaskTaskDetailsSource,
  *     },
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
@@ -123,6 +165,10 @@ export class MonitoredResourceTask extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
+     * Type of the task.
+     */
+    public /*out*/ readonly type!: pulumi.Output<string>;
+    /**
      * Identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for work requests submitted for this task.
      */
     public /*out*/ readonly workRequestIds!: pulumi.Output<string[]>;
@@ -150,6 +196,7 @@ export class MonitoredResourceTask extends pulumi.CustomResource {
             resourceInputs["tenantId"] = state ? state.tenantId : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["type"] = state ? state.type : undefined;
             resourceInputs["workRequestIds"] = state ? state.workRequestIds : undefined;
         } else {
             const args = argsOrState as MonitoredResourceTaskArgs | undefined;
@@ -169,6 +216,7 @@ export class MonitoredResourceTask extends pulumi.CustomResource {
             resourceInputs["tenantId"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
+            resourceInputs["type"] = undefined /*out*/;
             resourceInputs["workRequestIds"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -220,6 +268,10 @@ export interface MonitoredResourceTaskState {
      * The date and time when the stack monitoring resource task was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      */
     timeUpdated?: pulumi.Input<string>;
+    /**
+     * Type of the task.
+     */
+    type?: pulumi.Input<string>;
     /**
      * Identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for work requests submitted for this task.
      */

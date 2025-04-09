@@ -128,7 +128,11 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         public readonly ImmutableDictionary<string, string> AdditionalNamespaceMap;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+        /// Availability metrics details.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMonitoredResourceTypeAvailabilityMetricsConfigResult> AvailabilityMetricsConfigs;
+        /// <summary>
+        /// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -148,9 +152,17 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
+        /// Specific resource mapping configurations for Agent Extension Handlers.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMonitoredResourceTypeHandlerConfigResult> HandlerConfigs;
+        /// <summary>
         /// Monitored resource type identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// If boolean flag is true, then the resource type cannot be modified or deleted.
+        /// </summary>
+        public readonly bool IsSystemDefined;
         /// <summary>
         /// The metadata details for resource type.
         /// </summary>
@@ -181,6 +193,10 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
+        /// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// </summary>
+        public readonly string TenancyId;
+        /// <summary>
         /// The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         /// </summary>
         public readonly string TimeCreated;
@@ -193,6 +209,8 @@ namespace Pulumi.Oci.StackMonitoring
         private GetMonitoredResourceTypeResult(
             ImmutableDictionary<string, string> additionalNamespaceMap,
 
+            ImmutableArray<Outputs.GetMonitoredResourceTypeAvailabilityMetricsConfigResult> availabilityMetricsConfigs,
+
             string compartmentId,
 
             ImmutableDictionary<string, string> definedTags,
@@ -203,7 +221,11 @@ namespace Pulumi.Oci.StackMonitoring
 
             ImmutableDictionary<string, string> freeformTags,
 
+            ImmutableArray<Outputs.GetMonitoredResourceTypeHandlerConfigResult> handlerConfigs,
+
             string id,
+
+            bool isSystemDefined,
 
             ImmutableArray<Outputs.GetMonitoredResourceTypeMetadataResult> metadatas,
 
@@ -221,17 +243,22 @@ namespace Pulumi.Oci.StackMonitoring
 
             ImmutableDictionary<string, string> systemTags,
 
+            string tenancyId,
+
             string timeCreated,
 
             string timeUpdated)
         {
             AdditionalNamespaceMap = additionalNamespaceMap;
+            AvailabilityMetricsConfigs = availabilityMetricsConfigs;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             Description = description;
             DisplayName = displayName;
             FreeformTags = freeformTags;
+            HandlerConfigs = handlerConfigs;
             Id = id;
+            IsSystemDefined = isSystemDefined;
             Metadatas = metadatas;
             MetricNamespace = metricNamespace;
             MonitoredResourceTypeId = monitoredResourceTypeId;
@@ -240,6 +267,7 @@ namespace Pulumi.Oci.StackMonitoring
             SourceType = sourceType;
             State = state;
             SystemTags = systemTags;
+            TenancyId = tenancyId;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
         }

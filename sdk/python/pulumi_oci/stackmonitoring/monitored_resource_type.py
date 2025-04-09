@@ -34,7 +34,7 @@ class MonitoredResourceTypeArgs:
                  source_type: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a MonitoredResourceType resource.
-        :param pulumi.Input[builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+        :param pulumi.Input[builtins.str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[builtins.str] description: (Updatable) A friendly description.
         :param pulumi.Input[builtins.str] display_name: (Updatable) Monitored resource type display name.
@@ -73,7 +73,7 @@ class MonitoredResourceTypeArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[builtins.str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_id")
 
@@ -198,11 +198,14 @@ class MonitoredResourceTypeArgs:
 class _MonitoredResourceTypeState:
     def __init__(__self__, *,
                  additional_namespace_map: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
+                 availability_metrics_configs: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeAvailabilityMetricsConfigArgs']]]] = None,
                  compartment_id: Optional[pulumi.Input[builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
+                 handler_configs: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigArgs']]]] = None,
+                 is_system_defined: Optional[pulumi.Input[builtins.bool]] = None,
                  metadata: Optional[pulumi.Input['MonitoredResourceTypeMetadataArgs']] = None,
                  metric_namespace: Optional[pulumi.Input[builtins.str]] = None,
                  name: Optional[pulumi.Input[builtins.str]] = None,
@@ -210,16 +213,20 @@ class _MonitoredResourceTypeState:
                  source_type: Optional[pulumi.Input[builtins.str]] = None,
                  state: Optional[pulumi.Input[builtins.str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
+                 tenancy_id: Optional[pulumi.Input[builtins.str]] = None,
                  time_created: Optional[pulumi.Input[builtins.str]] = None,
                  time_updated: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering MonitoredResourceType resources.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] additional_namespace_map: Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
-        :param pulumi.Input[builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+        :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeAvailabilityMetricsConfigArgs']]] availability_metrics_configs: Availability metrics details.
+        :param pulumi.Input[builtins.str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[builtins.str] description: (Updatable) A friendly description.
         :param pulumi.Input[builtins.str] display_name: (Updatable) Monitored resource type display name.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigArgs']]] handler_configs: Specific resource mapping configurations for Agent Extension Handlers.
+        :param pulumi.Input[builtins.bool] is_system_defined: If boolean flag is true, then the resource type cannot be modified or deleted.
         :param pulumi.Input['MonitoredResourceTypeMetadataArgs'] metadata: (Updatable) The metadata details for resource type.
         :param pulumi.Input[builtins.str] metric_namespace: (Updatable) Metric namespace for resource type.
         :param pulumi.Input[builtins.str] name: A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
@@ -231,11 +238,14 @@ class _MonitoredResourceTypeState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[builtins.str] state: Lifecycle state of the monitored resource type.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[builtins.str] tenancy_id: Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[builtins.str] time_created: The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         :param pulumi.Input[builtins.str] time_updated: The date and time when the monitored resource was updated, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         """
         if additional_namespace_map is not None:
             pulumi.set(__self__, "additional_namespace_map", additional_namespace_map)
+        if availability_metrics_configs is not None:
+            pulumi.set(__self__, "availability_metrics_configs", availability_metrics_configs)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
@@ -246,6 +256,10 @@ class _MonitoredResourceTypeState:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if handler_configs is not None:
+            pulumi.set(__self__, "handler_configs", handler_configs)
+        if is_system_defined is not None:
+            pulumi.set(__self__, "is_system_defined", is_system_defined)
         if metadata is not None:
             pulumi.set(__self__, "metadata", metadata)
         if metric_namespace is not None:
@@ -260,6 +274,8 @@ class _MonitoredResourceTypeState:
             pulumi.set(__self__, "state", state)
         if system_tags is not None:
             pulumi.set(__self__, "system_tags", system_tags)
+        if tenancy_id is not None:
+            pulumi.set(__self__, "tenancy_id", tenancy_id)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
@@ -278,10 +294,22 @@ class _MonitoredResourceTypeState:
         pulumi.set(self, "additional_namespace_map", value)
 
     @property
+    @pulumi.getter(name="availabilityMetricsConfigs")
+    def availability_metrics_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeAvailabilityMetricsConfigArgs']]]]:
+        """
+        Availability metrics details.
+        """
+        return pulumi.get(self, "availability_metrics_configs")
+
+    @availability_metrics_configs.setter
+    def availability_metrics_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeAvailabilityMetricsConfigArgs']]]]):
+        pulumi.set(self, "availability_metrics_configs", value)
+
+    @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_id")
 
@@ -336,6 +364,30 @@ class _MonitoredResourceTypeState:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="handlerConfigs")
+    def handler_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigArgs']]]]:
+        """
+        Specific resource mapping configurations for Agent Extension Handlers.
+        """
+        return pulumi.get(self, "handler_configs")
+
+    @handler_configs.setter
+    def handler_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigArgs']]]]):
+        pulumi.set(self, "handler_configs", value)
+
+    @property
+    @pulumi.getter(name="isSystemDefined")
+    def is_system_defined(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        If boolean flag is true, then the resource type cannot be modified or deleted.
+        """
+        return pulumi.get(self, "is_system_defined")
+
+    @is_system_defined.setter
+    def is_system_defined(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_system_defined", value)
 
     @property
     @pulumi.getter
@@ -424,6 +476,18 @@ class _MonitoredResourceTypeState:
     @system_tags.setter
     def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
+
+    @property
+    @pulumi.getter(name="tenancyId")
+    def tenancy_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "tenancy_id")
+
+    @tenancy_id.setter
+    def tenancy_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "tenancy_id", value)
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -515,7 +579,7 @@ class MonitoredResourceType(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+        :param pulumi.Input[builtins.str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[builtins.str] description: (Updatable) A friendly description.
         :param pulumi.Input[builtins.str] display_name: (Updatable) Monitored resource type display name.
@@ -630,8 +694,12 @@ class MonitoredResourceType(pulumi.CustomResource):
             __props__.__dict__["resource_category"] = resource_category
             __props__.__dict__["source_type"] = source_type
             __props__.__dict__["additional_namespace_map"] = None
+            __props__.__dict__["availability_metrics_configs"] = None
+            __props__.__dict__["handler_configs"] = None
+            __props__.__dict__["is_system_defined"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
+            __props__.__dict__["tenancy_id"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
         super(MonitoredResourceType, __self__).__init__(
@@ -645,11 +713,14 @@ class MonitoredResourceType(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             additional_namespace_map: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
+            availability_metrics_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourceTypeAvailabilityMetricsConfigArgs', 'MonitoredResourceTypeAvailabilityMetricsConfigArgsDict']]]]] = None,
             compartment_id: Optional[pulumi.Input[builtins.str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             description: Optional[pulumi.Input[builtins.str]] = None,
             display_name: Optional[pulumi.Input[builtins.str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
+            handler_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourceTypeHandlerConfigArgs', 'MonitoredResourceTypeHandlerConfigArgsDict']]]]] = None,
+            is_system_defined: Optional[pulumi.Input[builtins.bool]] = None,
             metadata: Optional[pulumi.Input[Union['MonitoredResourceTypeMetadataArgs', 'MonitoredResourceTypeMetadataArgsDict']]] = None,
             metric_namespace: Optional[pulumi.Input[builtins.str]] = None,
             name: Optional[pulumi.Input[builtins.str]] = None,
@@ -657,6 +728,7 @@ class MonitoredResourceType(pulumi.CustomResource):
             source_type: Optional[pulumi.Input[builtins.str]] = None,
             state: Optional[pulumi.Input[builtins.str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
+            tenancy_id: Optional[pulumi.Input[builtins.str]] = None,
             time_created: Optional[pulumi.Input[builtins.str]] = None,
             time_updated: Optional[pulumi.Input[builtins.str]] = None) -> 'MonitoredResourceType':
         """
@@ -667,11 +739,14 @@ class MonitoredResourceType(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] additional_namespace_map: Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
-        :param pulumi.Input[builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourceTypeAvailabilityMetricsConfigArgs', 'MonitoredResourceTypeAvailabilityMetricsConfigArgsDict']]]] availability_metrics_configs: Availability metrics details.
+        :param pulumi.Input[builtins.str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[builtins.str] description: (Updatable) A friendly description.
         :param pulumi.Input[builtins.str] display_name: (Updatable) Monitored resource type display name.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourceTypeHandlerConfigArgs', 'MonitoredResourceTypeHandlerConfigArgsDict']]]] handler_configs: Specific resource mapping configurations for Agent Extension Handlers.
+        :param pulumi.Input[builtins.bool] is_system_defined: If boolean flag is true, then the resource type cannot be modified or deleted.
         :param pulumi.Input[Union['MonitoredResourceTypeMetadataArgs', 'MonitoredResourceTypeMetadataArgsDict']] metadata: (Updatable) The metadata details for resource type.
         :param pulumi.Input[builtins.str] metric_namespace: (Updatable) Metric namespace for resource type.
         :param pulumi.Input[builtins.str] name: A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
@@ -683,6 +758,7 @@ class MonitoredResourceType(pulumi.CustomResource):
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[builtins.str] state: Lifecycle state of the monitored resource type.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[builtins.str] tenancy_id: Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[builtins.str] time_created: The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         :param pulumi.Input[builtins.str] time_updated: The date and time when the monitored resource was updated, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         """
@@ -691,11 +767,14 @@ class MonitoredResourceType(pulumi.CustomResource):
         __props__ = _MonitoredResourceTypeState.__new__(_MonitoredResourceTypeState)
 
         __props__.__dict__["additional_namespace_map"] = additional_namespace_map
+        __props__.__dict__["availability_metrics_configs"] = availability_metrics_configs
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["description"] = description
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["handler_configs"] = handler_configs
+        __props__.__dict__["is_system_defined"] = is_system_defined
         __props__.__dict__["metadata"] = metadata
         __props__.__dict__["metric_namespace"] = metric_namespace
         __props__.__dict__["name"] = name
@@ -703,6 +782,7 @@ class MonitoredResourceType(pulumi.CustomResource):
         __props__.__dict__["source_type"] = source_type
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
+        __props__.__dict__["tenancy_id"] = tenancy_id
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
         return MonitoredResourceType(resource_name, opts=opts, __props__=__props__)
@@ -716,10 +796,18 @@ class MonitoredResourceType(pulumi.CustomResource):
         return pulumi.get(self, "additional_namespace_map")
 
     @property
+    @pulumi.getter(name="availabilityMetricsConfigs")
+    def availability_metrics_configs(self) -> pulumi.Output[Sequence['outputs.MonitoredResourceTypeAvailabilityMetricsConfig']]:
+        """
+        Availability metrics details.
+        """
+        return pulumi.get(self, "availability_metrics_configs")
+
+    @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[builtins.str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_id")
 
@@ -754,6 +842,22 @@ class MonitoredResourceType(pulumi.CustomResource):
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="handlerConfigs")
+    def handler_configs(self) -> pulumi.Output[Sequence['outputs.MonitoredResourceTypeHandlerConfig']]:
+        """
+        Specific resource mapping configurations for Agent Extension Handlers.
+        """
+        return pulumi.get(self, "handler_configs")
+
+    @property
+    @pulumi.getter(name="isSystemDefined")
+    def is_system_defined(self) -> pulumi.Output[builtins.bool]:
+        """
+        If boolean flag is true, then the resource type cannot be modified or deleted.
+        """
+        return pulumi.get(self, "is_system_defined")
 
     @property
     @pulumi.getter
@@ -814,6 +918,14 @@ class MonitoredResourceType(pulumi.CustomResource):
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="tenancyId")
+    def tenancy_id(self) -> pulumi.Output[builtins.str]:
+        """
+        Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "tenancy_id")
 
     @property
     @pulumi.getter(name="timeCreated")

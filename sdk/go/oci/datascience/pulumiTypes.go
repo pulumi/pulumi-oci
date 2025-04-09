@@ -2291,6 +2291,1777 @@ func (o JobRunLogDetailArrayOutput) Index(i pulumi.IntInput) JobRunLogDetailOutp
 	}).(JobRunLogDetailOutput)
 }
 
+type MlApplicationImplementationApplicationComponent struct {
+	// OCID of Data Flow Application
+	ApplicationId *string `pulumi:"applicationId"`
+	// Name of application component
+	ComponentName *string `pulumi:"componentName"`
+	// The OCID of the MlApplicationImplementation. Unique identifier that is immutable after creation.
+	Id *string `pulumi:"id"`
+	// OCID of Data Science Job
+	JobId *string `pulumi:"jobId"`
+	// OCID of Data Science Model
+	ModelId *string `pulumi:"modelId"`
+	// ML Application Implementation name which is unique for given ML Application.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Name *string `pulumi:"name"`
+	// OCID of Data Science Pipeline
+	PipelineId *string `pulumi:"pipelineId"`
+	// Type of the resource
+	ResourceType *string `pulumi:"resourceType"`
+	// type of the argument
+	Type *string `pulumi:"type"`
+}
+
+// MlApplicationImplementationApplicationComponentInput is an input type that accepts MlApplicationImplementationApplicationComponentArgs and MlApplicationImplementationApplicationComponentOutput values.
+// You can construct a concrete instance of `MlApplicationImplementationApplicationComponentInput` via:
+//
+//	MlApplicationImplementationApplicationComponentArgs{...}
+type MlApplicationImplementationApplicationComponentInput interface {
+	pulumi.Input
+
+	ToMlApplicationImplementationApplicationComponentOutput() MlApplicationImplementationApplicationComponentOutput
+	ToMlApplicationImplementationApplicationComponentOutputWithContext(context.Context) MlApplicationImplementationApplicationComponentOutput
+}
+
+type MlApplicationImplementationApplicationComponentArgs struct {
+	// OCID of Data Flow Application
+	ApplicationId pulumi.StringPtrInput `pulumi:"applicationId"`
+	// Name of application component
+	ComponentName pulumi.StringPtrInput `pulumi:"componentName"`
+	// The OCID of the MlApplicationImplementation. Unique identifier that is immutable after creation.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// OCID of Data Science Job
+	JobId pulumi.StringPtrInput `pulumi:"jobId"`
+	// OCID of Data Science Model
+	ModelId pulumi.StringPtrInput `pulumi:"modelId"`
+	// ML Application Implementation name which is unique for given ML Application.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// OCID of Data Science Pipeline
+	PipelineId pulumi.StringPtrInput `pulumi:"pipelineId"`
+	// Type of the resource
+	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
+	// type of the argument
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (MlApplicationImplementationApplicationComponentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MlApplicationImplementationApplicationComponent)(nil)).Elem()
+}
+
+func (i MlApplicationImplementationApplicationComponentArgs) ToMlApplicationImplementationApplicationComponentOutput() MlApplicationImplementationApplicationComponentOutput {
+	return i.ToMlApplicationImplementationApplicationComponentOutputWithContext(context.Background())
+}
+
+func (i MlApplicationImplementationApplicationComponentArgs) ToMlApplicationImplementationApplicationComponentOutputWithContext(ctx context.Context) MlApplicationImplementationApplicationComponentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MlApplicationImplementationApplicationComponentOutput)
+}
+
+// MlApplicationImplementationApplicationComponentArrayInput is an input type that accepts MlApplicationImplementationApplicationComponentArray and MlApplicationImplementationApplicationComponentArrayOutput values.
+// You can construct a concrete instance of `MlApplicationImplementationApplicationComponentArrayInput` via:
+//
+//	MlApplicationImplementationApplicationComponentArray{ MlApplicationImplementationApplicationComponentArgs{...} }
+type MlApplicationImplementationApplicationComponentArrayInput interface {
+	pulumi.Input
+
+	ToMlApplicationImplementationApplicationComponentArrayOutput() MlApplicationImplementationApplicationComponentArrayOutput
+	ToMlApplicationImplementationApplicationComponentArrayOutputWithContext(context.Context) MlApplicationImplementationApplicationComponentArrayOutput
+}
+
+type MlApplicationImplementationApplicationComponentArray []MlApplicationImplementationApplicationComponentInput
+
+func (MlApplicationImplementationApplicationComponentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MlApplicationImplementationApplicationComponent)(nil)).Elem()
+}
+
+func (i MlApplicationImplementationApplicationComponentArray) ToMlApplicationImplementationApplicationComponentArrayOutput() MlApplicationImplementationApplicationComponentArrayOutput {
+	return i.ToMlApplicationImplementationApplicationComponentArrayOutputWithContext(context.Background())
+}
+
+func (i MlApplicationImplementationApplicationComponentArray) ToMlApplicationImplementationApplicationComponentArrayOutputWithContext(ctx context.Context) MlApplicationImplementationApplicationComponentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MlApplicationImplementationApplicationComponentArrayOutput)
+}
+
+type MlApplicationImplementationApplicationComponentOutput struct{ *pulumi.OutputState }
+
+func (MlApplicationImplementationApplicationComponentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MlApplicationImplementationApplicationComponent)(nil)).Elem()
+}
+
+func (o MlApplicationImplementationApplicationComponentOutput) ToMlApplicationImplementationApplicationComponentOutput() MlApplicationImplementationApplicationComponentOutput {
+	return o
+}
+
+func (o MlApplicationImplementationApplicationComponentOutput) ToMlApplicationImplementationApplicationComponentOutputWithContext(ctx context.Context) MlApplicationImplementationApplicationComponentOutput {
+	return o
+}
+
+// OCID of Data Flow Application
+func (o MlApplicationImplementationApplicationComponentOutput) ApplicationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MlApplicationImplementationApplicationComponent) *string { return v.ApplicationId }).(pulumi.StringPtrOutput)
+}
+
+// Name of application component
+func (o MlApplicationImplementationApplicationComponentOutput) ComponentName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MlApplicationImplementationApplicationComponent) *string { return v.ComponentName }).(pulumi.StringPtrOutput)
+}
+
+// The OCID of the MlApplicationImplementation. Unique identifier that is immutable after creation.
+func (o MlApplicationImplementationApplicationComponentOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MlApplicationImplementationApplicationComponent) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// OCID of Data Science Job
+func (o MlApplicationImplementationApplicationComponentOutput) JobId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MlApplicationImplementationApplicationComponent) *string { return v.JobId }).(pulumi.StringPtrOutput)
+}
+
+// OCID of Data Science Model
+func (o MlApplicationImplementationApplicationComponentOutput) ModelId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MlApplicationImplementationApplicationComponent) *string { return v.ModelId }).(pulumi.StringPtrOutput)
+}
+
+// ML Application Implementation name which is unique for given ML Application.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o MlApplicationImplementationApplicationComponentOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MlApplicationImplementationApplicationComponent) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// OCID of Data Science Pipeline
+func (o MlApplicationImplementationApplicationComponentOutput) PipelineId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MlApplicationImplementationApplicationComponent) *string { return v.PipelineId }).(pulumi.StringPtrOutput)
+}
+
+// Type of the resource
+func (o MlApplicationImplementationApplicationComponentOutput) ResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MlApplicationImplementationApplicationComponent) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
+}
+
+// type of the argument
+func (o MlApplicationImplementationApplicationComponentOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MlApplicationImplementationApplicationComponent) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type MlApplicationImplementationApplicationComponentArrayOutput struct{ *pulumi.OutputState }
+
+func (MlApplicationImplementationApplicationComponentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MlApplicationImplementationApplicationComponent)(nil)).Elem()
+}
+
+func (o MlApplicationImplementationApplicationComponentArrayOutput) ToMlApplicationImplementationApplicationComponentArrayOutput() MlApplicationImplementationApplicationComponentArrayOutput {
+	return o
+}
+
+func (o MlApplicationImplementationApplicationComponentArrayOutput) ToMlApplicationImplementationApplicationComponentArrayOutputWithContext(ctx context.Context) MlApplicationImplementationApplicationComponentArrayOutput {
+	return o
+}
+
+func (o MlApplicationImplementationApplicationComponentArrayOutput) Index(i pulumi.IntInput) MlApplicationImplementationApplicationComponentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MlApplicationImplementationApplicationComponent {
+		return vs[0].([]MlApplicationImplementationApplicationComponent)[vs[1].(int)]
+	}).(MlApplicationImplementationApplicationComponentOutput)
+}
+
+type MlApplicationImplementationConfigurationSchema struct {
+	// The default value for the optional configuration property (it must not be specified for mandatory configuration properties)
+	DefaultValue *string `pulumi:"defaultValue"`
+	// short description of the argument
+	Description *string `pulumi:"description"`
+	// argument is mandatory or not
+	IsMandatory *bool `pulumi:"isMandatory"`
+	// Name of key (parameter name)
+	KeyName *string `pulumi:"keyName"`
+	// Sample property value (it must match validationRegexp if it is specified)
+	SampleValue *string `pulumi:"sampleValue"`
+	// A regular expression will be used for the validation of property value.
+	ValidationRegexp *string `pulumi:"validationRegexp"`
+	// Type of value
+	ValueType *string `pulumi:"valueType"`
+}
+
+// MlApplicationImplementationConfigurationSchemaInput is an input type that accepts MlApplicationImplementationConfigurationSchemaArgs and MlApplicationImplementationConfigurationSchemaOutput values.
+// You can construct a concrete instance of `MlApplicationImplementationConfigurationSchemaInput` via:
+//
+//	MlApplicationImplementationConfigurationSchemaArgs{...}
+type MlApplicationImplementationConfigurationSchemaInput interface {
+	pulumi.Input
+
+	ToMlApplicationImplementationConfigurationSchemaOutput() MlApplicationImplementationConfigurationSchemaOutput
+	ToMlApplicationImplementationConfigurationSchemaOutputWithContext(context.Context) MlApplicationImplementationConfigurationSchemaOutput
+}
+
+type MlApplicationImplementationConfigurationSchemaArgs struct {
+	// The default value for the optional configuration property (it must not be specified for mandatory configuration properties)
+	DefaultValue pulumi.StringPtrInput `pulumi:"defaultValue"`
+	// short description of the argument
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// argument is mandatory or not
+	IsMandatory pulumi.BoolPtrInput `pulumi:"isMandatory"`
+	// Name of key (parameter name)
+	KeyName pulumi.StringPtrInput `pulumi:"keyName"`
+	// Sample property value (it must match validationRegexp if it is specified)
+	SampleValue pulumi.StringPtrInput `pulumi:"sampleValue"`
+	// A regular expression will be used for the validation of property value.
+	ValidationRegexp pulumi.StringPtrInput `pulumi:"validationRegexp"`
+	// Type of value
+	ValueType pulumi.StringPtrInput `pulumi:"valueType"`
+}
+
+func (MlApplicationImplementationConfigurationSchemaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MlApplicationImplementationConfigurationSchema)(nil)).Elem()
+}
+
+func (i MlApplicationImplementationConfigurationSchemaArgs) ToMlApplicationImplementationConfigurationSchemaOutput() MlApplicationImplementationConfigurationSchemaOutput {
+	return i.ToMlApplicationImplementationConfigurationSchemaOutputWithContext(context.Background())
+}
+
+func (i MlApplicationImplementationConfigurationSchemaArgs) ToMlApplicationImplementationConfigurationSchemaOutputWithContext(ctx context.Context) MlApplicationImplementationConfigurationSchemaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MlApplicationImplementationConfigurationSchemaOutput)
+}
+
+// MlApplicationImplementationConfigurationSchemaArrayInput is an input type that accepts MlApplicationImplementationConfigurationSchemaArray and MlApplicationImplementationConfigurationSchemaArrayOutput values.
+// You can construct a concrete instance of `MlApplicationImplementationConfigurationSchemaArrayInput` via:
+//
+//	MlApplicationImplementationConfigurationSchemaArray{ MlApplicationImplementationConfigurationSchemaArgs{...} }
+type MlApplicationImplementationConfigurationSchemaArrayInput interface {
+	pulumi.Input
+
+	ToMlApplicationImplementationConfigurationSchemaArrayOutput() MlApplicationImplementationConfigurationSchemaArrayOutput
+	ToMlApplicationImplementationConfigurationSchemaArrayOutputWithContext(context.Context) MlApplicationImplementationConfigurationSchemaArrayOutput
+}
+
+type MlApplicationImplementationConfigurationSchemaArray []MlApplicationImplementationConfigurationSchemaInput
+
+func (MlApplicationImplementationConfigurationSchemaArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MlApplicationImplementationConfigurationSchema)(nil)).Elem()
+}
+
+func (i MlApplicationImplementationConfigurationSchemaArray) ToMlApplicationImplementationConfigurationSchemaArrayOutput() MlApplicationImplementationConfigurationSchemaArrayOutput {
+	return i.ToMlApplicationImplementationConfigurationSchemaArrayOutputWithContext(context.Background())
+}
+
+func (i MlApplicationImplementationConfigurationSchemaArray) ToMlApplicationImplementationConfigurationSchemaArrayOutputWithContext(ctx context.Context) MlApplicationImplementationConfigurationSchemaArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MlApplicationImplementationConfigurationSchemaArrayOutput)
+}
+
+type MlApplicationImplementationConfigurationSchemaOutput struct{ *pulumi.OutputState }
+
+func (MlApplicationImplementationConfigurationSchemaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MlApplicationImplementationConfigurationSchema)(nil)).Elem()
+}
+
+func (o MlApplicationImplementationConfigurationSchemaOutput) ToMlApplicationImplementationConfigurationSchemaOutput() MlApplicationImplementationConfigurationSchemaOutput {
+	return o
+}
+
+func (o MlApplicationImplementationConfigurationSchemaOutput) ToMlApplicationImplementationConfigurationSchemaOutputWithContext(ctx context.Context) MlApplicationImplementationConfigurationSchemaOutput {
+	return o
+}
+
+// The default value for the optional configuration property (it must not be specified for mandatory configuration properties)
+func (o MlApplicationImplementationConfigurationSchemaOutput) DefaultValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MlApplicationImplementationConfigurationSchema) *string { return v.DefaultValue }).(pulumi.StringPtrOutput)
+}
+
+// short description of the argument
+func (o MlApplicationImplementationConfigurationSchemaOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MlApplicationImplementationConfigurationSchema) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// argument is mandatory or not
+func (o MlApplicationImplementationConfigurationSchemaOutput) IsMandatory() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MlApplicationImplementationConfigurationSchema) *bool { return v.IsMandatory }).(pulumi.BoolPtrOutput)
+}
+
+// Name of key (parameter name)
+func (o MlApplicationImplementationConfigurationSchemaOutput) KeyName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MlApplicationImplementationConfigurationSchema) *string { return v.KeyName }).(pulumi.StringPtrOutput)
+}
+
+// Sample property value (it must match validationRegexp if it is specified)
+func (o MlApplicationImplementationConfigurationSchemaOutput) SampleValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MlApplicationImplementationConfigurationSchema) *string { return v.SampleValue }).(pulumi.StringPtrOutput)
+}
+
+// A regular expression will be used for the validation of property value.
+func (o MlApplicationImplementationConfigurationSchemaOutput) ValidationRegexp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MlApplicationImplementationConfigurationSchema) *string { return v.ValidationRegexp }).(pulumi.StringPtrOutput)
+}
+
+// Type of value
+func (o MlApplicationImplementationConfigurationSchemaOutput) ValueType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MlApplicationImplementationConfigurationSchema) *string { return v.ValueType }).(pulumi.StringPtrOutput)
+}
+
+type MlApplicationImplementationConfigurationSchemaArrayOutput struct{ *pulumi.OutputState }
+
+func (MlApplicationImplementationConfigurationSchemaArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MlApplicationImplementationConfigurationSchema)(nil)).Elem()
+}
+
+func (o MlApplicationImplementationConfigurationSchemaArrayOutput) ToMlApplicationImplementationConfigurationSchemaArrayOutput() MlApplicationImplementationConfigurationSchemaArrayOutput {
+	return o
+}
+
+func (o MlApplicationImplementationConfigurationSchemaArrayOutput) ToMlApplicationImplementationConfigurationSchemaArrayOutputWithContext(ctx context.Context) MlApplicationImplementationConfigurationSchemaArrayOutput {
+	return o
+}
+
+func (o MlApplicationImplementationConfigurationSchemaArrayOutput) Index(i pulumi.IntInput) MlApplicationImplementationConfigurationSchemaOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MlApplicationImplementationConfigurationSchema {
+		return vs[0].([]MlApplicationImplementationConfigurationSchema)[vs[1].(int)]
+	}).(MlApplicationImplementationConfigurationSchemaOutput)
+}
+
+type MlApplicationImplementationLogging struct {
+	// (Updatable) Log configuration details for particular areas of ML Application Implementation.
+	AggregatedInstanceViewLog *MlApplicationImplementationLoggingAggregatedInstanceViewLog `pulumi:"aggregatedInstanceViewLog"`
+	// (Updatable) Log configuration details for particular areas of ML Application Implementation.
+	ImplementationLog *MlApplicationImplementationLoggingImplementationLog `pulumi:"implementationLog"`
+	// (Updatable) Log configuration details for particular areas of ML Application Implementation.
+	TriggerLog *MlApplicationImplementationLoggingTriggerLog `pulumi:"triggerLog"`
+}
+
+// MlApplicationImplementationLoggingInput is an input type that accepts MlApplicationImplementationLoggingArgs and MlApplicationImplementationLoggingOutput values.
+// You can construct a concrete instance of `MlApplicationImplementationLoggingInput` via:
+//
+//	MlApplicationImplementationLoggingArgs{...}
+type MlApplicationImplementationLoggingInput interface {
+	pulumi.Input
+
+	ToMlApplicationImplementationLoggingOutput() MlApplicationImplementationLoggingOutput
+	ToMlApplicationImplementationLoggingOutputWithContext(context.Context) MlApplicationImplementationLoggingOutput
+}
+
+type MlApplicationImplementationLoggingArgs struct {
+	// (Updatable) Log configuration details for particular areas of ML Application Implementation.
+	AggregatedInstanceViewLog MlApplicationImplementationLoggingAggregatedInstanceViewLogPtrInput `pulumi:"aggregatedInstanceViewLog"`
+	// (Updatable) Log configuration details for particular areas of ML Application Implementation.
+	ImplementationLog MlApplicationImplementationLoggingImplementationLogPtrInput `pulumi:"implementationLog"`
+	// (Updatable) Log configuration details for particular areas of ML Application Implementation.
+	TriggerLog MlApplicationImplementationLoggingTriggerLogPtrInput `pulumi:"triggerLog"`
+}
+
+func (MlApplicationImplementationLoggingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MlApplicationImplementationLogging)(nil)).Elem()
+}
+
+func (i MlApplicationImplementationLoggingArgs) ToMlApplicationImplementationLoggingOutput() MlApplicationImplementationLoggingOutput {
+	return i.ToMlApplicationImplementationLoggingOutputWithContext(context.Background())
+}
+
+func (i MlApplicationImplementationLoggingArgs) ToMlApplicationImplementationLoggingOutputWithContext(ctx context.Context) MlApplicationImplementationLoggingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MlApplicationImplementationLoggingOutput)
+}
+
+func (i MlApplicationImplementationLoggingArgs) ToMlApplicationImplementationLoggingPtrOutput() MlApplicationImplementationLoggingPtrOutput {
+	return i.ToMlApplicationImplementationLoggingPtrOutputWithContext(context.Background())
+}
+
+func (i MlApplicationImplementationLoggingArgs) ToMlApplicationImplementationLoggingPtrOutputWithContext(ctx context.Context) MlApplicationImplementationLoggingPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MlApplicationImplementationLoggingOutput).ToMlApplicationImplementationLoggingPtrOutputWithContext(ctx)
+}
+
+// MlApplicationImplementationLoggingPtrInput is an input type that accepts MlApplicationImplementationLoggingArgs, MlApplicationImplementationLoggingPtr and MlApplicationImplementationLoggingPtrOutput values.
+// You can construct a concrete instance of `MlApplicationImplementationLoggingPtrInput` via:
+//
+//	        MlApplicationImplementationLoggingArgs{...}
+//
+//	or:
+//
+//	        nil
+type MlApplicationImplementationLoggingPtrInput interface {
+	pulumi.Input
+
+	ToMlApplicationImplementationLoggingPtrOutput() MlApplicationImplementationLoggingPtrOutput
+	ToMlApplicationImplementationLoggingPtrOutputWithContext(context.Context) MlApplicationImplementationLoggingPtrOutput
+}
+
+type mlApplicationImplementationLoggingPtrType MlApplicationImplementationLoggingArgs
+
+func MlApplicationImplementationLoggingPtr(v *MlApplicationImplementationLoggingArgs) MlApplicationImplementationLoggingPtrInput {
+	return (*mlApplicationImplementationLoggingPtrType)(v)
+}
+
+func (*mlApplicationImplementationLoggingPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MlApplicationImplementationLogging)(nil)).Elem()
+}
+
+func (i *mlApplicationImplementationLoggingPtrType) ToMlApplicationImplementationLoggingPtrOutput() MlApplicationImplementationLoggingPtrOutput {
+	return i.ToMlApplicationImplementationLoggingPtrOutputWithContext(context.Background())
+}
+
+func (i *mlApplicationImplementationLoggingPtrType) ToMlApplicationImplementationLoggingPtrOutputWithContext(ctx context.Context) MlApplicationImplementationLoggingPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MlApplicationImplementationLoggingPtrOutput)
+}
+
+type MlApplicationImplementationLoggingOutput struct{ *pulumi.OutputState }
+
+func (MlApplicationImplementationLoggingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MlApplicationImplementationLogging)(nil)).Elem()
+}
+
+func (o MlApplicationImplementationLoggingOutput) ToMlApplicationImplementationLoggingOutput() MlApplicationImplementationLoggingOutput {
+	return o
+}
+
+func (o MlApplicationImplementationLoggingOutput) ToMlApplicationImplementationLoggingOutputWithContext(ctx context.Context) MlApplicationImplementationLoggingOutput {
+	return o
+}
+
+func (o MlApplicationImplementationLoggingOutput) ToMlApplicationImplementationLoggingPtrOutput() MlApplicationImplementationLoggingPtrOutput {
+	return o.ToMlApplicationImplementationLoggingPtrOutputWithContext(context.Background())
+}
+
+func (o MlApplicationImplementationLoggingOutput) ToMlApplicationImplementationLoggingPtrOutputWithContext(ctx context.Context) MlApplicationImplementationLoggingPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MlApplicationImplementationLogging) *MlApplicationImplementationLogging {
+		return &v
+	}).(MlApplicationImplementationLoggingPtrOutput)
+}
+
+// (Updatable) Log configuration details for particular areas of ML Application Implementation.
+func (o MlApplicationImplementationLoggingOutput) AggregatedInstanceViewLog() MlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutput {
+	return o.ApplyT(func(v MlApplicationImplementationLogging) *MlApplicationImplementationLoggingAggregatedInstanceViewLog {
+		return v.AggregatedInstanceViewLog
+	}).(MlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutput)
+}
+
+// (Updatable) Log configuration details for particular areas of ML Application Implementation.
+func (o MlApplicationImplementationLoggingOutput) ImplementationLog() MlApplicationImplementationLoggingImplementationLogPtrOutput {
+	return o.ApplyT(func(v MlApplicationImplementationLogging) *MlApplicationImplementationLoggingImplementationLog {
+		return v.ImplementationLog
+	}).(MlApplicationImplementationLoggingImplementationLogPtrOutput)
+}
+
+// (Updatable) Log configuration details for particular areas of ML Application Implementation.
+func (o MlApplicationImplementationLoggingOutput) TriggerLog() MlApplicationImplementationLoggingTriggerLogPtrOutput {
+	return o.ApplyT(func(v MlApplicationImplementationLogging) *MlApplicationImplementationLoggingTriggerLog {
+		return v.TriggerLog
+	}).(MlApplicationImplementationLoggingTriggerLogPtrOutput)
+}
+
+type MlApplicationImplementationLoggingPtrOutput struct{ *pulumi.OutputState }
+
+func (MlApplicationImplementationLoggingPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MlApplicationImplementationLogging)(nil)).Elem()
+}
+
+func (o MlApplicationImplementationLoggingPtrOutput) ToMlApplicationImplementationLoggingPtrOutput() MlApplicationImplementationLoggingPtrOutput {
+	return o
+}
+
+func (o MlApplicationImplementationLoggingPtrOutput) ToMlApplicationImplementationLoggingPtrOutputWithContext(ctx context.Context) MlApplicationImplementationLoggingPtrOutput {
+	return o
+}
+
+func (o MlApplicationImplementationLoggingPtrOutput) Elem() MlApplicationImplementationLoggingOutput {
+	return o.ApplyT(func(v *MlApplicationImplementationLogging) MlApplicationImplementationLogging {
+		if v != nil {
+			return *v
+		}
+		var ret MlApplicationImplementationLogging
+		return ret
+	}).(MlApplicationImplementationLoggingOutput)
+}
+
+// (Updatable) Log configuration details for particular areas of ML Application Implementation.
+func (o MlApplicationImplementationLoggingPtrOutput) AggregatedInstanceViewLog() MlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutput {
+	return o.ApplyT(func(v *MlApplicationImplementationLogging) *MlApplicationImplementationLoggingAggregatedInstanceViewLog {
+		if v == nil {
+			return nil
+		}
+		return v.AggregatedInstanceViewLog
+	}).(MlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutput)
+}
+
+// (Updatable) Log configuration details for particular areas of ML Application Implementation.
+func (o MlApplicationImplementationLoggingPtrOutput) ImplementationLog() MlApplicationImplementationLoggingImplementationLogPtrOutput {
+	return o.ApplyT(func(v *MlApplicationImplementationLogging) *MlApplicationImplementationLoggingImplementationLog {
+		if v == nil {
+			return nil
+		}
+		return v.ImplementationLog
+	}).(MlApplicationImplementationLoggingImplementationLogPtrOutput)
+}
+
+// (Updatable) Log configuration details for particular areas of ML Application Implementation.
+func (o MlApplicationImplementationLoggingPtrOutput) TriggerLog() MlApplicationImplementationLoggingTriggerLogPtrOutput {
+	return o.ApplyT(func(v *MlApplicationImplementationLogging) *MlApplicationImplementationLoggingTriggerLog {
+		if v == nil {
+			return nil
+		}
+		return v.TriggerLog
+	}).(MlApplicationImplementationLoggingTriggerLogPtrOutput)
+}
+
+type MlApplicationImplementationLoggingAggregatedInstanceViewLog struct {
+	// (Updatable) If logging is enabled.
+	EnableLogging *bool `pulumi:"enableLogging"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId *string `pulumi:"logGroupId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+	LogId *string `pulumi:"logId"`
+}
+
+// MlApplicationImplementationLoggingAggregatedInstanceViewLogInput is an input type that accepts MlApplicationImplementationLoggingAggregatedInstanceViewLogArgs and MlApplicationImplementationLoggingAggregatedInstanceViewLogOutput values.
+// You can construct a concrete instance of `MlApplicationImplementationLoggingAggregatedInstanceViewLogInput` via:
+//
+//	MlApplicationImplementationLoggingAggregatedInstanceViewLogArgs{...}
+type MlApplicationImplementationLoggingAggregatedInstanceViewLogInput interface {
+	pulumi.Input
+
+	ToMlApplicationImplementationLoggingAggregatedInstanceViewLogOutput() MlApplicationImplementationLoggingAggregatedInstanceViewLogOutput
+	ToMlApplicationImplementationLoggingAggregatedInstanceViewLogOutputWithContext(context.Context) MlApplicationImplementationLoggingAggregatedInstanceViewLogOutput
+}
+
+type MlApplicationImplementationLoggingAggregatedInstanceViewLogArgs struct {
+	// (Updatable) If logging is enabled.
+	EnableLogging pulumi.BoolPtrInput `pulumi:"enableLogging"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId pulumi.StringPtrInput `pulumi:"logGroupId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+	LogId pulumi.StringPtrInput `pulumi:"logId"`
+}
+
+func (MlApplicationImplementationLoggingAggregatedInstanceViewLogArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MlApplicationImplementationLoggingAggregatedInstanceViewLog)(nil)).Elem()
+}
+
+func (i MlApplicationImplementationLoggingAggregatedInstanceViewLogArgs) ToMlApplicationImplementationLoggingAggregatedInstanceViewLogOutput() MlApplicationImplementationLoggingAggregatedInstanceViewLogOutput {
+	return i.ToMlApplicationImplementationLoggingAggregatedInstanceViewLogOutputWithContext(context.Background())
+}
+
+func (i MlApplicationImplementationLoggingAggregatedInstanceViewLogArgs) ToMlApplicationImplementationLoggingAggregatedInstanceViewLogOutputWithContext(ctx context.Context) MlApplicationImplementationLoggingAggregatedInstanceViewLogOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MlApplicationImplementationLoggingAggregatedInstanceViewLogOutput)
+}
+
+func (i MlApplicationImplementationLoggingAggregatedInstanceViewLogArgs) ToMlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutput() MlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutput {
+	return i.ToMlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutputWithContext(context.Background())
+}
+
+func (i MlApplicationImplementationLoggingAggregatedInstanceViewLogArgs) ToMlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutputWithContext(ctx context.Context) MlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MlApplicationImplementationLoggingAggregatedInstanceViewLogOutput).ToMlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutputWithContext(ctx)
+}
+
+// MlApplicationImplementationLoggingAggregatedInstanceViewLogPtrInput is an input type that accepts MlApplicationImplementationLoggingAggregatedInstanceViewLogArgs, MlApplicationImplementationLoggingAggregatedInstanceViewLogPtr and MlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutput values.
+// You can construct a concrete instance of `MlApplicationImplementationLoggingAggregatedInstanceViewLogPtrInput` via:
+//
+//	        MlApplicationImplementationLoggingAggregatedInstanceViewLogArgs{...}
+//
+//	or:
+//
+//	        nil
+type MlApplicationImplementationLoggingAggregatedInstanceViewLogPtrInput interface {
+	pulumi.Input
+
+	ToMlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutput() MlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutput
+	ToMlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutputWithContext(context.Context) MlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutput
+}
+
+type mlApplicationImplementationLoggingAggregatedInstanceViewLogPtrType MlApplicationImplementationLoggingAggregatedInstanceViewLogArgs
+
+func MlApplicationImplementationLoggingAggregatedInstanceViewLogPtr(v *MlApplicationImplementationLoggingAggregatedInstanceViewLogArgs) MlApplicationImplementationLoggingAggregatedInstanceViewLogPtrInput {
+	return (*mlApplicationImplementationLoggingAggregatedInstanceViewLogPtrType)(v)
+}
+
+func (*mlApplicationImplementationLoggingAggregatedInstanceViewLogPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MlApplicationImplementationLoggingAggregatedInstanceViewLog)(nil)).Elem()
+}
+
+func (i *mlApplicationImplementationLoggingAggregatedInstanceViewLogPtrType) ToMlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutput() MlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutput {
+	return i.ToMlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutputWithContext(context.Background())
+}
+
+func (i *mlApplicationImplementationLoggingAggregatedInstanceViewLogPtrType) ToMlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutputWithContext(ctx context.Context) MlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutput)
+}
+
+type MlApplicationImplementationLoggingAggregatedInstanceViewLogOutput struct{ *pulumi.OutputState }
+
+func (MlApplicationImplementationLoggingAggregatedInstanceViewLogOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MlApplicationImplementationLoggingAggregatedInstanceViewLog)(nil)).Elem()
+}
+
+func (o MlApplicationImplementationLoggingAggregatedInstanceViewLogOutput) ToMlApplicationImplementationLoggingAggregatedInstanceViewLogOutput() MlApplicationImplementationLoggingAggregatedInstanceViewLogOutput {
+	return o
+}
+
+func (o MlApplicationImplementationLoggingAggregatedInstanceViewLogOutput) ToMlApplicationImplementationLoggingAggregatedInstanceViewLogOutputWithContext(ctx context.Context) MlApplicationImplementationLoggingAggregatedInstanceViewLogOutput {
+	return o
+}
+
+func (o MlApplicationImplementationLoggingAggregatedInstanceViewLogOutput) ToMlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutput() MlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutput {
+	return o.ToMlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutputWithContext(context.Background())
+}
+
+func (o MlApplicationImplementationLoggingAggregatedInstanceViewLogOutput) ToMlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutputWithContext(ctx context.Context) MlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MlApplicationImplementationLoggingAggregatedInstanceViewLog) *MlApplicationImplementationLoggingAggregatedInstanceViewLog {
+		return &v
+	}).(MlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutput)
+}
+
+// (Updatable) If logging is enabled.
+func (o MlApplicationImplementationLoggingAggregatedInstanceViewLogOutput) EnableLogging() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MlApplicationImplementationLoggingAggregatedInstanceViewLog) *bool { return v.EnableLogging }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+func (o MlApplicationImplementationLoggingAggregatedInstanceViewLogOutput) LogGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MlApplicationImplementationLoggingAggregatedInstanceViewLog) *string { return v.LogGroupId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+func (o MlApplicationImplementationLoggingAggregatedInstanceViewLogOutput) LogId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MlApplicationImplementationLoggingAggregatedInstanceViewLog) *string { return v.LogId }).(pulumi.StringPtrOutput)
+}
+
+type MlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutput struct{ *pulumi.OutputState }
+
+func (MlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MlApplicationImplementationLoggingAggregatedInstanceViewLog)(nil)).Elem()
+}
+
+func (o MlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutput) ToMlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutput() MlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutput {
+	return o
+}
+
+func (o MlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutput) ToMlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutputWithContext(ctx context.Context) MlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutput {
+	return o
+}
+
+func (o MlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutput) Elem() MlApplicationImplementationLoggingAggregatedInstanceViewLogOutput {
+	return o.ApplyT(func(v *MlApplicationImplementationLoggingAggregatedInstanceViewLog) MlApplicationImplementationLoggingAggregatedInstanceViewLog {
+		if v != nil {
+			return *v
+		}
+		var ret MlApplicationImplementationLoggingAggregatedInstanceViewLog
+		return ret
+	}).(MlApplicationImplementationLoggingAggregatedInstanceViewLogOutput)
+}
+
+// (Updatable) If logging is enabled.
+func (o MlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutput) EnableLogging() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MlApplicationImplementationLoggingAggregatedInstanceViewLog) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnableLogging
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+func (o MlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutput) LogGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MlApplicationImplementationLoggingAggregatedInstanceViewLog) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LogGroupId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+func (o MlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutput) LogId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MlApplicationImplementationLoggingAggregatedInstanceViewLog) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LogId
+	}).(pulumi.StringPtrOutput)
+}
+
+type MlApplicationImplementationLoggingImplementationLog struct {
+	// (Updatable) If logging is enabled.
+	EnableLogging *bool `pulumi:"enableLogging"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId *string `pulumi:"logGroupId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+	LogId *string `pulumi:"logId"`
+}
+
+// MlApplicationImplementationLoggingImplementationLogInput is an input type that accepts MlApplicationImplementationLoggingImplementationLogArgs and MlApplicationImplementationLoggingImplementationLogOutput values.
+// You can construct a concrete instance of `MlApplicationImplementationLoggingImplementationLogInput` via:
+//
+//	MlApplicationImplementationLoggingImplementationLogArgs{...}
+type MlApplicationImplementationLoggingImplementationLogInput interface {
+	pulumi.Input
+
+	ToMlApplicationImplementationLoggingImplementationLogOutput() MlApplicationImplementationLoggingImplementationLogOutput
+	ToMlApplicationImplementationLoggingImplementationLogOutputWithContext(context.Context) MlApplicationImplementationLoggingImplementationLogOutput
+}
+
+type MlApplicationImplementationLoggingImplementationLogArgs struct {
+	// (Updatable) If logging is enabled.
+	EnableLogging pulumi.BoolPtrInput `pulumi:"enableLogging"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId pulumi.StringPtrInput `pulumi:"logGroupId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+	LogId pulumi.StringPtrInput `pulumi:"logId"`
+}
+
+func (MlApplicationImplementationLoggingImplementationLogArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MlApplicationImplementationLoggingImplementationLog)(nil)).Elem()
+}
+
+func (i MlApplicationImplementationLoggingImplementationLogArgs) ToMlApplicationImplementationLoggingImplementationLogOutput() MlApplicationImplementationLoggingImplementationLogOutput {
+	return i.ToMlApplicationImplementationLoggingImplementationLogOutputWithContext(context.Background())
+}
+
+func (i MlApplicationImplementationLoggingImplementationLogArgs) ToMlApplicationImplementationLoggingImplementationLogOutputWithContext(ctx context.Context) MlApplicationImplementationLoggingImplementationLogOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MlApplicationImplementationLoggingImplementationLogOutput)
+}
+
+func (i MlApplicationImplementationLoggingImplementationLogArgs) ToMlApplicationImplementationLoggingImplementationLogPtrOutput() MlApplicationImplementationLoggingImplementationLogPtrOutput {
+	return i.ToMlApplicationImplementationLoggingImplementationLogPtrOutputWithContext(context.Background())
+}
+
+func (i MlApplicationImplementationLoggingImplementationLogArgs) ToMlApplicationImplementationLoggingImplementationLogPtrOutputWithContext(ctx context.Context) MlApplicationImplementationLoggingImplementationLogPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MlApplicationImplementationLoggingImplementationLogOutput).ToMlApplicationImplementationLoggingImplementationLogPtrOutputWithContext(ctx)
+}
+
+// MlApplicationImplementationLoggingImplementationLogPtrInput is an input type that accepts MlApplicationImplementationLoggingImplementationLogArgs, MlApplicationImplementationLoggingImplementationLogPtr and MlApplicationImplementationLoggingImplementationLogPtrOutput values.
+// You can construct a concrete instance of `MlApplicationImplementationLoggingImplementationLogPtrInput` via:
+//
+//	        MlApplicationImplementationLoggingImplementationLogArgs{...}
+//
+//	or:
+//
+//	        nil
+type MlApplicationImplementationLoggingImplementationLogPtrInput interface {
+	pulumi.Input
+
+	ToMlApplicationImplementationLoggingImplementationLogPtrOutput() MlApplicationImplementationLoggingImplementationLogPtrOutput
+	ToMlApplicationImplementationLoggingImplementationLogPtrOutputWithContext(context.Context) MlApplicationImplementationLoggingImplementationLogPtrOutput
+}
+
+type mlApplicationImplementationLoggingImplementationLogPtrType MlApplicationImplementationLoggingImplementationLogArgs
+
+func MlApplicationImplementationLoggingImplementationLogPtr(v *MlApplicationImplementationLoggingImplementationLogArgs) MlApplicationImplementationLoggingImplementationLogPtrInput {
+	return (*mlApplicationImplementationLoggingImplementationLogPtrType)(v)
+}
+
+func (*mlApplicationImplementationLoggingImplementationLogPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MlApplicationImplementationLoggingImplementationLog)(nil)).Elem()
+}
+
+func (i *mlApplicationImplementationLoggingImplementationLogPtrType) ToMlApplicationImplementationLoggingImplementationLogPtrOutput() MlApplicationImplementationLoggingImplementationLogPtrOutput {
+	return i.ToMlApplicationImplementationLoggingImplementationLogPtrOutputWithContext(context.Background())
+}
+
+func (i *mlApplicationImplementationLoggingImplementationLogPtrType) ToMlApplicationImplementationLoggingImplementationLogPtrOutputWithContext(ctx context.Context) MlApplicationImplementationLoggingImplementationLogPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MlApplicationImplementationLoggingImplementationLogPtrOutput)
+}
+
+type MlApplicationImplementationLoggingImplementationLogOutput struct{ *pulumi.OutputState }
+
+func (MlApplicationImplementationLoggingImplementationLogOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MlApplicationImplementationLoggingImplementationLog)(nil)).Elem()
+}
+
+func (o MlApplicationImplementationLoggingImplementationLogOutput) ToMlApplicationImplementationLoggingImplementationLogOutput() MlApplicationImplementationLoggingImplementationLogOutput {
+	return o
+}
+
+func (o MlApplicationImplementationLoggingImplementationLogOutput) ToMlApplicationImplementationLoggingImplementationLogOutputWithContext(ctx context.Context) MlApplicationImplementationLoggingImplementationLogOutput {
+	return o
+}
+
+func (o MlApplicationImplementationLoggingImplementationLogOutput) ToMlApplicationImplementationLoggingImplementationLogPtrOutput() MlApplicationImplementationLoggingImplementationLogPtrOutput {
+	return o.ToMlApplicationImplementationLoggingImplementationLogPtrOutputWithContext(context.Background())
+}
+
+func (o MlApplicationImplementationLoggingImplementationLogOutput) ToMlApplicationImplementationLoggingImplementationLogPtrOutputWithContext(ctx context.Context) MlApplicationImplementationLoggingImplementationLogPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MlApplicationImplementationLoggingImplementationLog) *MlApplicationImplementationLoggingImplementationLog {
+		return &v
+	}).(MlApplicationImplementationLoggingImplementationLogPtrOutput)
+}
+
+// (Updatable) If logging is enabled.
+func (o MlApplicationImplementationLoggingImplementationLogOutput) EnableLogging() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MlApplicationImplementationLoggingImplementationLog) *bool { return v.EnableLogging }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+func (o MlApplicationImplementationLoggingImplementationLogOutput) LogGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MlApplicationImplementationLoggingImplementationLog) *string { return v.LogGroupId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+func (o MlApplicationImplementationLoggingImplementationLogOutput) LogId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MlApplicationImplementationLoggingImplementationLog) *string { return v.LogId }).(pulumi.StringPtrOutput)
+}
+
+type MlApplicationImplementationLoggingImplementationLogPtrOutput struct{ *pulumi.OutputState }
+
+func (MlApplicationImplementationLoggingImplementationLogPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MlApplicationImplementationLoggingImplementationLog)(nil)).Elem()
+}
+
+func (o MlApplicationImplementationLoggingImplementationLogPtrOutput) ToMlApplicationImplementationLoggingImplementationLogPtrOutput() MlApplicationImplementationLoggingImplementationLogPtrOutput {
+	return o
+}
+
+func (o MlApplicationImplementationLoggingImplementationLogPtrOutput) ToMlApplicationImplementationLoggingImplementationLogPtrOutputWithContext(ctx context.Context) MlApplicationImplementationLoggingImplementationLogPtrOutput {
+	return o
+}
+
+func (o MlApplicationImplementationLoggingImplementationLogPtrOutput) Elem() MlApplicationImplementationLoggingImplementationLogOutput {
+	return o.ApplyT(func(v *MlApplicationImplementationLoggingImplementationLog) MlApplicationImplementationLoggingImplementationLog {
+		if v != nil {
+			return *v
+		}
+		var ret MlApplicationImplementationLoggingImplementationLog
+		return ret
+	}).(MlApplicationImplementationLoggingImplementationLogOutput)
+}
+
+// (Updatable) If logging is enabled.
+func (o MlApplicationImplementationLoggingImplementationLogPtrOutput) EnableLogging() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MlApplicationImplementationLoggingImplementationLog) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnableLogging
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+func (o MlApplicationImplementationLoggingImplementationLogPtrOutput) LogGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MlApplicationImplementationLoggingImplementationLog) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LogGroupId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+func (o MlApplicationImplementationLoggingImplementationLogPtrOutput) LogId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MlApplicationImplementationLoggingImplementationLog) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LogId
+	}).(pulumi.StringPtrOutput)
+}
+
+type MlApplicationImplementationLoggingTriggerLog struct {
+	// (Updatable) If logging is enabled.
+	EnableLogging *bool `pulumi:"enableLogging"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId *string `pulumi:"logGroupId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+	LogId *string `pulumi:"logId"`
+}
+
+// MlApplicationImplementationLoggingTriggerLogInput is an input type that accepts MlApplicationImplementationLoggingTriggerLogArgs and MlApplicationImplementationLoggingTriggerLogOutput values.
+// You can construct a concrete instance of `MlApplicationImplementationLoggingTriggerLogInput` via:
+//
+//	MlApplicationImplementationLoggingTriggerLogArgs{...}
+type MlApplicationImplementationLoggingTriggerLogInput interface {
+	pulumi.Input
+
+	ToMlApplicationImplementationLoggingTriggerLogOutput() MlApplicationImplementationLoggingTriggerLogOutput
+	ToMlApplicationImplementationLoggingTriggerLogOutputWithContext(context.Context) MlApplicationImplementationLoggingTriggerLogOutput
+}
+
+type MlApplicationImplementationLoggingTriggerLogArgs struct {
+	// (Updatable) If logging is enabled.
+	EnableLogging pulumi.BoolPtrInput `pulumi:"enableLogging"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId pulumi.StringPtrInput `pulumi:"logGroupId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+	LogId pulumi.StringPtrInput `pulumi:"logId"`
+}
+
+func (MlApplicationImplementationLoggingTriggerLogArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MlApplicationImplementationLoggingTriggerLog)(nil)).Elem()
+}
+
+func (i MlApplicationImplementationLoggingTriggerLogArgs) ToMlApplicationImplementationLoggingTriggerLogOutput() MlApplicationImplementationLoggingTriggerLogOutput {
+	return i.ToMlApplicationImplementationLoggingTriggerLogOutputWithContext(context.Background())
+}
+
+func (i MlApplicationImplementationLoggingTriggerLogArgs) ToMlApplicationImplementationLoggingTriggerLogOutputWithContext(ctx context.Context) MlApplicationImplementationLoggingTriggerLogOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MlApplicationImplementationLoggingTriggerLogOutput)
+}
+
+func (i MlApplicationImplementationLoggingTriggerLogArgs) ToMlApplicationImplementationLoggingTriggerLogPtrOutput() MlApplicationImplementationLoggingTriggerLogPtrOutput {
+	return i.ToMlApplicationImplementationLoggingTriggerLogPtrOutputWithContext(context.Background())
+}
+
+func (i MlApplicationImplementationLoggingTriggerLogArgs) ToMlApplicationImplementationLoggingTriggerLogPtrOutputWithContext(ctx context.Context) MlApplicationImplementationLoggingTriggerLogPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MlApplicationImplementationLoggingTriggerLogOutput).ToMlApplicationImplementationLoggingTriggerLogPtrOutputWithContext(ctx)
+}
+
+// MlApplicationImplementationLoggingTriggerLogPtrInput is an input type that accepts MlApplicationImplementationLoggingTriggerLogArgs, MlApplicationImplementationLoggingTriggerLogPtr and MlApplicationImplementationLoggingTriggerLogPtrOutput values.
+// You can construct a concrete instance of `MlApplicationImplementationLoggingTriggerLogPtrInput` via:
+//
+//	        MlApplicationImplementationLoggingTriggerLogArgs{...}
+//
+//	or:
+//
+//	        nil
+type MlApplicationImplementationLoggingTriggerLogPtrInput interface {
+	pulumi.Input
+
+	ToMlApplicationImplementationLoggingTriggerLogPtrOutput() MlApplicationImplementationLoggingTriggerLogPtrOutput
+	ToMlApplicationImplementationLoggingTriggerLogPtrOutputWithContext(context.Context) MlApplicationImplementationLoggingTriggerLogPtrOutput
+}
+
+type mlApplicationImplementationLoggingTriggerLogPtrType MlApplicationImplementationLoggingTriggerLogArgs
+
+func MlApplicationImplementationLoggingTriggerLogPtr(v *MlApplicationImplementationLoggingTriggerLogArgs) MlApplicationImplementationLoggingTriggerLogPtrInput {
+	return (*mlApplicationImplementationLoggingTriggerLogPtrType)(v)
+}
+
+func (*mlApplicationImplementationLoggingTriggerLogPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MlApplicationImplementationLoggingTriggerLog)(nil)).Elem()
+}
+
+func (i *mlApplicationImplementationLoggingTriggerLogPtrType) ToMlApplicationImplementationLoggingTriggerLogPtrOutput() MlApplicationImplementationLoggingTriggerLogPtrOutput {
+	return i.ToMlApplicationImplementationLoggingTriggerLogPtrOutputWithContext(context.Background())
+}
+
+func (i *mlApplicationImplementationLoggingTriggerLogPtrType) ToMlApplicationImplementationLoggingTriggerLogPtrOutputWithContext(ctx context.Context) MlApplicationImplementationLoggingTriggerLogPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MlApplicationImplementationLoggingTriggerLogPtrOutput)
+}
+
+type MlApplicationImplementationLoggingTriggerLogOutput struct{ *pulumi.OutputState }
+
+func (MlApplicationImplementationLoggingTriggerLogOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MlApplicationImplementationLoggingTriggerLog)(nil)).Elem()
+}
+
+func (o MlApplicationImplementationLoggingTriggerLogOutput) ToMlApplicationImplementationLoggingTriggerLogOutput() MlApplicationImplementationLoggingTriggerLogOutput {
+	return o
+}
+
+func (o MlApplicationImplementationLoggingTriggerLogOutput) ToMlApplicationImplementationLoggingTriggerLogOutputWithContext(ctx context.Context) MlApplicationImplementationLoggingTriggerLogOutput {
+	return o
+}
+
+func (o MlApplicationImplementationLoggingTriggerLogOutput) ToMlApplicationImplementationLoggingTriggerLogPtrOutput() MlApplicationImplementationLoggingTriggerLogPtrOutput {
+	return o.ToMlApplicationImplementationLoggingTriggerLogPtrOutputWithContext(context.Background())
+}
+
+func (o MlApplicationImplementationLoggingTriggerLogOutput) ToMlApplicationImplementationLoggingTriggerLogPtrOutputWithContext(ctx context.Context) MlApplicationImplementationLoggingTriggerLogPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MlApplicationImplementationLoggingTriggerLog) *MlApplicationImplementationLoggingTriggerLog {
+		return &v
+	}).(MlApplicationImplementationLoggingTriggerLogPtrOutput)
+}
+
+// (Updatable) If logging is enabled.
+func (o MlApplicationImplementationLoggingTriggerLogOutput) EnableLogging() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MlApplicationImplementationLoggingTriggerLog) *bool { return v.EnableLogging }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+func (o MlApplicationImplementationLoggingTriggerLogOutput) LogGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MlApplicationImplementationLoggingTriggerLog) *string { return v.LogGroupId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+func (o MlApplicationImplementationLoggingTriggerLogOutput) LogId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MlApplicationImplementationLoggingTriggerLog) *string { return v.LogId }).(pulumi.StringPtrOutput)
+}
+
+type MlApplicationImplementationLoggingTriggerLogPtrOutput struct{ *pulumi.OutputState }
+
+func (MlApplicationImplementationLoggingTriggerLogPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MlApplicationImplementationLoggingTriggerLog)(nil)).Elem()
+}
+
+func (o MlApplicationImplementationLoggingTriggerLogPtrOutput) ToMlApplicationImplementationLoggingTriggerLogPtrOutput() MlApplicationImplementationLoggingTriggerLogPtrOutput {
+	return o
+}
+
+func (o MlApplicationImplementationLoggingTriggerLogPtrOutput) ToMlApplicationImplementationLoggingTriggerLogPtrOutputWithContext(ctx context.Context) MlApplicationImplementationLoggingTriggerLogPtrOutput {
+	return o
+}
+
+func (o MlApplicationImplementationLoggingTriggerLogPtrOutput) Elem() MlApplicationImplementationLoggingTriggerLogOutput {
+	return o.ApplyT(func(v *MlApplicationImplementationLoggingTriggerLog) MlApplicationImplementationLoggingTriggerLog {
+		if v != nil {
+			return *v
+		}
+		var ret MlApplicationImplementationLoggingTriggerLog
+		return ret
+	}).(MlApplicationImplementationLoggingTriggerLogOutput)
+}
+
+// (Updatable) If logging is enabled.
+func (o MlApplicationImplementationLoggingTriggerLogPtrOutput) EnableLogging() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MlApplicationImplementationLoggingTriggerLog) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnableLogging
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+func (o MlApplicationImplementationLoggingTriggerLogPtrOutput) LogGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MlApplicationImplementationLoggingTriggerLog) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LogGroupId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+func (o MlApplicationImplementationLoggingTriggerLogPtrOutput) LogId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MlApplicationImplementationLoggingTriggerLog) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LogId
+	}).(pulumi.StringPtrOutput)
+}
+
+type MlApplicationImplementationMlApplicationPackageArgument struct {
+	// Array of the ML Application package arguments
+	Arguments []MlApplicationImplementationMlApplicationPackageArgumentArgument `pulumi:"arguments"`
+}
+
+// MlApplicationImplementationMlApplicationPackageArgumentInput is an input type that accepts MlApplicationImplementationMlApplicationPackageArgumentArgs and MlApplicationImplementationMlApplicationPackageArgumentOutput values.
+// You can construct a concrete instance of `MlApplicationImplementationMlApplicationPackageArgumentInput` via:
+//
+//	MlApplicationImplementationMlApplicationPackageArgumentArgs{...}
+type MlApplicationImplementationMlApplicationPackageArgumentInput interface {
+	pulumi.Input
+
+	ToMlApplicationImplementationMlApplicationPackageArgumentOutput() MlApplicationImplementationMlApplicationPackageArgumentOutput
+	ToMlApplicationImplementationMlApplicationPackageArgumentOutputWithContext(context.Context) MlApplicationImplementationMlApplicationPackageArgumentOutput
+}
+
+type MlApplicationImplementationMlApplicationPackageArgumentArgs struct {
+	// Array of the ML Application package arguments
+	Arguments MlApplicationImplementationMlApplicationPackageArgumentArgumentArrayInput `pulumi:"arguments"`
+}
+
+func (MlApplicationImplementationMlApplicationPackageArgumentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MlApplicationImplementationMlApplicationPackageArgument)(nil)).Elem()
+}
+
+func (i MlApplicationImplementationMlApplicationPackageArgumentArgs) ToMlApplicationImplementationMlApplicationPackageArgumentOutput() MlApplicationImplementationMlApplicationPackageArgumentOutput {
+	return i.ToMlApplicationImplementationMlApplicationPackageArgumentOutputWithContext(context.Background())
+}
+
+func (i MlApplicationImplementationMlApplicationPackageArgumentArgs) ToMlApplicationImplementationMlApplicationPackageArgumentOutputWithContext(ctx context.Context) MlApplicationImplementationMlApplicationPackageArgumentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MlApplicationImplementationMlApplicationPackageArgumentOutput)
+}
+
+// MlApplicationImplementationMlApplicationPackageArgumentArrayInput is an input type that accepts MlApplicationImplementationMlApplicationPackageArgumentArray and MlApplicationImplementationMlApplicationPackageArgumentArrayOutput values.
+// You can construct a concrete instance of `MlApplicationImplementationMlApplicationPackageArgumentArrayInput` via:
+//
+//	MlApplicationImplementationMlApplicationPackageArgumentArray{ MlApplicationImplementationMlApplicationPackageArgumentArgs{...} }
+type MlApplicationImplementationMlApplicationPackageArgumentArrayInput interface {
+	pulumi.Input
+
+	ToMlApplicationImplementationMlApplicationPackageArgumentArrayOutput() MlApplicationImplementationMlApplicationPackageArgumentArrayOutput
+	ToMlApplicationImplementationMlApplicationPackageArgumentArrayOutputWithContext(context.Context) MlApplicationImplementationMlApplicationPackageArgumentArrayOutput
+}
+
+type MlApplicationImplementationMlApplicationPackageArgumentArray []MlApplicationImplementationMlApplicationPackageArgumentInput
+
+func (MlApplicationImplementationMlApplicationPackageArgumentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MlApplicationImplementationMlApplicationPackageArgument)(nil)).Elem()
+}
+
+func (i MlApplicationImplementationMlApplicationPackageArgumentArray) ToMlApplicationImplementationMlApplicationPackageArgumentArrayOutput() MlApplicationImplementationMlApplicationPackageArgumentArrayOutput {
+	return i.ToMlApplicationImplementationMlApplicationPackageArgumentArrayOutputWithContext(context.Background())
+}
+
+func (i MlApplicationImplementationMlApplicationPackageArgumentArray) ToMlApplicationImplementationMlApplicationPackageArgumentArrayOutputWithContext(ctx context.Context) MlApplicationImplementationMlApplicationPackageArgumentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MlApplicationImplementationMlApplicationPackageArgumentArrayOutput)
+}
+
+type MlApplicationImplementationMlApplicationPackageArgumentOutput struct{ *pulumi.OutputState }
+
+func (MlApplicationImplementationMlApplicationPackageArgumentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MlApplicationImplementationMlApplicationPackageArgument)(nil)).Elem()
+}
+
+func (o MlApplicationImplementationMlApplicationPackageArgumentOutput) ToMlApplicationImplementationMlApplicationPackageArgumentOutput() MlApplicationImplementationMlApplicationPackageArgumentOutput {
+	return o
+}
+
+func (o MlApplicationImplementationMlApplicationPackageArgumentOutput) ToMlApplicationImplementationMlApplicationPackageArgumentOutputWithContext(ctx context.Context) MlApplicationImplementationMlApplicationPackageArgumentOutput {
+	return o
+}
+
+// Array of the ML Application package arguments
+func (o MlApplicationImplementationMlApplicationPackageArgumentOutput) Arguments() MlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutput {
+	return o.ApplyT(func(v MlApplicationImplementationMlApplicationPackageArgument) []MlApplicationImplementationMlApplicationPackageArgumentArgument {
+		return v.Arguments
+	}).(MlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutput)
+}
+
+type MlApplicationImplementationMlApplicationPackageArgumentArrayOutput struct{ *pulumi.OutputState }
+
+func (MlApplicationImplementationMlApplicationPackageArgumentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MlApplicationImplementationMlApplicationPackageArgument)(nil)).Elem()
+}
+
+func (o MlApplicationImplementationMlApplicationPackageArgumentArrayOutput) ToMlApplicationImplementationMlApplicationPackageArgumentArrayOutput() MlApplicationImplementationMlApplicationPackageArgumentArrayOutput {
+	return o
+}
+
+func (o MlApplicationImplementationMlApplicationPackageArgumentArrayOutput) ToMlApplicationImplementationMlApplicationPackageArgumentArrayOutputWithContext(ctx context.Context) MlApplicationImplementationMlApplicationPackageArgumentArrayOutput {
+	return o
+}
+
+func (o MlApplicationImplementationMlApplicationPackageArgumentArrayOutput) Index(i pulumi.IntInput) MlApplicationImplementationMlApplicationPackageArgumentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MlApplicationImplementationMlApplicationPackageArgument {
+		return vs[0].([]MlApplicationImplementationMlApplicationPackageArgument)[vs[1].(int)]
+	}).(MlApplicationImplementationMlApplicationPackageArgumentOutput)
+}
+
+type MlApplicationImplementationMlApplicationPackageArgumentArgument struct {
+	// short description of the argument
+	Description *string `pulumi:"description"`
+	// argument is mandatory or not
+	IsMandatory *bool `pulumi:"isMandatory"`
+	// ML Application Implementation name which is unique for given ML Application.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Name *string `pulumi:"name"`
+	// type of the argument
+	Type *string `pulumi:"type"`
+	// Argument value
+	Value *string `pulumi:"value"`
+}
+
+// MlApplicationImplementationMlApplicationPackageArgumentArgumentInput is an input type that accepts MlApplicationImplementationMlApplicationPackageArgumentArgumentArgs and MlApplicationImplementationMlApplicationPackageArgumentArgumentOutput values.
+// You can construct a concrete instance of `MlApplicationImplementationMlApplicationPackageArgumentArgumentInput` via:
+//
+//	MlApplicationImplementationMlApplicationPackageArgumentArgumentArgs{...}
+type MlApplicationImplementationMlApplicationPackageArgumentArgumentInput interface {
+	pulumi.Input
+
+	ToMlApplicationImplementationMlApplicationPackageArgumentArgumentOutput() MlApplicationImplementationMlApplicationPackageArgumentArgumentOutput
+	ToMlApplicationImplementationMlApplicationPackageArgumentArgumentOutputWithContext(context.Context) MlApplicationImplementationMlApplicationPackageArgumentArgumentOutput
+}
+
+type MlApplicationImplementationMlApplicationPackageArgumentArgumentArgs struct {
+	// short description of the argument
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// argument is mandatory or not
+	IsMandatory pulumi.BoolPtrInput `pulumi:"isMandatory"`
+	// ML Application Implementation name which is unique for given ML Application.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// type of the argument
+	Type pulumi.StringPtrInput `pulumi:"type"`
+	// Argument value
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (MlApplicationImplementationMlApplicationPackageArgumentArgumentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MlApplicationImplementationMlApplicationPackageArgumentArgument)(nil)).Elem()
+}
+
+func (i MlApplicationImplementationMlApplicationPackageArgumentArgumentArgs) ToMlApplicationImplementationMlApplicationPackageArgumentArgumentOutput() MlApplicationImplementationMlApplicationPackageArgumentArgumentOutput {
+	return i.ToMlApplicationImplementationMlApplicationPackageArgumentArgumentOutputWithContext(context.Background())
+}
+
+func (i MlApplicationImplementationMlApplicationPackageArgumentArgumentArgs) ToMlApplicationImplementationMlApplicationPackageArgumentArgumentOutputWithContext(ctx context.Context) MlApplicationImplementationMlApplicationPackageArgumentArgumentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MlApplicationImplementationMlApplicationPackageArgumentArgumentOutput)
+}
+
+// MlApplicationImplementationMlApplicationPackageArgumentArgumentArrayInput is an input type that accepts MlApplicationImplementationMlApplicationPackageArgumentArgumentArray and MlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutput values.
+// You can construct a concrete instance of `MlApplicationImplementationMlApplicationPackageArgumentArgumentArrayInput` via:
+//
+//	MlApplicationImplementationMlApplicationPackageArgumentArgumentArray{ MlApplicationImplementationMlApplicationPackageArgumentArgumentArgs{...} }
+type MlApplicationImplementationMlApplicationPackageArgumentArgumentArrayInput interface {
+	pulumi.Input
+
+	ToMlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutput() MlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutput
+	ToMlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutputWithContext(context.Context) MlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutput
+}
+
+type MlApplicationImplementationMlApplicationPackageArgumentArgumentArray []MlApplicationImplementationMlApplicationPackageArgumentArgumentInput
+
+func (MlApplicationImplementationMlApplicationPackageArgumentArgumentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MlApplicationImplementationMlApplicationPackageArgumentArgument)(nil)).Elem()
+}
+
+func (i MlApplicationImplementationMlApplicationPackageArgumentArgumentArray) ToMlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutput() MlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutput {
+	return i.ToMlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutputWithContext(context.Background())
+}
+
+func (i MlApplicationImplementationMlApplicationPackageArgumentArgumentArray) ToMlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutputWithContext(ctx context.Context) MlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutput)
+}
+
+type MlApplicationImplementationMlApplicationPackageArgumentArgumentOutput struct{ *pulumi.OutputState }
+
+func (MlApplicationImplementationMlApplicationPackageArgumentArgumentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MlApplicationImplementationMlApplicationPackageArgumentArgument)(nil)).Elem()
+}
+
+func (o MlApplicationImplementationMlApplicationPackageArgumentArgumentOutput) ToMlApplicationImplementationMlApplicationPackageArgumentArgumentOutput() MlApplicationImplementationMlApplicationPackageArgumentArgumentOutput {
+	return o
+}
+
+func (o MlApplicationImplementationMlApplicationPackageArgumentArgumentOutput) ToMlApplicationImplementationMlApplicationPackageArgumentArgumentOutputWithContext(ctx context.Context) MlApplicationImplementationMlApplicationPackageArgumentArgumentOutput {
+	return o
+}
+
+// short description of the argument
+func (o MlApplicationImplementationMlApplicationPackageArgumentArgumentOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MlApplicationImplementationMlApplicationPackageArgumentArgument) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// argument is mandatory or not
+func (o MlApplicationImplementationMlApplicationPackageArgumentArgumentOutput) IsMandatory() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MlApplicationImplementationMlApplicationPackageArgumentArgument) *bool { return v.IsMandatory }).(pulumi.BoolPtrOutput)
+}
+
+// ML Application Implementation name which is unique for given ML Application.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o MlApplicationImplementationMlApplicationPackageArgumentArgumentOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MlApplicationImplementationMlApplicationPackageArgumentArgument) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// type of the argument
+func (o MlApplicationImplementationMlApplicationPackageArgumentArgumentOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MlApplicationImplementationMlApplicationPackageArgumentArgument) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+// Argument value
+func (o MlApplicationImplementationMlApplicationPackageArgumentArgumentOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MlApplicationImplementationMlApplicationPackageArgumentArgument) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type MlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutput struct{ *pulumi.OutputState }
+
+func (MlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MlApplicationImplementationMlApplicationPackageArgumentArgument)(nil)).Elem()
+}
+
+func (o MlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutput) ToMlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutput() MlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutput {
+	return o
+}
+
+func (o MlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutput) ToMlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutputWithContext(ctx context.Context) MlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutput {
+	return o
+}
+
+func (o MlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutput) Index(i pulumi.IntInput) MlApplicationImplementationMlApplicationPackageArgumentArgumentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MlApplicationImplementationMlApplicationPackageArgumentArgument {
+		return vs[0].([]MlApplicationImplementationMlApplicationPackageArgumentArgument)[vs[1].(int)]
+	}).(MlApplicationImplementationMlApplicationPackageArgumentArgumentOutput)
+}
+
+type MlApplicationInstanceAuthConfiguration struct {
+	// Name of the IDCS application
+	ApplicationName *string `pulumi:"applicationName"`
+	// Identity Domain OCID
+	DomainId *string `pulumi:"domainId"`
+	// Type of AuthN/Z
+	Type string `pulumi:"type"`
+}
+
+// MlApplicationInstanceAuthConfigurationInput is an input type that accepts MlApplicationInstanceAuthConfigurationArgs and MlApplicationInstanceAuthConfigurationOutput values.
+// You can construct a concrete instance of `MlApplicationInstanceAuthConfigurationInput` via:
+//
+//	MlApplicationInstanceAuthConfigurationArgs{...}
+type MlApplicationInstanceAuthConfigurationInput interface {
+	pulumi.Input
+
+	ToMlApplicationInstanceAuthConfigurationOutput() MlApplicationInstanceAuthConfigurationOutput
+	ToMlApplicationInstanceAuthConfigurationOutputWithContext(context.Context) MlApplicationInstanceAuthConfigurationOutput
+}
+
+type MlApplicationInstanceAuthConfigurationArgs struct {
+	// Name of the IDCS application
+	ApplicationName pulumi.StringPtrInput `pulumi:"applicationName"`
+	// Identity Domain OCID
+	DomainId pulumi.StringPtrInput `pulumi:"domainId"`
+	// Type of AuthN/Z
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (MlApplicationInstanceAuthConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MlApplicationInstanceAuthConfiguration)(nil)).Elem()
+}
+
+func (i MlApplicationInstanceAuthConfigurationArgs) ToMlApplicationInstanceAuthConfigurationOutput() MlApplicationInstanceAuthConfigurationOutput {
+	return i.ToMlApplicationInstanceAuthConfigurationOutputWithContext(context.Background())
+}
+
+func (i MlApplicationInstanceAuthConfigurationArgs) ToMlApplicationInstanceAuthConfigurationOutputWithContext(ctx context.Context) MlApplicationInstanceAuthConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MlApplicationInstanceAuthConfigurationOutput)
+}
+
+func (i MlApplicationInstanceAuthConfigurationArgs) ToMlApplicationInstanceAuthConfigurationPtrOutput() MlApplicationInstanceAuthConfigurationPtrOutput {
+	return i.ToMlApplicationInstanceAuthConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i MlApplicationInstanceAuthConfigurationArgs) ToMlApplicationInstanceAuthConfigurationPtrOutputWithContext(ctx context.Context) MlApplicationInstanceAuthConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MlApplicationInstanceAuthConfigurationOutput).ToMlApplicationInstanceAuthConfigurationPtrOutputWithContext(ctx)
+}
+
+// MlApplicationInstanceAuthConfigurationPtrInput is an input type that accepts MlApplicationInstanceAuthConfigurationArgs, MlApplicationInstanceAuthConfigurationPtr and MlApplicationInstanceAuthConfigurationPtrOutput values.
+// You can construct a concrete instance of `MlApplicationInstanceAuthConfigurationPtrInput` via:
+//
+//	        MlApplicationInstanceAuthConfigurationArgs{...}
+//
+//	or:
+//
+//	        nil
+type MlApplicationInstanceAuthConfigurationPtrInput interface {
+	pulumi.Input
+
+	ToMlApplicationInstanceAuthConfigurationPtrOutput() MlApplicationInstanceAuthConfigurationPtrOutput
+	ToMlApplicationInstanceAuthConfigurationPtrOutputWithContext(context.Context) MlApplicationInstanceAuthConfigurationPtrOutput
+}
+
+type mlApplicationInstanceAuthConfigurationPtrType MlApplicationInstanceAuthConfigurationArgs
+
+func MlApplicationInstanceAuthConfigurationPtr(v *MlApplicationInstanceAuthConfigurationArgs) MlApplicationInstanceAuthConfigurationPtrInput {
+	return (*mlApplicationInstanceAuthConfigurationPtrType)(v)
+}
+
+func (*mlApplicationInstanceAuthConfigurationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MlApplicationInstanceAuthConfiguration)(nil)).Elem()
+}
+
+func (i *mlApplicationInstanceAuthConfigurationPtrType) ToMlApplicationInstanceAuthConfigurationPtrOutput() MlApplicationInstanceAuthConfigurationPtrOutput {
+	return i.ToMlApplicationInstanceAuthConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i *mlApplicationInstanceAuthConfigurationPtrType) ToMlApplicationInstanceAuthConfigurationPtrOutputWithContext(ctx context.Context) MlApplicationInstanceAuthConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MlApplicationInstanceAuthConfigurationPtrOutput)
+}
+
+type MlApplicationInstanceAuthConfigurationOutput struct{ *pulumi.OutputState }
+
+func (MlApplicationInstanceAuthConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MlApplicationInstanceAuthConfiguration)(nil)).Elem()
+}
+
+func (o MlApplicationInstanceAuthConfigurationOutput) ToMlApplicationInstanceAuthConfigurationOutput() MlApplicationInstanceAuthConfigurationOutput {
+	return o
+}
+
+func (o MlApplicationInstanceAuthConfigurationOutput) ToMlApplicationInstanceAuthConfigurationOutputWithContext(ctx context.Context) MlApplicationInstanceAuthConfigurationOutput {
+	return o
+}
+
+func (o MlApplicationInstanceAuthConfigurationOutput) ToMlApplicationInstanceAuthConfigurationPtrOutput() MlApplicationInstanceAuthConfigurationPtrOutput {
+	return o.ToMlApplicationInstanceAuthConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (o MlApplicationInstanceAuthConfigurationOutput) ToMlApplicationInstanceAuthConfigurationPtrOutputWithContext(ctx context.Context) MlApplicationInstanceAuthConfigurationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MlApplicationInstanceAuthConfiguration) *MlApplicationInstanceAuthConfiguration {
+		return &v
+	}).(MlApplicationInstanceAuthConfigurationPtrOutput)
+}
+
+// Name of the IDCS application
+func (o MlApplicationInstanceAuthConfigurationOutput) ApplicationName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MlApplicationInstanceAuthConfiguration) *string { return v.ApplicationName }).(pulumi.StringPtrOutput)
+}
+
+// Identity Domain OCID
+func (o MlApplicationInstanceAuthConfigurationOutput) DomainId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MlApplicationInstanceAuthConfiguration) *string { return v.DomainId }).(pulumi.StringPtrOutput)
+}
+
+// Type of AuthN/Z
+func (o MlApplicationInstanceAuthConfigurationOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v MlApplicationInstanceAuthConfiguration) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type MlApplicationInstanceAuthConfigurationPtrOutput struct{ *pulumi.OutputState }
+
+func (MlApplicationInstanceAuthConfigurationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MlApplicationInstanceAuthConfiguration)(nil)).Elem()
+}
+
+func (o MlApplicationInstanceAuthConfigurationPtrOutput) ToMlApplicationInstanceAuthConfigurationPtrOutput() MlApplicationInstanceAuthConfigurationPtrOutput {
+	return o
+}
+
+func (o MlApplicationInstanceAuthConfigurationPtrOutput) ToMlApplicationInstanceAuthConfigurationPtrOutputWithContext(ctx context.Context) MlApplicationInstanceAuthConfigurationPtrOutput {
+	return o
+}
+
+func (o MlApplicationInstanceAuthConfigurationPtrOutput) Elem() MlApplicationInstanceAuthConfigurationOutput {
+	return o.ApplyT(func(v *MlApplicationInstanceAuthConfiguration) MlApplicationInstanceAuthConfiguration {
+		if v != nil {
+			return *v
+		}
+		var ret MlApplicationInstanceAuthConfiguration
+		return ret
+	}).(MlApplicationInstanceAuthConfigurationOutput)
+}
+
+// Name of the IDCS application
+func (o MlApplicationInstanceAuthConfigurationPtrOutput) ApplicationName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MlApplicationInstanceAuthConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ApplicationName
+	}).(pulumi.StringPtrOutput)
+}
+
+// Identity Domain OCID
+func (o MlApplicationInstanceAuthConfigurationPtrOutput) DomainId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MlApplicationInstanceAuthConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DomainId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Type of AuthN/Z
+func (o MlApplicationInstanceAuthConfigurationPtrOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MlApplicationInstanceAuthConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Type
+	}).(pulumi.StringPtrOutput)
+}
+
+type MlApplicationInstanceConfiguration struct {
+	// (Updatable) Key of configuration property
+	Key string `pulumi:"key"`
+	// (Updatable) Value of configuration property
+	Value *string `pulumi:"value"`
+}
+
+// MlApplicationInstanceConfigurationInput is an input type that accepts MlApplicationInstanceConfigurationArgs and MlApplicationInstanceConfigurationOutput values.
+// You can construct a concrete instance of `MlApplicationInstanceConfigurationInput` via:
+//
+//	MlApplicationInstanceConfigurationArgs{...}
+type MlApplicationInstanceConfigurationInput interface {
+	pulumi.Input
+
+	ToMlApplicationInstanceConfigurationOutput() MlApplicationInstanceConfigurationOutput
+	ToMlApplicationInstanceConfigurationOutputWithContext(context.Context) MlApplicationInstanceConfigurationOutput
+}
+
+type MlApplicationInstanceConfigurationArgs struct {
+	// (Updatable) Key of configuration property
+	Key pulumi.StringInput `pulumi:"key"`
+	// (Updatable) Value of configuration property
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (MlApplicationInstanceConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MlApplicationInstanceConfiguration)(nil)).Elem()
+}
+
+func (i MlApplicationInstanceConfigurationArgs) ToMlApplicationInstanceConfigurationOutput() MlApplicationInstanceConfigurationOutput {
+	return i.ToMlApplicationInstanceConfigurationOutputWithContext(context.Background())
+}
+
+func (i MlApplicationInstanceConfigurationArgs) ToMlApplicationInstanceConfigurationOutputWithContext(ctx context.Context) MlApplicationInstanceConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MlApplicationInstanceConfigurationOutput)
+}
+
+// MlApplicationInstanceConfigurationArrayInput is an input type that accepts MlApplicationInstanceConfigurationArray and MlApplicationInstanceConfigurationArrayOutput values.
+// You can construct a concrete instance of `MlApplicationInstanceConfigurationArrayInput` via:
+//
+//	MlApplicationInstanceConfigurationArray{ MlApplicationInstanceConfigurationArgs{...} }
+type MlApplicationInstanceConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToMlApplicationInstanceConfigurationArrayOutput() MlApplicationInstanceConfigurationArrayOutput
+	ToMlApplicationInstanceConfigurationArrayOutputWithContext(context.Context) MlApplicationInstanceConfigurationArrayOutput
+}
+
+type MlApplicationInstanceConfigurationArray []MlApplicationInstanceConfigurationInput
+
+func (MlApplicationInstanceConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MlApplicationInstanceConfiguration)(nil)).Elem()
+}
+
+func (i MlApplicationInstanceConfigurationArray) ToMlApplicationInstanceConfigurationArrayOutput() MlApplicationInstanceConfigurationArrayOutput {
+	return i.ToMlApplicationInstanceConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i MlApplicationInstanceConfigurationArray) ToMlApplicationInstanceConfigurationArrayOutputWithContext(ctx context.Context) MlApplicationInstanceConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MlApplicationInstanceConfigurationArrayOutput)
+}
+
+type MlApplicationInstanceConfigurationOutput struct{ *pulumi.OutputState }
+
+func (MlApplicationInstanceConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MlApplicationInstanceConfiguration)(nil)).Elem()
+}
+
+func (o MlApplicationInstanceConfigurationOutput) ToMlApplicationInstanceConfigurationOutput() MlApplicationInstanceConfigurationOutput {
+	return o
+}
+
+func (o MlApplicationInstanceConfigurationOutput) ToMlApplicationInstanceConfigurationOutputWithContext(ctx context.Context) MlApplicationInstanceConfigurationOutput {
+	return o
+}
+
+// (Updatable) Key of configuration property
+func (o MlApplicationInstanceConfigurationOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v MlApplicationInstanceConfiguration) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// (Updatable) Value of configuration property
+func (o MlApplicationInstanceConfigurationOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MlApplicationInstanceConfiguration) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type MlApplicationInstanceConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (MlApplicationInstanceConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MlApplicationInstanceConfiguration)(nil)).Elem()
+}
+
+func (o MlApplicationInstanceConfigurationArrayOutput) ToMlApplicationInstanceConfigurationArrayOutput() MlApplicationInstanceConfigurationArrayOutput {
+	return o
+}
+
+func (o MlApplicationInstanceConfigurationArrayOutput) ToMlApplicationInstanceConfigurationArrayOutputWithContext(ctx context.Context) MlApplicationInstanceConfigurationArrayOutput {
+	return o
+}
+
+func (o MlApplicationInstanceConfigurationArrayOutput) Index(i pulumi.IntInput) MlApplicationInstanceConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MlApplicationInstanceConfiguration {
+		return vs[0].([]MlApplicationInstanceConfiguration)[vs[1].(int)]
+	}).(MlApplicationInstanceConfigurationOutput)
+}
+
+type MlApplicationInstancePredictionEndpointDetail struct {
+	// Base URI of prediction router.
+	BasePredictionUri *string `pulumi:"basePredictionUri"`
+	// Array of all prediction URIs per use-case.
+	PredictionUris []MlApplicationInstancePredictionEndpointDetailPredictionUri `pulumi:"predictionUris"`
+}
+
+// MlApplicationInstancePredictionEndpointDetailInput is an input type that accepts MlApplicationInstancePredictionEndpointDetailArgs and MlApplicationInstancePredictionEndpointDetailOutput values.
+// You can construct a concrete instance of `MlApplicationInstancePredictionEndpointDetailInput` via:
+//
+//	MlApplicationInstancePredictionEndpointDetailArgs{...}
+type MlApplicationInstancePredictionEndpointDetailInput interface {
+	pulumi.Input
+
+	ToMlApplicationInstancePredictionEndpointDetailOutput() MlApplicationInstancePredictionEndpointDetailOutput
+	ToMlApplicationInstancePredictionEndpointDetailOutputWithContext(context.Context) MlApplicationInstancePredictionEndpointDetailOutput
+}
+
+type MlApplicationInstancePredictionEndpointDetailArgs struct {
+	// Base URI of prediction router.
+	BasePredictionUri pulumi.StringPtrInput `pulumi:"basePredictionUri"`
+	// Array of all prediction URIs per use-case.
+	PredictionUris MlApplicationInstancePredictionEndpointDetailPredictionUriArrayInput `pulumi:"predictionUris"`
+}
+
+func (MlApplicationInstancePredictionEndpointDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MlApplicationInstancePredictionEndpointDetail)(nil)).Elem()
+}
+
+func (i MlApplicationInstancePredictionEndpointDetailArgs) ToMlApplicationInstancePredictionEndpointDetailOutput() MlApplicationInstancePredictionEndpointDetailOutput {
+	return i.ToMlApplicationInstancePredictionEndpointDetailOutputWithContext(context.Background())
+}
+
+func (i MlApplicationInstancePredictionEndpointDetailArgs) ToMlApplicationInstancePredictionEndpointDetailOutputWithContext(ctx context.Context) MlApplicationInstancePredictionEndpointDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MlApplicationInstancePredictionEndpointDetailOutput)
+}
+
+// MlApplicationInstancePredictionEndpointDetailArrayInput is an input type that accepts MlApplicationInstancePredictionEndpointDetailArray and MlApplicationInstancePredictionEndpointDetailArrayOutput values.
+// You can construct a concrete instance of `MlApplicationInstancePredictionEndpointDetailArrayInput` via:
+//
+//	MlApplicationInstancePredictionEndpointDetailArray{ MlApplicationInstancePredictionEndpointDetailArgs{...} }
+type MlApplicationInstancePredictionEndpointDetailArrayInput interface {
+	pulumi.Input
+
+	ToMlApplicationInstancePredictionEndpointDetailArrayOutput() MlApplicationInstancePredictionEndpointDetailArrayOutput
+	ToMlApplicationInstancePredictionEndpointDetailArrayOutputWithContext(context.Context) MlApplicationInstancePredictionEndpointDetailArrayOutput
+}
+
+type MlApplicationInstancePredictionEndpointDetailArray []MlApplicationInstancePredictionEndpointDetailInput
+
+func (MlApplicationInstancePredictionEndpointDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MlApplicationInstancePredictionEndpointDetail)(nil)).Elem()
+}
+
+func (i MlApplicationInstancePredictionEndpointDetailArray) ToMlApplicationInstancePredictionEndpointDetailArrayOutput() MlApplicationInstancePredictionEndpointDetailArrayOutput {
+	return i.ToMlApplicationInstancePredictionEndpointDetailArrayOutputWithContext(context.Background())
+}
+
+func (i MlApplicationInstancePredictionEndpointDetailArray) ToMlApplicationInstancePredictionEndpointDetailArrayOutputWithContext(ctx context.Context) MlApplicationInstancePredictionEndpointDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MlApplicationInstancePredictionEndpointDetailArrayOutput)
+}
+
+type MlApplicationInstancePredictionEndpointDetailOutput struct{ *pulumi.OutputState }
+
+func (MlApplicationInstancePredictionEndpointDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MlApplicationInstancePredictionEndpointDetail)(nil)).Elem()
+}
+
+func (o MlApplicationInstancePredictionEndpointDetailOutput) ToMlApplicationInstancePredictionEndpointDetailOutput() MlApplicationInstancePredictionEndpointDetailOutput {
+	return o
+}
+
+func (o MlApplicationInstancePredictionEndpointDetailOutput) ToMlApplicationInstancePredictionEndpointDetailOutputWithContext(ctx context.Context) MlApplicationInstancePredictionEndpointDetailOutput {
+	return o
+}
+
+// Base URI of prediction router.
+func (o MlApplicationInstancePredictionEndpointDetailOutput) BasePredictionUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MlApplicationInstancePredictionEndpointDetail) *string { return v.BasePredictionUri }).(pulumi.StringPtrOutput)
+}
+
+// Array of all prediction URIs per use-case.
+func (o MlApplicationInstancePredictionEndpointDetailOutput) PredictionUris() MlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutput {
+	return o.ApplyT(func(v MlApplicationInstancePredictionEndpointDetail) []MlApplicationInstancePredictionEndpointDetailPredictionUri {
+		return v.PredictionUris
+	}).(MlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutput)
+}
+
+type MlApplicationInstancePredictionEndpointDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (MlApplicationInstancePredictionEndpointDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MlApplicationInstancePredictionEndpointDetail)(nil)).Elem()
+}
+
+func (o MlApplicationInstancePredictionEndpointDetailArrayOutput) ToMlApplicationInstancePredictionEndpointDetailArrayOutput() MlApplicationInstancePredictionEndpointDetailArrayOutput {
+	return o
+}
+
+func (o MlApplicationInstancePredictionEndpointDetailArrayOutput) ToMlApplicationInstancePredictionEndpointDetailArrayOutputWithContext(ctx context.Context) MlApplicationInstancePredictionEndpointDetailArrayOutput {
+	return o
+}
+
+func (o MlApplicationInstancePredictionEndpointDetailArrayOutput) Index(i pulumi.IntInput) MlApplicationInstancePredictionEndpointDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MlApplicationInstancePredictionEndpointDetail {
+		return vs[0].([]MlApplicationInstancePredictionEndpointDetail)[vs[1].(int)]
+	}).(MlApplicationInstancePredictionEndpointDetailOutput)
+}
+
+type MlApplicationInstancePredictionEndpointDetailPredictionUri struct {
+	// Prediction URI.
+	Uri *string `pulumi:"uri"`
+	// Prediction use-case.
+	UseCase *string `pulumi:"useCase"`
+}
+
+// MlApplicationInstancePredictionEndpointDetailPredictionUriInput is an input type that accepts MlApplicationInstancePredictionEndpointDetailPredictionUriArgs and MlApplicationInstancePredictionEndpointDetailPredictionUriOutput values.
+// You can construct a concrete instance of `MlApplicationInstancePredictionEndpointDetailPredictionUriInput` via:
+//
+//	MlApplicationInstancePredictionEndpointDetailPredictionUriArgs{...}
+type MlApplicationInstancePredictionEndpointDetailPredictionUriInput interface {
+	pulumi.Input
+
+	ToMlApplicationInstancePredictionEndpointDetailPredictionUriOutput() MlApplicationInstancePredictionEndpointDetailPredictionUriOutput
+	ToMlApplicationInstancePredictionEndpointDetailPredictionUriOutputWithContext(context.Context) MlApplicationInstancePredictionEndpointDetailPredictionUriOutput
+}
+
+type MlApplicationInstancePredictionEndpointDetailPredictionUriArgs struct {
+	// Prediction URI.
+	Uri pulumi.StringPtrInput `pulumi:"uri"`
+	// Prediction use-case.
+	UseCase pulumi.StringPtrInput `pulumi:"useCase"`
+}
+
+func (MlApplicationInstancePredictionEndpointDetailPredictionUriArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MlApplicationInstancePredictionEndpointDetailPredictionUri)(nil)).Elem()
+}
+
+func (i MlApplicationInstancePredictionEndpointDetailPredictionUriArgs) ToMlApplicationInstancePredictionEndpointDetailPredictionUriOutput() MlApplicationInstancePredictionEndpointDetailPredictionUriOutput {
+	return i.ToMlApplicationInstancePredictionEndpointDetailPredictionUriOutputWithContext(context.Background())
+}
+
+func (i MlApplicationInstancePredictionEndpointDetailPredictionUriArgs) ToMlApplicationInstancePredictionEndpointDetailPredictionUriOutputWithContext(ctx context.Context) MlApplicationInstancePredictionEndpointDetailPredictionUriOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MlApplicationInstancePredictionEndpointDetailPredictionUriOutput)
+}
+
+// MlApplicationInstancePredictionEndpointDetailPredictionUriArrayInput is an input type that accepts MlApplicationInstancePredictionEndpointDetailPredictionUriArray and MlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutput values.
+// You can construct a concrete instance of `MlApplicationInstancePredictionEndpointDetailPredictionUriArrayInput` via:
+//
+//	MlApplicationInstancePredictionEndpointDetailPredictionUriArray{ MlApplicationInstancePredictionEndpointDetailPredictionUriArgs{...} }
+type MlApplicationInstancePredictionEndpointDetailPredictionUriArrayInput interface {
+	pulumi.Input
+
+	ToMlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutput() MlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutput
+	ToMlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutputWithContext(context.Context) MlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutput
+}
+
+type MlApplicationInstancePredictionEndpointDetailPredictionUriArray []MlApplicationInstancePredictionEndpointDetailPredictionUriInput
+
+func (MlApplicationInstancePredictionEndpointDetailPredictionUriArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MlApplicationInstancePredictionEndpointDetailPredictionUri)(nil)).Elem()
+}
+
+func (i MlApplicationInstancePredictionEndpointDetailPredictionUriArray) ToMlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutput() MlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutput {
+	return i.ToMlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutputWithContext(context.Background())
+}
+
+func (i MlApplicationInstancePredictionEndpointDetailPredictionUriArray) ToMlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutputWithContext(ctx context.Context) MlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutput)
+}
+
+type MlApplicationInstancePredictionEndpointDetailPredictionUriOutput struct{ *pulumi.OutputState }
+
+func (MlApplicationInstancePredictionEndpointDetailPredictionUriOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MlApplicationInstancePredictionEndpointDetailPredictionUri)(nil)).Elem()
+}
+
+func (o MlApplicationInstancePredictionEndpointDetailPredictionUriOutput) ToMlApplicationInstancePredictionEndpointDetailPredictionUriOutput() MlApplicationInstancePredictionEndpointDetailPredictionUriOutput {
+	return o
+}
+
+func (o MlApplicationInstancePredictionEndpointDetailPredictionUriOutput) ToMlApplicationInstancePredictionEndpointDetailPredictionUriOutputWithContext(ctx context.Context) MlApplicationInstancePredictionEndpointDetailPredictionUriOutput {
+	return o
+}
+
+// Prediction URI.
+func (o MlApplicationInstancePredictionEndpointDetailPredictionUriOutput) Uri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MlApplicationInstancePredictionEndpointDetailPredictionUri) *string { return v.Uri }).(pulumi.StringPtrOutput)
+}
+
+// Prediction use-case.
+func (o MlApplicationInstancePredictionEndpointDetailPredictionUriOutput) UseCase() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MlApplicationInstancePredictionEndpointDetailPredictionUri) *string { return v.UseCase }).(pulumi.StringPtrOutput)
+}
+
+type MlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutput struct{ *pulumi.OutputState }
+
+func (MlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MlApplicationInstancePredictionEndpointDetailPredictionUri)(nil)).Elem()
+}
+
+func (o MlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutput) ToMlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutput() MlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutput {
+	return o
+}
+
+func (o MlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutput) ToMlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutputWithContext(ctx context.Context) MlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutput {
+	return o
+}
+
+func (o MlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutput) Index(i pulumi.IntInput) MlApplicationInstancePredictionEndpointDetailPredictionUriOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MlApplicationInstancePredictionEndpointDetailPredictionUri {
+		return vs[0].([]MlApplicationInstancePredictionEndpointDetailPredictionUri)[vs[1].(int)]
+	}).(MlApplicationInstancePredictionEndpointDetailPredictionUriOutput)
+}
+
 type ModelBackupOperationDetail struct {
 	// The backup status of the model.
 	BackupState *string `pulumi:"backupState"`
@@ -20172,6 +21943,4378 @@ func (o GetJobsJobJobStorageMountConfigurationDetailsListArrayOutput) Index(i pu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobsJobJobStorageMountConfigurationDetailsList {
 		return vs[0].([]GetJobsJobJobStorageMountConfigurationDetailsList)[vs[1].(int)]
 	}).(GetJobsJobJobStorageMountConfigurationDetailsListOutput)
+}
+
+type GetMlApplicationImplementationApplicationComponent struct {
+	// OCID of Data Flow Application
+	ApplicationId string `pulumi:"applicationId"`
+	// Name of application component
+	ComponentName string `pulumi:"componentName"`
+	// The OCID of the MlApplicationImplementation. Unique identifier that is immutable after creation.
+	Id string `pulumi:"id"`
+	// OCID of Data Science Job
+	JobId string `pulumi:"jobId"`
+	// OCID of Data Science Model
+	ModelId string `pulumi:"modelId"`
+	// ML Application Implementation name which is unique for given ML Application.
+	Name string `pulumi:"name"`
+	// OCID of Data Science Pipeline
+	PipelineId string `pulumi:"pipelineId"`
+	// Type of the resource
+	ResourceType string `pulumi:"resourceType"`
+	// type of the argument
+	Type string `pulumi:"type"`
+}
+
+// GetMlApplicationImplementationApplicationComponentInput is an input type that accepts GetMlApplicationImplementationApplicationComponentArgs and GetMlApplicationImplementationApplicationComponentOutput values.
+// You can construct a concrete instance of `GetMlApplicationImplementationApplicationComponentInput` via:
+//
+//	GetMlApplicationImplementationApplicationComponentArgs{...}
+type GetMlApplicationImplementationApplicationComponentInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationImplementationApplicationComponentOutput() GetMlApplicationImplementationApplicationComponentOutput
+	ToGetMlApplicationImplementationApplicationComponentOutputWithContext(context.Context) GetMlApplicationImplementationApplicationComponentOutput
+}
+
+type GetMlApplicationImplementationApplicationComponentArgs struct {
+	// OCID of Data Flow Application
+	ApplicationId pulumi.StringInput `pulumi:"applicationId"`
+	// Name of application component
+	ComponentName pulumi.StringInput `pulumi:"componentName"`
+	// The OCID of the MlApplicationImplementation. Unique identifier that is immutable after creation.
+	Id pulumi.StringInput `pulumi:"id"`
+	// OCID of Data Science Job
+	JobId pulumi.StringInput `pulumi:"jobId"`
+	// OCID of Data Science Model
+	ModelId pulumi.StringInput `pulumi:"modelId"`
+	// ML Application Implementation name which is unique for given ML Application.
+	Name pulumi.StringInput `pulumi:"name"`
+	// OCID of Data Science Pipeline
+	PipelineId pulumi.StringInput `pulumi:"pipelineId"`
+	// Type of the resource
+	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	// type of the argument
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMlApplicationImplementationApplicationComponentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationImplementationApplicationComponent)(nil)).Elem()
+}
+
+func (i GetMlApplicationImplementationApplicationComponentArgs) ToGetMlApplicationImplementationApplicationComponentOutput() GetMlApplicationImplementationApplicationComponentOutput {
+	return i.ToGetMlApplicationImplementationApplicationComponentOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationImplementationApplicationComponentArgs) ToGetMlApplicationImplementationApplicationComponentOutputWithContext(ctx context.Context) GetMlApplicationImplementationApplicationComponentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationImplementationApplicationComponentOutput)
+}
+
+// GetMlApplicationImplementationApplicationComponentArrayInput is an input type that accepts GetMlApplicationImplementationApplicationComponentArray and GetMlApplicationImplementationApplicationComponentArrayOutput values.
+// You can construct a concrete instance of `GetMlApplicationImplementationApplicationComponentArrayInput` via:
+//
+//	GetMlApplicationImplementationApplicationComponentArray{ GetMlApplicationImplementationApplicationComponentArgs{...} }
+type GetMlApplicationImplementationApplicationComponentArrayInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationImplementationApplicationComponentArrayOutput() GetMlApplicationImplementationApplicationComponentArrayOutput
+	ToGetMlApplicationImplementationApplicationComponentArrayOutputWithContext(context.Context) GetMlApplicationImplementationApplicationComponentArrayOutput
+}
+
+type GetMlApplicationImplementationApplicationComponentArray []GetMlApplicationImplementationApplicationComponentInput
+
+func (GetMlApplicationImplementationApplicationComponentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationImplementationApplicationComponent)(nil)).Elem()
+}
+
+func (i GetMlApplicationImplementationApplicationComponentArray) ToGetMlApplicationImplementationApplicationComponentArrayOutput() GetMlApplicationImplementationApplicationComponentArrayOutput {
+	return i.ToGetMlApplicationImplementationApplicationComponentArrayOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationImplementationApplicationComponentArray) ToGetMlApplicationImplementationApplicationComponentArrayOutputWithContext(ctx context.Context) GetMlApplicationImplementationApplicationComponentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationImplementationApplicationComponentArrayOutput)
+}
+
+type GetMlApplicationImplementationApplicationComponentOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationImplementationApplicationComponentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationImplementationApplicationComponent)(nil)).Elem()
+}
+
+func (o GetMlApplicationImplementationApplicationComponentOutput) ToGetMlApplicationImplementationApplicationComponentOutput() GetMlApplicationImplementationApplicationComponentOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationApplicationComponentOutput) ToGetMlApplicationImplementationApplicationComponentOutputWithContext(ctx context.Context) GetMlApplicationImplementationApplicationComponentOutput {
+	return o
+}
+
+// OCID of Data Flow Application
+func (o GetMlApplicationImplementationApplicationComponentOutput) ApplicationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationApplicationComponent) string { return v.ApplicationId }).(pulumi.StringOutput)
+}
+
+// Name of application component
+func (o GetMlApplicationImplementationApplicationComponentOutput) ComponentName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationApplicationComponent) string { return v.ComponentName }).(pulumi.StringOutput)
+}
+
+// The OCID of the MlApplicationImplementation. Unique identifier that is immutable after creation.
+func (o GetMlApplicationImplementationApplicationComponentOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationApplicationComponent) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// OCID of Data Science Job
+func (o GetMlApplicationImplementationApplicationComponentOutput) JobId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationApplicationComponent) string { return v.JobId }).(pulumi.StringOutput)
+}
+
+// OCID of Data Science Model
+func (o GetMlApplicationImplementationApplicationComponentOutput) ModelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationApplicationComponent) string { return v.ModelId }).(pulumi.StringOutput)
+}
+
+// ML Application Implementation name which is unique for given ML Application.
+func (o GetMlApplicationImplementationApplicationComponentOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationApplicationComponent) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// OCID of Data Science Pipeline
+func (o GetMlApplicationImplementationApplicationComponentOutput) PipelineId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationApplicationComponent) string { return v.PipelineId }).(pulumi.StringOutput)
+}
+
+// Type of the resource
+func (o GetMlApplicationImplementationApplicationComponentOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationApplicationComponent) string { return v.ResourceType }).(pulumi.StringOutput)
+}
+
+// type of the argument
+func (o GetMlApplicationImplementationApplicationComponentOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationApplicationComponent) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMlApplicationImplementationApplicationComponentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationImplementationApplicationComponentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationImplementationApplicationComponent)(nil)).Elem()
+}
+
+func (o GetMlApplicationImplementationApplicationComponentArrayOutput) ToGetMlApplicationImplementationApplicationComponentArrayOutput() GetMlApplicationImplementationApplicationComponentArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationApplicationComponentArrayOutput) ToGetMlApplicationImplementationApplicationComponentArrayOutputWithContext(ctx context.Context) GetMlApplicationImplementationApplicationComponentArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationApplicationComponentArrayOutput) Index(i pulumi.IntInput) GetMlApplicationImplementationApplicationComponentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMlApplicationImplementationApplicationComponent {
+		return vs[0].([]GetMlApplicationImplementationApplicationComponent)[vs[1].(int)]
+	}).(GetMlApplicationImplementationApplicationComponentOutput)
+}
+
+type GetMlApplicationImplementationConfigurationSchema struct {
+	// The default value for the optional configuration property (it must not be specified for mandatory configuration properties)
+	DefaultValue string `pulumi:"defaultValue"`
+	// short description of the argument
+	Description string `pulumi:"description"`
+	// argument is mandatory or not
+	IsMandatory bool `pulumi:"isMandatory"`
+	// Name of key (parameter name)
+	KeyName string `pulumi:"keyName"`
+	// Sample property value (it must match validationRegexp if it is specified)
+	SampleValue string `pulumi:"sampleValue"`
+	// A regular expression will be used for the validation of property value.
+	ValidationRegexp string `pulumi:"validationRegexp"`
+	// Type of value
+	ValueType string `pulumi:"valueType"`
+}
+
+// GetMlApplicationImplementationConfigurationSchemaInput is an input type that accepts GetMlApplicationImplementationConfigurationSchemaArgs and GetMlApplicationImplementationConfigurationSchemaOutput values.
+// You can construct a concrete instance of `GetMlApplicationImplementationConfigurationSchemaInput` via:
+//
+//	GetMlApplicationImplementationConfigurationSchemaArgs{...}
+type GetMlApplicationImplementationConfigurationSchemaInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationImplementationConfigurationSchemaOutput() GetMlApplicationImplementationConfigurationSchemaOutput
+	ToGetMlApplicationImplementationConfigurationSchemaOutputWithContext(context.Context) GetMlApplicationImplementationConfigurationSchemaOutput
+}
+
+type GetMlApplicationImplementationConfigurationSchemaArgs struct {
+	// The default value for the optional configuration property (it must not be specified for mandatory configuration properties)
+	DefaultValue pulumi.StringInput `pulumi:"defaultValue"`
+	// short description of the argument
+	Description pulumi.StringInput `pulumi:"description"`
+	// argument is mandatory or not
+	IsMandatory pulumi.BoolInput `pulumi:"isMandatory"`
+	// Name of key (parameter name)
+	KeyName pulumi.StringInput `pulumi:"keyName"`
+	// Sample property value (it must match validationRegexp if it is specified)
+	SampleValue pulumi.StringInput `pulumi:"sampleValue"`
+	// A regular expression will be used for the validation of property value.
+	ValidationRegexp pulumi.StringInput `pulumi:"validationRegexp"`
+	// Type of value
+	ValueType pulumi.StringInput `pulumi:"valueType"`
+}
+
+func (GetMlApplicationImplementationConfigurationSchemaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationImplementationConfigurationSchema)(nil)).Elem()
+}
+
+func (i GetMlApplicationImplementationConfigurationSchemaArgs) ToGetMlApplicationImplementationConfigurationSchemaOutput() GetMlApplicationImplementationConfigurationSchemaOutput {
+	return i.ToGetMlApplicationImplementationConfigurationSchemaOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationImplementationConfigurationSchemaArgs) ToGetMlApplicationImplementationConfigurationSchemaOutputWithContext(ctx context.Context) GetMlApplicationImplementationConfigurationSchemaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationImplementationConfigurationSchemaOutput)
+}
+
+// GetMlApplicationImplementationConfigurationSchemaArrayInput is an input type that accepts GetMlApplicationImplementationConfigurationSchemaArray and GetMlApplicationImplementationConfigurationSchemaArrayOutput values.
+// You can construct a concrete instance of `GetMlApplicationImplementationConfigurationSchemaArrayInput` via:
+//
+//	GetMlApplicationImplementationConfigurationSchemaArray{ GetMlApplicationImplementationConfigurationSchemaArgs{...} }
+type GetMlApplicationImplementationConfigurationSchemaArrayInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationImplementationConfigurationSchemaArrayOutput() GetMlApplicationImplementationConfigurationSchemaArrayOutput
+	ToGetMlApplicationImplementationConfigurationSchemaArrayOutputWithContext(context.Context) GetMlApplicationImplementationConfigurationSchemaArrayOutput
+}
+
+type GetMlApplicationImplementationConfigurationSchemaArray []GetMlApplicationImplementationConfigurationSchemaInput
+
+func (GetMlApplicationImplementationConfigurationSchemaArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationImplementationConfigurationSchema)(nil)).Elem()
+}
+
+func (i GetMlApplicationImplementationConfigurationSchemaArray) ToGetMlApplicationImplementationConfigurationSchemaArrayOutput() GetMlApplicationImplementationConfigurationSchemaArrayOutput {
+	return i.ToGetMlApplicationImplementationConfigurationSchemaArrayOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationImplementationConfigurationSchemaArray) ToGetMlApplicationImplementationConfigurationSchemaArrayOutputWithContext(ctx context.Context) GetMlApplicationImplementationConfigurationSchemaArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationImplementationConfigurationSchemaArrayOutput)
+}
+
+type GetMlApplicationImplementationConfigurationSchemaOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationImplementationConfigurationSchemaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationImplementationConfigurationSchema)(nil)).Elem()
+}
+
+func (o GetMlApplicationImplementationConfigurationSchemaOutput) ToGetMlApplicationImplementationConfigurationSchemaOutput() GetMlApplicationImplementationConfigurationSchemaOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationConfigurationSchemaOutput) ToGetMlApplicationImplementationConfigurationSchemaOutputWithContext(ctx context.Context) GetMlApplicationImplementationConfigurationSchemaOutput {
+	return o
+}
+
+// The default value for the optional configuration property (it must not be specified for mandatory configuration properties)
+func (o GetMlApplicationImplementationConfigurationSchemaOutput) DefaultValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationConfigurationSchema) string { return v.DefaultValue }).(pulumi.StringOutput)
+}
+
+// short description of the argument
+func (o GetMlApplicationImplementationConfigurationSchemaOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationConfigurationSchema) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// argument is mandatory or not
+func (o GetMlApplicationImplementationConfigurationSchemaOutput) IsMandatory() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationConfigurationSchema) bool { return v.IsMandatory }).(pulumi.BoolOutput)
+}
+
+// Name of key (parameter name)
+func (o GetMlApplicationImplementationConfigurationSchemaOutput) KeyName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationConfigurationSchema) string { return v.KeyName }).(pulumi.StringOutput)
+}
+
+// Sample property value (it must match validationRegexp if it is specified)
+func (o GetMlApplicationImplementationConfigurationSchemaOutput) SampleValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationConfigurationSchema) string { return v.SampleValue }).(pulumi.StringOutput)
+}
+
+// A regular expression will be used for the validation of property value.
+func (o GetMlApplicationImplementationConfigurationSchemaOutput) ValidationRegexp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationConfigurationSchema) string { return v.ValidationRegexp }).(pulumi.StringOutput)
+}
+
+// Type of value
+func (o GetMlApplicationImplementationConfigurationSchemaOutput) ValueType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationConfigurationSchema) string { return v.ValueType }).(pulumi.StringOutput)
+}
+
+type GetMlApplicationImplementationConfigurationSchemaArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationImplementationConfigurationSchemaArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationImplementationConfigurationSchema)(nil)).Elem()
+}
+
+func (o GetMlApplicationImplementationConfigurationSchemaArrayOutput) ToGetMlApplicationImplementationConfigurationSchemaArrayOutput() GetMlApplicationImplementationConfigurationSchemaArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationConfigurationSchemaArrayOutput) ToGetMlApplicationImplementationConfigurationSchemaArrayOutputWithContext(ctx context.Context) GetMlApplicationImplementationConfigurationSchemaArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationConfigurationSchemaArrayOutput) Index(i pulumi.IntInput) GetMlApplicationImplementationConfigurationSchemaOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMlApplicationImplementationConfigurationSchema {
+		return vs[0].([]GetMlApplicationImplementationConfigurationSchema)[vs[1].(int)]
+	}).(GetMlApplicationImplementationConfigurationSchemaOutput)
+}
+
+type GetMlApplicationImplementationLogging struct {
+	// Log configuration details for particular areas of ML Application Implementation.
+	AggregatedInstanceViewLogs []GetMlApplicationImplementationLoggingAggregatedInstanceViewLog `pulumi:"aggregatedInstanceViewLogs"`
+	// Log configuration details for particular areas of ML Application Implementation.
+	ImplementationLogs []GetMlApplicationImplementationLoggingImplementationLog `pulumi:"implementationLogs"`
+	// Log configuration details for particular areas of ML Application Implementation.
+	TriggerLogs []GetMlApplicationImplementationLoggingTriggerLog `pulumi:"triggerLogs"`
+}
+
+// GetMlApplicationImplementationLoggingInput is an input type that accepts GetMlApplicationImplementationLoggingArgs and GetMlApplicationImplementationLoggingOutput values.
+// You can construct a concrete instance of `GetMlApplicationImplementationLoggingInput` via:
+//
+//	GetMlApplicationImplementationLoggingArgs{...}
+type GetMlApplicationImplementationLoggingInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationImplementationLoggingOutput() GetMlApplicationImplementationLoggingOutput
+	ToGetMlApplicationImplementationLoggingOutputWithContext(context.Context) GetMlApplicationImplementationLoggingOutput
+}
+
+type GetMlApplicationImplementationLoggingArgs struct {
+	// Log configuration details for particular areas of ML Application Implementation.
+	AggregatedInstanceViewLogs GetMlApplicationImplementationLoggingAggregatedInstanceViewLogArrayInput `pulumi:"aggregatedInstanceViewLogs"`
+	// Log configuration details for particular areas of ML Application Implementation.
+	ImplementationLogs GetMlApplicationImplementationLoggingImplementationLogArrayInput `pulumi:"implementationLogs"`
+	// Log configuration details for particular areas of ML Application Implementation.
+	TriggerLogs GetMlApplicationImplementationLoggingTriggerLogArrayInput `pulumi:"triggerLogs"`
+}
+
+func (GetMlApplicationImplementationLoggingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationImplementationLogging)(nil)).Elem()
+}
+
+func (i GetMlApplicationImplementationLoggingArgs) ToGetMlApplicationImplementationLoggingOutput() GetMlApplicationImplementationLoggingOutput {
+	return i.ToGetMlApplicationImplementationLoggingOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationImplementationLoggingArgs) ToGetMlApplicationImplementationLoggingOutputWithContext(ctx context.Context) GetMlApplicationImplementationLoggingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationImplementationLoggingOutput)
+}
+
+// GetMlApplicationImplementationLoggingArrayInput is an input type that accepts GetMlApplicationImplementationLoggingArray and GetMlApplicationImplementationLoggingArrayOutput values.
+// You can construct a concrete instance of `GetMlApplicationImplementationLoggingArrayInput` via:
+//
+//	GetMlApplicationImplementationLoggingArray{ GetMlApplicationImplementationLoggingArgs{...} }
+type GetMlApplicationImplementationLoggingArrayInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationImplementationLoggingArrayOutput() GetMlApplicationImplementationLoggingArrayOutput
+	ToGetMlApplicationImplementationLoggingArrayOutputWithContext(context.Context) GetMlApplicationImplementationLoggingArrayOutput
+}
+
+type GetMlApplicationImplementationLoggingArray []GetMlApplicationImplementationLoggingInput
+
+func (GetMlApplicationImplementationLoggingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationImplementationLogging)(nil)).Elem()
+}
+
+func (i GetMlApplicationImplementationLoggingArray) ToGetMlApplicationImplementationLoggingArrayOutput() GetMlApplicationImplementationLoggingArrayOutput {
+	return i.ToGetMlApplicationImplementationLoggingArrayOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationImplementationLoggingArray) ToGetMlApplicationImplementationLoggingArrayOutputWithContext(ctx context.Context) GetMlApplicationImplementationLoggingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationImplementationLoggingArrayOutput)
+}
+
+type GetMlApplicationImplementationLoggingOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationImplementationLoggingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationImplementationLogging)(nil)).Elem()
+}
+
+func (o GetMlApplicationImplementationLoggingOutput) ToGetMlApplicationImplementationLoggingOutput() GetMlApplicationImplementationLoggingOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationLoggingOutput) ToGetMlApplicationImplementationLoggingOutputWithContext(ctx context.Context) GetMlApplicationImplementationLoggingOutput {
+	return o
+}
+
+// Log configuration details for particular areas of ML Application Implementation.
+func (o GetMlApplicationImplementationLoggingOutput) AggregatedInstanceViewLogs() GetMlApplicationImplementationLoggingAggregatedInstanceViewLogArrayOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationLogging) []GetMlApplicationImplementationLoggingAggregatedInstanceViewLog {
+		return v.AggregatedInstanceViewLogs
+	}).(GetMlApplicationImplementationLoggingAggregatedInstanceViewLogArrayOutput)
+}
+
+// Log configuration details for particular areas of ML Application Implementation.
+func (o GetMlApplicationImplementationLoggingOutput) ImplementationLogs() GetMlApplicationImplementationLoggingImplementationLogArrayOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationLogging) []GetMlApplicationImplementationLoggingImplementationLog {
+		return v.ImplementationLogs
+	}).(GetMlApplicationImplementationLoggingImplementationLogArrayOutput)
+}
+
+// Log configuration details for particular areas of ML Application Implementation.
+func (o GetMlApplicationImplementationLoggingOutput) TriggerLogs() GetMlApplicationImplementationLoggingTriggerLogArrayOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationLogging) []GetMlApplicationImplementationLoggingTriggerLog {
+		return v.TriggerLogs
+	}).(GetMlApplicationImplementationLoggingTriggerLogArrayOutput)
+}
+
+type GetMlApplicationImplementationLoggingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationImplementationLoggingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationImplementationLogging)(nil)).Elem()
+}
+
+func (o GetMlApplicationImplementationLoggingArrayOutput) ToGetMlApplicationImplementationLoggingArrayOutput() GetMlApplicationImplementationLoggingArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationLoggingArrayOutput) ToGetMlApplicationImplementationLoggingArrayOutputWithContext(ctx context.Context) GetMlApplicationImplementationLoggingArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationLoggingArrayOutput) Index(i pulumi.IntInput) GetMlApplicationImplementationLoggingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMlApplicationImplementationLogging {
+		return vs[0].([]GetMlApplicationImplementationLogging)[vs[1].(int)]
+	}).(GetMlApplicationImplementationLoggingOutput)
+}
+
+type GetMlApplicationImplementationLoggingAggregatedInstanceViewLog struct {
+	// If logging is enabled.
+	EnableLogging bool `pulumi:"enableLogging"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId string `pulumi:"logGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+	LogId string `pulumi:"logId"`
+}
+
+// GetMlApplicationImplementationLoggingAggregatedInstanceViewLogInput is an input type that accepts GetMlApplicationImplementationLoggingAggregatedInstanceViewLogArgs and GetMlApplicationImplementationLoggingAggregatedInstanceViewLogOutput values.
+// You can construct a concrete instance of `GetMlApplicationImplementationLoggingAggregatedInstanceViewLogInput` via:
+//
+//	GetMlApplicationImplementationLoggingAggregatedInstanceViewLogArgs{...}
+type GetMlApplicationImplementationLoggingAggregatedInstanceViewLogInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationImplementationLoggingAggregatedInstanceViewLogOutput() GetMlApplicationImplementationLoggingAggregatedInstanceViewLogOutput
+	ToGetMlApplicationImplementationLoggingAggregatedInstanceViewLogOutputWithContext(context.Context) GetMlApplicationImplementationLoggingAggregatedInstanceViewLogOutput
+}
+
+type GetMlApplicationImplementationLoggingAggregatedInstanceViewLogArgs struct {
+	// If logging is enabled.
+	EnableLogging pulumi.BoolInput `pulumi:"enableLogging"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+	LogId pulumi.StringInput `pulumi:"logId"`
+}
+
+func (GetMlApplicationImplementationLoggingAggregatedInstanceViewLogArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationImplementationLoggingAggregatedInstanceViewLog)(nil)).Elem()
+}
+
+func (i GetMlApplicationImplementationLoggingAggregatedInstanceViewLogArgs) ToGetMlApplicationImplementationLoggingAggregatedInstanceViewLogOutput() GetMlApplicationImplementationLoggingAggregatedInstanceViewLogOutput {
+	return i.ToGetMlApplicationImplementationLoggingAggregatedInstanceViewLogOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationImplementationLoggingAggregatedInstanceViewLogArgs) ToGetMlApplicationImplementationLoggingAggregatedInstanceViewLogOutputWithContext(ctx context.Context) GetMlApplicationImplementationLoggingAggregatedInstanceViewLogOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationImplementationLoggingAggregatedInstanceViewLogOutput)
+}
+
+// GetMlApplicationImplementationLoggingAggregatedInstanceViewLogArrayInput is an input type that accepts GetMlApplicationImplementationLoggingAggregatedInstanceViewLogArray and GetMlApplicationImplementationLoggingAggregatedInstanceViewLogArrayOutput values.
+// You can construct a concrete instance of `GetMlApplicationImplementationLoggingAggregatedInstanceViewLogArrayInput` via:
+//
+//	GetMlApplicationImplementationLoggingAggregatedInstanceViewLogArray{ GetMlApplicationImplementationLoggingAggregatedInstanceViewLogArgs{...} }
+type GetMlApplicationImplementationLoggingAggregatedInstanceViewLogArrayInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationImplementationLoggingAggregatedInstanceViewLogArrayOutput() GetMlApplicationImplementationLoggingAggregatedInstanceViewLogArrayOutput
+	ToGetMlApplicationImplementationLoggingAggregatedInstanceViewLogArrayOutputWithContext(context.Context) GetMlApplicationImplementationLoggingAggregatedInstanceViewLogArrayOutput
+}
+
+type GetMlApplicationImplementationLoggingAggregatedInstanceViewLogArray []GetMlApplicationImplementationLoggingAggregatedInstanceViewLogInput
+
+func (GetMlApplicationImplementationLoggingAggregatedInstanceViewLogArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationImplementationLoggingAggregatedInstanceViewLog)(nil)).Elem()
+}
+
+func (i GetMlApplicationImplementationLoggingAggregatedInstanceViewLogArray) ToGetMlApplicationImplementationLoggingAggregatedInstanceViewLogArrayOutput() GetMlApplicationImplementationLoggingAggregatedInstanceViewLogArrayOutput {
+	return i.ToGetMlApplicationImplementationLoggingAggregatedInstanceViewLogArrayOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationImplementationLoggingAggregatedInstanceViewLogArray) ToGetMlApplicationImplementationLoggingAggregatedInstanceViewLogArrayOutputWithContext(ctx context.Context) GetMlApplicationImplementationLoggingAggregatedInstanceViewLogArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationImplementationLoggingAggregatedInstanceViewLogArrayOutput)
+}
+
+type GetMlApplicationImplementationLoggingAggregatedInstanceViewLogOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationImplementationLoggingAggregatedInstanceViewLogOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationImplementationLoggingAggregatedInstanceViewLog)(nil)).Elem()
+}
+
+func (o GetMlApplicationImplementationLoggingAggregatedInstanceViewLogOutput) ToGetMlApplicationImplementationLoggingAggregatedInstanceViewLogOutput() GetMlApplicationImplementationLoggingAggregatedInstanceViewLogOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationLoggingAggregatedInstanceViewLogOutput) ToGetMlApplicationImplementationLoggingAggregatedInstanceViewLogOutputWithContext(ctx context.Context) GetMlApplicationImplementationLoggingAggregatedInstanceViewLogOutput {
+	return o
+}
+
+// If logging is enabled.
+func (o GetMlApplicationImplementationLoggingAggregatedInstanceViewLogOutput) EnableLogging() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationLoggingAggregatedInstanceViewLog) bool { return v.EnableLogging }).(pulumi.BoolOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+func (o GetMlApplicationImplementationLoggingAggregatedInstanceViewLogOutput) LogGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationLoggingAggregatedInstanceViewLog) string { return v.LogGroupId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+func (o GetMlApplicationImplementationLoggingAggregatedInstanceViewLogOutput) LogId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationLoggingAggregatedInstanceViewLog) string { return v.LogId }).(pulumi.StringOutput)
+}
+
+type GetMlApplicationImplementationLoggingAggregatedInstanceViewLogArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationImplementationLoggingAggregatedInstanceViewLogArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationImplementationLoggingAggregatedInstanceViewLog)(nil)).Elem()
+}
+
+func (o GetMlApplicationImplementationLoggingAggregatedInstanceViewLogArrayOutput) ToGetMlApplicationImplementationLoggingAggregatedInstanceViewLogArrayOutput() GetMlApplicationImplementationLoggingAggregatedInstanceViewLogArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationLoggingAggregatedInstanceViewLogArrayOutput) ToGetMlApplicationImplementationLoggingAggregatedInstanceViewLogArrayOutputWithContext(ctx context.Context) GetMlApplicationImplementationLoggingAggregatedInstanceViewLogArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationLoggingAggregatedInstanceViewLogArrayOutput) Index(i pulumi.IntInput) GetMlApplicationImplementationLoggingAggregatedInstanceViewLogOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMlApplicationImplementationLoggingAggregatedInstanceViewLog {
+		return vs[0].([]GetMlApplicationImplementationLoggingAggregatedInstanceViewLog)[vs[1].(int)]
+	}).(GetMlApplicationImplementationLoggingAggregatedInstanceViewLogOutput)
+}
+
+type GetMlApplicationImplementationLoggingImplementationLog struct {
+	// If logging is enabled.
+	EnableLogging bool `pulumi:"enableLogging"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId string `pulumi:"logGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+	LogId string `pulumi:"logId"`
+}
+
+// GetMlApplicationImplementationLoggingImplementationLogInput is an input type that accepts GetMlApplicationImplementationLoggingImplementationLogArgs and GetMlApplicationImplementationLoggingImplementationLogOutput values.
+// You can construct a concrete instance of `GetMlApplicationImplementationLoggingImplementationLogInput` via:
+//
+//	GetMlApplicationImplementationLoggingImplementationLogArgs{...}
+type GetMlApplicationImplementationLoggingImplementationLogInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationImplementationLoggingImplementationLogOutput() GetMlApplicationImplementationLoggingImplementationLogOutput
+	ToGetMlApplicationImplementationLoggingImplementationLogOutputWithContext(context.Context) GetMlApplicationImplementationLoggingImplementationLogOutput
+}
+
+type GetMlApplicationImplementationLoggingImplementationLogArgs struct {
+	// If logging is enabled.
+	EnableLogging pulumi.BoolInput `pulumi:"enableLogging"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+	LogId pulumi.StringInput `pulumi:"logId"`
+}
+
+func (GetMlApplicationImplementationLoggingImplementationLogArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationImplementationLoggingImplementationLog)(nil)).Elem()
+}
+
+func (i GetMlApplicationImplementationLoggingImplementationLogArgs) ToGetMlApplicationImplementationLoggingImplementationLogOutput() GetMlApplicationImplementationLoggingImplementationLogOutput {
+	return i.ToGetMlApplicationImplementationLoggingImplementationLogOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationImplementationLoggingImplementationLogArgs) ToGetMlApplicationImplementationLoggingImplementationLogOutputWithContext(ctx context.Context) GetMlApplicationImplementationLoggingImplementationLogOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationImplementationLoggingImplementationLogOutput)
+}
+
+// GetMlApplicationImplementationLoggingImplementationLogArrayInput is an input type that accepts GetMlApplicationImplementationLoggingImplementationLogArray and GetMlApplicationImplementationLoggingImplementationLogArrayOutput values.
+// You can construct a concrete instance of `GetMlApplicationImplementationLoggingImplementationLogArrayInput` via:
+//
+//	GetMlApplicationImplementationLoggingImplementationLogArray{ GetMlApplicationImplementationLoggingImplementationLogArgs{...} }
+type GetMlApplicationImplementationLoggingImplementationLogArrayInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationImplementationLoggingImplementationLogArrayOutput() GetMlApplicationImplementationLoggingImplementationLogArrayOutput
+	ToGetMlApplicationImplementationLoggingImplementationLogArrayOutputWithContext(context.Context) GetMlApplicationImplementationLoggingImplementationLogArrayOutput
+}
+
+type GetMlApplicationImplementationLoggingImplementationLogArray []GetMlApplicationImplementationLoggingImplementationLogInput
+
+func (GetMlApplicationImplementationLoggingImplementationLogArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationImplementationLoggingImplementationLog)(nil)).Elem()
+}
+
+func (i GetMlApplicationImplementationLoggingImplementationLogArray) ToGetMlApplicationImplementationLoggingImplementationLogArrayOutput() GetMlApplicationImplementationLoggingImplementationLogArrayOutput {
+	return i.ToGetMlApplicationImplementationLoggingImplementationLogArrayOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationImplementationLoggingImplementationLogArray) ToGetMlApplicationImplementationLoggingImplementationLogArrayOutputWithContext(ctx context.Context) GetMlApplicationImplementationLoggingImplementationLogArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationImplementationLoggingImplementationLogArrayOutput)
+}
+
+type GetMlApplicationImplementationLoggingImplementationLogOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationImplementationLoggingImplementationLogOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationImplementationLoggingImplementationLog)(nil)).Elem()
+}
+
+func (o GetMlApplicationImplementationLoggingImplementationLogOutput) ToGetMlApplicationImplementationLoggingImplementationLogOutput() GetMlApplicationImplementationLoggingImplementationLogOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationLoggingImplementationLogOutput) ToGetMlApplicationImplementationLoggingImplementationLogOutputWithContext(ctx context.Context) GetMlApplicationImplementationLoggingImplementationLogOutput {
+	return o
+}
+
+// If logging is enabled.
+func (o GetMlApplicationImplementationLoggingImplementationLogOutput) EnableLogging() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationLoggingImplementationLog) bool { return v.EnableLogging }).(pulumi.BoolOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+func (o GetMlApplicationImplementationLoggingImplementationLogOutput) LogGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationLoggingImplementationLog) string { return v.LogGroupId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+func (o GetMlApplicationImplementationLoggingImplementationLogOutput) LogId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationLoggingImplementationLog) string { return v.LogId }).(pulumi.StringOutput)
+}
+
+type GetMlApplicationImplementationLoggingImplementationLogArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationImplementationLoggingImplementationLogArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationImplementationLoggingImplementationLog)(nil)).Elem()
+}
+
+func (o GetMlApplicationImplementationLoggingImplementationLogArrayOutput) ToGetMlApplicationImplementationLoggingImplementationLogArrayOutput() GetMlApplicationImplementationLoggingImplementationLogArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationLoggingImplementationLogArrayOutput) ToGetMlApplicationImplementationLoggingImplementationLogArrayOutputWithContext(ctx context.Context) GetMlApplicationImplementationLoggingImplementationLogArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationLoggingImplementationLogArrayOutput) Index(i pulumi.IntInput) GetMlApplicationImplementationLoggingImplementationLogOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMlApplicationImplementationLoggingImplementationLog {
+		return vs[0].([]GetMlApplicationImplementationLoggingImplementationLog)[vs[1].(int)]
+	}).(GetMlApplicationImplementationLoggingImplementationLogOutput)
+}
+
+type GetMlApplicationImplementationLoggingTriggerLog struct {
+	// If logging is enabled.
+	EnableLogging bool `pulumi:"enableLogging"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId string `pulumi:"logGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+	LogId string `pulumi:"logId"`
+}
+
+// GetMlApplicationImplementationLoggingTriggerLogInput is an input type that accepts GetMlApplicationImplementationLoggingTriggerLogArgs and GetMlApplicationImplementationLoggingTriggerLogOutput values.
+// You can construct a concrete instance of `GetMlApplicationImplementationLoggingTriggerLogInput` via:
+//
+//	GetMlApplicationImplementationLoggingTriggerLogArgs{...}
+type GetMlApplicationImplementationLoggingTriggerLogInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationImplementationLoggingTriggerLogOutput() GetMlApplicationImplementationLoggingTriggerLogOutput
+	ToGetMlApplicationImplementationLoggingTriggerLogOutputWithContext(context.Context) GetMlApplicationImplementationLoggingTriggerLogOutput
+}
+
+type GetMlApplicationImplementationLoggingTriggerLogArgs struct {
+	// If logging is enabled.
+	EnableLogging pulumi.BoolInput `pulumi:"enableLogging"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+	LogId pulumi.StringInput `pulumi:"logId"`
+}
+
+func (GetMlApplicationImplementationLoggingTriggerLogArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationImplementationLoggingTriggerLog)(nil)).Elem()
+}
+
+func (i GetMlApplicationImplementationLoggingTriggerLogArgs) ToGetMlApplicationImplementationLoggingTriggerLogOutput() GetMlApplicationImplementationLoggingTriggerLogOutput {
+	return i.ToGetMlApplicationImplementationLoggingTriggerLogOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationImplementationLoggingTriggerLogArgs) ToGetMlApplicationImplementationLoggingTriggerLogOutputWithContext(ctx context.Context) GetMlApplicationImplementationLoggingTriggerLogOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationImplementationLoggingTriggerLogOutput)
+}
+
+// GetMlApplicationImplementationLoggingTriggerLogArrayInput is an input type that accepts GetMlApplicationImplementationLoggingTriggerLogArray and GetMlApplicationImplementationLoggingTriggerLogArrayOutput values.
+// You can construct a concrete instance of `GetMlApplicationImplementationLoggingTriggerLogArrayInput` via:
+//
+//	GetMlApplicationImplementationLoggingTriggerLogArray{ GetMlApplicationImplementationLoggingTriggerLogArgs{...} }
+type GetMlApplicationImplementationLoggingTriggerLogArrayInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationImplementationLoggingTriggerLogArrayOutput() GetMlApplicationImplementationLoggingTriggerLogArrayOutput
+	ToGetMlApplicationImplementationLoggingTriggerLogArrayOutputWithContext(context.Context) GetMlApplicationImplementationLoggingTriggerLogArrayOutput
+}
+
+type GetMlApplicationImplementationLoggingTriggerLogArray []GetMlApplicationImplementationLoggingTriggerLogInput
+
+func (GetMlApplicationImplementationLoggingTriggerLogArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationImplementationLoggingTriggerLog)(nil)).Elem()
+}
+
+func (i GetMlApplicationImplementationLoggingTriggerLogArray) ToGetMlApplicationImplementationLoggingTriggerLogArrayOutput() GetMlApplicationImplementationLoggingTriggerLogArrayOutput {
+	return i.ToGetMlApplicationImplementationLoggingTriggerLogArrayOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationImplementationLoggingTriggerLogArray) ToGetMlApplicationImplementationLoggingTriggerLogArrayOutputWithContext(ctx context.Context) GetMlApplicationImplementationLoggingTriggerLogArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationImplementationLoggingTriggerLogArrayOutput)
+}
+
+type GetMlApplicationImplementationLoggingTriggerLogOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationImplementationLoggingTriggerLogOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationImplementationLoggingTriggerLog)(nil)).Elem()
+}
+
+func (o GetMlApplicationImplementationLoggingTriggerLogOutput) ToGetMlApplicationImplementationLoggingTriggerLogOutput() GetMlApplicationImplementationLoggingTriggerLogOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationLoggingTriggerLogOutput) ToGetMlApplicationImplementationLoggingTriggerLogOutputWithContext(ctx context.Context) GetMlApplicationImplementationLoggingTriggerLogOutput {
+	return o
+}
+
+// If logging is enabled.
+func (o GetMlApplicationImplementationLoggingTriggerLogOutput) EnableLogging() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationLoggingTriggerLog) bool { return v.EnableLogging }).(pulumi.BoolOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+func (o GetMlApplicationImplementationLoggingTriggerLogOutput) LogGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationLoggingTriggerLog) string { return v.LogGroupId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+func (o GetMlApplicationImplementationLoggingTriggerLogOutput) LogId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationLoggingTriggerLog) string { return v.LogId }).(pulumi.StringOutput)
+}
+
+type GetMlApplicationImplementationLoggingTriggerLogArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationImplementationLoggingTriggerLogArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationImplementationLoggingTriggerLog)(nil)).Elem()
+}
+
+func (o GetMlApplicationImplementationLoggingTriggerLogArrayOutput) ToGetMlApplicationImplementationLoggingTriggerLogArrayOutput() GetMlApplicationImplementationLoggingTriggerLogArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationLoggingTriggerLogArrayOutput) ToGetMlApplicationImplementationLoggingTriggerLogArrayOutputWithContext(ctx context.Context) GetMlApplicationImplementationLoggingTriggerLogArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationLoggingTriggerLogArrayOutput) Index(i pulumi.IntInput) GetMlApplicationImplementationLoggingTriggerLogOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMlApplicationImplementationLoggingTriggerLog {
+		return vs[0].([]GetMlApplicationImplementationLoggingTriggerLog)[vs[1].(int)]
+	}).(GetMlApplicationImplementationLoggingTriggerLogOutput)
+}
+
+type GetMlApplicationImplementationMlApplicationPackageArgument struct {
+	// Array of the ML Application package arguments
+	Arguments []GetMlApplicationImplementationMlApplicationPackageArgumentArgument `pulumi:"arguments"`
+}
+
+// GetMlApplicationImplementationMlApplicationPackageArgumentInput is an input type that accepts GetMlApplicationImplementationMlApplicationPackageArgumentArgs and GetMlApplicationImplementationMlApplicationPackageArgumentOutput values.
+// You can construct a concrete instance of `GetMlApplicationImplementationMlApplicationPackageArgumentInput` via:
+//
+//	GetMlApplicationImplementationMlApplicationPackageArgumentArgs{...}
+type GetMlApplicationImplementationMlApplicationPackageArgumentInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationImplementationMlApplicationPackageArgumentOutput() GetMlApplicationImplementationMlApplicationPackageArgumentOutput
+	ToGetMlApplicationImplementationMlApplicationPackageArgumentOutputWithContext(context.Context) GetMlApplicationImplementationMlApplicationPackageArgumentOutput
+}
+
+type GetMlApplicationImplementationMlApplicationPackageArgumentArgs struct {
+	// Array of the ML Application package arguments
+	Arguments GetMlApplicationImplementationMlApplicationPackageArgumentArgumentArrayInput `pulumi:"arguments"`
+}
+
+func (GetMlApplicationImplementationMlApplicationPackageArgumentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationImplementationMlApplicationPackageArgument)(nil)).Elem()
+}
+
+func (i GetMlApplicationImplementationMlApplicationPackageArgumentArgs) ToGetMlApplicationImplementationMlApplicationPackageArgumentOutput() GetMlApplicationImplementationMlApplicationPackageArgumentOutput {
+	return i.ToGetMlApplicationImplementationMlApplicationPackageArgumentOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationImplementationMlApplicationPackageArgumentArgs) ToGetMlApplicationImplementationMlApplicationPackageArgumentOutputWithContext(ctx context.Context) GetMlApplicationImplementationMlApplicationPackageArgumentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationImplementationMlApplicationPackageArgumentOutput)
+}
+
+// GetMlApplicationImplementationMlApplicationPackageArgumentArrayInput is an input type that accepts GetMlApplicationImplementationMlApplicationPackageArgumentArray and GetMlApplicationImplementationMlApplicationPackageArgumentArrayOutput values.
+// You can construct a concrete instance of `GetMlApplicationImplementationMlApplicationPackageArgumentArrayInput` via:
+//
+//	GetMlApplicationImplementationMlApplicationPackageArgumentArray{ GetMlApplicationImplementationMlApplicationPackageArgumentArgs{...} }
+type GetMlApplicationImplementationMlApplicationPackageArgumentArrayInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationImplementationMlApplicationPackageArgumentArrayOutput() GetMlApplicationImplementationMlApplicationPackageArgumentArrayOutput
+	ToGetMlApplicationImplementationMlApplicationPackageArgumentArrayOutputWithContext(context.Context) GetMlApplicationImplementationMlApplicationPackageArgumentArrayOutput
+}
+
+type GetMlApplicationImplementationMlApplicationPackageArgumentArray []GetMlApplicationImplementationMlApplicationPackageArgumentInput
+
+func (GetMlApplicationImplementationMlApplicationPackageArgumentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationImplementationMlApplicationPackageArgument)(nil)).Elem()
+}
+
+func (i GetMlApplicationImplementationMlApplicationPackageArgumentArray) ToGetMlApplicationImplementationMlApplicationPackageArgumentArrayOutput() GetMlApplicationImplementationMlApplicationPackageArgumentArrayOutput {
+	return i.ToGetMlApplicationImplementationMlApplicationPackageArgumentArrayOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationImplementationMlApplicationPackageArgumentArray) ToGetMlApplicationImplementationMlApplicationPackageArgumentArrayOutputWithContext(ctx context.Context) GetMlApplicationImplementationMlApplicationPackageArgumentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationImplementationMlApplicationPackageArgumentArrayOutput)
+}
+
+type GetMlApplicationImplementationMlApplicationPackageArgumentOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationImplementationMlApplicationPackageArgumentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationImplementationMlApplicationPackageArgument)(nil)).Elem()
+}
+
+func (o GetMlApplicationImplementationMlApplicationPackageArgumentOutput) ToGetMlApplicationImplementationMlApplicationPackageArgumentOutput() GetMlApplicationImplementationMlApplicationPackageArgumentOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationMlApplicationPackageArgumentOutput) ToGetMlApplicationImplementationMlApplicationPackageArgumentOutputWithContext(ctx context.Context) GetMlApplicationImplementationMlApplicationPackageArgumentOutput {
+	return o
+}
+
+// Array of the ML Application package arguments
+func (o GetMlApplicationImplementationMlApplicationPackageArgumentOutput) Arguments() GetMlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationMlApplicationPackageArgument) []GetMlApplicationImplementationMlApplicationPackageArgumentArgument {
+		return v.Arguments
+	}).(GetMlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutput)
+}
+
+type GetMlApplicationImplementationMlApplicationPackageArgumentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationImplementationMlApplicationPackageArgumentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationImplementationMlApplicationPackageArgument)(nil)).Elem()
+}
+
+func (o GetMlApplicationImplementationMlApplicationPackageArgumentArrayOutput) ToGetMlApplicationImplementationMlApplicationPackageArgumentArrayOutput() GetMlApplicationImplementationMlApplicationPackageArgumentArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationMlApplicationPackageArgumentArrayOutput) ToGetMlApplicationImplementationMlApplicationPackageArgumentArrayOutputWithContext(ctx context.Context) GetMlApplicationImplementationMlApplicationPackageArgumentArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationMlApplicationPackageArgumentArrayOutput) Index(i pulumi.IntInput) GetMlApplicationImplementationMlApplicationPackageArgumentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMlApplicationImplementationMlApplicationPackageArgument {
+		return vs[0].([]GetMlApplicationImplementationMlApplicationPackageArgument)[vs[1].(int)]
+	}).(GetMlApplicationImplementationMlApplicationPackageArgumentOutput)
+}
+
+type GetMlApplicationImplementationMlApplicationPackageArgumentArgument struct {
+	// short description of the argument
+	Description string `pulumi:"description"`
+	// argument is mandatory or not
+	IsMandatory bool `pulumi:"isMandatory"`
+	// ML Application Implementation name which is unique for given ML Application.
+	Name string `pulumi:"name"`
+	// type of the argument
+	Type string `pulumi:"type"`
+	// Argument value
+	Value string `pulumi:"value"`
+}
+
+// GetMlApplicationImplementationMlApplicationPackageArgumentArgumentInput is an input type that accepts GetMlApplicationImplementationMlApplicationPackageArgumentArgumentArgs and GetMlApplicationImplementationMlApplicationPackageArgumentArgumentOutput values.
+// You can construct a concrete instance of `GetMlApplicationImplementationMlApplicationPackageArgumentArgumentInput` via:
+//
+//	GetMlApplicationImplementationMlApplicationPackageArgumentArgumentArgs{...}
+type GetMlApplicationImplementationMlApplicationPackageArgumentArgumentInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationImplementationMlApplicationPackageArgumentArgumentOutput() GetMlApplicationImplementationMlApplicationPackageArgumentArgumentOutput
+	ToGetMlApplicationImplementationMlApplicationPackageArgumentArgumentOutputWithContext(context.Context) GetMlApplicationImplementationMlApplicationPackageArgumentArgumentOutput
+}
+
+type GetMlApplicationImplementationMlApplicationPackageArgumentArgumentArgs struct {
+	// short description of the argument
+	Description pulumi.StringInput `pulumi:"description"`
+	// argument is mandatory or not
+	IsMandatory pulumi.BoolInput `pulumi:"isMandatory"`
+	// ML Application Implementation name which is unique for given ML Application.
+	Name pulumi.StringInput `pulumi:"name"`
+	// type of the argument
+	Type pulumi.StringInput `pulumi:"type"`
+	// Argument value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetMlApplicationImplementationMlApplicationPackageArgumentArgumentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationImplementationMlApplicationPackageArgumentArgument)(nil)).Elem()
+}
+
+func (i GetMlApplicationImplementationMlApplicationPackageArgumentArgumentArgs) ToGetMlApplicationImplementationMlApplicationPackageArgumentArgumentOutput() GetMlApplicationImplementationMlApplicationPackageArgumentArgumentOutput {
+	return i.ToGetMlApplicationImplementationMlApplicationPackageArgumentArgumentOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationImplementationMlApplicationPackageArgumentArgumentArgs) ToGetMlApplicationImplementationMlApplicationPackageArgumentArgumentOutputWithContext(ctx context.Context) GetMlApplicationImplementationMlApplicationPackageArgumentArgumentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationImplementationMlApplicationPackageArgumentArgumentOutput)
+}
+
+// GetMlApplicationImplementationMlApplicationPackageArgumentArgumentArrayInput is an input type that accepts GetMlApplicationImplementationMlApplicationPackageArgumentArgumentArray and GetMlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutput values.
+// You can construct a concrete instance of `GetMlApplicationImplementationMlApplicationPackageArgumentArgumentArrayInput` via:
+//
+//	GetMlApplicationImplementationMlApplicationPackageArgumentArgumentArray{ GetMlApplicationImplementationMlApplicationPackageArgumentArgumentArgs{...} }
+type GetMlApplicationImplementationMlApplicationPackageArgumentArgumentArrayInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutput() GetMlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutput
+	ToGetMlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutputWithContext(context.Context) GetMlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutput
+}
+
+type GetMlApplicationImplementationMlApplicationPackageArgumentArgumentArray []GetMlApplicationImplementationMlApplicationPackageArgumentArgumentInput
+
+func (GetMlApplicationImplementationMlApplicationPackageArgumentArgumentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationImplementationMlApplicationPackageArgumentArgument)(nil)).Elem()
+}
+
+func (i GetMlApplicationImplementationMlApplicationPackageArgumentArgumentArray) ToGetMlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutput() GetMlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutput {
+	return i.ToGetMlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationImplementationMlApplicationPackageArgumentArgumentArray) ToGetMlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutputWithContext(ctx context.Context) GetMlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutput)
+}
+
+type GetMlApplicationImplementationMlApplicationPackageArgumentArgumentOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationImplementationMlApplicationPackageArgumentArgumentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationImplementationMlApplicationPackageArgumentArgument)(nil)).Elem()
+}
+
+func (o GetMlApplicationImplementationMlApplicationPackageArgumentArgumentOutput) ToGetMlApplicationImplementationMlApplicationPackageArgumentArgumentOutput() GetMlApplicationImplementationMlApplicationPackageArgumentArgumentOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationMlApplicationPackageArgumentArgumentOutput) ToGetMlApplicationImplementationMlApplicationPackageArgumentArgumentOutputWithContext(ctx context.Context) GetMlApplicationImplementationMlApplicationPackageArgumentArgumentOutput {
+	return o
+}
+
+// short description of the argument
+func (o GetMlApplicationImplementationMlApplicationPackageArgumentArgumentOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationMlApplicationPackageArgumentArgument) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// argument is mandatory or not
+func (o GetMlApplicationImplementationMlApplicationPackageArgumentArgumentOutput) IsMandatory() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationMlApplicationPackageArgumentArgument) bool { return v.IsMandatory }).(pulumi.BoolOutput)
+}
+
+// ML Application Implementation name which is unique for given ML Application.
+func (o GetMlApplicationImplementationMlApplicationPackageArgumentArgumentOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationMlApplicationPackageArgumentArgument) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// type of the argument
+func (o GetMlApplicationImplementationMlApplicationPackageArgumentArgumentOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationMlApplicationPackageArgumentArgument) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// Argument value
+func (o GetMlApplicationImplementationMlApplicationPackageArgumentArgumentOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationMlApplicationPackageArgumentArgument) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetMlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationImplementationMlApplicationPackageArgumentArgument)(nil)).Elem()
+}
+
+func (o GetMlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutput) ToGetMlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutput() GetMlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutput) ToGetMlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutputWithContext(ctx context.Context) GetMlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutput) Index(i pulumi.IntInput) GetMlApplicationImplementationMlApplicationPackageArgumentArgumentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMlApplicationImplementationMlApplicationPackageArgumentArgument {
+		return vs[0].([]GetMlApplicationImplementationMlApplicationPackageArgumentArgument)[vs[1].(int)]
+	}).(GetMlApplicationImplementationMlApplicationPackageArgumentArgumentOutput)
+}
+
+type GetMlApplicationImplementationsFilter struct {
+	// A filter to return only resources that match the entire name given.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetMlApplicationImplementationsFilterInput is an input type that accepts GetMlApplicationImplementationsFilterArgs and GetMlApplicationImplementationsFilterOutput values.
+// You can construct a concrete instance of `GetMlApplicationImplementationsFilterInput` via:
+//
+//	GetMlApplicationImplementationsFilterArgs{...}
+type GetMlApplicationImplementationsFilterInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationImplementationsFilterOutput() GetMlApplicationImplementationsFilterOutput
+	ToGetMlApplicationImplementationsFilterOutputWithContext(context.Context) GetMlApplicationImplementationsFilterOutput
+}
+
+type GetMlApplicationImplementationsFilterArgs struct {
+	// A filter to return only resources that match the entire name given.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetMlApplicationImplementationsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationImplementationsFilter)(nil)).Elem()
+}
+
+func (i GetMlApplicationImplementationsFilterArgs) ToGetMlApplicationImplementationsFilterOutput() GetMlApplicationImplementationsFilterOutput {
+	return i.ToGetMlApplicationImplementationsFilterOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationImplementationsFilterArgs) ToGetMlApplicationImplementationsFilterOutputWithContext(ctx context.Context) GetMlApplicationImplementationsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationImplementationsFilterOutput)
+}
+
+// GetMlApplicationImplementationsFilterArrayInput is an input type that accepts GetMlApplicationImplementationsFilterArray and GetMlApplicationImplementationsFilterArrayOutput values.
+// You can construct a concrete instance of `GetMlApplicationImplementationsFilterArrayInput` via:
+//
+//	GetMlApplicationImplementationsFilterArray{ GetMlApplicationImplementationsFilterArgs{...} }
+type GetMlApplicationImplementationsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationImplementationsFilterArrayOutput() GetMlApplicationImplementationsFilterArrayOutput
+	ToGetMlApplicationImplementationsFilterArrayOutputWithContext(context.Context) GetMlApplicationImplementationsFilterArrayOutput
+}
+
+type GetMlApplicationImplementationsFilterArray []GetMlApplicationImplementationsFilterInput
+
+func (GetMlApplicationImplementationsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationImplementationsFilter)(nil)).Elem()
+}
+
+func (i GetMlApplicationImplementationsFilterArray) ToGetMlApplicationImplementationsFilterArrayOutput() GetMlApplicationImplementationsFilterArrayOutput {
+	return i.ToGetMlApplicationImplementationsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationImplementationsFilterArray) ToGetMlApplicationImplementationsFilterArrayOutputWithContext(ctx context.Context) GetMlApplicationImplementationsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationImplementationsFilterArrayOutput)
+}
+
+type GetMlApplicationImplementationsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationImplementationsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationImplementationsFilter)(nil)).Elem()
+}
+
+func (o GetMlApplicationImplementationsFilterOutput) ToGetMlApplicationImplementationsFilterOutput() GetMlApplicationImplementationsFilterOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationsFilterOutput) ToGetMlApplicationImplementationsFilterOutputWithContext(ctx context.Context) GetMlApplicationImplementationsFilterOutput {
+	return o
+}
+
+// A filter to return only resources that match the entire name given.
+func (o GetMlApplicationImplementationsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMlApplicationImplementationsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMlApplicationImplementationsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetMlApplicationImplementationsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationImplementationsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationImplementationsFilter)(nil)).Elem()
+}
+
+func (o GetMlApplicationImplementationsFilterArrayOutput) ToGetMlApplicationImplementationsFilterArrayOutput() GetMlApplicationImplementationsFilterArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationsFilterArrayOutput) ToGetMlApplicationImplementationsFilterArrayOutputWithContext(ctx context.Context) GetMlApplicationImplementationsFilterArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationsFilterArrayOutput) Index(i pulumi.IntInput) GetMlApplicationImplementationsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMlApplicationImplementationsFilter {
+		return vs[0].([]GetMlApplicationImplementationsFilter)[vs[1].(int)]
+	}).(GetMlApplicationImplementationsFilterOutput)
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollection struct {
+	Items []GetMlApplicationImplementationsMlApplicationImplementationCollectionItem `pulumi:"items"`
+}
+
+// GetMlApplicationImplementationsMlApplicationImplementationCollectionInput is an input type that accepts GetMlApplicationImplementationsMlApplicationImplementationCollectionArgs and GetMlApplicationImplementationsMlApplicationImplementationCollectionOutput values.
+// You can construct a concrete instance of `GetMlApplicationImplementationsMlApplicationImplementationCollectionInput` via:
+//
+//	GetMlApplicationImplementationsMlApplicationImplementationCollectionArgs{...}
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionOutput
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionOutputWithContext(context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionOutput
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionArgs struct {
+	Items GetMlApplicationImplementationsMlApplicationImplementationCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollection)(nil)).Elem()
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionArgs) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionOutput {
+	return i.ToGetMlApplicationImplementationsMlApplicationImplementationCollectionOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionArgs) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationImplementationsMlApplicationImplementationCollectionOutput)
+}
+
+// GetMlApplicationImplementationsMlApplicationImplementationCollectionArrayInput is an input type that accepts GetMlApplicationImplementationsMlApplicationImplementationCollectionArray and GetMlApplicationImplementationsMlApplicationImplementationCollectionArrayOutput values.
+// You can construct a concrete instance of `GetMlApplicationImplementationsMlApplicationImplementationCollectionArrayInput` via:
+//
+//	GetMlApplicationImplementationsMlApplicationImplementationCollectionArray{ GetMlApplicationImplementationsMlApplicationImplementationCollectionArgs{...} }
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionArrayOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionArrayOutput
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionArrayOutputWithContext(context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionArrayOutput
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionArray []GetMlApplicationImplementationsMlApplicationImplementationCollectionInput
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationImplementationsMlApplicationImplementationCollection)(nil)).Elem()
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionArray) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionArrayOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionArrayOutput {
+	return i.ToGetMlApplicationImplementationsMlApplicationImplementationCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionArray) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionArrayOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationImplementationsMlApplicationImplementationCollectionArrayOutput)
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollection)(nil)).Elem()
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionOutput) Items() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollection) []GetMlApplicationImplementationsMlApplicationImplementationCollectionItem {
+		return v.Items
+	}).(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemArrayOutput)
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationImplementationsMlApplicationImplementationCollection)(nil)).Elem()
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionArrayOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionArrayOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionArrayOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionArrayOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionArrayOutput) Index(i pulumi.IntInput) GetMlApplicationImplementationsMlApplicationImplementationCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMlApplicationImplementationsMlApplicationImplementationCollection {
+		return vs[0].([]GetMlApplicationImplementationsMlApplicationImplementationCollection)[vs[1].(int)]
+	}).(GetMlApplicationImplementationsMlApplicationImplementationCollectionOutput)
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItem struct {
+	// List of ML Application Implementation OCIDs for which migration from this implementation is allowed. Migration means that if consumers change implementation for their instances to implementation with OCID from this list, instance components will be updated in place otherwise new instance components are created based on the new implementation and old instance components are removed.
+	AllowedMigrationDestinations []string `pulumi:"allowedMigrationDestinations"`
+	// List of application components (OCI resources shared for all MlApplicationInstances). These have been created automatically based on their definitions in the ML Application package.
+	ApplicationComponents []GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponent `pulumi:"applicationComponents"`
+	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Schema of configuration which needs to be provided for each ML Application Instance. It is defined in the ML Application package descriptor.
+	ConfigurationSchemas []GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchema `pulumi:"configurationSchemas"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// short description of the argument
+	Description string `pulumi:"description"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the MlApplicationImplementation. Unique identifier that is immutable after creation.
+	Id string `pulumi:"id"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Configuration of Logging for ML Application Implementation.
+	Loggings []GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLogging `pulumi:"loggings"`
+	// unique MlApplication identifier
+	MlApplicationId string `pulumi:"mlApplicationId"`
+	// The name of ML Application (based on mlApplicationId)
+	MlApplicationName string `pulumi:"mlApplicationName"`
+	// Specifies the ML application package as a map of key-value pairs. Valid keys include 'source_type', 'path', and 'uri'. Use 'file://' for local paths or 'https://' for object storage URIs.
+	MlApplicationPackage map[string]string `pulumi:"mlApplicationPackage"`
+	// List of ML Application package arguments provided during ML Application package upload.
+	MlApplicationPackageArguments []GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgument `pulumi:"mlApplicationPackageArguments"`
+	// A filter to return only resources that match the entire name given.
+	Name                string            `pulumi:"name"`
+	OpcMlAppPackageArgs map[string]string `pulumi:"opcMlAppPackageArgs"`
+	// The version of ML Application Package (e.g. "1.2" or "2.0.4") defined in ML Application package descriptor. Value is not mandatory only for CREATING state otherwise it must be always presented.
+	PackageVersion string `pulumi:"packageVersion"`
+	// A filter to return only resources with lifecycleState matching the given lifecycleState.
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// Creation time of MlApplicationImplementation creation in the format defined by RFC 3339.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Time of last MlApplicationImplementation update in the format defined by RFC 3339.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetMlApplicationImplementationsMlApplicationImplementationCollectionItemInput is an input type that accepts GetMlApplicationImplementationsMlApplicationImplementationCollectionItemArgs and GetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput values.
+// You can construct a concrete instance of `GetMlApplicationImplementationsMlApplicationImplementationCollectionItemInput` via:
+//
+//	GetMlApplicationImplementationsMlApplicationImplementationCollectionItemArgs{...}
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutputWithContext(context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemArgs struct {
+	// List of ML Application Implementation OCIDs for which migration from this implementation is allowed. Migration means that if consumers change implementation for their instances to implementation with OCID from this list, instance components will be updated in place otherwise new instance components are created based on the new implementation and old instance components are removed.
+	AllowedMigrationDestinations pulumi.StringArrayInput `pulumi:"allowedMigrationDestinations"`
+	// List of application components (OCI resources shared for all MlApplicationInstances). These have been created automatically based on their definitions in the ML Application package.
+	ApplicationComponents GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArrayInput `pulumi:"applicationComponents"`
+	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Schema of configuration which needs to be provided for each ML Application Instance. It is defined in the ML Application package descriptor.
+	ConfigurationSchemas GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArrayInput `pulumi:"configurationSchemas"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// short description of the argument
+	Description pulumi.StringInput `pulumi:"description"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID of the MlApplicationImplementation. Unique identifier that is immutable after creation.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Configuration of Logging for ML Application Implementation.
+	Loggings GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArrayInput `pulumi:"loggings"`
+	// unique MlApplication identifier
+	MlApplicationId pulumi.StringInput `pulumi:"mlApplicationId"`
+	// The name of ML Application (based on mlApplicationId)
+	MlApplicationName pulumi.StringInput `pulumi:"mlApplicationName"`
+	// Specifies the ML application package as a map of key-value pairs. Valid keys include 'source_type', 'path', and 'uri'. Use 'file://' for local paths or 'https://' for object storage URIs.
+	MlApplicationPackage pulumi.StringMapInput `pulumi:"mlApplicationPackage"`
+	// List of ML Application package arguments provided during ML Application package upload.
+	MlApplicationPackageArguments GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArrayInput `pulumi:"mlApplicationPackageArguments"`
+	// A filter to return only resources that match the entire name given.
+	Name                pulumi.StringInput    `pulumi:"name"`
+	OpcMlAppPackageArgs pulumi.StringMapInput `pulumi:"opcMlAppPackageArgs"`
+	// The version of ML Application Package (e.g. "1.2" or "2.0.4") defined in ML Application package descriptor. Value is not mandatory only for CREATING state otherwise it must be always presented.
+	PackageVersion pulumi.StringInput `pulumi:"packageVersion"`
+	// A filter to return only resources with lifecycleState matching the given lifecycleState.
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// Creation time of MlApplicationImplementation creation in the format defined by RFC 3339.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Time of last MlApplicationImplementation update in the format defined by RFC 3339.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollectionItem)(nil)).Elem()
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionItemArgs) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput {
+	return i.ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionItemArgs) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput)
+}
+
+// GetMlApplicationImplementationsMlApplicationImplementationCollectionItemArrayInput is an input type that accepts GetMlApplicationImplementationsMlApplicationImplementationCollectionItemArray and GetMlApplicationImplementationsMlApplicationImplementationCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetMlApplicationImplementationsMlApplicationImplementationCollectionItemArrayInput` via:
+//
+//	GetMlApplicationImplementationsMlApplicationImplementationCollectionItemArray{ GetMlApplicationImplementationsMlApplicationImplementationCollectionItemArgs{...} }
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemArrayOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemArrayOutput
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemArrayOutputWithContext(context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemArrayOutput
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemArray []GetMlApplicationImplementationsMlApplicationImplementationCollectionItemInput
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationImplementationsMlApplicationImplementationCollectionItem)(nil)).Elem()
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionItemArray) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemArrayOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemArrayOutput {
+	return i.ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionItemArray) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemArrayOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemArrayOutput)
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollectionItem)(nil)).Elem()
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput {
+	return o
+}
+
+// List of ML Application Implementation OCIDs for which migration from this implementation is allowed. Migration means that if consumers change implementation for their instances to implementation with OCID from this list, instance components will be updated in place otherwise new instance components are created based on the new implementation and old instance components are removed.
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput) AllowedMigrationDestinations() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItem) []string {
+		return v.AllowedMigrationDestinations
+	}).(pulumi.StringArrayOutput)
+}
+
+// List of application components (OCI resources shared for all MlApplicationInstances). These have been created automatically based on their definitions in the ML Application package.
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput) ApplicationComponents() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArrayOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItem) []GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponent {
+		return v.ApplicationComponents
+	}).(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArrayOutput)
+}
+
+// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Schema of configuration which needs to be provided for each ML Application Instance. It is defined in the ML Application package descriptor.
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput) ConfigurationSchemas() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArrayOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItem) []GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchema {
+		return v.ConfigurationSchemas
+	}).(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArrayOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// short description of the argument
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItem) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The OCID of the MlApplicationImplementation. Unique identifier that is immutable after creation.
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// Configuration of Logging for ML Application Implementation.
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput) Loggings() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArrayOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItem) []GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLogging {
+		return v.Loggings
+	}).(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArrayOutput)
+}
+
+// unique MlApplication identifier
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput) MlApplicationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItem) string {
+		return v.MlApplicationId
+	}).(pulumi.StringOutput)
+}
+
+// The name of ML Application (based on mlApplicationId)
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput) MlApplicationName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItem) string {
+		return v.MlApplicationName
+	}).(pulumi.StringOutput)
+}
+
+// Specifies the ML application package as a map of key-value pairs. Valid keys include 'source_type', 'path', and 'uri'. Use 'file://' for local paths or 'https://' for object storage URIs.
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput) MlApplicationPackage() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItem) map[string]string {
+		return v.MlApplicationPackage
+	}).(pulumi.StringMapOutput)
+}
+
+// List of ML Application package arguments provided during ML Application package upload.
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput) MlApplicationPackageArguments() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArrayOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItem) []GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgument {
+		return v.MlApplicationPackageArguments
+	}).(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArrayOutput)
+}
+
+// A filter to return only resources that match the entire name given.
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput) OpcMlAppPackageArgs() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItem) map[string]string {
+		return v.OpcMlAppPackageArgs
+	}).(pulumi.StringMapOutput)
+}
+
+// The version of ML Application Package (e.g. "1.2" or "2.0.4") defined in ML Application package descriptor. Value is not mandatory only for CREATING state otherwise it must be always presented.
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput) PackageVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItem) string {
+		return v.PackageVersion
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources with lifecycleState matching the given lifecycleState.
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItem) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Creation time of MlApplicationImplementation creation in the format defined by RFC 3339.
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// Time of last MlApplicationImplementation update in the format defined by RFC 3339.
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationImplementationsMlApplicationImplementationCollectionItem)(nil)).Elem()
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemArrayOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemArrayOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemArrayOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemArrayOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMlApplicationImplementationsMlApplicationImplementationCollectionItem {
+		return vs[0].([]GetMlApplicationImplementationsMlApplicationImplementationCollectionItem)[vs[1].(int)]
+	}).(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput)
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponent struct {
+	// OCID of Data Flow Application
+	ApplicationId string `pulumi:"applicationId"`
+	// Name of application component
+	ComponentName string `pulumi:"componentName"`
+	// The OCID of the MlApplicationImplementation. Unique identifier that is immutable after creation.
+	Id string `pulumi:"id"`
+	// OCID of Data Science Job
+	JobId string `pulumi:"jobId"`
+	// OCID of Data Science Model
+	ModelId string `pulumi:"modelId"`
+	// A filter to return only resources that match the entire name given.
+	Name string `pulumi:"name"`
+	// OCID of Data Science Pipeline
+	PipelineId string `pulumi:"pipelineId"`
+	// Type of the resource
+	ResourceType string `pulumi:"resourceType"`
+	// type of the argument
+	Type string `pulumi:"type"`
+}
+
+// GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentInput is an input type that accepts GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArgs and GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentOutput values.
+// You can construct a concrete instance of `GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentInput` via:
+//
+//	GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArgs{...}
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentOutput
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentOutputWithContext(context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentOutput
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArgs struct {
+	// OCID of Data Flow Application
+	ApplicationId pulumi.StringInput `pulumi:"applicationId"`
+	// Name of application component
+	ComponentName pulumi.StringInput `pulumi:"componentName"`
+	// The OCID of the MlApplicationImplementation. Unique identifier that is immutable after creation.
+	Id pulumi.StringInput `pulumi:"id"`
+	// OCID of Data Science Job
+	JobId pulumi.StringInput `pulumi:"jobId"`
+	// OCID of Data Science Model
+	ModelId pulumi.StringInput `pulumi:"modelId"`
+	// A filter to return only resources that match the entire name given.
+	Name pulumi.StringInput `pulumi:"name"`
+	// OCID of Data Science Pipeline
+	PipelineId pulumi.StringInput `pulumi:"pipelineId"`
+	// Type of the resource
+	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	// type of the argument
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponent)(nil)).Elem()
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArgs) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentOutput {
+	return i.ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArgs) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentOutput)
+}
+
+// GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArrayInput is an input type that accepts GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArray and GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArrayOutput values.
+// You can construct a concrete instance of `GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArrayInput` via:
+//
+//	GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArray{ GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArgs{...} }
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArrayInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArrayOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArrayOutput
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArrayOutputWithContext(context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArrayOutput
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArray []GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentInput
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponent)(nil)).Elem()
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArray) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArrayOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArrayOutput {
+	return i.ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArrayOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArray) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArrayOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArrayOutput)
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponent)(nil)).Elem()
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentOutput {
+	return o
+}
+
+// OCID of Data Flow Application
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentOutput) ApplicationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponent) string {
+		return v.ApplicationId
+	}).(pulumi.StringOutput)
+}
+
+// Name of application component
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentOutput) ComponentName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponent) string {
+		return v.ComponentName
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the MlApplicationImplementation. Unique identifier that is immutable after creation.
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponent) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// OCID of Data Science Job
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentOutput) JobId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponent) string {
+		return v.JobId
+	}).(pulumi.StringOutput)
+}
+
+// OCID of Data Science Model
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentOutput) ModelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponent) string {
+		return v.ModelId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire name given.
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponent) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// OCID of Data Science Pipeline
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentOutput) PipelineId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponent) string {
+		return v.PipelineId
+	}).(pulumi.StringOutput)
+}
+
+// Type of the resource
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponent) string {
+		return v.ResourceType
+	}).(pulumi.StringOutput)
+}
+
+// type of the argument
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponent) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponent)(nil)).Elem()
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArrayOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArrayOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArrayOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArrayOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArrayOutput) Index(i pulumi.IntInput) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponent {
+		return vs[0].([]GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponent)[vs[1].(int)]
+	}).(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentOutput)
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchema struct {
+	// The default value for the optional configuration property (it must not be specified for mandatory configuration properties)
+	DefaultValue string `pulumi:"defaultValue"`
+	// short description of the argument
+	Description string `pulumi:"description"`
+	// argument is mandatory or not
+	IsMandatory bool `pulumi:"isMandatory"`
+	// Name of key (parameter name)
+	KeyName string `pulumi:"keyName"`
+	// Sample property value (it must match validationRegexp if it is specified)
+	SampleValue string `pulumi:"sampleValue"`
+	// A regular expression will be used for the validation of property value.
+	ValidationRegexp string `pulumi:"validationRegexp"`
+	// Type of value
+	ValueType string `pulumi:"valueType"`
+}
+
+// GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaInput is an input type that accepts GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArgs and GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaOutput values.
+// You can construct a concrete instance of `GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaInput` via:
+//
+//	GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArgs{...}
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaOutput
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaOutputWithContext(context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaOutput
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArgs struct {
+	// The default value for the optional configuration property (it must not be specified for mandatory configuration properties)
+	DefaultValue pulumi.StringInput `pulumi:"defaultValue"`
+	// short description of the argument
+	Description pulumi.StringInput `pulumi:"description"`
+	// argument is mandatory or not
+	IsMandatory pulumi.BoolInput `pulumi:"isMandatory"`
+	// Name of key (parameter name)
+	KeyName pulumi.StringInput `pulumi:"keyName"`
+	// Sample property value (it must match validationRegexp if it is specified)
+	SampleValue pulumi.StringInput `pulumi:"sampleValue"`
+	// A regular expression will be used for the validation of property value.
+	ValidationRegexp pulumi.StringInput `pulumi:"validationRegexp"`
+	// Type of value
+	ValueType pulumi.StringInput `pulumi:"valueType"`
+}
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchema)(nil)).Elem()
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArgs) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaOutput {
+	return i.ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArgs) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaOutput)
+}
+
+// GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArrayInput is an input type that accepts GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArray and GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArrayOutput values.
+// You can construct a concrete instance of `GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArrayInput` via:
+//
+//	GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArray{ GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArgs{...} }
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArrayInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArrayOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArrayOutput
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArrayOutputWithContext(context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArrayOutput
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArray []GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaInput
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchema)(nil)).Elem()
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArray) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArrayOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArrayOutput {
+	return i.ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArrayOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArray) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArrayOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArrayOutput)
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchema)(nil)).Elem()
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaOutput {
+	return o
+}
+
+// The default value for the optional configuration property (it must not be specified for mandatory configuration properties)
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaOutput) DefaultValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchema) string {
+		return v.DefaultValue
+	}).(pulumi.StringOutput)
+}
+
+// short description of the argument
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchema) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// argument is mandatory or not
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaOutput) IsMandatory() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchema) bool {
+		return v.IsMandatory
+	}).(pulumi.BoolOutput)
+}
+
+// Name of key (parameter name)
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaOutput) KeyName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchema) string {
+		return v.KeyName
+	}).(pulumi.StringOutput)
+}
+
+// Sample property value (it must match validationRegexp if it is specified)
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaOutput) SampleValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchema) string {
+		return v.SampleValue
+	}).(pulumi.StringOutput)
+}
+
+// A regular expression will be used for the validation of property value.
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaOutput) ValidationRegexp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchema) string {
+		return v.ValidationRegexp
+	}).(pulumi.StringOutput)
+}
+
+// Type of value
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaOutput) ValueType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchema) string {
+		return v.ValueType
+	}).(pulumi.StringOutput)
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchema)(nil)).Elem()
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArrayOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArrayOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArrayOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArrayOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArrayOutput) Index(i pulumi.IntInput) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchema {
+		return vs[0].([]GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchema)[vs[1].(int)]
+	}).(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaOutput)
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLogging struct {
+	// Log configuration details for particular areas of ML Application Implementation.
+	AggregatedInstanceViewLogs []GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLog `pulumi:"aggregatedInstanceViewLogs"`
+	// Log configuration details for particular areas of ML Application Implementation.
+	ImplementationLogs []GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLog `pulumi:"implementationLogs"`
+	// Log configuration details for particular areas of ML Application Implementation.
+	TriggerLogs []GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLog `pulumi:"triggerLogs"`
+}
+
+// GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingInput is an input type that accepts GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArgs and GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingOutput values.
+// You can construct a concrete instance of `GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingInput` via:
+//
+//	GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArgs{...}
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingOutput
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingOutputWithContext(context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingOutput
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArgs struct {
+	// Log configuration details for particular areas of ML Application Implementation.
+	AggregatedInstanceViewLogs GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArrayInput `pulumi:"aggregatedInstanceViewLogs"`
+	// Log configuration details for particular areas of ML Application Implementation.
+	ImplementationLogs GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArrayInput `pulumi:"implementationLogs"`
+	// Log configuration details for particular areas of ML Application Implementation.
+	TriggerLogs GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArrayInput `pulumi:"triggerLogs"`
+}
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLogging)(nil)).Elem()
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArgs) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingOutput {
+	return i.ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArgs) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingOutput)
+}
+
+// GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArrayInput is an input type that accepts GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArray and GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArrayOutput values.
+// You can construct a concrete instance of `GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArrayInput` via:
+//
+//	GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArray{ GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArgs{...} }
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArrayInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArrayOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArrayOutput
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArrayOutputWithContext(context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArrayOutput
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArray []GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingInput
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLogging)(nil)).Elem()
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArray) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArrayOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArrayOutput {
+	return i.ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArrayOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArray) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArrayOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArrayOutput)
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLogging)(nil)).Elem()
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingOutput {
+	return o
+}
+
+// Log configuration details for particular areas of ML Application Implementation.
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingOutput) AggregatedInstanceViewLogs() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArrayOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLogging) []GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLog {
+		return v.AggregatedInstanceViewLogs
+	}).(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArrayOutput)
+}
+
+// Log configuration details for particular areas of ML Application Implementation.
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingOutput) ImplementationLogs() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArrayOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLogging) []GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLog {
+		return v.ImplementationLogs
+	}).(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArrayOutput)
+}
+
+// Log configuration details for particular areas of ML Application Implementation.
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingOutput) TriggerLogs() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArrayOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLogging) []GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLog {
+		return v.TriggerLogs
+	}).(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArrayOutput)
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLogging)(nil)).Elem()
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArrayOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArrayOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArrayOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArrayOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArrayOutput) Index(i pulumi.IntInput) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLogging {
+		return vs[0].([]GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLogging)[vs[1].(int)]
+	}).(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingOutput)
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLog struct {
+	// If logging is enabled.
+	EnableLogging bool `pulumi:"enableLogging"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId string `pulumi:"logGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+	LogId string `pulumi:"logId"`
+}
+
+// GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogInput is an input type that accepts GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArgs and GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogOutput values.
+// You can construct a concrete instance of `GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogInput` via:
+//
+//	GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArgs{...}
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogOutput
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogOutputWithContext(context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogOutput
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArgs struct {
+	// If logging is enabled.
+	EnableLogging pulumi.BoolInput `pulumi:"enableLogging"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+	LogId pulumi.StringInput `pulumi:"logId"`
+}
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLog)(nil)).Elem()
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArgs) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogOutput {
+	return i.ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArgs) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogOutput)
+}
+
+// GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArrayInput is an input type that accepts GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArray and GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArrayOutput values.
+// You can construct a concrete instance of `GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArrayInput` via:
+//
+//	GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArray{ GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArgs{...} }
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArrayInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArrayOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArrayOutput
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArrayOutputWithContext(context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArrayOutput
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArray []GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogInput
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLog)(nil)).Elem()
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArray) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArrayOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArrayOutput {
+	return i.ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArrayOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArray) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArrayOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArrayOutput)
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLog)(nil)).Elem()
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogOutput {
+	return o
+}
+
+// If logging is enabled.
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogOutput) EnableLogging() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLog) bool {
+		return v.EnableLogging
+	}).(pulumi.BoolOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogOutput) LogGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLog) string {
+		return v.LogGroupId
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogOutput) LogId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLog) string {
+		return v.LogId
+	}).(pulumi.StringOutput)
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLog)(nil)).Elem()
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArrayOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArrayOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArrayOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArrayOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArrayOutput) Index(i pulumi.IntInput) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLog {
+		return vs[0].([]GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLog)[vs[1].(int)]
+	}).(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogOutput)
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLog struct {
+	// If logging is enabled.
+	EnableLogging bool `pulumi:"enableLogging"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId string `pulumi:"logGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+	LogId string `pulumi:"logId"`
+}
+
+// GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogInput is an input type that accepts GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArgs and GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogOutput values.
+// You can construct a concrete instance of `GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogInput` via:
+//
+//	GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArgs{...}
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogOutput
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogOutputWithContext(context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogOutput
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArgs struct {
+	// If logging is enabled.
+	EnableLogging pulumi.BoolInput `pulumi:"enableLogging"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+	LogId pulumi.StringInput `pulumi:"logId"`
+}
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLog)(nil)).Elem()
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArgs) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogOutput {
+	return i.ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArgs) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogOutput)
+}
+
+// GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArrayInput is an input type that accepts GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArray and GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArrayOutput values.
+// You can construct a concrete instance of `GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArrayInput` via:
+//
+//	GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArray{ GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArgs{...} }
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArrayInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArrayOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArrayOutput
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArrayOutputWithContext(context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArrayOutput
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArray []GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogInput
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLog)(nil)).Elem()
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArray) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArrayOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArrayOutput {
+	return i.ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArrayOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArray) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArrayOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArrayOutput)
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLog)(nil)).Elem()
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogOutput {
+	return o
+}
+
+// If logging is enabled.
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogOutput) EnableLogging() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLog) bool {
+		return v.EnableLogging
+	}).(pulumi.BoolOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogOutput) LogGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLog) string {
+		return v.LogGroupId
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogOutput) LogId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLog) string {
+		return v.LogId
+	}).(pulumi.StringOutput)
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLog)(nil)).Elem()
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArrayOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArrayOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArrayOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArrayOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArrayOutput) Index(i pulumi.IntInput) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLog {
+		return vs[0].([]GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLog)[vs[1].(int)]
+	}).(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogOutput)
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLog struct {
+	// If logging is enabled.
+	EnableLogging bool `pulumi:"enableLogging"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId string `pulumi:"logGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+	LogId string `pulumi:"logId"`
+}
+
+// GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogInput is an input type that accepts GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArgs and GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogOutput values.
+// You can construct a concrete instance of `GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogInput` via:
+//
+//	GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArgs{...}
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogOutput
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogOutputWithContext(context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogOutput
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArgs struct {
+	// If logging is enabled.
+	EnableLogging pulumi.BoolInput `pulumi:"enableLogging"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+	LogId pulumi.StringInput `pulumi:"logId"`
+}
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLog)(nil)).Elem()
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArgs) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogOutput {
+	return i.ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArgs) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogOutput)
+}
+
+// GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArrayInput is an input type that accepts GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArray and GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArrayOutput values.
+// You can construct a concrete instance of `GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArrayInput` via:
+//
+//	GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArray{ GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArgs{...} }
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArrayInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArrayOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArrayOutput
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArrayOutputWithContext(context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArrayOutput
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArray []GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogInput
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLog)(nil)).Elem()
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArray) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArrayOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArrayOutput {
+	return i.ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArrayOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArray) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArrayOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArrayOutput)
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLog)(nil)).Elem()
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogOutput {
+	return o
+}
+
+// If logging is enabled.
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogOutput) EnableLogging() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLog) bool {
+		return v.EnableLogging
+	}).(pulumi.BoolOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogOutput) LogGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLog) string {
+		return v.LogGroupId
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogOutput) LogId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLog) string {
+		return v.LogId
+	}).(pulumi.StringOutput)
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLog)(nil)).Elem()
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArrayOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArrayOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArrayOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArrayOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArrayOutput) Index(i pulumi.IntInput) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLog {
+		return vs[0].([]GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLog)[vs[1].(int)]
+	}).(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogOutput)
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgument struct {
+	// Array of the ML Application package arguments
+	Arguments []GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgument `pulumi:"arguments"`
+}
+
+// GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentInput is an input type that accepts GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgs and GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentOutput values.
+// You can construct a concrete instance of `GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentInput` via:
+//
+//	GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgs{...}
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentOutput
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentOutputWithContext(context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentOutput
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgs struct {
+	// Array of the ML Application package arguments
+	Arguments GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArrayInput `pulumi:"arguments"`
+}
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgument)(nil)).Elem()
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgs) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentOutput {
+	return i.ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgs) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentOutput)
+}
+
+// GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArrayInput is an input type that accepts GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArray and GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArrayOutput values.
+// You can construct a concrete instance of `GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArrayInput` via:
+//
+//	GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArray{ GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgs{...} }
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArrayInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArrayOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArrayOutput
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArrayOutputWithContext(context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArrayOutput
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArray []GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentInput
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgument)(nil)).Elem()
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArray) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArrayOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArrayOutput {
+	return i.ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArrayOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArray) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArrayOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArrayOutput)
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgument)(nil)).Elem()
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentOutput {
+	return o
+}
+
+// Array of the ML Application package arguments
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentOutput) Arguments() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArrayOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgument) []GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgument {
+		return v.Arguments
+	}).(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArrayOutput)
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgument)(nil)).Elem()
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArrayOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArrayOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArrayOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArrayOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArrayOutput) Index(i pulumi.IntInput) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgument {
+		return vs[0].([]GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgument)[vs[1].(int)]
+	}).(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentOutput)
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgument struct {
+	// short description of the argument
+	Description string `pulumi:"description"`
+	// argument is mandatory or not
+	IsMandatory bool `pulumi:"isMandatory"`
+	// A filter to return only resources that match the entire name given.
+	Name string `pulumi:"name"`
+	// type of the argument
+	Type string `pulumi:"type"`
+	// Argument value
+	Value string `pulumi:"value"`
+}
+
+// GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentInput is an input type that accepts GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArgs and GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentOutput values.
+// You can construct a concrete instance of `GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentInput` via:
+//
+//	GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArgs{...}
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentOutput
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentOutputWithContext(context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentOutput
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArgs struct {
+	// short description of the argument
+	Description pulumi.StringInput `pulumi:"description"`
+	// argument is mandatory or not
+	IsMandatory pulumi.BoolInput `pulumi:"isMandatory"`
+	// A filter to return only resources that match the entire name given.
+	Name pulumi.StringInput `pulumi:"name"`
+	// type of the argument
+	Type pulumi.StringInput `pulumi:"type"`
+	// Argument value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgument)(nil)).Elem()
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArgs) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentOutput {
+	return i.ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArgs) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentOutput)
+}
+
+// GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArrayInput is an input type that accepts GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArray and GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArrayOutput values.
+// You can construct a concrete instance of `GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArrayInput` via:
+//
+//	GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArray{ GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArgs{...} }
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArrayInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArrayOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArrayOutput
+	ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArrayOutputWithContext(context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArrayOutput
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArray []GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentInput
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgument)(nil)).Elem()
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArray) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArrayOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArrayOutput {
+	return i.ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArrayOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArray) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArrayOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArrayOutput)
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgument)(nil)).Elem()
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentOutput {
+	return o
+}
+
+// short description of the argument
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgument) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// argument is mandatory or not
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentOutput) IsMandatory() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgument) bool {
+		return v.IsMandatory
+	}).(pulumi.BoolOutput)
+}
+
+// A filter to return only resources that match the entire name given.
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgument) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// type of the argument
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgument) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+// Argument value
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgument) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgument)(nil)).Elem()
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArrayOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArrayOutput() GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArrayOutput) ToGetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArrayOutputWithContext(ctx context.Context) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArrayOutput) Index(i pulumi.IntInput) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgument {
+		return vs[0].([]GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgument)[vs[1].(int)]
+	}).(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentOutput)
+}
+
+type GetMlApplicationInstanceAuthConfiguration struct {
+	// Name of the IDCS application
+	ApplicationName string `pulumi:"applicationName"`
+	// Identity Domain OCID
+	DomainId string `pulumi:"domainId"`
+	// Type of AuthN/Z
+	Type string `pulumi:"type"`
+}
+
+// GetMlApplicationInstanceAuthConfigurationInput is an input type that accepts GetMlApplicationInstanceAuthConfigurationArgs and GetMlApplicationInstanceAuthConfigurationOutput values.
+// You can construct a concrete instance of `GetMlApplicationInstanceAuthConfigurationInput` via:
+//
+//	GetMlApplicationInstanceAuthConfigurationArgs{...}
+type GetMlApplicationInstanceAuthConfigurationInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationInstanceAuthConfigurationOutput() GetMlApplicationInstanceAuthConfigurationOutput
+	ToGetMlApplicationInstanceAuthConfigurationOutputWithContext(context.Context) GetMlApplicationInstanceAuthConfigurationOutput
+}
+
+type GetMlApplicationInstanceAuthConfigurationArgs struct {
+	// Name of the IDCS application
+	ApplicationName pulumi.StringInput `pulumi:"applicationName"`
+	// Identity Domain OCID
+	DomainId pulumi.StringInput `pulumi:"domainId"`
+	// Type of AuthN/Z
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMlApplicationInstanceAuthConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationInstanceAuthConfiguration)(nil)).Elem()
+}
+
+func (i GetMlApplicationInstanceAuthConfigurationArgs) ToGetMlApplicationInstanceAuthConfigurationOutput() GetMlApplicationInstanceAuthConfigurationOutput {
+	return i.ToGetMlApplicationInstanceAuthConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationInstanceAuthConfigurationArgs) ToGetMlApplicationInstanceAuthConfigurationOutputWithContext(ctx context.Context) GetMlApplicationInstanceAuthConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationInstanceAuthConfigurationOutput)
+}
+
+// GetMlApplicationInstanceAuthConfigurationArrayInput is an input type that accepts GetMlApplicationInstanceAuthConfigurationArray and GetMlApplicationInstanceAuthConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetMlApplicationInstanceAuthConfigurationArrayInput` via:
+//
+//	GetMlApplicationInstanceAuthConfigurationArray{ GetMlApplicationInstanceAuthConfigurationArgs{...} }
+type GetMlApplicationInstanceAuthConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationInstanceAuthConfigurationArrayOutput() GetMlApplicationInstanceAuthConfigurationArrayOutput
+	ToGetMlApplicationInstanceAuthConfigurationArrayOutputWithContext(context.Context) GetMlApplicationInstanceAuthConfigurationArrayOutput
+}
+
+type GetMlApplicationInstanceAuthConfigurationArray []GetMlApplicationInstanceAuthConfigurationInput
+
+func (GetMlApplicationInstanceAuthConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationInstanceAuthConfiguration)(nil)).Elem()
+}
+
+func (i GetMlApplicationInstanceAuthConfigurationArray) ToGetMlApplicationInstanceAuthConfigurationArrayOutput() GetMlApplicationInstanceAuthConfigurationArrayOutput {
+	return i.ToGetMlApplicationInstanceAuthConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationInstanceAuthConfigurationArray) ToGetMlApplicationInstanceAuthConfigurationArrayOutputWithContext(ctx context.Context) GetMlApplicationInstanceAuthConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationInstanceAuthConfigurationArrayOutput)
+}
+
+type GetMlApplicationInstanceAuthConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationInstanceAuthConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationInstanceAuthConfiguration)(nil)).Elem()
+}
+
+func (o GetMlApplicationInstanceAuthConfigurationOutput) ToGetMlApplicationInstanceAuthConfigurationOutput() GetMlApplicationInstanceAuthConfigurationOutput {
+	return o
+}
+
+func (o GetMlApplicationInstanceAuthConfigurationOutput) ToGetMlApplicationInstanceAuthConfigurationOutputWithContext(ctx context.Context) GetMlApplicationInstanceAuthConfigurationOutput {
+	return o
+}
+
+// Name of the IDCS application
+func (o GetMlApplicationInstanceAuthConfigurationOutput) ApplicationName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationInstanceAuthConfiguration) string { return v.ApplicationName }).(pulumi.StringOutput)
+}
+
+// Identity Domain OCID
+func (o GetMlApplicationInstanceAuthConfigurationOutput) DomainId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationInstanceAuthConfiguration) string { return v.DomainId }).(pulumi.StringOutput)
+}
+
+// Type of AuthN/Z
+func (o GetMlApplicationInstanceAuthConfigurationOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationInstanceAuthConfiguration) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMlApplicationInstanceAuthConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationInstanceAuthConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationInstanceAuthConfiguration)(nil)).Elem()
+}
+
+func (o GetMlApplicationInstanceAuthConfigurationArrayOutput) ToGetMlApplicationInstanceAuthConfigurationArrayOutput() GetMlApplicationInstanceAuthConfigurationArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationInstanceAuthConfigurationArrayOutput) ToGetMlApplicationInstanceAuthConfigurationArrayOutputWithContext(ctx context.Context) GetMlApplicationInstanceAuthConfigurationArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationInstanceAuthConfigurationArrayOutput) Index(i pulumi.IntInput) GetMlApplicationInstanceAuthConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMlApplicationInstanceAuthConfiguration {
+		return vs[0].([]GetMlApplicationInstanceAuthConfiguration)[vs[1].(int)]
+	}).(GetMlApplicationInstanceAuthConfigurationOutput)
+}
+
+type GetMlApplicationInstanceConfiguration struct {
+	// Key of configuration property
+	Key string `pulumi:"key"`
+	// Value of configuration property
+	Value string `pulumi:"value"`
+}
+
+// GetMlApplicationInstanceConfigurationInput is an input type that accepts GetMlApplicationInstanceConfigurationArgs and GetMlApplicationInstanceConfigurationOutput values.
+// You can construct a concrete instance of `GetMlApplicationInstanceConfigurationInput` via:
+//
+//	GetMlApplicationInstanceConfigurationArgs{...}
+type GetMlApplicationInstanceConfigurationInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationInstanceConfigurationOutput() GetMlApplicationInstanceConfigurationOutput
+	ToGetMlApplicationInstanceConfigurationOutputWithContext(context.Context) GetMlApplicationInstanceConfigurationOutput
+}
+
+type GetMlApplicationInstanceConfigurationArgs struct {
+	// Key of configuration property
+	Key pulumi.StringInput `pulumi:"key"`
+	// Value of configuration property
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetMlApplicationInstanceConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationInstanceConfiguration)(nil)).Elem()
+}
+
+func (i GetMlApplicationInstanceConfigurationArgs) ToGetMlApplicationInstanceConfigurationOutput() GetMlApplicationInstanceConfigurationOutput {
+	return i.ToGetMlApplicationInstanceConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationInstanceConfigurationArgs) ToGetMlApplicationInstanceConfigurationOutputWithContext(ctx context.Context) GetMlApplicationInstanceConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationInstanceConfigurationOutput)
+}
+
+// GetMlApplicationInstanceConfigurationArrayInput is an input type that accepts GetMlApplicationInstanceConfigurationArray and GetMlApplicationInstanceConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetMlApplicationInstanceConfigurationArrayInput` via:
+//
+//	GetMlApplicationInstanceConfigurationArray{ GetMlApplicationInstanceConfigurationArgs{...} }
+type GetMlApplicationInstanceConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationInstanceConfigurationArrayOutput() GetMlApplicationInstanceConfigurationArrayOutput
+	ToGetMlApplicationInstanceConfigurationArrayOutputWithContext(context.Context) GetMlApplicationInstanceConfigurationArrayOutput
+}
+
+type GetMlApplicationInstanceConfigurationArray []GetMlApplicationInstanceConfigurationInput
+
+func (GetMlApplicationInstanceConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationInstanceConfiguration)(nil)).Elem()
+}
+
+func (i GetMlApplicationInstanceConfigurationArray) ToGetMlApplicationInstanceConfigurationArrayOutput() GetMlApplicationInstanceConfigurationArrayOutput {
+	return i.ToGetMlApplicationInstanceConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationInstanceConfigurationArray) ToGetMlApplicationInstanceConfigurationArrayOutputWithContext(ctx context.Context) GetMlApplicationInstanceConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationInstanceConfigurationArrayOutput)
+}
+
+type GetMlApplicationInstanceConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationInstanceConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationInstanceConfiguration)(nil)).Elem()
+}
+
+func (o GetMlApplicationInstanceConfigurationOutput) ToGetMlApplicationInstanceConfigurationOutput() GetMlApplicationInstanceConfigurationOutput {
+	return o
+}
+
+func (o GetMlApplicationInstanceConfigurationOutput) ToGetMlApplicationInstanceConfigurationOutputWithContext(ctx context.Context) GetMlApplicationInstanceConfigurationOutput {
+	return o
+}
+
+// Key of configuration property
+func (o GetMlApplicationInstanceConfigurationOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationInstanceConfiguration) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Value of configuration property
+func (o GetMlApplicationInstanceConfigurationOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationInstanceConfiguration) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetMlApplicationInstanceConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationInstanceConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationInstanceConfiguration)(nil)).Elem()
+}
+
+func (o GetMlApplicationInstanceConfigurationArrayOutput) ToGetMlApplicationInstanceConfigurationArrayOutput() GetMlApplicationInstanceConfigurationArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationInstanceConfigurationArrayOutput) ToGetMlApplicationInstanceConfigurationArrayOutputWithContext(ctx context.Context) GetMlApplicationInstanceConfigurationArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationInstanceConfigurationArrayOutput) Index(i pulumi.IntInput) GetMlApplicationInstanceConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMlApplicationInstanceConfiguration {
+		return vs[0].([]GetMlApplicationInstanceConfiguration)[vs[1].(int)]
+	}).(GetMlApplicationInstanceConfigurationOutput)
+}
+
+type GetMlApplicationInstancePredictionEndpointDetail struct {
+	// Base URI of prediction router.
+	BasePredictionUri string `pulumi:"basePredictionUri"`
+	// Array of all prediction URIs per use-case.
+	PredictionUris []GetMlApplicationInstancePredictionEndpointDetailPredictionUri `pulumi:"predictionUris"`
+}
+
+// GetMlApplicationInstancePredictionEndpointDetailInput is an input type that accepts GetMlApplicationInstancePredictionEndpointDetailArgs and GetMlApplicationInstancePredictionEndpointDetailOutput values.
+// You can construct a concrete instance of `GetMlApplicationInstancePredictionEndpointDetailInput` via:
+//
+//	GetMlApplicationInstancePredictionEndpointDetailArgs{...}
+type GetMlApplicationInstancePredictionEndpointDetailInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationInstancePredictionEndpointDetailOutput() GetMlApplicationInstancePredictionEndpointDetailOutput
+	ToGetMlApplicationInstancePredictionEndpointDetailOutputWithContext(context.Context) GetMlApplicationInstancePredictionEndpointDetailOutput
+}
+
+type GetMlApplicationInstancePredictionEndpointDetailArgs struct {
+	// Base URI of prediction router.
+	BasePredictionUri pulumi.StringInput `pulumi:"basePredictionUri"`
+	// Array of all prediction URIs per use-case.
+	PredictionUris GetMlApplicationInstancePredictionEndpointDetailPredictionUriArrayInput `pulumi:"predictionUris"`
+}
+
+func (GetMlApplicationInstancePredictionEndpointDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationInstancePredictionEndpointDetail)(nil)).Elem()
+}
+
+func (i GetMlApplicationInstancePredictionEndpointDetailArgs) ToGetMlApplicationInstancePredictionEndpointDetailOutput() GetMlApplicationInstancePredictionEndpointDetailOutput {
+	return i.ToGetMlApplicationInstancePredictionEndpointDetailOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationInstancePredictionEndpointDetailArgs) ToGetMlApplicationInstancePredictionEndpointDetailOutputWithContext(ctx context.Context) GetMlApplicationInstancePredictionEndpointDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationInstancePredictionEndpointDetailOutput)
+}
+
+// GetMlApplicationInstancePredictionEndpointDetailArrayInput is an input type that accepts GetMlApplicationInstancePredictionEndpointDetailArray and GetMlApplicationInstancePredictionEndpointDetailArrayOutput values.
+// You can construct a concrete instance of `GetMlApplicationInstancePredictionEndpointDetailArrayInput` via:
+//
+//	GetMlApplicationInstancePredictionEndpointDetailArray{ GetMlApplicationInstancePredictionEndpointDetailArgs{...} }
+type GetMlApplicationInstancePredictionEndpointDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationInstancePredictionEndpointDetailArrayOutput() GetMlApplicationInstancePredictionEndpointDetailArrayOutput
+	ToGetMlApplicationInstancePredictionEndpointDetailArrayOutputWithContext(context.Context) GetMlApplicationInstancePredictionEndpointDetailArrayOutput
+}
+
+type GetMlApplicationInstancePredictionEndpointDetailArray []GetMlApplicationInstancePredictionEndpointDetailInput
+
+func (GetMlApplicationInstancePredictionEndpointDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationInstancePredictionEndpointDetail)(nil)).Elem()
+}
+
+func (i GetMlApplicationInstancePredictionEndpointDetailArray) ToGetMlApplicationInstancePredictionEndpointDetailArrayOutput() GetMlApplicationInstancePredictionEndpointDetailArrayOutput {
+	return i.ToGetMlApplicationInstancePredictionEndpointDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationInstancePredictionEndpointDetailArray) ToGetMlApplicationInstancePredictionEndpointDetailArrayOutputWithContext(ctx context.Context) GetMlApplicationInstancePredictionEndpointDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationInstancePredictionEndpointDetailArrayOutput)
+}
+
+type GetMlApplicationInstancePredictionEndpointDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationInstancePredictionEndpointDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationInstancePredictionEndpointDetail)(nil)).Elem()
+}
+
+func (o GetMlApplicationInstancePredictionEndpointDetailOutput) ToGetMlApplicationInstancePredictionEndpointDetailOutput() GetMlApplicationInstancePredictionEndpointDetailOutput {
+	return o
+}
+
+func (o GetMlApplicationInstancePredictionEndpointDetailOutput) ToGetMlApplicationInstancePredictionEndpointDetailOutputWithContext(ctx context.Context) GetMlApplicationInstancePredictionEndpointDetailOutput {
+	return o
+}
+
+// Base URI of prediction router.
+func (o GetMlApplicationInstancePredictionEndpointDetailOutput) BasePredictionUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationInstancePredictionEndpointDetail) string { return v.BasePredictionUri }).(pulumi.StringOutput)
+}
+
+// Array of all prediction URIs per use-case.
+func (o GetMlApplicationInstancePredictionEndpointDetailOutput) PredictionUris() GetMlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutput {
+	return o.ApplyT(func(v GetMlApplicationInstancePredictionEndpointDetail) []GetMlApplicationInstancePredictionEndpointDetailPredictionUri {
+		return v.PredictionUris
+	}).(GetMlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutput)
+}
+
+type GetMlApplicationInstancePredictionEndpointDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationInstancePredictionEndpointDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationInstancePredictionEndpointDetail)(nil)).Elem()
+}
+
+func (o GetMlApplicationInstancePredictionEndpointDetailArrayOutput) ToGetMlApplicationInstancePredictionEndpointDetailArrayOutput() GetMlApplicationInstancePredictionEndpointDetailArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationInstancePredictionEndpointDetailArrayOutput) ToGetMlApplicationInstancePredictionEndpointDetailArrayOutputWithContext(ctx context.Context) GetMlApplicationInstancePredictionEndpointDetailArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationInstancePredictionEndpointDetailArrayOutput) Index(i pulumi.IntInput) GetMlApplicationInstancePredictionEndpointDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMlApplicationInstancePredictionEndpointDetail {
+		return vs[0].([]GetMlApplicationInstancePredictionEndpointDetail)[vs[1].(int)]
+	}).(GetMlApplicationInstancePredictionEndpointDetailOutput)
+}
+
+type GetMlApplicationInstancePredictionEndpointDetailPredictionUri struct {
+	// Prediction URI.
+	Uri string `pulumi:"uri"`
+	// Prediction use-case.
+	UseCase string `pulumi:"useCase"`
+}
+
+// GetMlApplicationInstancePredictionEndpointDetailPredictionUriInput is an input type that accepts GetMlApplicationInstancePredictionEndpointDetailPredictionUriArgs and GetMlApplicationInstancePredictionEndpointDetailPredictionUriOutput values.
+// You can construct a concrete instance of `GetMlApplicationInstancePredictionEndpointDetailPredictionUriInput` via:
+//
+//	GetMlApplicationInstancePredictionEndpointDetailPredictionUriArgs{...}
+type GetMlApplicationInstancePredictionEndpointDetailPredictionUriInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationInstancePredictionEndpointDetailPredictionUriOutput() GetMlApplicationInstancePredictionEndpointDetailPredictionUriOutput
+	ToGetMlApplicationInstancePredictionEndpointDetailPredictionUriOutputWithContext(context.Context) GetMlApplicationInstancePredictionEndpointDetailPredictionUriOutput
+}
+
+type GetMlApplicationInstancePredictionEndpointDetailPredictionUriArgs struct {
+	// Prediction URI.
+	Uri pulumi.StringInput `pulumi:"uri"`
+	// Prediction use-case.
+	UseCase pulumi.StringInput `pulumi:"useCase"`
+}
+
+func (GetMlApplicationInstancePredictionEndpointDetailPredictionUriArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationInstancePredictionEndpointDetailPredictionUri)(nil)).Elem()
+}
+
+func (i GetMlApplicationInstancePredictionEndpointDetailPredictionUriArgs) ToGetMlApplicationInstancePredictionEndpointDetailPredictionUriOutput() GetMlApplicationInstancePredictionEndpointDetailPredictionUriOutput {
+	return i.ToGetMlApplicationInstancePredictionEndpointDetailPredictionUriOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationInstancePredictionEndpointDetailPredictionUriArgs) ToGetMlApplicationInstancePredictionEndpointDetailPredictionUriOutputWithContext(ctx context.Context) GetMlApplicationInstancePredictionEndpointDetailPredictionUriOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationInstancePredictionEndpointDetailPredictionUriOutput)
+}
+
+// GetMlApplicationInstancePredictionEndpointDetailPredictionUriArrayInput is an input type that accepts GetMlApplicationInstancePredictionEndpointDetailPredictionUriArray and GetMlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutput values.
+// You can construct a concrete instance of `GetMlApplicationInstancePredictionEndpointDetailPredictionUriArrayInput` via:
+//
+//	GetMlApplicationInstancePredictionEndpointDetailPredictionUriArray{ GetMlApplicationInstancePredictionEndpointDetailPredictionUriArgs{...} }
+type GetMlApplicationInstancePredictionEndpointDetailPredictionUriArrayInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutput() GetMlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutput
+	ToGetMlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutputWithContext(context.Context) GetMlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutput
+}
+
+type GetMlApplicationInstancePredictionEndpointDetailPredictionUriArray []GetMlApplicationInstancePredictionEndpointDetailPredictionUriInput
+
+func (GetMlApplicationInstancePredictionEndpointDetailPredictionUriArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationInstancePredictionEndpointDetailPredictionUri)(nil)).Elem()
+}
+
+func (i GetMlApplicationInstancePredictionEndpointDetailPredictionUriArray) ToGetMlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutput() GetMlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutput {
+	return i.ToGetMlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationInstancePredictionEndpointDetailPredictionUriArray) ToGetMlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutputWithContext(ctx context.Context) GetMlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutput)
+}
+
+type GetMlApplicationInstancePredictionEndpointDetailPredictionUriOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationInstancePredictionEndpointDetailPredictionUriOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationInstancePredictionEndpointDetailPredictionUri)(nil)).Elem()
+}
+
+func (o GetMlApplicationInstancePredictionEndpointDetailPredictionUriOutput) ToGetMlApplicationInstancePredictionEndpointDetailPredictionUriOutput() GetMlApplicationInstancePredictionEndpointDetailPredictionUriOutput {
+	return o
+}
+
+func (o GetMlApplicationInstancePredictionEndpointDetailPredictionUriOutput) ToGetMlApplicationInstancePredictionEndpointDetailPredictionUriOutputWithContext(ctx context.Context) GetMlApplicationInstancePredictionEndpointDetailPredictionUriOutput {
+	return o
+}
+
+// Prediction URI.
+func (o GetMlApplicationInstancePredictionEndpointDetailPredictionUriOutput) Uri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationInstancePredictionEndpointDetailPredictionUri) string { return v.Uri }).(pulumi.StringOutput)
+}
+
+// Prediction use-case.
+func (o GetMlApplicationInstancePredictionEndpointDetailPredictionUriOutput) UseCase() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationInstancePredictionEndpointDetailPredictionUri) string { return v.UseCase }).(pulumi.StringOutput)
+}
+
+type GetMlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationInstancePredictionEndpointDetailPredictionUri)(nil)).Elem()
+}
+
+func (o GetMlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutput) ToGetMlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutput() GetMlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutput) ToGetMlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutputWithContext(ctx context.Context) GetMlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutput) Index(i pulumi.IntInput) GetMlApplicationInstancePredictionEndpointDetailPredictionUriOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMlApplicationInstancePredictionEndpointDetailPredictionUri {
+		return vs[0].([]GetMlApplicationInstancePredictionEndpointDetailPredictionUri)[vs[1].(int)]
+	}).(GetMlApplicationInstancePredictionEndpointDetailPredictionUriOutput)
+}
+
+type GetMlApplicationInstancesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetMlApplicationInstancesFilterInput is an input type that accepts GetMlApplicationInstancesFilterArgs and GetMlApplicationInstancesFilterOutput values.
+// You can construct a concrete instance of `GetMlApplicationInstancesFilterInput` via:
+//
+//	GetMlApplicationInstancesFilterArgs{...}
+type GetMlApplicationInstancesFilterInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationInstancesFilterOutput() GetMlApplicationInstancesFilterOutput
+	ToGetMlApplicationInstancesFilterOutputWithContext(context.Context) GetMlApplicationInstancesFilterOutput
+}
+
+type GetMlApplicationInstancesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetMlApplicationInstancesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationInstancesFilter)(nil)).Elem()
+}
+
+func (i GetMlApplicationInstancesFilterArgs) ToGetMlApplicationInstancesFilterOutput() GetMlApplicationInstancesFilterOutput {
+	return i.ToGetMlApplicationInstancesFilterOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationInstancesFilterArgs) ToGetMlApplicationInstancesFilterOutputWithContext(ctx context.Context) GetMlApplicationInstancesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationInstancesFilterOutput)
+}
+
+// GetMlApplicationInstancesFilterArrayInput is an input type that accepts GetMlApplicationInstancesFilterArray and GetMlApplicationInstancesFilterArrayOutput values.
+// You can construct a concrete instance of `GetMlApplicationInstancesFilterArrayInput` via:
+//
+//	GetMlApplicationInstancesFilterArray{ GetMlApplicationInstancesFilterArgs{...} }
+type GetMlApplicationInstancesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationInstancesFilterArrayOutput() GetMlApplicationInstancesFilterArrayOutput
+	ToGetMlApplicationInstancesFilterArrayOutputWithContext(context.Context) GetMlApplicationInstancesFilterArrayOutput
+}
+
+type GetMlApplicationInstancesFilterArray []GetMlApplicationInstancesFilterInput
+
+func (GetMlApplicationInstancesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationInstancesFilter)(nil)).Elem()
+}
+
+func (i GetMlApplicationInstancesFilterArray) ToGetMlApplicationInstancesFilterArrayOutput() GetMlApplicationInstancesFilterArrayOutput {
+	return i.ToGetMlApplicationInstancesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationInstancesFilterArray) ToGetMlApplicationInstancesFilterArrayOutputWithContext(ctx context.Context) GetMlApplicationInstancesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationInstancesFilterArrayOutput)
+}
+
+type GetMlApplicationInstancesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationInstancesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationInstancesFilter)(nil)).Elem()
+}
+
+func (o GetMlApplicationInstancesFilterOutput) ToGetMlApplicationInstancesFilterOutput() GetMlApplicationInstancesFilterOutput {
+	return o
+}
+
+func (o GetMlApplicationInstancesFilterOutput) ToGetMlApplicationInstancesFilterOutputWithContext(ctx context.Context) GetMlApplicationInstancesFilterOutput {
+	return o
+}
+
+func (o GetMlApplicationInstancesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationInstancesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMlApplicationInstancesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMlApplicationInstancesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMlApplicationInstancesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMlApplicationInstancesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetMlApplicationInstancesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationInstancesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationInstancesFilter)(nil)).Elem()
+}
+
+func (o GetMlApplicationInstancesFilterArrayOutput) ToGetMlApplicationInstancesFilterArrayOutput() GetMlApplicationInstancesFilterArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationInstancesFilterArrayOutput) ToGetMlApplicationInstancesFilterArrayOutputWithContext(ctx context.Context) GetMlApplicationInstancesFilterArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationInstancesFilterArrayOutput) Index(i pulumi.IntInput) GetMlApplicationInstancesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMlApplicationInstancesFilter {
+		return vs[0].([]GetMlApplicationInstancesFilter)[vs[1].(int)]
+	}).(GetMlApplicationInstancesFilterOutput)
+}
+
+type GetMlApplicationInstancesMlApplicationInstanceCollection struct {
+	Items []GetMlApplicationInstancesMlApplicationInstanceCollectionItem `pulumi:"items"`
+}
+
+// GetMlApplicationInstancesMlApplicationInstanceCollectionInput is an input type that accepts GetMlApplicationInstancesMlApplicationInstanceCollectionArgs and GetMlApplicationInstancesMlApplicationInstanceCollectionOutput values.
+// You can construct a concrete instance of `GetMlApplicationInstancesMlApplicationInstanceCollectionInput` via:
+//
+//	GetMlApplicationInstancesMlApplicationInstanceCollectionArgs{...}
+type GetMlApplicationInstancesMlApplicationInstanceCollectionInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationInstancesMlApplicationInstanceCollectionOutput() GetMlApplicationInstancesMlApplicationInstanceCollectionOutput
+	ToGetMlApplicationInstancesMlApplicationInstanceCollectionOutputWithContext(context.Context) GetMlApplicationInstancesMlApplicationInstanceCollectionOutput
+}
+
+type GetMlApplicationInstancesMlApplicationInstanceCollectionArgs struct {
+	Items GetMlApplicationInstancesMlApplicationInstanceCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetMlApplicationInstancesMlApplicationInstanceCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationInstancesMlApplicationInstanceCollection)(nil)).Elem()
+}
+
+func (i GetMlApplicationInstancesMlApplicationInstanceCollectionArgs) ToGetMlApplicationInstancesMlApplicationInstanceCollectionOutput() GetMlApplicationInstancesMlApplicationInstanceCollectionOutput {
+	return i.ToGetMlApplicationInstancesMlApplicationInstanceCollectionOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationInstancesMlApplicationInstanceCollectionArgs) ToGetMlApplicationInstancesMlApplicationInstanceCollectionOutputWithContext(ctx context.Context) GetMlApplicationInstancesMlApplicationInstanceCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationInstancesMlApplicationInstanceCollectionOutput)
+}
+
+// GetMlApplicationInstancesMlApplicationInstanceCollectionArrayInput is an input type that accepts GetMlApplicationInstancesMlApplicationInstanceCollectionArray and GetMlApplicationInstancesMlApplicationInstanceCollectionArrayOutput values.
+// You can construct a concrete instance of `GetMlApplicationInstancesMlApplicationInstanceCollectionArrayInput` via:
+//
+//	GetMlApplicationInstancesMlApplicationInstanceCollectionArray{ GetMlApplicationInstancesMlApplicationInstanceCollectionArgs{...} }
+type GetMlApplicationInstancesMlApplicationInstanceCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationInstancesMlApplicationInstanceCollectionArrayOutput() GetMlApplicationInstancesMlApplicationInstanceCollectionArrayOutput
+	ToGetMlApplicationInstancesMlApplicationInstanceCollectionArrayOutputWithContext(context.Context) GetMlApplicationInstancesMlApplicationInstanceCollectionArrayOutput
+}
+
+type GetMlApplicationInstancesMlApplicationInstanceCollectionArray []GetMlApplicationInstancesMlApplicationInstanceCollectionInput
+
+func (GetMlApplicationInstancesMlApplicationInstanceCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationInstancesMlApplicationInstanceCollection)(nil)).Elem()
+}
+
+func (i GetMlApplicationInstancesMlApplicationInstanceCollectionArray) ToGetMlApplicationInstancesMlApplicationInstanceCollectionArrayOutput() GetMlApplicationInstancesMlApplicationInstanceCollectionArrayOutput {
+	return i.ToGetMlApplicationInstancesMlApplicationInstanceCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationInstancesMlApplicationInstanceCollectionArray) ToGetMlApplicationInstancesMlApplicationInstanceCollectionArrayOutputWithContext(ctx context.Context) GetMlApplicationInstancesMlApplicationInstanceCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationInstancesMlApplicationInstanceCollectionArrayOutput)
+}
+
+type GetMlApplicationInstancesMlApplicationInstanceCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationInstancesMlApplicationInstanceCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationInstancesMlApplicationInstanceCollection)(nil)).Elem()
+}
+
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionOutput) ToGetMlApplicationInstancesMlApplicationInstanceCollectionOutput() GetMlApplicationInstancesMlApplicationInstanceCollectionOutput {
+	return o
+}
+
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionOutput) ToGetMlApplicationInstancesMlApplicationInstanceCollectionOutputWithContext(ctx context.Context) GetMlApplicationInstancesMlApplicationInstanceCollectionOutput {
+	return o
+}
+
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionOutput) Items() GetMlApplicationInstancesMlApplicationInstanceCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetMlApplicationInstancesMlApplicationInstanceCollection) []GetMlApplicationInstancesMlApplicationInstanceCollectionItem {
+		return v.Items
+	}).(GetMlApplicationInstancesMlApplicationInstanceCollectionItemArrayOutput)
+}
+
+type GetMlApplicationInstancesMlApplicationInstanceCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationInstancesMlApplicationInstanceCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationInstancesMlApplicationInstanceCollection)(nil)).Elem()
+}
+
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionArrayOutput) ToGetMlApplicationInstancesMlApplicationInstanceCollectionArrayOutput() GetMlApplicationInstancesMlApplicationInstanceCollectionArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionArrayOutput) ToGetMlApplicationInstancesMlApplicationInstanceCollectionArrayOutputWithContext(ctx context.Context) GetMlApplicationInstancesMlApplicationInstanceCollectionArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionArrayOutput) Index(i pulumi.IntInput) GetMlApplicationInstancesMlApplicationInstanceCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMlApplicationInstancesMlApplicationInstanceCollection {
+		return vs[0].([]GetMlApplicationInstancesMlApplicationInstanceCollection)[vs[1].(int)]
+	}).(GetMlApplicationInstancesMlApplicationInstanceCollectionOutput)
+}
+
+type GetMlApplicationInstancesMlApplicationInstanceCollectionItem struct {
+	// AuthN/Z configuration for online prediction
+	AuthConfigurations []GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfiguration `pulumi:"authConfigurations"`
+	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Data that are used for provisioning of the given MlApplicationInstance. These are validated against configurationSchema defined in referenced MlApplicationImplementation.
+	Configurations []GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfiguration `pulumi:"configurations"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// <b>Filter</b> results by its user-friendly name.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the MlApplicationInstance. Unique identifier that is immutable after creation
+	Id string `pulumi:"id"`
+	// States whether the MlApplicationInstance is supposed to be in ACTIVE lifecycle state.
+	IsEnabled bool `pulumi:"isEnabled"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The current substate of the MlApplicationInstance. The substate has MlApplicationInstance specific values in comparison with lifecycleState which has standard values common for all Oracle Cloud Infrastructure resources. The NEEDS_ATTENTION and FAILED substates are deprecated in favor of (NON_)?RECOVERABLE_(PROVIDER|SERVICE)_ISSUE and will be removed in next release.
+	LifecycleSubstate string `pulumi:"lifecycleSubstate"`
+	// unique MlApplication identifier
+	MlApplicationId string `pulumi:"mlApplicationId"`
+	// The OCID of ML Application Implementation selected as a certain solution for a given ML problem (ML Application)
+	MlApplicationImplementationId string `pulumi:"mlApplicationImplementationId"`
+	// The name of Ml Application Implementation (based on mlApplicationImplementationId)
+	MlApplicationImplementationName string `pulumi:"mlApplicationImplementationName"`
+	// The name of ML Application (based on mlApplicationId).
+	MlApplicationName string `pulumi:"mlApplicationName"`
+	// Prediction endpoint related information.
+	PredictionEndpointDetails []GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetail `pulumi:"predictionEndpointDetails"`
+	// A filter to return only resources matching the given lifecycleState.
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The time the the MlApplication was created. An RFC3339 formatted datetime string
+	TimeCreated string `pulumi:"timeCreated"`
+	// Time of last MlApplicationInstance update in the format defined by RFC 3339.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetMlApplicationInstancesMlApplicationInstanceCollectionItemInput is an input type that accepts GetMlApplicationInstancesMlApplicationInstanceCollectionItemArgs and GetMlApplicationInstancesMlApplicationInstanceCollectionItemOutput values.
+// You can construct a concrete instance of `GetMlApplicationInstancesMlApplicationInstanceCollectionItemInput` via:
+//
+//	GetMlApplicationInstancesMlApplicationInstanceCollectionItemArgs{...}
+type GetMlApplicationInstancesMlApplicationInstanceCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemOutput() GetMlApplicationInstancesMlApplicationInstanceCollectionItemOutput
+	ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemOutputWithContext(context.Context) GetMlApplicationInstancesMlApplicationInstanceCollectionItemOutput
+}
+
+type GetMlApplicationInstancesMlApplicationInstanceCollectionItemArgs struct {
+	// AuthN/Z configuration for online prediction
+	AuthConfigurations GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArrayInput `pulumi:"authConfigurations"`
+	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Data that are used for provisioning of the given MlApplicationInstance. These are validated against configurationSchema defined in referenced MlApplicationImplementation.
+	Configurations GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArrayInput `pulumi:"configurations"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// <b>Filter</b> results by its user-friendly name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID of the MlApplicationInstance. Unique identifier that is immutable after creation
+	Id pulumi.StringInput `pulumi:"id"`
+	// States whether the MlApplicationInstance is supposed to be in ACTIVE lifecycle state.
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The current substate of the MlApplicationInstance. The substate has MlApplicationInstance specific values in comparison with lifecycleState which has standard values common for all Oracle Cloud Infrastructure resources. The NEEDS_ATTENTION and FAILED substates are deprecated in favor of (NON_)?RECOVERABLE_(PROVIDER|SERVICE)_ISSUE and will be removed in next release.
+	LifecycleSubstate pulumi.StringInput `pulumi:"lifecycleSubstate"`
+	// unique MlApplication identifier
+	MlApplicationId pulumi.StringInput `pulumi:"mlApplicationId"`
+	// The OCID of ML Application Implementation selected as a certain solution for a given ML problem (ML Application)
+	MlApplicationImplementationId pulumi.StringInput `pulumi:"mlApplicationImplementationId"`
+	// The name of Ml Application Implementation (based on mlApplicationImplementationId)
+	MlApplicationImplementationName pulumi.StringInput `pulumi:"mlApplicationImplementationName"`
+	// The name of ML Application (based on mlApplicationId).
+	MlApplicationName pulumi.StringInput `pulumi:"mlApplicationName"`
+	// Prediction endpoint related information.
+	PredictionEndpointDetails GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArrayInput `pulumi:"predictionEndpointDetails"`
+	// A filter to return only resources matching the given lifecycleState.
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The time the the MlApplication was created. An RFC3339 formatted datetime string
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Time of last MlApplicationInstance update in the format defined by RFC 3339.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetMlApplicationInstancesMlApplicationInstanceCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationInstancesMlApplicationInstanceCollectionItem)(nil)).Elem()
+}
+
+func (i GetMlApplicationInstancesMlApplicationInstanceCollectionItemArgs) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemOutput() GetMlApplicationInstancesMlApplicationInstanceCollectionItemOutput {
+	return i.ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationInstancesMlApplicationInstanceCollectionItemArgs) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemOutputWithContext(ctx context.Context) GetMlApplicationInstancesMlApplicationInstanceCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationInstancesMlApplicationInstanceCollectionItemOutput)
+}
+
+// GetMlApplicationInstancesMlApplicationInstanceCollectionItemArrayInput is an input type that accepts GetMlApplicationInstancesMlApplicationInstanceCollectionItemArray and GetMlApplicationInstancesMlApplicationInstanceCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetMlApplicationInstancesMlApplicationInstanceCollectionItemArrayInput` via:
+//
+//	GetMlApplicationInstancesMlApplicationInstanceCollectionItemArray{ GetMlApplicationInstancesMlApplicationInstanceCollectionItemArgs{...} }
+type GetMlApplicationInstancesMlApplicationInstanceCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemArrayOutput() GetMlApplicationInstancesMlApplicationInstanceCollectionItemArrayOutput
+	ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemArrayOutputWithContext(context.Context) GetMlApplicationInstancesMlApplicationInstanceCollectionItemArrayOutput
+}
+
+type GetMlApplicationInstancesMlApplicationInstanceCollectionItemArray []GetMlApplicationInstancesMlApplicationInstanceCollectionItemInput
+
+func (GetMlApplicationInstancesMlApplicationInstanceCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationInstancesMlApplicationInstanceCollectionItem)(nil)).Elem()
+}
+
+func (i GetMlApplicationInstancesMlApplicationInstanceCollectionItemArray) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemArrayOutput() GetMlApplicationInstancesMlApplicationInstanceCollectionItemArrayOutput {
+	return i.ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationInstancesMlApplicationInstanceCollectionItemArray) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemArrayOutputWithContext(ctx context.Context) GetMlApplicationInstancesMlApplicationInstanceCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationInstancesMlApplicationInstanceCollectionItemArrayOutput)
+}
+
+type GetMlApplicationInstancesMlApplicationInstanceCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationInstancesMlApplicationInstanceCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationInstancesMlApplicationInstanceCollectionItem)(nil)).Elem()
+}
+
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemOutput) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemOutput() GetMlApplicationInstancesMlApplicationInstanceCollectionItemOutput {
+	return o
+}
+
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemOutput) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemOutputWithContext(ctx context.Context) GetMlApplicationInstancesMlApplicationInstanceCollectionItemOutput {
+	return o
+}
+
+// AuthN/Z configuration for online prediction
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemOutput) AuthConfigurations() GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArrayOutput {
+	return o.ApplyT(func(v GetMlApplicationInstancesMlApplicationInstanceCollectionItem) []GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfiguration {
+		return v.AuthConfigurations
+	}).(GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArrayOutput)
+}
+
+// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationInstancesMlApplicationInstanceCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Data that are used for provisioning of the given MlApplicationInstance. These are validated against configurationSchema defined in referenced MlApplicationImplementation.
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemOutput) Configurations() GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArrayOutput {
+	return o.ApplyT(func(v GetMlApplicationInstancesMlApplicationInstanceCollectionItem) []GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfiguration {
+		return v.Configurations
+	}).(GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArrayOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMlApplicationInstancesMlApplicationInstanceCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// <b>Filter</b> results by its user-friendly name.
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationInstancesMlApplicationInstanceCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMlApplicationInstancesMlApplicationInstanceCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The OCID of the MlApplicationInstance. Unique identifier that is immutable after creation
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationInstancesMlApplicationInstanceCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// States whether the MlApplicationInstance is supposed to be in ACTIVE lifecycle state.
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMlApplicationInstancesMlApplicationInstanceCollectionItem) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationInstancesMlApplicationInstanceCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The current substate of the MlApplicationInstance. The substate has MlApplicationInstance specific values in comparison with lifecycleState which has standard values common for all Oracle Cloud Infrastructure resources. The NEEDS_ATTENTION and FAILED substates are deprecated in favor of (NON_)?RECOVERABLE_(PROVIDER|SERVICE)_ISSUE and will be removed in next release.
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemOutput) LifecycleSubstate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationInstancesMlApplicationInstanceCollectionItem) string {
+		return v.LifecycleSubstate
+	}).(pulumi.StringOutput)
+}
+
+// unique MlApplication identifier
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemOutput) MlApplicationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationInstancesMlApplicationInstanceCollectionItem) string { return v.MlApplicationId }).(pulumi.StringOutput)
+}
+
+// The OCID of ML Application Implementation selected as a certain solution for a given ML problem (ML Application)
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemOutput) MlApplicationImplementationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationInstancesMlApplicationInstanceCollectionItem) string {
+		return v.MlApplicationImplementationId
+	}).(pulumi.StringOutput)
+}
+
+// The name of Ml Application Implementation (based on mlApplicationImplementationId)
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemOutput) MlApplicationImplementationName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationInstancesMlApplicationInstanceCollectionItem) string {
+		return v.MlApplicationImplementationName
+	}).(pulumi.StringOutput)
+}
+
+// The name of ML Application (based on mlApplicationId).
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemOutput) MlApplicationName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationInstancesMlApplicationInstanceCollectionItem) string {
+		return v.MlApplicationName
+	}).(pulumi.StringOutput)
+}
+
+// Prediction endpoint related information.
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemOutput) PredictionEndpointDetails() GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArrayOutput {
+	return o.ApplyT(func(v GetMlApplicationInstancesMlApplicationInstanceCollectionItem) []GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetail {
+		return v.PredictionEndpointDetails
+	}).(GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArrayOutput)
+}
+
+// A filter to return only resources matching the given lifecycleState.
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationInstancesMlApplicationInstanceCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMlApplicationInstancesMlApplicationInstanceCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The time the the MlApplication was created. An RFC3339 formatted datetime string
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationInstancesMlApplicationInstanceCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Time of last MlApplicationInstance update in the format defined by RFC 3339.
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationInstancesMlApplicationInstanceCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetMlApplicationInstancesMlApplicationInstanceCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationInstancesMlApplicationInstanceCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationInstancesMlApplicationInstanceCollectionItem)(nil)).Elem()
+}
+
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemArrayOutput) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemArrayOutput() GetMlApplicationInstancesMlApplicationInstanceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemArrayOutput) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemArrayOutputWithContext(ctx context.Context) GetMlApplicationInstancesMlApplicationInstanceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMlApplicationInstancesMlApplicationInstanceCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMlApplicationInstancesMlApplicationInstanceCollectionItem {
+		return vs[0].([]GetMlApplicationInstancesMlApplicationInstanceCollectionItem)[vs[1].(int)]
+	}).(GetMlApplicationInstancesMlApplicationInstanceCollectionItemOutput)
+}
+
+type GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfiguration struct {
+	// Name of the IDCS application
+	ApplicationName string `pulumi:"applicationName"`
+	// Identity Domain OCID
+	DomainId string `pulumi:"domainId"`
+	// Type of AuthN/Z
+	Type string `pulumi:"type"`
+}
+
+// GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationInput is an input type that accepts GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArgs and GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationOutput values.
+// You can construct a concrete instance of `GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationInput` via:
+//
+//	GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArgs{...}
+type GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationOutput() GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationOutput
+	ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationOutputWithContext(context.Context) GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationOutput
+}
+
+type GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArgs struct {
+	// Name of the IDCS application
+	ApplicationName pulumi.StringInput `pulumi:"applicationName"`
+	// Identity Domain OCID
+	DomainId pulumi.StringInput `pulumi:"domainId"`
+	// Type of AuthN/Z
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfiguration)(nil)).Elem()
+}
+
+func (i GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArgs) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationOutput() GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationOutput {
+	return i.ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArgs) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationOutputWithContext(ctx context.Context) GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationOutput)
+}
+
+// GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArrayInput is an input type that accepts GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArray and GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArrayInput` via:
+//
+//	GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArray{ GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArgs{...} }
+type GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArrayOutput() GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArrayOutput
+	ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArrayOutputWithContext(context.Context) GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArrayOutput
+}
+
+type GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArray []GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationInput
+
+func (GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfiguration)(nil)).Elem()
+}
+
+func (i GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArray) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArrayOutput() GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArrayOutput {
+	return i.ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArray) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArrayOutputWithContext(ctx context.Context) GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArrayOutput)
+}
+
+type GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfiguration)(nil)).Elem()
+}
+
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationOutput) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationOutput() GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationOutput {
+	return o
+}
+
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationOutput) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationOutputWithContext(ctx context.Context) GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationOutput {
+	return o
+}
+
+// Name of the IDCS application
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationOutput) ApplicationName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfiguration) string {
+		return v.ApplicationName
+	}).(pulumi.StringOutput)
+}
+
+// Identity Domain OCID
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationOutput) DomainId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfiguration) string {
+		return v.DomainId
+	}).(pulumi.StringOutput)
+}
+
+// Type of AuthN/Z
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfiguration) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+type GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfiguration)(nil)).Elem()
+}
+
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArrayOutput) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArrayOutput() GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArrayOutput) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArrayOutputWithContext(ctx context.Context) GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArrayOutput) Index(i pulumi.IntInput) GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfiguration {
+		return vs[0].([]GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfiguration)[vs[1].(int)]
+	}).(GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationOutput)
+}
+
+type GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfiguration struct {
+	// Key of configuration property
+	Key string `pulumi:"key"`
+	// Value of configuration property
+	Value string `pulumi:"value"`
+}
+
+// GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationInput is an input type that accepts GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArgs and GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationOutput values.
+// You can construct a concrete instance of `GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationInput` via:
+//
+//	GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArgs{...}
+type GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationOutput() GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationOutput
+	ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationOutputWithContext(context.Context) GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationOutput
+}
+
+type GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArgs struct {
+	// Key of configuration property
+	Key pulumi.StringInput `pulumi:"key"`
+	// Value of configuration property
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfiguration)(nil)).Elem()
+}
+
+func (i GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArgs) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationOutput() GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationOutput {
+	return i.ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArgs) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationOutputWithContext(ctx context.Context) GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationOutput)
+}
+
+// GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArrayInput is an input type that accepts GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArray and GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArrayInput` via:
+//
+//	GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArray{ GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArgs{...} }
+type GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArrayOutput() GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArrayOutput
+	ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArrayOutputWithContext(context.Context) GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArrayOutput
+}
+
+type GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArray []GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationInput
+
+func (GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfiguration)(nil)).Elem()
+}
+
+func (i GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArray) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArrayOutput() GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArrayOutput {
+	return i.ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArray) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArrayOutputWithContext(ctx context.Context) GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArrayOutput)
+}
+
+type GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfiguration)(nil)).Elem()
+}
+
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationOutput) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationOutput() GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationOutput {
+	return o
+}
+
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationOutput) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationOutputWithContext(ctx context.Context) GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationOutput {
+	return o
+}
+
+// Key of configuration property
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfiguration) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Value of configuration property
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfiguration) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfiguration)(nil)).Elem()
+}
+
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArrayOutput) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArrayOutput() GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArrayOutput) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArrayOutputWithContext(ctx context.Context) GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArrayOutput) Index(i pulumi.IntInput) GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfiguration {
+		return vs[0].([]GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfiguration)[vs[1].(int)]
+	}).(GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationOutput)
+}
+
+type GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetail struct {
+	// Base URI of prediction router.
+	BasePredictionUri string `pulumi:"basePredictionUri"`
+	// Array of all prediction URIs per use-case.
+	PredictionUris []GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUri `pulumi:"predictionUris"`
+}
+
+// GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailInput is an input type that accepts GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArgs and GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailOutput values.
+// You can construct a concrete instance of `GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailInput` via:
+//
+//	GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArgs{...}
+type GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailOutput() GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailOutput
+	ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailOutputWithContext(context.Context) GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailOutput
+}
+
+type GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArgs struct {
+	// Base URI of prediction router.
+	BasePredictionUri pulumi.StringInput `pulumi:"basePredictionUri"`
+	// Array of all prediction URIs per use-case.
+	PredictionUris GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArrayInput `pulumi:"predictionUris"`
+}
+
+func (GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetail)(nil)).Elem()
+}
+
+func (i GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArgs) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailOutput() GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailOutput {
+	return i.ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArgs) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailOutputWithContext(ctx context.Context) GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailOutput)
+}
+
+// GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArrayInput is an input type that accepts GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArray and GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArrayOutput values.
+// You can construct a concrete instance of `GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArrayInput` via:
+//
+//	GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArray{ GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArgs{...} }
+type GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArrayOutput() GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArrayOutput
+	ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArrayOutputWithContext(context.Context) GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArrayOutput
+}
+
+type GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArray []GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailInput
+
+func (GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetail)(nil)).Elem()
+}
+
+func (i GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArray) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArrayOutput() GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArrayOutput {
+	return i.ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArray) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArrayOutputWithContext(ctx context.Context) GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArrayOutput)
+}
+
+type GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetail)(nil)).Elem()
+}
+
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailOutput) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailOutput() GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailOutput {
+	return o
+}
+
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailOutput) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailOutputWithContext(ctx context.Context) GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailOutput {
+	return o
+}
+
+// Base URI of prediction router.
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailOutput) BasePredictionUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetail) string {
+		return v.BasePredictionUri
+	}).(pulumi.StringOutput)
+}
+
+// Array of all prediction URIs per use-case.
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailOutput) PredictionUris() GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArrayOutput {
+	return o.ApplyT(func(v GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetail) []GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUri {
+		return v.PredictionUris
+	}).(GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArrayOutput)
+}
+
+type GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetail)(nil)).Elem()
+}
+
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArrayOutput) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArrayOutput() GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArrayOutput) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArrayOutputWithContext(ctx context.Context) GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArrayOutput) Index(i pulumi.IntInput) GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetail {
+		return vs[0].([]GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetail)[vs[1].(int)]
+	}).(GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailOutput)
+}
+
+type GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUri struct {
+	// Prediction URI.
+	Uri string `pulumi:"uri"`
+	// Prediction use-case.
+	UseCase string `pulumi:"useCase"`
+}
+
+// GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriInput is an input type that accepts GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArgs and GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriOutput values.
+// You can construct a concrete instance of `GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriInput` via:
+//
+//	GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArgs{...}
+type GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriOutput() GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriOutput
+	ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriOutputWithContext(context.Context) GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriOutput
+}
+
+type GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArgs struct {
+	// Prediction URI.
+	Uri pulumi.StringInput `pulumi:"uri"`
+	// Prediction use-case.
+	UseCase pulumi.StringInput `pulumi:"useCase"`
+}
+
+func (GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUri)(nil)).Elem()
+}
+
+func (i GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArgs) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriOutput() GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriOutput {
+	return i.ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArgs) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriOutputWithContext(ctx context.Context) GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriOutput)
+}
+
+// GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArrayInput is an input type that accepts GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArray and GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArrayOutput values.
+// You can construct a concrete instance of `GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArrayInput` via:
+//
+//	GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArray{ GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArgs{...} }
+type GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArrayInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArrayOutput() GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArrayOutput
+	ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArrayOutputWithContext(context.Context) GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArrayOutput
+}
+
+type GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArray []GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriInput
+
+func (GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUri)(nil)).Elem()
+}
+
+func (i GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArray) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArrayOutput() GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArrayOutput {
+	return i.ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArrayOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArray) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArrayOutputWithContext(ctx context.Context) GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArrayOutput)
+}
+
+type GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUri)(nil)).Elem()
+}
+
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriOutput) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriOutput() GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriOutput {
+	return o
+}
+
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriOutput) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriOutputWithContext(ctx context.Context) GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriOutput {
+	return o
+}
+
+// Prediction URI.
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriOutput) Uri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUri) string {
+		return v.Uri
+	}).(pulumi.StringOutput)
+}
+
+// Prediction use-case.
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriOutput) UseCase() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUri) string {
+		return v.UseCase
+	}).(pulumi.StringOutput)
+}
+
+type GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUri)(nil)).Elem()
+}
+
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArrayOutput) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArrayOutput() GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArrayOutput) ToGetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArrayOutputWithContext(ctx context.Context) GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArrayOutput) Index(i pulumi.IntInput) GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUri {
+		return vs[0].([]GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUri)[vs[1].(int)]
+	}).(GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriOutput)
+}
+
+type GetMlApplicationsFilter struct {
+	// A filter to return only resources that match the entire name given.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetMlApplicationsFilterInput is an input type that accepts GetMlApplicationsFilterArgs and GetMlApplicationsFilterOutput values.
+// You can construct a concrete instance of `GetMlApplicationsFilterInput` via:
+//
+//	GetMlApplicationsFilterArgs{...}
+type GetMlApplicationsFilterInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationsFilterOutput() GetMlApplicationsFilterOutput
+	ToGetMlApplicationsFilterOutputWithContext(context.Context) GetMlApplicationsFilterOutput
+}
+
+type GetMlApplicationsFilterArgs struct {
+	// A filter to return only resources that match the entire name given.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetMlApplicationsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationsFilter)(nil)).Elem()
+}
+
+func (i GetMlApplicationsFilterArgs) ToGetMlApplicationsFilterOutput() GetMlApplicationsFilterOutput {
+	return i.ToGetMlApplicationsFilterOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationsFilterArgs) ToGetMlApplicationsFilterOutputWithContext(ctx context.Context) GetMlApplicationsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationsFilterOutput)
+}
+
+// GetMlApplicationsFilterArrayInput is an input type that accepts GetMlApplicationsFilterArray and GetMlApplicationsFilterArrayOutput values.
+// You can construct a concrete instance of `GetMlApplicationsFilterArrayInput` via:
+//
+//	GetMlApplicationsFilterArray{ GetMlApplicationsFilterArgs{...} }
+type GetMlApplicationsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationsFilterArrayOutput() GetMlApplicationsFilterArrayOutput
+	ToGetMlApplicationsFilterArrayOutputWithContext(context.Context) GetMlApplicationsFilterArrayOutput
+}
+
+type GetMlApplicationsFilterArray []GetMlApplicationsFilterInput
+
+func (GetMlApplicationsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationsFilter)(nil)).Elem()
+}
+
+func (i GetMlApplicationsFilterArray) ToGetMlApplicationsFilterArrayOutput() GetMlApplicationsFilterArrayOutput {
+	return i.ToGetMlApplicationsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationsFilterArray) ToGetMlApplicationsFilterArrayOutputWithContext(ctx context.Context) GetMlApplicationsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationsFilterArrayOutput)
+}
+
+type GetMlApplicationsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationsFilter)(nil)).Elem()
+}
+
+func (o GetMlApplicationsFilterOutput) ToGetMlApplicationsFilterOutput() GetMlApplicationsFilterOutput {
+	return o
+}
+
+func (o GetMlApplicationsFilterOutput) ToGetMlApplicationsFilterOutputWithContext(ctx context.Context) GetMlApplicationsFilterOutput {
+	return o
+}
+
+// A filter to return only resources that match the entire name given.
+func (o GetMlApplicationsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMlApplicationsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMlApplicationsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMlApplicationsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMlApplicationsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetMlApplicationsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationsFilter)(nil)).Elem()
+}
+
+func (o GetMlApplicationsFilterArrayOutput) ToGetMlApplicationsFilterArrayOutput() GetMlApplicationsFilterArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationsFilterArrayOutput) ToGetMlApplicationsFilterArrayOutputWithContext(ctx context.Context) GetMlApplicationsFilterArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationsFilterArrayOutput) Index(i pulumi.IntInput) GetMlApplicationsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMlApplicationsFilter {
+		return vs[0].([]GetMlApplicationsFilter)[vs[1].(int)]
+	}).(GetMlApplicationsFilterOutput)
+}
+
+type GetMlApplicationsMlApplicationCollection struct {
+	Items []GetMlApplicationsMlApplicationCollectionItem `pulumi:"items"`
+}
+
+// GetMlApplicationsMlApplicationCollectionInput is an input type that accepts GetMlApplicationsMlApplicationCollectionArgs and GetMlApplicationsMlApplicationCollectionOutput values.
+// You can construct a concrete instance of `GetMlApplicationsMlApplicationCollectionInput` via:
+//
+//	GetMlApplicationsMlApplicationCollectionArgs{...}
+type GetMlApplicationsMlApplicationCollectionInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationsMlApplicationCollectionOutput() GetMlApplicationsMlApplicationCollectionOutput
+	ToGetMlApplicationsMlApplicationCollectionOutputWithContext(context.Context) GetMlApplicationsMlApplicationCollectionOutput
+}
+
+type GetMlApplicationsMlApplicationCollectionArgs struct {
+	Items GetMlApplicationsMlApplicationCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetMlApplicationsMlApplicationCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationsMlApplicationCollection)(nil)).Elem()
+}
+
+func (i GetMlApplicationsMlApplicationCollectionArgs) ToGetMlApplicationsMlApplicationCollectionOutput() GetMlApplicationsMlApplicationCollectionOutput {
+	return i.ToGetMlApplicationsMlApplicationCollectionOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationsMlApplicationCollectionArgs) ToGetMlApplicationsMlApplicationCollectionOutputWithContext(ctx context.Context) GetMlApplicationsMlApplicationCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationsMlApplicationCollectionOutput)
+}
+
+// GetMlApplicationsMlApplicationCollectionArrayInput is an input type that accepts GetMlApplicationsMlApplicationCollectionArray and GetMlApplicationsMlApplicationCollectionArrayOutput values.
+// You can construct a concrete instance of `GetMlApplicationsMlApplicationCollectionArrayInput` via:
+//
+//	GetMlApplicationsMlApplicationCollectionArray{ GetMlApplicationsMlApplicationCollectionArgs{...} }
+type GetMlApplicationsMlApplicationCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationsMlApplicationCollectionArrayOutput() GetMlApplicationsMlApplicationCollectionArrayOutput
+	ToGetMlApplicationsMlApplicationCollectionArrayOutputWithContext(context.Context) GetMlApplicationsMlApplicationCollectionArrayOutput
+}
+
+type GetMlApplicationsMlApplicationCollectionArray []GetMlApplicationsMlApplicationCollectionInput
+
+func (GetMlApplicationsMlApplicationCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationsMlApplicationCollection)(nil)).Elem()
+}
+
+func (i GetMlApplicationsMlApplicationCollectionArray) ToGetMlApplicationsMlApplicationCollectionArrayOutput() GetMlApplicationsMlApplicationCollectionArrayOutput {
+	return i.ToGetMlApplicationsMlApplicationCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationsMlApplicationCollectionArray) ToGetMlApplicationsMlApplicationCollectionArrayOutputWithContext(ctx context.Context) GetMlApplicationsMlApplicationCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationsMlApplicationCollectionArrayOutput)
+}
+
+type GetMlApplicationsMlApplicationCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationsMlApplicationCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationsMlApplicationCollection)(nil)).Elem()
+}
+
+func (o GetMlApplicationsMlApplicationCollectionOutput) ToGetMlApplicationsMlApplicationCollectionOutput() GetMlApplicationsMlApplicationCollectionOutput {
+	return o
+}
+
+func (o GetMlApplicationsMlApplicationCollectionOutput) ToGetMlApplicationsMlApplicationCollectionOutputWithContext(ctx context.Context) GetMlApplicationsMlApplicationCollectionOutput {
+	return o
+}
+
+func (o GetMlApplicationsMlApplicationCollectionOutput) Items() GetMlApplicationsMlApplicationCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetMlApplicationsMlApplicationCollection) []GetMlApplicationsMlApplicationCollectionItem {
+		return v.Items
+	}).(GetMlApplicationsMlApplicationCollectionItemArrayOutput)
+}
+
+type GetMlApplicationsMlApplicationCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationsMlApplicationCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationsMlApplicationCollection)(nil)).Elem()
+}
+
+func (o GetMlApplicationsMlApplicationCollectionArrayOutput) ToGetMlApplicationsMlApplicationCollectionArrayOutput() GetMlApplicationsMlApplicationCollectionArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationsMlApplicationCollectionArrayOutput) ToGetMlApplicationsMlApplicationCollectionArrayOutputWithContext(ctx context.Context) GetMlApplicationsMlApplicationCollectionArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationsMlApplicationCollectionArrayOutput) Index(i pulumi.IntInput) GetMlApplicationsMlApplicationCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMlApplicationsMlApplicationCollection {
+		return vs[0].([]GetMlApplicationsMlApplicationCollection)[vs[1].(int)]
+	}).(GetMlApplicationsMlApplicationCollectionOutput)
+}
+
+type GetMlApplicationsMlApplicationCollectionItem struct {
+	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Optional description of the ML Application
+	Description string `pulumi:"description"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the MlApplication. Unique identifier that is immutable after creation.
+	Id string `pulumi:"id"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the entire name given.
+	Name string `pulumi:"name"`
+	// A filter to return only resources with lifecycleState matching the given lifecycleState.
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// Creation time of MlApplication in the format defined by RFC 3339.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Time of last MlApplication update in the format defined by RFC 3339.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetMlApplicationsMlApplicationCollectionItemInput is an input type that accepts GetMlApplicationsMlApplicationCollectionItemArgs and GetMlApplicationsMlApplicationCollectionItemOutput values.
+// You can construct a concrete instance of `GetMlApplicationsMlApplicationCollectionItemInput` via:
+//
+//	GetMlApplicationsMlApplicationCollectionItemArgs{...}
+type GetMlApplicationsMlApplicationCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationsMlApplicationCollectionItemOutput() GetMlApplicationsMlApplicationCollectionItemOutput
+	ToGetMlApplicationsMlApplicationCollectionItemOutputWithContext(context.Context) GetMlApplicationsMlApplicationCollectionItemOutput
+}
+
+type GetMlApplicationsMlApplicationCollectionItemArgs struct {
+	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Optional description of the ML Application
+	Description pulumi.StringInput `pulumi:"description"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID of the MlApplication. Unique identifier that is immutable after creation.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the entire name given.
+	Name pulumi.StringInput `pulumi:"name"`
+	// A filter to return only resources with lifecycleState matching the given lifecycleState.
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// Creation time of MlApplication in the format defined by RFC 3339.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Time of last MlApplication update in the format defined by RFC 3339.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetMlApplicationsMlApplicationCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationsMlApplicationCollectionItem)(nil)).Elem()
+}
+
+func (i GetMlApplicationsMlApplicationCollectionItemArgs) ToGetMlApplicationsMlApplicationCollectionItemOutput() GetMlApplicationsMlApplicationCollectionItemOutput {
+	return i.ToGetMlApplicationsMlApplicationCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationsMlApplicationCollectionItemArgs) ToGetMlApplicationsMlApplicationCollectionItemOutputWithContext(ctx context.Context) GetMlApplicationsMlApplicationCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationsMlApplicationCollectionItemOutput)
+}
+
+// GetMlApplicationsMlApplicationCollectionItemArrayInput is an input type that accepts GetMlApplicationsMlApplicationCollectionItemArray and GetMlApplicationsMlApplicationCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetMlApplicationsMlApplicationCollectionItemArrayInput` via:
+//
+//	GetMlApplicationsMlApplicationCollectionItemArray{ GetMlApplicationsMlApplicationCollectionItemArgs{...} }
+type GetMlApplicationsMlApplicationCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMlApplicationsMlApplicationCollectionItemArrayOutput() GetMlApplicationsMlApplicationCollectionItemArrayOutput
+	ToGetMlApplicationsMlApplicationCollectionItemArrayOutputWithContext(context.Context) GetMlApplicationsMlApplicationCollectionItemArrayOutput
+}
+
+type GetMlApplicationsMlApplicationCollectionItemArray []GetMlApplicationsMlApplicationCollectionItemInput
+
+func (GetMlApplicationsMlApplicationCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationsMlApplicationCollectionItem)(nil)).Elem()
+}
+
+func (i GetMlApplicationsMlApplicationCollectionItemArray) ToGetMlApplicationsMlApplicationCollectionItemArrayOutput() GetMlApplicationsMlApplicationCollectionItemArrayOutput {
+	return i.ToGetMlApplicationsMlApplicationCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMlApplicationsMlApplicationCollectionItemArray) ToGetMlApplicationsMlApplicationCollectionItemArrayOutputWithContext(ctx context.Context) GetMlApplicationsMlApplicationCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMlApplicationsMlApplicationCollectionItemArrayOutput)
+}
+
+type GetMlApplicationsMlApplicationCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationsMlApplicationCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMlApplicationsMlApplicationCollectionItem)(nil)).Elem()
+}
+
+func (o GetMlApplicationsMlApplicationCollectionItemOutput) ToGetMlApplicationsMlApplicationCollectionItemOutput() GetMlApplicationsMlApplicationCollectionItemOutput {
+	return o
+}
+
+func (o GetMlApplicationsMlApplicationCollectionItemOutput) ToGetMlApplicationsMlApplicationCollectionItemOutputWithContext(ctx context.Context) GetMlApplicationsMlApplicationCollectionItemOutput {
+	return o
+}
+
+// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetMlApplicationsMlApplicationCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationsMlApplicationCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetMlApplicationsMlApplicationCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMlApplicationsMlApplicationCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// Optional description of the ML Application
+func (o GetMlApplicationsMlApplicationCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationsMlApplicationCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetMlApplicationsMlApplicationCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMlApplicationsMlApplicationCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The OCID of the MlApplication. Unique identifier that is immutable after creation.
+func (o GetMlApplicationsMlApplicationCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationsMlApplicationCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+func (o GetMlApplicationsMlApplicationCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationsMlApplicationCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire name given.
+func (o GetMlApplicationsMlApplicationCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationsMlApplicationCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources with lifecycleState matching the given lifecycleState.
+func (o GetMlApplicationsMlApplicationCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationsMlApplicationCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetMlApplicationsMlApplicationCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMlApplicationsMlApplicationCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// Creation time of MlApplication in the format defined by RFC 3339.
+func (o GetMlApplicationsMlApplicationCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationsMlApplicationCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Time of last MlApplication update in the format defined by RFC 3339.
+func (o GetMlApplicationsMlApplicationCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMlApplicationsMlApplicationCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetMlApplicationsMlApplicationCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMlApplicationsMlApplicationCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMlApplicationsMlApplicationCollectionItem)(nil)).Elem()
+}
+
+func (o GetMlApplicationsMlApplicationCollectionItemArrayOutput) ToGetMlApplicationsMlApplicationCollectionItemArrayOutput() GetMlApplicationsMlApplicationCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationsMlApplicationCollectionItemArrayOutput) ToGetMlApplicationsMlApplicationCollectionItemArrayOutputWithContext(ctx context.Context) GetMlApplicationsMlApplicationCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMlApplicationsMlApplicationCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMlApplicationsMlApplicationCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMlApplicationsMlApplicationCollectionItem {
+		return vs[0].([]GetMlApplicationsMlApplicationCollectionItem)[vs[1].(int)]
+	}).(GetMlApplicationsMlApplicationCollectionItemOutput)
 }
 
 type GetModelBackupOperationDetail struct {
@@ -42407,6 +48550,30 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobStorageMountConfigurationDetailsListArrayInput)(nil)).Elem(), JobRunJobStorageMountConfigurationDetailsListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunLogDetailInput)(nil)).Elem(), JobRunLogDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunLogDetailArrayInput)(nil)).Elem(), JobRunLogDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MlApplicationImplementationApplicationComponentInput)(nil)).Elem(), MlApplicationImplementationApplicationComponentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MlApplicationImplementationApplicationComponentArrayInput)(nil)).Elem(), MlApplicationImplementationApplicationComponentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MlApplicationImplementationConfigurationSchemaInput)(nil)).Elem(), MlApplicationImplementationConfigurationSchemaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MlApplicationImplementationConfigurationSchemaArrayInput)(nil)).Elem(), MlApplicationImplementationConfigurationSchemaArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MlApplicationImplementationLoggingInput)(nil)).Elem(), MlApplicationImplementationLoggingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MlApplicationImplementationLoggingPtrInput)(nil)).Elem(), MlApplicationImplementationLoggingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MlApplicationImplementationLoggingAggregatedInstanceViewLogInput)(nil)).Elem(), MlApplicationImplementationLoggingAggregatedInstanceViewLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MlApplicationImplementationLoggingAggregatedInstanceViewLogPtrInput)(nil)).Elem(), MlApplicationImplementationLoggingAggregatedInstanceViewLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MlApplicationImplementationLoggingImplementationLogInput)(nil)).Elem(), MlApplicationImplementationLoggingImplementationLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MlApplicationImplementationLoggingImplementationLogPtrInput)(nil)).Elem(), MlApplicationImplementationLoggingImplementationLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MlApplicationImplementationLoggingTriggerLogInput)(nil)).Elem(), MlApplicationImplementationLoggingTriggerLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MlApplicationImplementationLoggingTriggerLogPtrInput)(nil)).Elem(), MlApplicationImplementationLoggingTriggerLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MlApplicationImplementationMlApplicationPackageArgumentInput)(nil)).Elem(), MlApplicationImplementationMlApplicationPackageArgumentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MlApplicationImplementationMlApplicationPackageArgumentArrayInput)(nil)).Elem(), MlApplicationImplementationMlApplicationPackageArgumentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MlApplicationImplementationMlApplicationPackageArgumentArgumentInput)(nil)).Elem(), MlApplicationImplementationMlApplicationPackageArgumentArgumentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MlApplicationImplementationMlApplicationPackageArgumentArgumentArrayInput)(nil)).Elem(), MlApplicationImplementationMlApplicationPackageArgumentArgumentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MlApplicationInstanceAuthConfigurationInput)(nil)).Elem(), MlApplicationInstanceAuthConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MlApplicationInstanceAuthConfigurationPtrInput)(nil)).Elem(), MlApplicationInstanceAuthConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MlApplicationInstanceConfigurationInput)(nil)).Elem(), MlApplicationInstanceConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MlApplicationInstanceConfigurationArrayInput)(nil)).Elem(), MlApplicationInstanceConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MlApplicationInstancePredictionEndpointDetailInput)(nil)).Elem(), MlApplicationInstancePredictionEndpointDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MlApplicationInstancePredictionEndpointDetailArrayInput)(nil)).Elem(), MlApplicationInstancePredictionEndpointDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MlApplicationInstancePredictionEndpointDetailPredictionUriInput)(nil)).Elem(), MlApplicationInstancePredictionEndpointDetailPredictionUriArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MlApplicationInstancePredictionEndpointDetailPredictionUriArrayInput)(nil)).Elem(), MlApplicationInstancePredictionEndpointDetailPredictionUriArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelBackupOperationDetailInput)(nil)).Elem(), ModelBackupOperationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelBackupOperationDetailArrayInput)(nil)).Elem(), ModelBackupOperationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelBackupSettingInput)(nil)).Elem(), ModelBackupSettingArgs{})
@@ -42622,6 +48789,72 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobJobLogConfigurationDetailArrayInput)(nil)).Elem(), GetJobsJobJobLogConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobJobStorageMountConfigurationDetailsListInput)(nil)).Elem(), GetJobsJobJobStorageMountConfigurationDetailsListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobJobStorageMountConfigurationDetailsListArrayInput)(nil)).Elem(), GetJobsJobJobStorageMountConfigurationDetailsListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationImplementationApplicationComponentInput)(nil)).Elem(), GetMlApplicationImplementationApplicationComponentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationImplementationApplicationComponentArrayInput)(nil)).Elem(), GetMlApplicationImplementationApplicationComponentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationImplementationConfigurationSchemaInput)(nil)).Elem(), GetMlApplicationImplementationConfigurationSchemaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationImplementationConfigurationSchemaArrayInput)(nil)).Elem(), GetMlApplicationImplementationConfigurationSchemaArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationImplementationLoggingInput)(nil)).Elem(), GetMlApplicationImplementationLoggingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationImplementationLoggingArrayInput)(nil)).Elem(), GetMlApplicationImplementationLoggingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationImplementationLoggingAggregatedInstanceViewLogInput)(nil)).Elem(), GetMlApplicationImplementationLoggingAggregatedInstanceViewLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationImplementationLoggingAggregatedInstanceViewLogArrayInput)(nil)).Elem(), GetMlApplicationImplementationLoggingAggregatedInstanceViewLogArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationImplementationLoggingImplementationLogInput)(nil)).Elem(), GetMlApplicationImplementationLoggingImplementationLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationImplementationLoggingImplementationLogArrayInput)(nil)).Elem(), GetMlApplicationImplementationLoggingImplementationLogArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationImplementationLoggingTriggerLogInput)(nil)).Elem(), GetMlApplicationImplementationLoggingTriggerLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationImplementationLoggingTriggerLogArrayInput)(nil)).Elem(), GetMlApplicationImplementationLoggingTriggerLogArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationImplementationMlApplicationPackageArgumentInput)(nil)).Elem(), GetMlApplicationImplementationMlApplicationPackageArgumentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationImplementationMlApplicationPackageArgumentArrayInput)(nil)).Elem(), GetMlApplicationImplementationMlApplicationPackageArgumentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationImplementationMlApplicationPackageArgumentArgumentInput)(nil)).Elem(), GetMlApplicationImplementationMlApplicationPackageArgumentArgumentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationImplementationMlApplicationPackageArgumentArgumentArrayInput)(nil)).Elem(), GetMlApplicationImplementationMlApplicationPackageArgumentArgumentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationImplementationsFilterInput)(nil)).Elem(), GetMlApplicationImplementationsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationImplementationsFilterArrayInput)(nil)).Elem(), GetMlApplicationImplementationsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollectionInput)(nil)).Elem(), GetMlApplicationImplementationsMlApplicationImplementationCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollectionArrayInput)(nil)).Elem(), GetMlApplicationImplementationsMlApplicationImplementationCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollectionItemInput)(nil)).Elem(), GetMlApplicationImplementationsMlApplicationImplementationCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollectionItemArrayInput)(nil)).Elem(), GetMlApplicationImplementationsMlApplicationImplementationCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentInput)(nil)).Elem(), GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArrayInput)(nil)).Elem(), GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaInput)(nil)).Elem(), GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArrayInput)(nil)).Elem(), GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingInput)(nil)).Elem(), GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArrayInput)(nil)).Elem(), GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogInput)(nil)).Elem(), GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArrayInput)(nil)).Elem(), GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogInput)(nil)).Elem(), GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArrayInput)(nil)).Elem(), GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogInput)(nil)).Elem(), GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArrayInput)(nil)).Elem(), GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentInput)(nil)).Elem(), GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArrayInput)(nil)).Elem(), GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentInput)(nil)).Elem(), GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArrayInput)(nil)).Elem(), GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationInstanceAuthConfigurationInput)(nil)).Elem(), GetMlApplicationInstanceAuthConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationInstanceAuthConfigurationArrayInput)(nil)).Elem(), GetMlApplicationInstanceAuthConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationInstanceConfigurationInput)(nil)).Elem(), GetMlApplicationInstanceConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationInstanceConfigurationArrayInput)(nil)).Elem(), GetMlApplicationInstanceConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationInstancePredictionEndpointDetailInput)(nil)).Elem(), GetMlApplicationInstancePredictionEndpointDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationInstancePredictionEndpointDetailArrayInput)(nil)).Elem(), GetMlApplicationInstancePredictionEndpointDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationInstancePredictionEndpointDetailPredictionUriInput)(nil)).Elem(), GetMlApplicationInstancePredictionEndpointDetailPredictionUriArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationInstancePredictionEndpointDetailPredictionUriArrayInput)(nil)).Elem(), GetMlApplicationInstancePredictionEndpointDetailPredictionUriArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationInstancesFilterInput)(nil)).Elem(), GetMlApplicationInstancesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationInstancesFilterArrayInput)(nil)).Elem(), GetMlApplicationInstancesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationInstancesMlApplicationInstanceCollectionInput)(nil)).Elem(), GetMlApplicationInstancesMlApplicationInstanceCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationInstancesMlApplicationInstanceCollectionArrayInput)(nil)).Elem(), GetMlApplicationInstancesMlApplicationInstanceCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationInstancesMlApplicationInstanceCollectionItemInput)(nil)).Elem(), GetMlApplicationInstancesMlApplicationInstanceCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationInstancesMlApplicationInstanceCollectionItemArrayInput)(nil)).Elem(), GetMlApplicationInstancesMlApplicationInstanceCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationInput)(nil)).Elem(), GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArrayInput)(nil)).Elem(), GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationInput)(nil)).Elem(), GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArrayInput)(nil)).Elem(), GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailInput)(nil)).Elem(), GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArrayInput)(nil)).Elem(), GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriInput)(nil)).Elem(), GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArrayInput)(nil)).Elem(), GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationsFilterInput)(nil)).Elem(), GetMlApplicationsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationsFilterArrayInput)(nil)).Elem(), GetMlApplicationsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationsMlApplicationCollectionInput)(nil)).Elem(), GetMlApplicationsMlApplicationCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationsMlApplicationCollectionArrayInput)(nil)).Elem(), GetMlApplicationsMlApplicationCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationsMlApplicationCollectionItemInput)(nil)).Elem(), GetMlApplicationsMlApplicationCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationsMlApplicationCollectionItemArrayInput)(nil)).Elem(), GetMlApplicationsMlApplicationCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelBackupOperationDetailInput)(nil)).Elem(), GetModelBackupOperationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelBackupOperationDetailArrayInput)(nil)).Elem(), GetModelBackupOperationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelBackupSettingInput)(nil)).Elem(), GetModelBackupSettingArgs{})
@@ -42972,6 +49205,30 @@ func init() {
 	pulumi.RegisterOutputType(JobRunJobStorageMountConfigurationDetailsListArrayOutput{})
 	pulumi.RegisterOutputType(JobRunLogDetailOutput{})
 	pulumi.RegisterOutputType(JobRunLogDetailArrayOutput{})
+	pulumi.RegisterOutputType(MlApplicationImplementationApplicationComponentOutput{})
+	pulumi.RegisterOutputType(MlApplicationImplementationApplicationComponentArrayOutput{})
+	pulumi.RegisterOutputType(MlApplicationImplementationConfigurationSchemaOutput{})
+	pulumi.RegisterOutputType(MlApplicationImplementationConfigurationSchemaArrayOutput{})
+	pulumi.RegisterOutputType(MlApplicationImplementationLoggingOutput{})
+	pulumi.RegisterOutputType(MlApplicationImplementationLoggingPtrOutput{})
+	pulumi.RegisterOutputType(MlApplicationImplementationLoggingAggregatedInstanceViewLogOutput{})
+	pulumi.RegisterOutputType(MlApplicationImplementationLoggingAggregatedInstanceViewLogPtrOutput{})
+	pulumi.RegisterOutputType(MlApplicationImplementationLoggingImplementationLogOutput{})
+	pulumi.RegisterOutputType(MlApplicationImplementationLoggingImplementationLogPtrOutput{})
+	pulumi.RegisterOutputType(MlApplicationImplementationLoggingTriggerLogOutput{})
+	pulumi.RegisterOutputType(MlApplicationImplementationLoggingTriggerLogPtrOutput{})
+	pulumi.RegisterOutputType(MlApplicationImplementationMlApplicationPackageArgumentOutput{})
+	pulumi.RegisterOutputType(MlApplicationImplementationMlApplicationPackageArgumentArrayOutput{})
+	pulumi.RegisterOutputType(MlApplicationImplementationMlApplicationPackageArgumentArgumentOutput{})
+	pulumi.RegisterOutputType(MlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutput{})
+	pulumi.RegisterOutputType(MlApplicationInstanceAuthConfigurationOutput{})
+	pulumi.RegisterOutputType(MlApplicationInstanceAuthConfigurationPtrOutput{})
+	pulumi.RegisterOutputType(MlApplicationInstanceConfigurationOutput{})
+	pulumi.RegisterOutputType(MlApplicationInstanceConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(MlApplicationInstancePredictionEndpointDetailOutput{})
+	pulumi.RegisterOutputType(MlApplicationInstancePredictionEndpointDetailArrayOutput{})
+	pulumi.RegisterOutputType(MlApplicationInstancePredictionEndpointDetailPredictionUriOutput{})
+	pulumi.RegisterOutputType(MlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutput{})
 	pulumi.RegisterOutputType(ModelBackupOperationDetailOutput{})
 	pulumi.RegisterOutputType(ModelBackupOperationDetailArrayOutput{})
 	pulumi.RegisterOutputType(ModelBackupSettingOutput{})
@@ -43187,6 +49444,72 @@ func init() {
 	pulumi.RegisterOutputType(GetJobsJobJobLogConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetJobsJobJobStorageMountConfigurationDetailsListOutput{})
 	pulumi.RegisterOutputType(GetJobsJobJobStorageMountConfigurationDetailsListArrayOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationImplementationApplicationComponentOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationImplementationApplicationComponentArrayOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationImplementationConfigurationSchemaOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationImplementationConfigurationSchemaArrayOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationImplementationLoggingOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationImplementationLoggingArrayOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationImplementationLoggingAggregatedInstanceViewLogOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationImplementationLoggingAggregatedInstanceViewLogArrayOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationImplementationLoggingImplementationLogOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationImplementationLoggingImplementationLogArrayOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationImplementationLoggingTriggerLogOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationImplementationLoggingTriggerLogArrayOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationImplementationMlApplicationPackageArgumentOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationImplementationMlApplicationPackageArgumentArrayOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationImplementationMlApplicationPackageArgumentArgumentOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationImplementationMlApplicationPackageArgumentArgumentArrayOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationImplementationsFilterOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationImplementationsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationImplementationsMlApplicationImplementationCollectionOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationImplementationsMlApplicationImplementationCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemApplicationComponentArrayOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemConfigurationSchemaArrayOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingArrayOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingAggregatedInstanceViewLogArrayOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingImplementationLogArrayOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemLoggingTriggerLogArrayOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArrayOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationImplementationsMlApplicationImplementationCollectionItemMlApplicationPackageArgumentArgumentArrayOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationInstanceAuthConfigurationOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationInstanceAuthConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationInstanceConfigurationOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationInstanceConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationInstancePredictionEndpointDetailOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationInstancePredictionEndpointDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationInstancePredictionEndpointDetailPredictionUriOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationInstancePredictionEndpointDetailPredictionUriArrayOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationInstancesFilterOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationInstancesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationInstancesMlApplicationInstanceCollectionOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationInstancesMlApplicationInstanceCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationInstancesMlApplicationInstanceCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationInstancesMlApplicationInstanceCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationInstancesMlApplicationInstanceCollectionItemAuthConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationInstancesMlApplicationInstanceCollectionItemConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationInstancesMlApplicationInstanceCollectionItemPredictionEndpointDetailPredictionUriArrayOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationsFilterOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationsMlApplicationCollectionOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationsMlApplicationCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationsMlApplicationCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetMlApplicationsMlApplicationCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetModelBackupOperationDetailOutput{})
 	pulumi.RegisterOutputType(GetModelBackupOperationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetModelBackupSettingOutput{})

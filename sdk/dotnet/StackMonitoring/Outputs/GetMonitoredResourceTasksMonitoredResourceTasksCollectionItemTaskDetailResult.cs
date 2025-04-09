@@ -14,11 +14,15 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
     public sealed class GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResult
     {
         /// <summary>
+        /// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// </summary>
+        public readonly string AgentId;
+        /// <summary>
         /// Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
         /// </summary>
         public readonly int AvailabilityProxyMetricCollectionInterval;
         /// <summary>
-        /// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property 'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+        /// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionInterval'. If no metrics are specified, availability will not be calculated for the resource.
         /// </summary>
         public readonly ImmutableArray<string> AvailabilityProxyMetrics;
         /// <summary>
@@ -30,6 +34,14 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// </summary>
         public readonly string ExternalIdMapping;
         /// <summary>
+        /// Type of the handler.
+        /// </summary>
+        public readonly string HandlerType;
+        /// <summary>
+        /// True to enable the receiver and false to disable the receiver on the agent.
+        /// </summary>
+        public readonly bool IsEnable;
+        /// <summary>
         /// Lifecycle states of the external resource which reflects the status of the resource being up.
         /// </summary>
         public readonly ImmutableArray<string> LifecycleStatusMappingsForUpStatuses;
@@ -37,6 +49,10 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
         /// </summary>
         public readonly string Namespace;
+        /// <summary>
+        /// Properties for agent receiver.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyResult> ReceiverProperties;
         /// <summary>
         /// The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
         /// </summary>
@@ -58,6 +74,10 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// </summary>
         public readonly string ResourceTypeMapping;
         /// <summary>
+        /// A collection of resource type configuration details. User can provide  availability proxy metrics list for resource types along with the  telegraf/collectd handler configuration for the resource types.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationResult> ResourceTypesConfigurations;
+        /// <summary>
         /// The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
         /// </summary>
         public readonly string ServiceBaseUrl;
@@ -69,15 +89,19 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// Source from where the metrics pushed to telemetry. Possible values:
         /// * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
         /// * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+        /// * OCI_TELEMETRY_TELEGRAF    - The metrics are pushed to telemetry from Telegraf receiver.
+        /// * OCI_TELEMETRY_COLLECTD    - The metrics are pushed to telemetry from CollectD receiver.
         /// </summary>
         public readonly string Source;
         /// <summary>
-        /// Task type.
+        /// Type of the task.
         /// </summary>
         public readonly string Type;
 
         [OutputConstructor]
         private GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResult(
+            string agentId,
+
             int availabilityProxyMetricCollectionInterval,
 
             ImmutableArray<string> availabilityProxyMetrics,
@@ -86,9 +110,15 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
 
             string externalIdMapping,
 
+            string handlerType,
+
+            bool isEnable,
+
             ImmutableArray<string> lifecycleStatusMappingsForUpStatuses,
 
             string @namespace,
+
+            ImmutableArray<Outputs.GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailReceiverPropertyResult> receiverProperties,
 
             string resourceGroup,
 
@@ -100,6 +130,8 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
 
             string resourceTypeMapping,
 
+            ImmutableArray<Outputs.GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResourceTypesConfigurationResult> resourceTypesConfigurations,
+
             string serviceBaseUrl,
 
             bool shouldUseMetricsFlowForStatus,
@@ -108,17 +140,22 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
 
             string type)
         {
+            AgentId = agentId;
             AvailabilityProxyMetricCollectionInterval = availabilityProxyMetricCollectionInterval;
             AvailabilityProxyMetrics = availabilityProxyMetrics;
             ConsolePathPrefix = consolePathPrefix;
             ExternalIdMapping = externalIdMapping;
+            HandlerType = handlerType;
+            IsEnable = isEnable;
             LifecycleStatusMappingsForUpStatuses = lifecycleStatusMappingsForUpStatuses;
             Namespace = @namespace;
+            ReceiverProperties = receiverProperties;
             ResourceGroup = resourceGroup;
             ResourceNameFilter = resourceNameFilter;
             ResourceNameMapping = resourceNameMapping;
             ResourceTypeFilter = resourceTypeFilter;
             ResourceTypeMapping = resourceTypeMapping;
+            ResourceTypesConfigurations = resourceTypesConfigurations;
             ServiceBaseUrl = serviceBaseUrl;
             ShouldUseMetricsFlowForStatus = shouldUseMetricsFlowForStatus;
             Source = source;

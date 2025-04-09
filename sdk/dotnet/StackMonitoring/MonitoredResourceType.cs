@@ -81,7 +81,13 @@ namespace Pulumi.Oci.StackMonitoring
         public Output<ImmutableDictionary<string, string>> AdditionalNamespaceMap { get; private set; } = null!;
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+        /// Availability metrics details.
+        /// </summary>
+        [Output("availabilityMetricsConfigs")]
+        public Output<ImmutableArray<Outputs.MonitoredResourceTypeAvailabilityMetricsConfig>> AvailabilityMetricsConfigs { get; private set; } = null!;
+
+        /// <summary>
+        /// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -109,6 +115,18 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
+
+        /// <summary>
+        /// Specific resource mapping configurations for Agent Extension Handlers.
+        /// </summary>
+        [Output("handlerConfigs")]
+        public Output<ImmutableArray<Outputs.MonitoredResourceTypeHandlerConfig>> HandlerConfigs { get; private set; } = null!;
+
+        /// <summary>
+        /// If boolean flag is true, then the resource type cannot be modified or deleted.
+        /// </summary>
+        [Output("isSystemDefined")]
+        public Output<bool> IsSystemDefined { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The metadata details for resource type.
@@ -155,6 +173,12 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         [Output("systemTags")]
         public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
+
+        /// <summary>
+        /// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// </summary>
+        [Output("tenancyId")]
+        public Output<string> TenancyId { get; private set; } = null!;
 
         /// <summary>
         /// The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -215,7 +239,7 @@ namespace Pulumi.Oci.StackMonitoring
     public sealed class MonitoredResourceTypeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+        /// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -310,8 +334,20 @@ namespace Pulumi.Oci.StackMonitoring
             set => _additionalNamespaceMap = value;
         }
 
+        [Input("availabilityMetricsConfigs")]
+        private InputList<Inputs.MonitoredResourceTypeAvailabilityMetricsConfigGetArgs>? _availabilityMetricsConfigs;
+
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+        /// Availability metrics details.
+        /// </summary>
+        public InputList<Inputs.MonitoredResourceTypeAvailabilityMetricsConfigGetArgs> AvailabilityMetricsConfigs
+        {
+            get => _availabilityMetricsConfigs ?? (_availabilityMetricsConfigs = new InputList<Inputs.MonitoredResourceTypeAvailabilityMetricsConfigGetArgs>());
+            set => _availabilityMetricsConfigs = value;
+        }
+
+        /// <summary>
+        /// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -351,6 +387,24 @@ namespace Pulumi.Oci.StackMonitoring
             get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
+
+        [Input("handlerConfigs")]
+        private InputList<Inputs.MonitoredResourceTypeHandlerConfigGetArgs>? _handlerConfigs;
+
+        /// <summary>
+        /// Specific resource mapping configurations for Agent Extension Handlers.
+        /// </summary>
+        public InputList<Inputs.MonitoredResourceTypeHandlerConfigGetArgs> HandlerConfigs
+        {
+            get => _handlerConfigs ?? (_handlerConfigs = new InputList<Inputs.MonitoredResourceTypeHandlerConfigGetArgs>());
+            set => _handlerConfigs = value;
+        }
+
+        /// <summary>
+        /// If boolean flag is true, then the resource type cannot be modified or deleted.
+        /// </summary>
+        [Input("isSystemDefined")]
+        public Input<bool>? IsSystemDefined { get; set; }
 
         /// <summary>
         /// (Updatable) The metadata details for resource type.
@@ -403,6 +457,12 @@ namespace Pulumi.Oci.StackMonitoring
             get => _systemTags ?? (_systemTags = new InputMap<string>());
             set => _systemTags = value;
         }
+
+        /// <summary>
+        /// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// </summary>
+        [Input("tenancyId")]
+        public Input<string>? TenancyId { get; set; }
 
         /// <summary>
         /// The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.

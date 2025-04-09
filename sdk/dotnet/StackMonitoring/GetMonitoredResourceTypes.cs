@@ -40,6 +40,8 @@ namespace Pulumi.Oci.StackMonitoring
         ///         IsExcludeSystemTypes = monitoredResourceTypeIsExcludeSystemTypes,
         ///         MetricNamespace = monitoredResourceTypeMetricNamespace,
         ///         Name = monitoredResourceTypeName,
+        ///         ResourceCategory = monitoredResourceTypeResourceCategory,
+        ///         SourceType = monitoredResourceTypeSourceType,
         ///         Status = monitoredResourceTypeStatus,
         ///     });
         /// 
@@ -78,6 +80,8 @@ namespace Pulumi.Oci.StackMonitoring
         ///         IsExcludeSystemTypes = monitoredResourceTypeIsExcludeSystemTypes,
         ///         MetricNamespace = monitoredResourceTypeMetricNamespace,
         ///         Name = monitoredResourceTypeName,
+        ///         ResourceCategory = monitoredResourceTypeResourceCategory,
+        ///         SourceType = monitoredResourceTypeSourceType,
         ///         Status = monitoredResourceTypeStatus,
         ///     });
         /// 
@@ -116,6 +120,8 @@ namespace Pulumi.Oci.StackMonitoring
         ///         IsExcludeSystemTypes = monitoredResourceTypeIsExcludeSystemTypes,
         ///         MetricNamespace = monitoredResourceTypeMetricNamespace,
         ///         Name = monitoredResourceTypeName,
+        ///         ResourceCategory = monitoredResourceTypeResourceCategory,
+        ///         SourceType = monitoredResourceTypeSourceType,
         ///         Status = monitoredResourceTypeStatus,
         ///     });
         /// 
@@ -186,6 +192,18 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         [Input("name")]
         public string? Name { get; set; }
+
+        /// <summary>
+        /// A filter to return only resources with matching resource category.
+        /// </summary>
+        [Input("resourceCategory")]
+        public string? ResourceCategory { get; set; }
+
+        /// <summary>
+        /// A filter to return only resources with matching source type.
+        /// </summary>
+        [Input("sourceType")]
+        public string? SourceType { get; set; }
 
         /// <summary>
         /// A filter to return only resources that matches with lifecycleState given.
@@ -260,6 +278,18 @@ namespace Pulumi.Oci.StackMonitoring
         public Input<string>? Name { get; set; }
 
         /// <summary>
+        /// A filter to return only resources with matching resource category.
+        /// </summary>
+        [Input("resourceCategory")]
+        public Input<string>? ResourceCategory { get; set; }
+
+        /// <summary>
+        /// A filter to return only resources with matching source type.
+        /// </summary>
+        [Input("sourceType")]
+        public Input<string>? SourceType { get; set; }
+
+        /// <summary>
         /// A filter to return only resources that matches with lifecycleState given.
         /// </summary>
         [Input("status")]
@@ -276,7 +306,7 @@ namespace Pulumi.Oci.StackMonitoring
     public sealed class GetMonitoredResourceTypesResult
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+        /// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string CompartmentId;
         public readonly ImmutableArray<string> ExcludeFields;
@@ -299,6 +329,14 @@ namespace Pulumi.Oci.StackMonitoring
         /// A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
         /// </summary>
         public readonly string? Name;
+        /// <summary>
+        /// Resource Category to indicate the kind of resource type.
+        /// </summary>
+        public readonly string? ResourceCategory;
+        /// <summary>
+        /// Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+        /// </summary>
+        public readonly string? SourceType;
         public readonly string? Status;
 
         [OutputConstructor]
@@ -321,6 +359,10 @@ namespace Pulumi.Oci.StackMonitoring
 
             string? name,
 
+            string? resourceCategory,
+
+            string? sourceType,
+
             string? status)
         {
             CompartmentId = compartmentId;
@@ -332,6 +374,8 @@ namespace Pulumi.Oci.StackMonitoring
             MetricNamespace = metricNamespace;
             MonitoredResourceTypesCollections = monitoredResourceTypesCollections;
             Name = name;
+            ResourceCategory = resourceCategory;
+            SourceType = sourceType;
             Status = status;
         }
     }

@@ -5,8 +5,12 @@ package com.pulumi.oci.StackMonitoring.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.StackMonitoring.inputs.MonitoredResourceTypeAvailabilityMetricsConfigArgs;
+import com.pulumi.oci.StackMonitoring.inputs.MonitoredResourceTypeHandlerConfigArgs;
 import com.pulumi.oci.StackMonitoring.inputs.MonitoredResourceTypeMetadataArgs;
+import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -33,14 +37,29 @@ public final class MonitoredResourceTypeState extends com.pulumi.resources.Resou
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+     * Availability metrics details.
+     * 
+     */
+    @Import(name="availabilityMetricsConfigs")
+    private @Nullable Output<List<MonitoredResourceTypeAvailabilityMetricsConfigArgs>> availabilityMetricsConfigs;
+
+    /**
+     * @return Availability metrics details.
+     * 
+     */
+    public Optional<Output<List<MonitoredResourceTypeAvailabilityMetricsConfigArgs>>> availabilityMetricsConfigs() {
+        return Optional.ofNullable(this.availabilityMetricsConfigs);
+    }
+
+    /**
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+     * @return Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -105,6 +124,36 @@ public final class MonitoredResourceTypeState extends com.pulumi.resources.Resou
      */
     public Optional<Output<Map<String,String>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
+    }
+
+    /**
+     * Specific resource mapping configurations for Agent Extension Handlers.
+     * 
+     */
+    @Import(name="handlerConfigs")
+    private @Nullable Output<List<MonitoredResourceTypeHandlerConfigArgs>> handlerConfigs;
+
+    /**
+     * @return Specific resource mapping configurations for Agent Extension Handlers.
+     * 
+     */
+    public Optional<Output<List<MonitoredResourceTypeHandlerConfigArgs>>> handlerConfigs() {
+        return Optional.ofNullable(this.handlerConfigs);
+    }
+
+    /**
+     * If boolean flag is true, then the resource type cannot be modified or deleted.
+     * 
+     */
+    @Import(name="isSystemDefined")
+    private @Nullable Output<Boolean> isSystemDefined;
+
+    /**
+     * @return If boolean flag is true, then the resource type cannot be modified or deleted.
+     * 
+     */
+    public Optional<Output<Boolean>> isSystemDefined() {
+        return Optional.ofNullable(this.isSystemDefined);
     }
 
     /**
@@ -219,6 +268,21 @@ public final class MonitoredResourceTypeState extends com.pulumi.resources.Resou
     }
 
     /**
+     * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    @Import(name="tenancyId")
+    private @Nullable Output<String> tenancyId;
+
+    /**
+     * @return Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    public Optional<Output<String>> tenancyId() {
+        return Optional.ofNullable(this.tenancyId);
+    }
+
+    /**
      * The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * 
      */
@@ -252,11 +316,14 @@ public final class MonitoredResourceTypeState extends com.pulumi.resources.Resou
 
     private MonitoredResourceTypeState(MonitoredResourceTypeState $) {
         this.additionalNamespaceMap = $.additionalNamespaceMap;
+        this.availabilityMetricsConfigs = $.availabilityMetricsConfigs;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.description = $.description;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.handlerConfigs = $.handlerConfigs;
+        this.isSystemDefined = $.isSystemDefined;
         this.metadata = $.metadata;
         this.metricNamespace = $.metricNamespace;
         this.name = $.name;
@@ -264,6 +331,7 @@ public final class MonitoredResourceTypeState extends com.pulumi.resources.Resou
         this.sourceType = $.sourceType;
         this.state = $.state;
         this.systemTags = $.systemTags;
+        this.tenancyId = $.tenancyId;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
     }
@@ -308,7 +376,38 @@ public final class MonitoredResourceTypeState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+         * @param availabilityMetricsConfigs Availability metrics details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availabilityMetricsConfigs(@Nullable Output<List<MonitoredResourceTypeAvailabilityMetricsConfigArgs>> availabilityMetricsConfigs) {
+            $.availabilityMetricsConfigs = availabilityMetricsConfigs;
+            return this;
+        }
+
+        /**
+         * @param availabilityMetricsConfigs Availability metrics details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availabilityMetricsConfigs(List<MonitoredResourceTypeAvailabilityMetricsConfigArgs> availabilityMetricsConfigs) {
+            return availabilityMetricsConfigs(Output.of(availabilityMetricsConfigs));
+        }
+
+        /**
+         * @param availabilityMetricsConfigs Availability metrics details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availabilityMetricsConfigs(MonitoredResourceTypeAvailabilityMetricsConfigArgs... availabilityMetricsConfigs) {
+            return availabilityMetricsConfigs(List.of(availabilityMetricsConfigs));
+        }
+
+        /**
+         * @param compartmentId Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -319,7 +418,7 @@ public final class MonitoredResourceTypeState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+         * @param compartmentId Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -410,6 +509,58 @@ public final class MonitoredResourceTypeState extends com.pulumi.resources.Resou
          */
         public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param handlerConfigs Specific resource mapping configurations for Agent Extension Handlers.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder handlerConfigs(@Nullable Output<List<MonitoredResourceTypeHandlerConfigArgs>> handlerConfigs) {
+            $.handlerConfigs = handlerConfigs;
+            return this;
+        }
+
+        /**
+         * @param handlerConfigs Specific resource mapping configurations for Agent Extension Handlers.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder handlerConfigs(List<MonitoredResourceTypeHandlerConfigArgs> handlerConfigs) {
+            return handlerConfigs(Output.of(handlerConfigs));
+        }
+
+        /**
+         * @param handlerConfigs Specific resource mapping configurations for Agent Extension Handlers.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder handlerConfigs(MonitoredResourceTypeHandlerConfigArgs... handlerConfigs) {
+            return handlerConfigs(List.of(handlerConfigs));
+        }
+
+        /**
+         * @param isSystemDefined If boolean flag is true, then the resource type cannot be modified or deleted.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isSystemDefined(@Nullable Output<Boolean> isSystemDefined) {
+            $.isSystemDefined = isSystemDefined;
+            return this;
+        }
+
+        /**
+         * @param isSystemDefined If boolean flag is true, then the resource type cannot be modified or deleted.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isSystemDefined(Boolean isSystemDefined) {
+            return isSystemDefined(Output.of(isSystemDefined));
         }
 
         /**
@@ -563,6 +714,27 @@ public final class MonitoredResourceTypeState extends com.pulumi.resources.Resou
          */
         public Builder systemTags(Map<String,String> systemTags) {
             return systemTags(Output.of(systemTags));
+        }
+
+        /**
+         * @param tenancyId Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tenancyId(@Nullable Output<String> tenancyId) {
+            $.tenancyId = tenancyId;
+            return this;
+        }
+
+        /**
+         * @param tenancyId Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tenancyId(String tenancyId) {
+            return tenancyId(Output.of(tenancyId));
         }
 
         /**

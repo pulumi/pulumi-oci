@@ -6091,6 +6091,7 @@ class GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectio
 class GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: builtins.str,
+                 compute_model: builtins.str,
                  cpu_allocated: builtins.float,
                  cpu_used: builtins.float,
                  defined_tags: Mapping[str, builtins.str],
@@ -6109,7 +6110,8 @@ class GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectio
                  time_updated: builtins.str):
         """
         :param builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param builtins.float cpu_allocated: Number of OCPUs allocated to OPSI Warehouse ADW.
+        :param builtins.str compute_model: The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+        :param builtins.float cpu_allocated: Number of CPUs allocated to OPSI Warehouse ADW.
         :param builtins.float cpu_used: Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
         :param Mapping[str, builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param builtins.str display_name: A filter to return only resources that match the entire display name.
@@ -6127,6 +6129,7 @@ class GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectio
         :param builtins.str time_updated: The time at which the resource was last updated. An RFC3339 formatted datetime string
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "compute_model", compute_model)
         pulumi.set(__self__, "cpu_allocated", cpu_allocated)
         pulumi.set(__self__, "cpu_used", cpu_used)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -6153,10 +6156,18 @@ class GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectio
         return pulumi.get(self, "compartment_id")
 
     @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> builtins.str:
+        """
+        The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+        """
+        return pulumi.get(self, "compute_model")
+
+    @property
     @pulumi.getter(name="cpuAllocated")
     def cpu_allocated(self) -> builtins.float:
         """
-        Number of OCPUs allocated to OPSI Warehouse ADW.
+        Number of CPUs allocated to OPSI Warehouse ADW.
         """
         return pulumi.get(self, "cpu_allocated")
 

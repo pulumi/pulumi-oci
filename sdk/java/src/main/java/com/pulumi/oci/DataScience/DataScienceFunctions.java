@@ -22,6 +22,18 @@ import com.pulumi.oci.DataScience.inputs.GetJobShapesArgs;
 import com.pulumi.oci.DataScience.inputs.GetJobShapesPlainArgs;
 import com.pulumi.oci.DataScience.inputs.GetJobsArgs;
 import com.pulumi.oci.DataScience.inputs.GetJobsPlainArgs;
+import com.pulumi.oci.DataScience.inputs.GetMlApplicationArgs;
+import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationArgs;
+import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationPlainArgs;
+import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationsArgs;
+import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationsPlainArgs;
+import com.pulumi.oci.DataScience.inputs.GetMlApplicationInstanceArgs;
+import com.pulumi.oci.DataScience.inputs.GetMlApplicationInstancePlainArgs;
+import com.pulumi.oci.DataScience.inputs.GetMlApplicationInstancesArgs;
+import com.pulumi.oci.DataScience.inputs.GetMlApplicationInstancesPlainArgs;
+import com.pulumi.oci.DataScience.inputs.GetMlApplicationPlainArgs;
+import com.pulumi.oci.DataScience.inputs.GetMlApplicationsArgs;
+import com.pulumi.oci.DataScience.inputs.GetMlApplicationsPlainArgs;
 import com.pulumi.oci.DataScience.inputs.GetModelArgs;
 import com.pulumi.oci.DataScience.inputs.GetModelCustomMetadataArtifactContentArgs;
 import com.pulumi.oci.DataScience.inputs.GetModelCustomMetadataArtifactContentPlainArgs;
@@ -75,6 +87,12 @@ import com.pulumi.oci.DataScience.outputs.GetJobRunResult;
 import com.pulumi.oci.DataScience.outputs.GetJobRunsResult;
 import com.pulumi.oci.DataScience.outputs.GetJobShapesResult;
 import com.pulumi.oci.DataScience.outputs.GetJobsResult;
+import com.pulumi.oci.DataScience.outputs.GetMlApplicationImplementationResult;
+import com.pulumi.oci.DataScience.outputs.GetMlApplicationImplementationsResult;
+import com.pulumi.oci.DataScience.outputs.GetMlApplicationInstanceResult;
+import com.pulumi.oci.DataScience.outputs.GetMlApplicationInstancesResult;
+import com.pulumi.oci.DataScience.outputs.GetMlApplicationResult;
+import com.pulumi.oci.DataScience.outputs.GetMlApplicationsResult;
 import com.pulumi.oci.DataScience.outputs.GetModelCustomMetadataArtifactContentResult;
 import com.pulumi.oci.DataScience.outputs.GetModelDefinedMetadataArtifactContentResult;
 import com.pulumi.oci.DataScience.outputs.GetModelDeploymentResult;
@@ -1821,6 +1839,1386 @@ public final class DataScienceFunctions {
      */
     public static CompletableFuture<GetJobsResult> getJobsPlain(GetJobsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataScience/getJobs:getJobs", TypeShape.of(GetJobsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Ml Application resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets a MlApplication by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplication = DataScienceFunctions.getMlApplication(GetMlApplicationArgs.builder()
+     *             .mlApplicationId(testMlApplicationOciDatascienceMlApplication.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMlApplicationResult> getMlApplication(GetMlApplicationArgs args) {
+        return getMlApplication(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Ml Application resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets a MlApplication by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplication = DataScienceFunctions.getMlApplication(GetMlApplicationArgs.builder()
+     *             .mlApplicationId(testMlApplicationOciDatascienceMlApplication.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetMlApplicationResult> getMlApplicationPlain(GetMlApplicationPlainArgs args) {
+        return getMlApplicationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Ml Application resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets a MlApplication by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplication = DataScienceFunctions.getMlApplication(GetMlApplicationArgs.builder()
+     *             .mlApplicationId(testMlApplicationOciDatascienceMlApplication.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMlApplicationResult> getMlApplication(GetMlApplicationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getMlApplication:getMlApplication", TypeShape.of(GetMlApplicationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Ml Application resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets a MlApplication by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplication = DataScienceFunctions.getMlApplication(GetMlApplicationArgs.builder()
+     *             .mlApplicationId(testMlApplicationOciDatascienceMlApplication.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMlApplicationResult> getMlApplication(GetMlApplicationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getMlApplication:getMlApplication", TypeShape.of(GetMlApplicationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Ml Application resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets a MlApplication by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplication = DataScienceFunctions.getMlApplication(GetMlApplicationArgs.builder()
+     *             .mlApplicationId(testMlApplicationOciDatascienceMlApplication.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetMlApplicationResult> getMlApplicationPlain(GetMlApplicationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataScience/getMlApplication:getMlApplication", TypeShape.of(GetMlApplicationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Ml Application Implementation resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets a MlApplicationImplementation by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplicationImplementation = DataScienceFunctions.getMlApplicationImplementation(GetMlApplicationImplementationArgs.builder()
+     *             .mlApplicationImplementationId(testMlApplicationImplementationOciDatascienceMlApplicationImplementation.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMlApplicationImplementationResult> getMlApplicationImplementation(GetMlApplicationImplementationArgs args) {
+        return getMlApplicationImplementation(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Ml Application Implementation resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets a MlApplicationImplementation by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplicationImplementation = DataScienceFunctions.getMlApplicationImplementation(GetMlApplicationImplementationArgs.builder()
+     *             .mlApplicationImplementationId(testMlApplicationImplementationOciDatascienceMlApplicationImplementation.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetMlApplicationImplementationResult> getMlApplicationImplementationPlain(GetMlApplicationImplementationPlainArgs args) {
+        return getMlApplicationImplementationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Ml Application Implementation resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets a MlApplicationImplementation by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplicationImplementation = DataScienceFunctions.getMlApplicationImplementation(GetMlApplicationImplementationArgs.builder()
+     *             .mlApplicationImplementationId(testMlApplicationImplementationOciDatascienceMlApplicationImplementation.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMlApplicationImplementationResult> getMlApplicationImplementation(GetMlApplicationImplementationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getMlApplicationImplementation:getMlApplicationImplementation", TypeShape.of(GetMlApplicationImplementationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Ml Application Implementation resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets a MlApplicationImplementation by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplicationImplementation = DataScienceFunctions.getMlApplicationImplementation(GetMlApplicationImplementationArgs.builder()
+     *             .mlApplicationImplementationId(testMlApplicationImplementationOciDatascienceMlApplicationImplementation.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMlApplicationImplementationResult> getMlApplicationImplementation(GetMlApplicationImplementationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getMlApplicationImplementation:getMlApplicationImplementation", TypeShape.of(GetMlApplicationImplementationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Ml Application Implementation resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets a MlApplicationImplementation by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplicationImplementation = DataScienceFunctions.getMlApplicationImplementation(GetMlApplicationImplementationArgs.builder()
+     *             .mlApplicationImplementationId(testMlApplicationImplementationOciDatascienceMlApplicationImplementation.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetMlApplicationImplementationResult> getMlApplicationImplementationPlain(GetMlApplicationImplementationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataScience/getMlApplicationImplementation:getMlApplicationImplementation", TypeShape.of(GetMlApplicationImplementationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ml Application Implementations in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Returns a list of MlApplicationImplementations.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplicationImplementations = DataScienceFunctions.getMlApplicationImplementations(GetMlApplicationImplementationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(mlApplicationImplementationCompartmentIdInSubtree)
+     *             .mlApplicationId(testMlApplication.id())
+     *             .mlApplicationImplementationId(testMlApplicationImplementation.id())
+     *             .name(mlApplicationImplementationName)
+     *             .state(mlApplicationImplementationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMlApplicationImplementationsResult> getMlApplicationImplementations(GetMlApplicationImplementationsArgs args) {
+        return getMlApplicationImplementations(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Ml Application Implementations in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Returns a list of MlApplicationImplementations.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplicationImplementations = DataScienceFunctions.getMlApplicationImplementations(GetMlApplicationImplementationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(mlApplicationImplementationCompartmentIdInSubtree)
+     *             .mlApplicationId(testMlApplication.id())
+     *             .mlApplicationImplementationId(testMlApplicationImplementation.id())
+     *             .name(mlApplicationImplementationName)
+     *             .state(mlApplicationImplementationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetMlApplicationImplementationsResult> getMlApplicationImplementationsPlain(GetMlApplicationImplementationsPlainArgs args) {
+        return getMlApplicationImplementationsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Ml Application Implementations in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Returns a list of MlApplicationImplementations.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplicationImplementations = DataScienceFunctions.getMlApplicationImplementations(GetMlApplicationImplementationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(mlApplicationImplementationCompartmentIdInSubtree)
+     *             .mlApplicationId(testMlApplication.id())
+     *             .mlApplicationImplementationId(testMlApplicationImplementation.id())
+     *             .name(mlApplicationImplementationName)
+     *             .state(mlApplicationImplementationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMlApplicationImplementationsResult> getMlApplicationImplementations(GetMlApplicationImplementationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getMlApplicationImplementations:getMlApplicationImplementations", TypeShape.of(GetMlApplicationImplementationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ml Application Implementations in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Returns a list of MlApplicationImplementations.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplicationImplementations = DataScienceFunctions.getMlApplicationImplementations(GetMlApplicationImplementationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(mlApplicationImplementationCompartmentIdInSubtree)
+     *             .mlApplicationId(testMlApplication.id())
+     *             .mlApplicationImplementationId(testMlApplicationImplementation.id())
+     *             .name(mlApplicationImplementationName)
+     *             .state(mlApplicationImplementationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMlApplicationImplementationsResult> getMlApplicationImplementations(GetMlApplicationImplementationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getMlApplicationImplementations:getMlApplicationImplementations", TypeShape.of(GetMlApplicationImplementationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ml Application Implementations in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Returns a list of MlApplicationImplementations.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplicationImplementations = DataScienceFunctions.getMlApplicationImplementations(GetMlApplicationImplementationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(mlApplicationImplementationCompartmentIdInSubtree)
+     *             .mlApplicationId(testMlApplication.id())
+     *             .mlApplicationImplementationId(testMlApplicationImplementation.id())
+     *             .name(mlApplicationImplementationName)
+     *             .state(mlApplicationImplementationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetMlApplicationImplementationsResult> getMlApplicationImplementationsPlain(GetMlApplicationImplementationsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataScience/getMlApplicationImplementations:getMlApplicationImplementations", TypeShape.of(GetMlApplicationImplementationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Ml Application Instance resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets a MlApplicationInstance by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplicationInstance = DataScienceFunctions.getMlApplicationInstance(GetMlApplicationInstanceArgs.builder()
+     *             .mlApplicationInstanceId(testMlApplicationInstanceOciDatascienceMlApplicationInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMlApplicationInstanceResult> getMlApplicationInstance(GetMlApplicationInstanceArgs args) {
+        return getMlApplicationInstance(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Ml Application Instance resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets a MlApplicationInstance by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplicationInstance = DataScienceFunctions.getMlApplicationInstance(GetMlApplicationInstanceArgs.builder()
+     *             .mlApplicationInstanceId(testMlApplicationInstanceOciDatascienceMlApplicationInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetMlApplicationInstanceResult> getMlApplicationInstancePlain(GetMlApplicationInstancePlainArgs args) {
+        return getMlApplicationInstancePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Ml Application Instance resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets a MlApplicationInstance by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplicationInstance = DataScienceFunctions.getMlApplicationInstance(GetMlApplicationInstanceArgs.builder()
+     *             .mlApplicationInstanceId(testMlApplicationInstanceOciDatascienceMlApplicationInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMlApplicationInstanceResult> getMlApplicationInstance(GetMlApplicationInstanceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getMlApplicationInstance:getMlApplicationInstance", TypeShape.of(GetMlApplicationInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Ml Application Instance resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets a MlApplicationInstance by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplicationInstance = DataScienceFunctions.getMlApplicationInstance(GetMlApplicationInstanceArgs.builder()
+     *             .mlApplicationInstanceId(testMlApplicationInstanceOciDatascienceMlApplicationInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMlApplicationInstanceResult> getMlApplicationInstance(GetMlApplicationInstanceArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getMlApplicationInstance:getMlApplicationInstance", TypeShape.of(GetMlApplicationInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Ml Application Instance resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets a MlApplicationInstance by identifier
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplicationInstance = DataScienceFunctions.getMlApplicationInstance(GetMlApplicationInstanceArgs.builder()
+     *             .mlApplicationInstanceId(testMlApplicationInstanceOciDatascienceMlApplicationInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetMlApplicationInstanceResult> getMlApplicationInstancePlain(GetMlApplicationInstancePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataScience/getMlApplicationInstance:getMlApplicationInstance", TypeShape.of(GetMlApplicationInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ml Application Instances in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Returns a list of MlApplicationsInstances.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplicationInstances = DataScienceFunctions.getMlApplicationInstances(GetMlApplicationInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(mlApplicationInstanceDisplayName)
+     *             .mlApplicationId(testMlApplication.id())
+     *             .state(mlApplicationInstanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMlApplicationInstancesResult> getMlApplicationInstances(GetMlApplicationInstancesArgs args) {
+        return getMlApplicationInstances(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Ml Application Instances in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Returns a list of MlApplicationsInstances.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplicationInstances = DataScienceFunctions.getMlApplicationInstances(GetMlApplicationInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(mlApplicationInstanceDisplayName)
+     *             .mlApplicationId(testMlApplication.id())
+     *             .state(mlApplicationInstanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetMlApplicationInstancesResult> getMlApplicationInstancesPlain(GetMlApplicationInstancesPlainArgs args) {
+        return getMlApplicationInstancesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Ml Application Instances in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Returns a list of MlApplicationsInstances.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplicationInstances = DataScienceFunctions.getMlApplicationInstances(GetMlApplicationInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(mlApplicationInstanceDisplayName)
+     *             .mlApplicationId(testMlApplication.id())
+     *             .state(mlApplicationInstanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMlApplicationInstancesResult> getMlApplicationInstances(GetMlApplicationInstancesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getMlApplicationInstances:getMlApplicationInstances", TypeShape.of(GetMlApplicationInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ml Application Instances in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Returns a list of MlApplicationsInstances.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplicationInstances = DataScienceFunctions.getMlApplicationInstances(GetMlApplicationInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(mlApplicationInstanceDisplayName)
+     *             .mlApplicationId(testMlApplication.id())
+     *             .state(mlApplicationInstanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMlApplicationInstancesResult> getMlApplicationInstances(GetMlApplicationInstancesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getMlApplicationInstances:getMlApplicationInstances", TypeShape.of(GetMlApplicationInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ml Application Instances in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Returns a list of MlApplicationsInstances.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplicationInstances = DataScienceFunctions.getMlApplicationInstances(GetMlApplicationInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(mlApplicationInstanceDisplayName)
+     *             .mlApplicationId(testMlApplication.id())
+     *             .state(mlApplicationInstanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetMlApplicationInstancesResult> getMlApplicationInstancesPlain(GetMlApplicationInstancesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataScience/getMlApplicationInstances:getMlApplicationInstances", TypeShape.of(GetMlApplicationInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ml Applications in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Returns a list of MlApplications.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplications = DataScienceFunctions.getMlApplications(GetMlApplicationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(mlApplicationCompartmentIdInSubtree)
+     *             .mlApplicationId(testMlApplication.id())
+     *             .name(mlApplicationName)
+     *             .state(mlApplicationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMlApplicationsResult> getMlApplications(GetMlApplicationsArgs args) {
+        return getMlApplications(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Ml Applications in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Returns a list of MlApplications.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplications = DataScienceFunctions.getMlApplications(GetMlApplicationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(mlApplicationCompartmentIdInSubtree)
+     *             .mlApplicationId(testMlApplication.id())
+     *             .name(mlApplicationName)
+     *             .state(mlApplicationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetMlApplicationsResult> getMlApplicationsPlain(GetMlApplicationsPlainArgs args) {
+        return getMlApplicationsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Ml Applications in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Returns a list of MlApplications.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplications = DataScienceFunctions.getMlApplications(GetMlApplicationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(mlApplicationCompartmentIdInSubtree)
+     *             .mlApplicationId(testMlApplication.id())
+     *             .name(mlApplicationName)
+     *             .state(mlApplicationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMlApplicationsResult> getMlApplications(GetMlApplicationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getMlApplications:getMlApplications", TypeShape.of(GetMlApplicationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ml Applications in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Returns a list of MlApplications.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplications = DataScienceFunctions.getMlApplications(GetMlApplicationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(mlApplicationCompartmentIdInSubtree)
+     *             .mlApplicationId(testMlApplication.id())
+     *             .name(mlApplicationName)
+     *             .state(mlApplicationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMlApplicationsResult> getMlApplications(GetMlApplicationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getMlApplications:getMlApplications", TypeShape.of(GetMlApplicationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ml Applications in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Returns a list of MlApplications.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplications = DataScienceFunctions.getMlApplications(GetMlApplicationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(mlApplicationCompartmentIdInSubtree)
+     *             .mlApplicationId(testMlApplication.id())
+     *             .name(mlApplicationName)
+     *             .state(mlApplicationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetMlApplicationsResult> getMlApplicationsPlain(GetMlApplicationsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataScience/getMlApplications:getMlApplications", TypeShape.of(GetMlApplicationsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Data Science service.

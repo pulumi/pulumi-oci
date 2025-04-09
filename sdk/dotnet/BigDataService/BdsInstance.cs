@@ -203,7 +203,7 @@ namespace Pulumi.Oci.BigDataService
         public Output<string?> OsPatchVersion { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+        /// (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
         /// </summary>
         [Output("removeNode")]
         public Output<string?> RemoveNode { get; private set; } = null!;
@@ -470,7 +470,7 @@ namespace Pulumi.Oci.BigDataService
         public Input<string>? OsPatchVersion { get; set; }
 
         /// <summary>
-        /// (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+        /// (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
         /// </summary>
         [Input("removeNode")]
         public Input<string>? RemoveNode { get; set; }
@@ -730,7 +730,7 @@ namespace Pulumi.Oci.BigDataService
         public Input<string>? OsPatchVersion { get; set; }
 
         /// <summary>
-        /// (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+        /// (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
         /// </summary>
         [Input("removeNode")]
         public Input<string>? RemoveNode { get; set; }

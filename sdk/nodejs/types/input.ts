@@ -23144,6 +23144,54 @@ export namespace DataScience {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetMlApplicationImplementationsFilter {
+        /**
+         * A filter to return only resources that match the entire name given.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetMlApplicationImplementationsFilterArgs {
+        /**
+         * A filter to return only resources that match the entire name given.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetMlApplicationInstancesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetMlApplicationInstancesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetMlApplicationsFilter {
+        /**
+         * A filter to return only resources that match the entire name given.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetMlApplicationsFilterArgs {
+        /**
+         * A filter to return only resources that match the entire name given.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetModelDeploymentShapesFilter {
         /**
          * The name of the model deployment shape.
@@ -23577,6 +23625,222 @@ export namespace DataScience {
          * The log id of the log object the job run logs will be shipped to.
          */
         logId?: pulumi.Input<string>;
+    }
+
+    export interface MlApplicationImplementationApplicationComponent {
+        /**
+         * OCID of Data Flow Application
+         */
+        applicationId?: pulumi.Input<string>;
+        /**
+         * Name of application component
+         */
+        componentName?: pulumi.Input<string>;
+        /**
+         * The OCID of the MlApplicationImplementation. Unique identifier that is immutable after creation.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * OCID of Data Science Job
+         */
+        jobId?: pulumi.Input<string>;
+        /**
+         * OCID of Data Science Model
+         */
+        modelId?: pulumi.Input<string>;
+        /**
+         * ML Application Implementation name which is unique for given ML Application.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * OCID of Data Science Pipeline
+         */
+        pipelineId?: pulumi.Input<string>;
+        /**
+         * Type of the resource
+         */
+        resourceType?: pulumi.Input<string>;
+        /**
+         * type of the argument
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface MlApplicationImplementationConfigurationSchema {
+        /**
+         * The default value for the optional configuration property (it must not be specified for mandatory configuration properties)
+         */
+        defaultValue?: pulumi.Input<string>;
+        /**
+         * short description of the argument
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * argument is mandatory or not
+         */
+        isMandatory?: pulumi.Input<boolean>;
+        /**
+         * Name of key (parameter name)
+         */
+        keyName?: pulumi.Input<string>;
+        /**
+         * Sample property value (it must match validationRegexp if it is specified)
+         */
+        sampleValue?: pulumi.Input<string>;
+        /**
+         * A regular expression will be used for the validation of property value.
+         */
+        validationRegexp?: pulumi.Input<string>;
+        /**
+         * Type of value
+         */
+        valueType?: pulumi.Input<string>;
+    }
+
+    export interface MlApplicationImplementationLogging {
+        /**
+         * (Updatable) Log configuration details for particular areas of ML Application Implementation.
+         */
+        aggregatedInstanceViewLog?: pulumi.Input<inputs.DataScience.MlApplicationImplementationLoggingAggregatedInstanceViewLog>;
+        /**
+         * (Updatable) Log configuration details for particular areas of ML Application Implementation.
+         */
+        implementationLog?: pulumi.Input<inputs.DataScience.MlApplicationImplementationLoggingImplementationLog>;
+        /**
+         * (Updatable) Log configuration details for particular areas of ML Application Implementation.
+         */
+        triggerLog?: pulumi.Input<inputs.DataScience.MlApplicationImplementationLoggingTriggerLog>;
+    }
+
+    export interface MlApplicationImplementationLoggingAggregatedInstanceViewLog {
+        /**
+         * (Updatable) If logging is enabled.
+         */
+        enableLogging?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+         */
+        logGroupId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+         */
+        logId?: pulumi.Input<string>;
+    }
+
+    export interface MlApplicationImplementationLoggingImplementationLog {
+        /**
+         * (Updatable) If logging is enabled.
+         */
+        enableLogging?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+         */
+        logGroupId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+         */
+        logId?: pulumi.Input<string>;
+    }
+
+    export interface MlApplicationImplementationLoggingTriggerLog {
+        /**
+         * (Updatable) If logging is enabled.
+         */
+        enableLogging?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+         */
+        logGroupId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+         */
+        logId?: pulumi.Input<string>;
+    }
+
+    export interface MlApplicationImplementationMlApplicationPackageArgument {
+        /**
+         * Array of the ML Application package arguments
+         */
+        arguments?: pulumi.Input<pulumi.Input<inputs.DataScience.MlApplicationImplementationMlApplicationPackageArgumentArgument>[]>;
+    }
+
+    export interface MlApplicationImplementationMlApplicationPackageArgumentArgument {
+        /**
+         * short description of the argument
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * argument is mandatory or not
+         */
+        isMandatory?: pulumi.Input<boolean>;
+        /**
+         * ML Application Implementation name which is unique for given ML Application.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * type of the argument
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * Argument value
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface MlApplicationInstanceAuthConfiguration {
+        /**
+         * Name of the IDCS application
+         */
+        applicationName?: pulumi.Input<string>;
+        /**
+         * Identity Domain OCID
+         */
+        domainId?: pulumi.Input<string>;
+        /**
+         * Type of AuthN/Z
+         */
+        type: pulumi.Input<string>;
+    }
+
+    export interface MlApplicationInstanceConfiguration {
+        /**
+         * (Updatable) Key of configuration property
+         */
+        key: pulumi.Input<string>;
+        /**
+         * (Updatable) Value of configuration property
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface MlApplicationInstancePredictionEndpointDetail {
+        /**
+         * Base URI of prediction router.
+         */
+        basePredictionUri?: pulumi.Input<string>;
+        /**
+         * Array of all prediction URIs per use-case.
+         */
+        predictionUris?: pulumi.Input<pulumi.Input<inputs.DataScience.MlApplicationInstancePredictionEndpointDetailPredictionUri>[]>;
+    }
+
+    export interface MlApplicationInstancePredictionEndpointDetailPredictionUri {
+        /**
+         * Prediction URI.
+         */
+        uri?: pulumi.Input<string>;
+        /**
+         * Prediction use-case.
+         */
+        useCase?: pulumi.Input<string>;
     }
 
     export interface ModelBackupOperationDetail {
@@ -72873,6 +73137,51 @@ export namespace Logging {
     }
 }
 
+export namespace Lustre {
+    export interface FileStorageLustreFileSystemMaintenanceWindow {
+        /**
+         * Day of the week when the maintainence window starts.
+         */
+        dayOfWeek?: pulumi.Input<string>;
+        /**
+         * The time to start the maintenance window. The format is 'HH:MM', 'HH:MM' represents the time in UTC.   Example: `22:00`
+         */
+        timeStart?: pulumi.Input<string>;
+    }
+
+    export interface FileStorageLustreFileSystemRootSquashConfiguration {
+        /**
+         * (Updatable) A list of NIDs allowed with this lustre file system not to be squashed. A maximum of 10 is allowed.
+         */
+        clientExceptions?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Used when clients accessing the Lustre file system have their UID and GID remapped to `squashUid` and `squashGid`. If `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `NONE`.
+         */
+        identitySquash?: pulumi.Input<string>;
+        /**
+         * (Updatable) The GID value to remap to when squashing a client GID. See `identitySquash` for more details. If unspecified, defaults to `65534`.
+         */
+        squashGid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The UID value to remap to when squashing a client UID. See `identitySquash` for more details. If unspecified, defaults to `65534`.
+         */
+        squashUid?: pulumi.Input<string>;
+    }
+
+    export interface GetFileStorageLustreFileSystemsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFileStorageLustreFileSystemsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+}
+
 export namespace ManagementAgent {
     export interface GetManagementAgentAvailableHistoriesFilter {
         name: string;
@@ -83759,7 +84068,7 @@ export namespace StackMonitoring {
 
     export interface GetMonitoredResourceTasksFilter {
         /**
-         * Name of the task.
+         * Property name.
          */
         name: string;
         regex?: boolean;
@@ -83768,7 +84077,7 @@ export namespace StackMonitoring {
 
     export interface GetMonitoredResourceTasksFilterArgs {
         /**
-         * Name of the task.
+         * Property name.
          */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
@@ -84263,11 +84572,15 @@ export namespace StackMonitoring {
 
     export interface MonitoredResourceTaskTaskDetails {
         /**
+         * Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
+        agentId?: pulumi.Input<string>;
+        /**
          * Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
          */
         availabilityProxyMetricCollectionInterval?: pulumi.Input<number>;
         /**
-         * List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property 'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+         * List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionInterval'. If no metrics are specified, availability will not be calculated for the resource.
          */
         availabilityProxyMetrics?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -84279,13 +84592,25 @@ export namespace StackMonitoring {
          */
         externalIdMapping?: pulumi.Input<string>;
         /**
+         * Type of the handler.
+         */
+        handlerType?: pulumi.Input<string>;
+        /**
+         * True to enable the receiver and false to disable the receiver on the agent.
+         */
+        isEnable?: pulumi.Input<boolean>;
+        /**
          * Lifecycle states of the external resource which reflects the status of the resource being up.
          */
         lifecycleStatusMappingsForUpStatuses?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
          */
-        namespace: pulumi.Input<string>;
+        namespace?: pulumi.Input<string>;
+        /**
+         * Properties for agent receiver.
+         */
+        receiverProperties?: pulumi.Input<inputs.StackMonitoring.MonitoredResourceTaskTaskDetailsReceiverProperties>;
         /**
          * The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
          */
@@ -84307,6 +84632,10 @@ export namespace StackMonitoring {
          */
         resourceTypeMapping?: pulumi.Input<string>;
         /**
+         * A collection of resource type configuration details. User can provide  availability proxy metrics list for resource types along with the  telegraf/collectd handler configuration for the resource types.
+         */
+        resourceTypesConfigurations?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoredResourceTaskTaskDetailsResourceTypesConfiguration>[]>;
+        /**
          * The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
          */
         serviceBaseUrl?: pulumi.Input<string>;
@@ -84318,8 +84647,10 @@ export namespace StackMonitoring {
          * Source from where the metrics pushed to telemetry. Possible values:
          * * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
          * * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+         * * OCI_TELEMETRY_TELEGRAF    - The metrics are pushed to telemetry from Telegraf receiver.
+         * * OCI_TELEMETRY_COLLECTD    - The metrics are pushed to telemetry from CollectD receiver.
          */
-        source: pulumi.Input<string>;
+        source?: pulumi.Input<string>;
         /**
          * Task type.
          *
@@ -84328,6 +84659,262 @@ export namespace StackMonitoring {
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type: pulumi.Input<string>;
+    }
+
+    export interface MonitoredResourceTaskTaskDetailsReceiverProperties {
+        /**
+         * Receiver listener port.
+         */
+        listenerPort?: pulumi.Input<number>;
+    }
+
+    export interface MonitoredResourceTaskTaskDetailsResourceTypesConfiguration {
+        /**
+         * Availability metrics details.
+         */
+        availabilityMetricsConfig?: pulumi.Input<inputs.StackMonitoring.MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfig>;
+        /**
+         * Specific resource mapping configurations for Agent Extension Handlers.
+         */
+        handlerConfig?: pulumi.Input<inputs.StackMonitoring.MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfig>;
+        /**
+         * Resource type.
+         */
+        resourceType?: pulumi.Input<string>;
+    }
+
+    export interface MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfig {
+        /**
+         * Availability metric collection internal in seconds.
+         */
+        collectionIntervalInSeconds?: pulumi.Input<number>;
+        /**
+         * List of metrics used for availability calculation for the resource.
+         */
+        metrics?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfig {
+        /**
+         * Resource name generation overriding configurations for collectd resource types.
+         */
+        collectdResourceNameConfig?: pulumi.Input<inputs.StackMonitoring.MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig>;
+        /**
+         * List of collector/plugin names.
+         */
+        collectorTypes?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * List of handler configuration properties
+         */
+        handlerProperties?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerProperty>[]>;
+        /**
+         * List of AgentExtensionHandlerMetricMappingDetails.
+         */
+        metricMappings?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMapping>[]>;
+        /**
+         * Metric name generation overriding configurations.
+         */
+        metricNameConfig?: pulumi.Input<inputs.StackMonitoring.MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfig>;
+        /**
+         * Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+         */
+        metricUploadIntervalInSeconds?: pulumi.Input<number>;
+        /**
+         * Resource name generation overriding configurations for telegraf resource types.
+         */
+        telegrafResourceNameConfig?: pulumi.Input<inputs.StackMonitoring.MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig>;
+        /**
+         * Resource group string; if not specified, the resource group string will be generated by the handler.
+         */
+        telemetryResourceGroup?: pulumi.Input<string>;
+    }
+
+    export interface MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfig {
+        /**
+         * List of property names to be excluded.
+         */
+        excludeProperties?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * List of property names to be included.
+         */
+        includeProperties?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * String to be suffixed to the resource name.
+         */
+        suffix?: pulumi.Input<string>;
+    }
+
+    export interface MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerProperty {
+        /**
+         * Property name.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * Property value.
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMapping {
+        /**
+         * Metric name as defined by the collector.
+         */
+        collectorMetricName?: pulumi.Input<string>;
+        /**
+         * Is ignoring this metric.
+         */
+        isSkipUpload?: pulumi.Input<boolean>;
+        /**
+         * Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+         */
+        metricUploadIntervalInSeconds?: pulumi.Input<number>;
+        /**
+         * Metric name to be upload to telemetry.
+         */
+        telemetryMetricName?: pulumi.Input<string>;
+    }
+
+    export interface MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfig {
+        /**
+         * String pattern to be removed from the prefix of the metric name.
+         */
+        excludePatternOnPrefix?: pulumi.Input<string>;
+        /**
+         * is prefixing the metric with collector type.
+         */
+        isPrefixWithCollectorType?: pulumi.Input<boolean>;
+    }
+
+    export interface MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfig {
+        /**
+         * List of tag names to be excluded.
+         */
+        excludeTags?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * List of tag names to be included.
+         */
+        includeTags?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Flag to indicate if only tags will be used for resource name generation.
+         */
+        isUseTagsOnly?: pulumi.Input<boolean>;
+    }
+
+    export interface MonitoredResourceTypeAvailabilityMetricsConfig {
+        /**
+         * Availability metric collection internal in seconds.
+         */
+        collectionIntervalInSeconds?: pulumi.Input<number>;
+        /**
+         * List of metrics used for availability calculation for the resource.
+         */
+        metrics?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface MonitoredResourceTypeHandlerConfig {
+        /**
+         * Resource name generation overriding configurations for collectd resource types.
+         */
+        collectdResourceNameConfigs?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoredResourceTypeHandlerConfigCollectdResourceNameConfig>[]>;
+        /**
+         * List of collector/plugin names.
+         */
+        collectorTypes?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * List of handler configuration properties
+         */
+        handlerProperties?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoredResourceTypeHandlerConfigHandlerProperty>[]>;
+        /**
+         * List of AgentExtensionHandlerMetricMappingDetails.
+         */
+        metricMappings?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoredResourceTypeHandlerConfigMetricMapping>[]>;
+        /**
+         * Metric name generation overriding configurations.
+         */
+        metricNameConfigs?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoredResourceTypeHandlerConfigMetricNameConfig>[]>;
+        /**
+         * Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+         */
+        metricUploadIntervalInSeconds?: pulumi.Input<number>;
+        /**
+         * Resource name generation overriding configurations for telegraf resource types.
+         */
+        telegrafResourceNameConfigs?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfig>[]>;
+        /**
+         * Resource group string; if not specified, the resource group string will be generated by the handler.
+         */
+        telemetryResourceGroup?: pulumi.Input<string>;
+    }
+
+    export interface MonitoredResourceTypeHandlerConfigCollectdResourceNameConfig {
+        /**
+         * List of property names to be excluded.
+         */
+        excludeProperties?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * List of property names to be included.
+         */
+        includeProperties?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * String to be suffixed to the resource name.
+         */
+        suffix?: pulumi.Input<string>;
+    }
+
+    export interface MonitoredResourceTypeHandlerConfigHandlerProperty {
+        /**
+         * A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * Property value.
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface MonitoredResourceTypeHandlerConfigMetricMapping {
+        /**
+         * Metric name as defined by the collector.
+         */
+        collectorMetricName?: pulumi.Input<string>;
+        /**
+         * Is ignoring this metric.
+         */
+        isSkipUpload?: pulumi.Input<boolean>;
+        /**
+         * Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+         */
+        metricUploadIntervalInSeconds?: pulumi.Input<number>;
+        /**
+         * Metric name to be upload to telemetry.
+         */
+        telemetryMetricName?: pulumi.Input<string>;
+    }
+
+    export interface MonitoredResourceTypeHandlerConfigMetricNameConfig {
+        /**
+         * String pattern to be removed from the prefix of the metric name.
+         */
+        excludePatternOnPrefix?: pulumi.Input<string>;
+        /**
+         * is prefixing the metric with collector type.
+         */
+        isPrefixWithCollectorType?: pulumi.Input<boolean>;
+    }
+
+    export interface MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfig {
+        /**
+         * List of tag names to be excluded.
+         */
+        excludeTags?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * List of tag names to be included.
+         */
+        includeTags?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Flag to indicate if only tags will be used for resource name generation.
+         */
+        isUseTagsOnly?: pulumi.Input<boolean>;
     }
 
     export interface MonitoredResourceTypeMetadata {
@@ -87472,4 +88059,48 @@ export namespace Zpr {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+}
+
+export namespace oci {
+    export interface GetLustreFileStorageLustreFileSystemsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetLustreFileStorageLustreFileSystemsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface LustreFileStorageLustreFileSystemMaintenanceWindow {
+        /**
+         * Day of the week when the maintainence window starts.
+         */
+        dayOfWeek?: pulumi.Input<string>;
+        /**
+         * The time to start the maintenance window. The format is 'HH:MM', 'HH:MM' represents the time in UTC.   Example: `22:00`
+         */
+        timeStart?: pulumi.Input<string>;
+    }
+
+    export interface LustreFileStorageLustreFileSystemRootSquashConfiguration {
+        /**
+         * (Updatable) A list of NIDs allowed with this lustre file system not to be squashed. A maximum of 10 is allowed.
+         */
+        clientExceptions?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Used when clients accessing the Lustre file system have their UID and GID remapped to `squashUid` and `squashGid`. If `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `NONE`.
+         */
+        identitySquash?: pulumi.Input<string>;
+        /**
+         * (Updatable) The GID value to remap to when squashing a client GID. See `identitySquash` for more details. If unspecified, defaults to `65534`.
+         */
+        squashGid?: pulumi.Input<string>;
+        /**
+         * (Updatable) The UID value to remap to when squashing a client UID. See `identitySquash` for more details. If unspecified, defaults to `65534`.
+         */
+        squashUid?: pulumi.Input<string>;
+    }
 }

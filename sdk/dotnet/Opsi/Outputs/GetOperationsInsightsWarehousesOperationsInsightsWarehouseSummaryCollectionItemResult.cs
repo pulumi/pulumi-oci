@@ -18,7 +18,11 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// Number of OCPUs allocated to OPSI Warehouse ADW.
+        /// The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+        /// </summary>
+        public readonly string ComputeModel;
+        /// <summary>
+        /// Number of CPUs allocated to OPSI Warehouse ADW.
         /// </summary>
         public readonly double CpuAllocated;
         /// <summary>
@@ -86,6 +90,8 @@ namespace Pulumi.Oci.Opsi.Outputs
         private GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemResult(
             string compartmentId,
 
+            string computeModel,
+
             double cpuAllocated,
 
             double cpuUsed,
@@ -119,6 +125,7 @@ namespace Pulumi.Oci.Opsi.Outputs
             string timeUpdated)
         {
             CompartmentId = compartmentId;
+            ComputeModel = computeModel;
             CpuAllocated = cpuAllocated;
             CpuUsed = cpuUsed;
             DefinedTags = definedTags;

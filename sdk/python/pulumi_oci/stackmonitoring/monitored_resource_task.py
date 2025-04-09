@@ -118,6 +118,7 @@ class _MonitoredResourceTaskState:
                  tenant_id: Optional[pulumi.Input[builtins.str]] = None,
                  time_created: Optional[pulumi.Input[builtins.str]] = None,
                  time_updated: Optional[pulumi.Input[builtins.str]] = None,
+                 type: Optional[pulumi.Input[builtins.str]] = None,
                  work_request_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering MonitoredResourceTask resources.
@@ -131,6 +132,7 @@ class _MonitoredResourceTaskState:
         :param pulumi.Input[builtins.str] tenant_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
         :param pulumi.Input[builtins.str] time_created: The date and time when the stack monitoring resource task was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         :param pulumi.Input[builtins.str] time_updated: The date and time when the stack monitoring resource task was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+        :param pulumi.Input[builtins.str] type: Type of the task.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] work_request_ids: Identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for work requests submitted for this task.
         """
         if compartment_id is not None:
@@ -153,6 +155,8 @@ class _MonitoredResourceTaskState:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
         if work_request_ids is not None:
             pulumi.set(__self__, "work_request_ids", work_request_ids)
 
@@ -277,6 +281,18 @@ class _MonitoredResourceTaskState:
         pulumi.set(self, "time_updated", value)
 
     @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Type of the task.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "type", value)
+
+    @property
     @pulumi.getter(name="workRequestIds")
     def work_request_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
@@ -314,21 +330,63 @@ class MonitoredResourceTask(pulumi.CustomResource):
         test_monitored_resource_task = oci.stack_monitoring.MonitoredResourceTask("test_monitored_resource_task",
             compartment_id=compartment_id,
             task_details={
-                "namespace": monitored_resource_task_task_details_namespace,
-                "source": monitored_resource_task_task_details_source,
                 "type": monitored_resource_task_task_details_type,
+                "agent_id": test_agent["id"],
                 "availability_proxy_metric_collection_interval": monitored_resource_task_task_details_availability_proxy_metric_collection_interval,
                 "availability_proxy_metrics": monitored_resource_task_task_details_availability_proxy_metrics,
                 "console_path_prefix": monitored_resource_task_task_details_console_path_prefix,
                 "external_id_mapping": monitored_resource_task_task_details_external_id_mapping,
+                "handler_type": monitored_resource_task_task_details_handler_type,
+                "is_enable": monitored_resource_task_task_details_is_enable,
                 "lifecycle_status_mappings_for_up_statuses": monitored_resource_task_task_details_lifecycle_status_mappings_for_up_status,
+                "namespace": monitored_resource_task_task_details_namespace,
+                "receiver_properties": {
+                    "listener_port": monitored_resource_task_task_details_receiver_properties_listener_port,
+                },
                 "resource_group": monitored_resource_task_task_details_resource_group,
                 "resource_name_filter": monitored_resource_task_task_details_resource_name_filter,
                 "resource_name_mapping": monitored_resource_task_task_details_resource_name_mapping,
                 "resource_type_filter": monitored_resource_task_task_details_resource_type_filter,
                 "resource_type_mapping": monitored_resource_task_task_details_resource_type_mapping,
+                "resource_types_configurations": [{
+                    "availability_metrics_config": {
+                        "collection_interval_in_seconds": monitored_resource_task_task_details_resource_types_configuration_availability_metrics_config_collection_interval_in_seconds,
+                        "metrics": monitored_resource_task_task_details_resource_types_configuration_availability_metrics_config_metrics,
+                    },
+                    "handler_config": {
+                        "collectd_resource_name_config": {
+                            "exclude_properties": monitored_resource_task_task_details_resource_types_configuration_handler_config_collectd_resource_name_config_exclude_properties,
+                            "include_properties": monitored_resource_task_task_details_resource_types_configuration_handler_config_collectd_resource_name_config_include_properties,
+                            "suffix": monitored_resource_task_task_details_resource_types_configuration_handler_config_collectd_resource_name_config_suffix,
+                        },
+                        "collector_types": monitored_resource_task_task_details_resource_types_configuration_handler_config_collector_types,
+                        "handler_properties": [{
+                            "name": monitored_resource_task_task_details_resource_types_configuration_handler_config_handler_properties_name,
+                            "value": monitored_resource_task_task_details_resource_types_configuration_handler_config_handler_properties_value,
+                        }],
+                        "metric_mappings": [{
+                            "collector_metric_name": test_metric["name"],
+                            "is_skip_upload": monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_mappings_is_skip_upload,
+                            "metric_upload_interval_in_seconds": monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_mappings_metric_upload_interval_in_seconds,
+                            "telemetry_metric_name": test_metric["name"],
+                        }],
+                        "metric_name_config": {
+                            "exclude_pattern_on_prefix": monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_name_config_exclude_pattern_on_prefix,
+                            "is_prefix_with_collector_type": monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_name_config_is_prefix_with_collector_type,
+                        },
+                        "metric_upload_interval_in_seconds": monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_upload_interval_in_seconds,
+                        "telegraf_resource_name_config": {
+                            "exclude_tags": monitored_resource_task_task_details_resource_types_configuration_handler_config_telegraf_resource_name_config_exclude_tags,
+                            "include_tags": monitored_resource_task_task_details_resource_types_configuration_handler_config_telegraf_resource_name_config_include_tags,
+                            "is_use_tags_only": monitored_resource_task_task_details_resource_types_configuration_handler_config_telegraf_resource_name_config_is_use_tags_only,
+                        },
+                        "telemetry_resource_group": monitored_resource_task_task_details_resource_types_configuration_handler_config_telemetry_resource_group,
+                    },
+                    "resource_type": monitored_resource_task_task_details_resource_types_configuration_resource_type,
+                }],
                 "service_base_url": monitored_resource_task_task_details_service_base_url,
                 "should_use_metrics_flow_for_status": monitored_resource_task_task_details_should_use_metrics_flow_for_status,
+                "source": monitored_resource_task_task_details_source,
             },
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -375,21 +433,63 @@ class MonitoredResourceTask(pulumi.CustomResource):
         test_monitored_resource_task = oci.stack_monitoring.MonitoredResourceTask("test_monitored_resource_task",
             compartment_id=compartment_id,
             task_details={
-                "namespace": monitored_resource_task_task_details_namespace,
-                "source": monitored_resource_task_task_details_source,
                 "type": monitored_resource_task_task_details_type,
+                "agent_id": test_agent["id"],
                 "availability_proxy_metric_collection_interval": monitored_resource_task_task_details_availability_proxy_metric_collection_interval,
                 "availability_proxy_metrics": monitored_resource_task_task_details_availability_proxy_metrics,
                 "console_path_prefix": monitored_resource_task_task_details_console_path_prefix,
                 "external_id_mapping": monitored_resource_task_task_details_external_id_mapping,
+                "handler_type": monitored_resource_task_task_details_handler_type,
+                "is_enable": monitored_resource_task_task_details_is_enable,
                 "lifecycle_status_mappings_for_up_statuses": monitored_resource_task_task_details_lifecycle_status_mappings_for_up_status,
+                "namespace": monitored_resource_task_task_details_namespace,
+                "receiver_properties": {
+                    "listener_port": monitored_resource_task_task_details_receiver_properties_listener_port,
+                },
                 "resource_group": monitored_resource_task_task_details_resource_group,
                 "resource_name_filter": monitored_resource_task_task_details_resource_name_filter,
                 "resource_name_mapping": monitored_resource_task_task_details_resource_name_mapping,
                 "resource_type_filter": monitored_resource_task_task_details_resource_type_filter,
                 "resource_type_mapping": monitored_resource_task_task_details_resource_type_mapping,
+                "resource_types_configurations": [{
+                    "availability_metrics_config": {
+                        "collection_interval_in_seconds": monitored_resource_task_task_details_resource_types_configuration_availability_metrics_config_collection_interval_in_seconds,
+                        "metrics": monitored_resource_task_task_details_resource_types_configuration_availability_metrics_config_metrics,
+                    },
+                    "handler_config": {
+                        "collectd_resource_name_config": {
+                            "exclude_properties": monitored_resource_task_task_details_resource_types_configuration_handler_config_collectd_resource_name_config_exclude_properties,
+                            "include_properties": monitored_resource_task_task_details_resource_types_configuration_handler_config_collectd_resource_name_config_include_properties,
+                            "suffix": monitored_resource_task_task_details_resource_types_configuration_handler_config_collectd_resource_name_config_suffix,
+                        },
+                        "collector_types": monitored_resource_task_task_details_resource_types_configuration_handler_config_collector_types,
+                        "handler_properties": [{
+                            "name": monitored_resource_task_task_details_resource_types_configuration_handler_config_handler_properties_name,
+                            "value": monitored_resource_task_task_details_resource_types_configuration_handler_config_handler_properties_value,
+                        }],
+                        "metric_mappings": [{
+                            "collector_metric_name": test_metric["name"],
+                            "is_skip_upload": monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_mappings_is_skip_upload,
+                            "metric_upload_interval_in_seconds": monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_mappings_metric_upload_interval_in_seconds,
+                            "telemetry_metric_name": test_metric["name"],
+                        }],
+                        "metric_name_config": {
+                            "exclude_pattern_on_prefix": monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_name_config_exclude_pattern_on_prefix,
+                            "is_prefix_with_collector_type": monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_name_config_is_prefix_with_collector_type,
+                        },
+                        "metric_upload_interval_in_seconds": monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_upload_interval_in_seconds,
+                        "telegraf_resource_name_config": {
+                            "exclude_tags": monitored_resource_task_task_details_resource_types_configuration_handler_config_telegraf_resource_name_config_exclude_tags,
+                            "include_tags": monitored_resource_task_task_details_resource_types_configuration_handler_config_telegraf_resource_name_config_include_tags,
+                            "is_use_tags_only": monitored_resource_task_task_details_resource_types_configuration_handler_config_telegraf_resource_name_config_is_use_tags_only,
+                        },
+                        "telemetry_resource_group": monitored_resource_task_task_details_resource_types_configuration_handler_config_telemetry_resource_group,
+                    },
+                    "resource_type": monitored_resource_task_task_details_resource_types_configuration_resource_type,
+                }],
                 "service_base_url": monitored_resource_task_task_details_service_base_url,
                 "should_use_metrics_flow_for_status": monitored_resource_task_task_details_should_use_metrics_flow_for_status,
+                "source": monitored_resource_task_task_details_source,
             },
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -451,6 +551,7 @@ class MonitoredResourceTask(pulumi.CustomResource):
             __props__.__dict__["tenant_id"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
+            __props__.__dict__["type"] = None
             __props__.__dict__["work_request_ids"] = None
         super(MonitoredResourceTask, __self__).__init__(
             'oci:StackMonitoring/monitoredResourceTask:MonitoredResourceTask',
@@ -472,6 +573,7 @@ class MonitoredResourceTask(pulumi.CustomResource):
             tenant_id: Optional[pulumi.Input[builtins.str]] = None,
             time_created: Optional[pulumi.Input[builtins.str]] = None,
             time_updated: Optional[pulumi.Input[builtins.str]] = None,
+            type: Optional[pulumi.Input[builtins.str]] = None,
             work_request_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None) -> 'MonitoredResourceTask':
         """
         Get an existing MonitoredResourceTask resource's state with the given name, id, and optional extra
@@ -490,6 +592,7 @@ class MonitoredResourceTask(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] tenant_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
         :param pulumi.Input[builtins.str] time_created: The date and time when the stack monitoring resource task was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         :param pulumi.Input[builtins.str] time_updated: The date and time when the stack monitoring resource task was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+        :param pulumi.Input[builtins.str] type: Type of the task.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] work_request_ids: Identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for work requests submitted for this task.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -506,6 +609,7 @@ class MonitoredResourceTask(pulumi.CustomResource):
         __props__.__dict__["tenant_id"] = tenant_id
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
+        __props__.__dict__["type"] = type
         __props__.__dict__["work_request_ids"] = work_request_ids
         return MonitoredResourceTask(resource_name, opts=opts, __props__=__props__)
 
@@ -588,6 +692,14 @@ class MonitoredResourceTask(pulumi.CustomResource):
         The date and time when the stack monitoring resource task was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         """
         return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Output[builtins.str]:
+        """
+        Type of the task.
+        """
+        return pulumi.get(self, "type")
 
     @property
     @pulumi.getter(name="workRequestIds")

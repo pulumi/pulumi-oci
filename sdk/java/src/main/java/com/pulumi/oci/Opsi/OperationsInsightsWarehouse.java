@@ -51,6 +51,7 @@ import javax.annotation.Nullable;
  *             .compartmentId(compartmentId)
  *             .cpuAllocated(operationsInsightsWarehouseCpuAllocated)
  *             .displayName(operationsInsightsWarehouseDisplayName)
+ *             .computeModel(operationsInsightsWarehouseComputeModel)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .freeformTags(Map.of("bar-key", "value"))
  *             .storageAllocatedInGbs(operationsInsightsWarehouseStorageAllocatedInGbs)
@@ -88,14 +89,28 @@ public class OperationsInsightsWarehouse extends com.pulumi.resources.CustomReso
         return this.compartmentId;
     }
     /**
-     * (Updatable) Number of OCPUs allocated to OPSI Warehouse ADW.
+     * (Updatable) The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+     * 
+     */
+    @Export(name="computeModel", refs={String.class}, tree="[0]")
+    private Output<String> computeModel;
+
+    /**
+     * @return (Updatable) The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+     * 
+     */
+    public Output<String> computeModel() {
+        return this.computeModel;
+    }
+    /**
+     * (Updatable) Number of CPUs allocated to OPSI Warehouse ADW.
      * 
      */
     @Export(name="cpuAllocated", refs={Double.class}, tree="[0]")
     private Output<Double> cpuAllocated;
 
     /**
-     * @return (Updatable) Number of OCPUs allocated to OPSI Warehouse ADW.
+     * @return (Updatable) Number of CPUs allocated to OPSI Warehouse ADW.
      * 
      */
     public Output<Double> cpuAllocated() {

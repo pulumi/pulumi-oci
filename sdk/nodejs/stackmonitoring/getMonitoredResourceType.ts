@@ -48,7 +48,11 @@ export interface GetMonitoredResourceTypeResult {
      */
     readonly additionalNamespaceMap: {[key: string]: string};
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+     * Availability metrics details.
+     */
+    readonly availabilityMetricsConfigs: outputs.StackMonitoring.GetMonitoredResourceTypeAvailabilityMetricsConfig[];
+    /**
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     readonly compartmentId: string;
     /**
@@ -68,9 +72,17 @@ export interface GetMonitoredResourceTypeResult {
      */
     readonly freeformTags: {[key: string]: string};
     /**
+     * Specific resource mapping configurations for Agent Extension Handlers.
+     */
+    readonly handlerConfigs: outputs.StackMonitoring.GetMonitoredResourceTypeHandlerConfig[];
+    /**
      * Monitored resource type identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     readonly id: string;
+    /**
+     * If boolean flag is true, then the resource type cannot be modified or deleted.
+     */
+    readonly isSystemDefined: boolean;
     /**
      * The metadata details for resource type.
      */
@@ -100,6 +112,10 @@ export interface GetMonitoredResourceTypeResult {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
     readonly systemTags: {[key: string]: string};
+    /**
+     * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
+    readonly tenancyId: string;
     /**
      * The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      */

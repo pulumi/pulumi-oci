@@ -5,7 +5,10 @@ package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourceTypeAvailabilityMetricsConfig;
+import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourceTypeHandlerConfig;
 import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourceTypeMetadata;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -19,7 +22,12 @@ public final class GetMonitoredResourceTypeResult {
      */
     private Map<String,String> additionalNamespaceMap;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+     * @return Availability metrics details.
+     * 
+     */
+    private List<GetMonitoredResourceTypeAvailabilityMetricsConfig> availabilityMetricsConfigs;
+    /**
+     * @return Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     private String compartmentId;
@@ -44,10 +52,20 @@ public final class GetMonitoredResourceTypeResult {
      */
     private Map<String,String> freeformTags;
     /**
+     * @return Specific resource mapping configurations for Agent Extension Handlers.
+     * 
+     */
+    private List<GetMonitoredResourceTypeHandlerConfig> handlerConfigs;
+    /**
      * @return Monitored resource type identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     private String id;
+    /**
+     * @return If boolean flag is true, then the resource type cannot be modified or deleted.
+     * 
+     */
+    private Boolean isSystemDefined;
     /**
      * @return The metadata details for resource type.
      * 
@@ -85,6 +103,11 @@ public final class GetMonitoredResourceTypeResult {
      */
     private Map<String,String> systemTags;
     /**
+     * @return Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    private String tenancyId;
+    /**
      * @return The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * 
      */
@@ -104,7 +127,14 @@ public final class GetMonitoredResourceTypeResult {
         return this.additionalNamespaceMap;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+     * @return Availability metrics details.
+     * 
+     */
+    public List<GetMonitoredResourceTypeAvailabilityMetricsConfig> availabilityMetricsConfigs() {
+        return this.availabilityMetricsConfigs;
+    }
+    /**
+     * @return Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public String compartmentId() {
@@ -139,11 +169,25 @@ public final class GetMonitoredResourceTypeResult {
         return this.freeformTags;
     }
     /**
+     * @return Specific resource mapping configurations for Agent Extension Handlers.
+     * 
+     */
+    public List<GetMonitoredResourceTypeHandlerConfig> handlerConfigs() {
+        return this.handlerConfigs;
+    }
+    /**
      * @return Monitored resource type identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public String id() {
         return this.id;
+    }
+    /**
+     * @return If boolean flag is true, then the resource type cannot be modified or deleted.
+     * 
+     */
+    public Boolean isSystemDefined() {
+        return this.isSystemDefined;
     }
     /**
      * @return The metadata details for resource type.
@@ -198,6 +242,13 @@ public final class GetMonitoredResourceTypeResult {
         return this.systemTags;
     }
     /**
+     * @return Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    public String tenancyId() {
+        return this.tenancyId;
+    }
+    /**
      * @return The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * 
      */
@@ -222,12 +273,15 @@ public final class GetMonitoredResourceTypeResult {
     @CustomType.Builder
     public static final class Builder {
         private Map<String,String> additionalNamespaceMap;
+        private List<GetMonitoredResourceTypeAvailabilityMetricsConfig> availabilityMetricsConfigs;
         private String compartmentId;
         private Map<String,String> definedTags;
         private String description;
         private String displayName;
         private Map<String,String> freeformTags;
+        private List<GetMonitoredResourceTypeHandlerConfig> handlerConfigs;
         private String id;
+        private Boolean isSystemDefined;
         private List<GetMonitoredResourceTypeMetadata> metadatas;
         private String metricNamespace;
         private String monitoredResourceTypeId;
@@ -236,18 +290,22 @@ public final class GetMonitoredResourceTypeResult {
         private String sourceType;
         private String state;
         private Map<String,String> systemTags;
+        private String tenancyId;
         private String timeCreated;
         private String timeUpdated;
         public Builder() {}
         public Builder(GetMonitoredResourceTypeResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.additionalNamespaceMap = defaults.additionalNamespaceMap;
+    	      this.availabilityMetricsConfigs = defaults.availabilityMetricsConfigs;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
+    	      this.handlerConfigs = defaults.handlerConfigs;
     	      this.id = defaults.id;
+    	      this.isSystemDefined = defaults.isSystemDefined;
     	      this.metadatas = defaults.metadatas;
     	      this.metricNamespace = defaults.metricNamespace;
     	      this.monitoredResourceTypeId = defaults.monitoredResourceTypeId;
@@ -256,6 +314,7 @@ public final class GetMonitoredResourceTypeResult {
     	      this.sourceType = defaults.sourceType;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
+    	      this.tenancyId = defaults.tenancyId;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
         }
@@ -267,6 +326,17 @@ public final class GetMonitoredResourceTypeResult {
             }
             this.additionalNamespaceMap = additionalNamespaceMap;
             return this;
+        }
+        @CustomType.Setter
+        public Builder availabilityMetricsConfigs(List<GetMonitoredResourceTypeAvailabilityMetricsConfig> availabilityMetricsConfigs) {
+            if (availabilityMetricsConfigs == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTypeResult", "availabilityMetricsConfigs");
+            }
+            this.availabilityMetricsConfigs = availabilityMetricsConfigs;
+            return this;
+        }
+        public Builder availabilityMetricsConfigs(GetMonitoredResourceTypeAvailabilityMetricsConfig... availabilityMetricsConfigs) {
+            return availabilityMetricsConfigs(List.of(availabilityMetricsConfigs));
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
@@ -309,11 +379,30 @@ public final class GetMonitoredResourceTypeResult {
             return this;
         }
         @CustomType.Setter
+        public Builder handlerConfigs(List<GetMonitoredResourceTypeHandlerConfig> handlerConfigs) {
+            if (handlerConfigs == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTypeResult", "handlerConfigs");
+            }
+            this.handlerConfigs = handlerConfigs;
+            return this;
+        }
+        public Builder handlerConfigs(GetMonitoredResourceTypeHandlerConfig... handlerConfigs) {
+            return handlerConfigs(List.of(handlerConfigs));
+        }
+        @CustomType.Setter
         public Builder id(String id) {
             if (id == null) {
               throw new MissingRequiredPropertyException("GetMonitoredResourceTypeResult", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isSystemDefined(Boolean isSystemDefined) {
+            if (isSystemDefined == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTypeResult", "isSystemDefined");
+            }
+            this.isSystemDefined = isSystemDefined;
             return this;
         }
         @CustomType.Setter
@@ -384,6 +473,14 @@ public final class GetMonitoredResourceTypeResult {
             return this;
         }
         @CustomType.Setter
+        public Builder tenancyId(String tenancyId) {
+            if (tenancyId == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTypeResult", "tenancyId");
+            }
+            this.tenancyId = tenancyId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetMonitoredResourceTypeResult", "timeCreated");
@@ -402,12 +499,15 @@ public final class GetMonitoredResourceTypeResult {
         public GetMonitoredResourceTypeResult build() {
             final var _resultValue = new GetMonitoredResourceTypeResult();
             _resultValue.additionalNamespaceMap = additionalNamespaceMap;
+            _resultValue.availabilityMetricsConfigs = availabilityMetricsConfigs;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
+            _resultValue.handlerConfigs = handlerConfigs;
             _resultValue.id = id;
+            _resultValue.isSystemDefined = isSystemDefined;
             _resultValue.metadatas = metadatas;
             _resultValue.metricNamespace = metricNamespace;
             _resultValue.monitoredResourceTypeId = monitoredResourceTypeId;
@@ -416,6 +516,7 @@ public final class GetMonitoredResourceTypeResult {
             _resultValue.sourceType = sourceType;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
+            _resultValue.tenancyId = tenancyId;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             return _resultValue;

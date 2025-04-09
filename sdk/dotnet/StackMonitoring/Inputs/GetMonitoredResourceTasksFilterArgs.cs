@@ -13,7 +13,7 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
     public sealed class GetMonitoredResourceTasksFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Name of the task.
+        /// Property name.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;

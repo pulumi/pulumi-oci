@@ -27,10 +27,13 @@ class GetOperationsInsightsWarehouseResult:
     """
     A collection of values returned by getOperationsInsightsWarehouse.
     """
-    def __init__(__self__, compartment_id=None, cpu_allocated=None, cpu_used=None, defined_tags=None, display_name=None, dynamic_group_id=None, freeform_tags=None, id=None, lifecycle_details=None, operations_insights_tenancy_id=None, operations_insights_warehouse_id=None, state=None, storage_allocated_in_gbs=None, storage_used_in_gbs=None, system_tags=None, time_created=None, time_last_wallet_rotated=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, compute_model=None, cpu_allocated=None, cpu_used=None, defined_tags=None, display_name=None, dynamic_group_id=None, freeform_tags=None, id=None, lifecycle_details=None, operations_insights_tenancy_id=None, operations_insights_warehouse_id=None, state=None, storage_allocated_in_gbs=None, storage_used_in_gbs=None, system_tags=None, time_created=None, time_last_wallet_rotated=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if compute_model and not isinstance(compute_model, str):
+            raise TypeError("Expected argument 'compute_model' to be a str")
+        pulumi.set(__self__, "compute_model", compute_model)
         if cpu_allocated and not isinstance(cpu_allocated, float):
             raise TypeError("Expected argument 'cpu_allocated' to be a float")
         pulumi.set(__self__, "cpu_allocated", cpu_allocated)
@@ -92,10 +95,18 @@ class GetOperationsInsightsWarehouseResult:
         return pulumi.get(self, "compartment_id")
 
     @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> builtins.str:
+        """
+        The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+        """
+        return pulumi.get(self, "compute_model")
+
+    @property
     @pulumi.getter(name="cpuAllocated")
     def cpu_allocated(self) -> builtins.float:
         """
-        Number of OCPUs allocated to OPSI Warehouse ADW.
+        Number of CPUs allocated to OPSI Warehouse ADW.
         """
         return pulumi.get(self, "cpu_allocated")
 
@@ -232,6 +243,7 @@ class AwaitableGetOperationsInsightsWarehouseResult(GetOperationsInsightsWarehou
             yield self
         return GetOperationsInsightsWarehouseResult(
             compartment_id=self.compartment_id,
+            compute_model=self.compute_model,
             cpu_allocated=self.cpu_allocated,
             cpu_used=self.cpu_used,
             defined_tags=self.defined_tags,
@@ -278,6 +290,7 @@ def get_operations_insights_warehouse(operations_insights_warehouse_id: Optional
 
     return AwaitableGetOperationsInsightsWarehouseResult(
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compute_model=pulumi.get(__ret__, 'compute_model'),
         cpu_allocated=pulumi.get(__ret__, 'cpu_allocated'),
         cpu_used=pulumi.get(__ret__, 'cpu_used'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
@@ -321,6 +334,7 @@ def get_operations_insights_warehouse_output(operations_insights_warehouse_id: O
     __ret__ = pulumi.runtime.invoke_output('oci:Opsi/getOperationsInsightsWarehouse:getOperationsInsightsWarehouse', __args__, opts=opts, typ=GetOperationsInsightsWarehouseResult)
     return __ret__.apply(lambda __response__: GetOperationsInsightsWarehouseResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compute_model=pulumi.get(__response__, 'compute_model'),
         cpu_allocated=pulumi.get(__response__, 'cpu_allocated'),
         cpu_used=pulumi.get(__response__, 'cpu_used'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),

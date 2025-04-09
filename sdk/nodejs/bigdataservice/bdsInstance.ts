@@ -163,7 +163,7 @@ export class BdsInstance extends pulumi.CustomResource {
      */
     public readonly osPatchVersion!: pulumi.Output<string | undefined>;
     /**
-     * (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+     * (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
      */
     public readonly removeNode!: pulumi.Output<string | undefined>;
     public readonly startClusterShapeConfigs!: pulumi.Output<outputs.BigDataService.BdsInstanceStartClusterShapeConfig[] | undefined>;
@@ -434,7 +434,7 @@ export interface BdsInstanceState {
      */
     osPatchVersion?: pulumi.Input<string>;
     /**
-     * (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+     * (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
      */
     removeNode?: pulumi.Input<string>;
     startClusterShapeConfigs?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceStartClusterShapeConfig>[]>;
@@ -557,7 +557,7 @@ export interface BdsInstanceArgs {
      */
     osPatchVersion?: pulumi.Input<string>;
     /**
-     * (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+     * (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
      */
     removeNode?: pulumi.Input<string>;
     startClusterShapeConfigs?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceStartClusterShapeConfig>[]>;

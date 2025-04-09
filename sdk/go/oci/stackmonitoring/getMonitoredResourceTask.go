@@ -67,7 +67,7 @@ type LookupMonitoredResourceTaskResult struct {
 	// Task identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id                      string `pulumi:"id"`
 	MonitoredResourceTaskId string `pulumi:"monitoredResourceTaskId"`
-	// Name of the task.
+	// Property name.
 	Name string `pulumi:"name"`
 	// The current state of the stack monitoring resource task.
 	State string `pulumi:"state"`
@@ -81,6 +81,8 @@ type LookupMonitoredResourceTaskResult struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time when the stack monitoring resource task was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 	TimeUpdated string `pulumi:"timeUpdated"`
+	// Type of the task.
+	Type string `pulumi:"type"`
 	// Identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for work requests submitted for this task.
 	WorkRequestIds []string `pulumi:"workRequestIds"`
 }
@@ -143,7 +145,7 @@ func (o LookupMonitoredResourceTaskResultOutput) MonitoredResourceTaskId() pulum
 	return o.ApplyT(func(v LookupMonitoredResourceTaskResult) string { return v.MonitoredResourceTaskId }).(pulumi.StringOutput)
 }
 
-// Name of the task.
+// Property name.
 func (o LookupMonitoredResourceTaskResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMonitoredResourceTaskResult) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -176,6 +178,11 @@ func (o LookupMonitoredResourceTaskResultOutput) TimeCreated() pulumi.StringOutp
 // The date and time when the stack monitoring resource task was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 func (o LookupMonitoredResourceTaskResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMonitoredResourceTaskResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// Type of the task.
+func (o LookupMonitoredResourceTaskResultOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceTaskResult) string { return v.Type }).(pulumi.StringOutput)
 }
 
 // Identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for work requests submitted for this task.

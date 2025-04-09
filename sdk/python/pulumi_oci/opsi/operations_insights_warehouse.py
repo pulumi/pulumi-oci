@@ -23,14 +23,16 @@ class OperationsInsightsWarehouseArgs:
                  compartment_id: pulumi.Input[builtins.str],
                  cpu_allocated: pulumi.Input[builtins.float],
                  display_name: pulumi.Input[builtins.str],
+                 compute_model: Optional[pulumi.Input[builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  storage_allocated_in_gbs: Optional[pulumi.Input[builtins.float]] = None):
         """
         The set of arguments for constructing a OperationsInsightsWarehouse resource.
         :param pulumi.Input[builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[builtins.float] cpu_allocated: (Updatable) Number of OCPUs allocated to OPSI Warehouse ADW.
+        :param pulumi.Input[builtins.float] cpu_allocated: (Updatable) Number of CPUs allocated to OPSI Warehouse ADW.
         :param pulumi.Input[builtins.str] display_name: (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
+        :param pulumi.Input[builtins.str] compute_model: (Updatable) The compute model for the OPSI warehouse ADW (OCPU or ECPU)
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[builtins.float] storage_allocated_in_gbs: (Updatable) Storage allocated to OPSI Warehouse ADW. 
@@ -42,6 +44,8 @@ class OperationsInsightsWarehouseArgs:
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "cpu_allocated", cpu_allocated)
         pulumi.set(__self__, "display_name", display_name)
+        if compute_model is not None:
+            pulumi.set(__self__, "compute_model", compute_model)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
@@ -65,7 +69,7 @@ class OperationsInsightsWarehouseArgs:
     @pulumi.getter(name="cpuAllocated")
     def cpu_allocated(self) -> pulumi.Input[builtins.float]:
         """
-        (Updatable) Number of OCPUs allocated to OPSI Warehouse ADW.
+        (Updatable) Number of CPUs allocated to OPSI Warehouse ADW.
         """
         return pulumi.get(self, "cpu_allocated")
 
@@ -84,6 +88,18 @@ class OperationsInsightsWarehouseArgs:
     @display_name.setter
     def display_name(self, value: pulumi.Input[builtins.str]):
         pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+        """
+        return pulumi.get(self, "compute_model")
+
+    @compute_model.setter
+    def compute_model(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "compute_model", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -130,6 +146,7 @@ class OperationsInsightsWarehouseArgs:
 class _OperationsInsightsWarehouseState:
     def __init__(__self__, *,
                  compartment_id: Optional[pulumi.Input[builtins.str]] = None,
+                 compute_model: Optional[pulumi.Input[builtins.str]] = None,
                  cpu_allocated: Optional[pulumi.Input[builtins.float]] = None,
                  cpu_used: Optional[pulumi.Input[builtins.float]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
@@ -148,7 +165,8 @@ class _OperationsInsightsWarehouseState:
         """
         Input properties used for looking up and filtering OperationsInsightsWarehouse resources.
         :param pulumi.Input[builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[builtins.float] cpu_allocated: (Updatable) Number of OCPUs allocated to OPSI Warehouse ADW.
+        :param pulumi.Input[builtins.str] compute_model: (Updatable) The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+        :param pulumi.Input[builtins.float] cpu_allocated: (Updatable) Number of CPUs allocated to OPSI Warehouse ADW.
         :param pulumi.Input[builtins.float] cpu_used: Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[builtins.str] display_name: (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
@@ -170,6 +188,8 @@ class _OperationsInsightsWarehouseState:
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if compute_model is not None:
+            pulumi.set(__self__, "compute_model", compute_model)
         if cpu_allocated is not None:
             pulumi.set(__self__, "cpu_allocated", cpu_allocated)
         if cpu_used is not None:
@@ -214,10 +234,22 @@ class _OperationsInsightsWarehouseState:
         pulumi.set(self, "compartment_id", value)
 
     @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+        """
+        return pulumi.get(self, "compute_model")
+
+    @compute_model.setter
+    def compute_model(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "compute_model", value)
+
+    @property
     @pulumi.getter(name="cpuAllocated")
     def cpu_allocated(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        (Updatable) Number of OCPUs allocated to OPSI Warehouse ADW.
+        (Updatable) Number of CPUs allocated to OPSI Warehouse ADW.
         """
         return pulumi.get(self, "cpu_allocated")
 
@@ -404,6 +436,7 @@ class OperationsInsightsWarehouse(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[builtins.str]] = None,
+                 compute_model: Optional[pulumi.Input[builtins.str]] = None,
                  cpu_allocated: Optional[pulumi.Input[builtins.float]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
@@ -427,6 +460,7 @@ class OperationsInsightsWarehouse(pulumi.CustomResource):
             compartment_id=compartment_id,
             cpu_allocated=operations_insights_warehouse_cpu_allocated,
             display_name=operations_insights_warehouse_display_name,
+            compute_model=operations_insights_warehouse_compute_model,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -447,7 +481,8 @@ class OperationsInsightsWarehouse(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[builtins.float] cpu_allocated: (Updatable) Number of OCPUs allocated to OPSI Warehouse ADW.
+        :param pulumi.Input[builtins.str] compute_model: (Updatable) The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+        :param pulumi.Input[builtins.float] cpu_allocated: (Updatable) Number of CPUs allocated to OPSI Warehouse ADW.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[builtins.str] display_name: (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -480,6 +515,7 @@ class OperationsInsightsWarehouse(pulumi.CustomResource):
             compartment_id=compartment_id,
             cpu_allocated=operations_insights_warehouse_cpu_allocated,
             display_name=operations_insights_warehouse_display_name,
+            compute_model=operations_insights_warehouse_compute_model,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -513,6 +549,7 @@ class OperationsInsightsWarehouse(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[builtins.str]] = None,
+                 compute_model: Optional[pulumi.Input[builtins.str]] = None,
                  cpu_allocated: Optional[pulumi.Input[builtins.float]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
@@ -530,6 +567,7 @@ class OperationsInsightsWarehouse(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
+            __props__.__dict__["compute_model"] = compute_model
             if cpu_allocated is None and not opts.urn:
                 raise TypeError("Missing required property 'cpu_allocated'")
             __props__.__dict__["cpu_allocated"] = cpu_allocated
@@ -560,6 +598,7 @@ class OperationsInsightsWarehouse(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[builtins.str]] = None,
+            compute_model: Optional[pulumi.Input[builtins.str]] = None,
             cpu_allocated: Optional[pulumi.Input[builtins.float]] = None,
             cpu_used: Optional[pulumi.Input[builtins.float]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
@@ -583,7 +622,8 @@ class OperationsInsightsWarehouse(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[builtins.float] cpu_allocated: (Updatable) Number of OCPUs allocated to OPSI Warehouse ADW.
+        :param pulumi.Input[builtins.str] compute_model: (Updatable) The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+        :param pulumi.Input[builtins.float] cpu_allocated: (Updatable) Number of CPUs allocated to OPSI Warehouse ADW.
         :param pulumi.Input[builtins.float] cpu_used: Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[builtins.str] display_name: (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
@@ -608,6 +648,7 @@ class OperationsInsightsWarehouse(pulumi.CustomResource):
         __props__ = _OperationsInsightsWarehouseState.__new__(_OperationsInsightsWarehouseState)
 
         __props__.__dict__["compartment_id"] = compartment_id
+        __props__.__dict__["compute_model"] = compute_model
         __props__.__dict__["cpu_allocated"] = cpu_allocated
         __props__.__dict__["cpu_used"] = cpu_used
         __props__.__dict__["defined_tags"] = defined_tags
@@ -634,10 +675,18 @@ class OperationsInsightsWarehouse(pulumi.CustomResource):
         return pulumi.get(self, "compartment_id")
 
     @property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> pulumi.Output[builtins.str]:
+        """
+        (Updatable) The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+        """
+        return pulumi.get(self, "compute_model")
+
+    @property
     @pulumi.getter(name="cpuAllocated")
     def cpu_allocated(self) -> pulumi.Output[builtins.float]:
         """
-        (Updatable) Number of OCPUs allocated to OPSI Warehouse ADW.
+        (Updatable) Number of CPUs allocated to OPSI Warehouse ADW.
         """
         return pulumi.get(self, "cpu_allocated")
 

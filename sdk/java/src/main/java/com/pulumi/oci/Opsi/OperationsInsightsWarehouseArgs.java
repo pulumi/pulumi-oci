@@ -34,14 +34,29 @@ public final class OperationsInsightsWarehouseArgs extends com.pulumi.resources.
     }
 
     /**
-     * (Updatable) Number of OCPUs allocated to OPSI Warehouse ADW.
+     * (Updatable) The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+     * 
+     */
+    @Import(name="computeModel")
+    private @Nullable Output<String> computeModel;
+
+    /**
+     * @return (Updatable) The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+     * 
+     */
+    public Optional<Output<String>> computeModel() {
+        return Optional.ofNullable(this.computeModel);
+    }
+
+    /**
+     * (Updatable) Number of CPUs allocated to OPSI Warehouse ADW.
      * 
      */
     @Import(name="cpuAllocated", required=true)
     private Output<Double> cpuAllocated;
 
     /**
-     * @return (Updatable) Number of OCPUs allocated to OPSI Warehouse ADW.
+     * @return (Updatable) Number of CPUs allocated to OPSI Warehouse ADW.
      * 
      */
     public Output<Double> cpuAllocated() {
@@ -118,6 +133,7 @@ public final class OperationsInsightsWarehouseArgs extends com.pulumi.resources.
 
     private OperationsInsightsWarehouseArgs(OperationsInsightsWarehouseArgs $) {
         this.compartmentId = $.compartmentId;
+        this.computeModel = $.computeModel;
         this.cpuAllocated = $.cpuAllocated;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
@@ -165,7 +181,28 @@ public final class OperationsInsightsWarehouseArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param cpuAllocated (Updatable) Number of OCPUs allocated to OPSI Warehouse ADW.
+         * @param computeModel (Updatable) The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeModel(@Nullable Output<String> computeModel) {
+            $.computeModel = computeModel;
+            return this;
+        }
+
+        /**
+         * @param computeModel (Updatable) The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeModel(String computeModel) {
+            return computeModel(Output.of(computeModel));
+        }
+
+        /**
+         * @param cpuAllocated (Updatable) Number of CPUs allocated to OPSI Warehouse ADW.
          * 
          * @return builder
          * 
@@ -176,7 +213,7 @@ public final class OperationsInsightsWarehouseArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param cpuAllocated (Updatable) Number of OCPUs allocated to OPSI Warehouse ADW.
+         * @param cpuAllocated (Updatable) Number of CPUs allocated to OPSI Warehouse ADW.
          * 
          * @return builder
          * 

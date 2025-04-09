@@ -79,7 +79,7 @@ class BdsInstanceArgs:
         :param pulumi.Input[builtins.str] kms_key_id: (Updatable) The OCID of the Key Management master encryption key.
         :param pulumi.Input['BdsInstanceNetworkConfigArgs'] network_config: (Updatable) Additional configuration of the user's network.
         :param pulumi.Input[builtins.str] os_patch_version: (Updatable) The version of the patch to be upated.
-        :param pulumi.Input[builtins.str] remove_node: (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+        :param pulumi.Input[builtins.str] remove_node: (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
         :param pulumi.Input[builtins.str] state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         """
         pulumi.set(__self__, "cluster_admin_password", cluster_admin_password)
@@ -463,7 +463,7 @@ class BdsInstanceArgs:
     @pulumi.getter(name="removeNode")
     def remove_node(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+        (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
         """
         return pulumi.get(self, "remove_node")
 
@@ -564,7 +564,7 @@ class _BdsInstanceState:
         :param pulumi.Input[builtins.int] number_of_nodes: Number of nodes that forming the cluster
         :param pulumi.Input[builtins.int] number_of_nodes_requiring_maintenance_reboot: Number of nodes that require a maintenance reboot
         :param pulumi.Input[builtins.str] os_patch_version: (Updatable) The version of the patch to be upated.
-        :param pulumi.Input[builtins.str] remove_node: (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+        :param pulumi.Input[builtins.str] remove_node: (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
         :param pulumi.Input[builtins.str] state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         :param pulumi.Input[builtins.str] time_created: The time the BDS instance was created. An RFC3339 formatted datetime string
         :param pulumi.Input[builtins.str] time_updated: The time the BDS instance was updated. An RFC3339 formatted datetime string
@@ -1014,7 +1014,7 @@ class _BdsInstanceState:
     @pulumi.getter(name="removeNode")
     def remove_node(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+        (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
         """
         return pulumi.get(self, "remove_node")
 
@@ -1164,7 +1164,7 @@ class BdsInstance(pulumi.CustomResource):
         :param pulumi.Input[Union['BdsInstanceMasterNodeArgs', 'BdsInstanceMasterNodeArgsDict']] master_node: The master node in the BDS instance
         :param pulumi.Input[Union['BdsInstanceNetworkConfigArgs', 'BdsInstanceNetworkConfigArgsDict']] network_config: (Updatable) Additional configuration of the user's network.
         :param pulumi.Input[builtins.str] os_patch_version: (Updatable) The version of the patch to be upated.
-        :param pulumi.Input[builtins.str] remove_node: (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+        :param pulumi.Input[builtins.str] remove_node: (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
         :param pulumi.Input[builtins.str] state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         :param pulumi.Input[Union['BdsInstanceUtilNodeArgs', 'BdsInstanceUtilNodeArgsDict']] util_node: The utility node in the BDS instance
         """
@@ -1385,7 +1385,7 @@ class BdsInstance(pulumi.CustomResource):
         :param pulumi.Input[builtins.int] number_of_nodes: Number of nodes that forming the cluster
         :param pulumi.Input[builtins.int] number_of_nodes_requiring_maintenance_reboot: Number of nodes that require a maintenance reboot
         :param pulumi.Input[builtins.str] os_patch_version: (Updatable) The version of the patch to be upated.
-        :param pulumi.Input[builtins.str] remove_node: (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+        :param pulumi.Input[builtins.str] remove_node: (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
         :param pulumi.Input[builtins.str] state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         :param pulumi.Input[builtins.str] time_created: The time the BDS instance was created. An RFC3339 formatted datetime string
         :param pulumi.Input[builtins.str] time_updated: The time the BDS instance was updated. An RFC3339 formatted datetime string
@@ -1678,7 +1678,7 @@ class BdsInstance(pulumi.CustomResource):
     @pulumi.getter(name="removeNode")
     def remove_node(self) -> pulumi.Output[Optional[builtins.str]]:
         """
-        (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+        (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
         """
         return pulumi.get(self, "remove_node")
 

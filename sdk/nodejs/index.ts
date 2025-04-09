@@ -83,6 +83,7 @@ import * as limits from "./limits";
 import * as loadbalancer from "./loadbalancer";
 import * as loganalytics from "./loganalytics";
 import * as logging from "./logging";
+import * as lustre from "./lustre";
 import * as managementagent from "./managementagent";
 import * as managementdashboard from "./managementdashboard";
 import * as marketplace from "./marketplace";
@@ -95,6 +96,7 @@ import * as networkloadbalancer from "./networkloadbalancer";
 import * as nosql from "./nosql";
 import * as objectstorage from "./objectstorage";
 import * as oce from "./oce";
+import * as oci from "./oci";
 import * as ocvp from "./ocvp";
 import * as oda from "./oda";
 import * as onesubsription from "./onesubsription";
@@ -210,6 +212,7 @@ export {
     loadbalancer,
     loganalytics,
     logging,
+    lustre,
     managementagent,
     managementdashboard,
     marketplace,
@@ -222,6 +225,7 @@ export {
     nosql,
     objectstorage,
     oce,
+    oci,
     ocvp,
     oda,
     onesubsription,

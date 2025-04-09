@@ -5,6 +5,8 @@ package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.StackMonitoring.outputs.MonitoredResourceTaskTaskDetailsReceiverProperties;
+import com.pulumi.oci.StackMonitoring.outputs.MonitoredResourceTaskTaskDetailsResourceTypesConfiguration;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -16,12 +18,17 @@ import javax.annotation.Nullable;
 @CustomType
 public final class MonitoredResourceTaskTaskDetails {
     /**
+     * @return Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    private @Nullable String agentId;
+    /**
      * @return Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property &#39;availabilityProxyMetrics&#39;.
      * 
      */
     private @Nullable Integer availabilityProxyMetricCollectionInterval;
     /**
-     * @return List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property &#39;availabilityProxyMetricCollectionIntervalInSeconds&#39;. If no metrics are specified, availability will not be calculated for the resource.
+     * @return List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  &#39;availabilityProxyMetricCollectionInterval&#39;. If no metrics are specified, availability will not be calculated for the resource.
      * 
      */
     private @Nullable List<String> availabilityProxyMetrics;
@@ -36,6 +43,16 @@ public final class MonitoredResourceTaskTaskDetails {
      */
     private @Nullable String externalIdMapping;
     /**
+     * @return Type of the handler.
+     * 
+     */
+    private @Nullable String handlerType;
+    /**
+     * @return True to enable the receiver and false to disable the receiver on the agent.
+     * 
+     */
+    private @Nullable Boolean isEnable;
+    /**
      * @return Lifecycle states of the external resource which reflects the status of the resource being up.
      * 
      */
@@ -44,7 +61,12 @@ public final class MonitoredResourceTaskTaskDetails {
      * @return Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
      * 
      */
-    private String namespace;
+    private @Nullable String namespace;
+    /**
+     * @return Properties for agent receiver.
+     * 
+     */
+    private @Nullable MonitoredResourceTaskTaskDetailsReceiverProperties receiverProperties;
     /**
      * @return The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
      * 
@@ -71,6 +93,11 @@ public final class MonitoredResourceTaskTaskDetails {
      */
     private @Nullable String resourceTypeMapping;
     /**
+     * @return A collection of resource type configuration details. User can provide  availability proxy metrics list for resource types along with the  telegraf/collectd handler configuration for the resource types.
+     * 
+     */
+    private @Nullable List<MonitoredResourceTaskTaskDetailsResourceTypesConfiguration> resourceTypesConfigurations;
+    /**
      * @return The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
      * 
      */
@@ -84,9 +111,11 @@ public final class MonitoredResourceTaskTaskDetails {
      * @return Source from where the metrics pushed to telemetry. Possible values:
      * * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
      * * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+     * * OCI_TELEMETRY_TELEGRAF    - The metrics are pushed to telemetry from Telegraf receiver.
+     * * OCI_TELEMETRY_COLLECTD    - The metrics are pushed to telemetry from CollectD receiver.
      * 
      */
-    private String source;
+    private @Nullable String source;
     /**
      * @return Task type.
      * 
@@ -98,6 +127,13 @@ public final class MonitoredResourceTaskTaskDetails {
 
     private MonitoredResourceTaskTaskDetails() {}
     /**
+     * @return Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    public Optional<String> agentId() {
+        return Optional.ofNullable(this.agentId);
+    }
+    /**
      * @return Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property &#39;availabilityProxyMetrics&#39;.
      * 
      */
@@ -105,7 +141,7 @@ public final class MonitoredResourceTaskTaskDetails {
         return Optional.ofNullable(this.availabilityProxyMetricCollectionInterval);
     }
     /**
-     * @return List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property &#39;availabilityProxyMetricCollectionIntervalInSeconds&#39;. If no metrics are specified, availability will not be calculated for the resource.
+     * @return List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  &#39;availabilityProxyMetricCollectionInterval&#39;. If no metrics are specified, availability will not be calculated for the resource.
      * 
      */
     public List<String> availabilityProxyMetrics() {
@@ -126,6 +162,20 @@ public final class MonitoredResourceTaskTaskDetails {
         return Optional.ofNullable(this.externalIdMapping);
     }
     /**
+     * @return Type of the handler.
+     * 
+     */
+    public Optional<String> handlerType() {
+        return Optional.ofNullable(this.handlerType);
+    }
+    /**
+     * @return True to enable the receiver and false to disable the receiver on the agent.
+     * 
+     */
+    public Optional<Boolean> isEnable() {
+        return Optional.ofNullable(this.isEnable);
+    }
+    /**
      * @return Lifecycle states of the external resource which reflects the status of the resource being up.
      * 
      */
@@ -136,8 +186,15 @@ public final class MonitoredResourceTaskTaskDetails {
      * @return Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
      * 
      */
-    public String namespace() {
-        return this.namespace;
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
+    }
+    /**
+     * @return Properties for agent receiver.
+     * 
+     */
+    public Optional<MonitoredResourceTaskTaskDetailsReceiverProperties> receiverProperties() {
+        return Optional.ofNullable(this.receiverProperties);
     }
     /**
      * @return The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
@@ -175,6 +232,13 @@ public final class MonitoredResourceTaskTaskDetails {
         return Optional.ofNullable(this.resourceTypeMapping);
     }
     /**
+     * @return A collection of resource type configuration details. User can provide  availability proxy metrics list for resource types along with the  telegraf/collectd handler configuration for the resource types.
+     * 
+     */
+    public List<MonitoredResourceTaskTaskDetailsResourceTypesConfiguration> resourceTypesConfigurations() {
+        return this.resourceTypesConfigurations == null ? List.of() : this.resourceTypesConfigurations;
+    }
+    /**
      * @return The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
      * 
      */
@@ -192,10 +256,12 @@ public final class MonitoredResourceTaskTaskDetails {
      * @return Source from where the metrics pushed to telemetry. Possible values:
      * * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
      * * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+     * * OCI_TELEMETRY_TELEGRAF    - The metrics are pushed to telemetry from Telegraf receiver.
+     * * OCI_TELEMETRY_COLLECTD    - The metrics are pushed to telemetry from CollectD receiver.
      * 
      */
-    public String source() {
-        return this.source;
+    public Optional<String> source() {
+        return Optional.ofNullable(this.source);
     }
     /**
      * @return Task type.
@@ -217,41 +283,57 @@ public final class MonitoredResourceTaskTaskDetails {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String agentId;
         private @Nullable Integer availabilityProxyMetricCollectionInterval;
         private @Nullable List<String> availabilityProxyMetrics;
         private @Nullable String consolePathPrefix;
         private @Nullable String externalIdMapping;
+        private @Nullable String handlerType;
+        private @Nullable Boolean isEnable;
         private @Nullable List<String> lifecycleStatusMappingsForUpStatuses;
-        private String namespace;
+        private @Nullable String namespace;
+        private @Nullable MonitoredResourceTaskTaskDetailsReceiverProperties receiverProperties;
         private @Nullable String resourceGroup;
         private @Nullable String resourceNameFilter;
         private @Nullable String resourceNameMapping;
         private @Nullable String resourceTypeFilter;
         private @Nullable String resourceTypeMapping;
+        private @Nullable List<MonitoredResourceTaskTaskDetailsResourceTypesConfiguration> resourceTypesConfigurations;
         private @Nullable String serviceBaseUrl;
         private @Nullable Boolean shouldUseMetricsFlowForStatus;
-        private String source;
+        private @Nullable String source;
         private String type;
         public Builder() {}
         public Builder(MonitoredResourceTaskTaskDetails defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.agentId = defaults.agentId;
     	      this.availabilityProxyMetricCollectionInterval = defaults.availabilityProxyMetricCollectionInterval;
     	      this.availabilityProxyMetrics = defaults.availabilityProxyMetrics;
     	      this.consolePathPrefix = defaults.consolePathPrefix;
     	      this.externalIdMapping = defaults.externalIdMapping;
+    	      this.handlerType = defaults.handlerType;
+    	      this.isEnable = defaults.isEnable;
     	      this.lifecycleStatusMappingsForUpStatuses = defaults.lifecycleStatusMappingsForUpStatuses;
     	      this.namespace = defaults.namespace;
+    	      this.receiverProperties = defaults.receiverProperties;
     	      this.resourceGroup = defaults.resourceGroup;
     	      this.resourceNameFilter = defaults.resourceNameFilter;
     	      this.resourceNameMapping = defaults.resourceNameMapping;
     	      this.resourceTypeFilter = defaults.resourceTypeFilter;
     	      this.resourceTypeMapping = defaults.resourceTypeMapping;
+    	      this.resourceTypesConfigurations = defaults.resourceTypesConfigurations;
     	      this.serviceBaseUrl = defaults.serviceBaseUrl;
     	      this.shouldUseMetricsFlowForStatus = defaults.shouldUseMetricsFlowForStatus;
     	      this.source = defaults.source;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
+        public Builder agentId(@Nullable String agentId) {
+
+            this.agentId = agentId;
+            return this;
+        }
         @CustomType.Setter
         public Builder availabilityProxyMetricCollectionInterval(@Nullable Integer availabilityProxyMetricCollectionInterval) {
 
@@ -280,6 +362,18 @@ public final class MonitoredResourceTaskTaskDetails {
             return this;
         }
         @CustomType.Setter
+        public Builder handlerType(@Nullable String handlerType) {
+
+            this.handlerType = handlerType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isEnable(@Nullable Boolean isEnable) {
+
+            this.isEnable = isEnable;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleStatusMappingsForUpStatuses(@Nullable List<String> lifecycleStatusMappingsForUpStatuses) {
 
             this.lifecycleStatusMappingsForUpStatuses = lifecycleStatusMappingsForUpStatuses;
@@ -289,11 +383,15 @@ public final class MonitoredResourceTaskTaskDetails {
             return lifecycleStatusMappingsForUpStatuses(List.of(lifecycleStatusMappingsForUpStatuses));
         }
         @CustomType.Setter
-        public Builder namespace(String namespace) {
-            if (namespace == null) {
-              throw new MissingRequiredPropertyException("MonitoredResourceTaskTaskDetails", "namespace");
-            }
+        public Builder namespace(@Nullable String namespace) {
+
             this.namespace = namespace;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder receiverProperties(@Nullable MonitoredResourceTaskTaskDetailsReceiverProperties receiverProperties) {
+
+            this.receiverProperties = receiverProperties;
             return this;
         }
         @CustomType.Setter
@@ -327,6 +425,15 @@ public final class MonitoredResourceTaskTaskDetails {
             return this;
         }
         @CustomType.Setter
+        public Builder resourceTypesConfigurations(@Nullable List<MonitoredResourceTaskTaskDetailsResourceTypesConfiguration> resourceTypesConfigurations) {
+
+            this.resourceTypesConfigurations = resourceTypesConfigurations;
+            return this;
+        }
+        public Builder resourceTypesConfigurations(MonitoredResourceTaskTaskDetailsResourceTypesConfiguration... resourceTypesConfigurations) {
+            return resourceTypesConfigurations(List.of(resourceTypesConfigurations));
+        }
+        @CustomType.Setter
         public Builder serviceBaseUrl(@Nullable String serviceBaseUrl) {
 
             this.serviceBaseUrl = serviceBaseUrl;
@@ -339,10 +446,8 @@ public final class MonitoredResourceTaskTaskDetails {
             return this;
         }
         @CustomType.Setter
-        public Builder source(String source) {
-            if (source == null) {
-              throw new MissingRequiredPropertyException("MonitoredResourceTaskTaskDetails", "source");
-            }
+        public Builder source(@Nullable String source) {
+
             this.source = source;
             return this;
         }
@@ -356,17 +461,22 @@ public final class MonitoredResourceTaskTaskDetails {
         }
         public MonitoredResourceTaskTaskDetails build() {
             final var _resultValue = new MonitoredResourceTaskTaskDetails();
+            _resultValue.agentId = agentId;
             _resultValue.availabilityProxyMetricCollectionInterval = availabilityProxyMetricCollectionInterval;
             _resultValue.availabilityProxyMetrics = availabilityProxyMetrics;
             _resultValue.consolePathPrefix = consolePathPrefix;
             _resultValue.externalIdMapping = externalIdMapping;
+            _resultValue.handlerType = handlerType;
+            _resultValue.isEnable = isEnable;
             _resultValue.lifecycleStatusMappingsForUpStatuses = lifecycleStatusMappingsForUpStatuses;
             _resultValue.namespace = namespace;
+            _resultValue.receiverProperties = receiverProperties;
             _resultValue.resourceGroup = resourceGroup;
             _resultValue.resourceNameFilter = resourceNameFilter;
             _resultValue.resourceNameMapping = resourceNameMapping;
             _resultValue.resourceTypeFilter = resourceTypeFilter;
             _resultValue.resourceTypeMapping = resourceTypeMapping;
+            _resultValue.resourceTypesConfigurations = resourceTypesConfigurations;
             _resultValue.serviceBaseUrl = serviceBaseUrl;
             _resultValue.shouldUseMetricsFlowForStatus = shouldUseMetricsFlowForStatus;
             _resultValue.source = source;

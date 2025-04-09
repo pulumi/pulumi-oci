@@ -30,7 +30,7 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Name of the task.
+        /// Property name.
         /// </summary>
         public readonly string Name;
         /// <summary>
@@ -57,6 +57,10 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// The date and time when the stack monitoring resource task was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         /// </summary>
         public readonly string TimeUpdated;
+        /// <summary>
+        /// Type of the task.
+        /// </summary>
+        public readonly string Type;
         /// <summary>
         /// Identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for work requests submitted for this task.
         /// </summary>
@@ -86,6 +90,8 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
 
             string timeUpdated,
 
+            string type,
+
             ImmutableArray<string> workRequestIds)
         {
             CompartmentId = compartmentId;
@@ -99,6 +105,7 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
             TenantId = tenantId;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
+            Type = type;
             WorkRequestIds = workRequestIds;
         }
     }

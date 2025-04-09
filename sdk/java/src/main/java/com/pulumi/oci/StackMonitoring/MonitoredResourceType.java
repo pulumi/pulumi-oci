@@ -9,9 +9,13 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.StackMonitoring.MonitoredResourceTypeArgs;
 import com.pulumi.oci.StackMonitoring.inputs.MonitoredResourceTypeState;
+import com.pulumi.oci.StackMonitoring.outputs.MonitoredResourceTypeAvailabilityMetricsConfig;
+import com.pulumi.oci.StackMonitoring.outputs.MonitoredResourceTypeHandlerConfig;
 import com.pulumi.oci.StackMonitoring.outputs.MonitoredResourceTypeMetadata;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -103,14 +107,28 @@ public class MonitoredResourceType extends com.pulumi.resources.CustomResource {
         return this.additionalNamespaceMap;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+     * Availability metrics details.
+     * 
+     */
+    @Export(name="availabilityMetricsConfigs", refs={List.class,MonitoredResourceTypeAvailabilityMetricsConfig.class}, tree="[0,1]")
+    private Output<List<MonitoredResourceTypeAvailabilityMetricsConfig>> availabilityMetricsConfigs;
+
+    /**
+     * @return Availability metrics details.
+     * 
+     */
+    public Output<List<MonitoredResourceTypeAvailabilityMetricsConfig>> availabilityMetricsConfigs() {
+        return this.availabilityMetricsConfigs;
+    }
+    /**
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+     * @return Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Output<String> compartmentId() {
@@ -171,6 +189,34 @@ public class MonitoredResourceType extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,String>> freeformTags() {
         return this.freeformTags;
+    }
+    /**
+     * Specific resource mapping configurations for Agent Extension Handlers.
+     * 
+     */
+    @Export(name="handlerConfigs", refs={List.class,MonitoredResourceTypeHandlerConfig.class}, tree="[0,1]")
+    private Output<List<MonitoredResourceTypeHandlerConfig>> handlerConfigs;
+
+    /**
+     * @return Specific resource mapping configurations for Agent Extension Handlers.
+     * 
+     */
+    public Output<List<MonitoredResourceTypeHandlerConfig>> handlerConfigs() {
+        return this.handlerConfigs;
+    }
+    /**
+     * If boolean flag is true, then the resource type cannot be modified or deleted.
+     * 
+     */
+    @Export(name="isSystemDefined", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isSystemDefined;
+
+    /**
+     * @return If boolean flag is true, then the resource type cannot be modified or deleted.
+     * 
+     */
+    public Output<Boolean> isSystemDefined() {
+        return this.isSystemDefined;
     }
     /**
      * (Updatable) The metadata details for resource type.
@@ -275,6 +321,20 @@ public class MonitoredResourceType extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,String>> systemTags() {
         return this.systemTags;
+    }
+    /**
+     * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    @Export(name="tenancyId", refs={String.class}, tree="[0]")
+    private Output<String> tenancyId;
+
+    /**
+     * @return Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    public Output<String> tenancyId() {
+        return this.tenancyId;
     }
     /**
      * The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.

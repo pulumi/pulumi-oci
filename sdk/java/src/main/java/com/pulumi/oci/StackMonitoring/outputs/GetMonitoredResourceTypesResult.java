@@ -17,7 +17,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetMonitoredResourceTypesResult {
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+     * @return Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     private String compartmentId;
@@ -45,11 +45,21 @@ public final class GetMonitoredResourceTypesResult {
      * 
      */
     private @Nullable String name;
+    /**
+     * @return Resource Category to indicate the kind of resource type.
+     * 
+     */
+    private @Nullable String resourceCategory;
+    /**
+     * @return Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+     * 
+     */
+    private @Nullable String sourceType;
     private @Nullable String status;
 
     private GetMonitoredResourceTypesResult() {}
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+     * @return Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public String compartmentId() {
@@ -95,6 +105,20 @@ public final class GetMonitoredResourceTypesResult {
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
+    /**
+     * @return Resource Category to indicate the kind of resource type.
+     * 
+     */
+    public Optional<String> resourceCategory() {
+        return Optional.ofNullable(this.resourceCategory);
+    }
+    /**
+     * @return Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+     * 
+     */
+    public Optional<String> sourceType() {
+        return Optional.ofNullable(this.sourceType);
+    }
     public Optional<String> status() {
         return Optional.ofNullable(this.status);
     }
@@ -117,6 +141,8 @@ public final class GetMonitoredResourceTypesResult {
         private @Nullable String metricNamespace;
         private List<GetMonitoredResourceTypesMonitoredResourceTypesCollection> monitoredResourceTypesCollections;
         private @Nullable String name;
+        private @Nullable String resourceCategory;
+        private @Nullable String sourceType;
         private @Nullable String status;
         public Builder() {}
         public Builder(GetMonitoredResourceTypesResult defaults) {
@@ -130,6 +156,8 @@ public final class GetMonitoredResourceTypesResult {
     	      this.metricNamespace = defaults.metricNamespace;
     	      this.monitoredResourceTypesCollections = defaults.monitoredResourceTypesCollections;
     	      this.name = defaults.name;
+    	      this.resourceCategory = defaults.resourceCategory;
+    	      this.sourceType = defaults.sourceType;
     	      this.status = defaults.status;
         }
 
@@ -206,6 +234,18 @@ public final class GetMonitoredResourceTypesResult {
             return this;
         }
         @CustomType.Setter
+        public Builder resourceCategory(@Nullable String resourceCategory) {
+
+            this.resourceCategory = resourceCategory;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder sourceType(@Nullable String sourceType) {
+
+            this.sourceType = sourceType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder status(@Nullable String status) {
 
             this.status = status;
@@ -222,6 +262,8 @@ public final class GetMonitoredResourceTypesResult {
             _resultValue.metricNamespace = metricNamespace;
             _resultValue.monitoredResourceTypesCollections = monitoredResourceTypesCollections;
             _resultValue.name = name;
+            _resultValue.resourceCategory = resourceCategory;
+            _resultValue.sourceType = sourceType;
             _resultValue.status = status;
             return _resultValue;
         }

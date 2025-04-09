@@ -76,6 +76,38 @@ __all__ = [
     'MonitoredResourcePropertyArgsDict',
     'MonitoredResourceTaskTaskDetailsArgs',
     'MonitoredResourceTaskTaskDetailsArgsDict',
+    'MonitoredResourceTaskTaskDetailsReceiverPropertiesArgs',
+    'MonitoredResourceTaskTaskDetailsReceiverPropertiesArgsDict',
+    'MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArgs',
+    'MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArgsDict',
+    'MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigArgs',
+    'MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigArgsDict',
+    'MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigArgs',
+    'MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigArgsDict',
+    'MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs',
+    'MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgsDict',
+    'MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArgs',
+    'MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArgsDict',
+    'MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArgs',
+    'MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArgsDict',
+    'MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigArgs',
+    'MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigArgsDict',
+    'MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs',
+    'MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgsDict',
+    'MonitoredResourceTypeAvailabilityMetricsConfigArgs',
+    'MonitoredResourceTypeAvailabilityMetricsConfigArgsDict',
+    'MonitoredResourceTypeHandlerConfigArgs',
+    'MonitoredResourceTypeHandlerConfigArgsDict',
+    'MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArgs',
+    'MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArgsDict',
+    'MonitoredResourceTypeHandlerConfigHandlerPropertyArgs',
+    'MonitoredResourceTypeHandlerConfigHandlerPropertyArgsDict',
+    'MonitoredResourceTypeHandlerConfigMetricMappingArgs',
+    'MonitoredResourceTypeHandlerConfigMetricMappingArgsDict',
+    'MonitoredResourceTypeHandlerConfigMetricNameConfigArgs',
+    'MonitoredResourceTypeHandlerConfigMetricNameConfigArgsDict',
+    'MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArgs',
+    'MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArgsDict',
     'MonitoredResourceTypeMetadataArgs',
     'MonitoredResourceTypeMetadataArgsDict',
     'MonitoredResourceTypeMetadataUniquePropertySetArgs',
@@ -2627,16 +2659,6 @@ class MonitoredResourcePropertyArgs:
 
 if not MYPY:
     class MonitoredResourceTaskTaskDetailsArgsDict(TypedDict):
-        namespace: pulumi.Input[builtins.str]
-        """
-        Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
-        """
-        source: pulumi.Input[builtins.str]
-        """
-        Source from where the metrics pushed to telemetry. Possible values:
-        * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
-        * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
-        """
         type: pulumi.Input[builtins.str]
         """
         Task type.
@@ -2645,13 +2667,17 @@ if not MYPY:
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        agent_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
         availability_proxy_metric_collection_interval: NotRequired[pulumi.Input[builtins.int]]
         """
         Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
         """
         availability_proxy_metrics: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property 'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+        List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionInterval'. If no metrics are specified, availability will not be calculated for the resource.
         """
         console_path_prefix: NotRequired[pulumi.Input[builtins.str]]
         """
@@ -2661,9 +2687,25 @@ if not MYPY:
         """
         The external resource identifier property in the metric dimensions.  Resources imported will be using this property value for external id.
         """
+        handler_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Type of the handler.
+        """
+        is_enable: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        True to enable the receiver and false to disable the receiver on the agent.
+        """
         lifecycle_status_mappings_for_up_statuses: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
         Lifecycle states of the external resource which reflects the status of the resource being up.
+        """
+        namespace: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
+        """
+        receiver_properties: NotRequired[pulumi.Input['MonitoredResourceTaskTaskDetailsReceiverPropertiesArgsDict']]
+        """
+        Properties for agent receiver.
         """
         resource_group: NotRequired[pulumi.Input[builtins.str]]
         """
@@ -2685,6 +2727,10 @@ if not MYPY:
         """
         The resource type property in the metric dimensions.  Resources imported will be using this property value for resource type. If not specified, namespace will be used for resource type.
         """
+        resource_types_configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArgsDict']]]]
+        """
+        A collection of resource type configuration details. User can provide  availability proxy metrics list for resource types along with the  telegraf/collectd handler configuration for the resource types.
+        """
         service_base_url: NotRequired[pulumi.Input[builtins.str]]
         """
         The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
@@ -2693,53 +2739,73 @@ if not MYPY:
         """
         Flag to indicate whether status is calculated using metrics or  LifeCycleState attribute of the resource in Oracle Cloud Infrastructure service.
         """
+        source: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Source from where the metrics pushed to telemetry. Possible values:
+        * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
+        * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+        * OCI_TELEMETRY_TELEGRAF    - The metrics are pushed to telemetry from Telegraf receiver.
+        * OCI_TELEMETRY_COLLECTD    - The metrics are pushed to telemetry from CollectD receiver.
+        """
 elif False:
     MonitoredResourceTaskTaskDetailsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MonitoredResourceTaskTaskDetailsArgs:
     def __init__(__self__, *,
-                 namespace: pulumi.Input[builtins.str],
-                 source: pulumi.Input[builtins.str],
                  type: pulumi.Input[builtins.str],
+                 agent_id: Optional[pulumi.Input[builtins.str]] = None,
                  availability_proxy_metric_collection_interval: Optional[pulumi.Input[builtins.int]] = None,
                  availability_proxy_metrics: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  console_path_prefix: Optional[pulumi.Input[builtins.str]] = None,
                  external_id_mapping: Optional[pulumi.Input[builtins.str]] = None,
+                 handler_type: Optional[pulumi.Input[builtins.str]] = None,
+                 is_enable: Optional[pulumi.Input[builtins.bool]] = None,
                  lifecycle_status_mappings_for_up_statuses: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 namespace: Optional[pulumi.Input[builtins.str]] = None,
+                 receiver_properties: Optional[pulumi.Input['MonitoredResourceTaskTaskDetailsReceiverPropertiesArgs']] = None,
                  resource_group: Optional[pulumi.Input[builtins.str]] = None,
                  resource_name_filter: Optional[pulumi.Input[builtins.str]] = None,
                  resource_name_mapping: Optional[pulumi.Input[builtins.str]] = None,
                  resource_type_filter: Optional[pulumi.Input[builtins.str]] = None,
                  resource_type_mapping: Optional[pulumi.Input[builtins.str]] = None,
+                 resource_types_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArgs']]]] = None,
                  service_base_url: Optional[pulumi.Input[builtins.str]] = None,
-                 should_use_metrics_flow_for_status: Optional[pulumi.Input[builtins.bool]] = None):
+                 should_use_metrics_flow_for_status: Optional[pulumi.Input[builtins.bool]] = None,
+                 source: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] namespace: Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
-        :param pulumi.Input[builtins.str] source: Source from where the metrics pushed to telemetry. Possible values:
-               * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
-               * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
         :param pulumi.Input[builtins.str] type: Task type.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[builtins.str] agent_id: Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[builtins.int] availability_proxy_metric_collection_interval: Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] availability_proxy_metrics: List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property 'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] availability_proxy_metrics: List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionInterval'. If no metrics are specified, availability will not be calculated for the resource.
         :param pulumi.Input[builtins.str] console_path_prefix: The console path prefix to use for providing service home url page navigation.  For example if the prefix provided is 'security/bastion/bastions', the URL used for navigation will be https://<cloudhostname>/security/bastion/bastions/<resourceOcid>. If not provided, service home page link  will not be shown in the stack monitoring home page.
         :param pulumi.Input[builtins.str] external_id_mapping: The external resource identifier property in the metric dimensions.  Resources imported will be using this property value for external id.
+        :param pulumi.Input[builtins.str] handler_type: Type of the handler.
+        :param pulumi.Input[builtins.bool] is_enable: True to enable the receiver and false to disable the receiver on the agent.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] lifecycle_status_mappings_for_up_statuses: Lifecycle states of the external resource which reflects the status of the resource being up.
+        :param pulumi.Input[builtins.str] namespace: Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
+        :param pulumi.Input['MonitoredResourceTaskTaskDetailsReceiverPropertiesArgs'] receiver_properties: Properties for agent receiver.
         :param pulumi.Input[builtins.str] resource_group: The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
         :param pulumi.Input[builtins.str] resource_name_filter: The resource name filter. Resources matching with the resource name filter will be imported. Regular expressions will be accepted.
         :param pulumi.Input[builtins.str] resource_name_mapping: The resource name property in the metric dimensions.  Resources imported will be using this property value for resource name.
         :param pulumi.Input[builtins.str] resource_type_filter: The resource type filter. Resources matching with the resource type filter will be imported. Regular expressions will be accepted.
         :param pulumi.Input[builtins.str] resource_type_mapping: The resource type property in the metric dimensions.  Resources imported will be using this property value for resource type. If not specified, namespace will be used for resource type.
+        :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArgs']]] resource_types_configurations: A collection of resource type configuration details. User can provide  availability proxy metrics list for resource types along with the  telegraf/collectd handler configuration for the resource types.
         :param pulumi.Input[builtins.str] service_base_url: The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
         :param pulumi.Input[builtins.bool] should_use_metrics_flow_for_status: Flag to indicate whether status is calculated using metrics or  LifeCycleState attribute of the resource in Oracle Cloud Infrastructure service.
+        :param pulumi.Input[builtins.str] source: Source from where the metrics pushed to telemetry. Possible values:
+               * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
+               * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+               * OCI_TELEMETRY_TELEGRAF    - The metrics are pushed to telemetry from Telegraf receiver.
+               * OCI_TELEMETRY_COLLECTD    - The metrics are pushed to telemetry from CollectD receiver.
         """
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "source", source)
         pulumi.set(__self__, "type", type)
+        if agent_id is not None:
+            pulumi.set(__self__, "agent_id", agent_id)
         if availability_proxy_metric_collection_interval is not None:
             pulumi.set(__self__, "availability_proxy_metric_collection_interval", availability_proxy_metric_collection_interval)
         if availability_proxy_metrics is not None:
@@ -2748,8 +2814,16 @@ class MonitoredResourceTaskTaskDetailsArgs:
             pulumi.set(__self__, "console_path_prefix", console_path_prefix)
         if external_id_mapping is not None:
             pulumi.set(__self__, "external_id_mapping", external_id_mapping)
+        if handler_type is not None:
+            pulumi.set(__self__, "handler_type", handler_type)
+        if is_enable is not None:
+            pulumi.set(__self__, "is_enable", is_enable)
         if lifecycle_status_mappings_for_up_statuses is not None:
             pulumi.set(__self__, "lifecycle_status_mappings_for_up_statuses", lifecycle_status_mappings_for_up_statuses)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if receiver_properties is not None:
+            pulumi.set(__self__, "receiver_properties", receiver_properties)
         if resource_group is not None:
             pulumi.set(__self__, "resource_group", resource_group)
         if resource_name_filter is not None:
@@ -2760,36 +2834,14 @@ class MonitoredResourceTaskTaskDetailsArgs:
             pulumi.set(__self__, "resource_type_filter", resource_type_filter)
         if resource_type_mapping is not None:
             pulumi.set(__self__, "resource_type_mapping", resource_type_mapping)
+        if resource_types_configurations is not None:
+            pulumi.set(__self__, "resource_types_configurations", resource_types_configurations)
         if service_base_url is not None:
             pulumi.set(__self__, "service_base_url", service_base_url)
         if should_use_metrics_flow_for_status is not None:
             pulumi.set(__self__, "should_use_metrics_flow_for_status", should_use_metrics_flow_for_status)
-
-    @property
-    @pulumi.getter
-    def namespace(self) -> pulumi.Input[builtins.str]:
-        """
-        Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
-        """
-        return pulumi.get(self, "namespace")
-
-    @namespace.setter
-    def namespace(self, value: pulumi.Input[builtins.str]):
-        pulumi.set(self, "namespace", value)
-
-    @property
-    @pulumi.getter
-    def source(self) -> pulumi.Input[builtins.str]:
-        """
-        Source from where the metrics pushed to telemetry. Possible values:
-        * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
-        * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
-        """
-        return pulumi.get(self, "source")
-
-    @source.setter
-    def source(self, value: pulumi.Input[builtins.str]):
-        pulumi.set(self, "source", value)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
 
     @property
     @pulumi.getter
@@ -2808,6 +2860,18 @@ class MonitoredResourceTaskTaskDetailsArgs:
         pulumi.set(self, "type", value)
 
     @property
+    @pulumi.getter(name="agentId")
+    def agent_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "agent_id")
+
+    @agent_id.setter
+    def agent_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "agent_id", value)
+
+    @property
     @pulumi.getter(name="availabilityProxyMetricCollectionInterval")
     def availability_proxy_metric_collection_interval(self) -> Optional[pulumi.Input[builtins.int]]:
         """
@@ -2823,7 +2887,7 @@ class MonitoredResourceTaskTaskDetailsArgs:
     @pulumi.getter(name="availabilityProxyMetrics")
     def availability_proxy_metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property 'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+        List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionInterval'. If no metrics are specified, availability will not be calculated for the resource.
         """
         return pulumi.get(self, "availability_proxy_metrics")
 
@@ -2856,6 +2920,30 @@ class MonitoredResourceTaskTaskDetailsArgs:
         pulumi.set(self, "external_id_mapping", value)
 
     @property
+    @pulumi.getter(name="handlerType")
+    def handler_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Type of the handler.
+        """
+        return pulumi.get(self, "handler_type")
+
+    @handler_type.setter
+    def handler_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "handler_type", value)
+
+    @property
+    @pulumi.getter(name="isEnable")
+    def is_enable(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        True to enable the receiver and false to disable the receiver on the agent.
+        """
+        return pulumi.get(self, "is_enable")
+
+    @is_enable.setter
+    def is_enable(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_enable", value)
+
+    @property
     @pulumi.getter(name="lifecycleStatusMappingsForUpStatuses")
     def lifecycle_status_mappings_for_up_statuses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
@@ -2866,6 +2954,30 @@ class MonitoredResourceTaskTaskDetailsArgs:
     @lifecycle_status_mappings_for_up_statuses.setter
     def lifecycle_status_mappings_for_up_statuses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
         pulumi.set(self, "lifecycle_status_mappings_for_up_statuses", value)
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
+        """
+        return pulumi.get(self, "namespace")
+
+    @namespace.setter
+    def namespace(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "namespace", value)
+
+    @property
+    @pulumi.getter(name="receiverProperties")
+    def receiver_properties(self) -> Optional[pulumi.Input['MonitoredResourceTaskTaskDetailsReceiverPropertiesArgs']]:
+        """
+        Properties for agent receiver.
+        """
+        return pulumi.get(self, "receiver_properties")
+
+    @receiver_properties.setter
+    def receiver_properties(self, value: Optional[pulumi.Input['MonitoredResourceTaskTaskDetailsReceiverPropertiesArgs']]):
+        pulumi.set(self, "receiver_properties", value)
 
     @property
     @pulumi.getter(name="resourceGroup")
@@ -2928,6 +3040,18 @@ class MonitoredResourceTaskTaskDetailsArgs:
         pulumi.set(self, "resource_type_mapping", value)
 
     @property
+    @pulumi.getter(name="resourceTypesConfigurations")
+    def resource_types_configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArgs']]]]:
+        """
+        A collection of resource type configuration details. User can provide  availability proxy metrics list for resource types along with the  telegraf/collectd handler configuration for the resource types.
+        """
+        return pulumi.get(self, "resource_types_configurations")
+
+    @resource_types_configurations.setter
+    def resource_types_configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArgs']]]]):
+        pulumi.set(self, "resource_types_configurations", value)
+
+    @property
     @pulumi.getter(name="serviceBaseUrl")
     def service_base_url(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -2950,6 +3074,1254 @@ class MonitoredResourceTaskTaskDetailsArgs:
     @should_use_metrics_flow_for_status.setter
     def should_use_metrics_flow_for_status(self, value: Optional[pulumi.Input[builtins.bool]]):
         pulumi.set(self, "should_use_metrics_flow_for_status", value)
+
+    @property
+    @pulumi.getter
+    def source(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Source from where the metrics pushed to telemetry. Possible values:
+        * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
+        * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+        * OCI_TELEMETRY_TELEGRAF    - The metrics are pushed to telemetry from Telegraf receiver.
+        * OCI_TELEMETRY_COLLECTD    - The metrics are pushed to telemetry from CollectD receiver.
+        """
+        return pulumi.get(self, "source")
+
+    @source.setter
+    def source(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "source", value)
+
+
+if not MYPY:
+    class MonitoredResourceTaskTaskDetailsReceiverPropertiesArgsDict(TypedDict):
+        listener_port: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Receiver listener port.
+        """
+elif False:
+    MonitoredResourceTaskTaskDetailsReceiverPropertiesArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MonitoredResourceTaskTaskDetailsReceiverPropertiesArgs:
+    def __init__(__self__, *,
+                 listener_port: Optional[pulumi.Input[builtins.int]] = None):
+        """
+        :param pulumi.Input[builtins.int] listener_port: Receiver listener port.
+        """
+        if listener_port is not None:
+            pulumi.set(__self__, "listener_port", listener_port)
+
+    @property
+    @pulumi.getter(name="listenerPort")
+    def listener_port(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Receiver listener port.
+        """
+        return pulumi.get(self, "listener_port")
+
+    @listener_port.setter
+    def listener_port(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "listener_port", value)
+
+
+if not MYPY:
+    class MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArgsDict(TypedDict):
+        availability_metrics_config: NotRequired[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigArgsDict']]
+        """
+        Availability metrics details.
+        """
+        handler_config: NotRequired[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigArgsDict']]
+        """
+        Specific resource mapping configurations for Agent Extension Handlers.
+        """
+        resource_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Resource type.
+        """
+elif False:
+    MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArgs:
+    def __init__(__self__, *,
+                 availability_metrics_config: Optional[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigArgs']] = None,
+                 handler_config: Optional[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigArgs']] = None,
+                 resource_type: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigArgs'] availability_metrics_config: Availability metrics details.
+        :param pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigArgs'] handler_config: Specific resource mapping configurations for Agent Extension Handlers.
+        :param pulumi.Input[builtins.str] resource_type: Resource type.
+        """
+        if availability_metrics_config is not None:
+            pulumi.set(__self__, "availability_metrics_config", availability_metrics_config)
+        if handler_config is not None:
+            pulumi.set(__self__, "handler_config", handler_config)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+
+    @property
+    @pulumi.getter(name="availabilityMetricsConfig")
+    def availability_metrics_config(self) -> Optional[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigArgs']]:
+        """
+        Availability metrics details.
+        """
+        return pulumi.get(self, "availability_metrics_config")
+
+    @availability_metrics_config.setter
+    def availability_metrics_config(self, value: Optional[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigArgs']]):
+        pulumi.set(self, "availability_metrics_config", value)
+
+    @property
+    @pulumi.getter(name="handlerConfig")
+    def handler_config(self) -> Optional[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigArgs']]:
+        """
+        Specific resource mapping configurations for Agent Extension Handlers.
+        """
+        return pulumi.get(self, "handler_config")
+
+    @handler_config.setter
+    def handler_config(self, value: Optional[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigArgs']]):
+        pulumi.set(self, "handler_config", value)
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Resource type.
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "resource_type", value)
+
+
+if not MYPY:
+    class MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigArgsDict(TypedDict):
+        collection_interval_in_seconds: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Availability metric collection internal in seconds.
+        """
+        metrics: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        List of metrics used for availability calculation for the resource.
+        """
+elif False:
+    MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigArgs:
+    def __init__(__self__, *,
+                 collection_interval_in_seconds: Optional[pulumi.Input[builtins.int]] = None,
+                 metrics: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
+        """
+        :param pulumi.Input[builtins.int] collection_interval_in_seconds: Availability metric collection internal in seconds.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] metrics: List of metrics used for availability calculation for the resource.
+        """
+        if collection_interval_in_seconds is not None:
+            pulumi.set(__self__, "collection_interval_in_seconds", collection_interval_in_seconds)
+        if metrics is not None:
+            pulumi.set(__self__, "metrics", metrics)
+
+    @property
+    @pulumi.getter(name="collectionIntervalInSeconds")
+    def collection_interval_in_seconds(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Availability metric collection internal in seconds.
+        """
+        return pulumi.get(self, "collection_interval_in_seconds")
+
+    @collection_interval_in_seconds.setter
+    def collection_interval_in_seconds(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "collection_interval_in_seconds", value)
+
+    @property
+    @pulumi.getter
+    def metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        List of metrics used for availability calculation for the resource.
+        """
+        return pulumi.get(self, "metrics")
+
+    @metrics.setter
+    def metrics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "metrics", value)
+
+
+if not MYPY:
+    class MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigArgsDict(TypedDict):
+        collectd_resource_name_config: NotRequired[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgsDict']]
+        """
+        Resource name generation overriding configurations for collectd resource types.
+        """
+        collector_types: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        List of collector/plugin names.
+        """
+        handler_properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArgsDict']]]]
+        """
+        List of handler configuration properties
+        """
+        metric_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArgsDict']]]]
+        """
+        List of AgentExtensionHandlerMetricMappingDetails.
+        """
+        metric_name_config: NotRequired[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigArgsDict']]
+        """
+        Metric name generation overriding configurations.
+        """
+        metric_upload_interval_in_seconds: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+        """
+        telegraf_resource_name_config: NotRequired[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgsDict']]
+        """
+        Resource name generation overriding configurations for telegraf resource types.
+        """
+        telemetry_resource_group: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Resource group string; if not specified, the resource group string will be generated by the handler.
+        """
+elif False:
+    MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigArgs:
+    def __init__(__self__, *,
+                 collectd_resource_name_config: Optional[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs']] = None,
+                 collector_types: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 handler_properties: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArgs']]]] = None,
+                 metric_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArgs']]]] = None,
+                 metric_name_config: Optional[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigArgs']] = None,
+                 metric_upload_interval_in_seconds: Optional[pulumi.Input[builtins.int]] = None,
+                 telegraf_resource_name_config: Optional[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs']] = None,
+                 telemetry_resource_group: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs'] collectd_resource_name_config: Resource name generation overriding configurations for collectd resource types.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] collector_types: List of collector/plugin names.
+        :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArgs']]] handler_properties: List of handler configuration properties
+        :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArgs']]] metric_mappings: List of AgentExtensionHandlerMetricMappingDetails.
+        :param pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigArgs'] metric_name_config: Metric name generation overriding configurations.
+        :param pulumi.Input[builtins.int] metric_upload_interval_in_seconds: Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+        :param pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs'] telegraf_resource_name_config: Resource name generation overriding configurations for telegraf resource types.
+        :param pulumi.Input[builtins.str] telemetry_resource_group: Resource group string; if not specified, the resource group string will be generated by the handler.
+        """
+        if collectd_resource_name_config is not None:
+            pulumi.set(__self__, "collectd_resource_name_config", collectd_resource_name_config)
+        if collector_types is not None:
+            pulumi.set(__self__, "collector_types", collector_types)
+        if handler_properties is not None:
+            pulumi.set(__self__, "handler_properties", handler_properties)
+        if metric_mappings is not None:
+            pulumi.set(__self__, "metric_mappings", metric_mappings)
+        if metric_name_config is not None:
+            pulumi.set(__self__, "metric_name_config", metric_name_config)
+        if metric_upload_interval_in_seconds is not None:
+            pulumi.set(__self__, "metric_upload_interval_in_seconds", metric_upload_interval_in_seconds)
+        if telegraf_resource_name_config is not None:
+            pulumi.set(__self__, "telegraf_resource_name_config", telegraf_resource_name_config)
+        if telemetry_resource_group is not None:
+            pulumi.set(__self__, "telemetry_resource_group", telemetry_resource_group)
+
+    @property
+    @pulumi.getter(name="collectdResourceNameConfig")
+    def collectd_resource_name_config(self) -> Optional[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs']]:
+        """
+        Resource name generation overriding configurations for collectd resource types.
+        """
+        return pulumi.get(self, "collectd_resource_name_config")
+
+    @collectd_resource_name_config.setter
+    def collectd_resource_name_config(self, value: Optional[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs']]):
+        pulumi.set(self, "collectd_resource_name_config", value)
+
+    @property
+    @pulumi.getter(name="collectorTypes")
+    def collector_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        List of collector/plugin names.
+        """
+        return pulumi.get(self, "collector_types")
+
+    @collector_types.setter
+    def collector_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "collector_types", value)
+
+    @property
+    @pulumi.getter(name="handlerProperties")
+    def handler_properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArgs']]]]:
+        """
+        List of handler configuration properties
+        """
+        return pulumi.get(self, "handler_properties")
+
+    @handler_properties.setter
+    def handler_properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArgs']]]]):
+        pulumi.set(self, "handler_properties", value)
+
+    @property
+    @pulumi.getter(name="metricMappings")
+    def metric_mappings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArgs']]]]:
+        """
+        List of AgentExtensionHandlerMetricMappingDetails.
+        """
+        return pulumi.get(self, "metric_mappings")
+
+    @metric_mappings.setter
+    def metric_mappings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArgs']]]]):
+        pulumi.set(self, "metric_mappings", value)
+
+    @property
+    @pulumi.getter(name="metricNameConfig")
+    def metric_name_config(self) -> Optional[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigArgs']]:
+        """
+        Metric name generation overriding configurations.
+        """
+        return pulumi.get(self, "metric_name_config")
+
+    @metric_name_config.setter
+    def metric_name_config(self, value: Optional[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigArgs']]):
+        pulumi.set(self, "metric_name_config", value)
+
+    @property
+    @pulumi.getter(name="metricUploadIntervalInSeconds")
+    def metric_upload_interval_in_seconds(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+        """
+        return pulumi.get(self, "metric_upload_interval_in_seconds")
+
+    @metric_upload_interval_in_seconds.setter
+    def metric_upload_interval_in_seconds(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "metric_upload_interval_in_seconds", value)
+
+    @property
+    @pulumi.getter(name="telegrafResourceNameConfig")
+    def telegraf_resource_name_config(self) -> Optional[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs']]:
+        """
+        Resource name generation overriding configurations for telegraf resource types.
+        """
+        return pulumi.get(self, "telegraf_resource_name_config")
+
+    @telegraf_resource_name_config.setter
+    def telegraf_resource_name_config(self, value: Optional[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs']]):
+        pulumi.set(self, "telegraf_resource_name_config", value)
+
+    @property
+    @pulumi.getter(name="telemetryResourceGroup")
+    def telemetry_resource_group(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Resource group string; if not specified, the resource group string will be generated by the handler.
+        """
+        return pulumi.get(self, "telemetry_resource_group")
+
+    @telemetry_resource_group.setter
+    def telemetry_resource_group(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "telemetry_resource_group", value)
+
+
+if not MYPY:
+    class MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgsDict(TypedDict):
+        exclude_properties: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        List of property names to be excluded.
+        """
+        include_properties: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        List of property names to be included.
+        """
+        suffix: NotRequired[pulumi.Input[builtins.str]]
+        """
+        String to be suffixed to the resource name.
+        """
+elif False:
+    MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs:
+    def __init__(__self__, *,
+                 exclude_properties: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 include_properties: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 suffix: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] exclude_properties: List of property names to be excluded.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] include_properties: List of property names to be included.
+        :param pulumi.Input[builtins.str] suffix: String to be suffixed to the resource name.
+        """
+        if exclude_properties is not None:
+            pulumi.set(__self__, "exclude_properties", exclude_properties)
+        if include_properties is not None:
+            pulumi.set(__self__, "include_properties", include_properties)
+        if suffix is not None:
+            pulumi.set(__self__, "suffix", suffix)
+
+    @property
+    @pulumi.getter(name="excludeProperties")
+    def exclude_properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        List of property names to be excluded.
+        """
+        return pulumi.get(self, "exclude_properties")
+
+    @exclude_properties.setter
+    def exclude_properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "exclude_properties", value)
+
+    @property
+    @pulumi.getter(name="includeProperties")
+    def include_properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        List of property names to be included.
+        """
+        return pulumi.get(self, "include_properties")
+
+    @include_properties.setter
+    def include_properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "include_properties", value)
+
+    @property
+    @pulumi.getter
+    def suffix(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        String to be suffixed to the resource name.
+        """
+        return pulumi.get(self, "suffix")
+
+    @suffix.setter
+    def suffix(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "suffix", value)
+
+
+if not MYPY:
+    class MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Property name.
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Property value.
+        """
+elif False:
+    MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArgs:
+    def __init__(__self__, *,
+                 name: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] name: Property name.
+        :param pulumi.Input[builtins.str] value: Property value.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Property name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Property value.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArgsDict(TypedDict):
+        collector_metric_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Metric name as defined by the collector.
+        """
+        is_skip_upload: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Is ignoring this metric.
+        """
+        metric_upload_interval_in_seconds: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+        """
+        telemetry_metric_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Metric name to be upload to telemetry.
+        """
+elif False:
+    MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArgs:
+    def __init__(__self__, *,
+                 collector_metric_name: Optional[pulumi.Input[builtins.str]] = None,
+                 is_skip_upload: Optional[pulumi.Input[builtins.bool]] = None,
+                 metric_upload_interval_in_seconds: Optional[pulumi.Input[builtins.int]] = None,
+                 telemetry_metric_name: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] collector_metric_name: Metric name as defined by the collector.
+        :param pulumi.Input[builtins.bool] is_skip_upload: Is ignoring this metric.
+        :param pulumi.Input[builtins.int] metric_upload_interval_in_seconds: Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+        :param pulumi.Input[builtins.str] telemetry_metric_name: Metric name to be upload to telemetry.
+        """
+        if collector_metric_name is not None:
+            pulumi.set(__self__, "collector_metric_name", collector_metric_name)
+        if is_skip_upload is not None:
+            pulumi.set(__self__, "is_skip_upload", is_skip_upload)
+        if metric_upload_interval_in_seconds is not None:
+            pulumi.set(__self__, "metric_upload_interval_in_seconds", metric_upload_interval_in_seconds)
+        if telemetry_metric_name is not None:
+            pulumi.set(__self__, "telemetry_metric_name", telemetry_metric_name)
+
+    @property
+    @pulumi.getter(name="collectorMetricName")
+    def collector_metric_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Metric name as defined by the collector.
+        """
+        return pulumi.get(self, "collector_metric_name")
+
+    @collector_metric_name.setter
+    def collector_metric_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "collector_metric_name", value)
+
+    @property
+    @pulumi.getter(name="isSkipUpload")
+    def is_skip_upload(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Is ignoring this metric.
+        """
+        return pulumi.get(self, "is_skip_upload")
+
+    @is_skip_upload.setter
+    def is_skip_upload(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_skip_upload", value)
+
+    @property
+    @pulumi.getter(name="metricUploadIntervalInSeconds")
+    def metric_upload_interval_in_seconds(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+        """
+        return pulumi.get(self, "metric_upload_interval_in_seconds")
+
+    @metric_upload_interval_in_seconds.setter
+    def metric_upload_interval_in_seconds(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "metric_upload_interval_in_seconds", value)
+
+    @property
+    @pulumi.getter(name="telemetryMetricName")
+    def telemetry_metric_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Metric name to be upload to telemetry.
+        """
+        return pulumi.get(self, "telemetry_metric_name")
+
+    @telemetry_metric_name.setter
+    def telemetry_metric_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "telemetry_metric_name", value)
+
+
+if not MYPY:
+    class MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigArgsDict(TypedDict):
+        exclude_pattern_on_prefix: NotRequired[pulumi.Input[builtins.str]]
+        """
+        String pattern to be removed from the prefix of the metric name.
+        """
+        is_prefix_with_collector_type: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        is prefixing the metric with collector type.
+        """
+elif False:
+    MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigArgs:
+    def __init__(__self__, *,
+                 exclude_pattern_on_prefix: Optional[pulumi.Input[builtins.str]] = None,
+                 is_prefix_with_collector_type: Optional[pulumi.Input[builtins.bool]] = None):
+        """
+        :param pulumi.Input[builtins.str] exclude_pattern_on_prefix: String pattern to be removed from the prefix of the metric name.
+        :param pulumi.Input[builtins.bool] is_prefix_with_collector_type: is prefixing the metric with collector type.
+        """
+        if exclude_pattern_on_prefix is not None:
+            pulumi.set(__self__, "exclude_pattern_on_prefix", exclude_pattern_on_prefix)
+        if is_prefix_with_collector_type is not None:
+            pulumi.set(__self__, "is_prefix_with_collector_type", is_prefix_with_collector_type)
+
+    @property
+    @pulumi.getter(name="excludePatternOnPrefix")
+    def exclude_pattern_on_prefix(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        String pattern to be removed from the prefix of the metric name.
+        """
+        return pulumi.get(self, "exclude_pattern_on_prefix")
+
+    @exclude_pattern_on_prefix.setter
+    def exclude_pattern_on_prefix(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "exclude_pattern_on_prefix", value)
+
+    @property
+    @pulumi.getter(name="isPrefixWithCollectorType")
+    def is_prefix_with_collector_type(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        is prefixing the metric with collector type.
+        """
+        return pulumi.get(self, "is_prefix_with_collector_type")
+
+    @is_prefix_with_collector_type.setter
+    def is_prefix_with_collector_type(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_prefix_with_collector_type", value)
+
+
+if not MYPY:
+    class MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgsDict(TypedDict):
+        exclude_tags: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        List of tag names to be excluded.
+        """
+        include_tags: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        List of tag names to be included.
+        """
+        is_use_tags_only: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Flag to indicate if only tags will be used for resource name generation.
+        """
+elif False:
+    MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs:
+    def __init__(__self__, *,
+                 exclude_tags: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 include_tags: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 is_use_tags_only: Optional[pulumi.Input[builtins.bool]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] exclude_tags: List of tag names to be excluded.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] include_tags: List of tag names to be included.
+        :param pulumi.Input[builtins.bool] is_use_tags_only: Flag to indicate if only tags will be used for resource name generation.
+        """
+        if exclude_tags is not None:
+            pulumi.set(__self__, "exclude_tags", exclude_tags)
+        if include_tags is not None:
+            pulumi.set(__self__, "include_tags", include_tags)
+        if is_use_tags_only is not None:
+            pulumi.set(__self__, "is_use_tags_only", is_use_tags_only)
+
+    @property
+    @pulumi.getter(name="excludeTags")
+    def exclude_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        List of tag names to be excluded.
+        """
+        return pulumi.get(self, "exclude_tags")
+
+    @exclude_tags.setter
+    def exclude_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "exclude_tags", value)
+
+    @property
+    @pulumi.getter(name="includeTags")
+    def include_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        List of tag names to be included.
+        """
+        return pulumi.get(self, "include_tags")
+
+    @include_tags.setter
+    def include_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "include_tags", value)
+
+    @property
+    @pulumi.getter(name="isUseTagsOnly")
+    def is_use_tags_only(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Flag to indicate if only tags will be used for resource name generation.
+        """
+        return pulumi.get(self, "is_use_tags_only")
+
+    @is_use_tags_only.setter
+    def is_use_tags_only(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_use_tags_only", value)
+
+
+if not MYPY:
+    class MonitoredResourceTypeAvailabilityMetricsConfigArgsDict(TypedDict):
+        collection_interval_in_seconds: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Availability metric collection internal in seconds.
+        """
+        metrics: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        List of metrics used for availability calculation for the resource.
+        """
+elif False:
+    MonitoredResourceTypeAvailabilityMetricsConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MonitoredResourceTypeAvailabilityMetricsConfigArgs:
+    def __init__(__self__, *,
+                 collection_interval_in_seconds: Optional[pulumi.Input[builtins.int]] = None,
+                 metrics: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
+        """
+        :param pulumi.Input[builtins.int] collection_interval_in_seconds: Availability metric collection internal in seconds.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] metrics: List of metrics used for availability calculation for the resource.
+        """
+        if collection_interval_in_seconds is not None:
+            pulumi.set(__self__, "collection_interval_in_seconds", collection_interval_in_seconds)
+        if metrics is not None:
+            pulumi.set(__self__, "metrics", metrics)
+
+    @property
+    @pulumi.getter(name="collectionIntervalInSeconds")
+    def collection_interval_in_seconds(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Availability metric collection internal in seconds.
+        """
+        return pulumi.get(self, "collection_interval_in_seconds")
+
+    @collection_interval_in_seconds.setter
+    def collection_interval_in_seconds(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "collection_interval_in_seconds", value)
+
+    @property
+    @pulumi.getter
+    def metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        List of metrics used for availability calculation for the resource.
+        """
+        return pulumi.get(self, "metrics")
+
+    @metrics.setter
+    def metrics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "metrics", value)
+
+
+if not MYPY:
+    class MonitoredResourceTypeHandlerConfigArgsDict(TypedDict):
+        collectd_resource_name_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArgsDict']]]]
+        """
+        Resource name generation overriding configurations for collectd resource types.
+        """
+        collector_types: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        List of collector/plugin names.
+        """
+        handler_properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigHandlerPropertyArgsDict']]]]
+        """
+        List of handler configuration properties
+        """
+        metric_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigMetricMappingArgsDict']]]]
+        """
+        List of AgentExtensionHandlerMetricMappingDetails.
+        """
+        metric_name_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigMetricNameConfigArgsDict']]]]
+        """
+        Metric name generation overriding configurations.
+        """
+        metric_upload_interval_in_seconds: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+        """
+        telegraf_resource_name_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArgsDict']]]]
+        """
+        Resource name generation overriding configurations for telegraf resource types.
+        """
+        telemetry_resource_group: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Resource group string; if not specified, the resource group string will be generated by the handler.
+        """
+elif False:
+    MonitoredResourceTypeHandlerConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MonitoredResourceTypeHandlerConfigArgs:
+    def __init__(__self__, *,
+                 collectd_resource_name_configs: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArgs']]]] = None,
+                 collector_types: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 handler_properties: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigHandlerPropertyArgs']]]] = None,
+                 metric_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigMetricMappingArgs']]]] = None,
+                 metric_name_configs: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigMetricNameConfigArgs']]]] = None,
+                 metric_upload_interval_in_seconds: Optional[pulumi.Input[builtins.int]] = None,
+                 telegraf_resource_name_configs: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArgs']]]] = None,
+                 telemetry_resource_group: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArgs']]] collectd_resource_name_configs: Resource name generation overriding configurations for collectd resource types.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] collector_types: List of collector/plugin names.
+        :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigHandlerPropertyArgs']]] handler_properties: List of handler configuration properties
+        :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigMetricMappingArgs']]] metric_mappings: List of AgentExtensionHandlerMetricMappingDetails.
+        :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigMetricNameConfigArgs']]] metric_name_configs: Metric name generation overriding configurations.
+        :param pulumi.Input[builtins.int] metric_upload_interval_in_seconds: Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+        :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArgs']]] telegraf_resource_name_configs: Resource name generation overriding configurations for telegraf resource types.
+        :param pulumi.Input[builtins.str] telemetry_resource_group: Resource group string; if not specified, the resource group string will be generated by the handler.
+        """
+        if collectd_resource_name_configs is not None:
+            pulumi.set(__self__, "collectd_resource_name_configs", collectd_resource_name_configs)
+        if collector_types is not None:
+            pulumi.set(__self__, "collector_types", collector_types)
+        if handler_properties is not None:
+            pulumi.set(__self__, "handler_properties", handler_properties)
+        if metric_mappings is not None:
+            pulumi.set(__self__, "metric_mappings", metric_mappings)
+        if metric_name_configs is not None:
+            pulumi.set(__self__, "metric_name_configs", metric_name_configs)
+        if metric_upload_interval_in_seconds is not None:
+            pulumi.set(__self__, "metric_upload_interval_in_seconds", metric_upload_interval_in_seconds)
+        if telegraf_resource_name_configs is not None:
+            pulumi.set(__self__, "telegraf_resource_name_configs", telegraf_resource_name_configs)
+        if telemetry_resource_group is not None:
+            pulumi.set(__self__, "telemetry_resource_group", telemetry_resource_group)
+
+    @property
+    @pulumi.getter(name="collectdResourceNameConfigs")
+    def collectd_resource_name_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArgs']]]]:
+        """
+        Resource name generation overriding configurations for collectd resource types.
+        """
+        return pulumi.get(self, "collectd_resource_name_configs")
+
+    @collectd_resource_name_configs.setter
+    def collectd_resource_name_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArgs']]]]):
+        pulumi.set(self, "collectd_resource_name_configs", value)
+
+    @property
+    @pulumi.getter(name="collectorTypes")
+    def collector_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        List of collector/plugin names.
+        """
+        return pulumi.get(self, "collector_types")
+
+    @collector_types.setter
+    def collector_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "collector_types", value)
+
+    @property
+    @pulumi.getter(name="handlerProperties")
+    def handler_properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigHandlerPropertyArgs']]]]:
+        """
+        List of handler configuration properties
+        """
+        return pulumi.get(self, "handler_properties")
+
+    @handler_properties.setter
+    def handler_properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigHandlerPropertyArgs']]]]):
+        pulumi.set(self, "handler_properties", value)
+
+    @property
+    @pulumi.getter(name="metricMappings")
+    def metric_mappings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigMetricMappingArgs']]]]:
+        """
+        List of AgentExtensionHandlerMetricMappingDetails.
+        """
+        return pulumi.get(self, "metric_mappings")
+
+    @metric_mappings.setter
+    def metric_mappings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigMetricMappingArgs']]]]):
+        pulumi.set(self, "metric_mappings", value)
+
+    @property
+    @pulumi.getter(name="metricNameConfigs")
+    def metric_name_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigMetricNameConfigArgs']]]]:
+        """
+        Metric name generation overriding configurations.
+        """
+        return pulumi.get(self, "metric_name_configs")
+
+    @metric_name_configs.setter
+    def metric_name_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigMetricNameConfigArgs']]]]):
+        pulumi.set(self, "metric_name_configs", value)
+
+    @property
+    @pulumi.getter(name="metricUploadIntervalInSeconds")
+    def metric_upload_interval_in_seconds(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+        """
+        return pulumi.get(self, "metric_upload_interval_in_seconds")
+
+    @metric_upload_interval_in_seconds.setter
+    def metric_upload_interval_in_seconds(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "metric_upload_interval_in_seconds", value)
+
+    @property
+    @pulumi.getter(name="telegrafResourceNameConfigs")
+    def telegraf_resource_name_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArgs']]]]:
+        """
+        Resource name generation overriding configurations for telegraf resource types.
+        """
+        return pulumi.get(self, "telegraf_resource_name_configs")
+
+    @telegraf_resource_name_configs.setter
+    def telegraf_resource_name_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArgs']]]]):
+        pulumi.set(self, "telegraf_resource_name_configs", value)
+
+    @property
+    @pulumi.getter(name="telemetryResourceGroup")
+    def telemetry_resource_group(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Resource group string; if not specified, the resource group string will be generated by the handler.
+        """
+        return pulumi.get(self, "telemetry_resource_group")
+
+    @telemetry_resource_group.setter
+    def telemetry_resource_group(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "telemetry_resource_group", value)
+
+
+if not MYPY:
+    class MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArgsDict(TypedDict):
+        exclude_properties: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        List of property names to be excluded.
+        """
+        include_properties: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        List of property names to be included.
+        """
+        suffix: NotRequired[pulumi.Input[builtins.str]]
+        """
+        String to be suffixed to the resource name.
+        """
+elif False:
+    MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArgs:
+    def __init__(__self__, *,
+                 exclude_properties: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 include_properties: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 suffix: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] exclude_properties: List of property names to be excluded.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] include_properties: List of property names to be included.
+        :param pulumi.Input[builtins.str] suffix: String to be suffixed to the resource name.
+        """
+        if exclude_properties is not None:
+            pulumi.set(__self__, "exclude_properties", exclude_properties)
+        if include_properties is not None:
+            pulumi.set(__self__, "include_properties", include_properties)
+        if suffix is not None:
+            pulumi.set(__self__, "suffix", suffix)
+
+    @property
+    @pulumi.getter(name="excludeProperties")
+    def exclude_properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        List of property names to be excluded.
+        """
+        return pulumi.get(self, "exclude_properties")
+
+    @exclude_properties.setter
+    def exclude_properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "exclude_properties", value)
+
+    @property
+    @pulumi.getter(name="includeProperties")
+    def include_properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        List of property names to be included.
+        """
+        return pulumi.get(self, "include_properties")
+
+    @include_properties.setter
+    def include_properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "include_properties", value)
+
+    @property
+    @pulumi.getter
+    def suffix(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        String to be suffixed to the resource name.
+        """
+        return pulumi.get(self, "suffix")
+
+    @suffix.setter
+    def suffix(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "suffix", value)
+
+
+if not MYPY:
+    class MonitoredResourceTypeHandlerConfigHandlerPropertyArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Property value.
+        """
+elif False:
+    MonitoredResourceTypeHandlerConfigHandlerPropertyArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MonitoredResourceTypeHandlerConfigHandlerPropertyArgs:
+    def __init__(__self__, *,
+                 name: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] name: A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
+        :param pulumi.Input[builtins.str] value: Property value.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Property value.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class MonitoredResourceTypeHandlerConfigMetricMappingArgsDict(TypedDict):
+        collector_metric_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Metric name as defined by the collector.
+        """
+        is_skip_upload: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Is ignoring this metric.
+        """
+        metric_upload_interval_in_seconds: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+        """
+        telemetry_metric_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Metric name to be upload to telemetry.
+        """
+elif False:
+    MonitoredResourceTypeHandlerConfigMetricMappingArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MonitoredResourceTypeHandlerConfigMetricMappingArgs:
+    def __init__(__self__, *,
+                 collector_metric_name: Optional[pulumi.Input[builtins.str]] = None,
+                 is_skip_upload: Optional[pulumi.Input[builtins.bool]] = None,
+                 metric_upload_interval_in_seconds: Optional[pulumi.Input[builtins.int]] = None,
+                 telemetry_metric_name: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] collector_metric_name: Metric name as defined by the collector.
+        :param pulumi.Input[builtins.bool] is_skip_upload: Is ignoring this metric.
+        :param pulumi.Input[builtins.int] metric_upload_interval_in_seconds: Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+        :param pulumi.Input[builtins.str] telemetry_metric_name: Metric name to be upload to telemetry.
+        """
+        if collector_metric_name is not None:
+            pulumi.set(__self__, "collector_metric_name", collector_metric_name)
+        if is_skip_upload is not None:
+            pulumi.set(__self__, "is_skip_upload", is_skip_upload)
+        if metric_upload_interval_in_seconds is not None:
+            pulumi.set(__self__, "metric_upload_interval_in_seconds", metric_upload_interval_in_seconds)
+        if telemetry_metric_name is not None:
+            pulumi.set(__self__, "telemetry_metric_name", telemetry_metric_name)
+
+    @property
+    @pulumi.getter(name="collectorMetricName")
+    def collector_metric_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Metric name as defined by the collector.
+        """
+        return pulumi.get(self, "collector_metric_name")
+
+    @collector_metric_name.setter
+    def collector_metric_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "collector_metric_name", value)
+
+    @property
+    @pulumi.getter(name="isSkipUpload")
+    def is_skip_upload(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Is ignoring this metric.
+        """
+        return pulumi.get(self, "is_skip_upload")
+
+    @is_skip_upload.setter
+    def is_skip_upload(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_skip_upload", value)
+
+    @property
+    @pulumi.getter(name="metricUploadIntervalInSeconds")
+    def metric_upload_interval_in_seconds(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
+        """
+        return pulumi.get(self, "metric_upload_interval_in_seconds")
+
+    @metric_upload_interval_in_seconds.setter
+    def metric_upload_interval_in_seconds(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "metric_upload_interval_in_seconds", value)
+
+    @property
+    @pulumi.getter(name="telemetryMetricName")
+    def telemetry_metric_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Metric name to be upload to telemetry.
+        """
+        return pulumi.get(self, "telemetry_metric_name")
+
+    @telemetry_metric_name.setter
+    def telemetry_metric_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "telemetry_metric_name", value)
+
+
+if not MYPY:
+    class MonitoredResourceTypeHandlerConfigMetricNameConfigArgsDict(TypedDict):
+        exclude_pattern_on_prefix: NotRequired[pulumi.Input[builtins.str]]
+        """
+        String pattern to be removed from the prefix of the metric name.
+        """
+        is_prefix_with_collector_type: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        is prefixing the metric with collector type.
+        """
+elif False:
+    MonitoredResourceTypeHandlerConfigMetricNameConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MonitoredResourceTypeHandlerConfigMetricNameConfigArgs:
+    def __init__(__self__, *,
+                 exclude_pattern_on_prefix: Optional[pulumi.Input[builtins.str]] = None,
+                 is_prefix_with_collector_type: Optional[pulumi.Input[builtins.bool]] = None):
+        """
+        :param pulumi.Input[builtins.str] exclude_pattern_on_prefix: String pattern to be removed from the prefix of the metric name.
+        :param pulumi.Input[builtins.bool] is_prefix_with_collector_type: is prefixing the metric with collector type.
+        """
+        if exclude_pattern_on_prefix is not None:
+            pulumi.set(__self__, "exclude_pattern_on_prefix", exclude_pattern_on_prefix)
+        if is_prefix_with_collector_type is not None:
+            pulumi.set(__self__, "is_prefix_with_collector_type", is_prefix_with_collector_type)
+
+    @property
+    @pulumi.getter(name="excludePatternOnPrefix")
+    def exclude_pattern_on_prefix(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        String pattern to be removed from the prefix of the metric name.
+        """
+        return pulumi.get(self, "exclude_pattern_on_prefix")
+
+    @exclude_pattern_on_prefix.setter
+    def exclude_pattern_on_prefix(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "exclude_pattern_on_prefix", value)
+
+    @property
+    @pulumi.getter(name="isPrefixWithCollectorType")
+    def is_prefix_with_collector_type(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        is prefixing the metric with collector type.
+        """
+        return pulumi.get(self, "is_prefix_with_collector_type")
+
+    @is_prefix_with_collector_type.setter
+    def is_prefix_with_collector_type(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_prefix_with_collector_type", value)
+
+
+if not MYPY:
+    class MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArgsDict(TypedDict):
+        exclude_tags: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        List of tag names to be excluded.
+        """
+        include_tags: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        List of tag names to be included.
+        """
+        is_use_tags_only: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Flag to indicate if only tags will be used for resource name generation.
+        """
+elif False:
+    MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArgs:
+    def __init__(__self__, *,
+                 exclude_tags: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 include_tags: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 is_use_tags_only: Optional[pulumi.Input[builtins.bool]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] exclude_tags: List of tag names to be excluded.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] include_tags: List of tag names to be included.
+        :param pulumi.Input[builtins.bool] is_use_tags_only: Flag to indicate if only tags will be used for resource name generation.
+        """
+        if exclude_tags is not None:
+            pulumi.set(__self__, "exclude_tags", exclude_tags)
+        if include_tags is not None:
+            pulumi.set(__self__, "include_tags", include_tags)
+        if is_use_tags_only is not None:
+            pulumi.set(__self__, "is_use_tags_only", is_use_tags_only)
+
+    @property
+    @pulumi.getter(name="excludeTags")
+    def exclude_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        List of tag names to be excluded.
+        """
+        return pulumi.get(self, "exclude_tags")
+
+    @exclude_tags.setter
+    def exclude_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "exclude_tags", value)
+
+    @property
+    @pulumi.getter(name="includeTags")
+    def include_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        List of tag names to be included.
+        """
+        return pulumi.get(self, "include_tags")
+
+    @include_tags.setter
+    def include_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "include_tags", value)
+
+    @property
+    @pulumi.getter(name="isUseTagsOnly")
+    def is_use_tags_only(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Flag to indicate if only tags will be used for resource name generation.
+        """
+        return pulumi.get(self, "is_use_tags_only")
+
+    @is_use_tags_only.setter
+    def is_use_tags_only(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_use_tags_only", value)
 
 
 if not MYPY:
@@ -5333,7 +6705,7 @@ if not MYPY:
     class GetMonitoredResourceTasksFilterArgsDict(TypedDict):
         name: builtins.str
         """
-        Name of the task.
+        Property name.
         """
         values: Sequence[builtins.str]
         regex: NotRequired[builtins.bool]
@@ -5347,7 +6719,7 @@ class GetMonitoredResourceTasksFilterArgs:
                  values: Sequence[builtins.str],
                  regex: Optional[builtins.bool] = None):
         """
-        :param builtins.str name: Name of the task.
+        :param builtins.str name: Property name.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
@@ -5358,7 +6730,7 @@ class GetMonitoredResourceTasksFilterArgs:
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        Name of the task.
+        Property name.
         """
         return pulumi.get(self, "name")
 

@@ -13,6 +13,12 @@ from .get_job_run import *
 from .get_job_runs import *
 from .get_job_shapes import *
 from .get_jobs import *
+from .get_ml_application import *
+from .get_ml_application_implementation import *
+from .get_ml_application_implementations import *
+from .get_ml_application_instance import *
+from .get_ml_application_instances import *
+from .get_ml_applications import *
 from .get_model import *
 from .get_model_custom_metadata_artifact_content import *
 from .get_model_defined_metadata_artifact_content import *
@@ -38,6 +44,9 @@ from .get_schedule import *
 from .get_schedules import *
 from .job import *
 from .job_run import *
+from .ml_application import *
+from .ml_application_implementation import *
+from .ml_application_instance import *
 from .model import *
 from .model_artifact_export import *
 from .model_artifact_import import *

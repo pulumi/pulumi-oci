@@ -13,6 +13,12 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
     public sealed class MonitoredResourceTaskTaskDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// </summary>
+        [Input("agentId")]
+        public Input<string>? AgentId { get; set; }
+
+        /// <summary>
         /// Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
         /// </summary>
         [Input("availabilityProxyMetricCollectionInterval")]
@@ -22,7 +28,7 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         private InputList<string>? _availabilityProxyMetrics;
 
         /// <summary>
-        /// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property 'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+        /// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionInterval'. If no metrics are specified, availability will not be calculated for the resource.
         /// </summary>
         public InputList<string> AvailabilityProxyMetrics
         {
@@ -42,6 +48,18 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         [Input("externalIdMapping")]
         public Input<string>? ExternalIdMapping { get; set; }
 
+        /// <summary>
+        /// Type of the handler.
+        /// </summary>
+        [Input("handlerType")]
+        public Input<string>? HandlerType { get; set; }
+
+        /// <summary>
+        /// True to enable the receiver and false to disable the receiver on the agent.
+        /// </summary>
+        [Input("isEnable")]
+        public Input<bool>? IsEnable { get; set; }
+
         [Input("lifecycleStatusMappingsForUpStatuses")]
         private InputList<string>? _lifecycleStatusMappingsForUpStatuses;
 
@@ -57,8 +75,14 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         /// <summary>
         /// Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
         /// </summary>
-        [Input("namespace", required: true)]
-        public Input<string> Namespace { get; set; } = null!;
+        [Input("namespace")]
+        public Input<string>? Namespace { get; set; }
+
+        /// <summary>
+        /// Properties for agent receiver.
+        /// </summary>
+        [Input("receiverProperties")]
+        public Input<Inputs.MonitoredResourceTaskTaskDetailsReceiverPropertiesGetArgs>? ReceiverProperties { get; set; }
 
         /// <summary>
         /// The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
@@ -90,6 +114,18 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         [Input("resourceTypeMapping")]
         public Input<string>? ResourceTypeMapping { get; set; }
 
+        [Input("resourceTypesConfigurations")]
+        private InputList<Inputs.MonitoredResourceTaskTaskDetailsResourceTypesConfigurationGetArgs>? _resourceTypesConfigurations;
+
+        /// <summary>
+        /// A collection of resource type configuration details. User can provide  availability proxy metrics list for resource types along with the  telegraf/collectd handler configuration for the resource types.
+        /// </summary>
+        public InputList<Inputs.MonitoredResourceTaskTaskDetailsResourceTypesConfigurationGetArgs> ResourceTypesConfigurations
+        {
+            get => _resourceTypesConfigurations ?? (_resourceTypesConfigurations = new InputList<Inputs.MonitoredResourceTaskTaskDetailsResourceTypesConfigurationGetArgs>());
+            set => _resourceTypesConfigurations = value;
+        }
+
         /// <summary>
         /// The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
         /// </summary>
@@ -106,9 +142,11 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         /// Source from where the metrics pushed to telemetry. Possible values:
         /// * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
         /// * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+        /// * OCI_TELEMETRY_TELEGRAF    - The metrics are pushed to telemetry from Telegraf receiver.
+        /// * OCI_TELEMETRY_COLLECTD    - The metrics are pushed to telemetry from CollectD receiver.
         /// </summary>
-        [Input("source", required: true)]
-        public Input<string> Source { get; set; } = null!;
+        [Input("source")]
+        public Input<string>? Source { get; set; }
 
         /// <summary>
         /// Task type.

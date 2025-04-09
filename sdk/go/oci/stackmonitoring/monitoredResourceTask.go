@@ -33,21 +33,69 @@ import (
 //			_, err := stackmonitoring.NewMonitoredResourceTask(ctx, "test_monitored_resource_task", &stackmonitoring.MonitoredResourceTaskArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				TaskDetails: &stackmonitoring.MonitoredResourceTaskTaskDetailsArgs{
-//					Namespace: pulumi.Any(monitoredResourceTaskTaskDetailsNamespace),
-//					Source:    pulumi.Any(monitoredResourceTaskTaskDetailsSource),
-//					Type:      pulumi.Any(monitoredResourceTaskTaskDetailsType),
+//					Type:    pulumi.Any(monitoredResourceTaskTaskDetailsType),
+//					AgentId: pulumi.Any(testAgent.Id),
 //					AvailabilityProxyMetricCollectionInterval: pulumi.Any(monitoredResourceTaskTaskDetailsAvailabilityProxyMetricCollectionInterval),
 //					AvailabilityProxyMetrics:                  pulumi.Any(monitoredResourceTaskTaskDetailsAvailabilityProxyMetrics),
 //					ConsolePathPrefix:                         pulumi.Any(monitoredResourceTaskTaskDetailsConsolePathPrefix),
 //					ExternalIdMapping:                         pulumi.Any(monitoredResourceTaskTaskDetailsExternalIdMapping),
+//					HandlerType:                               pulumi.Any(monitoredResourceTaskTaskDetailsHandlerType),
+//					IsEnable:                                  pulumi.Any(monitoredResourceTaskTaskDetailsIsEnable),
 //					LifecycleStatusMappingsForUpStatuses:      pulumi.Any(monitoredResourceTaskTaskDetailsLifecycleStatusMappingsForUpStatus),
-//					ResourceGroup:                             pulumi.Any(monitoredResourceTaskTaskDetailsResourceGroup),
-//					ResourceNameFilter:                        pulumi.Any(monitoredResourceTaskTaskDetailsResourceNameFilter),
-//					ResourceNameMapping:                       pulumi.Any(monitoredResourceTaskTaskDetailsResourceNameMapping),
-//					ResourceTypeFilter:                        pulumi.Any(monitoredResourceTaskTaskDetailsResourceTypeFilter),
-//					ResourceTypeMapping:                       pulumi.Any(monitoredResourceTaskTaskDetailsResourceTypeMapping),
-//					ServiceBaseUrl:                            pulumi.Any(monitoredResourceTaskTaskDetailsServiceBaseUrl),
-//					ShouldUseMetricsFlowForStatus:             pulumi.Any(monitoredResourceTaskTaskDetailsShouldUseMetricsFlowForStatus),
+//					Namespace:                                 pulumi.Any(monitoredResourceTaskTaskDetailsNamespace),
+//					ReceiverProperties: &stackmonitoring.MonitoredResourceTaskTaskDetailsReceiverPropertiesArgs{
+//						ListenerPort: pulumi.Any(monitoredResourceTaskTaskDetailsReceiverPropertiesListenerPort),
+//					},
+//					ResourceGroup:       pulumi.Any(monitoredResourceTaskTaskDetailsResourceGroup),
+//					ResourceNameFilter:  pulumi.Any(monitoredResourceTaskTaskDetailsResourceNameFilter),
+//					ResourceNameMapping: pulumi.Any(monitoredResourceTaskTaskDetailsResourceNameMapping),
+//					ResourceTypeFilter:  pulumi.Any(monitoredResourceTaskTaskDetailsResourceTypeFilter),
+//					ResourceTypeMapping: pulumi.Any(monitoredResourceTaskTaskDetailsResourceTypeMapping),
+//					ResourceTypesConfigurations: stackmonitoring.MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArray{
+//						&stackmonitoring.MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArgs{
+//							AvailabilityMetricsConfig: &stackmonitoring.MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigArgs{
+//								CollectionIntervalInSeconds: pulumi.Any(monitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigCollectionIntervalInSeconds),
+//								Metrics:                     pulumi.Any(monitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigMetrics),
+//							},
+//							HandlerConfig: &stackmonitoring.MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigArgs{
+//								CollectdResourceNameConfig: &stackmonitoring.MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs{
+//									ExcludeProperties: pulumi.Any(monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigExcludeProperties),
+//									IncludeProperties: pulumi.Any(monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigIncludeProperties),
+//									Suffix:            pulumi.Any(monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigSuffix),
+//								},
+//								CollectorTypes: pulumi.Any(monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectorTypes),
+//								HandlerProperties: stackmonitoring.MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArray{
+//									&stackmonitoring.MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArgs{
+//										Name:  pulumi.Any(monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertiesName),
+//										Value: pulumi.Any(monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertiesValue),
+//									},
+//								},
+//								MetricMappings: stackmonitoring.MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArray{
+//									&stackmonitoring.MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArgs{
+//										CollectorMetricName:           pulumi.Any(testMetric.Name),
+//										IsSkipUpload:                  pulumi.Any(monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingsIsSkipUpload),
+//										MetricUploadIntervalInSeconds: pulumi.Any(monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingsMetricUploadIntervalInSeconds),
+//										TelemetryMetricName:           pulumi.Any(testMetric.Name),
+//									},
+//								},
+//								MetricNameConfig: &stackmonitoring.MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigArgs{
+//									ExcludePatternOnPrefix:    pulumi.Any(monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigExcludePatternOnPrefix),
+//									IsPrefixWithCollectorType: pulumi.Any(monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigIsPrefixWithCollectorType),
+//								},
+//								MetricUploadIntervalInSeconds: pulumi.Any(monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricUploadIntervalInSeconds),
+//								TelegrafResourceNameConfig: &stackmonitoring.MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs{
+//									ExcludeTags:   pulumi.Any(monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigExcludeTags),
+//									IncludeTags:   pulumi.Any(monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigIncludeTags),
+//									IsUseTagsOnly: pulumi.Any(monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigIsUseTagsOnly),
+//								},
+//								TelemetryResourceGroup: pulumi.Any(monitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelemetryResourceGroup),
+//							},
+//							ResourceType: pulumi.Any(monitoredResourceTaskTaskDetailsResourceTypesConfigurationResourceType),
+//						},
+//					},
+//					ServiceBaseUrl:                pulumi.Any(monitoredResourceTaskTaskDetailsServiceBaseUrl),
+//					ShouldUseMetricsFlowForStatus: pulumi.Any(monitoredResourceTaskTaskDetailsShouldUseMetricsFlowForStatus),
+//					Source:                        pulumi.Any(monitoredResourceTaskTaskDetailsSource),
 //				},
 //				DefinedTags: pulumi.StringMap{
 //					"foo-namespace.bar-key": pulumi.String("value"),
@@ -96,6 +144,8 @@ type MonitoredResourceTask struct {
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time when the stack monitoring resource task was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	// Type of the task.
+	Type pulumi.StringOutput `pulumi:"type"`
 	// Identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for work requests submitted for this task.
 	WorkRequestIds pulumi.StringArrayOutput `pulumi:"workRequestIds"`
 }
@@ -156,6 +206,8 @@ type monitoredResourceTaskState struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time when the stack monitoring resource task was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 	TimeUpdated *string `pulumi:"timeUpdated"`
+	// Type of the task.
+	Type *string `pulumi:"type"`
 	// Identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for work requests submitted for this task.
 	WorkRequestIds []string `pulumi:"workRequestIds"`
 }
@@ -181,6 +233,8 @@ type MonitoredResourceTaskState struct {
 	TimeCreated pulumi.StringPtrInput
 	// The date and time when the stack monitoring resource task was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 	TimeUpdated pulumi.StringPtrInput
+	// Type of the task.
+	Type pulumi.StringPtrInput
 	// Identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for work requests submitted for this task.
 	WorkRequestIds pulumi.StringArrayInput
 }
@@ -351,6 +405,11 @@ func (o MonitoredResourceTaskOutput) TimeCreated() pulumi.StringOutput {
 // The date and time when the stack monitoring resource task was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 func (o MonitoredResourceTaskOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *MonitoredResourceTask) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// Type of the task.
+func (o MonitoredResourceTaskOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v *MonitoredResourceTask) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }
 
 // Identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for work requests submitted for this task.

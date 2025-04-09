@@ -396,14 +396,14 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+     * (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
      * 
      */
     @Import(name="removeNode")
     private @Nullable Output<String> removeNode;
 
     /**
-     * @return (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+     * @return (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
      * 
      */
     public Optional<Output<String>> removeNode() {
@@ -1039,7 +1039,7 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param removeNode (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+         * @param removeNode (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
          * 
          * @return builder
          * 
@@ -1050,7 +1050,7 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param removeNode (Updatable) An optional property when used triggers Remove Node. Takes the node ocid as input.
+         * @param removeNode (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
          * 
          * @return builder
          * 

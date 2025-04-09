@@ -60,7 +60,9 @@ type LookupMonitoredResourceTypeArgs struct {
 type LookupMonitoredResourceTypeResult struct {
 	// Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
 	AdditionalNamespaceMap map[string]string `pulumi:"additionalNamespaceMap"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+	// Availability metrics details.
+	AvailabilityMetricsConfigs []GetMonitoredResourceTypeAvailabilityMetricsConfig `pulumi:"availabilityMetricsConfigs"`
+	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -70,8 +72,12 @@ type LookupMonitoredResourceTypeResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Specific resource mapping configurations for Agent Extension Handlers.
+	HandlerConfigs []GetMonitoredResourceTypeHandlerConfig `pulumi:"handlerConfigs"`
 	// Monitored resource type identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id string `pulumi:"id"`
+	// If boolean flag is true, then the resource type cannot be modified or deleted.
+	IsSystemDefined bool `pulumi:"isSystemDefined"`
 	// The metadata details for resource type.
 	Metadatas []GetMonitoredResourceTypeMetadata `pulumi:"metadatas"`
 	// Metric namespace for resource type.
@@ -87,6 +93,8 @@ type LookupMonitoredResourceTypeResult struct {
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
+	// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	TenancyId string `pulumi:"tenancyId"`
 	// The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time when the monitored resource was updated, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -132,7 +140,14 @@ func (o LookupMonitoredResourceTypeResultOutput) AdditionalNamespaceMap() pulumi
 	return o.ApplyT(func(v LookupMonitoredResourceTypeResult) map[string]string { return v.AdditionalNamespaceMap }).(pulumi.StringMapOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+// Availability metrics details.
+func (o LookupMonitoredResourceTypeResultOutput) AvailabilityMetricsConfigs() GetMonitoredResourceTypeAvailabilityMetricsConfigArrayOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceTypeResult) []GetMonitoredResourceTypeAvailabilityMetricsConfig {
+		return v.AvailabilityMetricsConfigs
+	}).(GetMonitoredResourceTypeAvailabilityMetricsConfigArrayOutput)
+}
+
+// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o LookupMonitoredResourceTypeResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMonitoredResourceTypeResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -157,9 +172,21 @@ func (o LookupMonitoredResourceTypeResultOutput) FreeformTags() pulumi.StringMap
 	return o.ApplyT(func(v LookupMonitoredResourceTypeResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
+// Specific resource mapping configurations for Agent Extension Handlers.
+func (o LookupMonitoredResourceTypeResultOutput) HandlerConfigs() GetMonitoredResourceTypeHandlerConfigArrayOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceTypeResult) []GetMonitoredResourceTypeHandlerConfig {
+		return v.HandlerConfigs
+	}).(GetMonitoredResourceTypeHandlerConfigArrayOutput)
+}
+
 // Monitored resource type identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o LookupMonitoredResourceTypeResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMonitoredResourceTypeResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// If boolean flag is true, then the resource type cannot be modified or deleted.
+func (o LookupMonitoredResourceTypeResultOutput) IsSystemDefined() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceTypeResult) bool { return v.IsSystemDefined }).(pulumi.BoolOutput)
 }
 
 // The metadata details for resource type.
@@ -199,6 +226,11 @@ func (o LookupMonitoredResourceTypeResultOutput) State() pulumi.StringOutput {
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o LookupMonitoredResourceTypeResultOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupMonitoredResourceTypeResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o LookupMonitoredResourceTypeResultOutput) TenancyId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceTypeResult) string { return v.TenancyId }).(pulumi.StringOutput)
 }
 
 // The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.

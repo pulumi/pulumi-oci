@@ -14,7 +14,7 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
     public sealed class GetMonitoredResourceTasksFilterResult
     {
         /// <summary>
-        /// Name of the task.
+        /// Property name.
         /// </summary>
         public readonly string Name;
         public readonly bool? Regex;

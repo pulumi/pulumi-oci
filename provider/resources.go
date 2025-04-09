@@ -26,6 +26,7 @@ import (
 
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge/tokens"
+	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge/tokens/fallbackstrat"
 	shimv2 "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim/sdk-v2"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/util/contract"
 
@@ -105,6 +106,7 @@ const (
 	loadBalancerMod                 = "LoadBalancer"                 // Load Balancer
 	logAnalyticsMod                 = "LogAnalytics"                 // Log Analytics
 	loggingMod                      = "Logging"                      // Logging
+	lustreMod                       = "Lustre"                       // Lustre
 	managementAgentMod              = "ManagementAgent"              // Management Agent
 	managementDashboardMod          = "ManagementDashboard"          // Management Dashboard
 	marketplaceMod                  = "Marketplace"                  // Marketplace
@@ -233,6 +235,7 @@ var mappedMods = map[string]string{
 	"load_balancer":                  loadBalancerMod,
 	"log_analytics":                  logAnalyticsMod,
 	"logging":                        loggingMod,
+	"lustre":                         lustreMod,
 	"management_agent":               managementAgentMod,
 	"management_dashboard":           managementDashboardMod,
 	"marketplace":                    marketplaceMod,
@@ -1713,7 +1716,17 @@ func Provider() tfbridge.ProviderInfo {
 		}, MetadataInfo: tfbridge.NewProviderMetadata(metadata),
 	}
 
-	prov.MustComputeTokens(tokens.MappedModules("oci_", "", mappedMods, tokens.MakeStandard(mainPkg)))
+	strategy, err := fallbackstrat.MappedModulesWithInferredFallback(
+		&prov,
+		"oci_",
+		"oci",
+		mappedMods,
+		tokens.MakeStandard(mainPkg),
+	)
+	if err != nil {
+		panic(err)
+	}
+	prov.MustComputeTokens(strategy)
 
 	// These are not preset upstream
 	resourcesMissingDocs := []string{

@@ -31,6 +31,7 @@ namespace Pulumi.Oci.Opsi
     ///         CompartmentId = compartmentId,
     ///         CpuAllocated = operationsInsightsWarehouseCpuAllocated,
     ///         DisplayName = operationsInsightsWarehouseDisplayName,
+    ///         ComputeModel = operationsInsightsWarehouseComputeModel,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -63,7 +64,13 @@ namespace Pulumi.Oci.Opsi
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Number of OCPUs allocated to OPSI Warehouse ADW.
+        /// (Updatable) The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+        /// </summary>
+        [Output("computeModel")]
+        public Output<string> ComputeModel { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Number of CPUs allocated to OPSI Warehouse ADW.
         /// </summary>
         [Output("cpuAllocated")]
         public Output<double> CpuAllocated { get; private set; } = null!;
@@ -209,7 +216,13 @@ namespace Pulumi.Oci.Opsi
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Number of OCPUs allocated to OPSI Warehouse ADW.
+        /// (Updatable) The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+        /// </summary>
+        [Input("computeModel")]
+        public Input<string>? ComputeModel { get; set; }
+
+        /// <summary>
+        /// (Updatable) Number of CPUs allocated to OPSI Warehouse ADW.
         /// </summary>
         [Input("cpuAllocated", required: true)]
         public Input<double> CpuAllocated { get; set; } = null!;
@@ -269,7 +282,13 @@ namespace Pulumi.Oci.Opsi
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// (Updatable) Number of OCPUs allocated to OPSI Warehouse ADW.
+        /// (Updatable) The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+        /// </summary>
+        [Input("computeModel")]
+        public Input<string>? ComputeModel { get; set; }
+
+        /// <summary>
+        /// (Updatable) Number of CPUs allocated to OPSI Warehouse ADW.
         /// </summary>
         [Input("cpuAllocated")]
         public Input<double>? CpuAllocated { get; set; }

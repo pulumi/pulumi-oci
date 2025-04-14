@@ -38,6 +38,10 @@ namespace Pulumi.Oci.Sch.Outputs
         /// </summary>
         public readonly string? PluginName;
         /// <summary>
+        /// The private endpoint metadata for the connector's source or target.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.ConnectorSourcePrivateEndpointMetadata> PrivateEndpointMetadatas;
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
         /// </summary>
         public readonly string? StreamId;
@@ -56,6 +60,8 @@ namespace Pulumi.Oci.Sch.Outputs
 
             string? pluginName,
 
+            ImmutableArray<Outputs.ConnectorSourcePrivateEndpointMetadata> privateEndpointMetadatas,
+
             string? streamId)
         {
             ConfigMap = configMap;
@@ -64,6 +70,7 @@ namespace Pulumi.Oci.Sch.Outputs
             LogSources = logSources;
             MonitoringSources = monitoringSources;
             PluginName = pluginName;
+            PrivateEndpointMetadatas = privateEndpointMetadatas;
             StreamId = streamId;
         }
     }

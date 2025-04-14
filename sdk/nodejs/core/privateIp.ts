@@ -27,7 +27,9 @@ import * as utilities from "../utilities";
  *     },
  *     hostnameLabel: privateIpHostnameLabel,
  *     ipAddress: privateIpIpAddress,
+ *     lifetime: privateIpLifetime,
  *     routeTableId: testRouteTable.id,
+ *     subnetId: testSubnet.id,
  *     vlanId: testVlan.id,
  *     vnicId: testVnicAttachment.vnicId,
  * });
@@ -102,21 +104,28 @@ export class PrivateIp extends pulumi.CustomResource {
      */
     public readonly ipAddress!: pulumi.Output<string>;
     /**
+     * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+     */
+    public /*out*/ readonly ipState!: pulumi.Output<string>;
+    /**
      * Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
      */
     public /*out*/ readonly isPrimary!: pulumi.Output<boolean>;
-    /**
-     * true if the IP is reserved and can exist detached from vnic
-     */
     public /*out*/ readonly isReserved!: pulumi.Output<boolean>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+     * (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+     * * Ephemeral
+     * * Reserved
+     */
+    public readonly lifetime!: pulumi.Output<string>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      */
     public readonly routeTableId!: pulumi.Output<string | undefined>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the private IP is to be drawn. The IP address, *if supplied*, must be valid for the given subnet.
      */
-    public /*out*/ readonly subnetId!: pulumi.Output<string>;
+    public readonly subnetId!: pulumi.Output<string>;
     /**
      * The date and time the private IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
@@ -134,7 +143,7 @@ export class PrivateIp extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly vnicId!: pulumi.Output<string>;
+    public readonly vnicId!: pulumi.Output<string | undefined>;
 
     /**
      * Create a PrivateIp resource with the given unique name, arguments, and options.
@@ -156,8 +165,10 @@ export class PrivateIp extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["hostnameLabel"] = state ? state.hostnameLabel : undefined;
             resourceInputs["ipAddress"] = state ? state.ipAddress : undefined;
+            resourceInputs["ipState"] = state ? state.ipState : undefined;
             resourceInputs["isPrimary"] = state ? state.isPrimary : undefined;
             resourceInputs["isReserved"] = state ? state.isReserved : undefined;
+            resourceInputs["lifetime"] = state ? state.lifetime : undefined;
             resourceInputs["routeTableId"] = state ? state.routeTableId : undefined;
             resourceInputs["subnetId"] = state ? state.subnetId : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
@@ -170,14 +181,16 @@ export class PrivateIp extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["hostnameLabel"] = args ? args.hostnameLabel : undefined;
             resourceInputs["ipAddress"] = args ? args.ipAddress : undefined;
+            resourceInputs["lifetime"] = args ? args.lifetime : undefined;
             resourceInputs["routeTableId"] = args ? args.routeTableId : undefined;
+            resourceInputs["subnetId"] = args ? args.subnetId : undefined;
             resourceInputs["vlanId"] = args ? args.vlanId : undefined;
             resourceInputs["vnicId"] = args ? args.vnicId : undefined;
             resourceInputs["availabilityDomain"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
+            resourceInputs["ipState"] = undefined /*out*/;
             resourceInputs["isPrimary"] = undefined /*out*/;
             resourceInputs["isReserved"] = undefined /*out*/;
-            resourceInputs["subnetId"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -222,19 +235,26 @@ export interface PrivateIpState {
      */
     ipAddress?: pulumi.Input<string>;
     /**
+     * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+     */
+    ipState?: pulumi.Input<string>;
+    /**
      * Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
      */
     isPrimary?: pulumi.Input<boolean>;
-    /**
-     * true if the IP is reserved and can exist detached from vnic
-     */
     isReserved?: pulumi.Input<boolean>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+     * (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+     * * Ephemeral
+     * * Reserved
+     */
+    lifetime?: pulumi.Input<string>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      */
     routeTableId?: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the private IP is to be drawn. The IP address, *if supplied*, must be valid for the given subnet.
      */
     subnetId?: pulumi.Input<string>;
     /**
@@ -286,9 +306,19 @@ export interface PrivateIpArgs {
      */
     ipAddress?: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+     * (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+     * * Ephemeral
+     * * Reserved
+     */
+    lifetime?: pulumi.Input<string>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      */
     routeTableId?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the private IP is to be drawn. The IP address, *if supplied*, must be valid for the given subnet.
+     */
+    subnetId?: pulumi.Input<string>;
     /**
      * Use this attribute only with the Oracle Cloud VMware Solution.
      *

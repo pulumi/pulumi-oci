@@ -5,8 +5,10 @@ package com.pulumi.oci.Sch.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Sch.outputs.GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadata;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -32,10 +34,15 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemTask {
      */
     private String functionId;
     /**
-     * @return The type discriminator.
+     * @return The type of dimension value: static or evaluated.
      * 
      */
     private String kind;
+    /**
+     * @return The private endpoint metadata for the connector&#39;s source or target.
+     * 
+     */
+    private List<GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadata> privateEndpointMetadatas;
 
     private GetServiceConnectorsServiceConnectorCollectionItemTask() {}
     /**
@@ -67,11 +74,18 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemTask {
         return this.functionId;
     }
     /**
-     * @return The type discriminator.
+     * @return The type of dimension value: static or evaluated.
      * 
      */
     public String kind() {
         return this.kind;
+    }
+    /**
+     * @return The private endpoint metadata for the connector&#39;s source or target.
+     * 
+     */
+    public List<GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadata> privateEndpointMetadatas() {
+        return this.privateEndpointMetadatas;
     }
 
     public static Builder builder() {
@@ -88,6 +102,7 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemTask {
         private String condition;
         private String functionId;
         private String kind;
+        private List<GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadata> privateEndpointMetadatas;
         public Builder() {}
         public Builder(GetServiceConnectorsServiceConnectorCollectionItemTask defaults) {
     	      Objects.requireNonNull(defaults);
@@ -96,6 +111,7 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemTask {
     	      this.condition = defaults.condition;
     	      this.functionId = defaults.functionId;
     	      this.kind = defaults.kind;
+    	      this.privateEndpointMetadatas = defaults.privateEndpointMetadatas;
         }
 
         @CustomType.Setter
@@ -138,6 +154,17 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemTask {
             this.kind = kind;
             return this;
         }
+        @CustomType.Setter
+        public Builder privateEndpointMetadatas(List<GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadata> privateEndpointMetadatas) {
+            if (privateEndpointMetadatas == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorsServiceConnectorCollectionItemTask", "privateEndpointMetadatas");
+            }
+            this.privateEndpointMetadatas = privateEndpointMetadatas;
+            return this;
+        }
+        public Builder privateEndpointMetadatas(GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadata... privateEndpointMetadatas) {
+            return privateEndpointMetadatas(List.of(privateEndpointMetadatas));
+        }
         public GetServiceConnectorsServiceConnectorCollectionItemTask build() {
             final var _resultValue = new GetServiceConnectorsServiceConnectorCollectionItemTask();
             _resultValue.batchSizeInKbs = batchSizeInKbs;
@@ -145,6 +172,7 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemTask {
             _resultValue.condition = condition;
             _resultValue.functionId = functionId;
             _resultValue.kind = kind;
+            _resultValue.privateEndpointMetadatas = privateEndpointMetadatas;
             return _resultValue;
         }
     }

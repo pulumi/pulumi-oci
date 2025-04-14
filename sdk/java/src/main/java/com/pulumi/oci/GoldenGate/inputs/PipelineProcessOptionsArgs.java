@@ -10,6 +10,8 @@ import com.pulumi.oci.GoldenGate.inputs.PipelineProcessOptionsInitialDataLoadArg
 import com.pulumi.oci.GoldenGate.inputs.PipelineProcessOptionsReplicateSchemaChangeArgs;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class PipelineProcessOptionsArgs extends com.pulumi.resources.ResourceArgs {
@@ -61,12 +63,28 @@ public final class PipelineProcessOptionsArgs extends com.pulumi.resources.Resou
         return this.shouldRestartOnFailure;
     }
 
+    /**
+     * (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+     * 
+     */
+    @Import(name="startUsingDefaultMapping")
+    private @Nullable Output<String> startUsingDefaultMapping;
+
+    /**
+     * @return (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+     * 
+     */
+    public Optional<Output<String>> startUsingDefaultMapping() {
+        return Optional.ofNullable(this.startUsingDefaultMapping);
+    }
+
     private PipelineProcessOptionsArgs() {}
 
     private PipelineProcessOptionsArgs(PipelineProcessOptionsArgs $) {
         this.initialDataLoad = $.initialDataLoad;
         this.replicateSchemaChange = $.replicateSchemaChange;
         this.shouldRestartOnFailure = $.shouldRestartOnFailure;
+        this.startUsingDefaultMapping = $.startUsingDefaultMapping;
     }
 
     public static Builder builder() {
@@ -148,6 +166,27 @@ public final class PipelineProcessOptionsArgs extends com.pulumi.resources.Resou
          */
         public Builder shouldRestartOnFailure(String shouldRestartOnFailure) {
             return shouldRestartOnFailure(Output.of(shouldRestartOnFailure));
+        }
+
+        /**
+         * @param startUsingDefaultMapping (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder startUsingDefaultMapping(@Nullable Output<String> startUsingDefaultMapping) {
+            $.startUsingDefaultMapping = startUsingDefaultMapping;
+            return this;
+        }
+
+        /**
+         * @param startUsingDefaultMapping (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder startUsingDefaultMapping(String startUsingDefaultMapping) {
+            return startUsingDefaultMapping(Output.of(startUsingDefaultMapping));
         }
 
         public PipelineProcessOptionsArgs build() {

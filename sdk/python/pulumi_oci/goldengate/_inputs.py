@@ -46,6 +46,8 @@ __all__ = [
     'PipelineLockArgsDict',
     'PipelineMappingRuleArgs',
     'PipelineMappingRuleArgsDict',
+    'PipelinePipelineDiagnosticDataArgs',
+    'PipelinePipelineDiagnosticDataArgsDict',
     'PipelineProcessOptionsArgs',
     'PipelineProcessOptionsArgsDict',
     'PipelineProcessOptionsInitialDataLoadArgs',
@@ -1409,6 +1411,118 @@ class PipelineMappingRuleArgs:
 
 
 if not MYPY:
+    class PipelinePipelineDiagnosticDataArgsDict(TypedDict):
+        bucket: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Name of the bucket where the object is to be uploaded in the object storage
+        """
+        diagnostic_state: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The state of the pipeline diagnostics collection.
+        """
+        namespace: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Name of namespace that serves as a container for all of your buckets
+        """
+        object: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Name of the diagnostic collected and uploaded to object storage
+        """
+        time_last_collected: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The date and time the diagnostic data was last collected for the pipeline. The format is defined by  [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-07-25T21:10:29.600Z`.
+        """
+elif False:
+    PipelinePipelineDiagnosticDataArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PipelinePipelineDiagnosticDataArgs:
+    def __init__(__self__, *,
+                 bucket: Optional[pulumi.Input[builtins.str]] = None,
+                 diagnostic_state: Optional[pulumi.Input[builtins.str]] = None,
+                 namespace: Optional[pulumi.Input[builtins.str]] = None,
+                 object: Optional[pulumi.Input[builtins.str]] = None,
+                 time_last_collected: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] bucket: Name of the bucket where the object is to be uploaded in the object storage
+        :param pulumi.Input[builtins.str] diagnostic_state: The state of the pipeline diagnostics collection.
+        :param pulumi.Input[builtins.str] namespace: Name of namespace that serves as a container for all of your buckets
+        :param pulumi.Input[builtins.str] object: Name of the diagnostic collected and uploaded to object storage
+        :param pulumi.Input[builtins.str] time_last_collected: The date and time the diagnostic data was last collected for the pipeline. The format is defined by  [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-07-25T21:10:29.600Z`.
+        """
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if diagnostic_state is not None:
+            pulumi.set(__self__, "diagnostic_state", diagnostic_state)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+        if time_last_collected is not None:
+            pulumi.set(__self__, "time_last_collected", time_last_collected)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Name of the bucket where the object is to be uploaded in the object storage
+        """
+        return pulumi.get(self, "bucket")
+
+    @bucket.setter
+    def bucket(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "bucket", value)
+
+    @property
+    @pulumi.getter(name="diagnosticState")
+    def diagnostic_state(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The state of the pipeline diagnostics collection.
+        """
+        return pulumi.get(self, "diagnostic_state")
+
+    @diagnostic_state.setter
+    def diagnostic_state(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "diagnostic_state", value)
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Name of namespace that serves as a container for all of your buckets
+        """
+        return pulumi.get(self, "namespace")
+
+    @namespace.setter
+    def namespace(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "namespace", value)
+
+    @property
+    @pulumi.getter
+    def object(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Name of the diagnostic collected and uploaded to object storage
+        """
+        return pulumi.get(self, "object")
+
+    @object.setter
+    def object(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "object", value)
+
+    @property
+    @pulumi.getter(name="timeLastCollected")
+    def time_last_collected(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The date and time the diagnostic data was last collected for the pipeline. The format is defined by  [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-07-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_last_collected")
+
+    @time_last_collected.setter
+    def time_last_collected(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "time_last_collected", value)
+
+
+if not MYPY:
     class PipelineProcessOptionsArgsDict(TypedDict):
         initial_data_load: pulumi.Input['PipelineProcessOptionsInitialDataLoadArgsDict']
         """
@@ -1422,6 +1536,10 @@ if not MYPY:
         """
         (Updatable) If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
         """
+        start_using_default_mapping: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+        """
 elif False:
     PipelineProcessOptionsArgsDict: TypeAlias = Mapping[str, Any]
 
@@ -1430,15 +1548,19 @@ class PipelineProcessOptionsArgs:
     def __init__(__self__, *,
                  initial_data_load: pulumi.Input['PipelineProcessOptionsInitialDataLoadArgs'],
                  replicate_schema_change: pulumi.Input['PipelineProcessOptionsReplicateSchemaChangeArgs'],
-                 should_restart_on_failure: pulumi.Input[builtins.str]):
+                 should_restart_on_failure: pulumi.Input[builtins.str],
+                 start_using_default_mapping: Optional[pulumi.Input[builtins.str]] = None):
         """
         :param pulumi.Input['PipelineProcessOptionsInitialDataLoadArgs'] initial_data_load: (Updatable) Options required for the pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
         :param pulumi.Input['PipelineProcessOptionsReplicateSchemaChangeArgs'] replicate_schema_change: (Updatable) Options required for pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
         :param pulumi.Input[builtins.str] should_restart_on_failure: (Updatable) If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
+        :param pulumi.Input[builtins.str] start_using_default_mapping: (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
         """
         pulumi.set(__self__, "initial_data_load", initial_data_load)
         pulumi.set(__self__, "replicate_schema_change", replicate_schema_change)
         pulumi.set(__self__, "should_restart_on_failure", should_restart_on_failure)
+        if start_using_default_mapping is not None:
+            pulumi.set(__self__, "start_using_default_mapping", start_using_default_mapping)
 
     @property
     @pulumi.getter(name="initialDataLoad")
@@ -1475,6 +1597,18 @@ class PipelineProcessOptionsArgs:
     @should_restart_on_failure.setter
     def should_restart_on_failure(self, value: pulumi.Input[builtins.str]):
         pulumi.set(self, "should_restart_on_failure", value)
+
+    @property
+    @pulumi.getter(name="startUsingDefaultMapping")
+    def start_using_default_mapping(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+        """
+        return pulumi.get(self, "start_using_default_mapping")
+
+    @start_using_default_mapping.setter
+    def start_using_default_mapping(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "start_using_default_mapping", value)
 
 
 if not MYPY:

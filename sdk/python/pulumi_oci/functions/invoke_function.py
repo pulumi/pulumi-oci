@@ -26,7 +26,8 @@ class InvokeFunctionArgs:
                  fn_invoke_type: Optional[pulumi.Input[builtins.str]] = None,
                  input_body_source_path: Optional[pulumi.Input[builtins.str]] = None,
                  invoke_function_body: Optional[pulumi.Input[builtins.str]] = None,
-                 invoke_function_body_base64_encoded: Optional[pulumi.Input[builtins.str]] = None):
+                 invoke_function_body_base64_encoded: Optional[pulumi.Input[builtins.str]] = None,
+                 is_dry_run: Optional[pulumi.Input[builtins.bool]] = None):
         """
         The set of arguments for constructing a InvokeFunction resource.
         :param pulumi.Input[builtins.str] function_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
@@ -37,6 +38,7 @@ class InvokeFunctionArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[builtins.str] invoke_function_body: The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `input_body_source_path` or `invoke_function_body_base64_encoded` is defined.
+        :param pulumi.Input[builtins.bool] is_dry_run: Indicates that the request is a dry run, if set to "true". A dry run request does not execute the function.
         """
         pulumi.set(__self__, "function_id", function_id)
         if base64_encode_content is not None:
@@ -51,6 +53,8 @@ class InvokeFunctionArgs:
             pulumi.set(__self__, "invoke_function_body", invoke_function_body)
         if invoke_function_body_base64_encoded is not None:
             pulumi.set(__self__, "invoke_function_body_base64_encoded", invoke_function_body_base64_encoded)
+        if is_dry_run is not None:
+            pulumi.set(__self__, "is_dry_run", is_dry_run)
 
     @property
     @pulumi.getter(name="functionId")
@@ -133,6 +137,18 @@ class InvokeFunctionArgs:
     def invoke_function_body_base64_encoded(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "invoke_function_body_base64_encoded", value)
 
+    @property
+    @pulumi.getter(name="isDryRun")
+    def is_dry_run(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Indicates that the request is a dry run, if set to "true". A dry run request does not execute the function.
+        """
+        return pulumi.get(self, "is_dry_run")
+
+    @is_dry_run.setter
+    def is_dry_run(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_dry_run", value)
+
 
 @pulumi.input_type
 class _InvokeFunctionState:
@@ -145,7 +161,8 @@ class _InvokeFunctionState:
                  input_body_source_path: Optional[pulumi.Input[builtins.str]] = None,
                  invoke_endpoint: Optional[pulumi.Input[builtins.str]] = None,
                  invoke_function_body: Optional[pulumi.Input[builtins.str]] = None,
-                 invoke_function_body_base64_encoded: Optional[pulumi.Input[builtins.str]] = None):
+                 invoke_function_body_base64_encoded: Optional[pulumi.Input[builtins.str]] = None,
+                 is_dry_run: Optional[pulumi.Input[builtins.bool]] = None):
         """
         Input properties used for looking up and filtering InvokeFunction resources.
         :param pulumi.Input[builtins.str] content: Content of the response string, if any. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
@@ -157,6 +174,7 @@ class _InvokeFunctionState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[builtins.str] invoke_function_body: The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `input_body_source_path` or `invoke_function_body_base64_encoded` is defined.
+        :param pulumi.Input[builtins.bool] is_dry_run: Indicates that the request is a dry run, if set to "true". A dry run request does not execute the function.
         """
         if base64_encode_content is not None:
             pulumi.set(__self__, "base64_encode_content", base64_encode_content)
@@ -176,6 +194,8 @@ class _InvokeFunctionState:
             pulumi.set(__self__, "invoke_function_body", invoke_function_body)
         if invoke_function_body_base64_encoded is not None:
             pulumi.set(__self__, "invoke_function_body_base64_encoded", invoke_function_body_base64_encoded)
+        if is_dry_run is not None:
+            pulumi.set(__self__, "is_dry_run", is_dry_run)
 
     @property
     @pulumi.getter(name="base64EncodeContent")
@@ -279,6 +299,18 @@ class _InvokeFunctionState:
     def invoke_function_body_base64_encoded(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "invoke_function_body_base64_encoded", value)
 
+    @property
+    @pulumi.getter(name="isDryRun")
+    def is_dry_run(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Indicates that the request is a dry run, if set to "true". A dry run request does not execute the function.
+        """
+        return pulumi.get(self, "is_dry_run")
+
+    @is_dry_run.setter
+    def is_dry_run(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_dry_run", value)
+
 
 class InvokeFunction(pulumi.CustomResource):
     @overload
@@ -292,6 +324,7 @@ class InvokeFunction(pulumi.CustomResource):
                  input_body_source_path: Optional[pulumi.Input[builtins.str]] = None,
                  invoke_function_body: Optional[pulumi.Input[builtins.str]] = None,
                  invoke_function_body_base64_encoded: Optional[pulumi.Input[builtins.str]] = None,
+                 is_dry_run: Optional[pulumi.Input[builtins.bool]] = None,
                  __props__=None):
         """
         This resource provides the Invoke Function resource in Oracle Cloud Infrastructure Functions service.
@@ -309,6 +342,7 @@ class InvokeFunction(pulumi.CustomResource):
             invoke_function_body=invoke_function_invoke_function_body,
             fn_intent=invoke_function_fn_intent,
             fn_invoke_type=invoke_function_fn_invoke_type,
+            is_dry_run=invoke_function_is_dry_run,
             base64_encode_content=False)
         ```
 
@@ -326,6 +360,7 @@ class InvokeFunction(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[builtins.str] invoke_function_body: The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `input_body_source_path` or `invoke_function_body_base64_encoded` is defined.
+        :param pulumi.Input[builtins.bool] is_dry_run: Indicates that the request is a dry run, if set to "true". A dry run request does not execute the function.
         """
         ...
     @overload
@@ -349,6 +384,7 @@ class InvokeFunction(pulumi.CustomResource):
             invoke_function_body=invoke_function_invoke_function_body,
             fn_intent=invoke_function_fn_intent,
             fn_invoke_type=invoke_function_fn_invoke_type,
+            is_dry_run=invoke_function_is_dry_run,
             base64_encode_content=False)
         ```
 
@@ -378,6 +414,7 @@ class InvokeFunction(pulumi.CustomResource):
                  input_body_source_path: Optional[pulumi.Input[builtins.str]] = None,
                  invoke_function_body: Optional[pulumi.Input[builtins.str]] = None,
                  invoke_function_body_base64_encoded: Optional[pulumi.Input[builtins.str]] = None,
+                 is_dry_run: Optional[pulumi.Input[builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -396,6 +433,7 @@ class InvokeFunction(pulumi.CustomResource):
             __props__.__dict__["input_body_source_path"] = input_body_source_path
             __props__.__dict__["invoke_function_body"] = invoke_function_body
             __props__.__dict__["invoke_function_body_base64_encoded"] = invoke_function_body_base64_encoded
+            __props__.__dict__["is_dry_run"] = is_dry_run
             __props__.__dict__["content"] = None
             __props__.__dict__["invoke_endpoint"] = None
         super(InvokeFunction, __self__).__init__(
@@ -416,7 +454,8 @@ class InvokeFunction(pulumi.CustomResource):
             input_body_source_path: Optional[pulumi.Input[builtins.str]] = None,
             invoke_endpoint: Optional[pulumi.Input[builtins.str]] = None,
             invoke_function_body: Optional[pulumi.Input[builtins.str]] = None,
-            invoke_function_body_base64_encoded: Optional[pulumi.Input[builtins.str]] = None) -> 'InvokeFunction':
+            invoke_function_body_base64_encoded: Optional[pulumi.Input[builtins.str]] = None,
+            is_dry_run: Optional[pulumi.Input[builtins.bool]] = None) -> 'InvokeFunction':
         """
         Get an existing InvokeFunction resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -433,6 +472,7 @@ class InvokeFunction(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[builtins.str] invoke_function_body: The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `input_body_source_path` or `invoke_function_body_base64_encoded` is defined.
+        :param pulumi.Input[builtins.bool] is_dry_run: Indicates that the request is a dry run, if set to "true". A dry run request does not execute the function.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -447,6 +487,7 @@ class InvokeFunction(pulumi.CustomResource):
         __props__.__dict__["invoke_endpoint"] = invoke_endpoint
         __props__.__dict__["invoke_function_body"] = invoke_function_body
         __props__.__dict__["invoke_function_body_base64_encoded"] = invoke_function_body_base64_encoded
+        __props__.__dict__["is_dry_run"] = is_dry_run
         return InvokeFunction(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -514,4 +555,12 @@ class InvokeFunction(pulumi.CustomResource):
     @pulumi.getter(name="invokeFunctionBodyBase64Encoded")
     def invoke_function_body_base64_encoded(self) -> pulumi.Output[builtins.str]:
         return pulumi.get(self, "invoke_function_body_base64_encoded")
+
+    @property
+    @pulumi.getter(name="isDryRun")
+    def is_dry_run(self) -> pulumi.Output[builtins.bool]:
+        """
+        Indicates that the request is a dry run, if set to "true". A dry run request does not execute the function.
+        """
+        return pulumi.get(self, "is_dry_run")
 

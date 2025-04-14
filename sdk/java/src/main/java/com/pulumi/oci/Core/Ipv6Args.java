@@ -5,7 +5,6 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -93,18 +92,52 @@ public final class Ipv6Args extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+     * (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+     * * Ephemeral
+     * * Reserved
+     * 
+     */
+    @Import(name="lifetime")
+    private @Nullable Output<String> lifetime;
+
+    /**
+     * @return (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+     * * Ephemeral
+     * * Reserved
+     * 
+     */
+    public Optional<Output<String>> lifetime() {
+        return Optional.ofNullable(this.lifetime);
+    }
+
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      * 
      */
     @Import(name="routeTableId")
     private @Nullable Output<String> routeTableId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      * 
      */
     public Optional<Output<String>> routeTableId() {
         return Optional.ofNullable(this.routeTableId);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the IPv6 is to be drawn. The IP address, *if supplied*, must be valid for the given subnet, only valid for reserved IPs currently.
+     * 
+     */
+    @Import(name="subnetId")
+    private @Nullable Output<String> subnetId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the IPv6 is to be drawn. The IP address, *if supplied*, must be valid for the given subnet, only valid for reserved IPs currently.
+     * 
+     */
+    public Optional<Output<String>> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
 
     /**
@@ -114,8 +147,8 @@ public final class Ipv6Args extends com.pulumi.resources.ResourceArgs {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Import(name="vnicId", required=true)
-    private Output<String> vnicId;
+    @Import(name="vnicId")
+    private @Nullable Output<String> vnicId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the IPv6 to. The IPv6 will be in the VNIC&#39;s subnet.
@@ -124,8 +157,8 @@ public final class Ipv6Args extends com.pulumi.resources.ResourceArgs {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> vnicId() {
-        return this.vnicId;
+    public Optional<Output<String>> vnicId() {
+        return Optional.ofNullable(this.vnicId);
     }
 
     private Ipv6Args() {}
@@ -136,7 +169,9 @@ public final class Ipv6Args extends com.pulumi.resources.ResourceArgs {
         this.freeformTags = $.freeformTags;
         this.ipAddress = $.ipAddress;
         this.ipv6subnetCidr = $.ipv6subnetCidr;
+        this.lifetime = $.lifetime;
         this.routeTableId = $.routeTableId;
+        this.subnetId = $.subnetId;
         this.vnicId = $.vnicId;
     }
 
@@ -264,7 +299,32 @@ public final class Ipv6Args extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param routeTableId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+         * @param lifetime (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+         * * Ephemeral
+         * * Reserved
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifetime(@Nullable Output<String> lifetime) {
+            $.lifetime = lifetime;
+            return this;
+        }
+
+        /**
+         * @param lifetime (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+         * * Ephemeral
+         * * Reserved
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifetime(String lifetime) {
+            return lifetime(Output.of(lifetime));
+        }
+
+        /**
+         * @param routeTableId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
          * 
          * @return builder
          * 
@@ -275,13 +335,34 @@ public final class Ipv6Args extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param routeTableId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+         * @param routeTableId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
          * 
          * @return builder
          * 
          */
         public Builder routeTableId(String routeTableId) {
             return routeTableId(Output.of(routeTableId));
+        }
+
+        /**
+         * @param subnetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the IPv6 is to be drawn. The IP address, *if supplied*, must be valid for the given subnet, only valid for reserved IPs currently.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subnetId(@Nullable Output<String> subnetId) {
+            $.subnetId = subnetId;
+            return this;
+        }
+
+        /**
+         * @param subnetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the IPv6 is to be drawn. The IP address, *if supplied*, must be valid for the given subnet, only valid for reserved IPs currently.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subnetId(String subnetId) {
+            return subnetId(Output.of(subnetId));
         }
 
         /**
@@ -293,7 +374,7 @@ public final class Ipv6Args extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder vnicId(Output<String> vnicId) {
+        public Builder vnicId(@Nullable Output<String> vnicId) {
             $.vnicId = vnicId;
             return this;
         }
@@ -312,9 +393,6 @@ public final class Ipv6Args extends com.pulumi.resources.ResourceArgs {
         }
 
         public Ipv6Args build() {
-            if ($.vnicId == null) {
-                throw new MissingRequiredPropertyException("Ipv6Args", "vnicId");
-            }
             return $;
         }
     }

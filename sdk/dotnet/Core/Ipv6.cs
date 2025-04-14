@@ -26,7 +26,6 @@ namespace Pulumi.Oci.Core
     /// {
     ///     var testIpv6 = new Oci.Core.Ipv6("test_ipv6", new()
     ///     {
-    ///         VnicId = testVnicAttachment.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -38,7 +37,10 @@ namespace Pulumi.Oci.Core
     ///         },
     ///         IpAddress = ipv6IpAddress,
     ///         Ipv6subnetCidr = ipv6Ipv6subnetCidr,
+    ///         Lifetime = ipv6Lifetime,
     ///         RouteTableId = testRouteTable.Id,
+    ///         SubnetId = testSubnet.Id,
+    ///         VnicId = testVnicAttachment.Id,
     ///     });
     /// 
     /// });
@@ -86,13 +88,27 @@ namespace Pulumi.Oci.Core
         public Output<string> IpAddress { get; private set; } = null!;
 
         /// <summary>
+        /// State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+        /// </summary>
+        [Output("ipState")]
+        public Output<string> IpState { get; private set; } = null!;
+
+        /// <summary>
         /// The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
         /// </summary>
         [Output("ipv6subnetCidr")]
         public Output<string> Ipv6subnetCidr { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+        /// (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+        /// * Ephemeral
+        /// * Reserved
+        /// </summary>
+        [Output("lifetime")]
+        public Output<string> Lifetime { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
         /// </summary>
         [Output("routeTableId")]
         public Output<string?> RouteTableId { get; private set; } = null!;
@@ -104,7 +120,7 @@ namespace Pulumi.Oci.Core
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the IPv6 is to be drawn. The IP address, *if supplied*, must be valid for the given subnet, only valid for reserved IPs currently.
         /// </summary>
         [Output("subnetId")]
         public Output<string> SubnetId { get; private set; } = null!;
@@ -123,7 +139,7 @@ namespace Pulumi.Oci.Core
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("vnicId")]
-        public Output<string> VnicId { get; private set; } = null!;
+        public Output<string?> VnicId { get; private set; } = null!;
 
 
         /// <summary>
@@ -133,7 +149,7 @@ namespace Pulumi.Oci.Core
         /// <param name="name">The unique name of the resource</param>
         /// <param name="args">The arguments used to populate this resource's properties</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
-        public Ipv6(string name, Ipv6Args args, CustomResourceOptions? options = null)
+        public Ipv6(string name, Ipv6Args? args = null, CustomResourceOptions? options = null)
             : base("oci:Core/ipv6:Ipv6", name, args ?? new Ipv6Args(), MakeResourceOptions(options, ""))
         {
         }
@@ -214,10 +230,24 @@ namespace Pulumi.Oci.Core
         public Input<string>? Ipv6subnetCidr { get; set; }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+        /// (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+        /// * Ephemeral
+        /// * Reserved
+        /// </summary>
+        [Input("lifetime")]
+        public Input<string>? Lifetime { get; set; }
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
         /// </summary>
         [Input("routeTableId")]
         public Input<string>? RouteTableId { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the IPv6 is to be drawn. The IP address, *if supplied*, must be valid for the given subnet, only valid for reserved IPs currently.
+        /// </summary>
+        [Input("subnetId")]
+        public Input<string>? SubnetId { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the IPv6 to. The IPv6 will be in the VNIC's subnet. 
@@ -226,8 +256,8 @@ namespace Pulumi.Oci.Core
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("vnicId", required: true)]
-        public Input<string> VnicId { get; set; } = null!;
+        [Input("vnicId")]
+        public Input<string>? VnicId { get; set; }
 
         public Ipv6Args()
         {
@@ -280,13 +310,27 @@ namespace Pulumi.Oci.Core
         public Input<string>? IpAddress { get; set; }
 
         /// <summary>
+        /// State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+        /// </summary>
+        [Input("ipState")]
+        public Input<string>? IpState { get; set; }
+
+        /// <summary>
         /// The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
         /// </summary>
         [Input("ipv6subnetCidr")]
         public Input<string>? Ipv6subnetCidr { get; set; }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+        /// (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+        /// * Ephemeral
+        /// * Reserved
+        /// </summary>
+        [Input("lifetime")]
+        public Input<string>? Lifetime { get; set; }
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
         /// </summary>
         [Input("routeTableId")]
         public Input<string>? RouteTableId { get; set; }
@@ -298,7 +342,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the IPv6 is to be drawn. The IP address, *if supplied*, must be valid for the given subnet, only valid for reserved IPs currently.
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }

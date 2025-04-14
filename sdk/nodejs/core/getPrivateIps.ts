@@ -53,6 +53,8 @@ import * as utilities from "../utilities";
  * // Filter on private IP address and Subnet OCID
  * const testPrivateIpsByIpAddress = oci.Core.getPrivateIps({
  *     ipAddress: privateIpIpAddress,
+ *     ipState: privateIpIpState,
+ *     lifetime: privateIpLifetime,
  *     subnetId: testSubnet.id,
  *     vlanId: testVlan.id,
  *     vnicId: testVnicAttachment.id,
@@ -65,6 +67,8 @@ export function getPrivateIps(args?: GetPrivateIpsArgs, opts?: pulumi.InvokeOpti
     return pulumi.runtime.invoke("oci:Core/getPrivateIps:getPrivateIps", {
         "filters": args.filters,
         "ipAddress": args.ipAddress,
+        "ipState": args.ipState,
+        "lifetime": args.lifetime,
         "subnetId": args.subnetId,
         "vlanId": args.vlanId,
         "vnicId": args.vnicId,
@@ -80,6 +84,16 @@ export interface GetPrivateIpsArgs {
      * An IP address. This could be either IPv4 or IPv6, depending on the resource. Example: `10.0.3.3`
      */
     ipAddress?: string;
+    /**
+     * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise AVAILABLE
+     */
+    ipState?: string;
+    /**
+     * Lifetime of the IP address. There are two types of IPs:
+     * * Ephemeral
+     * * Reserved
+     */
+    lifetime?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
      */
@@ -107,6 +121,16 @@ export interface GetPrivateIpsResult {
      * The private IP address of the `privateIp` object. The address is within the CIDR of the VNIC's subnet.
      */
     readonly ipAddress?: string;
+    /**
+     * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+     */
+    readonly ipState?: string;
+    /**
+     * Lifetime of the IP address. There are two types of IPv6 IPs:
+     * * Ephemeral
+     * * Reserved
+     */
+    readonly lifetime?: string;
     /**
      * The list of private_ips.
      */
@@ -171,6 +195,8 @@ export interface GetPrivateIpsResult {
  * // Filter on private IP address and Subnet OCID
  * const testPrivateIpsByIpAddress = oci.Core.getPrivateIps({
  *     ipAddress: privateIpIpAddress,
+ *     ipState: privateIpIpState,
+ *     lifetime: privateIpLifetime,
  *     subnetId: testSubnet.id,
  *     vlanId: testVlan.id,
  *     vnicId: testVnicAttachment.id,
@@ -183,6 +209,8 @@ export function getPrivateIpsOutput(args?: GetPrivateIpsOutputArgs, opts?: pulum
     return pulumi.runtime.invokeOutput("oci:Core/getPrivateIps:getPrivateIps", {
         "filters": args.filters,
         "ipAddress": args.ipAddress,
+        "ipState": args.ipState,
+        "lifetime": args.lifetime,
         "subnetId": args.subnetId,
         "vlanId": args.vlanId,
         "vnicId": args.vnicId,
@@ -198,6 +226,16 @@ export interface GetPrivateIpsOutputArgs {
      * An IP address. This could be either IPv4 or IPv6, depending on the resource. Example: `10.0.3.3`
      */
     ipAddress?: pulumi.Input<string>;
+    /**
+     * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise AVAILABLE
+     */
+    ipState?: pulumi.Input<string>;
+    /**
+     * Lifetime of the IP address. There are two types of IPs:
+     * * Ephemeral
+     * * Reserved
+     */
+    lifetime?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
      */

@@ -6,8 +6,11 @@ package com.pulumi.oci.Kms;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Kms.inputs.VaultVerificationReplicaVaultMetadataArgs;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class VaultVerificationArgs extends com.pulumi.resources.ResourceArgs {
@@ -31,6 +34,13 @@ public final class VaultVerificationArgs extends com.pulumi.resources.ResourceAr
         return this.replicaRegion;
     }
 
+    @Import(name="replicaVaultMetadata")
+    private @Nullable Output<VaultVerificationReplicaVaultMetadataArgs> replicaVaultMetadata;
+
+    public Optional<Output<VaultVerificationReplicaVaultMetadataArgs>> replicaVaultMetadata() {
+        return Optional.ofNullable(this.replicaVaultMetadata);
+    }
+
     /**
      * The OCID of the primary vault to create replica from.
      * 
@@ -50,6 +60,7 @@ public final class VaultVerificationArgs extends com.pulumi.resources.ResourceAr
 
     private VaultVerificationArgs(VaultVerificationArgs $) {
         this.replicaRegion = $.replicaRegion;
+        this.replicaVaultMetadata = $.replicaVaultMetadata;
         this.vaultId = $.vaultId;
     }
 
@@ -92,6 +103,15 @@ public final class VaultVerificationArgs extends com.pulumi.resources.ResourceAr
          */
         public Builder replicaRegion(String replicaRegion) {
             return replicaRegion(Output.of(replicaRegion));
+        }
+
+        public Builder replicaVaultMetadata(@Nullable Output<VaultVerificationReplicaVaultMetadataArgs> replicaVaultMetadata) {
+            $.replicaVaultMetadata = replicaVaultMetadata;
+            return this;
+        }
+
+        public Builder replicaVaultMetadata(VaultVerificationReplicaVaultMetadataArgs replicaVaultMetadata) {
+            return replicaVaultMetadata(Output.of(replicaVaultMetadata));
         }
 
         /**

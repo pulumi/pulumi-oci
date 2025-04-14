@@ -41,10 +41,22 @@ public final class GetIpv6Result {
      * 
      */
     private String ipAddress;
+    /**
+     * @return State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+     * 
+     */
+    private String ipState;
     private String ipv6id;
     private String ipv6subnetCidr;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+     * @return Lifetime of the IP address. There are two types of IPv6 IPs:
+     * * Ephemeral
+     * * Reserved
+     * 
+     */
+    private String lifetime;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      * 
      */
     private String routeTableId;
@@ -112,6 +124,13 @@ public final class GetIpv6Result {
     public String ipAddress() {
         return this.ipAddress;
     }
+    /**
+     * @return State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+     * 
+     */
+    public String ipState() {
+        return this.ipState;
+    }
     public String ipv6id() {
         return this.ipv6id;
     }
@@ -119,7 +138,16 @@ public final class GetIpv6Result {
         return this.ipv6subnetCidr;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+     * @return Lifetime of the IP address. There are two types of IPv6 IPs:
+     * * Ephemeral
+     * * Reserved
+     * 
+     */
+    public String lifetime() {
+        return this.lifetime;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      * 
      */
     public String routeTableId() {
@@ -169,8 +197,10 @@ public final class GetIpv6Result {
         private Map<String,String> freeformTags;
         private String id;
         private String ipAddress;
+        private String ipState;
         private String ipv6id;
         private String ipv6subnetCidr;
+        private String lifetime;
         private String routeTableId;
         private String state;
         private String subnetId;
@@ -185,8 +215,10 @@ public final class GetIpv6Result {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.ipAddress = defaults.ipAddress;
+    	      this.ipState = defaults.ipState;
     	      this.ipv6id = defaults.ipv6id;
     	      this.ipv6subnetCidr = defaults.ipv6subnetCidr;
+    	      this.lifetime = defaults.lifetime;
     	      this.routeTableId = defaults.routeTableId;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
@@ -243,6 +275,14 @@ public final class GetIpv6Result {
             return this;
         }
         @CustomType.Setter
+        public Builder ipState(String ipState) {
+            if (ipState == null) {
+              throw new MissingRequiredPropertyException("GetIpv6Result", "ipState");
+            }
+            this.ipState = ipState;
+            return this;
+        }
+        @CustomType.Setter
         public Builder ipv6id(String ipv6id) {
             if (ipv6id == null) {
               throw new MissingRequiredPropertyException("GetIpv6Result", "ipv6id");
@@ -256,6 +296,14 @@ public final class GetIpv6Result {
               throw new MissingRequiredPropertyException("GetIpv6Result", "ipv6subnetCidr");
             }
             this.ipv6subnetCidr = ipv6subnetCidr;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder lifetime(String lifetime) {
+            if (lifetime == null) {
+              throw new MissingRequiredPropertyException("GetIpv6Result", "lifetime");
+            }
+            this.lifetime = lifetime;
             return this;
         }
         @CustomType.Setter
@@ -306,8 +354,10 @@ public final class GetIpv6Result {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.ipAddress = ipAddress;
+            _resultValue.ipState = ipState;
             _resultValue.ipv6id = ipv6id;
             _resultValue.ipv6subnetCidr = ipv6subnetCidr;
+            _resultValue.lifetime = lifetime;
             _resultValue.routeTableId = routeTableId;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;

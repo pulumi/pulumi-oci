@@ -131,6 +131,21 @@ public final class PrivateIpState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+     * 
+     */
+    @Import(name="ipState")
+    private @Nullable Output<String> ipState;
+
+    /**
+     * @return State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+     * 
+     */
+    public Optional<Output<String>> ipState() {
+        return Optional.ofNullable(this.ipState);
+    }
+
+    /**
      * Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
      * 
      */
@@ -145,30 +160,41 @@ public final class PrivateIpState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.isPrimary);
     }
 
-    /**
-     * true if the IP is reserved and can exist detached from vnic
-     * 
-     */
     @Import(name="isReserved")
     private @Nullable Output<Boolean> isReserved;
 
-    /**
-     * @return true if the IP is reserved and can exist detached from vnic
-     * 
-     */
     public Optional<Output<Boolean>> isReserved() {
         return Optional.ofNullable(this.isReserved);
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+     * (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+     * * Ephemeral
+     * * Reserved
+     * 
+     */
+    @Import(name="lifetime")
+    private @Nullable Output<String> lifetime;
+
+    /**
+     * @return (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+     * * Ephemeral
+     * * Reserved
+     * 
+     */
+    public Optional<Output<String>> lifetime() {
+        return Optional.ofNullable(this.lifetime);
+    }
+
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      * 
      */
     @Import(name="routeTableId")
     private @Nullable Output<String> routeTableId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      * 
      */
     public Optional<Output<String>> routeTableId() {
@@ -176,14 +202,14 @@ public final class PrivateIpState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the private IP is to be drawn. The IP address, *if supplied*, must be valid for the given subnet.
      * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the private IP is to be drawn. The IP address, *if supplied*, must be valid for the given subnet.
      * 
      */
     public Optional<Output<String>> subnetId() {
@@ -255,8 +281,10 @@ public final class PrivateIpState extends com.pulumi.resources.ResourceArgs {
         this.freeformTags = $.freeformTags;
         this.hostnameLabel = $.hostnameLabel;
         this.ipAddress = $.ipAddress;
+        this.ipState = $.ipState;
         this.isPrimary = $.isPrimary;
         this.isReserved = $.isReserved;
+        this.lifetime = $.lifetime;
         this.routeTableId = $.routeTableId;
         this.subnetId = $.subnetId;
         this.timeCreated = $.timeCreated;
@@ -438,6 +466,27 @@ public final class PrivateIpState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param ipState State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipState(@Nullable Output<String> ipState) {
+            $.ipState = ipState;
+            return this;
+        }
+
+        /**
+         * @param ipState State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipState(String ipState) {
+            return ipState(Output.of(ipState));
+        }
+
+        /**
          * @param isPrimary Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
          * 
          * @return builder
@@ -458,29 +507,42 @@ public final class PrivateIpState extends com.pulumi.resources.ResourceArgs {
             return isPrimary(Output.of(isPrimary));
         }
 
-        /**
-         * @param isReserved true if the IP is reserved and can exist detached from vnic
-         * 
-         * @return builder
-         * 
-         */
         public Builder isReserved(@Nullable Output<Boolean> isReserved) {
             $.isReserved = isReserved;
             return this;
         }
 
-        /**
-         * @param isReserved true if the IP is reserved and can exist detached from vnic
-         * 
-         * @return builder
-         * 
-         */
         public Builder isReserved(Boolean isReserved) {
             return isReserved(Output.of(isReserved));
         }
 
         /**
-         * @param routeTableId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+         * @param lifetime (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+         * * Ephemeral
+         * * Reserved
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifetime(@Nullable Output<String> lifetime) {
+            $.lifetime = lifetime;
+            return this;
+        }
+
+        /**
+         * @param lifetime (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+         * * Ephemeral
+         * * Reserved
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifetime(String lifetime) {
+            return lifetime(Output.of(lifetime));
+        }
+
+        /**
+         * @param routeTableId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
          * 
          * @return builder
          * 
@@ -491,7 +553,7 @@ public final class PrivateIpState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param routeTableId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+         * @param routeTableId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
          * 
          * @return builder
          * 
@@ -501,7 +563,7 @@ public final class PrivateIpState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+         * @param subnetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the private IP is to be drawn. The IP address, *if supplied*, must be valid for the given subnet.
          * 
          * @return builder
          * 
@@ -512,7 +574,7 @@ public final class PrivateIpState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+         * @param subnetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the private IP is to be drawn. The IP address, *if supplied*, must be valid for the given subnet.
          * 
          * @return builder
          * 

@@ -25,6 +25,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// (Updatable) If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
         /// </summary>
         public readonly string ShouldRestartOnFailure;
+        /// <summary>
+        /// (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+        /// </summary>
+        public readonly string? StartUsingDefaultMapping;
 
         [OutputConstructor]
         private PipelineProcessOptions(
@@ -32,11 +36,14 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             Outputs.PipelineProcessOptionsReplicateSchemaChange replicateSchemaChange,
 
-            string shouldRestartOnFailure)
+            string shouldRestartOnFailure,
+
+            string? startUsingDefaultMapping)
         {
             InitialDataLoad = initialDataLoad;
             ReplicateSchemaChange = replicateSchemaChange;
             ShouldRestartOnFailure = shouldRestartOnFailure;
+            StartUsingDefaultMapping = startUsingDefaultMapping;
         }
     }
 }

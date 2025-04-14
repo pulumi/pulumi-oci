@@ -159,10 +159,20 @@ namespace Pulumi.Oci.Core
         /// The IPv6 address of the `IPv6` object. The address is within the IPv6 prefix of the VNIC's subnet (see the `ipv6CidrBlock` attribute for the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/) object.  Example: `2001:0db8:0123:1111:abcd:ef01:2345:6789`
         /// </summary>
         public readonly string IpAddress;
+        /// <summary>
+        /// State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+        /// </summary>
+        public readonly string IpState;
         public readonly string Ipv6id;
         public readonly string Ipv6subnetCidr;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+        /// Lifetime of the IP address. There are two types of IPv6 IPs:
+        /// * Ephemeral
+        /// * Reserved
+        /// </summary>
+        public readonly string Lifetime;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
         /// </summary>
         public readonly string RouteTableId;
         /// <summary>
@@ -196,9 +206,13 @@ namespace Pulumi.Oci.Core
 
             string ipAddress,
 
+            string ipState,
+
             string ipv6id,
 
             string ipv6subnetCidr,
+
+            string lifetime,
 
             string routeTableId,
 
@@ -216,8 +230,10 @@ namespace Pulumi.Oci.Core
             FreeformTags = freeformTags;
             Id = id;
             IpAddress = ipAddress;
+            IpState = ipState;
             Ipv6id = ipv6id;
             Ipv6subnetCidr = ipv6subnetCidr;
+            Lifetime = lifetime;
             RouteTableId = routeTableId;
             State = state;
             SubnetId = subnetId;

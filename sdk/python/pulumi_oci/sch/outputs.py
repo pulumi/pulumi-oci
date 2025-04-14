@@ -24,10 +24,13 @@ __all__ = [
     'ConnectorSourceMonitoringSourceNamespaceDetails',
     'ConnectorSourceMonitoringSourceNamespaceDetailsNamespace',
     'ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics',
+    'ConnectorSourcePrivateEndpointMetadata',
     'ConnectorTarget',
     'ConnectorTargetDimension',
     'ConnectorTargetDimensionDimensionValue',
+    'ConnectorTargetPrivateEndpointMetadata',
     'ConnectorTask',
+    'ConnectorTaskPrivateEndpointMetadata',
     'GetConnectorPluginsConnectorPluginCollectionResult',
     'GetConnectorPluginsConnectorPluginCollectionItemResult',
     'GetConnectorPluginsFilterResult',
@@ -38,10 +41,13 @@ __all__ = [
     'GetServiceConnectorSourceMonitoringSourceNamespaceDetailResult',
     'GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceResult',
     'GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricResult',
+    'GetServiceConnectorSourcePrivateEndpointMetadataResult',
     'GetServiceConnectorTargetResult',
     'GetServiceConnectorTargetDimensionResult',
     'GetServiceConnectorTargetDimensionDimensionValueResult',
+    'GetServiceConnectorTargetPrivateEndpointMetadataResult',
     'GetServiceConnectorTaskResult',
+    'GetServiceConnectorTaskPrivateEndpointMetadataResult',
     'GetServiceConnectorsFilterResult',
     'GetServiceConnectorsServiceConnectorCollectionResult',
     'GetServiceConnectorsServiceConnectorCollectionItemResult',
@@ -52,10 +58,13 @@ __all__ = [
     'GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailResult',
     'GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceResult',
     'GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricResult',
+    'GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataResult',
     'GetServiceConnectorsServiceConnectorCollectionItemTargetResult',
     'GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionResult',
     'GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueResult',
+    'GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataResult',
     'GetServiceConnectorsServiceConnectorCollectionItemTaskResult',
+    'GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataResult',
 ]
 
 @pulumi.output_type
@@ -71,6 +80,8 @@ class ConnectorSource(dict):
             suggest = "monitoring_sources"
         elif key == "pluginName":
             suggest = "plugin_name"
+        elif key == "privateEndpointMetadatas":
+            suggest = "private_endpoint_metadatas"
         elif key == "streamId":
             suggest = "stream_id"
 
@@ -92,6 +103,7 @@ class ConnectorSource(dict):
                  log_sources: Optional[Sequence['outputs.ConnectorSourceLogSource']] = None,
                  monitoring_sources: Optional[Sequence['outputs.ConnectorSourceMonitoringSource']] = None,
                  plugin_name: Optional[builtins.str] = None,
+                 private_endpoint_metadatas: Optional[Sequence['outputs.ConnectorSourcePrivateEndpointMetadata']] = None,
                  stream_id: Optional[builtins.str] = None):
         """
         :param builtins.str kind: (Updatable) The type discriminator.
@@ -100,6 +112,7 @@ class ConnectorSource(dict):
         :param Sequence['ConnectorSourceLogSourceArgs'] log_sources: (Updatable) The logs for this Logging source.
         :param Sequence['ConnectorSourceMonitoringSourceArgs'] monitoring_sources: (Updatable) One or more compartment-specific lists of metric namespaces to retrieve data from.
         :param builtins.str plugin_name: (Updatable) The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using [ListConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins).
+        :param Sequence['ConnectorSourcePrivateEndpointMetadataArgs'] private_endpoint_metadatas: The private endpoint metadata for the connector's source or target.
         :param builtins.str stream_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
         """
         pulumi.set(__self__, "kind", kind)
@@ -113,6 +126,8 @@ class ConnectorSource(dict):
             pulumi.set(__self__, "monitoring_sources", monitoring_sources)
         if plugin_name is not None:
             pulumi.set(__self__, "plugin_name", plugin_name)
+        if private_endpoint_metadatas is not None:
+            pulumi.set(__self__, "private_endpoint_metadatas", private_endpoint_metadatas)
         if stream_id is not None:
             pulumi.set(__self__, "stream_id", stream_id)
 
@@ -163,6 +178,14 @@ class ConnectorSource(dict):
         (Updatable) The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using [ListConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins).
         """
         return pulumi.get(self, "plugin_name")
+
+    @property
+    @pulumi.getter(name="privateEndpointMetadatas")
+    def private_endpoint_metadatas(self) -> Optional[Sequence['outputs.ConnectorSourcePrivateEndpointMetadata']]:
+        """
+        The private endpoint metadata for the connector's source or target.
+        """
+        return pulumi.get(self, "private_endpoint_metadatas")
 
     @property
     @pulumi.getter(name="streamId")
@@ -383,6 +406,56 @@ class ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics(dict):
 
 
 @pulumi.output_type
+class ConnectorSourcePrivateEndpointMetadata(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "rceDnsProxyIpAddress":
+            suggest = "rce_dns_proxy_ip_address"
+        elif key == "rceTrafficIpAddress":
+            suggest = "rce_traffic_ip_address"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ConnectorSourcePrivateEndpointMetadata. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ConnectorSourcePrivateEndpointMetadata.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ConnectorSourcePrivateEndpointMetadata.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 rce_dns_proxy_ip_address: Optional[builtins.str] = None,
+                 rce_traffic_ip_address: Optional[builtins.str] = None):
+        """
+        :param builtins.str rce_dns_proxy_ip_address: The reverse connection endpoint (RCE) IP address for DNS lookups.
+        :param builtins.str rce_traffic_ip_address: The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+        """
+        if rce_dns_proxy_ip_address is not None:
+            pulumi.set(__self__, "rce_dns_proxy_ip_address", rce_dns_proxy_ip_address)
+        if rce_traffic_ip_address is not None:
+            pulumi.set(__self__, "rce_traffic_ip_address", rce_traffic_ip_address)
+
+    @property
+    @pulumi.getter(name="rceDnsProxyIpAddress")
+    def rce_dns_proxy_ip_address(self) -> Optional[builtins.str]:
+        """
+        The reverse connection endpoint (RCE) IP address for DNS lookups.
+        """
+        return pulumi.get(self, "rce_dns_proxy_ip_address")
+
+    @property
+    @pulumi.getter(name="rceTrafficIpAddress")
+    def rce_traffic_ip_address(self) -> Optional[builtins.str]:
+        """
+        The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+        """
+        return pulumi.get(self, "rce_traffic_ip_address")
+
+
+@pulumi.output_type
 class ConnectorTarget(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -411,6 +484,8 @@ class ConnectorTarget(dict):
             suggest = "metric_namespace"
         elif key == "objectNamePrefix":
             suggest = "object_name_prefix"
+        elif key == "privateEndpointMetadatas":
+            suggest = "private_endpoint_metadatas"
         elif key == "streamId":
             suggest = "stream_id"
         elif key == "topicId":
@@ -445,6 +520,7 @@ class ConnectorTarget(dict):
                  metric_namespace: Optional[builtins.str] = None,
                  namespace: Optional[builtins.str] = None,
                  object_name_prefix: Optional[builtins.str] = None,
+                 private_endpoint_metadatas: Optional[Sequence['outputs.ConnectorTargetPrivateEndpointMetadata']] = None,
                  stream_id: Optional[builtins.str] = None,
                  topic_id: Optional[builtins.str] = None):
         """
@@ -465,6 +541,7 @@ class ConnectorTarget(dict):
         :param builtins.str metric_namespace: (Updatable) The namespace of the metric. Example: `oci_computeagent`
         :param builtins.str namespace: (Updatable) The namespace.
         :param builtins.str object_name_prefix: (Updatable) The prefix of the objects. Avoid entering confidential information.
+        :param Sequence['ConnectorTargetPrivateEndpointMetadataArgs'] private_endpoint_metadatas: The private endpoint metadata for the connector's source or target.
         :param builtins.str stream_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
         :param builtins.str topic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
         """
@@ -501,6 +578,8 @@ class ConnectorTarget(dict):
             pulumi.set(__self__, "namespace", namespace)
         if object_name_prefix is not None:
             pulumi.set(__self__, "object_name_prefix", object_name_prefix)
+        if private_endpoint_metadatas is not None:
+            pulumi.set(__self__, "private_endpoint_metadatas", private_endpoint_metadatas)
         if stream_id is not None:
             pulumi.set(__self__, "stream_id", stream_id)
         if topic_id is not None:
@@ -643,6 +722,14 @@ class ConnectorTarget(dict):
         return pulumi.get(self, "object_name_prefix")
 
     @property
+    @pulumi.getter(name="privateEndpointMetadatas")
+    def private_endpoint_metadatas(self) -> Optional[Sequence['outputs.ConnectorTargetPrivateEndpointMetadata']]:
+        """
+        The private endpoint metadata for the connector's source or target.
+        """
+        return pulumi.get(self, "private_endpoint_metadatas")
+
+    @property
     @pulumi.getter(name="streamId")
     def stream_id(self) -> Optional[builtins.str]:
         """
@@ -750,6 +837,56 @@ class ConnectorTargetDimensionDimensionValue(dict):
 
 
 @pulumi.output_type
+class ConnectorTargetPrivateEndpointMetadata(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "rceDnsProxyIpAddress":
+            suggest = "rce_dns_proxy_ip_address"
+        elif key == "rceTrafficIpAddress":
+            suggest = "rce_traffic_ip_address"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ConnectorTargetPrivateEndpointMetadata. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ConnectorTargetPrivateEndpointMetadata.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ConnectorTargetPrivateEndpointMetadata.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 rce_dns_proxy_ip_address: Optional[builtins.str] = None,
+                 rce_traffic_ip_address: Optional[builtins.str] = None):
+        """
+        :param builtins.str rce_dns_proxy_ip_address: The reverse connection endpoint (RCE) IP address for DNS lookups.
+        :param builtins.str rce_traffic_ip_address: The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+        """
+        if rce_dns_proxy_ip_address is not None:
+            pulumi.set(__self__, "rce_dns_proxy_ip_address", rce_dns_proxy_ip_address)
+        if rce_traffic_ip_address is not None:
+            pulumi.set(__self__, "rce_traffic_ip_address", rce_traffic_ip_address)
+
+    @property
+    @pulumi.getter(name="rceDnsProxyIpAddress")
+    def rce_dns_proxy_ip_address(self) -> Optional[builtins.str]:
+        """
+        The reverse connection endpoint (RCE) IP address for DNS lookups.
+        """
+        return pulumi.get(self, "rce_dns_proxy_ip_address")
+
+    @property
+    @pulumi.getter(name="rceTrafficIpAddress")
+    def rce_traffic_ip_address(self) -> Optional[builtins.str]:
+        """
+        The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+        """
+        return pulumi.get(self, "rce_traffic_ip_address")
+
+
+@pulumi.output_type
 class ConnectorTask(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -760,6 +897,8 @@ class ConnectorTask(dict):
             suggest = "batch_time_in_sec"
         elif key == "functionId":
             suggest = "function_id"
+        elif key == "privateEndpointMetadatas":
+            suggest = "private_endpoint_metadatas"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in ConnectorTask. Access the value via the '{suggest}' property getter instead.")
@@ -777,13 +916,15 @@ class ConnectorTask(dict):
                  batch_size_in_kbs: Optional[builtins.int] = None,
                  batch_time_in_sec: Optional[builtins.int] = None,
                  condition: Optional[builtins.str] = None,
-                 function_id: Optional[builtins.str] = None):
+                 function_id: Optional[builtins.str] = None,
+                 private_endpoint_metadatas: Optional[Sequence['outputs.ConnectorTaskPrivateEndpointMetadata']] = None):
         """
         :param builtins.str kind: (Updatable) The type descriminator.
         :param builtins.int batch_size_in_kbs: (Updatable) Size limit (kilobytes) for batch sent to invoke the function.
         :param builtins.int batch_time_in_sec: (Updatable) Time limit (seconds) for batch sent to invoke the function.
         :param builtins.str condition: (Updatable) A filter or mask to limit the source used in the flow defined by the connector.
         :param builtins.str function_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
+        :param Sequence['ConnectorTaskPrivateEndpointMetadataArgs'] private_endpoint_metadatas: The private endpoint metadata for the connector's source or target.
         """
         pulumi.set(__self__, "kind", kind)
         if batch_size_in_kbs is not None:
@@ -794,6 +935,8 @@ class ConnectorTask(dict):
             pulumi.set(__self__, "condition", condition)
         if function_id is not None:
             pulumi.set(__self__, "function_id", function_id)
+        if private_endpoint_metadatas is not None:
+            pulumi.set(__self__, "private_endpoint_metadatas", private_endpoint_metadatas)
 
     @property
     @pulumi.getter
@@ -834,6 +977,64 @@ class ConnectorTask(dict):
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
         """
         return pulumi.get(self, "function_id")
+
+    @property
+    @pulumi.getter(name="privateEndpointMetadatas")
+    def private_endpoint_metadatas(self) -> Optional[Sequence['outputs.ConnectorTaskPrivateEndpointMetadata']]:
+        """
+        The private endpoint metadata for the connector's source or target.
+        """
+        return pulumi.get(self, "private_endpoint_metadatas")
+
+
+@pulumi.output_type
+class ConnectorTaskPrivateEndpointMetadata(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "rceDnsProxyIpAddress":
+            suggest = "rce_dns_proxy_ip_address"
+        elif key == "rceTrafficIpAddress":
+            suggest = "rce_traffic_ip_address"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ConnectorTaskPrivateEndpointMetadata. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ConnectorTaskPrivateEndpointMetadata.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ConnectorTaskPrivateEndpointMetadata.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 rce_dns_proxy_ip_address: Optional[builtins.str] = None,
+                 rce_traffic_ip_address: Optional[builtins.str] = None):
+        """
+        :param builtins.str rce_dns_proxy_ip_address: The reverse connection endpoint (RCE) IP address for DNS lookups.
+        :param builtins.str rce_traffic_ip_address: The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+        """
+        if rce_dns_proxy_ip_address is not None:
+            pulumi.set(__self__, "rce_dns_proxy_ip_address", rce_dns_proxy_ip_address)
+        if rce_traffic_ip_address is not None:
+            pulumi.set(__self__, "rce_traffic_ip_address", rce_traffic_ip_address)
+
+    @property
+    @pulumi.getter(name="rceDnsProxyIpAddress")
+    def rce_dns_proxy_ip_address(self) -> Optional[builtins.str]:
+        """
+        The reverse connection endpoint (RCE) IP address for DNS lookups.
+        """
+        return pulumi.get(self, "rce_dns_proxy_ip_address")
+
+    @property
+    @pulumi.getter(name="rceTrafficIpAddress")
+    def rce_traffic_ip_address(self) -> Optional[builtins.str]:
+        """
+        The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+        """
+        return pulumi.get(self, "rce_traffic_ip_address")
 
 
 @pulumi.output_type
@@ -985,14 +1186,16 @@ class GetServiceConnectorSourceResult(dict):
                  log_sources: Sequence['outputs.GetServiceConnectorSourceLogSourceResult'],
                  monitoring_sources: Sequence['outputs.GetServiceConnectorSourceMonitoringSourceResult'],
                  plugin_name: builtins.str,
+                 private_endpoint_metadatas: Sequence['outputs.GetServiceConnectorSourcePrivateEndpointMetadataResult'],
                  stream_id: builtins.str):
         """
         :param builtins.str config_map: The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using [GetConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin) and review its schema value.
         :param Sequence['GetServiceConnectorSourceCursorArgs'] cursors: The [read setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm), which determines where in the stream to start moving data. For configuration instructions, see [Creating a Connector with a Streaming Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
-        :param builtins.str kind: The type discriminator.
+        :param builtins.str kind: The type of dimension value: static or evaluated.
         :param Sequence['GetServiceConnectorSourceLogSourceArgs'] log_sources: The logs for this Logging source.
         :param Sequence['GetServiceConnectorSourceMonitoringSourceArgs'] monitoring_sources: One or more compartment-specific lists of metric namespaces to retrieve data from.
         :param builtins.str plugin_name: The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using [ListConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins).
+        :param Sequence['GetServiceConnectorSourcePrivateEndpointMetadataArgs'] private_endpoint_metadatas: The private endpoint metadata for the connector's source or target.
         :param builtins.str stream_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
         """
         pulumi.set(__self__, "config_map", config_map)
@@ -1001,6 +1204,7 @@ class GetServiceConnectorSourceResult(dict):
         pulumi.set(__self__, "log_sources", log_sources)
         pulumi.set(__self__, "monitoring_sources", monitoring_sources)
         pulumi.set(__self__, "plugin_name", plugin_name)
+        pulumi.set(__self__, "private_endpoint_metadatas", private_endpoint_metadatas)
         pulumi.set(__self__, "stream_id", stream_id)
 
     @property
@@ -1023,7 +1227,7 @@ class GetServiceConnectorSourceResult(dict):
     @pulumi.getter
     def kind(self) -> builtins.str:
         """
-        The type discriminator.
+        The type of dimension value: static or evaluated.
         """
         return pulumi.get(self, "kind")
 
@@ -1052,6 +1256,14 @@ class GetServiceConnectorSourceResult(dict):
         return pulumi.get(self, "plugin_name")
 
     @property
+    @pulumi.getter(name="privateEndpointMetadatas")
+    def private_endpoint_metadatas(self) -> Sequence['outputs.GetServiceConnectorSourcePrivateEndpointMetadataResult']:
+        """
+        The private endpoint metadata for the connector's source or target.
+        """
+        return pulumi.get(self, "private_endpoint_metadatas")
+
+    @property
     @pulumi.getter(name="streamId")
     def stream_id(self) -> builtins.str:
         """
@@ -1065,7 +1277,7 @@ class GetServiceConnectorSourceCursorResult(dict):
     def __init__(__self__, *,
                  kind: builtins.str):
         """
-        :param builtins.str kind: The type discriminator.
+        :param builtins.str kind: The type of dimension value: static or evaluated.
         """
         pulumi.set(__self__, "kind", kind)
 
@@ -1073,7 +1285,7 @@ class GetServiceConnectorSourceCursorResult(dict):
     @pulumi.getter
     def kind(self) -> builtins.str:
         """
-        The type discriminator.
+        The type of dimension value: static or evaluated.
         """
         return pulumi.get(self, "kind")
 
@@ -1153,7 +1365,7 @@ class GetServiceConnectorSourceMonitoringSourceNamespaceDetailResult(dict):
                  kind: builtins.str,
                  namespaces: Sequence['outputs.GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceResult']):
         """
-        :param builtins.str kind: The type discriminator.
+        :param builtins.str kind: The type of dimension value: static or evaluated.
         :param Sequence['GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArgs'] namespaces: The namespaces for the compartment-specific list.
         """
         pulumi.set(__self__, "kind", kind)
@@ -1163,7 +1375,7 @@ class GetServiceConnectorSourceMonitoringSourceNamespaceDetailResult(dict):
     @pulumi.getter
     def kind(self) -> builtins.str:
         """
-        The type discriminator.
+        The type of dimension value: static or evaluated.
         """
         return pulumi.get(self, "kind")
 
@@ -1210,7 +1422,7 @@ class GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricRes
     def __init__(__self__, *,
                  kind: builtins.str):
         """
-        :param builtins.str kind: The type discriminator.
+        :param builtins.str kind: The type of dimension value: static or evaluated.
         """
         pulumi.set(__self__, "kind", kind)
 
@@ -1218,9 +1430,38 @@ class GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricRes
     @pulumi.getter
     def kind(self) -> builtins.str:
         """
-        The type discriminator.
+        The type of dimension value: static or evaluated.
         """
         return pulumi.get(self, "kind")
+
+
+@pulumi.output_type
+class GetServiceConnectorSourcePrivateEndpointMetadataResult(dict):
+    def __init__(__self__, *,
+                 rce_dns_proxy_ip_address: builtins.str,
+                 rce_traffic_ip_address: builtins.str):
+        """
+        :param builtins.str rce_dns_proxy_ip_address: The reverse connection endpoint (RCE) IP address for DNS lookups.
+        :param builtins.str rce_traffic_ip_address: The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+        """
+        pulumi.set(__self__, "rce_dns_proxy_ip_address", rce_dns_proxy_ip_address)
+        pulumi.set(__self__, "rce_traffic_ip_address", rce_traffic_ip_address)
+
+    @property
+    @pulumi.getter(name="rceDnsProxyIpAddress")
+    def rce_dns_proxy_ip_address(self) -> builtins.str:
+        """
+        The reverse connection endpoint (RCE) IP address for DNS lookups.
+        """
+        return pulumi.get(self, "rce_dns_proxy_ip_address")
+
+    @property
+    @pulumi.getter(name="rceTrafficIpAddress")
+    def rce_traffic_ip_address(self) -> builtins.str:
+        """
+        The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+        """
+        return pulumi.get(self, "rce_traffic_ip_address")
 
 
 @pulumi.output_type
@@ -1243,6 +1484,7 @@ class GetServiceConnectorTargetResult(dict):
                  metric_namespace: builtins.str,
                  namespace: builtins.str,
                  object_name_prefix: builtins.str,
+                 private_endpoint_metadatas: Sequence['outputs.GetServiceConnectorTargetPrivateEndpointMetadataResult'],
                  stream_id: builtins.str,
                  topic_id: builtins.str):
         """
@@ -1256,13 +1498,14 @@ class GetServiceConnectorTargetResult(dict):
         :param Sequence['GetServiceConnectorTargetDimensionArgs'] dimensions: List of dimension names and values.
         :param builtins.bool enable_formatted_messaging: Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol. Example: `true`
         :param builtins.str function_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
-        :param builtins.str kind: The type discriminator.
+        :param builtins.str kind: The type of dimension value: static or evaluated.
         :param builtins.str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
         :param builtins.str log_source_identifier: Identifier of the log source that you want to use for processing data received from the connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
         :param builtins.str metric: The name of the metric. Example: `CpuUtilization`
         :param builtins.str metric_namespace: The namespace of the metric. Example: `oci_computeagent`
         :param builtins.str namespace: The namespace.
         :param builtins.str object_name_prefix: The prefix of the objects. Avoid entering confidential information.
+        :param Sequence['GetServiceConnectorTargetPrivateEndpointMetadataArgs'] private_endpoint_metadatas: The private endpoint metadata for the connector's source or target.
         :param builtins.str stream_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
         :param builtins.str topic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
         """
@@ -1283,6 +1526,7 @@ class GetServiceConnectorTargetResult(dict):
         pulumi.set(__self__, "metric_namespace", metric_namespace)
         pulumi.set(__self__, "namespace", namespace)
         pulumi.set(__self__, "object_name_prefix", object_name_prefix)
+        pulumi.set(__self__, "private_endpoint_metadatas", private_endpoint_metadatas)
         pulumi.set(__self__, "stream_id", stream_id)
         pulumi.set(__self__, "topic_id", topic_id)
 
@@ -1370,7 +1614,7 @@ class GetServiceConnectorTargetResult(dict):
     @pulumi.getter
     def kind(self) -> builtins.str:
         """
-        The type discriminator.
+        The type of dimension value: static or evaluated.
         """
         return pulumi.get(self, "kind")
 
@@ -1421,6 +1665,14 @@ class GetServiceConnectorTargetResult(dict):
         The prefix of the objects. Avoid entering confidential information.
         """
         return pulumi.get(self, "object_name_prefix")
+
+    @property
+    @pulumi.getter(name="privateEndpointMetadatas")
+    def private_endpoint_metadatas(self) -> Sequence['outputs.GetServiceConnectorTargetPrivateEndpointMetadataResult']:
+        """
+        The private endpoint metadata for the connector's source or target.
+        """
+        return pulumi.get(self, "private_endpoint_metadatas")
 
     @property
     @pulumi.getter(name="streamId")
@@ -1475,7 +1727,7 @@ class GetServiceConnectorTargetDimensionDimensionValueResult(dict):
                  path: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str kind: The type discriminator.
+        :param builtins.str kind: The type of dimension value: static or evaluated.
         :param builtins.str path: The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.` and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
         :param builtins.str value: The data extracted from the specified dimension value (passed as-is). Unicode characters only. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails).
         """
@@ -1487,7 +1739,7 @@ class GetServiceConnectorTargetDimensionDimensionValueResult(dict):
     @pulumi.getter
     def kind(self) -> builtins.str:
         """
-        The type discriminator.
+        The type of dimension value: static or evaluated.
         """
         return pulumi.get(self, "kind")
 
@@ -1509,25 +1761,57 @@ class GetServiceConnectorTargetDimensionDimensionValueResult(dict):
 
 
 @pulumi.output_type
+class GetServiceConnectorTargetPrivateEndpointMetadataResult(dict):
+    def __init__(__self__, *,
+                 rce_dns_proxy_ip_address: builtins.str,
+                 rce_traffic_ip_address: builtins.str):
+        """
+        :param builtins.str rce_dns_proxy_ip_address: The reverse connection endpoint (RCE) IP address for DNS lookups.
+        :param builtins.str rce_traffic_ip_address: The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+        """
+        pulumi.set(__self__, "rce_dns_proxy_ip_address", rce_dns_proxy_ip_address)
+        pulumi.set(__self__, "rce_traffic_ip_address", rce_traffic_ip_address)
+
+    @property
+    @pulumi.getter(name="rceDnsProxyIpAddress")
+    def rce_dns_proxy_ip_address(self) -> builtins.str:
+        """
+        The reverse connection endpoint (RCE) IP address for DNS lookups.
+        """
+        return pulumi.get(self, "rce_dns_proxy_ip_address")
+
+    @property
+    @pulumi.getter(name="rceTrafficIpAddress")
+    def rce_traffic_ip_address(self) -> builtins.str:
+        """
+        The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+        """
+        return pulumi.get(self, "rce_traffic_ip_address")
+
+
+@pulumi.output_type
 class GetServiceConnectorTaskResult(dict):
     def __init__(__self__, *,
                  batch_size_in_kbs: builtins.int,
                  batch_time_in_sec: builtins.int,
                  condition: builtins.str,
                  function_id: builtins.str,
-                 kind: builtins.str):
+                 kind: builtins.str,
+                 private_endpoint_metadatas: Sequence['outputs.GetServiceConnectorTaskPrivateEndpointMetadataResult']):
         """
         :param builtins.int batch_size_in_kbs: Size limit (kilobytes) for batch sent to invoke the function.
         :param builtins.int batch_time_in_sec: Time limit (seconds) for batch sent to invoke the function.
         :param builtins.str condition: A filter or mask to limit the source used in the flow defined by the connector.
         :param builtins.str function_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
-        :param builtins.str kind: The type discriminator.
+        :param builtins.str kind: The type of dimension value: static or evaluated.
+        :param Sequence['GetServiceConnectorTaskPrivateEndpointMetadataArgs'] private_endpoint_metadatas: The private endpoint metadata for the connector's source or target.
         """
         pulumi.set(__self__, "batch_size_in_kbs", batch_size_in_kbs)
         pulumi.set(__self__, "batch_time_in_sec", batch_time_in_sec)
         pulumi.set(__self__, "condition", condition)
         pulumi.set(__self__, "function_id", function_id)
         pulumi.set(__self__, "kind", kind)
+        pulumi.set(__self__, "private_endpoint_metadatas", private_endpoint_metadatas)
 
     @property
     @pulumi.getter(name="batchSizeInKbs")
@@ -1565,9 +1849,46 @@ class GetServiceConnectorTaskResult(dict):
     @pulumi.getter
     def kind(self) -> builtins.str:
         """
-        The type discriminator.
+        The type of dimension value: static or evaluated.
         """
         return pulumi.get(self, "kind")
+
+    @property
+    @pulumi.getter(name="privateEndpointMetadatas")
+    def private_endpoint_metadatas(self) -> Sequence['outputs.GetServiceConnectorTaskPrivateEndpointMetadataResult']:
+        """
+        The private endpoint metadata for the connector's source or target.
+        """
+        return pulumi.get(self, "private_endpoint_metadatas")
+
+
+@pulumi.output_type
+class GetServiceConnectorTaskPrivateEndpointMetadataResult(dict):
+    def __init__(__self__, *,
+                 rce_dns_proxy_ip_address: builtins.str,
+                 rce_traffic_ip_address: builtins.str):
+        """
+        :param builtins.str rce_dns_proxy_ip_address: The reverse connection endpoint (RCE) IP address for DNS lookups.
+        :param builtins.str rce_traffic_ip_address: The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+        """
+        pulumi.set(__self__, "rce_dns_proxy_ip_address", rce_dns_proxy_ip_address)
+        pulumi.set(__self__, "rce_traffic_ip_address", rce_traffic_ip_address)
+
+    @property
+    @pulumi.getter(name="rceDnsProxyIpAddress")
+    def rce_dns_proxy_ip_address(self) -> builtins.str:
+        """
+        The reverse connection endpoint (RCE) IP address for DNS lookups.
+        """
+        return pulumi.get(self, "rce_dns_proxy_ip_address")
+
+    @property
+    @pulumi.getter(name="rceTrafficIpAddress")
+    def rce_traffic_ip_address(self) -> builtins.str:
+        """
+        The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+        """
+        return pulumi.get(self, "rce_traffic_ip_address")
 
 
 @pulumi.output_type
@@ -1788,14 +2109,16 @@ class GetServiceConnectorsServiceConnectorCollectionItemSourceResult(dict):
                  log_sources: Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceResult'],
                  monitoring_sources: Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceResult'],
                  plugin_name: builtins.str,
+                 private_endpoint_metadatas: Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataResult'],
                  stream_id: builtins.str):
         """
         :param builtins.str config_map: The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using [GetConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin) and review its schema value.
         :param Sequence['GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArgs'] cursors: The [read setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm), which determines where in the stream to start moving data. For configuration instructions, see [Creating a Connector with a Streaming Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
-        :param builtins.str kind: The type discriminator.
+        :param builtins.str kind: The type of dimension value: static or evaluated.
         :param Sequence['GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArgs'] log_sources: The logs for this Logging source.
         :param Sequence['GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArgs'] monitoring_sources: One or more compartment-specific lists of metric namespaces to retrieve data from.
         :param builtins.str plugin_name: The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using [ListConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins).
+        :param Sequence['GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArgs'] private_endpoint_metadatas: The private endpoint metadata for the connector's source or target.
         :param builtins.str stream_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
         """
         pulumi.set(__self__, "config_map", config_map)
@@ -1804,6 +2127,7 @@ class GetServiceConnectorsServiceConnectorCollectionItemSourceResult(dict):
         pulumi.set(__self__, "log_sources", log_sources)
         pulumi.set(__self__, "monitoring_sources", monitoring_sources)
         pulumi.set(__self__, "plugin_name", plugin_name)
+        pulumi.set(__self__, "private_endpoint_metadatas", private_endpoint_metadatas)
         pulumi.set(__self__, "stream_id", stream_id)
 
     @property
@@ -1826,7 +2150,7 @@ class GetServiceConnectorsServiceConnectorCollectionItemSourceResult(dict):
     @pulumi.getter
     def kind(self) -> builtins.str:
         """
-        The type discriminator.
+        The type of dimension value: static or evaluated.
         """
         return pulumi.get(self, "kind")
 
@@ -1855,6 +2179,14 @@ class GetServiceConnectorsServiceConnectorCollectionItemSourceResult(dict):
         return pulumi.get(self, "plugin_name")
 
     @property
+    @pulumi.getter(name="privateEndpointMetadatas")
+    def private_endpoint_metadatas(self) -> Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataResult']:
+        """
+        The private endpoint metadata for the connector's source or target.
+        """
+        return pulumi.get(self, "private_endpoint_metadatas")
+
+    @property
     @pulumi.getter(name="streamId")
     def stream_id(self) -> builtins.str:
         """
@@ -1868,7 +2200,7 @@ class GetServiceConnectorsServiceConnectorCollectionItemSourceCursorResult(dict)
     def __init__(__self__, *,
                  kind: builtins.str):
         """
-        :param builtins.str kind: The type discriminator.
+        :param builtins.str kind: The type of dimension value: static or evaluated.
         """
         pulumi.set(__self__, "kind", kind)
 
@@ -1876,7 +2208,7 @@ class GetServiceConnectorsServiceConnectorCollectionItemSourceCursorResult(dict)
     @pulumi.getter
     def kind(self) -> builtins.str:
         """
-        The type discriminator.
+        The type of dimension value: static or evaluated.
         """
         return pulumi.get(self, "kind")
 
@@ -1956,7 +2288,7 @@ class GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNa
                  kind: builtins.str,
                  namespaces: Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceResult']):
         """
-        :param builtins.str kind: The type discriminator.
+        :param builtins.str kind: The type of dimension value: static or evaluated.
         :param Sequence['GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArgs'] namespaces: The namespaces for the compartment-specific list.
         """
         pulumi.set(__self__, "kind", kind)
@@ -1966,7 +2298,7 @@ class GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNa
     @pulumi.getter
     def kind(self) -> builtins.str:
         """
-        The type discriminator.
+        The type of dimension value: static or evaluated.
         """
         return pulumi.get(self, "kind")
 
@@ -2013,7 +2345,7 @@ class GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNa
     def __init__(__self__, *,
                  kind: builtins.str):
         """
-        :param builtins.str kind: The type discriminator.
+        :param builtins.str kind: The type of dimension value: static or evaluated.
         """
         pulumi.set(__self__, "kind", kind)
 
@@ -2021,9 +2353,38 @@ class GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNa
     @pulumi.getter
     def kind(self) -> builtins.str:
         """
-        The type discriminator.
+        The type of dimension value: static or evaluated.
         """
         return pulumi.get(self, "kind")
+
+
+@pulumi.output_type
+class GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataResult(dict):
+    def __init__(__self__, *,
+                 rce_dns_proxy_ip_address: builtins.str,
+                 rce_traffic_ip_address: builtins.str):
+        """
+        :param builtins.str rce_dns_proxy_ip_address: The reverse connection endpoint (RCE) IP address for DNS lookups.
+        :param builtins.str rce_traffic_ip_address: The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+        """
+        pulumi.set(__self__, "rce_dns_proxy_ip_address", rce_dns_proxy_ip_address)
+        pulumi.set(__self__, "rce_traffic_ip_address", rce_traffic_ip_address)
+
+    @property
+    @pulumi.getter(name="rceDnsProxyIpAddress")
+    def rce_dns_proxy_ip_address(self) -> builtins.str:
+        """
+        The reverse connection endpoint (RCE) IP address for DNS lookups.
+        """
+        return pulumi.get(self, "rce_dns_proxy_ip_address")
+
+    @property
+    @pulumi.getter(name="rceTrafficIpAddress")
+    def rce_traffic_ip_address(self) -> builtins.str:
+        """
+        The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+        """
+        return pulumi.get(self, "rce_traffic_ip_address")
 
 
 @pulumi.output_type
@@ -2046,6 +2407,7 @@ class GetServiceConnectorsServiceConnectorCollectionItemTargetResult(dict):
                  metric_namespace: builtins.str,
                  namespace: builtins.str,
                  object_name_prefix: builtins.str,
+                 private_endpoint_metadatas: Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataResult'],
                  stream_id: builtins.str,
                  topic_id: builtins.str):
         """
@@ -2059,13 +2421,14 @@ class GetServiceConnectorsServiceConnectorCollectionItemTargetResult(dict):
         :param Sequence['GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArgs'] dimensions: List of dimension names and values.
         :param builtins.bool enable_formatted_messaging: Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol. Example: `true`
         :param builtins.str function_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
-        :param builtins.str kind: The type discriminator.
+        :param builtins.str kind: The type of dimension value: static or evaluated.
         :param builtins.str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
         :param builtins.str log_source_identifier: Identifier of the log source that you want to use for processing data received from the connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
         :param builtins.str metric: The name of the metric. Example: `CpuUtilization`
         :param builtins.str metric_namespace: The namespace of the metric. Example: `oci_computeagent`
         :param builtins.str namespace: The namespace.
         :param builtins.str object_name_prefix: The prefix of the objects. Avoid entering confidential information.
+        :param Sequence['GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArgs'] private_endpoint_metadatas: The private endpoint metadata for the connector's source or target.
         :param builtins.str stream_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
         :param builtins.str topic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
         """
@@ -2086,6 +2449,7 @@ class GetServiceConnectorsServiceConnectorCollectionItemTargetResult(dict):
         pulumi.set(__self__, "metric_namespace", metric_namespace)
         pulumi.set(__self__, "namespace", namespace)
         pulumi.set(__self__, "object_name_prefix", object_name_prefix)
+        pulumi.set(__self__, "private_endpoint_metadatas", private_endpoint_metadatas)
         pulumi.set(__self__, "stream_id", stream_id)
         pulumi.set(__self__, "topic_id", topic_id)
 
@@ -2173,7 +2537,7 @@ class GetServiceConnectorsServiceConnectorCollectionItemTargetResult(dict):
     @pulumi.getter
     def kind(self) -> builtins.str:
         """
-        The type discriminator.
+        The type of dimension value: static or evaluated.
         """
         return pulumi.get(self, "kind")
 
@@ -2224,6 +2588,14 @@ class GetServiceConnectorsServiceConnectorCollectionItemTargetResult(dict):
         The prefix of the objects. Avoid entering confidential information.
         """
         return pulumi.get(self, "object_name_prefix")
+
+    @property
+    @pulumi.getter(name="privateEndpointMetadatas")
+    def private_endpoint_metadatas(self) -> Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataResult']:
+        """
+        The private endpoint metadata for the connector's source or target.
+        """
+        return pulumi.get(self, "private_endpoint_metadatas")
 
     @property
     @pulumi.getter(name="streamId")
@@ -2278,7 +2650,7 @@ class GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimension
                  path: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str kind: The type discriminator.
+        :param builtins.str kind: The type of dimension value: static or evaluated.
         :param builtins.str path: The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.` and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
         :param builtins.str value: The data extracted from the specified dimension value (passed as-is). Unicode characters only. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails).
         """
@@ -2290,7 +2662,7 @@ class GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimension
     @pulumi.getter
     def kind(self) -> builtins.str:
         """
-        The type discriminator.
+        The type of dimension value: static or evaluated.
         """
         return pulumi.get(self, "kind")
 
@@ -2312,25 +2684,57 @@ class GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimension
 
 
 @pulumi.output_type
+class GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataResult(dict):
+    def __init__(__self__, *,
+                 rce_dns_proxy_ip_address: builtins.str,
+                 rce_traffic_ip_address: builtins.str):
+        """
+        :param builtins.str rce_dns_proxy_ip_address: The reverse connection endpoint (RCE) IP address for DNS lookups.
+        :param builtins.str rce_traffic_ip_address: The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+        """
+        pulumi.set(__self__, "rce_dns_proxy_ip_address", rce_dns_proxy_ip_address)
+        pulumi.set(__self__, "rce_traffic_ip_address", rce_traffic_ip_address)
+
+    @property
+    @pulumi.getter(name="rceDnsProxyIpAddress")
+    def rce_dns_proxy_ip_address(self) -> builtins.str:
+        """
+        The reverse connection endpoint (RCE) IP address for DNS lookups.
+        """
+        return pulumi.get(self, "rce_dns_proxy_ip_address")
+
+    @property
+    @pulumi.getter(name="rceTrafficIpAddress")
+    def rce_traffic_ip_address(self) -> builtins.str:
+        """
+        The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+        """
+        return pulumi.get(self, "rce_traffic_ip_address")
+
+
+@pulumi.output_type
 class GetServiceConnectorsServiceConnectorCollectionItemTaskResult(dict):
     def __init__(__self__, *,
                  batch_size_in_kbs: builtins.int,
                  batch_time_in_sec: builtins.int,
                  condition: builtins.str,
                  function_id: builtins.str,
-                 kind: builtins.str):
+                 kind: builtins.str,
+                 private_endpoint_metadatas: Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataResult']):
         """
         :param builtins.int batch_size_in_kbs: Size limit (kilobytes) for batch sent to invoke the function.
         :param builtins.int batch_time_in_sec: Time limit (seconds) for batch sent to invoke the function.
         :param builtins.str condition: A filter or mask to limit the source used in the flow defined by the connector.
         :param builtins.str function_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
-        :param builtins.str kind: The type discriminator.
+        :param builtins.str kind: The type of dimension value: static or evaluated.
+        :param Sequence['GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArgs'] private_endpoint_metadatas: The private endpoint metadata for the connector's source or target.
         """
         pulumi.set(__self__, "batch_size_in_kbs", batch_size_in_kbs)
         pulumi.set(__self__, "batch_time_in_sec", batch_time_in_sec)
         pulumi.set(__self__, "condition", condition)
         pulumi.set(__self__, "function_id", function_id)
         pulumi.set(__self__, "kind", kind)
+        pulumi.set(__self__, "private_endpoint_metadatas", private_endpoint_metadatas)
 
     @property
     @pulumi.getter(name="batchSizeInKbs")
@@ -2368,8 +2772,45 @@ class GetServiceConnectorsServiceConnectorCollectionItemTaskResult(dict):
     @pulumi.getter
     def kind(self) -> builtins.str:
         """
-        The type discriminator.
+        The type of dimension value: static or evaluated.
         """
         return pulumi.get(self, "kind")
+
+    @property
+    @pulumi.getter(name="privateEndpointMetadatas")
+    def private_endpoint_metadatas(self) -> Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataResult']:
+        """
+        The private endpoint metadata for the connector's source or target.
+        """
+        return pulumi.get(self, "private_endpoint_metadatas")
+
+
+@pulumi.output_type
+class GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataResult(dict):
+    def __init__(__self__, *,
+                 rce_dns_proxy_ip_address: builtins.str,
+                 rce_traffic_ip_address: builtins.str):
+        """
+        :param builtins.str rce_dns_proxy_ip_address: The reverse connection endpoint (RCE) IP address for DNS lookups.
+        :param builtins.str rce_traffic_ip_address: The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+        """
+        pulumi.set(__self__, "rce_dns_proxy_ip_address", rce_dns_proxy_ip_address)
+        pulumi.set(__self__, "rce_traffic_ip_address", rce_traffic_ip_address)
+
+    @property
+    @pulumi.getter(name="rceDnsProxyIpAddress")
+    def rce_dns_proxy_ip_address(self) -> builtins.str:
+        """
+        The reverse connection endpoint (RCE) IP address for DNS lookups.
+        """
+        return pulumi.get(self, "rce_dns_proxy_ip_address")
+
+    @property
+    @pulumi.getter(name="rceTrafficIpAddress")
+    def rce_traffic_ip_address(self) -> builtins.str:
+        """
+        The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+        """
+        return pulumi.get(self, "rce_traffic_ip_address")
 
 

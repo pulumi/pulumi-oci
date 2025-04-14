@@ -72,10 +72,16 @@ type LookupIpv6Result struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPv6.
 	Id string `pulumi:"id"`
 	// The IPv6 address of the `IPv6` object. The address is within the IPv6 prefix of the VNIC's subnet (see the `ipv6CidrBlock` attribute for the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/) object.  Example: `2001:0db8:0123:1111:abcd:ef01:2345:6789`
-	IpAddress      string `pulumi:"ipAddress"`
+	IpAddress string `pulumi:"ipAddress"`
+	// State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+	IpState        string `pulumi:"ipState"`
 	Ipv6id         string `pulumi:"ipv6id"`
 	Ipv6subnetCidr string `pulumi:"ipv6subnetCidr"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+	// Lifetime of the IP address. There are two types of IPv6 IPs:
+	// * Ephemeral
+	// * Reserved
+	Lifetime string `pulumi:"lifetime"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
 	RouteTableId string `pulumi:"routeTableId"`
 	// The IPv6's current state.
 	State string `pulumi:"state"`
@@ -151,6 +157,11 @@ func (o LookupIpv6ResultOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupIpv6Result) string { return v.IpAddress }).(pulumi.StringOutput)
 }
 
+// State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+func (o LookupIpv6ResultOutput) IpState() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupIpv6Result) string { return v.IpState }).(pulumi.StringOutput)
+}
+
 func (o LookupIpv6ResultOutput) Ipv6id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupIpv6Result) string { return v.Ipv6id }).(pulumi.StringOutput)
 }
@@ -159,7 +170,14 @@ func (o LookupIpv6ResultOutput) Ipv6subnetCidr() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupIpv6Result) string { return v.Ipv6subnetCidr }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+// Lifetime of the IP address. There are two types of IPv6 IPs:
+// * Ephemeral
+// * Reserved
+func (o LookupIpv6ResultOutput) Lifetime() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupIpv6Result) string { return v.Lifetime }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
 func (o LookupIpv6ResultOutput) RouteTableId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupIpv6Result) string { return v.RouteTableId }).(pulumi.StringOutput)
 }

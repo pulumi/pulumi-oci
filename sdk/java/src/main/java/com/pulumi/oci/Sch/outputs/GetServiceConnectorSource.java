@@ -8,6 +8,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Sch.outputs.GetServiceConnectorSourceCursor;
 import com.pulumi.oci.Sch.outputs.GetServiceConnectorSourceLogSource;
 import com.pulumi.oci.Sch.outputs.GetServiceConnectorSourceMonitoringSource;
+import com.pulumi.oci.Sch.outputs.GetServiceConnectorSourcePrivateEndpointMetadata;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -25,7 +26,7 @@ public final class GetServiceConnectorSource {
      */
     private List<GetServiceConnectorSourceCursor> cursors;
     /**
-     * @return The type discriminator.
+     * @return The type of dimension value: static or evaluated.
      * 
      */
     private String kind;
@@ -44,6 +45,11 @@ public final class GetServiceConnectorSource {
      * 
      */
     private String pluginName;
+    /**
+     * @return The private endpoint metadata for the connector&#39;s source or target.
+     * 
+     */
+    private List<GetServiceConnectorSourcePrivateEndpointMetadata> privateEndpointMetadatas;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
      * 
@@ -66,7 +72,7 @@ public final class GetServiceConnectorSource {
         return this.cursors;
     }
     /**
-     * @return The type discriminator.
+     * @return The type of dimension value: static or evaluated.
      * 
      */
     public String kind() {
@@ -94,6 +100,13 @@ public final class GetServiceConnectorSource {
         return this.pluginName;
     }
     /**
+     * @return The private endpoint metadata for the connector&#39;s source or target.
+     * 
+     */
+    public List<GetServiceConnectorSourcePrivateEndpointMetadata> privateEndpointMetadatas() {
+        return this.privateEndpointMetadatas;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
      * 
      */
@@ -116,6 +129,7 @@ public final class GetServiceConnectorSource {
         private List<GetServiceConnectorSourceLogSource> logSources;
         private List<GetServiceConnectorSourceMonitoringSource> monitoringSources;
         private String pluginName;
+        private List<GetServiceConnectorSourcePrivateEndpointMetadata> privateEndpointMetadatas;
         private String streamId;
         public Builder() {}
         public Builder(GetServiceConnectorSource defaults) {
@@ -126,6 +140,7 @@ public final class GetServiceConnectorSource {
     	      this.logSources = defaults.logSources;
     	      this.monitoringSources = defaults.monitoringSources;
     	      this.pluginName = defaults.pluginName;
+    	      this.privateEndpointMetadatas = defaults.privateEndpointMetadatas;
     	      this.streamId = defaults.streamId;
         }
 
@@ -187,6 +202,17 @@ public final class GetServiceConnectorSource {
             return this;
         }
         @CustomType.Setter
+        public Builder privateEndpointMetadatas(List<GetServiceConnectorSourcePrivateEndpointMetadata> privateEndpointMetadatas) {
+            if (privateEndpointMetadatas == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorSource", "privateEndpointMetadatas");
+            }
+            this.privateEndpointMetadatas = privateEndpointMetadatas;
+            return this;
+        }
+        public Builder privateEndpointMetadatas(GetServiceConnectorSourcePrivateEndpointMetadata... privateEndpointMetadatas) {
+            return privateEndpointMetadatas(List.of(privateEndpointMetadatas));
+        }
+        @CustomType.Setter
         public Builder streamId(String streamId) {
             if (streamId == null) {
               throw new MissingRequiredPropertyException("GetServiceConnectorSource", "streamId");
@@ -202,6 +228,7 @@ public final class GetServiceConnectorSource {
             _resultValue.logSources = logSources;
             _resultValue.monitoringSources = monitoringSources;
             _resultValue.pluginName = pluginName;
+            _resultValue.privateEndpointMetadatas = privateEndpointMetadatas;
             _resultValue.streamId = streamId;
             return _resultValue;
         }

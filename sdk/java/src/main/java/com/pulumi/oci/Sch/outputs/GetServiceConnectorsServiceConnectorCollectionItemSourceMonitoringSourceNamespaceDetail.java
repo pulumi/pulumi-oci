@@ -13,7 +13,7 @@ import java.util.Objects;
 @CustomType
 public final class GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail {
     /**
-     * @return The type discriminator.
+     * @return The type of dimension value: static or evaluated.
      * 
      */
     private String kind;
@@ -25,7 +25,7 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSourceMonit
 
     private GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail() {}
     /**
-     * @return The type discriminator.
+     * @return The type of dimension value: static or evaluated.
      * 
      */
     public String kind() {

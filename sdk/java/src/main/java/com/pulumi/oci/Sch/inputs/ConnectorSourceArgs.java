@@ -9,6 +9,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Sch.inputs.ConnectorSourceCursorArgs;
 import com.pulumi.oci.Sch.inputs.ConnectorSourceLogSourceArgs;
 import com.pulumi.oci.Sch.inputs.ConnectorSourceMonitoringSourceArgs;
+import com.pulumi.oci.Sch.inputs.ConnectorSourcePrivateEndpointMetadataArgs;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -111,6 +112,21 @@ public final class ConnectorSourceArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * The private endpoint metadata for the connector&#39;s source or target.
+     * 
+     */
+    @Import(name="privateEndpointMetadatas")
+    private @Nullable Output<List<ConnectorSourcePrivateEndpointMetadataArgs>> privateEndpointMetadatas;
+
+    /**
+     * @return The private endpoint metadata for the connector&#39;s source or target.
+     * 
+     */
+    public Optional<Output<List<ConnectorSourcePrivateEndpointMetadataArgs>>> privateEndpointMetadatas() {
+        return Optional.ofNullable(this.privateEndpointMetadatas);
+    }
+
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
      * 
      */
@@ -134,6 +150,7 @@ public final class ConnectorSourceArgs extends com.pulumi.resources.ResourceArgs
         this.logSources = $.logSources;
         this.monitoringSources = $.monitoringSources;
         this.pluginName = $.pluginName;
+        this.privateEndpointMetadatas = $.privateEndpointMetadatas;
         this.streamId = $.streamId;
     }
 
@@ -299,6 +316,37 @@ public final class ConnectorSourceArgs extends com.pulumi.resources.ResourceArgs
          */
         public Builder pluginName(String pluginName) {
             return pluginName(Output.of(pluginName));
+        }
+
+        /**
+         * @param privateEndpointMetadatas The private endpoint metadata for the connector&#39;s source or target.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateEndpointMetadatas(@Nullable Output<List<ConnectorSourcePrivateEndpointMetadataArgs>> privateEndpointMetadatas) {
+            $.privateEndpointMetadatas = privateEndpointMetadatas;
+            return this;
+        }
+
+        /**
+         * @param privateEndpointMetadatas The private endpoint metadata for the connector&#39;s source or target.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateEndpointMetadatas(List<ConnectorSourcePrivateEndpointMetadataArgs> privateEndpointMetadatas) {
+            return privateEndpointMetadatas(Output.of(privateEndpointMetadatas));
+        }
+
+        /**
+         * @param privateEndpointMetadatas The private endpoint metadata for the connector&#39;s source or target.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateEndpointMetadatas(ConnectorSourcePrivateEndpointMetadataArgs... privateEndpointMetadatas) {
+            return privateEndpointMetadatas(List.of(privateEndpointMetadatas));
         }
 
         /**

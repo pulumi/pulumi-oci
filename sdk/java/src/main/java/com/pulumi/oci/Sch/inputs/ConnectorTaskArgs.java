@@ -6,8 +6,10 @@ package com.pulumi.oci.Sch.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Sch.inputs.ConnectorTaskPrivateEndpointMetadataArgs;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -92,6 +94,21 @@ public final class ConnectorTaskArgs extends com.pulumi.resources.ResourceArgs {
         return this.kind;
     }
 
+    /**
+     * The private endpoint metadata for the connector&#39;s source or target.
+     * 
+     */
+    @Import(name="privateEndpointMetadatas")
+    private @Nullable Output<List<ConnectorTaskPrivateEndpointMetadataArgs>> privateEndpointMetadatas;
+
+    /**
+     * @return The private endpoint metadata for the connector&#39;s source or target.
+     * 
+     */
+    public Optional<Output<List<ConnectorTaskPrivateEndpointMetadataArgs>>> privateEndpointMetadatas() {
+        return Optional.ofNullable(this.privateEndpointMetadatas);
+    }
+
     private ConnectorTaskArgs() {}
 
     private ConnectorTaskArgs(ConnectorTaskArgs $) {
@@ -100,6 +117,7 @@ public final class ConnectorTaskArgs extends com.pulumi.resources.ResourceArgs {
         this.condition = $.condition;
         this.functionId = $.functionId;
         this.kind = $.kind;
+        this.privateEndpointMetadatas = $.privateEndpointMetadatas;
     }
 
     public static Builder builder() {
@@ -223,6 +241,37 @@ public final class ConnectorTaskArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder kind(String kind) {
             return kind(Output.of(kind));
+        }
+
+        /**
+         * @param privateEndpointMetadatas The private endpoint metadata for the connector&#39;s source or target.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateEndpointMetadatas(@Nullable Output<List<ConnectorTaskPrivateEndpointMetadataArgs>> privateEndpointMetadatas) {
+            $.privateEndpointMetadatas = privateEndpointMetadatas;
+            return this;
+        }
+
+        /**
+         * @param privateEndpointMetadatas The private endpoint metadata for the connector&#39;s source or target.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateEndpointMetadatas(List<ConnectorTaskPrivateEndpointMetadataArgs> privateEndpointMetadatas) {
+            return privateEndpointMetadatas(Output.of(privateEndpointMetadatas));
+        }
+
+        /**
+         * @param privateEndpointMetadatas The private endpoint metadata for the connector&#39;s source or target.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateEndpointMetadatas(ConnectorTaskPrivateEndpointMetadataArgs... privateEndpointMetadatas) {
+            return privateEndpointMetadatas(List.of(privateEndpointMetadatas));
         }
 
         public ConnectorTaskArgs build() {

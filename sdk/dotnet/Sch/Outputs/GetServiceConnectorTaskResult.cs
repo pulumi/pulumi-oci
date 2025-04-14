@@ -30,9 +30,13 @@ namespace Pulumi.Oci.Sch.Outputs
         /// </summary>
         public readonly string FunctionId;
         /// <summary>
-        /// The type discriminator.
+        /// The type of dimension value: static or evaluated.
         /// </summary>
         public readonly string Kind;
+        /// <summary>
+        /// The private endpoint metadata for the connector's source or target.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetServiceConnectorTaskPrivateEndpointMetadataResult> PrivateEndpointMetadatas;
 
         [OutputConstructor]
         private GetServiceConnectorTaskResult(
@@ -44,13 +48,16 @@ namespace Pulumi.Oci.Sch.Outputs
 
             string functionId,
 
-            string kind)
+            string kind,
+
+            ImmutableArray<Outputs.GetServiceConnectorTaskPrivateEndpointMetadataResult> privateEndpointMetadatas)
         {
             BatchSizeInKbs = batchSizeInKbs;
             BatchTimeInSec = batchTimeInSec;
             Condition = condition;
             FunctionId = functionId;
             Kind = kind;
+            PrivateEndpointMetadatas = privateEndpointMetadatas;
         }
     }
 }

@@ -39,6 +39,40 @@ public final class GetPrivateIpsPlainArgs extends com.pulumi.resources.InvokeArg
     }
 
     /**
+     * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise AVAILABLE
+     * 
+     */
+    @Import(name="ipState")
+    private @Nullable String ipState;
+
+    /**
+     * @return State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise AVAILABLE
+     * 
+     */
+    public Optional<String> ipState() {
+        return Optional.ofNullable(this.ipState);
+    }
+
+    /**
+     * Lifetime of the IP address. There are two types of IPs:
+     * * Ephemeral
+     * * Reserved
+     * 
+     */
+    @Import(name="lifetime")
+    private @Nullable String lifetime;
+
+    /**
+     * @return Lifetime of the IP address. There are two types of IPs:
+     * * Ephemeral
+     * * Reserved
+     * 
+     */
+    public Optional<String> lifetime() {
+        return Optional.ofNullable(this.lifetime);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
      * 
      */
@@ -88,6 +122,8 @@ public final class GetPrivateIpsPlainArgs extends com.pulumi.resources.InvokeArg
     private GetPrivateIpsPlainArgs(GetPrivateIpsPlainArgs $) {
         this.filters = $.filters;
         this.ipAddress = $.ipAddress;
+        this.ipState = $.ipState;
+        this.lifetime = $.lifetime;
         this.subnetId = $.subnetId;
         this.vlanId = $.vlanId;
         this.vnicId = $.vnicId;
@@ -128,6 +164,30 @@ public final class GetPrivateIpsPlainArgs extends com.pulumi.resources.InvokeArg
          */
         public Builder ipAddress(@Nullable String ipAddress) {
             $.ipAddress = ipAddress;
+            return this;
+        }
+
+        /**
+         * @param ipState State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise AVAILABLE
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipState(@Nullable String ipState) {
+            $.ipState = ipState;
+            return this;
+        }
+
+        /**
+         * @param lifetime Lifetime of the IP address. There are two types of IPs:
+         * * Ephemeral
+         * * Reserved
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifetime(@Nullable String lifetime) {
+            $.lifetime = lifetime;
             return this;
         }
 

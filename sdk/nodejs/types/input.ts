@@ -15811,11 +15811,11 @@ export namespace Core {
          */
         freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
-         * (Updatable) The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the `[Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/)` object and also the `[PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/)` object returned by `[ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps)` and `[GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)`.
+         * (Updatable) The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
          *
          * For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          *
-         * When launching an instance, use this `hostnameLabel` instead of the deprecated `hostnameLabel` in `[LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails)`. If you provide both, the values must match.
+         * When launching an instance, use this `hostnameLabel` instead of the deprecated `hostnameLabel` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). If you provide both, the values must match.
          *
          * Example: `bminstance1`
          *
@@ -15833,7 +15833,7 @@ export namespace Core {
          */
         nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the `[Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/)` object and also the `[PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/)` object returned by `[ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps)` and `[GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)`.
+         * A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
          *
          * If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
          *
@@ -15954,7 +15954,7 @@ export namespace Core {
          */
         launchCreateVolumeDetails?: pulumi.Input<inputs.Core.InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetails>;
         /**
-         * The type of volume. Currently, the only supported value is "iscsi".
+         * The type of volume attachment. Currently, the only supported values are "iscsi" and "paravirtualized".
          */
         type: pulumi.Input<string>;
         /**
@@ -17004,11 +17004,11 @@ export namespace Core {
          */
         freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
-         * (Updatable) The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the `[Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/)` object and also the `[PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/)` object returned by `[ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps)` and `[GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)`.
+         * (Updatable) The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
          *
          * For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          *
-         * When launching an instance, use this `hostnameLabel` instead of the deprecated `hostnameLabel` in `[LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails)`. If you provide both, the values must match.
+         * When launching an instance, use this `hostnameLabel` instead of the deprecated `hostnameLabel` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). If you provide both, the values must match.
          *
          * Example: `bminstance1`
          *
@@ -17026,7 +17026,7 @@ export namespace Core {
          */
         nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the `[Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/)` object and also the `[PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/)` object returned by `[ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps)` and `[GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)`.
+         * A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
          *
          * If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
          *
@@ -41773,6 +41773,29 @@ export namespace GoldenGate {
         target?: pulumi.Input<string>;
     }
 
+    export interface PipelinePipelineDiagnosticData {
+        /**
+         * Name of the bucket where the object is to be uploaded in the object storage
+         */
+        bucket?: pulumi.Input<string>;
+        /**
+         * The state of the pipeline diagnostics collection.
+         */
+        diagnosticState?: pulumi.Input<string>;
+        /**
+         * Name of namespace that serves as a container for all of your buckets
+         */
+        namespace?: pulumi.Input<string>;
+        /**
+         * Name of the diagnostic collected and uploaded to object storage
+         */
+        object?: pulumi.Input<string>;
+        /**
+         * The date and time the diagnostic data was last collected for the pipeline. The format is defined by  [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-07-25T21:10:29.600Z`.
+         */
+        timeLastCollected?: pulumi.Input<string>;
+    }
+
     export interface PipelineProcessOptions {
         /**
          * (Updatable) Options required for the pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
@@ -41786,6 +41809,10 @@ export namespace GoldenGate {
          * (Updatable) If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
          */
         shouldRestartOnFailure: pulumi.Input<string>;
+        /**
+         * (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+         */
+        startUsingDefaultMapping?: pulumi.Input<string>;
     }
 
     export interface PipelineProcessOptionsInitialDataLoad {
@@ -70685,6 +70712,12 @@ export namespace Kms {
          */
         uri?: pulumi.Input<string>;
     }
+
+    export interface VaultVerificationReplicaVaultMetadata {
+        idcsAccountNameUrl: pulumi.Input<string>;
+        privateEndpointId: pulumi.Input<string>;
+        vaultType: pulumi.Input<string>;
+    }
 }
 
 export namespace LicenseManager {
@@ -82818,6 +82851,10 @@ export namespace Sch {
          */
         pluginName?: pulumi.Input<string>;
         /**
+         * The private endpoint metadata for the connector's source or target.
+         */
+        privateEndpointMetadatas?: pulumi.Input<pulumi.Input<inputs.Sch.ConnectorSourcePrivateEndpointMetadata>[]>;
+        /**
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
          */
         streamId?: pulumi.Input<string>;
@@ -82883,6 +82920,17 @@ export namespace Sch {
          * (Updatable) The type discriminator.
          */
         kind: pulumi.Input<string>;
+    }
+
+    export interface ConnectorSourcePrivateEndpointMetadata {
+        /**
+         * The reverse connection endpoint (RCE) IP address for DNS lookups.
+         */
+        rceDnsProxyIpAddress?: pulumi.Input<string>;
+        /**
+         * The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+         */
+        rceTrafficIpAddress?: pulumi.Input<string>;
     }
 
     export interface ConnectorTarget {
@@ -82955,6 +83003,10 @@ export namespace Sch {
          */
         objectNamePrefix?: pulumi.Input<string>;
         /**
+         * The private endpoint metadata for the connector's source or target.
+         */
+        privateEndpointMetadatas?: pulumi.Input<pulumi.Input<inputs.Sch.ConnectorTargetPrivateEndpointMetadata>[]>;
+        /**
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
          */
         streamId?: pulumi.Input<string>;
@@ -82990,6 +83042,17 @@ export namespace Sch {
         value?: pulumi.Input<string>;
     }
 
+    export interface ConnectorTargetPrivateEndpointMetadata {
+        /**
+         * The reverse connection endpoint (RCE) IP address for DNS lookups.
+         */
+        rceDnsProxyIpAddress?: pulumi.Input<string>;
+        /**
+         * The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+         */
+        rceTrafficIpAddress?: pulumi.Input<string>;
+    }
+
     export interface ConnectorTask {
         /**
          * (Updatable) Size limit (kilobytes) for batch sent to invoke the function.
@@ -83011,6 +83074,21 @@ export namespace Sch {
          * (Updatable) The type descriminator.
          */
         kind: pulumi.Input<string>;
+        /**
+         * The private endpoint metadata for the connector's source or target.
+         */
+        privateEndpointMetadatas?: pulumi.Input<pulumi.Input<inputs.Sch.ConnectorTaskPrivateEndpointMetadata>[]>;
+    }
+
+    export interface ConnectorTaskPrivateEndpointMetadata {
+        /**
+         * The reverse connection endpoint (RCE) IP address for DNS lookups.
+         */
+        rceDnsProxyIpAddress?: pulumi.Input<string>;
+        /**
+         * The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+         */
+        rceTrafficIpAddress?: pulumi.Input<string>;
     }
 
     export interface GetConnectorPluginsFilter {

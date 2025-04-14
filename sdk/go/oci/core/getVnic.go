@@ -87,8 +87,9 @@ type GetVnicResult struct {
 	PrivateIpAddress string `pulumi:"privateIpAddress"`
 	// The public IP address of the VNIC, if one is assigned.
 	PublicIpAddress string `pulumi:"publicIpAddress"`
-	RouteTableId    string `pulumi:"routeTableId"`
-	// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
+	RouteTableId string `pulumi:"routeTableId"`
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
 	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you would skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
 	SkipSourceDestCheck bool `pulumi:"skipSourceDestCheck"`
@@ -202,11 +203,12 @@ func (o GetVnicResultOutput) PublicIpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVnicResult) string { return v.PublicIpAddress }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
 func (o GetVnicResultOutput) RouteTableId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVnicResult) string { return v.RouteTableId }).(pulumi.StringOutput)
 }
 
-// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
+// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
 func (o GetVnicResultOutput) SecurityAttributes() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetVnicResult) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }

@@ -35,6 +35,7 @@ import (
 //				InvokeFunctionBody:  pulumi.Any(invokeFunctionInvokeFunctionBody),
 //				FnIntent:            pulumi.Any(invokeFunctionFnIntent),
 //				FnInvokeType:        pulumi.Any(invokeFunctionFnInvokeType),
+//				IsDryRun:            pulumi.Any(invokeFunctionIsDryRun),
 //				Base64EncodeContent: pulumi.Bool(false),
 //			})
 //			if err != nil {
@@ -70,6 +71,8 @@ type InvokeFunction struct {
 	// The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `inputBodySourcePath` or `invokeFunctionBodyBase64Encoded` is defined.
 	InvokeFunctionBody              pulumi.StringOutput `pulumi:"invokeFunctionBody"`
 	InvokeFunctionBodyBase64Encoded pulumi.StringOutput `pulumi:"invokeFunctionBodyBase64Encoded"`
+	// Indicates that the request is a dry run, if set to "true". A dry run request does not execute the function.
+	IsDryRun pulumi.BoolOutput `pulumi:"isDryRun"`
 }
 
 // NewInvokeFunction registers a new resource with the given unique name, arguments, and options.
@@ -123,6 +126,8 @@ type invokeFunctionState struct {
 	// The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `inputBodySourcePath` or `invokeFunctionBodyBase64Encoded` is defined.
 	InvokeFunctionBody              *string `pulumi:"invokeFunctionBody"`
 	InvokeFunctionBodyBase64Encoded *string `pulumi:"invokeFunctionBodyBase64Encoded"`
+	// Indicates that the request is a dry run, if set to "true". A dry run request does not execute the function.
+	IsDryRun *bool `pulumi:"isDryRun"`
 }
 
 type InvokeFunctionState struct {
@@ -144,6 +149,8 @@ type InvokeFunctionState struct {
 	// The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `inputBodySourcePath` or `invokeFunctionBodyBase64Encoded` is defined.
 	InvokeFunctionBody              pulumi.StringPtrInput
 	InvokeFunctionBodyBase64Encoded pulumi.StringPtrInput
+	// Indicates that the request is a dry run, if set to "true". A dry run request does not execute the function.
+	IsDryRun pulumi.BoolPtrInput
 }
 
 func (InvokeFunctionState) ElementType() reflect.Type {
@@ -166,6 +173,8 @@ type invokeFunctionArgs struct {
 	// The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `inputBodySourcePath` or `invokeFunctionBodyBase64Encoded` is defined.
 	InvokeFunctionBody              *string `pulumi:"invokeFunctionBody"`
 	InvokeFunctionBodyBase64Encoded *string `pulumi:"invokeFunctionBodyBase64Encoded"`
+	// Indicates that the request is a dry run, if set to "true". A dry run request does not execute the function.
+	IsDryRun *bool `pulumi:"isDryRun"`
 }
 
 // The set of arguments for constructing a InvokeFunction resource.
@@ -185,6 +194,8 @@ type InvokeFunctionArgs struct {
 	// The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `inputBodySourcePath` or `invokeFunctionBodyBase64Encoded` is defined.
 	InvokeFunctionBody              pulumi.StringPtrInput
 	InvokeFunctionBodyBase64Encoded pulumi.StringPtrInput
+	// Indicates that the request is a dry run, if set to "true". A dry run request does not execute the function.
+	IsDryRun pulumi.BoolPtrInput
 }
 
 func (InvokeFunctionArgs) ElementType() reflect.Type {
@@ -317,6 +328,11 @@ func (o InvokeFunctionOutput) InvokeFunctionBody() pulumi.StringOutput {
 
 func (o InvokeFunctionOutput) InvokeFunctionBodyBase64Encoded() pulumi.StringOutput {
 	return o.ApplyT(func(v *InvokeFunction) pulumi.StringOutput { return v.InvokeFunctionBodyBase64Encoded }).(pulumi.StringOutput)
+}
+
+// Indicates that the request is a dry run, if set to "true". A dry run request does not execute the function.
+func (o InvokeFunctionOutput) IsDryRun() pulumi.BoolOutput {
+	return o.ApplyT(func(v *InvokeFunction) pulumi.BoolOutput { return v.IsDryRun }).(pulumi.BoolOutput)
 }
 
 type InvokeFunctionArrayOutput struct{ *pulumi.OutputState }

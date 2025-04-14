@@ -37,7 +37,9 @@ namespace Pulumi.Oci.Core.Outputs
         /// An IP address. This could be either IPv4 or IPv6, depending on the resource. Example: `10.0.3.3`
         /// </summary>
         public readonly string IpAddress;
+        public readonly string IpState;
         public readonly string Ipv6subnetCidr;
+        public readonly string Lifetime;
         public readonly string RouteTableId;
         /// <summary>
         /// The IPv6's current state.
@@ -70,7 +72,11 @@ namespace Pulumi.Oci.Core.Outputs
 
             string ipAddress,
 
+            string ipState,
+
             string ipv6subnetCidr,
+
+            string lifetime,
 
             string routeTableId,
 
@@ -88,7 +94,9 @@ namespace Pulumi.Oci.Core.Outputs
             FreeformTags = freeformTags;
             Id = id;
             IpAddress = ipAddress;
+            IpState = ipState;
             Ipv6subnetCidr = ipv6subnetCidr;
+            Lifetime = lifetime;
             RouteTableId = routeTableId;
             State = state;
             SubnetId = subnetId;

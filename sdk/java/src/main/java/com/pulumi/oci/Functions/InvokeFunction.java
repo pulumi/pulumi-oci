@@ -50,6 +50,7 @@ import javax.annotation.Nullable;
  *             .invokeFunctionBody(invokeFunctionInvokeFunctionBody)
  *             .fnIntent(invokeFunctionFnIntent)
  *             .fnInvokeType(invokeFunctionFnInvokeType)
+ *             .isDryRun(invokeFunctionIsDryRun)
  *             .base64EncodeContent(false)
  *             .build());
  * 
@@ -173,6 +174,20 @@ public class InvokeFunction extends com.pulumi.resources.CustomResource {
 
     public Output<String> invokeFunctionBodyBase64Encoded() {
         return this.invokeFunctionBodyBase64Encoded;
+    }
+    /**
+     * Indicates that the request is a dry run, if set to &#34;true&#34;. A dry run request does not execute the function.
+     * 
+     */
+    @Export(name="isDryRun", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isDryRun;
+
+    /**
+     * @return Indicates that the request is a dry run, if set to &#34;true&#34;. A dry run request does not execute the function.
+     * 
+     */
+    public Output<Boolean> isDryRun() {
+        return this.isDryRun;
     }
 
     /**

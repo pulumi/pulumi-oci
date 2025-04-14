@@ -78,9 +78,13 @@ public final class GetVnicResult {
      * 
      */
     private String publicIpAddress;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
+     * 
+     */
     private String routeTableId;
     /**
-     * @return Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR.MaxEgressCount.value&#34;: &#34;42&#34;, &#34;Oracle-DataSecurity-ZPR.MaxEgressCount.mode&#34;: &#34;audit&#34;}`
+     * @return [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
      * 
      */
     private Map<String,String> securityAttributes;
@@ -203,11 +207,15 @@ public final class GetVnicResult {
     public String publicIpAddress() {
         return this.publicIpAddress;
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
+     * 
+     */
     public String routeTableId() {
         return this.routeTableId;
     }
     /**
-     * @return Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR.MaxEgressCount.value&#34;: &#34;42&#34;, &#34;Oracle-DataSecurity-ZPR.MaxEgressCount.mode&#34;: &#34;audit&#34;}`
+     * @return [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
      * 
      */
     public Map<String,String> securityAttributes() {

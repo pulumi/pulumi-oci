@@ -30,14 +30,20 @@ __all__ = [
     'ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgsDict',
     'ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs',
     'ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgsDict',
+    'ConnectorSourcePrivateEndpointMetadataArgs',
+    'ConnectorSourcePrivateEndpointMetadataArgsDict',
     'ConnectorTargetArgs',
     'ConnectorTargetArgsDict',
     'ConnectorTargetDimensionArgs',
     'ConnectorTargetDimensionArgsDict',
     'ConnectorTargetDimensionDimensionValueArgs',
     'ConnectorTargetDimensionDimensionValueArgsDict',
+    'ConnectorTargetPrivateEndpointMetadataArgs',
+    'ConnectorTargetPrivateEndpointMetadataArgsDict',
     'ConnectorTaskArgs',
     'ConnectorTaskArgsDict',
+    'ConnectorTaskPrivateEndpointMetadataArgs',
+    'ConnectorTaskPrivateEndpointMetadataArgsDict',
     'GetConnectorPluginsFilterArgs',
     'GetConnectorPluginsFilterArgsDict',
     'GetServiceConnectorsFilterArgs',
@@ -72,6 +78,10 @@ if not MYPY:
         """
         (Updatable) The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using [ListConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins).
         """
+        private_endpoint_metadatas: NotRequired[pulumi.Input[Sequence[pulumi.Input['ConnectorSourcePrivateEndpointMetadataArgsDict']]]]
+        """
+        The private endpoint metadata for the connector's source or target.
+        """
         stream_id: NotRequired[pulumi.Input[builtins.str]]
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
@@ -88,6 +98,7 @@ class ConnectorSourceArgs:
                  log_sources: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectorSourceLogSourceArgs']]]] = None,
                  monitoring_sources: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectorSourceMonitoringSourceArgs']]]] = None,
                  plugin_name: Optional[pulumi.Input[builtins.str]] = None,
+                 private_endpoint_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectorSourcePrivateEndpointMetadataArgs']]]] = None,
                  stream_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         :param pulumi.Input[builtins.str] kind: (Updatable) The type discriminator.
@@ -96,6 +107,7 @@ class ConnectorSourceArgs:
         :param pulumi.Input[Sequence[pulumi.Input['ConnectorSourceLogSourceArgs']]] log_sources: (Updatable) The logs for this Logging source.
         :param pulumi.Input[Sequence[pulumi.Input['ConnectorSourceMonitoringSourceArgs']]] monitoring_sources: (Updatable) One or more compartment-specific lists of metric namespaces to retrieve data from.
         :param pulumi.Input[builtins.str] plugin_name: (Updatable) The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using [ListConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins).
+        :param pulumi.Input[Sequence[pulumi.Input['ConnectorSourcePrivateEndpointMetadataArgs']]] private_endpoint_metadatas: The private endpoint metadata for the connector's source or target.
         :param pulumi.Input[builtins.str] stream_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
         """
         pulumi.set(__self__, "kind", kind)
@@ -109,6 +121,8 @@ class ConnectorSourceArgs:
             pulumi.set(__self__, "monitoring_sources", monitoring_sources)
         if plugin_name is not None:
             pulumi.set(__self__, "plugin_name", plugin_name)
+        if private_endpoint_metadatas is not None:
+            pulumi.set(__self__, "private_endpoint_metadatas", private_endpoint_metadatas)
         if stream_id is not None:
             pulumi.set(__self__, "stream_id", stream_id)
 
@@ -183,6 +197,18 @@ class ConnectorSourceArgs:
     @plugin_name.setter
     def plugin_name(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "plugin_name", value)
+
+    @property
+    @pulumi.getter(name="privateEndpointMetadatas")
+    def private_endpoint_metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConnectorSourcePrivateEndpointMetadataArgs']]]]:
+        """
+        The private endpoint metadata for the connector's source or target.
+        """
+        return pulumi.get(self, "private_endpoint_metadatas")
+
+    @private_endpoint_metadatas.setter
+    def private_endpoint_metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectorSourcePrivateEndpointMetadataArgs']]]]):
+        pulumi.set(self, "private_endpoint_metadatas", value)
 
     @property
     @pulumi.getter(name="streamId")
@@ -485,6 +511,58 @@ class ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs:
 
 
 if not MYPY:
+    class ConnectorSourcePrivateEndpointMetadataArgsDict(TypedDict):
+        rce_dns_proxy_ip_address: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The reverse connection endpoint (RCE) IP address for DNS lookups.
+        """
+        rce_traffic_ip_address: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+        """
+elif False:
+    ConnectorSourcePrivateEndpointMetadataArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ConnectorSourcePrivateEndpointMetadataArgs:
+    def __init__(__self__, *,
+                 rce_dns_proxy_ip_address: Optional[pulumi.Input[builtins.str]] = None,
+                 rce_traffic_ip_address: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] rce_dns_proxy_ip_address: The reverse connection endpoint (RCE) IP address for DNS lookups.
+        :param pulumi.Input[builtins.str] rce_traffic_ip_address: The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+        """
+        if rce_dns_proxy_ip_address is not None:
+            pulumi.set(__self__, "rce_dns_proxy_ip_address", rce_dns_proxy_ip_address)
+        if rce_traffic_ip_address is not None:
+            pulumi.set(__self__, "rce_traffic_ip_address", rce_traffic_ip_address)
+
+    @property
+    @pulumi.getter(name="rceDnsProxyIpAddress")
+    def rce_dns_proxy_ip_address(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The reverse connection endpoint (RCE) IP address for DNS lookups.
+        """
+        return pulumi.get(self, "rce_dns_proxy_ip_address")
+
+    @rce_dns_proxy_ip_address.setter
+    def rce_dns_proxy_ip_address(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "rce_dns_proxy_ip_address", value)
+
+    @property
+    @pulumi.getter(name="rceTrafficIpAddress")
+    def rce_traffic_ip_address(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+        """
+        return pulumi.get(self, "rce_traffic_ip_address")
+
+    @rce_traffic_ip_address.setter
+    def rce_traffic_ip_address(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "rce_traffic_ip_address", value)
+
+
+if not MYPY:
     class ConnectorTargetArgsDict(TypedDict):
         kind: pulumi.Input[builtins.str]
         """
@@ -554,6 +632,10 @@ if not MYPY:
         """
         (Updatable) The prefix of the objects. Avoid entering confidential information.
         """
+        private_endpoint_metadatas: NotRequired[pulumi.Input[Sequence[pulumi.Input['ConnectorTargetPrivateEndpointMetadataArgsDict']]]]
+        """
+        The private endpoint metadata for the connector's source or target.
+        """
         stream_id: NotRequired[pulumi.Input[builtins.str]]
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
@@ -585,6 +667,7 @@ class ConnectorTargetArgs:
                  metric_namespace: Optional[pulumi.Input[builtins.str]] = None,
                  namespace: Optional[pulumi.Input[builtins.str]] = None,
                  object_name_prefix: Optional[pulumi.Input[builtins.str]] = None,
+                 private_endpoint_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectorTargetPrivateEndpointMetadataArgs']]]] = None,
                  stream_id: Optional[pulumi.Input[builtins.str]] = None,
                  topic_id: Optional[pulumi.Input[builtins.str]] = None):
         """
@@ -605,6 +688,7 @@ class ConnectorTargetArgs:
         :param pulumi.Input[builtins.str] metric_namespace: (Updatable) The namespace of the metric. Example: `oci_computeagent`
         :param pulumi.Input[builtins.str] namespace: (Updatable) The namespace.
         :param pulumi.Input[builtins.str] object_name_prefix: (Updatable) The prefix of the objects. Avoid entering confidential information.
+        :param pulumi.Input[Sequence[pulumi.Input['ConnectorTargetPrivateEndpointMetadataArgs']]] private_endpoint_metadatas: The private endpoint metadata for the connector's source or target.
         :param pulumi.Input[builtins.str] stream_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
         :param pulumi.Input[builtins.str] topic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
         """
@@ -641,6 +725,8 @@ class ConnectorTargetArgs:
             pulumi.set(__self__, "namespace", namespace)
         if object_name_prefix is not None:
             pulumi.set(__self__, "object_name_prefix", object_name_prefix)
+        if private_endpoint_metadatas is not None:
+            pulumi.set(__self__, "private_endpoint_metadatas", private_endpoint_metadatas)
         if stream_id is not None:
             pulumi.set(__self__, "stream_id", stream_id)
         if topic_id is not None:
@@ -851,6 +937,18 @@ class ConnectorTargetArgs:
         pulumi.set(self, "object_name_prefix", value)
 
     @property
+    @pulumi.getter(name="privateEndpointMetadatas")
+    def private_endpoint_metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConnectorTargetPrivateEndpointMetadataArgs']]]]:
+        """
+        The private endpoint metadata for the connector's source or target.
+        """
+        return pulumi.get(self, "private_endpoint_metadatas")
+
+    @private_endpoint_metadatas.setter
+    def private_endpoint_metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectorTargetPrivateEndpointMetadataArgs']]]]):
+        pulumi.set(self, "private_endpoint_metadatas", value)
+
+    @property
     @pulumi.getter(name="streamId")
     def stream_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -999,6 +1097,58 @@ class ConnectorTargetDimensionDimensionValueArgs:
 
 
 if not MYPY:
+    class ConnectorTargetPrivateEndpointMetadataArgsDict(TypedDict):
+        rce_dns_proxy_ip_address: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The reverse connection endpoint (RCE) IP address for DNS lookups.
+        """
+        rce_traffic_ip_address: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+        """
+elif False:
+    ConnectorTargetPrivateEndpointMetadataArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ConnectorTargetPrivateEndpointMetadataArgs:
+    def __init__(__self__, *,
+                 rce_dns_proxy_ip_address: Optional[pulumi.Input[builtins.str]] = None,
+                 rce_traffic_ip_address: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] rce_dns_proxy_ip_address: The reverse connection endpoint (RCE) IP address for DNS lookups.
+        :param pulumi.Input[builtins.str] rce_traffic_ip_address: The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+        """
+        if rce_dns_proxy_ip_address is not None:
+            pulumi.set(__self__, "rce_dns_proxy_ip_address", rce_dns_proxy_ip_address)
+        if rce_traffic_ip_address is not None:
+            pulumi.set(__self__, "rce_traffic_ip_address", rce_traffic_ip_address)
+
+    @property
+    @pulumi.getter(name="rceDnsProxyIpAddress")
+    def rce_dns_proxy_ip_address(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The reverse connection endpoint (RCE) IP address for DNS lookups.
+        """
+        return pulumi.get(self, "rce_dns_proxy_ip_address")
+
+    @rce_dns_proxy_ip_address.setter
+    def rce_dns_proxy_ip_address(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "rce_dns_proxy_ip_address", value)
+
+    @property
+    @pulumi.getter(name="rceTrafficIpAddress")
+    def rce_traffic_ip_address(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+        """
+        return pulumi.get(self, "rce_traffic_ip_address")
+
+    @rce_traffic_ip_address.setter
+    def rce_traffic_ip_address(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "rce_traffic_ip_address", value)
+
+
+if not MYPY:
     class ConnectorTaskArgsDict(TypedDict):
         kind: pulumi.Input[builtins.str]
         """
@@ -1020,6 +1170,10 @@ if not MYPY:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
         """
+        private_endpoint_metadatas: NotRequired[pulumi.Input[Sequence[pulumi.Input['ConnectorTaskPrivateEndpointMetadataArgsDict']]]]
+        """
+        The private endpoint metadata for the connector's source or target.
+        """
 elif False:
     ConnectorTaskArgsDict: TypeAlias = Mapping[str, Any]
 
@@ -1030,13 +1184,15 @@ class ConnectorTaskArgs:
                  batch_size_in_kbs: Optional[pulumi.Input[builtins.int]] = None,
                  batch_time_in_sec: Optional[pulumi.Input[builtins.int]] = None,
                  condition: Optional[pulumi.Input[builtins.str]] = None,
-                 function_id: Optional[pulumi.Input[builtins.str]] = None):
+                 function_id: Optional[pulumi.Input[builtins.str]] = None,
+                 private_endpoint_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectorTaskPrivateEndpointMetadataArgs']]]] = None):
         """
         :param pulumi.Input[builtins.str] kind: (Updatable) The type descriminator.
         :param pulumi.Input[builtins.int] batch_size_in_kbs: (Updatable) Size limit (kilobytes) for batch sent to invoke the function.
         :param pulumi.Input[builtins.int] batch_time_in_sec: (Updatable) Time limit (seconds) for batch sent to invoke the function.
         :param pulumi.Input[builtins.str] condition: (Updatable) A filter or mask to limit the source used in the flow defined by the connector.
         :param pulumi.Input[builtins.str] function_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
+        :param pulumi.Input[Sequence[pulumi.Input['ConnectorTaskPrivateEndpointMetadataArgs']]] private_endpoint_metadatas: The private endpoint metadata for the connector's source or target.
         """
         pulumi.set(__self__, "kind", kind)
         if batch_size_in_kbs is not None:
@@ -1047,6 +1203,8 @@ class ConnectorTaskArgs:
             pulumi.set(__self__, "condition", condition)
         if function_id is not None:
             pulumi.set(__self__, "function_id", function_id)
+        if private_endpoint_metadatas is not None:
+            pulumi.set(__self__, "private_endpoint_metadatas", private_endpoint_metadatas)
 
     @property
     @pulumi.getter
@@ -1107,6 +1265,70 @@ class ConnectorTaskArgs:
     @function_id.setter
     def function_id(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "function_id", value)
+
+    @property
+    @pulumi.getter(name="privateEndpointMetadatas")
+    def private_endpoint_metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConnectorTaskPrivateEndpointMetadataArgs']]]]:
+        """
+        The private endpoint metadata for the connector's source or target.
+        """
+        return pulumi.get(self, "private_endpoint_metadatas")
+
+    @private_endpoint_metadatas.setter
+    def private_endpoint_metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectorTaskPrivateEndpointMetadataArgs']]]]):
+        pulumi.set(self, "private_endpoint_metadatas", value)
+
+
+if not MYPY:
+    class ConnectorTaskPrivateEndpointMetadataArgsDict(TypedDict):
+        rce_dns_proxy_ip_address: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The reverse connection endpoint (RCE) IP address for DNS lookups.
+        """
+        rce_traffic_ip_address: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+        """
+elif False:
+    ConnectorTaskPrivateEndpointMetadataArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ConnectorTaskPrivateEndpointMetadataArgs:
+    def __init__(__self__, *,
+                 rce_dns_proxy_ip_address: Optional[pulumi.Input[builtins.str]] = None,
+                 rce_traffic_ip_address: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] rce_dns_proxy_ip_address: The reverse connection endpoint (RCE) IP address for DNS lookups.
+        :param pulumi.Input[builtins.str] rce_traffic_ip_address: The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+        """
+        if rce_dns_proxy_ip_address is not None:
+            pulumi.set(__self__, "rce_dns_proxy_ip_address", rce_dns_proxy_ip_address)
+        if rce_traffic_ip_address is not None:
+            pulumi.set(__self__, "rce_traffic_ip_address", rce_traffic_ip_address)
+
+    @property
+    @pulumi.getter(name="rceDnsProxyIpAddress")
+    def rce_dns_proxy_ip_address(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The reverse connection endpoint (RCE) IP address for DNS lookups.
+        """
+        return pulumi.get(self, "rce_dns_proxy_ip_address")
+
+    @rce_dns_proxy_ip_address.setter
+    def rce_dns_proxy_ip_address(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "rce_dns_proxy_ip_address", value)
+
+    @property
+    @pulumi.getter(name="rceTrafficIpAddress")
+    def rce_traffic_ip_address(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+        """
+        return pulumi.get(self, "rce_traffic_ip_address")
+
+    @rce_traffic_ip_address.setter
+    def rce_traffic_ip_address(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "rce_traffic_ip_address", value)
 
 
 if not MYPY:

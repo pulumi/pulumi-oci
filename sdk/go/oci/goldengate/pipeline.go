@@ -50,6 +50,8 @@ type Pipeline struct {
 	Locks PipelineLockArrayOutput `pulumi:"locks"`
 	// Mapping for source/target schema/tables for the pipeline data replication.
 	MappingRules PipelineMappingRuleArrayOutput `pulumi:"mappingRules"`
+	// Information regarding the pipeline diagnostic collection
+	PipelineDiagnosticDatas PipelinePipelineDiagnosticDataArrayOutput `pulumi:"pipelineDiagnosticDatas"`
 	// (Updatable) Required pipeline options to configure the replication process (Extract or Replicat).
 	ProcessOptions PipelineProcessOptionsOutput `pulumi:"processOptions"`
 	// (Updatable) The type of the recipe
@@ -142,6 +144,8 @@ type pipelineState struct {
 	Locks []PipelineLock `pulumi:"locks"`
 	// Mapping for source/target schema/tables for the pipeline data replication.
 	MappingRules []PipelineMappingRule `pulumi:"mappingRules"`
+	// Information regarding the pipeline diagnostic collection
+	PipelineDiagnosticDatas []PipelinePipelineDiagnosticData `pulumi:"pipelineDiagnosticDatas"`
 	// (Updatable) Required pipeline options to configure the replication process (Extract or Replicat).
 	ProcessOptions *PipelineProcessOptions `pulumi:"processOptions"`
 	// (Updatable) The type of the recipe
@@ -187,6 +191,8 @@ type PipelineState struct {
 	Locks PipelineLockArrayInput
 	// Mapping for source/target schema/tables for the pipeline data replication.
 	MappingRules PipelineMappingRuleArrayInput
+	// Information regarding the pipeline diagnostic collection
+	PipelineDiagnosticDatas PipelinePipelineDiagnosticDataArrayInput
 	// (Updatable) Required pipeline options to configure the replication process (Extract or Replicat).
 	ProcessOptions PipelineProcessOptionsPtrInput
 	// (Updatable) The type of the recipe
@@ -407,6 +413,11 @@ func (o PipelineOutput) Locks() PipelineLockArrayOutput {
 // Mapping for source/target schema/tables for the pipeline data replication.
 func (o PipelineOutput) MappingRules() PipelineMappingRuleArrayOutput {
 	return o.ApplyT(func(v *Pipeline) PipelineMappingRuleArrayOutput { return v.MappingRules }).(PipelineMappingRuleArrayOutput)
+}
+
+// Information regarding the pipeline diagnostic collection
+func (o PipelineOutput) PipelineDiagnosticDatas() PipelinePipelineDiagnosticDataArrayOutput {
+	return o.ApplyT(func(v *Pipeline) PipelinePipelineDiagnosticDataArrayOutput { return v.PipelineDiagnosticDatas }).(PipelinePipelineDiagnosticDataArrayOutput)
 }
 
 // (Updatable) Required pipeline options to configure the replication process (Extract or Replicat).

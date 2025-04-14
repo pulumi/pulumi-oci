@@ -46,7 +46,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly Outputs.InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetails? LaunchCreateVolumeDetails;
         /// <summary>
-        /// The type of volume. Currently, the only supported value is "iscsi".
+        /// The type of volume attachment. Currently, the only supported values are "iscsi" and "paravirtualized".
         /// </summary>
         public readonly string Type;
         /// <summary>

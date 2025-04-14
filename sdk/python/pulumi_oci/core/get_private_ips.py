@@ -29,7 +29,7 @@ class GetPrivateIpsResult:
     """
     A collection of values returned by getPrivateIps.
     """
-    def __init__(__self__, filters=None, id=None, ip_address=None, private_ips=None, subnet_id=None, vlan_id=None, vnic_id=None):
+    def __init__(__self__, filters=None, id=None, ip_address=None, ip_state=None, lifetime=None, private_ips=None, subnet_id=None, vlan_id=None, vnic_id=None):
         if filters and not isinstance(filters, list):
             raise TypeError("Expected argument 'filters' to be a list")
         pulumi.set(__self__, "filters", filters)
@@ -39,6 +39,12 @@ class GetPrivateIpsResult:
         if ip_address and not isinstance(ip_address, str):
             raise TypeError("Expected argument 'ip_address' to be a str")
         pulumi.set(__self__, "ip_address", ip_address)
+        if ip_state and not isinstance(ip_state, str):
+            raise TypeError("Expected argument 'ip_state' to be a str")
+        pulumi.set(__self__, "ip_state", ip_state)
+        if lifetime and not isinstance(lifetime, str):
+            raise TypeError("Expected argument 'lifetime' to be a str")
+        pulumi.set(__self__, "lifetime", lifetime)
         if private_ips and not isinstance(private_ips, list):
             raise TypeError("Expected argument 'private_ips' to be a list")
         pulumi.set(__self__, "private_ips", private_ips)
@@ -72,6 +78,24 @@ class GetPrivateIpsResult:
         The private IP address of the `privateIp` object. The address is within the CIDR of the VNIC's subnet.
         """
         return pulumi.get(self, "ip_address")
+
+    @property
+    @pulumi.getter(name="ipState")
+    def ip_state(self) -> Optional[builtins.str]:
+        """
+        State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+        """
+        return pulumi.get(self, "ip_state")
+
+    @property
+    @pulumi.getter
+    def lifetime(self) -> Optional[builtins.str]:
+        """
+        Lifetime of the IP address. There are two types of IPv6 IPs:
+        * Ephemeral
+        * Reserved
+        """
+        return pulumi.get(self, "lifetime")
 
     @property
     @pulumi.getter(name="privateIps")
@@ -115,6 +139,8 @@ class AwaitableGetPrivateIpsResult(GetPrivateIpsResult):
             filters=self.filters,
             id=self.id,
             ip_address=self.ip_address,
+            ip_state=self.ip_state,
+            lifetime=self.lifetime,
             private_ips=self.private_ips,
             subnet_id=self.subnet_id,
             vlan_id=self.vlan_id,
@@ -123,6 +149,8 @@ class AwaitableGetPrivateIpsResult(GetPrivateIpsResult):
 
 def get_private_ips(filters: Optional[Sequence[Union['GetPrivateIpsFilterArgs', 'GetPrivateIpsFilterArgsDict']]] = None,
                     ip_address: Optional[builtins.str] = None,
+                    ip_state: Optional[builtins.str] = None,
+                    lifetime: Optional[builtins.str] = None,
                     subnet_id: Optional[builtins.str] = None,
                     vlan_id: Optional[builtins.str] = None,
                     vnic_id: Optional[builtins.str] = None,
@@ -169,6 +197,8 @@ def get_private_ips(filters: Optional[Sequence[Union['GetPrivateIpsFilterArgs', 
 
     # Filter on private IP address and Subnet OCID
     test_private_ips_by_ip_address = oci.Core.get_private_ips(ip_address=private_ip_ip_address,
+        ip_state=private_ip_ip_state,
+        lifetime=private_ip_lifetime,
         subnet_id=test_subnet["id"],
         vlan_id=test_vlan["id"],
         vnic_id=test_vnic_attachment["id"])
@@ -176,6 +206,10 @@ def get_private_ips(filters: Optional[Sequence[Union['GetPrivateIpsFilterArgs', 
 
 
     :param builtins.str ip_address: An IP address. This could be either IPv4 or IPv6, depending on the resource. Example: `10.0.3.3`
+    :param builtins.str ip_state: State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise AVAILABLE
+    :param builtins.str lifetime: Lifetime of the IP address. There are two types of IPs:
+           * Ephemeral
+           * Reserved
     :param builtins.str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
     :param builtins.str vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
     :param builtins.str vnic_id: The OCID of the VNIC.
@@ -183,6 +217,8 @@ def get_private_ips(filters: Optional[Sequence[Union['GetPrivateIpsFilterArgs', 
     __args__ = dict()
     __args__['filters'] = filters
     __args__['ipAddress'] = ip_address
+    __args__['ipState'] = ip_state
+    __args__['lifetime'] = lifetime
     __args__['subnetId'] = subnet_id
     __args__['vlanId'] = vlan_id
     __args__['vnicId'] = vnic_id
@@ -193,12 +229,16 @@ def get_private_ips(filters: Optional[Sequence[Union['GetPrivateIpsFilterArgs', 
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         ip_address=pulumi.get(__ret__, 'ip_address'),
+        ip_state=pulumi.get(__ret__, 'ip_state'),
+        lifetime=pulumi.get(__ret__, 'lifetime'),
         private_ips=pulumi.get(__ret__, 'private_ips'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         vlan_id=pulumi.get(__ret__, 'vlan_id'),
         vnic_id=pulumi.get(__ret__, 'vnic_id'))
 def get_private_ips_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPrivateIpsFilterArgs', 'GetPrivateIpsFilterArgsDict']]]]] = None,
                            ip_address: Optional[pulumi.Input[Optional[builtins.str]]] = None,
+                           ip_state: Optional[pulumi.Input[Optional[builtins.str]]] = None,
+                           lifetime: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                            subnet_id: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                            vlan_id: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                            vnic_id: Optional[pulumi.Input[Optional[builtins.str]]] = None,
@@ -245,6 +285,8 @@ def get_private_ips_output(filters: Optional[pulumi.Input[Optional[Sequence[Unio
 
     # Filter on private IP address and Subnet OCID
     test_private_ips_by_ip_address = oci.Core.get_private_ips(ip_address=private_ip_ip_address,
+        ip_state=private_ip_ip_state,
+        lifetime=private_ip_lifetime,
         subnet_id=test_subnet["id"],
         vlan_id=test_vlan["id"],
         vnic_id=test_vnic_attachment["id"])
@@ -252,6 +294,10 @@ def get_private_ips_output(filters: Optional[pulumi.Input[Optional[Sequence[Unio
 
 
     :param builtins.str ip_address: An IP address. This could be either IPv4 or IPv6, depending on the resource. Example: `10.0.3.3`
+    :param builtins.str ip_state: State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise AVAILABLE
+    :param builtins.str lifetime: Lifetime of the IP address. There are two types of IPs:
+           * Ephemeral
+           * Reserved
     :param builtins.str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
     :param builtins.str vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
     :param builtins.str vnic_id: The OCID of the VNIC.
@@ -259,6 +305,8 @@ def get_private_ips_output(filters: Optional[pulumi.Input[Optional[Sequence[Unio
     __args__ = dict()
     __args__['filters'] = filters
     __args__['ipAddress'] = ip_address
+    __args__['ipState'] = ip_state
+    __args__['lifetime'] = lifetime
     __args__['subnetId'] = subnet_id
     __args__['vlanId'] = vlan_id
     __args__['vnicId'] = vnic_id
@@ -268,6 +316,8 @@ def get_private_ips_output(filters: Optional[pulumi.Input[Optional[Sequence[Unio
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
         ip_address=pulumi.get(__response__, 'ip_address'),
+        ip_state=pulumi.get(__response__, 'ip_state'),
+        lifetime=pulumi.get(__response__, 'lifetime'),
         private_ips=pulumi.get(__response__, 'private_ips'),
         subnet_id=pulumi.get(__response__, 'subnet_id'),
         vlan_id=pulumi.get(__response__, 'vlan_id'),

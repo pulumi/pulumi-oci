@@ -120,6 +120,18 @@ namespace Pulumi.Oci.Sch.Inputs
         [Input("objectNamePrefix")]
         public Input<string>? ObjectNamePrefix { get; set; }
 
+        [Input("privateEndpointMetadatas")]
+        private InputList<Inputs.ConnectorTargetPrivateEndpointMetadataGetArgs>? _privateEndpointMetadatas;
+
+        /// <summary>
+        /// The private endpoint metadata for the connector's source or target.
+        /// </summary>
+        public InputList<Inputs.ConnectorTargetPrivateEndpointMetadataGetArgs> PrivateEndpointMetadatas
+        {
+            get => _privateEndpointMetadatas ?? (_privateEndpointMetadatas = new InputList<Inputs.ConnectorTargetPrivateEndpointMetadataGetArgs>());
+            set => _privateEndpointMetadatas = value;
+        }
+
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
         /// </summary>

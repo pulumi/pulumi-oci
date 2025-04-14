@@ -53,15 +53,27 @@ public final class GetPrivateIpsPrivateIp {
      */
     private String ipAddress;
     /**
+     * @return State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise AVAILABLE
+     * 
+     */
+    private String ipState;
+    /**
      * @return Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
      * 
      */
     private Boolean isPrimary;
+    private Boolean isReserved;
     /**
-     * @return true if the IP is reserved and can exist detached from vnic
+     * @return Lifetime of the IP address. There are two types of IPs:
+     * * Ephemeral
+     * * Reserved
      * 
      */
-    private Boolean isReserved;
+    private String lifetime;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
+     * 
+     */
     private String routeTableId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
@@ -142,19 +154,35 @@ public final class GetPrivateIpsPrivateIp {
         return this.ipAddress;
     }
     /**
+     * @return State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise AVAILABLE
+     * 
+     */
+    public String ipState() {
+        return this.ipState;
+    }
+    /**
      * @return Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
      * 
      */
     public Boolean isPrimary() {
         return this.isPrimary;
     }
-    /**
-     * @return true if the IP is reserved and can exist detached from vnic
-     * 
-     */
     public Boolean isReserved() {
         return this.isReserved;
     }
+    /**
+     * @return Lifetime of the IP address. There are two types of IPs:
+     * * Ephemeral
+     * * Reserved
+     * 
+     */
+    public String lifetime() {
+        return this.lifetime;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
+     * 
+     */
     public String routeTableId() {
         return this.routeTableId;
     }
@@ -204,8 +232,10 @@ public final class GetPrivateIpsPrivateIp {
         private String hostnameLabel;
         private String id;
         private String ipAddress;
+        private String ipState;
         private Boolean isPrimary;
         private Boolean isReserved;
+        private String lifetime;
         private String routeTableId;
         private String subnetId;
         private String timeCreated;
@@ -222,8 +252,10 @@ public final class GetPrivateIpsPrivateIp {
     	      this.hostnameLabel = defaults.hostnameLabel;
     	      this.id = defaults.id;
     	      this.ipAddress = defaults.ipAddress;
+    	      this.ipState = defaults.ipState;
     	      this.isPrimary = defaults.isPrimary;
     	      this.isReserved = defaults.isReserved;
+    	      this.lifetime = defaults.lifetime;
     	      this.routeTableId = defaults.routeTableId;
     	      this.subnetId = defaults.subnetId;
     	      this.timeCreated = defaults.timeCreated;
@@ -296,6 +328,14 @@ public final class GetPrivateIpsPrivateIp {
             return this;
         }
         @CustomType.Setter
+        public Builder ipState(String ipState) {
+            if (ipState == null) {
+              throw new MissingRequiredPropertyException("GetPrivateIpsPrivateIp", "ipState");
+            }
+            this.ipState = ipState;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isPrimary(Boolean isPrimary) {
             if (isPrimary == null) {
               throw new MissingRequiredPropertyException("GetPrivateIpsPrivateIp", "isPrimary");
@@ -309,6 +349,14 @@ public final class GetPrivateIpsPrivateIp {
               throw new MissingRequiredPropertyException("GetPrivateIpsPrivateIp", "isReserved");
             }
             this.isReserved = isReserved;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder lifetime(String lifetime) {
+            if (lifetime == null) {
+              throw new MissingRequiredPropertyException("GetPrivateIpsPrivateIp", "lifetime");
+            }
+            this.lifetime = lifetime;
             return this;
         }
         @CustomType.Setter
@@ -361,8 +409,10 @@ public final class GetPrivateIpsPrivateIp {
             _resultValue.hostnameLabel = hostnameLabel;
             _resultValue.id = id;
             _resultValue.ipAddress = ipAddress;
+            _resultValue.ipState = ipState;
             _resultValue.isPrimary = isPrimary;
             _resultValue.isReserved = isReserved;
+            _resultValue.lifetime = lifetime;
             _resultValue.routeTableId = routeTableId;
             _resultValue.subnetId = subnetId;
             _resultValue.timeCreated = timeCreated;

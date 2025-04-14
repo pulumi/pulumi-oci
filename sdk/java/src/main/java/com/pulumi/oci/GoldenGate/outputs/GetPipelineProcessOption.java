@@ -28,6 +28,11 @@ public final class GetPipelineProcessOption {
      * 
      */
     private String shouldRestartOnFailure;
+    /**
+     * @return If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+     * 
+     */
+    private String startUsingDefaultMapping;
 
     private GetPipelineProcessOption() {}
     /**
@@ -51,6 +56,13 @@ public final class GetPipelineProcessOption {
     public String shouldRestartOnFailure() {
         return this.shouldRestartOnFailure;
     }
+    /**
+     * @return If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+     * 
+     */
+    public String startUsingDefaultMapping() {
+        return this.startUsingDefaultMapping;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -64,12 +76,14 @@ public final class GetPipelineProcessOption {
         private List<GetPipelineProcessOptionInitialDataLoad> initialDataLoads;
         private List<GetPipelineProcessOptionReplicateSchemaChange> replicateSchemaChanges;
         private String shouldRestartOnFailure;
+        private String startUsingDefaultMapping;
         public Builder() {}
         public Builder(GetPipelineProcessOption defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.initialDataLoads = defaults.initialDataLoads;
     	      this.replicateSchemaChanges = defaults.replicateSchemaChanges;
     	      this.shouldRestartOnFailure = defaults.shouldRestartOnFailure;
+    	      this.startUsingDefaultMapping = defaults.startUsingDefaultMapping;
         }
 
         @CustomType.Setter
@@ -102,11 +116,20 @@ public final class GetPipelineProcessOption {
             this.shouldRestartOnFailure = shouldRestartOnFailure;
             return this;
         }
+        @CustomType.Setter
+        public Builder startUsingDefaultMapping(String startUsingDefaultMapping) {
+            if (startUsingDefaultMapping == null) {
+              throw new MissingRequiredPropertyException("GetPipelineProcessOption", "startUsingDefaultMapping");
+            }
+            this.startUsingDefaultMapping = startUsingDefaultMapping;
+            return this;
+        }
         public GetPipelineProcessOption build() {
             final var _resultValue = new GetPipelineProcessOption();
             _resultValue.initialDataLoads = initialDataLoads;
             _resultValue.replicateSchemaChanges = replicateSchemaChanges;
             _resultValue.shouldRestartOnFailure = shouldRestartOnFailure;
+            _resultValue.startUsingDefaultMapping = startUsingDefaultMapping;
             return _resultValue;
         }
     }

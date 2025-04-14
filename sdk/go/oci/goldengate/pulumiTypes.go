@@ -2272,6 +2272,139 @@ func (o PipelineMappingRuleArrayOutput) Index(i pulumi.IntInput) PipelineMapping
 	}).(PipelineMappingRuleOutput)
 }
 
+type PipelinePipelineDiagnosticData struct {
+	// Name of the bucket where the object is to be uploaded in the object storage
+	Bucket *string `pulumi:"bucket"`
+	// The state of the pipeline diagnostics collection.
+	DiagnosticState *string `pulumi:"diagnosticState"`
+	// Name of namespace that serves as a container for all of your buckets
+	Namespace *string `pulumi:"namespace"`
+	// Name of the diagnostic collected and uploaded to object storage
+	Object *string `pulumi:"object"`
+	// The date and time the diagnostic data was last collected for the pipeline. The format is defined by  [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-07-25T21:10:29.600Z`.
+	TimeLastCollected *string `pulumi:"timeLastCollected"`
+}
+
+// PipelinePipelineDiagnosticDataInput is an input type that accepts PipelinePipelineDiagnosticDataArgs and PipelinePipelineDiagnosticDataOutput values.
+// You can construct a concrete instance of `PipelinePipelineDiagnosticDataInput` via:
+//
+//	PipelinePipelineDiagnosticDataArgs{...}
+type PipelinePipelineDiagnosticDataInput interface {
+	pulumi.Input
+
+	ToPipelinePipelineDiagnosticDataOutput() PipelinePipelineDiagnosticDataOutput
+	ToPipelinePipelineDiagnosticDataOutputWithContext(context.Context) PipelinePipelineDiagnosticDataOutput
+}
+
+type PipelinePipelineDiagnosticDataArgs struct {
+	// Name of the bucket where the object is to be uploaded in the object storage
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
+	// The state of the pipeline diagnostics collection.
+	DiagnosticState pulumi.StringPtrInput `pulumi:"diagnosticState"`
+	// Name of namespace that serves as a container for all of your buckets
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+	// Name of the diagnostic collected and uploaded to object storage
+	Object pulumi.StringPtrInput `pulumi:"object"`
+	// The date and time the diagnostic data was last collected for the pipeline. The format is defined by  [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-07-25T21:10:29.600Z`.
+	TimeLastCollected pulumi.StringPtrInput `pulumi:"timeLastCollected"`
+}
+
+func (PipelinePipelineDiagnosticDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PipelinePipelineDiagnosticData)(nil)).Elem()
+}
+
+func (i PipelinePipelineDiagnosticDataArgs) ToPipelinePipelineDiagnosticDataOutput() PipelinePipelineDiagnosticDataOutput {
+	return i.ToPipelinePipelineDiagnosticDataOutputWithContext(context.Background())
+}
+
+func (i PipelinePipelineDiagnosticDataArgs) ToPipelinePipelineDiagnosticDataOutputWithContext(ctx context.Context) PipelinePipelineDiagnosticDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelinePipelineDiagnosticDataOutput)
+}
+
+// PipelinePipelineDiagnosticDataArrayInput is an input type that accepts PipelinePipelineDiagnosticDataArray and PipelinePipelineDiagnosticDataArrayOutput values.
+// You can construct a concrete instance of `PipelinePipelineDiagnosticDataArrayInput` via:
+//
+//	PipelinePipelineDiagnosticDataArray{ PipelinePipelineDiagnosticDataArgs{...} }
+type PipelinePipelineDiagnosticDataArrayInput interface {
+	pulumi.Input
+
+	ToPipelinePipelineDiagnosticDataArrayOutput() PipelinePipelineDiagnosticDataArrayOutput
+	ToPipelinePipelineDiagnosticDataArrayOutputWithContext(context.Context) PipelinePipelineDiagnosticDataArrayOutput
+}
+
+type PipelinePipelineDiagnosticDataArray []PipelinePipelineDiagnosticDataInput
+
+func (PipelinePipelineDiagnosticDataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PipelinePipelineDiagnosticData)(nil)).Elem()
+}
+
+func (i PipelinePipelineDiagnosticDataArray) ToPipelinePipelineDiagnosticDataArrayOutput() PipelinePipelineDiagnosticDataArrayOutput {
+	return i.ToPipelinePipelineDiagnosticDataArrayOutputWithContext(context.Background())
+}
+
+func (i PipelinePipelineDiagnosticDataArray) ToPipelinePipelineDiagnosticDataArrayOutputWithContext(ctx context.Context) PipelinePipelineDiagnosticDataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelinePipelineDiagnosticDataArrayOutput)
+}
+
+type PipelinePipelineDiagnosticDataOutput struct{ *pulumi.OutputState }
+
+func (PipelinePipelineDiagnosticDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PipelinePipelineDiagnosticData)(nil)).Elem()
+}
+
+func (o PipelinePipelineDiagnosticDataOutput) ToPipelinePipelineDiagnosticDataOutput() PipelinePipelineDiagnosticDataOutput {
+	return o
+}
+
+func (o PipelinePipelineDiagnosticDataOutput) ToPipelinePipelineDiagnosticDataOutputWithContext(ctx context.Context) PipelinePipelineDiagnosticDataOutput {
+	return o
+}
+
+// Name of the bucket where the object is to be uploaded in the object storage
+func (o PipelinePipelineDiagnosticDataOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelinePipelineDiagnosticData) *string { return v.Bucket }).(pulumi.StringPtrOutput)
+}
+
+// The state of the pipeline diagnostics collection.
+func (o PipelinePipelineDiagnosticDataOutput) DiagnosticState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelinePipelineDiagnosticData) *string { return v.DiagnosticState }).(pulumi.StringPtrOutput)
+}
+
+// Name of namespace that serves as a container for all of your buckets
+func (o PipelinePipelineDiagnosticDataOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelinePipelineDiagnosticData) *string { return v.Namespace }).(pulumi.StringPtrOutput)
+}
+
+// Name of the diagnostic collected and uploaded to object storage
+func (o PipelinePipelineDiagnosticDataOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelinePipelineDiagnosticData) *string { return v.Object }).(pulumi.StringPtrOutput)
+}
+
+// The date and time the diagnostic data was last collected for the pipeline. The format is defined by  [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-07-25T21:10:29.600Z`.
+func (o PipelinePipelineDiagnosticDataOutput) TimeLastCollected() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelinePipelineDiagnosticData) *string { return v.TimeLastCollected }).(pulumi.StringPtrOutput)
+}
+
+type PipelinePipelineDiagnosticDataArrayOutput struct{ *pulumi.OutputState }
+
+func (PipelinePipelineDiagnosticDataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PipelinePipelineDiagnosticData)(nil)).Elem()
+}
+
+func (o PipelinePipelineDiagnosticDataArrayOutput) ToPipelinePipelineDiagnosticDataArrayOutput() PipelinePipelineDiagnosticDataArrayOutput {
+	return o
+}
+
+func (o PipelinePipelineDiagnosticDataArrayOutput) ToPipelinePipelineDiagnosticDataArrayOutputWithContext(ctx context.Context) PipelinePipelineDiagnosticDataArrayOutput {
+	return o
+}
+
+func (o PipelinePipelineDiagnosticDataArrayOutput) Index(i pulumi.IntInput) PipelinePipelineDiagnosticDataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PipelinePipelineDiagnosticData {
+		return vs[0].([]PipelinePipelineDiagnosticData)[vs[1].(int)]
+	}).(PipelinePipelineDiagnosticDataOutput)
+}
+
 type PipelineProcessOptions struct {
 	// (Updatable) Options required for the pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
 	InitialDataLoad PipelineProcessOptionsInitialDataLoad `pulumi:"initialDataLoad"`
@@ -2279,6 +2412,8 @@ type PipelineProcessOptions struct {
 	ReplicateSchemaChange PipelineProcessOptionsReplicateSchemaChange `pulumi:"replicateSchemaChange"`
 	// (Updatable) If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
 	ShouldRestartOnFailure string `pulumi:"shouldRestartOnFailure"`
+	// (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+	StartUsingDefaultMapping *string `pulumi:"startUsingDefaultMapping"`
 }
 
 // PipelineProcessOptionsInput is an input type that accepts PipelineProcessOptionsArgs and PipelineProcessOptionsOutput values.
@@ -2299,6 +2434,8 @@ type PipelineProcessOptionsArgs struct {
 	ReplicateSchemaChange PipelineProcessOptionsReplicateSchemaChangeInput `pulumi:"replicateSchemaChange"`
 	// (Updatable) If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
 	ShouldRestartOnFailure pulumi.StringInput `pulumi:"shouldRestartOnFailure"`
+	// (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+	StartUsingDefaultMapping pulumi.StringPtrInput `pulumi:"startUsingDefaultMapping"`
 }
 
 func (PipelineProcessOptionsArgs) ElementType() reflect.Type {
@@ -2395,6 +2532,11 @@ func (o PipelineProcessOptionsOutput) ShouldRestartOnFailure() pulumi.StringOutp
 	return o.ApplyT(func(v PipelineProcessOptions) string { return v.ShouldRestartOnFailure }).(pulumi.StringOutput)
 }
 
+// (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+func (o PipelineProcessOptionsOutput) StartUsingDefaultMapping() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineProcessOptions) *string { return v.StartUsingDefaultMapping }).(pulumi.StringPtrOutput)
+}
+
 type PipelineProcessOptionsPtrOutput struct{ *pulumi.OutputState }
 
 func (PipelineProcessOptionsPtrOutput) ElementType() reflect.Type {
@@ -2446,6 +2588,16 @@ func (o PipelineProcessOptionsPtrOutput) ShouldRestartOnFailure() pulumi.StringP
 			return nil
 		}
 		return &v.ShouldRestartOnFailure
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+func (o PipelineProcessOptionsPtrOutput) StartUsingDefaultMapping() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineProcessOptions) *string {
+		if v == nil {
+			return nil
+		}
+		return v.StartUsingDefaultMapping
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -12670,6 +12822,139 @@ func (o GetPipelineMappingRuleArrayOutput) Index(i pulumi.IntInput) GetPipelineM
 	}).(GetPipelineMappingRuleOutput)
 }
 
+type GetPipelinePipelineDiagnosticData struct {
+	// Name of the bucket where the object is to be uploaded in the object storage
+	Bucket string `pulumi:"bucket"`
+	// The state of the pipeline diagnostics collection.
+	DiagnosticState string `pulumi:"diagnosticState"`
+	// Name of namespace that serves as a container for all of your buckets
+	Namespace string `pulumi:"namespace"`
+	// Name of the diagnostic collected and uploaded to object storage
+	Object string `pulumi:"object"`
+	// The date and time the diagnostic data was last collected for the pipeline. The format is defined by  [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-07-25T21:10:29.600Z`.
+	TimeLastCollected string `pulumi:"timeLastCollected"`
+}
+
+// GetPipelinePipelineDiagnosticDataInput is an input type that accepts GetPipelinePipelineDiagnosticDataArgs and GetPipelinePipelineDiagnosticDataOutput values.
+// You can construct a concrete instance of `GetPipelinePipelineDiagnosticDataInput` via:
+//
+//	GetPipelinePipelineDiagnosticDataArgs{...}
+type GetPipelinePipelineDiagnosticDataInput interface {
+	pulumi.Input
+
+	ToGetPipelinePipelineDiagnosticDataOutput() GetPipelinePipelineDiagnosticDataOutput
+	ToGetPipelinePipelineDiagnosticDataOutputWithContext(context.Context) GetPipelinePipelineDiagnosticDataOutput
+}
+
+type GetPipelinePipelineDiagnosticDataArgs struct {
+	// Name of the bucket where the object is to be uploaded in the object storage
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The state of the pipeline diagnostics collection.
+	DiagnosticState pulumi.StringInput `pulumi:"diagnosticState"`
+	// Name of namespace that serves as a container for all of your buckets
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Name of the diagnostic collected and uploaded to object storage
+	Object pulumi.StringInput `pulumi:"object"`
+	// The date and time the diagnostic data was last collected for the pipeline. The format is defined by  [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-07-25T21:10:29.600Z`.
+	TimeLastCollected pulumi.StringInput `pulumi:"timeLastCollected"`
+}
+
+func (GetPipelinePipelineDiagnosticDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelinePipelineDiagnosticData)(nil)).Elem()
+}
+
+func (i GetPipelinePipelineDiagnosticDataArgs) ToGetPipelinePipelineDiagnosticDataOutput() GetPipelinePipelineDiagnosticDataOutput {
+	return i.ToGetPipelinePipelineDiagnosticDataOutputWithContext(context.Background())
+}
+
+func (i GetPipelinePipelineDiagnosticDataArgs) ToGetPipelinePipelineDiagnosticDataOutputWithContext(ctx context.Context) GetPipelinePipelineDiagnosticDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelinePipelineDiagnosticDataOutput)
+}
+
+// GetPipelinePipelineDiagnosticDataArrayInput is an input type that accepts GetPipelinePipelineDiagnosticDataArray and GetPipelinePipelineDiagnosticDataArrayOutput values.
+// You can construct a concrete instance of `GetPipelinePipelineDiagnosticDataArrayInput` via:
+//
+//	GetPipelinePipelineDiagnosticDataArray{ GetPipelinePipelineDiagnosticDataArgs{...} }
+type GetPipelinePipelineDiagnosticDataArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelinePipelineDiagnosticDataArrayOutput() GetPipelinePipelineDiagnosticDataArrayOutput
+	ToGetPipelinePipelineDiagnosticDataArrayOutputWithContext(context.Context) GetPipelinePipelineDiagnosticDataArrayOutput
+}
+
+type GetPipelinePipelineDiagnosticDataArray []GetPipelinePipelineDiagnosticDataInput
+
+func (GetPipelinePipelineDiagnosticDataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelinePipelineDiagnosticData)(nil)).Elem()
+}
+
+func (i GetPipelinePipelineDiagnosticDataArray) ToGetPipelinePipelineDiagnosticDataArrayOutput() GetPipelinePipelineDiagnosticDataArrayOutput {
+	return i.ToGetPipelinePipelineDiagnosticDataArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelinePipelineDiagnosticDataArray) ToGetPipelinePipelineDiagnosticDataArrayOutputWithContext(ctx context.Context) GetPipelinePipelineDiagnosticDataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelinePipelineDiagnosticDataArrayOutput)
+}
+
+type GetPipelinePipelineDiagnosticDataOutput struct{ *pulumi.OutputState }
+
+func (GetPipelinePipelineDiagnosticDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelinePipelineDiagnosticData)(nil)).Elem()
+}
+
+func (o GetPipelinePipelineDiagnosticDataOutput) ToGetPipelinePipelineDiagnosticDataOutput() GetPipelinePipelineDiagnosticDataOutput {
+	return o
+}
+
+func (o GetPipelinePipelineDiagnosticDataOutput) ToGetPipelinePipelineDiagnosticDataOutputWithContext(ctx context.Context) GetPipelinePipelineDiagnosticDataOutput {
+	return o
+}
+
+// Name of the bucket where the object is to be uploaded in the object storage
+func (o GetPipelinePipelineDiagnosticDataOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinePipelineDiagnosticData) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// The state of the pipeline diagnostics collection.
+func (o GetPipelinePipelineDiagnosticDataOutput) DiagnosticState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinePipelineDiagnosticData) string { return v.DiagnosticState }).(pulumi.StringOutput)
+}
+
+// Name of namespace that serves as a container for all of your buckets
+func (o GetPipelinePipelineDiagnosticDataOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinePipelineDiagnosticData) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// Name of the diagnostic collected and uploaded to object storage
+func (o GetPipelinePipelineDiagnosticDataOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinePipelineDiagnosticData) string { return v.Object }).(pulumi.StringOutput)
+}
+
+// The date and time the diagnostic data was last collected for the pipeline. The format is defined by  [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-07-25T21:10:29.600Z`.
+func (o GetPipelinePipelineDiagnosticDataOutput) TimeLastCollected() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinePipelineDiagnosticData) string { return v.TimeLastCollected }).(pulumi.StringOutput)
+}
+
+type GetPipelinePipelineDiagnosticDataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelinePipelineDiagnosticDataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelinePipelineDiagnosticData)(nil)).Elem()
+}
+
+func (o GetPipelinePipelineDiagnosticDataArrayOutput) ToGetPipelinePipelineDiagnosticDataArrayOutput() GetPipelinePipelineDiagnosticDataArrayOutput {
+	return o
+}
+
+func (o GetPipelinePipelineDiagnosticDataArrayOutput) ToGetPipelinePipelineDiagnosticDataArrayOutputWithContext(ctx context.Context) GetPipelinePipelineDiagnosticDataArrayOutput {
+	return o
+}
+
+func (o GetPipelinePipelineDiagnosticDataArrayOutput) Index(i pulumi.IntInput) GetPipelinePipelineDiagnosticDataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelinePipelineDiagnosticData {
+		return vs[0].([]GetPipelinePipelineDiagnosticData)[vs[1].(int)]
+	}).(GetPipelinePipelineDiagnosticDataOutput)
+}
+
 type GetPipelineProcessOption struct {
 	// Options required for the pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
 	InitialDataLoads []GetPipelineProcessOptionInitialDataLoad `pulumi:"initialDataLoads"`
@@ -12677,6 +12962,8 @@ type GetPipelineProcessOption struct {
 	ReplicateSchemaChanges []GetPipelineProcessOptionReplicateSchemaChange `pulumi:"replicateSchemaChanges"`
 	// If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
 	ShouldRestartOnFailure string `pulumi:"shouldRestartOnFailure"`
+	// If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+	StartUsingDefaultMapping string `pulumi:"startUsingDefaultMapping"`
 }
 
 // GetPipelineProcessOptionInput is an input type that accepts GetPipelineProcessOptionArgs and GetPipelineProcessOptionOutput values.
@@ -12697,6 +12984,8 @@ type GetPipelineProcessOptionArgs struct {
 	ReplicateSchemaChanges GetPipelineProcessOptionReplicateSchemaChangeArrayInput `pulumi:"replicateSchemaChanges"`
 	// If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
 	ShouldRestartOnFailure pulumi.StringInput `pulumi:"shouldRestartOnFailure"`
+	// If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+	StartUsingDefaultMapping pulumi.StringInput `pulumi:"startUsingDefaultMapping"`
 }
 
 func (GetPipelineProcessOptionArgs) ElementType() reflect.Type {
@@ -12765,6 +13054,11 @@ func (o GetPipelineProcessOptionOutput) ReplicateSchemaChanges() GetPipelineProc
 // If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
 func (o GetPipelineProcessOptionOutput) ShouldRestartOnFailure() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPipelineProcessOption) string { return v.ShouldRestartOnFailure }).(pulumi.StringOutput)
+}
+
+// If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+func (o GetPipelineProcessOptionOutput) StartUsingDefaultMapping() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineProcessOption) string { return v.StartUsingDefaultMapping }).(pulumi.StringOutput)
 }
 
 type GetPipelineProcessOptionArrayOutput struct{ *pulumi.OutputState }
@@ -14414,6 +14708,8 @@ type GetPipelinesPipelineCollectionItem struct {
 	Locks []GetPipelinesPipelineCollectionItemLock `pulumi:"locks"`
 	// Mapping for source/target schema/tables for the pipeline data replication.
 	MappingRules []GetPipelinesPipelineCollectionItemMappingRule `pulumi:"mappingRules"`
+	// Information regarding the pipeline diagnostic collection
+	PipelineDiagnosticDatas []GetPipelinesPipelineCollectionItemPipelineDiagnosticData `pulumi:"pipelineDiagnosticDatas"`
 	// Required pipeline options to configure the replication process (Extract or Replicat).
 	ProcessOptions []GetPipelinesPipelineCollectionItemProcessOption `pulumi:"processOptions"`
 	// The type of the recipe
@@ -14472,6 +14768,8 @@ type GetPipelinesPipelineCollectionItemArgs struct {
 	Locks GetPipelinesPipelineCollectionItemLockArrayInput `pulumi:"locks"`
 	// Mapping for source/target schema/tables for the pipeline data replication.
 	MappingRules GetPipelinesPipelineCollectionItemMappingRuleArrayInput `pulumi:"mappingRules"`
+	// Information regarding the pipeline diagnostic collection
+	PipelineDiagnosticDatas GetPipelinesPipelineCollectionItemPipelineDiagnosticDataArrayInput `pulumi:"pipelineDiagnosticDatas"`
 	// Required pipeline options to configure the replication process (Extract or Replicat).
 	ProcessOptions GetPipelinesPipelineCollectionItemProcessOptionArrayInput `pulumi:"processOptions"`
 	// The type of the recipe
@@ -14608,6 +14906,13 @@ func (o GetPipelinesPipelineCollectionItemOutput) MappingRules() GetPipelinesPip
 	return o.ApplyT(func(v GetPipelinesPipelineCollectionItem) []GetPipelinesPipelineCollectionItemMappingRule {
 		return v.MappingRules
 	}).(GetPipelinesPipelineCollectionItemMappingRuleArrayOutput)
+}
+
+// Information regarding the pipeline diagnostic collection
+func (o GetPipelinesPipelineCollectionItemOutput) PipelineDiagnosticDatas() GetPipelinesPipelineCollectionItemPipelineDiagnosticDataArrayOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItem) []GetPipelinesPipelineCollectionItemPipelineDiagnosticData {
+		return v.PipelineDiagnosticDatas
+	}).(GetPipelinesPipelineCollectionItemPipelineDiagnosticDataArrayOutput)
 }
 
 // Required pipeline options to configure the replication process (Extract or Replicat).
@@ -14902,6 +15207,139 @@ func (o GetPipelinesPipelineCollectionItemMappingRuleArrayOutput) Index(i pulumi
 	}).(GetPipelinesPipelineCollectionItemMappingRuleOutput)
 }
 
+type GetPipelinesPipelineCollectionItemPipelineDiagnosticData struct {
+	// Name of the bucket where the object is to be uploaded in the object storage
+	Bucket string `pulumi:"bucket"`
+	// The state of the pipeline diagnostics collection.
+	DiagnosticState string `pulumi:"diagnosticState"`
+	// Name of namespace that serves as a container for all of your buckets
+	Namespace string `pulumi:"namespace"`
+	// Name of the diagnostic collected and uploaded to object storage
+	Object string `pulumi:"object"`
+	// The date and time the diagnostic data was last collected for the pipeline. The format is defined by  [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-07-25T21:10:29.600Z`.
+	TimeLastCollected string `pulumi:"timeLastCollected"`
+}
+
+// GetPipelinesPipelineCollectionItemPipelineDiagnosticDataInput is an input type that accepts GetPipelinesPipelineCollectionItemPipelineDiagnosticDataArgs and GetPipelinesPipelineCollectionItemPipelineDiagnosticDataOutput values.
+// You can construct a concrete instance of `GetPipelinesPipelineCollectionItemPipelineDiagnosticDataInput` via:
+//
+//	GetPipelinesPipelineCollectionItemPipelineDiagnosticDataArgs{...}
+type GetPipelinesPipelineCollectionItemPipelineDiagnosticDataInput interface {
+	pulumi.Input
+
+	ToGetPipelinesPipelineCollectionItemPipelineDiagnosticDataOutput() GetPipelinesPipelineCollectionItemPipelineDiagnosticDataOutput
+	ToGetPipelinesPipelineCollectionItemPipelineDiagnosticDataOutputWithContext(context.Context) GetPipelinesPipelineCollectionItemPipelineDiagnosticDataOutput
+}
+
+type GetPipelinesPipelineCollectionItemPipelineDiagnosticDataArgs struct {
+	// Name of the bucket where the object is to be uploaded in the object storage
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The state of the pipeline diagnostics collection.
+	DiagnosticState pulumi.StringInput `pulumi:"diagnosticState"`
+	// Name of namespace that serves as a container for all of your buckets
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Name of the diagnostic collected and uploaded to object storage
+	Object pulumi.StringInput `pulumi:"object"`
+	// The date and time the diagnostic data was last collected for the pipeline. The format is defined by  [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-07-25T21:10:29.600Z`.
+	TimeLastCollected pulumi.StringInput `pulumi:"timeLastCollected"`
+}
+
+func (GetPipelinesPipelineCollectionItemPipelineDiagnosticDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelinesPipelineCollectionItemPipelineDiagnosticData)(nil)).Elem()
+}
+
+func (i GetPipelinesPipelineCollectionItemPipelineDiagnosticDataArgs) ToGetPipelinesPipelineCollectionItemPipelineDiagnosticDataOutput() GetPipelinesPipelineCollectionItemPipelineDiagnosticDataOutput {
+	return i.ToGetPipelinesPipelineCollectionItemPipelineDiagnosticDataOutputWithContext(context.Background())
+}
+
+func (i GetPipelinesPipelineCollectionItemPipelineDiagnosticDataArgs) ToGetPipelinesPipelineCollectionItemPipelineDiagnosticDataOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemPipelineDiagnosticDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelinesPipelineCollectionItemPipelineDiagnosticDataOutput)
+}
+
+// GetPipelinesPipelineCollectionItemPipelineDiagnosticDataArrayInput is an input type that accepts GetPipelinesPipelineCollectionItemPipelineDiagnosticDataArray and GetPipelinesPipelineCollectionItemPipelineDiagnosticDataArrayOutput values.
+// You can construct a concrete instance of `GetPipelinesPipelineCollectionItemPipelineDiagnosticDataArrayInput` via:
+//
+//	GetPipelinesPipelineCollectionItemPipelineDiagnosticDataArray{ GetPipelinesPipelineCollectionItemPipelineDiagnosticDataArgs{...} }
+type GetPipelinesPipelineCollectionItemPipelineDiagnosticDataArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelinesPipelineCollectionItemPipelineDiagnosticDataArrayOutput() GetPipelinesPipelineCollectionItemPipelineDiagnosticDataArrayOutput
+	ToGetPipelinesPipelineCollectionItemPipelineDiagnosticDataArrayOutputWithContext(context.Context) GetPipelinesPipelineCollectionItemPipelineDiagnosticDataArrayOutput
+}
+
+type GetPipelinesPipelineCollectionItemPipelineDiagnosticDataArray []GetPipelinesPipelineCollectionItemPipelineDiagnosticDataInput
+
+func (GetPipelinesPipelineCollectionItemPipelineDiagnosticDataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelinesPipelineCollectionItemPipelineDiagnosticData)(nil)).Elem()
+}
+
+func (i GetPipelinesPipelineCollectionItemPipelineDiagnosticDataArray) ToGetPipelinesPipelineCollectionItemPipelineDiagnosticDataArrayOutput() GetPipelinesPipelineCollectionItemPipelineDiagnosticDataArrayOutput {
+	return i.ToGetPipelinesPipelineCollectionItemPipelineDiagnosticDataArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelinesPipelineCollectionItemPipelineDiagnosticDataArray) ToGetPipelinesPipelineCollectionItemPipelineDiagnosticDataArrayOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemPipelineDiagnosticDataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelinesPipelineCollectionItemPipelineDiagnosticDataArrayOutput)
+}
+
+type GetPipelinesPipelineCollectionItemPipelineDiagnosticDataOutput struct{ *pulumi.OutputState }
+
+func (GetPipelinesPipelineCollectionItemPipelineDiagnosticDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelinesPipelineCollectionItemPipelineDiagnosticData)(nil)).Elem()
+}
+
+func (o GetPipelinesPipelineCollectionItemPipelineDiagnosticDataOutput) ToGetPipelinesPipelineCollectionItemPipelineDiagnosticDataOutput() GetPipelinesPipelineCollectionItemPipelineDiagnosticDataOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineCollectionItemPipelineDiagnosticDataOutput) ToGetPipelinesPipelineCollectionItemPipelineDiagnosticDataOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemPipelineDiagnosticDataOutput {
+	return o
+}
+
+// Name of the bucket where the object is to be uploaded in the object storage
+func (o GetPipelinesPipelineCollectionItemPipelineDiagnosticDataOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItemPipelineDiagnosticData) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// The state of the pipeline diagnostics collection.
+func (o GetPipelinesPipelineCollectionItemPipelineDiagnosticDataOutput) DiagnosticState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItemPipelineDiagnosticData) string { return v.DiagnosticState }).(pulumi.StringOutput)
+}
+
+// Name of namespace that serves as a container for all of your buckets
+func (o GetPipelinesPipelineCollectionItemPipelineDiagnosticDataOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItemPipelineDiagnosticData) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// Name of the diagnostic collected and uploaded to object storage
+func (o GetPipelinesPipelineCollectionItemPipelineDiagnosticDataOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItemPipelineDiagnosticData) string { return v.Object }).(pulumi.StringOutput)
+}
+
+// The date and time the diagnostic data was last collected for the pipeline. The format is defined by  [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-07-25T21:10:29.600Z`.
+func (o GetPipelinesPipelineCollectionItemPipelineDiagnosticDataOutput) TimeLastCollected() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItemPipelineDiagnosticData) string { return v.TimeLastCollected }).(pulumi.StringOutput)
+}
+
+type GetPipelinesPipelineCollectionItemPipelineDiagnosticDataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelinesPipelineCollectionItemPipelineDiagnosticDataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelinesPipelineCollectionItemPipelineDiagnosticData)(nil)).Elem()
+}
+
+func (o GetPipelinesPipelineCollectionItemPipelineDiagnosticDataArrayOutput) ToGetPipelinesPipelineCollectionItemPipelineDiagnosticDataArrayOutput() GetPipelinesPipelineCollectionItemPipelineDiagnosticDataArrayOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineCollectionItemPipelineDiagnosticDataArrayOutput) ToGetPipelinesPipelineCollectionItemPipelineDiagnosticDataArrayOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemPipelineDiagnosticDataArrayOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineCollectionItemPipelineDiagnosticDataArrayOutput) Index(i pulumi.IntInput) GetPipelinesPipelineCollectionItemPipelineDiagnosticDataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelinesPipelineCollectionItemPipelineDiagnosticData {
+		return vs[0].([]GetPipelinesPipelineCollectionItemPipelineDiagnosticData)[vs[1].(int)]
+	}).(GetPipelinesPipelineCollectionItemPipelineDiagnosticDataOutput)
+}
+
 type GetPipelinesPipelineCollectionItemProcessOption struct {
 	// Options required for the pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
 	InitialDataLoads []GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoad `pulumi:"initialDataLoads"`
@@ -14909,6 +15347,8 @@ type GetPipelinesPipelineCollectionItemProcessOption struct {
 	ReplicateSchemaChanges []GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChange `pulumi:"replicateSchemaChanges"`
 	// If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
 	ShouldRestartOnFailure string `pulumi:"shouldRestartOnFailure"`
+	// If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+	StartUsingDefaultMapping string `pulumi:"startUsingDefaultMapping"`
 }
 
 // GetPipelinesPipelineCollectionItemProcessOptionInput is an input type that accepts GetPipelinesPipelineCollectionItemProcessOptionArgs and GetPipelinesPipelineCollectionItemProcessOptionOutput values.
@@ -14929,6 +15369,8 @@ type GetPipelinesPipelineCollectionItemProcessOptionArgs struct {
 	ReplicateSchemaChanges GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArrayInput `pulumi:"replicateSchemaChanges"`
 	// If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
 	ShouldRestartOnFailure pulumi.StringInput `pulumi:"shouldRestartOnFailure"`
+	// If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+	StartUsingDefaultMapping pulumi.StringInput `pulumi:"startUsingDefaultMapping"`
 }
 
 func (GetPipelinesPipelineCollectionItemProcessOptionArgs) ElementType() reflect.Type {
@@ -14999,6 +15441,11 @@ func (o GetPipelinesPipelineCollectionItemProcessOptionOutput) ReplicateSchemaCh
 // If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
 func (o GetPipelinesPipelineCollectionItemProcessOptionOutput) ShouldRestartOnFailure() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPipelinesPipelineCollectionItemProcessOption) string { return v.ShouldRestartOnFailure }).(pulumi.StringOutput)
+}
+
+// If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+func (o GetPipelinesPipelineCollectionItemProcessOptionOutput) StartUsingDefaultMapping() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItemProcessOption) string { return v.StartUsingDefaultMapping }).(pulumi.StringOutput)
 }
 
 type GetPipelinesPipelineCollectionItemProcessOptionArrayOutput struct{ *pulumi.OutputState }
@@ -16835,6 +17282,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineLockArrayInput)(nil)).Elem(), PipelineLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineMappingRuleInput)(nil)).Elem(), PipelineMappingRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineMappingRuleArrayInput)(nil)).Elem(), PipelineMappingRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelinePipelineDiagnosticDataInput)(nil)).Elem(), PipelinePipelineDiagnosticDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelinePipelineDiagnosticDataArrayInput)(nil)).Elem(), PipelinePipelineDiagnosticDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineProcessOptionsInput)(nil)).Elem(), PipelineProcessOptionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineProcessOptionsPtrInput)(nil)).Elem(), PipelineProcessOptionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineProcessOptionsInitialDataLoadInput)(nil)).Elem(), PipelineProcessOptionsInitialDataLoadArgs{})
@@ -16971,6 +17420,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineLockArrayInput)(nil)).Elem(), GetPipelineLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineMappingRuleInput)(nil)).Elem(), GetPipelineMappingRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineMappingRuleArrayInput)(nil)).Elem(), GetPipelineMappingRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinePipelineDiagnosticDataInput)(nil)).Elem(), GetPipelinePipelineDiagnosticDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinePipelineDiagnosticDataArrayInput)(nil)).Elem(), GetPipelinePipelineDiagnosticDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineProcessOptionInput)(nil)).Elem(), GetPipelineProcessOptionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineProcessOptionArrayInput)(nil)).Elem(), GetPipelineProcessOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineProcessOptionInitialDataLoadInput)(nil)).Elem(), GetPipelineProcessOptionInitialDataLoadArgs{})
@@ -17009,6 +17460,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineCollectionItemLockArrayInput)(nil)).Elem(), GetPipelinesPipelineCollectionItemLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineCollectionItemMappingRuleInput)(nil)).Elem(), GetPipelinesPipelineCollectionItemMappingRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineCollectionItemMappingRuleArrayInput)(nil)).Elem(), GetPipelinesPipelineCollectionItemMappingRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineCollectionItemPipelineDiagnosticDataInput)(nil)).Elem(), GetPipelinesPipelineCollectionItemPipelineDiagnosticDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineCollectionItemPipelineDiagnosticDataArrayInput)(nil)).Elem(), GetPipelinesPipelineCollectionItemPipelineDiagnosticDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineCollectionItemProcessOptionInput)(nil)).Elem(), GetPipelinesPipelineCollectionItemProcessOptionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineCollectionItemProcessOptionArrayInput)(nil)).Elem(), GetPipelinesPipelineCollectionItemProcessOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadInput)(nil)).Elem(), GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArgs{})
@@ -17071,6 +17524,8 @@ func init() {
 	pulumi.RegisterOutputType(PipelineLockArrayOutput{})
 	pulumi.RegisterOutputType(PipelineMappingRuleOutput{})
 	pulumi.RegisterOutputType(PipelineMappingRuleArrayOutput{})
+	pulumi.RegisterOutputType(PipelinePipelineDiagnosticDataOutput{})
+	pulumi.RegisterOutputType(PipelinePipelineDiagnosticDataArrayOutput{})
 	pulumi.RegisterOutputType(PipelineProcessOptionsOutput{})
 	pulumi.RegisterOutputType(PipelineProcessOptionsPtrOutput{})
 	pulumi.RegisterOutputType(PipelineProcessOptionsInitialDataLoadOutput{})
@@ -17207,6 +17662,8 @@ func init() {
 	pulumi.RegisterOutputType(GetPipelineLockArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelineMappingRuleOutput{})
 	pulumi.RegisterOutputType(GetPipelineMappingRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelinePipelineDiagnosticDataOutput{})
+	pulumi.RegisterOutputType(GetPipelinePipelineDiagnosticDataArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelineProcessOptionOutput{})
 	pulumi.RegisterOutputType(GetPipelineProcessOptionArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelineProcessOptionInitialDataLoadOutput{})
@@ -17245,6 +17702,8 @@ func init() {
 	pulumi.RegisterOutputType(GetPipelinesPipelineCollectionItemLockArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelinesPipelineCollectionItemMappingRuleOutput{})
 	pulumi.RegisterOutputType(GetPipelinesPipelineCollectionItemMappingRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelinesPipelineCollectionItemPipelineDiagnosticDataOutput{})
+	pulumi.RegisterOutputType(GetPipelinesPipelineCollectionItemPipelineDiagnosticDataArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelinesPipelineCollectionItemProcessOptionOutput{})
 	pulumi.RegisterOutputType(GetPipelinesPipelineCollectionItemProcessOptionArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadOutput{})

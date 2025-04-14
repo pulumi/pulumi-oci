@@ -14,6 +14,8 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['VaultVerificationArgs', 'VaultVerification']
 
@@ -21,7 +23,8 @@ __all__ = ['VaultVerificationArgs', 'VaultVerification']
 class VaultVerificationArgs:
     def __init__(__self__, *,
                  replica_region: pulumi.Input[builtins.str],
-                 vault_id: pulumi.Input[builtins.str]):
+                 vault_id: pulumi.Input[builtins.str],
+                 replica_vault_metadata: Optional[pulumi.Input['VaultVerificationReplicaVaultMetadataArgs']] = None):
         """
         The set of arguments for constructing a VaultVerification resource.
         :param pulumi.Input[builtins.str] replica_region: (Updatable) The region to be created replica to. When updated,
@@ -30,6 +33,8 @@ class VaultVerificationArgs:
         """
         pulumi.set(__self__, "replica_region", replica_region)
         pulumi.set(__self__, "vault_id", vault_id)
+        if replica_vault_metadata is not None:
+            pulumi.set(__self__, "replica_vault_metadata", replica_vault_metadata)
 
     @property
     @pulumi.getter(name="replicaRegion")
@@ -56,11 +61,21 @@ class VaultVerificationArgs:
     def vault_id(self, value: pulumi.Input[builtins.str]):
         pulumi.set(self, "vault_id", value)
 
+    @property
+    @pulumi.getter(name="replicaVaultMetadata")
+    def replica_vault_metadata(self) -> Optional[pulumi.Input['VaultVerificationReplicaVaultMetadataArgs']]:
+        return pulumi.get(self, "replica_vault_metadata")
+
+    @replica_vault_metadata.setter
+    def replica_vault_metadata(self, value: Optional[pulumi.Input['VaultVerificationReplicaVaultMetadataArgs']]):
+        pulumi.set(self, "replica_vault_metadata", value)
+
 
 @pulumi.input_type
 class _VaultVerificationState:
     def __init__(__self__, *,
                  replica_region: Optional[pulumi.Input[builtins.str]] = None,
+                 replica_vault_metadata: Optional[pulumi.Input['VaultVerificationReplicaVaultMetadataArgs']] = None,
                  vault_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering VaultVerification resources.
@@ -70,6 +85,8 @@ class _VaultVerificationState:
         """
         if replica_region is not None:
             pulumi.set(__self__, "replica_region", replica_region)
+        if replica_vault_metadata is not None:
+            pulumi.set(__self__, "replica_vault_metadata", replica_vault_metadata)
         if vault_id is not None:
             pulumi.set(__self__, "vault_id", vault_id)
 
@@ -85,6 +102,15 @@ class _VaultVerificationState:
     @replica_region.setter
     def replica_region(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "replica_region", value)
+
+    @property
+    @pulumi.getter(name="replicaVaultMetadata")
+    def replica_vault_metadata(self) -> Optional[pulumi.Input['VaultVerificationReplicaVaultMetadataArgs']]:
+        return pulumi.get(self, "replica_vault_metadata")
+
+    @replica_vault_metadata.setter
+    def replica_vault_metadata(self, value: Optional[pulumi.Input['VaultVerificationReplicaVaultMetadataArgs']]):
+        pulumi.set(self, "replica_vault_metadata", value)
 
     @property
     @pulumi.getter(name="vaultId")
@@ -105,6 +131,7 @@ class VaultVerification(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  replica_region: Optional[pulumi.Input[builtins.str]] = None,
+                 replica_vault_metadata: Optional[pulumi.Input[Union['VaultVerificationReplicaVaultMetadataArgs', 'VaultVerificationReplicaVaultMetadataArgsDict']]] = None,
                  vault_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
@@ -175,6 +202,7 @@ class VaultVerification(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  replica_region: Optional[pulumi.Input[builtins.str]] = None,
+                 replica_vault_metadata: Optional[pulumi.Input[Union['VaultVerificationReplicaVaultMetadataArgs', 'VaultVerificationReplicaVaultMetadataArgsDict']]] = None,
                  vault_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -188,6 +216,7 @@ class VaultVerification(pulumi.CustomResource):
             if replica_region is None and not opts.urn:
                 raise TypeError("Missing required property 'replica_region'")
             __props__.__dict__["replica_region"] = replica_region
+            __props__.__dict__["replica_vault_metadata"] = replica_vault_metadata
             if vault_id is None and not opts.urn:
                 raise TypeError("Missing required property 'vault_id'")
             __props__.__dict__["vault_id"] = vault_id
@@ -202,6 +231,7 @@ class VaultVerification(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             replica_region: Optional[pulumi.Input[builtins.str]] = None,
+            replica_vault_metadata: Optional[pulumi.Input[Union['VaultVerificationReplicaVaultMetadataArgs', 'VaultVerificationReplicaVaultMetadataArgsDict']]] = None,
             vault_id: Optional[pulumi.Input[builtins.str]] = None) -> 'VaultVerification':
         """
         Get an existing VaultVerification resource's state with the given name, id, and optional extra
@@ -219,6 +249,7 @@ class VaultVerification(pulumi.CustomResource):
         __props__ = _VaultVerificationState.__new__(_VaultVerificationState)
 
         __props__.__dict__["replica_region"] = replica_region
+        __props__.__dict__["replica_vault_metadata"] = replica_vault_metadata
         __props__.__dict__["vault_id"] = vault_id
         return VaultVerification(resource_name, opts=opts, __props__=__props__)
 
@@ -230,6 +261,11 @@ class VaultVerification(pulumi.CustomResource):
         replica will be deleted from old region, and created to updated region.
         """
         return pulumi.get(self, "replica_region")
+
+    @property
+    @pulumi.getter(name="replicaVaultMetadata")
+    def replica_vault_metadata(self) -> pulumi.Output['outputs.VaultVerificationReplicaVaultMetadata']:
+        return pulumi.get(self, "replica_vault_metadata")
 
     @property
     @pulumi.getter(name="vaultId")

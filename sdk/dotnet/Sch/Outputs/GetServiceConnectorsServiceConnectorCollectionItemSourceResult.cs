@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Sch.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceCursorResult> Cursors;
         /// <summary>
-        /// The type discriminator.
+        /// The type of dimension value: static or evaluated.
         /// </summary>
         public readonly string Kind;
         /// <summary>
@@ -37,6 +37,10 @@ namespace Pulumi.Oci.Sch.Outputs
         /// The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using [ListConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins).
         /// </summary>
         public readonly string PluginName;
+        /// <summary>
+        /// The private endpoint metadata for the connector's source or target.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataResult> PrivateEndpointMetadatas;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
         /// </summary>
@@ -56,6 +60,8 @@ namespace Pulumi.Oci.Sch.Outputs
 
             string pluginName,
 
+            ImmutableArray<Outputs.GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataResult> privateEndpointMetadatas,
+
             string streamId)
         {
             ConfigMap = configMap;
@@ -64,6 +70,7 @@ namespace Pulumi.Oci.Sch.Outputs
             LogSources = logSources;
             MonitoringSources = monitoringSources;
             PluginName = pluginName;
+            PrivateEndpointMetadatas = privateEndpointMetadatas;
             StreamId = streamId;
         }
     }

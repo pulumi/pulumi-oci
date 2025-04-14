@@ -78,6 +78,8 @@ namespace Pulumi.Oci.Core
         ///     var testPrivateIpsByIpAddress = Oci.Core.GetPrivateIps.Invoke(new()
         ///     {
         ///         IpAddress = privateIpIpAddress,
+        ///         IpState = privateIpIpState,
+        ///         Lifetime = privateIpLifetime,
         ///         SubnetId = testSubnet.Id,
         ///         VlanId = testVlan.Id,
         ///         VnicId = testVnicAttachment.Id,
@@ -156,6 +158,8 @@ namespace Pulumi.Oci.Core
         ///     var testPrivateIpsByIpAddress = Oci.Core.GetPrivateIps.Invoke(new()
         ///     {
         ///         IpAddress = privateIpIpAddress,
+        ///         IpState = privateIpIpState,
+        ///         Lifetime = privateIpLifetime,
         ///         SubnetId = testSubnet.Id,
         ///         VlanId = testVlan.Id,
         ///         VnicId = testVnicAttachment.Id,
@@ -234,6 +238,8 @@ namespace Pulumi.Oci.Core
         ///     var testPrivateIpsByIpAddress = Oci.Core.GetPrivateIps.Invoke(new()
         ///     {
         ///         IpAddress = privateIpIpAddress,
+        ///         IpState = privateIpIpState,
+        ///         Lifetime = privateIpLifetime,
         ///         SubnetId = testSubnet.Id,
         ///         VlanId = testVlan.Id,
         ///         VnicId = testVnicAttachment.Id,
@@ -262,6 +268,20 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("ipAddress")]
         public string? IpAddress { get; set; }
+
+        /// <summary>
+        /// State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise AVAILABLE
+        /// </summary>
+        [Input("ipState")]
+        public string? IpState { get; set; }
+
+        /// <summary>
+        /// Lifetime of the IP address. There are two types of IPs:
+        /// * Ephemeral
+        /// * Reserved
+        /// </summary>
+        [Input("lifetime")]
+        public string? Lifetime { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
@@ -304,6 +324,20 @@ namespace Pulumi.Oci.Core
         public Input<string>? IpAddress { get; set; }
 
         /// <summary>
+        /// State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise AVAILABLE
+        /// </summary>
+        [Input("ipState")]
+        public Input<string>? IpState { get; set; }
+
+        /// <summary>
+        /// Lifetime of the IP address. There are two types of IPs:
+        /// * Ephemeral
+        /// * Reserved
+        /// </summary>
+        [Input("lifetime")]
+        public Input<string>? Lifetime { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
         /// </summary>
         [Input("subnetId")]
@@ -341,6 +375,16 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly string? IpAddress;
         /// <summary>
+        /// State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+        /// </summary>
+        public readonly string? IpState;
+        /// <summary>
+        /// Lifetime of the IP address. There are two types of IPv6 IPs:
+        /// * Ephemeral
+        /// * Reserved
+        /// </summary>
+        public readonly string? Lifetime;
+        /// <summary>
         /// The list of private_ips.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPrivateIpsPrivateIpResult> PrivateIps;
@@ -365,6 +409,10 @@ namespace Pulumi.Oci.Core
 
             string? ipAddress,
 
+            string? ipState,
+
+            string? lifetime,
+
             ImmutableArray<Outputs.GetPrivateIpsPrivateIpResult> privateIps,
 
             string? subnetId,
@@ -376,6 +424,8 @@ namespace Pulumi.Oci.Core
             Filters = filters;
             Id = id;
             IpAddress = ipAddress;
+            IpState = ipState;
+            Lifetime = lifetime;
             PrivateIps = privateIps;
             SubnetId = subnetId;
             VlanId = vlanId;

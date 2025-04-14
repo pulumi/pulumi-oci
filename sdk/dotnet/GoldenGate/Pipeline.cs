@@ -98,6 +98,12 @@ namespace Pulumi.Oci.GoldenGate
         public Output<ImmutableArray<Outputs.PipelineMappingRule>> MappingRules { get; private set; } = null!;
 
         /// <summary>
+        /// Information regarding the pipeline diagnostic collection
+        /// </summary>
+        [Output("pipelineDiagnosticDatas")]
+        public Output<ImmutableArray<Outputs.PipelinePipelineDiagnosticData>> PipelineDiagnosticDatas { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Required pipeline options to configure the replication process (Extract or Replicat).
         /// </summary>
         [Output("processOptions")]
@@ -383,6 +389,18 @@ namespace Pulumi.Oci.GoldenGate
         {
             get => _mappingRules ?? (_mappingRules = new InputList<Inputs.PipelineMappingRuleGetArgs>());
             set => _mappingRules = value;
+        }
+
+        [Input("pipelineDiagnosticDatas")]
+        private InputList<Inputs.PipelinePipelineDiagnosticDataGetArgs>? _pipelineDiagnosticDatas;
+
+        /// <summary>
+        /// Information regarding the pipeline diagnostic collection
+        /// </summary>
+        public InputList<Inputs.PipelinePipelineDiagnosticDataGetArgs> PipelineDiagnosticDatas
+        {
+            get => _pipelineDiagnosticDatas ?? (_pipelineDiagnosticDatas = new InputList<Inputs.PipelinePipelineDiagnosticDataGetArgs>());
+            set => _pipelineDiagnosticDatas = value;
         }
 
         /// <summary>

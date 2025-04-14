@@ -55,7 +55,7 @@ public final class InstanceLaunchVolumeAttachment {
      */
     private @Nullable InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetails launchCreateVolumeDetails;
     /**
-     * @return The type of volume. Currently, the only supported value is &#34;iscsi&#34;.
+     * @return The type of volume attachment. Currently, the only supported values are &#34;iscsi&#34; and &#34;paravirtualized&#34;.
      * 
      */
     private String type;
@@ -128,7 +128,7 @@ public final class InstanceLaunchVolumeAttachment {
         return Optional.ofNullable(this.launchCreateVolumeDetails);
     }
     /**
-     * @return The type of volume. Currently, the only supported value is &#34;iscsi&#34;.
+     * @return The type of volume attachment. Currently, the only supported values are &#34;iscsi&#34; and &#34;paravirtualized&#34;.
      * 
      */
     public String type() {

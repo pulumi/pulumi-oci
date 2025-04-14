@@ -212,6 +212,7 @@ class _PipelineState:
                  lifecycle_sub_state: Optional[pulumi.Input[builtins.str]] = None,
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineLockArgs']]]] = None,
                  mapping_rules: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineMappingRuleArgs']]]] = None,
+                 pipeline_diagnostic_datas: Optional[pulumi.Input[Sequence[pulumi.Input['PipelinePipelineDiagnosticDataArgs']]]] = None,
                  process_options: Optional[pulumi.Input['PipelineProcessOptionsArgs']] = None,
                  recipe_type: Optional[pulumi.Input[builtins.str]] = None,
                  source_connection_details: Optional[pulumi.Input['PipelineSourceConnectionDetailsArgs']] = None,
@@ -235,6 +236,7 @@ class _PipelineState:
         :param pulumi.Input[builtins.str] lifecycle_sub_state: Possible lifecycle substates when retrieving a pipeline.
         :param pulumi.Input[Sequence[pulumi.Input['PipelineLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input['PipelineMappingRuleArgs']]] mapping_rules: Mapping for source/target schema/tables for the pipeline data replication.
+        :param pulumi.Input[Sequence[pulumi.Input['PipelinePipelineDiagnosticDataArgs']]] pipeline_diagnostic_datas: Information regarding the pipeline diagnostic collection
         :param pulumi.Input['PipelineProcessOptionsArgs'] process_options: (Updatable) Required pipeline options to configure the replication process (Extract or Replicat).
         :param pulumi.Input[builtins.str] recipe_type: (Updatable) The type of the recipe
         :param pulumi.Input['PipelineSourceConnectionDetailsArgs'] source_connection_details: The source connection details for creating a pipeline.
@@ -269,6 +271,8 @@ class _PipelineState:
             pulumi.set(__self__, "locks", locks)
         if mapping_rules is not None:
             pulumi.set(__self__, "mapping_rules", mapping_rules)
+        if pipeline_diagnostic_datas is not None:
+            pulumi.set(__self__, "pipeline_diagnostic_datas", pipeline_diagnostic_datas)
         if process_options is not None:
             pulumi.set(__self__, "process_options", process_options)
         if recipe_type is not None:
@@ -431,6 +435,18 @@ class _PipelineState:
     @mapping_rules.setter
     def mapping_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineMappingRuleArgs']]]]):
         pulumi.set(self, "mapping_rules", value)
+
+    @property
+    @pulumi.getter(name="pipelineDiagnosticDatas")
+    def pipeline_diagnostic_datas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PipelinePipelineDiagnosticDataArgs']]]]:
+        """
+        Information regarding the pipeline diagnostic collection
+        """
+        return pulumi.get(self, "pipeline_diagnostic_datas")
+
+    @pipeline_diagnostic_datas.setter
+    def pipeline_diagnostic_datas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PipelinePipelineDiagnosticDataArgs']]]]):
+        pulumi.set(self, "pipeline_diagnostic_datas", value)
 
     @property
     @pulumi.getter(name="processOptions")
@@ -667,6 +683,7 @@ class Pipeline(pulumi.CustomResource):
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["lifecycle_sub_state"] = None
             __props__.__dict__["mapping_rules"] = None
+            __props__.__dict__["pipeline_diagnostic_datas"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
@@ -694,6 +711,7 @@ class Pipeline(pulumi.CustomResource):
             lifecycle_sub_state: Optional[pulumi.Input[builtins.str]] = None,
             locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PipelineLockArgs', 'PipelineLockArgsDict']]]]] = None,
             mapping_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PipelineMappingRuleArgs', 'PipelineMappingRuleArgsDict']]]]] = None,
+            pipeline_diagnostic_datas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PipelinePipelineDiagnosticDataArgs', 'PipelinePipelineDiagnosticDataArgsDict']]]]] = None,
             process_options: Optional[pulumi.Input[Union['PipelineProcessOptionsArgs', 'PipelineProcessOptionsArgsDict']]] = None,
             recipe_type: Optional[pulumi.Input[builtins.str]] = None,
             source_connection_details: Optional[pulumi.Input[Union['PipelineSourceConnectionDetailsArgs', 'PipelineSourceConnectionDetailsArgsDict']]] = None,
@@ -722,6 +740,7 @@ class Pipeline(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] lifecycle_sub_state: Possible lifecycle substates when retrieving a pipeline.
         :param pulumi.Input[Sequence[pulumi.Input[Union['PipelineLockArgs', 'PipelineLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['PipelineMappingRuleArgs', 'PipelineMappingRuleArgsDict']]]] mapping_rules: Mapping for source/target schema/tables for the pipeline data replication.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PipelinePipelineDiagnosticDataArgs', 'PipelinePipelineDiagnosticDataArgsDict']]]] pipeline_diagnostic_datas: Information regarding the pipeline diagnostic collection
         :param pulumi.Input[Union['PipelineProcessOptionsArgs', 'PipelineProcessOptionsArgsDict']] process_options: (Updatable) Required pipeline options to configure the replication process (Extract or Replicat).
         :param pulumi.Input[builtins.str] recipe_type: (Updatable) The type of the recipe
         :param pulumi.Input[Union['PipelineSourceConnectionDetailsArgs', 'PipelineSourceConnectionDetailsArgsDict']] source_connection_details: The source connection details for creating a pipeline.
@@ -748,6 +767,7 @@ class Pipeline(pulumi.CustomResource):
         __props__.__dict__["lifecycle_sub_state"] = lifecycle_sub_state
         __props__.__dict__["locks"] = locks
         __props__.__dict__["mapping_rules"] = mapping_rules
+        __props__.__dict__["pipeline_diagnostic_datas"] = pipeline_diagnostic_datas
         __props__.__dict__["process_options"] = process_options
         __props__.__dict__["recipe_type"] = recipe_type
         __props__.__dict__["source_connection_details"] = source_connection_details
@@ -854,6 +874,14 @@ class Pipeline(pulumi.CustomResource):
         Mapping for source/target schema/tables for the pipeline data replication.
         """
         return pulumi.get(self, "mapping_rules")
+
+    @property
+    @pulumi.getter(name="pipelineDiagnosticDatas")
+    def pipeline_diagnostic_datas(self) -> pulumi.Output[Sequence['outputs.PipelinePipelineDiagnosticData']]:
+        """
+        Information regarding the pipeline diagnostic collection
+        """
+        return pulumi.get(self, "pipeline_diagnostic_datas")
 
     @property
     @pulumi.getter(name="processOptions")

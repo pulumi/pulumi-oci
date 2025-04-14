@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValue {
     /**
-     * @return The type discriminator.
+     * @return The type of dimension value: static or evaluated.
      * 
      */
     private String kind;
@@ -28,7 +28,7 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemTargetDimen
 
     private GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValue() {}
     /**
-     * @return The type discriminator.
+     * @return The type of dimension value: static or evaluated.
      * 
      */
     public String kind() {

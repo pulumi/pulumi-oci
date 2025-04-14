@@ -50,6 +50,8 @@ __all__ = [
     'VaultRestoreFromFileArgsDict',
     'VaultRestoreFromObjectStoreArgs',
     'VaultRestoreFromObjectStoreArgsDict',
+    'VaultVerificationReplicaVaultMetadataArgs',
+    'VaultVerificationReplicaVaultMetadataArgsDict',
     'GetEkmsPrivateEndpointsFilterArgs',
     'GetEkmsPrivateEndpointsFilterArgsDict',
     'GetKeyVersionsFilterArgs',
@@ -1227,6 +1229,52 @@ class VaultRestoreFromObjectStoreArgs:
     @uri.setter
     def uri(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "uri", value)
+
+
+if not MYPY:
+    class VaultVerificationReplicaVaultMetadataArgsDict(TypedDict):
+        idcs_account_name_url: pulumi.Input[builtins.str]
+        private_endpoint_id: pulumi.Input[builtins.str]
+        vault_type: pulumi.Input[builtins.str]
+elif False:
+    VaultVerificationReplicaVaultMetadataArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class VaultVerificationReplicaVaultMetadataArgs:
+    def __init__(__self__, *,
+                 idcs_account_name_url: pulumi.Input[builtins.str],
+                 private_endpoint_id: pulumi.Input[builtins.str],
+                 vault_type: pulumi.Input[builtins.str]):
+        pulumi.set(__self__, "idcs_account_name_url", idcs_account_name_url)
+        pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+        pulumi.set(__self__, "vault_type", vault_type)
+
+    @property
+    @pulumi.getter(name="idcsAccountNameUrl")
+    def idcs_account_name_url(self) -> pulumi.Input[builtins.str]:
+        return pulumi.get(self, "idcs_account_name_url")
+
+    @idcs_account_name_url.setter
+    def idcs_account_name_url(self, value: pulumi.Input[builtins.str]):
+        pulumi.set(self, "idcs_account_name_url", value)
+
+    @property
+    @pulumi.getter(name="privateEndpointId")
+    def private_endpoint_id(self) -> pulumi.Input[builtins.str]:
+        return pulumi.get(self, "private_endpoint_id")
+
+    @private_endpoint_id.setter
+    def private_endpoint_id(self, value: pulumi.Input[builtins.str]):
+        pulumi.set(self, "private_endpoint_id", value)
+
+    @property
+    @pulumi.getter(name="vaultType")
+    def vault_type(self) -> pulumi.Input[builtins.str]:
+        return pulumi.get(self, "vault_type")
+
+    @vault_type.setter
+    def vault_type(self, value: pulumi.Input[builtins.str]):
+        pulumi.set(self, "vault_type", value)
 
 
 if not MYPY:

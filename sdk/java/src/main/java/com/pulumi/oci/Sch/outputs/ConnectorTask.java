@@ -5,8 +5,10 @@ package com.pulumi.oci.Sch.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Sch.outputs.ConnectorTaskPrivateEndpointMetadata;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -38,6 +40,11 @@ public final class ConnectorTask {
      * 
      */
     private String kind;
+    /**
+     * @return The private endpoint metadata for the connector&#39;s source or target.
+     * 
+     */
+    private @Nullable List<ConnectorTaskPrivateEndpointMetadata> privateEndpointMetadatas;
 
     private ConnectorTask() {}
     /**
@@ -75,6 +82,13 @@ public final class ConnectorTask {
     public String kind() {
         return this.kind;
     }
+    /**
+     * @return The private endpoint metadata for the connector&#39;s source or target.
+     * 
+     */
+    public List<ConnectorTaskPrivateEndpointMetadata> privateEndpointMetadatas() {
+        return this.privateEndpointMetadatas == null ? List.of() : this.privateEndpointMetadatas;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -90,6 +104,7 @@ public final class ConnectorTask {
         private @Nullable String condition;
         private @Nullable String functionId;
         private String kind;
+        private @Nullable List<ConnectorTaskPrivateEndpointMetadata> privateEndpointMetadatas;
         public Builder() {}
         public Builder(ConnectorTask defaults) {
     	      Objects.requireNonNull(defaults);
@@ -98,6 +113,7 @@ public final class ConnectorTask {
     	      this.condition = defaults.condition;
     	      this.functionId = defaults.functionId;
     	      this.kind = defaults.kind;
+    	      this.privateEndpointMetadatas = defaults.privateEndpointMetadatas;
         }
 
         @CustomType.Setter
@@ -132,6 +148,15 @@ public final class ConnectorTask {
             this.kind = kind;
             return this;
         }
+        @CustomType.Setter
+        public Builder privateEndpointMetadatas(@Nullable List<ConnectorTaskPrivateEndpointMetadata> privateEndpointMetadatas) {
+
+            this.privateEndpointMetadatas = privateEndpointMetadatas;
+            return this;
+        }
+        public Builder privateEndpointMetadatas(ConnectorTaskPrivateEndpointMetadata... privateEndpointMetadatas) {
+            return privateEndpointMetadatas(List.of(privateEndpointMetadatas));
+        }
         public ConnectorTask build() {
             final var _resultValue = new ConnectorTask();
             _resultValue.batchSizeInKbs = batchSizeInKbs;
@@ -139,6 +164,7 @@ public final class ConnectorTask {
             _resultValue.condition = condition;
             _resultValue.functionId = functionId;
             _resultValue.kind = kind;
+            _resultValue.privateEndpointMetadatas = privateEndpointMetadatas;
             return _resultValue;
         }
     }

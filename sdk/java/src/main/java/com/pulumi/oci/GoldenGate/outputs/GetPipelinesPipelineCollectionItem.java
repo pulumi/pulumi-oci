@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GoldenGate.outputs.GetPipelinesPipelineCollectionItemLock;
 import com.pulumi.oci.GoldenGate.outputs.GetPipelinesPipelineCollectionItemMappingRule;
+import com.pulumi.oci.GoldenGate.outputs.GetPipelinesPipelineCollectionItemPipelineDiagnosticData;
 import com.pulumi.oci.GoldenGate.outputs.GetPipelinesPipelineCollectionItemProcessOption;
 import com.pulumi.oci.GoldenGate.outputs.GetPipelinesPipelineCollectionItemSourceConnectionDetail;
 import com.pulumi.oci.GoldenGate.outputs.GetPipelinesPipelineCollectionItemTargetConnectionDetail;
@@ -84,6 +85,11 @@ public final class GetPipelinesPipelineCollectionItem {
      * 
      */
     private List<GetPipelinesPipelineCollectionItemMappingRule> mappingRules;
+    /**
+     * @return Information regarding the pipeline diagnostic collection
+     * 
+     */
+    private List<GetPipelinesPipelineCollectionItemPipelineDiagnosticData> pipelineDiagnosticDatas;
     /**
      * @return Required pipeline options to configure the replication process (Extract or Replicat).
      * 
@@ -223,6 +229,13 @@ public final class GetPipelinesPipelineCollectionItem {
         return this.mappingRules;
     }
     /**
+     * @return Information regarding the pipeline diagnostic collection
+     * 
+     */
+    public List<GetPipelinesPipelineCollectionItemPipelineDiagnosticData> pipelineDiagnosticDatas() {
+        return this.pipelineDiagnosticDatas;
+    }
+    /**
      * @return Required pipeline options to configure the replication process (Extract or Replicat).
      * 
      */
@@ -308,6 +321,7 @@ public final class GetPipelinesPipelineCollectionItem {
         private String lifecycleSubState;
         private List<GetPipelinesPipelineCollectionItemLock> locks;
         private List<GetPipelinesPipelineCollectionItemMappingRule> mappingRules;
+        private List<GetPipelinesPipelineCollectionItemPipelineDiagnosticData> pipelineDiagnosticDatas;
         private List<GetPipelinesPipelineCollectionItemProcessOption> processOptions;
         private String recipeType;
         private List<GetPipelinesPipelineCollectionItemSourceConnectionDetail> sourceConnectionDetails;
@@ -333,6 +347,7 @@ public final class GetPipelinesPipelineCollectionItem {
     	      this.lifecycleSubState = defaults.lifecycleSubState;
     	      this.locks = defaults.locks;
     	      this.mappingRules = defaults.mappingRules;
+    	      this.pipelineDiagnosticDatas = defaults.pipelineDiagnosticDatas;
     	      this.processOptions = defaults.processOptions;
     	      this.recipeType = defaults.recipeType;
     	      this.sourceConnectionDetails = defaults.sourceConnectionDetails;
@@ -455,6 +470,17 @@ public final class GetPipelinesPipelineCollectionItem {
             return mappingRules(List.of(mappingRules));
         }
         @CustomType.Setter
+        public Builder pipelineDiagnosticDatas(List<GetPipelinesPipelineCollectionItemPipelineDiagnosticData> pipelineDiagnosticDatas) {
+            if (pipelineDiagnosticDatas == null) {
+              throw new MissingRequiredPropertyException("GetPipelinesPipelineCollectionItem", "pipelineDiagnosticDatas");
+            }
+            this.pipelineDiagnosticDatas = pipelineDiagnosticDatas;
+            return this;
+        }
+        public Builder pipelineDiagnosticDatas(GetPipelinesPipelineCollectionItemPipelineDiagnosticData... pipelineDiagnosticDatas) {
+            return pipelineDiagnosticDatas(List.of(pipelineDiagnosticDatas));
+        }
+        @CustomType.Setter
         public Builder processOptions(List<GetPipelinesPipelineCollectionItemProcessOption> processOptions) {
             if (processOptions == null) {
               throw new MissingRequiredPropertyException("GetPipelinesPipelineCollectionItem", "processOptions");
@@ -550,6 +576,7 @@ public final class GetPipelinesPipelineCollectionItem {
             _resultValue.lifecycleSubState = lifecycleSubState;
             _resultValue.locks = locks;
             _resultValue.mappingRules = mappingRules;
+            _resultValue.pipelineDiagnosticDatas = pipelineDiagnosticDatas;
             _resultValue.processOptions = processOptions;
             _resultValue.recipeType = recipeType;
             _resultValue.sourceConnectionDetails = sourceConnectionDetails;

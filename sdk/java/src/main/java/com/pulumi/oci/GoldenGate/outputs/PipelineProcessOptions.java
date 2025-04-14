@@ -9,6 +9,8 @@ import com.pulumi.oci.GoldenGate.outputs.PipelineProcessOptionsInitialDataLoad;
 import com.pulumi.oci.GoldenGate.outputs.PipelineProcessOptionsReplicateSchemaChange;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class PipelineProcessOptions {
@@ -27,6 +29,11 @@ public final class PipelineProcessOptions {
      * 
      */
     private String shouldRestartOnFailure;
+    /**
+     * @return (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+     * 
+     */
+    private @Nullable String startUsingDefaultMapping;
 
     private PipelineProcessOptions() {}
     /**
@@ -50,6 +57,13 @@ public final class PipelineProcessOptions {
     public String shouldRestartOnFailure() {
         return this.shouldRestartOnFailure;
     }
+    /**
+     * @return (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+     * 
+     */
+    public Optional<String> startUsingDefaultMapping() {
+        return Optional.ofNullable(this.startUsingDefaultMapping);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -63,12 +77,14 @@ public final class PipelineProcessOptions {
         private PipelineProcessOptionsInitialDataLoad initialDataLoad;
         private PipelineProcessOptionsReplicateSchemaChange replicateSchemaChange;
         private String shouldRestartOnFailure;
+        private @Nullable String startUsingDefaultMapping;
         public Builder() {}
         public Builder(PipelineProcessOptions defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.initialDataLoad = defaults.initialDataLoad;
     	      this.replicateSchemaChange = defaults.replicateSchemaChange;
     	      this.shouldRestartOnFailure = defaults.shouldRestartOnFailure;
+    	      this.startUsingDefaultMapping = defaults.startUsingDefaultMapping;
         }
 
         @CustomType.Setter
@@ -95,11 +111,18 @@ public final class PipelineProcessOptions {
             this.shouldRestartOnFailure = shouldRestartOnFailure;
             return this;
         }
+        @CustomType.Setter
+        public Builder startUsingDefaultMapping(@Nullable String startUsingDefaultMapping) {
+
+            this.startUsingDefaultMapping = startUsingDefaultMapping;
+            return this;
+        }
         public PipelineProcessOptions build() {
             final var _resultValue = new PipelineProcessOptions();
             _resultValue.initialDataLoad = initialDataLoad;
             _resultValue.replicateSchemaChange = replicateSchemaChange;
             _resultValue.shouldRestartOnFailure = shouldRestartOnFailure;
+            _resultValue.startUsingDefaultMapping = startUsingDefaultMapping;
             return _resultValue;
         }
     }

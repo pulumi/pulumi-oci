@@ -56,11 +56,11 @@ public final class VnicAttachmentCreateVnicDetails {
      */
     private @Nullable Map<String,String> freeformTags;
     /**
-     * @return (Updatable) The hostname for the VNIC&#39;s primary private IP. Used for DNS. The value is the hostname portion of the primary private IP&#39;s fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the `[Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/)` object and also the `[PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/)` object returned by `[ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps)` and `[GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)`.
+     * @return (Updatable) The hostname for the VNIC&#39;s primary private IP. Used for DNS. The value is the hostname portion of the primary private IP&#39;s fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
      * 
      * For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      * 
-     * When launching an instance, use this `hostnameLabel` instead of the deprecated `hostnameLabel` in `[LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails)`. If you provide both, the values must match.
+     * When launching an instance, use this `hostnameLabel` instead of the deprecated `hostnameLabel` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). If you provide both, the values must match.
      * 
      * Example: `bminstance1`
      * 
@@ -81,7 +81,7 @@ public final class VnicAttachmentCreateVnicDetails {
      */
     private @Nullable List<String> nsgIds;
     /**
-     * @return A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC&#39;s *primary* private IP address. The value appears in the `[Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/)` object and also the `[PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/)` object returned by `[ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps)` and `[GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)`.
+     * @return A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC&#39;s *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
      * 
      * If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
      * 
@@ -173,11 +173,11 @@ public final class VnicAttachmentCreateVnicDetails {
         return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
-     * @return (Updatable) The hostname for the VNIC&#39;s primary private IP. Used for DNS. The value is the hostname portion of the primary private IP&#39;s fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the `[Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/)` object and also the `[PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/)` object returned by `[ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps)` and `[GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)`.
+     * @return (Updatable) The hostname for the VNIC&#39;s primary private IP. Used for DNS. The value is the hostname portion of the primary private IP&#39;s fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
      * 
      * For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      * 
-     * When launching an instance, use this `hostnameLabel` instead of the deprecated `hostnameLabel` in `[LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails)`. If you provide both, the values must match.
+     * When launching an instance, use this `hostnameLabel` instead of the deprecated `hostnameLabel` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). If you provide both, the values must match.
      * 
      * Example: `bminstance1`
      * 
@@ -204,7 +204,7 @@ public final class VnicAttachmentCreateVnicDetails {
         return this.nsgIds == null ? List.of() : this.nsgIds;
     }
     /**
-     * @return A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC&#39;s *primary* private IP address. The value appears in the `[Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/)` object and also the `[PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/)` object returned by `[ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps)` and `[GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)`.
+     * @return A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC&#39;s *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
      * 
      * If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
      * 

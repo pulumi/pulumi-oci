@@ -95,6 +95,8 @@ import (
 //			// Filter on private IP address and Subnet OCID
 //			_, err := core.GetPrivateIps(ctx, &core.GetPrivateIpsArgs{
 //				IpAddress: pulumi.StringRef(privateIpIpAddress),
+//				IpState:   pulumi.StringRef(privateIpIpState),
+//				Lifetime:  pulumi.StringRef(privateIpLifetime),
 //				SubnetId:  pulumi.StringRef(testSubnet.Id),
 //				VlanId:    pulumi.StringRef(testVlan.Id),
 //				VnicId:    pulumi.StringRef(testVnicAttachment.Id),
@@ -122,6 +124,12 @@ type GetPrivateIpsArgs struct {
 	Filters []GetPrivateIpsFilter `pulumi:"filters"`
 	// An IP address. This could be either IPv4 or IPv6, depending on the resource. Example: `10.0.3.3`
 	IpAddress *string `pulumi:"ipAddress"`
+	// State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise AVAILABLE
+	IpState *string `pulumi:"ipState"`
+	// Lifetime of the IP address. There are two types of IPs:
+	// * Ephemeral
+	// * Reserved
+	Lifetime *string `pulumi:"lifetime"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
 	SubnetId *string `pulumi:"subnetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
@@ -137,6 +145,12 @@ type GetPrivateIpsResult struct {
 	Id string `pulumi:"id"`
 	// The private IP address of the `privateIp` object. The address is within the CIDR of the VNIC's subnet.
 	IpAddress *string `pulumi:"ipAddress"`
+	// State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+	IpState *string `pulumi:"ipState"`
+	// Lifetime of the IP address. There are two types of IPv6 IPs:
+	// * Ephemeral
+	// * Reserved
+	Lifetime *string `pulumi:"lifetime"`
 	// The list of private_ips.
 	PrivateIps []GetPrivateIpsPrivateIp `pulumi:"privateIps"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
@@ -161,6 +175,12 @@ type GetPrivateIpsOutputArgs struct {
 	Filters GetPrivateIpsFilterArrayInput `pulumi:"filters"`
 	// An IP address. This could be either IPv4 or IPv6, depending on the resource. Example: `10.0.3.3`
 	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
+	// State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise AVAILABLE
+	IpState pulumi.StringPtrInput `pulumi:"ipState"`
+	// Lifetime of the IP address. There are two types of IPs:
+	// * Ephemeral
+	// * Reserved
+	Lifetime pulumi.StringPtrInput `pulumi:"lifetime"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
 	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
@@ -200,6 +220,18 @@ func (o GetPrivateIpsResultOutput) Id() pulumi.StringOutput {
 // The private IP address of the `privateIp` object. The address is within the CIDR of the VNIC's subnet.
 func (o GetPrivateIpsResultOutput) IpAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetPrivateIpsResult) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
+}
+
+// State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+func (o GetPrivateIpsResultOutput) IpState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateIpsResult) *string { return v.IpState }).(pulumi.StringPtrOutput)
+}
+
+// Lifetime of the IP address. There are two types of IPv6 IPs:
+// * Ephemeral
+// * Reserved
+func (o GetPrivateIpsResultOutput) Lifetime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateIpsResult) *string { return v.Lifetime }).(pulumi.StringPtrOutput)
 }
 
 // The list of private_ips.

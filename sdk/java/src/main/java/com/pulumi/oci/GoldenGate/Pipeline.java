@@ -11,6 +11,7 @@ import com.pulumi.oci.GoldenGate.PipelineArgs;
 import com.pulumi.oci.GoldenGate.inputs.PipelineState;
 import com.pulumi.oci.GoldenGate.outputs.PipelineLock;
 import com.pulumi.oci.GoldenGate.outputs.PipelineMappingRule;
+import com.pulumi.oci.GoldenGate.outputs.PipelinePipelineDiagnosticData;
 import com.pulumi.oci.GoldenGate.outputs.PipelineProcessOptions;
 import com.pulumi.oci.GoldenGate.outputs.PipelineSourceConnectionDetails;
 import com.pulumi.oci.GoldenGate.outputs.PipelineTargetConnectionDetails;
@@ -210,6 +211,20 @@ public class Pipeline extends com.pulumi.resources.CustomResource {
      */
     public Output<List<PipelineMappingRule>> mappingRules() {
         return this.mappingRules;
+    }
+    /**
+     * Information regarding the pipeline diagnostic collection
+     * 
+     */
+    @Export(name="pipelineDiagnosticDatas", refs={List.class,PipelinePipelineDiagnosticData.class}, tree="[0,1]")
+    private Output<List<PipelinePipelineDiagnosticData>> pipelineDiagnosticDatas;
+
+    /**
+     * @return Information regarding the pipeline diagnostic collection
+     * 
+     */
+    public Output<List<PipelinePipelineDiagnosticData>> pipelineDiagnosticDatas() {
+        return this.pipelineDiagnosticDatas;
     }
     /**
      * (Updatable) Required pipeline options to configure the replication process (Extract or Replicat).

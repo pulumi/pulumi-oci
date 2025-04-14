@@ -27,7 +27,7 @@ class GetPrivateIpResult:
     """
     A collection of values returned by getPrivateIp.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, hostname_label=None, id=None, ip_address=None, is_primary=None, is_reserved=None, private_ip_id=None, route_table_id=None, subnet_id=None, time_created=None, vlan_id=None, vnic_id=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, hostname_label=None, id=None, ip_address=None, ip_state=None, is_primary=None, is_reserved=None, lifetime=None, private_ip_id=None, route_table_id=None, subnet_id=None, time_created=None, vlan_id=None, vnic_id=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -52,12 +52,18 @@ class GetPrivateIpResult:
         if ip_address and not isinstance(ip_address, str):
             raise TypeError("Expected argument 'ip_address' to be a str")
         pulumi.set(__self__, "ip_address", ip_address)
+        if ip_state and not isinstance(ip_state, str):
+            raise TypeError("Expected argument 'ip_state' to be a str")
+        pulumi.set(__self__, "ip_state", ip_state)
         if is_primary and not isinstance(is_primary, bool):
             raise TypeError("Expected argument 'is_primary' to be a bool")
         pulumi.set(__self__, "is_primary", is_primary)
         if is_reserved and not isinstance(is_reserved, bool):
             raise TypeError("Expected argument 'is_reserved' to be a bool")
         pulumi.set(__self__, "is_reserved", is_reserved)
+        if lifetime and not isinstance(lifetime, str):
+            raise TypeError("Expected argument 'lifetime' to be a str")
+        pulumi.set(__self__, "lifetime", lifetime)
         if private_ip_id and not isinstance(private_ip_id, str):
             raise TypeError("Expected argument 'private_ip_id' to be a str")
         pulumi.set(__self__, "private_ip_id", private_ip_id)
@@ -142,6 +148,14 @@ class GetPrivateIpResult:
         return pulumi.get(self, "ip_address")
 
     @property
+    @pulumi.getter(name="ipState")
+    def ip_state(self) -> builtins.str:
+        """
+        State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+        """
+        return pulumi.get(self, "ip_state")
+
+    @property
     @pulumi.getter(name="isPrimary")
     def is_primary(self) -> builtins.bool:
         """
@@ -152,10 +166,17 @@ class GetPrivateIpResult:
     @property
     @pulumi.getter(name="isReserved")
     def is_reserved(self) -> builtins.bool:
-        """
-        true if the IP is reserved and can exist detached from vnic
-        """
         return pulumi.get(self, "is_reserved")
+
+    @property
+    @pulumi.getter
+    def lifetime(self) -> builtins.str:
+        """
+        Lifetime of the IP address. There are two types of IPv6 IPs:
+        * Ephemeral
+        * Reserved
+        """
+        return pulumi.get(self, "lifetime")
 
     @property
     @pulumi.getter(name="privateIpId")
@@ -165,6 +186,9 @@ class GetPrivateIpResult:
     @property
     @pulumi.getter(name="routeTableId")
     def route_table_id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
+        """
         return pulumi.get(self, "route_table_id")
 
     @property
@@ -214,8 +238,10 @@ class AwaitableGetPrivateIpResult(GetPrivateIpResult):
             hostname_label=self.hostname_label,
             id=self.id,
             ip_address=self.ip_address,
+            ip_state=self.ip_state,
             is_primary=self.is_primary,
             is_reserved=self.is_reserved,
+            lifetime=self.lifetime,
             private_ip_id=self.private_ip_id,
             route_table_id=self.route_table_id,
             subnet_id=self.subnet_id,
@@ -260,8 +286,10 @@ def get_private_ip(private_ip_id: Optional[builtins.str] = None,
         hostname_label=pulumi.get(__ret__, 'hostname_label'),
         id=pulumi.get(__ret__, 'id'),
         ip_address=pulumi.get(__ret__, 'ip_address'),
+        ip_state=pulumi.get(__ret__, 'ip_state'),
         is_primary=pulumi.get(__ret__, 'is_primary'),
         is_reserved=pulumi.get(__ret__, 'is_reserved'),
+        lifetime=pulumi.get(__ret__, 'lifetime'),
         private_ip_id=pulumi.get(__ret__, 'private_ip_id'),
         route_table_id=pulumi.get(__ret__, 'route_table_id'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
@@ -303,8 +331,10 @@ def get_private_ip_output(private_ip_id: Optional[pulumi.Input[builtins.str]] = 
         hostname_label=pulumi.get(__response__, 'hostname_label'),
         id=pulumi.get(__response__, 'id'),
         ip_address=pulumi.get(__response__, 'ip_address'),
+        ip_state=pulumi.get(__response__, 'ip_state'),
         is_primary=pulumi.get(__response__, 'is_primary'),
         is_reserved=pulumi.get(__response__, 'is_reserved'),
+        lifetime=pulumi.get(__response__, 'lifetime'),
         private_ip_id=pulumi.get(__response__, 'private_ip_id'),
         route_table_id=pulumi.get(__response__, 'route_table_id'),
         subnet_id=pulumi.get(__response__, 'subnet_id'),

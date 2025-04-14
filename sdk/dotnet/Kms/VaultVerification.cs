@@ -47,6 +47,9 @@ namespace Pulumi.Oci.Kms
         [Output("replicaRegion")]
         public Output<string> ReplicaRegion { get; private set; } = null!;
 
+        [Output("replicaVaultMetadata")]
+        public Output<Outputs.VaultVerificationReplicaVaultMetadata> ReplicaVaultMetadata { get; private set; } = null!;
+
         /// <summary>
         /// The OCID of the primary vault to create replica from.
         /// </summary>
@@ -106,6 +109,9 @@ namespace Pulumi.Oci.Kms
         [Input("replicaRegion", required: true)]
         public Input<string> ReplicaRegion { get; set; } = null!;
 
+        [Input("replicaVaultMetadata")]
+        public Input<Inputs.VaultVerificationReplicaVaultMetadataArgs>? ReplicaVaultMetadata { get; set; }
+
         /// <summary>
         /// The OCID of the primary vault to create replica from.
         /// </summary>
@@ -126,6 +132,9 @@ namespace Pulumi.Oci.Kms
         /// </summary>
         [Input("replicaRegion")]
         public Input<string>? ReplicaRegion { get; set; }
+
+        [Input("replicaVaultMetadata")]
+        public Input<Inputs.VaultVerificationReplicaVaultMetadataGetArgs>? ReplicaVaultMetadata { get; set; }
 
         /// <summary>
         /// The OCID of the primary vault to create replica from.

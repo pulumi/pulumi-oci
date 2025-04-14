@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -58,6 +60,7 @@ export class VaultVerification extends pulumi.CustomResource {
      * replica will be deleted from old region, and created to updated region.
      */
     public readonly replicaRegion!: pulumi.Output<string>;
+    public readonly replicaVaultMetadata!: pulumi.Output<outputs.Kms.VaultVerificationReplicaVaultMetadata>;
     /**
      * The OCID of the primary vault to create replica from.
      */
@@ -77,6 +80,7 @@ export class VaultVerification extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as VaultVerificationState | undefined;
             resourceInputs["replicaRegion"] = state ? state.replicaRegion : undefined;
+            resourceInputs["replicaVaultMetadata"] = state ? state.replicaVaultMetadata : undefined;
             resourceInputs["vaultId"] = state ? state.vaultId : undefined;
         } else {
             const args = argsOrState as VaultVerificationArgs | undefined;
@@ -87,6 +91,7 @@ export class VaultVerification extends pulumi.CustomResource {
                 throw new Error("Missing required property 'vaultId'");
             }
             resourceInputs["replicaRegion"] = args ? args.replicaRegion : undefined;
+            resourceInputs["replicaVaultMetadata"] = args ? args.replicaVaultMetadata : undefined;
             resourceInputs["vaultId"] = args ? args.vaultId : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -103,6 +108,7 @@ export interface VaultVerificationState {
      * replica will be deleted from old region, and created to updated region.
      */
     replicaRegion?: pulumi.Input<string>;
+    replicaVaultMetadata?: pulumi.Input<inputs.Kms.VaultVerificationReplicaVaultMetadata>;
     /**
      * The OCID of the primary vault to create replica from.
      */
@@ -118,6 +124,7 @@ export interface VaultVerificationArgs {
      * replica will be deleted from old region, and created to updated region.
      */
     replicaRegion: pulumi.Input<string>;
+    replicaVaultMetadata?: pulumi.Input<inputs.Kms.VaultVerificationReplicaVaultMetadata>;
     /**
      * The OCID of the primary vault to create replica from.
      */

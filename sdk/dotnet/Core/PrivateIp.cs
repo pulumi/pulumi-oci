@@ -39,7 +39,9 @@ namespace Pulumi.Oci.Core
     ///         },
     ///         HostnameLabel = privateIpHostnameLabel,
     ///         IpAddress = privateIpIpAddress,
+    ///         Lifetime = privateIpLifetime,
     ///         RouteTableId = testRouteTable.Id,
+    ///         SubnetId = testSubnet.Id,
     ///         VlanId = testVlan.Id,
     ///         VnicId = testVnicAttachment.VnicId,
     ///     });
@@ -105,25 +107,36 @@ namespace Pulumi.Oci.Core
         public Output<string> IpAddress { get; private set; } = null!;
 
         /// <summary>
+        /// State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+        /// </summary>
+        [Output("ipState")]
+        public Output<string> IpState { get; private set; } = null!;
+
+        /// <summary>
         /// Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
         /// </summary>
         [Output("isPrimary")]
         public Output<bool> IsPrimary { get; private set; } = null!;
 
-        /// <summary>
-        /// true if the IP is reserved and can exist detached from vnic
-        /// </summary>
         [Output("isReserved")]
         public Output<bool> IsReserved { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+        /// (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+        /// * Ephemeral
+        /// * Reserved
+        /// </summary>
+        [Output("lifetime")]
+        public Output<string> Lifetime { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
         /// </summary>
         [Output("routeTableId")]
         public Output<string?> RouteTableId { get; private set; } = null!;
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the private IP is to be drawn. The IP address, *if supplied*, must be valid for the given subnet.
         /// </summary>
         [Output("subnetId")]
         public Output<string> SubnetId { get; private set; } = null!;
@@ -150,7 +163,7 @@ namespace Pulumi.Oci.Core
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("vnicId")]
-        public Output<string> VnicId { get; private set; } = null!;
+        public Output<string?> VnicId { get; private set; } = null!;
 
 
         /// <summary>
@@ -245,10 +258,24 @@ namespace Pulumi.Oci.Core
         public Input<string>? IpAddress { get; set; }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+        /// (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+        /// * Ephemeral
+        /// * Reserved
+        /// </summary>
+        [Input("lifetime")]
+        public Input<string>? Lifetime { get; set; }
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
         /// </summary>
         [Input("routeTableId")]
         public Input<string>? RouteTableId { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the private IP is to be drawn. The IP address, *if supplied*, must be valid for the given subnet.
+        /// </summary>
+        [Input("subnetId")]
+        public Input<string>? SubnetId { get; set; }
 
         /// <summary>
         /// Use this attribute only with the Oracle Cloud VMware Solution.
@@ -335,25 +362,36 @@ namespace Pulumi.Oci.Core
         public Input<string>? IpAddress { get; set; }
 
         /// <summary>
+        /// State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+        /// </summary>
+        [Input("ipState")]
+        public Input<string>? IpState { get; set; }
+
+        /// <summary>
         /// Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
         /// </summary>
         [Input("isPrimary")]
         public Input<bool>? IsPrimary { get; set; }
 
-        /// <summary>
-        /// true if the IP is reserved and can exist detached from vnic
-        /// </summary>
         [Input("isReserved")]
         public Input<bool>? IsReserved { get; set; }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+        /// (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+        /// * Ephemeral
+        /// * Reserved
+        /// </summary>
+        [Input("lifetime")]
+        public Input<string>? Lifetime { get; set; }
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
         /// </summary>
         [Input("routeTableId")]
         public Input<string>? RouteTableId { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the private IP is to be drawn. The IP address, *if supplied*, must be valid for the given subnet.
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }

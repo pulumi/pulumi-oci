@@ -30,6 +30,7 @@ namespace Pulumi.Oci.Functions
     ///         InvokeFunctionBody = invokeFunctionInvokeFunctionBody,
     ///         FnIntent = invokeFunctionFnIntent,
     ///         FnInvokeType = invokeFunctionFnInvokeType,
+    ///         IsDryRun = invokeFunctionIsDryRun,
     ///         Base64EncodeContent = false,
     ///     });
     /// 
@@ -90,6 +91,12 @@ namespace Pulumi.Oci.Functions
 
         [Output("invokeFunctionBodyBase64Encoded")]
         public Output<string> InvokeFunctionBodyBase64Encoded { get; private set; } = null!;
+
+        /// <summary>
+        /// Indicates that the request is a dry run, if set to "true". A dry run request does not execute the function.
+        /// </summary>
+        [Output("isDryRun")]
+        public Output<bool> IsDryRun { get; private set; } = null!;
 
 
         /// <summary>
@@ -176,6 +183,12 @@ namespace Pulumi.Oci.Functions
         [Input("invokeFunctionBodyBase64Encoded")]
         public Input<string>? InvokeFunctionBodyBase64Encoded { get; set; }
 
+        /// <summary>
+        /// Indicates that the request is a dry run, if set to "true". A dry run request does not execute the function.
+        /// </summary>
+        [Input("isDryRun")]
+        public Input<bool>? IsDryRun { get; set; }
+
         public InvokeFunctionArgs()
         {
         }
@@ -231,6 +244,12 @@ namespace Pulumi.Oci.Functions
 
         [Input("invokeFunctionBodyBase64Encoded")]
         public Input<string>? InvokeFunctionBodyBase64Encoded { get; set; }
+
+        /// <summary>
+        /// Indicates that the request is a dry run, if set to "true". A dry run request does not execute the function.
+        /// </summary>
+        [Input("isDryRun")]
+        public Input<bool>? IsDryRun { get; set; }
 
         public InvokeFunctionState()
         {

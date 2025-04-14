@@ -25,7 +25,9 @@ class PrivateIpArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  hostname_label: Optional[pulumi.Input[builtins.str]] = None,
                  ip_address: Optional[pulumi.Input[builtins.str]] = None,
+                 lifetime: Optional[pulumi.Input[builtins.str]] = None,
                  route_table_id: Optional[pulumi.Input[builtins.str]] = None,
+                 subnet_id: Optional[pulumi.Input[builtins.str]] = None,
                  vlan_id: Optional[pulumi.Input[builtins.str]] = None,
                  vnic_id: Optional[pulumi.Input[builtins.str]] = None):
         """
@@ -39,7 +41,11 @@ class PrivateIpArgs:
                
                Example: `bminstance1`
         :param pulumi.Input[builtins.str] ip_address: A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
-        :param pulumi.Input[builtins.str] route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+        :param pulumi.Input[builtins.str] lifetime: (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+               * Ephemeral
+               * Reserved
+        :param pulumi.Input[builtins.str] route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
+        :param pulumi.Input[builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the private IP is to be drawn. The IP address, *if supplied*, must be valid for the given subnet.
         :param pulumi.Input[builtins.str] vlan_id: Use this attribute only with the Oracle Cloud VMware Solution.
                
                The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN from which the private IP is to be drawn. The IP address, *if supplied*, must be valid for the given VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
@@ -59,8 +65,12 @@ class PrivateIpArgs:
             pulumi.set(__self__, "hostname_label", hostname_label)
         if ip_address is not None:
             pulumi.set(__self__, "ip_address", ip_address)
+        if lifetime is not None:
+            pulumi.set(__self__, "lifetime", lifetime)
         if route_table_id is not None:
             pulumi.set(__self__, "route_table_id", route_table_id)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
         if vlan_id is not None:
             pulumi.set(__self__, "vlan_id", vlan_id)
         if vnic_id is not None:
@@ -131,16 +141,42 @@ class PrivateIpArgs:
         pulumi.set(self, "ip_address", value)
 
     @property
+    @pulumi.getter
+    def lifetime(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+        * Ephemeral
+        * Reserved
+        """
+        return pulumi.get(self, "lifetime")
+
+    @lifetime.setter
+    def lifetime(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "lifetime", value)
+
+    @property
     @pulumi.getter(name="routeTableId")
     def route_table_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
         """
         return pulumi.get(self, "route_table_id")
 
     @route_table_id.setter
     def route_table_id(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "route_table_id", value)
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the private IP is to be drawn. The IP address, *if supplied*, must be valid for the given subnet.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @subnet_id.setter
+    def subnet_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "subnet_id", value)
 
     @property
     @pulumi.getter(name="vlanId")
@@ -183,8 +219,10 @@ class _PrivateIpState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  hostname_label: Optional[pulumi.Input[builtins.str]] = None,
                  ip_address: Optional[pulumi.Input[builtins.str]] = None,
+                 ip_state: Optional[pulumi.Input[builtins.str]] = None,
                  is_primary: Optional[pulumi.Input[builtins.bool]] = None,
                  is_reserved: Optional[pulumi.Input[builtins.bool]] = None,
+                 lifetime: Optional[pulumi.Input[builtins.str]] = None,
                  route_table_id: Optional[pulumi.Input[builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[builtins.str]] = None,
                  time_created: Optional[pulumi.Input[builtins.str]] = None,
@@ -203,10 +241,13 @@ class _PrivateIpState:
                
                Example: `bminstance1`
         :param pulumi.Input[builtins.str] ip_address: A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
+        :param pulumi.Input[builtins.str] ip_state: State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
         :param pulumi.Input[builtins.bool] is_primary: Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
-        :param pulumi.Input[builtins.bool] is_reserved: true if the IP is reserved and can exist detached from vnic
-        :param pulumi.Input[builtins.str] route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
-        :param pulumi.Input[builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+        :param pulumi.Input[builtins.str] lifetime: (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+               * Ephemeral
+               * Reserved
+        :param pulumi.Input[builtins.str] route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
+        :param pulumi.Input[builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the private IP is to be drawn. The IP address, *if supplied*, must be valid for the given subnet.
         :param pulumi.Input[builtins.str] time_created: The date and time the private IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[builtins.str] vlan_id: Use this attribute only with the Oracle Cloud VMware Solution.
                
@@ -231,10 +272,14 @@ class _PrivateIpState:
             pulumi.set(__self__, "hostname_label", hostname_label)
         if ip_address is not None:
             pulumi.set(__self__, "ip_address", ip_address)
+        if ip_state is not None:
+            pulumi.set(__self__, "ip_state", ip_state)
         if is_primary is not None:
             pulumi.set(__self__, "is_primary", is_primary)
         if is_reserved is not None:
             pulumi.set(__self__, "is_reserved", is_reserved)
+        if lifetime is not None:
+            pulumi.set(__self__, "lifetime", lifetime)
         if route_table_id is not None:
             pulumi.set(__self__, "route_table_id", route_table_id)
         if subnet_id is not None:
@@ -335,6 +380,18 @@ class _PrivateIpState:
         pulumi.set(self, "ip_address", value)
 
     @property
+    @pulumi.getter(name="ipState")
+    def ip_state(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+        """
+        return pulumi.get(self, "ip_state")
+
+    @ip_state.setter
+    def ip_state(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "ip_state", value)
+
+    @property
     @pulumi.getter(name="isPrimary")
     def is_primary(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
@@ -349,9 +406,6 @@ class _PrivateIpState:
     @property
     @pulumi.getter(name="isReserved")
     def is_reserved(self) -> Optional[pulumi.Input[builtins.bool]]:
-        """
-        true if the IP is reserved and can exist detached from vnic
-        """
         return pulumi.get(self, "is_reserved")
 
     @is_reserved.setter
@@ -359,10 +413,24 @@ class _PrivateIpState:
         pulumi.set(self, "is_reserved", value)
 
     @property
+    @pulumi.getter
+    def lifetime(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+        * Ephemeral
+        * Reserved
+        """
+        return pulumi.get(self, "lifetime")
+
+    @lifetime.setter
+    def lifetime(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "lifetime", value)
+
+    @property
     @pulumi.getter(name="routeTableId")
     def route_table_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
         """
         return pulumi.get(self, "route_table_id")
 
@@ -374,7 +442,7 @@ class _PrivateIpState:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the private IP is to be drawn. The IP address, *if supplied*, must be valid for the given subnet.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -435,7 +503,9 @@ class PrivateIp(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  hostname_label: Optional[pulumi.Input[builtins.str]] = None,
                  ip_address: Optional[pulumi.Input[builtins.str]] = None,
+                 lifetime: Optional[pulumi.Input[builtins.str]] = None,
                  route_table_id: Optional[pulumi.Input[builtins.str]] = None,
+                 subnet_id: Optional[pulumi.Input[builtins.str]] = None,
                  vlan_id: Optional[pulumi.Input[builtins.str]] = None,
                  vnic_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
@@ -462,7 +532,9 @@ class PrivateIp(pulumi.CustomResource):
             },
             hostname_label=private_ip_hostname_label,
             ip_address=private_ip_ip_address,
+            lifetime=private_ip_lifetime,
             route_table_id=test_route_table["id"],
+            subnet_id=test_subnet["id"],
             vlan_id=test_vlan["id"],
             vnic_id=test_vnic_attachment["vnicId"])
         ```
@@ -486,7 +558,11 @@ class PrivateIp(pulumi.CustomResource):
                
                Example: `bminstance1`
         :param pulumi.Input[builtins.str] ip_address: A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
-        :param pulumi.Input[builtins.str] route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+        :param pulumi.Input[builtins.str] lifetime: (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+               * Ephemeral
+               * Reserved
+        :param pulumi.Input[builtins.str] route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
+        :param pulumi.Input[builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the private IP is to be drawn. The IP address, *if supplied*, must be valid for the given subnet.
         :param pulumi.Input[builtins.str] vlan_id: Use this attribute only with the Oracle Cloud VMware Solution.
                
                The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN from which the private IP is to be drawn. The IP address, *if supplied*, must be valid for the given VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
@@ -525,7 +601,9 @@ class PrivateIp(pulumi.CustomResource):
             },
             hostname_label=private_ip_hostname_label,
             ip_address=private_ip_ip_address,
+            lifetime=private_ip_lifetime,
             route_table_id=test_route_table["id"],
+            subnet_id=test_subnet["id"],
             vlan_id=test_vlan["id"],
             vnic_id=test_vnic_attachment["vnicId"])
         ```
@@ -558,7 +636,9 @@ class PrivateIp(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  hostname_label: Optional[pulumi.Input[builtins.str]] = None,
                  ip_address: Optional[pulumi.Input[builtins.str]] = None,
+                 lifetime: Optional[pulumi.Input[builtins.str]] = None,
                  route_table_id: Optional[pulumi.Input[builtins.str]] = None,
+                 subnet_id: Optional[pulumi.Input[builtins.str]] = None,
                  vlan_id: Optional[pulumi.Input[builtins.str]] = None,
                  vnic_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
@@ -575,14 +655,16 @@ class PrivateIp(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["hostname_label"] = hostname_label
             __props__.__dict__["ip_address"] = ip_address
+            __props__.__dict__["lifetime"] = lifetime
             __props__.__dict__["route_table_id"] = route_table_id
+            __props__.__dict__["subnet_id"] = subnet_id
             __props__.__dict__["vlan_id"] = vlan_id
             __props__.__dict__["vnic_id"] = vnic_id
             __props__.__dict__["availability_domain"] = None
             __props__.__dict__["compartment_id"] = None
+            __props__.__dict__["ip_state"] = None
             __props__.__dict__["is_primary"] = None
             __props__.__dict__["is_reserved"] = None
-            __props__.__dict__["subnet_id"] = None
             __props__.__dict__["time_created"] = None
         super(PrivateIp, __self__).__init__(
             'oci:Core/privateIp:PrivateIp',
@@ -601,8 +683,10 @@ class PrivateIp(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             hostname_label: Optional[pulumi.Input[builtins.str]] = None,
             ip_address: Optional[pulumi.Input[builtins.str]] = None,
+            ip_state: Optional[pulumi.Input[builtins.str]] = None,
             is_primary: Optional[pulumi.Input[builtins.bool]] = None,
             is_reserved: Optional[pulumi.Input[builtins.bool]] = None,
+            lifetime: Optional[pulumi.Input[builtins.str]] = None,
             route_table_id: Optional[pulumi.Input[builtins.str]] = None,
             subnet_id: Optional[pulumi.Input[builtins.str]] = None,
             time_created: Optional[pulumi.Input[builtins.str]] = None,
@@ -626,10 +710,13 @@ class PrivateIp(pulumi.CustomResource):
                
                Example: `bminstance1`
         :param pulumi.Input[builtins.str] ip_address: A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
+        :param pulumi.Input[builtins.str] ip_state: State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
         :param pulumi.Input[builtins.bool] is_primary: Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
-        :param pulumi.Input[builtins.bool] is_reserved: true if the IP is reserved and can exist detached from vnic
-        :param pulumi.Input[builtins.str] route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
-        :param pulumi.Input[builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+        :param pulumi.Input[builtins.str] lifetime: (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+               * Ephemeral
+               * Reserved
+        :param pulumi.Input[builtins.str] route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
+        :param pulumi.Input[builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the private IP is to be drawn. The IP address, *if supplied*, must be valid for the given subnet.
         :param pulumi.Input[builtins.str] time_created: The date and time the private IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[builtins.str] vlan_id: Use this attribute only with the Oracle Cloud VMware Solution.
                
@@ -651,8 +738,10 @@ class PrivateIp(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["hostname_label"] = hostname_label
         __props__.__dict__["ip_address"] = ip_address
+        __props__.__dict__["ip_state"] = ip_state
         __props__.__dict__["is_primary"] = is_primary
         __props__.__dict__["is_reserved"] = is_reserved
+        __props__.__dict__["lifetime"] = lifetime
         __props__.__dict__["route_table_id"] = route_table_id
         __props__.__dict__["subnet_id"] = subnet_id
         __props__.__dict__["time_created"] = time_created
@@ -721,6 +810,14 @@ class PrivateIp(pulumi.CustomResource):
         return pulumi.get(self, "ip_address")
 
     @property
+    @pulumi.getter(name="ipState")
+    def ip_state(self) -> pulumi.Output[builtins.str]:
+        """
+        State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+        """
+        return pulumi.get(self, "ip_state")
+
+    @property
     @pulumi.getter(name="isPrimary")
     def is_primary(self) -> pulumi.Output[builtins.bool]:
         """
@@ -731,16 +828,23 @@ class PrivateIp(pulumi.CustomResource):
     @property
     @pulumi.getter(name="isReserved")
     def is_reserved(self) -> pulumi.Output[builtins.bool]:
-        """
-        true if the IP is reserved and can exist detached from vnic
-        """
         return pulumi.get(self, "is_reserved")
+
+    @property
+    @pulumi.getter
+    def lifetime(self) -> pulumi.Output[builtins.str]:
+        """
+        (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+        * Ephemeral
+        * Reserved
+        """
+        return pulumi.get(self, "lifetime")
 
     @property
     @pulumi.getter(name="routeTableId")
     def route_table_id(self) -> pulumi.Output[Optional[builtins.str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
         """
         return pulumi.get(self, "route_table_id")
 
@@ -748,7 +852,7 @@ class PrivateIp(pulumi.CustomResource):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Output[builtins.str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the private IP is to be drawn. The IP address, *if supplied*, must be valid for the given subnet.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -772,7 +876,7 @@ class PrivateIp(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="vnicId")
-    def vnic_id(self) -> pulumi.Output[builtins.str]:
+    def vnic_id(self) -> pulumi.Output[Optional[builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the private IP to. The VNIC and private IP must be in the same subnet. 
 

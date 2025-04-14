@@ -7,7 +7,6 @@ import (
 	"context"
 	"reflect"
 
-	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
@@ -31,7 +30,6 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := core.NewIpv6(ctx, "test_ipv6", &core.Ipv6Args{
-//				VnicId: pulumi.Any(testVnicAttachment.Id),
 //				DefinedTags: pulumi.StringMap{
 //					"Operations.CostCenter": pulumi.String("42"),
 //				},
@@ -41,7 +39,10 @@ import (
 //				},
 //				IpAddress:      pulumi.Any(ipv6IpAddress),
 //				Ipv6subnetCidr: pulumi.Any(ipv6Ipv6subnetCidr),
+//				Lifetime:       pulumi.Any(ipv6Lifetime),
 //				RouteTableId:   pulumi.Any(testRouteTable.Id),
+//				SubnetId:       pulumi.Any(testSubnet.Id),
+//				VnicId:         pulumi.Any(testVnicAttachment.Id),
 //			})
 //			if err != nil {
 //				return err
@@ -72,13 +73,19 @@ type Ipv6 struct {
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// An IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns an IPv6 address from the subnet. The subnet is the one that contains the VNIC you specify in `vnicId`.  Example: `2001:DB8::`
 	IpAddress pulumi.StringOutput `pulumi:"ipAddress"`
+	// State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+	IpState pulumi.StringOutput `pulumi:"ipState"`
 	// The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
 	Ipv6subnetCidr pulumi.StringOutput `pulumi:"ipv6subnetCidr"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+	// (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+	// * Ephemeral
+	// * Reserved
+	Lifetime pulumi.StringOutput `pulumi:"lifetime"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
 	RouteTableId pulumi.StringPtrOutput `pulumi:"routeTableId"`
 	// The IPv6's current state.
 	State pulumi.StringOutput `pulumi:"state"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the IPv6 is to be drawn. The IP address, *if supplied*, must be valid for the given subnet, only valid for reserved IPs currently.
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// The date and time the IPv6 was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -86,19 +93,16 @@ type Ipv6 struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	VnicId pulumi.StringOutput `pulumi:"vnicId"`
+	VnicId pulumi.StringPtrOutput `pulumi:"vnicId"`
 }
 
 // NewIpv6 registers a new resource with the given unique name, arguments, and options.
 func NewIpv6(ctx *pulumi.Context,
 	name string, args *Ipv6Args, opts ...pulumi.ResourceOption) (*Ipv6, error) {
 	if args == nil {
-		return nil, errors.New("missing one or more required arguments")
+		args = &Ipv6Args{}
 	}
 
-	if args.VnicId == nil {
-		return nil, errors.New("invalid value for required argument 'VnicId'")
-	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Ipv6
 	err := ctx.RegisterResource("oci:Core/ipv6:Ipv6", name, args, &resource, opts...)
@@ -132,13 +136,19 @@ type ipv6State struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// An IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns an IPv6 address from the subnet. The subnet is the one that contains the VNIC you specify in `vnicId`.  Example: `2001:DB8::`
 	IpAddress *string `pulumi:"ipAddress"`
+	// State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+	IpState *string `pulumi:"ipState"`
 	// The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
 	Ipv6subnetCidr *string `pulumi:"ipv6subnetCidr"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+	// (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+	// * Ephemeral
+	// * Reserved
+	Lifetime *string `pulumi:"lifetime"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
 	RouteTableId *string `pulumi:"routeTableId"`
 	// The IPv6's current state.
 	State *string `pulumi:"state"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the IPv6 is to be drawn. The IP address, *if supplied*, must be valid for the given subnet, only valid for reserved IPs currently.
 	SubnetId *string `pulumi:"subnetId"`
 	// The date and time the IPv6 was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -160,13 +170,19 @@ type Ipv6State struct {
 	FreeformTags pulumi.StringMapInput
 	// An IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns an IPv6 address from the subnet. The subnet is the one that contains the VNIC you specify in `vnicId`.  Example: `2001:DB8::`
 	IpAddress pulumi.StringPtrInput
+	// State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+	IpState pulumi.StringPtrInput
 	// The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
 	Ipv6subnetCidr pulumi.StringPtrInput
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+	// (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+	// * Ephemeral
+	// * Reserved
+	Lifetime pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
 	RouteTableId pulumi.StringPtrInput
 	// The IPv6's current state.
 	State pulumi.StringPtrInput
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the IPv6 is to be drawn. The IP address, *if supplied*, must be valid for the given subnet, only valid for reserved IPs currently.
 	SubnetId pulumi.StringPtrInput
 	// The date and time the IPv6 was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
@@ -192,13 +208,19 @@ type ipv6Args struct {
 	IpAddress *string `pulumi:"ipAddress"`
 	// The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
 	Ipv6subnetCidr *string `pulumi:"ipv6subnetCidr"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+	// (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+	// * Ephemeral
+	// * Reserved
+	Lifetime *string `pulumi:"lifetime"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
 	RouteTableId *string `pulumi:"routeTableId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the IPv6 is to be drawn. The IP address, *if supplied*, must be valid for the given subnet, only valid for reserved IPs currently.
+	SubnetId *string `pulumi:"subnetId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the IPv6 to. The IPv6 will be in the VNIC's subnet.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	VnicId string `pulumi:"vnicId"`
+	VnicId *string `pulumi:"vnicId"`
 }
 
 // The set of arguments for constructing a Ipv6 resource.
@@ -213,13 +235,19 @@ type Ipv6Args struct {
 	IpAddress pulumi.StringPtrInput
 	// The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
 	Ipv6subnetCidr pulumi.StringPtrInput
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+	// (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+	// * Ephemeral
+	// * Reserved
+	Lifetime pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
 	RouteTableId pulumi.StringPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the IPv6 is to be drawn. The IP address, *if supplied*, must be valid for the given subnet, only valid for reserved IPs currently.
+	SubnetId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the IPv6 to. The IPv6 will be in the VNIC's subnet.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	VnicId pulumi.StringInput
+	VnicId pulumi.StringPtrInput
 }
 
 func (Ipv6Args) ElementType() reflect.Type {
@@ -334,12 +362,24 @@ func (o Ipv6Output) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v *Ipv6) pulumi.StringOutput { return v.IpAddress }).(pulumi.StringOutput)
 }
 
+// State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+func (o Ipv6Output) IpState() pulumi.StringOutput {
+	return o.ApplyT(func(v *Ipv6) pulumi.StringOutput { return v.IpState }).(pulumi.StringOutput)
+}
+
 // The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
 func (o Ipv6Output) Ipv6subnetCidr() pulumi.StringOutput {
 	return o.ApplyT(func(v *Ipv6) pulumi.StringOutput { return v.Ipv6subnetCidr }).(pulumi.StringOutput)
 }
 
-// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+// (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+// * Ephemeral
+// * Reserved
+func (o Ipv6Output) Lifetime() pulumi.StringOutput {
+	return o.ApplyT(func(v *Ipv6) pulumi.StringOutput { return v.Lifetime }).(pulumi.StringOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
 func (o Ipv6Output) RouteTableId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Ipv6) pulumi.StringPtrOutput { return v.RouteTableId }).(pulumi.StringPtrOutput)
 }
@@ -349,7 +389,7 @@ func (o Ipv6Output) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *Ipv6) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the IPv6 is to be drawn. The IP address, *if supplied*, must be valid for the given subnet, only valid for reserved IPs currently.
 func (o Ipv6Output) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Ipv6) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -363,8 +403,8 @@ func (o Ipv6Output) TimeCreated() pulumi.StringOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o Ipv6Output) VnicId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Ipv6) pulumi.StringOutput { return v.VnicId }).(pulumi.StringOutput)
+func (o Ipv6Output) VnicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Ipv6) pulumi.StringPtrOutput { return v.VnicId }).(pulumi.StringPtrOutput)
 }
 
 type Ipv6ArrayOutput struct{ *pulumi.OutputState }

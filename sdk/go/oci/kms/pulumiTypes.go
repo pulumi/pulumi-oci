@@ -2621,6 +2621,169 @@ func (o VaultRestoreFromObjectStorePtrOutput) Uri() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+type VaultVerificationReplicaVaultMetadata struct {
+	IdcsAccountNameUrl string `pulumi:"idcsAccountNameUrl"`
+	PrivateEndpointId  string `pulumi:"privateEndpointId"`
+	VaultType          string `pulumi:"vaultType"`
+}
+
+// VaultVerificationReplicaVaultMetadataInput is an input type that accepts VaultVerificationReplicaVaultMetadataArgs and VaultVerificationReplicaVaultMetadataOutput values.
+// You can construct a concrete instance of `VaultVerificationReplicaVaultMetadataInput` via:
+//
+//	VaultVerificationReplicaVaultMetadataArgs{...}
+type VaultVerificationReplicaVaultMetadataInput interface {
+	pulumi.Input
+
+	ToVaultVerificationReplicaVaultMetadataOutput() VaultVerificationReplicaVaultMetadataOutput
+	ToVaultVerificationReplicaVaultMetadataOutputWithContext(context.Context) VaultVerificationReplicaVaultMetadataOutput
+}
+
+type VaultVerificationReplicaVaultMetadataArgs struct {
+	IdcsAccountNameUrl pulumi.StringInput `pulumi:"idcsAccountNameUrl"`
+	PrivateEndpointId  pulumi.StringInput `pulumi:"privateEndpointId"`
+	VaultType          pulumi.StringInput `pulumi:"vaultType"`
+}
+
+func (VaultVerificationReplicaVaultMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VaultVerificationReplicaVaultMetadata)(nil)).Elem()
+}
+
+func (i VaultVerificationReplicaVaultMetadataArgs) ToVaultVerificationReplicaVaultMetadataOutput() VaultVerificationReplicaVaultMetadataOutput {
+	return i.ToVaultVerificationReplicaVaultMetadataOutputWithContext(context.Background())
+}
+
+func (i VaultVerificationReplicaVaultMetadataArgs) ToVaultVerificationReplicaVaultMetadataOutputWithContext(ctx context.Context) VaultVerificationReplicaVaultMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VaultVerificationReplicaVaultMetadataOutput)
+}
+
+func (i VaultVerificationReplicaVaultMetadataArgs) ToVaultVerificationReplicaVaultMetadataPtrOutput() VaultVerificationReplicaVaultMetadataPtrOutput {
+	return i.ToVaultVerificationReplicaVaultMetadataPtrOutputWithContext(context.Background())
+}
+
+func (i VaultVerificationReplicaVaultMetadataArgs) ToVaultVerificationReplicaVaultMetadataPtrOutputWithContext(ctx context.Context) VaultVerificationReplicaVaultMetadataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VaultVerificationReplicaVaultMetadataOutput).ToVaultVerificationReplicaVaultMetadataPtrOutputWithContext(ctx)
+}
+
+// VaultVerificationReplicaVaultMetadataPtrInput is an input type that accepts VaultVerificationReplicaVaultMetadataArgs, VaultVerificationReplicaVaultMetadataPtr and VaultVerificationReplicaVaultMetadataPtrOutput values.
+// You can construct a concrete instance of `VaultVerificationReplicaVaultMetadataPtrInput` via:
+//
+//	        VaultVerificationReplicaVaultMetadataArgs{...}
+//
+//	or:
+//
+//	        nil
+type VaultVerificationReplicaVaultMetadataPtrInput interface {
+	pulumi.Input
+
+	ToVaultVerificationReplicaVaultMetadataPtrOutput() VaultVerificationReplicaVaultMetadataPtrOutput
+	ToVaultVerificationReplicaVaultMetadataPtrOutputWithContext(context.Context) VaultVerificationReplicaVaultMetadataPtrOutput
+}
+
+type vaultVerificationReplicaVaultMetadataPtrType VaultVerificationReplicaVaultMetadataArgs
+
+func VaultVerificationReplicaVaultMetadataPtr(v *VaultVerificationReplicaVaultMetadataArgs) VaultVerificationReplicaVaultMetadataPtrInput {
+	return (*vaultVerificationReplicaVaultMetadataPtrType)(v)
+}
+
+func (*vaultVerificationReplicaVaultMetadataPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**VaultVerificationReplicaVaultMetadata)(nil)).Elem()
+}
+
+func (i *vaultVerificationReplicaVaultMetadataPtrType) ToVaultVerificationReplicaVaultMetadataPtrOutput() VaultVerificationReplicaVaultMetadataPtrOutput {
+	return i.ToVaultVerificationReplicaVaultMetadataPtrOutputWithContext(context.Background())
+}
+
+func (i *vaultVerificationReplicaVaultMetadataPtrType) ToVaultVerificationReplicaVaultMetadataPtrOutputWithContext(ctx context.Context) VaultVerificationReplicaVaultMetadataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VaultVerificationReplicaVaultMetadataPtrOutput)
+}
+
+type VaultVerificationReplicaVaultMetadataOutput struct{ *pulumi.OutputState }
+
+func (VaultVerificationReplicaVaultMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VaultVerificationReplicaVaultMetadata)(nil)).Elem()
+}
+
+func (o VaultVerificationReplicaVaultMetadataOutput) ToVaultVerificationReplicaVaultMetadataOutput() VaultVerificationReplicaVaultMetadataOutput {
+	return o
+}
+
+func (o VaultVerificationReplicaVaultMetadataOutput) ToVaultVerificationReplicaVaultMetadataOutputWithContext(ctx context.Context) VaultVerificationReplicaVaultMetadataOutput {
+	return o
+}
+
+func (o VaultVerificationReplicaVaultMetadataOutput) ToVaultVerificationReplicaVaultMetadataPtrOutput() VaultVerificationReplicaVaultMetadataPtrOutput {
+	return o.ToVaultVerificationReplicaVaultMetadataPtrOutputWithContext(context.Background())
+}
+
+func (o VaultVerificationReplicaVaultMetadataOutput) ToVaultVerificationReplicaVaultMetadataPtrOutputWithContext(ctx context.Context) VaultVerificationReplicaVaultMetadataPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v VaultVerificationReplicaVaultMetadata) *VaultVerificationReplicaVaultMetadata {
+		return &v
+	}).(VaultVerificationReplicaVaultMetadataPtrOutput)
+}
+
+func (o VaultVerificationReplicaVaultMetadataOutput) IdcsAccountNameUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v VaultVerificationReplicaVaultMetadata) string { return v.IdcsAccountNameUrl }).(pulumi.StringOutput)
+}
+
+func (o VaultVerificationReplicaVaultMetadataOutput) PrivateEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v VaultVerificationReplicaVaultMetadata) string { return v.PrivateEndpointId }).(pulumi.StringOutput)
+}
+
+func (o VaultVerificationReplicaVaultMetadataOutput) VaultType() pulumi.StringOutput {
+	return o.ApplyT(func(v VaultVerificationReplicaVaultMetadata) string { return v.VaultType }).(pulumi.StringOutput)
+}
+
+type VaultVerificationReplicaVaultMetadataPtrOutput struct{ *pulumi.OutputState }
+
+func (VaultVerificationReplicaVaultMetadataPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**VaultVerificationReplicaVaultMetadata)(nil)).Elem()
+}
+
+func (o VaultVerificationReplicaVaultMetadataPtrOutput) ToVaultVerificationReplicaVaultMetadataPtrOutput() VaultVerificationReplicaVaultMetadataPtrOutput {
+	return o
+}
+
+func (o VaultVerificationReplicaVaultMetadataPtrOutput) ToVaultVerificationReplicaVaultMetadataPtrOutputWithContext(ctx context.Context) VaultVerificationReplicaVaultMetadataPtrOutput {
+	return o
+}
+
+func (o VaultVerificationReplicaVaultMetadataPtrOutput) Elem() VaultVerificationReplicaVaultMetadataOutput {
+	return o.ApplyT(func(v *VaultVerificationReplicaVaultMetadata) VaultVerificationReplicaVaultMetadata {
+		if v != nil {
+			return *v
+		}
+		var ret VaultVerificationReplicaVaultMetadata
+		return ret
+	}).(VaultVerificationReplicaVaultMetadataOutput)
+}
+
+func (o VaultVerificationReplicaVaultMetadataPtrOutput) IdcsAccountNameUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VaultVerificationReplicaVaultMetadata) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.IdcsAccountNameUrl
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o VaultVerificationReplicaVaultMetadataPtrOutput) PrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VaultVerificationReplicaVaultMetadata) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.PrivateEndpointId
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o VaultVerificationReplicaVaultMetadataPtrOutput) VaultType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VaultVerificationReplicaVaultMetadata) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.VaultType
+	}).(pulumi.StringPtrOutput)
+}
+
 type GetEkmsPrivateEndpointsEkmsPrivateEndpoint struct {
 	// CABundle to validate TLS certificate of the external key manager system in PEM format
 	CaBundle string `pulumi:"caBundle"`
@@ -8005,6 +8168,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*VaultRestoreFromFilePtrInput)(nil)).Elem(), VaultRestoreFromFileArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VaultRestoreFromObjectStoreInput)(nil)).Elem(), VaultRestoreFromObjectStoreArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VaultRestoreFromObjectStorePtrInput)(nil)).Elem(), VaultRestoreFromObjectStoreArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VaultVerificationReplicaVaultMetadataInput)(nil)).Elem(), VaultVerificationReplicaVaultMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VaultVerificationReplicaVaultMetadataPtrInput)(nil)).Elem(), VaultVerificationReplicaVaultMetadataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEkmsPrivateEndpointsEkmsPrivateEndpointInput)(nil)).Elem(), GetEkmsPrivateEndpointsEkmsPrivateEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEkmsPrivateEndpointsEkmsPrivateEndpointArrayInput)(nil)).Elem(), GetEkmsPrivateEndpointsEkmsPrivateEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEkmsPrivateEndpointsFilterInput)(nil)).Elem(), GetEkmsPrivateEndpointsFilterArgs{})
@@ -8125,6 +8290,8 @@ func init() {
 	pulumi.RegisterOutputType(VaultRestoreFromFilePtrOutput{})
 	pulumi.RegisterOutputType(VaultRestoreFromObjectStoreOutput{})
 	pulumi.RegisterOutputType(VaultRestoreFromObjectStorePtrOutput{})
+	pulumi.RegisterOutputType(VaultVerificationReplicaVaultMetadataOutput{})
+	pulumi.RegisterOutputType(VaultVerificationReplicaVaultMetadataPtrOutput{})
 	pulumi.RegisterOutputType(GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput{})
 	pulumi.RegisterOutputType(GetEkmsPrivateEndpointsEkmsPrivateEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetEkmsPrivateEndpointsFilterOutput{})

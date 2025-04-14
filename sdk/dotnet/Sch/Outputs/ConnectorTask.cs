@@ -33,6 +33,10 @@ namespace Pulumi.Oci.Sch.Outputs
         /// (Updatable) The type descriminator.
         /// </summary>
         public readonly string Kind;
+        /// <summary>
+        /// The private endpoint metadata for the connector's source or target.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.ConnectorTaskPrivateEndpointMetadata> PrivateEndpointMetadatas;
 
         [OutputConstructor]
         private ConnectorTask(
@@ -44,13 +48,16 @@ namespace Pulumi.Oci.Sch.Outputs
 
             string? functionId,
 
-            string kind)
+            string kind,
+
+            ImmutableArray<Outputs.ConnectorTaskPrivateEndpointMetadata> privateEndpointMetadatas)
         {
             BatchSizeInKbs = batchSizeInKbs;
             BatchTimeInSec = batchTimeInSec;
             Condition = condition;
             FunctionId = functionId;
             Kind = kind;
+            PrivateEndpointMetadatas = privateEndpointMetadatas;
         }
     }
 }

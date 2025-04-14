@@ -168,14 +168,24 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly string IpAddress;
         /// <summary>
+        /// State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+        /// </summary>
+        public readonly string IpState;
+        /// <summary>
         /// Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
         /// </summary>
         public readonly bool IsPrimary;
-        /// <summary>
-        /// true if the IP is reserved and can exist detached from vnic
-        /// </summary>
         public readonly bool IsReserved;
+        /// <summary>
+        /// Lifetime of the IP address. There are two types of IPv6 IPs:
+        /// * Ephemeral
+        /// * Reserved
+        /// </summary>
+        public readonly string Lifetime;
         public readonly string PrivateIpId;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
+        /// </summary>
         public readonly string RouteTableId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
@@ -212,9 +222,13 @@ namespace Pulumi.Oci.Core
 
             string ipAddress,
 
+            string ipState,
+
             bool isPrimary,
 
             bool isReserved,
+
+            string lifetime,
 
             string privateIpId,
 
@@ -236,8 +250,10 @@ namespace Pulumi.Oci.Core
             HostnameLabel = hostnameLabel;
             Id = id;
             IpAddress = ipAddress;
+            IpState = ipState;
             IsPrimary = isPrimary;
             IsReserved = isReserved;
+            Lifetime = lifetime;
             PrivateIpId = privateIpId;
             RouteTableId = routeTableId;
             SubnetId = subnetId;

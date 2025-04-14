@@ -42,6 +42,18 @@ namespace Pulumi.Oci.Sch.Inputs
         [Input("kind", required: true)]
         public Input<string> Kind { get; set; } = null!;
 
+        [Input("privateEndpointMetadatas")]
+        private InputList<Inputs.ConnectorTaskPrivateEndpointMetadataArgs>? _privateEndpointMetadatas;
+
+        /// <summary>
+        /// The private endpoint metadata for the connector's source or target.
+        /// </summary>
+        public InputList<Inputs.ConnectorTaskPrivateEndpointMetadataArgs> PrivateEndpointMetadatas
+        {
+            get => _privateEndpointMetadatas ?? (_privateEndpointMetadatas = new InputList<Inputs.ConnectorTaskPrivateEndpointMetadataArgs>());
+            set => _privateEndpointMetadatas = value;
+        }
+
         public ConnectorTaskArgs()
         {
         }

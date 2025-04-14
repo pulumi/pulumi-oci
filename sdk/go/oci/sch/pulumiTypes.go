@@ -26,6 +26,8 @@ type ConnectorSource struct {
 	MonitoringSources []ConnectorSourceMonitoringSource `pulumi:"monitoringSources"`
 	// (Updatable) The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using [ListConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins).
 	PluginName *string `pulumi:"pluginName"`
+	// The private endpoint metadata for the connector's source or target.
+	PrivateEndpointMetadatas []ConnectorSourcePrivateEndpointMetadata `pulumi:"privateEndpointMetadatas"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
 	StreamId *string `pulumi:"streamId"`
 }
@@ -54,6 +56,8 @@ type ConnectorSourceArgs struct {
 	MonitoringSources ConnectorSourceMonitoringSourceArrayInput `pulumi:"monitoringSources"`
 	// (Updatable) The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using [ListConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins).
 	PluginName pulumi.StringPtrInput `pulumi:"pluginName"`
+	// The private endpoint metadata for the connector's source or target.
+	PrivateEndpointMetadatas ConnectorSourcePrivateEndpointMetadataArrayInput `pulumi:"privateEndpointMetadatas"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
 	StreamId pulumi.StringPtrInput `pulumi:"streamId"`
 }
@@ -165,6 +169,11 @@ func (o ConnectorSourceOutput) PluginName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConnectorSource) *string { return v.PluginName }).(pulumi.StringPtrOutput)
 }
 
+// The private endpoint metadata for the connector's source or target.
+func (o ConnectorSourceOutput) PrivateEndpointMetadatas() ConnectorSourcePrivateEndpointMetadataArrayOutput {
+	return o.ApplyT(func(v ConnectorSource) []ConnectorSourcePrivateEndpointMetadata { return v.PrivateEndpointMetadatas }).(ConnectorSourcePrivateEndpointMetadataArrayOutput)
+}
+
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
 func (o ConnectorSourceOutput) StreamId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConnectorSource) *string { return v.StreamId }).(pulumi.StringPtrOutput)
@@ -252,6 +261,16 @@ func (o ConnectorSourcePtrOutput) PluginName() pulumi.StringPtrOutput {
 		}
 		return v.PluginName
 	}).(pulumi.StringPtrOutput)
+}
+
+// The private endpoint metadata for the connector's source or target.
+func (o ConnectorSourcePtrOutput) PrivateEndpointMetadatas() ConnectorSourcePrivateEndpointMetadataArrayOutput {
+	return o.ApplyT(func(v *ConnectorSource) []ConnectorSourcePrivateEndpointMetadata {
+		if v == nil {
+			return nil
+		}
+		return v.PrivateEndpointMetadatas
+	}).(ConnectorSourcePrivateEndpointMetadataArrayOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
@@ -942,6 +961,112 @@ func (o ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsOutput) K
 	return o.ApplyT(func(v ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics) string { return v.Kind }).(pulumi.StringOutput)
 }
 
+type ConnectorSourcePrivateEndpointMetadata struct {
+	// The reverse connection endpoint (RCE) IP address for DNS lookups.
+	RceDnsProxyIpAddress *string `pulumi:"rceDnsProxyIpAddress"`
+	// The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+	RceTrafficIpAddress *string `pulumi:"rceTrafficIpAddress"`
+}
+
+// ConnectorSourcePrivateEndpointMetadataInput is an input type that accepts ConnectorSourcePrivateEndpointMetadataArgs and ConnectorSourcePrivateEndpointMetadataOutput values.
+// You can construct a concrete instance of `ConnectorSourcePrivateEndpointMetadataInput` via:
+//
+//	ConnectorSourcePrivateEndpointMetadataArgs{...}
+type ConnectorSourcePrivateEndpointMetadataInput interface {
+	pulumi.Input
+
+	ToConnectorSourcePrivateEndpointMetadataOutput() ConnectorSourcePrivateEndpointMetadataOutput
+	ToConnectorSourcePrivateEndpointMetadataOutputWithContext(context.Context) ConnectorSourcePrivateEndpointMetadataOutput
+}
+
+type ConnectorSourcePrivateEndpointMetadataArgs struct {
+	// The reverse connection endpoint (RCE) IP address for DNS lookups.
+	RceDnsProxyIpAddress pulumi.StringPtrInput `pulumi:"rceDnsProxyIpAddress"`
+	// The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+	RceTrafficIpAddress pulumi.StringPtrInput `pulumi:"rceTrafficIpAddress"`
+}
+
+func (ConnectorSourcePrivateEndpointMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConnectorSourcePrivateEndpointMetadata)(nil)).Elem()
+}
+
+func (i ConnectorSourcePrivateEndpointMetadataArgs) ToConnectorSourcePrivateEndpointMetadataOutput() ConnectorSourcePrivateEndpointMetadataOutput {
+	return i.ToConnectorSourcePrivateEndpointMetadataOutputWithContext(context.Background())
+}
+
+func (i ConnectorSourcePrivateEndpointMetadataArgs) ToConnectorSourcePrivateEndpointMetadataOutputWithContext(ctx context.Context) ConnectorSourcePrivateEndpointMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectorSourcePrivateEndpointMetadataOutput)
+}
+
+// ConnectorSourcePrivateEndpointMetadataArrayInput is an input type that accepts ConnectorSourcePrivateEndpointMetadataArray and ConnectorSourcePrivateEndpointMetadataArrayOutput values.
+// You can construct a concrete instance of `ConnectorSourcePrivateEndpointMetadataArrayInput` via:
+//
+//	ConnectorSourcePrivateEndpointMetadataArray{ ConnectorSourcePrivateEndpointMetadataArgs{...} }
+type ConnectorSourcePrivateEndpointMetadataArrayInput interface {
+	pulumi.Input
+
+	ToConnectorSourcePrivateEndpointMetadataArrayOutput() ConnectorSourcePrivateEndpointMetadataArrayOutput
+	ToConnectorSourcePrivateEndpointMetadataArrayOutputWithContext(context.Context) ConnectorSourcePrivateEndpointMetadataArrayOutput
+}
+
+type ConnectorSourcePrivateEndpointMetadataArray []ConnectorSourcePrivateEndpointMetadataInput
+
+func (ConnectorSourcePrivateEndpointMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConnectorSourcePrivateEndpointMetadata)(nil)).Elem()
+}
+
+func (i ConnectorSourcePrivateEndpointMetadataArray) ToConnectorSourcePrivateEndpointMetadataArrayOutput() ConnectorSourcePrivateEndpointMetadataArrayOutput {
+	return i.ToConnectorSourcePrivateEndpointMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i ConnectorSourcePrivateEndpointMetadataArray) ToConnectorSourcePrivateEndpointMetadataArrayOutputWithContext(ctx context.Context) ConnectorSourcePrivateEndpointMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectorSourcePrivateEndpointMetadataArrayOutput)
+}
+
+type ConnectorSourcePrivateEndpointMetadataOutput struct{ *pulumi.OutputState }
+
+func (ConnectorSourcePrivateEndpointMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConnectorSourcePrivateEndpointMetadata)(nil)).Elem()
+}
+
+func (o ConnectorSourcePrivateEndpointMetadataOutput) ToConnectorSourcePrivateEndpointMetadataOutput() ConnectorSourcePrivateEndpointMetadataOutput {
+	return o
+}
+
+func (o ConnectorSourcePrivateEndpointMetadataOutput) ToConnectorSourcePrivateEndpointMetadataOutputWithContext(ctx context.Context) ConnectorSourcePrivateEndpointMetadataOutput {
+	return o
+}
+
+// The reverse connection endpoint (RCE) IP address for DNS lookups.
+func (o ConnectorSourcePrivateEndpointMetadataOutput) RceDnsProxyIpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConnectorSourcePrivateEndpointMetadata) *string { return v.RceDnsProxyIpAddress }).(pulumi.StringPtrOutput)
+}
+
+// The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+func (o ConnectorSourcePrivateEndpointMetadataOutput) RceTrafficIpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConnectorSourcePrivateEndpointMetadata) *string { return v.RceTrafficIpAddress }).(pulumi.StringPtrOutput)
+}
+
+type ConnectorSourcePrivateEndpointMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (ConnectorSourcePrivateEndpointMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConnectorSourcePrivateEndpointMetadata)(nil)).Elem()
+}
+
+func (o ConnectorSourcePrivateEndpointMetadataArrayOutput) ToConnectorSourcePrivateEndpointMetadataArrayOutput() ConnectorSourcePrivateEndpointMetadataArrayOutput {
+	return o
+}
+
+func (o ConnectorSourcePrivateEndpointMetadataArrayOutput) ToConnectorSourcePrivateEndpointMetadataArrayOutputWithContext(ctx context.Context) ConnectorSourcePrivateEndpointMetadataArrayOutput {
+	return o
+}
+
+func (o ConnectorSourcePrivateEndpointMetadataArrayOutput) Index(i pulumi.IntInput) ConnectorSourcePrivateEndpointMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ConnectorSourcePrivateEndpointMetadata {
+		return vs[0].([]ConnectorSourcePrivateEndpointMetadata)[vs[1].(int)]
+	}).(ConnectorSourcePrivateEndpointMetadataOutput)
+}
+
 type ConnectorTarget struct {
 	// (Updatable) The batch rollover size in megabytes.
 	BatchRolloverSizeInMbs *int `pulumi:"batchRolloverSizeInMbs"`
@@ -977,6 +1102,8 @@ type ConnectorTarget struct {
 	Namespace *string `pulumi:"namespace"`
 	// (Updatable) The prefix of the objects. Avoid entering confidential information.
 	ObjectNamePrefix *string `pulumi:"objectNamePrefix"`
+	// The private endpoint metadata for the connector's source or target.
+	PrivateEndpointMetadatas []ConnectorTargetPrivateEndpointMetadata `pulumi:"privateEndpointMetadatas"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
 	StreamId *string `pulumi:"streamId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
@@ -1029,6 +1156,8 @@ type ConnectorTargetArgs struct {
 	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// (Updatable) The prefix of the objects. Avoid entering confidential information.
 	ObjectNamePrefix pulumi.StringPtrInput `pulumi:"objectNamePrefix"`
+	// The private endpoint metadata for the connector's source or target.
+	PrivateEndpointMetadatas ConnectorTargetPrivateEndpointMetadataArrayInput `pulumi:"privateEndpointMetadatas"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
 	StreamId pulumi.StringPtrInput `pulumi:"streamId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
@@ -1195,6 +1324,11 @@ func (o ConnectorTargetOutput) Namespace() pulumi.StringPtrOutput {
 // (Updatable) The prefix of the objects. Avoid entering confidential information.
 func (o ConnectorTargetOutput) ObjectNamePrefix() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConnectorTarget) *string { return v.ObjectNamePrefix }).(pulumi.StringPtrOutput)
+}
+
+// The private endpoint metadata for the connector's source or target.
+func (o ConnectorTargetOutput) PrivateEndpointMetadatas() ConnectorTargetPrivateEndpointMetadataArrayOutput {
+	return o.ApplyT(func(v ConnectorTarget) []ConnectorTargetPrivateEndpointMetadata { return v.PrivateEndpointMetadatas }).(ConnectorTargetPrivateEndpointMetadataArrayOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
@@ -1399,6 +1533,16 @@ func (o ConnectorTargetPtrOutput) ObjectNamePrefix() pulumi.StringPtrOutput {
 		}
 		return v.ObjectNamePrefix
 	}).(pulumi.StringPtrOutput)
+}
+
+// The private endpoint metadata for the connector's source or target.
+func (o ConnectorTargetPtrOutput) PrivateEndpointMetadatas() ConnectorTargetPrivateEndpointMetadataArrayOutput {
+	return o.ApplyT(func(v *ConnectorTarget) []ConnectorTargetPrivateEndpointMetadata {
+		if v == nil {
+			return nil
+		}
+		return v.PrivateEndpointMetadatas
+	}).(ConnectorTargetPrivateEndpointMetadataArrayOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
@@ -1702,6 +1846,112 @@ func (o ConnectorTargetDimensionDimensionValuePtrOutput) Value() pulumi.StringPt
 	}).(pulumi.StringPtrOutput)
 }
 
+type ConnectorTargetPrivateEndpointMetadata struct {
+	// The reverse connection endpoint (RCE) IP address for DNS lookups.
+	RceDnsProxyIpAddress *string `pulumi:"rceDnsProxyIpAddress"`
+	// The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+	RceTrafficIpAddress *string `pulumi:"rceTrafficIpAddress"`
+}
+
+// ConnectorTargetPrivateEndpointMetadataInput is an input type that accepts ConnectorTargetPrivateEndpointMetadataArgs and ConnectorTargetPrivateEndpointMetadataOutput values.
+// You can construct a concrete instance of `ConnectorTargetPrivateEndpointMetadataInput` via:
+//
+//	ConnectorTargetPrivateEndpointMetadataArgs{...}
+type ConnectorTargetPrivateEndpointMetadataInput interface {
+	pulumi.Input
+
+	ToConnectorTargetPrivateEndpointMetadataOutput() ConnectorTargetPrivateEndpointMetadataOutput
+	ToConnectorTargetPrivateEndpointMetadataOutputWithContext(context.Context) ConnectorTargetPrivateEndpointMetadataOutput
+}
+
+type ConnectorTargetPrivateEndpointMetadataArgs struct {
+	// The reverse connection endpoint (RCE) IP address for DNS lookups.
+	RceDnsProxyIpAddress pulumi.StringPtrInput `pulumi:"rceDnsProxyIpAddress"`
+	// The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+	RceTrafficIpAddress pulumi.StringPtrInput `pulumi:"rceTrafficIpAddress"`
+}
+
+func (ConnectorTargetPrivateEndpointMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConnectorTargetPrivateEndpointMetadata)(nil)).Elem()
+}
+
+func (i ConnectorTargetPrivateEndpointMetadataArgs) ToConnectorTargetPrivateEndpointMetadataOutput() ConnectorTargetPrivateEndpointMetadataOutput {
+	return i.ToConnectorTargetPrivateEndpointMetadataOutputWithContext(context.Background())
+}
+
+func (i ConnectorTargetPrivateEndpointMetadataArgs) ToConnectorTargetPrivateEndpointMetadataOutputWithContext(ctx context.Context) ConnectorTargetPrivateEndpointMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectorTargetPrivateEndpointMetadataOutput)
+}
+
+// ConnectorTargetPrivateEndpointMetadataArrayInput is an input type that accepts ConnectorTargetPrivateEndpointMetadataArray and ConnectorTargetPrivateEndpointMetadataArrayOutput values.
+// You can construct a concrete instance of `ConnectorTargetPrivateEndpointMetadataArrayInput` via:
+//
+//	ConnectorTargetPrivateEndpointMetadataArray{ ConnectorTargetPrivateEndpointMetadataArgs{...} }
+type ConnectorTargetPrivateEndpointMetadataArrayInput interface {
+	pulumi.Input
+
+	ToConnectorTargetPrivateEndpointMetadataArrayOutput() ConnectorTargetPrivateEndpointMetadataArrayOutput
+	ToConnectorTargetPrivateEndpointMetadataArrayOutputWithContext(context.Context) ConnectorTargetPrivateEndpointMetadataArrayOutput
+}
+
+type ConnectorTargetPrivateEndpointMetadataArray []ConnectorTargetPrivateEndpointMetadataInput
+
+func (ConnectorTargetPrivateEndpointMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConnectorTargetPrivateEndpointMetadata)(nil)).Elem()
+}
+
+func (i ConnectorTargetPrivateEndpointMetadataArray) ToConnectorTargetPrivateEndpointMetadataArrayOutput() ConnectorTargetPrivateEndpointMetadataArrayOutput {
+	return i.ToConnectorTargetPrivateEndpointMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i ConnectorTargetPrivateEndpointMetadataArray) ToConnectorTargetPrivateEndpointMetadataArrayOutputWithContext(ctx context.Context) ConnectorTargetPrivateEndpointMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectorTargetPrivateEndpointMetadataArrayOutput)
+}
+
+type ConnectorTargetPrivateEndpointMetadataOutput struct{ *pulumi.OutputState }
+
+func (ConnectorTargetPrivateEndpointMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConnectorTargetPrivateEndpointMetadata)(nil)).Elem()
+}
+
+func (o ConnectorTargetPrivateEndpointMetadataOutput) ToConnectorTargetPrivateEndpointMetadataOutput() ConnectorTargetPrivateEndpointMetadataOutput {
+	return o
+}
+
+func (o ConnectorTargetPrivateEndpointMetadataOutput) ToConnectorTargetPrivateEndpointMetadataOutputWithContext(ctx context.Context) ConnectorTargetPrivateEndpointMetadataOutput {
+	return o
+}
+
+// The reverse connection endpoint (RCE) IP address for DNS lookups.
+func (o ConnectorTargetPrivateEndpointMetadataOutput) RceDnsProxyIpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConnectorTargetPrivateEndpointMetadata) *string { return v.RceDnsProxyIpAddress }).(pulumi.StringPtrOutput)
+}
+
+// The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+func (o ConnectorTargetPrivateEndpointMetadataOutput) RceTrafficIpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConnectorTargetPrivateEndpointMetadata) *string { return v.RceTrafficIpAddress }).(pulumi.StringPtrOutput)
+}
+
+type ConnectorTargetPrivateEndpointMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (ConnectorTargetPrivateEndpointMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConnectorTargetPrivateEndpointMetadata)(nil)).Elem()
+}
+
+func (o ConnectorTargetPrivateEndpointMetadataArrayOutput) ToConnectorTargetPrivateEndpointMetadataArrayOutput() ConnectorTargetPrivateEndpointMetadataArrayOutput {
+	return o
+}
+
+func (o ConnectorTargetPrivateEndpointMetadataArrayOutput) ToConnectorTargetPrivateEndpointMetadataArrayOutputWithContext(ctx context.Context) ConnectorTargetPrivateEndpointMetadataArrayOutput {
+	return o
+}
+
+func (o ConnectorTargetPrivateEndpointMetadataArrayOutput) Index(i pulumi.IntInput) ConnectorTargetPrivateEndpointMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ConnectorTargetPrivateEndpointMetadata {
+		return vs[0].([]ConnectorTargetPrivateEndpointMetadata)[vs[1].(int)]
+	}).(ConnectorTargetPrivateEndpointMetadataOutput)
+}
+
 type ConnectorTask struct {
 	// (Updatable) Size limit (kilobytes) for batch sent to invoke the function.
 	BatchSizeInKbs *int `pulumi:"batchSizeInKbs"`
@@ -1713,6 +1963,8 @@ type ConnectorTask struct {
 	FunctionId *string `pulumi:"functionId"`
 	// (Updatable) The type descriminator.
 	Kind string `pulumi:"kind"`
+	// The private endpoint metadata for the connector's source or target.
+	PrivateEndpointMetadatas []ConnectorTaskPrivateEndpointMetadata `pulumi:"privateEndpointMetadatas"`
 }
 
 // ConnectorTaskInput is an input type that accepts ConnectorTaskArgs and ConnectorTaskOutput values.
@@ -1737,6 +1989,8 @@ type ConnectorTaskArgs struct {
 	FunctionId pulumi.StringPtrInput `pulumi:"functionId"`
 	// (Updatable) The type descriminator.
 	Kind pulumi.StringInput `pulumi:"kind"`
+	// The private endpoint metadata for the connector's source or target.
+	PrivateEndpointMetadatas ConnectorTaskPrivateEndpointMetadataArrayInput `pulumi:"privateEndpointMetadatas"`
 }
 
 func (ConnectorTaskArgs) ElementType() reflect.Type {
@@ -1815,6 +2069,11 @@ func (o ConnectorTaskOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v ConnectorTask) string { return v.Kind }).(pulumi.StringOutput)
 }
 
+// The private endpoint metadata for the connector's source or target.
+func (o ConnectorTaskOutput) PrivateEndpointMetadatas() ConnectorTaskPrivateEndpointMetadataArrayOutput {
+	return o.ApplyT(func(v ConnectorTask) []ConnectorTaskPrivateEndpointMetadata { return v.PrivateEndpointMetadatas }).(ConnectorTaskPrivateEndpointMetadataArrayOutput)
+}
+
 type ConnectorTaskArrayOutput struct{ *pulumi.OutputState }
 
 func (ConnectorTaskArrayOutput) ElementType() reflect.Type {
@@ -1833,6 +2092,112 @@ func (o ConnectorTaskArrayOutput) Index(i pulumi.IntInput) ConnectorTaskOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ConnectorTask {
 		return vs[0].([]ConnectorTask)[vs[1].(int)]
 	}).(ConnectorTaskOutput)
+}
+
+type ConnectorTaskPrivateEndpointMetadata struct {
+	// The reverse connection endpoint (RCE) IP address for DNS lookups.
+	RceDnsProxyIpAddress *string `pulumi:"rceDnsProxyIpAddress"`
+	// The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+	RceTrafficIpAddress *string `pulumi:"rceTrafficIpAddress"`
+}
+
+// ConnectorTaskPrivateEndpointMetadataInput is an input type that accepts ConnectorTaskPrivateEndpointMetadataArgs and ConnectorTaskPrivateEndpointMetadataOutput values.
+// You can construct a concrete instance of `ConnectorTaskPrivateEndpointMetadataInput` via:
+//
+//	ConnectorTaskPrivateEndpointMetadataArgs{...}
+type ConnectorTaskPrivateEndpointMetadataInput interface {
+	pulumi.Input
+
+	ToConnectorTaskPrivateEndpointMetadataOutput() ConnectorTaskPrivateEndpointMetadataOutput
+	ToConnectorTaskPrivateEndpointMetadataOutputWithContext(context.Context) ConnectorTaskPrivateEndpointMetadataOutput
+}
+
+type ConnectorTaskPrivateEndpointMetadataArgs struct {
+	// The reverse connection endpoint (RCE) IP address for DNS lookups.
+	RceDnsProxyIpAddress pulumi.StringPtrInput `pulumi:"rceDnsProxyIpAddress"`
+	// The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+	RceTrafficIpAddress pulumi.StringPtrInput `pulumi:"rceTrafficIpAddress"`
+}
+
+func (ConnectorTaskPrivateEndpointMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConnectorTaskPrivateEndpointMetadata)(nil)).Elem()
+}
+
+func (i ConnectorTaskPrivateEndpointMetadataArgs) ToConnectorTaskPrivateEndpointMetadataOutput() ConnectorTaskPrivateEndpointMetadataOutput {
+	return i.ToConnectorTaskPrivateEndpointMetadataOutputWithContext(context.Background())
+}
+
+func (i ConnectorTaskPrivateEndpointMetadataArgs) ToConnectorTaskPrivateEndpointMetadataOutputWithContext(ctx context.Context) ConnectorTaskPrivateEndpointMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectorTaskPrivateEndpointMetadataOutput)
+}
+
+// ConnectorTaskPrivateEndpointMetadataArrayInput is an input type that accepts ConnectorTaskPrivateEndpointMetadataArray and ConnectorTaskPrivateEndpointMetadataArrayOutput values.
+// You can construct a concrete instance of `ConnectorTaskPrivateEndpointMetadataArrayInput` via:
+//
+//	ConnectorTaskPrivateEndpointMetadataArray{ ConnectorTaskPrivateEndpointMetadataArgs{...} }
+type ConnectorTaskPrivateEndpointMetadataArrayInput interface {
+	pulumi.Input
+
+	ToConnectorTaskPrivateEndpointMetadataArrayOutput() ConnectorTaskPrivateEndpointMetadataArrayOutput
+	ToConnectorTaskPrivateEndpointMetadataArrayOutputWithContext(context.Context) ConnectorTaskPrivateEndpointMetadataArrayOutput
+}
+
+type ConnectorTaskPrivateEndpointMetadataArray []ConnectorTaskPrivateEndpointMetadataInput
+
+func (ConnectorTaskPrivateEndpointMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConnectorTaskPrivateEndpointMetadata)(nil)).Elem()
+}
+
+func (i ConnectorTaskPrivateEndpointMetadataArray) ToConnectorTaskPrivateEndpointMetadataArrayOutput() ConnectorTaskPrivateEndpointMetadataArrayOutput {
+	return i.ToConnectorTaskPrivateEndpointMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i ConnectorTaskPrivateEndpointMetadataArray) ToConnectorTaskPrivateEndpointMetadataArrayOutputWithContext(ctx context.Context) ConnectorTaskPrivateEndpointMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectorTaskPrivateEndpointMetadataArrayOutput)
+}
+
+type ConnectorTaskPrivateEndpointMetadataOutput struct{ *pulumi.OutputState }
+
+func (ConnectorTaskPrivateEndpointMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConnectorTaskPrivateEndpointMetadata)(nil)).Elem()
+}
+
+func (o ConnectorTaskPrivateEndpointMetadataOutput) ToConnectorTaskPrivateEndpointMetadataOutput() ConnectorTaskPrivateEndpointMetadataOutput {
+	return o
+}
+
+func (o ConnectorTaskPrivateEndpointMetadataOutput) ToConnectorTaskPrivateEndpointMetadataOutputWithContext(ctx context.Context) ConnectorTaskPrivateEndpointMetadataOutput {
+	return o
+}
+
+// The reverse connection endpoint (RCE) IP address for DNS lookups.
+func (o ConnectorTaskPrivateEndpointMetadataOutput) RceDnsProxyIpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConnectorTaskPrivateEndpointMetadata) *string { return v.RceDnsProxyIpAddress }).(pulumi.StringPtrOutput)
+}
+
+// The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+func (o ConnectorTaskPrivateEndpointMetadataOutput) RceTrafficIpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConnectorTaskPrivateEndpointMetadata) *string { return v.RceTrafficIpAddress }).(pulumi.StringPtrOutput)
+}
+
+type ConnectorTaskPrivateEndpointMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (ConnectorTaskPrivateEndpointMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConnectorTaskPrivateEndpointMetadata)(nil)).Elem()
+}
+
+func (o ConnectorTaskPrivateEndpointMetadataArrayOutput) ToConnectorTaskPrivateEndpointMetadataArrayOutput() ConnectorTaskPrivateEndpointMetadataArrayOutput {
+	return o
+}
+
+func (o ConnectorTaskPrivateEndpointMetadataArrayOutput) ToConnectorTaskPrivateEndpointMetadataArrayOutputWithContext(ctx context.Context) ConnectorTaskPrivateEndpointMetadataArrayOutput {
+	return o
+}
+
+func (o ConnectorTaskPrivateEndpointMetadataArrayOutput) Index(i pulumi.IntInput) ConnectorTaskPrivateEndpointMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ConnectorTaskPrivateEndpointMetadata {
+		return vs[0].([]ConnectorTaskPrivateEndpointMetadata)[vs[1].(int)]
+	}).(ConnectorTaskPrivateEndpointMetadataOutput)
 }
 
 type GetConnectorPluginsConnectorPluginCollection struct {
@@ -2205,7 +2570,7 @@ type GetServiceConnectorSource struct {
 	ConfigMap string `pulumi:"configMap"`
 	// The [read setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm), which determines where in the stream to start moving data. For configuration instructions, see [Creating a Connector with a Streaming Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
 	Cursors []GetServiceConnectorSourceCursor `pulumi:"cursors"`
-	// The type discriminator.
+	// The type of dimension value: static or evaluated.
 	Kind string `pulumi:"kind"`
 	// The logs for this Logging source.
 	LogSources []GetServiceConnectorSourceLogSource `pulumi:"logSources"`
@@ -2213,6 +2578,8 @@ type GetServiceConnectorSource struct {
 	MonitoringSources []GetServiceConnectorSourceMonitoringSource `pulumi:"monitoringSources"`
 	// The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using [ListConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins).
 	PluginName string `pulumi:"pluginName"`
+	// The private endpoint metadata for the connector's source or target.
+	PrivateEndpointMetadatas []GetServiceConnectorSourcePrivateEndpointMetadata `pulumi:"privateEndpointMetadatas"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
 	StreamId string `pulumi:"streamId"`
 }
@@ -2233,7 +2600,7 @@ type GetServiceConnectorSourceArgs struct {
 	ConfigMap pulumi.StringInput `pulumi:"configMap"`
 	// The [read setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm), which determines where in the stream to start moving data. For configuration instructions, see [Creating a Connector with a Streaming Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
 	Cursors GetServiceConnectorSourceCursorArrayInput `pulumi:"cursors"`
-	// The type discriminator.
+	// The type of dimension value: static or evaluated.
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// The logs for this Logging source.
 	LogSources GetServiceConnectorSourceLogSourceArrayInput `pulumi:"logSources"`
@@ -2241,6 +2608,8 @@ type GetServiceConnectorSourceArgs struct {
 	MonitoringSources GetServiceConnectorSourceMonitoringSourceArrayInput `pulumi:"monitoringSources"`
 	// The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using [ListConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins).
 	PluginName pulumi.StringInput `pulumi:"pluginName"`
+	// The private endpoint metadata for the connector's source or target.
+	PrivateEndpointMetadatas GetServiceConnectorSourcePrivateEndpointMetadataArrayInput `pulumi:"privateEndpointMetadatas"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
 	StreamId pulumi.StringInput `pulumi:"streamId"`
 }
@@ -2306,7 +2675,7 @@ func (o GetServiceConnectorSourceOutput) Cursors() GetServiceConnectorSourceCurs
 	return o.ApplyT(func(v GetServiceConnectorSource) []GetServiceConnectorSourceCursor { return v.Cursors }).(GetServiceConnectorSourceCursorArrayOutput)
 }
 
-// The type discriminator.
+// The type of dimension value: static or evaluated.
 func (o GetServiceConnectorSourceOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorSource) string { return v.Kind }).(pulumi.StringOutput)
 }
@@ -2326,6 +2695,13 @@ func (o GetServiceConnectorSourceOutput) MonitoringSources() GetServiceConnector
 // The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using [ListConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins).
 func (o GetServiceConnectorSourceOutput) PluginName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorSource) string { return v.PluginName }).(pulumi.StringOutput)
+}
+
+// The private endpoint metadata for the connector's source or target.
+func (o GetServiceConnectorSourceOutput) PrivateEndpointMetadatas() GetServiceConnectorSourcePrivateEndpointMetadataArrayOutput {
+	return o.ApplyT(func(v GetServiceConnectorSource) []GetServiceConnectorSourcePrivateEndpointMetadata {
+		return v.PrivateEndpointMetadatas
+	}).(GetServiceConnectorSourcePrivateEndpointMetadataArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
@@ -2354,7 +2730,7 @@ func (o GetServiceConnectorSourceArrayOutput) Index(i pulumi.IntInput) GetServic
 }
 
 type GetServiceConnectorSourceCursor struct {
-	// The type discriminator.
+	// The type of dimension value: static or evaluated.
 	Kind string `pulumi:"kind"`
 }
 
@@ -2370,7 +2746,7 @@ type GetServiceConnectorSourceCursorInput interface {
 }
 
 type GetServiceConnectorSourceCursorArgs struct {
-	// The type discriminator.
+	// The type of dimension value: static or evaluated.
 	Kind pulumi.StringInput `pulumi:"kind"`
 }
 
@@ -2425,7 +2801,7 @@ func (o GetServiceConnectorSourceCursorOutput) ToGetServiceConnectorSourceCursor
 	return o
 }
 
-// The type discriminator.
+// The type of dimension value: static or evaluated.
 func (o GetServiceConnectorSourceCursorOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorSourceCursor) string { return v.Kind }).(pulumi.StringOutput)
 }
@@ -2674,7 +3050,7 @@ func (o GetServiceConnectorSourceMonitoringSourceArrayOutput) Index(i pulumi.Int
 }
 
 type GetServiceConnectorSourceMonitoringSourceNamespaceDetail struct {
-	// The type discriminator.
+	// The type of dimension value: static or evaluated.
 	Kind string `pulumi:"kind"`
 	// The namespaces for the compartment-specific list.
 	Namespaces []GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace `pulumi:"namespaces"`
@@ -2692,7 +3068,7 @@ type GetServiceConnectorSourceMonitoringSourceNamespaceDetailInput interface {
 }
 
 type GetServiceConnectorSourceMonitoringSourceNamespaceDetailArgs struct {
-	// The type discriminator.
+	// The type of dimension value: static or evaluated.
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// The namespaces for the compartment-specific list.
 	Namespaces GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayInput `pulumi:"namespaces"`
@@ -2749,7 +3125,7 @@ func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailOutput) ToGetSer
 	return o
 }
 
-// The type discriminator.
+// The type of dimension value: static or evaluated.
 func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorSourceMonitoringSourceNamespaceDetail) string { return v.Kind }).(pulumi.StringOutput)
 }
@@ -2890,7 +3266,7 @@ func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayOu
 }
 
 type GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetric struct {
-	// The type discriminator.
+	// The type of dimension value: static or evaluated.
 	Kind string `pulumi:"kind"`
 }
 
@@ -2906,7 +3282,7 @@ type GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricInpu
 }
 
 type GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArgs struct {
-	// The type discriminator.
+	// The type of dimension value: static or evaluated.
 	Kind pulumi.StringInput `pulumi:"kind"`
 }
 
@@ -2961,7 +3337,7 @@ func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricO
 	return o
 }
 
-// The type discriminator.
+// The type of dimension value: static or evaluated.
 func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetric) string { return v.Kind }).(pulumi.StringOutput)
 }
@@ -2986,6 +3362,112 @@ func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricA
 	}).(GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput)
 }
 
+type GetServiceConnectorSourcePrivateEndpointMetadata struct {
+	// The reverse connection endpoint (RCE) IP address for DNS lookups.
+	RceDnsProxyIpAddress string `pulumi:"rceDnsProxyIpAddress"`
+	// The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+	RceTrafficIpAddress string `pulumi:"rceTrafficIpAddress"`
+}
+
+// GetServiceConnectorSourcePrivateEndpointMetadataInput is an input type that accepts GetServiceConnectorSourcePrivateEndpointMetadataArgs and GetServiceConnectorSourcePrivateEndpointMetadataOutput values.
+// You can construct a concrete instance of `GetServiceConnectorSourcePrivateEndpointMetadataInput` via:
+//
+//	GetServiceConnectorSourcePrivateEndpointMetadataArgs{...}
+type GetServiceConnectorSourcePrivateEndpointMetadataInput interface {
+	pulumi.Input
+
+	ToGetServiceConnectorSourcePrivateEndpointMetadataOutput() GetServiceConnectorSourcePrivateEndpointMetadataOutput
+	ToGetServiceConnectorSourcePrivateEndpointMetadataOutputWithContext(context.Context) GetServiceConnectorSourcePrivateEndpointMetadataOutput
+}
+
+type GetServiceConnectorSourcePrivateEndpointMetadataArgs struct {
+	// The reverse connection endpoint (RCE) IP address for DNS lookups.
+	RceDnsProxyIpAddress pulumi.StringInput `pulumi:"rceDnsProxyIpAddress"`
+	// The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+	RceTrafficIpAddress pulumi.StringInput `pulumi:"rceTrafficIpAddress"`
+}
+
+func (GetServiceConnectorSourcePrivateEndpointMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServiceConnectorSourcePrivateEndpointMetadata)(nil)).Elem()
+}
+
+func (i GetServiceConnectorSourcePrivateEndpointMetadataArgs) ToGetServiceConnectorSourcePrivateEndpointMetadataOutput() GetServiceConnectorSourcePrivateEndpointMetadataOutput {
+	return i.ToGetServiceConnectorSourcePrivateEndpointMetadataOutputWithContext(context.Background())
+}
+
+func (i GetServiceConnectorSourcePrivateEndpointMetadataArgs) ToGetServiceConnectorSourcePrivateEndpointMetadataOutputWithContext(ctx context.Context) GetServiceConnectorSourcePrivateEndpointMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorSourcePrivateEndpointMetadataOutput)
+}
+
+// GetServiceConnectorSourcePrivateEndpointMetadataArrayInput is an input type that accepts GetServiceConnectorSourcePrivateEndpointMetadataArray and GetServiceConnectorSourcePrivateEndpointMetadataArrayOutput values.
+// You can construct a concrete instance of `GetServiceConnectorSourcePrivateEndpointMetadataArrayInput` via:
+//
+//	GetServiceConnectorSourcePrivateEndpointMetadataArray{ GetServiceConnectorSourcePrivateEndpointMetadataArgs{...} }
+type GetServiceConnectorSourcePrivateEndpointMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetServiceConnectorSourcePrivateEndpointMetadataArrayOutput() GetServiceConnectorSourcePrivateEndpointMetadataArrayOutput
+	ToGetServiceConnectorSourcePrivateEndpointMetadataArrayOutputWithContext(context.Context) GetServiceConnectorSourcePrivateEndpointMetadataArrayOutput
+}
+
+type GetServiceConnectorSourcePrivateEndpointMetadataArray []GetServiceConnectorSourcePrivateEndpointMetadataInput
+
+func (GetServiceConnectorSourcePrivateEndpointMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServiceConnectorSourcePrivateEndpointMetadata)(nil)).Elem()
+}
+
+func (i GetServiceConnectorSourcePrivateEndpointMetadataArray) ToGetServiceConnectorSourcePrivateEndpointMetadataArrayOutput() GetServiceConnectorSourcePrivateEndpointMetadataArrayOutput {
+	return i.ToGetServiceConnectorSourcePrivateEndpointMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetServiceConnectorSourcePrivateEndpointMetadataArray) ToGetServiceConnectorSourcePrivateEndpointMetadataArrayOutputWithContext(ctx context.Context) GetServiceConnectorSourcePrivateEndpointMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorSourcePrivateEndpointMetadataArrayOutput)
+}
+
+type GetServiceConnectorSourcePrivateEndpointMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetServiceConnectorSourcePrivateEndpointMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServiceConnectorSourcePrivateEndpointMetadata)(nil)).Elem()
+}
+
+func (o GetServiceConnectorSourcePrivateEndpointMetadataOutput) ToGetServiceConnectorSourcePrivateEndpointMetadataOutput() GetServiceConnectorSourcePrivateEndpointMetadataOutput {
+	return o
+}
+
+func (o GetServiceConnectorSourcePrivateEndpointMetadataOutput) ToGetServiceConnectorSourcePrivateEndpointMetadataOutputWithContext(ctx context.Context) GetServiceConnectorSourcePrivateEndpointMetadataOutput {
+	return o
+}
+
+// The reverse connection endpoint (RCE) IP address for DNS lookups.
+func (o GetServiceConnectorSourcePrivateEndpointMetadataOutput) RceDnsProxyIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceConnectorSourcePrivateEndpointMetadata) string { return v.RceDnsProxyIpAddress }).(pulumi.StringOutput)
+}
+
+// The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+func (o GetServiceConnectorSourcePrivateEndpointMetadataOutput) RceTrafficIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceConnectorSourcePrivateEndpointMetadata) string { return v.RceTrafficIpAddress }).(pulumi.StringOutput)
+}
+
+type GetServiceConnectorSourcePrivateEndpointMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServiceConnectorSourcePrivateEndpointMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServiceConnectorSourcePrivateEndpointMetadata)(nil)).Elem()
+}
+
+func (o GetServiceConnectorSourcePrivateEndpointMetadataArrayOutput) ToGetServiceConnectorSourcePrivateEndpointMetadataArrayOutput() GetServiceConnectorSourcePrivateEndpointMetadataArrayOutput {
+	return o
+}
+
+func (o GetServiceConnectorSourcePrivateEndpointMetadataArrayOutput) ToGetServiceConnectorSourcePrivateEndpointMetadataArrayOutputWithContext(ctx context.Context) GetServiceConnectorSourcePrivateEndpointMetadataArrayOutput {
+	return o
+}
+
+func (o GetServiceConnectorSourcePrivateEndpointMetadataArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorSourcePrivateEndpointMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServiceConnectorSourcePrivateEndpointMetadata {
+		return vs[0].([]GetServiceConnectorSourcePrivateEndpointMetadata)[vs[1].(int)]
+	}).(GetServiceConnectorSourcePrivateEndpointMetadataOutput)
+}
+
 type GetServiceConnectorTarget struct {
 	// The batch rollover size in megabytes.
 	BatchRolloverSizeInMbs int `pulumi:"batchRolloverSizeInMbs"`
@@ -3007,7 +3489,7 @@ type GetServiceConnectorTarget struct {
 	EnableFormattedMessaging bool `pulumi:"enableFormattedMessaging"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
 	FunctionId string `pulumi:"functionId"`
-	// The type discriminator.
+	// The type of dimension value: static or evaluated.
 	Kind string `pulumi:"kind"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
 	LogGroupId string `pulumi:"logGroupId"`
@@ -3021,6 +3503,8 @@ type GetServiceConnectorTarget struct {
 	Namespace string `pulumi:"namespace"`
 	// The prefix of the objects. Avoid entering confidential information.
 	ObjectNamePrefix string `pulumi:"objectNamePrefix"`
+	// The private endpoint metadata for the connector's source or target.
+	PrivateEndpointMetadatas []GetServiceConnectorTargetPrivateEndpointMetadata `pulumi:"privateEndpointMetadatas"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
 	StreamId string `pulumi:"streamId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
@@ -3059,7 +3543,7 @@ type GetServiceConnectorTargetArgs struct {
 	EnableFormattedMessaging pulumi.BoolInput `pulumi:"enableFormattedMessaging"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
 	FunctionId pulumi.StringInput `pulumi:"functionId"`
-	// The type discriminator.
+	// The type of dimension value: static or evaluated.
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
 	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
@@ -3073,6 +3557,8 @@ type GetServiceConnectorTargetArgs struct {
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// The prefix of the objects. Avoid entering confidential information.
 	ObjectNamePrefix pulumi.StringInput `pulumi:"objectNamePrefix"`
+	// The private endpoint metadata for the connector's source or target.
+	PrivateEndpointMetadatas GetServiceConnectorTargetPrivateEndpointMetadataArrayInput `pulumi:"privateEndpointMetadatas"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
 	StreamId pulumi.StringInput `pulumi:"streamId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
@@ -3180,7 +3666,7 @@ func (o GetServiceConnectorTargetOutput) FunctionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorTarget) string { return v.FunctionId }).(pulumi.StringOutput)
 }
 
-// The type discriminator.
+// The type of dimension value: static or evaluated.
 func (o GetServiceConnectorTargetOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorTarget) string { return v.Kind }).(pulumi.StringOutput)
 }
@@ -3213,6 +3699,13 @@ func (o GetServiceConnectorTargetOutput) Namespace() pulumi.StringOutput {
 // The prefix of the objects. Avoid entering confidential information.
 func (o GetServiceConnectorTargetOutput) ObjectNamePrefix() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorTarget) string { return v.ObjectNamePrefix }).(pulumi.StringOutput)
+}
+
+// The private endpoint metadata for the connector's source or target.
+func (o GetServiceConnectorTargetOutput) PrivateEndpointMetadatas() GetServiceConnectorTargetPrivateEndpointMetadataArrayOutput {
+	return o.ApplyT(func(v GetServiceConnectorTarget) []GetServiceConnectorTargetPrivateEndpointMetadata {
+		return v.PrivateEndpointMetadatas
+	}).(GetServiceConnectorTargetPrivateEndpointMetadataArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
@@ -3354,7 +3847,7 @@ func (o GetServiceConnectorTargetDimensionArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetServiceConnectorTargetDimensionDimensionValue struct {
-	// The type discriminator.
+	// The type of dimension value: static or evaluated.
 	Kind string `pulumi:"kind"`
 	// The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.` and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
 	Path string `pulumi:"path"`
@@ -3374,7 +3867,7 @@ type GetServiceConnectorTargetDimensionDimensionValueInput interface {
 }
 
 type GetServiceConnectorTargetDimensionDimensionValueArgs struct {
-	// The type discriminator.
+	// The type of dimension value: static or evaluated.
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.` and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
 	Path pulumi.StringInput `pulumi:"path"`
@@ -3433,7 +3926,7 @@ func (o GetServiceConnectorTargetDimensionDimensionValueOutput) ToGetServiceConn
 	return o
 }
 
-// The type discriminator.
+// The type of dimension value: static or evaluated.
 func (o GetServiceConnectorTargetDimensionDimensionValueOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorTargetDimensionDimensionValue) string { return v.Kind }).(pulumi.StringOutput)
 }
@@ -3468,6 +3961,112 @@ func (o GetServiceConnectorTargetDimensionDimensionValueArrayOutput) Index(i pul
 	}).(GetServiceConnectorTargetDimensionDimensionValueOutput)
 }
 
+type GetServiceConnectorTargetPrivateEndpointMetadata struct {
+	// The reverse connection endpoint (RCE) IP address for DNS lookups.
+	RceDnsProxyIpAddress string `pulumi:"rceDnsProxyIpAddress"`
+	// The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+	RceTrafficIpAddress string `pulumi:"rceTrafficIpAddress"`
+}
+
+// GetServiceConnectorTargetPrivateEndpointMetadataInput is an input type that accepts GetServiceConnectorTargetPrivateEndpointMetadataArgs and GetServiceConnectorTargetPrivateEndpointMetadataOutput values.
+// You can construct a concrete instance of `GetServiceConnectorTargetPrivateEndpointMetadataInput` via:
+//
+//	GetServiceConnectorTargetPrivateEndpointMetadataArgs{...}
+type GetServiceConnectorTargetPrivateEndpointMetadataInput interface {
+	pulumi.Input
+
+	ToGetServiceConnectorTargetPrivateEndpointMetadataOutput() GetServiceConnectorTargetPrivateEndpointMetadataOutput
+	ToGetServiceConnectorTargetPrivateEndpointMetadataOutputWithContext(context.Context) GetServiceConnectorTargetPrivateEndpointMetadataOutput
+}
+
+type GetServiceConnectorTargetPrivateEndpointMetadataArgs struct {
+	// The reverse connection endpoint (RCE) IP address for DNS lookups.
+	RceDnsProxyIpAddress pulumi.StringInput `pulumi:"rceDnsProxyIpAddress"`
+	// The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+	RceTrafficIpAddress pulumi.StringInput `pulumi:"rceTrafficIpAddress"`
+}
+
+func (GetServiceConnectorTargetPrivateEndpointMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServiceConnectorTargetPrivateEndpointMetadata)(nil)).Elem()
+}
+
+func (i GetServiceConnectorTargetPrivateEndpointMetadataArgs) ToGetServiceConnectorTargetPrivateEndpointMetadataOutput() GetServiceConnectorTargetPrivateEndpointMetadataOutput {
+	return i.ToGetServiceConnectorTargetPrivateEndpointMetadataOutputWithContext(context.Background())
+}
+
+func (i GetServiceConnectorTargetPrivateEndpointMetadataArgs) ToGetServiceConnectorTargetPrivateEndpointMetadataOutputWithContext(ctx context.Context) GetServiceConnectorTargetPrivateEndpointMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorTargetPrivateEndpointMetadataOutput)
+}
+
+// GetServiceConnectorTargetPrivateEndpointMetadataArrayInput is an input type that accepts GetServiceConnectorTargetPrivateEndpointMetadataArray and GetServiceConnectorTargetPrivateEndpointMetadataArrayOutput values.
+// You can construct a concrete instance of `GetServiceConnectorTargetPrivateEndpointMetadataArrayInput` via:
+//
+//	GetServiceConnectorTargetPrivateEndpointMetadataArray{ GetServiceConnectorTargetPrivateEndpointMetadataArgs{...} }
+type GetServiceConnectorTargetPrivateEndpointMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetServiceConnectorTargetPrivateEndpointMetadataArrayOutput() GetServiceConnectorTargetPrivateEndpointMetadataArrayOutput
+	ToGetServiceConnectorTargetPrivateEndpointMetadataArrayOutputWithContext(context.Context) GetServiceConnectorTargetPrivateEndpointMetadataArrayOutput
+}
+
+type GetServiceConnectorTargetPrivateEndpointMetadataArray []GetServiceConnectorTargetPrivateEndpointMetadataInput
+
+func (GetServiceConnectorTargetPrivateEndpointMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServiceConnectorTargetPrivateEndpointMetadata)(nil)).Elem()
+}
+
+func (i GetServiceConnectorTargetPrivateEndpointMetadataArray) ToGetServiceConnectorTargetPrivateEndpointMetadataArrayOutput() GetServiceConnectorTargetPrivateEndpointMetadataArrayOutput {
+	return i.ToGetServiceConnectorTargetPrivateEndpointMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetServiceConnectorTargetPrivateEndpointMetadataArray) ToGetServiceConnectorTargetPrivateEndpointMetadataArrayOutputWithContext(ctx context.Context) GetServiceConnectorTargetPrivateEndpointMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorTargetPrivateEndpointMetadataArrayOutput)
+}
+
+type GetServiceConnectorTargetPrivateEndpointMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetServiceConnectorTargetPrivateEndpointMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServiceConnectorTargetPrivateEndpointMetadata)(nil)).Elem()
+}
+
+func (o GetServiceConnectorTargetPrivateEndpointMetadataOutput) ToGetServiceConnectorTargetPrivateEndpointMetadataOutput() GetServiceConnectorTargetPrivateEndpointMetadataOutput {
+	return o
+}
+
+func (o GetServiceConnectorTargetPrivateEndpointMetadataOutput) ToGetServiceConnectorTargetPrivateEndpointMetadataOutputWithContext(ctx context.Context) GetServiceConnectorTargetPrivateEndpointMetadataOutput {
+	return o
+}
+
+// The reverse connection endpoint (RCE) IP address for DNS lookups.
+func (o GetServiceConnectorTargetPrivateEndpointMetadataOutput) RceDnsProxyIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceConnectorTargetPrivateEndpointMetadata) string { return v.RceDnsProxyIpAddress }).(pulumi.StringOutput)
+}
+
+// The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+func (o GetServiceConnectorTargetPrivateEndpointMetadataOutput) RceTrafficIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceConnectorTargetPrivateEndpointMetadata) string { return v.RceTrafficIpAddress }).(pulumi.StringOutput)
+}
+
+type GetServiceConnectorTargetPrivateEndpointMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServiceConnectorTargetPrivateEndpointMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServiceConnectorTargetPrivateEndpointMetadata)(nil)).Elem()
+}
+
+func (o GetServiceConnectorTargetPrivateEndpointMetadataArrayOutput) ToGetServiceConnectorTargetPrivateEndpointMetadataArrayOutput() GetServiceConnectorTargetPrivateEndpointMetadataArrayOutput {
+	return o
+}
+
+func (o GetServiceConnectorTargetPrivateEndpointMetadataArrayOutput) ToGetServiceConnectorTargetPrivateEndpointMetadataArrayOutputWithContext(ctx context.Context) GetServiceConnectorTargetPrivateEndpointMetadataArrayOutput {
+	return o
+}
+
+func (o GetServiceConnectorTargetPrivateEndpointMetadataArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorTargetPrivateEndpointMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServiceConnectorTargetPrivateEndpointMetadata {
+		return vs[0].([]GetServiceConnectorTargetPrivateEndpointMetadata)[vs[1].(int)]
+	}).(GetServiceConnectorTargetPrivateEndpointMetadataOutput)
+}
+
 type GetServiceConnectorTask struct {
 	// Size limit (kilobytes) for batch sent to invoke the function.
 	BatchSizeInKbs int `pulumi:"batchSizeInKbs"`
@@ -3477,8 +4076,10 @@ type GetServiceConnectorTask struct {
 	Condition string `pulumi:"condition"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
 	FunctionId string `pulumi:"functionId"`
-	// The type discriminator.
+	// The type of dimension value: static or evaluated.
 	Kind string `pulumi:"kind"`
+	// The private endpoint metadata for the connector's source or target.
+	PrivateEndpointMetadatas []GetServiceConnectorTaskPrivateEndpointMetadata `pulumi:"privateEndpointMetadatas"`
 }
 
 // GetServiceConnectorTaskInput is an input type that accepts GetServiceConnectorTaskArgs and GetServiceConnectorTaskOutput values.
@@ -3501,8 +4102,10 @@ type GetServiceConnectorTaskArgs struct {
 	Condition pulumi.StringInput `pulumi:"condition"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
 	FunctionId pulumi.StringInput `pulumi:"functionId"`
-	// The type discriminator.
+	// The type of dimension value: static or evaluated.
 	Kind pulumi.StringInput `pulumi:"kind"`
+	// The private endpoint metadata for the connector's source or target.
+	PrivateEndpointMetadatas GetServiceConnectorTaskPrivateEndpointMetadataArrayInput `pulumi:"privateEndpointMetadatas"`
 }
 
 func (GetServiceConnectorTaskArgs) ElementType() reflect.Type {
@@ -3576,9 +4179,16 @@ func (o GetServiceConnectorTaskOutput) FunctionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorTask) string { return v.FunctionId }).(pulumi.StringOutput)
 }
 
-// The type discriminator.
+// The type of dimension value: static or evaluated.
 func (o GetServiceConnectorTaskOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorTask) string { return v.Kind }).(pulumi.StringOutput)
+}
+
+// The private endpoint metadata for the connector's source or target.
+func (o GetServiceConnectorTaskOutput) PrivateEndpointMetadatas() GetServiceConnectorTaskPrivateEndpointMetadataArrayOutput {
+	return o.ApplyT(func(v GetServiceConnectorTask) []GetServiceConnectorTaskPrivateEndpointMetadata {
+		return v.PrivateEndpointMetadatas
+	}).(GetServiceConnectorTaskPrivateEndpointMetadataArrayOutput)
 }
 
 type GetServiceConnectorTaskArrayOutput struct{ *pulumi.OutputState }
@@ -3599,6 +4209,112 @@ func (o GetServiceConnectorTaskArrayOutput) Index(i pulumi.IntInput) GetServiceC
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServiceConnectorTask {
 		return vs[0].([]GetServiceConnectorTask)[vs[1].(int)]
 	}).(GetServiceConnectorTaskOutput)
+}
+
+type GetServiceConnectorTaskPrivateEndpointMetadata struct {
+	// The reverse connection endpoint (RCE) IP address for DNS lookups.
+	RceDnsProxyIpAddress string `pulumi:"rceDnsProxyIpAddress"`
+	// The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+	RceTrafficIpAddress string `pulumi:"rceTrafficIpAddress"`
+}
+
+// GetServiceConnectorTaskPrivateEndpointMetadataInput is an input type that accepts GetServiceConnectorTaskPrivateEndpointMetadataArgs and GetServiceConnectorTaskPrivateEndpointMetadataOutput values.
+// You can construct a concrete instance of `GetServiceConnectorTaskPrivateEndpointMetadataInput` via:
+//
+//	GetServiceConnectorTaskPrivateEndpointMetadataArgs{...}
+type GetServiceConnectorTaskPrivateEndpointMetadataInput interface {
+	pulumi.Input
+
+	ToGetServiceConnectorTaskPrivateEndpointMetadataOutput() GetServiceConnectorTaskPrivateEndpointMetadataOutput
+	ToGetServiceConnectorTaskPrivateEndpointMetadataOutputWithContext(context.Context) GetServiceConnectorTaskPrivateEndpointMetadataOutput
+}
+
+type GetServiceConnectorTaskPrivateEndpointMetadataArgs struct {
+	// The reverse connection endpoint (RCE) IP address for DNS lookups.
+	RceDnsProxyIpAddress pulumi.StringInput `pulumi:"rceDnsProxyIpAddress"`
+	// The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+	RceTrafficIpAddress pulumi.StringInput `pulumi:"rceTrafficIpAddress"`
+}
+
+func (GetServiceConnectorTaskPrivateEndpointMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServiceConnectorTaskPrivateEndpointMetadata)(nil)).Elem()
+}
+
+func (i GetServiceConnectorTaskPrivateEndpointMetadataArgs) ToGetServiceConnectorTaskPrivateEndpointMetadataOutput() GetServiceConnectorTaskPrivateEndpointMetadataOutput {
+	return i.ToGetServiceConnectorTaskPrivateEndpointMetadataOutputWithContext(context.Background())
+}
+
+func (i GetServiceConnectorTaskPrivateEndpointMetadataArgs) ToGetServiceConnectorTaskPrivateEndpointMetadataOutputWithContext(ctx context.Context) GetServiceConnectorTaskPrivateEndpointMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorTaskPrivateEndpointMetadataOutput)
+}
+
+// GetServiceConnectorTaskPrivateEndpointMetadataArrayInput is an input type that accepts GetServiceConnectorTaskPrivateEndpointMetadataArray and GetServiceConnectorTaskPrivateEndpointMetadataArrayOutput values.
+// You can construct a concrete instance of `GetServiceConnectorTaskPrivateEndpointMetadataArrayInput` via:
+//
+//	GetServiceConnectorTaskPrivateEndpointMetadataArray{ GetServiceConnectorTaskPrivateEndpointMetadataArgs{...} }
+type GetServiceConnectorTaskPrivateEndpointMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetServiceConnectorTaskPrivateEndpointMetadataArrayOutput() GetServiceConnectorTaskPrivateEndpointMetadataArrayOutput
+	ToGetServiceConnectorTaskPrivateEndpointMetadataArrayOutputWithContext(context.Context) GetServiceConnectorTaskPrivateEndpointMetadataArrayOutput
+}
+
+type GetServiceConnectorTaskPrivateEndpointMetadataArray []GetServiceConnectorTaskPrivateEndpointMetadataInput
+
+func (GetServiceConnectorTaskPrivateEndpointMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServiceConnectorTaskPrivateEndpointMetadata)(nil)).Elem()
+}
+
+func (i GetServiceConnectorTaskPrivateEndpointMetadataArray) ToGetServiceConnectorTaskPrivateEndpointMetadataArrayOutput() GetServiceConnectorTaskPrivateEndpointMetadataArrayOutput {
+	return i.ToGetServiceConnectorTaskPrivateEndpointMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetServiceConnectorTaskPrivateEndpointMetadataArray) ToGetServiceConnectorTaskPrivateEndpointMetadataArrayOutputWithContext(ctx context.Context) GetServiceConnectorTaskPrivateEndpointMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorTaskPrivateEndpointMetadataArrayOutput)
+}
+
+type GetServiceConnectorTaskPrivateEndpointMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetServiceConnectorTaskPrivateEndpointMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServiceConnectorTaskPrivateEndpointMetadata)(nil)).Elem()
+}
+
+func (o GetServiceConnectorTaskPrivateEndpointMetadataOutput) ToGetServiceConnectorTaskPrivateEndpointMetadataOutput() GetServiceConnectorTaskPrivateEndpointMetadataOutput {
+	return o
+}
+
+func (o GetServiceConnectorTaskPrivateEndpointMetadataOutput) ToGetServiceConnectorTaskPrivateEndpointMetadataOutputWithContext(ctx context.Context) GetServiceConnectorTaskPrivateEndpointMetadataOutput {
+	return o
+}
+
+// The reverse connection endpoint (RCE) IP address for DNS lookups.
+func (o GetServiceConnectorTaskPrivateEndpointMetadataOutput) RceDnsProxyIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceConnectorTaskPrivateEndpointMetadata) string { return v.RceDnsProxyIpAddress }).(pulumi.StringOutput)
+}
+
+// The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+func (o GetServiceConnectorTaskPrivateEndpointMetadataOutput) RceTrafficIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceConnectorTaskPrivateEndpointMetadata) string { return v.RceTrafficIpAddress }).(pulumi.StringOutput)
+}
+
+type GetServiceConnectorTaskPrivateEndpointMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServiceConnectorTaskPrivateEndpointMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServiceConnectorTaskPrivateEndpointMetadata)(nil)).Elem()
+}
+
+func (o GetServiceConnectorTaskPrivateEndpointMetadataArrayOutput) ToGetServiceConnectorTaskPrivateEndpointMetadataArrayOutput() GetServiceConnectorTaskPrivateEndpointMetadataArrayOutput {
+	return o
+}
+
+func (o GetServiceConnectorTaskPrivateEndpointMetadataArrayOutput) ToGetServiceConnectorTaskPrivateEndpointMetadataArrayOutputWithContext(ctx context.Context) GetServiceConnectorTaskPrivateEndpointMetadataArrayOutput {
+	return o
+}
+
+func (o GetServiceConnectorTaskPrivateEndpointMetadataArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorTaskPrivateEndpointMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServiceConnectorTaskPrivateEndpointMetadata {
+		return vs[0].([]GetServiceConnectorTaskPrivateEndpointMetadata)[vs[1].(int)]
+	}).(GetServiceConnectorTaskPrivateEndpointMetadataOutput)
 }
 
 type GetServiceConnectorsFilter struct {
@@ -4034,7 +4750,7 @@ type GetServiceConnectorsServiceConnectorCollectionItemSource struct {
 	ConfigMap string `pulumi:"configMap"`
 	// The [read setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm), which determines where in the stream to start moving data. For configuration instructions, see [Creating a Connector with a Streaming Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
 	Cursors []GetServiceConnectorsServiceConnectorCollectionItemSourceCursor `pulumi:"cursors"`
-	// The type discriminator.
+	// The type of dimension value: static or evaluated.
 	Kind string `pulumi:"kind"`
 	// The logs for this Logging source.
 	LogSources []GetServiceConnectorsServiceConnectorCollectionItemSourceLogSource `pulumi:"logSources"`
@@ -4042,6 +4758,8 @@ type GetServiceConnectorsServiceConnectorCollectionItemSource struct {
 	MonitoringSources []GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource `pulumi:"monitoringSources"`
 	// The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using [ListConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins).
 	PluginName string `pulumi:"pluginName"`
+	// The private endpoint metadata for the connector's source or target.
+	PrivateEndpointMetadatas []GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadata `pulumi:"privateEndpointMetadatas"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
 	StreamId string `pulumi:"streamId"`
 }
@@ -4062,7 +4780,7 @@ type GetServiceConnectorsServiceConnectorCollectionItemSourceArgs struct {
 	ConfigMap pulumi.StringInput `pulumi:"configMap"`
 	// The [read setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm), which determines where in the stream to start moving data. For configuration instructions, see [Creating a Connector with a Streaming Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
 	Cursors GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArrayInput `pulumi:"cursors"`
-	// The type discriminator.
+	// The type of dimension value: static or evaluated.
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// The logs for this Logging source.
 	LogSources GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArrayInput `pulumi:"logSources"`
@@ -4070,6 +4788,8 @@ type GetServiceConnectorsServiceConnectorCollectionItemSourceArgs struct {
 	MonitoringSources GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayInput `pulumi:"monitoringSources"`
 	// The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using [ListConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins).
 	PluginName pulumi.StringInput `pulumi:"pluginName"`
+	// The private endpoint metadata for the connector's source or target.
+	PrivateEndpointMetadatas GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArrayInput `pulumi:"privateEndpointMetadatas"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
 	StreamId pulumi.StringInput `pulumi:"streamId"`
 }
@@ -4137,7 +4857,7 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemSourceOutput) Cursors(
 	}).(GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArrayOutput)
 }
 
-// The type discriminator.
+// The type of dimension value: static or evaluated.
 func (o GetServiceConnectorsServiceConnectorCollectionItemSourceOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemSource) string { return v.Kind }).(pulumi.StringOutput)
 }
@@ -4159,6 +4879,13 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemSourceOutput) Monitori
 // The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using [ListConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins).
 func (o GetServiceConnectorsServiceConnectorCollectionItemSourceOutput) PluginName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemSource) string { return v.PluginName }).(pulumi.StringOutput)
+}
+
+// The private endpoint metadata for the connector's source or target.
+func (o GetServiceConnectorsServiceConnectorCollectionItemSourceOutput) PrivateEndpointMetadatas() GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArrayOutput {
+	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemSource) []GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadata {
+		return v.PrivateEndpointMetadatas
+	}).(GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
@@ -4187,7 +4914,7 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemSourceArrayOutput) Ind
 }
 
 type GetServiceConnectorsServiceConnectorCollectionItemSourceCursor struct {
-	// The type discriminator.
+	// The type of dimension value: static or evaluated.
 	Kind string `pulumi:"kind"`
 }
 
@@ -4203,7 +4930,7 @@ type GetServiceConnectorsServiceConnectorCollectionItemSourceCursorInput interfa
 }
 
 type GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArgs struct {
-	// The type discriminator.
+	// The type of dimension value: static or evaluated.
 	Kind pulumi.StringInput `pulumi:"kind"`
 }
 
@@ -4258,7 +4985,7 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemSourceCursorOutput) To
 	return o
 }
 
-// The type discriminator.
+// The type of dimension value: static or evaluated.
 func (o GetServiceConnectorsServiceConnectorCollectionItemSourceCursorOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemSourceCursor) string { return v.Kind }).(pulumi.StringOutput)
 }
@@ -4511,7 +5238,7 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource
 }
 
 type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail struct {
-	// The type discriminator.
+	// The type of dimension value: static or evaluated.
 	Kind string `pulumi:"kind"`
 	// The namespaces for the compartment-specific list.
 	Namespaces []GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace `pulumi:"namespaces"`
@@ -4529,7 +5256,7 @@ type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNam
 }
 
 type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArgs struct {
-	// The type discriminator.
+	// The type of dimension value: static or evaluated.
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// The namespaces for the compartment-specific list.
 	Namespaces GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayInput `pulumi:"namespaces"`
@@ -4586,7 +5313,7 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource
 	return o
 }
 
-// The type discriminator.
+// The type of dimension value: static or evaluated.
 func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail) string {
 		return v.Kind
@@ -4731,7 +5458,7 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource
 }
 
 type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric struct {
-	// The type discriminator.
+	// The type of dimension value: static or evaluated.
 	Kind string `pulumi:"kind"`
 }
 
@@ -4747,7 +5474,7 @@ type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNam
 }
 
 type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArgs struct {
-	// The type discriminator.
+	// The type of dimension value: static or evaluated.
 	Kind pulumi.StringInput `pulumi:"kind"`
 }
 
@@ -4802,7 +5529,7 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource
 	return o
 }
 
-// The type discriminator.
+// The type of dimension value: static or evaluated.
 func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric) string {
 		return v.Kind
@@ -4829,6 +5556,116 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource
 	}).(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput)
 }
 
+type GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadata struct {
+	// The reverse connection endpoint (RCE) IP address for DNS lookups.
+	RceDnsProxyIpAddress string `pulumi:"rceDnsProxyIpAddress"`
+	// The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+	RceTrafficIpAddress string `pulumi:"rceTrafficIpAddress"`
+}
+
+// GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArgs and GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataOutput values.
+// You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataInput` via:
+//
+//	GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArgs{...}
+type GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataInput interface {
+	pulumi.Input
+
+	ToGetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataOutput() GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataOutput
+	ToGetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataOutputWithContext(context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataOutput
+}
+
+type GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArgs struct {
+	// The reverse connection endpoint (RCE) IP address for DNS lookups.
+	RceDnsProxyIpAddress pulumi.StringInput `pulumi:"rceDnsProxyIpAddress"`
+	// The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+	RceTrafficIpAddress pulumi.StringInput `pulumi:"rceTrafficIpAddress"`
+}
+
+func (GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadata)(nil)).Elem()
+}
+
+func (i GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArgs) ToGetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataOutput() GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataOutput {
+	return i.ToGetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataOutputWithContext(context.Background())
+}
+
+func (i GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArgs) ToGetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataOutput)
+}
+
+// GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArrayInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArray and GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArrayOutput values.
+// You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArrayInput` via:
+//
+//	GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArray{ GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArgs{...} }
+type GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArrayOutput() GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArrayOutput
+	ToGetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArrayOutputWithContext(context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArrayOutput
+}
+
+type GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArray []GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataInput
+
+func (GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadata)(nil)).Elem()
+}
+
+func (i GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArray) ToGetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArrayOutput() GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArrayOutput {
+	return i.ToGetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArray) ToGetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArrayOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArrayOutput)
+}
+
+type GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadata)(nil)).Elem()
+}
+
+func (o GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataOutput) ToGetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataOutput() GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataOutput {
+	return o
+}
+
+func (o GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataOutput) ToGetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataOutput {
+	return o
+}
+
+// The reverse connection endpoint (RCE) IP address for DNS lookups.
+func (o GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataOutput) RceDnsProxyIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadata) string {
+		return v.RceDnsProxyIpAddress
+	}).(pulumi.StringOutput)
+}
+
+// The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+func (o GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataOutput) RceTrafficIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadata) string {
+		return v.RceTrafficIpAddress
+	}).(pulumi.StringOutput)
+}
+
+type GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadata)(nil)).Elem()
+}
+
+func (o GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArrayOutput) ToGetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArrayOutput() GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArrayOutput {
+	return o
+}
+
+func (o GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArrayOutput) ToGetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArrayOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArrayOutput {
+	return o
+}
+
+func (o GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadata {
+		return vs[0].([]GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadata)[vs[1].(int)]
+	}).(GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataOutput)
+}
+
 type GetServiceConnectorsServiceConnectorCollectionItemTarget struct {
 	// The batch rollover size in megabytes.
 	BatchRolloverSizeInMbs int `pulumi:"batchRolloverSizeInMbs"`
@@ -4850,7 +5687,7 @@ type GetServiceConnectorsServiceConnectorCollectionItemTarget struct {
 	EnableFormattedMessaging bool `pulumi:"enableFormattedMessaging"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
 	FunctionId string `pulumi:"functionId"`
-	// The type discriminator.
+	// The type of dimension value: static or evaluated.
 	Kind string `pulumi:"kind"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
 	LogGroupId string `pulumi:"logGroupId"`
@@ -4864,6 +5701,8 @@ type GetServiceConnectorsServiceConnectorCollectionItemTarget struct {
 	Namespace string `pulumi:"namespace"`
 	// The prefix of the objects. Avoid entering confidential information.
 	ObjectNamePrefix string `pulumi:"objectNamePrefix"`
+	// The private endpoint metadata for the connector's source or target.
+	PrivateEndpointMetadatas []GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadata `pulumi:"privateEndpointMetadatas"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
 	StreamId string `pulumi:"streamId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
@@ -4902,7 +5741,7 @@ type GetServiceConnectorsServiceConnectorCollectionItemTargetArgs struct {
 	EnableFormattedMessaging pulumi.BoolInput `pulumi:"enableFormattedMessaging"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
 	FunctionId pulumi.StringInput `pulumi:"functionId"`
-	// The type discriminator.
+	// The type of dimension value: static or evaluated.
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
 	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
@@ -4916,6 +5755,8 @@ type GetServiceConnectorsServiceConnectorCollectionItemTargetArgs struct {
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// The prefix of the objects. Avoid entering confidential information.
 	ObjectNamePrefix pulumi.StringInput `pulumi:"objectNamePrefix"`
+	// The private endpoint metadata for the connector's source or target.
+	PrivateEndpointMetadatas GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArrayInput `pulumi:"privateEndpointMetadatas"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
 	StreamId pulumi.StringInput `pulumi:"streamId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
@@ -5027,7 +5868,7 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemTargetOutput) Function
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemTarget) string { return v.FunctionId }).(pulumi.StringOutput)
 }
 
-// The type discriminator.
+// The type of dimension value: static or evaluated.
 func (o GetServiceConnectorsServiceConnectorCollectionItemTargetOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemTarget) string { return v.Kind }).(pulumi.StringOutput)
 }
@@ -5060,6 +5901,13 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemTargetOutput) Namespac
 // The prefix of the objects. Avoid entering confidential information.
 func (o GetServiceConnectorsServiceConnectorCollectionItemTargetOutput) ObjectNamePrefix() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemTarget) string { return v.ObjectNamePrefix }).(pulumi.StringOutput)
+}
+
+// The private endpoint metadata for the connector's source or target.
+func (o GetServiceConnectorsServiceConnectorCollectionItemTargetOutput) PrivateEndpointMetadatas() GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArrayOutput {
+	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemTarget) []GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadata {
+		return v.PrivateEndpointMetadatas
+	}).(GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
@@ -5201,7 +6049,7 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArrayOu
 }
 
 type GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValue struct {
-	// The type discriminator.
+	// The type of dimension value: static or evaluated.
 	Kind string `pulumi:"kind"`
 	// The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.` and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
 	Path string `pulumi:"path"`
@@ -5221,7 +6069,7 @@ type GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionV
 }
 
 type GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueArgs struct {
-	// The type discriminator.
+	// The type of dimension value: static or evaluated.
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.` and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
 	Path pulumi.StringInput `pulumi:"path"`
@@ -5280,7 +6128,7 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensi
 	return o
 }
 
-// The type discriminator.
+// The type of dimension value: static or evaluated.
 func (o GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValue) string {
 		return v.Kind
@@ -5321,6 +6169,116 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensi
 	}).(GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueOutput)
 }
 
+type GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadata struct {
+	// The reverse connection endpoint (RCE) IP address for DNS lookups.
+	RceDnsProxyIpAddress string `pulumi:"rceDnsProxyIpAddress"`
+	// The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+	RceTrafficIpAddress string `pulumi:"rceTrafficIpAddress"`
+}
+
+// GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArgs and GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataOutput values.
+// You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataInput` via:
+//
+//	GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArgs{...}
+type GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataInput interface {
+	pulumi.Input
+
+	ToGetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataOutput() GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataOutput
+	ToGetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataOutputWithContext(context.Context) GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataOutput
+}
+
+type GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArgs struct {
+	// The reverse connection endpoint (RCE) IP address for DNS lookups.
+	RceDnsProxyIpAddress pulumi.StringInput `pulumi:"rceDnsProxyIpAddress"`
+	// The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+	RceTrafficIpAddress pulumi.StringInput `pulumi:"rceTrafficIpAddress"`
+}
+
+func (GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadata)(nil)).Elem()
+}
+
+func (i GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArgs) ToGetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataOutput() GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataOutput {
+	return i.ToGetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataOutputWithContext(context.Background())
+}
+
+func (i GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArgs) ToGetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataOutput)
+}
+
+// GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArrayInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArray and GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArrayOutput values.
+// You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArrayInput` via:
+//
+//	GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArray{ GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArgs{...} }
+type GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArrayOutput() GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArrayOutput
+	ToGetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArrayOutputWithContext(context.Context) GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArrayOutput
+}
+
+type GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArray []GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataInput
+
+func (GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadata)(nil)).Elem()
+}
+
+func (i GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArray) ToGetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArrayOutput() GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArrayOutput {
+	return i.ToGetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArray) ToGetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArrayOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArrayOutput)
+}
+
+type GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadata)(nil)).Elem()
+}
+
+func (o GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataOutput) ToGetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataOutput() GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataOutput {
+	return o
+}
+
+func (o GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataOutput) ToGetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataOutput {
+	return o
+}
+
+// The reverse connection endpoint (RCE) IP address for DNS lookups.
+func (o GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataOutput) RceDnsProxyIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadata) string {
+		return v.RceDnsProxyIpAddress
+	}).(pulumi.StringOutput)
+}
+
+// The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+func (o GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataOutput) RceTrafficIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadata) string {
+		return v.RceTrafficIpAddress
+	}).(pulumi.StringOutput)
+}
+
+type GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadata)(nil)).Elem()
+}
+
+func (o GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArrayOutput) ToGetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArrayOutput() GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArrayOutput {
+	return o
+}
+
+func (o GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArrayOutput) ToGetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArrayOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArrayOutput {
+	return o
+}
+
+func (o GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadata {
+		return vs[0].([]GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadata)[vs[1].(int)]
+	}).(GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataOutput)
+}
+
 type GetServiceConnectorsServiceConnectorCollectionItemTask struct {
 	// Size limit (kilobytes) for batch sent to invoke the function.
 	BatchSizeInKbs int `pulumi:"batchSizeInKbs"`
@@ -5330,8 +6288,10 @@ type GetServiceConnectorsServiceConnectorCollectionItemTask struct {
 	Condition string `pulumi:"condition"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
 	FunctionId string `pulumi:"functionId"`
-	// The type discriminator.
+	// The type of dimension value: static or evaluated.
 	Kind string `pulumi:"kind"`
+	// The private endpoint metadata for the connector's source or target.
+	PrivateEndpointMetadatas []GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadata `pulumi:"privateEndpointMetadatas"`
 }
 
 // GetServiceConnectorsServiceConnectorCollectionItemTaskInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemTaskArgs and GetServiceConnectorsServiceConnectorCollectionItemTaskOutput values.
@@ -5354,8 +6314,10 @@ type GetServiceConnectorsServiceConnectorCollectionItemTaskArgs struct {
 	Condition pulumi.StringInput `pulumi:"condition"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
 	FunctionId pulumi.StringInput `pulumi:"functionId"`
-	// The type discriminator.
+	// The type of dimension value: static or evaluated.
 	Kind pulumi.StringInput `pulumi:"kind"`
+	// The private endpoint metadata for the connector's source or target.
+	PrivateEndpointMetadatas GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArrayInput `pulumi:"privateEndpointMetadatas"`
 }
 
 func (GetServiceConnectorsServiceConnectorCollectionItemTaskArgs) ElementType() reflect.Type {
@@ -5429,9 +6391,16 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemTaskOutput) FunctionId
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemTask) string { return v.FunctionId }).(pulumi.StringOutput)
 }
 
-// The type discriminator.
+// The type of dimension value: static or evaluated.
 func (o GetServiceConnectorsServiceConnectorCollectionItemTaskOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemTask) string { return v.Kind }).(pulumi.StringOutput)
+}
+
+// The private endpoint metadata for the connector's source or target.
+func (o GetServiceConnectorsServiceConnectorCollectionItemTaskOutput) PrivateEndpointMetadatas() GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArrayOutput {
+	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemTask) []GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadata {
+		return v.PrivateEndpointMetadatas
+	}).(GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArrayOutput)
 }
 
 type GetServiceConnectorsServiceConnectorCollectionItemTaskArrayOutput struct{ *pulumi.OutputState }
@@ -5454,6 +6423,116 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemTaskArrayOutput) Index
 	}).(GetServiceConnectorsServiceConnectorCollectionItemTaskOutput)
 }
 
+type GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadata struct {
+	// The reverse connection endpoint (RCE) IP address for DNS lookups.
+	RceDnsProxyIpAddress string `pulumi:"rceDnsProxyIpAddress"`
+	// The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+	RceTrafficIpAddress string `pulumi:"rceTrafficIpAddress"`
+}
+
+// GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArgs and GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataOutput values.
+// You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataInput` via:
+//
+//	GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArgs{...}
+type GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataInput interface {
+	pulumi.Input
+
+	ToGetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataOutput() GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataOutput
+	ToGetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataOutputWithContext(context.Context) GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataOutput
+}
+
+type GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArgs struct {
+	// The reverse connection endpoint (RCE) IP address for DNS lookups.
+	RceDnsProxyIpAddress pulumi.StringInput `pulumi:"rceDnsProxyIpAddress"`
+	// The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+	RceTrafficIpAddress pulumi.StringInput `pulumi:"rceTrafficIpAddress"`
+}
+
+func (GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadata)(nil)).Elem()
+}
+
+func (i GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArgs) ToGetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataOutput() GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataOutput {
+	return i.ToGetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataOutputWithContext(context.Background())
+}
+
+func (i GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArgs) ToGetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataOutput)
+}
+
+// GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArrayInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArray and GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArrayOutput values.
+// You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArrayInput` via:
+//
+//	GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArray{ GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArgs{...} }
+type GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArrayOutput() GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArrayOutput
+	ToGetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArrayOutputWithContext(context.Context) GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArrayOutput
+}
+
+type GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArray []GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataInput
+
+func (GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadata)(nil)).Elem()
+}
+
+func (i GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArray) ToGetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArrayOutput() GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArrayOutput {
+	return i.ToGetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArray) ToGetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArrayOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArrayOutput)
+}
+
+type GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadata)(nil)).Elem()
+}
+
+func (o GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataOutput) ToGetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataOutput() GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataOutput {
+	return o
+}
+
+func (o GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataOutput) ToGetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataOutput {
+	return o
+}
+
+// The reverse connection endpoint (RCE) IP address for DNS lookups.
+func (o GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataOutput) RceDnsProxyIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadata) string {
+		return v.RceDnsProxyIpAddress
+	}).(pulumi.StringOutput)
+}
+
+// The reverse connection endpoint (RCE) IP address for primary flow of traffic in the subnet.
+func (o GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataOutput) RceTrafficIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadata) string {
+		return v.RceTrafficIpAddress
+	}).(pulumi.StringOutput)
+}
+
+type GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadata)(nil)).Elem()
+}
+
+func (o GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArrayOutput) ToGetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArrayOutput() GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArrayOutput {
+	return o
+}
+
+func (o GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArrayOutput) ToGetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArrayOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArrayOutput {
+	return o
+}
+
+func (o GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadata {
+		return vs[0].([]GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadata)[vs[1].(int)]
+	}).(GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectorSourceInput)(nil)).Elem(), ConnectorSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectorSourcePtrInput)(nil)).Elem(), ConnectorSourceArgs{})
@@ -5468,14 +6547,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceInput)(nil)).Elem(), ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayInput)(nil)).Elem(), ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsInput)(nil)).Elem(), ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConnectorSourcePrivateEndpointMetadataInput)(nil)).Elem(), ConnectorSourcePrivateEndpointMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConnectorSourcePrivateEndpointMetadataArrayInput)(nil)).Elem(), ConnectorSourcePrivateEndpointMetadataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectorTargetInput)(nil)).Elem(), ConnectorTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectorTargetPtrInput)(nil)).Elem(), ConnectorTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectorTargetDimensionInput)(nil)).Elem(), ConnectorTargetDimensionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectorTargetDimensionArrayInput)(nil)).Elem(), ConnectorTargetDimensionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectorTargetDimensionDimensionValueInput)(nil)).Elem(), ConnectorTargetDimensionDimensionValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectorTargetDimensionDimensionValuePtrInput)(nil)).Elem(), ConnectorTargetDimensionDimensionValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConnectorTargetPrivateEndpointMetadataInput)(nil)).Elem(), ConnectorTargetPrivateEndpointMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConnectorTargetPrivateEndpointMetadataArrayInput)(nil)).Elem(), ConnectorTargetPrivateEndpointMetadataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectorTaskInput)(nil)).Elem(), ConnectorTaskArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectorTaskArrayInput)(nil)).Elem(), ConnectorTaskArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConnectorTaskPrivateEndpointMetadataInput)(nil)).Elem(), ConnectorTaskPrivateEndpointMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConnectorTaskPrivateEndpointMetadataArrayInput)(nil)).Elem(), ConnectorTaskPrivateEndpointMetadataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectorPluginsConnectorPluginCollectionInput)(nil)).Elem(), GetConnectorPluginsConnectorPluginCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectorPluginsConnectorPluginCollectionArrayInput)(nil)).Elem(), GetConnectorPluginsConnectorPluginCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectorPluginsConnectorPluginCollectionItemInput)(nil)).Elem(), GetConnectorPluginsConnectorPluginCollectionItemArgs{})
@@ -5496,14 +6581,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayInput)(nil)).Elem(), GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricInput)(nil)).Elem(), GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayInput)(nil)).Elem(), GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorSourcePrivateEndpointMetadataInput)(nil)).Elem(), GetServiceConnectorSourcePrivateEndpointMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorSourcePrivateEndpointMetadataArrayInput)(nil)).Elem(), GetServiceConnectorSourcePrivateEndpointMetadataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorTargetInput)(nil)).Elem(), GetServiceConnectorTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorTargetArrayInput)(nil)).Elem(), GetServiceConnectorTargetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorTargetDimensionInput)(nil)).Elem(), GetServiceConnectorTargetDimensionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorTargetDimensionArrayInput)(nil)).Elem(), GetServiceConnectorTargetDimensionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorTargetDimensionDimensionValueInput)(nil)).Elem(), GetServiceConnectorTargetDimensionDimensionValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorTargetDimensionDimensionValueArrayInput)(nil)).Elem(), GetServiceConnectorTargetDimensionDimensionValueArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorTargetPrivateEndpointMetadataInput)(nil)).Elem(), GetServiceConnectorTargetPrivateEndpointMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorTargetPrivateEndpointMetadataArrayInput)(nil)).Elem(), GetServiceConnectorTargetPrivateEndpointMetadataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorTaskInput)(nil)).Elem(), GetServiceConnectorTaskArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorTaskArrayInput)(nil)).Elem(), GetServiceConnectorTaskArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorTaskPrivateEndpointMetadataInput)(nil)).Elem(), GetServiceConnectorTaskPrivateEndpointMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorTaskPrivateEndpointMetadataArrayInput)(nil)).Elem(), GetServiceConnectorTaskPrivateEndpointMetadataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorsFilterInput)(nil)).Elem(), GetServiceConnectorsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorsFilterArrayInput)(nil)).Elem(), GetServiceConnectorsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionInput)(nil)).Elem(), GetServiceConnectorsServiceConnectorCollectionArgs{})
@@ -5524,14 +6615,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayInput)(nil)).Elem(), GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricInput)(nil)).Elem(), GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayInput)(nil)).Elem(), GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataInput)(nil)).Elem(), GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArrayInput)(nil)).Elem(), GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemTargetInput)(nil)).Elem(), GetServiceConnectorsServiceConnectorCollectionItemTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemTargetArrayInput)(nil)).Elem(), GetServiceConnectorsServiceConnectorCollectionItemTargetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionInput)(nil)).Elem(), GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArrayInput)(nil)).Elem(), GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueInput)(nil)).Elem(), GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueArrayInput)(nil)).Elem(), GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataInput)(nil)).Elem(), GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArrayInput)(nil)).Elem(), GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemTaskInput)(nil)).Elem(), GetServiceConnectorsServiceConnectorCollectionItemTaskArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemTaskArrayInput)(nil)).Elem(), GetServiceConnectorsServiceConnectorCollectionItemTaskArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataInput)(nil)).Elem(), GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArrayInput)(nil)).Elem(), GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArray{})
 	pulumi.RegisterOutputType(ConnectorSourceOutput{})
 	pulumi.RegisterOutputType(ConnectorSourcePtrOutput{})
 	pulumi.RegisterOutputType(ConnectorSourceCursorOutput{})
@@ -5545,14 +6642,20 @@ func init() {
 	pulumi.RegisterOutputType(ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceOutput{})
 	pulumi.RegisterOutputType(ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayOutput{})
 	pulumi.RegisterOutputType(ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsOutput{})
+	pulumi.RegisterOutputType(ConnectorSourcePrivateEndpointMetadataOutput{})
+	pulumi.RegisterOutputType(ConnectorSourcePrivateEndpointMetadataArrayOutput{})
 	pulumi.RegisterOutputType(ConnectorTargetOutput{})
 	pulumi.RegisterOutputType(ConnectorTargetPtrOutput{})
 	pulumi.RegisterOutputType(ConnectorTargetDimensionOutput{})
 	pulumi.RegisterOutputType(ConnectorTargetDimensionArrayOutput{})
 	pulumi.RegisterOutputType(ConnectorTargetDimensionDimensionValueOutput{})
 	pulumi.RegisterOutputType(ConnectorTargetDimensionDimensionValuePtrOutput{})
+	pulumi.RegisterOutputType(ConnectorTargetPrivateEndpointMetadataOutput{})
+	pulumi.RegisterOutputType(ConnectorTargetPrivateEndpointMetadataArrayOutput{})
 	pulumi.RegisterOutputType(ConnectorTaskOutput{})
 	pulumi.RegisterOutputType(ConnectorTaskArrayOutput{})
+	pulumi.RegisterOutputType(ConnectorTaskPrivateEndpointMetadataOutput{})
+	pulumi.RegisterOutputType(ConnectorTaskPrivateEndpointMetadataArrayOutput{})
 	pulumi.RegisterOutputType(GetConnectorPluginsConnectorPluginCollectionOutput{})
 	pulumi.RegisterOutputType(GetConnectorPluginsConnectorPluginCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetConnectorPluginsConnectorPluginCollectionItemOutput{})
@@ -5573,14 +6676,20 @@ func init() {
 	pulumi.RegisterOutputType(GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput{})
 	pulumi.RegisterOutputType(GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput{})
 	pulumi.RegisterOutputType(GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput{})
+	pulumi.RegisterOutputType(GetServiceConnectorSourcePrivateEndpointMetadataOutput{})
+	pulumi.RegisterOutputType(GetServiceConnectorSourcePrivateEndpointMetadataArrayOutput{})
 	pulumi.RegisterOutputType(GetServiceConnectorTargetOutput{})
 	pulumi.RegisterOutputType(GetServiceConnectorTargetArrayOutput{})
 	pulumi.RegisterOutputType(GetServiceConnectorTargetDimensionOutput{})
 	pulumi.RegisterOutputType(GetServiceConnectorTargetDimensionArrayOutput{})
 	pulumi.RegisterOutputType(GetServiceConnectorTargetDimensionDimensionValueOutput{})
 	pulumi.RegisterOutputType(GetServiceConnectorTargetDimensionDimensionValueArrayOutput{})
+	pulumi.RegisterOutputType(GetServiceConnectorTargetPrivateEndpointMetadataOutput{})
+	pulumi.RegisterOutputType(GetServiceConnectorTargetPrivateEndpointMetadataArrayOutput{})
 	pulumi.RegisterOutputType(GetServiceConnectorTaskOutput{})
 	pulumi.RegisterOutputType(GetServiceConnectorTaskArrayOutput{})
+	pulumi.RegisterOutputType(GetServiceConnectorTaskPrivateEndpointMetadataOutput{})
+	pulumi.RegisterOutputType(GetServiceConnectorTaskPrivateEndpointMetadataArrayOutput{})
 	pulumi.RegisterOutputType(GetServiceConnectorsFilterOutput{})
 	pulumi.RegisterOutputType(GetServiceConnectorsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetServiceConnectorsServiceConnectorCollectionOutput{})
@@ -5601,12 +6710,18 @@ func init() {
 	pulumi.RegisterOutputType(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput{})
 	pulumi.RegisterOutputType(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput{})
 	pulumi.RegisterOutputType(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput{})
+	pulumi.RegisterOutputType(GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataOutput{})
+	pulumi.RegisterOutputType(GetServiceConnectorsServiceConnectorCollectionItemSourcePrivateEndpointMetadataArrayOutput{})
 	pulumi.RegisterOutputType(GetServiceConnectorsServiceConnectorCollectionItemTargetOutput{})
 	pulumi.RegisterOutputType(GetServiceConnectorsServiceConnectorCollectionItemTargetArrayOutput{})
 	pulumi.RegisterOutputType(GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionOutput{})
 	pulumi.RegisterOutputType(GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArrayOutput{})
 	pulumi.RegisterOutputType(GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueOutput{})
 	pulumi.RegisterOutputType(GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueArrayOutput{})
+	pulumi.RegisterOutputType(GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataOutput{})
+	pulumi.RegisterOutputType(GetServiceConnectorsServiceConnectorCollectionItemTargetPrivateEndpointMetadataArrayOutput{})
 	pulumi.RegisterOutputType(GetServiceConnectorsServiceConnectorCollectionItemTaskOutput{})
 	pulumi.RegisterOutputType(GetServiceConnectorsServiceConnectorCollectionItemTaskArrayOutput{})
+	pulumi.RegisterOutputType(GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataOutput{})
+	pulumi.RegisterOutputType(GetServiceConnectorsServiceConnectorCollectionItemTaskPrivateEndpointMetadataArrayOutput{})
 }

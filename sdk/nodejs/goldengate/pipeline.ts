@@ -96,6 +96,10 @@ export class Pipeline extends pulumi.CustomResource {
      */
     public /*out*/ readonly mappingRules!: pulumi.Output<outputs.GoldenGate.PipelineMappingRule[]>;
     /**
+     * Information regarding the pipeline diagnostic collection
+     */
+    public /*out*/ readonly pipelineDiagnosticDatas!: pulumi.Output<outputs.GoldenGate.PipelinePipelineDiagnosticData[]>;
+    /**
      * (Updatable) Required pipeline options to configure the replication process (Extract or Replicat).
      */
     public readonly processOptions!: pulumi.Output<outputs.GoldenGate.PipelineProcessOptions>;
@@ -157,6 +161,7 @@ export class Pipeline extends pulumi.CustomResource {
             resourceInputs["lifecycleSubState"] = state ? state.lifecycleSubState : undefined;
             resourceInputs["locks"] = state ? state.locks : undefined;
             resourceInputs["mappingRules"] = state ? state.mappingRules : undefined;
+            resourceInputs["pipelineDiagnosticDatas"] = state ? state.pipelineDiagnosticDatas : undefined;
             resourceInputs["processOptions"] = state ? state.processOptions : undefined;
             resourceInputs["recipeType"] = state ? state.recipeType : undefined;
             resourceInputs["sourceConnectionDetails"] = state ? state.sourceConnectionDetails : undefined;
@@ -202,6 +207,7 @@ export class Pipeline extends pulumi.CustomResource {
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["lifecycleSubState"] = undefined /*out*/;
             resourceInputs["mappingRules"] = undefined /*out*/;
+            resourceInputs["pipelineDiagnosticDatas"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -265,6 +271,10 @@ export interface PipelineState {
      * Mapping for source/target schema/tables for the pipeline data replication.
      */
     mappingRules?: pulumi.Input<pulumi.Input<inputs.GoldenGate.PipelineMappingRule>[]>;
+    /**
+     * Information regarding the pipeline diagnostic collection
+     */
+    pipelineDiagnosticDatas?: pulumi.Input<pulumi.Input<inputs.GoldenGate.PipelinePipelineDiagnosticData>[]>;
     /**
      * (Updatable) Required pipeline options to configure the replication process (Extract or Replicat).
      */

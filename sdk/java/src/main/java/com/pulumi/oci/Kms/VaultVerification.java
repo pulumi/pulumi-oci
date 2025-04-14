@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Kms.VaultVerificationArgs;
 import com.pulumi.oci.Kms.inputs.VaultVerificationState;
+import com.pulumi.oci.Kms.outputs.VaultVerificationReplicaVaultMetadata;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
 import javax.annotation.Nullable;
@@ -76,6 +77,12 @@ public class VaultVerification extends com.pulumi.resources.CustomResource {
      */
     public Output<String> replicaRegion() {
         return this.replicaRegion;
+    }
+    @Export(name="replicaVaultMetadata", refs={VaultVerificationReplicaVaultMetadata.class}, tree="[0]")
+    private Output<VaultVerificationReplicaVaultMetadata> replicaVaultMetadata;
+
+    public Output<VaultVerificationReplicaVaultMetadata> replicaVaultMetadata() {
+        return this.replicaVaultMetadata;
     }
     /**
      * The OCID of the primary vault to create replica from.

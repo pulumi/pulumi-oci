@@ -8,6 +8,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Sch.outputs.ConnectorSourceCursor;
 import com.pulumi.oci.Sch.outputs.ConnectorSourceLogSource;
 import com.pulumi.oci.Sch.outputs.ConnectorSourceMonitoringSource;
+import com.pulumi.oci.Sch.outputs.ConnectorSourcePrivateEndpointMetadata;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -46,6 +47,11 @@ public final class ConnectorSource {
      * 
      */
     private @Nullable String pluginName;
+    /**
+     * @return The private endpoint metadata for the connector&#39;s source or target.
+     * 
+     */
+    private @Nullable List<ConnectorSourcePrivateEndpointMetadata> privateEndpointMetadatas;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
      * 
@@ -96,6 +102,13 @@ public final class ConnectorSource {
         return Optional.ofNullable(this.pluginName);
     }
     /**
+     * @return The private endpoint metadata for the connector&#39;s source or target.
+     * 
+     */
+    public List<ConnectorSourcePrivateEndpointMetadata> privateEndpointMetadatas() {
+        return this.privateEndpointMetadatas == null ? List.of() : this.privateEndpointMetadatas;
+    }
+    /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
      * 
      */
@@ -118,6 +131,7 @@ public final class ConnectorSource {
         private @Nullable List<ConnectorSourceLogSource> logSources;
         private @Nullable List<ConnectorSourceMonitoringSource> monitoringSources;
         private @Nullable String pluginName;
+        private @Nullable List<ConnectorSourcePrivateEndpointMetadata> privateEndpointMetadatas;
         private @Nullable String streamId;
         public Builder() {}
         public Builder(ConnectorSource defaults) {
@@ -128,6 +142,7 @@ public final class ConnectorSource {
     	      this.logSources = defaults.logSources;
     	      this.monitoringSources = defaults.monitoringSources;
     	      this.pluginName = defaults.pluginName;
+    	      this.privateEndpointMetadatas = defaults.privateEndpointMetadatas;
     	      this.streamId = defaults.streamId;
         }
 
@@ -176,6 +191,15 @@ public final class ConnectorSource {
             return this;
         }
         @CustomType.Setter
+        public Builder privateEndpointMetadatas(@Nullable List<ConnectorSourcePrivateEndpointMetadata> privateEndpointMetadatas) {
+
+            this.privateEndpointMetadatas = privateEndpointMetadatas;
+            return this;
+        }
+        public Builder privateEndpointMetadatas(ConnectorSourcePrivateEndpointMetadata... privateEndpointMetadatas) {
+            return privateEndpointMetadatas(List.of(privateEndpointMetadatas));
+        }
+        @CustomType.Setter
         public Builder streamId(@Nullable String streamId) {
 
             this.streamId = streamId;
@@ -189,6 +213,7 @@ public final class ConnectorSource {
             _resultValue.logSources = logSources;
             _resultValue.monitoringSources = monitoringSources;
             _resultValue.pluginName = pluginName;
+            _resultValue.privateEndpointMetadatas = privateEndpointMetadatas;
             _resultValue.streamId = streamId;
             return _resultValue;
         }

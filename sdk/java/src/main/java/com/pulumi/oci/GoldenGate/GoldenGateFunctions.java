@@ -4905,7 +4905,7 @@ public final class GoldenGateFunctions {
     /**
      * This data source provides the list of Pipeline Running Processes in Oracle Cloud Infrastructure Golden Gate service.
      * 
-     * Retrieves a Pipeline&#39;s running replication process&#39;s status like extracts/replicats.
+     * Retrieves a Pipeline&#39;s running replication process&#39;s status like Capture/Apply.
      * 
      * ## Example Usage
      * 
@@ -4949,7 +4949,7 @@ public final class GoldenGateFunctions {
     /**
      * This data source provides the list of Pipeline Running Processes in Oracle Cloud Infrastructure Golden Gate service.
      * 
-     * Retrieves a Pipeline&#39;s running replication process&#39;s status like extracts/replicats.
+     * Retrieves a Pipeline&#39;s running replication process&#39;s status like Capture/Apply.
      * 
      * ## Example Usage
      * 
@@ -4993,7 +4993,7 @@ public final class GoldenGateFunctions {
     /**
      * This data source provides the list of Pipeline Running Processes in Oracle Cloud Infrastructure Golden Gate service.
      * 
-     * Retrieves a Pipeline&#39;s running replication process&#39;s status like extracts/replicats.
+     * Retrieves a Pipeline&#39;s running replication process&#39;s status like Capture/Apply.
      * 
      * ## Example Usage
      * 
@@ -5037,7 +5037,7 @@ public final class GoldenGateFunctions {
     /**
      * This data source provides the list of Pipeline Running Processes in Oracle Cloud Infrastructure Golden Gate service.
      * 
-     * Retrieves a Pipeline&#39;s running replication process&#39;s status like extracts/replicats.
+     * Retrieves a Pipeline&#39;s running replication process&#39;s status like Capture/Apply.
      * 
      * ## Example Usage
      * 
@@ -5081,7 +5081,7 @@ public final class GoldenGateFunctions {
     /**
      * This data source provides the list of Pipeline Running Processes in Oracle Cloud Infrastructure Golden Gate service.
      * 
-     * Retrieves a Pipeline&#39;s running replication process&#39;s status like extracts/replicats.
+     * Retrieves a Pipeline&#39;s running replication process&#39;s status like Capture/Apply.
      * 
      * ## Example Usage
      * 

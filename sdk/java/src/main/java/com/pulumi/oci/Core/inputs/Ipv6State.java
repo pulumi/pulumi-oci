@@ -92,6 +92,21 @@ public final class Ipv6State extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+     * 
+     */
+    @Import(name="ipState")
+    private @Nullable Output<String> ipState;
+
+    /**
+     * @return State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+     * 
+     */
+    public Optional<Output<String>> ipState() {
+        return Optional.ofNullable(this.ipState);
+    }
+
+    /**
      * The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
      * 
      */
@@ -107,14 +122,33 @@ public final class Ipv6State extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+     * (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+     * * Ephemeral
+     * * Reserved
+     * 
+     */
+    @Import(name="lifetime")
+    private @Nullable Output<String> lifetime;
+
+    /**
+     * @return (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+     * * Ephemeral
+     * * Reserved
+     * 
+     */
+    public Optional<Output<String>> lifetime() {
+        return Optional.ofNullable(this.lifetime);
+    }
+
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      * 
      */
     @Import(name="routeTableId")
     private @Nullable Output<String> routeTableId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      * 
      */
     public Optional<Output<String>> routeTableId() {
@@ -137,14 +171,14 @@ public final class Ipv6State extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the IPv6 is to be drawn. The IP address, *if supplied*, must be valid for the given subnet, only valid for reserved IPs currently.
      * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the IPv6 is to be drawn. The IP address, *if supplied*, must be valid for the given subnet, only valid for reserved IPs currently.
      * 
      */
     public Optional<Output<String>> subnetId() {
@@ -195,7 +229,9 @@ public final class Ipv6State extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.ipAddress = $.ipAddress;
+        this.ipState = $.ipState;
         this.ipv6subnetCidr = $.ipv6subnetCidr;
+        this.lifetime = $.lifetime;
         this.routeTableId = $.routeTableId;
         this.state = $.state;
         this.subnetId = $.subnetId;
@@ -327,6 +363,27 @@ public final class Ipv6State extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param ipState State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipState(@Nullable Output<String> ipState) {
+            $.ipState = ipState;
+            return this;
+        }
+
+        /**
+         * @param ipState State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipState(String ipState) {
+            return ipState(Output.of(ipState));
+        }
+
+        /**
          * @param ipv6subnetCidr The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
          * 
          * @return builder
@@ -348,7 +405,32 @@ public final class Ipv6State extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param routeTableId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+         * @param lifetime (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+         * * Ephemeral
+         * * Reserved
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifetime(@Nullable Output<String> lifetime) {
+            $.lifetime = lifetime;
+            return this;
+        }
+
+        /**
+         * @param lifetime (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+         * * Ephemeral
+         * * Reserved
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifetime(String lifetime) {
+            return lifetime(Output.of(lifetime));
+        }
+
+        /**
+         * @param routeTableId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
          * 
          * @return builder
          * 
@@ -359,7 +441,7 @@ public final class Ipv6State extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param routeTableId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+         * @param routeTableId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
          * 
          * @return builder
          * 
@@ -390,7 +472,7 @@ public final class Ipv6State extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+         * @param subnetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the IPv6 is to be drawn. The IP address, *if supplied*, must be valid for the given subnet, only valid for reserved IPs currently.
          * 
          * @return builder
          * 
@@ -401,7 +483,7 @@ public final class Ipv6State extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+         * @param subnetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the IPv6 is to be drawn. The IP address, *if supplied*, must be valid for the given subnet, only valid for reserved IPs currently.
          * 
          * @return builder
          * 

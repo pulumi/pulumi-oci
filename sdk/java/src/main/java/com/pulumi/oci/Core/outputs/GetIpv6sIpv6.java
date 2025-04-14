@@ -41,7 +41,9 @@ public final class GetIpv6sIpv6 {
      * 
      */
     private String ipAddress;
+    private String ipState;
     private String ipv6subnetCidr;
+    private String lifetime;
     private String routeTableId;
     /**
      * @return The IPv6&#39;s current state.
@@ -107,8 +109,14 @@ public final class GetIpv6sIpv6 {
     public String ipAddress() {
         return this.ipAddress;
     }
+    public String ipState() {
+        return this.ipState;
+    }
     public String ipv6subnetCidr() {
         return this.ipv6subnetCidr;
+    }
+    public String lifetime() {
+        return this.lifetime;
     }
     public String routeTableId() {
         return this.routeTableId;
@@ -157,7 +165,9 @@ public final class GetIpv6sIpv6 {
         private Map<String,String> freeformTags;
         private String id;
         private String ipAddress;
+        private String ipState;
         private String ipv6subnetCidr;
+        private String lifetime;
         private String routeTableId;
         private String state;
         private String subnetId;
@@ -172,7 +182,9 @@ public final class GetIpv6sIpv6 {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.ipAddress = defaults.ipAddress;
+    	      this.ipState = defaults.ipState;
     	      this.ipv6subnetCidr = defaults.ipv6subnetCidr;
+    	      this.lifetime = defaults.lifetime;
     	      this.routeTableId = defaults.routeTableId;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
@@ -229,11 +241,27 @@ public final class GetIpv6sIpv6 {
             return this;
         }
         @CustomType.Setter
+        public Builder ipState(String ipState) {
+            if (ipState == null) {
+              throw new MissingRequiredPropertyException("GetIpv6sIpv6", "ipState");
+            }
+            this.ipState = ipState;
+            return this;
+        }
+        @CustomType.Setter
         public Builder ipv6subnetCidr(String ipv6subnetCidr) {
             if (ipv6subnetCidr == null) {
               throw new MissingRequiredPropertyException("GetIpv6sIpv6", "ipv6subnetCidr");
             }
             this.ipv6subnetCidr = ipv6subnetCidr;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder lifetime(String lifetime) {
+            if (lifetime == null) {
+              throw new MissingRequiredPropertyException("GetIpv6sIpv6", "lifetime");
+            }
+            this.lifetime = lifetime;
             return this;
         }
         @CustomType.Setter
@@ -284,7 +312,9 @@ public final class GetIpv6sIpv6 {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.ipAddress = ipAddress;
+            _resultValue.ipState = ipState;
             _resultValue.ipv6subnetCidr = ipv6subnetCidr;
+            _resultValue.lifetime = lifetime;
             _resultValue.routeTableId = routeTableId;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;

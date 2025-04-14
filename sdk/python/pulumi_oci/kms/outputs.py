@@ -34,6 +34,7 @@ __all__ = [
     'VaultReplicaDetail',
     'VaultRestoreFromFile',
     'VaultRestoreFromObjectStore',
+    'VaultVerificationReplicaVaultMetadata',
     'GetEkmsPrivateEndpointsEkmsPrivateEndpointResult',
     'GetEkmsPrivateEndpointsFilterResult',
     'GetKeyAutoKeyRotationDetailResult',
@@ -1058,6 +1059,53 @@ class VaultRestoreFromObjectStore(dict):
         (Updatable) Pre-authenticated-request-uri of the backup* `restore_trigger` - (Optional) (Updatable) An optional property when flipped triggers restore from restore option provided in config file.
         """
         return pulumi.get(self, "uri")
+
+
+@pulumi.output_type
+class VaultVerificationReplicaVaultMetadata(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "idcsAccountNameUrl":
+            suggest = "idcs_account_name_url"
+        elif key == "privateEndpointId":
+            suggest = "private_endpoint_id"
+        elif key == "vaultType":
+            suggest = "vault_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VaultVerificationReplicaVaultMetadata. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VaultVerificationReplicaVaultMetadata.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VaultVerificationReplicaVaultMetadata.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 idcs_account_name_url: builtins.str,
+                 private_endpoint_id: builtins.str,
+                 vault_type: builtins.str):
+        pulumi.set(__self__, "idcs_account_name_url", idcs_account_name_url)
+        pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+        pulumi.set(__self__, "vault_type", vault_type)
+
+    @property
+    @pulumi.getter(name="idcsAccountNameUrl")
+    def idcs_account_name_url(self) -> builtins.str:
+        return pulumi.get(self, "idcs_account_name_url")
+
+    @property
+    @pulumi.getter(name="privateEndpointId")
+    def private_endpoint_id(self) -> builtins.str:
+        return pulumi.get(self, "private_endpoint_id")
+
+    @property
+    @pulumi.getter(name="vaultType")
+    def vault_type(self) -> builtins.str:
+        return pulumi.get(self, "vault_type")
 
 
 @pulumi.output_type

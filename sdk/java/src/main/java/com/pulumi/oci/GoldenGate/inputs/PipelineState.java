@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.GoldenGate.inputs.PipelineLockArgs;
 import com.pulumi.oci.GoldenGate.inputs.PipelineMappingRuleArgs;
+import com.pulumi.oci.GoldenGate.inputs.PipelinePipelineDiagnosticDataArgs;
 import com.pulumi.oci.GoldenGate.inputs.PipelineProcessOptionsArgs;
 import com.pulumi.oci.GoldenGate.inputs.PipelineSourceConnectionDetailsArgs;
 import com.pulumi.oci.GoldenGate.inputs.PipelineTargetConnectionDetailsArgs;
@@ -205,6 +206,21 @@ public final class PipelineState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Information regarding the pipeline diagnostic collection
+     * 
+     */
+    @Import(name="pipelineDiagnosticDatas")
+    private @Nullable Output<List<PipelinePipelineDiagnosticDataArgs>> pipelineDiagnosticDatas;
+
+    /**
+     * @return Information regarding the pipeline diagnostic collection
+     * 
+     */
+    public Optional<Output<List<PipelinePipelineDiagnosticDataArgs>>> pipelineDiagnosticDatas() {
+        return Optional.ofNullable(this.pipelineDiagnosticDatas);
+    }
+
+    /**
      * (Updatable) Required pipeline options to configure the replication process (Extract or Replicat).
      * 
      */
@@ -354,6 +370,7 @@ public final class PipelineState extends com.pulumi.resources.ResourceArgs {
         this.lifecycleSubState = $.lifecycleSubState;
         this.locks = $.locks;
         this.mappingRules = $.mappingRules;
+        this.pipelineDiagnosticDatas = $.pipelineDiagnosticDatas;
         this.processOptions = $.processOptions;
         this.recipeType = $.recipeType;
         this.sourceConnectionDetails = $.sourceConnectionDetails;
@@ -653,6 +670,37 @@ public final class PipelineState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder mappingRules(PipelineMappingRuleArgs... mappingRules) {
             return mappingRules(List.of(mappingRules));
+        }
+
+        /**
+         * @param pipelineDiagnosticDatas Information regarding the pipeline diagnostic collection
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pipelineDiagnosticDatas(@Nullable Output<List<PipelinePipelineDiagnosticDataArgs>> pipelineDiagnosticDatas) {
+            $.pipelineDiagnosticDatas = pipelineDiagnosticDatas;
+            return this;
+        }
+
+        /**
+         * @param pipelineDiagnosticDatas Information regarding the pipeline diagnostic collection
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pipelineDiagnosticDatas(List<PipelinePipelineDiagnosticDataArgs> pipelineDiagnosticDatas) {
+            return pipelineDiagnosticDatas(Output.of(pipelineDiagnosticDatas));
+        }
+
+        /**
+         * @param pipelineDiagnosticDatas Information regarding the pipeline diagnostic collection
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pipelineDiagnosticDatas(PipelinePipelineDiagnosticDataArgs... pipelineDiagnosticDatas) {
+            return pipelineDiagnosticDatas(List.of(pipelineDiagnosticDatas));
         }
 
         /**

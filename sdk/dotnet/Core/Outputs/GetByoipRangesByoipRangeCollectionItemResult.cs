@@ -41,6 +41,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource.
         /// </summary>
         public readonly string Id;
+        public readonly string IpAnycastId;
         /// <summary>
         /// The IPv6 prefix being imported to the Oracle cloud. This prefix must be /48 or larger, and can be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix can be also assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a fixed /64 in size.
         /// </summary>
@@ -49,6 +50,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// The `ByoipRange` resource's current status.
         /// </summary>
         public readonly string LifecycleDetails;
+        public readonly string MonitorIp;
         /// <summary>
         /// Information about the origin asn.
         /// </summary>
@@ -94,9 +96,13 @@ namespace Pulumi.Oci.Core.Outputs
 
             string id,
 
+            string ipAnycastId,
+
             string ipv6cidrBlock,
 
             string lifecycleDetails,
+
+            string monitorIp,
 
             ImmutableArray<Outputs.GetByoipRangesByoipRangeCollectionItemOriginAsnResult> originAsns,
 
@@ -119,8 +125,10 @@ namespace Pulumi.Oci.Core.Outputs
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            IpAnycastId = ipAnycastId;
             Ipv6cidrBlock = ipv6cidrBlock;
             LifecycleDetails = lifecycleDetails;
+            MonitorIp = monitorIp;
             OriginAsns = originAsns;
             State = state;
             TimeAdvertised = timeAdvertised;

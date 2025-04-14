@@ -13852,7 +13852,9 @@ type GetIpv6sIpv6 struct {
 	Id string `pulumi:"id"`
 	// An IP address. This could be either IPv4 or IPv6, depending on the resource. Example: `10.0.3.3`
 	IpAddress      string `pulumi:"ipAddress"`
+	IpState        string `pulumi:"ipState"`
 	Ipv6subnetCidr string `pulumi:"ipv6subnetCidr"`
+	Lifetime       string `pulumi:"lifetime"`
 	RouteTableId   string `pulumi:"routeTableId"`
 	// The IPv6's current state.
 	State string `pulumi:"state"`
@@ -13888,7 +13890,9 @@ type GetIpv6sIpv6Args struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// An IP address. This could be either IPv4 or IPv6, depending on the resource. Example: `10.0.3.3`
 	IpAddress      pulumi.StringInput `pulumi:"ipAddress"`
+	IpState        pulumi.StringInput `pulumi:"ipState"`
 	Ipv6subnetCidr pulumi.StringInput `pulumi:"ipv6subnetCidr"`
+	Lifetime       pulumi.StringInput `pulumi:"lifetime"`
 	RouteTableId   pulumi.StringInput `pulumi:"routeTableId"`
 	// The IPv6's current state.
 	State pulumi.StringInput `pulumi:"state"`
@@ -13981,8 +13985,16 @@ func (o GetIpv6sIpv6Output) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIpv6sIpv6) string { return v.IpAddress }).(pulumi.StringOutput)
 }
 
+func (o GetIpv6sIpv6Output) IpState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpv6sIpv6) string { return v.IpState }).(pulumi.StringOutput)
+}
+
 func (o GetIpv6sIpv6Output) Ipv6subnetCidr() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIpv6sIpv6) string { return v.Ipv6subnetCidr }).(pulumi.StringOutput)
+}
+
+func (o GetIpv6sIpv6Output) Lifetime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpv6sIpv6) string { return v.Lifetime }).(pulumi.StringOutput)
 }
 
 func (o GetIpv6sIpv6Output) RouteTableId() pulumi.StringOutput {
@@ -16807,10 +16819,16 @@ type GetPrivateIpsPrivateIp struct {
 	Id string `pulumi:"id"`
 	// An IP address. This could be either IPv4 or IPv6, depending on the resource. Example: `10.0.3.3`
 	IpAddress string `pulumi:"ipAddress"`
+	// State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise AVAILABLE
+	IpState string `pulumi:"ipState"`
 	// Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
-	IsPrimary bool `pulumi:"isPrimary"`
-	// true if the IP is reserved and can exist detached from vnic
-	IsReserved   bool   `pulumi:"isReserved"`
+	IsPrimary  bool `pulumi:"isPrimary"`
+	IsReserved bool `pulumi:"isReserved"`
+	// Lifetime of the IP address. There are two types of IPs:
+	// * Ephemeral
+	// * Reserved
+	Lifetime string `pulumi:"lifetime"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
 	RouteTableId string `pulumi:"routeTableId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
 	SubnetId string `pulumi:"subnetId"`
@@ -16850,10 +16868,16 @@ type GetPrivateIpsPrivateIpArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// An IP address. This could be either IPv4 or IPv6, depending on the resource. Example: `10.0.3.3`
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	// State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise AVAILABLE
+	IpState pulumi.StringInput `pulumi:"ipState"`
 	// Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
-	IsPrimary pulumi.BoolInput `pulumi:"isPrimary"`
-	// true if the IP is reserved and can exist detached from vnic
-	IsReserved   pulumi.BoolInput   `pulumi:"isReserved"`
+	IsPrimary  pulumi.BoolInput `pulumi:"isPrimary"`
+	IsReserved pulumi.BoolInput `pulumi:"isReserved"`
+	// Lifetime of the IP address. There are two types of IPs:
+	// * Ephemeral
+	// * Reserved
+	Lifetime pulumi.StringInput `pulumi:"lifetime"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
 	RouteTableId pulumi.StringInput `pulumi:"routeTableId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
@@ -16956,16 +16980,28 @@ func (o GetPrivateIpsPrivateIpOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateIpsPrivateIp) string { return v.IpAddress }).(pulumi.StringOutput)
 }
 
+// State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise AVAILABLE
+func (o GetPrivateIpsPrivateIpOutput) IpState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateIpsPrivateIp) string { return v.IpState }).(pulumi.StringOutput)
+}
+
 // Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
 func (o GetPrivateIpsPrivateIpOutput) IsPrimary() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetPrivateIpsPrivateIp) bool { return v.IsPrimary }).(pulumi.BoolOutput)
 }
 
-// true if the IP is reserved and can exist detached from vnic
 func (o GetPrivateIpsPrivateIpOutput) IsReserved() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetPrivateIpsPrivateIp) bool { return v.IsReserved }).(pulumi.BoolOutput)
 }
 
+// Lifetime of the IP address. There are two types of IPs:
+// * Ephemeral
+// * Reserved
+func (o GetPrivateIpsPrivateIpOutput) Lifetime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateIpsPrivateIp) string { return v.Lifetime }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
 func (o GetPrivateIpsPrivateIpOutput) RouteTableId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateIpsPrivateIp) string { return v.RouteTableId }).(pulumi.StringOutput)
 }

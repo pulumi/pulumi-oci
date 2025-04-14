@@ -95,6 +95,10 @@ export interface GetPipelineResult {
      * Mapping for source/target schema/tables for the pipeline data replication.
      */
     readonly mappingRules: outputs.GoldenGate.GetPipelineMappingRule[];
+    /**
+     * Information regarding the pipeline diagnostic collection
+     */
+    readonly pipelineDiagnosticDatas: outputs.GoldenGate.GetPipelinePipelineDiagnosticData[];
     readonly pipelineId: string;
     /**
      * Required pipeline options to configure the replication process (Extract or Replicat).

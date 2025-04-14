@@ -46,13 +46,23 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string IpAddress;
         /// <summary>
+        /// State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise AVAILABLE
+        /// </summary>
+        public readonly string IpState;
+        /// <summary>
         /// Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
         /// </summary>
         public readonly bool IsPrimary;
-        /// <summary>
-        /// true if the IP is reserved and can exist detached from vnic
-        /// </summary>
         public readonly bool IsReserved;
+        /// <summary>
+        /// Lifetime of the IP address. There are two types of IPs:
+        /// * Ephemeral
+        /// * Reserved
+        /// </summary>
+        public readonly string Lifetime;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
+        /// </summary>
         public readonly string RouteTableId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
@@ -89,9 +99,13 @@ namespace Pulumi.Oci.Core.Outputs
 
             string ipAddress,
 
+            string ipState,
+
             bool isPrimary,
 
             bool isReserved,
+
+            string lifetime,
 
             string routeTableId,
 
@@ -111,8 +125,10 @@ namespace Pulumi.Oci.Core.Outputs
             HostnameLabel = hostnameLabel;
             Id = id;
             IpAddress = ipAddress;
+            IpState = ipState;
             IsPrimary = isPrimary;
             IsReserved = isReserved;
+            Lifetime = lifetime;
             RouteTableId = routeTableId;
             SubnetId = subnetId;
             TimeCreated = timeCreated;

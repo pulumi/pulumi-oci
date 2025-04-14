@@ -28,7 +28,7 @@ class GetPipelineResult:
     """
     A collection of values returned by getPipeline.
     """
-    def __init__(__self__, compartment_id=None, cpu_core_count=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_auto_scaling_enabled=None, license_model=None, lifecycle_details=None, lifecycle_sub_state=None, locks=None, mapping_rules=None, pipeline_id=None, process_options=None, recipe_type=None, source_connection_details=None, state=None, system_tags=None, target_connection_details=None, time_created=None, time_last_recorded=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, cpu_core_count=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_auto_scaling_enabled=None, license_model=None, lifecycle_details=None, lifecycle_sub_state=None, locks=None, mapping_rules=None, pipeline_diagnostic_datas=None, pipeline_id=None, process_options=None, recipe_type=None, source_connection_details=None, state=None, system_tags=None, target_connection_details=None, time_created=None, time_last_recorded=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -68,6 +68,9 @@ class GetPipelineResult:
         if mapping_rules and not isinstance(mapping_rules, list):
             raise TypeError("Expected argument 'mapping_rules' to be a list")
         pulumi.set(__self__, "mapping_rules", mapping_rules)
+        if pipeline_diagnostic_datas and not isinstance(pipeline_diagnostic_datas, list):
+            raise TypeError("Expected argument 'pipeline_diagnostic_datas' to be a list")
+        pulumi.set(__self__, "pipeline_diagnostic_datas", pipeline_diagnostic_datas)
         if pipeline_id and not isinstance(pipeline_id, str):
             raise TypeError("Expected argument 'pipeline_id' to be a str")
         pulumi.set(__self__, "pipeline_id", pipeline_id)
@@ -204,6 +207,14 @@ class GetPipelineResult:
         return pulumi.get(self, "mapping_rules")
 
     @property
+    @pulumi.getter(name="pipelineDiagnosticDatas")
+    def pipeline_diagnostic_datas(self) -> Sequence['outputs.GetPipelinePipelineDiagnosticDataResult']:
+        """
+        Information regarding the pipeline diagnostic collection
+        """
+        return pulumi.get(self, "pipeline_diagnostic_datas")
+
+    @property
     @pulumi.getter(name="pipelineId")
     def pipeline_id(self) -> builtins.str:
         return pulumi.get(self, "pipeline_id")
@@ -300,6 +311,7 @@ class AwaitableGetPipelineResult(GetPipelineResult):
             lifecycle_sub_state=self.lifecycle_sub_state,
             locks=self.locks,
             mapping_rules=self.mapping_rules,
+            pipeline_diagnostic_datas=self.pipeline_diagnostic_datas,
             pipeline_id=self.pipeline_id,
             process_options=self.process_options,
             recipe_type=self.recipe_type,
@@ -350,6 +362,7 @@ def get_pipeline(pipeline_id: Optional[builtins.str] = None,
         lifecycle_sub_state=pulumi.get(__ret__, 'lifecycle_sub_state'),
         locks=pulumi.get(__ret__, 'locks'),
         mapping_rules=pulumi.get(__ret__, 'mapping_rules'),
+        pipeline_diagnostic_datas=pulumi.get(__ret__, 'pipeline_diagnostic_datas'),
         pipeline_id=pulumi.get(__ret__, 'pipeline_id'),
         process_options=pulumi.get(__ret__, 'process_options'),
         recipe_type=pulumi.get(__ret__, 'recipe_type'),
@@ -397,6 +410,7 @@ def get_pipeline_output(pipeline_id: Optional[pulumi.Input[builtins.str]] = None
         lifecycle_sub_state=pulumi.get(__response__, 'lifecycle_sub_state'),
         locks=pulumi.get(__response__, 'locks'),
         mapping_rules=pulumi.get(__response__, 'mapping_rules'),
+        pipeline_diagnostic_datas=pulumi.get(__response__, 'pipeline_diagnostic_datas'),
         pipeline_id=pulumi.get(__response__, 'pipeline_id'),
         process_options=pulumi.get(__response__, 'process_options'),
         recipe_type=pulumi.get(__response__, 'recipe_type'),

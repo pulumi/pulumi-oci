@@ -112,6 +112,21 @@ public final class InvokeFunctionArgs extends com.pulumi.resources.ResourceArgs 
         return Optional.ofNullable(this.invokeFunctionBodyBase64Encoded);
     }
 
+    /**
+     * Indicates that the request is a dry run, if set to &#34;true&#34;. A dry run request does not execute the function.
+     * 
+     */
+    @Import(name="isDryRun")
+    private @Nullable Output<Boolean> isDryRun;
+
+    /**
+     * @return Indicates that the request is a dry run, if set to &#34;true&#34;. A dry run request does not execute the function.
+     * 
+     */
+    public Optional<Output<Boolean>> isDryRun() {
+        return Optional.ofNullable(this.isDryRun);
+    }
+
     private InvokeFunctionArgs() {}
 
     private InvokeFunctionArgs(InvokeFunctionArgs $) {
@@ -122,6 +137,7 @@ public final class InvokeFunctionArgs extends com.pulumi.resources.ResourceArgs 
         this.inputBodySourcePath = $.inputBodySourcePath;
         this.invokeFunctionBody = $.invokeFunctionBody;
         this.invokeFunctionBodyBase64Encoded = $.invokeFunctionBodyBase64Encoded;
+        this.isDryRun = $.isDryRun;
     }
 
     public static Builder builder() {
@@ -269,6 +285,27 @@ public final class InvokeFunctionArgs extends com.pulumi.resources.ResourceArgs 
 
         public Builder invokeFunctionBodyBase64Encoded(String invokeFunctionBodyBase64Encoded) {
             return invokeFunctionBodyBase64Encoded(Output.of(invokeFunctionBodyBase64Encoded));
+        }
+
+        /**
+         * @param isDryRun Indicates that the request is a dry run, if set to &#34;true&#34;. A dry run request does not execute the function.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isDryRun(@Nullable Output<Boolean> isDryRun) {
+            $.isDryRun = isDryRun;
+            return this;
+        }
+
+        /**
+         * @param isDryRun Indicates that the request is a dry run, if set to &#34;true&#34;. A dry run request does not execute the function.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isDryRun(Boolean isDryRun) {
+            return isDryRun(Output.of(isDryRun));
         }
 
         public InvokeFunctionArgs build() {

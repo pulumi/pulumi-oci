@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GoldenGate.outputs.GetPipelineLock;
 import com.pulumi.oci.GoldenGate.outputs.GetPipelineMappingRule;
+import com.pulumi.oci.GoldenGate.outputs.GetPipelinePipelineDiagnosticData;
 import com.pulumi.oci.GoldenGate.outputs.GetPipelineProcessOption;
 import com.pulumi.oci.GoldenGate.outputs.GetPipelineSourceConnectionDetail;
 import com.pulumi.oci.GoldenGate.outputs.GetPipelineTargetConnectionDetail;
@@ -84,6 +85,11 @@ public final class GetPipelineResult {
      * 
      */
     private List<GetPipelineMappingRule> mappingRules;
+    /**
+     * @return Information regarding the pipeline diagnostic collection
+     * 
+     */
+    private List<GetPipelinePipelineDiagnosticData> pipelineDiagnosticDatas;
     private String pipelineId;
     /**
      * @return Required pipeline options to configure the replication process (Extract or Replicat).
@@ -223,6 +229,13 @@ public final class GetPipelineResult {
     public List<GetPipelineMappingRule> mappingRules() {
         return this.mappingRules;
     }
+    /**
+     * @return Information regarding the pipeline diagnostic collection
+     * 
+     */
+    public List<GetPipelinePipelineDiagnosticData> pipelineDiagnosticDatas() {
+        return this.pipelineDiagnosticDatas;
+    }
     public String pipelineId() {
         return this.pipelineId;
     }
@@ -312,6 +325,7 @@ public final class GetPipelineResult {
         private String lifecycleSubState;
         private List<GetPipelineLock> locks;
         private List<GetPipelineMappingRule> mappingRules;
+        private List<GetPipelinePipelineDiagnosticData> pipelineDiagnosticDatas;
         private String pipelineId;
         private List<GetPipelineProcessOption> processOptions;
         private String recipeType;
@@ -338,6 +352,7 @@ public final class GetPipelineResult {
     	      this.lifecycleSubState = defaults.lifecycleSubState;
     	      this.locks = defaults.locks;
     	      this.mappingRules = defaults.mappingRules;
+    	      this.pipelineDiagnosticDatas = defaults.pipelineDiagnosticDatas;
     	      this.pipelineId = defaults.pipelineId;
     	      this.processOptions = defaults.processOptions;
     	      this.recipeType = defaults.recipeType;
@@ -461,6 +476,17 @@ public final class GetPipelineResult {
             return mappingRules(List.of(mappingRules));
         }
         @CustomType.Setter
+        public Builder pipelineDiagnosticDatas(List<GetPipelinePipelineDiagnosticData> pipelineDiagnosticDatas) {
+            if (pipelineDiagnosticDatas == null) {
+              throw new MissingRequiredPropertyException("GetPipelineResult", "pipelineDiagnosticDatas");
+            }
+            this.pipelineDiagnosticDatas = pipelineDiagnosticDatas;
+            return this;
+        }
+        public Builder pipelineDiagnosticDatas(GetPipelinePipelineDiagnosticData... pipelineDiagnosticDatas) {
+            return pipelineDiagnosticDatas(List.of(pipelineDiagnosticDatas));
+        }
+        @CustomType.Setter
         public Builder pipelineId(String pipelineId) {
             if (pipelineId == null) {
               throw new MissingRequiredPropertyException("GetPipelineResult", "pipelineId");
@@ -564,6 +590,7 @@ public final class GetPipelineResult {
             _resultValue.lifecycleSubState = lifecycleSubState;
             _resultValue.locks = locks;
             _resultValue.mappingRules = mappingRules;
+            _resultValue.pipelineDiagnosticDatas = pipelineDiagnosticDatas;
             _resultValue.pipelineId = pipelineId;
             _resultValue.processOptions = processOptions;
             _resultValue.recipeType = recipeType;

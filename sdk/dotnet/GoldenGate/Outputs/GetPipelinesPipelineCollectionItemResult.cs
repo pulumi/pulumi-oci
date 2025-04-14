@@ -66,6 +66,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPipelinesPipelineCollectionItemMappingRuleResult> MappingRules;
         /// <summary>
+        /// Information regarding the pipeline diagnostic collection
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetPipelinesPipelineCollectionItemPipelineDiagnosticDataResult> PipelineDiagnosticDatas;
+        /// <summary>
         /// Required pipeline options to configure the replication process (Extract or Replicat).
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPipelinesPipelineCollectionItemProcessOptionResult> ProcessOptions;
@@ -130,6 +134,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             ImmutableArray<Outputs.GetPipelinesPipelineCollectionItemMappingRuleResult> mappingRules,
 
+            ImmutableArray<Outputs.GetPipelinesPipelineCollectionItemPipelineDiagnosticDataResult> pipelineDiagnosticDatas,
+
             ImmutableArray<Outputs.GetPipelinesPipelineCollectionItemProcessOptionResult> processOptions,
 
             string recipeType,
@@ -161,6 +167,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             LifecycleSubState = lifecycleSubState;
             Locks = locks;
             MappingRules = mappingRules;
+            PipelineDiagnosticDatas = pipelineDiagnosticDatas;
             ProcessOptions = processOptions;
             RecipeType = recipeType;
             SourceConnectionDetails = sourceConnectionDetails;

@@ -6,6 +6,7 @@ package com.pulumi.oci.Sch.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Sch.outputs.ConnectorTargetDimension;
+import com.pulumi.oci.Sch.outputs.ConnectorTargetPrivateEndpointMetadata;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -101,6 +102,11 @@ public final class ConnectorTarget {
      * 
      */
     private @Nullable String objectNamePrefix;
+    /**
+     * @return The private endpoint metadata for the connector&#39;s source or target.
+     * 
+     */
+    private @Nullable List<ConnectorTargetPrivateEndpointMetadata> privateEndpointMetadatas;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
      * 
@@ -233,6 +239,13 @@ public final class ConnectorTarget {
         return Optional.ofNullable(this.objectNamePrefix);
     }
     /**
+     * @return The private endpoint metadata for the connector&#39;s source or target.
+     * 
+     */
+    public List<ConnectorTargetPrivateEndpointMetadata> privateEndpointMetadatas() {
+        return this.privateEndpointMetadatas == null ? List.of() : this.privateEndpointMetadatas;
+    }
+    /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
      * 
      */
@@ -273,6 +286,7 @@ public final class ConnectorTarget {
         private @Nullable String metricNamespace;
         private @Nullable String namespace;
         private @Nullable String objectNamePrefix;
+        private @Nullable List<ConnectorTargetPrivateEndpointMetadata> privateEndpointMetadatas;
         private @Nullable String streamId;
         private @Nullable String topicId;
         public Builder() {}
@@ -295,6 +309,7 @@ public final class ConnectorTarget {
     	      this.metricNamespace = defaults.metricNamespace;
     	      this.namespace = defaults.namespace;
     	      this.objectNamePrefix = defaults.objectNamePrefix;
+    	      this.privateEndpointMetadatas = defaults.privateEndpointMetadatas;
     	      this.streamId = defaults.streamId;
     	      this.topicId = defaults.topicId;
         }
@@ -407,6 +422,15 @@ public final class ConnectorTarget {
             return this;
         }
         @CustomType.Setter
+        public Builder privateEndpointMetadatas(@Nullable List<ConnectorTargetPrivateEndpointMetadata> privateEndpointMetadatas) {
+
+            this.privateEndpointMetadatas = privateEndpointMetadatas;
+            return this;
+        }
+        public Builder privateEndpointMetadatas(ConnectorTargetPrivateEndpointMetadata... privateEndpointMetadatas) {
+            return privateEndpointMetadatas(List.of(privateEndpointMetadatas));
+        }
+        @CustomType.Setter
         public Builder streamId(@Nullable String streamId) {
 
             this.streamId = streamId;
@@ -437,6 +461,7 @@ public final class ConnectorTarget {
             _resultValue.metricNamespace = metricNamespace;
             _resultValue.namespace = namespace;
             _resultValue.objectNamePrefix = objectNamePrefix;
+            _resultValue.privateEndpointMetadatas = privateEndpointMetadatas;
             _resultValue.streamId = streamId;
             _resultValue.topicId = topicId;
             return _resultValue;

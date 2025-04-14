@@ -27,6 +27,18 @@ public final class GetPrivateIpsResult {
      */
     private @Nullable String ipAddress;
     /**
+     * @return State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+     * 
+     */
+    private @Nullable String ipState;
+    /**
+     * @return Lifetime of the IP address. There are two types of IPv6 IPs:
+     * * Ephemeral
+     * * Reserved
+     * 
+     */
+    private @Nullable String lifetime;
+    /**
      * @return The list of private_ips.
      * 
      */
@@ -64,6 +76,22 @@ public final class GetPrivateIpsResult {
      */
     public Optional<String> ipAddress() {
         return Optional.ofNullable(this.ipAddress);
+    }
+    /**
+     * @return State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+     * 
+     */
+    public Optional<String> ipState() {
+        return Optional.ofNullable(this.ipState);
+    }
+    /**
+     * @return Lifetime of the IP address. There are two types of IPv6 IPs:
+     * * Ephemeral
+     * * Reserved
+     * 
+     */
+    public Optional<String> lifetime() {
+        return Optional.ofNullable(this.lifetime);
     }
     /**
      * @return The list of private_ips.
@@ -106,6 +134,8 @@ public final class GetPrivateIpsResult {
         private @Nullable List<GetPrivateIpsFilter> filters;
         private String id;
         private @Nullable String ipAddress;
+        private @Nullable String ipState;
+        private @Nullable String lifetime;
         private List<GetPrivateIpsPrivateIp> privateIps;
         private @Nullable String subnetId;
         private @Nullable String vlanId;
@@ -116,6 +146,8 @@ public final class GetPrivateIpsResult {
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.ipAddress = defaults.ipAddress;
+    	      this.ipState = defaults.ipState;
+    	      this.lifetime = defaults.lifetime;
     	      this.privateIps = defaults.privateIps;
     	      this.subnetId = defaults.subnetId;
     	      this.vlanId = defaults.vlanId;
@@ -143,6 +175,18 @@ public final class GetPrivateIpsResult {
         public Builder ipAddress(@Nullable String ipAddress) {
 
             this.ipAddress = ipAddress;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder ipState(@Nullable String ipState) {
+
+            this.ipState = ipState;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder lifetime(@Nullable String lifetime) {
+
+            this.lifetime = lifetime;
             return this;
         }
         @CustomType.Setter
@@ -179,6 +223,8 @@ public final class GetPrivateIpsResult {
             _resultValue.filters = filters;
             _resultValue.id = id;
             _resultValue.ipAddress = ipAddress;
+            _resultValue.ipState = ipState;
+            _resultValue.lifetime = lifetime;
             _resultValue.privateIps = privateIps;
             _resultValue.subnetId = subnetId;
             _resultValue.vlanId = vlanId;

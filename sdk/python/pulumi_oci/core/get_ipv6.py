@@ -27,7 +27,7 @@ class GetIpv6Result:
     """
     A collection of values returned by getIpv6.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, ip_address=None, ipv6id=None, ipv6subnet_cidr=None, route_table_id=None, state=None, subnet_id=None, time_created=None, vnic_id=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, ip_address=None, ip_state=None, ipv6id=None, ipv6subnet_cidr=None, lifetime=None, route_table_id=None, state=None, subnet_id=None, time_created=None, vnic_id=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -46,12 +46,18 @@ class GetIpv6Result:
         if ip_address and not isinstance(ip_address, str):
             raise TypeError("Expected argument 'ip_address' to be a str")
         pulumi.set(__self__, "ip_address", ip_address)
+        if ip_state and not isinstance(ip_state, str):
+            raise TypeError("Expected argument 'ip_state' to be a str")
+        pulumi.set(__self__, "ip_state", ip_state)
         if ipv6id and not isinstance(ipv6id, str):
             raise TypeError("Expected argument 'ipv6id' to be a str")
         pulumi.set(__self__, "ipv6id", ipv6id)
         if ipv6subnet_cidr and not isinstance(ipv6subnet_cidr, str):
             raise TypeError("Expected argument 'ipv6subnet_cidr' to be a str")
         pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
+        if lifetime and not isinstance(lifetime, str):
+            raise TypeError("Expected argument 'lifetime' to be a str")
+        pulumi.set(__self__, "lifetime", lifetime)
         if route_table_id and not isinstance(route_table_id, str):
             raise TypeError("Expected argument 'route_table_id' to be a str")
         pulumi.set(__self__, "route_table_id", route_table_id)
@@ -117,6 +123,14 @@ class GetIpv6Result:
         return pulumi.get(self, "ip_address")
 
     @property
+    @pulumi.getter(name="ipState")
+    def ip_state(self) -> builtins.str:
+        """
+        State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+        """
+        return pulumi.get(self, "ip_state")
+
+    @property
     @pulumi.getter
     def ipv6id(self) -> builtins.str:
         return pulumi.get(self, "ipv6id")
@@ -127,10 +141,20 @@ class GetIpv6Result:
         return pulumi.get(self, "ipv6subnet_cidr")
 
     @property
+    @pulumi.getter
+    def lifetime(self) -> builtins.str:
+        """
+        Lifetime of the IP address. There are two types of IPv6 IPs:
+        * Ephemeral
+        * Reserved
+        """
+        return pulumi.get(self, "lifetime")
+
+    @property
     @pulumi.getter(name="routeTableId")
     def route_table_id(self) -> builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
         """
         return pulumi.get(self, "route_table_id")
 
@@ -179,8 +203,10 @@ class AwaitableGetIpv6Result(GetIpv6Result):
             freeform_tags=self.freeform_tags,
             id=self.id,
             ip_address=self.ip_address,
+            ip_state=self.ip_state,
             ipv6id=self.ipv6id,
             ipv6subnet_cidr=self.ipv6subnet_cidr,
+            lifetime=self.lifetime,
             route_table_id=self.route_table_id,
             state=self.state,
             subnet_id=self.subnet_id,
@@ -222,8 +248,10 @@ def get_ipv6(ipv6id: Optional[builtins.str] = None,
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         ip_address=pulumi.get(__ret__, 'ip_address'),
+        ip_state=pulumi.get(__ret__, 'ip_state'),
         ipv6id=pulumi.get(__ret__, 'ipv6id'),
         ipv6subnet_cidr=pulumi.get(__ret__, 'ipv6subnet_cidr'),
+        lifetime=pulumi.get(__ret__, 'lifetime'),
         route_table_id=pulumi.get(__ret__, 'route_table_id'),
         state=pulumi.get(__ret__, 'state'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
@@ -262,8 +290,10 @@ def get_ipv6_output(ipv6id: Optional[pulumi.Input[builtins.str]] = None,
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
         ip_address=pulumi.get(__response__, 'ip_address'),
+        ip_state=pulumi.get(__response__, 'ip_state'),
         ipv6id=pulumi.get(__response__, 'ipv6id'),
         ipv6subnet_cidr=pulumi.get(__response__, 'ipv6subnet_cidr'),
+        lifetime=pulumi.get(__response__, 'lifetime'),
         route_table_id=pulumi.get(__response__, 'route_table_id'),
         state=pulumi.get(__response__, 'state'),
         subnet_id=pulumi.get(__response__, 'subnet_id'),

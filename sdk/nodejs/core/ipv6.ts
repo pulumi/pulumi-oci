@@ -16,7 +16,6 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testIpv6 = new oci.core.Ipv6("test_ipv6", {
- *     vnicId: testVnicAttachment.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -26,7 +25,10 @@ import * as utilities from "../utilities";
  *     },
  *     ipAddress: ipv6IpAddress,
  *     ipv6subnetCidr: ipv6Ipv6subnetCidr,
+ *     lifetime: ipv6Lifetime,
  *     routeTableId: testRouteTable.id,
+ *     subnetId: testSubnet.id,
+ *     vnicId: testVnicAttachment.id,
  * });
  * ```
  *
@@ -87,11 +89,21 @@ export class Ipv6 extends pulumi.CustomResource {
      */
     public readonly ipAddress!: pulumi.Output<string>;
     /**
+     * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+     */
+    public /*out*/ readonly ipState!: pulumi.Output<string>;
+    /**
      * The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
      */
     public readonly ipv6subnetCidr!: pulumi.Output<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+     * (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+     * * Ephemeral
+     * * Reserved
+     */
+    public readonly lifetime!: pulumi.Output<string>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      */
     public readonly routeTableId!: pulumi.Output<string | undefined>;
     /**
@@ -99,9 +111,9 @@ export class Ipv6 extends pulumi.CustomResource {
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the IPv6 is to be drawn. The IP address, *if supplied*, must be valid for the given subnet, only valid for reserved IPs currently.
      */
-    public /*out*/ readonly subnetId!: pulumi.Output<string>;
+    public readonly subnetId!: pulumi.Output<string>;
     /**
      * The date and time the IPv6 was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
@@ -113,7 +125,7 @@ export class Ipv6 extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly vnicId!: pulumi.Output<string>;
+    public readonly vnicId!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Ipv6 resource with the given unique name, arguments, and options.
@@ -122,7 +134,7 @@ export class Ipv6 extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    constructor(name: string, args: Ipv6Args, opts?: pulumi.CustomResourceOptions)
+    constructor(name: string, args?: Ipv6Args, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: Ipv6Args | Ipv6State, opts?: pulumi.CustomResourceOptions) {
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
@@ -133,7 +145,9 @@ export class Ipv6 extends pulumi.CustomResource {
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["ipAddress"] = state ? state.ipAddress : undefined;
+            resourceInputs["ipState"] = state ? state.ipState : undefined;
             resourceInputs["ipv6subnetCidr"] = state ? state.ipv6subnetCidr : undefined;
+            resourceInputs["lifetime"] = state ? state.lifetime : undefined;
             resourceInputs["routeTableId"] = state ? state.routeTableId : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["subnetId"] = state ? state.subnetId : undefined;
@@ -141,19 +155,18 @@ export class Ipv6 extends pulumi.CustomResource {
             resourceInputs["vnicId"] = state ? state.vnicId : undefined;
         } else {
             const args = argsOrState as Ipv6Args | undefined;
-            if ((!args || args.vnicId === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'vnicId'");
-            }
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["ipAddress"] = args ? args.ipAddress : undefined;
             resourceInputs["ipv6subnetCidr"] = args ? args.ipv6subnetCidr : undefined;
+            resourceInputs["lifetime"] = args ? args.lifetime : undefined;
             resourceInputs["routeTableId"] = args ? args.routeTableId : undefined;
+            resourceInputs["subnetId"] = args ? args.subnetId : undefined;
             resourceInputs["vnicId"] = args ? args.vnicId : undefined;
             resourceInputs["compartmentId"] = undefined /*out*/;
+            resourceInputs["ipState"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
-            resourceInputs["subnetId"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -186,11 +199,21 @@ export interface Ipv6State {
      */
     ipAddress?: pulumi.Input<string>;
     /**
+     * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+     */
+    ipState?: pulumi.Input<string>;
+    /**
      * The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
      */
     ipv6subnetCidr?: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+     * (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+     * * Ephemeral
+     * * Reserved
+     */
+    lifetime?: pulumi.Input<string>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      */
     routeTableId?: pulumi.Input<string>;
     /**
@@ -198,7 +221,7 @@ export interface Ipv6State {
      */
     state?: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the IPv6 is to be drawn. The IP address, *if supplied*, must be valid for the given subnet, only valid for reserved IPs currently.
      */
     subnetId?: pulumi.Input<string>;
     /**
@@ -240,9 +263,19 @@ export interface Ipv6Args {
      */
     ipv6subnetCidr?: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+     * (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+     * * Ephemeral
+     * * Reserved
+     */
+    lifetime?: pulumi.Input<string>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      */
     routeTableId?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the IPv6 is to be drawn. The IP address, *if supplied*, must be valid for the given subnet, only valid for reserved IPs currently.
+     */
+    subnetId?: pulumi.Input<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the IPv6 to. The IPv6 will be in the VNIC's subnet. 
      *
@@ -250,5 +283,5 @@ export interface Ipv6Args {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vnicId: pulumi.Input<string>;
+    vnicId?: pulumi.Input<string>;
 }

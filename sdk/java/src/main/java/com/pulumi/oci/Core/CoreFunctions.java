@@ -29503,6 +29503,8 @@ public final class CoreFunctions {
      *         // Filter on private IP address and Subnet OCID
      *         final var testPrivateIpsByIpAddress = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
      *             .ipAddress(privateIpIpAddress)
+     *             .ipState(privateIpIpState)
+     *             .lifetime(privateIpLifetime)
      *             .subnetId(testSubnet.id())
      *             .vlanId(testVlan.id())
      *             .vnicId(testVnicAttachment.id())
@@ -29632,6 +29634,8 @@ public final class CoreFunctions {
      *         // Filter on private IP address and Subnet OCID
      *         final var testPrivateIpsByIpAddress = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
      *             .ipAddress(privateIpIpAddress)
+     *             .ipState(privateIpIpState)
+     *             .lifetime(privateIpLifetime)
      *             .subnetId(testSubnet.id())
      *             .vlanId(testVlan.id())
      *             .vnicId(testVnicAttachment.id())
@@ -29761,6 +29765,8 @@ public final class CoreFunctions {
      *         // Filter on private IP address and Subnet OCID
      *         final var testPrivateIpsByIpAddress = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
      *             .ipAddress(privateIpIpAddress)
+     *             .ipState(privateIpIpState)
+     *             .lifetime(privateIpLifetime)
      *             .subnetId(testSubnet.id())
      *             .vlanId(testVlan.id())
      *             .vnicId(testVnicAttachment.id())
@@ -29890,6 +29896,8 @@ public final class CoreFunctions {
      *         // Filter on private IP address and Subnet OCID
      *         final var testPrivateIpsByIpAddress = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
      *             .ipAddress(privateIpIpAddress)
+     *             .ipState(privateIpIpState)
+     *             .lifetime(privateIpLifetime)
      *             .subnetId(testSubnet.id())
      *             .vlanId(testVlan.id())
      *             .vnicId(testVnicAttachment.id())
@@ -30019,6 +30027,8 @@ public final class CoreFunctions {
      *         // Filter on private IP address and Subnet OCID
      *         final var testPrivateIpsByIpAddress = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
      *             .ipAddress(privateIpIpAddress)
+     *             .ipState(privateIpIpState)
+     *             .lifetime(privateIpLifetime)
      *             .subnetId(testSubnet.id())
      *             .vlanId(testVlan.id())
      *             .vnicId(testVnicAttachment.id())
@@ -30148,6 +30158,8 @@ public final class CoreFunctions {
      *         // Filter on private IP address and Subnet OCID
      *         final var testPrivateIpsByIpAddress = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
      *             .ipAddress(privateIpIpAddress)
+     *             .ipState(privateIpIpState)
+     *             .lifetime(privateIpLifetime)
      *             .subnetId(testSubnet.id())
      *             .vlanId(testVlan.id())
      *             .vnicId(testVnicAttachment.id())
@@ -30277,6 +30289,8 @@ public final class CoreFunctions {
      *         // Filter on private IP address and Subnet OCID
      *         final var testPrivateIpsByIpAddress = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
      *             .ipAddress(privateIpIpAddress)
+     *             .ipState(privateIpIpState)
+     *             .lifetime(privateIpLifetime)
      *             .subnetId(testSubnet.id())
      *             .vlanId(testVlan.id())
      *             .vnicId(testVnicAttachment.id())

@@ -84,7 +84,9 @@ type LookupPipelineResult struct {
 	Locks []GetPipelineLock `pulumi:"locks"`
 	// Mapping for source/target schema/tables for the pipeline data replication.
 	MappingRules []GetPipelineMappingRule `pulumi:"mappingRules"`
-	PipelineId   string                   `pulumi:"pipelineId"`
+	// Information regarding the pipeline diagnostic collection
+	PipelineDiagnosticDatas []GetPipelinePipelineDiagnosticData `pulumi:"pipelineDiagnosticDatas"`
+	PipelineId              string                              `pulumi:"pipelineId"`
 	// Required pipeline options to configure the replication process (Extract or Replicat).
 	ProcessOptions []GetPipelineProcessOption `pulumi:"processOptions"`
 	// The type of the recipe
@@ -202,6 +204,11 @@ func (o LookupPipelineResultOutput) Locks() GetPipelineLockArrayOutput {
 // Mapping for source/target schema/tables for the pipeline data replication.
 func (o LookupPipelineResultOutput) MappingRules() GetPipelineMappingRuleArrayOutput {
 	return o.ApplyT(func(v LookupPipelineResult) []GetPipelineMappingRule { return v.MappingRules }).(GetPipelineMappingRuleArrayOutput)
+}
+
+// Information regarding the pipeline diagnostic collection
+func (o LookupPipelineResultOutput) PipelineDiagnosticDatas() GetPipelinePipelineDiagnosticDataArrayOutput {
+	return o.ApplyT(func(v LookupPipelineResult) []GetPipelinePipelineDiagnosticData { return v.PipelineDiagnosticDatas }).(GetPipelinePipelineDiagnosticDataArrayOutput)
 }
 
 func (o LookupPipelineResultOutput) PipelineId() pulumi.StringOutput {

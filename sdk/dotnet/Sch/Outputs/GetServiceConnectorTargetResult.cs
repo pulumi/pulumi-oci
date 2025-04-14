@@ -54,7 +54,7 @@ namespace Pulumi.Oci.Sch.Outputs
         /// </summary>
         public readonly string FunctionId;
         /// <summary>
-        /// The type discriminator.
+        /// The type of dimension value: static or evaluated.
         /// </summary>
         public readonly string Kind;
         /// <summary>
@@ -81,6 +81,10 @@ namespace Pulumi.Oci.Sch.Outputs
         /// The prefix of the objects. Avoid entering confidential information.
         /// </summary>
         public readonly string ObjectNamePrefix;
+        /// <summary>
+        /// The private endpoint metadata for the connector's source or target.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetServiceConnectorTargetPrivateEndpointMetadataResult> PrivateEndpointMetadatas;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
         /// </summary>
@@ -126,6 +130,8 @@ namespace Pulumi.Oci.Sch.Outputs
 
             string objectNamePrefix,
 
+            ImmutableArray<Outputs.GetServiceConnectorTargetPrivateEndpointMetadataResult> privateEndpointMetadatas,
+
             string streamId,
 
             string topicId)
@@ -147,6 +153,7 @@ namespace Pulumi.Oci.Sch.Outputs
             MetricNamespace = metricNamespace;
             Namespace = @namespace;
             ObjectNamePrefix = objectNamePrefix;
+            PrivateEndpointMetadatas = privateEndpointMetadatas;
             StreamId = streamId;
             TopicId = topicId;
         }

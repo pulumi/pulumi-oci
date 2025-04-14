@@ -88,7 +88,7 @@ def get_pipeline_running_processes(filters: Optional[Sequence[Union['GetPipeline
     """
     This data source provides the list of Pipeline Running Processes in Oracle Cloud Infrastructure Golden Gate service.
 
-    Retrieves a Pipeline's running replication process's status like extracts/replicats.
+    Retrieves a Pipeline's running replication process's status like Capture/Apply.
 
     ## Example Usage
 
@@ -119,7 +119,7 @@ def get_pipeline_running_processes_output(filters: Optional[pulumi.Input[Optiona
     """
     This data source provides the list of Pipeline Running Processes in Oracle Cloud Infrastructure Golden Gate service.
 
-    Retrieves a Pipeline's running replication process's status like extracts/replicats.
+    Retrieves a Pipeline's running replication process's status like Capture/Apply.
 
     ## Example Usage
 

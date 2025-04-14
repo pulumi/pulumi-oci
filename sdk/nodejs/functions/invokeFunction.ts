@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  *     invokeFunctionBody: invokeFunctionInvokeFunctionBody,
  *     fnIntent: invokeFunctionFnIntent,
  *     fnInvokeType: invokeFunctionFnInvokeType,
+ *     isDryRun: invokeFunctionIsDryRun,
  *     base64EncodeContent: false,
  * });
  * ```
@@ -86,6 +87,10 @@ export class InvokeFunction extends pulumi.CustomResource {
      */
     public readonly invokeFunctionBody!: pulumi.Output<string>;
     public readonly invokeFunctionBodyBase64Encoded!: pulumi.Output<string>;
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not execute the function.
+     */
+    public readonly isDryRun!: pulumi.Output<boolean>;
 
     /**
      * Create a InvokeFunction resource with the given unique name, arguments, and options.
@@ -109,6 +114,7 @@ export class InvokeFunction extends pulumi.CustomResource {
             resourceInputs["invokeEndpoint"] = state ? state.invokeEndpoint : undefined;
             resourceInputs["invokeFunctionBody"] = state ? state.invokeFunctionBody : undefined;
             resourceInputs["invokeFunctionBodyBase64Encoded"] = state ? state.invokeFunctionBodyBase64Encoded : undefined;
+            resourceInputs["isDryRun"] = state ? state.isDryRun : undefined;
         } else {
             const args = argsOrState as InvokeFunctionArgs | undefined;
             if ((!args || args.functionId === undefined) && !opts.urn) {
@@ -121,6 +127,7 @@ export class InvokeFunction extends pulumi.CustomResource {
             resourceInputs["inputBodySourcePath"] = args ? args.inputBodySourcePath : undefined;
             resourceInputs["invokeFunctionBody"] = args ? args.invokeFunctionBody : undefined;
             resourceInputs["invokeFunctionBodyBase64Encoded"] = args ? args.invokeFunctionBodyBase64Encoded : undefined;
+            resourceInputs["isDryRun"] = args ? args.isDryRun : undefined;
             resourceInputs["content"] = undefined /*out*/;
             resourceInputs["invokeEndpoint"] = undefined /*out*/;
         }
@@ -163,6 +170,10 @@ export interface InvokeFunctionState {
      */
     invokeFunctionBody?: pulumi.Input<string>;
     invokeFunctionBodyBase64Encoded?: pulumi.Input<string>;
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not execute the function.
+     */
+    isDryRun?: pulumi.Input<boolean>;
 }
 
 /**
@@ -194,4 +205,8 @@ export interface InvokeFunctionArgs {
      */
     invokeFunctionBody?: pulumi.Input<string>;
     invokeFunctionBodyBase64Encoded?: pulumi.Input<string>;
+    /**
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not execute the function.
+     */
+    isDryRun?: pulumi.Input<boolean>;
 }

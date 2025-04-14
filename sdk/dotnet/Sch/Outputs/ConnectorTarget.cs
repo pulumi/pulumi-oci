@@ -82,6 +82,10 @@ namespace Pulumi.Oci.Sch.Outputs
         /// </summary>
         public readonly string? ObjectNamePrefix;
         /// <summary>
+        /// The private endpoint metadata for the connector's source or target.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.ConnectorTargetPrivateEndpointMetadata> PrivateEndpointMetadatas;
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
         /// </summary>
         public readonly string? StreamId;
@@ -126,6 +130,8 @@ namespace Pulumi.Oci.Sch.Outputs
 
             string? objectNamePrefix,
 
+            ImmutableArray<Outputs.ConnectorTargetPrivateEndpointMetadata> privateEndpointMetadatas,
+
             string? streamId,
 
             string? topicId)
@@ -147,6 +153,7 @@ namespace Pulumi.Oci.Sch.Outputs
             MetricNamespace = metricNamespace;
             Namespace = @namespace;
             ObjectNamePrefix = objectNamePrefix;
+            PrivateEndpointMetadatas = privateEndpointMetadatas;
             StreamId = streamId;
             TopicId = topicId;
         }

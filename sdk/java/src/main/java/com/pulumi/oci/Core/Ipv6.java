@@ -46,13 +46,15 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testIpv6 = new Ipv6("testIpv6", Ipv6Args.builder()
- *             .vnicId(testVnicAttachment.id())
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(ipv6DisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .ipAddress(ipv6IpAddress)
  *             .ipv6subnetCidr(ipv6Ipv6subnetCidr)
+ *             .lifetime(ipv6Lifetime)
  *             .routeTableId(testRouteTable.id())
+ *             .subnetId(testSubnet.id())
+ *             .vnicId(testVnicAttachment.id())
  *             .build());
  * 
  *     }
@@ -143,6 +145,20 @@ public class Ipv6 extends com.pulumi.resources.CustomResource {
         return this.ipAddress;
     }
     /**
+     * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+     * 
+     */
+    @Export(name="ipState", refs={String.class}, tree="[0]")
+    private Output<String> ipState;
+
+    /**
+     * @return State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+     * 
+     */
+    public Output<String> ipState() {
+        return this.ipState;
+    }
+    /**
      * The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
      * 
      */
@@ -157,14 +173,32 @@ public class Ipv6 extends com.pulumi.resources.CustomResource {
         return this.ipv6subnetCidr;
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+     * (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+     * * Ephemeral
+     * * Reserved
+     * 
+     */
+    @Export(name="lifetime", refs={String.class}, tree="[0]")
+    private Output<String> lifetime;
+
+    /**
+     * @return (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+     * * Ephemeral
+     * * Reserved
+     * 
+     */
+    public Output<String> lifetime() {
+        return this.lifetime;
+    }
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      * 
      */
     @Export(name="routeTableId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> routeTableId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the PrivateIp will use.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      * 
      */
     public Output<Optional<String>> routeTableId() {
@@ -185,14 +219,14 @@ public class Ipv6 extends com.pulumi.resources.CustomResource {
         return this.state;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the IPv6 is to be drawn. The IP address, *if supplied*, must be valid for the given subnet, only valid for reserved IPs currently.
      * 
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the IPv6 is to be drawn. The IP address, *if supplied*, must be valid for the given subnet, only valid for reserved IPs currently.
      * 
      */
     public Output<String> subnetId() {
@@ -220,7 +254,7 @@ public class Ipv6 extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="vnicId", refs={String.class}, tree="[0]")
-    private Output<String> vnicId;
+    private Output</* @Nullable */ String> vnicId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the IPv6 to. The IPv6 will be in the VNIC&#39;s subnet.
@@ -229,8 +263,8 @@ public class Ipv6 extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> vnicId() {
-        return this.vnicId;
+    public Output<Optional<String>> vnicId() {
+        return Codegen.optional(this.vnicId);
     }
 
     /**
@@ -245,7 +279,7 @@ public class Ipv6 extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public Ipv6(java.lang.String name, Ipv6Args args) {
+    public Ipv6(java.lang.String name, @Nullable Ipv6Args args) {
         this(name, args, null);
     }
     /**
@@ -254,7 +288,7 @@ public class Ipv6 extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public Ipv6(java.lang.String name, Ipv6Args args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public Ipv6(java.lang.String name, @Nullable Ipv6Args args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Core/ipv6:Ipv6", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
@@ -262,7 +296,7 @@ public class Ipv6 extends com.pulumi.resources.CustomResource {
         super("oci:Core/ipv6:Ipv6", name, state, makeResourceOptions(options, id), false);
     }
 
-    private static Ipv6Args makeArgs(Ipv6Args args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    private static Ipv6Args makeArgs(@Nullable Ipv6Args args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         if (options != null && options.getUrn().isPresent()) {
             return null;
         }

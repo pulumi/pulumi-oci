@@ -51,6 +51,7 @@ public final class GetByoipRangesByoipRangeCollectionItem {
      * 
      */
     private String id;
+    private String ipAnycastId;
     /**
      * @return The IPv6 prefix being imported to the Oracle cloud. This prefix must be /48 or larger, and can be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix can be also assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a fixed /64 in size.
      * 
@@ -61,6 +62,7 @@ public final class GetByoipRangesByoipRangeCollectionItem {
      * 
      */
     private String lifecycleDetails;
+    private String monitorIp;
     /**
      * @return Information about the origin asn.
      * 
@@ -147,6 +149,9 @@ public final class GetByoipRangesByoipRangeCollectionItem {
     public String id() {
         return this.id;
     }
+    public String ipAnycastId() {
+        return this.ipAnycastId;
+    }
     /**
      * @return The IPv6 prefix being imported to the Oracle cloud. This prefix must be /48 or larger, and can be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix can be also assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a fixed /64 in size.
      * 
@@ -160,6 +165,9 @@ public final class GetByoipRangesByoipRangeCollectionItem {
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    public String monitorIp() {
+        return this.monitorIp;
     }
     /**
      * @return Information about the origin asn.
@@ -227,8 +235,10 @@ public final class GetByoipRangesByoipRangeCollectionItem {
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
+        private String ipAnycastId;
         private String ipv6cidrBlock;
         private String lifecycleDetails;
+        private String monitorIp;
         private List<GetByoipRangesByoipRangeCollectionItemOriginAsn> originAsns;
         private String state;
         private String timeAdvertised;
@@ -246,8 +256,10 @@ public final class GetByoipRangesByoipRangeCollectionItem {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.ipAnycastId = defaults.ipAnycastId;
     	      this.ipv6cidrBlock = defaults.ipv6cidrBlock;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.monitorIp = defaults.monitorIp;
     	      this.originAsns = defaults.originAsns;
     	      this.state = defaults.state;
     	      this.timeAdvertised = defaults.timeAdvertised;
@@ -313,6 +325,14 @@ public final class GetByoipRangesByoipRangeCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder ipAnycastId(String ipAnycastId) {
+            if (ipAnycastId == null) {
+              throw new MissingRequiredPropertyException("GetByoipRangesByoipRangeCollectionItem", "ipAnycastId");
+            }
+            this.ipAnycastId = ipAnycastId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder ipv6cidrBlock(String ipv6cidrBlock) {
             if (ipv6cidrBlock == null) {
               throw new MissingRequiredPropertyException("GetByoipRangesByoipRangeCollectionItem", "ipv6cidrBlock");
@@ -326,6 +346,14 @@ public final class GetByoipRangesByoipRangeCollectionItem {
               throw new MissingRequiredPropertyException("GetByoipRangesByoipRangeCollectionItem", "lifecycleDetails");
             }
             this.lifecycleDetails = lifecycleDetails;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder monitorIp(String monitorIp) {
+            if (monitorIp == null) {
+              throw new MissingRequiredPropertyException("GetByoipRangesByoipRangeCollectionItem", "monitorIp");
+            }
+            this.monitorIp = monitorIp;
             return this;
         }
         @CustomType.Setter
@@ -396,8 +424,10 @@ public final class GetByoipRangesByoipRangeCollectionItem {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.ipAnycastId = ipAnycastId;
             _resultValue.ipv6cidrBlock = ipv6cidrBlock;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.monitorIp = monitorIp;
             _resultValue.originAsns = originAsns;
             _resultValue.state = state;
             _resultValue.timeAdvertised = timeAdvertised;

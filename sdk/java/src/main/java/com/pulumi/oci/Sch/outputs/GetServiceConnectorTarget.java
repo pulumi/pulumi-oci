@@ -6,6 +6,7 @@ package com.pulumi.oci.Sch.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Sch.outputs.GetServiceConnectorTargetDimension;
+import com.pulumi.oci.Sch.outputs.GetServiceConnectorTargetPrivateEndpointMetadata;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -65,7 +66,7 @@ public final class GetServiceConnectorTarget {
      */
     private String functionId;
     /**
-     * @return The type discriminator.
+     * @return The type of dimension value: static or evaluated.
      * 
      */
     private String kind;
@@ -99,6 +100,11 @@ public final class GetServiceConnectorTarget {
      * 
      */
     private String objectNamePrefix;
+    /**
+     * @return The private endpoint metadata for the connector&#39;s source or target.
+     * 
+     */
+    private List<GetServiceConnectorTargetPrivateEndpointMetadata> privateEndpointMetadatas;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
      * 
@@ -182,7 +188,7 @@ public final class GetServiceConnectorTarget {
         return this.functionId;
     }
     /**
-     * @return The type discriminator.
+     * @return The type of dimension value: static or evaluated.
      * 
      */
     public String kind() {
@@ -231,6 +237,13 @@ public final class GetServiceConnectorTarget {
         return this.objectNamePrefix;
     }
     /**
+     * @return The private endpoint metadata for the connector&#39;s source or target.
+     * 
+     */
+    public List<GetServiceConnectorTargetPrivateEndpointMetadata> privateEndpointMetadatas() {
+        return this.privateEndpointMetadatas;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
      * 
      */
@@ -271,6 +284,7 @@ public final class GetServiceConnectorTarget {
         private String metricNamespace;
         private String namespace;
         private String objectNamePrefix;
+        private List<GetServiceConnectorTargetPrivateEndpointMetadata> privateEndpointMetadatas;
         private String streamId;
         private String topicId;
         public Builder() {}
@@ -293,6 +307,7 @@ public final class GetServiceConnectorTarget {
     	      this.metricNamespace = defaults.metricNamespace;
     	      this.namespace = defaults.namespace;
     	      this.objectNamePrefix = defaults.objectNamePrefix;
+    	      this.privateEndpointMetadatas = defaults.privateEndpointMetadatas;
     	      this.streamId = defaults.streamId;
     	      this.topicId = defaults.topicId;
         }
@@ -437,6 +452,17 @@ public final class GetServiceConnectorTarget {
             return this;
         }
         @CustomType.Setter
+        public Builder privateEndpointMetadatas(List<GetServiceConnectorTargetPrivateEndpointMetadata> privateEndpointMetadatas) {
+            if (privateEndpointMetadatas == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorTarget", "privateEndpointMetadatas");
+            }
+            this.privateEndpointMetadatas = privateEndpointMetadatas;
+            return this;
+        }
+        public Builder privateEndpointMetadatas(GetServiceConnectorTargetPrivateEndpointMetadata... privateEndpointMetadatas) {
+            return privateEndpointMetadatas(List.of(privateEndpointMetadatas));
+        }
+        @CustomType.Setter
         public Builder streamId(String streamId) {
             if (streamId == null) {
               throw new MissingRequiredPropertyException("GetServiceConnectorTarget", "streamId");
@@ -471,6 +497,7 @@ public final class GetServiceConnectorTarget {
             _resultValue.metricNamespace = metricNamespace;
             _resultValue.namespace = namespace;
             _resultValue.objectNamePrefix = objectNamePrefix;
+            _resultValue.privateEndpointMetadatas = privateEndpointMetadatas;
             _resultValue.streamId = streamId;
             _resultValue.topicId = topicId;
             return _resultValue;

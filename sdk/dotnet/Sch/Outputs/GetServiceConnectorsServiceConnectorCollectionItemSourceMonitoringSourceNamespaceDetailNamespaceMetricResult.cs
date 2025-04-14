@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Sch.Outputs
     public sealed class GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricResult
     {
         /// <summary>
-        /// The type discriminator.
+        /// The type of dimension value: static or evaluated.
         /// </summary>
         public readonly string Kind;
 

@@ -4,7 +4,7 @@ go 1.21
 
 require (
 	github.com/hashicorp/terraform-plugin-sdk/v2 v2.34.0
-	github.com/oracle/terraform-provider-oci v1.0.19-0.20250402124620-ab7d62059409
+	github.com/oracle/terraform-provider-oci v1.0.19-0.20250410015934-fcba116c54e7
 )
 
 replace github.com/hashicorp/terraform-exec => github.com/hashicorp/terraform-exec v0.14.0

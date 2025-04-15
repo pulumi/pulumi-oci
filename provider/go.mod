@@ -13,9 +13,9 @@ replace (
 require (
 	github.com/oracle/terraform-provider-oci v1.0.19-0.20250410015934-fcba116c54e7 // indirect
 	github.com/oracle/terraform-provider-oci/shim v0.0.0
-	github.com/pulumi/pulumi-terraform-bridge/v3 v3.106.0
-	github.com/pulumi/pulumi/pkg/v3 v3.160.0 // indirect
-	github.com/pulumi/pulumi/sdk/v3 v3.160.0
+	github.com/pulumi/pulumi-terraform-bridge/v3 v3.106.1-0.20250411161714-3e445c167ecf
+	github.com/pulumi/pulumi/pkg/v3 v3.161.0 // indirect
+	github.com/pulumi/pulumi/sdk/v3 v3.161.0
 )
 
 require github.com/oracle/oci-go-sdk/v65 v65.89.0 // indirect
@@ -139,7 +139,7 @@ require (
 	github.com/pkg/term v1.1.0 // indirect
 	github.com/posener/complete v1.2.3 // indirect
 	github.com/pulumi/appdash v0.0.0-20231130102222-75f619a67231 // indirect
-	github.com/pulumi/esc v0.10.0 // indirect
+	github.com/pulumi/esc v0.13.0 // indirect
 	github.com/pulumi/inflector v0.1.1 // indirect
 	github.com/pulumi/pulumi-java/pkg v1.8.0 // indirect
 	github.com/pulumi/pulumi-yaml v1.15.1 // indirect

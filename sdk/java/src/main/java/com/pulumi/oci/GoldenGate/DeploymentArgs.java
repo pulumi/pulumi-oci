@@ -11,6 +11,7 @@ import com.pulumi.oci.GoldenGate.inputs.DeploymentLockArgs;
 import com.pulumi.oci.GoldenGate.inputs.DeploymentMaintenanceConfigurationArgs;
 import com.pulumi.oci.GoldenGate.inputs.DeploymentMaintenanceWindowArgs;
 import com.pulumi.oci.GoldenGate.inputs.DeploymentOggDataArgs;
+import com.pulumi.oci.GoldenGate.inputs.DeploymentPlacementArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -24,6 +25,21 @@ import javax.annotation.Nullable;
 public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final DeploymentArgs Empty = new DeploymentArgs();
+
+    /**
+     * The availability domain of a placement.
+     * 
+     */
+    @Import(name="availabilityDomain")
+    private @Nullable Output<String> availabilityDomain;
+
+    /**
+     * @return The availability domain of a placement.
+     * 
+     */
+    public Optional<Output<String>> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
+    }
 
     /**
      * (Updatable) Defines the backup schedule details for create operation.
@@ -59,15 +75,15 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
      * (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
      * 
      */
-    @Import(name="cpuCoreCount", required=true)
-    private Output<Integer> cpuCoreCount;
+    @Import(name="cpuCoreCount")
+    private @Nullable Output<Integer> cpuCoreCount;
 
     /**
      * @return (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
      * 
      */
-    public Output<Integer> cpuCoreCount() {
-        return this.cpuCoreCount;
+    public Optional<Output<Integer>> cpuCoreCount() {
+        return Optional.ofNullable(this.cpuCoreCount);
     }
 
     /**
@@ -104,15 +120,15 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
      * The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of &#39;DATABASE_ORACLE&#39;.
      * 
      */
-    @Import(name="deploymentType", required=true)
-    private Output<String> deploymentType;
+    @Import(name="deploymentType")
+    private @Nullable Output<String> deploymentType;
 
     /**
      * @return The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of &#39;DATABASE_ORACLE&#39;.
      * 
      */
-    public Output<String> deploymentType() {
-        return this.deploymentType;
+    public Optional<Output<String>> deploymentType() {
+        return Optional.ofNullable(this.deploymentType);
     }
 
     /**
@@ -161,6 +177,21 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The fault domain of a placement.
+     * 
+     */
+    @Import(name="faultDomain")
+    private @Nullable Output<String> faultDomain;
+
+    /**
+     * @return The fault domain of a placement.
+     * 
+     */
+    public Optional<Output<String>> faultDomain() {
+        return Optional.ofNullable(this.faultDomain);
+    }
+
+    /**
      * (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
      * 
      */
@@ -194,15 +225,15 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
      * (Updatable) Indicates if auto scaling is enabled for the Deployment&#39;s CPU core count.
      * 
      */
-    @Import(name="isAutoScalingEnabled", required=true)
-    private Output<Boolean> isAutoScalingEnabled;
+    @Import(name="isAutoScalingEnabled")
+    private @Nullable Output<Boolean> isAutoScalingEnabled;
 
     /**
      * @return (Updatable) Indicates if auto scaling is enabled for the Deployment&#39;s CPU core count.
      * 
      */
-    public Output<Boolean> isAutoScalingEnabled() {
-        return this.isAutoScalingEnabled;
+    public Optional<Output<Boolean>> isAutoScalingEnabled() {
+        return Optional.ofNullable(this.isAutoScalingEnabled);
     }
 
     @Import(name="isLockOverride")
@@ -231,15 +262,15 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
      * (Updatable) The Oracle license model that applies to a Deployment.
      * 
      */
-    @Import(name="licenseModel", required=true)
-    private Output<String> licenseModel;
+    @Import(name="licenseModel")
+    private @Nullable Output<String> licenseModel;
 
     /**
      * @return (Updatable) The Oracle license model that applies to a Deployment.
      * 
      */
-    public Output<String> licenseModel() {
-        return this.licenseModel;
+    public Optional<Output<String>> licenseModel() {
+        return Optional.ofNullable(this.licenseModel);
     }
 
     /**
@@ -332,6 +363,36 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.oggData);
     }
 
+    /**
+     * (Updatable) An array of local peers of deployment
+     * 
+     */
+    @Import(name="placements")
+    private @Nullable Output<List<DeploymentPlacementArgs>> placements;
+
+    /**
+     * @return (Updatable) An array of local peers of deployment
+     * 
+     */
+    public Optional<Output<List<DeploymentPlacementArgs>>> placements() {
+        return Optional.ofNullable(this.placements);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+     * 
+     */
+    @Import(name="sourceDeploymentId")
+    private @Nullable Output<String> sourceDeploymentId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+     * 
+     */
+    public Optional<Output<String>> sourceDeploymentId() {
+        return Optional.ofNullable(this.sourceDeploymentId);
+    }
+
     @Import(name="state")
     private @Nullable Output<String> state;
 
@@ -357,6 +418,7 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
     private DeploymentArgs() {}
 
     private DeploymentArgs(DeploymentArgs $) {
+        this.availabilityDomain = $.availabilityDomain;
         this.backupSchedule = $.backupSchedule;
         this.compartmentId = $.compartmentId;
         this.cpuCoreCount = $.cpuCoreCount;
@@ -366,6 +428,7 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         this.description = $.description;
         this.displayName = $.displayName;
         this.environmentType = $.environmentType;
+        this.faultDomain = $.faultDomain;
         this.fqdn = $.fqdn;
         this.freeformTags = $.freeformTags;
         this.isAutoScalingEnabled = $.isAutoScalingEnabled;
@@ -378,6 +441,8 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         this.maintenanceWindow = $.maintenanceWindow;
         this.nsgIds = $.nsgIds;
         this.oggData = $.oggData;
+        this.placements = $.placements;
+        this.sourceDeploymentId = $.sourceDeploymentId;
         this.state = $.state;
         this.subnetId = $.subnetId;
     }
@@ -398,6 +463,27 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder(DeploymentArgs defaults) {
             $ = new DeploymentArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param availabilityDomain The availability domain of a placement.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availabilityDomain(@Nullable Output<String> availabilityDomain) {
+            $.availabilityDomain = availabilityDomain;
+            return this;
+        }
+
+        /**
+         * @param availabilityDomain The availability domain of a placement.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availabilityDomain(String availabilityDomain) {
+            return availabilityDomain(Output.of(availabilityDomain));
         }
 
         /**
@@ -448,7 +534,7 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder cpuCoreCount(Output<Integer> cpuCoreCount) {
+        public Builder cpuCoreCount(@Nullable Output<Integer> cpuCoreCount) {
             $.cpuCoreCount = cpuCoreCount;
             return this;
         }
@@ -511,7 +597,7 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder deploymentType(Output<String> deploymentType) {
+        public Builder deploymentType(@Nullable Output<String> deploymentType) {
             $.deploymentType = deploymentType;
             return this;
         }
@@ -590,6 +676,27 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param faultDomain The fault domain of a placement.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder faultDomain(@Nullable Output<String> faultDomain) {
+            $.faultDomain = faultDomain;
+            return this;
+        }
+
+        /**
+         * @param faultDomain The fault domain of a placement.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder faultDomain(String faultDomain) {
+            return faultDomain(Output.of(faultDomain));
+        }
+
+        /**
          * @param fqdn (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
          * 
          * @return builder
@@ -637,7 +744,7 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder isAutoScalingEnabled(Output<Boolean> isAutoScalingEnabled) {
+        public Builder isAutoScalingEnabled(@Nullable Output<Boolean> isAutoScalingEnabled) {
             $.isAutoScalingEnabled = isAutoScalingEnabled;
             return this;
         }
@@ -688,7 +795,7 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder licenseModel(Output<String> licenseModel) {
+        public Builder licenseModel(@Nullable Output<String> licenseModel) {
             $.licenseModel = licenseModel;
             return this;
         }
@@ -849,6 +956,58 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
             return oggData(Output.of(oggData));
         }
 
+        /**
+         * @param placements (Updatable) An array of local peers of deployment
+         * 
+         * @return builder
+         * 
+         */
+        public Builder placements(@Nullable Output<List<DeploymentPlacementArgs>> placements) {
+            $.placements = placements;
+            return this;
+        }
+
+        /**
+         * @param placements (Updatable) An array of local peers of deployment
+         * 
+         * @return builder
+         * 
+         */
+        public Builder placements(List<DeploymentPlacementArgs> placements) {
+            return placements(Output.of(placements));
+        }
+
+        /**
+         * @param placements (Updatable) An array of local peers of deployment
+         * 
+         * @return builder
+         * 
+         */
+        public Builder placements(DeploymentPlacementArgs... placements) {
+            return placements(List.of(placements));
+        }
+
+        /**
+         * @param sourceDeploymentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceDeploymentId(@Nullable Output<String> sourceDeploymentId) {
+            $.sourceDeploymentId = sourceDeploymentId;
+            return this;
+        }
+
+        /**
+         * @param sourceDeploymentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceDeploymentId(String sourceDeploymentId) {
+            return sourceDeploymentId(Output.of(sourceDeploymentId));
+        }
+
         public Builder state(@Nullable Output<String> state) {
             $.state = state;
             return this;
@@ -883,20 +1042,8 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
             if ($.compartmentId == null) {
                 throw new MissingRequiredPropertyException("DeploymentArgs", "compartmentId");
             }
-            if ($.cpuCoreCount == null) {
-                throw new MissingRequiredPropertyException("DeploymentArgs", "cpuCoreCount");
-            }
-            if ($.deploymentType == null) {
-                throw new MissingRequiredPropertyException("DeploymentArgs", "deploymentType");
-            }
             if ($.displayName == null) {
                 throw new MissingRequiredPropertyException("DeploymentArgs", "displayName");
-            }
-            if ($.isAutoScalingEnabled == null) {
-                throw new MissingRequiredPropertyException("DeploymentArgs", "isAutoScalingEnabled");
-            }
-            if ($.licenseModel == null) {
-                throw new MissingRequiredPropertyException("DeploymentArgs", "licenseModel");
             }
             if ($.subnetId == null) {
                 throw new MissingRequiredPropertyException("DeploymentArgs", "subnetId");

@@ -2051,6 +2051,112 @@ func (o DeploymentOggDataGroupToRolesMappingPtrOutput) UserGroupId() pulumi.Stri
 	}).(pulumi.StringPtrOutput)
 }
 
+type DeploymentPlacement struct {
+	// (Updatable) The availability domain of a placement.
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
+	// (Updatable) The fault domain of a placement.
+	FaultDomain *string `pulumi:"faultDomain"`
+}
+
+// DeploymentPlacementInput is an input type that accepts DeploymentPlacementArgs and DeploymentPlacementOutput values.
+// You can construct a concrete instance of `DeploymentPlacementInput` via:
+//
+//	DeploymentPlacementArgs{...}
+type DeploymentPlacementInput interface {
+	pulumi.Input
+
+	ToDeploymentPlacementOutput() DeploymentPlacementOutput
+	ToDeploymentPlacementOutputWithContext(context.Context) DeploymentPlacementOutput
+}
+
+type DeploymentPlacementArgs struct {
+	// (Updatable) The availability domain of a placement.
+	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
+	// (Updatable) The fault domain of a placement.
+	FaultDomain pulumi.StringPtrInput `pulumi:"faultDomain"`
+}
+
+func (DeploymentPlacementArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeploymentPlacement)(nil)).Elem()
+}
+
+func (i DeploymentPlacementArgs) ToDeploymentPlacementOutput() DeploymentPlacementOutput {
+	return i.ToDeploymentPlacementOutputWithContext(context.Background())
+}
+
+func (i DeploymentPlacementArgs) ToDeploymentPlacementOutputWithContext(ctx context.Context) DeploymentPlacementOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentPlacementOutput)
+}
+
+// DeploymentPlacementArrayInput is an input type that accepts DeploymentPlacementArray and DeploymentPlacementArrayOutput values.
+// You can construct a concrete instance of `DeploymentPlacementArrayInput` via:
+//
+//	DeploymentPlacementArray{ DeploymentPlacementArgs{...} }
+type DeploymentPlacementArrayInput interface {
+	pulumi.Input
+
+	ToDeploymentPlacementArrayOutput() DeploymentPlacementArrayOutput
+	ToDeploymentPlacementArrayOutputWithContext(context.Context) DeploymentPlacementArrayOutput
+}
+
+type DeploymentPlacementArray []DeploymentPlacementInput
+
+func (DeploymentPlacementArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DeploymentPlacement)(nil)).Elem()
+}
+
+func (i DeploymentPlacementArray) ToDeploymentPlacementArrayOutput() DeploymentPlacementArrayOutput {
+	return i.ToDeploymentPlacementArrayOutputWithContext(context.Background())
+}
+
+func (i DeploymentPlacementArray) ToDeploymentPlacementArrayOutputWithContext(ctx context.Context) DeploymentPlacementArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentPlacementArrayOutput)
+}
+
+type DeploymentPlacementOutput struct{ *pulumi.OutputState }
+
+func (DeploymentPlacementOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeploymentPlacement)(nil)).Elem()
+}
+
+func (o DeploymentPlacementOutput) ToDeploymentPlacementOutput() DeploymentPlacementOutput {
+	return o
+}
+
+func (o DeploymentPlacementOutput) ToDeploymentPlacementOutputWithContext(ctx context.Context) DeploymentPlacementOutput {
+	return o
+}
+
+// (Updatable) The availability domain of a placement.
+func (o DeploymentPlacementOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentPlacement) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The fault domain of a placement.
+func (o DeploymentPlacementOutput) FaultDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentPlacement) *string { return v.FaultDomain }).(pulumi.StringPtrOutput)
+}
+
+type DeploymentPlacementArrayOutput struct{ *pulumi.OutputState }
+
+func (DeploymentPlacementArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DeploymentPlacement)(nil)).Elem()
+}
+
+func (o DeploymentPlacementArrayOutput) ToDeploymentPlacementArrayOutput() DeploymentPlacementArrayOutput {
+	return o
+}
+
+func (o DeploymentPlacementArrayOutput) ToDeploymentPlacementArrayOutputWithContext(ctx context.Context) DeploymentPlacementArrayOutput {
+	return o
+}
+
+func (o DeploymentPlacementArrayOutput) Index(i pulumi.IntInput) DeploymentPlacementOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DeploymentPlacement {
+		return vs[0].([]DeploymentPlacement)[vs[1].(int)]
+	}).(DeploymentPlacementOutput)
+}
+
 type PipelineLock struct {
 	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
 	Message *string `pulumi:"message"`
@@ -8958,6 +9064,504 @@ func (o GetDeploymentOggDataGroupToRolesMappingArrayOutput) Index(i pulumi.IntIn
 	}).(GetDeploymentOggDataGroupToRolesMappingOutput)
 }
 
+type GetDeploymentPeersDeploymentPeerCollection struct {
+	// An array of DeploymentPeers.
+	Items []GetDeploymentPeersDeploymentPeerCollectionItem `pulumi:"items"`
+}
+
+// GetDeploymentPeersDeploymentPeerCollectionInput is an input type that accepts GetDeploymentPeersDeploymentPeerCollectionArgs and GetDeploymentPeersDeploymentPeerCollectionOutput values.
+// You can construct a concrete instance of `GetDeploymentPeersDeploymentPeerCollectionInput` via:
+//
+//	GetDeploymentPeersDeploymentPeerCollectionArgs{...}
+type GetDeploymentPeersDeploymentPeerCollectionInput interface {
+	pulumi.Input
+
+	ToGetDeploymentPeersDeploymentPeerCollectionOutput() GetDeploymentPeersDeploymentPeerCollectionOutput
+	ToGetDeploymentPeersDeploymentPeerCollectionOutputWithContext(context.Context) GetDeploymentPeersDeploymentPeerCollectionOutput
+}
+
+type GetDeploymentPeersDeploymentPeerCollectionArgs struct {
+	// An array of DeploymentPeers.
+	Items GetDeploymentPeersDeploymentPeerCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetDeploymentPeersDeploymentPeerCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentPeersDeploymentPeerCollection)(nil)).Elem()
+}
+
+func (i GetDeploymentPeersDeploymentPeerCollectionArgs) ToGetDeploymentPeersDeploymentPeerCollectionOutput() GetDeploymentPeersDeploymentPeerCollectionOutput {
+	return i.ToGetDeploymentPeersDeploymentPeerCollectionOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentPeersDeploymentPeerCollectionArgs) ToGetDeploymentPeersDeploymentPeerCollectionOutputWithContext(ctx context.Context) GetDeploymentPeersDeploymentPeerCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentPeersDeploymentPeerCollectionOutput)
+}
+
+// GetDeploymentPeersDeploymentPeerCollectionArrayInput is an input type that accepts GetDeploymentPeersDeploymentPeerCollectionArray and GetDeploymentPeersDeploymentPeerCollectionArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentPeersDeploymentPeerCollectionArrayInput` via:
+//
+//	GetDeploymentPeersDeploymentPeerCollectionArray{ GetDeploymentPeersDeploymentPeerCollectionArgs{...} }
+type GetDeploymentPeersDeploymentPeerCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentPeersDeploymentPeerCollectionArrayOutput() GetDeploymentPeersDeploymentPeerCollectionArrayOutput
+	ToGetDeploymentPeersDeploymentPeerCollectionArrayOutputWithContext(context.Context) GetDeploymentPeersDeploymentPeerCollectionArrayOutput
+}
+
+type GetDeploymentPeersDeploymentPeerCollectionArray []GetDeploymentPeersDeploymentPeerCollectionInput
+
+func (GetDeploymentPeersDeploymentPeerCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentPeersDeploymentPeerCollection)(nil)).Elem()
+}
+
+func (i GetDeploymentPeersDeploymentPeerCollectionArray) ToGetDeploymentPeersDeploymentPeerCollectionArrayOutput() GetDeploymentPeersDeploymentPeerCollectionArrayOutput {
+	return i.ToGetDeploymentPeersDeploymentPeerCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentPeersDeploymentPeerCollectionArray) ToGetDeploymentPeersDeploymentPeerCollectionArrayOutputWithContext(ctx context.Context) GetDeploymentPeersDeploymentPeerCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentPeersDeploymentPeerCollectionArrayOutput)
+}
+
+type GetDeploymentPeersDeploymentPeerCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentPeersDeploymentPeerCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentPeersDeploymentPeerCollection)(nil)).Elem()
+}
+
+func (o GetDeploymentPeersDeploymentPeerCollectionOutput) ToGetDeploymentPeersDeploymentPeerCollectionOutput() GetDeploymentPeersDeploymentPeerCollectionOutput {
+	return o
+}
+
+func (o GetDeploymentPeersDeploymentPeerCollectionOutput) ToGetDeploymentPeersDeploymentPeerCollectionOutputWithContext(ctx context.Context) GetDeploymentPeersDeploymentPeerCollectionOutput {
+	return o
+}
+
+// An array of DeploymentPeers.
+func (o GetDeploymentPeersDeploymentPeerCollectionOutput) Items() GetDeploymentPeersDeploymentPeerCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetDeploymentPeersDeploymentPeerCollection) []GetDeploymentPeersDeploymentPeerCollectionItem {
+		return v.Items
+	}).(GetDeploymentPeersDeploymentPeerCollectionItemArrayOutput)
+}
+
+type GetDeploymentPeersDeploymentPeerCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentPeersDeploymentPeerCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentPeersDeploymentPeerCollection)(nil)).Elem()
+}
+
+func (o GetDeploymentPeersDeploymentPeerCollectionArrayOutput) ToGetDeploymentPeersDeploymentPeerCollectionArrayOutput() GetDeploymentPeersDeploymentPeerCollectionArrayOutput {
+	return o
+}
+
+func (o GetDeploymentPeersDeploymentPeerCollectionArrayOutput) ToGetDeploymentPeersDeploymentPeerCollectionArrayOutputWithContext(ctx context.Context) GetDeploymentPeersDeploymentPeerCollectionArrayOutput {
+	return o
+}
+
+func (o GetDeploymentPeersDeploymentPeerCollectionArrayOutput) Index(i pulumi.IntInput) GetDeploymentPeersDeploymentPeerCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentPeersDeploymentPeerCollection {
+		return vs[0].([]GetDeploymentPeersDeploymentPeerCollection)[vs[1].(int)]
+	}).(GetDeploymentPeersDeploymentPeerCollectionOutput)
+}
+
+type GetDeploymentPeersDeploymentPeerCollectionItem struct {
+	// The availability domain of a placement.
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// A unique Deployment identifier.
+	DeploymentId string `pulumi:"deploymentId"`
+	// A filter to return only the resources that match the entire 'displayName' given.
+	DisplayName string `pulumi:"displayName"`
+	// The fault domain of a placement.
+	FaultDomain string `pulumi:"faultDomain"`
+	// The type of the deployment role.
+	PeerRole string `pulumi:"peerRole"`
+	// The type of the deployment peer.
+	PeerType string `pulumi:"peerType"`
+	// The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+	Region string `pulumi:"region"`
+	// A filter to return only the resources that match the 'lifecycleState' given.
+	State string `pulumi:"state"`
+	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeRoleChanged string `pulumi:"timeRoleChanged"`
+	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetDeploymentPeersDeploymentPeerCollectionItemInput is an input type that accepts GetDeploymentPeersDeploymentPeerCollectionItemArgs and GetDeploymentPeersDeploymentPeerCollectionItemOutput values.
+// You can construct a concrete instance of `GetDeploymentPeersDeploymentPeerCollectionItemInput` via:
+//
+//	GetDeploymentPeersDeploymentPeerCollectionItemArgs{...}
+type GetDeploymentPeersDeploymentPeerCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetDeploymentPeersDeploymentPeerCollectionItemOutput() GetDeploymentPeersDeploymentPeerCollectionItemOutput
+	ToGetDeploymentPeersDeploymentPeerCollectionItemOutputWithContext(context.Context) GetDeploymentPeersDeploymentPeerCollectionItemOutput
+}
+
+type GetDeploymentPeersDeploymentPeerCollectionItemArgs struct {
+	// The availability domain of a placement.
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// A unique Deployment identifier.
+	DeploymentId pulumi.StringInput `pulumi:"deploymentId"`
+	// A filter to return only the resources that match the entire 'displayName' given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The fault domain of a placement.
+	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
+	// The type of the deployment role.
+	PeerRole pulumi.StringInput `pulumi:"peerRole"`
+	// The type of the deployment peer.
+	PeerType pulumi.StringInput `pulumi:"peerType"`
+	// The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+	Region pulumi.StringInput `pulumi:"region"`
+	// A filter to return only the resources that match the 'lifecycleState' given.
+	State pulumi.StringInput `pulumi:"state"`
+	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeRoleChanged pulumi.StringInput `pulumi:"timeRoleChanged"`
+	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetDeploymentPeersDeploymentPeerCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentPeersDeploymentPeerCollectionItem)(nil)).Elem()
+}
+
+func (i GetDeploymentPeersDeploymentPeerCollectionItemArgs) ToGetDeploymentPeersDeploymentPeerCollectionItemOutput() GetDeploymentPeersDeploymentPeerCollectionItemOutput {
+	return i.ToGetDeploymentPeersDeploymentPeerCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentPeersDeploymentPeerCollectionItemArgs) ToGetDeploymentPeersDeploymentPeerCollectionItemOutputWithContext(ctx context.Context) GetDeploymentPeersDeploymentPeerCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentPeersDeploymentPeerCollectionItemOutput)
+}
+
+// GetDeploymentPeersDeploymentPeerCollectionItemArrayInput is an input type that accepts GetDeploymentPeersDeploymentPeerCollectionItemArray and GetDeploymentPeersDeploymentPeerCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentPeersDeploymentPeerCollectionItemArrayInput` via:
+//
+//	GetDeploymentPeersDeploymentPeerCollectionItemArray{ GetDeploymentPeersDeploymentPeerCollectionItemArgs{...} }
+type GetDeploymentPeersDeploymentPeerCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentPeersDeploymentPeerCollectionItemArrayOutput() GetDeploymentPeersDeploymentPeerCollectionItemArrayOutput
+	ToGetDeploymentPeersDeploymentPeerCollectionItemArrayOutputWithContext(context.Context) GetDeploymentPeersDeploymentPeerCollectionItemArrayOutput
+}
+
+type GetDeploymentPeersDeploymentPeerCollectionItemArray []GetDeploymentPeersDeploymentPeerCollectionItemInput
+
+func (GetDeploymentPeersDeploymentPeerCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentPeersDeploymentPeerCollectionItem)(nil)).Elem()
+}
+
+func (i GetDeploymentPeersDeploymentPeerCollectionItemArray) ToGetDeploymentPeersDeploymentPeerCollectionItemArrayOutput() GetDeploymentPeersDeploymentPeerCollectionItemArrayOutput {
+	return i.ToGetDeploymentPeersDeploymentPeerCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentPeersDeploymentPeerCollectionItemArray) ToGetDeploymentPeersDeploymentPeerCollectionItemArrayOutputWithContext(ctx context.Context) GetDeploymentPeersDeploymentPeerCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentPeersDeploymentPeerCollectionItemArrayOutput)
+}
+
+type GetDeploymentPeersDeploymentPeerCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentPeersDeploymentPeerCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentPeersDeploymentPeerCollectionItem)(nil)).Elem()
+}
+
+func (o GetDeploymentPeersDeploymentPeerCollectionItemOutput) ToGetDeploymentPeersDeploymentPeerCollectionItemOutput() GetDeploymentPeersDeploymentPeerCollectionItemOutput {
+	return o
+}
+
+func (o GetDeploymentPeersDeploymentPeerCollectionItemOutput) ToGetDeploymentPeersDeploymentPeerCollectionItemOutputWithContext(ctx context.Context) GetDeploymentPeersDeploymentPeerCollectionItemOutput {
+	return o
+}
+
+// The availability domain of a placement.
+func (o GetDeploymentPeersDeploymentPeerCollectionItemOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentPeersDeploymentPeerCollectionItem) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// A unique Deployment identifier.
+func (o GetDeploymentPeersDeploymentPeerCollectionItemOutput) DeploymentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentPeersDeploymentPeerCollectionItem) string { return v.DeploymentId }).(pulumi.StringOutput)
+}
+
+// A filter to return only the resources that match the entire 'displayName' given.
+func (o GetDeploymentPeersDeploymentPeerCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentPeersDeploymentPeerCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The fault domain of a placement.
+func (o GetDeploymentPeersDeploymentPeerCollectionItemOutput) FaultDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentPeersDeploymentPeerCollectionItem) string { return v.FaultDomain }).(pulumi.StringOutput)
+}
+
+// The type of the deployment role.
+func (o GetDeploymentPeersDeploymentPeerCollectionItemOutput) PeerRole() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentPeersDeploymentPeerCollectionItem) string { return v.PeerRole }).(pulumi.StringOutput)
+}
+
+// The type of the deployment peer.
+func (o GetDeploymentPeersDeploymentPeerCollectionItemOutput) PeerType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentPeersDeploymentPeerCollectionItem) string { return v.PeerType }).(pulumi.StringOutput)
+}
+
+// The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+func (o GetDeploymentPeersDeploymentPeerCollectionItemOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentPeersDeploymentPeerCollectionItem) string { return v.Region }).(pulumi.StringOutput)
+}
+
+// A filter to return only the resources that match the 'lifecycleState' given.
+func (o GetDeploymentPeersDeploymentPeerCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentPeersDeploymentPeerCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetDeploymentPeersDeploymentPeerCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentPeersDeploymentPeerCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetDeploymentPeersDeploymentPeerCollectionItemOutput) TimeRoleChanged() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentPeersDeploymentPeerCollectionItem) string { return v.TimeRoleChanged }).(pulumi.StringOutput)
+}
+
+// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetDeploymentPeersDeploymentPeerCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentPeersDeploymentPeerCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetDeploymentPeersDeploymentPeerCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentPeersDeploymentPeerCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentPeersDeploymentPeerCollectionItem)(nil)).Elem()
+}
+
+func (o GetDeploymentPeersDeploymentPeerCollectionItemArrayOutput) ToGetDeploymentPeersDeploymentPeerCollectionItemArrayOutput() GetDeploymentPeersDeploymentPeerCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDeploymentPeersDeploymentPeerCollectionItemArrayOutput) ToGetDeploymentPeersDeploymentPeerCollectionItemArrayOutputWithContext(ctx context.Context) GetDeploymentPeersDeploymentPeerCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDeploymentPeersDeploymentPeerCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDeploymentPeersDeploymentPeerCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentPeersDeploymentPeerCollectionItem {
+		return vs[0].([]GetDeploymentPeersDeploymentPeerCollectionItem)[vs[1].(int)]
+	}).(GetDeploymentPeersDeploymentPeerCollectionItemOutput)
+}
+
+type GetDeploymentPeersFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDeploymentPeersFilterInput is an input type that accepts GetDeploymentPeersFilterArgs and GetDeploymentPeersFilterOutput values.
+// You can construct a concrete instance of `GetDeploymentPeersFilterInput` via:
+//
+//	GetDeploymentPeersFilterArgs{...}
+type GetDeploymentPeersFilterInput interface {
+	pulumi.Input
+
+	ToGetDeploymentPeersFilterOutput() GetDeploymentPeersFilterOutput
+	ToGetDeploymentPeersFilterOutputWithContext(context.Context) GetDeploymentPeersFilterOutput
+}
+
+type GetDeploymentPeersFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDeploymentPeersFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentPeersFilter)(nil)).Elem()
+}
+
+func (i GetDeploymentPeersFilterArgs) ToGetDeploymentPeersFilterOutput() GetDeploymentPeersFilterOutput {
+	return i.ToGetDeploymentPeersFilterOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentPeersFilterArgs) ToGetDeploymentPeersFilterOutputWithContext(ctx context.Context) GetDeploymentPeersFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentPeersFilterOutput)
+}
+
+// GetDeploymentPeersFilterArrayInput is an input type that accepts GetDeploymentPeersFilterArray and GetDeploymentPeersFilterArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentPeersFilterArrayInput` via:
+//
+//	GetDeploymentPeersFilterArray{ GetDeploymentPeersFilterArgs{...} }
+type GetDeploymentPeersFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentPeersFilterArrayOutput() GetDeploymentPeersFilterArrayOutput
+	ToGetDeploymentPeersFilterArrayOutputWithContext(context.Context) GetDeploymentPeersFilterArrayOutput
+}
+
+type GetDeploymentPeersFilterArray []GetDeploymentPeersFilterInput
+
+func (GetDeploymentPeersFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentPeersFilter)(nil)).Elem()
+}
+
+func (i GetDeploymentPeersFilterArray) ToGetDeploymentPeersFilterArrayOutput() GetDeploymentPeersFilterArrayOutput {
+	return i.ToGetDeploymentPeersFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentPeersFilterArray) ToGetDeploymentPeersFilterArrayOutputWithContext(ctx context.Context) GetDeploymentPeersFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentPeersFilterArrayOutput)
+}
+
+type GetDeploymentPeersFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentPeersFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentPeersFilter)(nil)).Elem()
+}
+
+func (o GetDeploymentPeersFilterOutput) ToGetDeploymentPeersFilterOutput() GetDeploymentPeersFilterOutput {
+	return o
+}
+
+func (o GetDeploymentPeersFilterOutput) ToGetDeploymentPeersFilterOutputWithContext(ctx context.Context) GetDeploymentPeersFilterOutput {
+	return o
+}
+
+func (o GetDeploymentPeersFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentPeersFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDeploymentPeersFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDeploymentPeersFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDeploymentPeersFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDeploymentPeersFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDeploymentPeersFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentPeersFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentPeersFilter)(nil)).Elem()
+}
+
+func (o GetDeploymentPeersFilterArrayOutput) ToGetDeploymentPeersFilterArrayOutput() GetDeploymentPeersFilterArrayOutput {
+	return o
+}
+
+func (o GetDeploymentPeersFilterArrayOutput) ToGetDeploymentPeersFilterArrayOutputWithContext(ctx context.Context) GetDeploymentPeersFilterArrayOutput {
+	return o
+}
+
+func (o GetDeploymentPeersFilterArrayOutput) Index(i pulumi.IntInput) GetDeploymentPeersFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentPeersFilter {
+		return vs[0].([]GetDeploymentPeersFilter)[vs[1].(int)]
+	}).(GetDeploymentPeersFilterOutput)
+}
+
+type GetDeploymentPlacement struct {
+	// The availability domain of a placement.
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The fault domain of a placement.
+	FaultDomain string `pulumi:"faultDomain"`
+}
+
+// GetDeploymentPlacementInput is an input type that accepts GetDeploymentPlacementArgs and GetDeploymentPlacementOutput values.
+// You can construct a concrete instance of `GetDeploymentPlacementInput` via:
+//
+//	GetDeploymentPlacementArgs{...}
+type GetDeploymentPlacementInput interface {
+	pulumi.Input
+
+	ToGetDeploymentPlacementOutput() GetDeploymentPlacementOutput
+	ToGetDeploymentPlacementOutputWithContext(context.Context) GetDeploymentPlacementOutput
+}
+
+type GetDeploymentPlacementArgs struct {
+	// The availability domain of a placement.
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The fault domain of a placement.
+	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
+}
+
+func (GetDeploymentPlacementArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentPlacement)(nil)).Elem()
+}
+
+func (i GetDeploymentPlacementArgs) ToGetDeploymentPlacementOutput() GetDeploymentPlacementOutput {
+	return i.ToGetDeploymentPlacementOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentPlacementArgs) ToGetDeploymentPlacementOutputWithContext(ctx context.Context) GetDeploymentPlacementOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentPlacementOutput)
+}
+
+// GetDeploymentPlacementArrayInput is an input type that accepts GetDeploymentPlacementArray and GetDeploymentPlacementArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentPlacementArrayInput` via:
+//
+//	GetDeploymentPlacementArray{ GetDeploymentPlacementArgs{...} }
+type GetDeploymentPlacementArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentPlacementArrayOutput() GetDeploymentPlacementArrayOutput
+	ToGetDeploymentPlacementArrayOutputWithContext(context.Context) GetDeploymentPlacementArrayOutput
+}
+
+type GetDeploymentPlacementArray []GetDeploymentPlacementInput
+
+func (GetDeploymentPlacementArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentPlacement)(nil)).Elem()
+}
+
+func (i GetDeploymentPlacementArray) ToGetDeploymentPlacementArrayOutput() GetDeploymentPlacementArrayOutput {
+	return i.ToGetDeploymentPlacementArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentPlacementArray) ToGetDeploymentPlacementArrayOutputWithContext(ctx context.Context) GetDeploymentPlacementArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentPlacementArrayOutput)
+}
+
+type GetDeploymentPlacementOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentPlacementOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentPlacement)(nil)).Elem()
+}
+
+func (o GetDeploymentPlacementOutput) ToGetDeploymentPlacementOutput() GetDeploymentPlacementOutput {
+	return o
+}
+
+func (o GetDeploymentPlacementOutput) ToGetDeploymentPlacementOutputWithContext(ctx context.Context) GetDeploymentPlacementOutput {
+	return o
+}
+
+// The availability domain of a placement.
+func (o GetDeploymentPlacementOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentPlacement) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// The fault domain of a placement.
+func (o GetDeploymentPlacementOutput) FaultDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentPlacement) string { return v.FaultDomain }).(pulumi.StringOutput)
+}
+
+type GetDeploymentPlacementArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentPlacementArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentPlacement)(nil)).Elem()
+}
+
+func (o GetDeploymentPlacementArrayOutput) ToGetDeploymentPlacementArrayOutput() GetDeploymentPlacementArrayOutput {
+	return o
+}
+
+func (o GetDeploymentPlacementArrayOutput) ToGetDeploymentPlacementArrayOutputWithContext(ctx context.Context) GetDeploymentPlacementArrayOutput {
+	return o
+}
+
+func (o GetDeploymentPlacementArrayOutput) Index(i pulumi.IntInput) GetDeploymentPlacementOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentPlacement {
+		return vs[0].([]GetDeploymentPlacement)[vs[1].(int)]
+	}).(GetDeploymentPlacementOutput)
+}
+
 type GetDeploymentTypeItem struct {
 	// The deployment category defines the broad separation of the deployment type into categories.  Currently the separation is 'DATA_REPLICATION' and 'STREAM_ANALYTICS'.
 	Category string `pulumi:"category"`
@@ -9214,6 +9818,8 @@ type GetDeploymentTypesDeploymentTypeCollectionItem struct {
 	OggVersion string `pulumi:"oggVersion"`
 	// List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
 	SourceTechnologies []string `pulumi:"sourceTechnologies"`
+	// Specifies supported capabilities or features by a deployment type .
+	SupportedCapabilities []string `pulumi:"supportedCapabilities"`
 	// The URL to the webpage listing the supported technologies.
 	SupportedTechnologiesUrl string `pulumi:"supportedTechnologiesUrl"`
 	// List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
@@ -9246,6 +9852,8 @@ type GetDeploymentTypesDeploymentTypeCollectionItemArgs struct {
 	OggVersion pulumi.StringInput `pulumi:"oggVersion"`
 	// List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
 	SourceTechnologies pulumi.StringArrayInput `pulumi:"sourceTechnologies"`
+	// Specifies supported capabilities or features by a deployment type .
+	SupportedCapabilities pulumi.StringArrayInput `pulumi:"supportedCapabilities"`
 	// The URL to the webpage listing the supported technologies.
 	SupportedTechnologiesUrl pulumi.StringInput `pulumi:"supportedTechnologiesUrl"`
 	// List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
@@ -9336,6 +9944,11 @@ func (o GetDeploymentTypesDeploymentTypeCollectionItemOutput) OggVersion() pulum
 // List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
 func (o GetDeploymentTypesDeploymentTypeCollectionItemOutput) SourceTechnologies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDeploymentTypesDeploymentTypeCollectionItem) []string { return v.SourceTechnologies }).(pulumi.StringArrayOutput)
+}
+
+// Specifies supported capabilities or features by a deployment type .
+func (o GetDeploymentTypesDeploymentTypeCollectionItemOutput) SupportedCapabilities() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDeploymentTypesDeploymentTypeCollectionItem) []string { return v.SupportedCapabilities }).(pulumi.StringArrayOutput)
 }
 
 // The URL to the webpage listing the supported technologies.
@@ -10475,6 +11088,8 @@ func (o GetDeploymentsDeploymentCollectionArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetDeploymentsDeploymentCollectionItem struct {
+	// The availability domain of a placement.
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// Defines the schedule of the deployment backup.
 	BackupSchedules []GetDeploymentsDeploymentCollectionItemBackupSchedule `pulumi:"backupSchedules"`
 	// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
@@ -10489,6 +11104,8 @@ type GetDeploymentsDeploymentCollectionItem struct {
 	DeploymentBackupId string `pulumi:"deploymentBackupId"`
 	// Information regarding the deployment diagnostic collection
 	DeploymentDiagnosticDatas []GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData `pulumi:"deploymentDiagnosticDatas"`
+	// The type of the deployment role.
+	DeploymentRole string `pulumi:"deploymentRole"`
 	// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
 	DeploymentType string `pulumi:"deploymentType"`
 	// The URL of a resource.
@@ -10499,6 +11116,8 @@ type GetDeploymentsDeploymentCollectionItem struct {
 	DisplayName string `pulumi:"displayName"`
 	// Specifies whether the deployment is used in a production or development/testing environment.
 	EnvironmentType string `pulumi:"environmentType"`
+	// The fault domain of a placement.
+	FaultDomain string `pulumi:"faultDomain"`
 	// A filter to return only the resources that match the 'fqdn' given.
 	Fqdn string `pulumi:"fqdn"`
 	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
@@ -10542,10 +11161,14 @@ type GetDeploymentsDeploymentCollectionItem struct {
 	NsgIds []string `pulumi:"nsgIds"`
 	// Deployment Data for an OggDeployment
 	OggDatas []GetDeploymentsDeploymentCollectionItemOggData `pulumi:"oggDatas"`
+	// An array of local peers of deployment
+	Placements []GetDeploymentsDeploymentCollectionItemPlacement `pulumi:"placements"`
 	// The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
 	PrivateIpAddress string `pulumi:"privateIpAddress"`
 	// The public IP address representing the access point for the Deployment.
 	PublicIpAddress string `pulumi:"publicIpAddress"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+	SourceDeploymentId string `pulumi:"sourceDeploymentId"`
 	// A filter to return only the resources that match the 'lifecycleState' given.
 	State string `pulumi:"state"`
 	// The amount of storage being utilized (in bytes)
@@ -10564,6 +11187,8 @@ type GetDeploymentsDeploymentCollectionItem struct {
 	TimeOfNextMaintenance string `pulumi:"timeOfNextMaintenance"`
 	// The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeOggVersionSupportedUntil string `pulumi:"timeOggVersionSupportedUntil"`
+	// The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeRoleChanged string `pulumi:"timeRoleChanged"`
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -10582,6 +11207,8 @@ type GetDeploymentsDeploymentCollectionItemInput interface {
 }
 
 type GetDeploymentsDeploymentCollectionItemArgs struct {
+	// The availability domain of a placement.
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
 	// Defines the schedule of the deployment backup.
 	BackupSchedules GetDeploymentsDeploymentCollectionItemBackupScheduleArrayInput `pulumi:"backupSchedules"`
 	// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
@@ -10596,6 +11223,8 @@ type GetDeploymentsDeploymentCollectionItemArgs struct {
 	DeploymentBackupId pulumi.StringInput `pulumi:"deploymentBackupId"`
 	// Information regarding the deployment diagnostic collection
 	DeploymentDiagnosticDatas GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayInput `pulumi:"deploymentDiagnosticDatas"`
+	// The type of the deployment role.
+	DeploymentRole pulumi.StringInput `pulumi:"deploymentRole"`
 	// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
 	DeploymentType pulumi.StringInput `pulumi:"deploymentType"`
 	// The URL of a resource.
@@ -10606,6 +11235,8 @@ type GetDeploymentsDeploymentCollectionItemArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Specifies whether the deployment is used in a production or development/testing environment.
 	EnvironmentType pulumi.StringInput `pulumi:"environmentType"`
+	// The fault domain of a placement.
+	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
 	// A filter to return only the resources that match the 'fqdn' given.
 	Fqdn pulumi.StringInput `pulumi:"fqdn"`
 	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
@@ -10649,10 +11280,14 @@ type GetDeploymentsDeploymentCollectionItemArgs struct {
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// Deployment Data for an OggDeployment
 	OggDatas GetDeploymentsDeploymentCollectionItemOggDataArrayInput `pulumi:"oggDatas"`
+	// An array of local peers of deployment
+	Placements GetDeploymentsDeploymentCollectionItemPlacementArrayInput `pulumi:"placements"`
 	// The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
 	PrivateIpAddress pulumi.StringInput `pulumi:"privateIpAddress"`
 	// The public IP address representing the access point for the Deployment.
 	PublicIpAddress pulumi.StringInput `pulumi:"publicIpAddress"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+	SourceDeploymentId pulumi.StringInput `pulumi:"sourceDeploymentId"`
 	// A filter to return only the resources that match the 'lifecycleState' given.
 	State pulumi.StringInput `pulumi:"state"`
 	// The amount of storage being utilized (in bytes)
@@ -10671,6 +11306,8 @@ type GetDeploymentsDeploymentCollectionItemArgs struct {
 	TimeOfNextMaintenance pulumi.StringInput `pulumi:"timeOfNextMaintenance"`
 	// The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeOggVersionSupportedUntil pulumi.StringInput `pulumi:"timeOggVersionSupportedUntil"`
+	// The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeRoleChanged pulumi.StringInput `pulumi:"timeRoleChanged"`
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 	// Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -10728,6 +11365,11 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) ToGetDeploymentsDeployment
 	return o
 }
 
+// The availability domain of a placement.
+func (o GetDeploymentsDeploymentCollectionItemOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
 // Defines the schedule of the deployment backup.
 func (o GetDeploymentsDeploymentCollectionItemOutput) BackupSchedules() GetDeploymentsDeploymentCollectionItemBackupScheduleArrayOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) []GetDeploymentsDeploymentCollectionItemBackupSchedule {
@@ -10767,6 +11409,11 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) DeploymentDiagnosticDatas(
 	}).(GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayOutput)
 }
 
+// The type of the deployment role.
+func (o GetDeploymentsDeploymentCollectionItemOutput) DeploymentRole() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.DeploymentRole }).(pulumi.StringOutput)
+}
+
 // The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
 func (o GetDeploymentsDeploymentCollectionItemOutput) DeploymentType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.DeploymentType }).(pulumi.StringOutput)
@@ -10790,6 +11437,11 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) DisplayName() pulumi.Strin
 // Specifies whether the deployment is used in a production or development/testing environment.
 func (o GetDeploymentsDeploymentCollectionItemOutput) EnvironmentType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.EnvironmentType }).(pulumi.StringOutput)
+}
+
+// The fault domain of a placement.
+func (o GetDeploymentsDeploymentCollectionItemOutput) FaultDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.FaultDomain }).(pulumi.StringOutput)
 }
 
 // A filter to return only the resources that match the 'fqdn' given.
@@ -10911,6 +11563,13 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) OggDatas() GetDeploymentsD
 	}).(GetDeploymentsDeploymentCollectionItemOggDataArrayOutput)
 }
 
+// An array of local peers of deployment
+func (o GetDeploymentsDeploymentCollectionItemOutput) Placements() GetDeploymentsDeploymentCollectionItemPlacementArrayOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) []GetDeploymentsDeploymentCollectionItemPlacement {
+		return v.Placements
+	}).(GetDeploymentsDeploymentCollectionItemPlacementArrayOutput)
+}
+
 // The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
 func (o GetDeploymentsDeploymentCollectionItemOutput) PrivateIpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.PrivateIpAddress }).(pulumi.StringOutput)
@@ -10919,6 +11578,11 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) PrivateIpAddress() pulumi.
 // The public IP address representing the access point for the Deployment.
 func (o GetDeploymentsDeploymentCollectionItemOutput) PublicIpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.PublicIpAddress }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+func (o GetDeploymentsDeploymentCollectionItemOutput) SourceDeploymentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.SourceDeploymentId }).(pulumi.StringOutput)
 }
 
 // A filter to return only the resources that match the 'lifecycleState' given.
@@ -10964,6 +11628,11 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) TimeOfNextMaintenance() pu
 // The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 func (o GetDeploymentsDeploymentCollectionItemOutput) TimeOggVersionSupportedUntil() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.TimeOggVersionSupportedUntil }).(pulumi.StringOutput)
+}
+
+// The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetDeploymentsDeploymentCollectionItemOutput) TimeRoleChanged() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.TimeRoleChanged }).(pulumi.StringOutput)
 }
 
 // The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -12058,6 +12727,112 @@ func (o GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArrayOut
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMapping {
 		return vs[0].([]GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMapping)[vs[1].(int)]
 	}).(GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemPlacement struct {
+	// The availability domain of a placement.
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The fault domain of a placement.
+	FaultDomain string `pulumi:"faultDomain"`
+}
+
+// GetDeploymentsDeploymentCollectionItemPlacementInput is an input type that accepts GetDeploymentsDeploymentCollectionItemPlacementArgs and GetDeploymentsDeploymentCollectionItemPlacementOutput values.
+// You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemPlacementInput` via:
+//
+//	GetDeploymentsDeploymentCollectionItemPlacementArgs{...}
+type GetDeploymentsDeploymentCollectionItemPlacementInput interface {
+	pulumi.Input
+
+	ToGetDeploymentsDeploymentCollectionItemPlacementOutput() GetDeploymentsDeploymentCollectionItemPlacementOutput
+	ToGetDeploymentsDeploymentCollectionItemPlacementOutputWithContext(context.Context) GetDeploymentsDeploymentCollectionItemPlacementOutput
+}
+
+type GetDeploymentsDeploymentCollectionItemPlacementArgs struct {
+	// The availability domain of a placement.
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The fault domain of a placement.
+	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
+}
+
+func (GetDeploymentsDeploymentCollectionItemPlacementArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemPlacement)(nil)).Elem()
+}
+
+func (i GetDeploymentsDeploymentCollectionItemPlacementArgs) ToGetDeploymentsDeploymentCollectionItemPlacementOutput() GetDeploymentsDeploymentCollectionItemPlacementOutput {
+	return i.ToGetDeploymentsDeploymentCollectionItemPlacementOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentsDeploymentCollectionItemPlacementArgs) ToGetDeploymentsDeploymentCollectionItemPlacementOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemPlacementOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentsDeploymentCollectionItemPlacementOutput)
+}
+
+// GetDeploymentsDeploymentCollectionItemPlacementArrayInput is an input type that accepts GetDeploymentsDeploymentCollectionItemPlacementArray and GetDeploymentsDeploymentCollectionItemPlacementArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemPlacementArrayInput` via:
+//
+//	GetDeploymentsDeploymentCollectionItemPlacementArray{ GetDeploymentsDeploymentCollectionItemPlacementArgs{...} }
+type GetDeploymentsDeploymentCollectionItemPlacementArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentsDeploymentCollectionItemPlacementArrayOutput() GetDeploymentsDeploymentCollectionItemPlacementArrayOutput
+	ToGetDeploymentsDeploymentCollectionItemPlacementArrayOutputWithContext(context.Context) GetDeploymentsDeploymentCollectionItemPlacementArrayOutput
+}
+
+type GetDeploymentsDeploymentCollectionItemPlacementArray []GetDeploymentsDeploymentCollectionItemPlacementInput
+
+func (GetDeploymentsDeploymentCollectionItemPlacementArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentsDeploymentCollectionItemPlacement)(nil)).Elem()
+}
+
+func (i GetDeploymentsDeploymentCollectionItemPlacementArray) ToGetDeploymentsDeploymentCollectionItemPlacementArrayOutput() GetDeploymentsDeploymentCollectionItemPlacementArrayOutput {
+	return i.ToGetDeploymentsDeploymentCollectionItemPlacementArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentsDeploymentCollectionItemPlacementArray) ToGetDeploymentsDeploymentCollectionItemPlacementArrayOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemPlacementArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentsDeploymentCollectionItemPlacementArrayOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemPlacementOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentsDeploymentCollectionItemPlacementOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemPlacement)(nil)).Elem()
+}
+
+func (o GetDeploymentsDeploymentCollectionItemPlacementOutput) ToGetDeploymentsDeploymentCollectionItemPlacementOutput() GetDeploymentsDeploymentCollectionItemPlacementOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemPlacementOutput) ToGetDeploymentsDeploymentCollectionItemPlacementOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemPlacementOutput {
+	return o
+}
+
+// The availability domain of a placement.
+func (o GetDeploymentsDeploymentCollectionItemPlacementOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemPlacement) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// The fault domain of a placement.
+func (o GetDeploymentsDeploymentCollectionItemPlacementOutput) FaultDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemPlacement) string { return v.FaultDomain }).(pulumi.StringOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemPlacementArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentsDeploymentCollectionItemPlacementArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentsDeploymentCollectionItemPlacement)(nil)).Elem()
+}
+
+func (o GetDeploymentsDeploymentCollectionItemPlacementArrayOutput) ToGetDeploymentsDeploymentCollectionItemPlacementArrayOutput() GetDeploymentsDeploymentCollectionItemPlacementArrayOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemPlacementArrayOutput) ToGetDeploymentsDeploymentCollectionItemPlacementArrayOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemPlacementArrayOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemPlacementArrayOutput) Index(i pulumi.IntInput) GetDeploymentsDeploymentCollectionItemPlacementOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentsDeploymentCollectionItemPlacement {
+		return vs[0].([]GetDeploymentsDeploymentCollectionItemPlacement)[vs[1].(int)]
+	}).(GetDeploymentsDeploymentCollectionItemPlacementOutput)
 }
 
 type GetDeploymentsFilter struct {
@@ -17278,6 +18053,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentOggDataPtrInput)(nil)).Elem(), DeploymentOggDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentOggDataGroupToRolesMappingInput)(nil)).Elem(), DeploymentOggDataGroupToRolesMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentOggDataGroupToRolesMappingPtrInput)(nil)).Elem(), DeploymentOggDataGroupToRolesMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentPlacementInput)(nil)).Elem(), DeploymentPlacementArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentPlacementArrayInput)(nil)).Elem(), DeploymentPlacementArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineLockInput)(nil)).Elem(), PipelineLockArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineLockArrayInput)(nil)).Elem(), PipelineLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineMappingRuleInput)(nil)).Elem(), PipelineMappingRuleArgs{})
@@ -17366,6 +18143,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentOggDataArrayInput)(nil)).Elem(), GetDeploymentOggDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentOggDataGroupToRolesMappingInput)(nil)).Elem(), GetDeploymentOggDataGroupToRolesMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentOggDataGroupToRolesMappingArrayInput)(nil)).Elem(), GetDeploymentOggDataGroupToRolesMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentPeersDeploymentPeerCollectionInput)(nil)).Elem(), GetDeploymentPeersDeploymentPeerCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentPeersDeploymentPeerCollectionArrayInput)(nil)).Elem(), GetDeploymentPeersDeploymentPeerCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentPeersDeploymentPeerCollectionItemInput)(nil)).Elem(), GetDeploymentPeersDeploymentPeerCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentPeersDeploymentPeerCollectionItemArrayInput)(nil)).Elem(), GetDeploymentPeersDeploymentPeerCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentPeersFilterInput)(nil)).Elem(), GetDeploymentPeersFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentPeersFilterArrayInput)(nil)).Elem(), GetDeploymentPeersFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentPlacementInput)(nil)).Elem(), GetDeploymentPlacementArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentPlacementArrayInput)(nil)).Elem(), GetDeploymentPlacementArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentTypeItemInput)(nil)).Elem(), GetDeploymentTypeItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentTypeItemArrayInput)(nil)).Elem(), GetDeploymentTypeItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentTypesDeploymentTypeCollectionInput)(nil)).Elem(), GetDeploymentTypesDeploymentTypeCollectionArgs{})
@@ -17406,6 +18191,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemOggDataArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemOggDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemPlacementInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemPlacementArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemPlacementArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemPlacementArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsFilterInput)(nil)).Elem(), GetDeploymentsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsFilterArrayInput)(nil)).Elem(), GetDeploymentsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMessageItemInput)(nil)).Elem(), GetMessageItemArgs{})
@@ -17520,6 +18307,8 @@ func init() {
 	pulumi.RegisterOutputType(DeploymentOggDataPtrOutput{})
 	pulumi.RegisterOutputType(DeploymentOggDataGroupToRolesMappingOutput{})
 	pulumi.RegisterOutputType(DeploymentOggDataGroupToRolesMappingPtrOutput{})
+	pulumi.RegisterOutputType(DeploymentPlacementOutput{})
+	pulumi.RegisterOutputType(DeploymentPlacementArrayOutput{})
 	pulumi.RegisterOutputType(PipelineLockOutput{})
 	pulumi.RegisterOutputType(PipelineLockArrayOutput{})
 	pulumi.RegisterOutputType(PipelineMappingRuleOutput{})
@@ -17608,6 +18397,14 @@ func init() {
 	pulumi.RegisterOutputType(GetDeploymentOggDataArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentOggDataGroupToRolesMappingOutput{})
 	pulumi.RegisterOutputType(GetDeploymentOggDataGroupToRolesMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentPeersDeploymentPeerCollectionOutput{})
+	pulumi.RegisterOutputType(GetDeploymentPeersDeploymentPeerCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentPeersDeploymentPeerCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetDeploymentPeersDeploymentPeerCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentPeersFilterOutput{})
+	pulumi.RegisterOutputType(GetDeploymentPeersFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentPlacementOutput{})
+	pulumi.RegisterOutputType(GetDeploymentPlacementArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentTypeItemOutput{})
 	pulumi.RegisterOutputType(GetDeploymentTypeItemArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentTypesDeploymentTypeCollectionOutput{})
@@ -17648,6 +18445,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemOggDataArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemPlacementOutput{})
+	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemPlacementArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsFilterOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetMessageItemOutput{})

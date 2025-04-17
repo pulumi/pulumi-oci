@@ -26,6 +26,8 @@ import (
 type Deployment struct {
 	pulumi.CustomResourceState
 
+	// The availability domain of a placement.
+	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
 	// (Updatable) Defines the backup schedule details for create operation.
 	BackupSchedule DeploymentBackupScheduleOutput `pulumi:"backupSchedule"`
 	// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
@@ -40,6 +42,8 @@ type Deployment struct {
 	DeploymentBackupId pulumi.StringOutput `pulumi:"deploymentBackupId"`
 	// Information regarding the deployment diagnostic collection
 	DeploymentDiagnosticDatas DeploymentDeploymentDiagnosticDataArrayOutput `pulumi:"deploymentDiagnosticDatas"`
+	// The type of the deployment role.
+	DeploymentRole pulumi.StringOutput `pulumi:"deploymentRole"`
 	// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
 	DeploymentType pulumi.StringOutput `pulumi:"deploymentType"`
 	// The URL of a resource.
@@ -50,6 +54,8 @@ type Deployment struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
 	EnvironmentType pulumi.StringOutput `pulumi:"environmentType"`
+	// The fault domain of a placement.
+	FaultDomain pulumi.StringOutput `pulumi:"faultDomain"`
 	// (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
 	Fqdn pulumi.StringOutput `pulumi:"fqdn"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
@@ -91,11 +97,15 @@ type Deployment struct {
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
 	// (Updatable) Deployment Data for creating an OggDeployment
 	OggData DeploymentOggDataOutput `pulumi:"oggData"`
+	// (Updatable) An array of local peers of deployment
+	Placements DeploymentPlacementArrayOutput `pulumi:"placements"`
 	// The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
 	PrivateIpAddress pulumi.StringOutput `pulumi:"privateIpAddress"`
 	// The public IP address representing the access point for the Deployment.
 	PublicIpAddress pulumi.StringOutput `pulumi:"publicIpAddress"`
-	State           pulumi.StringOutput `pulumi:"state"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+	SourceDeploymentId pulumi.StringOutput `pulumi:"sourceDeploymentId"`
+	State              pulumi.StringOutput `pulumi:"state"`
 	// The amount of storage being utilized (in bytes)
 	StorageUtilizationInBytes pulumi.StringOutput `pulumi:"storageUtilizationInBytes"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
@@ -112,6 +122,8 @@ type Deployment struct {
 	TimeOfNextMaintenance pulumi.StringOutput `pulumi:"timeOfNextMaintenance"`
 	// The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeOggVersionSupportedUntil pulumi.StringOutput `pulumi:"timeOggVersionSupportedUntil"`
+	// The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeRoleChanged pulumi.StringOutput `pulumi:"timeRoleChanged"`
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -128,20 +140,8 @@ func NewDeployment(ctx *pulumi.Context,
 	if args.CompartmentId == nil {
 		return nil, errors.New("invalid value for required argument 'CompartmentId'")
 	}
-	if args.CpuCoreCount == nil {
-		return nil, errors.New("invalid value for required argument 'CpuCoreCount'")
-	}
-	if args.DeploymentType == nil {
-		return nil, errors.New("invalid value for required argument 'DeploymentType'")
-	}
 	if args.DisplayName == nil {
 		return nil, errors.New("invalid value for required argument 'DisplayName'")
-	}
-	if args.IsAutoScalingEnabled == nil {
-		return nil, errors.New("invalid value for required argument 'IsAutoScalingEnabled'")
-	}
-	if args.LicenseModel == nil {
-		return nil, errors.New("invalid value for required argument 'LicenseModel'")
 	}
 	if args.SubnetId == nil {
 		return nil, errors.New("invalid value for required argument 'SubnetId'")
@@ -169,6 +169,8 @@ func GetDeployment(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Deployment resources.
 type deploymentState struct {
+	// The availability domain of a placement.
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// (Updatable) Defines the backup schedule details for create operation.
 	BackupSchedule *DeploymentBackupSchedule `pulumi:"backupSchedule"`
 	// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
@@ -183,6 +185,8 @@ type deploymentState struct {
 	DeploymentBackupId *string `pulumi:"deploymentBackupId"`
 	// Information regarding the deployment diagnostic collection
 	DeploymentDiagnosticDatas []DeploymentDeploymentDiagnosticData `pulumi:"deploymentDiagnosticDatas"`
+	// The type of the deployment role.
+	DeploymentRole *string `pulumi:"deploymentRole"`
 	// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
 	DeploymentType *string `pulumi:"deploymentType"`
 	// The URL of a resource.
@@ -193,6 +197,8 @@ type deploymentState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
 	EnvironmentType *string `pulumi:"environmentType"`
+	// The fault domain of a placement.
+	FaultDomain *string `pulumi:"faultDomain"`
 	// (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
 	Fqdn *string `pulumi:"fqdn"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
@@ -234,11 +240,15 @@ type deploymentState struct {
 	NsgIds []string `pulumi:"nsgIds"`
 	// (Updatable) Deployment Data for creating an OggDeployment
 	OggData *DeploymentOggData `pulumi:"oggData"`
+	// (Updatable) An array of local peers of deployment
+	Placements []DeploymentPlacement `pulumi:"placements"`
 	// The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
 	PrivateIpAddress *string `pulumi:"privateIpAddress"`
 	// The public IP address representing the access point for the Deployment.
 	PublicIpAddress *string `pulumi:"publicIpAddress"`
-	State           *string `pulumi:"state"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+	SourceDeploymentId *string `pulumi:"sourceDeploymentId"`
+	State              *string `pulumi:"state"`
 	// The amount of storage being utilized (in bytes)
 	StorageUtilizationInBytes *string `pulumi:"storageUtilizationInBytes"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
@@ -255,6 +265,8 @@ type deploymentState struct {
 	TimeOfNextMaintenance *string `pulumi:"timeOfNextMaintenance"`
 	// The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeOggVersionSupportedUntil *string `pulumi:"timeOggVersionSupportedUntil"`
+	// The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeRoleChanged *string `pulumi:"timeRoleChanged"`
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -262,6 +274,8 @@ type deploymentState struct {
 }
 
 type DeploymentState struct {
+	// The availability domain of a placement.
+	AvailabilityDomain pulumi.StringPtrInput
 	// (Updatable) Defines the backup schedule details for create operation.
 	BackupSchedule DeploymentBackupSchedulePtrInput
 	// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
@@ -276,6 +290,8 @@ type DeploymentState struct {
 	DeploymentBackupId pulumi.StringPtrInput
 	// Information regarding the deployment diagnostic collection
 	DeploymentDiagnosticDatas DeploymentDeploymentDiagnosticDataArrayInput
+	// The type of the deployment role.
+	DeploymentRole pulumi.StringPtrInput
 	// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
 	DeploymentType pulumi.StringPtrInput
 	// The URL of a resource.
@@ -286,6 +302,8 @@ type DeploymentState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
 	EnvironmentType pulumi.StringPtrInput
+	// The fault domain of a placement.
+	FaultDomain pulumi.StringPtrInput
 	// (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
 	Fqdn pulumi.StringPtrInput
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
@@ -327,11 +345,15 @@ type DeploymentState struct {
 	NsgIds pulumi.StringArrayInput
 	// (Updatable) Deployment Data for creating an OggDeployment
 	OggData DeploymentOggDataPtrInput
+	// (Updatable) An array of local peers of deployment
+	Placements DeploymentPlacementArrayInput
 	// The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
 	PrivateIpAddress pulumi.StringPtrInput
 	// The public IP address representing the access point for the Deployment.
 	PublicIpAddress pulumi.StringPtrInput
-	State           pulumi.StringPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+	SourceDeploymentId pulumi.StringPtrInput
+	State              pulumi.StringPtrInput
 	// The amount of storage being utilized (in bytes)
 	StorageUtilizationInBytes pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
@@ -348,6 +370,8 @@ type DeploymentState struct {
 	TimeOfNextMaintenance pulumi.StringPtrInput
 	// The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeOggVersionSupportedUntil pulumi.StringPtrInput
+	// The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeRoleChanged pulumi.StringPtrInput
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeUpdated pulumi.StringPtrInput
 	// Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -359,35 +383,39 @@ func (DeploymentState) ElementType() reflect.Type {
 }
 
 type deploymentArgs struct {
+	// The availability domain of a placement.
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// (Updatable) Defines the backup schedule details for create operation.
 	BackupSchedule *DeploymentBackupSchedule `pulumi:"backupSchedule"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
-	CpuCoreCount int `pulumi:"cpuCoreCount"`
+	CpuCoreCount *int `pulumi:"cpuCoreCount"`
 	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
 	DeploymentBackupId *string `pulumi:"deploymentBackupId"`
 	// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
-	DeploymentType string `pulumi:"deploymentType"`
+	DeploymentType *string `pulumi:"deploymentType"`
 	// (Updatable) Metadata about this specific object.
 	Description *string `pulumi:"description"`
 	// (Updatable) An object's Display Name.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
 	EnvironmentType *string `pulumi:"environmentType"`
+	// The fault domain of a placement.
+	FaultDomain *string `pulumi:"faultDomain"`
 	// (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
 	Fqdn *string `pulumi:"fqdn"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
-	IsAutoScalingEnabled bool  `pulumi:"isAutoScalingEnabled"`
+	IsAutoScalingEnabled *bool `pulumi:"isAutoScalingEnabled"`
 	IsLockOverride       *bool `pulumi:"isLockOverride"`
 	// (Updatable) True if this object is publicly available.
 	IsPublic *bool `pulumi:"isPublic"`
 	// (Updatable) The Oracle license model that applies to a Deployment.
-	LicenseModel string `pulumi:"licenseModel"`
+	LicenseModel *string `pulumi:"licenseModel"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
 	LoadBalancerSubnetId *string `pulumi:"loadBalancerSubnetId"`
 	// Locks associated with this resource.
@@ -400,42 +428,50 @@ type deploymentArgs struct {
 	NsgIds []string `pulumi:"nsgIds"`
 	// (Updatable) Deployment Data for creating an OggDeployment
 	OggData *DeploymentOggData `pulumi:"oggData"`
-	State   *string            `pulumi:"state"`
+	// (Updatable) An array of local peers of deployment
+	Placements []DeploymentPlacement `pulumi:"placements"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+	SourceDeploymentId *string `pulumi:"sourceDeploymentId"`
+	State              *string `pulumi:"state"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
 	SubnetId string `pulumi:"subnetId"`
 }
 
 // The set of arguments for constructing a Deployment resource.
 type DeploymentArgs struct {
+	// The availability domain of a placement.
+	AvailabilityDomain pulumi.StringPtrInput
 	// (Updatable) Defines the backup schedule details for create operation.
 	BackupSchedule DeploymentBackupSchedulePtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId pulumi.StringInput
 	// (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
-	CpuCoreCount pulumi.IntInput
+	CpuCoreCount pulumi.IntPtrInput
 	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
 	DeploymentBackupId pulumi.StringPtrInput
 	// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
-	DeploymentType pulumi.StringInput
+	DeploymentType pulumi.StringPtrInput
 	// (Updatable) Metadata about this specific object.
 	Description pulumi.StringPtrInput
 	// (Updatable) An object's Display Name.
 	DisplayName pulumi.StringInput
 	// (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
 	EnvironmentType pulumi.StringPtrInput
+	// The fault domain of a placement.
+	FaultDomain pulumi.StringPtrInput
 	// (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
 	Fqdn pulumi.StringPtrInput
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
 	// (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
-	IsAutoScalingEnabled pulumi.BoolInput
+	IsAutoScalingEnabled pulumi.BoolPtrInput
 	IsLockOverride       pulumi.BoolPtrInput
 	// (Updatable) True if this object is publicly available.
 	IsPublic pulumi.BoolPtrInput
 	// (Updatable) The Oracle license model that applies to a Deployment.
-	LicenseModel pulumi.StringInput
+	LicenseModel pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
 	LoadBalancerSubnetId pulumi.StringPtrInput
 	// Locks associated with this resource.
@@ -448,7 +484,11 @@ type DeploymentArgs struct {
 	NsgIds pulumi.StringArrayInput
 	// (Updatable) Deployment Data for creating an OggDeployment
 	OggData DeploymentOggDataPtrInput
-	State   pulumi.StringPtrInput
+	// (Updatable) An array of local peers of deployment
+	Placements DeploymentPlacementArrayInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+	SourceDeploymentId pulumi.StringPtrInput
+	State              pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
 	SubnetId pulumi.StringInput
 }
@@ -540,6 +580,11 @@ func (o DeploymentOutput) ToDeploymentOutputWithContext(ctx context.Context) Dep
 	return o
 }
 
+// The availability domain of a placement.
+func (o DeploymentOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
 // (Updatable) Defines the backup schedule details for create operation.
 func (o DeploymentOutput) BackupSchedule() DeploymentBackupScheduleOutput {
 	return o.ApplyT(func(v *Deployment) DeploymentBackupScheduleOutput { return v.BackupSchedule }).(DeploymentBackupScheduleOutput)
@@ -575,6 +620,11 @@ func (o DeploymentOutput) DeploymentDiagnosticDatas() DeploymentDeploymentDiagno
 	return o.ApplyT(func(v *Deployment) DeploymentDeploymentDiagnosticDataArrayOutput { return v.DeploymentDiagnosticDatas }).(DeploymentDeploymentDiagnosticDataArrayOutput)
 }
 
+// The type of the deployment role.
+func (o DeploymentOutput) DeploymentRole() pulumi.StringOutput {
+	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.DeploymentRole }).(pulumi.StringOutput)
+}
+
 // The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
 func (o DeploymentOutput) DeploymentType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.DeploymentType }).(pulumi.StringOutput)
@@ -598,6 +648,11 @@ func (o DeploymentOutput) DisplayName() pulumi.StringOutput {
 // (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
 func (o DeploymentOutput) EnvironmentType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.EnvironmentType }).(pulumi.StringOutput)
+}
+
+// The fault domain of a placement.
+func (o DeploymentOutput) FaultDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.FaultDomain }).(pulumi.StringOutput)
 }
 
 // (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
@@ -704,6 +759,11 @@ func (o DeploymentOutput) OggData() DeploymentOggDataOutput {
 	return o.ApplyT(func(v *Deployment) DeploymentOggDataOutput { return v.OggData }).(DeploymentOggDataOutput)
 }
 
+// (Updatable) An array of local peers of deployment
+func (o DeploymentOutput) Placements() DeploymentPlacementArrayOutput {
+	return o.ApplyT(func(v *Deployment) DeploymentPlacementArrayOutput { return v.Placements }).(DeploymentPlacementArrayOutput)
+}
+
 // The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
 func (o DeploymentOutput) PrivateIpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.PrivateIpAddress }).(pulumi.StringOutput)
@@ -712,6 +772,11 @@ func (o DeploymentOutput) PrivateIpAddress() pulumi.StringOutput {
 // The public IP address representing the access point for the Deployment.
 func (o DeploymentOutput) PublicIpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.PublicIpAddress }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+func (o DeploymentOutput) SourceDeploymentId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.SourceDeploymentId }).(pulumi.StringOutput)
 }
 
 func (o DeploymentOutput) State() pulumi.StringOutput {
@@ -756,6 +821,11 @@ func (o DeploymentOutput) TimeOfNextMaintenance() pulumi.StringOutput {
 // The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 func (o DeploymentOutput) TimeOggVersionSupportedUntil() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.TimeOggVersionSupportedUntil }).(pulumi.StringOutput)
+}
+
+// The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o DeploymentOutput) TimeRoleChanged() pulumi.StringOutput {
+	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.TimeRoleChanged }).(pulumi.StringOutput)
 }
 
 // The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.

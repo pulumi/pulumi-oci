@@ -58,6 +58,8 @@ type LookupDeploymentArgs struct {
 
 // A collection of values returned by getDeployment.
 type LookupDeploymentResult struct {
+	// The availability domain of a placement.
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// Defines the schedule of the deployment backup.
 	BackupSchedules []GetDeploymentBackupSchedule `pulumi:"backupSchedules"`
 	// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
@@ -73,6 +75,8 @@ type LookupDeploymentResult struct {
 	// Information regarding the deployment diagnostic collection
 	DeploymentDiagnosticDatas []GetDeploymentDeploymentDiagnosticData `pulumi:"deploymentDiagnosticDatas"`
 	DeploymentId              string                                  `pulumi:"deploymentId"`
+	// The type of the deployment role.
+	DeploymentRole string `pulumi:"deploymentRole"`
 	// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
 	DeploymentType string `pulumi:"deploymentType"`
 	// The URL of a resource.
@@ -83,6 +87,8 @@ type LookupDeploymentResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// Specifies whether the deployment is used in a production or development/testing environment.
 	EnvironmentType string `pulumi:"environmentType"`
+	// The fault domain of a placement.
+	FaultDomain string `pulumi:"faultDomain"`
 	// A three-label Fully Qualified Domain Name (FQDN) for a resource.
 	Fqdn string `pulumi:"fqdn"`
 	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
@@ -126,10 +132,14 @@ type LookupDeploymentResult struct {
 	NsgIds []string `pulumi:"nsgIds"`
 	// Deployment Data for an OggDeployment
 	OggDatas []GetDeploymentOggData `pulumi:"oggDatas"`
+	// An array of local peers of deployment
+	Placements []GetDeploymentPlacement `pulumi:"placements"`
 	// The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
 	PrivateIpAddress string `pulumi:"privateIpAddress"`
 	// The public IP address representing the access point for the Deployment.
 	PublicIpAddress string `pulumi:"publicIpAddress"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+	SourceDeploymentId string `pulumi:"sourceDeploymentId"`
 	// Possible lifecycle states.
 	State string `pulumi:"state"`
 	// The amount of storage being utilized (in bytes)
@@ -148,6 +158,8 @@ type LookupDeploymentResult struct {
 	TimeOfNextMaintenance string `pulumi:"timeOfNextMaintenance"`
 	// The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeOggVersionSupportedUntil string `pulumi:"timeOggVersionSupportedUntil"`
+	// The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeRoleChanged string `pulumi:"timeRoleChanged"`
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -186,6 +198,11 @@ func (o LookupDeploymentResultOutput) ToLookupDeploymentResultOutput() LookupDep
 
 func (o LookupDeploymentResultOutput) ToLookupDeploymentResultOutputWithContext(ctx context.Context) LookupDeploymentResultOutput {
 	return o
+}
+
+// The availability domain of a placement.
+func (o LookupDeploymentResultOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
 // Defines the schedule of the deployment backup.
@@ -229,6 +246,11 @@ func (o LookupDeploymentResultOutput) DeploymentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.DeploymentId }).(pulumi.StringOutput)
 }
 
+// The type of the deployment role.
+func (o LookupDeploymentResultOutput) DeploymentRole() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) string { return v.DeploymentRole }).(pulumi.StringOutput)
+}
+
 // The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
 func (o LookupDeploymentResultOutput) DeploymentType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.DeploymentType }).(pulumi.StringOutput)
@@ -252,6 +274,11 @@ func (o LookupDeploymentResultOutput) DisplayName() pulumi.StringOutput {
 // Specifies whether the deployment is used in a production or development/testing environment.
 func (o LookupDeploymentResultOutput) EnvironmentType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.EnvironmentType }).(pulumi.StringOutput)
+}
+
+// The fault domain of a placement.
+func (o LookupDeploymentResultOutput) FaultDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) string { return v.FaultDomain }).(pulumi.StringOutput)
 }
 
 // A three-label Fully Qualified Domain Name (FQDN) for a resource.
@@ -365,6 +392,11 @@ func (o LookupDeploymentResultOutput) OggDatas() GetDeploymentOggDataArrayOutput
 	return o.ApplyT(func(v LookupDeploymentResult) []GetDeploymentOggData { return v.OggDatas }).(GetDeploymentOggDataArrayOutput)
 }
 
+// An array of local peers of deployment
+func (o LookupDeploymentResultOutput) Placements() GetDeploymentPlacementArrayOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) []GetDeploymentPlacement { return v.Placements }).(GetDeploymentPlacementArrayOutput)
+}
+
 // The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
 func (o LookupDeploymentResultOutput) PrivateIpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.PrivateIpAddress }).(pulumi.StringOutput)
@@ -373,6 +405,11 @@ func (o LookupDeploymentResultOutput) PrivateIpAddress() pulumi.StringOutput {
 // The public IP address representing the access point for the Deployment.
 func (o LookupDeploymentResultOutput) PublicIpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.PublicIpAddress }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+func (o LookupDeploymentResultOutput) SourceDeploymentId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) string { return v.SourceDeploymentId }).(pulumi.StringOutput)
 }
 
 // Possible lifecycle states.
@@ -418,6 +455,11 @@ func (o LookupDeploymentResultOutput) TimeOfNextMaintenance() pulumi.StringOutpu
 // The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 func (o LookupDeploymentResultOutput) TimeOggVersionSupportedUntil() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.TimeOggVersionSupportedUntil }).(pulumi.StringOutput)
+}
+
+// The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o LookupDeploymentResultOutput) TimeRoleChanged() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) string { return v.TimeRoleChanged }).(pulumi.StringOutput)
 }
 
 // The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.

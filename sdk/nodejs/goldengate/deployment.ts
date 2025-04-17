@@ -48,6 +48,10 @@ export class Deployment extends pulumi.CustomResource {
     }
 
     /**
+     * The availability domain of a placement.
+     */
+    public readonly availabilityDomain!: pulumi.Output<string>;
+    /**
      * (Updatable) Defines the backup schedule details for create operation.
      */
     public readonly backupSchedule!: pulumi.Output<outputs.GoldenGate.DeploymentBackupSchedule>;
@@ -76,6 +80,10 @@ export class Deployment extends pulumi.CustomResource {
      */
     public /*out*/ readonly deploymentDiagnosticDatas!: pulumi.Output<outputs.GoldenGate.DeploymentDeploymentDiagnosticData[]>;
     /**
+     * The type of the deployment role.
+     */
+    public /*out*/ readonly deploymentRole!: pulumi.Output<string>;
+    /**
      * The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
      */
     public readonly deploymentType!: pulumi.Output<string>;
@@ -95,6 +103,10 @@ export class Deployment extends pulumi.CustomResource {
      * (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
      */
     public readonly environmentType!: pulumi.Output<string>;
+    /**
+     * The fault domain of a placement.
+     */
+    public readonly faultDomain!: pulumi.Output<string>;
     /**
      * (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
      */
@@ -177,6 +189,10 @@ export class Deployment extends pulumi.CustomResource {
      */
     public readonly oggData!: pulumi.Output<outputs.GoldenGate.DeploymentOggData>;
     /**
+     * (Updatable) An array of local peers of deployment
+     */
+    public readonly placements!: pulumi.Output<outputs.GoldenGate.DeploymentPlacement[]>;
+    /**
      * The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
      */
     public /*out*/ readonly privateIpAddress!: pulumi.Output<string>;
@@ -184,6 +200,10 @@ export class Deployment extends pulumi.CustomResource {
      * The public IP address representing the access point for the Deployment.
      */
     public /*out*/ readonly publicIpAddress!: pulumi.Output<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+     */
+    public readonly sourceDeploymentId!: pulumi.Output<string>;
     public readonly state!: pulumi.Output<string>;
     /**
      * The amount of storage being utilized (in bytes)
@@ -218,6 +238,10 @@ export class Deployment extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeOggVersionSupportedUntil!: pulumi.Output<string>;
     /**
+     * The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     */
+    public /*out*/ readonly timeRoleChanged!: pulumi.Output<string>;
+    /**
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
@@ -239,6 +263,7 @@ export class Deployment extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DeploymentState | undefined;
+            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
             resourceInputs["backupSchedule"] = state ? state.backupSchedule : undefined;
             resourceInputs["category"] = state ? state.category : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
@@ -246,11 +271,13 @@ export class Deployment extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["deploymentBackupId"] = state ? state.deploymentBackupId : undefined;
             resourceInputs["deploymentDiagnosticDatas"] = state ? state.deploymentDiagnosticDatas : undefined;
+            resourceInputs["deploymentRole"] = state ? state.deploymentRole : undefined;
             resourceInputs["deploymentType"] = state ? state.deploymentType : undefined;
             resourceInputs["deploymentUrl"] = state ? state.deploymentUrl : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["environmentType"] = state ? state.environmentType : undefined;
+            resourceInputs["faultDomain"] = state ? state.faultDomain : undefined;
             resourceInputs["fqdn"] = state ? state.fqdn : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["ingressIps"] = state ? state.ingressIps : undefined;
@@ -272,8 +299,10 @@ export class Deployment extends pulumi.CustomResource {
             resourceInputs["nextMaintenanceDescription"] = state ? state.nextMaintenanceDescription : undefined;
             resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
             resourceInputs["oggData"] = state ? state.oggData : undefined;
+            resourceInputs["placements"] = state ? state.placements : undefined;
             resourceInputs["privateIpAddress"] = state ? state.privateIpAddress : undefined;
             resourceInputs["publicIpAddress"] = state ? state.publicIpAddress : undefined;
+            resourceInputs["sourceDeploymentId"] = state ? state.sourceDeploymentId : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["storageUtilizationInBytes"] = state ? state.storageUtilizationInBytes : undefined;
             resourceInputs["subnetId"] = state ? state.subnetId : undefined;
@@ -283,6 +312,7 @@ export class Deployment extends pulumi.CustomResource {
             resourceInputs["timeNextBackupScheduled"] = state ? state.timeNextBackupScheduled : undefined;
             resourceInputs["timeOfNextMaintenance"] = state ? state.timeOfNextMaintenance : undefined;
             resourceInputs["timeOggVersionSupportedUntil"] = state ? state.timeOggVersionSupportedUntil : undefined;
+            resourceInputs["timeRoleChanged"] = state ? state.timeRoleChanged : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
             resourceInputs["timeUpgradeRequired"] = state ? state.timeUpgradeRequired : undefined;
         } else {
@@ -290,24 +320,13 @@ export class Deployment extends pulumi.CustomResource {
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.cpuCoreCount === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'cpuCoreCount'");
-            }
-            if ((!args || args.deploymentType === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'deploymentType'");
-            }
             if ((!args || args.displayName === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
-            }
-            if ((!args || args.isAutoScalingEnabled === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'isAutoScalingEnabled'");
-            }
-            if ((!args || args.licenseModel === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'licenseModel'");
             }
             if ((!args || args.subnetId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'subnetId'");
             }
+            resourceInputs["availabilityDomain"] = args ? args.availabilityDomain : undefined;
             resourceInputs["backupSchedule"] = args ? args.backupSchedule : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["cpuCoreCount"] = args ? args.cpuCoreCount : undefined;
@@ -317,6 +336,7 @@ export class Deployment extends pulumi.CustomResource {
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["environmentType"] = args ? args.environmentType : undefined;
+            resourceInputs["faultDomain"] = args ? args.faultDomain : undefined;
             resourceInputs["fqdn"] = args ? args.fqdn : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["isAutoScalingEnabled"] = args ? args.isAutoScalingEnabled : undefined;
@@ -329,10 +349,13 @@ export class Deployment extends pulumi.CustomResource {
             resourceInputs["maintenanceWindow"] = args ? args.maintenanceWindow : undefined;
             resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
             resourceInputs["oggData"] = args ? args.oggData : undefined;
+            resourceInputs["placements"] = args ? args.placements : undefined;
+            resourceInputs["sourceDeploymentId"] = args ? args.sourceDeploymentId : undefined;
             resourceInputs["state"] = args ? args.state : undefined;
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
             resourceInputs["category"] = undefined /*out*/;
             resourceInputs["deploymentDiagnosticDatas"] = undefined /*out*/;
+            resourceInputs["deploymentRole"] = undefined /*out*/;
             resourceInputs["deploymentUrl"] = undefined /*out*/;
             resourceInputs["ingressIps"] = undefined /*out*/;
             resourceInputs["isHealthy"] = undefined /*out*/;
@@ -352,6 +375,7 @@ export class Deployment extends pulumi.CustomResource {
             resourceInputs["timeNextBackupScheduled"] = undefined /*out*/;
             resourceInputs["timeOfNextMaintenance"] = undefined /*out*/;
             resourceInputs["timeOggVersionSupportedUntil"] = undefined /*out*/;
+            resourceInputs["timeRoleChanged"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
             resourceInputs["timeUpgradeRequired"] = undefined /*out*/;
         }
@@ -364,6 +388,10 @@ export class Deployment extends pulumi.CustomResource {
  * Input properties used for looking up and filtering Deployment resources.
  */
 export interface DeploymentState {
+    /**
+     * The availability domain of a placement.
+     */
+    availabilityDomain?: pulumi.Input<string>;
     /**
      * (Updatable) Defines the backup schedule details for create operation.
      */
@@ -393,6 +421,10 @@ export interface DeploymentState {
      */
     deploymentDiagnosticDatas?: pulumi.Input<pulumi.Input<inputs.GoldenGate.DeploymentDeploymentDiagnosticData>[]>;
     /**
+     * The type of the deployment role.
+     */
+    deploymentRole?: pulumi.Input<string>;
+    /**
      * The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
      */
     deploymentType?: pulumi.Input<string>;
@@ -412,6 +444,10 @@ export interface DeploymentState {
      * (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
      */
     environmentType?: pulumi.Input<string>;
+    /**
+     * The fault domain of a placement.
+     */
+    faultDomain?: pulumi.Input<string>;
     /**
      * (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
      */
@@ -494,6 +530,10 @@ export interface DeploymentState {
      */
     oggData?: pulumi.Input<inputs.GoldenGate.DeploymentOggData>;
     /**
+     * (Updatable) An array of local peers of deployment
+     */
+    placements?: pulumi.Input<pulumi.Input<inputs.GoldenGate.DeploymentPlacement>[]>;
+    /**
      * The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
      */
     privateIpAddress?: pulumi.Input<string>;
@@ -501,6 +541,10 @@ export interface DeploymentState {
      * The public IP address representing the access point for the Deployment.
      */
     publicIpAddress?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+     */
+    sourceDeploymentId?: pulumi.Input<string>;
     state?: pulumi.Input<string>;
     /**
      * The amount of storage being utilized (in bytes)
@@ -535,6 +579,10 @@ export interface DeploymentState {
      */
     timeOggVersionSupportedUntil?: pulumi.Input<string>;
     /**
+     * The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     */
+    timeRoleChanged?: pulumi.Input<string>;
+    /**
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
     timeUpdated?: pulumi.Input<string>;
@@ -549,6 +597,10 @@ export interface DeploymentState {
  */
 export interface DeploymentArgs {
     /**
+     * The availability domain of a placement.
+     */
+    availabilityDomain?: pulumi.Input<string>;
+    /**
      * (Updatable) Defines the backup schedule details for create operation.
      */
     backupSchedule?: pulumi.Input<inputs.GoldenGate.DeploymentBackupSchedule>;
@@ -559,7 +611,7 @@ export interface DeploymentArgs {
     /**
      * (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
      */
-    cpuCoreCount: pulumi.Input<number>;
+    cpuCoreCount?: pulumi.Input<number>;
     /**
      * (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
      */
@@ -571,7 +623,7 @@ export interface DeploymentArgs {
     /**
      * The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
      */
-    deploymentType: pulumi.Input<string>;
+    deploymentType?: pulumi.Input<string>;
     /**
      * (Updatable) Metadata about this specific object.
      */
@@ -585,6 +637,10 @@ export interface DeploymentArgs {
      */
     environmentType?: pulumi.Input<string>;
     /**
+     * The fault domain of a placement.
+     */
+    faultDomain?: pulumi.Input<string>;
+    /**
      * (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
      */
     fqdn?: pulumi.Input<string>;
@@ -595,7 +651,7 @@ export interface DeploymentArgs {
     /**
      * (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
      */
-    isAutoScalingEnabled: pulumi.Input<boolean>;
+    isAutoScalingEnabled?: pulumi.Input<boolean>;
     isLockOverride?: pulumi.Input<boolean>;
     /**
      * (Updatable) True if this object is publicly available.
@@ -604,7 +660,7 @@ export interface DeploymentArgs {
     /**
      * (Updatable) The Oracle license model that applies to a Deployment.
      */
-    licenseModel: pulumi.Input<string>;
+    licenseModel?: pulumi.Input<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
      */
@@ -629,6 +685,14 @@ export interface DeploymentArgs {
      * (Updatable) Deployment Data for creating an OggDeployment
      */
     oggData?: pulumi.Input<inputs.GoldenGate.DeploymentOggData>;
+    /**
+     * (Updatable) An array of local peers of deployment
+     */
+    placements?: pulumi.Input<pulumi.Input<inputs.GoldenGate.DeploymentPlacement>[]>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+     */
+    sourceDeploymentId?: pulumi.Input<string>;
     state?: pulumi.Input<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.

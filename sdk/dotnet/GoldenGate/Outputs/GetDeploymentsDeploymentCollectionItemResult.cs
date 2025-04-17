@@ -14,6 +14,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
     public sealed class GetDeploymentsDeploymentCollectionItemResult
     {
         /// <summary>
+        /// The availability domain of a placement.
+        /// </summary>
+        public readonly string AvailabilityDomain;
+        /// <summary>
         /// Defines the schedule of the deployment backup.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionItemBackupScheduleResult> BackupSchedules;
@@ -42,6 +46,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataResult> DeploymentDiagnosticDatas;
         /// <summary>
+        /// The type of the deployment role.
+        /// </summary>
+        public readonly string DeploymentRole;
+        /// <summary>
         /// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
         /// </summary>
         public readonly string DeploymentType;
@@ -61,6 +69,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// Specifies whether the deployment is used in a production or development/testing environment.
         /// </summary>
         public readonly string EnvironmentType;
+        /// <summary>
+        /// The fault domain of a placement.
+        /// </summary>
+        public readonly string FaultDomain;
         /// <summary>
         /// A filter to return only the resources that match the 'fqdn' given.
         /// </summary>
@@ -147,6 +159,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionItemOggDataResult> OggDatas;
         /// <summary>
+        /// An array of local peers of deployment
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionItemPlacementResult> Placements;
+        /// <summary>
         /// The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
         /// </summary>
         public readonly string PrivateIpAddress;
@@ -154,6 +170,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// The public IP address representing the access point for the Deployment.
         /// </summary>
         public readonly string PublicIpAddress;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+        /// </summary>
+        public readonly string SourceDeploymentId;
         /// <summary>
         /// A filter to return only the resources that match the 'lifecycleState' given.
         /// </summary>
@@ -191,6 +211,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string TimeOggVersionSupportedUntil;
         /// <summary>
+        /// The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        /// </summary>
+        public readonly string TimeRoleChanged;
+        /// <summary>
         /// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
         public readonly string TimeUpdated;
@@ -201,6 +225,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
         [OutputConstructor]
         private GetDeploymentsDeploymentCollectionItemResult(
+            string availabilityDomain,
+
             ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionItemBackupScheduleResult> backupSchedules,
 
             string category,
@@ -215,6 +241,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataResult> deploymentDiagnosticDatas,
 
+            string deploymentRole,
+
             string deploymentType,
 
             string deploymentUrl,
@@ -224,6 +252,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             string displayName,
 
             string environmentType,
+
+            string faultDomain,
 
             string fqdn,
 
@@ -269,9 +299,13 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionItemOggDataResult> oggDatas,
 
+            ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionItemPlacementResult> placements,
+
             string privateIpAddress,
 
             string publicIpAddress,
+
+            string sourceDeploymentId,
 
             string state,
 
@@ -291,10 +325,13 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string timeOggVersionSupportedUntil,
 
+            string timeRoleChanged,
+
             string timeUpdated,
 
             string timeUpgradeRequired)
         {
+            AvailabilityDomain = availabilityDomain;
             BackupSchedules = backupSchedules;
             Category = category;
             CompartmentId = compartmentId;
@@ -302,11 +339,13 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             DefinedTags = definedTags;
             DeploymentBackupId = deploymentBackupId;
             DeploymentDiagnosticDatas = deploymentDiagnosticDatas;
+            DeploymentRole = deploymentRole;
             DeploymentType = deploymentType;
             DeploymentUrl = deploymentUrl;
             Description = description;
             DisplayName = displayName;
             EnvironmentType = environmentType;
+            FaultDomain = faultDomain;
             Fqdn = fqdn;
             FreeformTags = freeformTags;
             Id = id;
@@ -329,8 +368,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             NextMaintenanceDescription = nextMaintenanceDescription;
             NsgIds = nsgIds;
             OggDatas = oggDatas;
+            Placements = placements;
             PrivateIpAddress = privateIpAddress;
             PublicIpAddress = publicIpAddress;
+            SourceDeploymentId = sourceDeploymentId;
             State = state;
             StorageUtilizationInBytes = storageUtilizationInBytes;
             SubnetId = subnetId;
@@ -340,6 +381,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             TimeNextBackupScheduled = timeNextBackupScheduled;
             TimeOfNextMaintenance = timeOfNextMaintenance;
             TimeOggVersionSupportedUntil = timeOggVersionSupportedUntil;
+            TimeRoleChanged = timeRoleChanged;
             TimeUpdated = timeUpdated;
             TimeUpgradeRequired = timeUpgradeRequired;
         }

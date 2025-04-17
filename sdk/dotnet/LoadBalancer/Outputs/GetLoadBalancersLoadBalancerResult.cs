@@ -64,6 +64,10 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         public readonly string RequestIdHeader;
         public readonly ImmutableArray<Outputs.GetLoadBalancersLoadBalancerReservedIpResult> ReservedIps;
         /// <summary>
+        /// Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
+        /// <summary>
         /// A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `100Mbps`
         /// </summary>
         public readonly string Shape;
@@ -118,6 +122,8 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
 
             ImmutableArray<Outputs.GetLoadBalancersLoadBalancerReservedIpResult> reservedIps,
 
+            ImmutableDictionary<string, string> securityAttributes,
+
             string shape,
 
             ImmutableArray<Outputs.GetLoadBalancersLoadBalancerShapeDetailResult> shapeDetails,
@@ -144,6 +150,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
             NetworkSecurityGroupIds = networkSecurityGroupIds;
             RequestIdHeader = requestIdHeader;
             ReservedIps = reservedIps;
+            SecurityAttributes = securityAttributes;
             Shape = shape;
             ShapeDetails = shapeDetails;
             State = state;

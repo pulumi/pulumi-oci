@@ -47,6 +47,11 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
      */
     private List<String> sourceTechnologies;
     /**
+     * @return Specifies supported capabilities or features by a deployment type .
+     * 
+     */
+    private List<String> supportedCapabilities;
+    /**
      * @return The URL to the webpage listing the supported technologies.
      * 
      */
@@ -108,6 +113,13 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
         return this.sourceTechnologies;
     }
     /**
+     * @return Specifies supported capabilities or features by a deployment type .
+     * 
+     */
+    public List<String> supportedCapabilities() {
+        return this.supportedCapabilities;
+    }
+    /**
      * @return The URL to the webpage listing the supported technologies.
      * 
      */
@@ -138,6 +150,7 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
         private String displayName;
         private String oggVersion;
         private List<String> sourceTechnologies;
+        private List<String> supportedCapabilities;
         private String supportedTechnologiesUrl;
         private List<String> targetTechnologies;
         public Builder() {}
@@ -150,6 +163,7 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
     	      this.displayName = defaults.displayName;
     	      this.oggVersion = defaults.oggVersion;
     	      this.sourceTechnologies = defaults.sourceTechnologies;
+    	      this.supportedCapabilities = defaults.supportedCapabilities;
     	      this.supportedTechnologiesUrl = defaults.supportedTechnologiesUrl;
     	      this.targetTechnologies = defaults.targetTechnologies;
         }
@@ -217,6 +231,17 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
             return sourceTechnologies(List.of(sourceTechnologies));
         }
         @CustomType.Setter
+        public Builder supportedCapabilities(List<String> supportedCapabilities) {
+            if (supportedCapabilities == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentTypesDeploymentTypeCollectionItem", "supportedCapabilities");
+            }
+            this.supportedCapabilities = supportedCapabilities;
+            return this;
+        }
+        public Builder supportedCapabilities(String... supportedCapabilities) {
+            return supportedCapabilities(List.of(supportedCapabilities));
+        }
+        @CustomType.Setter
         public Builder supportedTechnologiesUrl(String supportedTechnologiesUrl) {
             if (supportedTechnologiesUrl == null) {
               throw new MissingRequiredPropertyException("GetDeploymentTypesDeploymentTypeCollectionItem", "supportedTechnologiesUrl");
@@ -244,6 +269,7 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
             _resultValue.displayName = displayName;
             _resultValue.oggVersion = oggVersion;
             _resultValue.sourceTechnologies = sourceTechnologies;
+            _resultValue.supportedCapabilities = supportedCapabilities;
             _resultValue.supportedTechnologiesUrl = supportedTechnologiesUrl;
             _resultValue.targetTechnologies = targetTechnologies;
             return _resultValue;

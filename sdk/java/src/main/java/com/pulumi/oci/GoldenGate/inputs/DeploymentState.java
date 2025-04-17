@@ -12,6 +12,7 @@ import com.pulumi.oci.GoldenGate.inputs.DeploymentLockArgs;
 import com.pulumi.oci.GoldenGate.inputs.DeploymentMaintenanceConfigurationArgs;
 import com.pulumi.oci.GoldenGate.inputs.DeploymentMaintenanceWindowArgs;
 import com.pulumi.oci.GoldenGate.inputs.DeploymentOggDataArgs;
+import com.pulumi.oci.GoldenGate.inputs.DeploymentPlacementArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -25,6 +26,21 @@ import javax.annotation.Nullable;
 public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
 
     public static final DeploymentState Empty = new DeploymentState();
+
+    /**
+     * The availability domain of a placement.
+     * 
+     */
+    @Import(name="availabilityDomain")
+    private @Nullable Output<String> availabilityDomain;
+
+    /**
+     * @return The availability domain of a placement.
+     * 
+     */
+    public Optional<Output<String>> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
+    }
 
     /**
      * (Updatable) Defines the backup schedule details for create operation.
@@ -132,6 +148,21 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The type of the deployment role.
+     * 
+     */
+    @Import(name="deploymentRole")
+    private @Nullable Output<String> deploymentRole;
+
+    /**
+     * @return The type of the deployment role.
+     * 
+     */
+    public Optional<Output<String>> deploymentRole() {
+        return Optional.ofNullable(this.deploymentRole);
+    }
+
+    /**
      * The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of &#39;DATABASE_ORACLE&#39;.
      * 
      */
@@ -204,6 +235,21 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> environmentType() {
         return Optional.ofNullable(this.environmentType);
+    }
+
+    /**
+     * The fault domain of a placement.
+     * 
+     */
+    @Import(name="faultDomain")
+    private @Nullable Output<String> faultDomain;
+
+    /**
+     * @return The fault domain of a placement.
+     * 
+     */
+    public Optional<Output<String>> faultDomain() {
+        return Optional.ofNullable(this.faultDomain);
     }
 
     /**
@@ -514,6 +560,21 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) An array of local peers of deployment
+     * 
+     */
+    @Import(name="placements")
+    private @Nullable Output<List<DeploymentPlacementArgs>> placements;
+
+    /**
+     * @return (Updatable) An array of local peers of deployment
+     * 
+     */
+    public Optional<Output<List<DeploymentPlacementArgs>>> placements() {
+        return Optional.ofNullable(this.placements);
+    }
+
+    /**
      * The private IP address in the customer&#39;s VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
      * 
      */
@@ -541,6 +602,21 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> publicIpAddress() {
         return Optional.ofNullable(this.publicIpAddress);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+     * 
+     */
+    @Import(name="sourceDeploymentId")
+    private @Nullable Output<String> sourceDeploymentId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+     * 
+     */
+    public Optional<Output<String>> sourceDeploymentId() {
+        return Optional.ofNullable(this.sourceDeploymentId);
     }
 
     @Import(name="state")
@@ -671,6 +747,21 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * 
+     */
+    @Import(name="timeRoleChanged")
+    private @Nullable Output<String> timeRoleChanged;
+
+    /**
+     * @return The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * 
+     */
+    public Optional<Output<String>> timeRoleChanged() {
+        return Optional.ofNullable(this.timeRoleChanged);
+    }
+
+    /**
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
@@ -703,6 +794,7 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
     private DeploymentState() {}
 
     private DeploymentState(DeploymentState $) {
+        this.availabilityDomain = $.availabilityDomain;
         this.backupSchedule = $.backupSchedule;
         this.category = $.category;
         this.compartmentId = $.compartmentId;
@@ -710,11 +802,13 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
         this.definedTags = $.definedTags;
         this.deploymentBackupId = $.deploymentBackupId;
         this.deploymentDiagnosticDatas = $.deploymentDiagnosticDatas;
+        this.deploymentRole = $.deploymentRole;
         this.deploymentType = $.deploymentType;
         this.deploymentUrl = $.deploymentUrl;
         this.description = $.description;
         this.displayName = $.displayName;
         this.environmentType = $.environmentType;
+        this.faultDomain = $.faultDomain;
         this.fqdn = $.fqdn;
         this.freeformTags = $.freeformTags;
         this.ingressIps = $.ingressIps;
@@ -736,8 +830,10 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
         this.nextMaintenanceDescription = $.nextMaintenanceDescription;
         this.nsgIds = $.nsgIds;
         this.oggData = $.oggData;
+        this.placements = $.placements;
         this.privateIpAddress = $.privateIpAddress;
         this.publicIpAddress = $.publicIpAddress;
+        this.sourceDeploymentId = $.sourceDeploymentId;
         this.state = $.state;
         this.storageUtilizationInBytes = $.storageUtilizationInBytes;
         this.subnetId = $.subnetId;
@@ -747,6 +843,7 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
         this.timeNextBackupScheduled = $.timeNextBackupScheduled;
         this.timeOfNextMaintenance = $.timeOfNextMaintenance;
         this.timeOggVersionSupportedUntil = $.timeOggVersionSupportedUntil;
+        this.timeRoleChanged = $.timeRoleChanged;
         this.timeUpdated = $.timeUpdated;
         this.timeUpgradeRequired = $.timeUpgradeRequired;
     }
@@ -767,6 +864,27 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
 
         public Builder(DeploymentState defaults) {
             $ = new DeploymentState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param availabilityDomain The availability domain of a placement.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availabilityDomain(@Nullable Output<String> availabilityDomain) {
+            $.availabilityDomain = availabilityDomain;
+            return this;
+        }
+
+        /**
+         * @param availabilityDomain The availability domain of a placement.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availabilityDomain(String availabilityDomain) {
+            return availabilityDomain(Output.of(availabilityDomain));
         }
 
         /**
@@ -927,6 +1045,27 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param deploymentRole The type of the deployment role.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder deploymentRole(@Nullable Output<String> deploymentRole) {
+            $.deploymentRole = deploymentRole;
+            return this;
+        }
+
+        /**
+         * @param deploymentRole The type of the deployment role.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder deploymentRole(String deploymentRole) {
+            return deploymentRole(Output.of(deploymentRole));
+        }
+
+        /**
          * @param deploymentType The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of &#39;DATABASE_ORACLE&#39;.
          * 
          * @return builder
@@ -1029,6 +1168,27 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder environmentType(String environmentType) {
             return environmentType(Output.of(environmentType));
+        }
+
+        /**
+         * @param faultDomain The fault domain of a placement.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder faultDomain(@Nullable Output<String> faultDomain) {
+            $.faultDomain = faultDomain;
+            return this;
+        }
+
+        /**
+         * @param faultDomain The fault domain of a placement.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder faultDomain(String faultDomain) {
+            return faultDomain(Output.of(faultDomain));
         }
 
         /**
@@ -1491,6 +1651,37 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param placements (Updatable) An array of local peers of deployment
+         * 
+         * @return builder
+         * 
+         */
+        public Builder placements(@Nullable Output<List<DeploymentPlacementArgs>> placements) {
+            $.placements = placements;
+            return this;
+        }
+
+        /**
+         * @param placements (Updatable) An array of local peers of deployment
+         * 
+         * @return builder
+         * 
+         */
+        public Builder placements(List<DeploymentPlacementArgs> placements) {
+            return placements(Output.of(placements));
+        }
+
+        /**
+         * @param placements (Updatable) An array of local peers of deployment
+         * 
+         * @return builder
+         * 
+         */
+        public Builder placements(DeploymentPlacementArgs... placements) {
+            return placements(List.of(placements));
+        }
+
+        /**
          * @param privateIpAddress The private IP address in the customer&#39;s VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
          * 
          * @return builder
@@ -1530,6 +1721,27 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder publicIpAddress(String publicIpAddress) {
             return publicIpAddress(Output.of(publicIpAddress));
+        }
+
+        /**
+         * @param sourceDeploymentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceDeploymentId(@Nullable Output<String> sourceDeploymentId) {
+            $.sourceDeploymentId = sourceDeploymentId;
+            return this;
+        }
+
+        /**
+         * @param sourceDeploymentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceDeploymentId(String sourceDeploymentId) {
+            return sourceDeploymentId(Output.of(sourceDeploymentId));
         }
 
         public Builder state(@Nullable Output<String> state) {
@@ -1707,6 +1919,27 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder timeOggVersionSupportedUntil(String timeOggVersionSupportedUntil) {
             return timeOggVersionSupportedUntil(Output.of(timeOggVersionSupportedUntil));
+        }
+
+        /**
+         * @param timeRoleChanged The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeRoleChanged(@Nullable Output<String> timeRoleChanged) {
+            $.timeRoleChanged = timeRoleChanged;
+            return this;
+        }
+
+        /**
+         * @param timeRoleChanged The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeRoleChanged(String timeRoleChanged) {
+            return timeRoleChanged(Output.of(timeRoleChanged));
         }
 
         /**

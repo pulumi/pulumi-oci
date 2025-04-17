@@ -24,6 +24,7 @@ from .get_deployment_backups import *
 from .get_deployment_certificate import *
 from .get_deployment_certificates import *
 from .get_deployment_environments import *
+from .get_deployment_peers import *
 from .get_deployment_type import *
 from .get_deployment_types import *
 from .get_deployment_upgrade import *

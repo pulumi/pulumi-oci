@@ -42,6 +42,8 @@ __all__ = [
     'DeploymentOggDataArgsDict',
     'DeploymentOggDataGroupToRolesMappingArgs',
     'DeploymentOggDataGroupToRolesMappingArgsDict',
+    'DeploymentPlacementArgs',
+    'DeploymentPlacementArgsDict',
     'PipelineLockArgs',
     'PipelineLockArgsDict',
     'PipelineMappingRuleArgs',
@@ -70,6 +72,8 @@ __all__ = [
     'GetDeploymentCertificatesFilterArgsDict',
     'GetDeploymentEnvironmentsFilterArgs',
     'GetDeploymentEnvironmentsFilterArgsDict',
+    'GetDeploymentPeersFilterArgs',
+    'GetDeploymentPeersFilterArgsDict',
     'GetDeploymentTypesFilterArgs',
     'GetDeploymentTypesFilterArgsDict',
     'GetDeploymentUpgradesFilterArgs',
@@ -1288,6 +1292,58 @@ class DeploymentOggDataGroupToRolesMappingArgs:
 
 
 if not MYPY:
+    class DeploymentPlacementArgsDict(TypedDict):
+        availability_domain: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) The availability domain of a placement.
+        """
+        fault_domain: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) The fault domain of a placement.
+        """
+elif False:
+    DeploymentPlacementArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DeploymentPlacementArgs:
+    def __init__(__self__, *,
+                 availability_domain: Optional[pulumi.Input[builtins.str]] = None,
+                 fault_domain: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] availability_domain: (Updatable) The availability domain of a placement.
+        :param pulumi.Input[builtins.str] fault_domain: (Updatable) The fault domain of a placement.
+        """
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
+        if fault_domain is not None:
+            pulumi.set(__self__, "fault_domain", fault_domain)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The availability domain of a placement.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @availability_domain.setter
+    def availability_domain(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "availability_domain", value)
+
+    @property
+    @pulumi.getter(name="faultDomain")
+    def fault_domain(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The fault domain of a placement.
+        """
+        return pulumi.get(self, "fault_domain")
+
+    @fault_domain.setter
+    def fault_domain(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "fault_domain", value)
+
+
+if not MYPY:
     class PipelineLockArgsDict(TypedDict):
         type: pulumi.Input[builtins.str]
         """
@@ -2070,6 +2126,53 @@ elif False:
 
 @pulumi.input_type
 class GetDeploymentEnvironmentsFilterArgs:
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: builtins.str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetDeploymentPeersFilterArgsDict(TypedDict):
+        name: builtins.str
+        values: Sequence[builtins.str]
+        regex: NotRequired[builtins.bool]
+elif False:
+    GetDeploymentPeersFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetDeploymentPeersFilterArgs:
     def __init__(__self__, *,
                  name: builtins.str,
                  values: Sequence[builtins.str],

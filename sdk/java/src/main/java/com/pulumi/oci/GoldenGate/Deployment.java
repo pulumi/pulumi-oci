@@ -16,6 +16,7 @@ import com.pulumi.oci.GoldenGate.outputs.DeploymentLock;
 import com.pulumi.oci.GoldenGate.outputs.DeploymentMaintenanceConfiguration;
 import com.pulumi.oci.GoldenGate.outputs.DeploymentMaintenanceWindow;
 import com.pulumi.oci.GoldenGate.outputs.DeploymentOggData;
+import com.pulumi.oci.GoldenGate.outputs.DeploymentPlacement;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -40,6 +41,20 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:GoldenGate/deployment:Deployment")
 public class Deployment extends com.pulumi.resources.CustomResource {
+    /**
+     * The availability domain of a placement.
+     * 
+     */
+    @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
+    private Output<String> availabilityDomain;
+
+    /**
+     * @return The availability domain of a placement.
+     * 
+     */
+    public Output<String> availabilityDomain() {
+        return this.availabilityDomain;
+    }
     /**
      * (Updatable) Defines the backup schedule details for create operation.
      * 
@@ -139,6 +154,20 @@ public class Deployment extends com.pulumi.resources.CustomResource {
         return this.deploymentDiagnosticDatas;
     }
     /**
+     * The type of the deployment role.
+     * 
+     */
+    @Export(name="deploymentRole", refs={String.class}, tree="[0]")
+    private Output<String> deploymentRole;
+
+    /**
+     * @return The type of the deployment role.
+     * 
+     */
+    public Output<String> deploymentRole() {
+        return this.deploymentRole;
+    }
+    /**
      * The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of &#39;DATABASE_ORACLE&#39;.
      * 
      */
@@ -207,6 +236,20 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      */
     public Output<String> environmentType() {
         return this.environmentType;
+    }
+    /**
+     * The fault domain of a placement.
+     * 
+     */
+    @Export(name="faultDomain", refs={String.class}, tree="[0]")
+    private Output<String> faultDomain;
+
+    /**
+     * @return The fault domain of a placement.
+     * 
+     */
+    public Output<String> faultDomain() {
+        return this.faultDomain;
     }
     /**
      * (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
@@ -495,6 +538,20 @@ public class Deployment extends com.pulumi.resources.CustomResource {
         return this.oggData;
     }
     /**
+     * (Updatable) An array of local peers of deployment
+     * 
+     */
+    @Export(name="placements", refs={List.class,DeploymentPlacement.class}, tree="[0,1]")
+    private Output<List<DeploymentPlacement>> placements;
+
+    /**
+     * @return (Updatable) An array of local peers of deployment
+     * 
+     */
+    public Output<List<DeploymentPlacement>> placements() {
+        return this.placements;
+    }
+    /**
      * The private IP address in the customer&#39;s VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
      * 
      */
@@ -521,6 +578,20 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      */
     public Output<String> publicIpAddress() {
         return this.publicIpAddress;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+     * 
+     */
+    @Export(name="sourceDeploymentId", refs={String.class}, tree="[0]")
+    private Output<String> sourceDeploymentId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+     * 
+     */
+    public Output<String> sourceDeploymentId() {
+        return this.sourceDeploymentId;
     }
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
@@ -639,6 +710,20 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeOggVersionSupportedUntil() {
         return this.timeOggVersionSupportedUntil;
+    }
+    /**
+     * The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * 
+     */
+    @Export(name="timeRoleChanged", refs={String.class}, tree="[0]")
+    private Output<String> timeRoleChanged;
+
+    /**
+     * @return The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * 
+     */
+    public Output<String> timeRoleChanged() {
+        return this.timeRoleChanged;
     }
     /**
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.

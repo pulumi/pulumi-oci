@@ -69,8 +69,8 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         /// <summary>
         /// Container health check HTTP port.
         /// </summary>
-        [Input("port", required: true)]
-        public Input<int> Port { get; set; } = null!;
+        [Input("port")]
+        public Input<int>? Port { get; set; }
 
         [Input("status")]
         public Input<string>? Status { get; set; }

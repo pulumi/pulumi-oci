@@ -3063,7 +3063,7 @@ type ContainerInstanceContainerHealthCheck struct {
 	// Container health check HTTP path.
 	Path *string `pulumi:"path"`
 	// Container health check HTTP port.
-	Port          int     `pulumi:"port"`
+	Port          *int    `pulumi:"port"`
 	Status        *string `pulumi:"status"`
 	StatusDetails *string `pulumi:"statusDetails"`
 	// Number of consecutive successes at which we consider the check succeeded again after it was in failure state.
@@ -3101,7 +3101,7 @@ type ContainerInstanceContainerHealthCheckArgs struct {
 	// Container health check HTTP path.
 	Path pulumi.StringPtrInput `pulumi:"path"`
 	// Container health check HTTP port.
-	Port          pulumi.IntInput       `pulumi:"port"`
+	Port          pulumi.IntPtrInput    `pulumi:"port"`
 	Status        pulumi.StringPtrInput `pulumi:"status"`
 	StatusDetails pulumi.StringPtrInput `pulumi:"statusDetails"`
 	// Number of consecutive successes at which we consider the check succeeded again after it was in failure state.
@@ -3204,8 +3204,8 @@ func (o ContainerInstanceContainerHealthCheckOutput) Path() pulumi.StringPtrOutp
 }
 
 // Container health check HTTP port.
-func (o ContainerInstanceContainerHealthCheckOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v ContainerInstanceContainerHealthCheck) int { return v.Port }).(pulumi.IntOutput)
+func (o ContainerInstanceContainerHealthCheckOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceContainerHealthCheck) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 func (o ContainerInstanceContainerHealthCheckOutput) Status() pulumi.StringPtrOutput {

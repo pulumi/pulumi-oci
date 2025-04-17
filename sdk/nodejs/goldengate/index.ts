@@ -95,6 +95,11 @@ export const getDeploymentEnvironments: typeof import("./getDeploymentEnvironmen
 export const getDeploymentEnvironmentsOutput: typeof import("./getDeploymentEnvironments").getDeploymentEnvironmentsOutput = null as any;
 utilities.lazyLoad(exports, ["getDeploymentEnvironments","getDeploymentEnvironmentsOutput"], () => require("./getDeploymentEnvironments"));
 
+export { GetDeploymentPeersArgs, GetDeploymentPeersResult, GetDeploymentPeersOutputArgs } from "./getDeploymentPeers";
+export const getDeploymentPeers: typeof import("./getDeploymentPeers").getDeploymentPeers = null as any;
+export const getDeploymentPeersOutput: typeof import("./getDeploymentPeers").getDeploymentPeersOutput = null as any;
+utilities.lazyLoad(exports, ["getDeploymentPeers","getDeploymentPeersOutput"], () => require("./getDeploymentPeers"));
+
 export { GetDeploymentTypeArgs, GetDeploymentTypeResult, GetDeploymentTypeOutputArgs } from "./getDeploymentType";
 export const getDeploymentType: typeof import("./getDeploymentType").getDeploymentType = null as any;
 export const getDeploymentTypeOutput: typeof import("./getDeploymentType").getDeploymentTypeOutput = null as any;

@@ -12,6 +12,7 @@ import com.pulumi.oci.GoldenGate.outputs.GetDeploymentsDeploymentCollectionItemL
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentsDeploymentCollectionItemMaintenanceConfiguration;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentsDeploymentCollectionItemMaintenanceWindow;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentsDeploymentCollectionItemOggData;
+import com.pulumi.oci.GoldenGate.outputs.GetDeploymentsDeploymentCollectionItemPlacement;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -21,6 +22,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDeploymentsDeploymentCollectionItem {
+    /**
+     * @return The availability domain of a placement.
+     * 
+     */
+    private String availabilityDomain;
     /**
      * @return Defines the schedule of the deployment backup.
      * 
@@ -57,6 +63,11 @@ public final class GetDeploymentsDeploymentCollectionItem {
      */
     private List<GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData> deploymentDiagnosticDatas;
     /**
+     * @return The type of the deployment role.
+     * 
+     */
+    private String deploymentRole;
+    /**
      * @return The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of &#39;DATABASE_ORACLE&#39;.
      * 
      */
@@ -81,6 +92,11 @@ public final class GetDeploymentsDeploymentCollectionItem {
      * 
      */
     private String environmentType;
+    /**
+     * @return The fault domain of a placement.
+     * 
+     */
+    private String faultDomain;
     /**
      * @return A filter to return only the resources that match the &#39;fqdn&#39; given.
      * 
@@ -188,6 +204,11 @@ public final class GetDeploymentsDeploymentCollectionItem {
      */
     private List<GetDeploymentsDeploymentCollectionItemOggData> oggDatas;
     /**
+     * @return An array of local peers of deployment
+     * 
+     */
+    private List<GetDeploymentsDeploymentCollectionItemPlacement> placements;
+    /**
      * @return The private IP address in the customer&#39;s VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
      * 
      */
@@ -197,6 +218,11 @@ public final class GetDeploymentsDeploymentCollectionItem {
      * 
      */
     private String publicIpAddress;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+     * 
+     */
+    private String sourceDeploymentId;
     /**
      * @return A filter to return only the resources that match the &#39;lifecycleState&#39; given.
      * 
@@ -243,6 +269,11 @@ public final class GetDeploymentsDeploymentCollectionItem {
      */
     private String timeOggVersionSupportedUntil;
     /**
+     * @return The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * 
+     */
+    private String timeRoleChanged;
+    /**
      * @return The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
@@ -254,6 +285,13 @@ public final class GetDeploymentsDeploymentCollectionItem {
     private String timeUpgradeRequired;
 
     private GetDeploymentsDeploymentCollectionItem() {}
+    /**
+     * @return The availability domain of a placement.
+     * 
+     */
+    public String availabilityDomain() {
+        return this.availabilityDomain;
+    }
     /**
      * @return Defines the schedule of the deployment backup.
      * 
@@ -304,6 +342,13 @@ public final class GetDeploymentsDeploymentCollectionItem {
         return this.deploymentDiagnosticDatas;
     }
     /**
+     * @return The type of the deployment role.
+     * 
+     */
+    public String deploymentRole() {
+        return this.deploymentRole;
+    }
+    /**
      * @return The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of &#39;DATABASE_ORACLE&#39;.
      * 
      */
@@ -337,6 +382,13 @@ public final class GetDeploymentsDeploymentCollectionItem {
      */
     public String environmentType() {
         return this.environmentType;
+    }
+    /**
+     * @return The fault domain of a placement.
+     * 
+     */
+    public String faultDomain() {
+        return this.faultDomain;
     }
     /**
      * @return A filter to return only the resources that match the &#39;fqdn&#39; given.
@@ -489,6 +541,13 @@ public final class GetDeploymentsDeploymentCollectionItem {
         return this.oggDatas;
     }
     /**
+     * @return An array of local peers of deployment
+     * 
+     */
+    public List<GetDeploymentsDeploymentCollectionItemPlacement> placements() {
+        return this.placements;
+    }
+    /**
      * @return The private IP address in the customer&#39;s VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
      * 
      */
@@ -501,6 +560,13 @@ public final class GetDeploymentsDeploymentCollectionItem {
      */
     public String publicIpAddress() {
         return this.publicIpAddress;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+     * 
+     */
+    public String sourceDeploymentId() {
+        return this.sourceDeploymentId;
     }
     /**
      * @return A filter to return only the resources that match the &#39;lifecycleState&#39; given.
@@ -566,6 +632,13 @@ public final class GetDeploymentsDeploymentCollectionItem {
         return this.timeOggVersionSupportedUntil;
     }
     /**
+     * @return The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * 
+     */
+    public String timeRoleChanged() {
+        return this.timeRoleChanged;
+    }
+    /**
      * @return The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
@@ -589,6 +662,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String availabilityDomain;
         private List<GetDeploymentsDeploymentCollectionItemBackupSchedule> backupSchedules;
         private String category;
         private String compartmentId;
@@ -596,11 +670,13 @@ public final class GetDeploymentsDeploymentCollectionItem {
         private Map<String,String> definedTags;
         private String deploymentBackupId;
         private List<GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData> deploymentDiagnosticDatas;
+        private String deploymentRole;
         private String deploymentType;
         private String deploymentUrl;
         private String description;
         private String displayName;
         private String environmentType;
+        private String faultDomain;
         private String fqdn;
         private Map<String,String> freeformTags;
         private String id;
@@ -623,8 +699,10 @@ public final class GetDeploymentsDeploymentCollectionItem {
         private String nextMaintenanceDescription;
         private List<String> nsgIds;
         private List<GetDeploymentsDeploymentCollectionItemOggData> oggDatas;
+        private List<GetDeploymentsDeploymentCollectionItemPlacement> placements;
         private String privateIpAddress;
         private String publicIpAddress;
+        private String sourceDeploymentId;
         private String state;
         private String storageUtilizationInBytes;
         private String subnetId;
@@ -634,11 +712,13 @@ public final class GetDeploymentsDeploymentCollectionItem {
         private String timeNextBackupScheduled;
         private String timeOfNextMaintenance;
         private String timeOggVersionSupportedUntil;
+        private String timeRoleChanged;
         private String timeUpdated;
         private String timeUpgradeRequired;
         public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.backupSchedules = defaults.backupSchedules;
     	      this.category = defaults.category;
     	      this.compartmentId = defaults.compartmentId;
@@ -646,11 +726,13 @@ public final class GetDeploymentsDeploymentCollectionItem {
     	      this.definedTags = defaults.definedTags;
     	      this.deploymentBackupId = defaults.deploymentBackupId;
     	      this.deploymentDiagnosticDatas = defaults.deploymentDiagnosticDatas;
+    	      this.deploymentRole = defaults.deploymentRole;
     	      this.deploymentType = defaults.deploymentType;
     	      this.deploymentUrl = defaults.deploymentUrl;
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
     	      this.environmentType = defaults.environmentType;
+    	      this.faultDomain = defaults.faultDomain;
     	      this.fqdn = defaults.fqdn;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
@@ -673,8 +755,10 @@ public final class GetDeploymentsDeploymentCollectionItem {
     	      this.nextMaintenanceDescription = defaults.nextMaintenanceDescription;
     	      this.nsgIds = defaults.nsgIds;
     	      this.oggDatas = defaults.oggDatas;
+    	      this.placements = defaults.placements;
     	      this.privateIpAddress = defaults.privateIpAddress;
     	      this.publicIpAddress = defaults.publicIpAddress;
+    	      this.sourceDeploymentId = defaults.sourceDeploymentId;
     	      this.state = defaults.state;
     	      this.storageUtilizationInBytes = defaults.storageUtilizationInBytes;
     	      this.subnetId = defaults.subnetId;
@@ -684,10 +768,19 @@ public final class GetDeploymentsDeploymentCollectionItem {
     	      this.timeNextBackupScheduled = defaults.timeNextBackupScheduled;
     	      this.timeOfNextMaintenance = defaults.timeOfNextMaintenance;
     	      this.timeOggVersionSupportedUntil = defaults.timeOggVersionSupportedUntil;
+    	      this.timeRoleChanged = defaults.timeRoleChanged;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.timeUpgradeRequired = defaults.timeUpgradeRequired;
         }
 
+        @CustomType.Setter
+        public Builder availabilityDomain(String availabilityDomain) {
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItem", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
+            return this;
+        }
         @CustomType.Setter
         public Builder backupSchedules(List<GetDeploymentsDeploymentCollectionItemBackupSchedule> backupSchedules) {
             if (backupSchedules == null) {
@@ -751,6 +844,14 @@ public final class GetDeploymentsDeploymentCollectionItem {
             return deploymentDiagnosticDatas(List.of(deploymentDiagnosticDatas));
         }
         @CustomType.Setter
+        public Builder deploymentRole(String deploymentRole) {
+            if (deploymentRole == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItem", "deploymentRole");
+            }
+            this.deploymentRole = deploymentRole;
+            return this;
+        }
+        @CustomType.Setter
         public Builder deploymentType(String deploymentType) {
             if (deploymentType == null) {
               throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItem", "deploymentType");
@@ -788,6 +889,14 @@ public final class GetDeploymentsDeploymentCollectionItem {
               throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItem", "environmentType");
             }
             this.environmentType = environmentType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder faultDomain(String faultDomain) {
+            if (faultDomain == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItem", "faultDomain");
+            }
+            this.faultDomain = faultDomain;
             return this;
         }
         @CustomType.Setter
@@ -985,6 +1094,17 @@ public final class GetDeploymentsDeploymentCollectionItem {
             return oggDatas(List.of(oggDatas));
         }
         @CustomType.Setter
+        public Builder placements(List<GetDeploymentsDeploymentCollectionItemPlacement> placements) {
+            if (placements == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItem", "placements");
+            }
+            this.placements = placements;
+            return this;
+        }
+        public Builder placements(GetDeploymentsDeploymentCollectionItemPlacement... placements) {
+            return placements(List.of(placements));
+        }
+        @CustomType.Setter
         public Builder privateIpAddress(String privateIpAddress) {
             if (privateIpAddress == null) {
               throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItem", "privateIpAddress");
@@ -998,6 +1118,14 @@ public final class GetDeploymentsDeploymentCollectionItem {
               throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItem", "publicIpAddress");
             }
             this.publicIpAddress = publicIpAddress;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder sourceDeploymentId(String sourceDeploymentId) {
+            if (sourceDeploymentId == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItem", "sourceDeploymentId");
+            }
+            this.sourceDeploymentId = sourceDeploymentId;
             return this;
         }
         @CustomType.Setter
@@ -1073,6 +1201,14 @@ public final class GetDeploymentsDeploymentCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder timeRoleChanged(String timeRoleChanged) {
+            if (timeRoleChanged == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItem", "timeRoleChanged");
+            }
+            this.timeRoleChanged = timeRoleChanged;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             if (timeUpdated == null) {
               throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItem", "timeUpdated");
@@ -1090,6 +1226,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
         }
         public GetDeploymentsDeploymentCollectionItem build() {
             final var _resultValue = new GetDeploymentsDeploymentCollectionItem();
+            _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.backupSchedules = backupSchedules;
             _resultValue.category = category;
             _resultValue.compartmentId = compartmentId;
@@ -1097,11 +1234,13 @@ public final class GetDeploymentsDeploymentCollectionItem {
             _resultValue.definedTags = definedTags;
             _resultValue.deploymentBackupId = deploymentBackupId;
             _resultValue.deploymentDiagnosticDatas = deploymentDiagnosticDatas;
+            _resultValue.deploymentRole = deploymentRole;
             _resultValue.deploymentType = deploymentType;
             _resultValue.deploymentUrl = deploymentUrl;
             _resultValue.description = description;
             _resultValue.displayName = displayName;
             _resultValue.environmentType = environmentType;
+            _resultValue.faultDomain = faultDomain;
             _resultValue.fqdn = fqdn;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
@@ -1124,8 +1263,10 @@ public final class GetDeploymentsDeploymentCollectionItem {
             _resultValue.nextMaintenanceDescription = nextMaintenanceDescription;
             _resultValue.nsgIds = nsgIds;
             _resultValue.oggDatas = oggDatas;
+            _resultValue.placements = placements;
             _resultValue.privateIpAddress = privateIpAddress;
             _resultValue.publicIpAddress = publicIpAddress;
+            _resultValue.sourceDeploymentId = sourceDeploymentId;
             _resultValue.state = state;
             _resultValue.storageUtilizationInBytes = storageUtilizationInBytes;
             _resultValue.subnetId = subnetId;
@@ -1135,6 +1276,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
             _resultValue.timeNextBackupScheduled = timeNextBackupScheduled;
             _resultValue.timeOfNextMaintenance = timeOfNextMaintenance;
             _resultValue.timeOggVersionSupportedUntil = timeOggVersionSupportedUntil;
+            _resultValue.timeRoleChanged = timeRoleChanged;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.timeUpgradeRequired = timeUpgradeRequired;
             return _resultValue;

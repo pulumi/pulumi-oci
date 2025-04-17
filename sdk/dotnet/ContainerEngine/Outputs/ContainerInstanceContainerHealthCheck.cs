@@ -48,7 +48,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// Container health check HTTP port.
         /// </summary>
-        public readonly int Port;
+        public readonly int? Port;
         public readonly string? Status;
         public readonly string? StatusDetails;
         /// <summary>
@@ -78,7 +78,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
             string? path,
 
-            int port,
+            int? port,
 
             string? status,
 

@@ -1720,7 +1720,6 @@ class ContainerInstanceContainerHealthCheck(dict):
 
     def __init__(__self__, *,
                  health_check_type: builtins.str,
-                 port: builtins.int,
                  failure_action: Optional[builtins.str] = None,
                  failure_threshold: Optional[builtins.int] = None,
                  headers: Optional[Sequence['outputs.ContainerInstanceContainerHealthCheckHeader']] = None,
@@ -1728,13 +1727,13 @@ class ContainerInstanceContainerHealthCheck(dict):
                  interval_in_seconds: Optional[builtins.int] = None,
                  name: Optional[builtins.str] = None,
                  path: Optional[builtins.str] = None,
+                 port: Optional[builtins.int] = None,
                  status: Optional[builtins.str] = None,
                  status_details: Optional[builtins.str] = None,
                  success_threshold: Optional[builtins.int] = None,
                  timeout_in_seconds: Optional[builtins.int] = None):
         """
         :param builtins.str health_check_type: Container health check type.
-        :param builtins.int port: Container health check HTTP port.
         :param builtins.str failure_action: The action will be triggered when the container health check fails. There are two types of action: KILL or NONE. The default action is KILL. If failure action is KILL, the container will be subject to the container restart policy.
         :param builtins.int failure_threshold: Number of consecutive failures at which we consider the check failed.
         :param Sequence['ContainerInstanceContainerHealthCheckHeaderArgs'] headers: Container health check HTTP headers.
@@ -1742,11 +1741,11 @@ class ContainerInstanceContainerHealthCheck(dict):
         :param builtins.int interval_in_seconds: Number of seconds between two consecutive runs for checking container health.
         :param builtins.str name: Health check name.
         :param builtins.str path: Container health check HTTP path.
+        :param builtins.int port: Container health check HTTP port.
         :param builtins.int success_threshold: Number of consecutive successes at which we consider the check succeeded again after it was in failure state.
         :param builtins.int timeout_in_seconds: Length of waiting time in seconds before marking health check failed.
         """
         pulumi.set(__self__, "health_check_type", health_check_type)
-        pulumi.set(__self__, "port", port)
         if failure_action is not None:
             pulumi.set(__self__, "failure_action", failure_action)
         if failure_threshold is not None:
@@ -1761,6 +1760,8 @@ class ContainerInstanceContainerHealthCheck(dict):
             pulumi.set(__self__, "name", name)
         if path is not None:
             pulumi.set(__self__, "path", path)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
         if status is not None:
             pulumi.set(__self__, "status", status)
         if status_details is not None:
@@ -1777,14 +1778,6 @@ class ContainerInstanceContainerHealthCheck(dict):
         Container health check type.
         """
         return pulumi.get(self, "health_check_type")
-
-    @property
-    @pulumi.getter
-    def port(self) -> builtins.int:
-        """
-        Container health check HTTP port.
-        """
-        return pulumi.get(self, "port")
 
     @property
     @pulumi.getter(name="failureAction")
@@ -1841,6 +1834,14 @@ class ContainerInstanceContainerHealthCheck(dict):
         Container health check HTTP path.
         """
         return pulumi.get(self, "path")
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[builtins.int]:
+        """
+        Container health check HTTP port.
+        """
+        return pulumi.get(self, "port")
 
     @property
     @pulumi.getter

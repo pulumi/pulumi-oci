@@ -35,6 +35,7 @@ class LoadBalancerArgs:
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  request_id_header: Optional[pulumi.Input[builtins.str]] = None,
                  reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  shape_details: Optional[pulumi.Input['LoadBalancerShapeDetailsArgs']] = None):
         """
         The set of arguments for constructing a LoadBalancer resource.
@@ -101,6 +102,7 @@ class LoadBalancerArgs:
                * Unless the header name is "" it must start with "X-" prefix.
                * Setting the header name to "" will set it to the default: X-Request-Id.
         :param pulumi.Input[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]] reserved_ips: An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] security_attributes: (Updatable) Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}`
         :param pulumi.Input['LoadBalancerShapeDetailsArgs'] shape_details: (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -125,6 +127,8 @@ class LoadBalancerArgs:
             pulumi.set(__self__, "request_id_header", request_id_header)
         if reserved_ips is not None:
             pulumi.set(__self__, "reserved_ips", reserved_ips)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if shape_details is not None:
             pulumi.set(__self__, "shape_details", shape_details)
 
@@ -335,6 +339,18 @@ class LoadBalancerArgs:
         pulumi.set(self, "reserved_ips", value)
 
     @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]:
+        """
+        (Updatable) Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @property
     @pulumi.getter(name="shapeDetails")
     def shape_details(self) -> Optional[pulumi.Input['LoadBalancerShapeDetailsArgs']]:
         """
@@ -363,6 +379,7 @@ class _LoadBalancerState:
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  request_id_header: Optional[pulumi.Input[builtins.str]] = None,
                  reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  shape: Optional[pulumi.Input[builtins.str]] = None,
                  shape_details: Optional[pulumi.Input['LoadBalancerShapeDetailsArgs']] = None,
                  state: Optional[pulumi.Input[builtins.str]] = None,
@@ -430,6 +447,7 @@ class _LoadBalancerState:
                * Unless the header name is "" it must start with "X-" prefix.
                * Setting the header name to "" will set it to the default: X-Request-Id.
         :param pulumi.Input[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]] reserved_ips: An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] security_attributes: (Updatable) Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}`
         :param pulumi.Input[builtins.str] shape: (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
         :param pulumi.Input['LoadBalancerShapeDetailsArgs'] shape_details: (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
         :param pulumi.Input[builtins.str] state: The current state of the load balancer.
@@ -470,6 +488,8 @@ class _LoadBalancerState:
             pulumi.set(__self__, "request_id_header", request_id_header)
         if reserved_ips is not None:
             pulumi.set(__self__, "reserved_ips", reserved_ips)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if shape is not None:
             pulumi.set(__self__, "shape", shape)
         if shape_details is not None:
@@ -687,6 +707,18 @@ class _LoadBalancerState:
         pulumi.set(self, "reserved_ips", value)
 
     @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]:
+        """
+        (Updatable) Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @property
     @pulumi.getter
     def shape(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -779,6 +811,7 @@ class LoadBalancer(pulumi.CustomResource):
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  request_id_header: Optional[pulumi.Input[builtins.str]] = None,
                  reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerReservedIpArgs', 'LoadBalancerReservedIpArgsDict']]]]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  shape: Optional[pulumi.Input[builtins.str]] = None,
                  shape_details: Optional[pulumi.Input[Union['LoadBalancerShapeDetailsArgs', 'LoadBalancerShapeDetailsArgsDict']]] = None,
                  subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
@@ -841,6 +874,7 @@ class LoadBalancer(pulumi.CustomResource):
             reserved_ips=[{
                 "id": load_balancer_reserved_ips_id,
             }],
+            security_attributes=load_balancer_security_attributes,
             shape_details={
                 "maximum_bandwidth_in_mbps": load_balancer_shape_details_maximum_bandwidth_in_mbps,
                 "minimum_bandwidth_in_mbps": load_balancer_shape_details_minimum_bandwidth_in_mbps,
@@ -914,6 +948,7 @@ class LoadBalancer(pulumi.CustomResource):
                * Unless the header name is "" it must start with "X-" prefix.
                * Setting the header name to "" will set it to the default: X-Request-Id.
         :param pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerReservedIpArgs', 'LoadBalancerReservedIpArgsDict']]]] reserved_ips: An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] security_attributes: (Updatable) Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}`
         :param pulumi.Input[builtins.str] shape: (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
         :param pulumi.Input[Union['LoadBalancerShapeDetailsArgs', 'LoadBalancerShapeDetailsArgsDict']] shape_details: (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_ids: An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -986,6 +1021,7 @@ class LoadBalancer(pulumi.CustomResource):
             reserved_ips=[{
                 "id": load_balancer_reserved_ips_id,
             }],
+            security_attributes=load_balancer_security_attributes,
             shape_details={
                 "maximum_bandwidth_in_mbps": load_balancer_shape_details_maximum_bandwidth_in_mbps,
                 "minimum_bandwidth_in_mbps": load_balancer_shape_details_minimum_bandwidth_in_mbps,
@@ -1026,6 +1062,7 @@ class LoadBalancer(pulumi.CustomResource):
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  request_id_header: Optional[pulumi.Input[builtins.str]] = None,
                  reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerReservedIpArgs', 'LoadBalancerReservedIpArgsDict']]]]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  shape: Optional[pulumi.Input[builtins.str]] = None,
                  shape_details: Optional[pulumi.Input[Union['LoadBalancerShapeDetailsArgs', 'LoadBalancerShapeDetailsArgsDict']]] = None,
                  subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
@@ -1053,6 +1090,7 @@ class LoadBalancer(pulumi.CustomResource):
             __props__.__dict__["network_security_group_ids"] = network_security_group_ids
             __props__.__dict__["request_id_header"] = request_id_header
             __props__.__dict__["reserved_ips"] = reserved_ips
+            __props__.__dict__["security_attributes"] = security_attributes
             if shape is None and not opts.urn:
                 raise TypeError("Missing required property 'shape'")
             __props__.__dict__["shape"] = shape
@@ -1088,6 +1126,7 @@ class LoadBalancer(pulumi.CustomResource):
             network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
             request_id_header: Optional[pulumi.Input[builtins.str]] = None,
             reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerReservedIpArgs', 'LoadBalancerReservedIpArgsDict']]]]] = None,
+            security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             shape: Optional[pulumi.Input[builtins.str]] = None,
             shape_details: Optional[pulumi.Input[Union['LoadBalancerShapeDetailsArgs', 'LoadBalancerShapeDetailsArgsDict']]] = None,
             state: Optional[pulumi.Input[builtins.str]] = None,
@@ -1160,6 +1199,7 @@ class LoadBalancer(pulumi.CustomResource):
                * Unless the header name is "" it must start with "X-" prefix.
                * Setting the header name to "" will set it to the default: X-Request-Id.
         :param pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerReservedIpArgs', 'LoadBalancerReservedIpArgsDict']]]] reserved_ips: An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] security_attributes: (Updatable) Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}`
         :param pulumi.Input[builtins.str] shape: (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
         :param pulumi.Input[Union['LoadBalancerShapeDetailsArgs', 'LoadBalancerShapeDetailsArgsDict']] shape_details: (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
         :param pulumi.Input[builtins.str] state: The current state of the load balancer.
@@ -1188,6 +1228,7 @@ class LoadBalancer(pulumi.CustomResource):
         __props__.__dict__["network_security_group_ids"] = network_security_group_ids
         __props__.__dict__["request_id_header"] = request_id_header
         __props__.__dict__["reserved_ips"] = reserved_ips
+        __props__.__dict__["security_attributes"] = security_attributes
         __props__.__dict__["shape"] = shape
         __props__.__dict__["shape_details"] = shape_details
         __props__.__dict__["state"] = state
@@ -1346,6 +1387,14 @@ class LoadBalancer(pulumi.CustomResource):
         An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
         """
         return pulumi.get(self, "reserved_ips")
+
+    @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Output[Mapping[str, builtins.str]]:
+        """
+        (Updatable) Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @property
     @pulumi.getter

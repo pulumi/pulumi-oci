@@ -83,6 +83,11 @@ public final class GetLoadBalancersLoadBalancer {
     private String requestIdHeader;
     private List<GetLoadBalancersLoadBalancerReservedIp> reservedIps;
     /**
+     * @return Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;, &#34;usagetype&#34; : &#34;zpr&#34;}}}`
+     * 
+     */
+    private Map<String,String> securityAttributes;
+    /**
      * @return A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `100Mbps`
      * 
      */
@@ -209,6 +214,13 @@ public final class GetLoadBalancersLoadBalancer {
         return this.reservedIps;
     }
     /**
+     * @return Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;, &#34;usagetype&#34; : &#34;zpr&#34;}}}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * @return A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `100Mbps`
      * 
      */
@@ -274,6 +286,7 @@ public final class GetLoadBalancersLoadBalancer {
         private List<String> networkSecurityGroupIds;
         private String requestIdHeader;
         private List<GetLoadBalancersLoadBalancerReservedIp> reservedIps;
+        private Map<String,String> securityAttributes;
         private String shape;
         private List<GetLoadBalancersLoadBalancerShapeDetail> shapeDetails;
         private String state;
@@ -297,6 +310,7 @@ public final class GetLoadBalancersLoadBalancer {
     	      this.networkSecurityGroupIds = defaults.networkSecurityGroupIds;
     	      this.requestIdHeader = defaults.requestIdHeader;
     	      this.reservedIps = defaults.reservedIps;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.shape = defaults.shape;
     	      this.shapeDetails = defaults.shapeDetails;
     	      this.state = defaults.state;
@@ -430,6 +444,14 @@ public final class GetLoadBalancersLoadBalancer {
             return reservedIps(List.of(reservedIps));
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancersLoadBalancer", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder shape(String shape) {
             if (shape == null) {
               throw new MissingRequiredPropertyException("GetLoadBalancersLoadBalancer", "shape");
@@ -499,6 +521,7 @@ public final class GetLoadBalancersLoadBalancer {
             _resultValue.networkSecurityGroupIds = networkSecurityGroupIds;
             _resultValue.requestIdHeader = requestIdHeader;
             _resultValue.reservedIps = reservedIps;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.shape = shape;
             _resultValue.shapeDetails = shapeDetails;
             _resultValue.state = state;

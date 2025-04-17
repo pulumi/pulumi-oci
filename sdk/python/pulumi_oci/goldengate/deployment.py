@@ -23,77 +23,93 @@ __all__ = ['DeploymentArgs', 'Deployment']
 class DeploymentArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[builtins.str],
-                 cpu_core_count: pulumi.Input[builtins.int],
-                 deployment_type: pulumi.Input[builtins.str],
                  display_name: pulumi.Input[builtins.str],
-                 is_auto_scaling_enabled: pulumi.Input[builtins.bool],
-                 license_model: pulumi.Input[builtins.str],
                  subnet_id: pulumi.Input[builtins.str],
+                 availability_domain: Optional[pulumi.Input[builtins.str]] = None,
                  backup_schedule: Optional[pulumi.Input['DeploymentBackupScheduleArgs']] = None,
+                 cpu_core_count: Optional[pulumi.Input[builtins.int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  deployment_backup_id: Optional[pulumi.Input[builtins.str]] = None,
+                 deployment_type: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  environment_type: Optional[pulumi.Input[builtins.str]] = None,
+                 fault_domain: Optional[pulumi.Input[builtins.str]] = None,
                  fqdn: Optional[pulumi.Input[builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
+                 is_auto_scaling_enabled: Optional[pulumi.Input[builtins.bool]] = None,
                  is_lock_override: Optional[pulumi.Input[builtins.bool]] = None,
                  is_public: Optional[pulumi.Input[builtins.bool]] = None,
+                 license_model: Optional[pulumi.Input[builtins.str]] = None,
                  load_balancer_subnet_id: Optional[pulumi.Input[builtins.str]] = None,
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentLockArgs']]]] = None,
                  maintenance_configuration: Optional[pulumi.Input['DeploymentMaintenanceConfigurationArgs']] = None,
                  maintenance_window: Optional[pulumi.Input['DeploymentMaintenanceWindowArgs']] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  ogg_data: Optional[pulumi.Input['DeploymentOggDataArgs']] = None,
+                 placements: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentPlacementArgs']]]] = None,
+                 source_deployment_id: Optional[pulumi.Input[builtins.str]] = None,
                  state: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a Deployment resource.
         :param pulumi.Input[builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        :param pulumi.Input[builtins.int] cpu_core_count: (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
-        :param pulumi.Input[builtins.str] deployment_type: The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
         :param pulumi.Input[builtins.str] display_name: (Updatable) An object's Display Name.
-        :param pulumi.Input[builtins.bool] is_auto_scaling_enabled: (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
-        :param pulumi.Input[builtins.str] license_model: (Updatable) The Oracle license model that applies to a Deployment.
         :param pulumi.Input[builtins.str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
+        :param pulumi.Input[builtins.str] availability_domain: The availability domain of a placement.
         :param pulumi.Input['DeploymentBackupScheduleArgs'] backup_schedule: (Updatable) Defines the backup schedule details for create operation.
+        :param pulumi.Input[builtins.int] cpu_core_count: (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[builtins.str] deployment_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
+        :param pulumi.Input[builtins.str] deployment_type: The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
         :param pulumi.Input[builtins.str] description: (Updatable) Metadata about this specific object.
         :param pulumi.Input[builtins.str] environment_type: (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
+        :param pulumi.Input[builtins.str] fault_domain: The fault domain of a placement.
         :param pulumi.Input[builtins.str] fqdn: (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
+        :param pulumi.Input[builtins.bool] is_auto_scaling_enabled: (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
         :param pulumi.Input[builtins.bool] is_public: (Updatable) True if this object is publicly available.
+        :param pulumi.Input[builtins.str] license_model: (Updatable) The Oracle license model that applies to a Deployment.
         :param pulumi.Input[builtins.str] load_balancer_subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
         :param pulumi.Input[Sequence[pulumi.Input['DeploymentLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input['DeploymentMaintenanceConfigurationArgs'] maintenance_configuration: (Updatable) Defines the maintenance configuration for create operation.
         :param pulumi.Input['DeploymentMaintenanceWindowArgs'] maintenance_window: (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
         :param pulumi.Input['DeploymentOggDataArgs'] ogg_data: (Updatable) Deployment Data for creating an OggDeployment
+        :param pulumi.Input[Sequence[pulumi.Input['DeploymentPlacementArgs']]] placements: (Updatable) An array of local peers of deployment
+        :param pulumi.Input[builtins.str] source_deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "cpu_core_count", cpu_core_count)
-        pulumi.set(__self__, "deployment_type", deployment_type)
         pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "is_auto_scaling_enabled", is_auto_scaling_enabled)
-        pulumi.set(__self__, "license_model", license_model)
         pulumi.set(__self__, "subnet_id", subnet_id)
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
         if backup_schedule is not None:
             pulumi.set(__self__, "backup_schedule", backup_schedule)
+        if cpu_core_count is not None:
+            pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if deployment_backup_id is not None:
             pulumi.set(__self__, "deployment_backup_id", deployment_backup_id)
+        if deployment_type is not None:
+            pulumi.set(__self__, "deployment_type", deployment_type)
         if description is not None:
             pulumi.set(__self__, "description", description)
         if environment_type is not None:
             pulumi.set(__self__, "environment_type", environment_type)
+        if fault_domain is not None:
+            pulumi.set(__self__, "fault_domain", fault_domain)
         if fqdn is not None:
             pulumi.set(__self__, "fqdn", fqdn)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_auto_scaling_enabled is not None:
+            pulumi.set(__self__, "is_auto_scaling_enabled", is_auto_scaling_enabled)
         if is_lock_override is not None:
             pulumi.set(__self__, "is_lock_override", is_lock_override)
         if is_public is not None:
             pulumi.set(__self__, "is_public", is_public)
+        if license_model is not None:
+            pulumi.set(__self__, "license_model", license_model)
         if load_balancer_subnet_id is not None:
             pulumi.set(__self__, "load_balancer_subnet_id", load_balancer_subnet_id)
         if locks is not None:
@@ -106,6 +122,10 @@ class DeploymentArgs:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if ogg_data is not None:
             pulumi.set(__self__, "ogg_data", ogg_data)
+        if placements is not None:
+            pulumi.set(__self__, "placements", placements)
+        if source_deployment_id is not None:
+            pulumi.set(__self__, "source_deployment_id", source_deployment_id)
         if state is not None:
             pulumi.set(__self__, "state", state)
 
@@ -122,30 +142,6 @@ class DeploymentArgs:
         pulumi.set(self, "compartment_id", value)
 
     @property
-    @pulumi.getter(name="cpuCoreCount")
-    def cpu_core_count(self) -> pulumi.Input[builtins.int]:
-        """
-        (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
-        """
-        return pulumi.get(self, "cpu_core_count")
-
-    @cpu_core_count.setter
-    def cpu_core_count(self, value: pulumi.Input[builtins.int]):
-        pulumi.set(self, "cpu_core_count", value)
-
-    @property
-    @pulumi.getter(name="deploymentType")
-    def deployment_type(self) -> pulumi.Input[builtins.str]:
-        """
-        The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
-        """
-        return pulumi.get(self, "deployment_type")
-
-    @deployment_type.setter
-    def deployment_type(self, value: pulumi.Input[builtins.str]):
-        pulumi.set(self, "deployment_type", value)
-
-    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[builtins.str]:
         """
@@ -156,30 +152,6 @@ class DeploymentArgs:
     @display_name.setter
     def display_name(self, value: pulumi.Input[builtins.str]):
         pulumi.set(self, "display_name", value)
-
-    @property
-    @pulumi.getter(name="isAutoScalingEnabled")
-    def is_auto_scaling_enabled(self) -> pulumi.Input[builtins.bool]:
-        """
-        (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
-        """
-        return pulumi.get(self, "is_auto_scaling_enabled")
-
-    @is_auto_scaling_enabled.setter
-    def is_auto_scaling_enabled(self, value: pulumi.Input[builtins.bool]):
-        pulumi.set(self, "is_auto_scaling_enabled", value)
-
-    @property
-    @pulumi.getter(name="licenseModel")
-    def license_model(self) -> pulumi.Input[builtins.str]:
-        """
-        (Updatable) The Oracle license model that applies to a Deployment.
-        """
-        return pulumi.get(self, "license_model")
-
-    @license_model.setter
-    def license_model(self, value: pulumi.Input[builtins.str]):
-        pulumi.set(self, "license_model", value)
 
     @property
     @pulumi.getter(name="subnetId")
@@ -194,6 +166,18 @@ class DeploymentArgs:
         pulumi.set(self, "subnet_id", value)
 
     @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The availability domain of a placement.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @availability_domain.setter
+    def availability_domain(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "availability_domain", value)
+
+    @property
     @pulumi.getter(name="backupSchedule")
     def backup_schedule(self) -> Optional[pulumi.Input['DeploymentBackupScheduleArgs']]:
         """
@@ -204,6 +188,18 @@ class DeploymentArgs:
     @backup_schedule.setter
     def backup_schedule(self, value: Optional[pulumi.Input['DeploymentBackupScheduleArgs']]):
         pulumi.set(self, "backup_schedule", value)
+
+    @property
+    @pulumi.getter(name="cpuCoreCount")
+    def cpu_core_count(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
+        """
+        return pulumi.get(self, "cpu_core_count")
+
+    @cpu_core_count.setter
+    def cpu_core_count(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "cpu_core_count", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -230,6 +226,18 @@ class DeploymentArgs:
         pulumi.set(self, "deployment_backup_id", value)
 
     @property
+    @pulumi.getter(name="deploymentType")
+    def deployment_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
+        """
+        return pulumi.get(self, "deployment_type")
+
+    @deployment_type.setter
+    def deployment_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "deployment_type", value)
+
+    @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -252,6 +260,18 @@ class DeploymentArgs:
     @environment_type.setter
     def environment_type(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "environment_type", value)
+
+    @property
+    @pulumi.getter(name="faultDomain")
+    def fault_domain(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The fault domain of a placement.
+        """
+        return pulumi.get(self, "fault_domain")
+
+    @fault_domain.setter
+    def fault_domain(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "fault_domain", value)
 
     @property
     @pulumi.getter
@@ -278,6 +298,18 @@ class DeploymentArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="isAutoScalingEnabled")
+    def is_auto_scaling_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
+        """
+        return pulumi.get(self, "is_auto_scaling_enabled")
+
+    @is_auto_scaling_enabled.setter
+    def is_auto_scaling_enabled(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_auto_scaling_enabled", value)
+
+    @property
     @pulumi.getter(name="isLockOverride")
     def is_lock_override(self) -> Optional[pulumi.Input[builtins.bool]]:
         return pulumi.get(self, "is_lock_override")
@@ -297,6 +329,18 @@ class DeploymentArgs:
     @is_public.setter
     def is_public(self, value: Optional[pulumi.Input[builtins.bool]]):
         pulumi.set(self, "is_public", value)
+
+    @property
+    @pulumi.getter(name="licenseModel")
+    def license_model(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The Oracle license model that applies to a Deployment.
+        """
+        return pulumi.get(self, "license_model")
+
+    @license_model.setter
+    def license_model(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "license_model", value)
 
     @property
     @pulumi.getter(name="loadBalancerSubnetId")
@@ -372,6 +416,30 @@ class DeploymentArgs:
 
     @property
     @pulumi.getter
+    def placements(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentPlacementArgs']]]]:
+        """
+        (Updatable) An array of local peers of deployment
+        """
+        return pulumi.get(self, "placements")
+
+    @placements.setter
+    def placements(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentPlacementArgs']]]]):
+        pulumi.set(self, "placements", value)
+
+    @property
+    @pulumi.getter(name="sourceDeploymentId")
+    def source_deployment_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+        """
+        return pulumi.get(self, "source_deployment_id")
+
+    @source_deployment_id.setter
+    def source_deployment_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "source_deployment_id", value)
+
+    @property
+    @pulumi.getter
     def state(self) -> Optional[pulumi.Input[builtins.str]]:
         return pulumi.get(self, "state")
 
@@ -383,6 +451,7 @@ class DeploymentArgs:
 @pulumi.input_type
 class _DeploymentState:
     def __init__(__self__, *,
+                 availability_domain: Optional[pulumi.Input[builtins.str]] = None,
                  backup_schedule: Optional[pulumi.Input['DeploymentBackupScheduleArgs']] = None,
                  category: Optional[pulumi.Input[builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -390,11 +459,13 @@ class _DeploymentState:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  deployment_backup_id: Optional[pulumi.Input[builtins.str]] = None,
                  deployment_diagnostic_datas: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeploymentDiagnosticDataArgs']]]] = None,
+                 deployment_role: Optional[pulumi.Input[builtins.str]] = None,
                  deployment_type: Optional[pulumi.Input[builtins.str]] = None,
                  deployment_url: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
                  environment_type: Optional[pulumi.Input[builtins.str]] = None,
+                 fault_domain: Optional[pulumi.Input[builtins.str]] = None,
                  fqdn: Optional[pulumi.Input[builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  ingress_ips: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentIngressIpArgs']]]] = None,
@@ -416,8 +487,10 @@ class _DeploymentState:
                  next_maintenance_description: Optional[pulumi.Input[builtins.str]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  ogg_data: Optional[pulumi.Input['DeploymentOggDataArgs']] = None,
+                 placements: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentPlacementArgs']]]] = None,
                  private_ip_address: Optional[pulumi.Input[builtins.str]] = None,
                  public_ip_address: Optional[pulumi.Input[builtins.str]] = None,
+                 source_deployment_id: Optional[pulumi.Input[builtins.str]] = None,
                  state: Optional[pulumi.Input[builtins.str]] = None,
                  storage_utilization_in_bytes: Optional[pulumi.Input[builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -427,10 +500,12 @@ class _DeploymentState:
                  time_next_backup_scheduled: Optional[pulumi.Input[builtins.str]] = None,
                  time_of_next_maintenance: Optional[pulumi.Input[builtins.str]] = None,
                  time_ogg_version_supported_until: Optional[pulumi.Input[builtins.str]] = None,
+                 time_role_changed: Optional[pulumi.Input[builtins.str]] = None,
                  time_updated: Optional[pulumi.Input[builtins.str]] = None,
                  time_upgrade_required: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Deployment resources.
+        :param pulumi.Input[builtins.str] availability_domain: The availability domain of a placement.
         :param pulumi.Input['DeploymentBackupScheduleArgs'] backup_schedule: (Updatable) Defines the backup schedule details for create operation.
         :param pulumi.Input[builtins.str] category: The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
         :param pulumi.Input[builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
@@ -438,11 +513,13 @@ class _DeploymentState:
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[builtins.str] deployment_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
         :param pulumi.Input[Sequence[pulumi.Input['DeploymentDeploymentDiagnosticDataArgs']]] deployment_diagnostic_datas: Information regarding the deployment diagnostic collection
+        :param pulumi.Input[builtins.str] deployment_role: The type of the deployment role.
         :param pulumi.Input[builtins.str] deployment_type: The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
         :param pulumi.Input[builtins.str] deployment_url: The URL of a resource.
         :param pulumi.Input[builtins.str] description: (Updatable) Metadata about this specific object.
         :param pulumi.Input[builtins.str] display_name: (Updatable) An object's Display Name.
         :param pulumi.Input[builtins.str] environment_type: (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
+        :param pulumi.Input[builtins.str] fault_domain: The fault domain of a placement.
         :param pulumi.Input[builtins.str] fqdn: (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input['DeploymentIngressIpArgs']]] ingress_ips: List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
@@ -463,8 +540,10 @@ class _DeploymentState:
         :param pulumi.Input[builtins.str] next_maintenance_description: Description of the next maintenance.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
         :param pulumi.Input['DeploymentOggDataArgs'] ogg_data: (Updatable) Deployment Data for creating an OggDeployment
+        :param pulumi.Input[Sequence[pulumi.Input['DeploymentPlacementArgs']]] placements: (Updatable) An array of local peers of deployment
         :param pulumi.Input[builtins.str] private_ip_address: The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
         :param pulumi.Input[builtins.str] public_ip_address: The public IP address representing the access point for the Deployment.
+        :param pulumi.Input[builtins.str] source_deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         :param pulumi.Input[builtins.str] storage_utilization_in_bytes: The amount of storage being utilized (in bytes)
         :param pulumi.Input[builtins.str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -473,9 +552,12 @@ class _DeploymentState:
         :param pulumi.Input[builtins.str] time_next_backup_scheduled: The timestamp of next deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
         :param pulumi.Input[builtins.str] time_of_next_maintenance: The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[builtins.str] time_ogg_version_supported_until: The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param pulumi.Input[builtins.str] time_role_changed: The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[builtins.str] time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[builtins.str] time_upgrade_required: Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
         if backup_schedule is not None:
             pulumi.set(__self__, "backup_schedule", backup_schedule)
         if category is not None:
@@ -490,6 +572,8 @@ class _DeploymentState:
             pulumi.set(__self__, "deployment_backup_id", deployment_backup_id)
         if deployment_diagnostic_datas is not None:
             pulumi.set(__self__, "deployment_diagnostic_datas", deployment_diagnostic_datas)
+        if deployment_role is not None:
+            pulumi.set(__self__, "deployment_role", deployment_role)
         if deployment_type is not None:
             pulumi.set(__self__, "deployment_type", deployment_type)
         if deployment_url is not None:
@@ -500,6 +584,8 @@ class _DeploymentState:
             pulumi.set(__self__, "display_name", display_name)
         if environment_type is not None:
             pulumi.set(__self__, "environment_type", environment_type)
+        if fault_domain is not None:
+            pulumi.set(__self__, "fault_domain", fault_domain)
         if fqdn is not None:
             pulumi.set(__self__, "fqdn", fqdn)
         if freeform_tags is not None:
@@ -542,10 +628,14 @@ class _DeploymentState:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if ogg_data is not None:
             pulumi.set(__self__, "ogg_data", ogg_data)
+        if placements is not None:
+            pulumi.set(__self__, "placements", placements)
         if private_ip_address is not None:
             pulumi.set(__self__, "private_ip_address", private_ip_address)
         if public_ip_address is not None:
             pulumi.set(__self__, "public_ip_address", public_ip_address)
+        if source_deployment_id is not None:
+            pulumi.set(__self__, "source_deployment_id", source_deployment_id)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if storage_utilization_in_bytes is not None:
@@ -564,10 +654,24 @@ class _DeploymentState:
             pulumi.set(__self__, "time_of_next_maintenance", time_of_next_maintenance)
         if time_ogg_version_supported_until is not None:
             pulumi.set(__self__, "time_ogg_version_supported_until", time_ogg_version_supported_until)
+        if time_role_changed is not None:
+            pulumi.set(__self__, "time_role_changed", time_role_changed)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
         if time_upgrade_required is not None:
             pulumi.set(__self__, "time_upgrade_required", time_upgrade_required)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The availability domain of a placement.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @availability_domain.setter
+    def availability_domain(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "availability_domain", value)
 
     @property
     @pulumi.getter(name="backupSchedule")
@@ -654,6 +758,18 @@ class _DeploymentState:
         pulumi.set(self, "deployment_diagnostic_datas", value)
 
     @property
+    @pulumi.getter(name="deploymentRole")
+    def deployment_role(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The type of the deployment role.
+        """
+        return pulumi.get(self, "deployment_role")
+
+    @deployment_role.setter
+    def deployment_role(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "deployment_role", value)
+
+    @property
     @pulumi.getter(name="deploymentType")
     def deployment_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -712,6 +828,18 @@ class _DeploymentState:
     @environment_type.setter
     def environment_type(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "environment_type", value)
+
+    @property
+    @pulumi.getter(name="faultDomain")
+    def fault_domain(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The fault domain of a placement.
+        """
+        return pulumi.get(self, "fault_domain")
+
+    @fault_domain.setter
+    def fault_domain(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "fault_domain", value)
 
     @property
     @pulumi.getter
@@ -963,6 +1091,18 @@ class _DeploymentState:
         pulumi.set(self, "ogg_data", value)
 
     @property
+    @pulumi.getter
+    def placements(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentPlacementArgs']]]]:
+        """
+        (Updatable) An array of local peers of deployment
+        """
+        return pulumi.get(self, "placements")
+
+    @placements.setter
+    def placements(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentPlacementArgs']]]]):
+        pulumi.set(self, "placements", value)
+
+    @property
     @pulumi.getter(name="privateIpAddress")
     def private_ip_address(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -985,6 +1125,18 @@ class _DeploymentState:
     @public_ip_address.setter
     def public_ip_address(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "public_ip_address", value)
+
+    @property
+    @pulumi.getter(name="sourceDeploymentId")
+    def source_deployment_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+        """
+        return pulumi.get(self, "source_deployment_id")
+
+    @source_deployment_id.setter
+    def source_deployment_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "source_deployment_id", value)
 
     @property
     @pulumi.getter
@@ -1092,6 +1244,18 @@ class _DeploymentState:
         pulumi.set(self, "time_ogg_version_supported_until", value)
 
     @property
+    @pulumi.getter(name="timeRoleChanged")
+    def time_role_changed(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_role_changed")
+
+    @time_role_changed.setter
+    def time_role_changed(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "time_role_changed", value)
+
+    @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -1121,6 +1285,7 @@ class Deployment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 availability_domain: Optional[pulumi.Input[builtins.str]] = None,
                  backup_schedule: Optional[pulumi.Input[Union['DeploymentBackupScheduleArgs', 'DeploymentBackupScheduleArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[builtins.str]] = None,
                  cpu_core_count: Optional[pulumi.Input[builtins.int]] = None,
@@ -1130,6 +1295,7 @@ class Deployment(pulumi.CustomResource):
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
                  environment_type: Optional[pulumi.Input[builtins.str]] = None,
+                 fault_domain: Optional[pulumi.Input[builtins.str]] = None,
                  fqdn: Optional[pulumi.Input[builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  is_auto_scaling_enabled: Optional[pulumi.Input[builtins.bool]] = None,
@@ -1142,6 +1308,8 @@ class Deployment(pulumi.CustomResource):
                  maintenance_window: Optional[pulumi.Input[Union['DeploymentMaintenanceWindowArgs', 'DeploymentMaintenanceWindowArgsDict']]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  ogg_data: Optional[pulumi.Input[Union['DeploymentOggDataArgs', 'DeploymentOggDataArgsDict']]] = None,
+                 placements: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DeploymentPlacementArgs', 'DeploymentPlacementArgsDict']]]]] = None,
+                 source_deployment_id: Optional[pulumi.Input[builtins.str]] = None,
                  state: Optional[pulumi.Input[builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
@@ -1160,6 +1328,7 @@ class Deployment(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[builtins.str] availability_domain: The availability domain of a placement.
         :param pulumi.Input[Union['DeploymentBackupScheduleArgs', 'DeploymentBackupScheduleArgsDict']] backup_schedule: (Updatable) Defines the backup schedule details for create operation.
         :param pulumi.Input[builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         :param pulumi.Input[builtins.int] cpu_core_count: (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
@@ -1169,6 +1338,7 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] description: (Updatable) Metadata about this specific object.
         :param pulumi.Input[builtins.str] display_name: (Updatable) An object's Display Name.
         :param pulumi.Input[builtins.str] environment_type: (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
+        :param pulumi.Input[builtins.str] fault_domain: The fault domain of a placement.
         :param pulumi.Input[builtins.str] fqdn: (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[builtins.bool] is_auto_scaling_enabled: (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
@@ -1180,6 +1350,8 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[Union['DeploymentMaintenanceWindowArgs', 'DeploymentMaintenanceWindowArgsDict']] maintenance_window: (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
         :param pulumi.Input[Union['DeploymentOggDataArgs', 'DeploymentOggDataArgsDict']] ogg_data: (Updatable) Deployment Data for creating an OggDeployment
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentPlacementArgs', 'DeploymentPlacementArgsDict']]]] placements: (Updatable) An array of local peers of deployment
+        :param pulumi.Input[builtins.str] source_deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         :param pulumi.Input[builtins.str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
         """
         ...
@@ -1216,6 +1388,7 @@ class Deployment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 availability_domain: Optional[pulumi.Input[builtins.str]] = None,
                  backup_schedule: Optional[pulumi.Input[Union['DeploymentBackupScheduleArgs', 'DeploymentBackupScheduleArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[builtins.str]] = None,
                  cpu_core_count: Optional[pulumi.Input[builtins.int]] = None,
@@ -1225,6 +1398,7 @@ class Deployment(pulumi.CustomResource):
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
                  environment_type: Optional[pulumi.Input[builtins.str]] = None,
+                 fault_domain: Optional[pulumi.Input[builtins.str]] = None,
                  fqdn: Optional[pulumi.Input[builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  is_auto_scaling_enabled: Optional[pulumi.Input[builtins.bool]] = None,
@@ -1237,6 +1411,8 @@ class Deployment(pulumi.CustomResource):
                  maintenance_window: Optional[pulumi.Input[Union['DeploymentMaintenanceWindowArgs', 'DeploymentMaintenanceWindowArgsDict']]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  ogg_data: Optional[pulumi.Input[Union['DeploymentOggDataArgs', 'DeploymentOggDataArgsDict']]] = None,
+                 placements: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DeploymentPlacementArgs', 'DeploymentPlacementArgsDict']]]]] = None,
+                 source_deployment_id: Optional[pulumi.Input[builtins.str]] = None,
                  state: Optional[pulumi.Input[builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
@@ -1248,32 +1424,26 @@ class Deployment(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = DeploymentArgs.__new__(DeploymentArgs)
 
+            __props__.__dict__["availability_domain"] = availability_domain
             __props__.__dict__["backup_schedule"] = backup_schedule
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
-            if cpu_core_count is None and not opts.urn:
-                raise TypeError("Missing required property 'cpu_core_count'")
             __props__.__dict__["cpu_core_count"] = cpu_core_count
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["deployment_backup_id"] = deployment_backup_id
-            if deployment_type is None and not opts.urn:
-                raise TypeError("Missing required property 'deployment_type'")
             __props__.__dict__["deployment_type"] = deployment_type
             __props__.__dict__["description"] = description
             if display_name is None and not opts.urn:
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["environment_type"] = environment_type
+            __props__.__dict__["fault_domain"] = fault_domain
             __props__.__dict__["fqdn"] = fqdn
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if is_auto_scaling_enabled is None and not opts.urn:
-                raise TypeError("Missing required property 'is_auto_scaling_enabled'")
             __props__.__dict__["is_auto_scaling_enabled"] = is_auto_scaling_enabled
             __props__.__dict__["is_lock_override"] = is_lock_override
             __props__.__dict__["is_public"] = is_public
-            if license_model is None and not opts.urn:
-                raise TypeError("Missing required property 'license_model'")
             __props__.__dict__["license_model"] = license_model
             __props__.__dict__["load_balancer_subnet_id"] = load_balancer_subnet_id
             __props__.__dict__["locks"] = locks
@@ -1281,12 +1451,15 @@ class Deployment(pulumi.CustomResource):
             __props__.__dict__["maintenance_window"] = maintenance_window
             __props__.__dict__["nsg_ids"] = nsg_ids
             __props__.__dict__["ogg_data"] = ogg_data
+            __props__.__dict__["placements"] = placements
+            __props__.__dict__["source_deployment_id"] = source_deployment_id
             __props__.__dict__["state"] = state
             if subnet_id is None and not opts.urn:
                 raise TypeError("Missing required property 'subnet_id'")
             __props__.__dict__["subnet_id"] = subnet_id
             __props__.__dict__["category"] = None
             __props__.__dict__["deployment_diagnostic_datas"] = None
+            __props__.__dict__["deployment_role"] = None
             __props__.__dict__["deployment_url"] = None
             __props__.__dict__["ingress_ips"] = None
             __props__.__dict__["is_healthy"] = None
@@ -1306,6 +1479,7 @@ class Deployment(pulumi.CustomResource):
             __props__.__dict__["time_next_backup_scheduled"] = None
             __props__.__dict__["time_of_next_maintenance"] = None
             __props__.__dict__["time_ogg_version_supported_until"] = None
+            __props__.__dict__["time_role_changed"] = None
             __props__.__dict__["time_updated"] = None
             __props__.__dict__["time_upgrade_required"] = None
         super(Deployment, __self__).__init__(
@@ -1318,6 +1492,7 @@ class Deployment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            availability_domain: Optional[pulumi.Input[builtins.str]] = None,
             backup_schedule: Optional[pulumi.Input[Union['DeploymentBackupScheduleArgs', 'DeploymentBackupScheduleArgsDict']]] = None,
             category: Optional[pulumi.Input[builtins.str]] = None,
             compartment_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -1325,11 +1500,13 @@ class Deployment(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             deployment_backup_id: Optional[pulumi.Input[builtins.str]] = None,
             deployment_diagnostic_datas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DeploymentDeploymentDiagnosticDataArgs', 'DeploymentDeploymentDiagnosticDataArgsDict']]]]] = None,
+            deployment_role: Optional[pulumi.Input[builtins.str]] = None,
             deployment_type: Optional[pulumi.Input[builtins.str]] = None,
             deployment_url: Optional[pulumi.Input[builtins.str]] = None,
             description: Optional[pulumi.Input[builtins.str]] = None,
             display_name: Optional[pulumi.Input[builtins.str]] = None,
             environment_type: Optional[pulumi.Input[builtins.str]] = None,
+            fault_domain: Optional[pulumi.Input[builtins.str]] = None,
             fqdn: Optional[pulumi.Input[builtins.str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             ingress_ips: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DeploymentIngressIpArgs', 'DeploymentIngressIpArgsDict']]]]] = None,
@@ -1351,8 +1528,10 @@ class Deployment(pulumi.CustomResource):
             next_maintenance_description: Optional[pulumi.Input[builtins.str]] = None,
             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
             ogg_data: Optional[pulumi.Input[Union['DeploymentOggDataArgs', 'DeploymentOggDataArgsDict']]] = None,
+            placements: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DeploymentPlacementArgs', 'DeploymentPlacementArgsDict']]]]] = None,
             private_ip_address: Optional[pulumi.Input[builtins.str]] = None,
             public_ip_address: Optional[pulumi.Input[builtins.str]] = None,
+            source_deployment_id: Optional[pulumi.Input[builtins.str]] = None,
             state: Optional[pulumi.Input[builtins.str]] = None,
             storage_utilization_in_bytes: Optional[pulumi.Input[builtins.str]] = None,
             subnet_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -1362,6 +1541,7 @@ class Deployment(pulumi.CustomResource):
             time_next_backup_scheduled: Optional[pulumi.Input[builtins.str]] = None,
             time_of_next_maintenance: Optional[pulumi.Input[builtins.str]] = None,
             time_ogg_version_supported_until: Optional[pulumi.Input[builtins.str]] = None,
+            time_role_changed: Optional[pulumi.Input[builtins.str]] = None,
             time_updated: Optional[pulumi.Input[builtins.str]] = None,
             time_upgrade_required: Optional[pulumi.Input[builtins.str]] = None) -> 'Deployment':
         """
@@ -1371,6 +1551,7 @@ class Deployment(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[builtins.str] availability_domain: The availability domain of a placement.
         :param pulumi.Input[Union['DeploymentBackupScheduleArgs', 'DeploymentBackupScheduleArgsDict']] backup_schedule: (Updatable) Defines the backup schedule details for create operation.
         :param pulumi.Input[builtins.str] category: The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
         :param pulumi.Input[builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
@@ -1378,11 +1559,13 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[builtins.str] deployment_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentDeploymentDiagnosticDataArgs', 'DeploymentDeploymentDiagnosticDataArgsDict']]]] deployment_diagnostic_datas: Information regarding the deployment diagnostic collection
+        :param pulumi.Input[builtins.str] deployment_role: The type of the deployment role.
         :param pulumi.Input[builtins.str] deployment_type: The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
         :param pulumi.Input[builtins.str] deployment_url: The URL of a resource.
         :param pulumi.Input[builtins.str] description: (Updatable) Metadata about this specific object.
         :param pulumi.Input[builtins.str] display_name: (Updatable) An object's Display Name.
         :param pulumi.Input[builtins.str] environment_type: (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
+        :param pulumi.Input[builtins.str] fault_domain: The fault domain of a placement.
         :param pulumi.Input[builtins.str] fqdn: (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentIngressIpArgs', 'DeploymentIngressIpArgsDict']]]] ingress_ips: List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
@@ -1403,8 +1586,10 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] next_maintenance_description: Description of the next maintenance.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
         :param pulumi.Input[Union['DeploymentOggDataArgs', 'DeploymentOggDataArgsDict']] ogg_data: (Updatable) Deployment Data for creating an OggDeployment
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentPlacementArgs', 'DeploymentPlacementArgsDict']]]] placements: (Updatable) An array of local peers of deployment
         :param pulumi.Input[builtins.str] private_ip_address: The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
         :param pulumi.Input[builtins.str] public_ip_address: The public IP address representing the access point for the Deployment.
+        :param pulumi.Input[builtins.str] source_deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         :param pulumi.Input[builtins.str] storage_utilization_in_bytes: The amount of storage being utilized (in bytes)
         :param pulumi.Input[builtins.str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -1413,6 +1598,7 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] time_next_backup_scheduled: The timestamp of next deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
         :param pulumi.Input[builtins.str] time_of_next_maintenance: The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[builtins.str] time_ogg_version_supported_until: The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param pulumi.Input[builtins.str] time_role_changed: The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[builtins.str] time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[builtins.str] time_upgrade_required: Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
@@ -1420,6 +1606,7 @@ class Deployment(pulumi.CustomResource):
 
         __props__ = _DeploymentState.__new__(_DeploymentState)
 
+        __props__.__dict__["availability_domain"] = availability_domain
         __props__.__dict__["backup_schedule"] = backup_schedule
         __props__.__dict__["category"] = category
         __props__.__dict__["compartment_id"] = compartment_id
@@ -1427,11 +1614,13 @@ class Deployment(pulumi.CustomResource):
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["deployment_backup_id"] = deployment_backup_id
         __props__.__dict__["deployment_diagnostic_datas"] = deployment_diagnostic_datas
+        __props__.__dict__["deployment_role"] = deployment_role
         __props__.__dict__["deployment_type"] = deployment_type
         __props__.__dict__["deployment_url"] = deployment_url
         __props__.__dict__["description"] = description
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["environment_type"] = environment_type
+        __props__.__dict__["fault_domain"] = fault_domain
         __props__.__dict__["fqdn"] = fqdn
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["ingress_ips"] = ingress_ips
@@ -1453,8 +1642,10 @@ class Deployment(pulumi.CustomResource):
         __props__.__dict__["next_maintenance_description"] = next_maintenance_description
         __props__.__dict__["nsg_ids"] = nsg_ids
         __props__.__dict__["ogg_data"] = ogg_data
+        __props__.__dict__["placements"] = placements
         __props__.__dict__["private_ip_address"] = private_ip_address
         __props__.__dict__["public_ip_address"] = public_ip_address
+        __props__.__dict__["source_deployment_id"] = source_deployment_id
         __props__.__dict__["state"] = state
         __props__.__dict__["storage_utilization_in_bytes"] = storage_utilization_in_bytes
         __props__.__dict__["subnet_id"] = subnet_id
@@ -1464,9 +1655,18 @@ class Deployment(pulumi.CustomResource):
         __props__.__dict__["time_next_backup_scheduled"] = time_next_backup_scheduled
         __props__.__dict__["time_of_next_maintenance"] = time_of_next_maintenance
         __props__.__dict__["time_ogg_version_supported_until"] = time_ogg_version_supported_until
+        __props__.__dict__["time_role_changed"] = time_role_changed
         __props__.__dict__["time_updated"] = time_updated
         __props__.__dict__["time_upgrade_required"] = time_upgrade_required
         return Deployment(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> pulumi.Output[builtins.str]:
+        """
+        The availability domain of a placement.
+        """
+        return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="backupSchedule")
@@ -1525,6 +1725,14 @@ class Deployment(pulumi.CustomResource):
         return pulumi.get(self, "deployment_diagnostic_datas")
 
     @property
+    @pulumi.getter(name="deploymentRole")
+    def deployment_role(self) -> pulumi.Output[builtins.str]:
+        """
+        The type of the deployment role.
+        """
+        return pulumi.get(self, "deployment_role")
+
+    @property
     @pulumi.getter(name="deploymentType")
     def deployment_type(self) -> pulumi.Output[builtins.str]:
         """
@@ -1563,6 +1771,14 @@ class Deployment(pulumi.CustomResource):
         (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
         """
         return pulumi.get(self, "environment_type")
+
+    @property
+    @pulumi.getter(name="faultDomain")
+    def fault_domain(self) -> pulumi.Output[builtins.str]:
+        """
+        The fault domain of a placement.
+        """
+        return pulumi.get(self, "fault_domain")
 
     @property
     @pulumi.getter
@@ -1730,6 +1946,14 @@ class Deployment(pulumi.CustomResource):
         return pulumi.get(self, "ogg_data")
 
     @property
+    @pulumi.getter
+    def placements(self) -> pulumi.Output[Sequence['outputs.DeploymentPlacement']]:
+        """
+        (Updatable) An array of local peers of deployment
+        """
+        return pulumi.get(self, "placements")
+
+    @property
     @pulumi.getter(name="privateIpAddress")
     def private_ip_address(self) -> pulumi.Output[builtins.str]:
         """
@@ -1744,6 +1968,14 @@ class Deployment(pulumi.CustomResource):
         The public IP address representing the access point for the Deployment.
         """
         return pulumi.get(self, "public_ip_address")
+
+    @property
+    @pulumi.getter(name="sourceDeploymentId")
+    def source_deployment_id(self) -> pulumi.Output[builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+        """
+        return pulumi.get(self, "source_deployment_id")
 
     @property
     @pulumi.getter
@@ -1813,6 +2045,14 @@ class Deployment(pulumi.CustomResource):
         The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_ogg_version_supported_until")
+
+    @property
+    @pulumi.getter(name="timeRoleChanged")
+    def time_role_changed(self) -> pulumi.Output[builtins.str]:
+        """
+        The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_role_changed")
 
     @property
     @pulumi.getter(name="timeUpdated")

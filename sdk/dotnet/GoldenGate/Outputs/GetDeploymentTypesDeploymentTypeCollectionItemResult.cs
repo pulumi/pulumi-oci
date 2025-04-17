@@ -42,6 +42,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly ImmutableArray<string> SourceTechnologies;
         /// <summary>
+        /// Specifies supported capabilities or features by a deployment type .
+        /// </summary>
+        public readonly ImmutableArray<string> SupportedCapabilities;
+        /// <summary>
         /// The URL to the webpage listing the supported technologies.
         /// </summary>
         public readonly string SupportedTechnologiesUrl;
@@ -66,6 +70,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             ImmutableArray<string> sourceTechnologies,
 
+            ImmutableArray<string> supportedCapabilities,
+
             string supportedTechnologiesUrl,
 
             ImmutableArray<string> targetTechnologies)
@@ -77,6 +83,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             DisplayName = displayName;
             OggVersion = oggVersion;
             SourceTechnologies = sourceTechnologies;
+            SupportedCapabilities = supportedCapabilities;
             SupportedTechnologiesUrl = supportedTechnologiesUrl;
             TargetTechnologies = targetTechnologies;
         }

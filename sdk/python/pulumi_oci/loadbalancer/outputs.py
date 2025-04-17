@@ -3739,6 +3739,7 @@ class GetLoadBalancersLoadBalancerResult(dict):
                  network_security_group_ids: Sequence[builtins.str],
                  request_id_header: builtins.str,
                  reserved_ips: Sequence['outputs.GetLoadBalancersLoadBalancerReservedIpResult'],
+                 security_attributes: Mapping[str, builtins.str],
                  shape: builtins.str,
                  shape_details: Sequence['outputs.GetLoadBalancersLoadBalancerShapeDetailResult'],
                  state: builtins.str,
@@ -3758,6 +3759,7 @@ class GetLoadBalancersLoadBalancerResult(dict):
         :param builtins.bool is_request_id_enabled: Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
         :param Sequence[builtins.str] network_security_group_ids: An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the load balancer.
         :param builtins.str request_id_header: If isRequestIdEnabled is true then this field contains the name of the header field that contains the unique request id that is attached to every request from the load balancer to the load balancer backends and to every response from the load balancer.
+        :param Mapping[str, builtins.str] security_attributes: Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}`
         :param builtins.str shape: A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `100Mbps`
         :param Sequence['GetLoadBalancersLoadBalancerShapeDetailArgs'] shape_details: The configuration details to update load balancer to a different shape.
         :param builtins.str state: A filter to return only resources that match the given lifecycle state.  Example: `SUCCEEDED`
@@ -3779,6 +3781,7 @@ class GetLoadBalancersLoadBalancerResult(dict):
         pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
         pulumi.set(__self__, "request_id_header", request_id_header)
         pulumi.set(__self__, "reserved_ips", reserved_ips)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "shape_details", shape_details)
         pulumi.set(__self__, "state", state)
@@ -3892,6 +3895,14 @@ class GetLoadBalancersLoadBalancerResult(dict):
     @pulumi.getter(name="reservedIps")
     def reserved_ips(self) -> Sequence['outputs.GetLoadBalancersLoadBalancerReservedIpResult']:
         return pulumi.get(self, "reserved_ips")
+
+    @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, builtins.str]:
+        """
+        Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @property
     @pulumi.getter

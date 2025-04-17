@@ -95,6 +95,7 @@ import javax.annotation.Nullable;
  *             .reservedIps(LoadBalancerReservedIpArgs.builder()
  *                 .id(loadBalancerReservedIpsId)
  *                 .build())
+ *             .securityAttributes(loadBalancerSecurityAttributes)
  *             .shapeDetails(LoadBalancerShapeDetailsArgs.builder()
  *                 .maximumBandwidthInMbps(loadBalancerShapeDetailsMaximumBandwidthInMbps)
  *                 .minimumBandwidthInMbps(loadBalancerShapeDetailsMinimumBandwidthInMbps)
@@ -395,6 +396,20 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
      */
     public Output<Optional<List<LoadBalancerReservedIp>>> reservedIps() {
         return Codegen.optional(this.reservedIps);
+    }
+    /**
+     * (Updatable) Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;, &#34;usagetype&#34; : &#34;zpr&#34;}}}`
+     * 
+     */
+    @Export(name="securityAttributes", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return (Updatable) Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;, &#34;usagetype&#34; : &#34;zpr&#34;}}}`
+     * 
+     */
+    public Output<Map<String,String>> securityAttributes() {
+        return this.securityAttributes;
     }
     /**
      * (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.

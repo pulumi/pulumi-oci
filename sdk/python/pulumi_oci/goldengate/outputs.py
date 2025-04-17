@@ -30,6 +30,7 @@ __all__ = [
     'DeploymentMaintenanceWindow',
     'DeploymentOggData',
     'DeploymentOggDataGroupToRolesMapping',
+    'DeploymentPlacement',
     'PipelineLock',
     'PipelineMappingRule',
     'PipelinePipelineDiagnosticData',
@@ -74,6 +75,10 @@ __all__ = [
     'GetDeploymentMaintenanceWindowResult',
     'GetDeploymentOggDataResult',
     'GetDeploymentOggDataGroupToRolesMappingResult',
+    'GetDeploymentPeersDeploymentPeerCollectionResult',
+    'GetDeploymentPeersDeploymentPeerCollectionItemResult',
+    'GetDeploymentPeersFilterResult',
+    'GetDeploymentPlacementResult',
     'GetDeploymentTypeItemResult',
     'GetDeploymentTypesDeploymentTypeCollectionResult',
     'GetDeploymentTypesDeploymentTypeCollectionItemResult',
@@ -94,6 +99,7 @@ __all__ = [
     'GetDeploymentsDeploymentCollectionItemMaintenanceWindowResult',
     'GetDeploymentsDeploymentCollectionItemOggDataResult',
     'GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingResult',
+    'GetDeploymentsDeploymentCollectionItemPlacementResult',
     'GetDeploymentsFilterResult',
     'GetMessageItemResult',
     'GetMessagesDeploymentMessagesCollectionResult',
@@ -1092,6 +1098,56 @@ class DeploymentOggDataGroupToRolesMapping(dict):
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role userGroup. It allows information-only service requests, which do not alter or affect the operation of either the MA. Examples of query and read-only information include performance metric information and resource status and monitoring information
         """
         return pulumi.get(self, "user_group_id")
+
+
+@pulumi.output_type
+class DeploymentPlacement(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "availabilityDomain":
+            suggest = "availability_domain"
+        elif key == "faultDomain":
+            suggest = "fault_domain"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DeploymentPlacement. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DeploymentPlacement.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DeploymentPlacement.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 availability_domain: Optional[builtins.str] = None,
+                 fault_domain: Optional[builtins.str] = None):
+        """
+        :param builtins.str availability_domain: (Updatable) The availability domain of a placement.
+        :param builtins.str fault_domain: (Updatable) The fault domain of a placement.
+        """
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
+        if fault_domain is not None:
+            pulumi.set(__self__, "fault_domain", fault_domain)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The availability domain of a placement.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="faultDomain")
+    def fault_domain(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The fault domain of a placement.
+        """
+        return pulumi.get(self, "fault_domain")
 
 
 @pulumi.output_type
@@ -4819,6 +4875,208 @@ class GetDeploymentOggDataGroupToRolesMappingResult(dict):
 
 
 @pulumi.output_type
+class GetDeploymentPeersDeploymentPeerCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDeploymentPeersDeploymentPeerCollectionItemResult']):
+        """
+        :param Sequence['GetDeploymentPeersDeploymentPeerCollectionItemArgs'] items: An array of DeploymentPeers.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDeploymentPeersDeploymentPeerCollectionItemResult']:
+        """
+        An array of DeploymentPeers.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDeploymentPeersDeploymentPeerCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 availability_domain: builtins.str,
+                 deployment_id: builtins.str,
+                 display_name: builtins.str,
+                 fault_domain: builtins.str,
+                 peer_role: builtins.str,
+                 peer_type: builtins.str,
+                 region: builtins.str,
+                 state: builtins.str,
+                 time_created: builtins.str,
+                 time_role_changed: builtins.str,
+                 time_updated: builtins.str):
+        """
+        :param builtins.str availability_domain: The availability domain of a placement.
+        :param builtins.str deployment_id: A unique Deployment identifier.
+        :param builtins.str display_name: A filter to return only the resources that match the entire 'displayName' given.
+        :param builtins.str fault_domain: The fault domain of a placement.
+        :param builtins.str peer_role: The type of the deployment role.
+        :param builtins.str peer_type: The type of the deployment peer.
+        :param builtins.str region: The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+        :param builtins.str state: A filter to return only the resources that match the 'lifecycleState' given.
+        :param builtins.str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param builtins.str time_role_changed: The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param builtins.str time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "deployment_id", deployment_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "fault_domain", fault_domain)
+        pulumi.set(__self__, "peer_role", peer_role)
+        pulumi.set(__self__, "peer_type", peer_type)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_role_changed", time_role_changed)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> builtins.str:
+        """
+        The availability domain of a placement.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="deploymentId")
+    def deployment_id(self) -> builtins.str:
+        """
+        A unique Deployment identifier.
+        """
+        return pulumi.get(self, "deployment_id")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> builtins.str:
+        """
+        A filter to return only the resources that match the entire 'displayName' given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="faultDomain")
+    def fault_domain(self) -> builtins.str:
+        """
+        The fault domain of a placement.
+        """
+        return pulumi.get(self, "fault_domain")
+
+    @property
+    @pulumi.getter(name="peerRole")
+    def peer_role(self) -> builtins.str:
+        """
+        The type of the deployment role.
+        """
+        return pulumi.get(self, "peer_role")
+
+    @property
+    @pulumi.getter(name="peerType")
+    def peer_type(self) -> builtins.str:
+        """
+        The type of the deployment peer.
+        """
+        return pulumi.get(self, "peer_type")
+
+    @property
+    @pulumi.getter
+    def region(self) -> builtins.str:
+        """
+        The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+        """
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter
+    def state(self) -> builtins.str:
+        """
+        A filter to return only the resources that match the 'lifecycleState' given.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> builtins.str:
+        """
+        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeRoleChanged")
+    def time_role_changed(self) -> builtins.str:
+        """
+        The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_role_changed")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> builtins.str:
+        """
+        The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetDeploymentPeersFilterResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDeploymentPlacementResult(dict):
+    def __init__(__self__, *,
+                 availability_domain: builtins.str,
+                 fault_domain: builtins.str):
+        """
+        :param builtins.str availability_domain: The availability domain of a placement.
+        :param builtins.str fault_domain: The fault domain of a placement.
+        """
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "fault_domain", fault_domain)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> builtins.str:
+        """
+        The availability domain of a placement.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="faultDomain")
+    def fault_domain(self) -> builtins.str:
+        """
+        The fault domain of a placement.
+        """
+        return pulumi.get(self, "fault_domain")
+
+
+@pulumi.output_type
 class GetDeploymentTypeItemResult(dict):
     def __init__(__self__, *,
                  category: builtins.str,
@@ -4919,6 +5177,7 @@ class GetDeploymentTypesDeploymentTypeCollectionItemResult(dict):
                  display_name: builtins.str,
                  ogg_version: builtins.str,
                  source_technologies: Sequence[builtins.str],
+                 supported_capabilities: Sequence[builtins.str],
                  supported_technologies_url: builtins.str,
                  target_technologies: Sequence[builtins.str]):
         """
@@ -4929,6 +5188,7 @@ class GetDeploymentTypesDeploymentTypeCollectionItemResult(dict):
         :param builtins.str display_name: A filter to return only the resources that match the entire 'displayName' given.
         :param builtins.str ogg_version: Allows to query by a specific GoldenGate version.
         :param Sequence[builtins.str] source_technologies: List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
+        :param Sequence[builtins.str] supported_capabilities: Specifies supported capabilities or features by a deployment type .
         :param builtins.str supported_technologies_url: The URL to the webpage listing the supported technologies.
         :param Sequence[builtins.str] target_technologies: List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
         """
@@ -4939,6 +5199,7 @@ class GetDeploymentTypesDeploymentTypeCollectionItemResult(dict):
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "ogg_version", ogg_version)
         pulumi.set(__self__, "source_technologies", source_technologies)
+        pulumi.set(__self__, "supported_capabilities", supported_capabilities)
         pulumi.set(__self__, "supported_technologies_url", supported_technologies_url)
         pulumi.set(__self__, "target_technologies", target_technologies)
 
@@ -4997,6 +5258,14 @@ class GetDeploymentTypesDeploymentTypeCollectionItemResult(dict):
         List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
         """
         return pulumi.get(self, "source_technologies")
+
+    @property
+    @pulumi.getter(name="supportedCapabilities")
+    def supported_capabilities(self) -> Sequence[builtins.str]:
+        """
+        Specifies supported capabilities or features by a deployment type .
+        """
+        return pulumi.get(self, "supported_capabilities")
 
     @property
     @pulumi.getter(name="supportedTechnologiesUrl")
@@ -5544,6 +5813,7 @@ class GetDeploymentsDeploymentCollectionResult(dict):
 @pulumi.output_type
 class GetDeploymentsDeploymentCollectionItemResult(dict):
     def __init__(__self__, *,
+                 availability_domain: builtins.str,
                  backup_schedules: Sequence['outputs.GetDeploymentsDeploymentCollectionItemBackupScheduleResult'],
                  category: builtins.str,
                  compartment_id: builtins.str,
@@ -5551,11 +5821,13 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
                  defined_tags: Mapping[str, builtins.str],
                  deployment_backup_id: builtins.str,
                  deployment_diagnostic_datas: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataResult'],
+                 deployment_role: builtins.str,
                  deployment_type: builtins.str,
                  deployment_url: builtins.str,
                  description: builtins.str,
                  display_name: builtins.str,
                  environment_type: builtins.str,
+                 fault_domain: builtins.str,
                  fqdn: builtins.str,
                  freeform_tags: Mapping[str, builtins.str],
                  id: builtins.str,
@@ -5578,8 +5850,10 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
                  next_maintenance_description: builtins.str,
                  nsg_ids: Sequence[builtins.str],
                  ogg_datas: Sequence['outputs.GetDeploymentsDeploymentCollectionItemOggDataResult'],
+                 placements: Sequence['outputs.GetDeploymentsDeploymentCollectionItemPlacementResult'],
                  private_ip_address: builtins.str,
                  public_ip_address: builtins.str,
+                 source_deployment_id: builtins.str,
                  state: builtins.str,
                  storage_utilization_in_bytes: builtins.str,
                  subnet_id: builtins.str,
@@ -5589,9 +5863,11 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
                  time_next_backup_scheduled: builtins.str,
                  time_of_next_maintenance: builtins.str,
                  time_ogg_version_supported_until: builtins.str,
+                 time_role_changed: builtins.str,
                  time_updated: builtins.str,
                  time_upgrade_required: builtins.str):
         """
+        :param builtins.str availability_domain: The availability domain of a placement.
         :param Sequence['GetDeploymentsDeploymentCollectionItemBackupScheduleArgs'] backup_schedules: Defines the schedule of the deployment backup.
         :param builtins.str category: The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
         :param builtins.str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
@@ -5599,11 +5875,13 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         :param Mapping[str, builtins.str] defined_tags: Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         :param builtins.str deployment_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
         :param Sequence['GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArgs'] deployment_diagnostic_datas: Information regarding the deployment diagnostic collection
+        :param builtins.str deployment_role: The type of the deployment role.
         :param builtins.str deployment_type: The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
         :param builtins.str deployment_url: The URL of a resource.
         :param builtins.str description: Metadata about this specific object.
         :param builtins.str display_name: A filter to return only the resources that match the entire 'displayName' given.
         :param builtins.str environment_type: Specifies whether the deployment is used in a production or development/testing environment.
+        :param builtins.str fault_domain: The fault domain of a placement.
         :param builtins.str fqdn: A filter to return only the resources that match the 'fqdn' given.
         :param Mapping[str, builtins.str] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
@@ -5625,8 +5903,10 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         :param builtins.str next_maintenance_description: Description of the next maintenance.
         :param Sequence[builtins.str] nsg_ids: An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
         :param Sequence['GetDeploymentsDeploymentCollectionItemOggDataArgs'] ogg_datas: Deployment Data for an OggDeployment
+        :param Sequence['GetDeploymentsDeploymentCollectionItemPlacementArgs'] placements: An array of local peers of deployment
         :param builtins.str private_ip_address: The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
         :param builtins.str public_ip_address: The public IP address representing the access point for the Deployment.
+        :param builtins.str source_deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         :param builtins.str state: A filter to return only the resources that match the 'lifecycleState' given.
         :param builtins.str storage_utilization_in_bytes: The amount of storage being utilized (in bytes)
         :param builtins.str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
@@ -5636,9 +5916,11 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         :param builtins.str time_next_backup_scheduled: The timestamp of next deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
         :param builtins.str time_of_next_maintenance: The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param builtins.str time_ogg_version_supported_until: The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param builtins.str time_role_changed: The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param builtins.str time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param builtins.str time_upgrade_required: Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
+        pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "backup_schedules", backup_schedules)
         pulumi.set(__self__, "category", category)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -5646,11 +5928,13 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "deployment_backup_id", deployment_backup_id)
         pulumi.set(__self__, "deployment_diagnostic_datas", deployment_diagnostic_datas)
+        pulumi.set(__self__, "deployment_role", deployment_role)
         pulumi.set(__self__, "deployment_type", deployment_type)
         pulumi.set(__self__, "deployment_url", deployment_url)
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "environment_type", environment_type)
+        pulumi.set(__self__, "fault_domain", fault_domain)
         pulumi.set(__self__, "fqdn", fqdn)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
@@ -5673,8 +5957,10 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         pulumi.set(__self__, "next_maintenance_description", next_maintenance_description)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "ogg_datas", ogg_datas)
+        pulumi.set(__self__, "placements", placements)
         pulumi.set(__self__, "private_ip_address", private_ip_address)
         pulumi.set(__self__, "public_ip_address", public_ip_address)
+        pulumi.set(__self__, "source_deployment_id", source_deployment_id)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "storage_utilization_in_bytes", storage_utilization_in_bytes)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -5684,8 +5970,17 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         pulumi.set(__self__, "time_next_backup_scheduled", time_next_backup_scheduled)
         pulumi.set(__self__, "time_of_next_maintenance", time_of_next_maintenance)
         pulumi.set(__self__, "time_ogg_version_supported_until", time_ogg_version_supported_until)
+        pulumi.set(__self__, "time_role_changed", time_role_changed)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "time_upgrade_required", time_upgrade_required)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> builtins.str:
+        """
+        The availability domain of a placement.
+        """
+        return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="backupSchedules")
@@ -5744,6 +6039,14 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         return pulumi.get(self, "deployment_diagnostic_datas")
 
     @property
+    @pulumi.getter(name="deploymentRole")
+    def deployment_role(self) -> builtins.str:
+        """
+        The type of the deployment role.
+        """
+        return pulumi.get(self, "deployment_role")
+
+    @property
     @pulumi.getter(name="deploymentType")
     def deployment_type(self) -> builtins.str:
         """
@@ -5782,6 +6085,14 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         Specifies whether the deployment is used in a production or development/testing environment.
         """
         return pulumi.get(self, "environment_type")
+
+    @property
+    @pulumi.getter(name="faultDomain")
+    def fault_domain(self) -> builtins.str:
+        """
+        The fault domain of a placement.
+        """
+        return pulumi.get(self, "fault_domain")
 
     @property
     @pulumi.getter
@@ -5957,6 +6268,14 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         return pulumi.get(self, "ogg_datas")
 
     @property
+    @pulumi.getter
+    def placements(self) -> Sequence['outputs.GetDeploymentsDeploymentCollectionItemPlacementResult']:
+        """
+        An array of local peers of deployment
+        """
+        return pulumi.get(self, "placements")
+
+    @property
     @pulumi.getter(name="privateIpAddress")
     def private_ip_address(self) -> builtins.str:
         """
@@ -5971,6 +6290,14 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         The public IP address representing the access point for the Deployment.
         """
         return pulumi.get(self, "public_ip_address")
+
+    @property
+    @pulumi.getter(name="sourceDeploymentId")
+    def source_deployment_id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+        """
+        return pulumi.get(self, "source_deployment_id")
 
     @property
     @pulumi.getter
@@ -6043,6 +6370,14 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_ogg_version_supported_until")
+
+    @property
+    @pulumi.getter(name="timeRoleChanged")
+    def time_role_changed(self) -> builtins.str:
+        """
+        The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_role_changed")
 
     @property
     @pulumi.getter(name="timeUpdated")
@@ -6525,6 +6860,35 @@ class GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingResult(dic
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role userGroup. It allows information-only service requests, which do not alter or affect the operation of either the MA. Examples of query and read-only information include performance metric information and resource status and monitoring information
         """
         return pulumi.get(self, "user_group_id")
+
+
+@pulumi.output_type
+class GetDeploymentsDeploymentCollectionItemPlacementResult(dict):
+    def __init__(__self__, *,
+                 availability_domain: builtins.str,
+                 fault_domain: builtins.str):
+        """
+        :param builtins.str availability_domain: The availability domain of a placement.
+        :param builtins.str fault_domain: The fault domain of a placement.
+        """
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "fault_domain", fault_domain)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> builtins.str:
+        """
+        The availability domain of a placement.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="faultDomain")
+    def fault_domain(self) -> builtins.str:
+        """
+        The fault domain of a placement.
+        """
+        return pulumi.get(self, "fault_domain")
 
 
 @pulumi.output_type

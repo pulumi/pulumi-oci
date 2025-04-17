@@ -44,6 +44,10 @@ export interface GetDeploymentArgs {
  */
 export interface GetDeploymentResult {
     /**
+     * The availability domain of a placement.
+     */
+    readonly availabilityDomain: string;
+    /**
      * Defines the schedule of the deployment backup.
      */
     readonly backupSchedules: outputs.GoldenGate.GetDeploymentBackupSchedule[];
@@ -73,6 +77,10 @@ export interface GetDeploymentResult {
     readonly deploymentDiagnosticDatas: outputs.GoldenGate.GetDeploymentDeploymentDiagnosticData[];
     readonly deploymentId: string;
     /**
+     * The type of the deployment role.
+     */
+    readonly deploymentRole: string;
+    /**
      * The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
      */
     readonly deploymentType: string;
@@ -92,6 +100,10 @@ export interface GetDeploymentResult {
      * Specifies whether the deployment is used in a production or development/testing environment.
      */
     readonly environmentType: string;
+    /**
+     * The fault domain of a placement.
+     */
+    readonly faultDomain: string;
     /**
      * A three-label Fully Qualified Domain Name (FQDN) for a resource.
      */
@@ -178,6 +190,10 @@ export interface GetDeploymentResult {
      */
     readonly oggDatas: outputs.GoldenGate.GetDeploymentOggData[];
     /**
+     * An array of local peers of deployment
+     */
+    readonly placements: outputs.GoldenGate.GetDeploymentPlacement[];
+    /**
      * The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
      */
     readonly privateIpAddress: string;
@@ -185,6 +201,10 @@ export interface GetDeploymentResult {
      * The public IP address representing the access point for the Deployment.
      */
     readonly publicIpAddress: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+     */
+    readonly sourceDeploymentId: string;
     /**
      * Possible lifecycle states.
      */
@@ -221,6 +241,10 @@ export interface GetDeploymentResult {
      * The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
     readonly timeOggVersionSupportedUntil: string;
+    /**
+     * The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     */
+    readonly timeRoleChanged: string;
     /**
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */

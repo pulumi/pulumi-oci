@@ -59,7 +59,7 @@ public final class ContainerInstanceContainerHealthCheck {
      * @return Container health check HTTP port.
      * 
      */
-    private Integer port;
+    private @Nullable Integer port;
     private @Nullable String status;
     private @Nullable String statusDetails;
     /**
@@ -134,8 +134,8 @@ public final class ContainerInstanceContainerHealthCheck {
      * @return Container health check HTTP port.
      * 
      */
-    public Integer port() {
-        return this.port;
+    public Optional<Integer> port() {
+        return Optional.ofNullable(this.port);
     }
     public Optional<String> status() {
         return Optional.ofNullable(this.status);
@@ -175,7 +175,7 @@ public final class ContainerInstanceContainerHealthCheck {
         private @Nullable Integer intervalInSeconds;
         private @Nullable String name;
         private @Nullable String path;
-        private Integer port;
+        private @Nullable Integer port;
         private @Nullable String status;
         private @Nullable String statusDetails;
         private @Nullable Integer successThreshold;
@@ -252,10 +252,8 @@ public final class ContainerInstanceContainerHealthCheck {
             return this;
         }
         @CustomType.Setter
-        public Builder port(Integer port) {
-            if (port == null) {
-              throw new MissingRequiredPropertyException("ContainerInstanceContainerHealthCheck", "port");
-            }
+        public Builder port(@Nullable Integer port) {
+
             this.port = port;
             return this;
         }

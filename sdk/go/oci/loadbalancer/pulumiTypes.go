@@ -7682,6 +7682,8 @@ type GetLoadBalancersLoadBalancer struct {
 	// If isRequestIdEnabled is true then this field contains the name of the header field that contains the unique request id that is attached to every request from the load balancer to the load balancer backends and to every response from the load balancer.
 	RequestIdHeader string                                   `pulumi:"requestIdHeader"`
 	ReservedIps     []GetLoadBalancersLoadBalancerReservedIp `pulumi:"reservedIps"`
+	// Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `100Mbps`
 	Shape string `pulumi:"shape"`
 	// The configuration details to update load balancer to a different shape.
@@ -7736,6 +7738,8 @@ type GetLoadBalancersLoadBalancerArgs struct {
 	// If isRequestIdEnabled is true then this field contains the name of the header field that contains the unique request id that is attached to every request from the load balancer to the load balancer backends and to every response from the load balancer.
 	RequestIdHeader pulumi.StringInput                               `pulumi:"requestIdHeader"`
 	ReservedIps     GetLoadBalancersLoadBalancerReservedIpArrayInput `pulumi:"reservedIps"`
+	// Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}`
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `100Mbps`
 	Shape pulumi.StringInput `pulumi:"shape"`
 	// The configuration details to update load balancer to a different shape.
@@ -7871,6 +7875,11 @@ func (o GetLoadBalancersLoadBalancerOutput) RequestIdHeader() pulumi.StringOutpu
 
 func (o GetLoadBalancersLoadBalancerOutput) ReservedIps() GetLoadBalancersLoadBalancerReservedIpArrayOutput {
 	return o.ApplyT(func(v GetLoadBalancersLoadBalancer) []GetLoadBalancersLoadBalancerReservedIp { return v.ReservedIps }).(GetLoadBalancersLoadBalancerReservedIpArrayOutput)
+}
+
+// Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}`
+func (o GetLoadBalancersLoadBalancerOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetLoadBalancersLoadBalancer) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `100Mbps`

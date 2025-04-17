@@ -2061,10 +2061,6 @@ if not MYPY:
         """
         Container health check type.
         """
-        port: pulumi.Input[builtins.int]
-        """
-        Container health check HTTP port.
-        """
         failure_action: NotRequired[pulumi.Input[builtins.str]]
         """
         The action will be triggered when the container health check fails. There are two types of action: KILL or NONE. The default action is KILL. If failure action is KILL, the container will be subject to the container restart policy.
@@ -2093,6 +2089,10 @@ if not MYPY:
         """
         Container health check HTTP path.
         """
+        port: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Container health check HTTP port.
+        """
         status: NotRequired[pulumi.Input[builtins.str]]
         status_details: NotRequired[pulumi.Input[builtins.str]]
         success_threshold: NotRequired[pulumi.Input[builtins.int]]
@@ -2110,7 +2110,6 @@ elif False:
 class ContainerInstanceContainerHealthCheckArgs:
     def __init__(__self__, *,
                  health_check_type: pulumi.Input[builtins.str],
-                 port: pulumi.Input[builtins.int],
                  failure_action: Optional[pulumi.Input[builtins.str]] = None,
                  failure_threshold: Optional[pulumi.Input[builtins.int]] = None,
                  headers: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerHealthCheckHeaderArgs']]]] = None,
@@ -2118,13 +2117,13 @@ class ContainerInstanceContainerHealthCheckArgs:
                  interval_in_seconds: Optional[pulumi.Input[builtins.int]] = None,
                  name: Optional[pulumi.Input[builtins.str]] = None,
                  path: Optional[pulumi.Input[builtins.str]] = None,
+                 port: Optional[pulumi.Input[builtins.int]] = None,
                  status: Optional[pulumi.Input[builtins.str]] = None,
                  status_details: Optional[pulumi.Input[builtins.str]] = None,
                  success_threshold: Optional[pulumi.Input[builtins.int]] = None,
                  timeout_in_seconds: Optional[pulumi.Input[builtins.int]] = None):
         """
         :param pulumi.Input[builtins.str] health_check_type: Container health check type.
-        :param pulumi.Input[builtins.int] port: Container health check HTTP port.
         :param pulumi.Input[builtins.str] failure_action: The action will be triggered when the container health check fails. There are two types of action: KILL or NONE. The default action is KILL. If failure action is KILL, the container will be subject to the container restart policy.
         :param pulumi.Input[builtins.int] failure_threshold: Number of consecutive failures at which we consider the check failed.
         :param pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerHealthCheckHeaderArgs']]] headers: Container health check HTTP headers.
@@ -2132,11 +2131,11 @@ class ContainerInstanceContainerHealthCheckArgs:
         :param pulumi.Input[builtins.int] interval_in_seconds: Number of seconds between two consecutive runs for checking container health.
         :param pulumi.Input[builtins.str] name: Health check name.
         :param pulumi.Input[builtins.str] path: Container health check HTTP path.
+        :param pulumi.Input[builtins.int] port: Container health check HTTP port.
         :param pulumi.Input[builtins.int] success_threshold: Number of consecutive successes at which we consider the check succeeded again after it was in failure state.
         :param pulumi.Input[builtins.int] timeout_in_seconds: Length of waiting time in seconds before marking health check failed.
         """
         pulumi.set(__self__, "health_check_type", health_check_type)
-        pulumi.set(__self__, "port", port)
         if failure_action is not None:
             pulumi.set(__self__, "failure_action", failure_action)
         if failure_threshold is not None:
@@ -2151,6 +2150,8 @@ class ContainerInstanceContainerHealthCheckArgs:
             pulumi.set(__self__, "name", name)
         if path is not None:
             pulumi.set(__self__, "path", path)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
         if status is not None:
             pulumi.set(__self__, "status", status)
         if status_details is not None:
@@ -2171,18 +2172,6 @@ class ContainerInstanceContainerHealthCheckArgs:
     @health_check_type.setter
     def health_check_type(self, value: pulumi.Input[builtins.str]):
         pulumi.set(self, "health_check_type", value)
-
-    @property
-    @pulumi.getter
-    def port(self) -> pulumi.Input[builtins.int]:
-        """
-        Container health check HTTP port.
-        """
-        return pulumi.get(self, "port")
-
-    @port.setter
-    def port(self, value: pulumi.Input[builtins.int]):
-        pulumi.set(self, "port", value)
 
     @property
     @pulumi.getter(name="failureAction")
@@ -2267,6 +2256,18 @@ class ContainerInstanceContainerHealthCheckArgs:
     @path.setter
     def path(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "path", value)
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Container health check HTTP port.
+        """
+        return pulumi.get(self, "port")
+
+    @port.setter
+    def port(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "port", value)
 
     @property
     @pulumi.getter

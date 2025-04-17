@@ -143,15 +143,15 @@ public final class ContainerInstanceContainerHealthCheckArgs extends com.pulumi.
      * Container health check HTTP port.
      * 
      */
-    @Import(name="port", required=true)
-    private Output<Integer> port;
+    @Import(name="port")
+    private @Nullable Output<Integer> port;
 
     /**
      * @return Container health check HTTP port.
      * 
      */
-    public Output<Integer> port() {
-        return this.port;
+    public Optional<Output<Integer>> port() {
+        return Optional.ofNullable(this.port);
     }
 
     @Import(name="status")
@@ -418,7 +418,7 @@ public final class ContainerInstanceContainerHealthCheckArgs extends com.pulumi.
          * @return builder
          * 
          */
-        public Builder port(Output<Integer> port) {
+        public Builder port(@Nullable Output<Integer> port) {
             $.port = port;
             return this;
         }
@@ -496,9 +496,6 @@ public final class ContainerInstanceContainerHealthCheckArgs extends com.pulumi.
         public ContainerInstanceContainerHealthCheckArgs build() {
             if ($.healthCheckType == null) {
                 throw new MissingRequiredPropertyException("ContainerInstanceContainerHealthCheckArgs", "healthCheckType");
-            }
-            if ($.port == null) {
-                throw new MissingRequiredPropertyException("ContainerInstanceContainerHealthCheckArgs", "port");
             }
             return $;
         }

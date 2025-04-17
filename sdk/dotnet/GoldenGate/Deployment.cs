@@ -26,6 +26,12 @@ namespace Pulumi.Oci.GoldenGate
     public partial class Deployment : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// The availability domain of a placement.
+        /// </summary>
+        [Output("availabilityDomain")]
+        public Output<string> AvailabilityDomain { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Defines the backup schedule details for create operation.
         /// </summary>
         [Output("backupSchedule")]
@@ -68,6 +74,12 @@ namespace Pulumi.Oci.GoldenGate
         public Output<ImmutableArray<Outputs.DeploymentDeploymentDiagnosticData>> DeploymentDiagnosticDatas { get; private set; } = null!;
 
         /// <summary>
+        /// The type of the deployment role.
+        /// </summary>
+        [Output("deploymentRole")]
+        public Output<string> DeploymentRole { get; private set; } = null!;
+
+        /// <summary>
         /// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
         /// </summary>
         [Output("deploymentType")]
@@ -96,6 +108,12 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Output("environmentType")]
         public Output<string> EnvironmentType { get; private set; } = null!;
+
+        /// <summary>
+        /// The fault domain of a placement.
+        /// </summary>
+        [Output("faultDomain")]
+        public Output<string> FaultDomain { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
@@ -221,6 +239,12 @@ namespace Pulumi.Oci.GoldenGate
         public Output<Outputs.DeploymentOggData> OggData { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) An array of local peers of deployment
+        /// </summary>
+        [Output("placements")]
+        public Output<ImmutableArray<Outputs.DeploymentPlacement>> Placements { get; private set; } = null!;
+
+        /// <summary>
         /// The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
         /// </summary>
         [Output("privateIpAddress")]
@@ -231,6 +255,12 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Output("publicIpAddress")]
         public Output<string> PublicIpAddress { get; private set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+        /// </summary>
+        [Output("sourceDeploymentId")]
+        public Output<string> SourceDeploymentId { get; private set; } = null!;
 
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -282,6 +312,12 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Output("timeOggVersionSupportedUntil")]
         public Output<string> TimeOggVersionSupportedUntil { get; private set; } = null!;
+
+        /// <summary>
+        /// The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        /// </summary>
+        [Output("timeRoleChanged")]
+        public Output<string> TimeRoleChanged { get; private set; } = null!;
 
         /// <summary>
         /// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -342,6 +378,12 @@ namespace Pulumi.Oci.GoldenGate
     public sealed class DeploymentArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// The availability domain of a placement.
+        /// </summary>
+        [Input("availabilityDomain")]
+        public Input<string>? AvailabilityDomain { get; set; }
+
+        /// <summary>
         /// (Updatable) Defines the backup schedule details for create operation.
         /// </summary>
         [Input("backupSchedule")]
@@ -356,8 +398,8 @@ namespace Pulumi.Oci.GoldenGate
         /// <summary>
         /// (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
         /// </summary>
-        [Input("cpuCoreCount", required: true)]
-        public Input<int> CpuCoreCount { get; set; } = null!;
+        [Input("cpuCoreCount")]
+        public Input<int>? CpuCoreCount { get; set; }
 
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
@@ -380,8 +422,8 @@ namespace Pulumi.Oci.GoldenGate
         /// <summary>
         /// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
         /// </summary>
-        [Input("deploymentType", required: true)]
-        public Input<string> DeploymentType { get; set; } = null!;
+        [Input("deploymentType")]
+        public Input<string>? DeploymentType { get; set; }
 
         /// <summary>
         /// (Updatable) Metadata about this specific object.
@@ -400,6 +442,12 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Input("environmentType")]
         public Input<string>? EnvironmentType { get; set; }
+
+        /// <summary>
+        /// The fault domain of a placement.
+        /// </summary>
+        [Input("faultDomain")]
+        public Input<string>? FaultDomain { get; set; }
 
         /// <summary>
         /// (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
@@ -422,8 +470,8 @@ namespace Pulumi.Oci.GoldenGate
         /// <summary>
         /// (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
         /// </summary>
-        [Input("isAutoScalingEnabled", required: true)]
-        public Input<bool> IsAutoScalingEnabled { get; set; } = null!;
+        [Input("isAutoScalingEnabled")]
+        public Input<bool>? IsAutoScalingEnabled { get; set; }
 
         [Input("isLockOverride")]
         public Input<bool>? IsLockOverride { get; set; }
@@ -437,8 +485,8 @@ namespace Pulumi.Oci.GoldenGate
         /// <summary>
         /// (Updatable) The Oracle license model that applies to a Deployment.
         /// </summary>
-        [Input("licenseModel", required: true)]
-        public Input<string> LicenseModel { get; set; } = null!;
+        [Input("licenseModel")]
+        public Input<string>? LicenseModel { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
@@ -488,6 +536,24 @@ namespace Pulumi.Oci.GoldenGate
         [Input("oggData")]
         public Input<Inputs.DeploymentOggDataArgs>? OggData { get; set; }
 
+        [Input("placements")]
+        private InputList<Inputs.DeploymentPlacementArgs>? _placements;
+
+        /// <summary>
+        /// (Updatable) An array of local peers of deployment
+        /// </summary>
+        public InputList<Inputs.DeploymentPlacementArgs> Placements
+        {
+            get => _placements ?? (_placements = new InputList<Inputs.DeploymentPlacementArgs>());
+            set => _placements = value;
+        }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+        /// </summary>
+        [Input("sourceDeploymentId")]
+        public Input<string>? SourceDeploymentId { get; set; }
+
         [Input("state")]
         public Input<string>? State { get; set; }
 
@@ -505,6 +571,12 @@ namespace Pulumi.Oci.GoldenGate
 
     public sealed class DeploymentState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The availability domain of a placement.
+        /// </summary>
+        [Input("availabilityDomain")]
+        public Input<string>? AvailabilityDomain { get; set; }
+
         /// <summary>
         /// (Updatable) Defines the backup schedule details for create operation.
         /// </summary>
@@ -560,6 +632,12 @@ namespace Pulumi.Oci.GoldenGate
         }
 
         /// <summary>
+        /// The type of the deployment role.
+        /// </summary>
+        [Input("deploymentRole")]
+        public Input<string>? DeploymentRole { get; set; }
+
+        /// <summary>
         /// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
         /// </summary>
         [Input("deploymentType")]
@@ -588,6 +666,12 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Input("environmentType")]
         public Input<string>? EnvironmentType { get; set; }
+
+        /// <summary>
+        /// The fault domain of a placement.
+        /// </summary>
+        [Input("faultDomain")]
+        public Input<string>? FaultDomain { get; set; }
 
         /// <summary>
         /// (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
@@ -736,6 +820,18 @@ namespace Pulumi.Oci.GoldenGate
         [Input("oggData")]
         public Input<Inputs.DeploymentOggDataGetArgs>? OggData { get; set; }
 
+        [Input("placements")]
+        private InputList<Inputs.DeploymentPlacementGetArgs>? _placements;
+
+        /// <summary>
+        /// (Updatable) An array of local peers of deployment
+        /// </summary>
+        public InputList<Inputs.DeploymentPlacementGetArgs> Placements
+        {
+            get => _placements ?? (_placements = new InputList<Inputs.DeploymentPlacementGetArgs>());
+            set => _placements = value;
+        }
+
         /// <summary>
         /// The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
         /// </summary>
@@ -747,6 +843,12 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Input("publicIpAddress")]
         public Input<string>? PublicIpAddress { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+        /// </summary>
+        [Input("sourceDeploymentId")]
+        public Input<string>? SourceDeploymentId { get; set; }
 
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -804,6 +906,12 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Input("timeOggVersionSupportedUntil")]
         public Input<string>? TimeOggVersionSupportedUntil { get; set; }
+
+        /// <summary>
+        /// The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        /// </summary>
+        [Input("timeRoleChanged")]
+        public Input<string>? TimeRoleChanged { get; set; }
 
         /// <summary>
         /// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.

@@ -64,6 +64,7 @@ import * as utilities from "../utilities";
  *     reservedIps: [{
  *         id: loadBalancerReservedIpsId,
  *     }],
+ *     securityAttributes: loadBalancerSecurityAttributes,
  *     shapeDetails: {
  *         maximumBandwidthInMbps: loadBalancerShapeDetailsMaximumBandwidthInMbps,
  *         minimumBandwidthInMbps: loadBalancerShapeDetailsMinimumBandwidthInMbps,
@@ -208,6 +209,10 @@ export class LoadBalancer extends pulumi.CustomResource {
      */
     public readonly reservedIps!: pulumi.Output<outputs.LoadBalancer.LoadBalancerReservedIp[] | undefined>;
     /**
+     * (Updatable) Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}`
+     */
+    public readonly securityAttributes!: pulumi.Output<{[key: string]: string}>;
+    /**
      * (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
      */
     public readonly shape!: pulumi.Output<string>;
@@ -262,6 +267,7 @@ export class LoadBalancer extends pulumi.CustomResource {
             resourceInputs["networkSecurityGroupIds"] = state ? state.networkSecurityGroupIds : undefined;
             resourceInputs["requestIdHeader"] = state ? state.requestIdHeader : undefined;
             resourceInputs["reservedIps"] = state ? state.reservedIps : undefined;
+            resourceInputs["securityAttributes"] = state ? state.securityAttributes : undefined;
             resourceInputs["shape"] = state ? state.shape : undefined;
             resourceInputs["shapeDetails"] = state ? state.shapeDetails : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
@@ -293,6 +299,7 @@ export class LoadBalancer extends pulumi.CustomResource {
             resourceInputs["networkSecurityGroupIds"] = args ? args.networkSecurityGroupIds : undefined;
             resourceInputs["requestIdHeader"] = args ? args.requestIdHeader : undefined;
             resourceInputs["reservedIps"] = args ? args.reservedIps : undefined;
+            resourceInputs["securityAttributes"] = args ? args.securityAttributes : undefined;
             resourceInputs["shape"] = args ? args.shape : undefined;
             resourceInputs["shapeDetails"] = args ? args.shapeDetails : undefined;
             resourceInputs["subnetIds"] = args ? args.subnetIds : undefined;
@@ -411,6 +418,10 @@ export interface LoadBalancerState {
      * An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
      */
     reservedIps?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.LoadBalancerReservedIp>[]>;
+    /**
+     * (Updatable) Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}`
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
      */
@@ -535,6 +546,10 @@ export interface LoadBalancerArgs {
      * An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
      */
     reservedIps?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.LoadBalancerReservedIp>[]>;
+    /**
+     * (Updatable) Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}`
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
      */

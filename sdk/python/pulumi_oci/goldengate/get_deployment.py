@@ -28,7 +28,10 @@ class GetDeploymentResult:
     """
     A collection of values returned by getDeployment.
     """
-    def __init__(__self__, backup_schedules=None, category=None, compartment_id=None, cpu_core_count=None, defined_tags=None, deployment_backup_id=None, deployment_diagnostic_datas=None, deployment_id=None, deployment_type=None, deployment_url=None, description=None, display_name=None, environment_type=None, fqdn=None, freeform_tags=None, id=None, ingress_ips=None, is_auto_scaling_enabled=None, is_healthy=None, is_latest_version=None, is_lock_override=None, is_public=None, is_storage_utilization_limit_exceeded=None, license_model=None, lifecycle_details=None, lifecycle_sub_state=None, load_balancer_id=None, load_balancer_subnet_id=None, locks=None, maintenance_configurations=None, maintenance_windows=None, next_maintenance_action_type=None, next_maintenance_description=None, nsg_ids=None, ogg_datas=None, private_ip_address=None, public_ip_address=None, state=None, storage_utilization_in_bytes=None, subnet_id=None, system_tags=None, time_created=None, time_last_backup_scheduled=None, time_next_backup_scheduled=None, time_of_next_maintenance=None, time_ogg_version_supported_until=None, time_updated=None, time_upgrade_required=None):
+    def __init__(__self__, availability_domain=None, backup_schedules=None, category=None, compartment_id=None, cpu_core_count=None, defined_tags=None, deployment_backup_id=None, deployment_diagnostic_datas=None, deployment_id=None, deployment_role=None, deployment_type=None, deployment_url=None, description=None, display_name=None, environment_type=None, fault_domain=None, fqdn=None, freeform_tags=None, id=None, ingress_ips=None, is_auto_scaling_enabled=None, is_healthy=None, is_latest_version=None, is_lock_override=None, is_public=None, is_storage_utilization_limit_exceeded=None, license_model=None, lifecycle_details=None, lifecycle_sub_state=None, load_balancer_id=None, load_balancer_subnet_id=None, locks=None, maintenance_configurations=None, maintenance_windows=None, next_maintenance_action_type=None, next_maintenance_description=None, nsg_ids=None, ogg_datas=None, placements=None, private_ip_address=None, public_ip_address=None, source_deployment_id=None, state=None, storage_utilization_in_bytes=None, subnet_id=None, system_tags=None, time_created=None, time_last_backup_scheduled=None, time_next_backup_scheduled=None, time_of_next_maintenance=None, time_ogg_version_supported_until=None, time_role_changed=None, time_updated=None, time_upgrade_required=None):
+        if availability_domain and not isinstance(availability_domain, str):
+            raise TypeError("Expected argument 'availability_domain' to be a str")
+        pulumi.set(__self__, "availability_domain", availability_domain)
         if backup_schedules and not isinstance(backup_schedules, list):
             raise TypeError("Expected argument 'backup_schedules' to be a list")
         pulumi.set(__self__, "backup_schedules", backup_schedules)
@@ -53,6 +56,9 @@ class GetDeploymentResult:
         if deployment_id and not isinstance(deployment_id, str):
             raise TypeError("Expected argument 'deployment_id' to be a str")
         pulumi.set(__self__, "deployment_id", deployment_id)
+        if deployment_role and not isinstance(deployment_role, str):
+            raise TypeError("Expected argument 'deployment_role' to be a str")
+        pulumi.set(__self__, "deployment_role", deployment_role)
         if deployment_type and not isinstance(deployment_type, str):
             raise TypeError("Expected argument 'deployment_type' to be a str")
         pulumi.set(__self__, "deployment_type", deployment_type)
@@ -68,6 +74,9 @@ class GetDeploymentResult:
         if environment_type and not isinstance(environment_type, str):
             raise TypeError("Expected argument 'environment_type' to be a str")
         pulumi.set(__self__, "environment_type", environment_type)
+        if fault_domain and not isinstance(fault_domain, str):
+            raise TypeError("Expected argument 'fault_domain' to be a str")
+        pulumi.set(__self__, "fault_domain", fault_domain)
         if fqdn and not isinstance(fqdn, str):
             raise TypeError("Expected argument 'fqdn' to be a str")
         pulumi.set(__self__, "fqdn", fqdn)
@@ -134,12 +143,18 @@ class GetDeploymentResult:
         if ogg_datas and not isinstance(ogg_datas, list):
             raise TypeError("Expected argument 'ogg_datas' to be a list")
         pulumi.set(__self__, "ogg_datas", ogg_datas)
+        if placements and not isinstance(placements, list):
+            raise TypeError("Expected argument 'placements' to be a list")
+        pulumi.set(__self__, "placements", placements)
         if private_ip_address and not isinstance(private_ip_address, str):
             raise TypeError("Expected argument 'private_ip_address' to be a str")
         pulumi.set(__self__, "private_ip_address", private_ip_address)
         if public_ip_address and not isinstance(public_ip_address, str):
             raise TypeError("Expected argument 'public_ip_address' to be a str")
         pulumi.set(__self__, "public_ip_address", public_ip_address)
+        if source_deployment_id and not isinstance(source_deployment_id, str):
+            raise TypeError("Expected argument 'source_deployment_id' to be a str")
+        pulumi.set(__self__, "source_deployment_id", source_deployment_id)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -167,12 +182,23 @@ class GetDeploymentResult:
         if time_ogg_version_supported_until and not isinstance(time_ogg_version_supported_until, str):
             raise TypeError("Expected argument 'time_ogg_version_supported_until' to be a str")
         pulumi.set(__self__, "time_ogg_version_supported_until", time_ogg_version_supported_until)
+        if time_role_changed and not isinstance(time_role_changed, str):
+            raise TypeError("Expected argument 'time_role_changed' to be a str")
+        pulumi.set(__self__, "time_role_changed", time_role_changed)
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
         if time_upgrade_required and not isinstance(time_upgrade_required, str):
             raise TypeError("Expected argument 'time_upgrade_required' to be a str")
         pulumi.set(__self__, "time_upgrade_required", time_upgrade_required)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> builtins.str:
+        """
+        The availability domain of a placement.
+        """
+        return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="backupSchedules")
@@ -236,6 +262,14 @@ class GetDeploymentResult:
         return pulumi.get(self, "deployment_id")
 
     @property
+    @pulumi.getter(name="deploymentRole")
+    def deployment_role(self) -> builtins.str:
+        """
+        The type of the deployment role.
+        """
+        return pulumi.get(self, "deployment_role")
+
+    @property
     @pulumi.getter(name="deploymentType")
     def deployment_type(self) -> builtins.str:
         """
@@ -274,6 +308,14 @@ class GetDeploymentResult:
         Specifies whether the deployment is used in a production or development/testing environment.
         """
         return pulumi.get(self, "environment_type")
+
+    @property
+    @pulumi.getter(name="faultDomain")
+    def fault_domain(self) -> builtins.str:
+        """
+        The fault domain of a placement.
+        """
+        return pulumi.get(self, "fault_domain")
 
     @property
     @pulumi.getter
@@ -449,6 +491,14 @@ class GetDeploymentResult:
         return pulumi.get(self, "ogg_datas")
 
     @property
+    @pulumi.getter
+    def placements(self) -> Sequence['outputs.GetDeploymentPlacementResult']:
+        """
+        An array of local peers of deployment
+        """
+        return pulumi.get(self, "placements")
+
+    @property
     @pulumi.getter(name="privateIpAddress")
     def private_ip_address(self) -> builtins.str:
         """
@@ -463,6 +513,14 @@ class GetDeploymentResult:
         The public IP address representing the access point for the Deployment.
         """
         return pulumi.get(self, "public_ip_address")
+
+    @property
+    @pulumi.getter(name="sourceDeploymentId")
+    def source_deployment_id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+        """
+        return pulumi.get(self, "source_deployment_id")
 
     @property
     @pulumi.getter
@@ -537,6 +595,14 @@ class GetDeploymentResult:
         return pulumi.get(self, "time_ogg_version_supported_until")
 
     @property
+    @pulumi.getter(name="timeRoleChanged")
+    def time_role_changed(self) -> builtins.str:
+        """
+        The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_role_changed")
+
+    @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> builtins.str:
         """
@@ -559,6 +625,7 @@ class AwaitableGetDeploymentResult(GetDeploymentResult):
         if False:
             yield self
         return GetDeploymentResult(
+            availability_domain=self.availability_domain,
             backup_schedules=self.backup_schedules,
             category=self.category,
             compartment_id=self.compartment_id,
@@ -567,11 +634,13 @@ class AwaitableGetDeploymentResult(GetDeploymentResult):
             deployment_backup_id=self.deployment_backup_id,
             deployment_diagnostic_datas=self.deployment_diagnostic_datas,
             deployment_id=self.deployment_id,
+            deployment_role=self.deployment_role,
             deployment_type=self.deployment_type,
             deployment_url=self.deployment_url,
             description=self.description,
             display_name=self.display_name,
             environment_type=self.environment_type,
+            fault_domain=self.fault_domain,
             fqdn=self.fqdn,
             freeform_tags=self.freeform_tags,
             id=self.id,
@@ -594,8 +663,10 @@ class AwaitableGetDeploymentResult(GetDeploymentResult):
             next_maintenance_description=self.next_maintenance_description,
             nsg_ids=self.nsg_ids,
             ogg_datas=self.ogg_datas,
+            placements=self.placements,
             private_ip_address=self.private_ip_address,
             public_ip_address=self.public_ip_address,
+            source_deployment_id=self.source_deployment_id,
             state=self.state,
             storage_utilization_in_bytes=self.storage_utilization_in_bytes,
             subnet_id=self.subnet_id,
@@ -605,6 +676,7 @@ class AwaitableGetDeploymentResult(GetDeploymentResult):
             time_next_backup_scheduled=self.time_next_backup_scheduled,
             time_of_next_maintenance=self.time_of_next_maintenance,
             time_ogg_version_supported_until=self.time_ogg_version_supported_until,
+            time_role_changed=self.time_role_changed,
             time_updated=self.time_updated,
             time_upgrade_required=self.time_upgrade_required)
 
@@ -634,6 +706,7 @@ def get_deployment(deployment_id: Optional[builtins.str] = None,
     __ret__ = pulumi.runtime.invoke('oci:GoldenGate/getDeployment:getDeployment', __args__, opts=opts, typ=GetDeploymentResult).value
 
     return AwaitableGetDeploymentResult(
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
         backup_schedules=pulumi.get(__ret__, 'backup_schedules'),
         category=pulumi.get(__ret__, 'category'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
@@ -642,11 +715,13 @@ def get_deployment(deployment_id: Optional[builtins.str] = None,
         deployment_backup_id=pulumi.get(__ret__, 'deployment_backup_id'),
         deployment_diagnostic_datas=pulumi.get(__ret__, 'deployment_diagnostic_datas'),
         deployment_id=pulumi.get(__ret__, 'deployment_id'),
+        deployment_role=pulumi.get(__ret__, 'deployment_role'),
         deployment_type=pulumi.get(__ret__, 'deployment_type'),
         deployment_url=pulumi.get(__ret__, 'deployment_url'),
         description=pulumi.get(__ret__, 'description'),
         display_name=pulumi.get(__ret__, 'display_name'),
         environment_type=pulumi.get(__ret__, 'environment_type'),
+        fault_domain=pulumi.get(__ret__, 'fault_domain'),
         fqdn=pulumi.get(__ret__, 'fqdn'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
@@ -669,8 +744,10 @@ def get_deployment(deployment_id: Optional[builtins.str] = None,
         next_maintenance_description=pulumi.get(__ret__, 'next_maintenance_description'),
         nsg_ids=pulumi.get(__ret__, 'nsg_ids'),
         ogg_datas=pulumi.get(__ret__, 'ogg_datas'),
+        placements=pulumi.get(__ret__, 'placements'),
         private_ip_address=pulumi.get(__ret__, 'private_ip_address'),
         public_ip_address=pulumi.get(__ret__, 'public_ip_address'),
+        source_deployment_id=pulumi.get(__ret__, 'source_deployment_id'),
         state=pulumi.get(__ret__, 'state'),
         storage_utilization_in_bytes=pulumi.get(__ret__, 'storage_utilization_in_bytes'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
@@ -680,6 +757,7 @@ def get_deployment(deployment_id: Optional[builtins.str] = None,
         time_next_backup_scheduled=pulumi.get(__ret__, 'time_next_backup_scheduled'),
         time_of_next_maintenance=pulumi.get(__ret__, 'time_of_next_maintenance'),
         time_ogg_version_supported_until=pulumi.get(__ret__, 'time_ogg_version_supported_until'),
+        time_role_changed=pulumi.get(__ret__, 'time_role_changed'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         time_upgrade_required=pulumi.get(__ret__, 'time_upgrade_required'))
 def get_deployment_output(deployment_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -706,6 +784,7 @@ def get_deployment_output(deployment_id: Optional[pulumi.Input[builtins.str]] = 
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:GoldenGate/getDeployment:getDeployment', __args__, opts=opts, typ=GetDeploymentResult)
     return __ret__.apply(lambda __response__: GetDeploymentResult(
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
         backup_schedules=pulumi.get(__response__, 'backup_schedules'),
         category=pulumi.get(__response__, 'category'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
@@ -714,11 +793,13 @@ def get_deployment_output(deployment_id: Optional[pulumi.Input[builtins.str]] = 
         deployment_backup_id=pulumi.get(__response__, 'deployment_backup_id'),
         deployment_diagnostic_datas=pulumi.get(__response__, 'deployment_diagnostic_datas'),
         deployment_id=pulumi.get(__response__, 'deployment_id'),
+        deployment_role=pulumi.get(__response__, 'deployment_role'),
         deployment_type=pulumi.get(__response__, 'deployment_type'),
         deployment_url=pulumi.get(__response__, 'deployment_url'),
         description=pulumi.get(__response__, 'description'),
         display_name=pulumi.get(__response__, 'display_name'),
         environment_type=pulumi.get(__response__, 'environment_type'),
+        fault_domain=pulumi.get(__response__, 'fault_domain'),
         fqdn=pulumi.get(__response__, 'fqdn'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
@@ -741,8 +822,10 @@ def get_deployment_output(deployment_id: Optional[pulumi.Input[builtins.str]] = 
         next_maintenance_description=pulumi.get(__response__, 'next_maintenance_description'),
         nsg_ids=pulumi.get(__response__, 'nsg_ids'),
         ogg_datas=pulumi.get(__response__, 'ogg_datas'),
+        placements=pulumi.get(__response__, 'placements'),
         private_ip_address=pulumi.get(__response__, 'private_ip_address'),
         public_ip_address=pulumi.get(__response__, 'public_ip_address'),
+        source_deployment_id=pulumi.get(__response__, 'source_deployment_id'),
         state=pulumi.get(__response__, 'state'),
         storage_utilization_in_bytes=pulumi.get(__response__, 'storage_utilization_in_bytes'),
         subnet_id=pulumi.get(__response__, 'subnet_id'),
@@ -752,5 +835,6 @@ def get_deployment_output(deployment_id: Optional[pulumi.Input[builtins.str]] = 
         time_next_backup_scheduled=pulumi.get(__response__, 'time_next_backup_scheduled'),
         time_of_next_maintenance=pulumi.get(__response__, 'time_of_next_maintenance'),
         time_ogg_version_supported_until=pulumi.get(__response__, 'time_ogg_version_supported_until'),
+        time_role_changed=pulumi.get(__response__, 'time_role_changed'),
         time_updated=pulumi.get(__response__, 'time_updated'),
         time_upgrade_required=pulumi.get(__response__, 'time_upgrade_required')))

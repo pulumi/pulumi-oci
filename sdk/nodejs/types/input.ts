@@ -11201,7 +11201,7 @@ export namespace ContainerEngine {
         /**
          * Container health check HTTP port.
          */
-        port: pulumi.Input<number>;
+        port?: pulumi.Input<number>;
         status?: pulumi.Input<string>;
         statusDetails?: pulumi.Input<string>;
         /**
@@ -41507,6 +41507,17 @@ export namespace GoldenGate {
         userGroupId?: pulumi.Input<string>;
     }
 
+    export interface DeploymentPlacement {
+        /**
+         * (Updatable) The availability domain of a placement.
+         */
+        availabilityDomain?: pulumi.Input<string>;
+        /**
+         * (Updatable) The fault domain of a placement.
+         */
+        faultDomain?: pulumi.Input<string>;
+    }
+
     export interface GetConnectionAssignmentsFilter {
         /**
          * The name of the connection in the assignment (aliasName).
@@ -41586,6 +41597,18 @@ export namespace GoldenGate {
     }
 
     export interface GetDeploymentEnvironmentsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDeploymentPeersFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDeploymentPeersFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;

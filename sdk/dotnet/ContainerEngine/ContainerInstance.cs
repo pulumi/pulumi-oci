@@ -44,7 +44,6 @@ namespace Pulumi.Oci.ContainerEngine
     ///                     new Oci.ContainerEngine.Inputs.ContainerInstanceContainerHealthCheckArgs
     ///                     {
     ///                         HealthCheckType = containerInstanceContainersHealthChecksHealthCheckType,
-    ///                         Port = containerInstanceContainersHealthChecksPort,
     ///                         FailureAction = containerInstanceContainersHealthChecksFailureAction,
     ///                         FailureThreshold = containerInstanceContainersHealthChecksFailureThreshold,
     ///                         Headers = new[]
@@ -59,6 +58,7 @@ namespace Pulumi.Oci.ContainerEngine
     ///                         IntervalInSeconds = containerInstanceContainersHealthChecksIntervalInSeconds,
     ///                         Name = containerInstanceContainersHealthChecksName,
     ///                         Path = containerInstanceContainersHealthChecksPath,
+    ///                         Port = containerInstanceContainersHealthChecksPort,
     ///                         SuccessThreshold = containerInstanceContainersHealthChecksSuccessThreshold,
     ///                         TimeoutInSeconds = containerInstanceContainersHealthChecksTimeoutInSeconds,
     ///                     },

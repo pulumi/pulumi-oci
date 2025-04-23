@@ -492,6 +492,9 @@ class _IpsecState:
 
 
 class Ipsec(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/ipsec:Ipsec"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -466,6 +466,9 @@ class _TargetDatabaseState:
 
 
 class TargetDatabase(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataSafe/targetDatabase:TargetDatabase"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

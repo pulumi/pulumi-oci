@@ -160,6 +160,9 @@ class _ListingResourceVersionAgreementState:
 
 
 class ListingResourceVersionAgreement(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/listingResourceVersionAgreement:ListingResourceVersionAgreement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

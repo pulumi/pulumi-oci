@@ -416,6 +416,9 @@ class _ConnectorState:
 
 
 class Connector(pulumi.CustomResource):
+
+    pulumi_type = "oci:Sch/connector:Connector"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

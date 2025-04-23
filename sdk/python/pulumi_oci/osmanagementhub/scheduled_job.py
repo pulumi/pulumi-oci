@@ -768,6 +768,9 @@ class _ScheduledJobState:
 
 
 class ScheduledJob(pulumi.CustomResource):
+
+    pulumi_type = "oci:OsManagementHub/scheduledJob:ScheduledJob"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

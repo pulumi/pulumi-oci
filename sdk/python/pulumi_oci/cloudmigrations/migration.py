@@ -320,6 +320,9 @@ class _MigrationState:
 
 
 class Migration(pulumi.CustomResource):
+
+    pulumi_type = "oci:CloudMigrations/migration:Migration"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

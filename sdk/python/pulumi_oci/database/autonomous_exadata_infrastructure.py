@@ -600,6 +600,9 @@ class _AutonomousExadataInfrastructureState:
 
 
 class AutonomousExadataInfrastructure(pulumi.CustomResource):
+
+    pulumi_type = "oci:Database/autonomousExadataInfrastructure:AutonomousExadataInfrastructure"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

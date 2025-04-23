@@ -323,6 +323,9 @@ class _ManagedInstanceManagementState:
 
 
 class ManagedInstanceManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:OsManagement/managedInstanceManagement:ManagedInstanceManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

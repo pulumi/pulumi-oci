@@ -361,6 +361,9 @@ class _OccDemandSignalState:
 
 
 class OccDemandSignal(pulumi.CustomResource):
+
+    pulumi_type = "oci:DemandSignal/occDemandSignal:OccDemandSignal"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

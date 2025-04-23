@@ -861,6 +861,9 @@ class _DatabaseState:
 
 
 class Database(pulumi.CustomResource):
+
+    pulumi_type = "oci:Database/database:Database"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

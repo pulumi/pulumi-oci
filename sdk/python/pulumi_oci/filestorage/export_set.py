@@ -253,6 +253,9 @@ class _ExportSetState:
 
 
 class ExportSet(pulumi.CustomResource):
+
+    pulumi_type = "oci:FileStorage/exportSet:ExportSet"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

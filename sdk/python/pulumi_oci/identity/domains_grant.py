@@ -1290,6 +1290,9 @@ class _DomainsGrantState:
 
 
 class DomainsGrant(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/domainsGrant:DomainsGrant"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

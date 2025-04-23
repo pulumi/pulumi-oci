@@ -259,6 +259,9 @@ class _DrgState:
 
 
 class Drg(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/drg:Drg"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

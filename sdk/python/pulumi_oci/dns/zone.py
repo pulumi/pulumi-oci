@@ -582,6 +582,9 @@ class _ZoneState:
 
 
 class Zone(pulumi.CustomResource):
+
+    pulumi_type = "oci:Dns/zone:Zone"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

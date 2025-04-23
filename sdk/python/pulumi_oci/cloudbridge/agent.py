@@ -462,6 +462,9 @@ class _AgentState:
 
 
 class Agent(pulumi.CustomResource):
+
+    pulumi_type = "oci:CloudBridge/agent:Agent"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

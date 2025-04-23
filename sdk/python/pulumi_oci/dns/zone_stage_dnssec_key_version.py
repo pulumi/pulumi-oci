@@ -144,6 +144,9 @@ class _ZoneStageDnssecKeyVersionState:
 
 
 class ZoneStageDnssecKeyVersion(pulumi.CustomResource):
+
+    pulumi_type = "oci:Dns/zoneStageDnssecKeyVersion:ZoneStageDnssecKeyVersion"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

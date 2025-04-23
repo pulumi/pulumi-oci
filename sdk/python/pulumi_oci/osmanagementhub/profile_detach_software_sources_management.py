@@ -112,6 +112,9 @@ class _ProfileDetachSoftwareSourcesManagementState:
 
 
 class ProfileDetachSoftwareSourcesManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:OsManagementHub/profileDetachSoftwareSourcesManagement:ProfileDetachSoftwareSourcesManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -483,6 +483,9 @@ class _ReplicaState:
 
 
 class Replica(pulumi.CustomResource):
+
+    pulumi_type = "oci:Mysql/replica:Replica"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

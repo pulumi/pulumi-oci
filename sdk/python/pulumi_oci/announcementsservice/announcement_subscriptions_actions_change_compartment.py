@@ -112,6 +112,9 @@ class _AnnouncementSubscriptionsActionsChangeCompartmentState:
 
 
 class AnnouncementSubscriptionsActionsChangeCompartment(pulumi.CustomResource):
+
+    pulumi_type = "oci:AnnouncementsService/announcementSubscriptionsActionsChangeCompartment:AnnouncementSubscriptionsActionsChangeCompartment"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

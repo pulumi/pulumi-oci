@@ -574,6 +574,9 @@ class _NewsReportState:
 
 
 class NewsReport(pulumi.CustomResource):
+
+    pulumi_type = "oci:Opsi/newsReport:NewsReport"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

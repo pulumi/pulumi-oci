@@ -827,6 +827,9 @@ class _OperatorControlAssignmentState:
 
 
 class OperatorControlAssignment(pulumi.CustomResource):
+
+    pulumi_type = "oci:OperatorAccessControl/operatorControlAssignment:OperatorControlAssignment"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

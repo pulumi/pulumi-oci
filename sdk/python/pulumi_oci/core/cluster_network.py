@@ -353,6 +353,9 @@ class _ClusterNetworkState:
 
 
 class ClusterNetwork(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/clusterNetwork:ClusterNetwork"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

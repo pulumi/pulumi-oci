@@ -207,6 +207,9 @@ class _IdpGroupMappingState:
 
 
 class IdpGroupMapping(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/idpGroupMapping:IdpGroupMapping"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

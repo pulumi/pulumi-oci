@@ -494,6 +494,9 @@ class _PrivateIpState:
 
 
 class PrivateIp(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/privateIp:PrivateIp"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

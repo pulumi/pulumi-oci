@@ -447,6 +447,9 @@ class _CompliancePolicyRuleState:
 
 
 class CompliancePolicyRule(pulumi.CustomResource):
+
+    pulumi_type = "oci:FleetAppsManagement/compliancePolicyRule:CompliancePolicyRule"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -573,6 +573,9 @@ class _OperatorControlState:
 
 
 class OperatorControl(pulumi.CustomResource):
+
+    pulumi_type = "oci:OperatorAccessControl/operatorControl:OperatorControl"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -623,6 +623,9 @@ class _DomainState:
 
 
 class Domain(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/domain:Domain"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

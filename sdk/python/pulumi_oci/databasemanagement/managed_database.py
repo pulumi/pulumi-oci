@@ -451,6 +451,9 @@ class _ManagedDatabaseState:
 
 
 class ManagedDatabase(pulumi.CustomResource):
+
+    pulumi_type = "oci:DatabaseManagement/managedDatabase:ManagedDatabase"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

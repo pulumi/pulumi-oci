@@ -4054,6 +4054,9 @@ class _AutonomousDatabaseState:
 
 
 class AutonomousDatabase(pulumi.CustomResource):
+
+    pulumi_type = "oci:Database/autonomousDatabase:AutonomousDatabase"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -658,6 +658,9 @@ class _DiscoveryModState:
 
 
 class DiscoveryMod(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataSafe/discoveryMod:DiscoveryMod"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

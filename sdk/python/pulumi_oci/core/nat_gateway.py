@@ -360,6 +360,9 @@ class _NatGatewayState:
 
 
 class NatGateway(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/natGateway:NatGateway"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

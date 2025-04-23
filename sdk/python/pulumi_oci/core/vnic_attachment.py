@@ -306,6 +306,9 @@ class _VnicAttachmentState:
 
 
 class VnicAttachment(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/vnicAttachment:VnicAttachment"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

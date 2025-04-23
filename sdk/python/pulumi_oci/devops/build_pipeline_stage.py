@@ -721,6 +721,9 @@ class _BuildPipelineStageState:
 
 
 class BuildPipelineStage(pulumi.CustomResource):
+
+    pulumi_type = "oci:DevOps/buildPipelineStage:BuildPipelineStage"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

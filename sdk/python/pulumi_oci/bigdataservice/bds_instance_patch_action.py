@@ -177,6 +177,9 @@ class _BdsInstancePatchActionState:
 
 
 class BdsInstancePatchAction(pulumi.CustomResource):
+
+    pulumi_type = "oci:BigDataService/bdsInstancePatchAction:BdsInstancePatchAction"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

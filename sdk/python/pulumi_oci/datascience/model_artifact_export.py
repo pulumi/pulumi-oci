@@ -172,6 +172,9 @@ class _ModelArtifactExportState:
 
 
 class ModelArtifactExport(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataScience/modelArtifactExport:ModelArtifactExport"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

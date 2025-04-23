@@ -269,6 +269,9 @@ class _AnalyticsInstanceVanityUrlState:
 
 
 class AnalyticsInstanceVanityUrl(pulumi.CustomResource):
+
+    pulumi_type = "oci:Analytics/analyticsInstanceVanityUrl:AnalyticsInstanceVanityUrl"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

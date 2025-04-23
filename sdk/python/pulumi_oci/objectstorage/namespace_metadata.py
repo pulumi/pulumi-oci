@@ -105,6 +105,9 @@ class _NamespaceMetadataState:
 
 
 class NamespaceMetadata(pulumi.CustomResource):
+
+    pulumi_type = "oci:ObjectStorage/namespaceMetadata:NamespaceMetadata"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -206,6 +206,9 @@ class _ModelCustomMetadataArtifactState:
 
 
 class ModelCustomMetadataArtifact(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataScience/modelCustomMetadataArtifact:ModelCustomMetadataArtifact"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

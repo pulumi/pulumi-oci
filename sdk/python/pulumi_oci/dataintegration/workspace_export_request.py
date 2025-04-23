@@ -498,6 +498,9 @@ class _WorkspaceExportRequestState:
 
 
 class WorkspaceExportRequest(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataIntegration/workspaceExportRequest:WorkspaceExportRequest"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -1518,6 +1518,9 @@ class _DomainsAppRoleState:
 
 
 class DomainsAppRole(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/domainsAppRole:DomainsAppRole"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

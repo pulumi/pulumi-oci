@@ -549,6 +549,9 @@ class _HttpMonitorState:
 
 
 class HttpMonitor(pulumi.CustomResource):
+
+    pulumi_type = "oci:HealthChecks/httpMonitor:HttpMonitor"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

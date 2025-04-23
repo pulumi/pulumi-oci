@@ -224,6 +224,9 @@ class _CatalogState:
 
 
 class Catalog(pulumi.CustomResource):
+
+    pulumi_type = "oci:ServiceCatalog/catalog:Catalog"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

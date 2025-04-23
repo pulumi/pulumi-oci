@@ -339,6 +339,9 @@ class _InstanceConfigurationState:
 
 
 class InstanceConfiguration(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/instanceConfiguration:InstanceConfiguration"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

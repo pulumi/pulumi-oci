@@ -527,6 +527,9 @@ class _SubscriptionState:
 
 
 class Subscription(pulumi.CustomResource):
+
+    pulumi_type = "oci:OspGateway/subscription:Subscription"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

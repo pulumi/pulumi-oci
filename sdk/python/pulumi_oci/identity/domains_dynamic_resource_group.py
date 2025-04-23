@@ -1052,6 +1052,9 @@ class _DomainsDynamicResourceGroupState:
 
 
 class DomainsDynamicResourceGroup(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/domainsDynamicResourceGroup:DomainsDynamicResourceGroup"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

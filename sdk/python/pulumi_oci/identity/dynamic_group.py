@@ -287,6 +287,9 @@ class _DynamicGroupState:
 
 
 class DynamicGroup(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/dynamicGroup:DynamicGroup"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

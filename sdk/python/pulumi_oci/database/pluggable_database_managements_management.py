@@ -527,6 +527,9 @@ class _PluggableDatabaseManagementsManagementState:
 
 
 class PluggableDatabaseManagementsManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:Database/pluggableDatabaseManagementsManagement:PluggableDatabaseManagementsManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

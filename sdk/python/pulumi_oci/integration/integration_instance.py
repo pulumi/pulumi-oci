@@ -907,6 +907,9 @@ class _IntegrationInstanceState:
 
 
 class IntegrationInstance(pulumi.CustomResource):
+
+    pulumi_type = "oci:Integration/integrationInstance:IntegrationInstance"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

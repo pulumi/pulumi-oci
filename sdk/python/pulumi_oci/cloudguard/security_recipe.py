@@ -335,6 +335,9 @@ class _SecurityRecipeState:
 
 
 class SecurityRecipe(pulumi.CustomResource):
+
+    pulumi_type = "oci:CloudGuard/securityRecipe:SecurityRecipe"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

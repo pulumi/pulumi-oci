@@ -177,6 +177,9 @@ class _SubscriptionRedeemableUserState:
 
 
 class SubscriptionRedeemableUser(pulumi.CustomResource):
+
+    pulumi_type = "oci:UsageProxy/subscriptionRedeemableUser:SubscriptionRedeemableUser"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

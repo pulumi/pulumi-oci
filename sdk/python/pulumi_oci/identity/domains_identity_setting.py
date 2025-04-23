@@ -1433,6 +1433,9 @@ class _DomainsIdentitySettingState:
 
 
 class DomainsIdentitySetting(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/domainsIdentitySetting:DomainsIdentitySetting"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

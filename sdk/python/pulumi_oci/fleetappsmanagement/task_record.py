@@ -362,6 +362,9 @@ class _TaskRecordState:
 
 
 class TaskRecord(pulumi.CustomResource):
+
+    pulumi_type = "oci:FleetAppsManagement/taskRecord:TaskRecord"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

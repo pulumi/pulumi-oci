@@ -1164,6 +1164,9 @@ class _DomainsMyRequestState:
 
 
 class DomainsMyRequest(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/domainsMyRequest:DomainsMyRequest"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

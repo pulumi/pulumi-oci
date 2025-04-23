@@ -1049,6 +1049,9 @@ class _ApplicationState:
 
 
 class Application(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataFlow/application:Application"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

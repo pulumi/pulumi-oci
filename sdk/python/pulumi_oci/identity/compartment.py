@@ -301,6 +301,9 @@ class _CompartmentState:
 
 
 class Compartment(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/compartment:Compartment"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

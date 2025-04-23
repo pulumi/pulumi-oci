@@ -414,6 +414,9 @@ class _PrivateEndpointState:
 
 
 class PrivateEndpoint(pulumi.CustomResource):
+
+    pulumi_type = "oci:ResourceManager/privateEndpoint:PrivateEndpoint"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

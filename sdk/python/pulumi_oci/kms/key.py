@@ -652,6 +652,9 @@ class _KeyState:
 
 
 class Key(pulumi.CustomResource):
+
+    pulumi_type = "oci:Kms/key:Key"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

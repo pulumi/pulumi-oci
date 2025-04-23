@@ -878,6 +878,9 @@ class _LogAnalyticsObjectCollectionRuleState:
 
 
 class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
+
+    pulumi_type = "oci:LogAnalytics/logAnalyticsObjectCollectionRule:LogAnalyticsObjectCollectionRule"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

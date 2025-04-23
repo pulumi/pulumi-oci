@@ -466,6 +466,9 @@ class _DeployEnvironmentState:
 
 
 class DeployEnvironment(pulumi.CustomResource):
+
+    pulumi_type = "oci:DevOps/deployEnvironment:DeployEnvironment"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

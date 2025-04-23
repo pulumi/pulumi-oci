@@ -318,6 +318,9 @@ class _FileSystemQuotaRuleState:
 
 
 class FileSystemQuotaRule(pulumi.CustomResource):
+
+    pulumi_type = "oci:FileStorage/fileSystemQuotaRule:FileSystemQuotaRule"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

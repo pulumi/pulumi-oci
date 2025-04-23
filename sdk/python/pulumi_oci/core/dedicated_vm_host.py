@@ -383,6 +383,9 @@ class _DedicatedVmHostState:
 
 
 class DedicatedVmHost(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/dedicatedVmHost:DedicatedVmHost"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

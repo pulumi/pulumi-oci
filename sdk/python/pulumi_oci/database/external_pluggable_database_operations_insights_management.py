@@ -139,6 +139,9 @@ class _ExternalPluggableDatabaseOperationsInsightsManagementState:
 
 
 class ExternalPluggableDatabaseOperationsInsightsManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:Database/externalPluggableDatabaseOperationsInsightsManagement:ExternalPluggableDatabaseOperationsInsightsManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -447,6 +447,9 @@ class _OccAvailabilityCatalogState:
 
 
 class OccAvailabilityCatalog(pulumi.CustomResource):
+
+    pulumi_type = "oci:CapacityManagement/occAvailabilityCatalog:OccAvailabilityCatalog"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

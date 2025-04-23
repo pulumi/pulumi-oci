@@ -377,6 +377,9 @@ class _StreamCdnConfigState:
 
 
 class StreamCdnConfig(pulumi.CustomResource):
+
+    pulumi_type = "oci:MediaServices/streamCdnConfig:StreamCdnConfig"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

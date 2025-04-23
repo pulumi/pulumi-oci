@@ -146,6 +146,9 @@ class _AutonomousDatabaseRegionalWalletManagementState:
 
 
 class AutonomousDatabaseRegionalWalletManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:Database/autonomousDatabaseRegionalWalletManagement:AutonomousDatabaseRegionalWalletManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -572,6 +572,9 @@ class _MysqlBackupState:
 
 
 class MysqlBackup(pulumi.CustomResource):
+
+    pulumi_type = "oci:Mysql/mysqlBackup:MysqlBackup"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

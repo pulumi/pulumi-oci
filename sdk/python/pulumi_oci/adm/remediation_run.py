@@ -355,6 +355,9 @@ class _RemediationRunState:
 
 
 class RemediationRun(pulumi.CustomResource):
+
+    pulumi_type = "oci:Adm/remediationRun:RemediationRun"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

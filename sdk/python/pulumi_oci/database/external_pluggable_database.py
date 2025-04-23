@@ -481,6 +481,9 @@ class _ExternalPluggableDatabaseState:
 
 
 class ExternalPluggableDatabase(pulumi.CustomResource):
+
+    pulumi_type = "oci:Database/externalPluggableDatabase:ExternalPluggableDatabase"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -81,6 +81,9 @@ class _MaintenanceWindowsStopState:
 
 
 class MaintenanceWindowsStop(pulumi.CustomResource):
+
+    pulumi_type = "oci:StackMonitoring/maintenanceWindowsStop:MaintenanceWindowsStop"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

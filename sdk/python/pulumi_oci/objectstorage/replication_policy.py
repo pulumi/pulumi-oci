@@ -302,6 +302,9 @@ class _ReplicationPolicyState:
 
 
 class ReplicationPolicy(pulumi.CustomResource):
+
+    pulumi_type = "oci:ObjectStorage/replicationPolicy:ReplicationPolicy"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

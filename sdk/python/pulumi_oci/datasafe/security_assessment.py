@@ -603,6 +603,9 @@ class _SecurityAssessmentState:
 
 
 class SecurityAssessment(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataSafe/securityAssessment:SecurityAssessment"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

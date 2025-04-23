@@ -1809,6 +1809,9 @@ class _SddcState:
 
 
 class Sddc(pulumi.CustomResource):
+
+    pulumi_type = "oci:Ocvp/sddc:Sddc"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

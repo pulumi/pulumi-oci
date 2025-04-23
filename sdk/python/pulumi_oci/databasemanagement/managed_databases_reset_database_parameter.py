@@ -217,6 +217,9 @@ class _ManagedDatabasesResetDatabaseParameterState:
 
 
 class ManagedDatabasesResetDatabaseParameter(pulumi.CustomResource):
+
+    pulumi_type = "oci:DatabaseManagement/managedDatabasesResetDatabaseParameter:ManagedDatabasesResetDatabaseParameter"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -298,6 +298,9 @@ class _AdhocQueryState:
 
 
 class AdhocQuery(pulumi.CustomResource):
+
+    pulumi_type = "oci:CloudGuard/adhocQuery:AdhocQuery"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

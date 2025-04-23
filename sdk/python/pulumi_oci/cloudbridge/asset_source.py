@@ -589,6 +589,9 @@ class _AssetSourceState:
 
 
 class AssetSource(pulumi.CustomResource):
+
+    pulumi_type = "oci:CloudBridge/assetSource:AssetSource"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

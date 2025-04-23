@@ -382,6 +382,9 @@ class _TargetAlertPolicyAssociationState:
 
 
 class TargetAlertPolicyAssociation(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataSafe/targetAlertPolicyAssociation:TargetAlertPolicyAssociation"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

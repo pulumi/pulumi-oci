@@ -551,6 +551,9 @@ class _ManagementAgentState:
 
 
 class ManagementAgent(pulumi.CustomResource):
+
+    pulumi_type = "oci:ManagementAgent/managementAgent:ManagementAgent"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

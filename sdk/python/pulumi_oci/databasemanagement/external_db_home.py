@@ -321,6 +321,9 @@ class _ExternalDbHomeState:
 
 
 class ExternalDbHome(pulumi.CustomResource):
+
+    pulumi_type = "oci:DatabaseManagement/externalDbHome:ExternalDbHome"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

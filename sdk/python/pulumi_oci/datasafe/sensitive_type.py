@@ -560,6 +560,9 @@ class _SensitiveTypeState:
 
 
 class SensitiveType(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataSafe/sensitiveType:SensitiveType"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

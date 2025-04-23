@@ -469,6 +469,9 @@ class _NetworkSecurityGroupSecurityRuleState:
 
 
 class NetworkSecurityGroupSecurityRule(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/networkSecurityGroupSecurityRule:NetworkSecurityGroupSecurityRule"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

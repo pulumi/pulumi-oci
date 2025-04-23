@@ -830,6 +830,9 @@ class _VirtualCircuitState:
 
 
 class VirtualCircuit(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/virtualCircuit:VirtualCircuit"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

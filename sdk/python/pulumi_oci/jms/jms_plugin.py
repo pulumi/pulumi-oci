@@ -384,6 +384,9 @@ class _JmsPluginState:
 
 
 class JmsPlugin(pulumi.CustomResource):
+
+    pulumi_type = "oci:Jms/jmsPlugin:JmsPlugin"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

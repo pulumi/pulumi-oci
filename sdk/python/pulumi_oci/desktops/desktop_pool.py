@@ -917,6 +917,9 @@ class _DesktopPoolState:
 
 
 class DesktopPool(pulumi.CustomResource):
+
+    pulumi_type = "oci:Desktops/desktopPool:DesktopPool"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

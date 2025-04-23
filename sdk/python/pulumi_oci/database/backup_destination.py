@@ -505,6 +505,9 @@ class _BackupDestinationState:
 
 
 class BackupDestination(pulumi.CustomResource):
+
+    pulumi_type = "oci:Database/backupDestination:BackupDestination"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

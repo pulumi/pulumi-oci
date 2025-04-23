@@ -418,6 +418,9 @@ class _VirtualDeploymentState:
 
 
 class VirtualDeployment(pulumi.CustomResource):
+
+    pulumi_type = "oci:ServiceMesh/virtualDeployment:VirtualDeployment"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

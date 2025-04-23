@@ -585,6 +585,9 @@ class _InstanceMaintenanceEventState:
 
 
 class InstanceMaintenanceEvent(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/instanceMaintenanceEvent:InstanceMaintenanceEvent"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -254,6 +254,9 @@ class _SignState:
 
 
 class Sign(pulumi.CustomResource):
+
+    pulumi_type = "oci:Kms/sign:Sign"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -112,6 +112,9 @@ class _SoftwareSourceReplacePackagesManagementState:
 
 
 class SoftwareSourceReplacePackagesManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:OsManagementHub/softwareSourceReplacePackagesManagement:SoftwareSourceReplacePackagesManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

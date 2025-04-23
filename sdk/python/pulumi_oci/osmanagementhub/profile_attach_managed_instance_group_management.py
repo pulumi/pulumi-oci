@@ -112,6 +112,9 @@ class _ProfileAttachManagedInstanceGroupManagementState:
 
 
 class ProfileAttachManagedInstanceGroupManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:OsManagementHub/profileAttachManagedInstanceGroupManagement:ProfileAttachManagedInstanceGroupManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

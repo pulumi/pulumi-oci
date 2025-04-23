@@ -317,6 +317,9 @@ class _NetworkFirewallPolicyTunnelInspectionRuleState:
 
 
 class NetworkFirewallPolicyTunnelInspectionRule(pulumi.CustomResource):
+
+    pulumi_type = "oci:NetworkFirewall/networkFirewallPolicyTunnelInspectionRule:NetworkFirewallPolicyTunnelInspectionRule"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

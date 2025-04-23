@@ -96,6 +96,9 @@ class _RouteTableAttachmentState:
 
 
 class RouteTableAttachment(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/routeTableAttachment:RouteTableAttachment"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -128,6 +128,9 @@ class _PrivateEndpointOutboundConnectionState:
 
 
 class PrivateEndpointOutboundConnection(pulumi.CustomResource):
+
+    pulumi_type = "oci:Integration/privateEndpointOutboundConnection:PrivateEndpointOutboundConnection"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

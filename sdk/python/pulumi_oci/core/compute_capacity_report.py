@@ -145,6 +145,9 @@ class _ComputeCapacityReportState:
 
 
 class ComputeCapacityReport(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/computeCapacityReport:ComputeCapacityReport"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

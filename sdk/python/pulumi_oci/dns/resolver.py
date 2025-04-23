@@ -451,6 +451,9 @@ class _ResolverState:
 
 
 class Resolver(pulumi.CustomResource):
+
+    pulumi_type = "oci:Dns/resolver:Resolver"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

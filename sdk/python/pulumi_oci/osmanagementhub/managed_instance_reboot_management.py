@@ -131,6 +131,9 @@ class _ManagedInstanceRebootManagementState:
 
 
 class ManagedInstanceRebootManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:OsManagementHub/managedInstanceRebootManagement:ManagedInstanceRebootManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

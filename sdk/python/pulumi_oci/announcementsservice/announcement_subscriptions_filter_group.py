@@ -146,6 +146,9 @@ class _AnnouncementSubscriptionsFilterGroupState:
 
 
 class AnnouncementSubscriptionsFilterGroup(pulumi.CustomResource):
+
+    pulumi_type = "oci:AnnouncementsService/announcementSubscriptionsFilterGroup:AnnouncementSubscriptionsFilterGroup"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

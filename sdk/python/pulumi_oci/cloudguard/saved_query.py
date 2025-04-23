@@ -311,6 +311,9 @@ class _SavedQueryState:
 
 
 class SavedQuery(pulumi.CustomResource):
+
+    pulumi_type = "oci:CloudGuard/savedQuery:SavedQuery"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -594,6 +594,9 @@ class _VmClusterRemoveVirtualMachineState:
 
 
 class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
+
+    pulumi_type = "oci:Database/vmClusterRemoveVirtualMachine:VmClusterRemoveVirtualMachine"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

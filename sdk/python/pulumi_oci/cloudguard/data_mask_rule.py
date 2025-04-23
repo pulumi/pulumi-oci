@@ -431,6 +431,9 @@ class _DataMaskRuleState:
 
 
 class DataMaskRule(pulumi.CustomResource):
+
+    pulumi_type = "oci:CloudGuard/dataMaskRule:DataMaskRule"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

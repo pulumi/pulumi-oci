@@ -399,6 +399,9 @@ class _ExternalDatabaseConnectorState:
 
 
 class ExternalDatabaseConnector(pulumi.CustomResource):
+
+    pulumi_type = "oci:Database/externalDatabaseConnector:ExternalDatabaseConnector"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

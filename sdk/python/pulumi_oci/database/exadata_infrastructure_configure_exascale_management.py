@@ -882,6 +882,9 @@ class _ExadataInfrastructureConfigureExascaleManagementState:
 
 
 class ExadataInfrastructureConfigureExascaleManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:Database/exadataInfrastructureConfigureExascaleManagement:ExadataInfrastructureConfigureExascaleManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

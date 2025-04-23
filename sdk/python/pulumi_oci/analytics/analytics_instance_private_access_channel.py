@@ -319,6 +319,9 @@ class _AnalyticsInstancePrivateAccessChannelState:
 
 
 class AnalyticsInstancePrivateAccessChannel(pulumi.CustomResource):
+
+    pulumi_type = "oci:Analytics/analyticsInstancePrivateAccessChannel:AnalyticsInstancePrivateAccessChannel"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -144,6 +144,9 @@ class _ExternalMySqlDatabaseExternalMysqlDatabasesManagementState:
 
 
 class ExternalMySqlDatabaseExternalMysqlDatabasesManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:DatabaseManagement/externalMySqlDatabaseExternalMysqlDatabasesManagement:ExternalMySqlDatabaseExternalMysqlDatabasesManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

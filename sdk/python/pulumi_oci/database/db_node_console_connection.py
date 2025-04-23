@@ -272,6 +272,9 @@ class _DbNodeConsoleConnectionState:
 
 
 class DbNodeConsoleConnection(pulumi.CustomResource):
+
+    pulumi_type = "oci:Database/dbNodeConsoleConnection:DbNodeConsoleConnection"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

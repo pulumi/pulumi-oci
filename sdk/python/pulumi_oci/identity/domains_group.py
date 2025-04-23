@@ -1239,6 +1239,9 @@ class _DomainsGroupState:
 
 
 class DomainsGroup(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/domainsGroup:DomainsGroup"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

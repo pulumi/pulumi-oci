@@ -305,6 +305,9 @@ class _NetworkFirewallPolicyDecryptionRuleState:
 
 
 class NetworkFirewallPolicyDecryptionRule(pulumi.CustomResource):
+
+    pulumi_type = "oci:NetworkFirewall/networkFirewallPolicyDecryptionRule:NetworkFirewallPolicyDecryptionRule"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

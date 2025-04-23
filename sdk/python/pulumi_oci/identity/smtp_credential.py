@@ -208,6 +208,9 @@ class _SmtpCredentialState:
 
 
 class SmtpCredential(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/smtpCredential:SmtpCredential"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

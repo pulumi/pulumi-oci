@@ -489,6 +489,9 @@ class _ReplicationState:
 
 
 class Replication(pulumi.CustomResource):
+
+    pulumi_type = "oci:FileStorage/replication:Replication"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

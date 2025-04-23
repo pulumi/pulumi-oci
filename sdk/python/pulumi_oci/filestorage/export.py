@@ -353,6 +353,9 @@ class _ExportState:
 
 
 class Export(pulumi.CustomResource):
+
+    pulumi_type = "oci:FileStorage/export:Export"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

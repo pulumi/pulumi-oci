@@ -960,6 +960,9 @@ class _DomainsMyAuthTokenState:
 
 
 class DomainsMyAuthToken(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/domainsMyAuthToken:DomainsMyAuthToken"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

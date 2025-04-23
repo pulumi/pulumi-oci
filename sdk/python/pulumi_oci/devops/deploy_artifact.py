@@ -400,6 +400,9 @@ class _DeployArtifactState:
 
 
 class DeployArtifact(pulumi.CustomResource):
+
+    pulumi_type = "oci:DevOps/deployArtifact:DeployArtifact"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

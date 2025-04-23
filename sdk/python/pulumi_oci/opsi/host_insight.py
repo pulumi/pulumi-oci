@@ -636,6 +636,9 @@ class _HostInsightState:
 
 
 class HostInsight(pulumi.CustomResource):
+
+    pulumi_type = "oci:Opsi/hostInsight:HostInsight"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

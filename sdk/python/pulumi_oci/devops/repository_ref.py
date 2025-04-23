@@ -255,6 +255,9 @@ class _RepositoryRefState:
 
 
 class RepositoryRef(pulumi.CustomResource):
+
+    pulumi_type = "oci:DevOps/repositoryRef:RepositoryRef"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

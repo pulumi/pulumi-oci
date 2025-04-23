@@ -185,6 +185,9 @@ class _UsageStatementEmailRecipientsGroupState:
 
 
 class UsageStatementEmailRecipientsGroup(pulumi.CustomResource):
+
+    pulumi_type = "oci:MeteringComputation/usageStatementEmailRecipientsGroup:UsageStatementEmailRecipientsGroup"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

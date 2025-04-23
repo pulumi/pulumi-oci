@@ -353,6 +353,9 @@ class _AutoScalingConfigurationState:
 
 
 class AutoScalingConfiguration(pulumi.CustomResource):
+
+    pulumi_type = "oci:Autoscaling/autoScalingConfiguration:AutoScalingConfiguration"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

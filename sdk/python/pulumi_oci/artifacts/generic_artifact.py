@@ -289,6 +289,9 @@ class _GenericArtifactState:
 
 
 class GenericArtifact(pulumi.CustomResource):
+
+    pulumi_type = "oci:Artifacts/genericArtifact:GenericArtifact"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

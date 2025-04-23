@@ -323,6 +323,9 @@ class _MonitoredResourcesSearchAssociationState:
 
 
 class MonitoredResourcesSearchAssociation(pulumi.CustomResource):
+
+    pulumi_type = "oci:StackMonitoring/monitoredResourcesSearchAssociation:MonitoredResourcesSearchAssociation"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

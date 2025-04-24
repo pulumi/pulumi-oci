@@ -14,6 +14,14 @@ namespace Pulumi.Oci.VisualBuilder.Outputs
     public sealed class GetVbInstanceNetworkEndpointDetailResult
     {
         /// <summary>
+        /// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5/32", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        /// </summary>
+        public readonly ImmutableArray<string> AllowlistedHttpIps;
+        /// <summary>
+        /// Virtual Cloud Networks allowed to access this network endpoint.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnResult> AllowlistedHttpVcns;
+        /// <summary>
         /// The type of network endpoint.
         /// </summary>
         public readonly string NetworkEndpointType;
@@ -32,6 +40,10 @@ namespace Pulumi.Oci.VisualBuilder.Outputs
 
         [OutputConstructor]
         private GetVbInstanceNetworkEndpointDetailResult(
+            ImmutableArray<string> allowlistedHttpIps,
+
+            ImmutableArray<Outputs.GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnResult> allowlistedHttpVcns,
+
             string networkEndpointType,
 
             ImmutableArray<string> networkSecurityGroupIds,
@@ -40,6 +52,8 @@ namespace Pulumi.Oci.VisualBuilder.Outputs
 
             string subnetId)
         {
+            AllowlistedHttpIps = allowlistedHttpIps;
+            AllowlistedHttpVcns = allowlistedHttpVcns;
             NetworkEndpointType = networkEndpointType;
             NetworkSecurityGroupIds = networkSecurityGroupIds;
             PrivateEndpointIp = privateEndpointIp;

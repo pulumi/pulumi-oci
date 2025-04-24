@@ -5,6 +5,16 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { GetPatchManagementArgs, GetPatchManagementResult, GetPatchManagementOutputArgs } from "./getPatchManagement";
+export const getPatchManagement: typeof import("./getPatchManagement").getPatchManagement = null as any;
+export const getPatchManagementOutput: typeof import("./getPatchManagement").getPatchManagementOutput = null as any;
+utilities.lazyLoad(exports, ["getPatchManagement","getPatchManagementOutput"], () => require("./getPatchManagement"));
+
+export { GetPatchManagementDatabasesArgs, GetPatchManagementDatabasesResult, GetPatchManagementDatabasesOutputArgs } from "./getPatchManagementDatabases";
+export const getPatchManagementDatabases: typeof import("./getPatchManagementDatabases").getPatchManagementDatabases = null as any;
+export const getPatchManagementDatabasesOutput: typeof import("./getPatchManagementDatabases").getPatchManagementDatabasesOutput = null as any;
+utilities.lazyLoad(exports, ["getPatchManagementDatabases","getPatchManagementDatabasesOutput"], () => require("./getPatchManagementDatabases"));
+
 export { GetVulnerabilityArgs, GetVulnerabilityResult, GetVulnerabilityOutputArgs } from "./getVulnerability";
 export const getVulnerability: typeof import("./getVulnerability").getVulnerability = null as any;
 export const getVulnerabilityOutput: typeof import("./getVulnerability").getVulnerabilityOutput = null as any;

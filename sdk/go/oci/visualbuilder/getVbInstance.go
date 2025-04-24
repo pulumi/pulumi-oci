@@ -72,7 +72,7 @@ type LookupVbInstanceResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// Unique identifier that is immutable on creation.
+	// The Virtual Cloud Network OCID.
 	Id         string `pulumi:"id"`
 	IdcsOpenId string `pulumi:"idcsOpenId"`
 	// The Vb Instance URL.
@@ -175,7 +175,7 @@ func (o LookupVbInstanceResultOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupVbInstanceResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// Unique identifier that is immutable on creation.
+// The Virtual Cloud Network OCID.
 func (o LookupVbInstanceResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVbInstanceResult) string { return v.Id }).(pulumi.StringOutput)
 }

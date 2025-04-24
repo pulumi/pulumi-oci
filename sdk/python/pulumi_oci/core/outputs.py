@@ -50631,6 +50631,7 @@ class GetVolumesVolumeResult(dict):
                  id: builtins.str,
                  is_auto_tune_enabled: builtins.bool,
                  is_hydrated: builtins.bool,
+                 is_reservations_enabled: builtins.bool,
                  kms_key_id: builtins.str,
                  size_in_gbs: builtins.str,
                  size_in_mbs: builtins.str,
@@ -50655,6 +50656,7 @@ class GetVolumesVolumeResult(dict):
         :param builtins.str id: (Required when type=blockVolumeReplica | volume | volumeBackup) The OCID of the block volume replica.
         :param builtins.bool is_auto_tune_enabled: Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         :param builtins.bool is_hydrated: Specifies whether the cloned volume's data has finished copying from the source volume or backup.
+        :param builtins.bool is_reservations_enabled: Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
         :param builtins.str kms_key_id: The OCID of the Vault service key which is the master encryption key for the volume.
         :param builtins.str size_in_gbs: The size of the volume in GBs.
         :param builtins.str size_in_mbs: The size of the volume in MBs. This field is deprecated. Use sizeInGBs instead.
@@ -50679,6 +50681,7 @@ class GetVolumesVolumeResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_auto_tune_enabled", is_auto_tune_enabled)
         pulumi.set(__self__, "is_hydrated", is_hydrated)
+        pulumi.set(__self__, "is_reservations_enabled", is_reservations_enabled)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
         pulumi.set(__self__, "size_in_gbs", size_in_gbs)
         pulumi.set(__self__, "size_in_mbs", size_in_mbs)
@@ -50797,6 +50800,14 @@ class GetVolumesVolumeResult(dict):
         Specifies whether the cloned volume's data has finished copying from the source volume or backup.
         """
         return pulumi.get(self, "is_hydrated")
+
+    @property
+    @pulumi.getter(name="isReservationsEnabled")
+    def is_reservations_enabled(self) -> builtins.bool:
+        """
+        Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+        """
+        return pulumi.get(self, "is_reservations_enabled")
 
     @property
     @pulumi.getter(name="kmsKeyId")

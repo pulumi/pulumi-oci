@@ -34531,6 +34531,18 @@ export namespace DatabaseTools {
 }
 
 export namespace Dblm {
+    export interface GetPatchManagementDatabasesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetPatchManagementDatabasesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetVulnerabilityAggregatedVulnerabilityDataFilter {
         name: string;
         regex?: boolean;
@@ -85946,7 +85958,17 @@ export namespace VisualBuilder {
 
     export interface VbInstanceNetworkEndpointDetails {
         /**
+         * (Updatable) Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5/32", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+         */
+        allowlistedHttpIps?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Virtual Cloud Networks allowed to access this network endpoint.
+         */
+        allowlistedHttpVcns?: pulumi.Input<pulumi.Input<inputs.VisualBuilder.VbInstanceNetworkEndpointDetailsAllowlistedHttpVcn>[]>;
+        /**
          * (Updatable) The type of network endpoint.
+         *
+         * For private endpoint access
          */
         networkEndpointType: pulumi.Input<string>;
         /**
@@ -85959,8 +85981,21 @@ export namespace VisualBuilder {
         privateEndpointIp?: pulumi.Input<string>;
         /**
          * (Updatable) The subnet OCID for the private endpoint.
+         *
+         * For public network access control
          */
-        subnetId: pulumi.Input<string>;
+        subnetId?: pulumi.Input<string>;
+    }
+
+    export interface VbInstanceNetworkEndpointDetailsAllowlistedHttpVcn {
+        /**
+         * (Updatable) Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5/32", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+         */
+        allowlistedIpCidrs?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The Virtual Cloud Network OCID.
+         */
+        id: pulumi.Input<string>;
     }
 }
 

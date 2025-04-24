@@ -159,7 +159,7 @@ class GetVbInstanceResult:
     @pulumi.getter
     def id(self) -> builtins.str:
         """
-        Unique identifier that is immutable on creation.
+        The Virtual Cloud Network OCID.
         """
         return pulumi.get(self, "id")
 

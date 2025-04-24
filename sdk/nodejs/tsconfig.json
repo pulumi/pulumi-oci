@@ -1342,6 +1342,8 @@
         "datascience/privateEndpoint.ts",
         "datascience/project.ts",
         "datascience/schedule.ts",
+        "dblm/getPatchManagement.ts",
+        "dblm/getPatchManagementDatabases.ts",
         "dblm/getVulnerability.ts",
         "dblm/getVulnerabilityAggregatedVulnerabilityData.ts",
         "dblm/getVulnerabilityNotifications.ts",

@@ -304,14 +304,22 @@ func (o VbInstanceCustomEndpointPtrOutput) Hostname() pulumi.StringPtrOutput {
 }
 
 type VbInstanceNetworkEndpointDetails struct {
+	// (Updatable) Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5/32", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+	AllowlistedHttpIps []string `pulumi:"allowlistedHttpIps"`
+	// (Updatable) Virtual Cloud Networks allowed to access this network endpoint.
+	AllowlistedHttpVcns []VbInstanceNetworkEndpointDetailsAllowlistedHttpVcn `pulumi:"allowlistedHttpVcns"`
 	// (Updatable) The type of network endpoint.
+	//
+	// For private endpoint access
 	NetworkEndpointType string `pulumi:"networkEndpointType"`
 	// (Updatable) Network Security Group OCIDs for the Private Endpoint.
 	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
 	// The IP address to be assigned to Private Endpoint
 	PrivateEndpointIp *string `pulumi:"privateEndpointIp"`
 	// (Updatable) The subnet OCID for the private endpoint.
-	SubnetId string `pulumi:"subnetId"`
+	//
+	// For public network access control
+	SubnetId *string `pulumi:"subnetId"`
 }
 
 // VbInstanceNetworkEndpointDetailsInput is an input type that accepts VbInstanceNetworkEndpointDetailsArgs and VbInstanceNetworkEndpointDetailsOutput values.
@@ -326,14 +334,22 @@ type VbInstanceNetworkEndpointDetailsInput interface {
 }
 
 type VbInstanceNetworkEndpointDetailsArgs struct {
+	// (Updatable) Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5/32", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+	AllowlistedHttpIps pulumi.StringArrayInput `pulumi:"allowlistedHttpIps"`
+	// (Updatable) Virtual Cloud Networks allowed to access this network endpoint.
+	AllowlistedHttpVcns VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayInput `pulumi:"allowlistedHttpVcns"`
 	// (Updatable) The type of network endpoint.
+	//
+	// For private endpoint access
 	NetworkEndpointType pulumi.StringInput `pulumi:"networkEndpointType"`
 	// (Updatable) Network Security Group OCIDs for the Private Endpoint.
 	NetworkSecurityGroupIds pulumi.StringArrayInput `pulumi:"networkSecurityGroupIds"`
 	// The IP address to be assigned to Private Endpoint
 	PrivateEndpointIp pulumi.StringPtrInput `pulumi:"privateEndpointIp"`
 	// (Updatable) The subnet OCID for the private endpoint.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	//
+	// For public network access control
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 }
 
 func (VbInstanceNetworkEndpointDetailsArgs) ElementType() reflect.Type {
@@ -413,7 +429,21 @@ func (o VbInstanceNetworkEndpointDetailsOutput) ToVbInstanceNetworkEndpointDetai
 	}).(VbInstanceNetworkEndpointDetailsPtrOutput)
 }
 
+// (Updatable) Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5/32", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+func (o VbInstanceNetworkEndpointDetailsOutput) AllowlistedHttpIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v VbInstanceNetworkEndpointDetails) []string { return v.AllowlistedHttpIps }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Virtual Cloud Networks allowed to access this network endpoint.
+func (o VbInstanceNetworkEndpointDetailsOutput) AllowlistedHttpVcns() VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput {
+	return o.ApplyT(func(v VbInstanceNetworkEndpointDetails) []VbInstanceNetworkEndpointDetailsAllowlistedHttpVcn {
+		return v.AllowlistedHttpVcns
+	}).(VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput)
+}
+
 // (Updatable) The type of network endpoint.
+//
+// For private endpoint access
 func (o VbInstanceNetworkEndpointDetailsOutput) NetworkEndpointType() pulumi.StringOutput {
 	return o.ApplyT(func(v VbInstanceNetworkEndpointDetails) string { return v.NetworkEndpointType }).(pulumi.StringOutput)
 }
@@ -429,8 +459,10 @@ func (o VbInstanceNetworkEndpointDetailsOutput) PrivateEndpointIp() pulumi.Strin
 }
 
 // (Updatable) The subnet OCID for the private endpoint.
-func (o VbInstanceNetworkEndpointDetailsOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v VbInstanceNetworkEndpointDetails) string { return v.SubnetId }).(pulumi.StringOutput)
+//
+// For public network access control
+func (o VbInstanceNetworkEndpointDetailsOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VbInstanceNetworkEndpointDetails) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 type VbInstanceNetworkEndpointDetailsPtrOutput struct{ *pulumi.OutputState }
@@ -457,7 +489,29 @@ func (o VbInstanceNetworkEndpointDetailsPtrOutput) Elem() VbInstanceNetworkEndpo
 	}).(VbInstanceNetworkEndpointDetailsOutput)
 }
 
+// (Updatable) Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5/32", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+func (o VbInstanceNetworkEndpointDetailsPtrOutput) AllowlistedHttpIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *VbInstanceNetworkEndpointDetails) []string {
+		if v == nil {
+			return nil
+		}
+		return v.AllowlistedHttpIps
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Virtual Cloud Networks allowed to access this network endpoint.
+func (o VbInstanceNetworkEndpointDetailsPtrOutput) AllowlistedHttpVcns() VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput {
+	return o.ApplyT(func(v *VbInstanceNetworkEndpointDetails) []VbInstanceNetworkEndpointDetailsAllowlistedHttpVcn {
+		if v == nil {
+			return nil
+		}
+		return v.AllowlistedHttpVcns
+	}).(VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput)
+}
+
 // (Updatable) The type of network endpoint.
+//
+// For private endpoint access
 func (o VbInstanceNetworkEndpointDetailsPtrOutput) NetworkEndpointType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *VbInstanceNetworkEndpointDetails) *string {
 		if v == nil {
@@ -488,13 +542,121 @@ func (o VbInstanceNetworkEndpointDetailsPtrOutput) PrivateEndpointIp() pulumi.St
 }
 
 // (Updatable) The subnet OCID for the private endpoint.
+//
+// For public network access control
 func (o VbInstanceNetworkEndpointDetailsPtrOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *VbInstanceNetworkEndpointDetails) *string {
 		if v == nil {
 			return nil
 		}
-		return &v.SubnetId
+		return v.SubnetId
 	}).(pulumi.StringPtrOutput)
+}
+
+type VbInstanceNetworkEndpointDetailsAllowlistedHttpVcn struct {
+	// (Updatable) Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5/32", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+	AllowlistedIpCidrs []string `pulumi:"allowlistedIpCidrs"`
+	// (Updatable) The Virtual Cloud Network OCID.
+	Id string `pulumi:"id"`
+}
+
+// VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnInput is an input type that accepts VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs and VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput values.
+// You can construct a concrete instance of `VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnInput` via:
+//
+//	VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs{...}
+type VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnInput interface {
+	pulumi.Input
+
+	ToVbInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput() VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput
+	ToVbInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutputWithContext(context.Context) VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput
+}
+
+type VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs struct {
+	// (Updatable) Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5/32", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+	AllowlistedIpCidrs pulumi.StringArrayInput `pulumi:"allowlistedIpCidrs"`
+	// (Updatable) The Virtual Cloud Network OCID.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VbInstanceNetworkEndpointDetailsAllowlistedHttpVcn)(nil)).Elem()
+}
+
+func (i VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs) ToVbInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput() VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput {
+	return i.ToVbInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutputWithContext(context.Background())
+}
+
+func (i VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs) ToVbInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutputWithContext(ctx context.Context) VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput)
+}
+
+// VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayInput is an input type that accepts VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArray and VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput values.
+// You can construct a concrete instance of `VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayInput` via:
+//
+//	VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArray{ VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs{...} }
+type VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayInput interface {
+	pulumi.Input
+
+	ToVbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput() VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput
+	ToVbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutputWithContext(context.Context) VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput
+}
+
+type VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArray []VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnInput
+
+func (VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VbInstanceNetworkEndpointDetailsAllowlistedHttpVcn)(nil)).Elem()
+}
+
+func (i VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArray) ToVbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput() VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput {
+	return i.ToVbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutputWithContext(context.Background())
+}
+
+func (i VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArray) ToVbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutputWithContext(ctx context.Context) VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput)
+}
+
+type VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput struct{ *pulumi.OutputState }
+
+func (VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VbInstanceNetworkEndpointDetailsAllowlistedHttpVcn)(nil)).Elem()
+}
+
+func (o VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput) ToVbInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput() VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput {
+	return o
+}
+
+func (o VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput) ToVbInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutputWithContext(ctx context.Context) VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput {
+	return o
+}
+
+// (Updatable) Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5/32", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+func (o VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput) AllowlistedIpCidrs() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v VbInstanceNetworkEndpointDetailsAllowlistedHttpVcn) []string { return v.AllowlistedIpCidrs }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The Virtual Cloud Network OCID.
+func (o VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v VbInstanceNetworkEndpointDetailsAllowlistedHttpVcn) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput struct{ *pulumi.OutputState }
+
+func (VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VbInstanceNetworkEndpointDetailsAllowlistedHttpVcn)(nil)).Elem()
+}
+
+func (o VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput) ToVbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput() VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput {
+	return o
+}
+
+func (o VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput) ToVbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutputWithContext(ctx context.Context) VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput {
+	return o
+}
+
+func (o VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput) Index(i pulumi.IntInput) VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VbInstanceNetworkEndpointDetailsAllowlistedHttpVcn {
+		return vs[0].([]VbInstanceNetworkEndpointDetailsAllowlistedHttpVcn)[vs[1].(int)]
+	}).(VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput)
 }
 
 type GetVbInstanceAlternateCustomEndpoint struct {
@@ -948,6 +1110,10 @@ func (o GetVbInstanceCustomEndpointArrayOutput) Index(i pulumi.IntInput) GetVbIn
 }
 
 type GetVbInstanceNetworkEndpointDetail struct {
+	// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5/32", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+	AllowlistedHttpIps []string `pulumi:"allowlistedHttpIps"`
+	// Virtual Cloud Networks allowed to access this network endpoint.
+	AllowlistedHttpVcns []GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcn `pulumi:"allowlistedHttpVcns"`
 	// The type of network endpoint.
 	NetworkEndpointType string `pulumi:"networkEndpointType"`
 	// Network Security Group OCIDs for the Private Endpoint.
@@ -970,6 +1136,10 @@ type GetVbInstanceNetworkEndpointDetailInput interface {
 }
 
 type GetVbInstanceNetworkEndpointDetailArgs struct {
+	// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5/32", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+	AllowlistedHttpIps pulumi.StringArrayInput `pulumi:"allowlistedHttpIps"`
+	// Virtual Cloud Networks allowed to access this network endpoint.
+	AllowlistedHttpVcns GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayInput `pulumi:"allowlistedHttpVcns"`
 	// The type of network endpoint.
 	NetworkEndpointType pulumi.StringInput `pulumi:"networkEndpointType"`
 	// Network Security Group OCIDs for the Private Endpoint.
@@ -1031,6 +1201,18 @@ func (o GetVbInstanceNetworkEndpointDetailOutput) ToGetVbInstanceNetworkEndpoint
 	return o
 }
 
+// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5/32", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+func (o GetVbInstanceNetworkEndpointDetailOutput) AllowlistedHttpIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVbInstanceNetworkEndpointDetail) []string { return v.AllowlistedHttpIps }).(pulumi.StringArrayOutput)
+}
+
+// Virtual Cloud Networks allowed to access this network endpoint.
+func (o GetVbInstanceNetworkEndpointDetailOutput) AllowlistedHttpVcns() GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput {
+	return o.ApplyT(func(v GetVbInstanceNetworkEndpointDetail) []GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcn {
+		return v.AllowlistedHttpVcns
+	}).(GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput)
+}
+
 // The type of network endpoint.
 func (o GetVbInstanceNetworkEndpointDetailOutput) NetworkEndpointType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVbInstanceNetworkEndpointDetail) string { return v.NetworkEndpointType }).(pulumi.StringOutput)
@@ -1069,6 +1251,112 @@ func (o GetVbInstanceNetworkEndpointDetailArrayOutput) Index(i pulumi.IntInput) 
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVbInstanceNetworkEndpointDetail {
 		return vs[0].([]GetVbInstanceNetworkEndpointDetail)[vs[1].(int)]
 	}).(GetVbInstanceNetworkEndpointDetailOutput)
+}
+
+type GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcn struct {
+	// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5/32", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+	AllowlistedIpCidrs []string `pulumi:"allowlistedIpCidrs"`
+	// The Virtual Cloud Network OCID.
+	Id string `pulumi:"id"`
+}
+
+// GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnInput is an input type that accepts GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArgs and GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput values.
+// You can construct a concrete instance of `GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnInput` via:
+//
+//	GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArgs{...}
+type GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnInput interface {
+	pulumi.Input
+
+	ToGetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput() GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput
+	ToGetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnOutputWithContext(context.Context) GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput
+}
+
+type GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArgs struct {
+	// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5/32", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+	AllowlistedIpCidrs pulumi.StringArrayInput `pulumi:"allowlistedIpCidrs"`
+	// The Virtual Cloud Network OCID.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcn)(nil)).Elem()
+}
+
+func (i GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArgs) ToGetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput() GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput {
+	return i.ToGetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnOutputWithContext(context.Background())
+}
+
+func (i GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArgs) ToGetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnOutputWithContext(ctx context.Context) GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput)
+}
+
+// GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayInput is an input type that accepts GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArray and GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput values.
+// You can construct a concrete instance of `GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayInput` via:
+//
+//	GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArray{ GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArgs{...} }
+type GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayInput interface {
+	pulumi.Input
+
+	ToGetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput() GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput
+	ToGetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutputWithContext(context.Context) GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput
+}
+
+type GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArray []GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnInput
+
+func (GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcn)(nil)).Elem()
+}
+
+func (i GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArray) ToGetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput() GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput {
+	return i.ToGetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutputWithContext(context.Background())
+}
+
+func (i GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArray) ToGetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutputWithContext(ctx context.Context) GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput)
+}
+
+type GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput struct{ *pulumi.OutputState }
+
+func (GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcn)(nil)).Elem()
+}
+
+func (o GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput) ToGetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput() GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput {
+	return o
+}
+
+func (o GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput) ToGetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnOutputWithContext(ctx context.Context) GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput {
+	return o
+}
+
+// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5/32", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+func (o GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput) AllowlistedIpCidrs() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcn) []string { return v.AllowlistedIpCidrs }).(pulumi.StringArrayOutput)
+}
+
+// The Virtual Cloud Network OCID.
+func (o GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcn) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcn)(nil)).Elem()
+}
+
+func (o GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput) ToGetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput() GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput {
+	return o
+}
+
+func (o GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput) ToGetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutputWithContext(ctx context.Context) GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput {
+	return o
+}
+
+func (o GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput) Index(i pulumi.IntInput) GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcn {
+		return vs[0].([]GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcn)[vs[1].(int)]
+	}).(GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput)
 }
 
 type GetVbInstancesFilter struct {
@@ -1288,7 +1576,7 @@ type GetVbInstancesVbInstanceSummaryCollectionItem struct {
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// Unique identifier that is immutable on creation.
+	// The Virtual Cloud Network OCID.
 	Id         string `pulumi:"id"`
 	IdcsOpenId string `pulumi:"idcsOpenId"`
 	// The Vb Instance URL.
@@ -1345,7 +1633,7 @@ type GetVbInstancesVbInstanceSummaryCollectionItemArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
-	// Unique identifier that is immutable on creation.
+	// The Virtual Cloud Network OCID.
 	Id         pulumi.StringInput `pulumi:"id"`
 	IdcsOpenId pulumi.StringInput `pulumi:"idcsOpenId"`
 	// The Vb Instance URL.
@@ -1466,7 +1754,7 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) FreeformTags() pulu
 	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// Unique identifier that is immutable on creation.
+// The Virtual Cloud Network OCID.
 func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -1801,6 +2089,10 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArrayOutput) 
 }
 
 type GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetail struct {
+	// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5/32", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+	AllowlistedHttpIps []string `pulumi:"allowlistedHttpIps"`
+	// Virtual Cloud Networks allowed to access this network endpoint.
+	AllowlistedHttpVcns []GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcn `pulumi:"allowlistedHttpVcns"`
 	// The type of network endpoint.
 	NetworkEndpointType string `pulumi:"networkEndpointType"`
 	// Network Security Group OCIDs for the Private Endpoint.
@@ -1823,6 +2115,10 @@ type GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailInput int
 }
 
 type GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArgs struct {
+	// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5/32", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+	AllowlistedHttpIps pulumi.StringArrayInput `pulumi:"allowlistedHttpIps"`
+	// Virtual Cloud Networks allowed to access this network endpoint.
+	AllowlistedHttpVcns GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArrayInput `pulumi:"allowlistedHttpVcns"`
 	// The type of network endpoint.
 	NetworkEndpointType pulumi.StringInput `pulumi:"networkEndpointType"`
 	// Network Security Group OCIDs for the Private Endpoint.
@@ -1884,6 +2180,20 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailOutput
 	return o
 }
 
+// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5/32", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+func (o GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailOutput) AllowlistedHttpIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetail) []string {
+		return v.AllowlistedHttpIps
+	}).(pulumi.StringArrayOutput)
+}
+
+// Virtual Cloud Networks allowed to access this network endpoint.
+func (o GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailOutput) AllowlistedHttpVcns() GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArrayOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetail) []GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcn {
+		return v.AllowlistedHttpVcns
+	}).(GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArrayOutput)
+}
+
 // The type of network endpoint.
 func (o GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailOutput) NetworkEndpointType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetail) string {
@@ -1930,6 +2240,116 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArrayO
 	}).(GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailOutput)
 }
 
+type GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcn struct {
+	// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5/32", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+	AllowlistedIpCidrs []string `pulumi:"allowlistedIpCidrs"`
+	// The Virtual Cloud Network OCID.
+	Id string `pulumi:"id"`
+}
+
+// GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnInput is an input type that accepts GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArgs and GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnOutput values.
+// You can construct a concrete instance of `GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnInput` via:
+//
+//	GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArgs{...}
+type GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnInput interface {
+	pulumi.Input
+
+	ToGetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnOutput() GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnOutput
+	ToGetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnOutputWithContext(context.Context) GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnOutput
+}
+
+type GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArgs struct {
+	// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5/32", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+	AllowlistedIpCidrs pulumi.StringArrayInput `pulumi:"allowlistedIpCidrs"`
+	// The Virtual Cloud Network OCID.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcn)(nil)).Elem()
+}
+
+func (i GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArgs) ToGetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnOutput() GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnOutput {
+	return i.ToGetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnOutputWithContext(context.Background())
+}
+
+func (i GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArgs) ToGetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnOutput)
+}
+
+// GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArrayInput is an input type that accepts GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArray and GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArrayOutput values.
+// You can construct a concrete instance of `GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArrayInput` via:
+//
+//	GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArray{ GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArgs{...} }
+type GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArrayInput interface {
+	pulumi.Input
+
+	ToGetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArrayOutput() GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArrayOutput
+	ToGetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArrayOutputWithContext(context.Context) GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArrayOutput
+}
+
+type GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArray []GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnInput
+
+func (GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcn)(nil)).Elem()
+}
+
+func (i GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArray) ToGetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArrayOutput() GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArrayOutput {
+	return i.ToGetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArrayOutputWithContext(context.Background())
+}
+
+func (i GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArray) ToGetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArrayOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArrayOutput)
+}
+
+type GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnOutput struct{ *pulumi.OutputState }
+
+func (GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcn)(nil)).Elem()
+}
+
+func (o GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnOutput) ToGetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnOutput() GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnOutput {
+	return o
+}
+
+func (o GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnOutput) ToGetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnOutput {
+	return o
+}
+
+// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5/32", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+func (o GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnOutput) AllowlistedIpCidrs() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcn) []string {
+		return v.AllowlistedIpCidrs
+	}).(pulumi.StringArrayOutput)
+}
+
+// The Virtual Cloud Network OCID.
+func (o GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcn) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+type GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcn)(nil)).Elem()
+}
+
+func (o GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArrayOutput) ToGetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArrayOutput() GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArrayOutput {
+	return o
+}
+
+func (o GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArrayOutput) ToGetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArrayOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArrayOutput {
+	return o
+}
+
+func (o GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArrayOutput) Index(i pulumi.IntInput) GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcn {
+		return vs[0].([]GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcn)[vs[1].(int)]
+	}).(GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*VbInstanceAlternateCustomEndpointInput)(nil)).Elem(), VbInstanceAlternateCustomEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VbInstanceAlternateCustomEndpointArrayInput)(nil)).Elem(), VbInstanceAlternateCustomEndpointArray{})
@@ -1937,6 +2357,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*VbInstanceCustomEndpointPtrInput)(nil)).Elem(), VbInstanceCustomEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VbInstanceNetworkEndpointDetailsInput)(nil)).Elem(), VbInstanceNetworkEndpointDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VbInstanceNetworkEndpointDetailsPtrInput)(nil)).Elem(), VbInstanceNetworkEndpointDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnInput)(nil)).Elem(), VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayInput)(nil)).Elem(), VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstanceAlternateCustomEndpointInput)(nil)).Elem(), GetVbInstanceAlternateCustomEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstanceAlternateCustomEndpointArrayInput)(nil)).Elem(), GetVbInstanceAlternateCustomEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstanceApplicationsApplicationSummaryCollectionInput)(nil)).Elem(), GetVbInstanceApplicationsApplicationSummaryCollectionArgs{})
@@ -1947,6 +2369,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstanceCustomEndpointArrayInput)(nil)).Elem(), GetVbInstanceCustomEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstanceNetworkEndpointDetailInput)(nil)).Elem(), GetVbInstanceNetworkEndpointDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstanceNetworkEndpointDetailArrayInput)(nil)).Elem(), GetVbInstanceNetworkEndpointDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnInput)(nil)).Elem(), GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayInput)(nil)).Elem(), GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstancesFilterInput)(nil)).Elem(), GetVbInstancesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstancesFilterArrayInput)(nil)).Elem(), GetVbInstancesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionInput)(nil)).Elem(), GetVbInstancesVbInstanceSummaryCollectionArgs{})
@@ -1959,12 +2383,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArrayInput)(nil)).Elem(), GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailInput)(nil)).Elem(), GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArrayInput)(nil)).Elem(), GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnInput)(nil)).Elem(), GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArrayInput)(nil)).Elem(), GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArray{})
 	pulumi.RegisterOutputType(VbInstanceAlternateCustomEndpointOutput{})
 	pulumi.RegisterOutputType(VbInstanceAlternateCustomEndpointArrayOutput{})
 	pulumi.RegisterOutputType(VbInstanceCustomEndpointOutput{})
 	pulumi.RegisterOutputType(VbInstanceCustomEndpointPtrOutput{})
 	pulumi.RegisterOutputType(VbInstanceNetworkEndpointDetailsOutput{})
 	pulumi.RegisterOutputType(VbInstanceNetworkEndpointDetailsPtrOutput{})
+	pulumi.RegisterOutputType(VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput{})
+	pulumi.RegisterOutputType(VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput{})
 	pulumi.RegisterOutputType(GetVbInstanceAlternateCustomEndpointOutput{})
 	pulumi.RegisterOutputType(GetVbInstanceAlternateCustomEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetVbInstanceApplicationsApplicationSummaryCollectionOutput{})
@@ -1975,6 +2403,8 @@ func init() {
 	pulumi.RegisterOutputType(GetVbInstanceCustomEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetVbInstanceNetworkEndpointDetailOutput{})
 	pulumi.RegisterOutputType(GetVbInstanceNetworkEndpointDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput{})
+	pulumi.RegisterOutputType(GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput{})
 	pulumi.RegisterOutputType(GetVbInstancesFilterOutput{})
 	pulumi.RegisterOutputType(GetVbInstancesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetVbInstancesVbInstanceSummaryCollectionOutput{})
@@ -1987,4 +2417,6 @@ func init() {
 	pulumi.RegisterOutputType(GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailOutput{})
 	pulumi.RegisterOutputType(GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnOutput{})
+	pulumi.RegisterOutputType(GetVbInstancesVbInstanceSummaryCollectionItemNetworkEndpointDetailAllowlistedHttpVcnArrayOutput{})
 }

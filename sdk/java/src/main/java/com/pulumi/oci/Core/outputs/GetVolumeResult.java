@@ -85,6 +85,11 @@ public final class GetVolumeResult {
      */
     private Boolean isHydrated;
     /**
+     * @return Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+     * 
+     */
+    private Boolean isReservationsEnabled;
+    /**
      * @return The OCID of the Vault service key which is the master encryption key for the volume.
      * 
      */
@@ -235,6 +240,13 @@ public final class GetVolumeResult {
         return this.isHydrated;
     }
     /**
+     * @return Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+     * 
+     */
+    public Boolean isReservationsEnabled() {
+        return this.isReservationsEnabled;
+    }
+    /**
      * @return The OCID of the Vault service key which is the master encryption key for the volume.
      * 
      */
@@ -334,6 +346,7 @@ public final class GetVolumeResult {
         private String id;
         private Boolean isAutoTuneEnabled;
         private Boolean isHydrated;
+        private Boolean isReservationsEnabled;
         private String kmsKeyId;
         private String sizeInGbs;
         private String sizeInMbs;
@@ -363,6 +376,7 @@ public final class GetVolumeResult {
     	      this.id = defaults.id;
     	      this.isAutoTuneEnabled = defaults.isAutoTuneEnabled;
     	      this.isHydrated = defaults.isHydrated;
+    	      this.isReservationsEnabled = defaults.isReservationsEnabled;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.sizeInGbs = defaults.sizeInGbs;
     	      this.sizeInMbs = defaults.sizeInMbs;
@@ -496,6 +510,14 @@ public final class GetVolumeResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isReservationsEnabled(Boolean isReservationsEnabled) {
+            if (isReservationsEnabled == null) {
+              throw new MissingRequiredPropertyException("GetVolumeResult", "isReservationsEnabled");
+            }
+            this.isReservationsEnabled = isReservationsEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
             if (kmsKeyId == null) {
               throw new MissingRequiredPropertyException("GetVolumeResult", "kmsKeyId");
@@ -610,6 +632,7 @@ public final class GetVolumeResult {
             _resultValue.id = id;
             _resultValue.isAutoTuneEnabled = isAutoTuneEnabled;
             _resultValue.isHydrated = isHydrated;
+            _resultValue.isReservationsEnabled = isReservationsEnabled;
             _resultValue.kmsKeyId = kmsKeyId;
             _resultValue.sizeInGbs = sizeInGbs;
             _resultValue.sizeInMbs = sizeInMbs;

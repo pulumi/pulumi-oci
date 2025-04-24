@@ -68,10 +68,11 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
-//				IsAutoTuneEnabled: pulumi.Any(volumeIsAutoTuneEnabled),
-//				KmsKeyId:          pulumi.Any(testKey.Id),
-//				SizeInGbs:         pulumi.Any(volumeSizeInGbs),
-//				SizeInMbs:         pulumi.Any(volumeSizeInMbs),
+//				IsAutoTuneEnabled:     pulumi.Any(volumeIsAutoTuneEnabled),
+//				IsReservationsEnabled: pulumi.Any(volumeIsReservationsEnabled),
+//				KmsKeyId:              pulumi.Any(testKey.Id),
+//				SizeInGbs:             pulumi.Any(volumeSizeInGbs),
+//				SizeInMbs:             pulumi.Any(volumeSizeInMbs),
 //				SourceDetails: &core.VolumeSourceDetailsArgs{
 //					Type:                   pulumi.Any(volumeSourceDetailsType),
 //					ChangeBlockSizeInBytes: pulumi.Any(volumeSourceDetailsChangeBlockSizeInBytes),
@@ -129,6 +130,8 @@ type Volume struct {
 	IsAutoTuneEnabled pulumi.BoolOutput `pulumi:"isAutoTuneEnabled"`
 	// Specifies whether the cloned volume's data has finished copying from the source volume or backup.
 	IsHydrated pulumi.BoolOutput `pulumi:"isHydrated"`
+	// (Updatable) Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+	IsReservationsEnabled pulumi.BoolOutput `pulumi:"isReservationsEnabled"`
 	// (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
 	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
 	// (Updatable) The size of the volume in GBs.
@@ -223,6 +226,8 @@ type volumeState struct {
 	IsAutoTuneEnabled *bool `pulumi:"isAutoTuneEnabled"`
 	// Specifies whether the cloned volume's data has finished copying from the source volume or backup.
 	IsHydrated *bool `pulumi:"isHydrated"`
+	// (Updatable) Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+	IsReservationsEnabled *bool `pulumi:"isReservationsEnabled"`
 	// (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// (Updatable) The size of the volume in GBs.
@@ -282,6 +287,8 @@ type VolumeState struct {
 	IsAutoTuneEnabled pulumi.BoolPtrInput
 	// Specifies whether the cloned volume's data has finished copying from the source volume or backup.
 	IsHydrated pulumi.BoolPtrInput
+	// (Updatable) Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+	IsReservationsEnabled pulumi.BoolPtrInput
 	// (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
 	KmsKeyId pulumi.StringPtrInput
 	// (Updatable) The size of the volume in GBs.
@@ -341,6 +348,8 @@ type volumeArgs struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 	IsAutoTuneEnabled *bool `pulumi:"isAutoTuneEnabled"`
+	// (Updatable) Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+	IsReservationsEnabled *bool `pulumi:"isReservationsEnabled"`
 	// (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// (Updatable) The size of the volume in GBs.
@@ -389,6 +398,8 @@ type VolumeArgs struct {
 	FreeformTags pulumi.StringMapInput
 	// (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 	IsAutoTuneEnabled pulumi.BoolPtrInput
+	// (Updatable) Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+	IsReservationsEnabled pulumi.BoolPtrInput
 	// (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
 	KmsKeyId pulumi.StringPtrInput
 	// (Updatable) The size of the volume in GBs.
@@ -563,6 +574,11 @@ func (o VolumeOutput) IsAutoTuneEnabled() pulumi.BoolOutput {
 // Specifies whether the cloned volume's data has finished copying from the source volume or backup.
 func (o VolumeOutput) IsHydrated() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Volume) pulumi.BoolOutput { return v.IsHydrated }).(pulumi.BoolOutput)
+}
+
+// (Updatable) Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+func (o VolumeOutput) IsReservationsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Volume) pulumi.BoolOutput { return v.IsReservationsEnabled }).(pulumi.BoolOutput)
 }
 
 // (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.

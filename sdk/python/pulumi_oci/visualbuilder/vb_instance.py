@@ -582,41 +582,6 @@ class VbInstance(pulumi.CustomResource):
 
         Creates a new Vb Instance.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_vb_instance = oci.visual_builder.VbInstance("test_vb_instance",
-            compartment_id=compartment_id,
-            display_name=vb_instance_display_name,
-            node_count=vb_instance_node_count,
-            alternate_custom_endpoints=[{
-                "hostname": vb_instance_alternate_custom_endpoints_hostname,
-                "certificate_secret_id": test_secret["id"],
-            }],
-            consumption_model=vb_instance_consumption_model,
-            custom_endpoint={
-                "hostname": vb_instance_custom_endpoint_hostname,
-                "certificate_secret_id": test_secret["id"],
-            },
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            },
-            idcs_open_id=test_idcs_open["id"],
-            is_visual_builder_enabled=vb_instance_is_visual_builder_enabled,
-            network_endpoint_details={
-                "network_endpoint_type": vb_instance_network_endpoint_details_network_endpoint_type,
-                "subnet_id": test_subnet["id"],
-                "network_security_group_ids": vb_instance_network_endpoint_details_network_security_group_ids,
-                "private_endpoint_ip": vb_instance_network_endpoint_details_private_endpoint_ip,
-            })
-        ```
-
         ## Import
 
         VbInstances can be imported using the `id`, e.g.
@@ -653,41 +618,6 @@ class VbInstance(pulumi.CustomResource):
         This resource provides the Vb Instance resource in Oracle Cloud Infrastructure Visual Builder service.
 
         Creates a new Vb Instance.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_vb_instance = oci.visual_builder.VbInstance("test_vb_instance",
-            compartment_id=compartment_id,
-            display_name=vb_instance_display_name,
-            node_count=vb_instance_node_count,
-            alternate_custom_endpoints=[{
-                "hostname": vb_instance_alternate_custom_endpoints_hostname,
-                "certificate_secret_id": test_secret["id"],
-            }],
-            consumption_model=vb_instance_consumption_model,
-            custom_endpoint={
-                "hostname": vb_instance_custom_endpoint_hostname,
-                "certificate_secret_id": test_secret["id"],
-            },
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            },
-            idcs_open_id=test_idcs_open["id"],
-            is_visual_builder_enabled=vb_instance_is_visual_builder_enabled,
-            network_endpoint_details={
-                "network_endpoint_type": vb_instance_network_endpoint_details_network_endpoint_type,
-                "subnet_id": test_subnet["id"],
-                "network_security_group_ids": vb_instance_network_endpoint_details_network_security_group_ids,
-                "private_endpoint_ip": vb_instance_network_endpoint_details_private_endpoint_ip,
-            })
-        ```
 
         ## Import
 

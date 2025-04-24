@@ -13,6 +13,1876 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetPatchManagementDatabasesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetPatchManagementDatabasesFilterInput is an input type that accepts GetPatchManagementDatabasesFilterArgs and GetPatchManagementDatabasesFilterOutput values.
+// You can construct a concrete instance of `GetPatchManagementDatabasesFilterInput` via:
+//
+//	GetPatchManagementDatabasesFilterArgs{...}
+type GetPatchManagementDatabasesFilterInput interface {
+	pulumi.Input
+
+	ToGetPatchManagementDatabasesFilterOutput() GetPatchManagementDatabasesFilterOutput
+	ToGetPatchManagementDatabasesFilterOutputWithContext(context.Context) GetPatchManagementDatabasesFilterOutput
+}
+
+type GetPatchManagementDatabasesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetPatchManagementDatabasesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPatchManagementDatabasesFilter)(nil)).Elem()
+}
+
+func (i GetPatchManagementDatabasesFilterArgs) ToGetPatchManagementDatabasesFilterOutput() GetPatchManagementDatabasesFilterOutput {
+	return i.ToGetPatchManagementDatabasesFilterOutputWithContext(context.Background())
+}
+
+func (i GetPatchManagementDatabasesFilterArgs) ToGetPatchManagementDatabasesFilterOutputWithContext(ctx context.Context) GetPatchManagementDatabasesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPatchManagementDatabasesFilterOutput)
+}
+
+// GetPatchManagementDatabasesFilterArrayInput is an input type that accepts GetPatchManagementDatabasesFilterArray and GetPatchManagementDatabasesFilterArrayOutput values.
+// You can construct a concrete instance of `GetPatchManagementDatabasesFilterArrayInput` via:
+//
+//	GetPatchManagementDatabasesFilterArray{ GetPatchManagementDatabasesFilterArgs{...} }
+type GetPatchManagementDatabasesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetPatchManagementDatabasesFilterArrayOutput() GetPatchManagementDatabasesFilterArrayOutput
+	ToGetPatchManagementDatabasesFilterArrayOutputWithContext(context.Context) GetPatchManagementDatabasesFilterArrayOutput
+}
+
+type GetPatchManagementDatabasesFilterArray []GetPatchManagementDatabasesFilterInput
+
+func (GetPatchManagementDatabasesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPatchManagementDatabasesFilter)(nil)).Elem()
+}
+
+func (i GetPatchManagementDatabasesFilterArray) ToGetPatchManagementDatabasesFilterArrayOutput() GetPatchManagementDatabasesFilterArrayOutput {
+	return i.ToGetPatchManagementDatabasesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetPatchManagementDatabasesFilterArray) ToGetPatchManagementDatabasesFilterArrayOutputWithContext(ctx context.Context) GetPatchManagementDatabasesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPatchManagementDatabasesFilterArrayOutput)
+}
+
+type GetPatchManagementDatabasesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetPatchManagementDatabasesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPatchManagementDatabasesFilter)(nil)).Elem()
+}
+
+func (o GetPatchManagementDatabasesFilterOutput) ToGetPatchManagementDatabasesFilterOutput() GetPatchManagementDatabasesFilterOutput {
+	return o
+}
+
+func (o GetPatchManagementDatabasesFilterOutput) ToGetPatchManagementDatabasesFilterOutputWithContext(ctx context.Context) GetPatchManagementDatabasesFilterOutput {
+	return o
+}
+
+func (o GetPatchManagementDatabasesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetPatchManagementDatabasesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetPatchManagementDatabasesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetPatchManagementDatabasesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPatchManagementDatabasesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPatchManagementDatabasesFilter)(nil)).Elem()
+}
+
+func (o GetPatchManagementDatabasesFilterArrayOutput) ToGetPatchManagementDatabasesFilterArrayOutput() GetPatchManagementDatabasesFilterArrayOutput {
+	return o
+}
+
+func (o GetPatchManagementDatabasesFilterArrayOutput) ToGetPatchManagementDatabasesFilterArrayOutputWithContext(ctx context.Context) GetPatchManagementDatabasesFilterArrayOutput {
+	return o
+}
+
+func (o GetPatchManagementDatabasesFilterArrayOutput) Index(i pulumi.IntInput) GetPatchManagementDatabasesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPatchManagementDatabasesFilter {
+		return vs[0].([]GetPatchManagementDatabasesFilter)[vs[1].(int)]
+	}).(GetPatchManagementDatabasesFilterOutput)
+}
+
+type GetPatchManagementDatabasesPatchDatabasesCollection struct {
+	// List of patchDatabases.
+	Items []GetPatchManagementDatabasesPatchDatabasesCollectionItem `pulumi:"items"`
+}
+
+// GetPatchManagementDatabasesPatchDatabasesCollectionInput is an input type that accepts GetPatchManagementDatabasesPatchDatabasesCollectionArgs and GetPatchManagementDatabasesPatchDatabasesCollectionOutput values.
+// You can construct a concrete instance of `GetPatchManagementDatabasesPatchDatabasesCollectionInput` via:
+//
+//	GetPatchManagementDatabasesPatchDatabasesCollectionArgs{...}
+type GetPatchManagementDatabasesPatchDatabasesCollectionInput interface {
+	pulumi.Input
+
+	ToGetPatchManagementDatabasesPatchDatabasesCollectionOutput() GetPatchManagementDatabasesPatchDatabasesCollectionOutput
+	ToGetPatchManagementDatabasesPatchDatabasesCollectionOutputWithContext(context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionOutput
+}
+
+type GetPatchManagementDatabasesPatchDatabasesCollectionArgs struct {
+	// List of patchDatabases.
+	Items GetPatchManagementDatabasesPatchDatabasesCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetPatchManagementDatabasesPatchDatabasesCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPatchManagementDatabasesPatchDatabasesCollection)(nil)).Elem()
+}
+
+func (i GetPatchManagementDatabasesPatchDatabasesCollectionArgs) ToGetPatchManagementDatabasesPatchDatabasesCollectionOutput() GetPatchManagementDatabasesPatchDatabasesCollectionOutput {
+	return i.ToGetPatchManagementDatabasesPatchDatabasesCollectionOutputWithContext(context.Background())
+}
+
+func (i GetPatchManagementDatabasesPatchDatabasesCollectionArgs) ToGetPatchManagementDatabasesPatchDatabasesCollectionOutputWithContext(ctx context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPatchManagementDatabasesPatchDatabasesCollectionOutput)
+}
+
+// GetPatchManagementDatabasesPatchDatabasesCollectionArrayInput is an input type that accepts GetPatchManagementDatabasesPatchDatabasesCollectionArray and GetPatchManagementDatabasesPatchDatabasesCollectionArrayOutput values.
+// You can construct a concrete instance of `GetPatchManagementDatabasesPatchDatabasesCollectionArrayInput` via:
+//
+//	GetPatchManagementDatabasesPatchDatabasesCollectionArray{ GetPatchManagementDatabasesPatchDatabasesCollectionArgs{...} }
+type GetPatchManagementDatabasesPatchDatabasesCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetPatchManagementDatabasesPatchDatabasesCollectionArrayOutput() GetPatchManagementDatabasesPatchDatabasesCollectionArrayOutput
+	ToGetPatchManagementDatabasesPatchDatabasesCollectionArrayOutputWithContext(context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionArrayOutput
+}
+
+type GetPatchManagementDatabasesPatchDatabasesCollectionArray []GetPatchManagementDatabasesPatchDatabasesCollectionInput
+
+func (GetPatchManagementDatabasesPatchDatabasesCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPatchManagementDatabasesPatchDatabasesCollection)(nil)).Elem()
+}
+
+func (i GetPatchManagementDatabasesPatchDatabasesCollectionArray) ToGetPatchManagementDatabasesPatchDatabasesCollectionArrayOutput() GetPatchManagementDatabasesPatchDatabasesCollectionArrayOutput {
+	return i.ToGetPatchManagementDatabasesPatchDatabasesCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetPatchManagementDatabasesPatchDatabasesCollectionArray) ToGetPatchManagementDatabasesPatchDatabasesCollectionArrayOutputWithContext(ctx context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPatchManagementDatabasesPatchDatabasesCollectionArrayOutput)
+}
+
+type GetPatchManagementDatabasesPatchDatabasesCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetPatchManagementDatabasesPatchDatabasesCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPatchManagementDatabasesPatchDatabasesCollection)(nil)).Elem()
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionOutput) ToGetPatchManagementDatabasesPatchDatabasesCollectionOutput() GetPatchManagementDatabasesPatchDatabasesCollectionOutput {
+	return o
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionOutput) ToGetPatchManagementDatabasesPatchDatabasesCollectionOutputWithContext(ctx context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionOutput {
+	return o
+}
+
+// List of patchDatabases.
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionOutput) Items() GetPatchManagementDatabasesPatchDatabasesCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollection) []GetPatchManagementDatabasesPatchDatabasesCollectionItem {
+		return v.Items
+	}).(GetPatchManagementDatabasesPatchDatabasesCollectionItemArrayOutput)
+}
+
+type GetPatchManagementDatabasesPatchDatabasesCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPatchManagementDatabasesPatchDatabasesCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPatchManagementDatabasesPatchDatabasesCollection)(nil)).Elem()
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionArrayOutput) ToGetPatchManagementDatabasesPatchDatabasesCollectionArrayOutput() GetPatchManagementDatabasesPatchDatabasesCollectionArrayOutput {
+	return o
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionArrayOutput) ToGetPatchManagementDatabasesPatchDatabasesCollectionArrayOutputWithContext(ctx context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionArrayOutput {
+	return o
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionArrayOutput) Index(i pulumi.IntInput) GetPatchManagementDatabasesPatchDatabasesCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPatchManagementDatabasesPatchDatabasesCollection {
+		return vs[0].([]GetPatchManagementDatabasesPatchDatabasesCollection)[vs[1].(int)]
+	}).(GetPatchManagementDatabasesPatchDatabasesCollectionOutput)
+}
+
+type GetPatchManagementDatabasesPatchDatabasesCollectionItem struct {
+	// List of additional patches on database.
+	AdditionalPatches []GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatch `pulumi:"additionalPatches"`
+	// This is the hashcode representing the list of patches applied.
+	CurrentPatchWatermark string `pulumi:"currentPatchWatermark"`
+	// Database ocid.
+	DatabaseId string `pulumi:"databaseId"`
+	// Database name.
+	DatabaseName string `pulumi:"databaseName"`
+	// Filter by database type. Possible values Single Instance or RAC.
+	DatabaseType string `pulumi:"databaseType"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// For SI, hosted on host and for RAC, host on cluster.
+	HostOrCluster string `pulumi:"hostOrCluster"`
+	// Image details containing the subscribed image, its status, version, owner and time of creation.
+	ImageDetails []GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetail `pulumi:"imageDetails"`
+	// Path to the Oracle home.
+	OracleHomePath string `pulumi:"oracleHomePath"`
+	// Details of deploy, update and migrate-listener(only for single Instance database) operations for this resource.
+	PatchActivityDetails []GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetail `pulumi:"patchActivityDetails"`
+	// Patch Compliance Status
+	PatchComplianceDetails []GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetail `pulumi:"patchComplianceDetails"`
+	// Intermediate user to be used for patching, created and maintained by customers. This user requires sudo access to switch as Oracle home owner and root user
+	PatchUser string `pulumi:"patchUser"`
+	// Database release.
+	Release string `pulumi:"release"`
+	// Database release full version.
+	ReleaseFullVersion string `pulumi:"releaseFullVersion"`
+	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	State string `pulumi:"state"`
+	// Path to sudo binary (executable) file
+	SudoFilePath string `pulumi:"sudoFilePath"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// Summary of vulnerabilities found in registered resources grouped by severity.
+	VulnerabilitiesSummaries []GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummary `pulumi:"vulnerabilitiesSummaries"`
+}
+
+// GetPatchManagementDatabasesPatchDatabasesCollectionItemInput is an input type that accepts GetPatchManagementDatabasesPatchDatabasesCollectionItemArgs and GetPatchManagementDatabasesPatchDatabasesCollectionItemOutput values.
+// You can construct a concrete instance of `GetPatchManagementDatabasesPatchDatabasesCollectionItemInput` via:
+//
+//	GetPatchManagementDatabasesPatchDatabasesCollectionItemArgs{...}
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetPatchManagementDatabasesPatchDatabasesCollectionItemOutput() GetPatchManagementDatabasesPatchDatabasesCollectionItemOutput
+	ToGetPatchManagementDatabasesPatchDatabasesCollectionItemOutputWithContext(context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionItemOutput
+}
+
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemArgs struct {
+	// List of additional patches on database.
+	AdditionalPatches GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArrayInput `pulumi:"additionalPatches"`
+	// This is the hashcode representing the list of patches applied.
+	CurrentPatchWatermark pulumi.StringInput `pulumi:"currentPatchWatermark"`
+	// Database ocid.
+	DatabaseId pulumi.StringInput `pulumi:"databaseId"`
+	// Database name.
+	DatabaseName pulumi.StringInput `pulumi:"databaseName"`
+	// Filter by database type. Possible values Single Instance or RAC.
+	DatabaseType pulumi.StringInput `pulumi:"databaseType"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// For SI, hosted on host and for RAC, host on cluster.
+	HostOrCluster pulumi.StringInput `pulumi:"hostOrCluster"`
+	// Image details containing the subscribed image, its status, version, owner and time of creation.
+	ImageDetails GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArrayInput `pulumi:"imageDetails"`
+	// Path to the Oracle home.
+	OracleHomePath pulumi.StringInput `pulumi:"oracleHomePath"`
+	// Details of deploy, update and migrate-listener(only for single Instance database) operations for this resource.
+	PatchActivityDetails GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArrayInput `pulumi:"patchActivityDetails"`
+	// Patch Compliance Status
+	PatchComplianceDetails GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArrayInput `pulumi:"patchComplianceDetails"`
+	// Intermediate user to be used for patching, created and maintained by customers. This user requires sudo access to switch as Oracle home owner and root user
+	PatchUser pulumi.StringInput `pulumi:"patchUser"`
+	// Database release.
+	Release pulumi.StringInput `pulumi:"release"`
+	// Database release full version.
+	ReleaseFullVersion pulumi.StringInput `pulumi:"releaseFullVersion"`
+	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	State pulumi.StringInput `pulumi:"state"`
+	// Path to sudo binary (executable) file
+	SudoFilePath pulumi.StringInput `pulumi:"sudoFilePath"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// Summary of vulnerabilities found in registered resources grouped by severity.
+	VulnerabilitiesSummaries GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArrayInput `pulumi:"vulnerabilitiesSummaries"`
+}
+
+func (GetPatchManagementDatabasesPatchDatabasesCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPatchManagementDatabasesPatchDatabasesCollectionItem)(nil)).Elem()
+}
+
+func (i GetPatchManagementDatabasesPatchDatabasesCollectionItemArgs) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemOutput() GetPatchManagementDatabasesPatchDatabasesCollectionItemOutput {
+	return i.ToGetPatchManagementDatabasesPatchDatabasesCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetPatchManagementDatabasesPatchDatabasesCollectionItemArgs) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemOutputWithContext(ctx context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPatchManagementDatabasesPatchDatabasesCollectionItemOutput)
+}
+
+// GetPatchManagementDatabasesPatchDatabasesCollectionItemArrayInput is an input type that accepts GetPatchManagementDatabasesPatchDatabasesCollectionItemArray and GetPatchManagementDatabasesPatchDatabasesCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetPatchManagementDatabasesPatchDatabasesCollectionItemArrayInput` via:
+//
+//	GetPatchManagementDatabasesPatchDatabasesCollectionItemArray{ GetPatchManagementDatabasesPatchDatabasesCollectionItemArgs{...} }
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetPatchManagementDatabasesPatchDatabasesCollectionItemArrayOutput() GetPatchManagementDatabasesPatchDatabasesCollectionItemArrayOutput
+	ToGetPatchManagementDatabasesPatchDatabasesCollectionItemArrayOutputWithContext(context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionItemArrayOutput
+}
+
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemArray []GetPatchManagementDatabasesPatchDatabasesCollectionItemInput
+
+func (GetPatchManagementDatabasesPatchDatabasesCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPatchManagementDatabasesPatchDatabasesCollectionItem)(nil)).Elem()
+}
+
+func (i GetPatchManagementDatabasesPatchDatabasesCollectionItemArray) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemArrayOutput() GetPatchManagementDatabasesPatchDatabasesCollectionItemArrayOutput {
+	return i.ToGetPatchManagementDatabasesPatchDatabasesCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetPatchManagementDatabasesPatchDatabasesCollectionItemArray) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemArrayOutputWithContext(ctx context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPatchManagementDatabasesPatchDatabasesCollectionItemArrayOutput)
+}
+
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetPatchManagementDatabasesPatchDatabasesCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPatchManagementDatabasesPatchDatabasesCollectionItem)(nil)).Elem()
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemOutput) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemOutput() GetPatchManagementDatabasesPatchDatabasesCollectionItemOutput {
+	return o
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemOutput) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemOutputWithContext(ctx context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionItemOutput {
+	return o
+}
+
+// List of additional patches on database.
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemOutput) AdditionalPatches() GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArrayOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItem) []GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatch {
+		return v.AdditionalPatches
+	}).(GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArrayOutput)
+}
+
+// This is the hashcode representing the list of patches applied.
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemOutput) CurrentPatchWatermark() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItem) string { return v.CurrentPatchWatermark }).(pulumi.StringOutput)
+}
+
+// Database ocid.
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemOutput) DatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItem) string { return v.DatabaseId }).(pulumi.StringOutput)
+}
+
+// Database name.
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemOutput) DatabaseName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItem) string { return v.DatabaseName }).(pulumi.StringOutput)
+}
+
+// Filter by database type. Possible values Single Instance or RAC.
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemOutput) DatabaseType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItem) string { return v.DatabaseType }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// For SI, hosted on host and for RAC, host on cluster.
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemOutput) HostOrCluster() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItem) string { return v.HostOrCluster }).(pulumi.StringOutput)
+}
+
+// Image details containing the subscribed image, its status, version, owner and time of creation.
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemOutput) ImageDetails() GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArrayOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItem) []GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetail {
+		return v.ImageDetails
+	}).(GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArrayOutput)
+}
+
+// Path to the Oracle home.
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemOutput) OracleHomePath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItem) string { return v.OracleHomePath }).(pulumi.StringOutput)
+}
+
+// Details of deploy, update and migrate-listener(only for single Instance database) operations for this resource.
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemOutput) PatchActivityDetails() GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArrayOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItem) []GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetail {
+		return v.PatchActivityDetails
+	}).(GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArrayOutput)
+}
+
+// Patch Compliance Status
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemOutput) PatchComplianceDetails() GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArrayOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItem) []GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetail {
+		return v.PatchComplianceDetails
+	}).(GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArrayOutput)
+}
+
+// Intermediate user to be used for patching, created and maintained by customers. This user requires sudo access to switch as Oracle home owner and root user
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemOutput) PatchUser() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItem) string { return v.PatchUser }).(pulumi.StringOutput)
+}
+
+// Database release.
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemOutput) Release() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItem) string { return v.Release }).(pulumi.StringOutput)
+}
+
+// Database release full version.
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemOutput) ReleaseFullVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItem) string { return v.ReleaseFullVersion }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources their lifecycleState matches the given lifecycleState.
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Path to sudo binary (executable) file
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemOutput) SudoFilePath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItem) string { return v.SudoFilePath }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// Summary of vulnerabilities found in registered resources grouped by severity.
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemOutput) VulnerabilitiesSummaries() GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArrayOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItem) []GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummary {
+		return v.VulnerabilitiesSummaries
+	}).(GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArrayOutput)
+}
+
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPatchManagementDatabasesPatchDatabasesCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPatchManagementDatabasesPatchDatabasesCollectionItem)(nil)).Elem()
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemArrayOutput) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemArrayOutput() GetPatchManagementDatabasesPatchDatabasesCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemArrayOutput) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemArrayOutputWithContext(ctx context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemArrayOutput) Index(i pulumi.IntInput) GetPatchManagementDatabasesPatchDatabasesCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPatchManagementDatabasesPatchDatabasesCollectionItem {
+		return vs[0].([]GetPatchManagementDatabasesPatchDatabasesCollectionItem)[vs[1].(int)]
+	}).(GetPatchManagementDatabasesPatchDatabasesCollectionItemOutput)
+}
+
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatch struct {
+	// Shows if patch is recommended or is an additional patch from an existing database.
+	Category string `pulumi:"category"`
+	// Description of the patch recommendation.
+	Description string `pulumi:"description"`
+	// Id for the patch recommendation.
+	PatchId int `pulumi:"patchId"`
+	// Name for the patch recommendation.
+	PatchName string `pulumi:"patchName"`
+}
+
+// GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchInput is an input type that accepts GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArgs and GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchOutput values.
+// You can construct a concrete instance of `GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchInput` via:
+//
+//	GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArgs{...}
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchInput interface {
+	pulumi.Input
+
+	ToGetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchOutput() GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchOutput
+	ToGetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchOutputWithContext(context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchOutput
+}
+
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArgs struct {
+	// Shows if patch is recommended or is an additional patch from an existing database.
+	Category pulumi.StringInput `pulumi:"category"`
+	// Description of the patch recommendation.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Id for the patch recommendation.
+	PatchId pulumi.IntInput `pulumi:"patchId"`
+	// Name for the patch recommendation.
+	PatchName pulumi.StringInput `pulumi:"patchName"`
+}
+
+func (GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatch)(nil)).Elem()
+}
+
+func (i GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArgs) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchOutput() GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchOutput {
+	return i.ToGetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchOutputWithContext(context.Background())
+}
+
+func (i GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArgs) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchOutputWithContext(ctx context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchOutput)
+}
+
+// GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArrayInput is an input type that accepts GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArray and GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArrayOutput values.
+// You can construct a concrete instance of `GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArrayInput` via:
+//
+//	GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArray{ GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArgs{...} }
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArrayInput interface {
+	pulumi.Input
+
+	ToGetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArrayOutput() GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArrayOutput
+	ToGetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArrayOutputWithContext(context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArrayOutput
+}
+
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArray []GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchInput
+
+func (GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatch)(nil)).Elem()
+}
+
+func (i GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArray) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArrayOutput() GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArrayOutput {
+	return i.ToGetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArrayOutputWithContext(context.Background())
+}
+
+func (i GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArray) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArrayOutputWithContext(ctx context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArrayOutput)
+}
+
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchOutput struct{ *pulumi.OutputState }
+
+func (GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatch)(nil)).Elem()
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchOutput) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchOutput() GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchOutput {
+	return o
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchOutput) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchOutputWithContext(ctx context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchOutput {
+	return o
+}
+
+// Shows if patch is recommended or is an additional patch from an existing database.
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchOutput) Category() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatch) string {
+		return v.Category
+	}).(pulumi.StringOutput)
+}
+
+// Description of the patch recommendation.
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatch) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// Id for the patch recommendation.
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchOutput) PatchId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatch) int { return v.PatchId }).(pulumi.IntOutput)
+}
+
+// Name for the patch recommendation.
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchOutput) PatchName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatch) string {
+		return v.PatchName
+	}).(pulumi.StringOutput)
+}
+
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatch)(nil)).Elem()
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArrayOutput) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArrayOutput() GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArrayOutput {
+	return o
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArrayOutput) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArrayOutputWithContext(ctx context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArrayOutput {
+	return o
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArrayOutput) Index(i pulumi.IntInput) GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatch {
+		return vs[0].([]GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatch)[vs[1].(int)]
+	}).(GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchOutput)
+}
+
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetail struct {
+	// Name of the person who created the image.
+	CreatedBy string `pulumi:"createdBy"`
+	// Name of the image version marked as current of the image.
+	CurrentVersion string `pulumi:"currentVersion"`
+	// Subscribed image
+	ImageId string `pulumi:"imageId"`
+	// Owner of the image.
+	ImageOwner string `pulumi:"imageOwner"`
+	// Image status.
+	ImageStatus string `pulumi:"imageStatus"`
+	// Release version of the image.
+	ImageVersion string `pulumi:"imageVersion"`
+	// Subscribed image.
+	SubscribedImage string `pulumi:"subscribedImage"`
+	// Date when the image was created.
+	TimeImageCreation string `pulumi:"timeImageCreation"`
+	// An image version name, that is up to date and has no recommendations.
+	UpToDateImageVersion string `pulumi:"upToDateImageVersion"`
+}
+
+// GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailInput is an input type that accepts GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArgs and GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailOutput values.
+// You can construct a concrete instance of `GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailInput` via:
+//
+//	GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArgs{...}
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailInput interface {
+	pulumi.Input
+
+	ToGetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailOutput() GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailOutput
+	ToGetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailOutputWithContext(context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailOutput
+}
+
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArgs struct {
+	// Name of the person who created the image.
+	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	// Name of the image version marked as current of the image.
+	CurrentVersion pulumi.StringInput `pulumi:"currentVersion"`
+	// Subscribed image
+	ImageId pulumi.StringInput `pulumi:"imageId"`
+	// Owner of the image.
+	ImageOwner pulumi.StringInput `pulumi:"imageOwner"`
+	// Image status.
+	ImageStatus pulumi.StringInput `pulumi:"imageStatus"`
+	// Release version of the image.
+	ImageVersion pulumi.StringInput `pulumi:"imageVersion"`
+	// Subscribed image.
+	SubscribedImage pulumi.StringInput `pulumi:"subscribedImage"`
+	// Date when the image was created.
+	TimeImageCreation pulumi.StringInput `pulumi:"timeImageCreation"`
+	// An image version name, that is up to date and has no recommendations.
+	UpToDateImageVersion pulumi.StringInput `pulumi:"upToDateImageVersion"`
+}
+
+func (GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetail)(nil)).Elem()
+}
+
+func (i GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArgs) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailOutput() GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailOutput {
+	return i.ToGetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailOutputWithContext(context.Background())
+}
+
+func (i GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArgs) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailOutputWithContext(ctx context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailOutput)
+}
+
+// GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArrayInput is an input type that accepts GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArray and GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArrayOutput values.
+// You can construct a concrete instance of `GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArrayInput` via:
+//
+//	GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArray{ GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArgs{...} }
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArrayOutput() GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArrayOutput
+	ToGetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArrayOutputWithContext(context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArrayOutput
+}
+
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArray []GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailInput
+
+func (GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetail)(nil)).Elem()
+}
+
+func (i GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArray) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArrayOutput() GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArrayOutput {
+	return i.ToGetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArray) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArrayOutputWithContext(ctx context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArrayOutput)
+}
+
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetail)(nil)).Elem()
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailOutput) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailOutput() GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailOutput {
+	return o
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailOutput) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailOutputWithContext(ctx context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailOutput {
+	return o
+}
+
+// Name of the person who created the image.
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetail) string { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
+// Name of the image version marked as current of the image.
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailOutput) CurrentVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetail) string {
+		return v.CurrentVersion
+	}).(pulumi.StringOutput)
+}
+
+// Subscribed image
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailOutput) ImageId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetail) string { return v.ImageId }).(pulumi.StringOutput)
+}
+
+// Owner of the image.
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailOutput) ImageOwner() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetail) string { return v.ImageOwner }).(pulumi.StringOutput)
+}
+
+// Image status.
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailOutput) ImageStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetail) string {
+		return v.ImageStatus
+	}).(pulumi.StringOutput)
+}
+
+// Release version of the image.
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailOutput) ImageVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetail) string {
+		return v.ImageVersion
+	}).(pulumi.StringOutput)
+}
+
+// Subscribed image.
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailOutput) SubscribedImage() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetail) string {
+		return v.SubscribedImage
+	}).(pulumi.StringOutput)
+}
+
+// Date when the image was created.
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailOutput) TimeImageCreation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetail) string {
+		return v.TimeImageCreation
+	}).(pulumi.StringOutput)
+}
+
+// An image version name, that is up to date and has no recommendations.
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailOutput) UpToDateImageVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetail) string {
+		return v.UpToDateImageVersion
+	}).(pulumi.StringOutput)
+}
+
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetail)(nil)).Elem()
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArrayOutput) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArrayOutput() GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArrayOutput {
+	return o
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArrayOutput) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArrayOutputWithContext(ctx context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArrayOutput {
+	return o
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArrayOutput) Index(i pulumi.IntInput) GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetail {
+		return vs[0].([]GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetail)[vs[1].(int)]
+	}).(GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailOutput)
+}
+
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetail struct {
+	// Operation Identifier for deploy operation.
+	DeployOperationId string `pulumi:"deployOperationId"`
+	// Status of deploy operation.
+	DeployStatus string `pulumi:"deployStatus"`
+	// Task identifier for deploy operation.
+	DeployTaskId string `pulumi:"deployTaskId"`
+	// Operation Identifier for migrate listener operation.
+	MigrateListenerOperationId string `pulumi:"migrateListenerOperationId"`
+	// Status of migrate listener operation.
+	MigrateListenerStatus string `pulumi:"migrateListenerStatus"`
+	// Task identifier for migrate listener operation.
+	MigrateListenerTaskId string `pulumi:"migrateListenerTaskId"`
+	// Operation Identifier for update operation.
+	UpdateOperationId string `pulumi:"updateOperationId"`
+	// Status of update operation.
+	UpdateStatus string `pulumi:"updateStatus"`
+	// Task identifier for update operation.
+	UpdateTaskId string `pulumi:"updateTaskId"`
+}
+
+// GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailInput is an input type that accepts GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArgs and GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailOutput values.
+// You can construct a concrete instance of `GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailInput` via:
+//
+//	GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArgs{...}
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailInput interface {
+	pulumi.Input
+
+	ToGetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailOutput() GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailOutput
+	ToGetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailOutputWithContext(context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailOutput
+}
+
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArgs struct {
+	// Operation Identifier for deploy operation.
+	DeployOperationId pulumi.StringInput `pulumi:"deployOperationId"`
+	// Status of deploy operation.
+	DeployStatus pulumi.StringInput `pulumi:"deployStatus"`
+	// Task identifier for deploy operation.
+	DeployTaskId pulumi.StringInput `pulumi:"deployTaskId"`
+	// Operation Identifier for migrate listener operation.
+	MigrateListenerOperationId pulumi.StringInput `pulumi:"migrateListenerOperationId"`
+	// Status of migrate listener operation.
+	MigrateListenerStatus pulumi.StringInput `pulumi:"migrateListenerStatus"`
+	// Task identifier for migrate listener operation.
+	MigrateListenerTaskId pulumi.StringInput `pulumi:"migrateListenerTaskId"`
+	// Operation Identifier for update operation.
+	UpdateOperationId pulumi.StringInput `pulumi:"updateOperationId"`
+	// Status of update operation.
+	UpdateStatus pulumi.StringInput `pulumi:"updateStatus"`
+	// Task identifier for update operation.
+	UpdateTaskId pulumi.StringInput `pulumi:"updateTaskId"`
+}
+
+func (GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetail)(nil)).Elem()
+}
+
+func (i GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArgs) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailOutput() GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailOutput {
+	return i.ToGetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailOutputWithContext(context.Background())
+}
+
+func (i GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArgs) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailOutputWithContext(ctx context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailOutput)
+}
+
+// GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArrayInput is an input type that accepts GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArray and GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArrayOutput values.
+// You can construct a concrete instance of `GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArrayInput` via:
+//
+//	GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArray{ GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArgs{...} }
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArrayOutput() GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArrayOutput
+	ToGetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArrayOutputWithContext(context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArrayOutput
+}
+
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArray []GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailInput
+
+func (GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetail)(nil)).Elem()
+}
+
+func (i GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArray) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArrayOutput() GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArrayOutput {
+	return i.ToGetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArray) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArrayOutputWithContext(ctx context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArrayOutput)
+}
+
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetail)(nil)).Elem()
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailOutput) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailOutput() GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailOutput {
+	return o
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailOutput) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailOutputWithContext(ctx context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailOutput {
+	return o
+}
+
+// Operation Identifier for deploy operation.
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailOutput) DeployOperationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetail) string {
+		return v.DeployOperationId
+	}).(pulumi.StringOutput)
+}
+
+// Status of deploy operation.
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailOutput) DeployStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetail) string {
+		return v.DeployStatus
+	}).(pulumi.StringOutput)
+}
+
+// Task identifier for deploy operation.
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailOutput) DeployTaskId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetail) string {
+		return v.DeployTaskId
+	}).(pulumi.StringOutput)
+}
+
+// Operation Identifier for migrate listener operation.
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailOutput) MigrateListenerOperationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetail) string {
+		return v.MigrateListenerOperationId
+	}).(pulumi.StringOutput)
+}
+
+// Status of migrate listener operation.
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailOutput) MigrateListenerStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetail) string {
+		return v.MigrateListenerStatus
+	}).(pulumi.StringOutput)
+}
+
+// Task identifier for migrate listener operation.
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailOutput) MigrateListenerTaskId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetail) string {
+		return v.MigrateListenerTaskId
+	}).(pulumi.StringOutput)
+}
+
+// Operation Identifier for update operation.
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailOutput) UpdateOperationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetail) string {
+		return v.UpdateOperationId
+	}).(pulumi.StringOutput)
+}
+
+// Status of update operation.
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailOutput) UpdateStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetail) string {
+		return v.UpdateStatus
+	}).(pulumi.StringOutput)
+}
+
+// Task identifier for update operation.
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailOutput) UpdateTaskId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetail) string {
+		return v.UpdateTaskId
+	}).(pulumi.StringOutput)
+}
+
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetail)(nil)).Elem()
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArrayOutput) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArrayOutput() GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArrayOutput {
+	return o
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArrayOutput) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArrayOutputWithContext(ctx context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArrayOutput {
+	return o
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArrayOutput) Index(i pulumi.IntInput) GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetail {
+		return vs[0].([]GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetail)[vs[1].(int)]
+	}).(GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailOutput)
+}
+
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetail struct {
+	// Patch compliance status.
+	PatchComplianceStatus string `pulumi:"patchComplianceStatus"`
+	// Resource patch compliance version name.
+	PatchComplianceVersion string `pulumi:"patchComplianceVersion"`
+}
+
+// GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailInput is an input type that accepts GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArgs and GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailOutput values.
+// You can construct a concrete instance of `GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailInput` via:
+//
+//	GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArgs{...}
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailInput interface {
+	pulumi.Input
+
+	ToGetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailOutput() GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailOutput
+	ToGetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailOutputWithContext(context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailOutput
+}
+
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArgs struct {
+	// Patch compliance status.
+	PatchComplianceStatus pulumi.StringInput `pulumi:"patchComplianceStatus"`
+	// Resource patch compliance version name.
+	PatchComplianceVersion pulumi.StringInput `pulumi:"patchComplianceVersion"`
+}
+
+func (GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetail)(nil)).Elem()
+}
+
+func (i GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArgs) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailOutput() GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailOutput {
+	return i.ToGetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailOutputWithContext(context.Background())
+}
+
+func (i GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArgs) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailOutputWithContext(ctx context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailOutput)
+}
+
+// GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArrayInput is an input type that accepts GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArray and GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArrayOutput values.
+// You can construct a concrete instance of `GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArrayInput` via:
+//
+//	GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArray{ GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArgs{...} }
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArrayOutput() GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArrayOutput
+	ToGetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArrayOutputWithContext(context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArrayOutput
+}
+
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArray []GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailInput
+
+func (GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetail)(nil)).Elem()
+}
+
+func (i GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArray) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArrayOutput() GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArrayOutput {
+	return i.ToGetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArray) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArrayOutputWithContext(ctx context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArrayOutput)
+}
+
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetail)(nil)).Elem()
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailOutput) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailOutput() GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailOutput {
+	return o
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailOutput) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailOutputWithContext(ctx context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailOutput {
+	return o
+}
+
+// Patch compliance status.
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailOutput) PatchComplianceStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetail) string {
+		return v.PatchComplianceStatus
+	}).(pulumi.StringOutput)
+}
+
+// Resource patch compliance version name.
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailOutput) PatchComplianceVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetail) string {
+		return v.PatchComplianceVersion
+	}).(pulumi.StringOutput)
+}
+
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetail)(nil)).Elem()
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArrayOutput) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArrayOutput() GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArrayOutput {
+	return o
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArrayOutput) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArrayOutputWithContext(ctx context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArrayOutput {
+	return o
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArrayOutput) Index(i pulumi.IntInput) GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetail {
+		return vs[0].([]GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetail)[vs[1].(int)]
+	}).(GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailOutput)
+}
+
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummary struct {
+	Critical int `pulumi:"critical"`
+	High     int `pulumi:"high"`
+	Info     int `pulumi:"info"`
+	Low      int `pulumi:"low"`
+	Medium   int `pulumi:"medium"`
+	Total    int `pulumi:"total"`
+}
+
+// GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryInput is an input type that accepts GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArgs and GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryOutput values.
+// You can construct a concrete instance of `GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryInput` via:
+//
+//	GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArgs{...}
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryInput interface {
+	pulumi.Input
+
+	ToGetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryOutput() GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryOutput
+	ToGetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryOutputWithContext(context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryOutput
+}
+
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArgs struct {
+	Critical pulumi.IntInput `pulumi:"critical"`
+	High     pulumi.IntInput `pulumi:"high"`
+	Info     pulumi.IntInput `pulumi:"info"`
+	Low      pulumi.IntInput `pulumi:"low"`
+	Medium   pulumi.IntInput `pulumi:"medium"`
+	Total    pulumi.IntInput `pulumi:"total"`
+}
+
+func (GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummary)(nil)).Elem()
+}
+
+func (i GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArgs) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryOutput() GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryOutput {
+	return i.ToGetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryOutputWithContext(context.Background())
+}
+
+func (i GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArgs) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryOutputWithContext(ctx context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryOutput)
+}
+
+// GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArrayInput is an input type that accepts GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArray and GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArrayOutput values.
+// You can construct a concrete instance of `GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArrayInput` via:
+//
+//	GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArray{ GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArgs{...} }
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArrayInput interface {
+	pulumi.Input
+
+	ToGetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArrayOutput() GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArrayOutput
+	ToGetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArrayOutputWithContext(context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArrayOutput
+}
+
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArray []GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryInput
+
+func (GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummary)(nil)).Elem()
+}
+
+func (i GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArray) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArrayOutput() GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArrayOutput {
+	return i.ToGetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArrayOutputWithContext(context.Background())
+}
+
+func (i GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArray) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArrayOutputWithContext(ctx context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArrayOutput)
+}
+
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryOutput struct{ *pulumi.OutputState }
+
+func (GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummary)(nil)).Elem()
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryOutput) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryOutput() GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryOutput {
+	return o
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryOutput) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryOutputWithContext(ctx context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryOutput {
+	return o
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryOutput) Critical() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummary) int {
+		return v.Critical
+	}).(pulumi.IntOutput)
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryOutput) High() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummary) int {
+		return v.High
+	}).(pulumi.IntOutput)
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryOutput) Info() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummary) int {
+		return v.Info
+	}).(pulumi.IntOutput)
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryOutput) Low() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummary) int {
+		return v.Low
+	}).(pulumi.IntOutput)
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryOutput) Medium() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummary) int {
+		return v.Medium
+	}).(pulumi.IntOutput)
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryOutput) Total() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummary) int {
+		return v.Total
+	}).(pulumi.IntOutput)
+}
+
+type GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummary)(nil)).Elem()
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArrayOutput) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArrayOutput() GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArrayOutput {
+	return o
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArrayOutput) ToGetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArrayOutputWithContext(ctx context.Context) GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArrayOutput {
+	return o
+}
+
+func (o GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArrayOutput) Index(i pulumi.IntInput) GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummary {
+		return vs[0].([]GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummary)[vs[1].(int)]
+	}).(GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryOutput)
+}
+
+type GetPatchManagementImagesPatchRecommendationSummary struct {
+	ImagePatchRecommendationsCount int `pulumi:"imagePatchRecommendationsCount"`
+	TotalImagesCount               int `pulumi:"totalImagesCount"`
+	UpToDateImagesCount            int `pulumi:"upToDateImagesCount"`
+}
+
+// GetPatchManagementImagesPatchRecommendationSummaryInput is an input type that accepts GetPatchManagementImagesPatchRecommendationSummaryArgs and GetPatchManagementImagesPatchRecommendationSummaryOutput values.
+// You can construct a concrete instance of `GetPatchManagementImagesPatchRecommendationSummaryInput` via:
+//
+//	GetPatchManagementImagesPatchRecommendationSummaryArgs{...}
+type GetPatchManagementImagesPatchRecommendationSummaryInput interface {
+	pulumi.Input
+
+	ToGetPatchManagementImagesPatchRecommendationSummaryOutput() GetPatchManagementImagesPatchRecommendationSummaryOutput
+	ToGetPatchManagementImagesPatchRecommendationSummaryOutputWithContext(context.Context) GetPatchManagementImagesPatchRecommendationSummaryOutput
+}
+
+type GetPatchManagementImagesPatchRecommendationSummaryArgs struct {
+	ImagePatchRecommendationsCount pulumi.IntInput `pulumi:"imagePatchRecommendationsCount"`
+	TotalImagesCount               pulumi.IntInput `pulumi:"totalImagesCount"`
+	UpToDateImagesCount            pulumi.IntInput `pulumi:"upToDateImagesCount"`
+}
+
+func (GetPatchManagementImagesPatchRecommendationSummaryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPatchManagementImagesPatchRecommendationSummary)(nil)).Elem()
+}
+
+func (i GetPatchManagementImagesPatchRecommendationSummaryArgs) ToGetPatchManagementImagesPatchRecommendationSummaryOutput() GetPatchManagementImagesPatchRecommendationSummaryOutput {
+	return i.ToGetPatchManagementImagesPatchRecommendationSummaryOutputWithContext(context.Background())
+}
+
+func (i GetPatchManagementImagesPatchRecommendationSummaryArgs) ToGetPatchManagementImagesPatchRecommendationSummaryOutputWithContext(ctx context.Context) GetPatchManagementImagesPatchRecommendationSummaryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPatchManagementImagesPatchRecommendationSummaryOutput)
+}
+
+// GetPatchManagementImagesPatchRecommendationSummaryArrayInput is an input type that accepts GetPatchManagementImagesPatchRecommendationSummaryArray and GetPatchManagementImagesPatchRecommendationSummaryArrayOutput values.
+// You can construct a concrete instance of `GetPatchManagementImagesPatchRecommendationSummaryArrayInput` via:
+//
+//	GetPatchManagementImagesPatchRecommendationSummaryArray{ GetPatchManagementImagesPatchRecommendationSummaryArgs{...} }
+type GetPatchManagementImagesPatchRecommendationSummaryArrayInput interface {
+	pulumi.Input
+
+	ToGetPatchManagementImagesPatchRecommendationSummaryArrayOutput() GetPatchManagementImagesPatchRecommendationSummaryArrayOutput
+	ToGetPatchManagementImagesPatchRecommendationSummaryArrayOutputWithContext(context.Context) GetPatchManagementImagesPatchRecommendationSummaryArrayOutput
+}
+
+type GetPatchManagementImagesPatchRecommendationSummaryArray []GetPatchManagementImagesPatchRecommendationSummaryInput
+
+func (GetPatchManagementImagesPatchRecommendationSummaryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPatchManagementImagesPatchRecommendationSummary)(nil)).Elem()
+}
+
+func (i GetPatchManagementImagesPatchRecommendationSummaryArray) ToGetPatchManagementImagesPatchRecommendationSummaryArrayOutput() GetPatchManagementImagesPatchRecommendationSummaryArrayOutput {
+	return i.ToGetPatchManagementImagesPatchRecommendationSummaryArrayOutputWithContext(context.Background())
+}
+
+func (i GetPatchManagementImagesPatchRecommendationSummaryArray) ToGetPatchManagementImagesPatchRecommendationSummaryArrayOutputWithContext(ctx context.Context) GetPatchManagementImagesPatchRecommendationSummaryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPatchManagementImagesPatchRecommendationSummaryArrayOutput)
+}
+
+type GetPatchManagementImagesPatchRecommendationSummaryOutput struct{ *pulumi.OutputState }
+
+func (GetPatchManagementImagesPatchRecommendationSummaryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPatchManagementImagesPatchRecommendationSummary)(nil)).Elem()
+}
+
+func (o GetPatchManagementImagesPatchRecommendationSummaryOutput) ToGetPatchManagementImagesPatchRecommendationSummaryOutput() GetPatchManagementImagesPatchRecommendationSummaryOutput {
+	return o
+}
+
+func (o GetPatchManagementImagesPatchRecommendationSummaryOutput) ToGetPatchManagementImagesPatchRecommendationSummaryOutputWithContext(ctx context.Context) GetPatchManagementImagesPatchRecommendationSummaryOutput {
+	return o
+}
+
+func (o GetPatchManagementImagesPatchRecommendationSummaryOutput) ImagePatchRecommendationsCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPatchManagementImagesPatchRecommendationSummary) int {
+		return v.ImagePatchRecommendationsCount
+	}).(pulumi.IntOutput)
+}
+
+func (o GetPatchManagementImagesPatchRecommendationSummaryOutput) TotalImagesCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPatchManagementImagesPatchRecommendationSummary) int { return v.TotalImagesCount }).(pulumi.IntOutput)
+}
+
+func (o GetPatchManagementImagesPatchRecommendationSummaryOutput) UpToDateImagesCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPatchManagementImagesPatchRecommendationSummary) int { return v.UpToDateImagesCount }).(pulumi.IntOutput)
+}
+
+type GetPatchManagementImagesPatchRecommendationSummaryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPatchManagementImagesPatchRecommendationSummaryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPatchManagementImagesPatchRecommendationSummary)(nil)).Elem()
+}
+
+func (o GetPatchManagementImagesPatchRecommendationSummaryArrayOutput) ToGetPatchManagementImagesPatchRecommendationSummaryArrayOutput() GetPatchManagementImagesPatchRecommendationSummaryArrayOutput {
+	return o
+}
+
+func (o GetPatchManagementImagesPatchRecommendationSummaryArrayOutput) ToGetPatchManagementImagesPatchRecommendationSummaryArrayOutputWithContext(ctx context.Context) GetPatchManagementImagesPatchRecommendationSummaryArrayOutput {
+	return o
+}
+
+func (o GetPatchManagementImagesPatchRecommendationSummaryArrayOutput) Index(i pulumi.IntInput) GetPatchManagementImagesPatchRecommendationSummaryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPatchManagementImagesPatchRecommendationSummary {
+		return vs[0].([]GetPatchManagementImagesPatchRecommendationSummary)[vs[1].(int)]
+	}).(GetPatchManagementImagesPatchRecommendationSummaryOutput)
+}
+
+type GetPatchManagementPatchOperationsSummary struct {
+	FailedPatchOpsCount     int `pulumi:"failedPatchOpsCount"`
+	RunningPatchOpsCount    int `pulumi:"runningPatchOpsCount"`
+	ScheduledPatchOpsCount  int `pulumi:"scheduledPatchOpsCount"`
+	SuccessfulPatchOpsCount int `pulumi:"successfulPatchOpsCount"`
+	WarningsPatchOpsCount   int `pulumi:"warningsPatchOpsCount"`
+}
+
+// GetPatchManagementPatchOperationsSummaryInput is an input type that accepts GetPatchManagementPatchOperationsSummaryArgs and GetPatchManagementPatchOperationsSummaryOutput values.
+// You can construct a concrete instance of `GetPatchManagementPatchOperationsSummaryInput` via:
+//
+//	GetPatchManagementPatchOperationsSummaryArgs{...}
+type GetPatchManagementPatchOperationsSummaryInput interface {
+	pulumi.Input
+
+	ToGetPatchManagementPatchOperationsSummaryOutput() GetPatchManagementPatchOperationsSummaryOutput
+	ToGetPatchManagementPatchOperationsSummaryOutputWithContext(context.Context) GetPatchManagementPatchOperationsSummaryOutput
+}
+
+type GetPatchManagementPatchOperationsSummaryArgs struct {
+	FailedPatchOpsCount     pulumi.IntInput `pulumi:"failedPatchOpsCount"`
+	RunningPatchOpsCount    pulumi.IntInput `pulumi:"runningPatchOpsCount"`
+	ScheduledPatchOpsCount  pulumi.IntInput `pulumi:"scheduledPatchOpsCount"`
+	SuccessfulPatchOpsCount pulumi.IntInput `pulumi:"successfulPatchOpsCount"`
+	WarningsPatchOpsCount   pulumi.IntInput `pulumi:"warningsPatchOpsCount"`
+}
+
+func (GetPatchManagementPatchOperationsSummaryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPatchManagementPatchOperationsSummary)(nil)).Elem()
+}
+
+func (i GetPatchManagementPatchOperationsSummaryArgs) ToGetPatchManagementPatchOperationsSummaryOutput() GetPatchManagementPatchOperationsSummaryOutput {
+	return i.ToGetPatchManagementPatchOperationsSummaryOutputWithContext(context.Background())
+}
+
+func (i GetPatchManagementPatchOperationsSummaryArgs) ToGetPatchManagementPatchOperationsSummaryOutputWithContext(ctx context.Context) GetPatchManagementPatchOperationsSummaryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPatchManagementPatchOperationsSummaryOutput)
+}
+
+// GetPatchManagementPatchOperationsSummaryArrayInput is an input type that accepts GetPatchManagementPatchOperationsSummaryArray and GetPatchManagementPatchOperationsSummaryArrayOutput values.
+// You can construct a concrete instance of `GetPatchManagementPatchOperationsSummaryArrayInput` via:
+//
+//	GetPatchManagementPatchOperationsSummaryArray{ GetPatchManagementPatchOperationsSummaryArgs{...} }
+type GetPatchManagementPatchOperationsSummaryArrayInput interface {
+	pulumi.Input
+
+	ToGetPatchManagementPatchOperationsSummaryArrayOutput() GetPatchManagementPatchOperationsSummaryArrayOutput
+	ToGetPatchManagementPatchOperationsSummaryArrayOutputWithContext(context.Context) GetPatchManagementPatchOperationsSummaryArrayOutput
+}
+
+type GetPatchManagementPatchOperationsSummaryArray []GetPatchManagementPatchOperationsSummaryInput
+
+func (GetPatchManagementPatchOperationsSummaryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPatchManagementPatchOperationsSummary)(nil)).Elem()
+}
+
+func (i GetPatchManagementPatchOperationsSummaryArray) ToGetPatchManagementPatchOperationsSummaryArrayOutput() GetPatchManagementPatchOperationsSummaryArrayOutput {
+	return i.ToGetPatchManagementPatchOperationsSummaryArrayOutputWithContext(context.Background())
+}
+
+func (i GetPatchManagementPatchOperationsSummaryArray) ToGetPatchManagementPatchOperationsSummaryArrayOutputWithContext(ctx context.Context) GetPatchManagementPatchOperationsSummaryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPatchManagementPatchOperationsSummaryArrayOutput)
+}
+
+type GetPatchManagementPatchOperationsSummaryOutput struct{ *pulumi.OutputState }
+
+func (GetPatchManagementPatchOperationsSummaryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPatchManagementPatchOperationsSummary)(nil)).Elem()
+}
+
+func (o GetPatchManagementPatchOperationsSummaryOutput) ToGetPatchManagementPatchOperationsSummaryOutput() GetPatchManagementPatchOperationsSummaryOutput {
+	return o
+}
+
+func (o GetPatchManagementPatchOperationsSummaryOutput) ToGetPatchManagementPatchOperationsSummaryOutputWithContext(ctx context.Context) GetPatchManagementPatchOperationsSummaryOutput {
+	return o
+}
+
+func (o GetPatchManagementPatchOperationsSummaryOutput) FailedPatchOpsCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPatchManagementPatchOperationsSummary) int { return v.FailedPatchOpsCount }).(pulumi.IntOutput)
+}
+
+func (o GetPatchManagementPatchOperationsSummaryOutput) RunningPatchOpsCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPatchManagementPatchOperationsSummary) int { return v.RunningPatchOpsCount }).(pulumi.IntOutput)
+}
+
+func (o GetPatchManagementPatchOperationsSummaryOutput) ScheduledPatchOpsCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPatchManagementPatchOperationsSummary) int { return v.ScheduledPatchOpsCount }).(pulumi.IntOutput)
+}
+
+func (o GetPatchManagementPatchOperationsSummaryOutput) SuccessfulPatchOpsCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPatchManagementPatchOperationsSummary) int { return v.SuccessfulPatchOpsCount }).(pulumi.IntOutput)
+}
+
+func (o GetPatchManagementPatchOperationsSummaryOutput) WarningsPatchOpsCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPatchManagementPatchOperationsSummary) int { return v.WarningsPatchOpsCount }).(pulumi.IntOutput)
+}
+
+type GetPatchManagementPatchOperationsSummaryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPatchManagementPatchOperationsSummaryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPatchManagementPatchOperationsSummary)(nil)).Elem()
+}
+
+func (o GetPatchManagementPatchOperationsSummaryArrayOutput) ToGetPatchManagementPatchOperationsSummaryArrayOutput() GetPatchManagementPatchOperationsSummaryArrayOutput {
+	return o
+}
+
+func (o GetPatchManagementPatchOperationsSummaryArrayOutput) ToGetPatchManagementPatchOperationsSummaryArrayOutputWithContext(ctx context.Context) GetPatchManagementPatchOperationsSummaryArrayOutput {
+	return o
+}
+
+func (o GetPatchManagementPatchOperationsSummaryArrayOutput) Index(i pulumi.IntInput) GetPatchManagementPatchOperationsSummaryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPatchManagementPatchOperationsSummary {
+		return vs[0].([]GetPatchManagementPatchOperationsSummary)[vs[1].(int)]
+	}).(GetPatchManagementPatchOperationsSummaryOutput)
+}
+
+type GetPatchManagementResource struct {
+	// The agent Id of the agent managing the resource.
+	AgentId string `pulumi:"agentId"`
+	// The connector Id of the resource.
+	ConnectorId string `pulumi:"connectorId"`
+	// The platform type of the resource.
+	DbPlatformType string `pulumi:"dbPlatformType"`
+	// The version of the resource.
+	DbVersion string `pulumi:"dbVersion"`
+	// The deployment type of the resource.
+	DeploymentType string `pulumi:"deploymentType"`
+	// host info objects
+	HostInfos []GetPatchManagementResourceHostInfo `pulumi:"hostInfos"`
+	// True if it is a cluster db.
+	IsClusterDb bool `pulumi:"isClusterDb"`
+	// The License Type of the resource.
+	LicenseType string `pulumi:"licenseType"`
+	// The compartmentId of the resource.
+	ResourceCompartmentId string `pulumi:"resourceCompartmentId"`
+	// The Id of the resource.
+	ResourceId string `pulumi:"resourceId"`
+	// The name of the resource.
+	ResourceName string `pulumi:"resourceName"`
+	// The type of the resource.
+	ResourceType string `pulumi:"resourceType"`
+}
+
+// GetPatchManagementResourceInput is an input type that accepts GetPatchManagementResourceArgs and GetPatchManagementResourceOutput values.
+// You can construct a concrete instance of `GetPatchManagementResourceInput` via:
+//
+//	GetPatchManagementResourceArgs{...}
+type GetPatchManagementResourceInput interface {
+	pulumi.Input
+
+	ToGetPatchManagementResourceOutput() GetPatchManagementResourceOutput
+	ToGetPatchManagementResourceOutputWithContext(context.Context) GetPatchManagementResourceOutput
+}
+
+type GetPatchManagementResourceArgs struct {
+	// The agent Id of the agent managing the resource.
+	AgentId pulumi.StringInput `pulumi:"agentId"`
+	// The connector Id of the resource.
+	ConnectorId pulumi.StringInput `pulumi:"connectorId"`
+	// The platform type of the resource.
+	DbPlatformType pulumi.StringInput `pulumi:"dbPlatformType"`
+	// The version of the resource.
+	DbVersion pulumi.StringInput `pulumi:"dbVersion"`
+	// The deployment type of the resource.
+	DeploymentType pulumi.StringInput `pulumi:"deploymentType"`
+	// host info objects
+	HostInfos GetPatchManagementResourceHostInfoArrayInput `pulumi:"hostInfos"`
+	// True if it is a cluster db.
+	IsClusterDb pulumi.BoolInput `pulumi:"isClusterDb"`
+	// The License Type of the resource.
+	LicenseType pulumi.StringInput `pulumi:"licenseType"`
+	// The compartmentId of the resource.
+	ResourceCompartmentId pulumi.StringInput `pulumi:"resourceCompartmentId"`
+	// The Id of the resource.
+	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+	// The name of the resource.
+	ResourceName pulumi.StringInput `pulumi:"resourceName"`
+	// The type of the resource.
+	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+}
+
+func (GetPatchManagementResourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPatchManagementResource)(nil)).Elem()
+}
+
+func (i GetPatchManagementResourceArgs) ToGetPatchManagementResourceOutput() GetPatchManagementResourceOutput {
+	return i.ToGetPatchManagementResourceOutputWithContext(context.Background())
+}
+
+func (i GetPatchManagementResourceArgs) ToGetPatchManagementResourceOutputWithContext(ctx context.Context) GetPatchManagementResourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPatchManagementResourceOutput)
+}
+
+// GetPatchManagementResourceArrayInput is an input type that accepts GetPatchManagementResourceArray and GetPatchManagementResourceArrayOutput values.
+// You can construct a concrete instance of `GetPatchManagementResourceArrayInput` via:
+//
+//	GetPatchManagementResourceArray{ GetPatchManagementResourceArgs{...} }
+type GetPatchManagementResourceArrayInput interface {
+	pulumi.Input
+
+	ToGetPatchManagementResourceArrayOutput() GetPatchManagementResourceArrayOutput
+	ToGetPatchManagementResourceArrayOutputWithContext(context.Context) GetPatchManagementResourceArrayOutput
+}
+
+type GetPatchManagementResourceArray []GetPatchManagementResourceInput
+
+func (GetPatchManagementResourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPatchManagementResource)(nil)).Elem()
+}
+
+func (i GetPatchManagementResourceArray) ToGetPatchManagementResourceArrayOutput() GetPatchManagementResourceArrayOutput {
+	return i.ToGetPatchManagementResourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetPatchManagementResourceArray) ToGetPatchManagementResourceArrayOutputWithContext(ctx context.Context) GetPatchManagementResourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPatchManagementResourceArrayOutput)
+}
+
+type GetPatchManagementResourceOutput struct{ *pulumi.OutputState }
+
+func (GetPatchManagementResourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPatchManagementResource)(nil)).Elem()
+}
+
+func (o GetPatchManagementResourceOutput) ToGetPatchManagementResourceOutput() GetPatchManagementResourceOutput {
+	return o
+}
+
+func (o GetPatchManagementResourceOutput) ToGetPatchManagementResourceOutputWithContext(ctx context.Context) GetPatchManagementResourceOutput {
+	return o
+}
+
+// The agent Id of the agent managing the resource.
+func (o GetPatchManagementResourceOutput) AgentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementResource) string { return v.AgentId }).(pulumi.StringOutput)
+}
+
+// The connector Id of the resource.
+func (o GetPatchManagementResourceOutput) ConnectorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementResource) string { return v.ConnectorId }).(pulumi.StringOutput)
+}
+
+// The platform type of the resource.
+func (o GetPatchManagementResourceOutput) DbPlatformType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementResource) string { return v.DbPlatformType }).(pulumi.StringOutput)
+}
+
+// The version of the resource.
+func (o GetPatchManagementResourceOutput) DbVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementResource) string { return v.DbVersion }).(pulumi.StringOutput)
+}
+
+// The deployment type of the resource.
+func (o GetPatchManagementResourceOutput) DeploymentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementResource) string { return v.DeploymentType }).(pulumi.StringOutput)
+}
+
+// host info objects
+func (o GetPatchManagementResourceOutput) HostInfos() GetPatchManagementResourceHostInfoArrayOutput {
+	return o.ApplyT(func(v GetPatchManagementResource) []GetPatchManagementResourceHostInfo { return v.HostInfos }).(GetPatchManagementResourceHostInfoArrayOutput)
+}
+
+// True if it is a cluster db.
+func (o GetPatchManagementResourceOutput) IsClusterDb() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetPatchManagementResource) bool { return v.IsClusterDb }).(pulumi.BoolOutput)
+}
+
+// The License Type of the resource.
+func (o GetPatchManagementResourceOutput) LicenseType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementResource) string { return v.LicenseType }).(pulumi.StringOutput)
+}
+
+// The compartmentId of the resource.
+func (o GetPatchManagementResourceOutput) ResourceCompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementResource) string { return v.ResourceCompartmentId }).(pulumi.StringOutput)
+}
+
+// The Id of the resource.
+func (o GetPatchManagementResourceOutput) ResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementResource) string { return v.ResourceId }).(pulumi.StringOutput)
+}
+
+// The name of the resource.
+func (o GetPatchManagementResourceOutput) ResourceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementResource) string { return v.ResourceName }).(pulumi.StringOutput)
+}
+
+// The type of the resource.
+func (o GetPatchManagementResourceOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementResource) string { return v.ResourceType }).(pulumi.StringOutput)
+}
+
+type GetPatchManagementResourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPatchManagementResourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPatchManagementResource)(nil)).Elem()
+}
+
+func (o GetPatchManagementResourceArrayOutput) ToGetPatchManagementResourceArrayOutput() GetPatchManagementResourceArrayOutput {
+	return o
+}
+
+func (o GetPatchManagementResourceArrayOutput) ToGetPatchManagementResourceArrayOutputWithContext(ctx context.Context) GetPatchManagementResourceArrayOutput {
+	return o
+}
+
+func (o GetPatchManagementResourceArrayOutput) Index(i pulumi.IntInput) GetPatchManagementResourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPatchManagementResource {
+		return vs[0].([]GetPatchManagementResource)[vs[1].(int)]
+	}).(GetPatchManagementResourceOutput)
+}
+
+type GetPatchManagementResourceHostInfo struct {
+	// Number of host cores.
+	HostCores int `pulumi:"hostCores"`
+	// The name of the host.
+	HostName string `pulumi:"hostName"`
+}
+
+// GetPatchManagementResourceHostInfoInput is an input type that accepts GetPatchManagementResourceHostInfoArgs and GetPatchManagementResourceHostInfoOutput values.
+// You can construct a concrete instance of `GetPatchManagementResourceHostInfoInput` via:
+//
+//	GetPatchManagementResourceHostInfoArgs{...}
+type GetPatchManagementResourceHostInfoInput interface {
+	pulumi.Input
+
+	ToGetPatchManagementResourceHostInfoOutput() GetPatchManagementResourceHostInfoOutput
+	ToGetPatchManagementResourceHostInfoOutputWithContext(context.Context) GetPatchManagementResourceHostInfoOutput
+}
+
+type GetPatchManagementResourceHostInfoArgs struct {
+	// Number of host cores.
+	HostCores pulumi.IntInput `pulumi:"hostCores"`
+	// The name of the host.
+	HostName pulumi.StringInput `pulumi:"hostName"`
+}
+
+func (GetPatchManagementResourceHostInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPatchManagementResourceHostInfo)(nil)).Elem()
+}
+
+func (i GetPatchManagementResourceHostInfoArgs) ToGetPatchManagementResourceHostInfoOutput() GetPatchManagementResourceHostInfoOutput {
+	return i.ToGetPatchManagementResourceHostInfoOutputWithContext(context.Background())
+}
+
+func (i GetPatchManagementResourceHostInfoArgs) ToGetPatchManagementResourceHostInfoOutputWithContext(ctx context.Context) GetPatchManagementResourceHostInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPatchManagementResourceHostInfoOutput)
+}
+
+// GetPatchManagementResourceHostInfoArrayInput is an input type that accepts GetPatchManagementResourceHostInfoArray and GetPatchManagementResourceHostInfoArrayOutput values.
+// You can construct a concrete instance of `GetPatchManagementResourceHostInfoArrayInput` via:
+//
+//	GetPatchManagementResourceHostInfoArray{ GetPatchManagementResourceHostInfoArgs{...} }
+type GetPatchManagementResourceHostInfoArrayInput interface {
+	pulumi.Input
+
+	ToGetPatchManagementResourceHostInfoArrayOutput() GetPatchManagementResourceHostInfoArrayOutput
+	ToGetPatchManagementResourceHostInfoArrayOutputWithContext(context.Context) GetPatchManagementResourceHostInfoArrayOutput
+}
+
+type GetPatchManagementResourceHostInfoArray []GetPatchManagementResourceHostInfoInput
+
+func (GetPatchManagementResourceHostInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPatchManagementResourceHostInfo)(nil)).Elem()
+}
+
+func (i GetPatchManagementResourceHostInfoArray) ToGetPatchManagementResourceHostInfoArrayOutput() GetPatchManagementResourceHostInfoArrayOutput {
+	return i.ToGetPatchManagementResourceHostInfoArrayOutputWithContext(context.Background())
+}
+
+func (i GetPatchManagementResourceHostInfoArray) ToGetPatchManagementResourceHostInfoArrayOutputWithContext(ctx context.Context) GetPatchManagementResourceHostInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPatchManagementResourceHostInfoArrayOutput)
+}
+
+type GetPatchManagementResourceHostInfoOutput struct{ *pulumi.OutputState }
+
+func (GetPatchManagementResourceHostInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPatchManagementResourceHostInfo)(nil)).Elem()
+}
+
+func (o GetPatchManagementResourceHostInfoOutput) ToGetPatchManagementResourceHostInfoOutput() GetPatchManagementResourceHostInfoOutput {
+	return o
+}
+
+func (o GetPatchManagementResourceHostInfoOutput) ToGetPatchManagementResourceHostInfoOutputWithContext(ctx context.Context) GetPatchManagementResourceHostInfoOutput {
+	return o
+}
+
+// Number of host cores.
+func (o GetPatchManagementResourceHostInfoOutput) HostCores() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPatchManagementResourceHostInfo) int { return v.HostCores }).(pulumi.IntOutput)
+}
+
+// The name of the host.
+func (o GetPatchManagementResourceHostInfoOutput) HostName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPatchManagementResourceHostInfo) string { return v.HostName }).(pulumi.StringOutput)
+}
+
+type GetPatchManagementResourceHostInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPatchManagementResourceHostInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPatchManagementResourceHostInfo)(nil)).Elem()
+}
+
+func (o GetPatchManagementResourceHostInfoArrayOutput) ToGetPatchManagementResourceHostInfoArrayOutput() GetPatchManagementResourceHostInfoArrayOutput {
+	return o
+}
+
+func (o GetPatchManagementResourceHostInfoArrayOutput) ToGetPatchManagementResourceHostInfoArrayOutputWithContext(ctx context.Context) GetPatchManagementResourceHostInfoArrayOutput {
+	return o
+}
+
+func (o GetPatchManagementResourceHostInfoArrayOutput) Index(i pulumi.IntInput) GetPatchManagementResourceHostInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPatchManagementResourceHostInfo {
+		return vs[0].([]GetPatchManagementResourceHostInfo)[vs[1].(int)]
+	}).(GetPatchManagementResourceHostInfoOutput)
+}
+
+type GetPatchManagementResourcesPatchComplianceSummary struct {
+	NonCompliantResourcesCount      int `pulumi:"nonCompliantResourcesCount"`
+	NotDblmRegisteredResourcesCount int `pulumi:"notDblmRegisteredResourcesCount"`
+	NotSubscribedResourcesCount     int `pulumi:"notSubscribedResourcesCount"`
+	TotalResourcesCount             int `pulumi:"totalResourcesCount"`
+	UpToDateResourcesCount          int `pulumi:"upToDateResourcesCount"`
+}
+
+// GetPatchManagementResourcesPatchComplianceSummaryInput is an input type that accepts GetPatchManagementResourcesPatchComplianceSummaryArgs and GetPatchManagementResourcesPatchComplianceSummaryOutput values.
+// You can construct a concrete instance of `GetPatchManagementResourcesPatchComplianceSummaryInput` via:
+//
+//	GetPatchManagementResourcesPatchComplianceSummaryArgs{...}
+type GetPatchManagementResourcesPatchComplianceSummaryInput interface {
+	pulumi.Input
+
+	ToGetPatchManagementResourcesPatchComplianceSummaryOutput() GetPatchManagementResourcesPatchComplianceSummaryOutput
+	ToGetPatchManagementResourcesPatchComplianceSummaryOutputWithContext(context.Context) GetPatchManagementResourcesPatchComplianceSummaryOutput
+}
+
+type GetPatchManagementResourcesPatchComplianceSummaryArgs struct {
+	NonCompliantResourcesCount      pulumi.IntInput `pulumi:"nonCompliantResourcesCount"`
+	NotDblmRegisteredResourcesCount pulumi.IntInput `pulumi:"notDblmRegisteredResourcesCount"`
+	NotSubscribedResourcesCount     pulumi.IntInput `pulumi:"notSubscribedResourcesCount"`
+	TotalResourcesCount             pulumi.IntInput `pulumi:"totalResourcesCount"`
+	UpToDateResourcesCount          pulumi.IntInput `pulumi:"upToDateResourcesCount"`
+}
+
+func (GetPatchManagementResourcesPatchComplianceSummaryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPatchManagementResourcesPatchComplianceSummary)(nil)).Elem()
+}
+
+func (i GetPatchManagementResourcesPatchComplianceSummaryArgs) ToGetPatchManagementResourcesPatchComplianceSummaryOutput() GetPatchManagementResourcesPatchComplianceSummaryOutput {
+	return i.ToGetPatchManagementResourcesPatchComplianceSummaryOutputWithContext(context.Background())
+}
+
+func (i GetPatchManagementResourcesPatchComplianceSummaryArgs) ToGetPatchManagementResourcesPatchComplianceSummaryOutputWithContext(ctx context.Context) GetPatchManagementResourcesPatchComplianceSummaryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPatchManagementResourcesPatchComplianceSummaryOutput)
+}
+
+// GetPatchManagementResourcesPatchComplianceSummaryArrayInput is an input type that accepts GetPatchManagementResourcesPatchComplianceSummaryArray and GetPatchManagementResourcesPatchComplianceSummaryArrayOutput values.
+// You can construct a concrete instance of `GetPatchManagementResourcesPatchComplianceSummaryArrayInput` via:
+//
+//	GetPatchManagementResourcesPatchComplianceSummaryArray{ GetPatchManagementResourcesPatchComplianceSummaryArgs{...} }
+type GetPatchManagementResourcesPatchComplianceSummaryArrayInput interface {
+	pulumi.Input
+
+	ToGetPatchManagementResourcesPatchComplianceSummaryArrayOutput() GetPatchManagementResourcesPatchComplianceSummaryArrayOutput
+	ToGetPatchManagementResourcesPatchComplianceSummaryArrayOutputWithContext(context.Context) GetPatchManagementResourcesPatchComplianceSummaryArrayOutput
+}
+
+type GetPatchManagementResourcesPatchComplianceSummaryArray []GetPatchManagementResourcesPatchComplianceSummaryInput
+
+func (GetPatchManagementResourcesPatchComplianceSummaryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPatchManagementResourcesPatchComplianceSummary)(nil)).Elem()
+}
+
+func (i GetPatchManagementResourcesPatchComplianceSummaryArray) ToGetPatchManagementResourcesPatchComplianceSummaryArrayOutput() GetPatchManagementResourcesPatchComplianceSummaryArrayOutput {
+	return i.ToGetPatchManagementResourcesPatchComplianceSummaryArrayOutputWithContext(context.Background())
+}
+
+func (i GetPatchManagementResourcesPatchComplianceSummaryArray) ToGetPatchManagementResourcesPatchComplianceSummaryArrayOutputWithContext(ctx context.Context) GetPatchManagementResourcesPatchComplianceSummaryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPatchManagementResourcesPatchComplianceSummaryArrayOutput)
+}
+
+type GetPatchManagementResourcesPatchComplianceSummaryOutput struct{ *pulumi.OutputState }
+
+func (GetPatchManagementResourcesPatchComplianceSummaryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPatchManagementResourcesPatchComplianceSummary)(nil)).Elem()
+}
+
+func (o GetPatchManagementResourcesPatchComplianceSummaryOutput) ToGetPatchManagementResourcesPatchComplianceSummaryOutput() GetPatchManagementResourcesPatchComplianceSummaryOutput {
+	return o
+}
+
+func (o GetPatchManagementResourcesPatchComplianceSummaryOutput) ToGetPatchManagementResourcesPatchComplianceSummaryOutputWithContext(ctx context.Context) GetPatchManagementResourcesPatchComplianceSummaryOutput {
+	return o
+}
+
+func (o GetPatchManagementResourcesPatchComplianceSummaryOutput) NonCompliantResourcesCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPatchManagementResourcesPatchComplianceSummary) int { return v.NonCompliantResourcesCount }).(pulumi.IntOutput)
+}
+
+func (o GetPatchManagementResourcesPatchComplianceSummaryOutput) NotDblmRegisteredResourcesCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPatchManagementResourcesPatchComplianceSummary) int {
+		return v.NotDblmRegisteredResourcesCount
+	}).(pulumi.IntOutput)
+}
+
+func (o GetPatchManagementResourcesPatchComplianceSummaryOutput) NotSubscribedResourcesCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPatchManagementResourcesPatchComplianceSummary) int { return v.NotSubscribedResourcesCount }).(pulumi.IntOutput)
+}
+
+func (o GetPatchManagementResourcesPatchComplianceSummaryOutput) TotalResourcesCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPatchManagementResourcesPatchComplianceSummary) int { return v.TotalResourcesCount }).(pulumi.IntOutput)
+}
+
+func (o GetPatchManagementResourcesPatchComplianceSummaryOutput) UpToDateResourcesCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPatchManagementResourcesPatchComplianceSummary) int { return v.UpToDateResourcesCount }).(pulumi.IntOutput)
+}
+
+type GetPatchManagementResourcesPatchComplianceSummaryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPatchManagementResourcesPatchComplianceSummaryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPatchManagementResourcesPatchComplianceSummary)(nil)).Elem()
+}
+
+func (o GetPatchManagementResourcesPatchComplianceSummaryArrayOutput) ToGetPatchManagementResourcesPatchComplianceSummaryArrayOutput() GetPatchManagementResourcesPatchComplianceSummaryArrayOutput {
+	return o
+}
+
+func (o GetPatchManagementResourcesPatchComplianceSummaryArrayOutput) ToGetPatchManagementResourcesPatchComplianceSummaryArrayOutputWithContext(ctx context.Context) GetPatchManagementResourcesPatchComplianceSummaryArrayOutput {
+	return o
+}
+
+func (o GetPatchManagementResourcesPatchComplianceSummaryArrayOutput) Index(i pulumi.IntInput) GetPatchManagementResourcesPatchComplianceSummaryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPatchManagementResourcesPatchComplianceSummary {
+		return vs[0].([]GetPatchManagementResourcesPatchComplianceSummary)[vs[1].(int)]
+	}).(GetPatchManagementResourcesPatchComplianceSummaryOutput)
+}
+
 type GetVulnerabilityAggregatedVulnerabilityDataAggregatedVulnerabilityCollection struct {
 	// List of data
 	Items []GetVulnerabilityAggregatedVulnerabilityDataAggregatedVulnerabilityCollectionItem `pulumi:"items"`
@@ -775,6 +2645,8 @@ func (o GetVulnerabilityPatchRecommendationsSummaryArrayOutput) Index(i pulumi.I
 }
 
 type GetVulnerabilityResource struct {
+	// The agent Id of the agent managing the resource.
+	AgentId string `pulumi:"agentId"`
 	// The connector Id of the resource.
 	ConnectorId string `pulumi:"connectorId"`
 	// The platform type of the resource.
@@ -811,6 +2683,8 @@ type GetVulnerabilityResourceInput interface {
 }
 
 type GetVulnerabilityResourceArgs struct {
+	// The agent Id of the agent managing the resource.
+	AgentId pulumi.StringInput `pulumi:"agentId"`
 	// The connector Id of the resource.
 	ConnectorId pulumi.StringInput `pulumi:"connectorId"`
 	// The platform type of the resource.
@@ -884,6 +2758,11 @@ func (o GetVulnerabilityResourceOutput) ToGetVulnerabilityResourceOutput() GetVu
 
 func (o GetVulnerabilityResourceOutput) ToGetVulnerabilityResourceOutputWithContext(ctx context.Context) GetVulnerabilityResourceOutput {
 	return o
+}
+
+// The agent Id of the agent managing the resource.
+func (o GetVulnerabilityResourceOutput) AgentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityResource) string { return v.AgentId }).(pulumi.StringOutput)
 }
 
 // The connector Id of the resource.
@@ -3188,6 +5067,32 @@ func (o GetVulnerabilityVulnerabilitiesVulnerabilityCollectionItemArrayOutput) I
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPatchManagementDatabasesFilterInput)(nil)).Elem(), GetPatchManagementDatabasesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPatchManagementDatabasesFilterArrayInput)(nil)).Elem(), GetPatchManagementDatabasesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPatchManagementDatabasesPatchDatabasesCollectionInput)(nil)).Elem(), GetPatchManagementDatabasesPatchDatabasesCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPatchManagementDatabasesPatchDatabasesCollectionArrayInput)(nil)).Elem(), GetPatchManagementDatabasesPatchDatabasesCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPatchManagementDatabasesPatchDatabasesCollectionItemInput)(nil)).Elem(), GetPatchManagementDatabasesPatchDatabasesCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPatchManagementDatabasesPatchDatabasesCollectionItemArrayInput)(nil)).Elem(), GetPatchManagementDatabasesPatchDatabasesCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchInput)(nil)).Elem(), GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArrayInput)(nil)).Elem(), GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailInput)(nil)).Elem(), GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArrayInput)(nil)).Elem(), GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailInput)(nil)).Elem(), GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArrayInput)(nil)).Elem(), GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailInput)(nil)).Elem(), GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArrayInput)(nil)).Elem(), GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryInput)(nil)).Elem(), GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArrayInput)(nil)).Elem(), GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPatchManagementImagesPatchRecommendationSummaryInput)(nil)).Elem(), GetPatchManagementImagesPatchRecommendationSummaryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPatchManagementImagesPatchRecommendationSummaryArrayInput)(nil)).Elem(), GetPatchManagementImagesPatchRecommendationSummaryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPatchManagementPatchOperationsSummaryInput)(nil)).Elem(), GetPatchManagementPatchOperationsSummaryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPatchManagementPatchOperationsSummaryArrayInput)(nil)).Elem(), GetPatchManagementPatchOperationsSummaryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPatchManagementResourceInput)(nil)).Elem(), GetPatchManagementResourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPatchManagementResourceArrayInput)(nil)).Elem(), GetPatchManagementResourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPatchManagementResourceHostInfoInput)(nil)).Elem(), GetPatchManagementResourceHostInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPatchManagementResourceHostInfoArrayInput)(nil)).Elem(), GetPatchManagementResourceHostInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPatchManagementResourcesPatchComplianceSummaryInput)(nil)).Elem(), GetPatchManagementResourcesPatchComplianceSummaryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPatchManagementResourcesPatchComplianceSummaryArrayInput)(nil)).Elem(), GetPatchManagementResourcesPatchComplianceSummaryArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAggregatedVulnerabilityDataAggregatedVulnerabilityCollectionInput)(nil)).Elem(), GetVulnerabilityAggregatedVulnerabilityDataAggregatedVulnerabilityCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAggregatedVulnerabilityDataAggregatedVulnerabilityCollectionArrayInput)(nil)).Elem(), GetVulnerabilityAggregatedVulnerabilityDataAggregatedVulnerabilityCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAggregatedVulnerabilityDataAggregatedVulnerabilityCollectionItemInput)(nil)).Elem(), GetVulnerabilityAggregatedVulnerabilityDataAggregatedVulnerabilityCollectionItemArgs{})
@@ -3238,6 +5143,32 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityVulnerabilitiesVulnerabilityCollectionArrayInput)(nil)).Elem(), GetVulnerabilityVulnerabilitiesVulnerabilityCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityVulnerabilitiesVulnerabilityCollectionItemInput)(nil)).Elem(), GetVulnerabilityVulnerabilitiesVulnerabilityCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityVulnerabilitiesVulnerabilityCollectionItemArrayInput)(nil)).Elem(), GetVulnerabilityVulnerabilitiesVulnerabilityCollectionItemArray{})
+	pulumi.RegisterOutputType(GetPatchManagementDatabasesFilterOutput{})
+	pulumi.RegisterOutputType(GetPatchManagementDatabasesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetPatchManagementDatabasesPatchDatabasesCollectionOutput{})
+	pulumi.RegisterOutputType(GetPatchManagementDatabasesPatchDatabasesCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetPatchManagementDatabasesPatchDatabasesCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetPatchManagementDatabasesPatchDatabasesCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchOutput{})
+	pulumi.RegisterOutputType(GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArrayOutput{})
+	pulumi.RegisterOutputType(GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailOutput{})
+	pulumi.RegisterOutputType(GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailOutput{})
+	pulumi.RegisterOutputType(GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailOutput{})
+	pulumi.RegisterOutputType(GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryOutput{})
+	pulumi.RegisterOutputType(GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArrayOutput{})
+	pulumi.RegisterOutputType(GetPatchManagementImagesPatchRecommendationSummaryOutput{})
+	pulumi.RegisterOutputType(GetPatchManagementImagesPatchRecommendationSummaryArrayOutput{})
+	pulumi.RegisterOutputType(GetPatchManagementPatchOperationsSummaryOutput{})
+	pulumi.RegisterOutputType(GetPatchManagementPatchOperationsSummaryArrayOutput{})
+	pulumi.RegisterOutputType(GetPatchManagementResourceOutput{})
+	pulumi.RegisterOutputType(GetPatchManagementResourceArrayOutput{})
+	pulumi.RegisterOutputType(GetPatchManagementResourceHostInfoOutput{})
+	pulumi.RegisterOutputType(GetPatchManagementResourceHostInfoArrayOutput{})
+	pulumi.RegisterOutputType(GetPatchManagementResourcesPatchComplianceSummaryOutput{})
+	pulumi.RegisterOutputType(GetPatchManagementResourcesPatchComplianceSummaryArrayOutput{})
 	pulumi.RegisterOutputType(GetVulnerabilityAggregatedVulnerabilityDataAggregatedVulnerabilityCollectionOutput{})
 	pulumi.RegisterOutputType(GetVulnerabilityAggregatedVulnerabilityDataAggregatedVulnerabilityCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetVulnerabilityAggregatedVulnerabilityDataAggregatedVulnerabilityCollectionItemOutput{})

@@ -53,7 +53,7 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItem {
      */
     private Map<String,String> freeformTags;
     /**
-     * @return Unique identifier that is immutable on creation.
+     * @return The Virtual Cloud Network OCID.
      * 
      */
     private String id;
@@ -175,7 +175,7 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItem {
         return this.freeformTags;
     }
     /**
-     * @return Unique identifier that is immutable on creation.
+     * @return The Virtual Cloud Network OCID.
      * 
      */
     public String id() {

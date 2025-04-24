@@ -97,6 +97,10 @@ export interface GetVolumeResult {
      */
     readonly isHydrated: boolean;
     /**
+     * Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+     */
+    readonly isReservationsEnabled: boolean;
+    /**
      * The OCID of the Vault service key which is the master encryption key for the volume.
      */
     readonly kmsKeyId: string;

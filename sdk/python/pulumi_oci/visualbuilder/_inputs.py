@@ -22,6 +22,8 @@ __all__ = [
     'VbInstanceCustomEndpointArgsDict',
     'VbInstanceNetworkEndpointDetailsArgs',
     'VbInstanceNetworkEndpointDetailsArgsDict',
+    'VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs',
+    'VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgsDict',
     'GetVbInstancesFilterArgs',
     'GetVbInstancesFilterArgsDict',
 ]
@@ -175,10 +177,16 @@ if not MYPY:
         network_endpoint_type: pulumi.Input[builtins.str]
         """
         (Updatable) The type of network endpoint.
+
+        For private endpoint access
         """
-        subnet_id: pulumi.Input[builtins.str]
+        allowlisted_http_ips: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        (Updatable) The subnet OCID for the private endpoint.
+        (Updatable) Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5/32", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        """
+        allowlisted_http_vcns: NotRequired[pulumi.Input[Sequence[pulumi.Input['VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgsDict']]]]
+        """
+        (Updatable) Virtual Cloud Networks allowed to access this network endpoint.
         """
         network_security_group_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
@@ -188,6 +196,12 @@ if not MYPY:
         """
         The IP address to be assigned to Private Endpoint
         """
+        subnet_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) The subnet OCID for the private endpoint.
+
+        For public network access control
+        """
 elif False:
     VbInstanceNetworkEndpointDetailsArgsDict: TypeAlias = Mapping[str, Any]
 
@@ -195,27 +209,42 @@ elif False:
 class VbInstanceNetworkEndpointDetailsArgs:
     def __init__(__self__, *,
                  network_endpoint_type: pulumi.Input[builtins.str],
-                 subnet_id: pulumi.Input[builtins.str],
+                 allowlisted_http_ips: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 allowlisted_http_vcns: Optional[pulumi.Input[Sequence[pulumi.Input['VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs']]]] = None,
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
-                 private_endpoint_ip: Optional[pulumi.Input[builtins.str]] = None):
+                 private_endpoint_ip: Optional[pulumi.Input[builtins.str]] = None,
+                 subnet_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         :param pulumi.Input[builtins.str] network_endpoint_type: (Updatable) The type of network endpoint.
-        :param pulumi.Input[builtins.str] subnet_id: (Updatable) The subnet OCID for the private endpoint.
+               
+               For private endpoint access
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allowlisted_http_ips: (Updatable) Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5/32", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        :param pulumi.Input[Sequence[pulumi.Input['VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs']]] allowlisted_http_vcns: (Updatable) Virtual Cloud Networks allowed to access this network endpoint.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] network_security_group_ids: (Updatable) Network Security Group OCIDs for the Private Endpoint.
         :param pulumi.Input[builtins.str] private_endpoint_ip: The IP address to be assigned to Private Endpoint
+        :param pulumi.Input[builtins.str] subnet_id: (Updatable) The subnet OCID for the private endpoint.
+               
+               For public network access control
         """
         pulumi.set(__self__, "network_endpoint_type", network_endpoint_type)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        if allowlisted_http_ips is not None:
+            pulumi.set(__self__, "allowlisted_http_ips", allowlisted_http_ips)
+        if allowlisted_http_vcns is not None:
+            pulumi.set(__self__, "allowlisted_http_vcns", allowlisted_http_vcns)
         if network_security_group_ids is not None:
             pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
         if private_endpoint_ip is not None:
             pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="networkEndpointType")
     def network_endpoint_type(self) -> pulumi.Input[builtins.str]:
         """
         (Updatable) The type of network endpoint.
+
+        For private endpoint access
         """
         return pulumi.get(self, "network_endpoint_type")
 
@@ -224,16 +253,28 @@ class VbInstanceNetworkEndpointDetailsArgs:
         pulumi.set(self, "network_endpoint_type", value)
 
     @property
-    @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> pulumi.Input[builtins.str]:
+    @pulumi.getter(name="allowlistedHttpIps")
+    def allowlisted_http_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        (Updatable) The subnet OCID for the private endpoint.
+        (Updatable) Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5/32", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
         """
-        return pulumi.get(self, "subnet_id")
+        return pulumi.get(self, "allowlisted_http_ips")
 
-    @subnet_id.setter
-    def subnet_id(self, value: pulumi.Input[builtins.str]):
-        pulumi.set(self, "subnet_id", value)
+    @allowlisted_http_ips.setter
+    def allowlisted_http_ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "allowlisted_http_ips", value)
+
+    @property
+    @pulumi.getter(name="allowlistedHttpVcns")
+    def allowlisted_http_vcns(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs']]]]:
+        """
+        (Updatable) Virtual Cloud Networks allowed to access this network endpoint.
+        """
+        return pulumi.get(self, "allowlisted_http_vcns")
+
+    @allowlisted_http_vcns.setter
+    def allowlisted_http_vcns(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs']]]]):
+        pulumi.set(self, "allowlisted_http_vcns", value)
 
     @property
     @pulumi.getter(name="networkSecurityGroupIds")
@@ -258,6 +299,71 @@ class VbInstanceNetworkEndpointDetailsArgs:
     @private_endpoint_ip.setter
     def private_endpoint_ip(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "private_endpoint_ip", value)
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The subnet OCID for the private endpoint.
+
+        For public network access control
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @subnet_id.setter
+    def subnet_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "subnet_id", value)
+
+
+if not MYPY:
+    class VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgsDict(TypedDict):
+        id: pulumi.Input[builtins.str]
+        """
+        (Updatable) The Virtual Cloud Network OCID.
+        """
+        allowlisted_ip_cidrs: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        (Updatable) Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5/32", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        """
+elif False:
+    VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs:
+    def __init__(__self__, *,
+                 id: pulumi.Input[builtins.str],
+                 allowlisted_ip_cidrs: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
+        """
+        :param pulumi.Input[builtins.str] id: (Updatable) The Virtual Cloud Network OCID.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allowlisted_ip_cidrs: (Updatable) Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5/32", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        """
+        pulumi.set(__self__, "id", id)
+        if allowlisted_ip_cidrs is not None:
+            pulumi.set(__self__, "allowlisted_ip_cidrs", allowlisted_ip_cidrs)
+
+    @property
+    @pulumi.getter
+    def id(self) -> pulumi.Input[builtins.str]:
+        """
+        (Updatable) The Virtual Cloud Network OCID.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: pulumi.Input[builtins.str]):
+        pulumi.set(self, "id", value)
+
+    @property
+    @pulumi.getter(name="allowlistedIpCidrs")
+    def allowlisted_ip_cidrs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        (Updatable) Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5/32", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        """
+        return pulumi.get(self, "allowlisted_ip_cidrs")
+
+    @allowlisted_ip_cidrs.setter
+    def allowlisted_ip_cidrs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "allowlisted_ip_cidrs", value)
 
 
 if not MYPY:

@@ -5,12 +5,23 @@ package com.pulumi.oci.VisualBuilder.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.VisualBuilder.outputs.GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcn;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
 
 @CustomType
 public final class GetVbInstanceNetworkEndpointDetail {
+    /**
+     * @return Source IP addresses or IP address ranges ingress rules. (ex: &#34;168.122.59.5/32&#34;, &#34;10.20.30.0/26&#34;) An invalid IP or CIDR block will result in a 400 response.
+     * 
+     */
+    private List<String> allowlistedHttpIps;
+    /**
+     * @return Virtual Cloud Networks allowed to access this network endpoint.
+     * 
+     */
+    private List<GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcn> allowlistedHttpVcns;
     /**
      * @return The type of network endpoint.
      * 
@@ -33,6 +44,20 @@ public final class GetVbInstanceNetworkEndpointDetail {
     private String subnetId;
 
     private GetVbInstanceNetworkEndpointDetail() {}
+    /**
+     * @return Source IP addresses or IP address ranges ingress rules. (ex: &#34;168.122.59.5/32&#34;, &#34;10.20.30.0/26&#34;) An invalid IP or CIDR block will result in a 400 response.
+     * 
+     */
+    public List<String> allowlistedHttpIps() {
+        return this.allowlistedHttpIps;
+    }
+    /**
+     * @return Virtual Cloud Networks allowed to access this network endpoint.
+     * 
+     */
+    public List<GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcn> allowlistedHttpVcns() {
+        return this.allowlistedHttpVcns;
+    }
     /**
      * @return The type of network endpoint.
      * 
@@ -71,6 +96,8 @@ public final class GetVbInstanceNetworkEndpointDetail {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<String> allowlistedHttpIps;
+        private List<GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcn> allowlistedHttpVcns;
         private String networkEndpointType;
         private List<String> networkSecurityGroupIds;
         private String privateEndpointIp;
@@ -78,12 +105,36 @@ public final class GetVbInstanceNetworkEndpointDetail {
         public Builder() {}
         public Builder(GetVbInstanceNetworkEndpointDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.allowlistedHttpIps = defaults.allowlistedHttpIps;
+    	      this.allowlistedHttpVcns = defaults.allowlistedHttpVcns;
     	      this.networkEndpointType = defaults.networkEndpointType;
     	      this.networkSecurityGroupIds = defaults.networkSecurityGroupIds;
     	      this.privateEndpointIp = defaults.privateEndpointIp;
     	      this.subnetId = defaults.subnetId;
         }
 
+        @CustomType.Setter
+        public Builder allowlistedHttpIps(List<String> allowlistedHttpIps) {
+            if (allowlistedHttpIps == null) {
+              throw new MissingRequiredPropertyException("GetVbInstanceNetworkEndpointDetail", "allowlistedHttpIps");
+            }
+            this.allowlistedHttpIps = allowlistedHttpIps;
+            return this;
+        }
+        public Builder allowlistedHttpIps(String... allowlistedHttpIps) {
+            return allowlistedHttpIps(List.of(allowlistedHttpIps));
+        }
+        @CustomType.Setter
+        public Builder allowlistedHttpVcns(List<GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcn> allowlistedHttpVcns) {
+            if (allowlistedHttpVcns == null) {
+              throw new MissingRequiredPropertyException("GetVbInstanceNetworkEndpointDetail", "allowlistedHttpVcns");
+            }
+            this.allowlistedHttpVcns = allowlistedHttpVcns;
+            return this;
+        }
+        public Builder allowlistedHttpVcns(GetVbInstanceNetworkEndpointDetailAllowlistedHttpVcn... allowlistedHttpVcns) {
+            return allowlistedHttpVcns(List.of(allowlistedHttpVcns));
+        }
         @CustomType.Setter
         public Builder networkEndpointType(String networkEndpointType) {
             if (networkEndpointType == null) {
@@ -121,6 +172,8 @@ public final class GetVbInstanceNetworkEndpointDetail {
         }
         public GetVbInstanceNetworkEndpointDetail build() {
             final var _resultValue = new GetVbInstanceNetworkEndpointDetail();
+            _resultValue.allowlistedHttpIps = allowlistedHttpIps;
+            _resultValue.allowlistedHttpVcns = allowlistedHttpVcns;
             _resultValue.networkEndpointType = networkEndpointType;
             _resultValue.networkSecurityGroupIds = networkSecurityGroupIds;
             _resultValue.privateEndpointIp = privateEndpointIp;

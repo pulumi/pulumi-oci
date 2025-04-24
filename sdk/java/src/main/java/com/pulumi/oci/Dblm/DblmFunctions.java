@@ -8,6 +8,10 @@ import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
 import com.pulumi.deployment.InvokeOutputOptions;
+import com.pulumi.oci.Dblm.inputs.GetPatchManagementArgs;
+import com.pulumi.oci.Dblm.inputs.GetPatchManagementDatabasesArgs;
+import com.pulumi.oci.Dblm.inputs.GetPatchManagementDatabasesPlainArgs;
+import com.pulumi.oci.Dblm.inputs.GetPatchManagementPlainArgs;
 import com.pulumi.oci.Dblm.inputs.GetVulnerabilityAggregatedVulnerabilityDataArgs;
 import com.pulumi.oci.Dblm.inputs.GetVulnerabilityAggregatedVulnerabilityDataPlainArgs;
 import com.pulumi.oci.Dblm.inputs.GetVulnerabilityArgs;
@@ -22,6 +26,8 @@ import com.pulumi.oci.Dblm.inputs.GetVulnerabilityScansArgs;
 import com.pulumi.oci.Dblm.inputs.GetVulnerabilityScansPlainArgs;
 import com.pulumi.oci.Dblm.inputs.GetVulnerabilityVulnerabilitiesArgs;
 import com.pulumi.oci.Dblm.inputs.GetVulnerabilityVulnerabilitiesPlainArgs;
+import com.pulumi.oci.Dblm.outputs.GetPatchManagementDatabasesResult;
+import com.pulumi.oci.Dblm.outputs.GetPatchManagementResult;
 import com.pulumi.oci.Dblm.outputs.GetVulnerabilityAggregatedVulnerabilityDataResult;
 import com.pulumi.oci.Dblm.outputs.GetVulnerabilityNotificationsResult;
 import com.pulumi.oci.Dblm.outputs.GetVulnerabilityResourcesResult;
@@ -33,6 +39,440 @@ import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
 public final class DblmFunctions {
+    /**
+     * This data source provides details about a specific Patch Management resource in Oracle Cloud Infrastructure Dblm service.
+     * 
+     * Overview of Patch Management.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPatchManagementResult> getPatchManagement(GetPatchManagementArgs args) {
+        return getPatchManagement(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Patch Management resource in Oracle Cloud Infrastructure Dblm service.
+     * 
+     * Overview of Patch Management.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetPatchManagementResult> getPatchManagementPlain(GetPatchManagementPlainArgs args) {
+        return getPatchManagementPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Patch Management resource in Oracle Cloud Infrastructure Dblm service.
+     * 
+     * Overview of Patch Management.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPatchManagementResult> getPatchManagement(GetPatchManagementArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Dblm/getPatchManagement:getPatchManagement", TypeShape.of(GetPatchManagementResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Patch Management resource in Oracle Cloud Infrastructure Dblm service.
+     * 
+     * Overview of Patch Management.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPatchManagementResult> getPatchManagement(GetPatchManagementArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Dblm/getPatchManagement:getPatchManagement", TypeShape.of(GetPatchManagementResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Patch Management resource in Oracle Cloud Infrastructure Dblm service.
+     * 
+     * Overview of Patch Management.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetPatchManagementResult> getPatchManagementPlain(GetPatchManagementPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Dblm/getPatchManagement:getPatchManagement", TypeShape.of(GetPatchManagementResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Patch Management Databases in Oracle Cloud Infrastructure Dblm service.
+     * 
+     * Gets the list of databases
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dblm.DblmFunctions;
+     * import com.pulumi.oci.Dblm.inputs.GetPatchManagementDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPatchManagementDatabases = DblmFunctions.getPatchManagementDatabases(GetPatchManagementDatabasesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseRelease(patchManagementDatabaseDatabaseRelease)
+     *             .databaseType(patchManagementDatabaseDatabaseType)
+     *             .displayName(patchManagementDatabaseDisplayName)
+     *             .drifterPatchId(testPatch.id())
+     *             .imageCompliance(patchManagementDatabaseImageCompliance)
+     *             .imageId(testImage.id())
+     *             .severityTypes(patchManagementDatabaseSeverityType)
+     *             .state(patchManagementDatabaseState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPatchManagementDatabasesResult> getPatchManagementDatabases() {
+        return getPatchManagementDatabases(GetPatchManagementDatabasesArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Patch Management Databases in Oracle Cloud Infrastructure Dblm service.
+     * 
+     * Gets the list of databases
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dblm.DblmFunctions;
+     * import com.pulumi.oci.Dblm.inputs.GetPatchManagementDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPatchManagementDatabases = DblmFunctions.getPatchManagementDatabases(GetPatchManagementDatabasesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseRelease(patchManagementDatabaseDatabaseRelease)
+     *             .databaseType(patchManagementDatabaseDatabaseType)
+     *             .displayName(patchManagementDatabaseDisplayName)
+     *             .drifterPatchId(testPatch.id())
+     *             .imageCompliance(patchManagementDatabaseImageCompliance)
+     *             .imageId(testImage.id())
+     *             .severityTypes(patchManagementDatabaseSeverityType)
+     *             .state(patchManagementDatabaseState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetPatchManagementDatabasesResult> getPatchManagementDatabasesPlain() {
+        return getPatchManagementDatabasesPlain(GetPatchManagementDatabasesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Patch Management Databases in Oracle Cloud Infrastructure Dblm service.
+     * 
+     * Gets the list of databases
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dblm.DblmFunctions;
+     * import com.pulumi.oci.Dblm.inputs.GetPatchManagementDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPatchManagementDatabases = DblmFunctions.getPatchManagementDatabases(GetPatchManagementDatabasesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseRelease(patchManagementDatabaseDatabaseRelease)
+     *             .databaseType(patchManagementDatabaseDatabaseType)
+     *             .displayName(patchManagementDatabaseDisplayName)
+     *             .drifterPatchId(testPatch.id())
+     *             .imageCompliance(patchManagementDatabaseImageCompliance)
+     *             .imageId(testImage.id())
+     *             .severityTypes(patchManagementDatabaseSeverityType)
+     *             .state(patchManagementDatabaseState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPatchManagementDatabasesResult> getPatchManagementDatabases(GetPatchManagementDatabasesArgs args) {
+        return getPatchManagementDatabases(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Patch Management Databases in Oracle Cloud Infrastructure Dblm service.
+     * 
+     * Gets the list of databases
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dblm.DblmFunctions;
+     * import com.pulumi.oci.Dblm.inputs.GetPatchManagementDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPatchManagementDatabases = DblmFunctions.getPatchManagementDatabases(GetPatchManagementDatabasesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseRelease(patchManagementDatabaseDatabaseRelease)
+     *             .databaseType(patchManagementDatabaseDatabaseType)
+     *             .displayName(patchManagementDatabaseDisplayName)
+     *             .drifterPatchId(testPatch.id())
+     *             .imageCompliance(patchManagementDatabaseImageCompliance)
+     *             .imageId(testImage.id())
+     *             .severityTypes(patchManagementDatabaseSeverityType)
+     *             .state(patchManagementDatabaseState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetPatchManagementDatabasesResult> getPatchManagementDatabasesPlain(GetPatchManagementDatabasesPlainArgs args) {
+        return getPatchManagementDatabasesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Patch Management Databases in Oracle Cloud Infrastructure Dblm service.
+     * 
+     * Gets the list of databases
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dblm.DblmFunctions;
+     * import com.pulumi.oci.Dblm.inputs.GetPatchManagementDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPatchManagementDatabases = DblmFunctions.getPatchManagementDatabases(GetPatchManagementDatabasesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseRelease(patchManagementDatabaseDatabaseRelease)
+     *             .databaseType(patchManagementDatabaseDatabaseType)
+     *             .displayName(patchManagementDatabaseDisplayName)
+     *             .drifterPatchId(testPatch.id())
+     *             .imageCompliance(patchManagementDatabaseImageCompliance)
+     *             .imageId(testImage.id())
+     *             .severityTypes(patchManagementDatabaseSeverityType)
+     *             .state(patchManagementDatabaseState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPatchManagementDatabasesResult> getPatchManagementDatabases(GetPatchManagementDatabasesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Dblm/getPatchManagementDatabases:getPatchManagementDatabases", TypeShape.of(GetPatchManagementDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Patch Management Databases in Oracle Cloud Infrastructure Dblm service.
+     * 
+     * Gets the list of databases
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dblm.DblmFunctions;
+     * import com.pulumi.oci.Dblm.inputs.GetPatchManagementDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPatchManagementDatabases = DblmFunctions.getPatchManagementDatabases(GetPatchManagementDatabasesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseRelease(patchManagementDatabaseDatabaseRelease)
+     *             .databaseType(patchManagementDatabaseDatabaseType)
+     *             .displayName(patchManagementDatabaseDisplayName)
+     *             .drifterPatchId(testPatch.id())
+     *             .imageCompliance(patchManagementDatabaseImageCompliance)
+     *             .imageId(testImage.id())
+     *             .severityTypes(patchManagementDatabaseSeverityType)
+     *             .state(patchManagementDatabaseState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPatchManagementDatabasesResult> getPatchManagementDatabases(GetPatchManagementDatabasesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Dblm/getPatchManagementDatabases:getPatchManagementDatabases", TypeShape.of(GetPatchManagementDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Patch Management Databases in Oracle Cloud Infrastructure Dblm service.
+     * 
+     * Gets the list of databases
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dblm.DblmFunctions;
+     * import com.pulumi.oci.Dblm.inputs.GetPatchManagementDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPatchManagementDatabases = DblmFunctions.getPatchManagementDatabases(GetPatchManagementDatabasesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseRelease(patchManagementDatabaseDatabaseRelease)
+     *             .databaseType(patchManagementDatabaseDatabaseType)
+     *             .displayName(patchManagementDatabaseDisplayName)
+     *             .drifterPatchId(testPatch.id())
+     *             .imageCompliance(patchManagementDatabaseImageCompliance)
+     *             .imageId(testImage.id())
+     *             .severityTypes(patchManagementDatabaseSeverityType)
+     *             .state(patchManagementDatabaseState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetPatchManagementDatabasesResult> getPatchManagementDatabasesPlain(GetPatchManagementDatabasesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Dblm/getPatchManagementDatabases:getPatchManagementDatabases", TypeShape.of(GetPatchManagementDatabasesResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * This data source provides details about a specific Vulnerability resource in Oracle Cloud Infrastructure Dblm service.
      * 

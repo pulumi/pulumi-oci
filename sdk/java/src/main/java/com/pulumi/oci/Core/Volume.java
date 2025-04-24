@@ -84,6 +84,7 @@ import javax.annotation.Nullable;
  *             .displayName(volumeDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .isAutoTuneEnabled(volumeIsAutoTuneEnabled)
+ *             .isReservationsEnabled(volumeIsReservationsEnabled)
  *             .kmsKeyId(testKey.id())
  *             .sizeInGbs(volumeSizeInGbs)
  *             .sizeInMbs(volumeSizeInMbs)
@@ -293,6 +294,20 @@ public class Volume extends com.pulumi.resources.CustomResource {
      */
     public Output<Boolean> isHydrated() {
         return this.isHydrated;
+    }
+    /**
+     * (Updatable) Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+     * 
+     */
+    @Export(name="isReservationsEnabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isReservationsEnabled;
+
+    /**
+     * @return (Updatable) Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+     * 
+     */
+    public Output<Boolean> isReservationsEnabled() {
+        return this.isReservationsEnabled;
     }
     /**
      * (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.

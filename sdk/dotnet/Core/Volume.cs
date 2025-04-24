@@ -70,6 +70,7 @@ namespace Pulumi.Oci.Core
     ///             { "Department", "Finance" },
     ///         },
     ///         IsAutoTuneEnabled = volumeIsAutoTuneEnabled,
+    ///         IsReservationsEnabled = volumeIsReservationsEnabled,
     ///         KmsKeyId = testKey.Id,
     ///         SizeInGbs = volumeSizeInGbs,
     ///         SizeInMbs = volumeSizeInMbs,
@@ -174,6 +175,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Output("isHydrated")]
         public Output<bool> IsHydrated { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+        /// </summary>
+        [Output("isReservationsEnabled")]
+        public Output<bool> IsReservationsEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
@@ -381,6 +388,12 @@ namespace Pulumi.Oci.Core
         public Input<bool>? IsAutoTuneEnabled { get; set; }
 
         /// <summary>
+        /// (Updatable) Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+        /// </summary>
+        [Input("isReservationsEnabled")]
+        public Input<bool>? IsReservationsEnabled { get; set; }
+
+        /// <summary>
         /// (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
         /// </summary>
         [Input("kmsKeyId")]
@@ -534,6 +547,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("isHydrated")]
         public Input<bool>? IsHydrated { get; set; }
+
+        /// <summary>
+        /// (Updatable) Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+        /// </summary>
+        [Input("isReservationsEnabled")]
+        public Input<bool>? IsReservationsEnabled { get; set; }
 
         /// <summary>
         /// (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.

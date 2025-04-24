@@ -42,7 +42,7 @@ namespace Pulumi.Oci.VisualBuilder.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
-        /// Unique identifier that is immutable on creation.
+        /// The Virtual Cloud Network OCID.
         /// </summary>
         public readonly string Id;
         public readonly string IdcsOpenId;

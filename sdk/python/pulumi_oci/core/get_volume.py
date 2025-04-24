@@ -28,7 +28,7 @@ class GetVolumeResult:
     """
     A collection of values returned by getVolume.
     """
-    def __init__(__self__, auto_tuned_vpus_per_gb=None, autotune_policies=None, availability_domain=None, backup_policy_id=None, block_volume_replicas=None, block_volume_replicas_deletion=None, cluster_placement_group_id=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_auto_tune_enabled=None, is_hydrated=None, kms_key_id=None, size_in_gbs=None, size_in_mbs=None, source_details=None, state=None, system_tags=None, time_created=None, volume_backup_id=None, volume_group_id=None, volume_id=None, vpus_per_gb=None, xrc_kms_key_id=None):
+    def __init__(__self__, auto_tuned_vpus_per_gb=None, autotune_policies=None, availability_domain=None, backup_policy_id=None, block_volume_replicas=None, block_volume_replicas_deletion=None, cluster_placement_group_id=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_auto_tune_enabled=None, is_hydrated=None, is_reservations_enabled=None, kms_key_id=None, size_in_gbs=None, size_in_mbs=None, source_details=None, state=None, system_tags=None, time_created=None, volume_backup_id=None, volume_group_id=None, volume_id=None, vpus_per_gb=None, xrc_kms_key_id=None):
         if auto_tuned_vpus_per_gb and not isinstance(auto_tuned_vpus_per_gb, str):
             raise TypeError("Expected argument 'auto_tuned_vpus_per_gb' to be a str")
         pulumi.set(__self__, "auto_tuned_vpus_per_gb", auto_tuned_vpus_per_gb)
@@ -71,6 +71,9 @@ class GetVolumeResult:
         if is_hydrated and not isinstance(is_hydrated, bool):
             raise TypeError("Expected argument 'is_hydrated' to be a bool")
         pulumi.set(__self__, "is_hydrated", is_hydrated)
+        if is_reservations_enabled and not isinstance(is_reservations_enabled, bool):
+            raise TypeError("Expected argument 'is_reservations_enabled' to be a bool")
+        pulumi.set(__self__, "is_reservations_enabled", is_reservations_enabled)
         if kms_key_id and not isinstance(kms_key_id, str):
             raise TypeError("Expected argument 'kms_key_id' to be a str")
         pulumi.set(__self__, "kms_key_id", kms_key_id)
@@ -216,6 +219,14 @@ class GetVolumeResult:
         return pulumi.get(self, "is_hydrated")
 
     @property
+    @pulumi.getter(name="isReservationsEnabled")
+    def is_reservations_enabled(self) -> builtins.bool:
+        """
+        Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+        """
+        return pulumi.get(self, "is_reservations_enabled")
+
+    @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> builtins.str:
         """
@@ -324,6 +335,7 @@ class AwaitableGetVolumeResult(GetVolumeResult):
             id=self.id,
             is_auto_tune_enabled=self.is_auto_tune_enabled,
             is_hydrated=self.is_hydrated,
+            is_reservations_enabled=self.is_reservations_enabled,
             kms_key_id=self.kms_key_id,
             size_in_gbs=self.size_in_gbs,
             size_in_mbs=self.size_in_mbs,
@@ -377,6 +389,7 @@ def get_volume(volume_id: Optional[builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         is_auto_tune_enabled=pulumi.get(__ret__, 'is_auto_tune_enabled'),
         is_hydrated=pulumi.get(__ret__, 'is_hydrated'),
+        is_reservations_enabled=pulumi.get(__ret__, 'is_reservations_enabled'),
         kms_key_id=pulumi.get(__ret__, 'kms_key_id'),
         size_in_gbs=pulumi.get(__ret__, 'size_in_gbs'),
         size_in_mbs=pulumi.get(__ret__, 'size_in_mbs'),
@@ -427,6 +440,7 @@ def get_volume_output(volume_id: Optional[pulumi.Input[builtins.str]] = None,
         id=pulumi.get(__response__, 'id'),
         is_auto_tune_enabled=pulumi.get(__response__, 'is_auto_tune_enabled'),
         is_hydrated=pulumi.get(__response__, 'is_hydrated'),
+        is_reservations_enabled=pulumi.get(__response__, 'is_reservations_enabled'),
         kms_key_id=pulumi.get(__response__, 'kms_key_id'),
         size_in_gbs=pulumi.get(__response__, 'size_in_gbs'),
         size_in_mbs=pulumi.get(__response__, 'size_in_mbs'),

@@ -17,6 +17,19 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'GetPatchManagementDatabasesFilterResult',
+    'GetPatchManagementDatabasesPatchDatabasesCollectionResult',
+    'GetPatchManagementDatabasesPatchDatabasesCollectionItemResult',
+    'GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchResult',
+    'GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailResult',
+    'GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailResult',
+    'GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailResult',
+    'GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryResult',
+    'GetPatchManagementImagesPatchRecommendationSummaryResult',
+    'GetPatchManagementPatchOperationsSummaryResult',
+    'GetPatchManagementResourceResult',
+    'GetPatchManagementResourceHostInfoResult',
+    'GetPatchManagementResourcesPatchComplianceSummaryResult',
     'GetVulnerabilityAggregatedVulnerabilityDataAggregatedVulnerabilityCollectionResult',
     'GetVulnerabilityAggregatedVulnerabilityDataAggregatedVulnerabilityCollectionItemResult',
     'GetVulnerabilityAggregatedVulnerabilityDataFilterResult',
@@ -43,6 +56,880 @@ __all__ = [
     'GetVulnerabilityVulnerabilitiesVulnerabilityCollectionResult',
     'GetVulnerabilityVulnerabilitiesVulnerabilityCollectionItemResult',
 ]
+
+@pulumi.output_type
+class GetPatchManagementDatabasesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetPatchManagementDatabasesPatchDatabasesCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetPatchManagementDatabasesPatchDatabasesCollectionItemResult']):
+        """
+        :param Sequence['GetPatchManagementDatabasesPatchDatabasesCollectionItemArgs'] items: List of patchDatabases.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetPatchManagementDatabasesPatchDatabasesCollectionItemResult']:
+        """
+        List of patchDatabases.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetPatchManagementDatabasesPatchDatabasesCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 additional_patches: Sequence['outputs.GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchResult'],
+                 current_patch_watermark: builtins.str,
+                 database_id: builtins.str,
+                 database_name: builtins.str,
+                 database_type: builtins.str,
+                 defined_tags: Mapping[str, builtins.str],
+                 freeform_tags: Mapping[str, builtins.str],
+                 host_or_cluster: builtins.str,
+                 image_details: Sequence['outputs.GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailResult'],
+                 oracle_home_path: builtins.str,
+                 patch_activity_details: Sequence['outputs.GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailResult'],
+                 patch_compliance_details: Sequence['outputs.GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailResult'],
+                 patch_user: builtins.str,
+                 release: builtins.str,
+                 release_full_version: builtins.str,
+                 state: builtins.str,
+                 sudo_file_path: builtins.str,
+                 system_tags: Mapping[str, builtins.str],
+                 vulnerabilities_summaries: Sequence['outputs.GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryResult']):
+        """
+        :param Sequence['GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchArgs'] additional_patches: List of additional patches on database.
+        :param builtins.str current_patch_watermark: This is the hashcode representing the list of patches applied.
+        :param builtins.str database_id: Database ocid.
+        :param builtins.str database_name: Database name.
+        :param builtins.str database_type: Filter by database type. Possible values Single Instance or RAC.
+        :param Mapping[str, builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param builtins.str host_or_cluster: For SI, hosted on host and for RAC, host on cluster.
+        :param Sequence['GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailArgs'] image_details: Image details containing the subscribed image, its status, version, owner and time of creation.
+        :param builtins.str oracle_home_path: Path to the Oracle home.
+        :param Sequence['GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailArgs'] patch_activity_details: Details of deploy, update and migrate-listener(only for single Instance database) operations for this resource.
+        :param Sequence['GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailArgs'] patch_compliance_details: Patch Compliance Status
+        :param builtins.str patch_user: Intermediate user to be used for patching, created and maintained by customers. This user requires sudo access to switch as Oracle home owner and root user
+        :param builtins.str release: Database release.
+        :param builtins.str release_full_version: Database release full version.
+        :param builtins.str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+        :param builtins.str sudo_file_path: Path to sudo binary (executable) file
+        :param Mapping[str, builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Sequence['GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryArgs'] vulnerabilities_summaries: Summary of vulnerabilities found in registered resources grouped by severity.
+        """
+        pulumi.set(__self__, "additional_patches", additional_patches)
+        pulumi.set(__self__, "current_patch_watermark", current_patch_watermark)
+        pulumi.set(__self__, "database_id", database_id)
+        pulumi.set(__self__, "database_name", database_name)
+        pulumi.set(__self__, "database_type", database_type)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "host_or_cluster", host_or_cluster)
+        pulumi.set(__self__, "image_details", image_details)
+        pulumi.set(__self__, "oracle_home_path", oracle_home_path)
+        pulumi.set(__self__, "patch_activity_details", patch_activity_details)
+        pulumi.set(__self__, "patch_compliance_details", patch_compliance_details)
+        pulumi.set(__self__, "patch_user", patch_user)
+        pulumi.set(__self__, "release", release)
+        pulumi.set(__self__, "release_full_version", release_full_version)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "sudo_file_path", sudo_file_path)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "vulnerabilities_summaries", vulnerabilities_summaries)
+
+    @property
+    @pulumi.getter(name="additionalPatches")
+    def additional_patches(self) -> Sequence['outputs.GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchResult']:
+        """
+        List of additional patches on database.
+        """
+        return pulumi.get(self, "additional_patches")
+
+    @property
+    @pulumi.getter(name="currentPatchWatermark")
+    def current_patch_watermark(self) -> builtins.str:
+        """
+        This is the hashcode representing the list of patches applied.
+        """
+        return pulumi.get(self, "current_patch_watermark")
+
+    @property
+    @pulumi.getter(name="databaseId")
+    def database_id(self) -> builtins.str:
+        """
+        Database ocid.
+        """
+        return pulumi.get(self, "database_id")
+
+    @property
+    @pulumi.getter(name="databaseName")
+    def database_name(self) -> builtins.str:
+        """
+        Database name.
+        """
+        return pulumi.get(self, "database_name")
+
+    @property
+    @pulumi.getter(name="databaseType")
+    def database_type(self) -> builtins.str:
+        """
+        Filter by database type. Possible values Single Instance or RAC.
+        """
+        return pulumi.get(self, "database_type")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="hostOrCluster")
+    def host_or_cluster(self) -> builtins.str:
+        """
+        For SI, hosted on host and for RAC, host on cluster.
+        """
+        return pulumi.get(self, "host_or_cluster")
+
+    @property
+    @pulumi.getter(name="imageDetails")
+    def image_details(self) -> Sequence['outputs.GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailResult']:
+        """
+        Image details containing the subscribed image, its status, version, owner and time of creation.
+        """
+        return pulumi.get(self, "image_details")
+
+    @property
+    @pulumi.getter(name="oracleHomePath")
+    def oracle_home_path(self) -> builtins.str:
+        """
+        Path to the Oracle home.
+        """
+        return pulumi.get(self, "oracle_home_path")
+
+    @property
+    @pulumi.getter(name="patchActivityDetails")
+    def patch_activity_details(self) -> Sequence['outputs.GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailResult']:
+        """
+        Details of deploy, update and migrate-listener(only for single Instance database) operations for this resource.
+        """
+        return pulumi.get(self, "patch_activity_details")
+
+    @property
+    @pulumi.getter(name="patchComplianceDetails")
+    def patch_compliance_details(self) -> Sequence['outputs.GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailResult']:
+        """
+        Patch Compliance Status
+        """
+        return pulumi.get(self, "patch_compliance_details")
+
+    @property
+    @pulumi.getter(name="patchUser")
+    def patch_user(self) -> builtins.str:
+        """
+        Intermediate user to be used for patching, created and maintained by customers. This user requires sudo access to switch as Oracle home owner and root user
+        """
+        return pulumi.get(self, "patch_user")
+
+    @property
+    @pulumi.getter
+    def release(self) -> builtins.str:
+        """
+        Database release.
+        """
+        return pulumi.get(self, "release")
+
+    @property
+    @pulumi.getter(name="releaseFullVersion")
+    def release_full_version(self) -> builtins.str:
+        """
+        Database release full version.
+        """
+        return pulumi.get(self, "release_full_version")
+
+    @property
+    @pulumi.getter
+    def state(self) -> builtins.str:
+        """
+        A filter to return only resources their lifecycleState matches the given lifecycleState.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="sudoFilePath")
+    def sudo_file_path(self) -> builtins.str:
+        """
+        Path to sudo binary (executable) file
+        """
+        return pulumi.get(self, "sudo_file_path")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="vulnerabilitiesSummaries")
+    def vulnerabilities_summaries(self) -> Sequence['outputs.GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryResult']:
+        """
+        Summary of vulnerabilities found in registered resources grouped by severity.
+        """
+        return pulumi.get(self, "vulnerabilities_summaries")
+
+
+@pulumi.output_type
+class GetPatchManagementDatabasesPatchDatabasesCollectionItemAdditionalPatchResult(dict):
+    def __init__(__self__, *,
+                 category: builtins.str,
+                 description: builtins.str,
+                 patch_id: builtins.int,
+                 patch_name: builtins.str):
+        """
+        :param builtins.str category: Shows if patch is recommended or is an additional patch from an existing database.
+        :param builtins.str description: Description of the patch recommendation.
+        :param builtins.int patch_id: Id for the patch recommendation.
+        :param builtins.str patch_name: Name for the patch recommendation.
+        """
+        pulumi.set(__self__, "category", category)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "patch_id", patch_id)
+        pulumi.set(__self__, "patch_name", patch_name)
+
+    @property
+    @pulumi.getter
+    def category(self) -> builtins.str:
+        """
+        Shows if patch is recommended or is an additional patch from an existing database.
+        """
+        return pulumi.get(self, "category")
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        Description of the patch recommendation.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="patchId")
+    def patch_id(self) -> builtins.int:
+        """
+        Id for the patch recommendation.
+        """
+        return pulumi.get(self, "patch_id")
+
+    @property
+    @pulumi.getter(name="patchName")
+    def patch_name(self) -> builtins.str:
+        """
+        Name for the patch recommendation.
+        """
+        return pulumi.get(self, "patch_name")
+
+
+@pulumi.output_type
+class GetPatchManagementDatabasesPatchDatabasesCollectionItemImageDetailResult(dict):
+    def __init__(__self__, *,
+                 created_by: builtins.str,
+                 current_version: builtins.str,
+                 image_id: builtins.str,
+                 image_owner: builtins.str,
+                 image_status: builtins.str,
+                 image_version: builtins.str,
+                 subscribed_image: builtins.str,
+                 time_image_creation: builtins.str,
+                 up_to_date_image_version: builtins.str):
+        """
+        :param builtins.str created_by: Name of the person who created the image.
+        :param builtins.str current_version: Name of the image version marked as current of the image.
+        :param builtins.str image_id: Subscribed image
+        :param builtins.str image_owner: Owner of the image.
+        :param builtins.str image_status: Image status.
+        :param builtins.str image_version: Release version of the image.
+        :param builtins.str subscribed_image: Subscribed image.
+        :param builtins.str time_image_creation: Date when the image was created.
+        :param builtins.str up_to_date_image_version: An image version name, that is up to date and has no recommendations.
+        """
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "current_version", current_version)
+        pulumi.set(__self__, "image_id", image_id)
+        pulumi.set(__self__, "image_owner", image_owner)
+        pulumi.set(__self__, "image_status", image_status)
+        pulumi.set(__self__, "image_version", image_version)
+        pulumi.set(__self__, "subscribed_image", subscribed_image)
+        pulumi.set(__self__, "time_image_creation", time_image_creation)
+        pulumi.set(__self__, "up_to_date_image_version", up_to_date_image_version)
+
+    @property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> builtins.str:
+        """
+        Name of the person who created the image.
+        """
+        return pulumi.get(self, "created_by")
+
+    @property
+    @pulumi.getter(name="currentVersion")
+    def current_version(self) -> builtins.str:
+        """
+        Name of the image version marked as current of the image.
+        """
+        return pulumi.get(self, "current_version")
+
+    @property
+    @pulumi.getter(name="imageId")
+    def image_id(self) -> builtins.str:
+        """
+        Subscribed image
+        """
+        return pulumi.get(self, "image_id")
+
+    @property
+    @pulumi.getter(name="imageOwner")
+    def image_owner(self) -> builtins.str:
+        """
+        Owner of the image.
+        """
+        return pulumi.get(self, "image_owner")
+
+    @property
+    @pulumi.getter(name="imageStatus")
+    def image_status(self) -> builtins.str:
+        """
+        Image status.
+        """
+        return pulumi.get(self, "image_status")
+
+    @property
+    @pulumi.getter(name="imageVersion")
+    def image_version(self) -> builtins.str:
+        """
+        Release version of the image.
+        """
+        return pulumi.get(self, "image_version")
+
+    @property
+    @pulumi.getter(name="subscribedImage")
+    def subscribed_image(self) -> builtins.str:
+        """
+        Subscribed image.
+        """
+        return pulumi.get(self, "subscribed_image")
+
+    @property
+    @pulumi.getter(name="timeImageCreation")
+    def time_image_creation(self) -> builtins.str:
+        """
+        Date when the image was created.
+        """
+        return pulumi.get(self, "time_image_creation")
+
+    @property
+    @pulumi.getter(name="upToDateImageVersion")
+    def up_to_date_image_version(self) -> builtins.str:
+        """
+        An image version name, that is up to date and has no recommendations.
+        """
+        return pulumi.get(self, "up_to_date_image_version")
+
+
+@pulumi.output_type
+class GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchActivityDetailResult(dict):
+    def __init__(__self__, *,
+                 deploy_operation_id: builtins.str,
+                 deploy_status: builtins.str,
+                 deploy_task_id: builtins.str,
+                 migrate_listener_operation_id: builtins.str,
+                 migrate_listener_status: builtins.str,
+                 migrate_listener_task_id: builtins.str,
+                 update_operation_id: builtins.str,
+                 update_status: builtins.str,
+                 update_task_id: builtins.str):
+        """
+        :param builtins.str deploy_operation_id: Operation Identifier for deploy operation.
+        :param builtins.str deploy_status: Status of deploy operation.
+        :param builtins.str deploy_task_id: Task identifier for deploy operation.
+        :param builtins.str migrate_listener_operation_id: Operation Identifier for migrate listener operation.
+        :param builtins.str migrate_listener_status: Status of migrate listener operation.
+        :param builtins.str migrate_listener_task_id: Task identifier for migrate listener operation.
+        :param builtins.str update_operation_id: Operation Identifier for update operation.
+        :param builtins.str update_status: Status of update operation.
+        :param builtins.str update_task_id: Task identifier for update operation.
+        """
+        pulumi.set(__self__, "deploy_operation_id", deploy_operation_id)
+        pulumi.set(__self__, "deploy_status", deploy_status)
+        pulumi.set(__self__, "deploy_task_id", deploy_task_id)
+        pulumi.set(__self__, "migrate_listener_operation_id", migrate_listener_operation_id)
+        pulumi.set(__self__, "migrate_listener_status", migrate_listener_status)
+        pulumi.set(__self__, "migrate_listener_task_id", migrate_listener_task_id)
+        pulumi.set(__self__, "update_operation_id", update_operation_id)
+        pulumi.set(__self__, "update_status", update_status)
+        pulumi.set(__self__, "update_task_id", update_task_id)
+
+    @property
+    @pulumi.getter(name="deployOperationId")
+    def deploy_operation_id(self) -> builtins.str:
+        """
+        Operation Identifier for deploy operation.
+        """
+        return pulumi.get(self, "deploy_operation_id")
+
+    @property
+    @pulumi.getter(name="deployStatus")
+    def deploy_status(self) -> builtins.str:
+        """
+        Status of deploy operation.
+        """
+        return pulumi.get(self, "deploy_status")
+
+    @property
+    @pulumi.getter(name="deployTaskId")
+    def deploy_task_id(self) -> builtins.str:
+        """
+        Task identifier for deploy operation.
+        """
+        return pulumi.get(self, "deploy_task_id")
+
+    @property
+    @pulumi.getter(name="migrateListenerOperationId")
+    def migrate_listener_operation_id(self) -> builtins.str:
+        """
+        Operation Identifier for migrate listener operation.
+        """
+        return pulumi.get(self, "migrate_listener_operation_id")
+
+    @property
+    @pulumi.getter(name="migrateListenerStatus")
+    def migrate_listener_status(self) -> builtins.str:
+        """
+        Status of migrate listener operation.
+        """
+        return pulumi.get(self, "migrate_listener_status")
+
+    @property
+    @pulumi.getter(name="migrateListenerTaskId")
+    def migrate_listener_task_id(self) -> builtins.str:
+        """
+        Task identifier for migrate listener operation.
+        """
+        return pulumi.get(self, "migrate_listener_task_id")
+
+    @property
+    @pulumi.getter(name="updateOperationId")
+    def update_operation_id(self) -> builtins.str:
+        """
+        Operation Identifier for update operation.
+        """
+        return pulumi.get(self, "update_operation_id")
+
+    @property
+    @pulumi.getter(name="updateStatus")
+    def update_status(self) -> builtins.str:
+        """
+        Status of update operation.
+        """
+        return pulumi.get(self, "update_status")
+
+    @property
+    @pulumi.getter(name="updateTaskId")
+    def update_task_id(self) -> builtins.str:
+        """
+        Task identifier for update operation.
+        """
+        return pulumi.get(self, "update_task_id")
+
+
+@pulumi.output_type
+class GetPatchManagementDatabasesPatchDatabasesCollectionItemPatchComplianceDetailResult(dict):
+    def __init__(__self__, *,
+                 patch_compliance_status: builtins.str,
+                 patch_compliance_version: builtins.str):
+        """
+        :param builtins.str patch_compliance_status: Patch compliance status.
+        :param builtins.str patch_compliance_version: Resource patch compliance version name.
+        """
+        pulumi.set(__self__, "patch_compliance_status", patch_compliance_status)
+        pulumi.set(__self__, "patch_compliance_version", patch_compliance_version)
+
+    @property
+    @pulumi.getter(name="patchComplianceStatus")
+    def patch_compliance_status(self) -> builtins.str:
+        """
+        Patch compliance status.
+        """
+        return pulumi.get(self, "patch_compliance_status")
+
+    @property
+    @pulumi.getter(name="patchComplianceVersion")
+    def patch_compliance_version(self) -> builtins.str:
+        """
+        Resource patch compliance version name.
+        """
+        return pulumi.get(self, "patch_compliance_version")
+
+
+@pulumi.output_type
+class GetPatchManagementDatabasesPatchDatabasesCollectionItemVulnerabilitiesSummaryResult(dict):
+    def __init__(__self__, *,
+                 critical: builtins.int,
+                 high: builtins.int,
+                 info: builtins.int,
+                 low: builtins.int,
+                 medium: builtins.int,
+                 total: builtins.int):
+        pulumi.set(__self__, "critical", critical)
+        pulumi.set(__self__, "high", high)
+        pulumi.set(__self__, "info", info)
+        pulumi.set(__self__, "low", low)
+        pulumi.set(__self__, "medium", medium)
+        pulumi.set(__self__, "total", total)
+
+    @property
+    @pulumi.getter
+    def critical(self) -> builtins.int:
+        return pulumi.get(self, "critical")
+
+    @property
+    @pulumi.getter
+    def high(self) -> builtins.int:
+        return pulumi.get(self, "high")
+
+    @property
+    @pulumi.getter
+    def info(self) -> builtins.int:
+        return pulumi.get(self, "info")
+
+    @property
+    @pulumi.getter
+    def low(self) -> builtins.int:
+        return pulumi.get(self, "low")
+
+    @property
+    @pulumi.getter
+    def medium(self) -> builtins.int:
+        return pulumi.get(self, "medium")
+
+    @property
+    @pulumi.getter
+    def total(self) -> builtins.int:
+        return pulumi.get(self, "total")
+
+
+@pulumi.output_type
+class GetPatchManagementImagesPatchRecommendationSummaryResult(dict):
+    def __init__(__self__, *,
+                 image_patch_recommendations_count: builtins.int,
+                 total_images_count: builtins.int,
+                 up_to_date_images_count: builtins.int):
+        pulumi.set(__self__, "image_patch_recommendations_count", image_patch_recommendations_count)
+        pulumi.set(__self__, "total_images_count", total_images_count)
+        pulumi.set(__self__, "up_to_date_images_count", up_to_date_images_count)
+
+    @property
+    @pulumi.getter(name="imagePatchRecommendationsCount")
+    def image_patch_recommendations_count(self) -> builtins.int:
+        return pulumi.get(self, "image_patch_recommendations_count")
+
+    @property
+    @pulumi.getter(name="totalImagesCount")
+    def total_images_count(self) -> builtins.int:
+        return pulumi.get(self, "total_images_count")
+
+    @property
+    @pulumi.getter(name="upToDateImagesCount")
+    def up_to_date_images_count(self) -> builtins.int:
+        return pulumi.get(self, "up_to_date_images_count")
+
+
+@pulumi.output_type
+class GetPatchManagementPatchOperationsSummaryResult(dict):
+    def __init__(__self__, *,
+                 failed_patch_ops_count: builtins.int,
+                 running_patch_ops_count: builtins.int,
+                 scheduled_patch_ops_count: builtins.int,
+                 successful_patch_ops_count: builtins.int,
+                 warnings_patch_ops_count: builtins.int):
+        pulumi.set(__self__, "failed_patch_ops_count", failed_patch_ops_count)
+        pulumi.set(__self__, "running_patch_ops_count", running_patch_ops_count)
+        pulumi.set(__self__, "scheduled_patch_ops_count", scheduled_patch_ops_count)
+        pulumi.set(__self__, "successful_patch_ops_count", successful_patch_ops_count)
+        pulumi.set(__self__, "warnings_patch_ops_count", warnings_patch_ops_count)
+
+    @property
+    @pulumi.getter(name="failedPatchOpsCount")
+    def failed_patch_ops_count(self) -> builtins.int:
+        return pulumi.get(self, "failed_patch_ops_count")
+
+    @property
+    @pulumi.getter(name="runningPatchOpsCount")
+    def running_patch_ops_count(self) -> builtins.int:
+        return pulumi.get(self, "running_patch_ops_count")
+
+    @property
+    @pulumi.getter(name="scheduledPatchOpsCount")
+    def scheduled_patch_ops_count(self) -> builtins.int:
+        return pulumi.get(self, "scheduled_patch_ops_count")
+
+    @property
+    @pulumi.getter(name="successfulPatchOpsCount")
+    def successful_patch_ops_count(self) -> builtins.int:
+        return pulumi.get(self, "successful_patch_ops_count")
+
+    @property
+    @pulumi.getter(name="warningsPatchOpsCount")
+    def warnings_patch_ops_count(self) -> builtins.int:
+        return pulumi.get(self, "warnings_patch_ops_count")
+
+
+@pulumi.output_type
+class GetPatchManagementResourceResult(dict):
+    def __init__(__self__, *,
+                 agent_id: builtins.str,
+                 connector_id: builtins.str,
+                 db_platform_type: builtins.str,
+                 db_version: builtins.str,
+                 deployment_type: builtins.str,
+                 host_infos: Sequence['outputs.GetPatchManagementResourceHostInfoResult'],
+                 is_cluster_db: builtins.bool,
+                 license_type: builtins.str,
+                 resource_compartment_id: builtins.str,
+                 resource_id: builtins.str,
+                 resource_name: builtins.str,
+                 resource_type: builtins.str):
+        """
+        :param builtins.str agent_id: The agent Id of the agent managing the resource.
+        :param builtins.str connector_id: The connector Id of the resource.
+        :param builtins.str db_platform_type: The platform type of the resource.
+        :param builtins.str db_version: The version of the resource.
+        :param builtins.str deployment_type: The deployment type of the resource.
+        :param Sequence['GetPatchManagementResourceHostInfoArgs'] host_infos: host info objects
+        :param builtins.bool is_cluster_db: True if it is a cluster db.
+        :param builtins.str license_type: The License Type of the resource.
+        :param builtins.str resource_compartment_id: The compartmentId of the resource.
+        :param builtins.str resource_id: The Id of the resource.
+        :param builtins.str resource_name: The name of the resource.
+        :param builtins.str resource_type: The type of the resource.
+        """
+        pulumi.set(__self__, "agent_id", agent_id)
+        pulumi.set(__self__, "connector_id", connector_id)
+        pulumi.set(__self__, "db_platform_type", db_platform_type)
+        pulumi.set(__self__, "db_version", db_version)
+        pulumi.set(__self__, "deployment_type", deployment_type)
+        pulumi.set(__self__, "host_infos", host_infos)
+        pulumi.set(__self__, "is_cluster_db", is_cluster_db)
+        pulumi.set(__self__, "license_type", license_type)
+        pulumi.set(__self__, "resource_compartment_id", resource_compartment_id)
+        pulumi.set(__self__, "resource_id", resource_id)
+        pulumi.set(__self__, "resource_name", resource_name)
+        pulumi.set(__self__, "resource_type", resource_type)
+
+    @property
+    @pulumi.getter(name="agentId")
+    def agent_id(self) -> builtins.str:
+        """
+        The agent Id of the agent managing the resource.
+        """
+        return pulumi.get(self, "agent_id")
+
+    @property
+    @pulumi.getter(name="connectorId")
+    def connector_id(self) -> builtins.str:
+        """
+        The connector Id of the resource.
+        """
+        return pulumi.get(self, "connector_id")
+
+    @property
+    @pulumi.getter(name="dbPlatformType")
+    def db_platform_type(self) -> builtins.str:
+        """
+        The platform type of the resource.
+        """
+        return pulumi.get(self, "db_platform_type")
+
+    @property
+    @pulumi.getter(name="dbVersion")
+    def db_version(self) -> builtins.str:
+        """
+        The version of the resource.
+        """
+        return pulumi.get(self, "db_version")
+
+    @property
+    @pulumi.getter(name="deploymentType")
+    def deployment_type(self) -> builtins.str:
+        """
+        The deployment type of the resource.
+        """
+        return pulumi.get(self, "deployment_type")
+
+    @property
+    @pulumi.getter(name="hostInfos")
+    def host_infos(self) -> Sequence['outputs.GetPatchManagementResourceHostInfoResult']:
+        """
+        host info objects
+        """
+        return pulumi.get(self, "host_infos")
+
+    @property
+    @pulumi.getter(name="isClusterDb")
+    def is_cluster_db(self) -> builtins.bool:
+        """
+        True if it is a cluster db.
+        """
+        return pulumi.get(self, "is_cluster_db")
+
+    @property
+    @pulumi.getter(name="licenseType")
+    def license_type(self) -> builtins.str:
+        """
+        The License Type of the resource.
+        """
+        return pulumi.get(self, "license_type")
+
+    @property
+    @pulumi.getter(name="resourceCompartmentId")
+    def resource_compartment_id(self) -> builtins.str:
+        """
+        The compartmentId of the resource.
+        """
+        return pulumi.get(self, "resource_compartment_id")
+
+    @property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> builtins.str:
+        """
+        The Id of the resource.
+        """
+        return pulumi.get(self, "resource_id")
+
+    @property
+    @pulumi.getter(name="resourceName")
+    def resource_name(self) -> builtins.str:
+        """
+        The name of the resource.
+        """
+        return pulumi.get(self, "resource_name")
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> builtins.str:
+        """
+        The type of the resource.
+        """
+        return pulumi.get(self, "resource_type")
+
+
+@pulumi.output_type
+class GetPatchManagementResourceHostInfoResult(dict):
+    def __init__(__self__, *,
+                 host_cores: builtins.int,
+                 host_name: builtins.str):
+        """
+        :param builtins.int host_cores: Number of host cores.
+        :param builtins.str host_name: The name of the host.
+        """
+        pulumi.set(__self__, "host_cores", host_cores)
+        pulumi.set(__self__, "host_name", host_name)
+
+    @property
+    @pulumi.getter(name="hostCores")
+    def host_cores(self) -> builtins.int:
+        """
+        Number of host cores.
+        """
+        return pulumi.get(self, "host_cores")
+
+    @property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> builtins.str:
+        """
+        The name of the host.
+        """
+        return pulumi.get(self, "host_name")
+
+
+@pulumi.output_type
+class GetPatchManagementResourcesPatchComplianceSummaryResult(dict):
+    def __init__(__self__, *,
+                 non_compliant_resources_count: builtins.int,
+                 not_dblm_registered_resources_count: builtins.int,
+                 not_subscribed_resources_count: builtins.int,
+                 total_resources_count: builtins.int,
+                 up_to_date_resources_count: builtins.int):
+        pulumi.set(__self__, "non_compliant_resources_count", non_compliant_resources_count)
+        pulumi.set(__self__, "not_dblm_registered_resources_count", not_dblm_registered_resources_count)
+        pulumi.set(__self__, "not_subscribed_resources_count", not_subscribed_resources_count)
+        pulumi.set(__self__, "total_resources_count", total_resources_count)
+        pulumi.set(__self__, "up_to_date_resources_count", up_to_date_resources_count)
+
+    @property
+    @pulumi.getter(name="nonCompliantResourcesCount")
+    def non_compliant_resources_count(self) -> builtins.int:
+        return pulumi.get(self, "non_compliant_resources_count")
+
+    @property
+    @pulumi.getter(name="notDblmRegisteredResourcesCount")
+    def not_dblm_registered_resources_count(self) -> builtins.int:
+        return pulumi.get(self, "not_dblm_registered_resources_count")
+
+    @property
+    @pulumi.getter(name="notSubscribedResourcesCount")
+    def not_subscribed_resources_count(self) -> builtins.int:
+        return pulumi.get(self, "not_subscribed_resources_count")
+
+    @property
+    @pulumi.getter(name="totalResourcesCount")
+    def total_resources_count(self) -> builtins.int:
+        return pulumi.get(self, "total_resources_count")
+
+    @property
+    @pulumi.getter(name="upToDateResourcesCount")
+    def up_to_date_resources_count(self) -> builtins.int:
+        return pulumi.get(self, "up_to_date_resources_count")
+
 
 @pulumi.output_type
 class GetVulnerabilityAggregatedVulnerabilityDataAggregatedVulnerabilityCollectionResult(dict):
@@ -254,6 +1141,7 @@ class GetVulnerabilityPatchRecommendationsSummaryResult(dict):
 @pulumi.output_type
 class GetVulnerabilityResourceResult(dict):
     def __init__(__self__, *,
+                 agent_id: builtins.str,
                  connector_id: builtins.str,
                  db_platform_type: builtins.str,
                  db_version: builtins.str,
@@ -266,6 +1154,7 @@ class GetVulnerabilityResourceResult(dict):
                  resource_name: builtins.str,
                  resource_type: builtins.str):
         """
+        :param builtins.str agent_id: The agent Id of the agent managing the resource.
         :param builtins.str connector_id: The connector Id of the resource.
         :param builtins.str db_platform_type: The platform type of the resource.
         :param builtins.str db_version: The version of the resource.
@@ -278,6 +1167,7 @@ class GetVulnerabilityResourceResult(dict):
         :param builtins.str resource_name: The name of the resource.
         :param builtins.str resource_type: The type of the resource.
         """
+        pulumi.set(__self__, "agent_id", agent_id)
         pulumi.set(__self__, "connector_id", connector_id)
         pulumi.set(__self__, "db_platform_type", db_platform_type)
         pulumi.set(__self__, "db_version", db_version)
@@ -289,6 +1179,14 @@ class GetVulnerabilityResourceResult(dict):
         pulumi.set(__self__, "resource_id", resource_id)
         pulumi.set(__self__, "resource_name", resource_name)
         pulumi.set(__self__, "resource_type", resource_type)
+
+    @property
+    @pulumi.getter(name="agentId")
+    def agent_id(self) -> builtins.str:
+        """
+        The agent Id of the agent managing the resource.
+        """
+        return pulumi.get(self, "agent_id")
 
     @property
     @pulumi.getter(name="connectorId")

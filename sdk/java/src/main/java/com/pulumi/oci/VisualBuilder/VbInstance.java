@@ -26,65 +26,6 @@ import javax.annotation.Nullable;
  * 
  * Creates a new Vb Instance.
  * 
- * ## Example Usage
- * 
- * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.VisualBuilder.VbInstance;
- * import com.pulumi.oci.VisualBuilder.VbInstanceArgs;
- * import com.pulumi.oci.VisualBuilder.inputs.VbInstanceAlternateCustomEndpointArgs;
- * import com.pulumi.oci.VisualBuilder.inputs.VbInstanceCustomEndpointArgs;
- * import com.pulumi.oci.VisualBuilder.inputs.VbInstanceNetworkEndpointDetailsArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testVbInstance = new VbInstance("testVbInstance", VbInstanceArgs.builder()
- *             .compartmentId(compartmentId)
- *             .displayName(vbInstanceDisplayName)
- *             .nodeCount(vbInstanceNodeCount)
- *             .alternateCustomEndpoints(VbInstanceAlternateCustomEndpointArgs.builder()
- *                 .hostname(vbInstanceAlternateCustomEndpointsHostname)
- *                 .certificateSecretId(testSecret.id())
- *                 .build())
- *             .consumptionModel(vbInstanceConsumptionModel)
- *             .customEndpoint(VbInstanceCustomEndpointArgs.builder()
- *                 .hostname(vbInstanceCustomEndpointHostname)
- *                 .certificateSecretId(testSecret.id())
- *                 .build())
- *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
- *             .freeformTags(Map.of("bar-key", "value"))
- *             .idcsOpenId(testIdcsOpen.id())
- *             .isVisualBuilderEnabled(vbInstanceIsVisualBuilderEnabled)
- *             .networkEndpointDetails(VbInstanceNetworkEndpointDetailsArgs.builder()
- *                 .networkEndpointType(vbInstanceNetworkEndpointDetailsNetworkEndpointType)
- *                 .subnetId(testSubnet.id())
- *                 .networkSecurityGroupIds(vbInstanceNetworkEndpointDetailsNetworkSecurityGroupIds)
- *                 .privateEndpointIp(vbInstanceNetworkEndpointDetailsPrivateEndpointIp)
- *                 .build())
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
- * &lt;!--End PulumiCodeChooser --&gt;
- * 
  * ## Import
  * 
  * VbInstances can be imported using the `id`, e.g.

@@ -174,6 +174,10 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly bool IsHydrated;
         /// <summary>
+        /// Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+        /// </summary>
+        public readonly bool IsReservationsEnabled;
+        /// <summary>
         /// The OCID of the Vault service key which is the master encryption key for the volume.
         /// </summary>
         public readonly string KmsKeyId;
@@ -243,6 +247,8 @@ namespace Pulumi.Oci.Core
 
             bool isHydrated,
 
+            bool isReservationsEnabled,
+
             string kmsKeyId,
 
             string sizeInGbs,
@@ -281,6 +287,7 @@ namespace Pulumi.Oci.Core
             Id = id;
             IsAutoTuneEnabled = isAutoTuneEnabled;
             IsHydrated = isHydrated;
+            IsReservationsEnabled = isReservationsEnabled;
             KmsKeyId = kmsKeyId;
             SizeInGbs = sizeInGbs;
             SizeInMbs = sizeInMbs;

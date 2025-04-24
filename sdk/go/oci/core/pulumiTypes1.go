@@ -33516,6 +33516,8 @@ type GetVolumesVolume struct {
 	IsAutoTuneEnabled bool `pulumi:"isAutoTuneEnabled"`
 	// Specifies whether the cloned volume's data has finished copying from the source volume or backup.
 	IsHydrated bool `pulumi:"isHydrated"`
+	// Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+	IsReservationsEnabled bool `pulumi:"isReservationsEnabled"`
 	// The OCID of the Vault service key which is the master encryption key for the volume.
 	KmsKeyId string `pulumi:"kmsKeyId"`
 	// The size of the volume in GBs.
@@ -33579,6 +33581,8 @@ type GetVolumesVolumeArgs struct {
 	IsAutoTuneEnabled pulumi.BoolInput `pulumi:"isAutoTuneEnabled"`
 	// Specifies whether the cloned volume's data has finished copying from the source volume or backup.
 	IsHydrated pulumi.BoolInput `pulumi:"isHydrated"`
+	// Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+	IsReservationsEnabled pulumi.BoolInput `pulumi:"isReservationsEnabled"`
 	// The OCID of the Vault service key which is the master encryption key for the volume.
 	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
 	// The size of the volume in GBs.
@@ -33721,6 +33725,11 @@ func (o GetVolumesVolumeOutput) IsAutoTuneEnabled() pulumi.BoolOutput {
 // Specifies whether the cloned volume's data has finished copying from the source volume or backup.
 func (o GetVolumesVolumeOutput) IsHydrated() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetVolumesVolume) bool { return v.IsHydrated }).(pulumi.BoolOutput)
+}
+
+// Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+func (o GetVolumesVolumeOutput) IsReservationsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVolumesVolume) bool { return v.IsReservationsEnabled }).(pulumi.BoolOutput)
 }
 
 // The OCID of the Vault service key which is the master encryption key for the volume.

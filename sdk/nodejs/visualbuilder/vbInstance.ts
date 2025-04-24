@@ -11,42 +11,6 @@ import * as utilities from "../utilities";
  *
  * Creates a new Vb Instance.
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testVbInstance = new oci.visualbuilder.VbInstance("test_vb_instance", {
- *     compartmentId: compartmentId,
- *     displayName: vbInstanceDisplayName,
- *     nodeCount: vbInstanceNodeCount,
- *     alternateCustomEndpoints: [{
- *         hostname: vbInstanceAlternateCustomEndpointsHostname,
- *         certificateSecretId: testSecret.id,
- *     }],
- *     consumptionModel: vbInstanceConsumptionModel,
- *     customEndpoint: {
- *         hostname: vbInstanceCustomEndpointHostname,
- *         certificateSecretId: testSecret.id,
- *     },
- *     definedTags: {
- *         "foo-namespace.bar-key": "value",
- *     },
- *     freeformTags: {
- *         "bar-key": "value",
- *     },
- *     idcsOpenId: testIdcsOpen.id,
- *     isVisualBuilderEnabled: vbInstanceIsVisualBuilderEnabled,
- *     networkEndpointDetails: {
- *         networkEndpointType: vbInstanceNetworkEndpointDetailsNetworkEndpointType,
- *         subnetId: testSubnet.id,
- *         networkSecurityGroupIds: vbInstanceNetworkEndpointDetailsNetworkSecurityGroupIds,
- *         privateEndpointIp: vbInstanceNetworkEndpointDetailsPrivateEndpointIp,
- *     },
- * });
- * ```
- *
  * ## Import
  *
  * VbInstances can be imported using the `id`, e.g.

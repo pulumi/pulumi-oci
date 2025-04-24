@@ -16,59 +16,6 @@ import (
 //
 // Creates a new Vb Instance.
 //
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/visualbuilder"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := visualbuilder.NewVbInstance(ctx, "test_vb_instance", &visualbuilder.VbInstanceArgs{
-//				CompartmentId: pulumi.Any(compartmentId),
-//				DisplayName:   pulumi.Any(vbInstanceDisplayName),
-//				NodeCount:     pulumi.Any(vbInstanceNodeCount),
-//				AlternateCustomEndpoints: visualbuilder.VbInstanceAlternateCustomEndpointArray{
-//					&visualbuilder.VbInstanceAlternateCustomEndpointArgs{
-//						Hostname:            pulumi.Any(vbInstanceAlternateCustomEndpointsHostname),
-//						CertificateSecretId: pulumi.Any(testSecret.Id),
-//					},
-//				},
-//				ConsumptionModel: pulumi.Any(vbInstanceConsumptionModel),
-//				CustomEndpoint: &visualbuilder.VbInstanceCustomEndpointArgs{
-//					Hostname:            pulumi.Any(vbInstanceCustomEndpointHostname),
-//					CertificateSecretId: pulumi.Any(testSecret.Id),
-//				},
-//				DefinedTags: pulumi.StringMap{
-//					"foo-namespace.bar-key": pulumi.String("value"),
-//				},
-//				FreeformTags: pulumi.StringMap{
-//					"bar-key": pulumi.String("value"),
-//				},
-//				IdcsOpenId:             pulumi.Any(testIdcsOpen.Id),
-//				IsVisualBuilderEnabled: pulumi.Any(vbInstanceIsVisualBuilderEnabled),
-//				NetworkEndpointDetails: &visualbuilder.VbInstanceNetworkEndpointDetailsArgs{
-//					NetworkEndpointType:     pulumi.Any(vbInstanceNetworkEndpointDetailsNetworkEndpointType),
-//					SubnetId:                pulumi.Any(testSubnet.Id),
-//					NetworkSecurityGroupIds: pulumi.Any(vbInstanceNetworkEndpointDetailsNetworkSecurityGroupIds),
-//					PrivateEndpointIp:       pulumi.Any(vbInstanceNetworkEndpointDetailsPrivateEndpointIp),
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
 // ## Import
 //
 // VbInstances can be imported using the `id`, e.g.

@@ -12,8 +12,34 @@ namespace Pulumi.Oci.VisualBuilder.Inputs
 
     public sealed class VbInstanceNetworkEndpointDetailsGetArgs : global::Pulumi.ResourceArgs
     {
+        [Input("allowlistedHttpIps")]
+        private InputList<string>? _allowlistedHttpIps;
+
+        /// <summary>
+        /// (Updatable) Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5/32", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        /// </summary>
+        public InputList<string> AllowlistedHttpIps
+        {
+            get => _allowlistedHttpIps ?? (_allowlistedHttpIps = new InputList<string>());
+            set => _allowlistedHttpIps = value;
+        }
+
+        [Input("allowlistedHttpVcns")]
+        private InputList<Inputs.VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnGetArgs>? _allowlistedHttpVcns;
+
+        /// <summary>
+        /// (Updatable) Virtual Cloud Networks allowed to access this network endpoint.
+        /// </summary>
+        public InputList<Inputs.VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnGetArgs> AllowlistedHttpVcns
+        {
+            get => _allowlistedHttpVcns ?? (_allowlistedHttpVcns = new InputList<Inputs.VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnGetArgs>());
+            set => _allowlistedHttpVcns = value;
+        }
+
         /// <summary>
         /// (Updatable) The type of network endpoint.
+        /// 
+        /// For private endpoint access
         /// </summary>
         [Input("networkEndpointType", required: true)]
         public Input<string> NetworkEndpointType { get; set; } = null!;
@@ -38,9 +64,11 @@ namespace Pulumi.Oci.VisualBuilder.Inputs
 
         /// <summary>
         /// (Updatable) The subnet OCID for the private endpoint.
+        /// 
+        /// For public network access control
         /// </summary>
-        [Input("subnetId", required: true)]
-        public Input<string> SubnetId { get; set; } = null!;
+        [Input("subnetId")]
+        public Input<string>? SubnetId { get; set; }
 
         public VbInstanceNetworkEndpointDetailsGetArgs()
         {

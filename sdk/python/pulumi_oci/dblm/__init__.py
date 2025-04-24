@@ -6,6 +6,8 @@ import builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .get_patch_management import *
+from .get_patch_management_databases import *
 from .get_vulnerability import *
 from .get_vulnerability_aggregated_vulnerability_data import *
 from .get_vulnerability_notifications import *

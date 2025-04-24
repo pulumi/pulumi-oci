@@ -33,6 +33,7 @@ class VolumeArgs:
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  is_auto_tune_enabled: Optional[pulumi.Input[builtins.bool]] = None,
+                 is_reservations_enabled: Optional[pulumi.Input[builtins.bool]] = None,
                  kms_key_id: Optional[pulumi.Input[builtins.str]] = None,
                  size_in_gbs: Optional[pulumi.Input[builtins.str]] = None,
                  size_in_mbs: Optional[pulumi.Input[builtins.str]] = None,
@@ -52,6 +53,7 @@ class VolumeArgs:
         :param pulumi.Input[builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[builtins.bool] is_auto_tune_enabled: (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
+        :param pulumi.Input[builtins.bool] is_reservations_enabled: (Updatable) Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
         :param pulumi.Input[builtins.str] kms_key_id: (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
         :param pulumi.Input[builtins.str] size_in_gbs: (Updatable) The size of the volume in GBs.
         :param pulumi.Input[builtins.str] size_in_mbs: The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use sizeInGBs instead.
@@ -89,6 +91,8 @@ class VolumeArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_auto_tune_enabled is not None:
             pulumi.set(__self__, "is_auto_tune_enabled", is_auto_tune_enabled)
+        if is_reservations_enabled is not None:
+            pulumi.set(__self__, "is_reservations_enabled", is_reservations_enabled)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
         if size_in_gbs is not None:
@@ -238,6 +242,18 @@ class VolumeArgs:
         pulumi.set(self, "is_auto_tune_enabled", value)
 
     @property
+    @pulumi.getter(name="isReservationsEnabled")
+    def is_reservations_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        (Updatable) Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+        """
+        return pulumi.get(self, "is_reservations_enabled")
+
+    @is_reservations_enabled.setter
+    def is_reservations_enabled(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_reservations_enabled", value)
+
+    @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -345,6 +361,7 @@ class _VolumeState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  is_auto_tune_enabled: Optional[pulumi.Input[builtins.bool]] = None,
                  is_hydrated: Optional[pulumi.Input[builtins.bool]] = None,
+                 is_reservations_enabled: Optional[pulumi.Input[builtins.bool]] = None,
                  kms_key_id: Optional[pulumi.Input[builtins.str]] = None,
                  size_in_gbs: Optional[pulumi.Input[builtins.str]] = None,
                  size_in_mbs: Optional[pulumi.Input[builtins.str]] = None,
@@ -370,6 +387,7 @@ class _VolumeState:
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[builtins.bool] is_auto_tune_enabled: (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         :param pulumi.Input[builtins.bool] is_hydrated: Specifies whether the cloned volume's data has finished copying from the source volume or backup.
+        :param pulumi.Input[builtins.bool] is_reservations_enabled: (Updatable) Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
         :param pulumi.Input[builtins.str] kms_key_id: (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
         :param pulumi.Input[builtins.str] size_in_gbs: (Updatable) The size of the volume in GBs.
         :param pulumi.Input[builtins.str] size_in_mbs: The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use sizeInGBs instead.
@@ -417,6 +435,8 @@ class _VolumeState:
             pulumi.set(__self__, "is_auto_tune_enabled", is_auto_tune_enabled)
         if is_hydrated is not None:
             pulumi.set(__self__, "is_hydrated", is_hydrated)
+        if is_reservations_enabled is not None:
+            pulumi.set(__self__, "is_reservations_enabled", is_reservations_enabled)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
         if size_in_gbs is not None:
@@ -598,6 +618,18 @@ class _VolumeState:
         pulumi.set(self, "is_hydrated", value)
 
     @property
+    @pulumi.getter(name="isReservationsEnabled")
+    def is_reservations_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        (Updatable) Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+        """
+        return pulumi.get(self, "is_reservations_enabled")
+
+    @is_reservations_enabled.setter
+    def is_reservations_enabled(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_reservations_enabled", value)
+
+    @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -753,6 +785,7 @@ class Volume(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  is_auto_tune_enabled: Optional[pulumi.Input[builtins.bool]] = None,
+                 is_reservations_enabled: Optional[pulumi.Input[builtins.bool]] = None,
                  kms_key_id: Optional[pulumi.Input[builtins.str]] = None,
                  size_in_gbs: Optional[pulumi.Input[builtins.str]] = None,
                  size_in_mbs: Optional[pulumi.Input[builtins.str]] = None,
@@ -807,6 +840,7 @@ class Volume(pulumi.CustomResource):
                 "Department": "Finance",
             },
             is_auto_tune_enabled=volume_is_auto_tune_enabled,
+            is_reservations_enabled=volume_is_reservations_enabled,
             kms_key_id=test_key["id"],
             size_in_gbs=volume_size_in_gbs,
             size_in_mbs=volume_size_in_mbs,
@@ -842,6 +876,7 @@ class Volume(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[builtins.bool] is_auto_tune_enabled: (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
+        :param pulumi.Input[builtins.bool] is_reservations_enabled: (Updatable) Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
         :param pulumi.Input[builtins.str] kms_key_id: (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
         :param pulumi.Input[builtins.str] size_in_gbs: (Updatable) The size of the volume in GBs.
         :param pulumi.Input[builtins.str] size_in_mbs: The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use sizeInGBs instead.
@@ -908,6 +943,7 @@ class Volume(pulumi.CustomResource):
                 "Department": "Finance",
             },
             is_auto_tune_enabled=volume_is_auto_tune_enabled,
+            is_reservations_enabled=volume_is_reservations_enabled,
             kms_key_id=test_key["id"],
             size_in_gbs=volume_size_in_gbs,
             size_in_mbs=volume_size_in_mbs,
@@ -957,6 +993,7 @@ class Volume(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  is_auto_tune_enabled: Optional[pulumi.Input[builtins.bool]] = None,
+                 is_reservations_enabled: Optional[pulumi.Input[builtins.bool]] = None,
                  kms_key_id: Optional[pulumi.Input[builtins.str]] = None,
                  size_in_gbs: Optional[pulumi.Input[builtins.str]] = None,
                  size_in_mbs: Optional[pulumi.Input[builtins.str]] = None,
@@ -988,6 +1025,7 @@ class Volume(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["is_auto_tune_enabled"] = is_auto_tune_enabled
+            __props__.__dict__["is_reservations_enabled"] = is_reservations_enabled
             __props__.__dict__["kms_key_id"] = kms_key_id
             __props__.__dict__["size_in_gbs"] = size_in_gbs
             __props__.__dict__["size_in_mbs"] = size_in_mbs
@@ -1024,6 +1062,7 @@ class Volume(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             is_auto_tune_enabled: Optional[pulumi.Input[builtins.bool]] = None,
             is_hydrated: Optional[pulumi.Input[builtins.bool]] = None,
+            is_reservations_enabled: Optional[pulumi.Input[builtins.bool]] = None,
             kms_key_id: Optional[pulumi.Input[builtins.str]] = None,
             size_in_gbs: Optional[pulumi.Input[builtins.str]] = None,
             size_in_mbs: Optional[pulumi.Input[builtins.str]] = None,
@@ -1054,6 +1093,7 @@ class Volume(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[builtins.bool] is_auto_tune_enabled: (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         :param pulumi.Input[builtins.bool] is_hydrated: Specifies whether the cloned volume's data has finished copying from the source volume or backup.
+        :param pulumi.Input[builtins.bool] is_reservations_enabled: (Updatable) Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
         :param pulumi.Input[builtins.str] kms_key_id: (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
         :param pulumi.Input[builtins.str] size_in_gbs: (Updatable) The size of the volume in GBs.
         :param pulumi.Input[builtins.str] size_in_mbs: The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use sizeInGBs instead.
@@ -1089,6 +1129,7 @@ class Volume(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_auto_tune_enabled"] = is_auto_tune_enabled
         __props__.__dict__["is_hydrated"] = is_hydrated
+        __props__.__dict__["is_reservations_enabled"] = is_reservations_enabled
         __props__.__dict__["kms_key_id"] = kms_key_id
         __props__.__dict__["size_in_gbs"] = size_in_gbs
         __props__.__dict__["size_in_mbs"] = size_in_mbs
@@ -1203,6 +1244,14 @@ class Volume(pulumi.CustomResource):
         Specifies whether the cloned volume's data has finished copying from the source volume or backup.
         """
         return pulumi.get(self, "is_hydrated")
+
+    @property
+    @pulumi.getter(name="isReservationsEnabled")
+    def is_reservations_enabled(self) -> pulumi.Output[builtins.bool]:
+        """
+        (Updatable) Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+        """
+        return pulumi.get(self, "is_reservations_enabled")
 
     @property
     @pulumi.getter(name="kmsKeyId")

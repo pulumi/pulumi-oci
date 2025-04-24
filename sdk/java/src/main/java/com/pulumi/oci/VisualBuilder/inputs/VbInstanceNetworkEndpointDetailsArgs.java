@@ -6,6 +6,7 @@ package com.pulumi.oci.VisualBuilder.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.VisualBuilder.inputs.VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -18,7 +19,39 @@ public final class VbInstanceNetworkEndpointDetailsArgs extends com.pulumi.resou
     public static final VbInstanceNetworkEndpointDetailsArgs Empty = new VbInstanceNetworkEndpointDetailsArgs();
 
     /**
+     * (Updatable) Source IP addresses or IP address ranges ingress rules. (ex: &#34;168.122.59.5/32&#34;, &#34;10.20.30.0/26&#34;) An invalid IP or CIDR block will result in a 400 response.
+     * 
+     */
+    @Import(name="allowlistedHttpIps")
+    private @Nullable Output<List<String>> allowlistedHttpIps;
+
+    /**
+     * @return (Updatable) Source IP addresses or IP address ranges ingress rules. (ex: &#34;168.122.59.5/32&#34;, &#34;10.20.30.0/26&#34;) An invalid IP or CIDR block will result in a 400 response.
+     * 
+     */
+    public Optional<Output<List<String>>> allowlistedHttpIps() {
+        return Optional.ofNullable(this.allowlistedHttpIps);
+    }
+
+    /**
+     * (Updatable) Virtual Cloud Networks allowed to access this network endpoint.
+     * 
+     */
+    @Import(name="allowlistedHttpVcns")
+    private @Nullable Output<List<VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs>> allowlistedHttpVcns;
+
+    /**
+     * @return (Updatable) Virtual Cloud Networks allowed to access this network endpoint.
+     * 
+     */
+    public Optional<Output<List<VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs>>> allowlistedHttpVcns() {
+        return Optional.ofNullable(this.allowlistedHttpVcns);
+    }
+
+    /**
      * (Updatable) The type of network endpoint.
+     * 
+     * For private endpoint access
      * 
      */
     @Import(name="networkEndpointType", required=true)
@@ -26,6 +59,8 @@ public final class VbInstanceNetworkEndpointDetailsArgs extends com.pulumi.resou
 
     /**
      * @return (Updatable) The type of network endpoint.
+     * 
+     * For private endpoint access
      * 
      */
     public Output<String> networkEndpointType() {
@@ -65,21 +100,27 @@ public final class VbInstanceNetworkEndpointDetailsArgs extends com.pulumi.resou
     /**
      * (Updatable) The subnet OCID for the private endpoint.
      * 
+     * For public network access control
+     * 
      */
-    @Import(name="subnetId", required=true)
-    private Output<String> subnetId;
+    @Import(name="subnetId")
+    private @Nullable Output<String> subnetId;
 
     /**
      * @return (Updatable) The subnet OCID for the private endpoint.
      * 
+     * For public network access control
+     * 
      */
-    public Output<String> subnetId() {
-        return this.subnetId;
+    public Optional<Output<String>> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
 
     private VbInstanceNetworkEndpointDetailsArgs() {}
 
     private VbInstanceNetworkEndpointDetailsArgs(VbInstanceNetworkEndpointDetailsArgs $) {
+        this.allowlistedHttpIps = $.allowlistedHttpIps;
+        this.allowlistedHttpVcns = $.allowlistedHttpVcns;
         this.networkEndpointType = $.networkEndpointType;
         this.networkSecurityGroupIds = $.networkSecurityGroupIds;
         this.privateEndpointIp = $.privateEndpointIp;
@@ -105,7 +146,71 @@ public final class VbInstanceNetworkEndpointDetailsArgs extends com.pulumi.resou
         }
 
         /**
+         * @param allowlistedHttpIps (Updatable) Source IP addresses or IP address ranges ingress rules. (ex: &#34;168.122.59.5/32&#34;, &#34;10.20.30.0/26&#34;) An invalid IP or CIDR block will result in a 400 response.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder allowlistedHttpIps(@Nullable Output<List<String>> allowlistedHttpIps) {
+            $.allowlistedHttpIps = allowlistedHttpIps;
+            return this;
+        }
+
+        /**
+         * @param allowlistedHttpIps (Updatable) Source IP addresses or IP address ranges ingress rules. (ex: &#34;168.122.59.5/32&#34;, &#34;10.20.30.0/26&#34;) An invalid IP or CIDR block will result in a 400 response.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder allowlistedHttpIps(List<String> allowlistedHttpIps) {
+            return allowlistedHttpIps(Output.of(allowlistedHttpIps));
+        }
+
+        /**
+         * @param allowlistedHttpIps (Updatable) Source IP addresses or IP address ranges ingress rules. (ex: &#34;168.122.59.5/32&#34;, &#34;10.20.30.0/26&#34;) An invalid IP or CIDR block will result in a 400 response.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder allowlistedHttpIps(String... allowlistedHttpIps) {
+            return allowlistedHttpIps(List.of(allowlistedHttpIps));
+        }
+
+        /**
+         * @param allowlistedHttpVcns (Updatable) Virtual Cloud Networks allowed to access this network endpoint.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder allowlistedHttpVcns(@Nullable Output<List<VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs>> allowlistedHttpVcns) {
+            $.allowlistedHttpVcns = allowlistedHttpVcns;
+            return this;
+        }
+
+        /**
+         * @param allowlistedHttpVcns (Updatable) Virtual Cloud Networks allowed to access this network endpoint.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder allowlistedHttpVcns(List<VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs> allowlistedHttpVcns) {
+            return allowlistedHttpVcns(Output.of(allowlistedHttpVcns));
+        }
+
+        /**
+         * @param allowlistedHttpVcns (Updatable) Virtual Cloud Networks allowed to access this network endpoint.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder allowlistedHttpVcns(VbInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs... allowlistedHttpVcns) {
+            return allowlistedHttpVcns(List.of(allowlistedHttpVcns));
+        }
+
+        /**
          * @param networkEndpointType (Updatable) The type of network endpoint.
+         * 
+         * For private endpoint access
          * 
          * @return builder
          * 
@@ -117,6 +222,8 @@ public final class VbInstanceNetworkEndpointDetailsArgs extends com.pulumi.resou
 
         /**
          * @param networkEndpointType (Updatable) The type of network endpoint.
+         * 
+         * For private endpoint access
          * 
          * @return builder
          * 
@@ -180,16 +287,20 @@ public final class VbInstanceNetworkEndpointDetailsArgs extends com.pulumi.resou
         /**
          * @param subnetId (Updatable) The subnet OCID for the private endpoint.
          * 
+         * For public network access control
+         * 
          * @return builder
          * 
          */
-        public Builder subnetId(Output<String> subnetId) {
+        public Builder subnetId(@Nullable Output<String> subnetId) {
             $.subnetId = subnetId;
             return this;
         }
 
         /**
          * @param subnetId (Updatable) The subnet OCID for the private endpoint.
+         * 
+         * For public network access control
          * 
          * @return builder
          * 
@@ -201,9 +312,6 @@ public final class VbInstanceNetworkEndpointDetailsArgs extends com.pulumi.resou
         public VbInstanceNetworkEndpointDetailsArgs build() {
             if ($.networkEndpointType == null) {
                 throw new MissingRequiredPropertyException("VbInstanceNetworkEndpointDetailsArgs", "networkEndpointType");
-            }
-            if ($.subnetId == null) {
-                throw new MissingRequiredPropertyException("VbInstanceNetworkEndpointDetailsArgs", "subnetId");
             }
             return $;
         }

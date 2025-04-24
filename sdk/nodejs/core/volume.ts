@@ -52,6 +52,7 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     isAutoTuneEnabled: volumeIsAutoTuneEnabled,
+ *     isReservationsEnabled: volumeIsReservationsEnabled,
  *     kmsKeyId: testKey.id,
  *     sizeInGbs: volumeSizeInGbs,
  *     sizeInMbs: volumeSizeInMbs,
@@ -156,6 +157,10 @@ export class Volume extends pulumi.CustomResource {
      */
     public /*out*/ readonly isHydrated!: pulumi.Output<boolean>;
     /**
+     * (Updatable) Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+     */
+    public readonly isReservationsEnabled!: pulumi.Output<boolean>;
+    /**
      * (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
      */
     public readonly kmsKeyId!: pulumi.Output<string>;
@@ -234,6 +239,7 @@ export class Volume extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["isAutoTuneEnabled"] = state ? state.isAutoTuneEnabled : undefined;
             resourceInputs["isHydrated"] = state ? state.isHydrated : undefined;
+            resourceInputs["isReservationsEnabled"] = state ? state.isReservationsEnabled : undefined;
             resourceInputs["kmsKeyId"] = state ? state.kmsKeyId : undefined;
             resourceInputs["sizeInGbs"] = state ? state.sizeInGbs : undefined;
             resourceInputs["sizeInMbs"] = state ? state.sizeInMbs : undefined;
@@ -264,6 +270,7 @@ export class Volume extends pulumi.CustomResource {
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["isAutoTuneEnabled"] = args ? args.isAutoTuneEnabled : undefined;
+            resourceInputs["isReservationsEnabled"] = args ? args.isReservationsEnabled : undefined;
             resourceInputs["kmsKeyId"] = args ? args.kmsKeyId : undefined;
             resourceInputs["sizeInGbs"] = args ? args.sizeInGbs : undefined;
             resourceInputs["sizeInMbs"] = args ? args.sizeInMbs : undefined;
@@ -338,6 +345,10 @@ export interface VolumeState {
      * Specifies whether the cloned volume's data has finished copying from the source volume or backup.
      */
     isHydrated?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+     */
+    isReservationsEnabled?: pulumi.Input<boolean>;
     /**
      * (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
      */
@@ -439,6 +450,10 @@ export interface VolumeArgs {
      * (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
      */
     isAutoTuneEnabled?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+     */
+    isReservationsEnabled?: pulumi.Input<boolean>;
     /**
      * (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
      */

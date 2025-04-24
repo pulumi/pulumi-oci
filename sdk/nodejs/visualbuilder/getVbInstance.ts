@@ -72,7 +72,7 @@ export interface GetVbInstanceResult {
      */
     readonly freeformTags: {[key: string]: string};
     /**
-     * Unique identifier that is immutable on creation.
+     * The Virtual Cloud Network OCID.
      */
     readonly id: string;
     readonly idcsOpenId: string;

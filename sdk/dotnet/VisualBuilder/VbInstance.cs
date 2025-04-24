@@ -14,57 +14,6 @@ namespace Pulumi.Oci.VisualBuilder
     /// 
     /// Creates a new Vb Instance.
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testVbInstance = new Oci.VisualBuilder.VbInstance("test_vb_instance", new()
-    ///     {
-    ///         CompartmentId = compartmentId,
-    ///         DisplayName = vbInstanceDisplayName,
-    ///         NodeCount = vbInstanceNodeCount,
-    ///         AlternateCustomEndpoints = new[]
-    ///         {
-    ///             new Oci.VisualBuilder.Inputs.VbInstanceAlternateCustomEndpointArgs
-    ///             {
-    ///                 Hostname = vbInstanceAlternateCustomEndpointsHostname,
-    ///                 CertificateSecretId = testSecret.Id,
-    ///             },
-    ///         },
-    ///         ConsumptionModel = vbInstanceConsumptionModel,
-    ///         CustomEndpoint = new Oci.VisualBuilder.Inputs.VbInstanceCustomEndpointArgs
-    ///         {
-    ///             Hostname = vbInstanceCustomEndpointHostname,
-    ///             CertificateSecretId = testSecret.Id,
-    ///         },
-    ///         DefinedTags = 
-    ///         {
-    ///             { "foo-namespace.bar-key", "value" },
-    ///         },
-    ///         FreeformTags = 
-    ///         {
-    ///             { "bar-key", "value" },
-    ///         },
-    ///         IdcsOpenId = testIdcsOpen.Id,
-    ///         IsVisualBuilderEnabled = vbInstanceIsVisualBuilderEnabled,
-    ///         NetworkEndpointDetails = new Oci.VisualBuilder.Inputs.VbInstanceNetworkEndpointDetailsArgs
-    ///         {
-    ///             NetworkEndpointType = vbInstanceNetworkEndpointDetailsNetworkEndpointType,
-    ///             SubnetId = testSubnet.Id,
-    ///             NetworkSecurityGroupIds = vbInstanceNetworkEndpointDetailsNetworkSecurityGroupIds,
-    ///             PrivateEndpointIp = vbInstanceNetworkEndpointDetailsPrivateEndpointIp,
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// VbInstances can be imported using the `id`, e.g.

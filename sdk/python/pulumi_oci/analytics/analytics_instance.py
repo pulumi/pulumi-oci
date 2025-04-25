@@ -656,6 +656,9 @@ class _AnalyticsInstanceState:
 
 
 class AnalyticsInstance(pulumi.CustomResource):
+
+    pulumi_type = "oci:Analytics/analyticsInstance:AnalyticsInstance"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

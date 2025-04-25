@@ -655,6 +655,9 @@ class _ManagementStationState:
 
 
 class ManagementStation(pulumi.CustomResource):
+
+    pulumi_type = "oci:OsManagementHub/managementStation:ManagementStation"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

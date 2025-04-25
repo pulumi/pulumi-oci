@@ -528,6 +528,9 @@ class _ExascaleDbStorageVaultState:
 
 
 class ExascaleDbStorageVault(pulumi.CustomResource):
+
+    pulumi_type = "oci:Database/exascaleDbStorageVault:ExascaleDbStorageVault"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

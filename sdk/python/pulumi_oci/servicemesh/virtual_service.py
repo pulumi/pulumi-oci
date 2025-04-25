@@ -418,6 +418,9 @@ class _VirtualServiceState:
 
 
 class VirtualService(pulumi.CustomResource):
+
+    pulumi_type = "oci:ServiceMesh/virtualService:VirtualService"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

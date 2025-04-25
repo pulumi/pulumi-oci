@@ -290,6 +290,9 @@ class _CaptureFilterState:
 
 
 class CaptureFilter(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/captureFilter:CaptureFilter"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

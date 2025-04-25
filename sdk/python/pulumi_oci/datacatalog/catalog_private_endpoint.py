@@ -353,6 +353,9 @@ class _CatalogPrivateEndpointState:
 
 
 class CatalogPrivateEndpoint(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataCatalog/catalogPrivateEndpoint:CatalogPrivateEndpoint"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

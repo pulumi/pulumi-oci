@@ -374,6 +374,9 @@ class _PreauthrequestState:
 
 
 class Preauthrequest(pulumi.CustomResource):
+
+    pulumi_type = "oci:ObjectStorage/preauthrequest:Preauthrequest"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

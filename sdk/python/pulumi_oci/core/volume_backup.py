@@ -476,6 +476,9 @@ class _VolumeBackupState:
 
 
 class VolumeBackup(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/volumeBackup:VolumeBackup"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

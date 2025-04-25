@@ -593,6 +593,9 @@ class _SqlFirewallPolicyState:
 
 
 class SqlFirewallPolicy(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataSafe/sqlFirewallPolicy:SqlFirewallPolicy"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

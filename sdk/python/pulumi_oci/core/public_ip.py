@@ -404,6 +404,9 @@ class _PublicIpState:
 
 
 class PublicIp(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/publicIp:PublicIp"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

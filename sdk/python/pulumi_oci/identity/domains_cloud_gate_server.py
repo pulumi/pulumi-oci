@@ -1279,6 +1279,9 @@ class _DomainsCloudGateServerState:
 
 
 class DomainsCloudGateServer(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/domainsCloudGateServer:DomainsCloudGateServer"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

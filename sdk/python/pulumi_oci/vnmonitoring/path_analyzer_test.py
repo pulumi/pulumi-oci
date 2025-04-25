@@ -384,6 +384,9 @@ class _PathAnalyzerTestState:
 
 
 class PathAnalyzerTest(pulumi.CustomResource):
+
+    pulumi_type = "oci:VnMonitoring/pathAnalyzerTest:PathAnalyzerTest"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

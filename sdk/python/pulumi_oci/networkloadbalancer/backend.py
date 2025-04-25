@@ -367,6 +367,9 @@ class _BackendState:
 
 
 class Backend(pulumi.CustomResource):
+
+    pulumi_type = "oci:NetworkLoadBalancer/backend:Backend"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

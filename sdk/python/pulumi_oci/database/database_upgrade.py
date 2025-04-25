@@ -610,6 +610,9 @@ class _DatabaseUpgradeState:
 
 
 class DatabaseUpgrade(pulumi.CustomResource):
+
+    pulumi_type = "oci:Database/databaseUpgrade:DatabaseUpgrade"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

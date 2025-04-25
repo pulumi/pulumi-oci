@@ -402,6 +402,9 @@ class _FilesystemSnapshotPolicyState:
 
 
 class FilesystemSnapshotPolicy(pulumi.CustomResource):
+
+    pulumi_type = "oci:FileStorage/filesystemSnapshotPolicy:FilesystemSnapshotPolicy"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

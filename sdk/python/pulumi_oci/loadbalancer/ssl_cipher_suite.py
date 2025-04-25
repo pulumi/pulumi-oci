@@ -208,6 +208,9 @@ class _SslCipherSuiteState:
 
 
 class SslCipherSuite(pulumi.CustomResource):
+
+    pulumi_type = "oci:LoadBalancer/sslCipherSuite:SslCipherSuite"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

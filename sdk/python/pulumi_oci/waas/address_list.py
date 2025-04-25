@@ -255,6 +255,9 @@ class _AddressListState:
 
 
 class AddressList(pulumi.CustomResource):
+
+    pulumi_type = "oci:Waas/addressList:AddressList"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

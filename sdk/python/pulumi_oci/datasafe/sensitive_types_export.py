@@ -337,6 +337,9 @@ class _SensitiveTypesExportState:
 
 
 class SensitiveTypesExport(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataSafe/sensitiveTypesExport:SensitiveTypesExport"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

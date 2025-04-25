@@ -452,6 +452,9 @@ class _BootVolumeBackupState:
 
 
 class BootVolumeBackup(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/bootVolumeBackup:BootVolumeBackup"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

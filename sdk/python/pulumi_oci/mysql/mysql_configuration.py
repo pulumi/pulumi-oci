@@ -402,6 +402,9 @@ class _MysqlConfigurationState:
 
 
 class MysqlConfiguration(pulumi.CustomResource):
+
+    pulumi_type = "oci:Mysql/mysqlConfiguration:MysqlConfiguration"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

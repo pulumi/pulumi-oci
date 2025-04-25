@@ -290,6 +290,9 @@ class _SchedulingPolicySchedulingWindowState:
 
 
 class SchedulingPolicySchedulingWindow(pulumi.CustomResource):
+
+    pulumi_type = "oci:Database/schedulingPolicySchedulingWindow:SchedulingPolicySchedulingWindow"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

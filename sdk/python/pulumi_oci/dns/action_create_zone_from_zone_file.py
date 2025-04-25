@@ -426,6 +426,9 @@ class _ActionCreateZoneFromZoneFileState:
 
 
 class ActionCreateZoneFromZoneFile(pulumi.CustomResource):
+
+    pulumi_type = "oci:Dns/actionCreateZoneFromZoneFile:ActionCreateZoneFromZoneFile"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

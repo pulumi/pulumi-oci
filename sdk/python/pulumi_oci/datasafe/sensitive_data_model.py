@@ -594,6 +594,9 @@ class _SensitiveDataModelState:
 
 
 class SensitiveDataModel(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataSafe/sensitiveDataModel:SensitiveDataModel"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

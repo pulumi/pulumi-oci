@@ -561,6 +561,9 @@ class _VbInstanceState:
 
 
 class VbInstance(pulumi.CustomResource):
+
+    pulumi_type = "oci:VisualBuilder/vbInstance:VbInstance"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

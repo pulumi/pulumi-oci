@@ -513,6 +513,9 @@ class _AtCustomerCccInfrastructureState:
 
 
 class AtCustomerCccInfrastructure(pulumi.CustomResource):
+
+    pulumi_type = "oci:ComputeCloud/atCustomerCccInfrastructure:AtCustomerCccInfrastructure"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

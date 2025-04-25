@@ -298,6 +298,9 @@ class _StreamDistributionChannelState:
 
 
 class StreamDistributionChannel(pulumi.CustomResource):
+
+    pulumi_type = "oci:MediaServices/streamDistributionChannel:StreamDistributionChannel"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

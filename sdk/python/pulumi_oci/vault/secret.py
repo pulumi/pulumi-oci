@@ -624,6 +624,9 @@ class _SecretState:
 
 
 class Secret(pulumi.CustomResource):
+
+    pulumi_type = "oci:Vault/secret:Secret"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

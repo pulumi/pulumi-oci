@@ -529,6 +529,9 @@ class _DbNodeState:
 
 
 class DbNode(pulumi.CustomResource):
+
+    pulumi_type = "oci:Database/dbNode:DbNode"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

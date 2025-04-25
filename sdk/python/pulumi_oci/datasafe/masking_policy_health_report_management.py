@@ -234,6 +234,9 @@ class _MaskingPolicyHealthReportManagementState:
 
 
 class MaskingPolicyHealthReportManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataSafe/maskingPolicyHealthReportManagement:MaskingPolicyHealthReportManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -57,6 +57,9 @@ class _AddSdmColumnsState:
 
 
 class AddSdmColumns(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataSafe/addSdmColumns:AddSdmColumns"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

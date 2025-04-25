@@ -1090,6 +1090,9 @@ class _BdsInstanceState:
 
 
 class BdsInstance(pulumi.CustomResource):
+
+    pulumi_type = "oci:BigDataService/bdsInstance:BdsInstance"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

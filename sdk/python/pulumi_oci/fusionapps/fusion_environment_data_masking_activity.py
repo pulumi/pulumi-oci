@@ -161,6 +161,9 @@ class _FusionEnvironmentDataMaskingActivityState:
 
 
 class FusionEnvironmentDataMaskingActivity(pulumi.CustomResource):
+
+    pulumi_type = "oci:FusionApps/fusionEnvironmentDataMaskingActivity:FusionEnvironmentDataMaskingActivity"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

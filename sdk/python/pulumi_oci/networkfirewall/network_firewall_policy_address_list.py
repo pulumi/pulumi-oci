@@ -207,6 +207,9 @@ class _NetworkFirewallPolicyAddressListState:
 
 
 class NetworkFirewallPolicyAddressList(pulumi.CustomResource):
+
+    pulumi_type = "oci:NetworkFirewall/networkFirewallPolicyAddressList:NetworkFirewallPolicyAddressList"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

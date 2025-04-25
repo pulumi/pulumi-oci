@@ -302,6 +302,9 @@ class _FusionEnvironmentRefreshActivityState:
 
 
 class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
+
+    pulumi_type = "oci:FusionApps/fusionEnvironmentRefreshActivity:FusionEnvironmentRefreshActivity"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

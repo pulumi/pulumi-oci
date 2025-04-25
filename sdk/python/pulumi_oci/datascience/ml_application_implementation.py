@@ -514,6 +514,9 @@ class _MlApplicationImplementationState:
 
 
 class MlApplicationImplementation(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataScience/mlApplicationImplementation:MlApplicationImplementation"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

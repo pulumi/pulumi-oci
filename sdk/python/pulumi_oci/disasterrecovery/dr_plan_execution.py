@@ -450,6 +450,9 @@ class _DrPlanExecutionState:
 
 
 class DrPlanExecution(pulumi.CustomResource):
+
+    pulumi_type = "oci:DisasterRecovery/drPlanExecution:DrPlanExecution"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

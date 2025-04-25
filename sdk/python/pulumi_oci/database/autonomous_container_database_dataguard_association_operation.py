@@ -127,6 +127,9 @@ class _AutonomousContainerDatabaseDataguardAssociationOperationState:
 
 
 class AutonomousContainerDatabaseDataguardAssociationOperation(pulumi.CustomResource):
+
+    pulumi_type = "oci:Database/autonomousContainerDatabaseDataguardAssociationOperation:AutonomousContainerDatabaseDataguardAssociationOperation"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

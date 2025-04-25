@@ -448,6 +448,9 @@ class _MaskingPoliciesMaskingColumnState:
 
 
 class MaskingPoliciesMaskingColumn(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataSafe/maskingPoliciesMaskingColumn:MaskingPoliciesMaskingColumn"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -1233,6 +1233,9 @@ class _DomainsConditionState:
 
 
 class DomainsCondition(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/domainsCondition:DomainsCondition"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

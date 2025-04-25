@@ -446,6 +446,9 @@ class _PublicationState:
 
 
 class Publication(pulumi.CustomResource):
+
+    pulumi_type = "oci:Marketplace/publication:Publication"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

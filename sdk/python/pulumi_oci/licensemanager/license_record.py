@@ -478,6 +478,9 @@ class _LicenseRecordState:
 
 
 class LicenseRecord(pulumi.CustomResource):
+
+    pulumi_type = "oci:LicenseManager/licenseRecord:LicenseRecord"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

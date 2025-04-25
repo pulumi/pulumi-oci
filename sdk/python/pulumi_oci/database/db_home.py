@@ -604,6 +604,9 @@ class _DbHomeState:
 
 
 class DbHome(pulumi.CustomResource):
+
+    pulumi_type = "oci:Database/dbHome:DbHome"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

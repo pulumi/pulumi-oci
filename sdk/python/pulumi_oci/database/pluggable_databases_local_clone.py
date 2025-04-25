@@ -434,6 +434,9 @@ class _PluggableDatabasesLocalCloneState:
 
 
 class PluggableDatabasesLocalClone(pulumi.CustomResource):
+
+    pulumi_type = "oci:Database/pluggableDatabasesLocalClone:PluggableDatabasesLocalClone"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

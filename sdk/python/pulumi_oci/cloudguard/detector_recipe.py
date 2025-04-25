@@ -458,6 +458,9 @@ class _DetectorRecipeState:
 
 
 class DetectorRecipe(pulumi.CustomResource):
+
+    pulumi_type = "oci:CloudGuard/detectorRecipe:DetectorRecipe"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

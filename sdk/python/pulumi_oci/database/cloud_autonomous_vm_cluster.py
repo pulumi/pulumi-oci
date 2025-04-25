@@ -1340,6 +1340,9 @@ class _CloudAutonomousVmClusterState:
 
 
 class CloudAutonomousVmCluster(pulumi.CustomResource):
+
+    pulumi_type = "oci:Database/cloudAutonomousVmCluster:CloudAutonomousVmCluster"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

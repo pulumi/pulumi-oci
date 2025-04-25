@@ -545,6 +545,9 @@ class _OpaInstanceState:
 
 
 class OpaInstance(pulumi.CustomResource):
+
+    pulumi_type = "oci:Opa/opaInstance:OpaInstance"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

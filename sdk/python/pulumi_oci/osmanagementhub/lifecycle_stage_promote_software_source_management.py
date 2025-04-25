@@ -131,6 +131,9 @@ class _LifecycleStagePromoteSoftwareSourceManagementState:
 
 
 class LifecycleStagePromoteSoftwareSourceManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:OsManagementHub/lifecycleStagePromoteSoftwareSourceManagement:LifecycleStagePromoteSoftwareSourceManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

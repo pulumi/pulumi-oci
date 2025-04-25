@@ -361,6 +361,9 @@ class _ComputeCapacityReservationState:
 
 
 class ComputeCapacityReservation(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/computeCapacityReservation:ComputeCapacityReservation"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

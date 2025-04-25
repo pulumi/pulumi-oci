@@ -605,6 +605,9 @@ class _OccCapacityRequestState:
 
 
 class OccCapacityRequest(pulumi.CustomResource):
+
+    pulumi_type = "oci:CapacityManagement/occCapacityRequest:OccCapacityRequest"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

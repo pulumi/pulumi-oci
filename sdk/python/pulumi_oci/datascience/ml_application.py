@@ -289,6 +289,9 @@ class _MlApplicationState:
 
 
 class MlApplication(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataScience/mlApplication:MlApplication"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

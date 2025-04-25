@@ -440,6 +440,9 @@ class _ManagedListState:
 
 
 class ManagedList(pulumi.CustomResource):
+
+    pulumi_type = "oci:CloudGuard/managedList:ManagedList"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

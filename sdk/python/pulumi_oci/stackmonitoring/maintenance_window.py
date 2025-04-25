@@ -353,6 +353,9 @@ class _MaintenanceWindowState:
 
 
 class MaintenanceWindow(pulumi.CustomResource):
+
+    pulumi_type = "oci:StackMonitoring/maintenanceWindow:MaintenanceWindow"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

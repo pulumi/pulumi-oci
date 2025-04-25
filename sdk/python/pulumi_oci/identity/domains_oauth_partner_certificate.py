@@ -1283,6 +1283,9 @@ class _DomainsOauthPartnerCertificateState:
 
 
 class DomainsOauthPartnerCertificate(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/domainsOauthPartnerCertificate:DomainsOauthPartnerCertificate"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

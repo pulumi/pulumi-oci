@@ -3344,6 +3344,9 @@ class _DomainsPasswordPolicyState:
 
 
 class DomainsPasswordPolicy(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/domainsPasswordPolicy:DomainsPasswordPolicy"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

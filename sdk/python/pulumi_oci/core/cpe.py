@@ -312,6 +312,9 @@ class _CpeState:
 
 
 class Cpe(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/cpe:Cpe"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -291,6 +291,9 @@ class _CrossConnectGroupState:
 
 
 class CrossConnectGroup(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/crossConnectGroup:CrossConnectGroup"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

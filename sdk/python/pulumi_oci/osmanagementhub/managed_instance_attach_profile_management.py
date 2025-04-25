@@ -112,6 +112,9 @@ class _ManagedInstanceAttachProfileManagementState:
 
 
 class ManagedInstanceAttachProfileManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:OsManagementHub/managedInstanceAttachProfileManagement:ManagedInstanceAttachProfileManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

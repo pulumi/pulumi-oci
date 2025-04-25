@@ -288,6 +288,9 @@ class _LogSavedSearchState:
 
 
 class LogSavedSearch(pulumi.CustomResource):
+
+    pulumi_type = "oci:Logging/logSavedSearch:LogSavedSearch"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

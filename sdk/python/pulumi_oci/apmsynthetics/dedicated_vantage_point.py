@@ -336,6 +336,9 @@ class _DedicatedVantagePointState:
 
 
 class DedicatedVantagePoint(pulumi.CustomResource):
+
+    pulumi_type = "oci:ApmSynthetics/dedicatedVantagePoint:DedicatedVantagePoint"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

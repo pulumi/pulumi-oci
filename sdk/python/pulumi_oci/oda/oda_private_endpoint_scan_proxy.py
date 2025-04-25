@@ -208,6 +208,9 @@ class _OdaPrivateEndpointScanProxyState:
 
 
 class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
+
+    pulumi_type = "oci:Oda/odaPrivateEndpointScanProxy:OdaPrivateEndpointScanProxy"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -176,6 +176,9 @@ class _NetworkFirewallPolicyApplicationGroupState:
 
 
 class NetworkFirewallPolicyApplicationGroup(pulumi.CustomResource):
+
+    pulumi_type = "oci:NetworkFirewall/networkFirewallPolicyApplicationGroup:NetworkFirewallPolicyApplicationGroup"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

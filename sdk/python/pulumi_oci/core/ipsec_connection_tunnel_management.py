@@ -642,6 +642,9 @@ class _IpsecConnectionTunnelManagementState:
 
 
 class IpsecConnectionTunnelManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/ipsecConnectionTunnelManagement:IpsecConnectionTunnelManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

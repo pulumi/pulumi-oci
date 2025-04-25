@@ -112,6 +112,9 @@ class _ClusterStartCredentialRotationManagementState:
 
 
 class ClusterStartCredentialRotationManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:ContainerEngine/clusterStartCredentialRotationManagement:ClusterStartCredentialRotationManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

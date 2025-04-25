@@ -170,6 +170,9 @@ class _PluggabledatabasePluggableDatabaseDbmFeaturesManagementState:
 
 
 class PluggabledatabasePluggableDatabaseDbmFeaturesManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:DatabaseManagement/pluggabledatabasePluggableDatabaseDbmFeaturesManagement:PluggabledatabasePluggableDatabaseDbmFeaturesManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

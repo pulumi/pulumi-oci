@@ -320,6 +320,9 @@ class _ManagementAgentInstallKeyState:
 
 
 class ManagementAgentInstallKey(pulumi.CustomResource):
+
+    pulumi_type = "oci:ManagementAgent/managementAgentInstallKey:ManagementAgentInstallKey"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

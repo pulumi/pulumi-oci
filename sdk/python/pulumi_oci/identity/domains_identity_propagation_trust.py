@@ -2014,6 +2014,9 @@ class _DomainsIdentityPropagationTrustState:
 
 
 class DomainsIdentityPropagationTrust(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/domainsIdentityPropagationTrust:DomainsIdentityPropagationTrust"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

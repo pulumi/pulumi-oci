@@ -385,6 +385,9 @@ class _EndpointState:
 
 
 class Endpoint(pulumi.CustomResource):
+
+    pulumi_type = "oci:GenerativeAi/endpoint:Endpoint"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

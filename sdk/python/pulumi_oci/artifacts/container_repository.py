@@ -418,6 +418,9 @@ class _ContainerRepositoryState:
 
 
 class ContainerRepository(pulumi.CustomResource):
+
+    pulumi_type = "oci:Artifacts/containerRepository:ContainerRepository"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

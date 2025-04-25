@@ -290,6 +290,9 @@ class _SecurityAttributeState:
 
 
 class SecurityAttribute(pulumi.CustomResource):
+
+    pulumi_type = "oci:SecurityAttribute/securityAttribute:SecurityAttribute"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -430,6 +430,9 @@ class _AuditArchiveRetrievalState:
 
 
 class AuditArchiveRetrieval(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataSafe/auditArchiveRetrieval:AuditArchiveRetrieval"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

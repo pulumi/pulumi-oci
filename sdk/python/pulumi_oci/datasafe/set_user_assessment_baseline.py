@@ -113,6 +113,9 @@ class _SetUserAssessmentBaselineState:
 
 
 class SetUserAssessmentBaseline(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataSafe/setUserAssessmentBaseline:SetUserAssessmentBaseline"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -598,6 +598,9 @@ class _DeploymentBackupState:
 
 
 class DeploymentBackup(pulumi.CustomResource):
+
+    pulumi_type = "oci:GoldenGate/deploymentBackup:DeploymentBackup"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

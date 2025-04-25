@@ -398,6 +398,9 @@ class _SchedulingPlanState:
 
 
 class SchedulingPlan(pulumi.CustomResource):
+
+    pulumi_type = "oci:Database/schedulingPlan:SchedulingPlan"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

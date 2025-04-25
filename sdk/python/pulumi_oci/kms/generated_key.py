@@ -288,6 +288,9 @@ class _GeneratedKeyState:
 
 
 class GeneratedKey(pulumi.CustomResource):
+
+    pulumi_type = "oci:Kms/generatedKey:GeneratedKey"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

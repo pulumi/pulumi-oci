@@ -669,6 +669,9 @@ class _OpensearchClusterPipelineState:
 
 
 class OpensearchClusterPipeline(pulumi.CustomResource):
+
+    pulumi_type = "oci:Opensearch/opensearchClusterPipeline:OpensearchClusterPipeline"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

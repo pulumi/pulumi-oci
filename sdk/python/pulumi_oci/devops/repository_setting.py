@@ -179,6 +179,9 @@ class _RepositorySettingState:
 
 
 class RepositorySetting(pulumi.CustomResource):
+
+    pulumi_type = "oci:DevOps/repositorySetting:RepositorySetting"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

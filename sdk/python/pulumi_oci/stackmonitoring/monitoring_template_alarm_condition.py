@@ -414,6 +414,9 @@ class _MonitoringTemplateAlarmConditionState:
 
 
 class MonitoringTemplateAlarmCondition(pulumi.CustomResource):
+
+    pulumi_type = "oci:StackMonitoring/monitoringTemplateAlarmCondition:MonitoringTemplateAlarmCondition"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

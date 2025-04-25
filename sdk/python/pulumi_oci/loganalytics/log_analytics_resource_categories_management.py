@@ -174,6 +174,9 @@ class _LogAnalyticsResourceCategoriesManagementState:
 
 
 class LogAnalyticsResourceCategoriesManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:LogAnalytics/logAnalyticsResourceCategoriesManagement:LogAnalyticsResourceCategoriesManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

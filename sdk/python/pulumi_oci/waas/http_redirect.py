@@ -289,6 +289,9 @@ class _HttpRedirectState:
 
 
 class HttpRedirect(pulumi.CustomResource):
+
+    pulumi_type = "oci:Waas/httpRedirect:HttpRedirect"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

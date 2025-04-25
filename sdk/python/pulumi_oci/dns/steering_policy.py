@@ -457,6 +457,9 @@ class _SteeringPolicyState:
 
 
 class SteeringPolicy(pulumi.CustomResource):
+
+    pulumi_type = "oci:Dns/steeringPolicy:SteeringPolicy"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

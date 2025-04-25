@@ -194,6 +194,9 @@ class _RunStatementState:
 
 
 class RunStatement(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataFlow/runStatement:RunStatement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

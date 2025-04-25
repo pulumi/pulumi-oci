@@ -284,6 +284,9 @@ class _VerifyState:
 
 
 class Verify(pulumi.CustomResource):
+
+    pulumi_type = "oci:Kms/verify:Verify"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

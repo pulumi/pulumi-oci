@@ -273,6 +273,9 @@ class _ProcessSetState:
 
 
 class ProcessSet(pulumi.CustomResource):
+
+    pulumi_type = "oci:StackMonitoring/processSet:ProcessSet"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

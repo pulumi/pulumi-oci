@@ -240,6 +240,9 @@ class _ComputeClusterState:
 
 
 class ComputeCluster(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/computeCluster:ComputeCluster"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

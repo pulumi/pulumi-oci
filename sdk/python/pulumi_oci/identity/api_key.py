@@ -176,6 +176,9 @@ class _ApiKeyState:
 
 
 class ApiKey(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/apiKey:ApiKey"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

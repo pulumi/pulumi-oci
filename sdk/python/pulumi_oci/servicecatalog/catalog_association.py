@@ -160,6 +160,9 @@ class _CatalogAssociationState:
 
 
 class CatalogAssociation(pulumi.CustomResource):
+
+    pulumi_type = "oci:ServiceCatalog/catalogAssociation:CatalogAssociation"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

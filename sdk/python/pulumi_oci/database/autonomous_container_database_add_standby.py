@@ -1231,6 +1231,9 @@ class _AutonomousContainerDatabaseAddStandbyState:
 
 
 class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
+
+    pulumi_type = "oci:Database/autonomousContainerDatabaseAddStandby:AutonomousContainerDatabaseAddStandby"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

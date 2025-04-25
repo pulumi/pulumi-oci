@@ -431,6 +431,9 @@ class _OperationsInsightsWarehouseState:
 
 
 class OperationsInsightsWarehouse(pulumi.CustomResource):
+
+    pulumi_type = "oci:Opsi/operationsInsightsWarehouse:OperationsInsightsWarehouse"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

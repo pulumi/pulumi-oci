@@ -305,6 +305,9 @@ class _AddonState:
 
 
 class Addon(pulumi.CustomResource):
+
+    pulumi_type = "oci:ContainerEngine/addon:Addon"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

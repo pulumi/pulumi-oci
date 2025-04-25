@@ -799,6 +799,9 @@ class _ConfigState:
 
 
 class Config(pulumi.CustomResource):
+
+    pulumi_type = "oci:ApmSynthetics/config:Config"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -1032,6 +1032,9 @@ class _AlarmState:
 
 
 class Alarm(pulumi.CustomResource):
+
+    pulumi_type = "oci:Monitoring/alarm:Alarm"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

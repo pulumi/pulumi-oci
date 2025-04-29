@@ -472,6 +472,9 @@ class _DedicatedAiClusterState:
 
 
 class DedicatedAiCluster(pulumi.CustomResource):
+
+    pulumi_type = "oci:GenerativeAi/dedicatedAiCluster:DedicatedAiCluster"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

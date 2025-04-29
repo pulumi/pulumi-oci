@@ -464,6 +464,9 @@ class _ClusterPlacementGroupState:
 
 
 class ClusterPlacementGroup(pulumi.CustomResource):
+
+    pulumi_type = "oci:ClusterPlacementGroups/clusterPlacementGroup:ClusterPlacementGroup"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

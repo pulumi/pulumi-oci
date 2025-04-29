@@ -619,6 +619,9 @@ class _DelegationControlState:
 
 
 class DelegationControl(pulumi.CustomResource):
+
+    pulumi_type = "oci:DelegateAccessControl/delegationControl:DelegationControl"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

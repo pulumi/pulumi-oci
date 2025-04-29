@@ -368,6 +368,9 @@ class _ScriptState:
 
 
 class Script(pulumi.CustomResource):
+
+    pulumi_type = "oci:ApmSynthetics/script:Script"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

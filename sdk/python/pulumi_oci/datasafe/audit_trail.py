@@ -577,6 +577,9 @@ class _AuditTrailState:
 
 
 class AuditTrail(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataSafe/auditTrail:AuditTrail"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

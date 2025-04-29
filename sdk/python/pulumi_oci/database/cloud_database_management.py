@@ -366,6 +366,9 @@ class _CloudDatabaseManagementState:
 
 
 class CloudDatabaseManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:Database/cloudDatabaseManagement:CloudDatabaseManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

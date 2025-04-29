@@ -145,6 +145,9 @@ class _UiPasswordState:
 
 
 class UiPassword(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/uiPassword:UiPassword"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

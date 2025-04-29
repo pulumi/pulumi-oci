@@ -623,6 +623,9 @@ class _DatabaseToolsConnectionState:
 
 
 class DatabaseToolsConnection(pulumi.CustomResource):
+
+    pulumi_type = "oci:DatabaseTools/databaseToolsConnection:DatabaseToolsConnection"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

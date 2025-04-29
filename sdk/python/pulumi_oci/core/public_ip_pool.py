@@ -225,6 +225,9 @@ class _PublicIpPoolState:
 
 
 class PublicIpPool(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/publicIpPool:PublicIpPool"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

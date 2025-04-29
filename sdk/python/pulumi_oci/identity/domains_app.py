@@ -7142,6 +7142,9 @@ class _DomainsAppState:
 
 
 class DomainsApp(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/domainsApp:DomainsApp"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

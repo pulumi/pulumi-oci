@@ -304,6 +304,9 @@ class _SecurityAttributeNamespaceState:
 
 
 class SecurityAttributeNamespace(pulumi.CustomResource):
+
+    pulumi_type = "oci:SecurityAttribute/securityAttributeNamespace:SecurityAttributeNamespace"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -382,6 +382,9 @@ class _ComputeGpuMemoryClusterState:
 
 
 class ComputeGpuMemoryCluster(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/computeGpuMemoryCluster:ComputeGpuMemoryCluster"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

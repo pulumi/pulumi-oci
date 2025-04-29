@@ -343,6 +343,9 @@ class _SecurityZoneState:
 
 
 class SecurityZone(pulumi.CustomResource):
+
+    pulumi_type = "oci:CloudGuard/securityZone:SecurityZone"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

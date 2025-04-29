@@ -348,6 +348,9 @@ class _AppCatalogSubscriptionState:
 
 
 class AppCatalogSubscription(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/appCatalogSubscription:AppCatalogSubscription"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

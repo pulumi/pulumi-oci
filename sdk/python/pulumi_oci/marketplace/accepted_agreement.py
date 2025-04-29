@@ -317,6 +317,9 @@ class _AcceptedAgreementState:
 
 
 class AcceptedAgreement(pulumi.CustomResource):
+
+    pulumi_type = "oci:Marketplace/acceptedAgreement:AcceptedAgreement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

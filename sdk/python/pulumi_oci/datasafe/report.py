@@ -321,6 +321,9 @@ class _ReportState:
 
 
 class Report(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataSafe/report:Report"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

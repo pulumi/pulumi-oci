@@ -81,6 +81,9 @@ class _MaintenanceWindowsRetryFailedOperationState:
 
 
 class MaintenanceWindowsRetryFailedOperation(pulumi.CustomResource):
+
+    pulumi_type = "oci:StackMonitoring/maintenanceWindowsRetryFailedOperation:MaintenanceWindowsRetryFailedOperation"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

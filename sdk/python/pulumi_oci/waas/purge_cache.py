@@ -113,6 +113,9 @@ class _PurgeCacheState:
 
 
 class PurgeCache(pulumi.CustomResource):
+
+    pulumi_type = "oci:Waas/purgeCache:PurgeCache"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

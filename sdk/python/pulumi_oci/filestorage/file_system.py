@@ -674,6 +674,9 @@ class _FileSystemState:
 
 
 class FileSystem(pulumi.CustomResource):
+
+    pulumi_type = "oci:FileStorage/fileSystem:FileSystem"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

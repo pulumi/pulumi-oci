@@ -386,6 +386,9 @@ class _DiscoveryJobState:
 
 
 class DiscoveryJob(pulumi.CustomResource):
+
+    pulumi_type = "oci:StackMonitoring/discoveryJob:DiscoveryJob"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

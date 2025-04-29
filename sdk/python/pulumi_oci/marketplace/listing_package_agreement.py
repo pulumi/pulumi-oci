@@ -223,6 +223,9 @@ class _ListingPackageAgreementState:
 
 
 class ListingPackageAgreement(pulumi.CustomResource):
+
+    pulumi_type = "oci:Marketplace/listingPackageAgreement:ListingPackageAgreement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

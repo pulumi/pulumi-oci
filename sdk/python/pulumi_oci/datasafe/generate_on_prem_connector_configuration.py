@@ -112,6 +112,9 @@ class _GenerateOnPremConnectorConfigurationState:
 
 
 class GenerateOnPremConnectorConfiguration(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataSafe/generateOnPremConnectorConfiguration:GenerateOnPremConnectorConfiguration"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

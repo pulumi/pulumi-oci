@@ -1357,6 +1357,9 @@ class _ShardedDatabaseState:
 
 
 class ShardedDatabase(pulumi.CustomResource):
+
+    pulumi_type = "oci:GloballyDistributedDatabase/shardedDatabase:ShardedDatabase"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

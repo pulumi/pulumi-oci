@@ -146,6 +146,9 @@ class _ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementState:
 
 
 class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:DatabaseManagement/externalcontainerdatabaseExternalContainerDbmFeaturesManagement:ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

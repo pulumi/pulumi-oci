@@ -399,6 +399,9 @@ class _BaselineableMetricState:
 
 
 class BaselineableMetric(pulumi.CustomResource):
+
+    pulumi_type = "oci:StackMonitoring/baselineableMetric:BaselineableMetric"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

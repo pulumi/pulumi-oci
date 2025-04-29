@@ -361,6 +361,9 @@ class _AgentDataSourceState:
 
 
 class AgentDataSource(pulumi.CustomResource):
+
+    pulumi_type = "oci:GenerativeAi/agentDataSource:AgentDataSource"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

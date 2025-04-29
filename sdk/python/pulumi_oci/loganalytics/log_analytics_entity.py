@@ -625,6 +625,9 @@ class _LogAnalyticsEntityState:
 
 
 class LogAnalyticsEntity(pulumi.CustomResource):
+
+    pulumi_type = "oci:LogAnalytics/logAnalyticsEntity:LogAnalyticsEntity"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

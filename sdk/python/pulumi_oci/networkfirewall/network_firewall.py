@@ -447,6 +447,9 @@ class _NetworkFirewallState:
 
 
 class NetworkFirewall(pulumi.CustomResource):
+
+    pulumi_type = "oci:NetworkFirewall/networkFirewall:NetworkFirewall"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

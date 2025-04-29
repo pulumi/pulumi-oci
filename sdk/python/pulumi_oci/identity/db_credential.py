@@ -207,6 +207,9 @@ class _DbCredentialState:
 
 
 class DbCredential(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/dbCredential:DbCredential"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

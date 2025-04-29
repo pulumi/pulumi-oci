@@ -474,6 +474,9 @@ class _NamespaceScheduledTaskState:
 
 
 class NamespaceScheduledTask(pulumi.CustomResource):
+
+    pulumi_type = "oci:LogAnalytics/namespaceScheduledTask:NamespaceScheduledTask"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -615,6 +615,9 @@ class _VcnState:
 
 
 class Vcn(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/vcn:Vcn"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

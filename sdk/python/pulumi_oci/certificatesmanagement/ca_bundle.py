@@ -288,6 +288,9 @@ class _CaBundleState:
 
 
 class CaBundle(pulumi.CustomResource):
+
+    pulumi_type = "oci:CertificatesManagement/caBundle:CaBundle"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

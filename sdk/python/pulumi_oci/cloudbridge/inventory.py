@@ -256,6 +256,9 @@ class _InventoryState:
 
 
 class Inventory(pulumi.CustomResource):
+
+    pulumi_type = "oci:CloudBridge/inventory:Inventory"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

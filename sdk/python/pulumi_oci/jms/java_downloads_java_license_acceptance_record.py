@@ -289,6 +289,9 @@ class _JavaDownloadsJavaLicenseAcceptanceRecordState:
 
 
 class JavaDownloadsJavaLicenseAcceptanceRecord(pulumi.CustomResource):
+
+    pulumi_type = "oci:Jms/javaDownloadsJavaLicenseAcceptanceRecord:JavaDownloadsJavaLicenseAcceptanceRecord"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

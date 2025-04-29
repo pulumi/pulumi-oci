@@ -994,6 +994,9 @@ class _AddressActionVerificationState:
 
 
 class AddressActionVerification(pulumi.CustomResource):
+
+    pulumi_type = "oci:OspGateway/addressActionVerification:AddressActionVerification"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

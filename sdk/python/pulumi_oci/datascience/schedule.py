@@ -463,6 +463,9 @@ class _ScheduleState:
 
 
 class Schedule(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataScience/schedule:Schedule"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

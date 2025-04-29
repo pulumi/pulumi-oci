@@ -261,6 +261,9 @@ class _NetworkFirewallPolicyMappedSecretState:
 
 
 class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
+
+    pulumi_type = "oci:NetworkFirewall/networkFirewallPolicyMappedSecret:NetworkFirewallPolicyMappedSecret"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

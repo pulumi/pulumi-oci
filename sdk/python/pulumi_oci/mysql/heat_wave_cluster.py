@@ -269,6 +269,9 @@ class _HeatWaveClusterState:
 
 
 class HeatWaveCluster(pulumi.CustomResource):
+
+    pulumi_type = "oci:Mysql/heatWaveCluster:HeatWaveCluster"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

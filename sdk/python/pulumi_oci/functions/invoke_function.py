@@ -313,6 +313,9 @@ class _InvokeFunctionState:
 
 
 class InvokeFunction(pulumi.CustomResource):
+
+    pulumi_type = "oci:Functions/invokeFunction:InvokeFunction"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

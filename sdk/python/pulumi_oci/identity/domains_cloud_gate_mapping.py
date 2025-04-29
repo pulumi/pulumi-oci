@@ -1411,6 +1411,9 @@ class _DomainsCloudGateMappingState:
 
 
 class DomainsCloudGateMapping(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/domainsCloudGateMapping:DomainsCloudGateMapping"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

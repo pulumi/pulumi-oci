@@ -337,6 +337,9 @@ class _AtCustomerCccUpgradeScheduleState:
 
 
 class AtCustomerCccUpgradeSchedule(pulumi.CustomResource):
+
+    pulumi_type = "oci:ComputeCloud/atCustomerCccUpgradeSchedule:AtCustomerCccUpgradeSchedule"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

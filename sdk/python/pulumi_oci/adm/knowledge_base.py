@@ -241,6 +241,9 @@ class _KnowledgeBaseState:
 
 
 class KnowledgeBase(pulumi.CustomResource):
+
+    pulumi_type = "oci:Adm/knowledgeBase:KnowledgeBase"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

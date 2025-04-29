@@ -112,6 +112,9 @@ class _CompareUserAssessmentState:
 
 
 class CompareUserAssessment(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataSafe/compareUserAssessment:CompareUserAssessment"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

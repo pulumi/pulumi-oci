@@ -176,6 +176,9 @@ class _LogAnalyticsUnprocessedDataBucketManagementState:
 
 
 class LogAnalyticsUnprocessedDataBucketManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:LogAnalytics/logAnalyticsUnprocessedDataBucketManagement:LogAnalyticsUnprocessedDataBucketManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

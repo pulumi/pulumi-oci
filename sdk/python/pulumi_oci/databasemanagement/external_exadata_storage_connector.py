@@ -447,6 +447,9 @@ class _ExternalExadataStorageConnectorState:
 
 
 class ExternalExadataStorageConnector(pulumi.CustomResource):
+
+    pulumi_type = "oci:DatabaseManagement/externalExadataStorageConnector:ExternalExadataStorageConnector"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

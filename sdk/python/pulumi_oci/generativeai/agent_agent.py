@@ -353,6 +353,9 @@ class _AgentAgentState:
 
 
 class AgentAgent(pulumi.CustomResource):
+
+    pulumi_type = "oci:GenerativeAi/agentAgent:AgentAgent"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

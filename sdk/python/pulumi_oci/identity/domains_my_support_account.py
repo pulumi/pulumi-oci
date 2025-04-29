@@ -891,6 +891,9 @@ class _DomainsMySupportAccountState:
 
 
 class DomainsMySupportAccount(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/domainsMySupportAccount:DomainsMySupportAccount"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

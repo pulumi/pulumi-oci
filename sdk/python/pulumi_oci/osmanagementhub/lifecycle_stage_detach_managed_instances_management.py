@@ -98,6 +98,9 @@ class _LifecycleStageDetachManagedInstancesManagementState:
 
 
 class LifecycleStageDetachManagedInstancesManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:OsManagementHub/lifecycleStageDetachManagedInstancesManagement:LifecycleStageDetachManagedInstancesManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

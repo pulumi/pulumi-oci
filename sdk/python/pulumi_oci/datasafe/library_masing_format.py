@@ -338,6 +338,9 @@ class _LibraryMasingFormatState:
 
 
 class LibraryMasingFormat(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataSafe/libraryMasingFormat:LibraryMasingFormat"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

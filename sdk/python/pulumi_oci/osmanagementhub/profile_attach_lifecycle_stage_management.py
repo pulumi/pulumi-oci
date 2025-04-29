@@ -112,6 +112,9 @@ class _ProfileAttachLifecycleStageManagementState:
 
 
 class ProfileAttachLifecycleStageManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:OsManagementHub/profileAttachLifecycleStageManagement:ProfileAttachLifecycleStageManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

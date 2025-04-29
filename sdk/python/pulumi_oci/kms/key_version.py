@@ -358,6 +358,9 @@ class _KeyVersionState:
 
 
 class KeyVersion(pulumi.CustomResource):
+
+    pulumi_type = "oci:Kms/keyVersion:KeyVersion"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

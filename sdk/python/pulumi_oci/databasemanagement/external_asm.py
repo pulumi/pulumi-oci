@@ -419,6 +419,9 @@ class _ExternalAsmState:
 
 
 class ExternalAsm(pulumi.CustomResource):
+
+    pulumi_type = "oci:DatabaseManagement/externalAsm:ExternalAsm"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

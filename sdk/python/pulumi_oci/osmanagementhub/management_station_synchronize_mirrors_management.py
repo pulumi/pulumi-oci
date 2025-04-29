@@ -112,6 +112,9 @@ class _ManagementStationSynchronizeMirrorsManagementState:
 
 
 class ManagementStationSynchronizeMirrorsManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:OsManagementHub/managementStationSynchronizeMirrorsManagement:ManagementStationSynchronizeMirrorsManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

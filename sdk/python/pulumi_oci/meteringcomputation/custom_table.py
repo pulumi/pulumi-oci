@@ -145,6 +145,9 @@ class _CustomTableState:
 
 
 class CustomTable(pulumi.CustomResource):
+
+    pulumi_type = "oci:MeteringComputation/customTable:CustomTable"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

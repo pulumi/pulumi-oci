@@ -192,6 +192,9 @@ class _EnrollmentStatusState:
 
 
 class EnrollmentStatus(pulumi.CustomResource):
+
+    pulumi_type = "oci:Optimizer/enrollmentStatus:EnrollmentStatus"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

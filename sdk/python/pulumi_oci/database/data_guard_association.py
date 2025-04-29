@@ -1482,6 +1482,9 @@ class _DataGuardAssociationState:
 
 
 class DataGuardAssociation(pulumi.CustomResource):
+
+    pulumi_type = "oci:Database/dataGuardAssociation:DataGuardAssociation"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

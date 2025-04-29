@@ -735,6 +735,9 @@ class _BlockchainPlatformState:
 
 
 class BlockchainPlatform(pulumi.CustomResource):
+
+    pulumi_type = "oci:Blockchain/blockchainPlatform:BlockchainPlatform"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

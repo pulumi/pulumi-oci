@@ -224,6 +224,9 @@ class _AlertPolicyRuleState:
 
 
 class AlertPolicyRule(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataSafe/alertPolicyRule:AlertPolicyRule"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

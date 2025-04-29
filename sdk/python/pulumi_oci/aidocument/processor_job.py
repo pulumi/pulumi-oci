@@ -288,6 +288,9 @@ class _ProcessorJobState:
 
 
 class ProcessorJob(pulumi.CustomResource):
+
+    pulumi_type = "oci:AiDocument/processorJob:ProcessorJob"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

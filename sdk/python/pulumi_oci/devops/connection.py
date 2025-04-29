@@ -498,6 +498,9 @@ class _ConnectionState:
 
 
 class Connection(pulumi.CustomResource):
+
+    pulumi_type = "oci:DevOps/connection:Connection"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

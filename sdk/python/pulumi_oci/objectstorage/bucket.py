@@ -610,6 +610,9 @@ class _BucketState:
 
 
 class Bucket(pulumi.CustomResource):
+
+    pulumi_type = "oci:ObjectStorage/bucket:Bucket"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

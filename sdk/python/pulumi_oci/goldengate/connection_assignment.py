@@ -224,6 +224,9 @@ class _ConnectionAssignmentState:
 
 
 class ConnectionAssignment(pulumi.CustomResource):
+
+    pulumi_type = "oci:GoldenGate/connectionAssignment:ConnectionAssignment"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

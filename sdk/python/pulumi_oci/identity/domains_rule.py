@@ -1441,6 +1441,9 @@ class _DomainsRuleState:
 
 
 class DomainsRule(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/domainsRule:DomainsRule"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

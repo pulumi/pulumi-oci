@@ -259,6 +259,9 @@ class _ManagedInstanceGroupManageModuleStreamsManagementState:
 
 
 class ManagedInstanceGroupManageModuleStreamsManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:OsManagementHub/managedInstanceGroupManageModuleStreamsManagement:ManagedInstanceGroupManageModuleStreamsManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

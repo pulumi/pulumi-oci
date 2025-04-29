@@ -433,6 +433,9 @@ class _SnapshotState:
 
 
 class Snapshot(pulumi.CustomResource):
+
+    pulumi_type = "oci:FileStorage/snapshot:Snapshot"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

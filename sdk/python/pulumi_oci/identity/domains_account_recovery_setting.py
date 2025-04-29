@@ -1052,6 +1052,9 @@ class _DomainsAccountRecoverySettingState:
 
 
 class DomainsAccountRecoverySetting(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/domainsAccountRecoverySetting:DomainsAccountRecoverySetting"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

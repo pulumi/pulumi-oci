@@ -665,6 +665,9 @@ class _ModelState:
 
 
 class Model(pulumi.CustomResource):
+
+    pulumi_type = "oci:AiDocument/model:Model"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

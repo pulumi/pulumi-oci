@@ -176,6 +176,9 @@ class _MetricExtensionsTestManagementState:
 
 
 class MetricExtensionsTestManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:StackMonitoring/metricExtensionsTestManagement:MetricExtensionsTestManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

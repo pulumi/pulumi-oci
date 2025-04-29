@@ -385,6 +385,9 @@ class _VirtualServiceRouteTableState:
 
 
 class VirtualServiceRouteTable(pulumi.CustomResource):
+
+    pulumi_type = "oci:ServiceMesh/virtualServiceRouteTable:VirtualServiceRouteTable"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -141,6 +141,9 @@ class _MonitorPluginManagementState:
 
 
 class MonitorPluginManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:AppMgmtControl/monitorPluginManagement:MonitorPluginManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

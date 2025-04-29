@@ -90,6 +90,9 @@ class _ManagementDashboardsImportState:
 
 
 class ManagementDashboardsImport(pulumi.CustomResource):
+
+    pulumi_type = "oci:ManagementDashboard/managementDashboardsImport:ManagementDashboardsImport"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

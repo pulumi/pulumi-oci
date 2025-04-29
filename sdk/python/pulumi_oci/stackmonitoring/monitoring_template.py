@@ -528,6 +528,9 @@ class _MonitoringTemplateState:
 
 
 class MonitoringTemplate(pulumi.CustomResource):
+
+    pulumi_type = "oci:StackMonitoring/monitoringTemplate:MonitoringTemplate"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

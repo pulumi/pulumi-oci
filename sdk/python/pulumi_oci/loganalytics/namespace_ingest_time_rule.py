@@ -379,6 +379,9 @@ class _NamespaceIngestTimeRuleState:
 
 
 class NamespaceIngestTimeRule(pulumi.CustomResource):
+
+    pulumi_type = "oci:LogAnalytics/namespaceIngestTimeRule:NamespaceIngestTimeRule"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

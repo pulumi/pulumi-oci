@@ -674,6 +674,9 @@ warnings.warn("""oci.oci/lustrefilestoragelustrefilesystem.LustreFileStorageLust
 class LustreFileStorageLustreFileSystem(pulumi.CustomResource):
     warnings.warn("""oci.oci/lustrefilestoragelustrefilesystem.LustreFileStorageLustreFileSystem has been deprecated in favor of oci.lustre/filestoragelustrefilesystem.FileStorageLustreFileSystem""", DeprecationWarning)
 
+
+    pulumi_type = "oci:oci/lustreFileStorageLustreFileSystem:LustreFileStorageLustreFileSystem"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

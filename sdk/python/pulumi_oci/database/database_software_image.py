@@ -496,6 +496,9 @@ class _DatabaseSoftwareImageState:
 
 
 class DatabaseSoftwareImage(pulumi.CustomResource):
+
+    pulumi_type = "oci:Database/databaseSoftwareImage:DatabaseSoftwareImage"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

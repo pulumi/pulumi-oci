@@ -701,6 +701,9 @@ class _NetworkLoadBalancerState:
 
 
 class NetworkLoadBalancer(pulumi.CustomResource):
+
+    pulumi_type = "oci:NetworkLoadBalancer/networkLoadBalancer:NetworkLoadBalancer"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

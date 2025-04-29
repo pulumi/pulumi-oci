@@ -319,6 +319,9 @@ class _TsigKeyState:
 
 
 class TsigKey(pulumi.CustomResource):
+
+    pulumi_type = "oci:Dns/tsigKey:TsigKey"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

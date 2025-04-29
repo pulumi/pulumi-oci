@@ -577,6 +577,9 @@ class _WorkspaceApplicationPatchState:
 
 
 class WorkspaceApplicationPatch(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataIntegration/workspaceApplicationPatch:WorkspaceApplicationPatch"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

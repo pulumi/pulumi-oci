@@ -467,6 +467,9 @@ class _AppFirewallPolicyState:
 
 
 class AppFirewallPolicy(pulumi.CustomResource):
+
+    pulumi_type = "oci:Waf/appFirewallPolicy:AppFirewallPolicy"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

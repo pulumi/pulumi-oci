@@ -160,6 +160,9 @@ class _VolumeBackupPolicyAssignmentState:
 
 
 class VolumeBackupPolicyAssignment(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/volumeBackupPolicyAssignment:VolumeBackupPolicyAssignment"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

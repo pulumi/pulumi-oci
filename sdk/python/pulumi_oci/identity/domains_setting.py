@@ -3988,6 +3988,9 @@ class _DomainsSettingState:
 
 
 class DomainsSetting(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/domainsSetting:DomainsSetting"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

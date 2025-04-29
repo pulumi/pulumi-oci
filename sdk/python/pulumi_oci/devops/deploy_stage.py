@@ -2161,6 +2161,9 @@ class _DeployStageState:
 
 
 class DeployStage(pulumi.CustomResource):
+
+    pulumi_type = "oci:DevOps/deployStage:DeployStage"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

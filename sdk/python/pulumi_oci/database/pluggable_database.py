@@ -658,6 +658,9 @@ class _PluggableDatabaseState:
 
 
 class PluggableDatabase(pulumi.CustomResource):
+
+    pulumi_type = "oci:Database/pluggableDatabase:PluggableDatabase"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

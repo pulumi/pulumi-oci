@@ -366,6 +366,9 @@ class _ExternalDbSystemDiscoveryState:
 
 
 class ExternalDbSystemDiscovery(pulumi.CustomResource):
+
+    pulumi_type = "oci:DatabaseManagement/externalDbSystemDiscovery:ExternalDbSystemDiscovery"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

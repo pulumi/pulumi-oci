@@ -432,6 +432,9 @@ class _FsuCollectionState:
 
 
 class FsuCollection(pulumi.CustomResource):
+
+    pulumi_type = "oci:FleetSoftwareUpdate/fsuCollection:FsuCollection"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

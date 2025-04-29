@@ -127,6 +127,9 @@ class _ShapeManagementState:
 
 
 class ShapeManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/shapeManagement:ShapeManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -287,6 +287,9 @@ class _ReplicationScheduleState:
 
 
 class ReplicationSchedule(pulumi.CustomResource):
+
+    pulumi_type = "oci:CloudMigrations/replicationSchedule:ReplicationSchedule"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

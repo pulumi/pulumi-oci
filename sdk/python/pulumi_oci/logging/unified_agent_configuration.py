@@ -351,6 +351,9 @@ class _UnifiedAgentConfigurationState:
 
 
 class UnifiedAgentConfiguration(pulumi.CustomResource):
+
+    pulumi_type = "oci:Logging/unifiedAgentConfiguration:UnifiedAgentConfiguration"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

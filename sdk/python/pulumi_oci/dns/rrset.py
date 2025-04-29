@@ -285,6 +285,9 @@ class _RrsetState:
 
 
 class Rrset(pulumi.CustomResource):
+
+    pulumi_type = "oci:Dns/rrset:Rrset"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

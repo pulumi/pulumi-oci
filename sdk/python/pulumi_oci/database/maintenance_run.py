@@ -697,6 +697,9 @@ class _MaintenanceRunState:
 
 
 class MaintenanceRun(pulumi.CustomResource):
+
+    pulumi_type = "oci:Database/maintenanceRun:MaintenanceRun"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

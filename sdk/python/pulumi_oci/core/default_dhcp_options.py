@@ -226,6 +226,9 @@ class _DefaultDhcpOptionsState:
 
 
 class DefaultDhcpOptions(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/defaultDhcpOptions:DefaultDhcpOptions"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

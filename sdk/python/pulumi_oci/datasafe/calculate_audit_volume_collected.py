@@ -162,6 +162,9 @@ class _CalculateAuditVolumeCollectedState:
 
 
 class CalculateAuditVolumeCollected(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataSafe/calculateAuditVolumeCollected:CalculateAuditVolumeCollected"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

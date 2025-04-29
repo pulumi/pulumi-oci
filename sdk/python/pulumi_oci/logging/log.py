@@ -385,6 +385,9 @@ class _LogState:
 
 
 class Log(pulumi.CustomResource):
+
+    pulumi_type = "oci:Logging/log:Log"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

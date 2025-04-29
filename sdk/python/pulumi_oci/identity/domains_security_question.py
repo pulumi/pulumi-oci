@@ -1025,6 +1025,9 @@ class _DomainsSecurityQuestionState:
 
 
 class DomainsSecurityQuestion(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/domainsSecurityQuestion:DomainsSecurityQuestion"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

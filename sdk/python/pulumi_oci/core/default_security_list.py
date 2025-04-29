@@ -227,6 +227,9 @@ class _DefaultSecurityListState:
 
 
 class DefaultSecurityList(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/defaultSecurityList:DefaultSecurityList"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

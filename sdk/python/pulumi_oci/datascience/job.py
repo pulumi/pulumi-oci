@@ -628,6 +628,9 @@ class _JobState:
 
 
 class Job(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataScience/job:Job"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

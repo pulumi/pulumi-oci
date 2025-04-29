@@ -732,6 +732,9 @@ class _DatabaseRegistrationState:
 
 
 class DatabaseRegistration(pulumi.CustomResource):
+
+    pulumi_type = "oci:GoldenGate/databaseRegistration:DatabaseRegistration"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

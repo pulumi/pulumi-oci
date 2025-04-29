@@ -708,6 +708,9 @@ class _ExadataInfrastructureStorageState:
 
 
 class ExadataInfrastructureStorage(pulumi.CustomResource):
+
+    pulumi_type = "oci:Database/exadataInfrastructureStorage:ExadataInfrastructureStorage"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

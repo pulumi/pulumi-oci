@@ -1023,6 +1023,9 @@ class _DomainsApprovalWorkflowState:
 
 
 class DomainsApprovalWorkflow(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/domainsApprovalWorkflow:DomainsApprovalWorkflow"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

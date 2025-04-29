@@ -401,6 +401,9 @@ class _AlertPolicyState:
 
 
 class AlertPolicy(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataSafe/alertPolicy:AlertPolicy"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

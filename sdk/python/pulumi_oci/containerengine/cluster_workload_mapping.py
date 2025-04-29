@@ -255,6 +255,9 @@ class _ClusterWorkloadMappingState:
 
 
 class ClusterWorkloadMapping(pulumi.CustomResource):
+
+    pulumi_type = "oci:ContainerEngine/clusterWorkloadMapping:ClusterWorkloadMapping"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

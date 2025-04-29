@@ -160,6 +160,9 @@ class _RepositoryProtectedBranchManagementState:
 
 
 class RepositoryProtectedBranchManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:DevOps/repositoryProtectedBranchManagement:RepositoryProtectedBranchManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

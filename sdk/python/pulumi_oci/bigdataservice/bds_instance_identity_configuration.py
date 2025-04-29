@@ -479,6 +479,9 @@ class _BdsInstanceIdentityConfigurationState:
 
 
 class BdsInstanceIdentityConfiguration(pulumi.CustomResource):
+
+    pulumi_type = "oci:BigDataService/bdsInstanceIdentityConfiguration:BdsInstanceIdentityConfiguration"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -2457,6 +2457,9 @@ class _DomainsAuthenticationFactorSettingState:
 
 
 class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/domainsAuthenticationFactorSetting:DomainsAuthenticationFactorSetting"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

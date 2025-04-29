@@ -81,6 +81,9 @@ class _OperationsInsightsWarehouseRotateWarehouseWalletState:
 
 
 class OperationsInsightsWarehouseRotateWarehouseWallet(pulumi.CustomResource):
+
+    pulumi_type = "oci:Opsi/operationsInsightsWarehouseRotateWarehouseWallet:OperationsInsightsWarehouseRotateWarehouseWallet"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

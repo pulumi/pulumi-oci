@@ -336,6 +336,9 @@ class _ModelVersionSetState:
 
 
 class ModelVersionSet(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataScience/modelVersionSet:ModelVersionSet"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

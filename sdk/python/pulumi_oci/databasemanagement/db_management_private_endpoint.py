@@ -416,6 +416,9 @@ class _DbManagementPrivateEndpointState:
 
 
 class DbManagementPrivateEndpoint(pulumi.CustomResource):
+
+    pulumi_type = "oci:DatabaseManagement/dbManagementPrivateEndpoint:DbManagementPrivateEndpoint"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

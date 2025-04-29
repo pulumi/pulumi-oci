@@ -226,6 +226,9 @@ class _ProtectionRuleState:
 
 
 class ProtectionRule(pulumi.CustomResource):
+
+    pulumi_type = "oci:Waas/protectionRule:ProtectionRule"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

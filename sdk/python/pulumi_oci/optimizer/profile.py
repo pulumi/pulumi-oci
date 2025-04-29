@@ -381,6 +381,9 @@ class _ProfileState:
 
 
 class Profile(pulumi.CustomResource):
+
+    pulumi_type = "oci:Optimizer/profile:Profile"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

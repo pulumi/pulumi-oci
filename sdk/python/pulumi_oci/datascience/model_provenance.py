@@ -273,6 +273,9 @@ class _ModelProvenanceState:
 
 
 class ModelProvenance(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataScience/modelProvenance:ModelProvenance"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

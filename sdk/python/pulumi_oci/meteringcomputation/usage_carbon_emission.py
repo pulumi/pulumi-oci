@@ -321,6 +321,9 @@ class _UsageCarbonEmissionState:
 
 
 class UsageCarbonEmission(pulumi.CustomResource):
+
+    pulumi_type = "oci:MeteringComputation/usageCarbonEmission:UsageCarbonEmission"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

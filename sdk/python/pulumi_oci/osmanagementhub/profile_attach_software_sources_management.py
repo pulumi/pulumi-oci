@@ -112,6 +112,9 @@ class _ProfileAttachSoftwareSourcesManagementState:
 
 
 class ProfileAttachSoftwareSourcesManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:OsManagementHub/profileAttachSoftwareSourcesManagement:ProfileAttachSoftwareSourcesManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -112,6 +112,9 @@ class _ProfileAttachManagementStationManagementState:
 
 
 class ProfileAttachManagementStationManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:OsManagementHub/profileAttachManagementStationManagement:ProfileAttachManagementStationManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

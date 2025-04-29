@@ -483,6 +483,9 @@ class _AuditPolicyState:
 
 
 class AuditPolicy(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataSafe/auditPolicy:AuditPolicy"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

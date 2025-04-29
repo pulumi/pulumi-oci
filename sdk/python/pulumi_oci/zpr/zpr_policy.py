@@ -319,6 +319,9 @@ class _ZprPolicyState:
 
 
 class ZprPolicy(pulumi.CustomResource):
+
+    pulumi_type = "oci:Zpr/zprPolicy:ZprPolicy"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

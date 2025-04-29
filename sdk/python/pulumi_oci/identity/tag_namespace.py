@@ -272,6 +272,9 @@ class _TagNamespaceState:
 
 
 class TagNamespace(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/tagNamespace:TagNamespace"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -176,6 +176,9 @@ class _DrgRouteDistributionStatementState:
 
 
 class DrgRouteDistributionStatement(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/drgRouteDistributionStatement:DrgRouteDistributionStatement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

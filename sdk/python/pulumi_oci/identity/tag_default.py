@@ -255,6 +255,9 @@ class _TagDefaultState:
 
 
 class TagDefault(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/tagDefault:TagDefault"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

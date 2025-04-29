@@ -320,6 +320,9 @@ class _OdaPrivateEndpointState:
 
 
 class OdaPrivateEndpoint(pulumi.CustomResource):
+
+    pulumi_type = "oci:Oda/odaPrivateEndpoint:OdaPrivateEndpoint"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

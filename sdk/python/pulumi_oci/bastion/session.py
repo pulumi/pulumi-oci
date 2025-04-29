@@ -353,6 +353,9 @@ class _SessionState:
 
 
 class Session(pulumi.CustomResource):
+
+    pulumi_type = "oci:Bastion/session:Session"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

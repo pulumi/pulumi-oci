@@ -339,6 +339,9 @@ class _StreamPoolState:
 
 
 class StreamPool(pulumi.CustomResource):
+
+    pulumi_type = "oci:Streaming/streamPool:StreamPool"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

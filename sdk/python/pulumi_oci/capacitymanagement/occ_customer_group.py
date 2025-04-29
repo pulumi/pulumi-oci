@@ -370,6 +370,9 @@ class _OccCustomerGroupState:
 
 
 class OccCustomerGroup(pulumi.CustomResource):
+
+    pulumi_type = "oci:CapacityManagement/occCustomerGroup:OccCustomerGroup"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

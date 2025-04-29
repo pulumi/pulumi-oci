@@ -561,6 +561,9 @@ class _SoftwareSourceState:
 
 
 class SoftwareSource(pulumi.CustomResource):
+
+    pulumi_type = "oci:OsManagement/softwareSource:SoftwareSource"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

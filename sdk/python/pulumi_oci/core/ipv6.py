@@ -410,6 +410,9 @@ class _Ipv6State:
 
 
 class Ipv6(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/ipv6:Ipv6"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

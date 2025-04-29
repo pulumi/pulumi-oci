@@ -381,6 +381,9 @@ class _EkmsPrivateEndpointState:
 
 
 class EkmsPrivateEndpoint(pulumi.CustomResource):
+
+    pulumi_type = "oci:Kms/ekmsPrivateEndpoint:EkmsPrivateEndpoint"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

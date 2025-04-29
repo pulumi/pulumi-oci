@@ -342,6 +342,9 @@ class _WlpAgentState:
 
 
 class WlpAgent(pulumi.CustomResource):
+
+    pulumi_type = "oci:CloudGuard/wlpAgent:WlpAgent"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

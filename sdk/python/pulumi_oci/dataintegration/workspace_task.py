@@ -864,6 +864,9 @@ class _WorkspaceTaskState:
 
 
 class WorkspaceTask(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataIntegration/workspaceTask:WorkspaceTask"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

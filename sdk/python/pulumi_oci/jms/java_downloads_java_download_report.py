@@ -394,6 +394,9 @@ class _JavaDownloadsJavaDownloadReportState:
 
 
 class JavaDownloadsJavaDownloadReport(pulumi.CustomResource):
+
+    pulumi_type = "oci:Jms/javaDownloadsJavaDownloadReport:JavaDownloadsJavaDownloadReport"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

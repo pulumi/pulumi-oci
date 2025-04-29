@@ -130,6 +130,9 @@ class _ManagementStationAssociateManagedInstancesManagementState:
 
 
 class ManagementStationAssociateManagedInstancesManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:OsManagementHub/managementStationAssociateManagedInstancesManagement:ManagementStationAssociateManagedInstancesManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

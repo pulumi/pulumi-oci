@@ -400,6 +400,9 @@ class _InstVbsInstanceState:
 
 
 class InstVbsInstance(pulumi.CustomResource):
+
+    pulumi_type = "oci:Vbs/instVbsInstance:InstVbsInstance"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

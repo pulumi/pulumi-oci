@@ -444,6 +444,9 @@ class _IdentityProviderState:
 
 
 class IdentityProvider(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/identityProvider:IdentityProvider"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

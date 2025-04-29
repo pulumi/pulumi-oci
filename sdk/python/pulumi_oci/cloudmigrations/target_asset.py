@@ -463,6 +463,9 @@ class _TargetAssetState:
 
 
 class TargetAsset(pulumi.CustomResource):
+
+    pulumi_type = "oci:CloudMigrations/targetAsset:TargetAsset"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

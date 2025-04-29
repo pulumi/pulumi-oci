@@ -414,6 +414,9 @@ class _DataSafePrivateEndpointState:
 
 
 class DataSafePrivateEndpoint(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataSafe/dataSafePrivateEndpoint:DataSafePrivateEndpoint"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

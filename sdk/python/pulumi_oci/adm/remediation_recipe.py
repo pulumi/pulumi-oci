@@ -445,6 +445,9 @@ class _RemediationRecipeState:
 
 
 class RemediationRecipe(pulumi.CustomResource):
+
+    pulumi_type = "oci:Adm/remediationRecipe:RemediationRecipe"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -337,6 +337,9 @@ class _EmailReturnPathState:
 
 
 class EmailReturnPath(pulumi.CustomResource):
+
+    pulumi_type = "oci:Email/emailReturnPath:EmailReturnPath"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

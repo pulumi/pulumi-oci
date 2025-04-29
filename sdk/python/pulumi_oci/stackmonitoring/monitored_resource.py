@@ -738,6 +738,9 @@ class _MonitoredResourceState:
 
 
 class MonitoredResource(pulumi.CustomResource):
+
+    pulumi_type = "oci:StackMonitoring/monitoredResource:MonitoredResource"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

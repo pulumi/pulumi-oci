@@ -119,6 +119,9 @@ class _SensitiveTypeGroupGroupedSensitiveTypeState:
 
 
 class SensitiveTypeGroupGroupedSensitiveType(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataSafe/sensitiveTypeGroupGroupedSensitiveType:SensitiveTypeGroupGroupedSensitiveType"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -671,6 +671,9 @@ class _FusionEnvironmentState:
 
 
 class FusionEnvironment(pulumi.CustomResource):
+
+    pulumi_type = "oci:FusionApps/fusionEnvironment:FusionEnvironment"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

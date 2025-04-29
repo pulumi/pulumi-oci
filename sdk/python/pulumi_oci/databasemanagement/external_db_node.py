@@ -401,6 +401,9 @@ class _ExternalDbNodeState:
 
 
 class ExternalDbNode(pulumi.CustomResource):
+
+    pulumi_type = "oci:DatabaseManagement/externalDbNode:ExternalDbNode"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

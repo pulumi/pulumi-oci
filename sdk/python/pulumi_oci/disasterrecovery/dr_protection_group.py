@@ -449,6 +449,9 @@ class _DrProtectionGroupState:
 
 
 class DrProtectionGroup(pulumi.CustomResource):
+
+    pulumi_type = "oci:DisasterRecovery/drProtectionGroup:DrProtectionGroup"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -578,6 +578,9 @@ class _MaskingPolicyState:
 
 
 class MaskingPolicy(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataSafe/maskingPolicy:MaskingPolicy"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

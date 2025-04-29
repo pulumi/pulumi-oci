@@ -353,6 +353,9 @@ class _SecurityPolicyDeploymentState:
 
 
 class SecurityPolicyDeployment(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataSafe/securityPolicyDeployment:SecurityPolicyDeployment"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

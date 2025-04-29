@@ -366,6 +366,9 @@ class _AppAccelerationState:
 
 
 class AppAcceleration(pulumi.CustomResource):
+
+    pulumi_type = "oci:Waa/appAcceleration:AppAcceleration"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

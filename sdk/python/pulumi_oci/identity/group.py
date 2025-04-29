@@ -257,6 +257,9 @@ class _GroupState:
 
 
 class Group(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/group:Group"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

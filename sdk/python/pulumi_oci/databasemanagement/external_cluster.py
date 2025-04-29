@@ -451,6 +451,9 @@ class _ExternalClusterState:
 
 
 class ExternalCluster(pulumi.CustomResource):
+
+    pulumi_type = "oci:DatabaseManagement/externalCluster:ExternalCluster"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

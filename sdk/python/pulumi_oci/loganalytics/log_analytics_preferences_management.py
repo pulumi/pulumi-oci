@@ -115,6 +115,9 @@ class _LogAnalyticsPreferencesManagementState:
 
 
 class LogAnalyticsPreferencesManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:LogAnalytics/logAnalyticsPreferencesManagement:LogAnalyticsPreferencesManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

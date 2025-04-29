@@ -302,6 +302,9 @@ class _FleetCredentialState:
 
 
 class FleetCredential(pulumi.CustomResource):
+
+    pulumi_type = "oci:FleetAppsManagement/fleetCredential:FleetCredential"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

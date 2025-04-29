@@ -146,6 +146,9 @@ class _AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementState:
 
 
 class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:DatabaseManagement/autonomousDatabaseAutonomousDatabaseDbmFeaturesManagement:AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

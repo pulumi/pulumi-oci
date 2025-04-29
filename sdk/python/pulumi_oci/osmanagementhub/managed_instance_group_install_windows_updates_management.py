@@ -130,6 +130,9 @@ class _ManagedInstanceGroupInstallWindowsUpdatesManagementState:
 
 
 class ManagedInstanceGroupInstallWindowsUpdatesManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:OsManagementHub/managedInstanceGroupInstallWindowsUpdatesManagement:ManagedInstanceGroupInstallWindowsUpdatesManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

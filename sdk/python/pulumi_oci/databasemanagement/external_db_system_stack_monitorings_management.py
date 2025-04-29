@@ -176,6 +176,9 @@ class _ExternalDbSystemStackMonitoringsManagementState:
 
 
 class ExternalDbSystemStackMonitoringsManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:DatabaseManagement/externalDbSystemStackMonitoringsManagement:ExternalDbSystemStackMonitoringsManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -337,6 +337,9 @@ class _MeshState:
 
 
 class Mesh(pulumi.CustomResource):
+
+    pulumi_type = "oci:ServiceMesh/mesh:Mesh"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -394,6 +394,9 @@ class _ResourceActionState:
 
 
 class ResourceAction(pulumi.CustomResource):
+
+    pulumi_type = "oci:Optimizer/resourceAction:ResourceAction"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

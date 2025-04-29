@@ -440,6 +440,9 @@ class _InstancePoolState:
 
 
 class InstancePool(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/instancePool:InstancePool"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -143,6 +143,9 @@ class _ExternalNonContainerDatabasesStackMonitoringState:
 
 
 class ExternalNonContainerDatabasesStackMonitoring(pulumi.CustomResource):
+
+    pulumi_type = "oci:Database/externalNonContainerDatabasesStackMonitoring:ExternalNonContainerDatabasesStackMonitoring"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

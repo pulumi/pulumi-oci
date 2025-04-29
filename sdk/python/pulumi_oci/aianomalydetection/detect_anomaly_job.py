@@ -416,6 +416,9 @@ class _DetectAnomalyJobState:
 
 
 class DetectAnomalyJob(pulumi.CustomResource):
+
+    pulumi_type = "oci:AiAnomalyDetection/detectAnomalyJob:DetectAnomalyJob"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

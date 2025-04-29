@@ -339,6 +339,9 @@ class _FleetAdvancedFeatureConfigurationState:
 
 
 class FleetAdvancedFeatureConfiguration(pulumi.CustomResource):
+
+    pulumi_type = "oci:Jms/fleetAdvancedFeatureConfiguration:FleetAdvancedFeatureConfiguration"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

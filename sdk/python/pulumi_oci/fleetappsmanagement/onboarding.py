@@ -291,6 +291,9 @@ class _OnboardingState:
 
 
 class Onboarding(pulumi.CustomResource):
+
+    pulumi_type = "oci:FleetAppsManagement/onboarding:Onboarding"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

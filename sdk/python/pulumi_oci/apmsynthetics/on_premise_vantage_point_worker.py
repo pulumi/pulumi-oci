@@ -576,6 +576,9 @@ class _OnPremiseVantagePointWorkerState:
 
 
 class OnPremiseVantagePointWorker(pulumi.CustomResource):
+
+    pulumi_type = "oci:ApmSynthetics/onPremiseVantagePointWorker:OnPremiseVantagePointWorker"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -175,6 +175,9 @@ class _CloudGuardConfigurationState:
 
 
 class CloudGuardConfiguration(pulumi.CustomResource):
+
+    pulumi_type = "oci:CloudGuard/cloudGuardConfiguration:CloudGuardConfiguration"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

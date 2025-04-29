@@ -409,6 +409,9 @@ class _ResponderRecipeState:
 
 
 class ResponderRecipe(pulumi.CustomResource):
+
+    pulumi_type = "oci:CloudGuard/responderRecipe:ResponderRecipe"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

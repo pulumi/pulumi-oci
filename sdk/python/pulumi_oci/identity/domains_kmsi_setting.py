@@ -1351,6 +1351,9 @@ class _DomainsKmsiSettingState:
 
 
 class DomainsKmsiSetting(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/domainsKmsiSetting:DomainsKmsiSetting"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

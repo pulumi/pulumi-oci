@@ -271,6 +271,9 @@ class _BdsInstanceResourcePrincipalConfigurationState:
 
 
 class BdsInstanceResourcePrincipalConfiguration(pulumi.CustomResource):
+
+    pulumi_type = "oci:BigDataService/bdsInstanceResourcePrincipalConfiguration:BdsInstanceResourcePrincipalConfiguration"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -546,6 +546,9 @@ class _OdaInstanceState:
 
 
 class OdaInstance(pulumi.CustomResource):
+
+    pulumi_type = "oci:Oda/odaInstance:OdaInstance"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

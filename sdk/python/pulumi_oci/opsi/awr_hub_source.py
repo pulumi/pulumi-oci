@@ -527,6 +527,9 @@ class _AwrHubSourceState:
 
 
 class AwrHubSource(pulumi.CustomResource):
+
+    pulumi_type = "oci:Opsi/awrHubSource:AwrHubSource"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

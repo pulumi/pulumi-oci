@@ -241,6 +241,9 @@ class _UserCapabilitiesManagementState:
 
 
 class UserCapabilitiesManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/userCapabilitiesManagement:UserCapabilitiesManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

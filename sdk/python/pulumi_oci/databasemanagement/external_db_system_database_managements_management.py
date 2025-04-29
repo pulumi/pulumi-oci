@@ -144,6 +144,9 @@ class _ExternalDbSystemDatabaseManagementsManagementState:
 
 
 class ExternalDbSystemDatabaseManagementsManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:DatabaseManagement/externalDbSystemDatabaseManagementsManagement:ExternalDbSystemDatabaseManagementsManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

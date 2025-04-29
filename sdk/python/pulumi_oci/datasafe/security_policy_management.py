@@ -306,6 +306,9 @@ class _SecurityPolicyManagementState:
 
 
 class SecurityPolicyManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataSafe/securityPolicyManagement:SecurityPolicyManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

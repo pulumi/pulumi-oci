@@ -417,6 +417,9 @@ class _AnnouncementSubscriptionState:
 
 
 class AnnouncementSubscription(pulumi.CustomResource):
+
+    pulumi_type = "oci:AnnouncementsService/announcementSubscription:AnnouncementSubscription"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

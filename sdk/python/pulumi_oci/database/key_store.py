@@ -281,6 +281,9 @@ class _KeyStoreState:
 
 
 class KeyStore(pulumi.CustomResource):
+
+    pulumi_type = "oci:Database/keyStore:KeyStore"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

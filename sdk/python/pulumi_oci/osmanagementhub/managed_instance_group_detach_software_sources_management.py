@@ -130,6 +130,9 @@ class _ManagedInstanceGroupDetachSoftwareSourcesManagementState:
 
 
 class ManagedInstanceGroupDetachSoftwareSourcesManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:OsManagementHub/managedInstanceGroupDetachSoftwareSourcesManagement:ManagedInstanceGroupDetachSoftwareSourcesManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

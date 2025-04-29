@@ -113,6 +113,9 @@ class _BackupCancelManagementState:
 
 
 class BackupCancelManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:Database/backupCancelManagement:BackupCancelManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -449,6 +449,9 @@ class _ModelDeploymentState:
 
 
 class ModelDeployment(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataScience/modelDeployment:ModelDeployment"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

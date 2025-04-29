@@ -626,6 +626,9 @@ class _ExadataInsightState:
 
 
 class ExadataInsight(pulumi.CustomResource):
+
+    pulumi_type = "oci:Opsi/exadataInsight:ExadataInsight"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

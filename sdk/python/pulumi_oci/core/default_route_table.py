@@ -203,6 +203,9 @@ class _DefaultRouteTableState:
 
 
 class DefaultRouteTable(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/defaultRouteTable:DefaultRouteTable"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

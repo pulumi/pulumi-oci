@@ -345,6 +345,9 @@ class _MediaWorkflowConfigurationState:
 
 
 class MediaWorkflowConfiguration(pulumi.CustomResource):
+
+    pulumi_type = "oci:MediaServices/mediaWorkflowConfiguration:MediaWorkflowConfiguration"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

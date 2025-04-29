@@ -434,6 +434,9 @@ class _NotebookSessionState:
 
 
 class NotebookSession(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataScience/notebookSession:NotebookSession"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

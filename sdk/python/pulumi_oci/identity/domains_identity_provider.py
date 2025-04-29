@@ -4086,6 +4086,9 @@ class _DomainsIdentityProviderState:
 
 
 class DomainsIdentityProvider(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/domainsIdentityProvider:DomainsIdentityProvider"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

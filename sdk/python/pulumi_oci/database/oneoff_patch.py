@@ -414,6 +414,9 @@ class _OneoffPatchState:
 
 
 class OneoffPatch(pulumi.CustomResource):
+
+    pulumi_type = "oci:Database/oneoffPatch:OneoffPatch"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

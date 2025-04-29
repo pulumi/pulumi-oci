@@ -139,6 +139,9 @@ class _ExternalNonContainerDatabaseOperationsInsightsManagementState:
 
 
 class ExternalNonContainerDatabaseOperationsInsightsManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:Database/externalNonContainerDatabaseOperationsInsightsManagement:ExternalNonContainerDatabaseOperationsInsightsManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

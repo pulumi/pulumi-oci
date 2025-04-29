@@ -146,6 +146,9 @@ class _ObjectLifecyclePolicyState:
 
 
 class ObjectLifecyclePolicy(pulumi.CustomResource):
+
+    pulumi_type = "oci:ObjectStorage/objectLifecyclePolicy:ObjectLifecyclePolicy"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

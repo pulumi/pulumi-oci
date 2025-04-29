@@ -669,6 +669,9 @@ class _FileStorageLustreFileSystemState:
 
 
 class FileStorageLustreFileSystem(pulumi.CustomResource):
+
+    pulumi_type = "oci:Lustre/fileStorageLustreFileSystem:FileStorageLustreFileSystem"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

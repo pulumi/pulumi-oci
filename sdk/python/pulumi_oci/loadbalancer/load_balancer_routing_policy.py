@@ -173,6 +173,9 @@ class _LoadBalancerRoutingPolicyState:
 
 
 class LoadBalancerRoutingPolicy(pulumi.CustomResource):
+
+    pulumi_type = "oci:LoadBalancer/loadBalancerRoutingPolicy:LoadBalancerRoutingPolicy"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

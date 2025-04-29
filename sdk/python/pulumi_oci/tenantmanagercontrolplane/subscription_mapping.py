@@ -192,6 +192,9 @@ class _SubscriptionMappingState:
 
 
 class SubscriptionMapping(pulumi.CustomResource):
+
+    pulumi_type = "oci:Tenantmanagercontrolplane/subscriptionMapping:SubscriptionMapping"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

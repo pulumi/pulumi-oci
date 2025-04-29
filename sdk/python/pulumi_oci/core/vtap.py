@@ -678,6 +678,9 @@ class _VtapState:
 
 
 class Vtap(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/vtap:Vtap"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

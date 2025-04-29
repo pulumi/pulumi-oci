@@ -513,6 +513,9 @@ class _CrossConnectState:
 
 
 class CrossConnect(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/crossConnect:CrossConnect"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

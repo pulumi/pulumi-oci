@@ -1336,6 +1336,9 @@ class _MysqlDbSystemState:
 
 
 class MysqlDbSystem(pulumi.CustomResource):
+
+    pulumi_type = "oci:Mysql/mysqlDbSystem:MysqlDbSystem"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

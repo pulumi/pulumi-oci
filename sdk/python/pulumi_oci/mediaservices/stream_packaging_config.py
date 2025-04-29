@@ -408,6 +408,9 @@ class _StreamPackagingConfigState:
 
 
 class StreamPackagingConfig(pulumi.CustomResource):
+
+    pulumi_type = "oci:MediaServices/streamPackagingConfig:StreamPackagingConfig"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -305,6 +305,9 @@ class _ByoasnState:
 
 
 class Byoasn(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/byoasn:Byoasn"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

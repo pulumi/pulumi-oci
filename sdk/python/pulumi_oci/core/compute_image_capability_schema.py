@@ -286,6 +286,9 @@ class _ComputeImageCapabilitySchemaState:
 
 
 class ComputeImageCapabilitySchema(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/computeImageCapabilitySchema:ComputeImageCapabilitySchema"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

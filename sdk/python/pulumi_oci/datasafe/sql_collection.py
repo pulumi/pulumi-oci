@@ -607,6 +607,9 @@ class _SqlCollectionState:
 
 
 class SqlCollection(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataSafe/sqlCollection:SqlCollection"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

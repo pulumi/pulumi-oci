@@ -130,6 +130,9 @@ class _ManagedInstanceGroupRemovePackagesManagementState:
 
 
 class ManagedInstanceGroupRemovePackagesManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:OsManagementHub/managedInstanceGroupRemovePackagesManagement:ManagedInstanceGroupRemovePackagesManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

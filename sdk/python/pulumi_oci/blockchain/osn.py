@@ -162,6 +162,9 @@ class _OsnState:
 
 
 class Osn(pulumi.CustomResource):
+
+    pulumi_type = "oci:Blockchain/osn:Osn"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

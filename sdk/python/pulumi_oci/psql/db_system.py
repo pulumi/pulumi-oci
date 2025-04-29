@@ -798,6 +798,9 @@ class _DbSystemState:
 
 
 class DbSystem(pulumi.CustomResource):
+
+    pulumi_type = "oci:Psql/dbSystem:DbSystem"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

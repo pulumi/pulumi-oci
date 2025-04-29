@@ -391,6 +391,9 @@ class _ProtectionPolicyState:
 
 
 class ProtectionPolicy(pulumi.CustomResource):
+
+    pulumi_type = "oci:RecoveryMod/protectionPolicy:ProtectionPolicy"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

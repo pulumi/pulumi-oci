@@ -387,6 +387,9 @@ class _DiscoveryJobsResultState:
 
 
 class DiscoveryJobsResult(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataSafe/discoveryJobsResult:DiscoveryJobsResult"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

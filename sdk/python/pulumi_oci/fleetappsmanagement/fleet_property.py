@@ -302,6 +302,9 @@ class _FleetPropertyState:
 
 
 class FleetProperty(pulumi.CustomResource):
+
+    pulumi_type = "oci:FleetAppsManagement/fleetProperty:FleetProperty"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

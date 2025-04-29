@@ -314,6 +314,9 @@ class _AgentKnowledgeBaseState:
 
 
 class AgentKnowledgeBase(pulumi.CustomResource):
+
+    pulumi_type = "oci:GenerativeAi/agentKnowledgeBase:AgentKnowledgeBase"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

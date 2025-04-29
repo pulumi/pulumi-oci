@@ -126,6 +126,9 @@ class _VaultVerificationState:
 
 
 class VaultVerification(pulumi.CustomResource):
+
+    pulumi_type = "oci:Kms/vaultVerification:VaultVerification"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

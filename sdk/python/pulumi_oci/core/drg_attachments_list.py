@@ -163,6 +163,9 @@ class _DrgAttachmentsListState:
 
 
 class DrgAttachmentsList(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/drgAttachmentsList:DrgAttachmentsList"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

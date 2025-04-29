@@ -225,6 +225,9 @@ class _ConnectHarnessState:
 
 
 class ConnectHarness(pulumi.CustomResource):
+
+    pulumi_type = "oci:Streaming/connectHarness:ConnectHarness"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

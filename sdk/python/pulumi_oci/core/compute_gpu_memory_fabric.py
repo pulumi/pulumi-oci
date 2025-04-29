@@ -369,6 +369,9 @@ class _ComputeGpuMemoryFabricState:
 
 
 class ComputeGpuMemoryFabric(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/computeGpuMemoryFabric:ComputeGpuMemoryFabric"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

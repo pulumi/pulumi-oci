@@ -208,6 +208,9 @@ class _SuppressionState:
 
 
 class Suppression(pulumi.CustomResource):
+
+    pulumi_type = "oci:Email/suppression:Suppression"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

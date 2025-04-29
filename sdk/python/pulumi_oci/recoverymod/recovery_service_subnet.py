@@ -391,6 +391,9 @@ class _RecoveryServiceSubnetState:
 
 
 class RecoveryServiceSubnet(pulumi.CustomResource):
+
+    pulumi_type = "oci:RecoveryMod/recoveryServiceSubnet:RecoveryServiceSubnet"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

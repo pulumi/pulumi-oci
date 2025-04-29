@@ -510,6 +510,9 @@ class _VirtualNodePoolState:
 
 
 class VirtualNodePool(pulumi.CustomResource):
+
+    pulumi_type = "oci:ContainerEngine/virtualNodePool:VirtualNodePool"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

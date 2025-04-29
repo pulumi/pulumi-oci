@@ -160,6 +160,9 @@ class _AppCatalogListingResourceVersionAgreementState:
 
 
 class AppCatalogListingResourceVersionAgreement(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/appCatalogListingResourceVersionAgreement:AppCatalogListingResourceVersionAgreement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

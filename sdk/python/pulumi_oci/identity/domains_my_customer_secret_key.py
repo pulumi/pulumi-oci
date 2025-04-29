@@ -1042,6 +1042,9 @@ class _DomainsMyCustomerSecretKeyState:
 
 
 class DomainsMyCustomerSecretKey(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/domainsMyCustomerSecretKey:DomainsMyCustomerSecretKey"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

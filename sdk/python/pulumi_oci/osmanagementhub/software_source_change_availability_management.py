@@ -67,6 +67,9 @@ class _SoftwareSourceChangeAvailabilityManagementState:
 
 
 class SoftwareSourceChangeAvailabilityManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:OsManagementHub/softwareSourceChangeAvailabilityManagement:SoftwareSourceChangeAvailabilityManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -304,6 +304,9 @@ class _InternetGatewayState:
 
 
 class InternetGateway(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/internetGateway:InternetGateway"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

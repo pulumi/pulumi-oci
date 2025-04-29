@@ -1173,6 +1173,9 @@ class _ExadbVmClusterState:
 
 
 class ExadbVmCluster(pulumi.CustomResource):
+
+    pulumi_type = "oci:Database/exadbVmCluster:ExadbVmCluster"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

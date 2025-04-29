@@ -464,6 +464,9 @@ class _AlarmSuppressionState:
 
 
 class AlarmSuppression(pulumi.CustomResource):
+
+    pulumi_type = "oci:Monitoring/alarmSuppression:AlarmSuppression"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

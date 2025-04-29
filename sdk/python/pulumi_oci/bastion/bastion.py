@@ -527,6 +527,9 @@ class _BastionState:
 
 
 class Bastion(pulumi.CustomResource):
+
+    pulumi_type = "oci:Bastion/bastion:Bastion"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

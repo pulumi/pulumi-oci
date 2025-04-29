@@ -337,6 +337,9 @@ class _AccessPolicyState:
 
 
 class AccessPolicy(pulumi.CustomResource):
+
+    pulumi_type = "oci:ServiceMesh/accessPolicy:AccessPolicy"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

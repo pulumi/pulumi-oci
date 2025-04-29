@@ -410,6 +410,9 @@ class _WorkspaceProjectState:
 
 
 class WorkspaceProject(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataIntegration/workspaceProject:WorkspaceProject"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

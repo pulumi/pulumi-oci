@@ -371,6 +371,9 @@ class _DeployPipelineState:
 
 
 class DeployPipeline(pulumi.CustomResource):
+
+    pulumi_type = "oci:DevOps/deployPipeline:DeployPipeline"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -354,6 +354,9 @@ class _NetworkAddressListState:
 
 
 class NetworkAddressList(pulumi.CustomResource):
+
+    pulumi_type = "oci:Waf/networkAddressList:NetworkAddressList"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

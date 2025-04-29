@@ -320,6 +320,9 @@ class _SdmMaskingPolicyDifferenceState:
 
 
 class SdmMaskingPolicyDifference(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataSafe/sdmMaskingPolicyDifference:SdmMaskingPolicyDifference"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

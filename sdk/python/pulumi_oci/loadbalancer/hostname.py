@@ -156,6 +156,9 @@ class _HostnameState:
 
 
 class Hostname(pulumi.CustomResource):
+
+    pulumi_type = "oci:LoadBalancer/hostname:Hostname"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

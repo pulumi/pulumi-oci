@@ -418,6 +418,9 @@ class _ExternalNonContainerDatabaseState:
 
 
 class ExternalNonContainerDatabase(pulumi.CustomResource):
+
+    pulumi_type = "oci:Database/externalNonContainerDatabase:ExternalNonContainerDatabase"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

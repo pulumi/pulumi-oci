@@ -335,6 +335,9 @@ class _ApplicationVipState:
 
 
 class ApplicationVip(pulumi.CustomResource):
+
+    pulumi_type = "oci:Database/applicationVip:ApplicationVip"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

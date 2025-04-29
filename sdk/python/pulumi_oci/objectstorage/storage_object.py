@@ -613,6 +613,9 @@ class _StorageObjectState:
 
 
 class StorageObject(pulumi.CustomResource):
+
+    pulumi_type = "oci:ObjectStorage/storageObject:StorageObject"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

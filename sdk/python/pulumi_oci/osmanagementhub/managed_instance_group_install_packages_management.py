@@ -162,6 +162,9 @@ class _ManagedInstanceGroupInstallPackagesManagementState:
 
 
 class ManagedInstanceGroupInstallPackagesManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:OsManagementHub/managedInstanceGroupInstallPackagesManagement:ManagedInstanceGroupInstallPackagesManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

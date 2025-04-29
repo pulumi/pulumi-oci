@@ -112,6 +112,9 @@ class _SoftwareSourceRemovePackagesManagementState:
 
 
 class SoftwareSourceRemovePackagesManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:OsManagementHub/softwareSourceRemovePackagesManagement:SoftwareSourceRemovePackagesManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

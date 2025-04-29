@@ -333,6 +333,9 @@ class _BdsInstanceMetastoreConfigState:
 
 
 class BdsInstanceMetastoreConfig(pulumi.CustomResource):
+
+    pulumi_type = "oci:BigDataService/bdsInstanceMetastoreConfig:BdsInstanceMetastoreConfig"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

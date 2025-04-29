@@ -335,6 +335,9 @@ class _AiPrivateEndpointState:
 
 
 class AiPrivateEndpoint(pulumi.CustomResource):
+
+    pulumi_type = "oci:AiAnomalyDetection/aiPrivateEndpoint:AiPrivateEndpoint"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

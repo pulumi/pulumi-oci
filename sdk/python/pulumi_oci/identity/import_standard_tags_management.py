@@ -124,6 +124,9 @@ class _ImportStandardTagsManagementState:
 
 
 class ImportStandardTagsManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/importStandardTagsManagement:ImportStandardTagsManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -2685,6 +2685,9 @@ class _DomainsSocialIdentityProviderState:
 
 
 class DomainsSocialIdentityProvider(pulumi.CustomResource):
+
+    pulumi_type = "oci:Identity/domainsSocialIdentityProvider:DomainsSocialIdentityProvider"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

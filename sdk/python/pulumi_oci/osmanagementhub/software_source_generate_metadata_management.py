@@ -81,6 +81,9 @@ class _SoftwareSourceGenerateMetadataManagementState:
 
 
 class SoftwareSourceGenerateMetadataManagement(pulumi.CustomResource):
+
+    pulumi_type = "oci:OsManagementHub/softwareSourceGenerateMetadataManagement:SoftwareSourceGenerateMetadataManagement"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

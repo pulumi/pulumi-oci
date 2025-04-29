@@ -533,6 +533,9 @@ class _VolumeGroupState:
 
 
 class VolumeGroup(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/volumeGroup:VolumeGroup"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

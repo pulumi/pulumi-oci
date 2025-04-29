@@ -411,6 +411,9 @@ class _ContainerImageSignatureState:
 
 
 class ContainerImageSignature(pulumi.CustomResource):
+
+    pulumi_type = "oci:Artifacts/containerImageSignature:ContainerImageSignature"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

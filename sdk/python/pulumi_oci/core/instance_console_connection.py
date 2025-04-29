@@ -272,6 +272,9 @@ class _InstanceConsoleConnectionState:
 
 
 class InstanceConsoleConnection(pulumi.CustomResource):
+
+    pulumi_type = "oci:Core/instanceConsoleConnection:InstanceConsoleConnection"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

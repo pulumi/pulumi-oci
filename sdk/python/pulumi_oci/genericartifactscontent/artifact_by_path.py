@@ -347,6 +347,9 @@ class _ArtifactByPathState:
 
 
 class ArtifactByPath(pulumi.CustomResource):
+
+    pulumi_type = "oci:GenericArtifactsContent/artifactByPath:ArtifactByPath"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

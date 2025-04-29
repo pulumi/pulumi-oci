@@ -433,6 +433,9 @@ class _PoolState:
 
 
 class Pool(pulumi.CustomResource):
+
+    pulumi_type = "oci:DataFlow/pool:Pool"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

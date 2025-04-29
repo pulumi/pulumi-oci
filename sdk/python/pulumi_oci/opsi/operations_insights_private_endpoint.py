@@ -445,6 +445,9 @@ class _OperationsInsightsPrivateEndpointState:
 
 
 class OperationsInsightsPrivateEndpoint(pulumi.CustomResource):
+
+    pulumi_type = "oci:Opsi/operationsInsightsPrivateEndpoint:OperationsInsightsPrivateEndpoint"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

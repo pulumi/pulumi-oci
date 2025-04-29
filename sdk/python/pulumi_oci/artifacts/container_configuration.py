@@ -104,6 +104,9 @@ class _ContainerConfigurationState:
 
 
 class ContainerConfiguration(pulumi.CustomResource):
+
+    pulumi_type = "oci:Artifacts/containerConfiguration:ContainerConfiguration"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -4,7 +4,6 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseScheduledOperationDayOfWeek;
 import java.lang.String;
 import java.util.Objects;
@@ -17,7 +16,7 @@ public final class AutonomousDatabaseScheduledOperation {
      * @return (Updatable) Day of the week.
      * 
      */
-    private AutonomousDatabaseScheduledOperationDayOfWeek dayOfWeek;
+    private @Nullable AutonomousDatabaseScheduledOperationDayOfWeek dayOfWeek;
     /**
      * @return (Updatable) auto start time. value must be of ISO-8601 format &#34;HH:mm&#34;
      * 
@@ -34,8 +33,8 @@ public final class AutonomousDatabaseScheduledOperation {
      * @return (Updatable) Day of the week.
      * 
      */
-    public AutonomousDatabaseScheduledOperationDayOfWeek dayOfWeek() {
-        return this.dayOfWeek;
+    public Optional<AutonomousDatabaseScheduledOperationDayOfWeek> dayOfWeek() {
+        return Optional.ofNullable(this.dayOfWeek);
     }
     /**
      * @return (Updatable) auto start time. value must be of ISO-8601 format &#34;HH:mm&#34;
@@ -61,7 +60,7 @@ public final class AutonomousDatabaseScheduledOperation {
     }
     @CustomType.Builder
     public static final class Builder {
-        private AutonomousDatabaseScheduledOperationDayOfWeek dayOfWeek;
+        private @Nullable AutonomousDatabaseScheduledOperationDayOfWeek dayOfWeek;
         private @Nullable String scheduledStartTime;
         private @Nullable String scheduledStopTime;
         public Builder() {}
@@ -73,10 +72,8 @@ public final class AutonomousDatabaseScheduledOperation {
         }
 
         @CustomType.Setter
-        public Builder dayOfWeek(AutonomousDatabaseScheduledOperationDayOfWeek dayOfWeek) {
-            if (dayOfWeek == null) {
-              throw new MissingRequiredPropertyException("AutonomousDatabaseScheduledOperation", "dayOfWeek");
-            }
+        public Builder dayOfWeek(@Nullable AutonomousDatabaseScheduledOperationDayOfWeek dayOfWeek) {
+
             this.dayOfWeek = dayOfWeek;
             return this;
         }

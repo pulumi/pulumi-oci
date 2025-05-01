@@ -31,6 +31,7 @@ public final class GetSchedulesResult {
      * 
      */
     private String id;
+    private @Nullable String resourceId;
     /**
      * @return The list of schedule_collection.
      * 
@@ -68,6 +69,9 @@ public final class GetSchedulesResult {
     public String id() {
         return this.id;
     }
+    public Optional<String> resourceId() {
+        return Optional.ofNullable(this.resourceId);
+    }
     /**
      * @return The list of schedule_collection.
      * 
@@ -99,6 +103,7 @@ public final class GetSchedulesResult {
         private @Nullable String displayName;
         private @Nullable List<GetSchedulesFilter> filters;
         private String id;
+        private @Nullable String resourceId;
         private List<GetSchedulesScheduleCollection> scheduleCollections;
         private @Nullable String scheduleId;
         private @Nullable String state;
@@ -109,6 +114,7 @@ public final class GetSchedulesResult {
     	      this.displayName = defaults.displayName;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.resourceId = defaults.resourceId;
     	      this.scheduleCollections = defaults.scheduleCollections;
     	      this.scheduleId = defaults.scheduleId;
     	      this.state = defaults.state;
@@ -144,6 +150,12 @@ public final class GetSchedulesResult {
             return this;
         }
         @CustomType.Setter
+        public Builder resourceId(@Nullable String resourceId) {
+
+            this.resourceId = resourceId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder scheduleCollections(List<GetSchedulesScheduleCollection> scheduleCollections) {
             if (scheduleCollections == null) {
               throw new MissingRequiredPropertyException("GetSchedulesResult", "scheduleCollections");
@@ -172,6 +184,7 @@ public final class GetSchedulesResult {
             _resultValue.displayName = displayName;
             _resultValue.filters = filters;
             _resultValue.id = id;
+            _resultValue.resourceId = resourceId;
             _resultValue.scheduleCollections = scheduleCollections;
             _resultValue.scheduleId = scheduleId;
             _resultValue.state = state;

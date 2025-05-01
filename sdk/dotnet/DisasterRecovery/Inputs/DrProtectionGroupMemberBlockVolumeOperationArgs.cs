@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
     public sealed class DrProtectionGroupMemberBlockVolumeOperationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The details for creating a block volume attachment.
+        /// (Updatable) Deprecated. Use the 'CreateComputeInstanceNonMovableBlockVolumeAttachOperationDetails' definition instead of this. The details for creating a block volume attachment.
         /// </summary>
         [Input("attachmentDetails")]
         public Input<Inputs.DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs>? AttachmentDetails { get; set; }

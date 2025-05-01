@@ -15,6 +15,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetClusterResult {
@@ -95,6 +97,7 @@ public final class GetClusterResult {
      * 
      */
     private List<GetClusterOption> options;
+    private @Nullable String shouldIncludeOidcConfigFile;
     /**
      * @return The state of the cluster masters.
      * 
@@ -223,6 +226,9 @@ public final class GetClusterResult {
     public List<GetClusterOption> options() {
         return this.options;
     }
+    public Optional<String> shouldIncludeOidcConfigFile() {
+        return Optional.ofNullable(this.shouldIncludeOidcConfigFile);
+    }
     /**
      * @return The state of the cluster masters.
      * 
@@ -271,6 +277,7 @@ public final class GetClusterResult {
         private String name;
         private String openIdConnectDiscoveryEndpoint;
         private List<GetClusterOption> options;
+        private @Nullable String shouldIncludeOidcConfigFile;
         private String state;
         private String type;
         private String vcnId;
@@ -294,6 +301,7 @@ public final class GetClusterResult {
     	      this.name = defaults.name;
     	      this.openIdConnectDiscoveryEndpoint = defaults.openIdConnectDiscoveryEndpoint;
     	      this.options = defaults.options;
+    	      this.shouldIncludeOidcConfigFile = defaults.shouldIncludeOidcConfigFile;
     	      this.state = defaults.state;
     	      this.type = defaults.type;
     	      this.vcnId = defaults.vcnId;
@@ -457,6 +465,12 @@ public final class GetClusterResult {
             return options(List.of(options));
         }
         @CustomType.Setter
+        public Builder shouldIncludeOidcConfigFile(@Nullable String shouldIncludeOidcConfigFile) {
+
+            this.shouldIncludeOidcConfigFile = shouldIncludeOidcConfigFile;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetClusterResult", "state");
@@ -499,6 +513,7 @@ public final class GetClusterResult {
             _resultValue.name = name;
             _resultValue.openIdConnectDiscoveryEndpoint = openIdConnectDiscoveryEndpoint;
             _resultValue.options = options;
+            _resultValue.shouldIncludeOidcConfigFile = shouldIncludeOidcConfigFile;
             _resultValue.state = state;
             _resultValue.type = type;
             _resultValue.vcnId = vcnId;

@@ -32,7 +32,7 @@ class TableArgs:
         """
         The set of arguments for constructing a Table resource.
         :param pulumi.Input[builtins.str] compartment_id: (Updatable) Compartment Identifier.
-        :param pulumi.Input[builtins.str] ddl_statement: (Updatable) Complete CREATE TABLE DDL statement. When update ddl_statement, it should be ALTER TABLE DDL statement.
+        :param pulumi.Input[builtins.str] ddl_statement: (Updatable) CREATE TABLE DDL statement. While updating an existing table, note that the column order should not be changed, and new columns can only be appended at the end of the table.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[builtins.bool] is_auto_reclaimable: True if table can be reclaimed after an idle period.
@@ -68,7 +68,7 @@ class TableArgs:
     @pulumi.getter(name="ddlStatement")
     def ddl_statement(self) -> pulumi.Input[builtins.str]:
         """
-        (Updatable) Complete CREATE TABLE DDL statement. When update ddl_statement, it should be ALTER TABLE DDL statement.
+        (Updatable) CREATE TABLE DDL statement. While updating an existing table, note that the column order should not be changed, and new columns can only be appended at the end of the table.
         """
         return pulumi.get(self, "ddl_statement")
 
@@ -161,7 +161,7 @@ class _TableState:
         """
         Input properties used for looking up and filtering Table resources.
         :param pulumi.Input[builtins.str] compartment_id: (Updatable) Compartment Identifier.
-        :param pulumi.Input[builtins.str] ddl_statement: (Updatable) Complete CREATE TABLE DDL statement. When update ddl_statement, it should be ALTER TABLE DDL statement.
+        :param pulumi.Input[builtins.str] ddl_statement: (Updatable) CREATE TABLE DDL statement. While updating an existing table, note that the column order should not be changed, and new columns can only be appended at the end of the table.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[builtins.bool] is_auto_reclaimable: True if table can be reclaimed after an idle period.
@@ -232,7 +232,7 @@ class _TableState:
     @pulumi.getter(name="ddlStatement")
     def ddl_statement(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        (Updatable) Complete CREATE TABLE DDL statement. When update ddl_statement, it should be ALTER TABLE DDL statement.
+        (Updatable) CREATE TABLE DDL statement. While updating an existing table, note that the column order should not be changed, and new columns can only be appended at the end of the table.
         """
         return pulumi.get(self, "ddl_statement")
 
@@ -488,7 +488,7 @@ class Table(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[builtins.str] compartment_id: (Updatable) Compartment Identifier.
-        :param pulumi.Input[builtins.str] ddl_statement: (Updatable) Complete CREATE TABLE DDL statement. When update ddl_statement, it should be ALTER TABLE DDL statement.
+        :param pulumi.Input[builtins.str] ddl_statement: (Updatable) CREATE TABLE DDL statement. While updating an existing table, note that the column order should not be changed, and new columns can only be appended at the end of the table.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[builtins.bool] is_auto_reclaimable: True if table can be reclaimed after an idle period.
@@ -626,7 +626,7 @@ class Table(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[builtins.str] compartment_id: (Updatable) Compartment Identifier.
-        :param pulumi.Input[builtins.str] ddl_statement: (Updatable) Complete CREATE TABLE DDL statement. When update ddl_statement, it should be ALTER TABLE DDL statement.
+        :param pulumi.Input[builtins.str] ddl_statement: (Updatable) CREATE TABLE DDL statement. While updating an existing table, note that the column order should not be changed, and new columns can only be appended at the end of the table.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[builtins.bool] is_auto_reclaimable: True if table can be reclaimed after an idle period.
@@ -680,7 +680,7 @@ class Table(pulumi.CustomResource):
     @pulumi.getter(name="ddlStatement")
     def ddl_statement(self) -> pulumi.Output[builtins.str]:
         """
-        (Updatable) Complete CREATE TABLE DDL statement. When update ddl_statement, it should be ALTER TABLE DDL statement.
+        (Updatable) CREATE TABLE DDL statement. While updating an existing table, note that the column order should not be changed, and new columns can only be appended at the end of the table.
         """
         return pulumi.get(self, "ddl_statement")
 

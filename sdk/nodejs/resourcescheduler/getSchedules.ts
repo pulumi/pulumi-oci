@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Schedules in Oracle Cloud Infrastructure Resource Scheduler service.
  *
- * This API gets a list of schedules
+ * This API gets a list of schedules. You must provide either a compartmentId or a scheduleId or both. You can list resources in this compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This is required unless a specific schedule ID is passed.
  *
  * ## Example Usage
  *
@@ -19,9 +19,8 @@ import * as utilities from "../utilities";
  *
  * const testSchedules = oci.ResourceScheduler.getSchedules({
  *     compartmentId: compartmentId,
- *     scheduleId: testSchedule.id,
  *     displayName: scheduleDisplayName,
- *     state: scheduleState,
+ *     resourceId: testResource.id,
  * });
  * ```
  */
@@ -32,6 +31,7 @@ export function getSchedules(args?: GetSchedulesArgs, opts?: pulumi.InvokeOption
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
         "filters": args.filters,
+        "resourceId": args.resourceId,
         "scheduleId": args.scheduleId,
         "state": args.state,
     }, opts);
@@ -50,6 +50,10 @@ export interface GetSchedulesArgs {
      */
     displayName?: string;
     filters?: inputs.ResourceScheduler.GetSchedulesFilter[];
+    /**
+     * This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource affected by the work request.
+     */
+    resourceId?: string;
     /**
      * This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.  You need to at least provide either `compartmentId` or `scheduleId` or both.
      */
@@ -77,6 +81,7 @@ export interface GetSchedulesResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly resourceId?: string;
     /**
      * The list of schedule_collection.
      */
@@ -90,7 +95,7 @@ export interface GetSchedulesResult {
 /**
  * This data source provides the list of Schedules in Oracle Cloud Infrastructure Resource Scheduler service.
  *
- * This API gets a list of schedules
+ * This API gets a list of schedules. You must provide either a compartmentId or a scheduleId or both. You can list resources in this compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This is required unless a specific schedule ID is passed.
  *
  * ## Example Usage
  *
@@ -100,9 +105,8 @@ export interface GetSchedulesResult {
  *
  * const testSchedules = oci.ResourceScheduler.getSchedules({
  *     compartmentId: compartmentId,
- *     scheduleId: testSchedule.id,
  *     displayName: scheduleDisplayName,
- *     state: scheduleState,
+ *     resourceId: testResource.id,
  * });
  * ```
  */
@@ -113,6 +117,7 @@ export function getSchedulesOutput(args?: GetSchedulesOutputArgs, opts?: pulumi.
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
         "filters": args.filters,
+        "resourceId": args.resourceId,
         "scheduleId": args.scheduleId,
         "state": args.state,
     }, opts);
@@ -131,6 +136,10 @@ export interface GetSchedulesOutputArgs {
      */
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.ResourceScheduler.GetSchedulesFilterArgs>[]>;
+    /**
+     * This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource affected by the work request.
+     */
+    resourceId?: pulumi.Input<string>;
     /**
      * This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.  You need to at least provide either `compartmentId` or `scheduleId` or both.
      */

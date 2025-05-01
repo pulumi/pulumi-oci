@@ -470,6 +470,162 @@ class DrProtectionGroup(pulumi.CustomResource):
 
         Create a DR protection group.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        config = pulumi.Config()
+        disassociate_trigger = config.get_float("disassociateTrigger")
+        if disassociate_trigger is None:
+            disassociate_trigger = 0
+        test_dr_protection_group = oci.disaster_recovery.DrProtectionGroup("test_dr_protection_group",
+            compartment_id=compartment_id,
+            display_name=dr_protection_group_display_name,
+            log_location={
+                "bucket": dr_protection_group_log_location_bucket,
+                "namespace": dr_protection_group_log_location_namespace,
+            },
+            association={
+                "role": dr_protection_group_association_role,
+                "peer_id": dr_protection_group_association_peer_id,
+                "peer_region": dr_protection_group_association_peer_region,
+            },
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            freeform_tags={
+                "Department": "Finance",
+            },
+            disassociate_trigger=disassociate_trigger,
+            members=[{
+                "member_id": dr_protection_group_members_member_id,
+                "member_type": dr_protection_group_members_member_type,
+                "autonomous_database_standby_type_for_dr_drills": dr_protection_group_members_autonomous_database_standby_type_for_dr_drills,
+                "backend_set_mappings": [{
+                    "destination_backend_set_name": test_backend_set["name"],
+                    "is_backend_set_for_non_movable": dr_protection_group_members_backend_set_mappings_is_backend_set_for_non_movable,
+                    "source_backend_set_name": test_backend_set["name"],
+                }],
+                "backup_config": {
+                    "backup_schedule": dr_protection_group_members_backup_config_backup_schedule,
+                    "image_replication_vault_secret_id": test_secret["id"],
+                    "max_number_of_backups_retained": dr_protection_group_members_backup_config_max_number_of_backups_retained,
+                    "namespaces": dr_protection_group_members_backup_config_namespaces,
+                    "replicate_images": dr_protection_group_members_backup_config_replicate_images,
+                },
+                "backup_location": {
+                    "bucket": dr_protection_group_members_backup_location_bucket,
+                    "namespace": dr_protection_group_members_backup_location_namespace,
+                },
+                "block_volume_attach_and_mount_operations": {
+                    "attachments": [{
+                        "block_volume_id": test_volume["id"],
+                        "volume_attachment_reference_instance_id": test_instance["id"],
+                    }],
+                    "mounts": [{
+                        "mount_point": dr_protection_group_members_block_volume_attach_and_mount_operations_mounts_mount_point,
+                    }],
+                },
+                "block_volume_operations": [{
+                    "attachment_details": {
+                        "volume_attachment_reference_instance_id": test_instance["id"],
+                    },
+                    "block_volume_id": test_volume["id"],
+                    "mount_details": {
+                        "mount_point": dr_protection_group_members_block_volume_operations_mount_details_mount_point,
+                    },
+                }],
+                "bucket": dr_protection_group_members_bucket,
+                "common_destination_key": {
+                    "encryption_key_id": test_key["id"],
+                    "vault_id": test_vault["id"],
+                },
+                "connection_string_type": dr_protection_group_members_connection_string_type,
+                "destination_availability_domain": dr_protection_group_members_destination_availability_domain,
+                "destination_backup_policy_id": test_policy["id"],
+                "destination_capacity_reservation_id": destination_capacity_reservation_id,
+                "destination_compartment_id": test_compartment["id"],
+                "destination_dedicated_vm_host_id": test_dedicated_vm_host["id"],
+                "destination_encryption_key": {
+                    "encryption_key_id": test_key["id"],
+                    "vault_id": test_vault["id"],
+                },
+                "destination_load_balancer_id": test_load_balancer["id"],
+                "destination_network_load_balancer_id": test_network_load_balancer["id"],
+                "destination_snapshot_policy_id": test_policy["id"],
+                "export_mappings": [{
+                    "destination_mount_target_id": test_mount_target["id"],
+                    "export_id": test_export["id"],
+                }],
+                "file_system_operations": [{
+                    "export_path": dr_protection_group_members_file_system_operations_export_path,
+                    "mount_details": {
+                        "mount_target_id": test_mount_target["id"],
+                    },
+                    "mount_point": dr_protection_group_members_file_system_operations_mount_point,
+                    "mount_target_id": test_mount_target["id"],
+                    "unmount_details": {
+                        "mount_target_id": test_mount_target["id"],
+                    },
+                }],
+                "is_movable": dr_protection_group_members_is_movable,
+                "is_retain_fault_domain": dr_protection_group_members_is_retain_fault_domain,
+                "is_start_stop_enabled": dr_protection_group_members_is_start_stop_enabled,
+                "jump_host_id": test_jump_host["id"],
+                "load_balancer_mappings": [{
+                    "destination_load_balancer_id": test_load_balancer["id"],
+                    "source_load_balancer_id": test_load_balancer["id"],
+                }],
+                "managed_node_pool_configs": [{
+                    "id": dr_protection_group_members_managed_node_pool_configs_id,
+                    "maximum": dr_protection_group_members_managed_node_pool_configs_maximum,
+                    "minimum": dr_protection_group_members_managed_node_pool_configs_minimum,
+                }],
+                "namespace": dr_protection_group_members_namespace,
+                "password_vault_secret_id": password_vault_secret_id,
+                "network_load_balancer_mappings": [{
+                    "destination_network_load_balancer_id": test_network_load_balancer["id"],
+                    "source_network_load_balancer_id": test_network_load_balancer["id"],
+                }],
+                "peer_cluster_id": test_cluster["id"],
+                "source_volume_to_destination_encryption_key_mappings": [{
+                    "destination_encryption_key": {
+                        "encryption_key_id": test_key["id"],
+                        "vault_id": test_vault["id"],
+                    },
+                    "source_volume_id": test_volume["id"],
+                }],
+                "vault_mappings": [{
+                    "destination_vault_id": test_vault["id"],
+                    "source_vault_id": test_vault["id"],
+                }],
+                "virtual_node_pool_configs": [{
+                    "id": dr_protection_group_members_virtual_node_pool_configs_id,
+                    "maximum": dr_protection_group_members_virtual_node_pool_configs_maximum,
+                    "minimum": dr_protection_group_members_virtual_node_pool_configs_minimum,
+                }],
+                "vnic_mappings": [
+                    {
+                        "destination_nsg_id_lists": dr_protection_group_members_vnic_mapping_destination_nsg_id_list,
+                        "destination_primary_private_ip_address": dr_protection_group_members_vnic_mapping_destination_primary_private_ip_address,
+                        "destination_primary_private_ip_hostname_label": dr_protection_group_members_vnic_mapping_destination_primary_private_ip_hostname_label,
+                        "destination_subnet_id": test_subnet["id"],
+                        "source_vnic_id": test_vnic["id"],
+                    },
+                    {
+                        "destination_nsg_id_lists": dr_protection_group_members_vnic_mappings_destination_nsg_id_list,
+                        "destination_primary_private_ip_address": dr_protection_group_members_vnic_mappings_destination_primary_private_ip_address,
+                        "destination_primary_private_ip_hostname_label": dr_protection_group_members_vnic_mappings_destination_primary_private_ip_hostname_label,
+                        "destination_reserved_public_ip_id": test_public_ip["id"],
+                        "destination_subnet_id": test_subnet["id"],
+                        "source_vnic_id": test_vnic["id"],
+                    },
+                ],
+            }])
+        ```
+
         ## Create
 
         Create DR Protection Group resource with a default value of `disassociate_trigger` property, e.g.
@@ -511,6 +667,162 @@ class DrProtectionGroup(pulumi.CustomResource):
         This resource provides the Dr Protection Group resource in Oracle Cloud Infrastructure Disaster Recovery service.
 
         Create a DR protection group.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        config = pulumi.Config()
+        disassociate_trigger = config.get_float("disassociateTrigger")
+        if disassociate_trigger is None:
+            disassociate_trigger = 0
+        test_dr_protection_group = oci.disaster_recovery.DrProtectionGroup("test_dr_protection_group",
+            compartment_id=compartment_id,
+            display_name=dr_protection_group_display_name,
+            log_location={
+                "bucket": dr_protection_group_log_location_bucket,
+                "namespace": dr_protection_group_log_location_namespace,
+            },
+            association={
+                "role": dr_protection_group_association_role,
+                "peer_id": dr_protection_group_association_peer_id,
+                "peer_region": dr_protection_group_association_peer_region,
+            },
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            freeform_tags={
+                "Department": "Finance",
+            },
+            disassociate_trigger=disassociate_trigger,
+            members=[{
+                "member_id": dr_protection_group_members_member_id,
+                "member_type": dr_protection_group_members_member_type,
+                "autonomous_database_standby_type_for_dr_drills": dr_protection_group_members_autonomous_database_standby_type_for_dr_drills,
+                "backend_set_mappings": [{
+                    "destination_backend_set_name": test_backend_set["name"],
+                    "is_backend_set_for_non_movable": dr_protection_group_members_backend_set_mappings_is_backend_set_for_non_movable,
+                    "source_backend_set_name": test_backend_set["name"],
+                }],
+                "backup_config": {
+                    "backup_schedule": dr_protection_group_members_backup_config_backup_schedule,
+                    "image_replication_vault_secret_id": test_secret["id"],
+                    "max_number_of_backups_retained": dr_protection_group_members_backup_config_max_number_of_backups_retained,
+                    "namespaces": dr_protection_group_members_backup_config_namespaces,
+                    "replicate_images": dr_protection_group_members_backup_config_replicate_images,
+                },
+                "backup_location": {
+                    "bucket": dr_protection_group_members_backup_location_bucket,
+                    "namespace": dr_protection_group_members_backup_location_namespace,
+                },
+                "block_volume_attach_and_mount_operations": {
+                    "attachments": [{
+                        "block_volume_id": test_volume["id"],
+                        "volume_attachment_reference_instance_id": test_instance["id"],
+                    }],
+                    "mounts": [{
+                        "mount_point": dr_protection_group_members_block_volume_attach_and_mount_operations_mounts_mount_point,
+                    }],
+                },
+                "block_volume_operations": [{
+                    "attachment_details": {
+                        "volume_attachment_reference_instance_id": test_instance["id"],
+                    },
+                    "block_volume_id": test_volume["id"],
+                    "mount_details": {
+                        "mount_point": dr_protection_group_members_block_volume_operations_mount_details_mount_point,
+                    },
+                }],
+                "bucket": dr_protection_group_members_bucket,
+                "common_destination_key": {
+                    "encryption_key_id": test_key["id"],
+                    "vault_id": test_vault["id"],
+                },
+                "connection_string_type": dr_protection_group_members_connection_string_type,
+                "destination_availability_domain": dr_protection_group_members_destination_availability_domain,
+                "destination_backup_policy_id": test_policy["id"],
+                "destination_capacity_reservation_id": destination_capacity_reservation_id,
+                "destination_compartment_id": test_compartment["id"],
+                "destination_dedicated_vm_host_id": test_dedicated_vm_host["id"],
+                "destination_encryption_key": {
+                    "encryption_key_id": test_key["id"],
+                    "vault_id": test_vault["id"],
+                },
+                "destination_load_balancer_id": test_load_balancer["id"],
+                "destination_network_load_balancer_id": test_network_load_balancer["id"],
+                "destination_snapshot_policy_id": test_policy["id"],
+                "export_mappings": [{
+                    "destination_mount_target_id": test_mount_target["id"],
+                    "export_id": test_export["id"],
+                }],
+                "file_system_operations": [{
+                    "export_path": dr_protection_group_members_file_system_operations_export_path,
+                    "mount_details": {
+                        "mount_target_id": test_mount_target["id"],
+                    },
+                    "mount_point": dr_protection_group_members_file_system_operations_mount_point,
+                    "mount_target_id": test_mount_target["id"],
+                    "unmount_details": {
+                        "mount_target_id": test_mount_target["id"],
+                    },
+                }],
+                "is_movable": dr_protection_group_members_is_movable,
+                "is_retain_fault_domain": dr_protection_group_members_is_retain_fault_domain,
+                "is_start_stop_enabled": dr_protection_group_members_is_start_stop_enabled,
+                "jump_host_id": test_jump_host["id"],
+                "load_balancer_mappings": [{
+                    "destination_load_balancer_id": test_load_balancer["id"],
+                    "source_load_balancer_id": test_load_balancer["id"],
+                }],
+                "managed_node_pool_configs": [{
+                    "id": dr_protection_group_members_managed_node_pool_configs_id,
+                    "maximum": dr_protection_group_members_managed_node_pool_configs_maximum,
+                    "minimum": dr_protection_group_members_managed_node_pool_configs_minimum,
+                }],
+                "namespace": dr_protection_group_members_namespace,
+                "password_vault_secret_id": password_vault_secret_id,
+                "network_load_balancer_mappings": [{
+                    "destination_network_load_balancer_id": test_network_load_balancer["id"],
+                    "source_network_load_balancer_id": test_network_load_balancer["id"],
+                }],
+                "peer_cluster_id": test_cluster["id"],
+                "source_volume_to_destination_encryption_key_mappings": [{
+                    "destination_encryption_key": {
+                        "encryption_key_id": test_key["id"],
+                        "vault_id": test_vault["id"],
+                    },
+                    "source_volume_id": test_volume["id"],
+                }],
+                "vault_mappings": [{
+                    "destination_vault_id": test_vault["id"],
+                    "source_vault_id": test_vault["id"],
+                }],
+                "virtual_node_pool_configs": [{
+                    "id": dr_protection_group_members_virtual_node_pool_configs_id,
+                    "maximum": dr_protection_group_members_virtual_node_pool_configs_maximum,
+                    "minimum": dr_protection_group_members_virtual_node_pool_configs_minimum,
+                }],
+                "vnic_mappings": [
+                    {
+                        "destination_nsg_id_lists": dr_protection_group_members_vnic_mapping_destination_nsg_id_list,
+                        "destination_primary_private_ip_address": dr_protection_group_members_vnic_mapping_destination_primary_private_ip_address,
+                        "destination_primary_private_ip_hostname_label": dr_protection_group_members_vnic_mapping_destination_primary_private_ip_hostname_label,
+                        "destination_subnet_id": test_subnet["id"],
+                        "source_vnic_id": test_vnic["id"],
+                    },
+                    {
+                        "destination_nsg_id_lists": dr_protection_group_members_vnic_mappings_destination_nsg_id_list,
+                        "destination_primary_private_ip_address": dr_protection_group_members_vnic_mappings_destination_primary_private_ip_address,
+                        "destination_primary_private_ip_hostname_label": dr_protection_group_members_vnic_mappings_destination_primary_private_ip_hostname_label,
+                        "destination_reserved_public_ip_id": test_public_ip["id"],
+                        "destination_subnet_id": test_subnet["id"],
+                        "source_vnic_id": test_vnic["id"],
+                    },
+                ],
+            }])
+        ```
 
         ## Create
 

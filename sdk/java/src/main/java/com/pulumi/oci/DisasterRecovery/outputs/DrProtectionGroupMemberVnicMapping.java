@@ -28,6 +28,11 @@ public final class DrProtectionGroupMemberVnicMapping {
      */
     private @Nullable String destinationPrimaryPrivateIpHostnameLabel;
     /**
+     * @return (Updatable) The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+     * 
+     */
+    private @Nullable String destinationReservedPublicIpId;
+    /**
      * @return (Updatable) The OCID of the destination subnet to which the source VNIC should connect.          Example: `ocid1.subnet.oc1..uniqueID`
      * 
      */
@@ -61,6 +66,13 @@ public final class DrProtectionGroupMemberVnicMapping {
         return Optional.ofNullable(this.destinationPrimaryPrivateIpHostnameLabel);
     }
     /**
+     * @return (Updatable) The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+     * 
+     */
+    public Optional<String> destinationReservedPublicIpId() {
+        return Optional.ofNullable(this.destinationReservedPublicIpId);
+    }
+    /**
      * @return (Updatable) The OCID of the destination subnet to which the source VNIC should connect.          Example: `ocid1.subnet.oc1..uniqueID`
      * 
      */
@@ -87,6 +99,7 @@ public final class DrProtectionGroupMemberVnicMapping {
         private @Nullable List<String> destinationNsgIdLists;
         private @Nullable String destinationPrimaryPrivateIpAddress;
         private @Nullable String destinationPrimaryPrivateIpHostnameLabel;
+        private @Nullable String destinationReservedPublicIpId;
         private @Nullable String destinationSubnetId;
         private @Nullable String sourceVnicId;
         public Builder() {}
@@ -95,6 +108,7 @@ public final class DrProtectionGroupMemberVnicMapping {
     	      this.destinationNsgIdLists = defaults.destinationNsgIdLists;
     	      this.destinationPrimaryPrivateIpAddress = defaults.destinationPrimaryPrivateIpAddress;
     	      this.destinationPrimaryPrivateIpHostnameLabel = defaults.destinationPrimaryPrivateIpHostnameLabel;
+    	      this.destinationReservedPublicIpId = defaults.destinationReservedPublicIpId;
     	      this.destinationSubnetId = defaults.destinationSubnetId;
     	      this.sourceVnicId = defaults.sourceVnicId;
         }
@@ -121,6 +135,12 @@ public final class DrProtectionGroupMemberVnicMapping {
             return this;
         }
         @CustomType.Setter
+        public Builder destinationReservedPublicIpId(@Nullable String destinationReservedPublicIpId) {
+
+            this.destinationReservedPublicIpId = destinationReservedPublicIpId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder destinationSubnetId(@Nullable String destinationSubnetId) {
 
             this.destinationSubnetId = destinationSubnetId;
@@ -137,6 +157,7 @@ public final class DrProtectionGroupMemberVnicMapping {
             _resultValue.destinationNsgIdLists = destinationNsgIdLists;
             _resultValue.destinationPrimaryPrivateIpAddress = destinationPrimaryPrivateIpAddress;
             _resultValue.destinationPrimaryPrivateIpHostnameLabel = destinationPrimaryPrivateIpHostnameLabel;
+            _resultValue.destinationReservedPublicIpId = destinationReservedPublicIpId;
             _resultValue.destinationSubnetId = destinationSubnetId;
             _resultValue.sourceVnicId = sourceVnicId;
             return _resultValue;

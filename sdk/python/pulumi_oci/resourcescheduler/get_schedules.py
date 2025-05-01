@@ -29,7 +29,7 @@ class GetSchedulesResult:
     """
     A collection of values returned by getSchedules.
     """
-    def __init__(__self__, compartment_id=None, display_name=None, filters=None, id=None, schedule_collections=None, schedule_id=None, state=None):
+    def __init__(__self__, compartment_id=None, display_name=None, filters=None, id=None, resource_id=None, schedule_collections=None, schedule_id=None, state=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -42,6 +42,9 @@ class GetSchedulesResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if resource_id and not isinstance(resource_id, str):
+            raise TypeError("Expected argument 'resource_id' to be a str")
+        pulumi.set(__self__, "resource_id", resource_id)
         if schedule_collections and not isinstance(schedule_collections, list):
             raise TypeError("Expected argument 'schedule_collections' to be a list")
         pulumi.set(__self__, "schedule_collections", schedule_collections)
@@ -82,6 +85,11 @@ class GetSchedulesResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> Optional[builtins.str]:
+        return pulumi.get(self, "resource_id")
+
+    @property
     @pulumi.getter(name="scheduleCollections")
     def schedule_collections(self) -> Sequence['outputs.GetSchedulesScheduleCollectionResult']:
         """
@@ -113,6 +121,7 @@ class AwaitableGetSchedulesResult(GetSchedulesResult):
             display_name=self.display_name,
             filters=self.filters,
             id=self.id,
+            resource_id=self.resource_id,
             schedule_collections=self.schedule_collections,
             schedule_id=self.schedule_id,
             state=self.state)
@@ -121,13 +130,14 @@ class AwaitableGetSchedulesResult(GetSchedulesResult):
 def get_schedules(compartment_id: Optional[builtins.str] = None,
                   display_name: Optional[builtins.str] = None,
                   filters: Optional[Sequence[Union['GetSchedulesFilterArgs', 'GetSchedulesFilterArgsDict']]] = None,
+                  resource_id: Optional[builtins.str] = None,
                   schedule_id: Optional[builtins.str] = None,
                   state: Optional[builtins.str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSchedulesResult:
     """
     This data source provides the list of Schedules in Oracle Cloud Infrastructure Resource Scheduler service.
 
-    This API gets a list of schedules
+    This API gets a list of schedules. You must provide either a compartmentId or a scheduleId or both. You can list resources in this compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This is required unless a specific schedule ID is passed.
 
     ## Example Usage
 
@@ -136,14 +146,14 @@ def get_schedules(compartment_id: Optional[builtins.str] = None,
     import pulumi_oci as oci
 
     test_schedules = oci.ResourceScheduler.get_schedules(compartment_id=compartment_id,
-        schedule_id=test_schedule["id"],
         display_name=schedule_display_name,
-        state=schedule_state)
+        resource_id=test_resource["id"])
     ```
 
 
     :param builtins.str compartment_id: This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources. You need to at least provide either `compartment_id` or `schedule_id` or both.
     :param builtins.str display_name: This is a filter to return only resources that match the given display name exactly.
+    :param builtins.str resource_id: This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource affected by the work request.
     :param builtins.str schedule_id: This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.  You need to at least provide either `compartment_id` or `schedule_id` or both.
     :param builtins.str state: This is a filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
     """
@@ -151,6 +161,7 @@ def get_schedules(compartment_id: Optional[builtins.str] = None,
     __args__['compartmentId'] = compartment_id
     __args__['displayName'] = display_name
     __args__['filters'] = filters
+    __args__['resourceId'] = resource_id
     __args__['scheduleId'] = schedule_id
     __args__['state'] = state
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -161,19 +172,21 @@ def get_schedules(compartment_id: Optional[builtins.str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
+        resource_id=pulumi.get(__ret__, 'resource_id'),
         schedule_collections=pulumi.get(__ret__, 'schedule_collections'),
         schedule_id=pulumi.get(__ret__, 'schedule_id'),
         state=pulumi.get(__ret__, 'state'))
 def get_schedules_output(compartment_id: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                          display_name: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSchedulesFilterArgs', 'GetSchedulesFilterArgsDict']]]]] = None,
+                         resource_id: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                          schedule_id: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                          state: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSchedulesResult]:
     """
     This data source provides the list of Schedules in Oracle Cloud Infrastructure Resource Scheduler service.
 
-    This API gets a list of schedules
+    This API gets a list of schedules. You must provide either a compartmentId or a scheduleId or both. You can list resources in this compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This is required unless a specific schedule ID is passed.
 
     ## Example Usage
 
@@ -182,14 +195,14 @@ def get_schedules_output(compartment_id: Optional[pulumi.Input[Optional[builtins
     import pulumi_oci as oci
 
     test_schedules = oci.ResourceScheduler.get_schedules(compartment_id=compartment_id,
-        schedule_id=test_schedule["id"],
         display_name=schedule_display_name,
-        state=schedule_state)
+        resource_id=test_resource["id"])
     ```
 
 
     :param builtins.str compartment_id: This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources. You need to at least provide either `compartment_id` or `schedule_id` or both.
     :param builtins.str display_name: This is a filter to return only resources that match the given display name exactly.
+    :param builtins.str resource_id: This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource affected by the work request.
     :param builtins.str schedule_id: This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.  You need to at least provide either `compartment_id` or `schedule_id` or both.
     :param builtins.str state: This is a filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
     """
@@ -197,6 +210,7 @@ def get_schedules_output(compartment_id: Optional[pulumi.Input[Optional[builtins
     __args__['compartmentId'] = compartment_id
     __args__['displayName'] = display_name
     __args__['filters'] = filters
+    __args__['resourceId'] = resource_id
     __args__['scheduleId'] = schedule_id
     __args__['state'] = state
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -206,6 +220,7 @@ def get_schedules_output(compartment_id: Optional[pulumi.Input[Optional[builtins
         display_name=pulumi.get(__response__, 'display_name'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
+        resource_id=pulumi.get(__response__, 'resource_id'),
         schedule_collections=pulumi.get(__response__, 'schedule_collections'),
         schedule_id=pulumi.get(__response__, 'schedule_id'),
         state=pulumi.get(__response__, 'state')))

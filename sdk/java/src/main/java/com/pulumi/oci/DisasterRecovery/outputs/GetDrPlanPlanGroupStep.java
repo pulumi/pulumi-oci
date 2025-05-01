@@ -60,6 +60,11 @@ public final class GetDrPlanPlanGroupStep {
      */
     private String type;
     /**
+     * @return The display name of the DR Plan step type.  Example: `Database Switchover`
+     * 
+     */
+    private String typeDisplayName;
+    /**
      * @return The details for a user-defined step in a DR plan.
      * 
      */
@@ -130,6 +135,13 @@ public final class GetDrPlanPlanGroupStep {
         return this.type;
     }
     /**
+     * @return The display name of the DR Plan step type.  Example: `Database Switchover`
+     * 
+     */
+    public String typeDisplayName() {
+        return this.typeDisplayName;
+    }
+    /**
      * @return The details for a user-defined step in a DR plan.
      * 
      */
@@ -155,6 +167,7 @@ public final class GetDrPlanPlanGroupStep {
         private String refreshStatus;
         private Integer timeout;
         private String type;
+        private String typeDisplayName;
         private List<GetDrPlanPlanGroupStepUserDefinedStep> userDefinedSteps;
         public Builder() {}
         public Builder(GetDrPlanPlanGroupStep defaults) {
@@ -168,6 +181,7 @@ public final class GetDrPlanPlanGroupStep {
     	      this.refreshStatus = defaults.refreshStatus;
     	      this.timeout = defaults.timeout;
     	      this.type = defaults.type;
+    	      this.typeDisplayName = defaults.typeDisplayName;
     	      this.userDefinedSteps = defaults.userDefinedSteps;
         }
 
@@ -244,6 +258,14 @@ public final class GetDrPlanPlanGroupStep {
             return this;
         }
         @CustomType.Setter
+        public Builder typeDisplayName(String typeDisplayName) {
+            if (typeDisplayName == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanPlanGroupStep", "typeDisplayName");
+            }
+            this.typeDisplayName = typeDisplayName;
+            return this;
+        }
+        @CustomType.Setter
         public Builder userDefinedSteps(List<GetDrPlanPlanGroupStepUserDefinedStep> userDefinedSteps) {
             if (userDefinedSteps == null) {
               throw new MissingRequiredPropertyException("GetDrPlanPlanGroupStep", "userDefinedSteps");
@@ -265,6 +287,7 @@ public final class GetDrPlanPlanGroupStep {
             _resultValue.refreshStatus = refreshStatus;
             _resultValue.timeout = timeout;
             _resultValue.type = type;
+            _resultValue.typeDisplayName = typeDisplayName;
             _resultValue.userDefinedSteps = userDefinedSteps;
             return _resultValue;
         }

@@ -64,6 +64,11 @@ public final class DrPlanExecutionGroupExecutionStepExecution {
      * 
      */
     private @Nullable String type;
+    /**
+     * @return The display name of the DR Plan step type.  Example: `Database Switchover`
+     * 
+     */
+    private @Nullable String typeDisplayName;
 
     private DrPlanExecutionGroupExecutionStepExecution() {}
     /**
@@ -136,6 +141,13 @@ public final class DrPlanExecutionGroupExecutionStepExecution {
     public Optional<String> type() {
         return Optional.ofNullable(this.type);
     }
+    /**
+     * @return The display name of the DR Plan step type.  Example: `Database Switchover`
+     * 
+     */
+    public Optional<String> typeDisplayName() {
+        return Optional.ofNullable(this.typeDisplayName);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -156,6 +168,7 @@ public final class DrPlanExecutionGroupExecutionStepExecution {
         private @Nullable String timeEnded;
         private @Nullable String timeStarted;
         private @Nullable String type;
+        private @Nullable String typeDisplayName;
         public Builder() {}
         public Builder(DrPlanExecutionGroupExecutionStepExecution defaults) {
     	      Objects.requireNonNull(defaults);
@@ -169,6 +182,7 @@ public final class DrPlanExecutionGroupExecutionStepExecution {
     	      this.timeEnded = defaults.timeEnded;
     	      this.timeStarted = defaults.timeStarted;
     	      this.type = defaults.type;
+    	      this.typeDisplayName = defaults.typeDisplayName;
         }
 
         @CustomType.Setter
@@ -234,6 +248,12 @@ public final class DrPlanExecutionGroupExecutionStepExecution {
             this.type = type;
             return this;
         }
+        @CustomType.Setter
+        public Builder typeDisplayName(@Nullable String typeDisplayName) {
+
+            this.typeDisplayName = typeDisplayName;
+            return this;
+        }
         public DrPlanExecutionGroupExecutionStepExecution build() {
             final var _resultValue = new DrPlanExecutionGroupExecutionStepExecution();
             _resultValue.displayName = displayName;
@@ -246,6 +266,7 @@ public final class DrPlanExecutionGroupExecutionStepExecution {
             _resultValue.timeEnded = timeEnded;
             _resultValue.timeStarted = timeStarted;
             _resultValue.type = type;
+            _resultValue.typeDisplayName = typeDisplayName;
             return _resultValue;
         }
     }

@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Schedule resource in Oracle Cloud Infrastructure Resource Scheduler service.
  *
- * Creates a Schedule
+ * This API creates a schedule. You must provide either resources or resourceFilters.
  *
  * ## Import
  *
@@ -49,6 +49,7 @@ export class Schedule extends pulumi.CustomResource {
 
     /**
      * (Updatable) This is the action that will be executed by the schedule.
+     * <<<<<<< ours
      */
     public readonly action!: pulumi.Output<string>;
     /**
@@ -69,10 +70,17 @@ export class Schedule extends pulumi.CustomResource {
     public readonly displayName!: pulumi.Output<string>;
     /**
      * (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+     * >>>>>>> theirs
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     /**
+     * This is the status of the last work request.
+     */
+    public /*out*/ readonly lastRunStatus!: pulumi.Output<string>;
+    /**
      * (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
+     *
+     * >>>>>>> theirs
      */
     public readonly recurrenceDetails!: pulumi.Output<string>;
     /**
@@ -143,6 +151,7 @@ export class Schedule extends pulumi.CustomResource {
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["lastRunStatus"] = state ? state.lastRunStatus : undefined;
             resourceInputs["recurrenceDetails"] = state ? state.recurrenceDetails : undefined;
             resourceInputs["recurrenceType"] = state ? state.recurrenceType : undefined;
             resourceInputs["resourceFilters"] = state ? state.resourceFilters : undefined;
@@ -182,6 +191,7 @@ export class Schedule extends pulumi.CustomResource {
             resourceInputs["state"] = args ? args.state : undefined;
             resourceInputs["timeEnds"] = args ? args.timeEnds : undefined;
             resourceInputs["timeStarts"] = args ? args.timeStarts : undefined;
+            resourceInputs["lastRunStatus"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeLastRun"] = undefined /*out*/;
@@ -199,6 +209,7 @@ export class Schedule extends pulumi.CustomResource {
 export interface ScheduleState {
     /**
      * (Updatable) This is the action that will be executed by the schedule.
+     * <<<<<<< ours
      */
     action?: pulumi.Input<string>;
     /**
@@ -219,10 +230,17 @@ export interface ScheduleState {
     displayName?: pulumi.Input<string>;
     /**
      * (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+     * >>>>>>> theirs
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
+     * This is the status of the last work request.
+     */
+    lastRunStatus?: pulumi.Input<string>;
+    /**
      * (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
+     *
+     * >>>>>>> theirs
      */
     recurrenceDetails?: pulumi.Input<string>;
     /**
@@ -281,6 +299,7 @@ export interface ScheduleState {
 export interface ScheduleArgs {
     /**
      * (Updatable) This is the action that will be executed by the schedule.
+     * <<<<<<< ours
      */
     action: pulumi.Input<string>;
     /**
@@ -301,10 +320,13 @@ export interface ScheduleArgs {
     displayName?: pulumi.Input<string>;
     /**
      * (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+     * >>>>>>> theirs
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
+     *
+     * >>>>>>> theirs
      */
     recurrenceDetails: pulumi.Input<string>;
     /**

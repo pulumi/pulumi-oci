@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DrProtectionGroupMemberBlockVolumeOperation {
     /**
-     * @return (Updatable) The details for creating a block volume attachment.
+     * @return (Updatable) Deprecated. Use the &#39;CreateComputeInstanceNonMovableBlockVolumeAttachOperationDetails&#39; definition instead of this. The details for creating a block volume attachment.
      * 
      */
     private @Nullable DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails attachmentDetails;
@@ -31,7 +31,7 @@ public final class DrProtectionGroupMemberBlockVolumeOperation {
 
     private DrProtectionGroupMemberBlockVolumeOperation() {}
     /**
-     * @return (Updatable) The details for creating a block volume attachment.
+     * @return (Updatable) Deprecated. Use the &#39;CreateComputeInstanceNonMovableBlockVolumeAttachOperationDetails&#39; definition instead of this. The details for creating a block volume attachment.
      * 
      */
     public Optional<DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails> attachmentDetails() {

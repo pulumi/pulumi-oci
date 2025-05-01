@@ -52,6 +52,7 @@ class AutonomousDatabaseArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  disaster_recovery_type: Optional[pulumi.Input[builtins.str]] = None,
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
+                 enable_delete_scheduled_operations: Optional[pulumi.Input[builtins.bool]] = None,
                  encryption_key: Optional[pulumi.Input['AutonomousDatabaseEncryptionKeyArgs']] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  in_memory_percentage: Optional[pulumi.Input[builtins.int]] = None,
@@ -165,6 +166,7 @@ class AutonomousDatabaseArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[builtins.str] disaster_recovery_type: Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param pulumi.Input[builtins.str] display_name: (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
+        :param pulumi.Input[builtins.bool] enable_delete_scheduled_operations: If omitted or set to false the provider will not delete scheduled_operations from the Autonomous Database. If set to true, provider will delete scheduled_operations from the Autonomous Database.
         :param pulumi.Input['AutonomousDatabaseEncryptionKeyArgs'] encryption_key: (Updatable) Details of the Autonomous Database encryption key.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[builtins.int] in_memory_percentage: (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
@@ -330,6 +332,8 @@ class AutonomousDatabaseArgs:
             pulumi.set(__self__, "disaster_recovery_type", disaster_recovery_type)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if enable_delete_scheduled_operations is not None:
+            pulumi.set(__self__, "enable_delete_scheduled_operations", enable_delete_scheduled_operations)
         if encryption_key is not None:
             pulumi.set(__self__, "encryption_key", encryption_key)
         if freeform_tags is not None:
@@ -828,6 +832,18 @@ class AutonomousDatabaseArgs:
     @display_name.setter
     def display_name(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="enableDeleteScheduledOperations")
+    def enable_delete_scheduled_operations(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        If omitted or set to false the provider will not delete scheduled_operations from the Autonomous Database. If set to true, provider will delete scheduled_operations from the Autonomous Database.
+        """
+        return pulumi.get(self, "enable_delete_scheduled_operations")
+
+    @enable_delete_scheduled_operations.setter
+    def enable_delete_scheduled_operations(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "enable_delete_scheduled_operations", value)
 
     @property
     @pulumi.getter(name="encryptionKey")
@@ -1595,6 +1611,7 @@ class _AutonomousDatabaseState:
                  disaster_recovery_region_type: Optional[pulumi.Input[builtins.str]] = None,
                  disaster_recovery_type: Optional[pulumi.Input[builtins.str]] = None,
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
+                 enable_delete_scheduled_operations: Optional[pulumi.Input[builtins.bool]] = None,
                  encryption_key: Optional[pulumi.Input['AutonomousDatabaseEncryptionKeyArgs']] = None,
                  encryption_key_history_entries: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyHistoryEntryArgs']]]] = None,
                  failed_data_recovery_in_seconds: Optional[pulumi.Input[builtins.int]] = None,
@@ -1769,6 +1786,7 @@ class _AutonomousDatabaseState:
         :param pulumi.Input[builtins.str] disaster_recovery_region_type: **Deprecated** The disaster recovery (DR) region type of the Autonomous Database. For Serverless Autonomous Databases, DR associations have designated primary (`PRIMARY`) and standby (`REMOTE`) regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
         :param pulumi.Input[builtins.str] disaster_recovery_type: Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param pulumi.Input[builtins.str] display_name: (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
+        :param pulumi.Input[builtins.bool] enable_delete_scheduled_operations: If omitted or set to false the provider will not delete scheduled_operations from the Autonomous Database. If set to true, provider will delete scheduled_operations from the Autonomous Database.
         :param pulumi.Input['AutonomousDatabaseEncryptionKeyArgs'] encryption_key: (Updatable) Details of the Autonomous Database encryption key.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyHistoryEntryArgs']]] encryption_key_history_entries: Key History Entry.
         :param pulumi.Input[builtins.int] failed_data_recovery_in_seconds: Indicates the number of seconds of data loss for a Data Guard failover.
@@ -2006,6 +2024,8 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "disaster_recovery_type", disaster_recovery_type)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if enable_delete_scheduled_operations is not None:
+            pulumi.set(__self__, "enable_delete_scheduled_operations", enable_delete_scheduled_operations)
         if encryption_key is not None:
             pulumi.set(__self__, "encryption_key", encryption_key)
         if encryption_key_history_entries is not None:
@@ -2736,6 +2756,18 @@ class _AutonomousDatabaseState:
     @display_name.setter
     def display_name(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="enableDeleteScheduledOperations")
+    def enable_delete_scheduled_operations(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        If omitted or set to false the provider will not delete scheduled_operations from the Autonomous Database. If set to true, provider will delete scheduled_operations from the Autonomous Database.
+        """
+        return pulumi.get(self, "enable_delete_scheduled_operations")
+
+    @enable_delete_scheduled_operations.setter
+    def enable_delete_scheduled_operations(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "enable_delete_scheduled_operations", value)
 
     @property
     @pulumi.getter(name="encryptionKey")
@@ -4091,6 +4123,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  disaster_recovery_type: Optional[pulumi.Input[builtins.str]] = None,
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
+                 enable_delete_scheduled_operations: Optional[pulumi.Input[builtins.bool]] = None,
                  encryption_key: Optional[pulumi.Input[Union['AutonomousDatabaseEncryptionKeyArgs', 'AutonomousDatabaseEncryptionKeyArgsDict']]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  in_memory_percentage: Optional[pulumi.Input[builtins.int]] = None,
@@ -4220,6 +4253,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[builtins.str] disaster_recovery_type: Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param pulumi.Input[builtins.str] display_name: (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
+        :param pulumi.Input[builtins.bool] enable_delete_scheduled_operations: If omitted or set to false the provider will not delete scheduled_operations from the Autonomous Database. If set to true, provider will delete scheduled_operations from the Autonomous Database.
         :param pulumi.Input[Union['AutonomousDatabaseEncryptionKeyArgs', 'AutonomousDatabaseEncryptionKeyArgsDict']] encryption_key: (Updatable) Details of the Autonomous Database encryption key.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[builtins.int] in_memory_percentage: (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
@@ -4393,6 +4427,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  disaster_recovery_type: Optional[pulumi.Input[builtins.str]] = None,
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
+                 enable_delete_scheduled_operations: Optional[pulumi.Input[builtins.bool]] = None,
                  encryption_key: Optional[pulumi.Input[Union['AutonomousDatabaseEncryptionKeyArgs', 'AutonomousDatabaseEncryptionKeyArgsDict']]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  in_memory_percentage: Optional[pulumi.Input[builtins.int]] = None,
@@ -4492,6 +4527,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["disaster_recovery_type"] = disaster_recovery_type
             __props__.__dict__["display_name"] = display_name
+            __props__.__dict__["enable_delete_scheduled_operations"] = enable_delete_scheduled_operations
             __props__.__dict__["encryption_key"] = encryption_key
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["in_memory_percentage"] = in_memory_percentage
@@ -4662,6 +4698,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             disaster_recovery_region_type: Optional[pulumi.Input[builtins.str]] = None,
             disaster_recovery_type: Optional[pulumi.Input[builtins.str]] = None,
             display_name: Optional[pulumi.Input[builtins.str]] = None,
+            enable_delete_scheduled_operations: Optional[pulumi.Input[builtins.bool]] = None,
             encryption_key: Optional[pulumi.Input[Union['AutonomousDatabaseEncryptionKeyArgs', 'AutonomousDatabaseEncryptionKeyArgsDict']]] = None,
             encryption_key_history_entries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseEncryptionKeyHistoryEntryArgs', 'AutonomousDatabaseEncryptionKeyHistoryEntryArgsDict']]]]] = None,
             failed_data_recovery_in_seconds: Optional[pulumi.Input[builtins.int]] = None,
@@ -4841,6 +4878,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] disaster_recovery_region_type: **Deprecated** The disaster recovery (DR) region type of the Autonomous Database. For Serverless Autonomous Databases, DR associations have designated primary (`PRIMARY`) and standby (`REMOTE`) regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
         :param pulumi.Input[builtins.str] disaster_recovery_type: Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param pulumi.Input[builtins.str] display_name: (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
+        :param pulumi.Input[builtins.bool] enable_delete_scheduled_operations: If omitted or set to false the provider will not delete scheduled_operations from the Autonomous Database. If set to true, provider will delete scheduled_operations from the Autonomous Database.
         :param pulumi.Input[Union['AutonomousDatabaseEncryptionKeyArgs', 'AutonomousDatabaseEncryptionKeyArgsDict']] encryption_key: (Updatable) Details of the Autonomous Database encryption key.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseEncryptionKeyHistoryEntryArgs', 'AutonomousDatabaseEncryptionKeyHistoryEntryArgsDict']]]] encryption_key_history_entries: Key History Entry.
         :param pulumi.Input[builtins.int] failed_data_recovery_in_seconds: Indicates the number of seconds of data loss for a Data Guard failover.
@@ -5041,6 +5079,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["disaster_recovery_region_type"] = disaster_recovery_region_type
         __props__.__dict__["disaster_recovery_type"] = disaster_recovery_type
         __props__.__dict__["display_name"] = display_name
+        __props__.__dict__["enable_delete_scheduled_operations"] = enable_delete_scheduled_operations
         __props__.__dict__["encryption_key"] = encryption_key
         __props__.__dict__["encryption_key_history_entries"] = encryption_key_history_entries
         __props__.__dict__["failed_data_recovery_in_seconds"] = failed_data_recovery_in_seconds
@@ -5499,6 +5538,14 @@ class AutonomousDatabase(pulumi.CustomResource):
         (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="enableDeleteScheduledOperations")
+    def enable_delete_scheduled_operations(self) -> pulumi.Output[Optional[builtins.bool]]:
+        """
+        If omitted or set to false the provider will not delete scheduled_operations from the Autonomous Database. If set to true, provider will delete scheduled_operations from the Autonomous Database.
+        """
+        return pulumi.get(self, "enable_delete_scheduled_operations")
 
     @property
     @pulumi.getter(name="encryptionKey")

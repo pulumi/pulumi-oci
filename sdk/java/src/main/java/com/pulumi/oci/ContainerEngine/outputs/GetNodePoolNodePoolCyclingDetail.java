@@ -7,12 +7,18 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
 public final class GetNodePoolNodePoolCyclingDetail {
     /**
-     * @return If nodes in the nodepool will be cycled to have new changes.
+     * @return An ordered list of cycle modes that should be performed on the OKE nodes.
+     * 
+     */
+    private List<String> cycleModes;
+    /**
+     * @return If cycling operation should be performed on the nodes in the node pool.
      * 
      */
     private Boolean isNodeCyclingEnabled;
@@ -29,7 +35,14 @@ public final class GetNodePoolNodePoolCyclingDetail {
 
     private GetNodePoolNodePoolCyclingDetail() {}
     /**
-     * @return If nodes in the nodepool will be cycled to have new changes.
+     * @return An ordered list of cycle modes that should be performed on the OKE nodes.
+     * 
+     */
+    public List<String> cycleModes() {
+        return this.cycleModes;
+    }
+    /**
+     * @return If cycling operation should be performed on the nodes in the node pool.
      * 
      */
     public Boolean isNodeCyclingEnabled() {
@@ -59,17 +72,30 @@ public final class GetNodePoolNodePoolCyclingDetail {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<String> cycleModes;
         private Boolean isNodeCyclingEnabled;
         private String maximumSurge;
         private String maximumUnavailable;
         public Builder() {}
         public Builder(GetNodePoolNodePoolCyclingDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.cycleModes = defaults.cycleModes;
     	      this.isNodeCyclingEnabled = defaults.isNodeCyclingEnabled;
     	      this.maximumSurge = defaults.maximumSurge;
     	      this.maximumUnavailable = defaults.maximumUnavailable;
         }
 
+        @CustomType.Setter
+        public Builder cycleModes(List<String> cycleModes) {
+            if (cycleModes == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolNodePoolCyclingDetail", "cycleModes");
+            }
+            this.cycleModes = cycleModes;
+            return this;
+        }
+        public Builder cycleModes(String... cycleModes) {
+            return cycleModes(List.of(cycleModes));
+        }
         @CustomType.Setter
         public Builder isNodeCyclingEnabled(Boolean isNodeCyclingEnabled) {
             if (isNodeCyclingEnabled == null) {
@@ -96,6 +122,7 @@ public final class GetNodePoolNodePoolCyclingDetail {
         }
         public GetNodePoolNodePoolCyclingDetail build() {
             final var _resultValue = new GetNodePoolNodePoolCyclingDetail();
+            _resultValue.cycleModes = cycleModes;
             _resultValue.isNodeCyclingEnabled = isNodeCyclingEnabled;
             _resultValue.maximumSurge = maximumSurge;
             _resultValue.maximumUnavailable = maximumUnavailable;

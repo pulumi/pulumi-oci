@@ -90,12 +90,14 @@ namespace Pulumi.Oci.ContainerEngine
     ///         NodeEvictionNodePoolSettings = new Oci.ContainerEngine.Inputs.NodePoolNodeEvictionNodePoolSettingsArgs
     ///         {
     ///             EvictionGraceDuration = nodePoolNodeEvictionNodePoolSettingsEvictionGraceDuration,
+    ///             IsForceActionAfterGraceDuration = nodePoolNodeEvictionNodePoolSettingsIsForceActionAfterGraceDuration,
     ///             IsForceDeleteAfterGraceDuration = nodePoolNodeEvictionNodePoolSettingsIsForceDeleteAfterGraceDuration,
     ///         },
     ///         NodeImageName = testImage.Name,
     ///         NodeMetadata = nodePoolNodeMetadata,
     ///         NodePoolCyclingDetails = new Oci.ContainerEngine.Inputs.NodePoolNodePoolCyclingDetailsArgs
     ///         {
+    ///             CycleModes = nodePoolNodePoolCyclingDetailsCycleModes,
     ///             IsNodeCyclingEnabled = nodePoolNodePoolCyclingDetailsIsNodeCyclingEnabled,
     ///             MaximumSurge = nodePoolNodePoolCyclingDetailsMaximumSurge,
     ///             MaximumUnavailable = nodePoolNodePoolCyclingDetailsMaximumUnavailable,

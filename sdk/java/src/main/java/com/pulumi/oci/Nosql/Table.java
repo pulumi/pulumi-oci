@@ -98,14 +98,14 @@ public class Table extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
-     * (Updatable) Complete CREATE TABLE DDL statement. When update ddl_statement, it should be ALTER TABLE DDL statement.
+     * (Updatable) CREATE TABLE DDL statement. While updating an existing table, note that the column order should not be changed, and new columns can only be appended at the end of the table.
      * 
      */
     @Export(name="ddlStatement", refs={String.class}, tree="[0]")
     private Output<String> ddlStatement;
 
     /**
-     * @return (Updatable) Complete CREATE TABLE DDL statement. When update ddl_statement, it should be ALTER TABLE DDL statement.
+     * @return (Updatable) CREATE TABLE DDL statement. While updating an existing table, note that the column order should not be changed, and new columns can only be appended at the end of the table.
      * 
      */
     public Output<String> ddlStatement() {

@@ -54,6 +54,21 @@ public final class GetSchedulesPlainArgs extends com.pulumi.resources.InvokeArgs
     }
 
     /**
+     * This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource affected by the work request.
+     * 
+     */
+    @Import(name="resourceId")
+    private @Nullable String resourceId;
+
+    /**
+     * @return This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource affected by the work request.
+     * 
+     */
+    public Optional<String> resourceId() {
+        return Optional.ofNullable(this.resourceId);
+    }
+
+    /**
      * This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.  You need to at least provide either `compartment_id` or `schedule_id` or both.
      * 
      */
@@ -89,6 +104,7 @@ public final class GetSchedulesPlainArgs extends com.pulumi.resources.InvokeArgs
         this.compartmentId = $.compartmentId;
         this.displayName = $.displayName;
         this.filters = $.filters;
+        this.resourceId = $.resourceId;
         this.scheduleId = $.scheduleId;
         this.state = $.state;
     }
@@ -140,6 +156,17 @@ public final class GetSchedulesPlainArgs extends com.pulumi.resources.InvokeArgs
 
         public Builder filters(GetSchedulesFilter... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param resourceId This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource affected by the work request.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceId(@Nullable String resourceId) {
+            $.resourceId = resourceId;
+            return this;
         }
 
         /**

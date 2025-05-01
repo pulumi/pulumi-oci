@@ -42,6 +42,10 @@ namespace Pulumi.Oci.ResourceScheduler.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// This is the status of the last work request.
+        /// </summary>
+        public readonly string LastRunStatus;
+        /// <summary>
         /// This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
         /// </summary>
         public readonly string RecurrenceDetails;
@@ -106,6 +110,8 @@ namespace Pulumi.Oci.ResourceScheduler.Outputs
 
             string id,
 
+            string lastRunStatus,
+
             string recurrenceDetails,
 
             string recurrenceType,
@@ -137,6 +143,7 @@ namespace Pulumi.Oci.ResourceScheduler.Outputs
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            LastRunStatus = lastRunStatus;
             RecurrenceDetails = recurrenceDetails;
             RecurrenceType = recurrenceType;
             ResourceFilters = resourceFilters;

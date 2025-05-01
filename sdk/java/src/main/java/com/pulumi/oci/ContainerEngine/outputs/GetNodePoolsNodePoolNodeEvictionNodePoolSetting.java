@@ -17,6 +17,11 @@ public final class GetNodePoolsNodePoolNodeEvictionNodePoolSetting {
      */
     private String evictionGraceDuration;
     /**
+     * @return If the node action should be performed if not all the pods can be evicted in the grace period
+     * 
+     */
+    private Boolean isForceActionAfterGraceDuration;
+    /**
      * @return If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
      * 
      */
@@ -29,6 +34,13 @@ public final class GetNodePoolsNodePoolNodeEvictionNodePoolSetting {
      */
     public String evictionGraceDuration() {
         return this.evictionGraceDuration;
+    }
+    /**
+     * @return If the node action should be performed if not all the pods can be evicted in the grace period
+     * 
+     */
+    public Boolean isForceActionAfterGraceDuration() {
+        return this.isForceActionAfterGraceDuration;
     }
     /**
      * @return If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
@@ -48,11 +60,13 @@ public final class GetNodePoolsNodePoolNodeEvictionNodePoolSetting {
     @CustomType.Builder
     public static final class Builder {
         private String evictionGraceDuration;
+        private Boolean isForceActionAfterGraceDuration;
         private Boolean isForceDeleteAfterGraceDuration;
         public Builder() {}
         public Builder(GetNodePoolsNodePoolNodeEvictionNodePoolSetting defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.evictionGraceDuration = defaults.evictionGraceDuration;
+    	      this.isForceActionAfterGraceDuration = defaults.isForceActionAfterGraceDuration;
     	      this.isForceDeleteAfterGraceDuration = defaults.isForceDeleteAfterGraceDuration;
         }
 
@@ -62,6 +76,14 @@ public final class GetNodePoolsNodePoolNodeEvictionNodePoolSetting {
               throw new MissingRequiredPropertyException("GetNodePoolsNodePoolNodeEvictionNodePoolSetting", "evictionGraceDuration");
             }
             this.evictionGraceDuration = evictionGraceDuration;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isForceActionAfterGraceDuration(Boolean isForceActionAfterGraceDuration) {
+            if (isForceActionAfterGraceDuration == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolsNodePoolNodeEvictionNodePoolSetting", "isForceActionAfterGraceDuration");
+            }
+            this.isForceActionAfterGraceDuration = isForceActionAfterGraceDuration;
             return this;
         }
         @CustomType.Setter
@@ -75,6 +97,7 @@ public final class GetNodePoolsNodePoolNodeEvictionNodePoolSetting {
         public GetNodePoolsNodePoolNodeEvictionNodePoolSetting build() {
             final var _resultValue = new GetNodePoolsNodePoolNodeEvictionNodePoolSetting();
             _resultValue.evictionGraceDuration = evictionGraceDuration;
+            _resultValue.isForceActionAfterGraceDuration = isForceActionAfterGraceDuration;
             _resultValue.isForceDeleteAfterGraceDuration = isForceDeleteAfterGraceDuration;
             return _resultValue;
         }

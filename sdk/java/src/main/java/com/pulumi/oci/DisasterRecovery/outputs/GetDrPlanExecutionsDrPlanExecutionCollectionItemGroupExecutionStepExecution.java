@@ -63,6 +63,11 @@ public final class GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutio
      * 
      */
     private String type;
+    /**
+     * @return The display name of the DR Plan step type.  Example: `Database Switchover`
+     * 
+     */
+    private String typeDisplayName;
 
     private GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution() {}
     /**
@@ -135,6 +140,13 @@ public final class GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutio
     public String type() {
         return this.type;
     }
+    /**
+     * @return The display name of the DR Plan step type.  Example: `Database Switchover`
+     * 
+     */
+    public String typeDisplayName() {
+        return this.typeDisplayName;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -155,6 +167,7 @@ public final class GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutio
         private String timeEnded;
         private String timeStarted;
         private String type;
+        private String typeDisplayName;
         public Builder() {}
         public Builder(GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution defaults) {
     	      Objects.requireNonNull(defaults);
@@ -168,6 +181,7 @@ public final class GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutio
     	      this.timeEnded = defaults.timeEnded;
     	      this.timeStarted = defaults.timeStarted;
     	      this.type = defaults.type;
+    	      this.typeDisplayName = defaults.typeDisplayName;
         }
 
         @CustomType.Setter
@@ -253,6 +267,14 @@ public final class GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutio
             this.type = type;
             return this;
         }
+        @CustomType.Setter
+        public Builder typeDisplayName(String typeDisplayName) {
+            if (typeDisplayName == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution", "typeDisplayName");
+            }
+            this.typeDisplayName = typeDisplayName;
+            return this;
+        }
         public GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution build() {
             final var _resultValue = new GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution();
             _resultValue.displayName = displayName;
@@ -265,6 +287,7 @@ public final class GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutio
             _resultValue.timeEnded = timeEnded;
             _resultValue.timeStarted = timeStarted;
             _resultValue.type = type;
+            _resultValue.typeDisplayName = typeDisplayName;
             return _resultValue;
         }
     }

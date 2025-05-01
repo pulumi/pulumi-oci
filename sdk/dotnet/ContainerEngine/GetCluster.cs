@@ -29,6 +29,7 @@ namespace Pulumi.Oci.ContainerEngine
         ///     var testCluster = Oci.ContainerEngine.GetCluster.Invoke(new()
         ///     {
         ///         ClusterId = testClusterOciContainerengineCluster.Id,
+        ///         ShouldIncludeOidcConfigFile = clusterShouldIncludeOidcConfigFile,
         ///     });
         /// 
         /// });
@@ -55,6 +56,7 @@ namespace Pulumi.Oci.ContainerEngine
         ///     var testCluster = Oci.ContainerEngine.GetCluster.Invoke(new()
         ///     {
         ///         ClusterId = testClusterOciContainerengineCluster.Id,
+        ///         ShouldIncludeOidcConfigFile = clusterShouldIncludeOidcConfigFile,
         ///     });
         /// 
         /// });
@@ -81,6 +83,7 @@ namespace Pulumi.Oci.ContainerEngine
         ///     var testCluster = Oci.ContainerEngine.GetCluster.Invoke(new()
         ///     {
         ///         ClusterId = testClusterOciContainerengineCluster.Id,
+        ///         ShouldIncludeOidcConfigFile = clusterShouldIncludeOidcConfigFile,
         ///     });
         /// 
         /// });
@@ -99,6 +102,12 @@ namespace Pulumi.Oci.ContainerEngine
         [Input("clusterId", required: true)]
         public string ClusterId { get; set; } = null!;
 
+        /// <summary>
+        /// Boolean value to determine if the OpenIdConnectAuth configuration file should be displayed for the provided cluster.
+        /// </summary>
+        [Input("shouldIncludeOidcConfigFile")]
+        public string? ShouldIncludeOidcConfigFile { get; set; }
+
         public GetClusterArgs()
         {
         }
@@ -112,6 +121,12 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         [Input("clusterId", required: true)]
         public Input<string> ClusterId { get; set; } = null!;
+
+        /// <summary>
+        /// Boolean value to determine if the OpenIdConnectAuth configuration file should be displayed for the provided cluster.
+        /// </summary>
+        [Input("shouldIncludeOidcConfigFile")]
+        public Input<string>? ShouldIncludeOidcConfigFile { get; set; }
 
         public GetClusterInvokeArgs()
         {
@@ -185,6 +200,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// Optional attributes for the cluster.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetClusterOptionResult> Options;
+        public readonly string? ShouldIncludeOidcConfigFile;
         /// <summary>
         /// The state of the cluster masters.
         /// </summary>
@@ -234,6 +250,8 @@ namespace Pulumi.Oci.ContainerEngine
 
             ImmutableArray<Outputs.GetClusterOptionResult> options,
 
+            string? shouldIncludeOidcConfigFile,
+
             string state,
 
             string type,
@@ -257,6 +275,7 @@ namespace Pulumi.Oci.ContainerEngine
             Name = name;
             OpenIdConnectDiscoveryEndpoint = openIdConnectDiscoveryEndpoint;
             Options = options;
+            ShouldIncludeOidcConfigFile = shouldIncludeOidcConfigFile;
             State = state;
             Type = type;
             VcnId = vcnId;

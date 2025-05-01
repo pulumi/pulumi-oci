@@ -16,14 +16,14 @@ public final class DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsA
     public static final DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs Empty = new DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs();
 
     /**
-     * (Updatable) The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+     * (Updatable) The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
      * 
      */
     @Import(name="volumeAttachmentReferenceInstanceId")
     private @Nullable Output<String> volumeAttachmentReferenceInstanceId;
 
     /**
-     * @return (Updatable) The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+     * @return (Updatable) The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
      * 
      */
     public Optional<Output<String>> volumeAttachmentReferenceInstanceId() {
@@ -55,7 +55,7 @@ public final class DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsA
         }
 
         /**
-         * @param volumeAttachmentReferenceInstanceId (Updatable) The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+         * @param volumeAttachmentReferenceInstanceId (Updatable) The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsA
         }
 
         /**
-         * @param volumeAttachmentReferenceInstanceId (Updatable) The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+         * @param volumeAttachmentReferenceInstanceId (Updatable) The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
          * 
          * @return builder
          * 

@@ -5,7 +5,9 @@ package com.pulumi.oci.ResourceScheduler.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.ResourceScheduler.outputs.GetScheduleResourceParameter;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -21,6 +23,11 @@ public final class GetScheduleResource {
      * 
      */
     private Map<String,String> metadata;
+    /**
+     * @return This is the user input parameters to use when acting on the resource.
+     * 
+     */
+    private List<GetScheduleResourceParameter> parameters;
 
     private GetScheduleResource() {}
     /**
@@ -37,6 +44,13 @@ public final class GetScheduleResource {
     public Map<String,String> metadata() {
         return this.metadata;
     }
+    /**
+     * @return This is the user input parameters to use when acting on the resource.
+     * 
+     */
+    public List<GetScheduleResourceParameter> parameters() {
+        return this.parameters;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -49,11 +63,13 @@ public final class GetScheduleResource {
     public static final class Builder {
         private String id;
         private Map<String,String> metadata;
+        private List<GetScheduleResourceParameter> parameters;
         public Builder() {}
         public Builder(GetScheduleResource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
     	      this.metadata = defaults.metadata;
+    	      this.parameters = defaults.parameters;
         }
 
         @CustomType.Setter
@@ -72,10 +88,22 @@ public final class GetScheduleResource {
             this.metadata = metadata;
             return this;
         }
+        @CustomType.Setter
+        public Builder parameters(List<GetScheduleResourceParameter> parameters) {
+            if (parameters == null) {
+              throw new MissingRequiredPropertyException("GetScheduleResource", "parameters");
+            }
+            this.parameters = parameters;
+            return this;
+        }
+        public Builder parameters(GetScheduleResourceParameter... parameters) {
+            return parameters(List.of(parameters));
+        }
         public GetScheduleResource build() {
             final var _resultValue = new GetScheduleResource();
             _resultValue.id = id;
             _resultValue.metadata = metadata;
+            _resultValue.parameters = parameters;
             return _resultValue;
         }
     }

@@ -4261,6 +4261,10 @@ if not MYPY:
         """
         (Updatable) Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
         """
+        is_force_action_after_grace_duration: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        (Updatable) If the node action should be performed if not all the pods can be evicted in the grace period
+        """
         is_force_delete_after_grace_duration: NotRequired[pulumi.Input[builtins.bool]]
         """
         (Updatable) If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
@@ -4272,13 +4276,17 @@ elif False:
 class NodePoolNodeEvictionNodePoolSettingsArgs:
     def __init__(__self__, *,
                  eviction_grace_duration: Optional[pulumi.Input[builtins.str]] = None,
+                 is_force_action_after_grace_duration: Optional[pulumi.Input[builtins.bool]] = None,
                  is_force_delete_after_grace_duration: Optional[pulumi.Input[builtins.bool]] = None):
         """
         :param pulumi.Input[builtins.str] eviction_grace_duration: (Updatable) Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
+        :param pulumi.Input[builtins.bool] is_force_action_after_grace_duration: (Updatable) If the node action should be performed if not all the pods can be evicted in the grace period
         :param pulumi.Input[builtins.bool] is_force_delete_after_grace_duration: (Updatable) If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
         """
         if eviction_grace_duration is not None:
             pulumi.set(__self__, "eviction_grace_duration", eviction_grace_duration)
+        if is_force_action_after_grace_duration is not None:
+            pulumi.set(__self__, "is_force_action_after_grace_duration", is_force_action_after_grace_duration)
         if is_force_delete_after_grace_duration is not None:
             pulumi.set(__self__, "is_force_delete_after_grace_duration", is_force_delete_after_grace_duration)
 
@@ -4295,6 +4303,18 @@ class NodePoolNodeEvictionNodePoolSettingsArgs:
         pulumi.set(self, "eviction_grace_duration", value)
 
     @property
+    @pulumi.getter(name="isForceActionAfterGraceDuration")
+    def is_force_action_after_grace_duration(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        (Updatable) If the node action should be performed if not all the pods can be evicted in the grace period
+        """
+        return pulumi.get(self, "is_force_action_after_grace_duration")
+
+    @is_force_action_after_grace_duration.setter
+    def is_force_action_after_grace_duration(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_force_action_after_grace_duration", value)
+
+    @property
     @pulumi.getter(name="isForceDeleteAfterGraceDuration")
     def is_force_delete_after_grace_duration(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
@@ -4309,9 +4329,13 @@ class NodePoolNodeEvictionNodePoolSettingsArgs:
 
 if not MYPY:
     class NodePoolNodePoolCyclingDetailsArgsDict(TypedDict):
+        cycle_modes: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        (Updatable) An ordered list of cycle modes that should be performed on the OKE nodes.
+        """
         is_node_cycling_enabled: NotRequired[pulumi.Input[builtins.bool]]
         """
-        (Updatable) If nodes in the nodepool will be cycled to have new changes.
+        (Updatable) If cycling operation should be performed on the nodes in the node pool.
         """
         maximum_surge: NotRequired[pulumi.Input[builtins.str]]
         """
@@ -4327,14 +4351,18 @@ elif False:
 @pulumi.input_type
 class NodePoolNodePoolCyclingDetailsArgs:
     def __init__(__self__, *,
+                 cycle_modes: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  is_node_cycling_enabled: Optional[pulumi.Input[builtins.bool]] = None,
                  maximum_surge: Optional[pulumi.Input[builtins.str]] = None,
                  maximum_unavailable: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.bool] is_node_cycling_enabled: (Updatable) If nodes in the nodepool will be cycled to have new changes.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] cycle_modes: (Updatable) An ordered list of cycle modes that should be performed on the OKE nodes.
+        :param pulumi.Input[builtins.bool] is_node_cycling_enabled: (Updatable) If cycling operation should be performed on the nodes in the node pool.
         :param pulumi.Input[builtins.str] maximum_surge: (Updatable) Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
         :param pulumi.Input[builtins.str] maximum_unavailable: (Updatable) Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
         """
+        if cycle_modes is not None:
+            pulumi.set(__self__, "cycle_modes", cycle_modes)
         if is_node_cycling_enabled is not None:
             pulumi.set(__self__, "is_node_cycling_enabled", is_node_cycling_enabled)
         if maximum_surge is not None:
@@ -4343,10 +4371,22 @@ class NodePoolNodePoolCyclingDetailsArgs:
             pulumi.set(__self__, "maximum_unavailable", maximum_unavailable)
 
     @property
+    @pulumi.getter(name="cycleModes")
+    def cycle_modes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        (Updatable) An ordered list of cycle modes that should be performed on the OKE nodes.
+        """
+        return pulumi.get(self, "cycle_modes")
+
+    @cycle_modes.setter
+    def cycle_modes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "cycle_modes", value)
+
+    @property
     @pulumi.getter(name="isNodeCyclingEnabled")
     def is_node_cycling_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        (Updatable) If nodes in the nodepool will be cycled to have new changes.
+        (Updatable) If cycling operation should be performed on the nodes in the node pool.
         """
         return pulumi.get(self, "is_node_cycling_enabled")
 

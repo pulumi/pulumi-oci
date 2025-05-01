@@ -26,7 +26,7 @@ namespace Pulumi.Oci.ResourceScheduler.Outputs
         /// </summary>
         public readonly bool ShouldIncludeChildCompartments;
         /// <summary>
-        /// This is the value of the defined tag.
+        /// This is the HTTP request header value.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSchedulesScheduleCollectionItemResourceFilterValueResult> Values;
 

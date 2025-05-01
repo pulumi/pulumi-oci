@@ -6,6 +6,7 @@ package com.pulumi.oci.ContainerEngine.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -13,7 +14,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NodePoolNodePoolCyclingDetails {
     /**
-     * @return (Updatable) If nodes in the nodepool will be cycled to have new changes.
+     * @return (Updatable) An ordered list of cycle modes that should be performed on the OKE nodes.
+     * 
+     */
+    private @Nullable List<String> cycleModes;
+    /**
+     * @return (Updatable) If cycling operation should be performed on the nodes in the node pool.
      * 
      */
     private @Nullable Boolean isNodeCyclingEnabled;
@@ -30,7 +36,14 @@ public final class NodePoolNodePoolCyclingDetails {
 
     private NodePoolNodePoolCyclingDetails() {}
     /**
-     * @return (Updatable) If nodes in the nodepool will be cycled to have new changes.
+     * @return (Updatable) An ordered list of cycle modes that should be performed on the OKE nodes.
+     * 
+     */
+    public List<String> cycleModes() {
+        return this.cycleModes == null ? List.of() : this.cycleModes;
+    }
+    /**
+     * @return (Updatable) If cycling operation should be performed on the nodes in the node pool.
      * 
      */
     public Optional<Boolean> isNodeCyclingEnabled() {
@@ -60,17 +73,28 @@ public final class NodePoolNodePoolCyclingDetails {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable List<String> cycleModes;
         private @Nullable Boolean isNodeCyclingEnabled;
         private @Nullable String maximumSurge;
         private @Nullable String maximumUnavailable;
         public Builder() {}
         public Builder(NodePoolNodePoolCyclingDetails defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.cycleModes = defaults.cycleModes;
     	      this.isNodeCyclingEnabled = defaults.isNodeCyclingEnabled;
     	      this.maximumSurge = defaults.maximumSurge;
     	      this.maximumUnavailable = defaults.maximumUnavailable;
         }
 
+        @CustomType.Setter
+        public Builder cycleModes(@Nullable List<String> cycleModes) {
+
+            this.cycleModes = cycleModes;
+            return this;
+        }
+        public Builder cycleModes(String... cycleModes) {
+            return cycleModes(List.of(cycleModes));
+        }
         @CustomType.Setter
         public Builder isNodeCyclingEnabled(@Nullable Boolean isNodeCyclingEnabled) {
 
@@ -91,6 +115,7 @@ public final class NodePoolNodePoolCyclingDetails {
         }
         public NodePoolNodePoolCyclingDetails build() {
             final var _resultValue = new NodePoolNodePoolCyclingDetails();
+            _resultValue.cycleModes = cycleModes;
             _resultValue.isNodeCyclingEnabled = isNodeCyclingEnabled;
             _resultValue.maximumSurge = maximumSurge;
             _resultValue.maximumUnavailable = maximumUnavailable;

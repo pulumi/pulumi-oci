@@ -66,6 +66,12 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         [Input("type")]
         public Input<string>? Type { get; set; }
 
+        /// <summary>
+        /// The display name of the DR Plan step type.  Example: `Database Switchover`
+        /// </summary>
+        [Input("typeDisplayName")]
+        public Input<string>? TypeDisplayName { get; set; }
+
         [Input("userDefinedSteps")]
         private InputList<Inputs.DrPlanPlanGroupStepUserDefinedStepArgs>? _userDefinedSteps;
 

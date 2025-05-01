@@ -50,6 +50,11 @@ public final class GetSchedulesScheduleCollectionItem {
      */
     private String id;
     /**
+     * @return This is the status of the last work request.
+     * 
+     */
+    private String lastRunStatus;
+    /**
      * @return This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
      * 
      */
@@ -161,6 +166,13 @@ public final class GetSchedulesScheduleCollectionItem {
         return this.id;
     }
     /**
+     * @return This is the status of the last work request.
+     * 
+     */
+    public String lastRunStatus() {
+        return this.lastRunStatus;
+    }
+    /**
      * @return This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
      * 
      */
@@ -261,6 +273,7 @@ public final class GetSchedulesScheduleCollectionItem {
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
+        private String lastRunStatus;
         private String recurrenceDetails;
         private String recurrenceType;
         private List<GetSchedulesScheduleCollectionItemResourceFilter> resourceFilters;
@@ -283,6 +296,7 @@ public final class GetSchedulesScheduleCollectionItem {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.lastRunStatus = defaults.lastRunStatus;
     	      this.recurrenceDetails = defaults.recurrenceDetails;
     	      this.recurrenceType = defaults.recurrenceType;
     	      this.resourceFilters = defaults.resourceFilters;
@@ -351,6 +365,14 @@ public final class GetSchedulesScheduleCollectionItem {
               throw new MissingRequiredPropertyException("GetSchedulesScheduleCollectionItem", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder lastRunStatus(String lastRunStatus) {
+            if (lastRunStatus == null) {
+              throw new MissingRequiredPropertyException("GetSchedulesScheduleCollectionItem", "lastRunStatus");
+            }
+            this.lastRunStatus = lastRunStatus;
             return this;
         }
         @CustomType.Setter
@@ -464,6 +486,7 @@ public final class GetSchedulesScheduleCollectionItem {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.lastRunStatus = lastRunStatus;
             _resultValue.recurrenceDetails = recurrenceDetails;
             _resultValue.recurrenceType = recurrenceType;
             _resultValue.resourceFilters = resourceFilters;

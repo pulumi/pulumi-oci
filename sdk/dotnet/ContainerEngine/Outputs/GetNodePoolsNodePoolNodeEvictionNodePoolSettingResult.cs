@@ -18,6 +18,10 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly string EvictionGraceDuration;
         /// <summary>
+        /// If the node action should be performed if not all the pods can be evicted in the grace period
+        /// </summary>
+        public readonly bool IsForceActionAfterGraceDuration;
+        /// <summary>
         /// If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
         /// </summary>
         public readonly bool IsForceDeleteAfterGraceDuration;
@@ -26,9 +30,12 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         private GetNodePoolsNodePoolNodeEvictionNodePoolSettingResult(
             string evictionGraceDuration,
 
+            bool isForceActionAfterGraceDuration,
+
             bool isForceDeleteAfterGraceDuration)
         {
             EvictionGraceDuration = evictionGraceDuration;
+            IsForceActionAfterGraceDuration = isForceActionAfterGraceDuration;
             IsForceDeleteAfterGraceDuration = isForceDeleteAfterGraceDuration;
         }
     }

@@ -522,6 +522,21 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * If omitted or set to false the provider will not delete scheduled_operations from the Autonomous Database. If set to true, provider will delete scheduled_operations from the Autonomous Database.
+     * 
+     */
+    @Import(name="enableDeleteScheduledOperations")
+    private @Nullable Output<Boolean> enableDeleteScheduledOperations;
+
+    /**
+     * @return If omitted or set to false the provider will not delete scheduled_operations from the Autonomous Database. If set to true, provider will delete scheduled_operations from the Autonomous Database.
+     * 
+     */
+    public Optional<Output<Boolean>> enableDeleteScheduledOperations() {
+        return Optional.ofNullable(this.enableDeleteScheduledOperations);
+    }
+
+    /**
      * (Updatable) Details of the Autonomous Database encryption key.
      * 
      */
@@ -1494,6 +1509,7 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         this.definedTags = $.definedTags;
         this.disasterRecoveryType = $.disasterRecoveryType;
         this.displayName = $.displayName;
+        this.enableDeleteScheduledOperations = $.enableDeleteScheduledOperations;
         this.encryptionKey = $.encryptionKey;
         this.freeformTags = $.freeformTags;
         this.inMemoryPercentage = $.inMemoryPercentage;
@@ -2270,6 +2286,27 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        /**
+         * @param enableDeleteScheduledOperations If omitted or set to false the provider will not delete scheduled_operations from the Autonomous Database. If set to true, provider will delete scheduled_operations from the Autonomous Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder enableDeleteScheduledOperations(@Nullable Output<Boolean> enableDeleteScheduledOperations) {
+            $.enableDeleteScheduledOperations = enableDeleteScheduledOperations;
+            return this;
+        }
+
+        /**
+         * @param enableDeleteScheduledOperations If omitted or set to false the provider will not delete scheduled_operations from the Autonomous Database. If set to true, provider will delete scheduled_operations from the Autonomous Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder enableDeleteScheduledOperations(Boolean enableDeleteScheduledOperations) {
+            return enableDeleteScheduledOperations(Output.of(enableDeleteScheduledOperations));
         }
 
         /**

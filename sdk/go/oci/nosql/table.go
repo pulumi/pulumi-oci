@@ -67,7 +67,7 @@ type Table struct {
 
 	// (Updatable) Compartment Identifier.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// (Updatable) Complete CREATE TABLE DDL statement. When update ddl_statement, it should be ALTER TABLE DDL statement.
+	// (Updatable) CREATE TABLE DDL statement. While updating an existing table, note that the column order should not be changed, and new columns can only be appended at the end of the table.
 	DdlStatement pulumi.StringOutput `pulumi:"ddlStatement"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
@@ -141,7 +141,7 @@ func GetTable(ctx *pulumi.Context,
 type tableState struct {
 	// (Updatable) Compartment Identifier.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) Complete CREATE TABLE DDL statement. When update ddl_statement, it should be ALTER TABLE DDL statement.
+	// (Updatable) CREATE TABLE DDL statement. While updating an existing table, note that the column order should not be changed, and new columns can only be appended at the end of the table.
 	DdlStatement *string `pulumi:"ddlStatement"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -180,7 +180,7 @@ type tableState struct {
 type TableState struct {
 	// (Updatable) Compartment Identifier.
 	CompartmentId pulumi.StringPtrInput
-	// (Updatable) Complete CREATE TABLE DDL statement. When update ddl_statement, it should be ALTER TABLE DDL statement.
+	// (Updatable) CREATE TABLE DDL statement. While updating an existing table, note that the column order should not be changed, and new columns can only be appended at the end of the table.
 	DdlStatement pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags pulumi.StringMapInput
@@ -223,7 +223,7 @@ func (TableState) ElementType() reflect.Type {
 type tableArgs struct {
 	// (Updatable) Compartment Identifier.
 	CompartmentId string `pulumi:"compartmentId"`
-	// (Updatable) Complete CREATE TABLE DDL statement. When update ddl_statement, it should be ALTER TABLE DDL statement.
+	// (Updatable) CREATE TABLE DDL statement. While updating an existing table, note that the column order should not be changed, and new columns can only be appended at the end of the table.
 	DdlStatement string `pulumi:"ddlStatement"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -241,7 +241,7 @@ type tableArgs struct {
 type TableArgs struct {
 	// (Updatable) Compartment Identifier.
 	CompartmentId pulumi.StringInput
-	// (Updatable) Complete CREATE TABLE DDL statement. When update ddl_statement, it should be ALTER TABLE DDL statement.
+	// (Updatable) CREATE TABLE DDL statement. While updating an existing table, note that the column order should not be changed, and new columns can only be appended at the end of the table.
 	DdlStatement pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags pulumi.StringMapInput
@@ -347,7 +347,7 @@ func (o TableOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Table) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// (Updatable) Complete CREATE TABLE DDL statement. When update ddl_statement, it should be ALTER TABLE DDL statement.
+// (Updatable) CREATE TABLE DDL statement. While updating an existing table, note that the column order should not be changed, and new columns can only be appended at the end of the table.
 func (o TableOutput) DdlStatement() pulumi.StringOutput {
 	return o.ApplyT(func(v *Table) pulumi.StringOutput { return v.DdlStatement }).(pulumi.StringOutput)
 }

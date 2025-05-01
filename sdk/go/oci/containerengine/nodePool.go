@@ -82,11 +82,13 @@ import (
 //				},
 //				NodeEvictionNodePoolSettings: &containerengine.NodePoolNodeEvictionNodePoolSettingsArgs{
 //					EvictionGraceDuration:           pulumi.Any(nodePoolNodeEvictionNodePoolSettingsEvictionGraceDuration),
+//					IsForceActionAfterGraceDuration: pulumi.Any(nodePoolNodeEvictionNodePoolSettingsIsForceActionAfterGraceDuration),
 //					IsForceDeleteAfterGraceDuration: pulumi.Any(nodePoolNodeEvictionNodePoolSettingsIsForceDeleteAfterGraceDuration),
 //				},
 //				NodeImageName: pulumi.Any(testImage.Name),
 //				NodeMetadata:  pulumi.Any(nodePoolNodeMetadata),
 //				NodePoolCyclingDetails: &containerengine.NodePoolNodePoolCyclingDetailsArgs{
+//					CycleModes:           pulumi.Any(nodePoolNodePoolCyclingDetailsCycleModes),
 //					IsNodeCyclingEnabled: pulumi.Any(nodePoolNodePoolCyclingDetailsIsNodeCyclingEnabled),
 //					MaximumSurge:         pulumi.Any(nodePoolNodePoolCyclingDetailsMaximumSurge),
 //					MaximumUnavailable:   pulumi.Any(nodePoolNodePoolCyclingDetailsMaximumUnavailable),

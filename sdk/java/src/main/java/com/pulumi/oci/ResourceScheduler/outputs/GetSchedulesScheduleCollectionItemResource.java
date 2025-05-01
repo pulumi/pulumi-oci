@@ -5,7 +5,9 @@ package com.pulumi.oci.ResourceScheduler.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.ResourceScheduler.outputs.GetSchedulesScheduleCollectionItemResourceParameter;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -21,6 +23,11 @@ public final class GetSchedulesScheduleCollectionItemResource {
      * 
      */
     private Map<String,String> metadata;
+    /**
+     * @return This is the user input parameters to use when acting on the resource.
+     * 
+     */
+    private List<GetSchedulesScheduleCollectionItemResourceParameter> parameters;
 
     private GetSchedulesScheduleCollectionItemResource() {}
     /**
@@ -37,6 +44,13 @@ public final class GetSchedulesScheduleCollectionItemResource {
     public Map<String,String> metadata() {
         return this.metadata;
     }
+    /**
+     * @return This is the user input parameters to use when acting on the resource.
+     * 
+     */
+    public List<GetSchedulesScheduleCollectionItemResourceParameter> parameters() {
+        return this.parameters;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -49,11 +63,13 @@ public final class GetSchedulesScheduleCollectionItemResource {
     public static final class Builder {
         private String id;
         private Map<String,String> metadata;
+        private List<GetSchedulesScheduleCollectionItemResourceParameter> parameters;
         public Builder() {}
         public Builder(GetSchedulesScheduleCollectionItemResource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
     	      this.metadata = defaults.metadata;
+    	      this.parameters = defaults.parameters;
         }
 
         @CustomType.Setter
@@ -72,10 +88,22 @@ public final class GetSchedulesScheduleCollectionItemResource {
             this.metadata = metadata;
             return this;
         }
+        @CustomType.Setter
+        public Builder parameters(List<GetSchedulesScheduleCollectionItemResourceParameter> parameters) {
+            if (parameters == null) {
+              throw new MissingRequiredPropertyException("GetSchedulesScheduleCollectionItemResource", "parameters");
+            }
+            this.parameters = parameters;
+            return this;
+        }
+        public Builder parameters(GetSchedulesScheduleCollectionItemResourceParameter... parameters) {
+            return parameters(List.of(parameters));
+        }
         public GetSchedulesScheduleCollectionItemResource build() {
             final var _resultValue = new GetSchedulesScheduleCollectionItemResource();
             _resultValue.id = id;
             _resultValue.metadata = metadata;
+            _resultValue.parameters = parameters;
             return _resultValue;
         }
     }

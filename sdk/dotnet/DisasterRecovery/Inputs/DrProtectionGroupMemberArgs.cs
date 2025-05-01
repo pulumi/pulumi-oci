@@ -42,11 +42,17 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         [Input("backupLocation")]
         public Input<Inputs.DrProtectionGroupMemberBackupLocationArgs>? BackupLocation { get; set; }
 
+        /// <summary>
+        /// (Updatable) The details for creating the operations performed on a block volume.
+        /// </summary>
+        [Input("blockVolumeAttachAndMountOperations")]
+        public Input<Inputs.DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsArgs>? BlockVolumeAttachAndMountOperations { get; set; }
+
         [Input("blockVolumeOperations")]
         private InputList<Inputs.DrProtectionGroupMemberBlockVolumeOperationArgs>? _blockVolumeOperations;
 
         /// <summary>
-        /// (Updatable) A list of operations performed on block volumes used by the compute instance.
+        /// (Updatable) Deprecated. Use the 'blockVolumeAttachAndMountOperations' attribute instead of this. A list of operations performed on block volumes used by the compute instance.
         /// </summary>
         public InputList<Inputs.DrProtectionGroupMemberBlockVolumeOperationArgs> BlockVolumeOperations
         {
@@ -61,6 +67,12 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         public Input<string>? Bucket { get; set; }
 
         /// <summary>
+        /// (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
+        /// </summary>
+        [Input("commonDestinationKey")]
+        public Input<Inputs.DrProtectionGroupMemberCommonDestinationKeyArgs>? CommonDestinationKey { get; set; }
+
+        /// <summary>
         /// (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
         /// </summary>
         [Input("connectionStringType")]
@@ -71,6 +83,12 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         /// </summary>
         [Input("destinationAvailabilityDomain")]
         public Input<string>? DestinationAvailabilityDomain { get; set; }
+
+        /// <summary>
+        /// (Updatable) The OCID of the backup policy to use in the destination region. This policy will be used to create backups  for this volume group after it moves the destination region.  Example: `ocid1.volumebackuppolicy.oc1..uniqueID`
+        /// </summary>
+        [Input("destinationBackupPolicyId")]
+        public Input<string>? DestinationBackupPolicyId { get; set; }
 
         /// <summary>
         /// (Updatable) The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
@@ -91,6 +109,12 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         public Input<string>? DestinationDedicatedVmHostId { get; set; }
 
         /// <summary>
+        /// (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
+        /// </summary>
+        [Input("destinationEncryptionKey")]
+        public Input<Inputs.DrProtectionGroupMemberDestinationEncryptionKeyArgs>? DestinationEncryptionKey { get; set; }
+
+        /// <summary>
         /// (Updatable) The OCID of the destination load balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
         /// </summary>
         [Input("destinationLoadBalancerId")]
@@ -101,6 +125,12 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         /// </summary>
         [Input("destinationNetworkLoadBalancerId")]
         public Input<string>? DestinationNetworkLoadBalancerId { get; set; }
+
+        /// <summary>
+        /// (Updatable) The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.  Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
+        /// </summary>
+        [Input("destinationSnapshotPolicyId")]
+        public Input<string>? DestinationSnapshotPolicyId { get; set; }
 
         [Input("exportMappings")]
         private InputList<Inputs.DrProtectionGroupMemberExportMappingArgs>? _exportMappings;
@@ -225,6 +255,22 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         /// </summary>
         [Input("peerClusterId")]
         public Input<string>? PeerClusterId { get; set; }
+
+        [Input("sourceVolumeToDestinationEncryptionKeyMappings")]
+        private InputList<Inputs.DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs>? _sourceVolumeToDestinationEncryptionKeyMappings;
+
+        /// <summary>
+        /// (Updatable) A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
+        /// 
+        /// If you add the entry for source volumes and its corresponding vault and encryption keys here, you can not use  'commonDestinationKey' for encrypting all volumes with common encryption key. Similarly, if you specify common vault and encryption key using 'commonDestinationKey', you cannot specify vaults and encryption keys individually  for each volume using 'sourceVolumeToDestinationEncryptionKeyMappings'.
+        /// 
+        /// An entry for each volume in volume group should be added in this list. The encryption key will not be updated  for the volumes that are part of volume group but missing in this list.
+        /// </summary>
+        public InputList<Inputs.DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs> SourceVolumeToDestinationEncryptionKeyMappings
+        {
+            get => _sourceVolumeToDestinationEncryptionKeyMappings ?? (_sourceVolumeToDestinationEncryptionKeyMappings = new InputList<Inputs.DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs>());
+            set => _sourceVolumeToDestinationEncryptionKeyMappings = value;
+        }
 
         [Input("vaultMappings")]
         private InputList<Inputs.DrProtectionGroupMemberVaultMappingArgs>? _vaultMappings;

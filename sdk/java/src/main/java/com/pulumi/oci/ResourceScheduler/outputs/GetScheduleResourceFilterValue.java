@@ -21,7 +21,7 @@ public final class GetScheduleResourceFilterValue {
      */
     private String tagKey;
     /**
-     * @return This is the value of the defined tag.
+     * @return This is the HTTP request header value.
      * 
      */
     private String value;
@@ -42,7 +42,7 @@ public final class GetScheduleResourceFilterValue {
         return this.tagKey;
     }
     /**
-     * @return This is the value of the defined tag.
+     * @return This is the HTTP request header value.
      * 
      */
     public String value() {

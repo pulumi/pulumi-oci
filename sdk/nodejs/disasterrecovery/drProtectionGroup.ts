@@ -11,6 +11,161 @@ import * as utilities from "../utilities";
  *
  * Create a DR protection group.
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const config = new pulumi.Config();
+ * const disassociateTrigger = config.getNumber("disassociateTrigger") || 0;
+ * const testDrProtectionGroup = new oci.disasterrecovery.DrProtectionGroup("test_dr_protection_group", {
+ *     compartmentId: compartmentId,
+ *     displayName: drProtectionGroupDisplayName,
+ *     logLocation: {
+ *         bucket: drProtectionGroupLogLocationBucket,
+ *         namespace: drProtectionGroupLogLocationNamespace,
+ *     },
+ *     association: {
+ *         role: drProtectionGroupAssociationRole,
+ *         peerId: drProtectionGroupAssociationPeerId,
+ *         peerRegion: drProtectionGroupAssociationPeerRegion,
+ *     },
+ *     definedTags: {
+ *         "Operations.CostCenter": "42",
+ *     },
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
+ *     disassociateTrigger: disassociateTrigger,
+ *     members: [{
+ *         memberId: drProtectionGroupMembersMemberId,
+ *         memberType: drProtectionGroupMembersMemberType,
+ *         autonomousDatabaseStandbyTypeForDrDrills: drProtectionGroupMembersAutonomousDatabaseStandbyTypeForDrDrills,
+ *         backendSetMappings: [{
+ *             destinationBackendSetName: testBackendSet.name,
+ *             isBackendSetForNonMovable: drProtectionGroupMembersBackendSetMappingsIsBackendSetForNonMovable,
+ *             sourceBackendSetName: testBackendSet.name,
+ *         }],
+ *         backupConfig: {
+ *             backupSchedule: drProtectionGroupMembersBackupConfigBackupSchedule,
+ *             imageReplicationVaultSecretId: testSecret.id,
+ *             maxNumberOfBackupsRetained: drProtectionGroupMembersBackupConfigMaxNumberOfBackupsRetained,
+ *             namespaces: drProtectionGroupMembersBackupConfigNamespaces,
+ *             replicateImages: drProtectionGroupMembersBackupConfigReplicateImages,
+ *         },
+ *         backupLocation: {
+ *             bucket: drProtectionGroupMembersBackupLocationBucket,
+ *             namespace: drProtectionGroupMembersBackupLocationNamespace,
+ *         },
+ *         blockVolumeAttachAndMountOperations: {
+ *             attachments: [{
+ *                 blockVolumeId: testVolume.id,
+ *                 volumeAttachmentReferenceInstanceId: testInstance.id,
+ *             }],
+ *             mounts: [{
+ *                 mountPoint: drProtectionGroupMembersBlockVolumeAttachAndMountOperationsMountsMountPoint,
+ *             }],
+ *         },
+ *         blockVolumeOperations: [{
+ *             attachmentDetails: {
+ *                 volumeAttachmentReferenceInstanceId: testInstance.id,
+ *             },
+ *             blockVolumeId: testVolume.id,
+ *             mountDetails: {
+ *                 mountPoint: drProtectionGroupMembersBlockVolumeOperationsMountDetailsMountPoint,
+ *             },
+ *         }],
+ *         bucket: drProtectionGroupMembersBucket,
+ *         commonDestinationKey: {
+ *             encryptionKeyId: testKey.id,
+ *             vaultId: testVault.id,
+ *         },
+ *         connectionStringType: drProtectionGroupMembersConnectionStringType,
+ *         destinationAvailabilityDomain: drProtectionGroupMembersDestinationAvailabilityDomain,
+ *         destinationBackupPolicyId: testPolicy.id,
+ *         destinationCapacityReservationId: destinationCapacityReservationId,
+ *         destinationCompartmentId: testCompartment.id,
+ *         destinationDedicatedVmHostId: testDedicatedVmHost.id,
+ *         destinationEncryptionKey: {
+ *             encryptionKeyId: testKey.id,
+ *             vaultId: testVault.id,
+ *         },
+ *         destinationLoadBalancerId: testLoadBalancer.id,
+ *         destinationNetworkLoadBalancerId: testNetworkLoadBalancer.id,
+ *         destinationSnapshotPolicyId: testPolicy.id,
+ *         exportMappings: [{
+ *             destinationMountTargetId: testMountTarget.id,
+ *             exportId: testExport.id,
+ *         }],
+ *         fileSystemOperations: [{
+ *             exportPath: drProtectionGroupMembersFileSystemOperationsExportPath,
+ *             mountDetails: {
+ *                 mountTargetId: testMountTarget.id,
+ *             },
+ *             mountPoint: drProtectionGroupMembersFileSystemOperationsMountPoint,
+ *             mountTargetId: testMountTarget.id,
+ *             unmountDetails: {
+ *                 mountTargetId: testMountTarget.id,
+ *             },
+ *         }],
+ *         isMovable: drProtectionGroupMembersIsMovable,
+ *         isRetainFaultDomain: drProtectionGroupMembersIsRetainFaultDomain,
+ *         isStartStopEnabled: drProtectionGroupMembersIsStartStopEnabled,
+ *         jumpHostId: testJumpHost.id,
+ *         loadBalancerMappings: [{
+ *             destinationLoadBalancerId: testLoadBalancer.id,
+ *             sourceLoadBalancerId: testLoadBalancer.id,
+ *         }],
+ *         managedNodePoolConfigs: [{
+ *             id: drProtectionGroupMembersManagedNodePoolConfigsId,
+ *             maximum: drProtectionGroupMembersManagedNodePoolConfigsMaximum,
+ *             minimum: drProtectionGroupMembersManagedNodePoolConfigsMinimum,
+ *         }],
+ *         namespace: drProtectionGroupMembersNamespace,
+ *         passwordVaultSecretId: passwordVaultSecretId,
+ *         networkLoadBalancerMappings: [{
+ *             destinationNetworkLoadBalancerId: testNetworkLoadBalancer.id,
+ *             sourceNetworkLoadBalancerId: testNetworkLoadBalancer.id,
+ *         }],
+ *         peerClusterId: testCluster.id,
+ *         sourceVolumeToDestinationEncryptionKeyMappings: [{
+ *             destinationEncryptionKey: {
+ *                 encryptionKeyId: testKey.id,
+ *                 vaultId: testVault.id,
+ *             },
+ *             sourceVolumeId: testVolume.id,
+ *         }],
+ *         vaultMappings: [{
+ *             destinationVaultId: testVault.id,
+ *             sourceVaultId: testVault.id,
+ *         }],
+ *         virtualNodePoolConfigs: [{
+ *             id: drProtectionGroupMembersVirtualNodePoolConfigsId,
+ *             maximum: drProtectionGroupMembersVirtualNodePoolConfigsMaximum,
+ *             minimum: drProtectionGroupMembersVirtualNodePoolConfigsMinimum,
+ *         }],
+ *         vnicMappings: [
+ *             {
+ *                 destinationNsgIdLists: drProtectionGroupMembersVnicMappingDestinationNsgIdList,
+ *                 destinationPrimaryPrivateIpAddress: drProtectionGroupMembersVnicMappingDestinationPrimaryPrivateIpAddress,
+ *                 destinationPrimaryPrivateIpHostnameLabel: drProtectionGroupMembersVnicMappingDestinationPrimaryPrivateIpHostnameLabel,
+ *                 destinationSubnetId: testSubnet.id,
+ *                 sourceVnicId: testVnic.id,
+ *             },
+ *             {
+ *                 destinationNsgIdLists: drProtectionGroupMembersVnicMappingsDestinationNsgIdList,
+ *                 destinationPrimaryPrivateIpAddress: drProtectionGroupMembersVnicMappingsDestinationPrimaryPrivateIpAddress,
+ *                 destinationPrimaryPrivateIpHostnameLabel: drProtectionGroupMembersVnicMappingsDestinationPrimaryPrivateIpHostnameLabel,
+ *                 destinationReservedPublicIpId: testPublicIp.id,
+ *                 destinationSubnetId: testSubnet.id,
+ *                 sourceVnicId: testVnic.id,
+ *             },
+ *         ],
+ *     }],
+ * });
+ * ```
+ *
  * ## Create
  *
  * Create DR Protection Group resource with a default value of `disassociateTrigger` property, e.g.

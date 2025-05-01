@@ -30,7 +30,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := containerengine.GetCluster(ctx, &containerengine.GetClusterArgs{
-//				ClusterId: testClusterOciContainerengineCluster.Id,
+//				ClusterId:                   testClusterOciContainerengineCluster.Id,
+//				ShouldIncludeOidcConfigFile: pulumi.StringRef(clusterShouldIncludeOidcConfigFile),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -54,6 +55,8 @@ func LookupCluster(ctx *pulumi.Context, args *LookupClusterArgs, opts ...pulumi.
 type LookupClusterArgs struct {
 	// The OCID of the cluster.
 	ClusterId string `pulumi:"clusterId"`
+	// Boolean value to determine if the OpenIdConnectAuth configuration file should be displayed for the provided cluster.
+	ShouldIncludeOidcConfigFile *string `pulumi:"shouldIncludeOidcConfigFile"`
 }
 
 // A collection of values returned by getCluster.
@@ -89,7 +92,8 @@ type LookupClusterResult struct {
 	Name                           string `pulumi:"name"`
 	OpenIdConnectDiscoveryEndpoint string `pulumi:"openIdConnectDiscoveryEndpoint"`
 	// Optional attributes for the cluster.
-	Options []GetClusterOption `pulumi:"options"`
+	Options                     []GetClusterOption `pulumi:"options"`
+	ShouldIncludeOidcConfigFile *string            `pulumi:"shouldIncludeOidcConfigFile"`
 	// The state of the cluster masters.
 	State string `pulumi:"state"`
 	// Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information, see [Cluster Types](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm)
@@ -111,6 +115,8 @@ func LookupClusterOutput(ctx *pulumi.Context, args LookupClusterOutputArgs, opts
 type LookupClusterOutputArgs struct {
 	// The OCID of the cluster.
 	ClusterId pulumi.StringInput `pulumi:"clusterId"`
+	// Boolean value to determine if the OpenIdConnectAuth configuration file should be displayed for the provided cluster.
+	ShouldIncludeOidcConfigFile pulumi.StringPtrInput `pulumi:"shouldIncludeOidcConfigFile"`
 }
 
 func (LookupClusterOutputArgs) ElementType() reflect.Type {
@@ -213,6 +219,10 @@ func (o LookupClusterResultOutput) OpenIdConnectDiscoveryEndpoint() pulumi.Strin
 // Optional attributes for the cluster.
 func (o LookupClusterResultOutput) Options() GetClusterOptionArrayOutput {
 	return o.ApplyT(func(v LookupClusterResult) []GetClusterOption { return v.Options }).(GetClusterOptionArrayOutput)
+}
+
+func (o LookupClusterResultOutput) ShouldIncludeOidcConfigFile() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupClusterResult) *string { return v.ShouldIncludeOidcConfigFile }).(pulumi.StringPtrOutput)
 }
 
 // The state of the cluster masters.

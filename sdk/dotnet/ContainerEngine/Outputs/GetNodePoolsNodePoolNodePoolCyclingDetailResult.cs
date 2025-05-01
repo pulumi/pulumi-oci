@@ -14,7 +14,11 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
     public sealed class GetNodePoolsNodePoolNodePoolCyclingDetailResult
     {
         /// <summary>
-        /// If nodes in the nodepool will be cycled to have new changes.
+        /// An ordered list of cycle modes that should be performed on the OKE nodes.
+        /// </summary>
+        public readonly ImmutableArray<string> CycleModes;
+        /// <summary>
+        /// If cycling operation should be performed on the nodes in the node pool.
         /// </summary>
         public readonly bool IsNodeCyclingEnabled;
         /// <summary>
@@ -28,12 +32,15 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
         [OutputConstructor]
         private GetNodePoolsNodePoolNodePoolCyclingDetailResult(
+            ImmutableArray<string> cycleModes,
+
             bool isNodeCyclingEnabled,
 
             string maximumSurge,
 
             string maximumUnavailable)
         {
+            CycleModes = cycleModes;
             IsNodeCyclingEnabled = isNodeCyclingEnabled;
             MaximumSurge = maximumSurge;
             MaximumUnavailable = maximumUnavailable;

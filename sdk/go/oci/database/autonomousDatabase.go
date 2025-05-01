@@ -135,6 +135,8 @@ type AutonomousDatabase struct {
 	DisasterRecoveryType pulumi.StringOutput `pulumi:"disasterRecoveryType"`
 	// (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	// If omitted or set to false the provider will not delete scheduledOperations from the Autonomous Database. If set to true, provider will delete scheduledOperations from the Autonomous Database.
+	EnableDeleteScheduledOperations pulumi.BoolPtrOutput `pulumi:"enableDeleteScheduledOperations"`
 	// (Updatable) Details of the Autonomous Database encryption key.
 	EncryptionKey AutonomousDatabaseEncryptionKeyOutput `pulumi:"encryptionKey"`
 	// Key History Entry.
@@ -548,6 +550,8 @@ type autonomousDatabaseState struct {
 	DisasterRecoveryType *string `pulumi:"disasterRecoveryType"`
 	// (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
+	// If omitted or set to false the provider will not delete scheduledOperations from the Autonomous Database. If set to true, provider will delete scheduledOperations from the Autonomous Database.
+	EnableDeleteScheduledOperations *bool `pulumi:"enableDeleteScheduledOperations"`
 	// (Updatable) Details of the Autonomous Database encryption key.
 	EncryptionKey *AutonomousDatabaseEncryptionKey `pulumi:"encryptionKey"`
 	// Key History Entry.
@@ -919,6 +923,8 @@ type AutonomousDatabaseState struct {
 	DisasterRecoveryType pulumi.StringPtrInput
 	// (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
 	DisplayName pulumi.StringPtrInput
+	// If omitted or set to false the provider will not delete scheduledOperations from the Autonomous Database. If set to true, provider will delete scheduledOperations from the Autonomous Database.
+	EnableDeleteScheduledOperations pulumi.BoolPtrInput
 	// (Updatable) Details of the Autonomous Database encryption key.
 	EncryptionKey AutonomousDatabaseEncryptionKeyPtrInput
 	// Key History Entry.
@@ -1272,6 +1278,8 @@ type autonomousDatabaseArgs struct {
 	DisasterRecoveryType *string `pulumi:"disasterRecoveryType"`
 	// (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
+	// If omitted or set to false the provider will not delete scheduledOperations from the Autonomous Database. If set to true, provider will delete scheduledOperations from the Autonomous Database.
+	EnableDeleteScheduledOperations *bool `pulumi:"enableDeleteScheduledOperations"`
 	// (Updatable) Details of the Autonomous Database encryption key.
 	EncryptionKey *AutonomousDatabaseEncryptionKey `pulumi:"encryptionKey"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -1524,6 +1532,8 @@ type AutonomousDatabaseArgs struct {
 	DisasterRecoveryType pulumi.StringPtrInput
 	// (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
 	DisplayName pulumi.StringPtrInput
+	// If omitted or set to false the provider will not delete scheduledOperations from the Autonomous Database. If set to true, provider will delete scheduledOperations from the Autonomous Database.
+	EnableDeleteScheduledOperations pulumi.BoolPtrInput
 	// (Updatable) Details of the Autonomous Database encryption key.
 	EncryptionKey AutonomousDatabaseEncryptionKeyPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -2004,6 +2014,11 @@ func (o AutonomousDatabaseOutput) DisasterRecoveryType() pulumi.StringOutput {
 // (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
 func (o AutonomousDatabaseOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// If omitted or set to false the provider will not delete scheduledOperations from the Autonomous Database. If set to true, provider will delete scheduledOperations from the Autonomous Database.
+func (o AutonomousDatabaseOutput) EnableDeleteScheduledOperations() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AutonomousDatabase) pulumi.BoolPtrOutput { return v.EnableDeleteScheduledOperations }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Details of the Autonomous Database encryption key.

@@ -237,6 +237,10 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
+     * If omitted or set to false the provider will not delete scheduledOperations from the Autonomous Database. If set to true, provider will delete scheduledOperations from the Autonomous Database.
+     */
+    public readonly enableDeleteScheduledOperations!: pulumi.Output<boolean | undefined>;
+    /**
      * (Updatable) Details of the Autonomous Database encryption key.
      */
     public readonly encryptionKey!: pulumi.Output<outputs.Database.AutonomousDatabaseEncryptionKey>;
@@ -759,6 +763,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["disasterRecoveryRegionType"] = state ? state.disasterRecoveryRegionType : undefined;
             resourceInputs["disasterRecoveryType"] = state ? state.disasterRecoveryType : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
+            resourceInputs["enableDeleteScheduledOperations"] = state ? state.enableDeleteScheduledOperations : undefined;
             resourceInputs["encryptionKey"] = state ? state.encryptionKey : undefined;
             resourceInputs["encryptionKeyHistoryEntries"] = state ? state.encryptionKeyHistoryEntries : undefined;
             resourceInputs["failedDataRecoveryInSeconds"] = state ? state.failedDataRecoveryInSeconds : undefined;
@@ -903,6 +908,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["disasterRecoveryType"] = args ? args.disasterRecoveryType : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
+            resourceInputs["enableDeleteScheduledOperations"] = args ? args.enableDeleteScheduledOperations : undefined;
             resourceInputs["encryptionKey"] = args ? args.encryptionKey : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["inMemoryPercentage"] = args ? args.inMemoryPercentage : undefined;
@@ -1219,6 +1225,10 @@ export interface AutonomousDatabaseState {
      * (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * If omitted or set to false the provider will not delete scheduledOperations from the Autonomous Database. If set to true, provider will delete scheduledOperations from the Autonomous Database.
+     */
+    enableDeleteScheduledOperations?: pulumi.Input<boolean>;
     /**
      * (Updatable) Details of the Autonomous Database encryption key.
      */
@@ -1836,6 +1846,10 @@ export interface AutonomousDatabaseArgs {
      * (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * If omitted or set to false the provider will not delete scheduledOperations from the Autonomous Database. If set to true, provider will delete scheduledOperations from the Autonomous Database.
+     */
+    enableDeleteScheduledOperations?: pulumi.Input<boolean>;
     /**
      * (Updatable) Details of the Autonomous Database encryption key.
      */

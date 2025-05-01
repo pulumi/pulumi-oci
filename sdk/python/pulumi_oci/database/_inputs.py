@@ -6495,7 +6495,7 @@ class AutonomousDatabaseResourcePoolSummaryArgs:
 
 if not MYPY:
     class AutonomousDatabaseScheduledOperationArgsDict(TypedDict):
-        day_of_week: pulumi.Input['AutonomousDatabaseScheduledOperationDayOfWeekArgsDict']
+        day_of_week: NotRequired[pulumi.Input['AutonomousDatabaseScheduledOperationDayOfWeekArgsDict']]
         """
         (Updatable) Day of the week.
         """
@@ -6513,7 +6513,7 @@ elif False:
 @pulumi.input_type
 class AutonomousDatabaseScheduledOperationArgs:
     def __init__(__self__, *,
-                 day_of_week: pulumi.Input['AutonomousDatabaseScheduledOperationDayOfWeekArgs'],
+                 day_of_week: Optional[pulumi.Input['AutonomousDatabaseScheduledOperationDayOfWeekArgs']] = None,
                  scheduled_start_time: Optional[pulumi.Input[builtins.str]] = None,
                  scheduled_stop_time: Optional[pulumi.Input[builtins.str]] = None):
         """
@@ -6521,7 +6521,8 @@ class AutonomousDatabaseScheduledOperationArgs:
         :param pulumi.Input[builtins.str] scheduled_start_time: (Updatable) auto start time. value must be of ISO-8601 format "HH:mm"
         :param pulumi.Input[builtins.str] scheduled_stop_time: (Updatable) auto stop time. value must be of ISO-8601 format "HH:mm"
         """
-        pulumi.set(__self__, "day_of_week", day_of_week)
+        if day_of_week is not None:
+            pulumi.set(__self__, "day_of_week", day_of_week)
         if scheduled_start_time is not None:
             pulumi.set(__self__, "scheduled_start_time", scheduled_start_time)
         if scheduled_stop_time is not None:
@@ -6529,14 +6530,14 @@ class AutonomousDatabaseScheduledOperationArgs:
 
     @property
     @pulumi.getter(name="dayOfWeek")
-    def day_of_week(self) -> pulumi.Input['AutonomousDatabaseScheduledOperationDayOfWeekArgs']:
+    def day_of_week(self) -> Optional[pulumi.Input['AutonomousDatabaseScheduledOperationDayOfWeekArgs']]:
         """
         (Updatable) Day of the week.
         """
         return pulumi.get(self, "day_of_week")
 
     @day_of_week.setter
-    def day_of_week(self, value: pulumi.Input['AutonomousDatabaseScheduledOperationDayOfWeekArgs']):
+    def day_of_week(self, value: Optional[pulumi.Input['AutonomousDatabaseScheduledOperationDayOfWeekArgs']]):
         pulumi.set(self, "day_of_week", value)
 
     @property

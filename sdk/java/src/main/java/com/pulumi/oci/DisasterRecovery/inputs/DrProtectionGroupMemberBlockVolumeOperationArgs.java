@@ -18,14 +18,14 @@ public final class DrProtectionGroupMemberBlockVolumeOperationArgs extends com.p
     public static final DrProtectionGroupMemberBlockVolumeOperationArgs Empty = new DrProtectionGroupMemberBlockVolumeOperationArgs();
 
     /**
-     * (Updatable) The details for creating a block volume attachment.
+     * (Updatable) Deprecated. Use the &#39;CreateComputeInstanceNonMovableBlockVolumeAttachOperationDetails&#39; definition instead of this. The details for creating a block volume attachment.
      * 
      */
     @Import(name="attachmentDetails")
     private @Nullable Output<DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs> attachmentDetails;
 
     /**
-     * @return (Updatable) The details for creating a block volume attachment.
+     * @return (Updatable) Deprecated. Use the &#39;CreateComputeInstanceNonMovableBlockVolumeAttachOperationDetails&#39; definition instead of this. The details for creating a block volume attachment.
      * 
      */
     public Optional<Output<DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs>> attachmentDetails() {
@@ -89,7 +89,7 @@ public final class DrProtectionGroupMemberBlockVolumeOperationArgs extends com.p
         }
 
         /**
-         * @param attachmentDetails (Updatable) The details for creating a block volume attachment.
+         * @param attachmentDetails (Updatable) Deprecated. Use the &#39;CreateComputeInstanceNonMovableBlockVolumeAttachOperationDetails&#39; definition instead of this. The details for creating a block volume attachment.
          * 
          * @return builder
          * 
@@ -100,7 +100,7 @@ public final class DrProtectionGroupMemberBlockVolumeOperationArgs extends com.p
         }
 
         /**
-         * @param attachmentDetails (Updatable) The details for creating a block volume attachment.
+         * @param attachmentDetails (Updatable) Deprecated. Use the &#39;CreateComputeInstanceNonMovableBlockVolumeAttachOperationDetails&#39; definition instead of this. The details for creating a block volume attachment.
          * 
          * @return builder
          * 

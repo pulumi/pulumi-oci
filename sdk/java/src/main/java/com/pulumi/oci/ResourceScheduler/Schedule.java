@@ -20,7 +20,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Schedule resource in Oracle Cloud Infrastructure Resource Scheduler service.
  * 
- * Creates a Schedule
+ * This API creates a schedule. You must provide either resources or resourceFilters.
  * 
  * ## Import
  * 
@@ -35,6 +35,7 @@ import javax.annotation.Nullable;
 public class Schedule extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) This is the action that will be executed by the schedule.
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     @Export(name="action", refs={String.class}, tree="[0]")
@@ -42,6 +43,7 @@ public class Schedule extends com.pulumi.resources.CustomResource {
 
     /**
      * @return (Updatable) This is the action that will be executed by the schedule.
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     public Output<String> action() {
@@ -105,6 +107,7 @@ public class Schedule extends com.pulumi.resources.CustomResource {
     }
     /**
      * (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class}, tree="[0,1,1]")
@@ -112,13 +115,30 @@ public class Schedule extends com.pulumi.resources.CustomResource {
 
     /**
      * @return (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      */
     public Output<Map<String,String>> freeformTags() {
         return this.freeformTags;
     }
     /**
+     * This is the status of the last work request.
+     * 
+     */
+    @Export(name="lastRunStatus", refs={String.class}, tree="[0]")
+    private Output<String> lastRunStatus;
+
+    /**
+     * @return This is the status of the last work request.
+     * 
+     */
+    public Output<String> lastRunStatus() {
+        return this.lastRunStatus;
+    }
+    /**
      * (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
+     * 
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      */
     @Export(name="recurrenceDetails", refs={String.class}, tree="[0]")
@@ -126,6 +146,8 @@ public class Schedule extends com.pulumi.resources.CustomResource {
 
     /**
      * @return (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
+     * 
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      */
     public Output<String> recurrenceDetails() {

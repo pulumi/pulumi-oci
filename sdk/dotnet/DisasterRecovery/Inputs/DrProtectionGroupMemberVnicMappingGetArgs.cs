@@ -37,6 +37,12 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         public Input<string>? DestinationPrimaryPrivateIpHostnameLabel { get; set; }
 
         /// <summary>
+        /// (Updatable) The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+        /// </summary>
+        [Input("destinationReservedPublicIpId")]
+        public Input<string>? DestinationReservedPublicIpId { get; set; }
+
+        /// <summary>
         /// (Updatable) The OCID of the destination subnet to which the source VNIC should connect.          Example: `ocid1.subnet.oc1..uniqueID`
         /// </summary>
         [Input("destinationSubnetId")]

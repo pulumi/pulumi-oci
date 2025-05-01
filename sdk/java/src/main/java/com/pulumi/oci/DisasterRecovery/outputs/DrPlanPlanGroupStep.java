@@ -61,6 +61,11 @@ public final class DrPlanPlanGroupStep {
      */
     private @Nullable String type;
     /**
+     * @return The display name of the DR Plan step type.  Example: `Database Switchover`
+     * 
+     */
+    private @Nullable String typeDisplayName;
+    /**
      * @return The details for a user-defined step in a DR plan.
      * 
      */
@@ -131,6 +136,13 @@ public final class DrPlanPlanGroupStep {
         return Optional.ofNullable(this.type);
     }
     /**
+     * @return The display name of the DR Plan step type.  Example: `Database Switchover`
+     * 
+     */
+    public Optional<String> typeDisplayName() {
+        return Optional.ofNullable(this.typeDisplayName);
+    }
+    /**
      * @return The details for a user-defined step in a DR plan.
      * 
      */
@@ -156,6 +168,7 @@ public final class DrPlanPlanGroupStep {
         private @Nullable String refreshStatus;
         private @Nullable Integer timeout;
         private @Nullable String type;
+        private @Nullable String typeDisplayName;
         private @Nullable List<DrPlanPlanGroupStepUserDefinedStep> userDefinedSteps;
         public Builder() {}
         public Builder(DrPlanPlanGroupStep defaults) {
@@ -169,6 +182,7 @@ public final class DrPlanPlanGroupStep {
     	      this.refreshStatus = defaults.refreshStatus;
     	      this.timeout = defaults.timeout;
     	      this.type = defaults.type;
+    	      this.typeDisplayName = defaults.typeDisplayName;
     	      this.userDefinedSteps = defaults.userDefinedSteps;
         }
 
@@ -227,6 +241,12 @@ public final class DrPlanPlanGroupStep {
             return this;
         }
         @CustomType.Setter
+        public Builder typeDisplayName(@Nullable String typeDisplayName) {
+
+            this.typeDisplayName = typeDisplayName;
+            return this;
+        }
+        @CustomType.Setter
         public Builder userDefinedSteps(@Nullable List<DrPlanPlanGroupStepUserDefinedStep> userDefinedSteps) {
 
             this.userDefinedSteps = userDefinedSteps;
@@ -246,6 +266,7 @@ public final class DrPlanPlanGroupStep {
             _resultValue.refreshStatus = refreshStatus;
             _resultValue.timeout = timeout;
             _resultValue.type = type;
+            _resultValue.typeDisplayName = typeDisplayName;
             _resultValue.userDefinedSteps = userDefinedSteps;
             return _resultValue;
         }

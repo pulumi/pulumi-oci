@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Schedules in Oracle Cloud Infrastructure Resource Scheduler service.
 //
-// # This API gets a list of schedules
+// This API gets a list of schedules. You must provide either a compartmentId or a scheduleId or both. You can list resources in this compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This is required unless a specific schedule ID is passed.
 //
 // ## Example Usage
 //
@@ -31,9 +31,8 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := resourcescheduler.GetSchedules(ctx, &resourcescheduler.GetSchedulesArgs{
 //				CompartmentId: pulumi.StringRef(compartmentId),
-//				ScheduleId:    pulumi.StringRef(testSchedule.Id),
 //				DisplayName:   pulumi.StringRef(scheduleDisplayName),
-//				State:         pulumi.StringRef(scheduleState),
+//				ResourceId:    pulumi.StringRef(testResource.Id),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -60,6 +59,8 @@ type GetSchedulesArgs struct {
 	// This is a filter to return only resources that match the given display name exactly.
 	DisplayName *string              `pulumi:"displayName"`
 	Filters     []GetSchedulesFilter `pulumi:"filters"`
+	// This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource affected by the work request.
+	ResourceId *string `pulumi:"resourceId"`
 	// This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.  You need to at least provide either `compartmentId` or `scheduleId` or both.
 	ScheduleId *string `pulumi:"scheduleId"`
 	// This is a filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
@@ -74,7 +75,8 @@ type GetSchedulesResult struct {
 	DisplayName *string              `pulumi:"displayName"`
 	Filters     []GetSchedulesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id         string  `pulumi:"id"`
+	ResourceId *string `pulumi:"resourceId"`
 	// The list of schedule_collection.
 	ScheduleCollections []GetSchedulesScheduleCollection `pulumi:"scheduleCollections"`
 	ScheduleId          *string                          `pulumi:"scheduleId"`
@@ -98,6 +100,8 @@ type GetSchedulesOutputArgs struct {
 	// This is a filter to return only resources that match the given display name exactly.
 	DisplayName pulumi.StringPtrInput        `pulumi:"displayName"`
 	Filters     GetSchedulesFilterArrayInput `pulumi:"filters"`
+	// This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource affected by the work request.
+	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
 	// This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.  You need to at least provide either `compartmentId` or `scheduleId` or both.
 	ScheduleId pulumi.StringPtrInput `pulumi:"scheduleId"`
 	// This is a filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
@@ -140,6 +144,10 @@ func (o GetSchedulesResultOutput) Filters() GetSchedulesFilterArrayOutput {
 // The provider-assigned unique ID for this managed resource.
 func (o GetSchedulesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSchedulesResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetSchedulesResultOutput) ResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSchedulesResult) *string { return v.ResourceId }).(pulumi.StringPtrOutput)
 }
 
 // The list of schedule_collection.

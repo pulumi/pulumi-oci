@@ -6330,6 +6330,8 @@ func (o NodePoolNodeErrorArrayOutput) Index(i pulumi.IntInput) NodePoolNodeError
 type NodePoolNodeEvictionNodePoolSettings struct {
 	// (Updatable) Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
 	EvictionGraceDuration *string `pulumi:"evictionGraceDuration"`
+	// (Updatable) If the node action should be performed if not all the pods can be evicted in the grace period
+	IsForceActionAfterGraceDuration *bool `pulumi:"isForceActionAfterGraceDuration"`
 	// (Updatable) If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
 	IsForceDeleteAfterGraceDuration *bool `pulumi:"isForceDeleteAfterGraceDuration"`
 }
@@ -6348,6 +6350,8 @@ type NodePoolNodeEvictionNodePoolSettingsInput interface {
 type NodePoolNodeEvictionNodePoolSettingsArgs struct {
 	// (Updatable) Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
 	EvictionGraceDuration pulumi.StringPtrInput `pulumi:"evictionGraceDuration"`
+	// (Updatable) If the node action should be performed if not all the pods can be evicted in the grace period
+	IsForceActionAfterGraceDuration pulumi.BoolPtrInput `pulumi:"isForceActionAfterGraceDuration"`
 	// (Updatable) If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
 	IsForceDeleteAfterGraceDuration pulumi.BoolPtrInput `pulumi:"isForceDeleteAfterGraceDuration"`
 }
@@ -6434,6 +6438,11 @@ func (o NodePoolNodeEvictionNodePoolSettingsOutput) EvictionGraceDuration() pulu
 	return o.ApplyT(func(v NodePoolNodeEvictionNodePoolSettings) *string { return v.EvictionGraceDuration }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) If the node action should be performed if not all the pods can be evicted in the grace period
+func (o NodePoolNodeEvictionNodePoolSettingsOutput) IsForceActionAfterGraceDuration() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v NodePoolNodeEvictionNodePoolSettings) *bool { return v.IsForceActionAfterGraceDuration }).(pulumi.BoolPtrOutput)
+}
+
 // (Updatable) If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
 func (o NodePoolNodeEvictionNodePoolSettingsOutput) IsForceDeleteAfterGraceDuration() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeEvictionNodePoolSettings) *bool { return v.IsForceDeleteAfterGraceDuration }).(pulumi.BoolPtrOutput)
@@ -6473,6 +6482,16 @@ func (o NodePoolNodeEvictionNodePoolSettingsPtrOutput) EvictionGraceDuration() p
 	}).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) If the node action should be performed if not all the pods can be evicted in the grace period
+func (o NodePoolNodeEvictionNodePoolSettingsPtrOutput) IsForceActionAfterGraceDuration() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *NodePoolNodeEvictionNodePoolSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsForceActionAfterGraceDuration
+	}).(pulumi.BoolPtrOutput)
+}
+
 // (Updatable) If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
 func (o NodePoolNodeEvictionNodePoolSettingsPtrOutput) IsForceDeleteAfterGraceDuration() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeEvictionNodePoolSettings) *bool {
@@ -6484,7 +6503,9 @@ func (o NodePoolNodeEvictionNodePoolSettingsPtrOutput) IsForceDeleteAfterGraceDu
 }
 
 type NodePoolNodePoolCyclingDetails struct {
-	// (Updatable) If nodes in the nodepool will be cycled to have new changes.
+	// (Updatable) An ordered list of cycle modes that should be performed on the OKE nodes.
+	CycleModes []string `pulumi:"cycleModes"`
+	// (Updatable) If cycling operation should be performed on the nodes in the node pool.
 	IsNodeCyclingEnabled *bool `pulumi:"isNodeCyclingEnabled"`
 	// (Updatable) Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
 	MaximumSurge *string `pulumi:"maximumSurge"`
@@ -6504,7 +6525,9 @@ type NodePoolNodePoolCyclingDetailsInput interface {
 }
 
 type NodePoolNodePoolCyclingDetailsArgs struct {
-	// (Updatable) If nodes in the nodepool will be cycled to have new changes.
+	// (Updatable) An ordered list of cycle modes that should be performed on the OKE nodes.
+	CycleModes pulumi.StringArrayInput `pulumi:"cycleModes"`
+	// (Updatable) If cycling operation should be performed on the nodes in the node pool.
 	IsNodeCyclingEnabled pulumi.BoolPtrInput `pulumi:"isNodeCyclingEnabled"`
 	// (Updatable) Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
 	MaximumSurge pulumi.StringPtrInput `pulumi:"maximumSurge"`
@@ -6589,7 +6612,12 @@ func (o NodePoolNodePoolCyclingDetailsOutput) ToNodePoolNodePoolCyclingDetailsPt
 	}).(NodePoolNodePoolCyclingDetailsPtrOutput)
 }
 
-// (Updatable) If nodes in the nodepool will be cycled to have new changes.
+// (Updatable) An ordered list of cycle modes that should be performed on the OKE nodes.
+func (o NodePoolNodePoolCyclingDetailsOutput) CycleModes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v NodePoolNodePoolCyclingDetails) []string { return v.CycleModes }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) If cycling operation should be performed on the nodes in the node pool.
 func (o NodePoolNodePoolCyclingDetailsOutput) IsNodeCyclingEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NodePoolNodePoolCyclingDetails) *bool { return v.IsNodeCyclingEnabled }).(pulumi.BoolPtrOutput)
 }
@@ -6628,7 +6656,17 @@ func (o NodePoolNodePoolCyclingDetailsPtrOutput) Elem() NodePoolNodePoolCyclingD
 	}).(NodePoolNodePoolCyclingDetailsOutput)
 }
 
-// (Updatable) If nodes in the nodepool will be cycled to have new changes.
+// (Updatable) An ordered list of cycle modes that should be performed on the OKE nodes.
+func (o NodePoolNodePoolCyclingDetailsPtrOutput) CycleModes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *NodePoolNodePoolCyclingDetails) []string {
+		if v == nil {
+			return nil
+		}
+		return v.CycleModes
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) If cycling operation should be performed on the nodes in the node pool.
 func (o NodePoolNodePoolCyclingDetailsPtrOutput) IsNodeCyclingEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodePoolCyclingDetails) *bool {
 		if v == nil {
@@ -14642,6 +14680,8 @@ func (o GetNodePoolNodeErrorArrayOutput) Index(i pulumi.IntInput) GetNodePoolNod
 type GetNodePoolNodeEvictionNodePoolSetting struct {
 	// Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
 	EvictionGraceDuration string `pulumi:"evictionGraceDuration"`
+	// If the node action should be performed if not all the pods can be evicted in the grace period
+	IsForceActionAfterGraceDuration bool `pulumi:"isForceActionAfterGraceDuration"`
 	// If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
 	IsForceDeleteAfterGraceDuration bool `pulumi:"isForceDeleteAfterGraceDuration"`
 }
@@ -14660,6 +14700,8 @@ type GetNodePoolNodeEvictionNodePoolSettingInput interface {
 type GetNodePoolNodeEvictionNodePoolSettingArgs struct {
 	// Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
 	EvictionGraceDuration pulumi.StringInput `pulumi:"evictionGraceDuration"`
+	// If the node action should be performed if not all the pods can be evicted in the grace period
+	IsForceActionAfterGraceDuration pulumi.BoolInput `pulumi:"isForceActionAfterGraceDuration"`
 	// If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
 	IsForceDeleteAfterGraceDuration pulumi.BoolInput `pulumi:"isForceDeleteAfterGraceDuration"`
 }
@@ -14720,6 +14762,11 @@ func (o GetNodePoolNodeEvictionNodePoolSettingOutput) EvictionGraceDuration() pu
 	return o.ApplyT(func(v GetNodePoolNodeEvictionNodePoolSetting) string { return v.EvictionGraceDuration }).(pulumi.StringOutput)
 }
 
+// If the node action should be performed if not all the pods can be evicted in the grace period
+func (o GetNodePoolNodeEvictionNodePoolSettingOutput) IsForceActionAfterGraceDuration() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNodePoolNodeEvictionNodePoolSetting) bool { return v.IsForceActionAfterGraceDuration }).(pulumi.BoolOutput)
+}
+
 // If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
 func (o GetNodePoolNodeEvictionNodePoolSettingOutput) IsForceDeleteAfterGraceDuration() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNodePoolNodeEvictionNodePoolSetting) bool { return v.IsForceDeleteAfterGraceDuration }).(pulumi.BoolOutput)
@@ -14746,7 +14793,9 @@ func (o GetNodePoolNodeEvictionNodePoolSettingArrayOutput) Index(i pulumi.IntInp
 }
 
 type GetNodePoolNodePoolCyclingDetail struct {
-	// If nodes in the nodepool will be cycled to have new changes.
+	// An ordered list of cycle modes that should be performed on the OKE nodes.
+	CycleModes []string `pulumi:"cycleModes"`
+	// If cycling operation should be performed on the nodes in the node pool.
 	IsNodeCyclingEnabled bool `pulumi:"isNodeCyclingEnabled"`
 	// Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
 	MaximumSurge string `pulumi:"maximumSurge"`
@@ -14766,7 +14815,9 @@ type GetNodePoolNodePoolCyclingDetailInput interface {
 }
 
 type GetNodePoolNodePoolCyclingDetailArgs struct {
-	// If nodes in the nodepool will be cycled to have new changes.
+	// An ordered list of cycle modes that should be performed on the OKE nodes.
+	CycleModes pulumi.StringArrayInput `pulumi:"cycleModes"`
+	// If cycling operation should be performed on the nodes in the node pool.
 	IsNodeCyclingEnabled pulumi.BoolInput `pulumi:"isNodeCyclingEnabled"`
 	// Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
 	MaximumSurge pulumi.StringInput `pulumi:"maximumSurge"`
@@ -14825,7 +14876,12 @@ func (o GetNodePoolNodePoolCyclingDetailOutput) ToGetNodePoolNodePoolCyclingDeta
 	return o
 }
 
-// If nodes in the nodepool will be cycled to have new changes.
+// An ordered list of cycle modes that should be performed on the OKE nodes.
+func (o GetNodePoolNodePoolCyclingDetailOutput) CycleModes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNodePoolNodePoolCyclingDetail) []string { return v.CycleModes }).(pulumi.StringArrayOutput)
+}
+
+// If cycling operation should be performed on the nodes in the node pool.
 func (o GetNodePoolNodePoolCyclingDetailOutput) IsNodeCyclingEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNodePoolNodePoolCyclingDetail) bool { return v.IsNodeCyclingEnabled }).(pulumi.BoolOutput)
 }
@@ -16792,6 +16848,8 @@ func (o GetNodePoolsNodePoolNodeErrorArrayOutput) Index(i pulumi.IntInput) GetNo
 type GetNodePoolsNodePoolNodeEvictionNodePoolSetting struct {
 	// Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
 	EvictionGraceDuration string `pulumi:"evictionGraceDuration"`
+	// If the node action should be performed if not all the pods can be evicted in the grace period
+	IsForceActionAfterGraceDuration bool `pulumi:"isForceActionAfterGraceDuration"`
 	// If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
 	IsForceDeleteAfterGraceDuration bool `pulumi:"isForceDeleteAfterGraceDuration"`
 }
@@ -16810,6 +16868,8 @@ type GetNodePoolsNodePoolNodeEvictionNodePoolSettingInput interface {
 type GetNodePoolsNodePoolNodeEvictionNodePoolSettingArgs struct {
 	// Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
 	EvictionGraceDuration pulumi.StringInput `pulumi:"evictionGraceDuration"`
+	// If the node action should be performed if not all the pods can be evicted in the grace period
+	IsForceActionAfterGraceDuration pulumi.BoolInput `pulumi:"isForceActionAfterGraceDuration"`
 	// If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
 	IsForceDeleteAfterGraceDuration pulumi.BoolInput `pulumi:"isForceDeleteAfterGraceDuration"`
 }
@@ -16870,6 +16930,11 @@ func (o GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput) EvictionGraceDura
 	return o.ApplyT(func(v GetNodePoolsNodePoolNodeEvictionNodePoolSetting) string { return v.EvictionGraceDuration }).(pulumi.StringOutput)
 }
 
+// If the node action should be performed if not all the pods can be evicted in the grace period
+func (o GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput) IsForceActionAfterGraceDuration() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeEvictionNodePoolSetting) bool { return v.IsForceActionAfterGraceDuration }).(pulumi.BoolOutput)
+}
+
 // If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
 func (o GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput) IsForceDeleteAfterGraceDuration() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePoolNodeEvictionNodePoolSetting) bool { return v.IsForceDeleteAfterGraceDuration }).(pulumi.BoolOutput)
@@ -16896,7 +16961,9 @@ func (o GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutput) Index(i pulu
 }
 
 type GetNodePoolsNodePoolNodePoolCyclingDetail struct {
-	// If nodes in the nodepool will be cycled to have new changes.
+	// An ordered list of cycle modes that should be performed on the OKE nodes.
+	CycleModes []string `pulumi:"cycleModes"`
+	// If cycling operation should be performed on the nodes in the node pool.
 	IsNodeCyclingEnabled bool `pulumi:"isNodeCyclingEnabled"`
 	// Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
 	MaximumSurge string `pulumi:"maximumSurge"`
@@ -16916,7 +16983,9 @@ type GetNodePoolsNodePoolNodePoolCyclingDetailInput interface {
 }
 
 type GetNodePoolsNodePoolNodePoolCyclingDetailArgs struct {
-	// If nodes in the nodepool will be cycled to have new changes.
+	// An ordered list of cycle modes that should be performed on the OKE nodes.
+	CycleModes pulumi.StringArrayInput `pulumi:"cycleModes"`
+	// If cycling operation should be performed on the nodes in the node pool.
 	IsNodeCyclingEnabled pulumi.BoolInput `pulumi:"isNodeCyclingEnabled"`
 	// Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
 	MaximumSurge pulumi.StringInput `pulumi:"maximumSurge"`
@@ -16975,7 +17044,12 @@ func (o GetNodePoolsNodePoolNodePoolCyclingDetailOutput) ToGetNodePoolsNodePoolN
 	return o
 }
 
-// If nodes in the nodepool will be cycled to have new changes.
+// An ordered list of cycle modes that should be performed on the OKE nodes.
+func (o GetNodePoolsNodePoolNodePoolCyclingDetailOutput) CycleModes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodePoolCyclingDetail) []string { return v.CycleModes }).(pulumi.StringArrayOutput)
+}
+
+// If cycling operation should be performed on the nodes in the node pool.
 func (o GetNodePoolsNodePoolNodePoolCyclingDetailOutput) IsNodeCyclingEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePoolNodePoolCyclingDetail) bool { return v.IsNodeCyclingEnabled }).(pulumi.BoolOutput)
 }

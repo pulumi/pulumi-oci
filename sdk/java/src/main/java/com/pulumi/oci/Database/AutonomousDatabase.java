@@ -672,6 +672,20 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
+     * If omitted or set to false the provider will not delete scheduled_operations from the Autonomous Database. If set to true, provider will delete scheduled_operations from the Autonomous Database.
+     * 
+     */
+    @Export(name="enableDeleteScheduledOperations", refs={Boolean.class}, tree="[0]")
+    private Output</* @Nullable */ Boolean> enableDeleteScheduledOperations;
+
+    /**
+     * @return If omitted or set to false the provider will not delete scheduled_operations from the Autonomous Database. If set to true, provider will delete scheduled_operations from the Autonomous Database.
+     * 
+     */
+    public Output<Optional<Boolean>> enableDeleteScheduledOperations() {
+        return Codegen.optional(this.enableDeleteScheduledOperations);
+    }
+    /**
      * (Updatable) Details of the Autonomous Database encryption key.
      * 
      */

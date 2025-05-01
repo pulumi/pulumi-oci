@@ -72,6 +72,8 @@ type LookupScheduleResult struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// This is the resource OCID.
 	Id string `pulumi:"id"`
+	// This is the status of the last work request.
+	LastRunStatus string `pulumi:"lastRunStatus"`
 	// This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
 	RecurrenceDetails string `pulumi:"recurrenceDetails"`
 	// Type of recurrence of a schedule
@@ -166,6 +168,11 @@ func (o LookupScheduleResultOutput) FreeformTags() pulumi.StringMapOutput {
 // This is the resource OCID.
 func (o LookupScheduleResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScheduleResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// This is the status of the last work request.
+func (o LookupScheduleResultOutput) LastRunStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupScheduleResult) string { return v.LastRunStatus }).(pulumi.StringOutput)
 }
 
 // This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.

@@ -22,7 +22,7 @@ namespace Pulumi.Oci.ResourceScheduler.Outputs
         /// </summary>
         public readonly string TagKey;
         /// <summary>
-        /// This is the value of the defined tag.
+        /// This is the HTTP request header value.
         /// </summary>
         public readonly string Value;
 

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class GetClusterPlainArgs extends com.pulumi.resources.InvokeArgs {
@@ -28,10 +30,26 @@ public final class GetClusterPlainArgs extends com.pulumi.resources.InvokeArgs {
         return this.clusterId;
     }
 
+    /**
+     * Boolean value to determine if the OpenIdConnectAuth configuration file should be displayed for the provided cluster.
+     * 
+     */
+    @Import(name="shouldIncludeOidcConfigFile")
+    private @Nullable String shouldIncludeOidcConfigFile;
+
+    /**
+     * @return Boolean value to determine if the OpenIdConnectAuth configuration file should be displayed for the provided cluster.
+     * 
+     */
+    public Optional<String> shouldIncludeOidcConfigFile() {
+        return Optional.ofNullable(this.shouldIncludeOidcConfigFile);
+    }
+
     private GetClusterPlainArgs() {}
 
     private GetClusterPlainArgs(GetClusterPlainArgs $) {
         this.clusterId = $.clusterId;
+        this.shouldIncludeOidcConfigFile = $.shouldIncludeOidcConfigFile;
     }
 
     public static Builder builder() {
@@ -60,6 +78,17 @@ public final class GetClusterPlainArgs extends com.pulumi.resources.InvokeArgs {
          */
         public Builder clusterId(String clusterId) {
             $.clusterId = clusterId;
+            return this;
+        }
+
+        /**
+         * @param shouldIncludeOidcConfigFile Boolean value to determine if the OpenIdConnectAuth configuration file should be displayed for the provided cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shouldIncludeOidcConfigFile(@Nullable String shouldIncludeOidcConfigFile) {
+            $.shouldIncludeOidcConfigFile = shouldIncludeOidcConfigFile;
             return this;
         }
 

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
     public sealed class DrProtectionGroupMemberBlockVolumeOperation
     {
         /// <summary>
-        /// (Updatable) The details for creating a block volume attachment.
+        /// (Updatable) Deprecated. Use the 'CreateComputeInstanceNonMovableBlockVolumeAttachOperationDetails' definition instead of this. The details for creating a block volume attachment.
         /// </summary>
         public readonly Outputs.DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails? AttachmentDetails;
         /// <summary>

@@ -18,8 +18,13 @@ type ScheduleResource struct {
 	Id string `pulumi:"id"`
 	// (Updatable) This is additional information that helps to identity the resource for the schedule.
 	//
+	// <<<<<<< ours
 	// { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
 	Metadata map[string]string `pulumi:"metadata"`
+	// (Updatable) This is the user input parameters to use when acting on the resource.
+	//
+	// { "parameters": [ { "parameterType": "BODY", "value": { "ip": "192.168.44.44", "memory": "1024", "syncedFolders": [ { "hostPath": "data/", "guestPath": "/var/www", "type": "default" } ], "forwardedPorts": [] } }, { "parameterType": "PATH", "value": { "compartmentId": "ocid1.compartment.oc1..xxxxx", "instanceId": "ocid1.vcn.oc1..yyyy" } }, { "parameterType": "QUERY", "value": { "limit": "10", "tenantId": "ocid1.tenant.oc1..zzzz" } }, { "parameterType": "HEADER", "value": { "token": "xxxx" } } ] }
+	Parameters []ScheduleResourceParameter `pulumi:"parameters"`
 }
 
 // ScheduleResourceInput is an input type that accepts ScheduleResourceArgs and ScheduleResourceOutput values.
@@ -38,8 +43,13 @@ type ScheduleResourceArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// (Updatable) This is additional information that helps to identity the resource for the schedule.
 	//
+	// <<<<<<< ours
 	// { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
 	Metadata pulumi.StringMapInput `pulumi:"metadata"`
+	// (Updatable) This is the user input parameters to use when acting on the resource.
+	//
+	// { "parameters": [ { "parameterType": "BODY", "value": { "ip": "192.168.44.44", "memory": "1024", "syncedFolders": [ { "hostPath": "data/", "guestPath": "/var/www", "type": "default" } ], "forwardedPorts": [] } }, { "parameterType": "PATH", "value": { "compartmentId": "ocid1.compartment.oc1..xxxxx", "instanceId": "ocid1.vcn.oc1..yyyy" } }, { "parameterType": "QUERY", "value": { "limit": "10", "tenantId": "ocid1.tenant.oc1..zzzz" } }, { "parameterType": "HEADER", "value": { "token": "xxxx" } } ] }
+	Parameters ScheduleResourceParameterArrayInput `pulumi:"parameters"`
 }
 
 func (ScheduleResourceArgs) ElementType() reflect.Type {
@@ -100,9 +110,17 @@ func (o ScheduleResourceOutput) Id() pulumi.StringOutput {
 
 // (Updatable) This is additional information that helps to identity the resource for the schedule.
 //
+// <<<<<<< ours
 // { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
 func (o ScheduleResourceOutput) Metadata() pulumi.StringMapOutput {
 	return o.ApplyT(func(v ScheduleResource) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
+}
+
+// (Updatable) This is the user input parameters to use when acting on the resource.
+//
+// { "parameters": [ { "parameterType": "BODY", "value": { "ip": "192.168.44.44", "memory": "1024", "syncedFolders": [ { "hostPath": "data/", "guestPath": "/var/www", "type": "default" } ], "forwardedPorts": [] } }, { "parameterType": "PATH", "value": { "compartmentId": "ocid1.compartment.oc1..xxxxx", "instanceId": "ocid1.vcn.oc1..yyyy" } }, { "parameterType": "QUERY", "value": { "limit": "10", "tenantId": "ocid1.tenant.oc1..zzzz" } }, { "parameterType": "HEADER", "value": { "token": "xxxx" } } ] }
+func (o ScheduleResourceOutput) Parameters() ScheduleResourceParameterArrayOutput {
+	return o.ApplyT(func(v ScheduleResource) []ScheduleResourceParameter { return v.Parameters }).(ScheduleResourceParameterArrayOutput)
 }
 
 type ScheduleResourceArrayOutput struct{ *pulumi.OutputState }
@@ -367,11 +385,125 @@ func (o ScheduleResourceFilterValueArrayOutput) Index(i pulumi.IntInput) Schedul
 	}).(ScheduleResourceFilterValueOutput)
 }
 
+type ScheduleResourceParameter struct {
+	// (Updatable) This is the parameter type on which the input parameter is defined
+	ParameterType string `pulumi:"parameterType"`
+	// (Updatable) This is the HTTP request header value.
+	// ===
+	// { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
+	Value *string `pulumi:"value"`
+}
+
+// ScheduleResourceParameterInput is an input type that accepts ScheduleResourceParameterArgs and ScheduleResourceParameterOutput values.
+// You can construct a concrete instance of `ScheduleResourceParameterInput` via:
+//
+//	ScheduleResourceParameterArgs{...}
+type ScheduleResourceParameterInput interface {
+	pulumi.Input
+
+	ToScheduleResourceParameterOutput() ScheduleResourceParameterOutput
+	ToScheduleResourceParameterOutputWithContext(context.Context) ScheduleResourceParameterOutput
+}
+
+type ScheduleResourceParameterArgs struct {
+	// (Updatable) This is the parameter type on which the input parameter is defined
+	ParameterType pulumi.StringInput `pulumi:"parameterType"`
+	// (Updatable) This is the HTTP request header value.
+	// ===
+	// { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ScheduleResourceParameterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleResourceParameter)(nil)).Elem()
+}
+
+func (i ScheduleResourceParameterArgs) ToScheduleResourceParameterOutput() ScheduleResourceParameterOutput {
+	return i.ToScheduleResourceParameterOutputWithContext(context.Background())
+}
+
+func (i ScheduleResourceParameterArgs) ToScheduleResourceParameterOutputWithContext(ctx context.Context) ScheduleResourceParameterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleResourceParameterOutput)
+}
+
+// ScheduleResourceParameterArrayInput is an input type that accepts ScheduleResourceParameterArray and ScheduleResourceParameterArrayOutput values.
+// You can construct a concrete instance of `ScheduleResourceParameterArrayInput` via:
+//
+//	ScheduleResourceParameterArray{ ScheduleResourceParameterArgs{...} }
+type ScheduleResourceParameterArrayInput interface {
+	pulumi.Input
+
+	ToScheduleResourceParameterArrayOutput() ScheduleResourceParameterArrayOutput
+	ToScheduleResourceParameterArrayOutputWithContext(context.Context) ScheduleResourceParameterArrayOutput
+}
+
+type ScheduleResourceParameterArray []ScheduleResourceParameterInput
+
+func (ScheduleResourceParameterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ScheduleResourceParameter)(nil)).Elem()
+}
+
+func (i ScheduleResourceParameterArray) ToScheduleResourceParameterArrayOutput() ScheduleResourceParameterArrayOutput {
+	return i.ToScheduleResourceParameterArrayOutputWithContext(context.Background())
+}
+
+func (i ScheduleResourceParameterArray) ToScheduleResourceParameterArrayOutputWithContext(ctx context.Context) ScheduleResourceParameterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleResourceParameterArrayOutput)
+}
+
+type ScheduleResourceParameterOutput struct{ *pulumi.OutputState }
+
+func (ScheduleResourceParameterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleResourceParameter)(nil)).Elem()
+}
+
+func (o ScheduleResourceParameterOutput) ToScheduleResourceParameterOutput() ScheduleResourceParameterOutput {
+	return o
+}
+
+func (o ScheduleResourceParameterOutput) ToScheduleResourceParameterOutputWithContext(ctx context.Context) ScheduleResourceParameterOutput {
+	return o
+}
+
+// (Updatable) This is the parameter type on which the input parameter is defined
+func (o ScheduleResourceParameterOutput) ParameterType() pulumi.StringOutput {
+	return o.ApplyT(func(v ScheduleResourceParameter) string { return v.ParameterType }).(pulumi.StringOutput)
+}
+
+// (Updatable) This is the HTTP request header value.
+// ===
+// { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
+func (o ScheduleResourceParameterOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleResourceParameter) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ScheduleResourceParameterArrayOutput struct{ *pulumi.OutputState }
+
+func (ScheduleResourceParameterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ScheduleResourceParameter)(nil)).Elem()
+}
+
+func (o ScheduleResourceParameterArrayOutput) ToScheduleResourceParameterArrayOutput() ScheduleResourceParameterArrayOutput {
+	return o
+}
+
+func (o ScheduleResourceParameterArrayOutput) ToScheduleResourceParameterArrayOutputWithContext(ctx context.Context) ScheduleResourceParameterArrayOutput {
+	return o
+}
+
+func (o ScheduleResourceParameterArrayOutput) Index(i pulumi.IntInput) ScheduleResourceParameterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ScheduleResourceParameter {
+		return vs[0].([]ScheduleResourceParameter)[vs[1].(int)]
+	}).(ScheduleResourceParameterOutput)
+}
+
 type GetScheduleResource struct {
 	// This is the resource OCID.
 	Id string `pulumi:"id"`
 	// This is additional information that helps to identity the resource for the schedule.
 	Metadata map[string]string `pulumi:"metadata"`
+	// This is the user input parameters to use when acting on the resource.
+	Parameters []GetScheduleResourceParameter `pulumi:"parameters"`
 }
 
 // GetScheduleResourceInput is an input type that accepts GetScheduleResourceArgs and GetScheduleResourceOutput values.
@@ -390,6 +522,8 @@ type GetScheduleResourceArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// This is additional information that helps to identity the resource for the schedule.
 	Metadata pulumi.StringMapInput `pulumi:"metadata"`
+	// This is the user input parameters to use when acting on the resource.
+	Parameters GetScheduleResourceParameterArrayInput `pulumi:"parameters"`
 }
 
 func (GetScheduleResourceArgs) ElementType() reflect.Type {
@@ -453,6 +587,11 @@ func (o GetScheduleResourceOutput) Metadata() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetScheduleResource) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
+// This is the user input parameters to use when acting on the resource.
+func (o GetScheduleResourceOutput) Parameters() GetScheduleResourceParameterArrayOutput {
+	return o.ApplyT(func(v GetScheduleResource) []GetScheduleResourceParameter { return v.Parameters }).(GetScheduleResourceParameterArrayOutput)
+}
+
 type GetScheduleResourceArrayOutput struct{ *pulumi.OutputState }
 
 func (GetScheduleResourceArrayOutput) ElementType() reflect.Type {
@@ -480,7 +619,7 @@ type GetScheduleResourceFilter struct {
 	Condition string `pulumi:"condition"`
 	// This sets whether to include child compartments.
 	ShouldIncludeChildCompartments bool `pulumi:"shouldIncludeChildCompartments"`
-	// This is the value of the defined tag.
+	// This is the HTTP request header value.
 	Values []GetScheduleResourceFilterValue `pulumi:"values"`
 }
 
@@ -502,7 +641,7 @@ type GetScheduleResourceFilterArgs struct {
 	Condition pulumi.StringInput `pulumi:"condition"`
 	// This sets whether to include child compartments.
 	ShouldIncludeChildCompartments pulumi.BoolInput `pulumi:"shouldIncludeChildCompartments"`
-	// This is the value of the defined tag.
+	// This is the HTTP request header value.
 	Values GetScheduleResourceFilterValueArrayInput `pulumi:"values"`
 }
 
@@ -572,7 +711,7 @@ func (o GetScheduleResourceFilterOutput) ShouldIncludeChildCompartments() pulumi
 	return o.ApplyT(func(v GetScheduleResourceFilter) bool { return v.ShouldIncludeChildCompartments }).(pulumi.BoolOutput)
 }
 
-// This is the value of the defined tag.
+// This is the HTTP request header value.
 func (o GetScheduleResourceFilterOutput) Values() GetScheduleResourceFilterValueArrayOutput {
 	return o.ApplyT(func(v GetScheduleResourceFilter) []GetScheduleResourceFilterValue { return v.Values }).(GetScheduleResourceFilterValueArrayOutput)
 }
@@ -602,7 +741,7 @@ type GetScheduleResourceFilterValue struct {
 	Namespace string `pulumi:"namespace"`
 	// This is the key of the defined tag.
 	TagKey string `pulumi:"tagKey"`
-	// This is the value of the defined tag.
+	// This is the HTTP request header value.
 	Value string `pulumi:"value"`
 }
 
@@ -622,7 +761,7 @@ type GetScheduleResourceFilterValueArgs struct {
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// This is the key of the defined tag.
 	TagKey pulumi.StringInput `pulumi:"tagKey"`
-	// This is the value of the defined tag.
+	// This is the HTTP request header value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -687,7 +826,7 @@ func (o GetScheduleResourceFilterValueOutput) TagKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScheduleResourceFilterValue) string { return v.TagKey }).(pulumi.StringOutput)
 }
 
-// This is the value of the defined tag.
+// This is the HTTP request header value.
 func (o GetScheduleResourceFilterValueOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScheduleResourceFilterValue) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -710,6 +849,112 @@ func (o GetScheduleResourceFilterValueArrayOutput) Index(i pulumi.IntInput) GetS
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduleResourceFilterValue {
 		return vs[0].([]GetScheduleResourceFilterValue)[vs[1].(int)]
 	}).(GetScheduleResourceFilterValueOutput)
+}
+
+type GetScheduleResourceParameter struct {
+	// This is the parameter type on which the input parameter is defined
+	ParameterType string `pulumi:"parameterType"`
+	// This is the HTTP request header value.
+	Values []string `pulumi:"values"`
+}
+
+// GetScheduleResourceParameterInput is an input type that accepts GetScheduleResourceParameterArgs and GetScheduleResourceParameterOutput values.
+// You can construct a concrete instance of `GetScheduleResourceParameterInput` via:
+//
+//	GetScheduleResourceParameterArgs{...}
+type GetScheduleResourceParameterInput interface {
+	pulumi.Input
+
+	ToGetScheduleResourceParameterOutput() GetScheduleResourceParameterOutput
+	ToGetScheduleResourceParameterOutputWithContext(context.Context) GetScheduleResourceParameterOutput
+}
+
+type GetScheduleResourceParameterArgs struct {
+	// This is the parameter type on which the input parameter is defined
+	ParameterType pulumi.StringInput `pulumi:"parameterType"`
+	// This is the HTTP request header value.
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetScheduleResourceParameterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleResourceParameter)(nil)).Elem()
+}
+
+func (i GetScheduleResourceParameterArgs) ToGetScheduleResourceParameterOutput() GetScheduleResourceParameterOutput {
+	return i.ToGetScheduleResourceParameterOutputWithContext(context.Background())
+}
+
+func (i GetScheduleResourceParameterArgs) ToGetScheduleResourceParameterOutputWithContext(ctx context.Context) GetScheduleResourceParameterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleResourceParameterOutput)
+}
+
+// GetScheduleResourceParameterArrayInput is an input type that accepts GetScheduleResourceParameterArray and GetScheduleResourceParameterArrayOutput values.
+// You can construct a concrete instance of `GetScheduleResourceParameterArrayInput` via:
+//
+//	GetScheduleResourceParameterArray{ GetScheduleResourceParameterArgs{...} }
+type GetScheduleResourceParameterArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduleResourceParameterArrayOutput() GetScheduleResourceParameterArrayOutput
+	ToGetScheduleResourceParameterArrayOutputWithContext(context.Context) GetScheduleResourceParameterArrayOutput
+}
+
+type GetScheduleResourceParameterArray []GetScheduleResourceParameterInput
+
+func (GetScheduleResourceParameterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleResourceParameter)(nil)).Elem()
+}
+
+func (i GetScheduleResourceParameterArray) ToGetScheduleResourceParameterArrayOutput() GetScheduleResourceParameterArrayOutput {
+	return i.ToGetScheduleResourceParameterArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduleResourceParameterArray) ToGetScheduleResourceParameterArrayOutputWithContext(ctx context.Context) GetScheduleResourceParameterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleResourceParameterArrayOutput)
+}
+
+type GetScheduleResourceParameterOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleResourceParameterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleResourceParameter)(nil)).Elem()
+}
+
+func (o GetScheduleResourceParameterOutput) ToGetScheduleResourceParameterOutput() GetScheduleResourceParameterOutput {
+	return o
+}
+
+func (o GetScheduleResourceParameterOutput) ToGetScheduleResourceParameterOutputWithContext(ctx context.Context) GetScheduleResourceParameterOutput {
+	return o
+}
+
+// This is the parameter type on which the input parameter is defined
+func (o GetScheduleResourceParameterOutput) ParameterType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleResourceParameter) string { return v.ParameterType }).(pulumi.StringOutput)
+}
+
+// This is the HTTP request header value.
+func (o GetScheduleResourceParameterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetScheduleResourceParameter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetScheduleResourceParameterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleResourceParameterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleResourceParameter)(nil)).Elem()
+}
+
+func (o GetScheduleResourceParameterArrayOutput) ToGetScheduleResourceParameterArrayOutput() GetScheduleResourceParameterArrayOutput {
+	return o
+}
+
+func (o GetScheduleResourceParameterArrayOutput) ToGetScheduleResourceParameterArrayOutputWithContext(ctx context.Context) GetScheduleResourceParameterArrayOutput {
+	return o
+}
+
+func (o GetScheduleResourceParameterArrayOutput) Index(i pulumi.IntInput) GetScheduleResourceParameterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduleResourceParameter {
+		return vs[0].([]GetScheduleResourceParameter)[vs[1].(int)]
+	}).(GetScheduleResourceParameterOutput)
 }
 
 type GetSchedulesFilter struct {
@@ -927,6 +1172,8 @@ type GetSchedulesScheduleCollectionItem struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// This is the resource OCID.
 	Id string `pulumi:"id"`
+	// This is the status of the last work request.
+	LastRunStatus string `pulumi:"lastRunStatus"`
 	// This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
 	RecurrenceDetails string `pulumi:"recurrenceDetails"`
 	// Type of recurrence of a schedule
@@ -979,6 +1226,8 @@ type GetSchedulesScheduleCollectionItemArgs struct {
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// This is the resource OCID.
 	Id pulumi.StringInput `pulumi:"id"`
+	// This is the status of the last work request.
+	LastRunStatus pulumi.StringInput `pulumi:"lastRunStatus"`
 	// This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
 	RecurrenceDetails pulumi.StringInput `pulumi:"recurrenceDetails"`
 	// Type of recurrence of a schedule
@@ -1091,6 +1340,11 @@ func (o GetSchedulesScheduleCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// This is the status of the last work request.
+func (o GetSchedulesScheduleCollectionItemOutput) LastRunStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.LastRunStatus }).(pulumi.StringOutput)
+}
+
 // This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
 func (o GetSchedulesScheduleCollectionItemOutput) RecurrenceDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.RecurrenceDetails }).(pulumi.StringOutput)
@@ -1180,6 +1434,8 @@ type GetSchedulesScheduleCollectionItemResource struct {
 	Id string `pulumi:"id"`
 	// This is additional information that helps to identity the resource for the schedule.
 	Metadata map[string]string `pulumi:"metadata"`
+	// This is the user input parameters to use when acting on the resource.
+	Parameters []GetSchedulesScheduleCollectionItemResourceParameter `pulumi:"parameters"`
 }
 
 // GetSchedulesScheduleCollectionItemResourceInput is an input type that accepts GetSchedulesScheduleCollectionItemResourceArgs and GetSchedulesScheduleCollectionItemResourceOutput values.
@@ -1198,6 +1454,8 @@ type GetSchedulesScheduleCollectionItemResourceArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// This is additional information that helps to identity the resource for the schedule.
 	Metadata pulumi.StringMapInput `pulumi:"metadata"`
+	// This is the user input parameters to use when acting on the resource.
+	Parameters GetSchedulesScheduleCollectionItemResourceParameterArrayInput `pulumi:"parameters"`
 }
 
 func (GetSchedulesScheduleCollectionItemResourceArgs) ElementType() reflect.Type {
@@ -1261,6 +1519,13 @@ func (o GetSchedulesScheduleCollectionItemResourceOutput) Metadata() pulumi.Stri
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemResource) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
+// This is the user input parameters to use when acting on the resource.
+func (o GetSchedulesScheduleCollectionItemResourceOutput) Parameters() GetSchedulesScheduleCollectionItemResourceParameterArrayOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemResource) []GetSchedulesScheduleCollectionItemResourceParameter {
+		return v.Parameters
+	}).(GetSchedulesScheduleCollectionItemResourceParameterArrayOutput)
+}
+
 type GetSchedulesScheduleCollectionItemResourceArrayOutput struct{ *pulumi.OutputState }
 
 func (GetSchedulesScheduleCollectionItemResourceArrayOutput) ElementType() reflect.Type {
@@ -1288,7 +1553,7 @@ type GetSchedulesScheduleCollectionItemResourceFilter struct {
 	Condition string `pulumi:"condition"`
 	// This sets whether to include child compartments.
 	ShouldIncludeChildCompartments bool `pulumi:"shouldIncludeChildCompartments"`
-	// This is the value of the defined tag.
+	// This is the HTTP request header value.
 	Values []GetSchedulesScheduleCollectionItemResourceFilterValue `pulumi:"values"`
 }
 
@@ -1310,7 +1575,7 @@ type GetSchedulesScheduleCollectionItemResourceFilterArgs struct {
 	Condition pulumi.StringInput `pulumi:"condition"`
 	// This sets whether to include child compartments.
 	ShouldIncludeChildCompartments pulumi.BoolInput `pulumi:"shouldIncludeChildCompartments"`
-	// This is the value of the defined tag.
+	// This is the HTTP request header value.
 	Values GetSchedulesScheduleCollectionItemResourceFilterValueArrayInput `pulumi:"values"`
 }
 
@@ -1380,7 +1645,7 @@ func (o GetSchedulesScheduleCollectionItemResourceFilterOutput) ShouldIncludeChi
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemResourceFilter) bool { return v.ShouldIncludeChildCompartments }).(pulumi.BoolOutput)
 }
 
-// This is the value of the defined tag.
+// This is the HTTP request header value.
 func (o GetSchedulesScheduleCollectionItemResourceFilterOutput) Values() GetSchedulesScheduleCollectionItemResourceFilterValueArrayOutput {
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemResourceFilter) []GetSchedulesScheduleCollectionItemResourceFilterValue {
 		return v.Values
@@ -1412,7 +1677,7 @@ type GetSchedulesScheduleCollectionItemResourceFilterValue struct {
 	Namespace string `pulumi:"namespace"`
 	// This is the key of the defined tag.
 	TagKey string `pulumi:"tagKey"`
-	// This is the value of the defined tag.
+	// This is the HTTP request header value.
 	Value string `pulumi:"value"`
 }
 
@@ -1432,7 +1697,7 @@ type GetSchedulesScheduleCollectionItemResourceFilterValueArgs struct {
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// This is the key of the defined tag.
 	TagKey pulumi.StringInput `pulumi:"tagKey"`
-	// This is the value of the defined tag.
+	// This is the HTTP request header value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -1497,7 +1762,7 @@ func (o GetSchedulesScheduleCollectionItemResourceFilterValueOutput) TagKey() pu
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemResourceFilterValue) string { return v.TagKey }).(pulumi.StringOutput)
 }
 
-// This is the value of the defined tag.
+// This is the HTTP request header value.
 func (o GetSchedulesScheduleCollectionItemResourceFilterValueOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemResourceFilterValue) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -1522,6 +1787,112 @@ func (o GetSchedulesScheduleCollectionItemResourceFilterValueArrayOutput) Index(
 	}).(GetSchedulesScheduleCollectionItemResourceFilterValueOutput)
 }
 
+type GetSchedulesScheduleCollectionItemResourceParameter struct {
+	// This is the parameter type on which the input parameter is defined
+	ParameterType string `pulumi:"parameterType"`
+	// This is the HTTP request header value.
+	Values []string `pulumi:"values"`
+}
+
+// GetSchedulesScheduleCollectionItemResourceParameterInput is an input type that accepts GetSchedulesScheduleCollectionItemResourceParameterArgs and GetSchedulesScheduleCollectionItemResourceParameterOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleCollectionItemResourceParameterInput` via:
+//
+//	GetSchedulesScheduleCollectionItemResourceParameterArgs{...}
+type GetSchedulesScheduleCollectionItemResourceParameterInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleCollectionItemResourceParameterOutput() GetSchedulesScheduleCollectionItemResourceParameterOutput
+	ToGetSchedulesScheduleCollectionItemResourceParameterOutputWithContext(context.Context) GetSchedulesScheduleCollectionItemResourceParameterOutput
+}
+
+type GetSchedulesScheduleCollectionItemResourceParameterArgs struct {
+	// This is the parameter type on which the input parameter is defined
+	ParameterType pulumi.StringInput `pulumi:"parameterType"`
+	// This is the HTTP request header value.
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSchedulesScheduleCollectionItemResourceParameterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleCollectionItemResourceParameter)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleCollectionItemResourceParameterArgs) ToGetSchedulesScheduleCollectionItemResourceParameterOutput() GetSchedulesScheduleCollectionItemResourceParameterOutput {
+	return i.ToGetSchedulesScheduleCollectionItemResourceParameterOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleCollectionItemResourceParameterArgs) ToGetSchedulesScheduleCollectionItemResourceParameterOutputWithContext(ctx context.Context) GetSchedulesScheduleCollectionItemResourceParameterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleCollectionItemResourceParameterOutput)
+}
+
+// GetSchedulesScheduleCollectionItemResourceParameterArrayInput is an input type that accepts GetSchedulesScheduleCollectionItemResourceParameterArray and GetSchedulesScheduleCollectionItemResourceParameterArrayOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleCollectionItemResourceParameterArrayInput` via:
+//
+//	GetSchedulesScheduleCollectionItemResourceParameterArray{ GetSchedulesScheduleCollectionItemResourceParameterArgs{...} }
+type GetSchedulesScheduleCollectionItemResourceParameterArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleCollectionItemResourceParameterArrayOutput() GetSchedulesScheduleCollectionItemResourceParameterArrayOutput
+	ToGetSchedulesScheduleCollectionItemResourceParameterArrayOutputWithContext(context.Context) GetSchedulesScheduleCollectionItemResourceParameterArrayOutput
+}
+
+type GetSchedulesScheduleCollectionItemResourceParameterArray []GetSchedulesScheduleCollectionItemResourceParameterInput
+
+func (GetSchedulesScheduleCollectionItemResourceParameterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleCollectionItemResourceParameter)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleCollectionItemResourceParameterArray) ToGetSchedulesScheduleCollectionItemResourceParameterArrayOutput() GetSchedulesScheduleCollectionItemResourceParameterArrayOutput {
+	return i.ToGetSchedulesScheduleCollectionItemResourceParameterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleCollectionItemResourceParameterArray) ToGetSchedulesScheduleCollectionItemResourceParameterArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleCollectionItemResourceParameterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleCollectionItemResourceParameterArrayOutput)
+}
+
+type GetSchedulesScheduleCollectionItemResourceParameterOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleCollectionItemResourceParameterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleCollectionItemResourceParameter)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleCollectionItemResourceParameterOutput) ToGetSchedulesScheduleCollectionItemResourceParameterOutput() GetSchedulesScheduleCollectionItemResourceParameterOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleCollectionItemResourceParameterOutput) ToGetSchedulesScheduleCollectionItemResourceParameterOutputWithContext(ctx context.Context) GetSchedulesScheduleCollectionItemResourceParameterOutput {
+	return o
+}
+
+// This is the parameter type on which the input parameter is defined
+func (o GetSchedulesScheduleCollectionItemResourceParameterOutput) ParameterType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemResourceParameter) string { return v.ParameterType }).(pulumi.StringOutput)
+}
+
+// This is the HTTP request header value.
+func (o GetSchedulesScheduleCollectionItemResourceParameterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemResourceParameter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSchedulesScheduleCollectionItemResourceParameterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleCollectionItemResourceParameterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleCollectionItemResourceParameter)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleCollectionItemResourceParameterArrayOutput) ToGetSchedulesScheduleCollectionItemResourceParameterArrayOutput() GetSchedulesScheduleCollectionItemResourceParameterArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleCollectionItemResourceParameterArrayOutput) ToGetSchedulesScheduleCollectionItemResourceParameterArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleCollectionItemResourceParameterArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleCollectionItemResourceParameterArrayOutput) Index(i pulumi.IntInput) GetSchedulesScheduleCollectionItemResourceParameterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulesScheduleCollectionItemResourceParameter {
+		return vs[0].([]GetSchedulesScheduleCollectionItemResourceParameter)[vs[1].(int)]
+	}).(GetSchedulesScheduleCollectionItemResourceParameterOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleResourceInput)(nil)).Elem(), ScheduleResourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleResourceArrayInput)(nil)).Elem(), ScheduleResourceArray{})
@@ -1529,12 +1900,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleResourceFilterArrayInput)(nil)).Elem(), ScheduleResourceFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleResourceFilterValueInput)(nil)).Elem(), ScheduleResourceFilterValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleResourceFilterValueArrayInput)(nil)).Elem(), ScheduleResourceFilterValueArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleResourceParameterInput)(nil)).Elem(), ScheduleResourceParameterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleResourceParameterArrayInput)(nil)).Elem(), ScheduleResourceParameterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleResourceInput)(nil)).Elem(), GetScheduleResourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleResourceArrayInput)(nil)).Elem(), GetScheduleResourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleResourceFilterInput)(nil)).Elem(), GetScheduleResourceFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleResourceFilterArrayInput)(nil)).Elem(), GetScheduleResourceFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleResourceFilterValueInput)(nil)).Elem(), GetScheduleResourceFilterValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleResourceFilterValueArrayInput)(nil)).Elem(), GetScheduleResourceFilterValueArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleResourceParameterInput)(nil)).Elem(), GetScheduleResourceParameterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleResourceParameterArrayInput)(nil)).Elem(), GetScheduleResourceParameterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesFilterInput)(nil)).Elem(), GetSchedulesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesFilterArrayInput)(nil)).Elem(), GetSchedulesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleCollectionInput)(nil)).Elem(), GetSchedulesScheduleCollectionArgs{})
@@ -1547,18 +1922,24 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleCollectionItemResourceFilterArrayInput)(nil)).Elem(), GetSchedulesScheduleCollectionItemResourceFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleCollectionItemResourceFilterValueInput)(nil)).Elem(), GetSchedulesScheduleCollectionItemResourceFilterValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleCollectionItemResourceFilterValueArrayInput)(nil)).Elem(), GetSchedulesScheduleCollectionItemResourceFilterValueArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleCollectionItemResourceParameterInput)(nil)).Elem(), GetSchedulesScheduleCollectionItemResourceParameterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleCollectionItemResourceParameterArrayInput)(nil)).Elem(), GetSchedulesScheduleCollectionItemResourceParameterArray{})
 	pulumi.RegisterOutputType(ScheduleResourceOutput{})
 	pulumi.RegisterOutputType(ScheduleResourceArrayOutput{})
 	pulumi.RegisterOutputType(ScheduleResourceFilterOutput{})
 	pulumi.RegisterOutputType(ScheduleResourceFilterArrayOutput{})
 	pulumi.RegisterOutputType(ScheduleResourceFilterValueOutput{})
 	pulumi.RegisterOutputType(ScheduleResourceFilterValueArrayOutput{})
+	pulumi.RegisterOutputType(ScheduleResourceParameterOutput{})
+	pulumi.RegisterOutputType(ScheduleResourceParameterArrayOutput{})
 	pulumi.RegisterOutputType(GetScheduleResourceOutput{})
 	pulumi.RegisterOutputType(GetScheduleResourceArrayOutput{})
 	pulumi.RegisterOutputType(GetScheduleResourceFilterOutput{})
 	pulumi.RegisterOutputType(GetScheduleResourceFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetScheduleResourceFilterValueOutput{})
 	pulumi.RegisterOutputType(GetScheduleResourceFilterValueArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduleResourceParameterOutput{})
+	pulumi.RegisterOutputType(GetScheduleResourceParameterArrayOutput{})
 	pulumi.RegisterOutputType(GetSchedulesFilterOutput{})
 	pulumi.RegisterOutputType(GetSchedulesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetSchedulesScheduleCollectionOutput{})
@@ -1571,4 +1952,6 @@ func init() {
 	pulumi.RegisterOutputType(GetSchedulesScheduleCollectionItemResourceFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetSchedulesScheduleCollectionItemResourceFilterValueOutput{})
 	pulumi.RegisterOutputType(GetSchedulesScheduleCollectionItemResourceFilterValueArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleCollectionItemResourceParameterOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleCollectionItemResourceParameterArrayOutput{})
 }

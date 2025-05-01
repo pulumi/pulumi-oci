@@ -20,31 +20,41 @@ __all__ = [
     'ScheduleResource',
     'ScheduleResourceFilter',
     'ScheduleResourceFilterValue',
+    'ScheduleResourceParameter',
     'GetScheduleResourceResult',
     'GetScheduleResourceFilterResult',
     'GetScheduleResourceFilterValueResult',
+    'GetScheduleResourceParameterResult',
     'GetSchedulesFilterResult',
     'GetSchedulesScheduleCollectionResult',
     'GetSchedulesScheduleCollectionItemResult',
     'GetSchedulesScheduleCollectionItemResourceResult',
     'GetSchedulesScheduleCollectionItemResourceFilterResult',
     'GetSchedulesScheduleCollectionItemResourceFilterValueResult',
+    'GetSchedulesScheduleCollectionItemResourceParameterResult',
 ]
 
 @pulumi.output_type
 class ScheduleResource(dict):
     def __init__(__self__, *,
                  id: builtins.str,
-                 metadata: Optional[Mapping[str, builtins.str]] = None):
+                 metadata: Optional[Mapping[str, builtins.str]] = None,
+                 parameters: Optional[Sequence['outputs.ScheduleResourceParameter']] = None):
         """
         :param builtins.str id: (Updatable) This is the resource OCID.
         :param Mapping[str, builtins.str] metadata: (Updatable) This is additional information that helps to identity the resource for the schedule.
                
+               <<<<<<< ours
                { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
+        :param Sequence['ScheduleResourceParameterArgs'] parameters: (Updatable) This is the user input parameters to use when acting on the resource.
+               
+               { "parameters": [ { "parameterType": "BODY", "value": { "ip": "192.168.44.44", "memory": "1024", "synced_folders": [ { "host_path": "data/", "guest_path": "/var/www", "type": "default" } ], "forwarded_ports": [] } }, { "parameterType": "PATH", "value": { "compartmentId": "ocid1.compartment.oc1..xxxxx", "instanceId": "ocid1.vcn.oc1..yyyy" } }, { "parameterType": "QUERY", "value": { "limit": "10", "tenantId": "ocid1.tenant.oc1..zzzz" } }, { "parameterType": "HEADER", "value": { "token": "xxxx" } } ] }
         """
         pulumi.set(__self__, "id", id)
         if metadata is not None:
             pulumi.set(__self__, "metadata", metadata)
+        if parameters is not None:
+            pulumi.set(__self__, "parameters", parameters)
 
     @property
     @pulumi.getter
@@ -60,9 +70,20 @@ class ScheduleResource(dict):
         """
         (Updatable) This is additional information that helps to identity the resource for the schedule.
 
+        <<<<<<< ours
         { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
         """
         return pulumi.get(self, "metadata")
+
+    @property
+    @pulumi.getter
+    def parameters(self) -> Optional[Sequence['outputs.ScheduleResourceParameter']]:
+        """
+        (Updatable) This is the user input parameters to use when acting on the resource.
+
+        { "parameters": [ { "parameterType": "BODY", "value": { "ip": "192.168.44.44", "memory": "1024", "synced_folders": [ { "host_path": "data/", "guest_path": "/var/www", "type": "default" } ], "forwarded_ports": [] } }, { "parameterType": "PATH", "value": { "compartmentId": "ocid1.compartment.oc1..xxxxx", "instanceId": "ocid1.vcn.oc1..yyyy" } }, { "parameterType": "QUERY", "value": { "limit": "10", "tenantId": "ocid1.tenant.oc1..zzzz" } }, { "parameterType": "HEADER", "value": { "token": "xxxx" } } ] }
+        """
+        return pulumi.get(self, "parameters")
 
 
 @pulumi.output_type
@@ -199,16 +220,70 @@ class ScheduleResourceFilterValue(dict):
 
 
 @pulumi.output_type
+class ScheduleResourceParameter(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "parameterType":
+            suggest = "parameter_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ScheduleResourceParameter. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ScheduleResourceParameter.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ScheduleResourceParameter.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 parameter_type: builtins.str,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str parameter_type: (Updatable) This is the parameter type on which the input parameter is defined
+        :param builtins.str value: (Updatable) This is the HTTP request header value.
+               =======
+               { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
+        """
+        pulumi.set(__self__, "parameter_type", parameter_type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter(name="parameterType")
+    def parameter_type(self) -> builtins.str:
+        """
+        (Updatable) This is the parameter type on which the input parameter is defined
+        """
+        return pulumi.get(self, "parameter_type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        (Updatable) This is the HTTP request header value.
+        =======
+        { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
 class GetScheduleResourceResult(dict):
     def __init__(__self__, *,
                  id: builtins.str,
-                 metadata: Mapping[str, builtins.str]):
+                 metadata: Mapping[str, builtins.str],
+                 parameters: Sequence['outputs.GetScheduleResourceParameterResult']):
         """
         :param builtins.str id: This is the resource OCID.
         :param Mapping[str, builtins.str] metadata: This is additional information that helps to identity the resource for the schedule.
+        :param Sequence['GetScheduleResourceParameterArgs'] parameters: This is the user input parameters to use when acting on the resource.
         """
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "metadata", metadata)
+        pulumi.set(__self__, "parameters", parameters)
 
     @property
     @pulumi.getter
@@ -226,6 +301,14 @@ class GetScheduleResourceResult(dict):
         """
         return pulumi.get(self, "metadata")
 
+    @property
+    @pulumi.getter
+    def parameters(self) -> Sequence['outputs.GetScheduleResourceParameterResult']:
+        """
+        This is the user input parameters to use when acting on the resource.
+        """
+        return pulumi.get(self, "parameters")
+
 
 @pulumi.output_type
 class GetScheduleResourceFilterResult(dict):
@@ -238,7 +321,7 @@ class GetScheduleResourceFilterResult(dict):
         :param builtins.str attribute: This is the resource attribute on which the threshold is defined.
         :param builtins.str condition: This is the condition for the filter in comparison to its creation time.
         :param builtins.bool should_include_child_compartments: This sets whether to include child compartments.
-        :param Sequence['GetScheduleResourceFilterValueArgs'] values: This is the value of the defined tag.
+        :param Sequence['GetScheduleResourceFilterValueArgs'] values: This is the HTTP request header value.
         """
         pulumi.set(__self__, "attribute", attribute)
         pulumi.set(__self__, "condition", condition)
@@ -273,7 +356,7 @@ class GetScheduleResourceFilterResult(dict):
     @pulumi.getter
     def values(self) -> Sequence['outputs.GetScheduleResourceFilterValueResult']:
         """
-        This is the value of the defined tag.
+        This is the HTTP request header value.
         """
         return pulumi.get(self, "values")
 
@@ -287,7 +370,7 @@ class GetScheduleResourceFilterValueResult(dict):
         """
         :param builtins.str namespace: This is the namespace of the defined tag.
         :param builtins.str tag_key: This is the key of the defined tag.
-        :param builtins.str value: This is the value of the defined tag.
+        :param builtins.str value: This is the HTTP request header value.
         """
         pulumi.set(__self__, "namespace", namespace)
         pulumi.set(__self__, "tag_key", tag_key)
@@ -313,9 +396,38 @@ class GetScheduleResourceFilterValueResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        This is the value of the defined tag.
+        This is the HTTP request header value.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetScheduleResourceParameterResult(dict):
+    def __init__(__self__, *,
+                 parameter_type: builtins.str,
+                 values: Sequence[builtins.str]):
+        """
+        :param builtins.str parameter_type: This is the parameter type on which the input parameter is defined
+        :param Sequence[builtins.str] values: This is the HTTP request header value.
+        """
+        pulumi.set(__self__, "parameter_type", parameter_type)
+        pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter(name="parameterType")
+    def parameter_type(self) -> builtins.str:
+        """
+        This is the parameter type on which the input parameter is defined
+        """
+        return pulumi.get(self, "parameter_type")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        """
+        This is the HTTP request header value.
+        """
+        return pulumi.get(self, "values")
 
 
 @pulumi.output_type
@@ -367,6 +479,7 @@ class GetSchedulesScheduleCollectionItemResult(dict):
                  display_name: builtins.str,
                  freeform_tags: Mapping[str, builtins.str],
                  id: builtins.str,
+                 last_run_status: builtins.str,
                  recurrence_details: builtins.str,
                  recurrence_type: builtins.str,
                  resource_filters: Sequence['outputs.GetSchedulesScheduleCollectionItemResourceFilterResult'],
@@ -387,6 +500,7 @@ class GetSchedulesScheduleCollectionItemResult(dict):
         :param builtins.str display_name: This is a filter to return only resources that match the given display name exactly.
         :param Mapping[str, builtins.str] freeform_tags: These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param builtins.str id: This is the resource OCID.
+        :param builtins.str last_run_status: This is the status of the last work request.
         :param builtins.str recurrence_details: This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
         :param builtins.str recurrence_type: Type of recurrence of a schedule
         :param Sequence['GetSchedulesScheduleCollectionItemResourceFilterArgs'] resource_filters: This is a list of resources filters.  The schedule will be applied to resources matching all of them.
@@ -407,6 +521,7 @@ class GetSchedulesScheduleCollectionItemResult(dict):
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "last_run_status", last_run_status)
         pulumi.set(__self__, "recurrence_details", recurrence_details)
         pulumi.set(__self__, "recurrence_type", recurrence_type)
         pulumi.set(__self__, "resource_filters", resource_filters)
@@ -475,6 +590,14 @@ class GetSchedulesScheduleCollectionItemResult(dict):
         This is the resource OCID.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lastRunStatus")
+    def last_run_status(self) -> builtins.str:
+        """
+        This is the status of the last work request.
+        """
+        return pulumi.get(self, "last_run_status")
 
     @property
     @pulumi.getter(name="recurrenceDetails")
@@ -577,13 +700,16 @@ class GetSchedulesScheduleCollectionItemResult(dict):
 class GetSchedulesScheduleCollectionItemResourceResult(dict):
     def __init__(__self__, *,
                  id: builtins.str,
-                 metadata: Mapping[str, builtins.str]):
+                 metadata: Mapping[str, builtins.str],
+                 parameters: Sequence['outputs.GetSchedulesScheduleCollectionItemResourceParameterResult']):
         """
         :param builtins.str id: This is the resource OCID.
         :param Mapping[str, builtins.str] metadata: This is additional information that helps to identity the resource for the schedule.
+        :param Sequence['GetSchedulesScheduleCollectionItemResourceParameterArgs'] parameters: This is the user input parameters to use when acting on the resource.
         """
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "metadata", metadata)
+        pulumi.set(__self__, "parameters", parameters)
 
     @property
     @pulumi.getter
@@ -601,6 +727,14 @@ class GetSchedulesScheduleCollectionItemResourceResult(dict):
         """
         return pulumi.get(self, "metadata")
 
+    @property
+    @pulumi.getter
+    def parameters(self) -> Sequence['outputs.GetSchedulesScheduleCollectionItemResourceParameterResult']:
+        """
+        This is the user input parameters to use when acting on the resource.
+        """
+        return pulumi.get(self, "parameters")
+
 
 @pulumi.output_type
 class GetSchedulesScheduleCollectionItemResourceFilterResult(dict):
@@ -613,7 +747,7 @@ class GetSchedulesScheduleCollectionItemResourceFilterResult(dict):
         :param builtins.str attribute: This is the resource attribute on which the threshold is defined.
         :param builtins.str condition: This is the condition for the filter in comparison to its creation time.
         :param builtins.bool should_include_child_compartments: This sets whether to include child compartments.
-        :param Sequence['GetSchedulesScheduleCollectionItemResourceFilterValueArgs'] values: This is the value of the defined tag.
+        :param Sequence['GetSchedulesScheduleCollectionItemResourceFilterValueArgs'] values: This is the HTTP request header value.
         """
         pulumi.set(__self__, "attribute", attribute)
         pulumi.set(__self__, "condition", condition)
@@ -648,7 +782,7 @@ class GetSchedulesScheduleCollectionItemResourceFilterResult(dict):
     @pulumi.getter
     def values(self) -> Sequence['outputs.GetSchedulesScheduleCollectionItemResourceFilterValueResult']:
         """
-        This is the value of the defined tag.
+        This is the HTTP request header value.
         """
         return pulumi.get(self, "values")
 
@@ -662,7 +796,7 @@ class GetSchedulesScheduleCollectionItemResourceFilterValueResult(dict):
         """
         :param builtins.str namespace: This is the namespace of the defined tag.
         :param builtins.str tag_key: This is the key of the defined tag.
-        :param builtins.str value: This is the value of the defined tag.
+        :param builtins.str value: This is the HTTP request header value.
         """
         pulumi.set(__self__, "namespace", namespace)
         pulumi.set(__self__, "tag_key", tag_key)
@@ -688,8 +822,37 @@ class GetSchedulesScheduleCollectionItemResourceFilterValueResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        This is the value of the defined tag.
+        This is the HTTP request header value.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetSchedulesScheduleCollectionItemResourceParameterResult(dict):
+    def __init__(__self__, *,
+                 parameter_type: builtins.str,
+                 values: Sequence[builtins.str]):
+        """
+        :param builtins.str parameter_type: This is the parameter type on which the input parameter is defined
+        :param Sequence[builtins.str] values: This is the HTTP request header value.
+        """
+        pulumi.set(__self__, "parameter_type", parameter_type)
+        pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter(name="parameterType")
+    def parameter_type(self) -> builtins.str:
+        """
+        This is the parameter type on which the input parameter is defined
+        """
+        return pulumi.get(self, "parameter_type")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        """
+        This is the HTTP request header value.
+        """
+        return pulumi.get(self, "values")
 
 

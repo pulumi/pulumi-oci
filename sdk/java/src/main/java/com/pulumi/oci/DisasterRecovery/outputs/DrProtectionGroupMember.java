@@ -8,12 +8,16 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DisasterRecovery.outputs.DrProtectionGroupMemberBackendSetMapping;
 import com.pulumi.oci.DisasterRecovery.outputs.DrProtectionGroupMemberBackupConfig;
 import com.pulumi.oci.DisasterRecovery.outputs.DrProtectionGroupMemberBackupLocation;
+import com.pulumi.oci.DisasterRecovery.outputs.DrProtectionGroupMemberBlockVolumeAttachAndMountOperations;
 import com.pulumi.oci.DisasterRecovery.outputs.DrProtectionGroupMemberBlockVolumeOperation;
+import com.pulumi.oci.DisasterRecovery.outputs.DrProtectionGroupMemberCommonDestinationKey;
+import com.pulumi.oci.DisasterRecovery.outputs.DrProtectionGroupMemberDestinationEncryptionKey;
 import com.pulumi.oci.DisasterRecovery.outputs.DrProtectionGroupMemberExportMapping;
 import com.pulumi.oci.DisasterRecovery.outputs.DrProtectionGroupMemberFileSystemOperation;
 import com.pulumi.oci.DisasterRecovery.outputs.DrProtectionGroupMemberLoadBalancerMapping;
 import com.pulumi.oci.DisasterRecovery.outputs.DrProtectionGroupMemberManagedNodePoolConfig;
 import com.pulumi.oci.DisasterRecovery.outputs.DrProtectionGroupMemberNetworkLoadBalancerMapping;
+import com.pulumi.oci.DisasterRecovery.outputs.DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping;
 import com.pulumi.oci.DisasterRecovery.outputs.DrProtectionGroupMemberVaultMapping;
 import com.pulumi.oci.DisasterRecovery.outputs.DrProtectionGroupMemberVirtualNodePoolConfig;
 import com.pulumi.oci.DisasterRecovery.outputs.DrProtectionGroupMemberVnicMapping;
@@ -47,7 +51,12 @@ public final class DrProtectionGroupMember {
      */
     private @Nullable DrProtectionGroupMemberBackupLocation backupLocation;
     /**
-     * @return (Updatable) A list of operations performed on block volumes used by the compute instance.
+     * @return (Updatable) The details for creating the operations performed on a block volume.
+     * 
+     */
+    private @Nullable DrProtectionGroupMemberBlockVolumeAttachAndMountOperations blockVolumeAttachAndMountOperations;
+    /**
+     * @return (Updatable) Deprecated. Use the &#39;blockVolumeAttachAndMountOperations&#39; attribute instead of this. A list of operations performed on block volumes used by the compute instance.
      * 
      */
     private @Nullable List<DrProtectionGroupMemberBlockVolumeOperation> blockVolumeOperations;
@@ -56,6 +65,11 @@ public final class DrProtectionGroupMember {
      * 
      */
     private @Nullable String bucket;
+    /**
+     * @return (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
+     * 
+     */
+    private @Nullable DrProtectionGroupMemberCommonDestinationKey commonDestinationKey;
     /**
      * @return (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
      * 
@@ -66,6 +80,11 @@ public final class DrProtectionGroupMember {
      * 
      */
     private @Nullable String destinationAvailabilityDomain;
+    /**
+     * @return (Updatable) The OCID of the backup policy to use in the destination region. This policy will be used to create backups  for this volume group after it moves the destination region.  Example: `ocid1.volumebackuppolicy.oc1..uniqueID`
+     * 
+     */
+    private @Nullable String destinationBackupPolicyId;
     /**
      * @return (Updatable) The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
      * 
@@ -82,6 +101,11 @@ public final class DrProtectionGroupMember {
      */
     private @Nullable String destinationDedicatedVmHostId;
     /**
+     * @return (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
+     * 
+     */
+    private @Nullable DrProtectionGroupMemberDestinationEncryptionKey destinationEncryptionKey;
+    /**
      * @return (Updatable) The OCID of the destination load balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
      * 
      */
@@ -91,6 +115,11 @@ public final class DrProtectionGroupMember {
      * 
      */
     private @Nullable String destinationNetworkLoadBalancerId;
+    /**
+     * @return (Updatable) The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.  Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
+     * 
+     */
+    private @Nullable String destinationSnapshotPolicyId;
     /**
      * @return (Updatable) A list of mappings between file system exports in the primary region and mount targets in the standby region.
      * 
@@ -162,6 +191,15 @@ public final class DrProtectionGroupMember {
      */
     private @Nullable String peerClusterId;
     /**
+     * @return (Updatable) A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
+     * 
+     * If you add the entry for source volumes and its corresponding vault and encryption keys here, you can not use  &#39;commonDestinationKey&#39; for encrypting all volumes with common encryption key. Similarly, if you specify common vault and encryption key using &#39;commonDestinationKey&#39;, you cannot specify vaults and encryption keys individually  for each volume using &#39;sourceVolumeToDestinationEncryptionKeyMappings&#39;.
+     * 
+     * An entry for each volume in volume group should be added in this list. The encryption key will not be updated  for the volumes that are part of volume group but missing in this list.
+     * 
+     */
+    private @Nullable List<DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping> sourceVolumeToDestinationEncryptionKeyMappings;
+    /**
      * @return (Updatable) The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
      * 
      */
@@ -212,7 +250,14 @@ public final class DrProtectionGroupMember {
         return Optional.ofNullable(this.backupLocation);
     }
     /**
-     * @return (Updatable) A list of operations performed on block volumes used by the compute instance.
+     * @return (Updatable) The details for creating the operations performed on a block volume.
+     * 
+     */
+    public Optional<DrProtectionGroupMemberBlockVolumeAttachAndMountOperations> blockVolumeAttachAndMountOperations() {
+        return Optional.ofNullable(this.blockVolumeAttachAndMountOperations);
+    }
+    /**
+     * @return (Updatable) Deprecated. Use the &#39;blockVolumeAttachAndMountOperations&#39; attribute instead of this. A list of operations performed on block volumes used by the compute instance.
      * 
      */
     public List<DrProtectionGroupMemberBlockVolumeOperation> blockVolumeOperations() {
@@ -224,6 +269,13 @@ public final class DrProtectionGroupMember {
      */
     public Optional<String> bucket() {
         return Optional.ofNullable(this.bucket);
+    }
+    /**
+     * @return (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
+     * 
+     */
+    public Optional<DrProtectionGroupMemberCommonDestinationKey> commonDestinationKey() {
+        return Optional.ofNullable(this.commonDestinationKey);
     }
     /**
      * @return (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
@@ -238,6 +290,13 @@ public final class DrProtectionGroupMember {
      */
     public Optional<String> destinationAvailabilityDomain() {
         return Optional.ofNullable(this.destinationAvailabilityDomain);
+    }
+    /**
+     * @return (Updatable) The OCID of the backup policy to use in the destination region. This policy will be used to create backups  for this volume group after it moves the destination region.  Example: `ocid1.volumebackuppolicy.oc1..uniqueID`
+     * 
+     */
+    public Optional<String> destinationBackupPolicyId() {
+        return Optional.ofNullable(this.destinationBackupPolicyId);
     }
     /**
      * @return (Updatable) The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
@@ -261,6 +320,13 @@ public final class DrProtectionGroupMember {
         return Optional.ofNullable(this.destinationDedicatedVmHostId);
     }
     /**
+     * @return (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
+     * 
+     */
+    public Optional<DrProtectionGroupMemberDestinationEncryptionKey> destinationEncryptionKey() {
+        return Optional.ofNullable(this.destinationEncryptionKey);
+    }
+    /**
      * @return (Updatable) The OCID of the destination load balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
      * 
      */
@@ -273,6 +339,13 @@ public final class DrProtectionGroupMember {
      */
     public Optional<String> destinationNetworkLoadBalancerId() {
         return Optional.ofNullable(this.destinationNetworkLoadBalancerId);
+    }
+    /**
+     * @return (Updatable) The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.  Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
+     * 
+     */
+    public Optional<String> destinationSnapshotPolicyId() {
+        return Optional.ofNullable(this.destinationSnapshotPolicyId);
     }
     /**
      * @return (Updatable) A list of mappings between file system exports in the primary region and mount targets in the standby region.
@@ -373,6 +446,17 @@ public final class DrProtectionGroupMember {
         return Optional.ofNullable(this.peerClusterId);
     }
     /**
+     * @return (Updatable) A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
+     * 
+     * If you add the entry for source volumes and its corresponding vault and encryption keys here, you can not use  &#39;commonDestinationKey&#39; for encrypting all volumes with common encryption key. Similarly, if you specify common vault and encryption key using &#39;commonDestinationKey&#39;, you cannot specify vaults and encryption keys individually  for each volume using &#39;sourceVolumeToDestinationEncryptionKeyMappings&#39;.
+     * 
+     * An entry for each volume in volume group should be added in this list. The encryption key will not be updated  for the volumes that are part of volume group but missing in this list.
+     * 
+     */
+    public List<DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping> sourceVolumeToDestinationEncryptionKeyMappings() {
+        return this.sourceVolumeToDestinationEncryptionKeyMappings == null ? List.of() : this.sourceVolumeToDestinationEncryptionKeyMappings;
+    }
+    /**
      * @return (Updatable) The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
      * 
      */
@@ -414,15 +498,20 @@ public final class DrProtectionGroupMember {
         private @Nullable List<DrProtectionGroupMemberBackendSetMapping> backendSetMappings;
         private @Nullable DrProtectionGroupMemberBackupConfig backupConfig;
         private @Nullable DrProtectionGroupMemberBackupLocation backupLocation;
+        private @Nullable DrProtectionGroupMemberBlockVolumeAttachAndMountOperations blockVolumeAttachAndMountOperations;
         private @Nullable List<DrProtectionGroupMemberBlockVolumeOperation> blockVolumeOperations;
         private @Nullable String bucket;
+        private @Nullable DrProtectionGroupMemberCommonDestinationKey commonDestinationKey;
         private @Nullable String connectionStringType;
         private @Nullable String destinationAvailabilityDomain;
+        private @Nullable String destinationBackupPolicyId;
         private @Nullable String destinationCapacityReservationId;
         private @Nullable String destinationCompartmentId;
         private @Nullable String destinationDedicatedVmHostId;
+        private @Nullable DrProtectionGroupMemberDestinationEncryptionKey destinationEncryptionKey;
         private @Nullable String destinationLoadBalancerId;
         private @Nullable String destinationNetworkLoadBalancerId;
+        private @Nullable String destinationSnapshotPolicyId;
         private @Nullable List<DrProtectionGroupMemberExportMapping> exportMappings;
         private @Nullable List<DrProtectionGroupMemberFileSystemOperation> fileSystemOperations;
         private @Nullable Boolean isMovable;
@@ -437,6 +526,7 @@ public final class DrProtectionGroupMember {
         private @Nullable List<DrProtectionGroupMemberNetworkLoadBalancerMapping> networkLoadBalancerMappings;
         private @Nullable String passwordVaultSecretId;
         private @Nullable String peerClusterId;
+        private @Nullable List<DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping> sourceVolumeToDestinationEncryptionKeyMappings;
         private @Nullable List<DrProtectionGroupMemberVaultMapping> vaultMappings;
         private @Nullable List<DrProtectionGroupMemberVirtualNodePoolConfig> virtualNodePoolConfigs;
         private @Nullable List<DrProtectionGroupMemberVnicMapping> vnicMapping;
@@ -448,15 +538,20 @@ public final class DrProtectionGroupMember {
     	      this.backendSetMappings = defaults.backendSetMappings;
     	      this.backupConfig = defaults.backupConfig;
     	      this.backupLocation = defaults.backupLocation;
+    	      this.blockVolumeAttachAndMountOperations = defaults.blockVolumeAttachAndMountOperations;
     	      this.blockVolumeOperations = defaults.blockVolumeOperations;
     	      this.bucket = defaults.bucket;
+    	      this.commonDestinationKey = defaults.commonDestinationKey;
     	      this.connectionStringType = defaults.connectionStringType;
     	      this.destinationAvailabilityDomain = defaults.destinationAvailabilityDomain;
+    	      this.destinationBackupPolicyId = defaults.destinationBackupPolicyId;
     	      this.destinationCapacityReservationId = defaults.destinationCapacityReservationId;
     	      this.destinationCompartmentId = defaults.destinationCompartmentId;
     	      this.destinationDedicatedVmHostId = defaults.destinationDedicatedVmHostId;
+    	      this.destinationEncryptionKey = defaults.destinationEncryptionKey;
     	      this.destinationLoadBalancerId = defaults.destinationLoadBalancerId;
     	      this.destinationNetworkLoadBalancerId = defaults.destinationNetworkLoadBalancerId;
+    	      this.destinationSnapshotPolicyId = defaults.destinationSnapshotPolicyId;
     	      this.exportMappings = defaults.exportMappings;
     	      this.fileSystemOperations = defaults.fileSystemOperations;
     	      this.isMovable = defaults.isMovable;
@@ -471,6 +566,7 @@ public final class DrProtectionGroupMember {
     	      this.networkLoadBalancerMappings = defaults.networkLoadBalancerMappings;
     	      this.passwordVaultSecretId = defaults.passwordVaultSecretId;
     	      this.peerClusterId = defaults.peerClusterId;
+    	      this.sourceVolumeToDestinationEncryptionKeyMappings = defaults.sourceVolumeToDestinationEncryptionKeyMappings;
     	      this.vaultMappings = defaults.vaultMappings;
     	      this.virtualNodePoolConfigs = defaults.virtualNodePoolConfigs;
     	      this.vnicMapping = defaults.vnicMapping;
@@ -505,6 +601,12 @@ public final class DrProtectionGroupMember {
             return this;
         }
         @CustomType.Setter
+        public Builder blockVolumeAttachAndMountOperations(@Nullable DrProtectionGroupMemberBlockVolumeAttachAndMountOperations blockVolumeAttachAndMountOperations) {
+
+            this.blockVolumeAttachAndMountOperations = blockVolumeAttachAndMountOperations;
+            return this;
+        }
+        @CustomType.Setter
         public Builder blockVolumeOperations(@Nullable List<DrProtectionGroupMemberBlockVolumeOperation> blockVolumeOperations) {
 
             this.blockVolumeOperations = blockVolumeOperations;
@@ -520,6 +622,12 @@ public final class DrProtectionGroupMember {
             return this;
         }
         @CustomType.Setter
+        public Builder commonDestinationKey(@Nullable DrProtectionGroupMemberCommonDestinationKey commonDestinationKey) {
+
+            this.commonDestinationKey = commonDestinationKey;
+            return this;
+        }
+        @CustomType.Setter
         public Builder connectionStringType(@Nullable String connectionStringType) {
 
             this.connectionStringType = connectionStringType;
@@ -529,6 +637,12 @@ public final class DrProtectionGroupMember {
         public Builder destinationAvailabilityDomain(@Nullable String destinationAvailabilityDomain) {
 
             this.destinationAvailabilityDomain = destinationAvailabilityDomain;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder destinationBackupPolicyId(@Nullable String destinationBackupPolicyId) {
+
+            this.destinationBackupPolicyId = destinationBackupPolicyId;
             return this;
         }
         @CustomType.Setter
@@ -550,6 +664,12 @@ public final class DrProtectionGroupMember {
             return this;
         }
         @CustomType.Setter
+        public Builder destinationEncryptionKey(@Nullable DrProtectionGroupMemberDestinationEncryptionKey destinationEncryptionKey) {
+
+            this.destinationEncryptionKey = destinationEncryptionKey;
+            return this;
+        }
+        @CustomType.Setter
         public Builder destinationLoadBalancerId(@Nullable String destinationLoadBalancerId) {
 
             this.destinationLoadBalancerId = destinationLoadBalancerId;
@@ -559,6 +679,12 @@ public final class DrProtectionGroupMember {
         public Builder destinationNetworkLoadBalancerId(@Nullable String destinationNetworkLoadBalancerId) {
 
             this.destinationNetworkLoadBalancerId = destinationNetworkLoadBalancerId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder destinationSnapshotPolicyId(@Nullable String destinationSnapshotPolicyId) {
+
+            this.destinationSnapshotPolicyId = destinationSnapshotPolicyId;
             return this;
         }
         @CustomType.Setter
@@ -665,6 +791,15 @@ public final class DrProtectionGroupMember {
             return this;
         }
         @CustomType.Setter
+        public Builder sourceVolumeToDestinationEncryptionKeyMappings(@Nullable List<DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping> sourceVolumeToDestinationEncryptionKeyMappings) {
+
+            this.sourceVolumeToDestinationEncryptionKeyMappings = sourceVolumeToDestinationEncryptionKeyMappings;
+            return this;
+        }
+        public Builder sourceVolumeToDestinationEncryptionKeyMappings(DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping... sourceVolumeToDestinationEncryptionKeyMappings) {
+            return sourceVolumeToDestinationEncryptionKeyMappings(List.of(sourceVolumeToDestinationEncryptionKeyMappings));
+        }
+        @CustomType.Setter
         public Builder vaultMappings(@Nullable List<DrProtectionGroupMemberVaultMapping> vaultMappings) {
 
             this.vaultMappings = vaultMappings;
@@ -706,15 +841,20 @@ public final class DrProtectionGroupMember {
             _resultValue.backendSetMappings = backendSetMappings;
             _resultValue.backupConfig = backupConfig;
             _resultValue.backupLocation = backupLocation;
+            _resultValue.blockVolumeAttachAndMountOperations = blockVolumeAttachAndMountOperations;
             _resultValue.blockVolumeOperations = blockVolumeOperations;
             _resultValue.bucket = bucket;
+            _resultValue.commonDestinationKey = commonDestinationKey;
             _resultValue.connectionStringType = connectionStringType;
             _resultValue.destinationAvailabilityDomain = destinationAvailabilityDomain;
+            _resultValue.destinationBackupPolicyId = destinationBackupPolicyId;
             _resultValue.destinationCapacityReservationId = destinationCapacityReservationId;
             _resultValue.destinationCompartmentId = destinationCompartmentId;
             _resultValue.destinationDedicatedVmHostId = destinationDedicatedVmHostId;
+            _resultValue.destinationEncryptionKey = destinationEncryptionKey;
             _resultValue.destinationLoadBalancerId = destinationLoadBalancerId;
             _resultValue.destinationNetworkLoadBalancerId = destinationNetworkLoadBalancerId;
+            _resultValue.destinationSnapshotPolicyId = destinationSnapshotPolicyId;
             _resultValue.exportMappings = exportMappings;
             _resultValue.fileSystemOperations = fileSystemOperations;
             _resultValue.isMovable = isMovable;
@@ -729,6 +869,7 @@ public final class DrProtectionGroupMember {
             _resultValue.networkLoadBalancerMappings = networkLoadBalancerMappings;
             _resultValue.passwordVaultSecretId = passwordVaultSecretId;
             _resultValue.peerClusterId = peerClusterId;
+            _resultValue.sourceVolumeToDestinationEncryptionKeyMappings = sourceVolumeToDestinationEncryptionKeyMappings;
             _resultValue.vaultMappings = vaultMappings;
             _resultValue.virtualNodePoolConfigs = virtualNodePoolConfigs;
             _resultValue.vnicMapping = vnicMapping;

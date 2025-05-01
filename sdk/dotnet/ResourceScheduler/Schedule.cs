@@ -12,7 +12,7 @@ namespace Pulumi.Oci.ResourceScheduler
     /// <summary>
     /// This resource provides the Schedule resource in Oracle Cloud Infrastructure Resource Scheduler service.
     /// 
-    /// Creates a Schedule
+    /// This API creates a schedule. You must provide either resources or resourceFilters.
     /// 
     /// ## Import
     /// 
@@ -27,6 +27,7 @@ namespace Pulumi.Oci.ResourceScheduler
     {
         /// <summary>
         /// (Updatable) This is the action that will be executed by the schedule.
+        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
         /// </summary>
         [Output("action")]
         public Output<string> Action { get; private set; } = null!;
@@ -57,12 +58,21 @@ namespace Pulumi.Oci.ResourceScheduler
 
         /// <summary>
         /// (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        /// &gt;&gt;&gt;&gt;&gt;&gt;&gt; theirs
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
+        /// This is the status of the last work request.
+        /// </summary>
+        [Output("lastRunStatus")]
+        public Output<string> LastRunStatus { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
+        /// 
+        /// &gt;&gt;&gt;&gt;&gt;&gt;&gt; theirs
         /// </summary>
         [Output("recurrenceDetails")]
         public Output<string> RecurrenceDetails { get; private set; } = null!;
@@ -185,6 +195,7 @@ namespace Pulumi.Oci.ResourceScheduler
     {
         /// <summary>
         /// (Updatable) This is the action that will be executed by the schedule.
+        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
         /// </summary>
         [Input("action", required: true)]
         public Input<string> Action { get; set; } = null!;
@@ -224,6 +235,7 @@ namespace Pulumi.Oci.ResourceScheduler
 
         /// <summary>
         /// (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        /// &gt;&gt;&gt;&gt;&gt;&gt;&gt; theirs
         /// </summary>
         public InputMap<string> FreeformTags
         {
@@ -233,6 +245,8 @@ namespace Pulumi.Oci.ResourceScheduler
 
         /// <summary>
         /// (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
+        /// 
+        /// &gt;&gt;&gt;&gt;&gt;&gt;&gt; theirs
         /// </summary>
         [Input("recurrenceDetails", required: true)]
         public Input<string> RecurrenceDetails { get; set; } = null!;
@@ -299,6 +313,7 @@ namespace Pulumi.Oci.ResourceScheduler
     {
         /// <summary>
         /// (Updatable) This is the action that will be executed by the schedule.
+        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
         /// </summary>
         [Input("action")]
         public Input<string>? Action { get; set; }
@@ -338,6 +353,7 @@ namespace Pulumi.Oci.ResourceScheduler
 
         /// <summary>
         /// (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        /// &gt;&gt;&gt;&gt;&gt;&gt;&gt; theirs
         /// </summary>
         public InputMap<string> FreeformTags
         {
@@ -346,7 +362,15 @@ namespace Pulumi.Oci.ResourceScheduler
         }
 
         /// <summary>
+        /// This is the status of the last work request.
+        /// </summary>
+        [Input("lastRunStatus")]
+        public Input<string>? LastRunStatus { get; set; }
+
+        /// <summary>
         /// (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
+        /// 
+        /// &gt;&gt;&gt;&gt;&gt;&gt;&gt; theirs
         /// </summary>
         [Input("recurrenceDetails")]
         public Input<string>? RecurrenceDetails { get; set; }

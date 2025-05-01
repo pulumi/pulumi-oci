@@ -380,6 +380,8 @@ type DrPlanExecutionGroupExecutionStepExecution struct {
 	TimeStarted *string `pulumi:"timeStarted"`
 	// The group type.  Example: `BUILT_IN`
 	Type *string `pulumi:"type"`
+	// The display name of the DR Plan step type.  Example: `Database Switchover`
+	TypeDisplayName *string `pulumi:"typeDisplayName"`
 }
 
 // DrPlanExecutionGroupExecutionStepExecutionInput is an input type that accepts DrPlanExecutionGroupExecutionStepExecutionArgs and DrPlanExecutionGroupExecutionStepExecutionOutput values.
@@ -414,6 +416,8 @@ type DrPlanExecutionGroupExecutionStepExecutionArgs struct {
 	TimeStarted pulumi.StringPtrInput `pulumi:"timeStarted"`
 	// The group type.  Example: `BUILT_IN`
 	Type pulumi.StringPtrInput `pulumi:"type"`
+	// The display name of the DR Plan step type.  Example: `Database Switchover`
+	TypeDisplayName pulumi.StringPtrInput `pulumi:"typeDisplayName"`
 }
 
 func (DrPlanExecutionGroupExecutionStepExecutionArgs) ElementType() reflect.Type {
@@ -517,6 +521,11 @@ func (o DrPlanExecutionGroupExecutionStepExecutionOutput) TimeStarted() pulumi.S
 // The group type.  Example: `BUILT_IN`
 func (o DrPlanExecutionGroupExecutionStepExecutionOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanExecutionGroupExecutionStepExecution) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+// The display name of the DR Plan step type.  Example: `Database Switchover`
+func (o DrPlanExecutionGroupExecutionStepExecutionOutput) TypeDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrPlanExecutionGroupExecutionStepExecution) *string { return v.TypeDisplayName }).(pulumi.StringPtrOutput)
 }
 
 type DrPlanExecutionGroupExecutionStepExecutionArrayOutput struct{ *pulumi.OutputState }
@@ -930,6 +939,8 @@ type DrPlanPlanGroupStep struct {
 	Timeout *int `pulumi:"timeout"`
 	// The type of DR plan to be created.
 	Type *string `pulumi:"type"`
+	// The display name of the DR Plan step type.  Example: `Database Switchover`
+	TypeDisplayName *string `pulumi:"typeDisplayName"`
 	// The details for a user-defined step in a DR plan.
 	UserDefinedSteps []DrPlanPlanGroupStepUserDefinedStep `pulumi:"userDefinedSteps"`
 }
@@ -964,6 +975,8 @@ type DrPlanPlanGroupStepArgs struct {
 	Timeout pulumi.IntPtrInput `pulumi:"timeout"`
 	// The type of DR plan to be created.
 	Type pulumi.StringPtrInput `pulumi:"type"`
+	// The display name of the DR Plan step type.  Example: `Database Switchover`
+	TypeDisplayName pulumi.StringPtrInput `pulumi:"typeDisplayName"`
 	// The details for a user-defined step in a DR plan.
 	UserDefinedSteps DrPlanPlanGroupStepUserDefinedStepArrayInput `pulumi:"userDefinedSteps"`
 }
@@ -1062,6 +1075,11 @@ func (o DrPlanPlanGroupStepOutput) Timeout() pulumi.IntPtrOutput {
 // The type of DR plan to be created.
 func (o DrPlanPlanGroupStepOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroupStep) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+// The display name of the DR Plan step type.  Example: `Database Switchover`
+func (o DrPlanPlanGroupStepOutput) TypeDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrPlanPlanGroupStep) *string { return v.TypeDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The details for a user-defined step in a DR plan.
@@ -1734,24 +1752,34 @@ type DrProtectionGroupMember struct {
 	BackupConfig *DrProtectionGroupMemberBackupConfig `pulumi:"backupConfig"`
 	// (Updatable) The details for creating the backup location of an OKE Cluster.
 	BackupLocation *DrProtectionGroupMemberBackupLocation `pulumi:"backupLocation"`
-	// (Updatable) A list of operations performed on block volumes used by the compute instance.
+	// (Updatable) The details for creating the operations performed on a block volume.
+	BlockVolumeAttachAndMountOperations *DrProtectionGroupMemberBlockVolumeAttachAndMountOperations `pulumi:"blockVolumeAttachAndMountOperations"`
+	// (Updatable) Deprecated. Use the 'blockVolumeAttachAndMountOperations' attribute instead of this. A list of operations performed on block volumes used by the compute instance.
 	BlockVolumeOperations []DrProtectionGroupMemberBlockVolumeOperation `pulumi:"blockVolumeOperations"`
 	// (Updatable) The bucket name inside the object storage namespace.  Example: `bucketName`
 	Bucket *string `pulumi:"bucket"`
+	// (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
+	CommonDestinationKey *DrProtectionGroupMemberCommonDestinationKey `pulumi:"commonDestinationKey"`
 	// (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
 	ConnectionStringType *string `pulumi:"connectionStringType"`
 	// (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
 	DestinationAvailabilityDomain *string `pulumi:"destinationAvailabilityDomain"`
+	// (Updatable) The OCID of the backup policy to use in the destination region. This policy will be used to create backups  for this volume group after it moves the destination region.  Example: `ocid1.volumebackuppolicy.oc1..uniqueID`
+	DestinationBackupPolicyId *string `pulumi:"destinationBackupPolicyId"`
 	// (Updatable) The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
 	DestinationCapacityReservationId *string `pulumi:"destinationCapacityReservationId"`
 	// (Updatable) The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
 	DestinationCompartmentId *string `pulumi:"destinationCompartmentId"`
 	// (Updatable) The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
 	DestinationDedicatedVmHostId *string `pulumi:"destinationDedicatedVmHostId"`
+	// (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
+	DestinationEncryptionKey *DrProtectionGroupMemberDestinationEncryptionKey `pulumi:"destinationEncryptionKey"`
 	// (Updatable) The OCID of the destination load balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
 	DestinationLoadBalancerId *string `pulumi:"destinationLoadBalancerId"`
 	// (Updatable) The OCID of the destination network load balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
 	DestinationNetworkLoadBalancerId *string `pulumi:"destinationNetworkLoadBalancerId"`
+	// (Updatable) The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.  Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
+	DestinationSnapshotPolicyId *string `pulumi:"destinationSnapshotPolicyId"`
 	// (Updatable) A list of mappings between file system exports in the primary region and mount targets in the standby region.
 	ExportMappings []DrProtectionGroupMemberExportMapping `pulumi:"exportMappings"`
 	// (Updatable) A list of operations performed on file systems used by the compute instance.
@@ -1780,6 +1808,12 @@ type DrProtectionGroupMember struct {
 	PasswordVaultSecretId *string `pulumi:"passwordVaultSecretId"`
 	// (Updatable) The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.   Example: `ocid1.cluster.oc1..uniqueID`
 	PeerClusterId *string `pulumi:"peerClusterId"`
+	// (Updatable) A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
+	//
+	// If you add the entry for source volumes and its corresponding vault and encryption keys here, you can not use  'commonDestinationKey' for encrypting all volumes with common encryption key. Similarly, if you specify common vault and encryption key using 'commonDestinationKey', you cannot specify vaults and encryption keys individually  for each volume using 'sourceVolumeToDestinationEncryptionKeyMappings'.
+	//
+	// An entry for each volume in volume group should be added in this list. The encryption key will not be updated  for the volumes that are part of volume group but missing in this list.
+	SourceVolumeToDestinationEncryptionKeyMappings []DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping `pulumi:"sourceVolumeToDestinationEncryptionKeyMappings"`
 	// (Updatable) The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
 	VaultMappings []DrProtectionGroupMemberVaultMapping `pulumi:"vaultMappings"`
 	// (Updatable) The list of virtual node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
@@ -1810,24 +1844,34 @@ type DrProtectionGroupMemberArgs struct {
 	BackupConfig DrProtectionGroupMemberBackupConfigPtrInput `pulumi:"backupConfig"`
 	// (Updatable) The details for creating the backup location of an OKE Cluster.
 	BackupLocation DrProtectionGroupMemberBackupLocationPtrInput `pulumi:"backupLocation"`
-	// (Updatable) A list of operations performed on block volumes used by the compute instance.
+	// (Updatable) The details for creating the operations performed on a block volume.
+	BlockVolumeAttachAndMountOperations DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrInput `pulumi:"blockVolumeAttachAndMountOperations"`
+	// (Updatable) Deprecated. Use the 'blockVolumeAttachAndMountOperations' attribute instead of this. A list of operations performed on block volumes used by the compute instance.
 	BlockVolumeOperations DrProtectionGroupMemberBlockVolumeOperationArrayInput `pulumi:"blockVolumeOperations"`
 	// (Updatable) The bucket name inside the object storage namespace.  Example: `bucketName`
 	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
+	// (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
+	CommonDestinationKey DrProtectionGroupMemberCommonDestinationKeyPtrInput `pulumi:"commonDestinationKey"`
 	// (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
 	ConnectionStringType pulumi.StringPtrInput `pulumi:"connectionStringType"`
 	// (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
 	DestinationAvailabilityDomain pulumi.StringPtrInput `pulumi:"destinationAvailabilityDomain"`
+	// (Updatable) The OCID of the backup policy to use in the destination region. This policy will be used to create backups  for this volume group after it moves the destination region.  Example: `ocid1.volumebackuppolicy.oc1..uniqueID`
+	DestinationBackupPolicyId pulumi.StringPtrInput `pulumi:"destinationBackupPolicyId"`
 	// (Updatable) The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
 	DestinationCapacityReservationId pulumi.StringPtrInput `pulumi:"destinationCapacityReservationId"`
 	// (Updatable) The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
 	DestinationCompartmentId pulumi.StringPtrInput `pulumi:"destinationCompartmentId"`
 	// (Updatable) The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
 	DestinationDedicatedVmHostId pulumi.StringPtrInput `pulumi:"destinationDedicatedVmHostId"`
+	// (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
+	DestinationEncryptionKey DrProtectionGroupMemberDestinationEncryptionKeyPtrInput `pulumi:"destinationEncryptionKey"`
 	// (Updatable) The OCID of the destination load balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
 	DestinationLoadBalancerId pulumi.StringPtrInput `pulumi:"destinationLoadBalancerId"`
 	// (Updatable) The OCID of the destination network load balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
 	DestinationNetworkLoadBalancerId pulumi.StringPtrInput `pulumi:"destinationNetworkLoadBalancerId"`
+	// (Updatable) The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.  Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
+	DestinationSnapshotPolicyId pulumi.StringPtrInput `pulumi:"destinationSnapshotPolicyId"`
 	// (Updatable) A list of mappings between file system exports in the primary region and mount targets in the standby region.
 	ExportMappings DrProtectionGroupMemberExportMappingArrayInput `pulumi:"exportMappings"`
 	// (Updatable) A list of operations performed on file systems used by the compute instance.
@@ -1856,6 +1900,12 @@ type DrProtectionGroupMemberArgs struct {
 	PasswordVaultSecretId pulumi.StringPtrInput `pulumi:"passwordVaultSecretId"`
 	// (Updatable) The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.   Example: `ocid1.cluster.oc1..uniqueID`
 	PeerClusterId pulumi.StringPtrInput `pulumi:"peerClusterId"`
+	// (Updatable) A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
+	//
+	// If you add the entry for source volumes and its corresponding vault and encryption keys here, you can not use  'commonDestinationKey' for encrypting all volumes with common encryption key. Similarly, if you specify common vault and encryption key using 'commonDestinationKey', you cannot specify vaults and encryption keys individually  for each volume using 'sourceVolumeToDestinationEncryptionKeyMappings'.
+	//
+	// An entry for each volume in volume group should be added in this list. The encryption key will not be updated  for the volumes that are part of volume group but missing in this list.
+	SourceVolumeToDestinationEncryptionKeyMappings DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayInput `pulumi:"sourceVolumeToDestinationEncryptionKeyMappings"`
 	// (Updatable) The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
 	VaultMappings DrProtectionGroupMemberVaultMappingArrayInput `pulumi:"vaultMappings"`
 	// (Updatable) The list of virtual node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
@@ -1939,7 +1989,14 @@ func (o DrProtectionGroupMemberOutput) BackupLocation() DrProtectionGroupMemberB
 	return o.ApplyT(func(v DrProtectionGroupMember) *DrProtectionGroupMemberBackupLocation { return v.BackupLocation }).(DrProtectionGroupMemberBackupLocationPtrOutput)
 }
 
-// (Updatable) A list of operations performed on block volumes used by the compute instance.
+// (Updatable) The details for creating the operations performed on a block volume.
+func (o DrProtectionGroupMemberOutput) BlockVolumeAttachAndMountOperations() DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMember) *DrProtectionGroupMemberBlockVolumeAttachAndMountOperations {
+		return v.BlockVolumeAttachAndMountOperations
+	}).(DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrOutput)
+}
+
+// (Updatable) Deprecated. Use the 'blockVolumeAttachAndMountOperations' attribute instead of this. A list of operations performed on block volumes used by the compute instance.
 func (o DrProtectionGroupMemberOutput) BlockVolumeOperations() DrProtectionGroupMemberBlockVolumeOperationArrayOutput {
 	return o.ApplyT(func(v DrProtectionGroupMember) []DrProtectionGroupMemberBlockVolumeOperation {
 		return v.BlockVolumeOperations
@@ -1951,6 +2008,13 @@ func (o DrProtectionGroupMemberOutput) Bucket() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
+func (o DrProtectionGroupMemberOutput) CommonDestinationKey() DrProtectionGroupMemberCommonDestinationKeyPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMember) *DrProtectionGroupMemberCommonDestinationKey {
+		return v.CommonDestinationKey
+	}).(DrProtectionGroupMemberCommonDestinationKeyPtrOutput)
+}
+
 // (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
 func (o DrProtectionGroupMemberOutput) ConnectionStringType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.ConnectionStringType }).(pulumi.StringPtrOutput)
@@ -1959,6 +2023,11 @@ func (o DrProtectionGroupMemberOutput) ConnectionStringType() pulumi.StringPtrOu
 // (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
 func (o DrProtectionGroupMemberOutput) DestinationAvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.DestinationAvailabilityDomain }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the backup policy to use in the destination region. This policy will be used to create backups  for this volume group after it moves the destination region.  Example: `ocid1.volumebackuppolicy.oc1..uniqueID`
+func (o DrProtectionGroupMemberOutput) DestinationBackupPolicyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.DestinationBackupPolicyId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
@@ -1976,6 +2045,13 @@ func (o DrProtectionGroupMemberOutput) DestinationDedicatedVmHostId() pulumi.Str
 	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.DestinationDedicatedVmHostId }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
+func (o DrProtectionGroupMemberOutput) DestinationEncryptionKey() DrProtectionGroupMemberDestinationEncryptionKeyPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMember) *DrProtectionGroupMemberDestinationEncryptionKey {
+		return v.DestinationEncryptionKey
+	}).(DrProtectionGroupMemberDestinationEncryptionKeyPtrOutput)
+}
+
 // (Updatable) The OCID of the destination load balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
 func (o DrProtectionGroupMemberOutput) DestinationLoadBalancerId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.DestinationLoadBalancerId }).(pulumi.StringPtrOutput)
@@ -1984,6 +2060,11 @@ func (o DrProtectionGroupMemberOutput) DestinationLoadBalancerId() pulumi.String
 // (Updatable) The OCID of the destination network load balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
 func (o DrProtectionGroupMemberOutput) DestinationNetworkLoadBalancerId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.DestinationNetworkLoadBalancerId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.  Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
+func (o DrProtectionGroupMemberOutput) DestinationSnapshotPolicyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.DestinationSnapshotPolicyId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A list of mappings between file system exports in the primary region and mount targets in the standby region.
@@ -2062,6 +2143,17 @@ func (o DrProtectionGroupMemberOutput) PasswordVaultSecretId() pulumi.StringPtrO
 // (Updatable) The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.   Example: `ocid1.cluster.oc1..uniqueID`
 func (o DrProtectionGroupMemberOutput) PeerClusterId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.PeerClusterId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
+//
+// If you add the entry for source volumes and its corresponding vault and encryption keys here, you can not use  'commonDestinationKey' for encrypting all volumes with common encryption key. Similarly, if you specify common vault and encryption key using 'commonDestinationKey', you cannot specify vaults and encryption keys individually  for each volume using 'sourceVolumeToDestinationEncryptionKeyMappings'.
+//
+// An entry for each volume in volume group should be added in this list. The encryption key will not be updated  for the volumes that are part of volume group but missing in this list.
+func (o DrProtectionGroupMemberOutput) SourceVolumeToDestinationEncryptionKeyMappings() DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput {
+	return o.ApplyT(func(v DrProtectionGroupMember) []DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping {
+		return v.SourceVolumeToDestinationEncryptionKeyMappings
+	}).(DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput)
 }
 
 // (Updatable) The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
@@ -2234,9 +2326,9 @@ type DrProtectionGroupMemberBackupConfig struct {
 	// * Minimum = 1
 	// * Maximum = 12
 	//
-	// Examples:  FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 > Run a backup every week on monday and wednesday at 10:00 AM. FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 > Invalid configuration (can not specify interval of 2).
+	// Examples:  FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 > Run a backup every Monday and Wednesday at 10:00 AM. FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 > Invalid configuration (Cannot specify an interval of 2).
 	//
-	// FREQ=HOURLY;INTERVAL=25 > Invalid configuration (can not specify interval of 25). FREQ=HOURLY;INTERVAL=0 > Invalid configuration (can not specify interval of 0). FREQ=HOURLY;INTERVAL=24 > Run a backup every 24 hours. FREQ=HOURLY;INTERVAL=1 > Run a backup every hour. FREQ=HOURLY;BYMINUTE=30;INTERVAL=15 > Run a backup every 15 hours at the 30th minute. FREQ=DAILY;INTERVAL=31 > Invalid configuration (can not specify interval of 31). FREQ=DAILY;INTERVAL=0 > Invalid configuration (can not specify interval of 0). FREQ=DAILY;INTERVAL=30 > Run a backup every 30 days at 12:00 midnight.  FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 > Run a backup every day at 05:10 PM.
+	// FREQ=HOURLY;INTERVAL=25 > Invalid configuration (Cannot specify an interval of 25). FREQ=HOURLY;INTERVAL=0 > Invalid configuration (Cannot specify an interval of 0). FREQ=HOURLY;INTERVAL=24 > Run a backup every 24 hours. FREQ=HOURLY;INTERVAL=1 > Run a backup every hour. FREQ=HOURLY;BYMINUTE=30;INTERVAL=15 > Run a backup every 15 hours at the 30th minute. FREQ=DAILY;INTERVAL=31 > Invalid configuration (Cannot specify an interval of 31). FREQ=DAILY;INTERVAL=0 > Invalid configuration (Cannot specify an interval of 0). FREQ=DAILY;INTERVAL=30 > Run a backup every 30 days at 12:00 midnight.  FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 > Run a backup daily at 05:10 PM.
 	BackupSchedule *string `pulumi:"backupSchedule"`
 	// (Updatable) The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
 	ImageReplicationVaultSecretId *string `pulumi:"imageReplicationVaultSecretId"`
@@ -2272,9 +2364,9 @@ type DrProtectionGroupMemberBackupConfigArgs struct {
 	// * Minimum = 1
 	// * Maximum = 12
 	//
-	// Examples:  FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 > Run a backup every week on monday and wednesday at 10:00 AM. FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 > Invalid configuration (can not specify interval of 2).
+	// Examples:  FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 > Run a backup every Monday and Wednesday at 10:00 AM. FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 > Invalid configuration (Cannot specify an interval of 2).
 	//
-	// FREQ=HOURLY;INTERVAL=25 > Invalid configuration (can not specify interval of 25). FREQ=HOURLY;INTERVAL=0 > Invalid configuration (can not specify interval of 0). FREQ=HOURLY;INTERVAL=24 > Run a backup every 24 hours. FREQ=HOURLY;INTERVAL=1 > Run a backup every hour. FREQ=HOURLY;BYMINUTE=30;INTERVAL=15 > Run a backup every 15 hours at the 30th minute. FREQ=DAILY;INTERVAL=31 > Invalid configuration (can not specify interval of 31). FREQ=DAILY;INTERVAL=0 > Invalid configuration (can not specify interval of 0). FREQ=DAILY;INTERVAL=30 > Run a backup every 30 days at 12:00 midnight.  FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 > Run a backup every day at 05:10 PM.
+	// FREQ=HOURLY;INTERVAL=25 > Invalid configuration (Cannot specify an interval of 25). FREQ=HOURLY;INTERVAL=0 > Invalid configuration (Cannot specify an interval of 0). FREQ=HOURLY;INTERVAL=24 > Run a backup every 24 hours. FREQ=HOURLY;INTERVAL=1 > Run a backup every hour. FREQ=HOURLY;BYMINUTE=30;INTERVAL=15 > Run a backup every 15 hours at the 30th minute. FREQ=DAILY;INTERVAL=31 > Invalid configuration (Cannot specify an interval of 31). FREQ=DAILY;INTERVAL=0 > Invalid configuration (Cannot specify an interval of 0). FREQ=DAILY;INTERVAL=30 > Run a backup every 30 days at 12:00 midnight.  FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 > Run a backup daily at 05:10 PM.
 	BackupSchedule pulumi.StringPtrInput `pulumi:"backupSchedule"`
 	// (Updatable) The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
 	ImageReplicationVaultSecretId pulumi.StringPtrInput `pulumi:"imageReplicationVaultSecretId"`
@@ -2375,9 +2467,9 @@ func (o DrProtectionGroupMemberBackupConfigOutput) ToDrProtectionGroupMemberBack
 // * Minimum = 1
 // * Maximum = 12
 //
-// Examples:  FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 > Run a backup every week on monday and wednesday at 10:00 AM. FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 > Invalid configuration (can not specify interval of 2).
+// Examples:  FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 > Run a backup every Monday and Wednesday at 10:00 AM. FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 > Invalid configuration (Cannot specify an interval of 2).
 //
-// FREQ=HOURLY;INTERVAL=25 > Invalid configuration (can not specify interval of 25). FREQ=HOURLY;INTERVAL=0 > Invalid configuration (can not specify interval of 0). FREQ=HOURLY;INTERVAL=24 > Run a backup every 24 hours. FREQ=HOURLY;INTERVAL=1 > Run a backup every hour. FREQ=HOURLY;BYMINUTE=30;INTERVAL=15 > Run a backup every 15 hours at the 30th minute. FREQ=DAILY;INTERVAL=31 > Invalid configuration (can not specify interval of 31). FREQ=DAILY;INTERVAL=0 > Invalid configuration (can not specify interval of 0). FREQ=DAILY;INTERVAL=30 > Run a backup every 30 days at 12:00 midnight.  FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 > Run a backup every day at 05:10 PM.
+// FREQ=HOURLY;INTERVAL=25 > Invalid configuration (Cannot specify an interval of 25). FREQ=HOURLY;INTERVAL=0 > Invalid configuration (Cannot specify an interval of 0). FREQ=HOURLY;INTERVAL=24 > Run a backup every 24 hours. FREQ=HOURLY;INTERVAL=1 > Run a backup every hour. FREQ=HOURLY;BYMINUTE=30;INTERVAL=15 > Run a backup every 15 hours at the 30th minute. FREQ=DAILY;INTERVAL=31 > Invalid configuration (Cannot specify an interval of 31). FREQ=DAILY;INTERVAL=0 > Invalid configuration (Cannot specify an interval of 0). FREQ=DAILY;INTERVAL=30 > Run a backup every 30 days at 12:00 midnight.  FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 > Run a backup daily at 05:10 PM.
 func (o DrProtectionGroupMemberBackupConfigOutput) BackupSchedule() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMemberBackupConfig) *string { return v.BackupSchedule }).(pulumi.StringPtrOutput)
 }
@@ -2438,9 +2530,9 @@ func (o DrProtectionGroupMemberBackupConfigPtrOutput) Elem() DrProtectionGroupMe
 // * Minimum = 1
 // * Maximum = 12
 //
-// Examples:  FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 > Run a backup every week on monday and wednesday at 10:00 AM. FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 > Invalid configuration (can not specify interval of 2).
+// Examples:  FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 > Run a backup every Monday and Wednesday at 10:00 AM. FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 > Invalid configuration (Cannot specify an interval of 2).
 //
-// FREQ=HOURLY;INTERVAL=25 > Invalid configuration (can not specify interval of 25). FREQ=HOURLY;INTERVAL=0 > Invalid configuration (can not specify interval of 0). FREQ=HOURLY;INTERVAL=24 > Run a backup every 24 hours. FREQ=HOURLY;INTERVAL=1 > Run a backup every hour. FREQ=HOURLY;BYMINUTE=30;INTERVAL=15 > Run a backup every 15 hours at the 30th minute. FREQ=DAILY;INTERVAL=31 > Invalid configuration (can not specify interval of 31). FREQ=DAILY;INTERVAL=0 > Invalid configuration (can not specify interval of 0). FREQ=DAILY;INTERVAL=30 > Run a backup every 30 days at 12:00 midnight.  FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 > Run a backup every day at 05:10 PM.
+// FREQ=HOURLY;INTERVAL=25 > Invalid configuration (Cannot specify an interval of 25). FREQ=HOURLY;INTERVAL=0 > Invalid configuration (Cannot specify an interval of 0). FREQ=HOURLY;INTERVAL=24 > Run a backup every 24 hours. FREQ=HOURLY;INTERVAL=1 > Run a backup every hour. FREQ=HOURLY;BYMINUTE=30;INTERVAL=15 > Run a backup every 15 hours at the 30th minute. FREQ=DAILY;INTERVAL=31 > Invalid configuration (Cannot specify an interval of 31). FREQ=DAILY;INTERVAL=0 > Invalid configuration (Cannot specify an interval of 0). FREQ=DAILY;INTERVAL=30 > Run a backup every 30 days at 12:00 midnight.  FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 > Run a backup daily at 05:10 PM.
 func (o DrProtectionGroupMemberBackupConfigPtrOutput) BackupSchedule() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DrProtectionGroupMemberBackupConfig) *string {
 		if v == nil {
@@ -2665,8 +2757,375 @@ func (o DrProtectionGroupMemberBackupLocationPtrOutput) Object() pulumi.StringPt
 	}).(pulumi.StringPtrOutput)
 }
 
+type DrProtectionGroupMemberBlockVolumeAttachAndMountOperations struct {
+	// (Updatable) A list of details of attach or detach operations performed on block volumes.
+	Attachments []DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachment `pulumi:"attachments"`
+	// (Updatable) A list of details of mount operations performed on block volumes.
+	Mounts []DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMount `pulumi:"mounts"`
+}
+
+// DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsInput is an input type that accepts DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsArgs and DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsInput` via:
+//
+//	DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsArgs{...}
+type DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsOutput() DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsOutput
+	ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsOutputWithContext(context.Context) DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsOutput
+}
+
+type DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsArgs struct {
+	// (Updatable) A list of details of attach or detach operations performed on block volumes.
+	Attachments DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArrayInput `pulumi:"attachments"`
+	// (Updatable) A list of details of mount operations performed on block volumes.
+	Mounts DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArrayInput `pulumi:"mounts"`
+}
+
+func (DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberBlockVolumeAttachAndMountOperations)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsArgs) ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsOutput() DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsOutput {
+	return i.ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsArgs) ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsOutput)
+}
+
+func (i DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsArgs) ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrOutput() DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrOutput {
+	return i.ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsArgs) ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsOutput).ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrOutputWithContext(ctx)
+}
+
+// DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrInput is an input type that accepts DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsArgs, DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtr and DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrInput` via:
+//
+//	        DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsArgs{...}
+//
+//	or:
+//
+//	        nil
+type DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrOutput() DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrOutput
+	ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrOutputWithContext(context.Context) DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrOutput
+}
+
+type drProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrType DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsArgs
+
+func DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtr(v *DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsArgs) DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrInput {
+	return (*drProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrType)(v)
+}
+
+func (*drProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DrProtectionGroupMemberBlockVolumeAttachAndMountOperations)(nil)).Elem()
+}
+
+func (i *drProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrType) ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrOutput() DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrOutput {
+	return i.ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrOutputWithContext(context.Background())
+}
+
+func (i *drProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrType) ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrOutput)
+}
+
+type DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberBlockVolumeAttachAndMountOperations)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsOutput) ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsOutput() DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsOutput) ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsOutput) ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrOutput() DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrOutput {
+	return o.ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrOutputWithContext(context.Background())
+}
+
+func (o DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsOutput) ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DrProtectionGroupMemberBlockVolumeAttachAndMountOperations) *DrProtectionGroupMemberBlockVolumeAttachAndMountOperations {
+		return &v
+	}).(DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrOutput)
+}
+
+// (Updatable) A list of details of attach or detach operations performed on block volumes.
+func (o DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsOutput) Attachments() DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArrayOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberBlockVolumeAttachAndMountOperations) []DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachment {
+		return v.Attachments
+	}).(DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArrayOutput)
+}
+
+// (Updatable) A list of details of mount operations performed on block volumes.
+func (o DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsOutput) Mounts() DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArrayOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberBlockVolumeAttachAndMountOperations) []DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMount {
+		return v.Mounts
+	}).(DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArrayOutput)
+}
+
+type DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DrProtectionGroupMemberBlockVolumeAttachAndMountOperations)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrOutput) ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrOutput() DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrOutput) ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrOutput) Elem() DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberBlockVolumeAttachAndMountOperations) DrProtectionGroupMemberBlockVolumeAttachAndMountOperations {
+		if v != nil {
+			return *v
+		}
+		var ret DrProtectionGroupMemberBlockVolumeAttachAndMountOperations
+		return ret
+	}).(DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsOutput)
+}
+
+// (Updatable) A list of details of attach or detach operations performed on block volumes.
+func (o DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrOutput) Attachments() DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArrayOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberBlockVolumeAttachAndMountOperations) []DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachment {
+		if v == nil {
+			return nil
+		}
+		return v.Attachments
+	}).(DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArrayOutput)
+}
+
+// (Updatable) A list of details of mount operations performed on block volumes.
+func (o DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrOutput) Mounts() DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArrayOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberBlockVolumeAttachAndMountOperations) []DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMount {
+		if v == nil {
+			return nil
+		}
+		return v.Mounts
+	}).(DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArrayOutput)
+}
+
+type DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachment struct {
+	// (Updatable) The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
+	BlockVolumeId *string `pulumi:"blockVolumeId"`
+	// (Updatable) The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+	VolumeAttachmentReferenceInstanceId *string `pulumi:"volumeAttachmentReferenceInstanceId"`
+}
+
+// DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentInput is an input type that accepts DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArgs and DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentInput` via:
+//
+//	DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArgs{...}
+type DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentOutput() DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentOutput
+	ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentOutputWithContext(context.Context) DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentOutput
+}
+
+type DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArgs struct {
+	// (Updatable) The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
+	BlockVolumeId pulumi.StringPtrInput `pulumi:"blockVolumeId"`
+	// (Updatable) The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+	VolumeAttachmentReferenceInstanceId pulumi.StringPtrInput `pulumi:"volumeAttachmentReferenceInstanceId"`
+}
+
+func (DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachment)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArgs) ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentOutput() DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentOutput {
+	return i.ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArgs) ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentOutput)
+}
+
+// DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArrayInput is an input type that accepts DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArray and DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArrayOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArrayInput` via:
+//
+//	DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArray{ DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArgs{...} }
+type DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArrayInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArrayOutput() DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArrayOutput
+	ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArrayOutputWithContext(context.Context) DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArrayOutput
+}
+
+type DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArray []DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentInput
+
+func (DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachment)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArray) ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArrayOutput() DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArrayOutput {
+	return i.ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArrayOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArray) ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArrayOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArrayOutput)
+}
+
+type DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachment)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentOutput) ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentOutput() DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentOutput) ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentOutput {
+	return o
+}
+
+// (Updatable) The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
+func (o DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentOutput) BlockVolumeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachment) *string {
+		return v.BlockVolumeId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+func (o DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentOutput) VolumeAttachmentReferenceInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachment) *string {
+		return v.VolumeAttachmentReferenceInstanceId
+	}).(pulumi.StringPtrOutput)
+}
+
+type DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArrayOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachment)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArrayOutput) ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArrayOutput() DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArrayOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArrayOutput) ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArrayOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArrayOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArrayOutput) Index(i pulumi.IntInput) DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachment {
+		return vs[0].([]DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachment)[vs[1].(int)]
+	}).(DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentOutput)
+}
+
+type DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMount struct {
+	// (Updatable) The physical mount point where the file system is mounted on the block volume.  Example: `/mnt/yourmountpoint`
+	MountPoint *string `pulumi:"mountPoint"`
+}
+
+// DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountInput is an input type that accepts DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArgs and DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountInput` via:
+//
+//	DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArgs{...}
+type DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountOutput() DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountOutput
+	ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountOutputWithContext(context.Context) DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountOutput
+}
+
+type DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArgs struct {
+	// (Updatable) The physical mount point where the file system is mounted on the block volume.  Example: `/mnt/yourmountpoint`
+	MountPoint pulumi.StringPtrInput `pulumi:"mountPoint"`
+}
+
+func (DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMount)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArgs) ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountOutput() DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountOutput {
+	return i.ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArgs) ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountOutput)
+}
+
+// DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArrayInput is an input type that accepts DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArray and DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArrayOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArrayInput` via:
+//
+//	DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArray{ DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArgs{...} }
+type DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArrayInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArrayOutput() DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArrayOutput
+	ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArrayOutputWithContext(context.Context) DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArrayOutput
+}
+
+type DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArray []DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountInput
+
+func (DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMount)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArray) ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArrayOutput() DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArrayOutput {
+	return i.ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArrayOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArray) ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArrayOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArrayOutput)
+}
+
+type DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMount)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountOutput) ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountOutput() DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountOutput) ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountOutput {
+	return o
+}
+
+// (Updatable) The physical mount point where the file system is mounted on the block volume.  Example: `/mnt/yourmountpoint`
+func (o DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountOutput) MountPoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMount) *string { return v.MountPoint }).(pulumi.StringPtrOutput)
+}
+
+type DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArrayOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMount)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArrayOutput) ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArrayOutput() DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArrayOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArrayOutput) ToDrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArrayOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArrayOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArrayOutput) Index(i pulumi.IntInput) DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMount {
+		return vs[0].([]DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMount)[vs[1].(int)]
+	}).(DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountOutput)
+}
+
 type DrProtectionGroupMemberBlockVolumeOperation struct {
-	// (Updatable) The details for creating a block volume attachment.
+	// (Updatable) Deprecated. Use the 'CreateComputeInstanceNonMovableBlockVolumeAttachOperationDetails' definition instead of this. The details for creating a block volume attachment.
 	AttachmentDetails *DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails `pulumi:"attachmentDetails"`
 	// (Updatable) The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
 	BlockVolumeId *string `pulumi:"blockVolumeId"`
@@ -2686,7 +3145,7 @@ type DrProtectionGroupMemberBlockVolumeOperationInput interface {
 }
 
 type DrProtectionGroupMemberBlockVolumeOperationArgs struct {
-	// (Updatable) The details for creating a block volume attachment.
+	// (Updatable) Deprecated. Use the 'CreateComputeInstanceNonMovableBlockVolumeAttachOperationDetails' definition instead of this. The details for creating a block volume attachment.
 	AttachmentDetails DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrInput `pulumi:"attachmentDetails"`
 	// (Updatable) The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
 	BlockVolumeId pulumi.StringPtrInput `pulumi:"blockVolumeId"`
@@ -2745,7 +3204,7 @@ func (o DrProtectionGroupMemberBlockVolumeOperationOutput) ToDrProtectionGroupMe
 	return o
 }
 
-// (Updatable) The details for creating a block volume attachment.
+// (Updatable) Deprecated. Use the 'CreateComputeInstanceNonMovableBlockVolumeAttachOperationDetails' definition instead of this. The details for creating a block volume attachment.
 func (o DrProtectionGroupMemberBlockVolumeOperationOutput) AttachmentDetails() DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMemberBlockVolumeOperation) *DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails {
 		return v.AttachmentDetails
@@ -2785,7 +3244,7 @@ func (o DrProtectionGroupMemberBlockVolumeOperationArrayOutput) Index(i pulumi.I
 }
 
 type DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails struct {
-	// (Updatable) The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+	// (Updatable) The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
 	VolumeAttachmentReferenceInstanceId *string `pulumi:"volumeAttachmentReferenceInstanceId"`
 }
 
@@ -2801,7 +3260,7 @@ type DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsInput interface
 }
 
 type DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs struct {
-	// (Updatable) The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+	// (Updatable) The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
 	VolumeAttachmentReferenceInstanceId pulumi.StringPtrInput `pulumi:"volumeAttachmentReferenceInstanceId"`
 }
 
@@ -2882,7 +3341,7 @@ func (o DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput) ToDr
 	}).(DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput)
 }
 
-// (Updatable) The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+// (Updatable) The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
 func (o DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput) VolumeAttachmentReferenceInstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails) *string {
 		return v.VolumeAttachmentReferenceInstanceId
@@ -2913,7 +3372,7 @@ func (o DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput) E
 	}).(DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput)
 }
 
-// (Updatable) The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+// (Updatable) The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
 func (o DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput) VolumeAttachmentReferenceInstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails) *string {
 		if v == nil {
@@ -3057,6 +3516,318 @@ func (o DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput) MountP
 			return nil
 		}
 		return v.MountPoint
+	}).(pulumi.StringPtrOutput)
+}
+
+type DrProtectionGroupMemberCommonDestinationKey struct {
+	// (Updatable) The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+	EncryptionKeyId *string `pulumi:"encryptionKeyId"`
+	// (Updatable) The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+	VaultId *string `pulumi:"vaultId"`
+}
+
+// DrProtectionGroupMemberCommonDestinationKeyInput is an input type that accepts DrProtectionGroupMemberCommonDestinationKeyArgs and DrProtectionGroupMemberCommonDestinationKeyOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberCommonDestinationKeyInput` via:
+//
+//	DrProtectionGroupMemberCommonDestinationKeyArgs{...}
+type DrProtectionGroupMemberCommonDestinationKeyInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberCommonDestinationKeyOutput() DrProtectionGroupMemberCommonDestinationKeyOutput
+	ToDrProtectionGroupMemberCommonDestinationKeyOutputWithContext(context.Context) DrProtectionGroupMemberCommonDestinationKeyOutput
+}
+
+type DrProtectionGroupMemberCommonDestinationKeyArgs struct {
+	// (Updatable) The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+	EncryptionKeyId pulumi.StringPtrInput `pulumi:"encryptionKeyId"`
+	// (Updatable) The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+	VaultId pulumi.StringPtrInput `pulumi:"vaultId"`
+}
+
+func (DrProtectionGroupMemberCommonDestinationKeyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberCommonDestinationKey)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberCommonDestinationKeyArgs) ToDrProtectionGroupMemberCommonDestinationKeyOutput() DrProtectionGroupMemberCommonDestinationKeyOutput {
+	return i.ToDrProtectionGroupMemberCommonDestinationKeyOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberCommonDestinationKeyArgs) ToDrProtectionGroupMemberCommonDestinationKeyOutputWithContext(ctx context.Context) DrProtectionGroupMemberCommonDestinationKeyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberCommonDestinationKeyOutput)
+}
+
+func (i DrProtectionGroupMemberCommonDestinationKeyArgs) ToDrProtectionGroupMemberCommonDestinationKeyPtrOutput() DrProtectionGroupMemberCommonDestinationKeyPtrOutput {
+	return i.ToDrProtectionGroupMemberCommonDestinationKeyPtrOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberCommonDestinationKeyArgs) ToDrProtectionGroupMemberCommonDestinationKeyPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberCommonDestinationKeyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberCommonDestinationKeyOutput).ToDrProtectionGroupMemberCommonDestinationKeyPtrOutputWithContext(ctx)
+}
+
+// DrProtectionGroupMemberCommonDestinationKeyPtrInput is an input type that accepts DrProtectionGroupMemberCommonDestinationKeyArgs, DrProtectionGroupMemberCommonDestinationKeyPtr and DrProtectionGroupMemberCommonDestinationKeyPtrOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberCommonDestinationKeyPtrInput` via:
+//
+//	        DrProtectionGroupMemberCommonDestinationKeyArgs{...}
+//
+//	or:
+//
+//	        nil
+type DrProtectionGroupMemberCommonDestinationKeyPtrInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberCommonDestinationKeyPtrOutput() DrProtectionGroupMemberCommonDestinationKeyPtrOutput
+	ToDrProtectionGroupMemberCommonDestinationKeyPtrOutputWithContext(context.Context) DrProtectionGroupMemberCommonDestinationKeyPtrOutput
+}
+
+type drProtectionGroupMemberCommonDestinationKeyPtrType DrProtectionGroupMemberCommonDestinationKeyArgs
+
+func DrProtectionGroupMemberCommonDestinationKeyPtr(v *DrProtectionGroupMemberCommonDestinationKeyArgs) DrProtectionGroupMemberCommonDestinationKeyPtrInput {
+	return (*drProtectionGroupMemberCommonDestinationKeyPtrType)(v)
+}
+
+func (*drProtectionGroupMemberCommonDestinationKeyPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DrProtectionGroupMemberCommonDestinationKey)(nil)).Elem()
+}
+
+func (i *drProtectionGroupMemberCommonDestinationKeyPtrType) ToDrProtectionGroupMemberCommonDestinationKeyPtrOutput() DrProtectionGroupMemberCommonDestinationKeyPtrOutput {
+	return i.ToDrProtectionGroupMemberCommonDestinationKeyPtrOutputWithContext(context.Background())
+}
+
+func (i *drProtectionGroupMemberCommonDestinationKeyPtrType) ToDrProtectionGroupMemberCommonDestinationKeyPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberCommonDestinationKeyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberCommonDestinationKeyPtrOutput)
+}
+
+type DrProtectionGroupMemberCommonDestinationKeyOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberCommonDestinationKeyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberCommonDestinationKey)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberCommonDestinationKeyOutput) ToDrProtectionGroupMemberCommonDestinationKeyOutput() DrProtectionGroupMemberCommonDestinationKeyOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberCommonDestinationKeyOutput) ToDrProtectionGroupMemberCommonDestinationKeyOutputWithContext(ctx context.Context) DrProtectionGroupMemberCommonDestinationKeyOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberCommonDestinationKeyOutput) ToDrProtectionGroupMemberCommonDestinationKeyPtrOutput() DrProtectionGroupMemberCommonDestinationKeyPtrOutput {
+	return o.ToDrProtectionGroupMemberCommonDestinationKeyPtrOutputWithContext(context.Background())
+}
+
+func (o DrProtectionGroupMemberCommonDestinationKeyOutput) ToDrProtectionGroupMemberCommonDestinationKeyPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberCommonDestinationKeyPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DrProtectionGroupMemberCommonDestinationKey) *DrProtectionGroupMemberCommonDestinationKey {
+		return &v
+	}).(DrProtectionGroupMemberCommonDestinationKeyPtrOutput)
+}
+
+// (Updatable) The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+func (o DrProtectionGroupMemberCommonDestinationKeyOutput) EncryptionKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberCommonDestinationKey) *string { return v.EncryptionKeyId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+func (o DrProtectionGroupMemberCommonDestinationKeyOutput) VaultId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberCommonDestinationKey) *string { return v.VaultId }).(pulumi.StringPtrOutput)
+}
+
+type DrProtectionGroupMemberCommonDestinationKeyPtrOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberCommonDestinationKeyPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DrProtectionGroupMemberCommonDestinationKey)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberCommonDestinationKeyPtrOutput) ToDrProtectionGroupMemberCommonDestinationKeyPtrOutput() DrProtectionGroupMemberCommonDestinationKeyPtrOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberCommonDestinationKeyPtrOutput) ToDrProtectionGroupMemberCommonDestinationKeyPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberCommonDestinationKeyPtrOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberCommonDestinationKeyPtrOutput) Elem() DrProtectionGroupMemberCommonDestinationKeyOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberCommonDestinationKey) DrProtectionGroupMemberCommonDestinationKey {
+		if v != nil {
+			return *v
+		}
+		var ret DrProtectionGroupMemberCommonDestinationKey
+		return ret
+	}).(DrProtectionGroupMemberCommonDestinationKeyOutput)
+}
+
+// (Updatable) The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+func (o DrProtectionGroupMemberCommonDestinationKeyPtrOutput) EncryptionKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberCommonDestinationKey) *string {
+		if v == nil {
+			return nil
+		}
+		return v.EncryptionKeyId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+func (o DrProtectionGroupMemberCommonDestinationKeyPtrOutput) VaultId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberCommonDestinationKey) *string {
+		if v == nil {
+			return nil
+		}
+		return v.VaultId
+	}).(pulumi.StringPtrOutput)
+}
+
+type DrProtectionGroupMemberDestinationEncryptionKey struct {
+	// (Updatable) The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+	EncryptionKeyId *string `pulumi:"encryptionKeyId"`
+	// (Updatable) The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+	VaultId *string `pulumi:"vaultId"`
+}
+
+// DrProtectionGroupMemberDestinationEncryptionKeyInput is an input type that accepts DrProtectionGroupMemberDestinationEncryptionKeyArgs and DrProtectionGroupMemberDestinationEncryptionKeyOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberDestinationEncryptionKeyInput` via:
+//
+//	DrProtectionGroupMemberDestinationEncryptionKeyArgs{...}
+type DrProtectionGroupMemberDestinationEncryptionKeyInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberDestinationEncryptionKeyOutput() DrProtectionGroupMemberDestinationEncryptionKeyOutput
+	ToDrProtectionGroupMemberDestinationEncryptionKeyOutputWithContext(context.Context) DrProtectionGroupMemberDestinationEncryptionKeyOutput
+}
+
+type DrProtectionGroupMemberDestinationEncryptionKeyArgs struct {
+	// (Updatable) The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+	EncryptionKeyId pulumi.StringPtrInput `pulumi:"encryptionKeyId"`
+	// (Updatable) The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+	VaultId pulumi.StringPtrInput `pulumi:"vaultId"`
+}
+
+func (DrProtectionGroupMemberDestinationEncryptionKeyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberDestinationEncryptionKey)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberDestinationEncryptionKeyArgs) ToDrProtectionGroupMemberDestinationEncryptionKeyOutput() DrProtectionGroupMemberDestinationEncryptionKeyOutput {
+	return i.ToDrProtectionGroupMemberDestinationEncryptionKeyOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberDestinationEncryptionKeyArgs) ToDrProtectionGroupMemberDestinationEncryptionKeyOutputWithContext(ctx context.Context) DrProtectionGroupMemberDestinationEncryptionKeyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberDestinationEncryptionKeyOutput)
+}
+
+func (i DrProtectionGroupMemberDestinationEncryptionKeyArgs) ToDrProtectionGroupMemberDestinationEncryptionKeyPtrOutput() DrProtectionGroupMemberDestinationEncryptionKeyPtrOutput {
+	return i.ToDrProtectionGroupMemberDestinationEncryptionKeyPtrOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberDestinationEncryptionKeyArgs) ToDrProtectionGroupMemberDestinationEncryptionKeyPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberDestinationEncryptionKeyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberDestinationEncryptionKeyOutput).ToDrProtectionGroupMemberDestinationEncryptionKeyPtrOutputWithContext(ctx)
+}
+
+// DrProtectionGroupMemberDestinationEncryptionKeyPtrInput is an input type that accepts DrProtectionGroupMemberDestinationEncryptionKeyArgs, DrProtectionGroupMemberDestinationEncryptionKeyPtr and DrProtectionGroupMemberDestinationEncryptionKeyPtrOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberDestinationEncryptionKeyPtrInput` via:
+//
+//	        DrProtectionGroupMemberDestinationEncryptionKeyArgs{...}
+//
+//	or:
+//
+//	        nil
+type DrProtectionGroupMemberDestinationEncryptionKeyPtrInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberDestinationEncryptionKeyPtrOutput() DrProtectionGroupMemberDestinationEncryptionKeyPtrOutput
+	ToDrProtectionGroupMemberDestinationEncryptionKeyPtrOutputWithContext(context.Context) DrProtectionGroupMemberDestinationEncryptionKeyPtrOutput
+}
+
+type drProtectionGroupMemberDestinationEncryptionKeyPtrType DrProtectionGroupMemberDestinationEncryptionKeyArgs
+
+func DrProtectionGroupMemberDestinationEncryptionKeyPtr(v *DrProtectionGroupMemberDestinationEncryptionKeyArgs) DrProtectionGroupMemberDestinationEncryptionKeyPtrInput {
+	return (*drProtectionGroupMemberDestinationEncryptionKeyPtrType)(v)
+}
+
+func (*drProtectionGroupMemberDestinationEncryptionKeyPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DrProtectionGroupMemberDestinationEncryptionKey)(nil)).Elem()
+}
+
+func (i *drProtectionGroupMemberDestinationEncryptionKeyPtrType) ToDrProtectionGroupMemberDestinationEncryptionKeyPtrOutput() DrProtectionGroupMemberDestinationEncryptionKeyPtrOutput {
+	return i.ToDrProtectionGroupMemberDestinationEncryptionKeyPtrOutputWithContext(context.Background())
+}
+
+func (i *drProtectionGroupMemberDestinationEncryptionKeyPtrType) ToDrProtectionGroupMemberDestinationEncryptionKeyPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberDestinationEncryptionKeyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberDestinationEncryptionKeyPtrOutput)
+}
+
+type DrProtectionGroupMemberDestinationEncryptionKeyOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberDestinationEncryptionKeyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberDestinationEncryptionKey)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberDestinationEncryptionKeyOutput) ToDrProtectionGroupMemberDestinationEncryptionKeyOutput() DrProtectionGroupMemberDestinationEncryptionKeyOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberDestinationEncryptionKeyOutput) ToDrProtectionGroupMemberDestinationEncryptionKeyOutputWithContext(ctx context.Context) DrProtectionGroupMemberDestinationEncryptionKeyOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberDestinationEncryptionKeyOutput) ToDrProtectionGroupMemberDestinationEncryptionKeyPtrOutput() DrProtectionGroupMemberDestinationEncryptionKeyPtrOutput {
+	return o.ToDrProtectionGroupMemberDestinationEncryptionKeyPtrOutputWithContext(context.Background())
+}
+
+func (o DrProtectionGroupMemberDestinationEncryptionKeyOutput) ToDrProtectionGroupMemberDestinationEncryptionKeyPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberDestinationEncryptionKeyPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DrProtectionGroupMemberDestinationEncryptionKey) *DrProtectionGroupMemberDestinationEncryptionKey {
+		return &v
+	}).(DrProtectionGroupMemberDestinationEncryptionKeyPtrOutput)
+}
+
+// (Updatable) The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+func (o DrProtectionGroupMemberDestinationEncryptionKeyOutput) EncryptionKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberDestinationEncryptionKey) *string { return v.EncryptionKeyId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+func (o DrProtectionGroupMemberDestinationEncryptionKeyOutput) VaultId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberDestinationEncryptionKey) *string { return v.VaultId }).(pulumi.StringPtrOutput)
+}
+
+type DrProtectionGroupMemberDestinationEncryptionKeyPtrOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberDestinationEncryptionKeyPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DrProtectionGroupMemberDestinationEncryptionKey)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberDestinationEncryptionKeyPtrOutput) ToDrProtectionGroupMemberDestinationEncryptionKeyPtrOutput() DrProtectionGroupMemberDestinationEncryptionKeyPtrOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberDestinationEncryptionKeyPtrOutput) ToDrProtectionGroupMemberDestinationEncryptionKeyPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberDestinationEncryptionKeyPtrOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberDestinationEncryptionKeyPtrOutput) Elem() DrProtectionGroupMemberDestinationEncryptionKeyOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberDestinationEncryptionKey) DrProtectionGroupMemberDestinationEncryptionKey {
+		if v != nil {
+			return *v
+		}
+		var ret DrProtectionGroupMemberDestinationEncryptionKey
+		return ret
+	}).(DrProtectionGroupMemberDestinationEncryptionKeyOutput)
+}
+
+// (Updatable) The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+func (o DrProtectionGroupMemberDestinationEncryptionKeyPtrOutput) EncryptionKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberDestinationEncryptionKey) *string {
+		if v == nil {
+			return nil
+		}
+		return v.EncryptionKeyId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+func (o DrProtectionGroupMemberDestinationEncryptionKeyPtrOutput) VaultId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberDestinationEncryptionKey) *string {
+		if v == nil {
+			return nil
+		}
+		return v.VaultId
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -3908,6 +4679,276 @@ func (o DrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput) Index(i pu
 	}).(DrProtectionGroupMemberNetworkLoadBalancerMappingOutput)
 }
 
+type DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping struct {
+	// (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
+	DestinationEncryptionKey *DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey `pulumi:"destinationEncryptionKey"`
+	// (Updatable) The OCID of the source boot volume or block volume.  Example: `ocid1.volume.oc1..uniqueID`
+	SourceVolumeId *string `pulumi:"sourceVolumeId"`
+}
+
+// DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingInput is an input type that accepts DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs and DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingInput` via:
+//
+//	DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs{...}
+type DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput() DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput
+	ToDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutputWithContext(context.Context) DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput
+}
+
+type DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs struct {
+	// (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
+	DestinationEncryptionKey DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrInput `pulumi:"destinationEncryptionKey"`
+	// (Updatable) The OCID of the source boot volume or block volume.  Example: `ocid1.volume.oc1..uniqueID`
+	SourceVolumeId pulumi.StringPtrInput `pulumi:"sourceVolumeId"`
+}
+
+func (DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs) ToDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput() DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput {
+	return i.ToDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs) ToDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutputWithContext(ctx context.Context) DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput)
+}
+
+// DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayInput is an input type that accepts DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArray and DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayInput` via:
+//
+//	DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArray{ DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs{...} }
+type DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput() DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput
+	ToDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutputWithContext(context.Context) DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput
+}
+
+type DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArray []DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingInput
+
+func (DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArray) ToDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput() DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput {
+	return i.ToDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArray) ToDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutputWithContext(ctx context.Context) DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput)
+}
+
+type DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput) ToDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput() DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput) ToDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutputWithContext(ctx context.Context) DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput {
+	return o
+}
+
+// (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
+func (o DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput) DestinationEncryptionKey() DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping) *DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey {
+		return v.DestinationEncryptionKey
+	}).(DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrOutput)
+}
+
+// (Updatable) The OCID of the source boot volume or block volume.  Example: `ocid1.volume.oc1..uniqueID`
+func (o DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput) SourceVolumeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping) *string {
+		return v.SourceVolumeId
+	}).(pulumi.StringPtrOutput)
+}
+
+type DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput) ToDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput() DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput) ToDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutputWithContext(ctx context.Context) DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput) Index(i pulumi.IntInput) DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping {
+		return vs[0].([]DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping)[vs[1].(int)]
+	}).(DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput)
+}
+
+type DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey struct {
+	// (Updatable) The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+	EncryptionKeyId *string `pulumi:"encryptionKeyId"`
+	// (Updatable) The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+	VaultId *string `pulumi:"vaultId"`
+}
+
+// DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyInput is an input type that accepts DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs and DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyInput` via:
+//
+//	DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs{...}
+type DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput() DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput
+	ToDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutputWithContext(context.Context) DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput
+}
+
+type DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs struct {
+	// (Updatable) The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+	EncryptionKeyId pulumi.StringPtrInput `pulumi:"encryptionKeyId"`
+	// (Updatable) The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+	VaultId pulumi.StringPtrInput `pulumi:"vaultId"`
+}
+
+func (DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs) ToDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput() DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput {
+	return i.ToDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs) ToDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutputWithContext(ctx context.Context) DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput)
+}
+
+func (i DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs) ToDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrOutput() DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrOutput {
+	return i.ToDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs) ToDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput).ToDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrOutputWithContext(ctx)
+}
+
+// DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrInput is an input type that accepts DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs, DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtr and DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrInput` via:
+//
+//	        DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs{...}
+//
+//	or:
+//
+//	        nil
+type DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrOutput() DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrOutput
+	ToDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrOutputWithContext(context.Context) DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrOutput
+}
+
+type drProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrType DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs
+
+func DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtr(v *DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs) DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrInput {
+	return (*drProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrType)(v)
+}
+
+func (*drProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey)(nil)).Elem()
+}
+
+func (i *drProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrType) ToDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrOutput() DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrOutput {
+	return i.ToDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrOutputWithContext(context.Background())
+}
+
+func (i *drProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrType) ToDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrOutput)
+}
+
+type DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput) ToDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput() DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput) ToDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutputWithContext(ctx context.Context) DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput) ToDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrOutput() DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrOutput {
+	return o.ToDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrOutputWithContext(context.Background())
+}
+
+func (o DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput) ToDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey) *DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey {
+		return &v
+	}).(DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrOutput)
+}
+
+// (Updatable) The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+func (o DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput) EncryptionKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey) *string {
+		return v.EncryptionKeyId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+func (o DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput) VaultId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey) *string {
+		return v.VaultId
+	}).(pulumi.StringPtrOutput)
+}
+
+type DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrOutput) ToDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrOutput() DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrOutput) ToDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrOutput) Elem() DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey) DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey {
+		if v != nil {
+			return *v
+		}
+		var ret DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey
+		return ret
+	}).(DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput)
+}
+
+// (Updatable) The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+func (o DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrOutput) EncryptionKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey) *string {
+		if v == nil {
+			return nil
+		}
+		return v.EncryptionKeyId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+func (o DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrOutput) VaultId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey) *string {
+		if v == nil {
+			return nil
+		}
+		return v.VaultId
+	}).(pulumi.StringPtrOutput)
+}
+
 type DrProtectionGroupMemberVaultMapping struct {
 	// (Updatable) The OCID of the destination Vault.  Example: `ocid1.vault.oc1..uniqueID`
 	DestinationVaultId *string `pulumi:"destinationVaultId"`
@@ -4136,6 +5177,8 @@ type DrProtectionGroupMemberVnicMapping struct {
 	DestinationPrimaryPrivateIpAddress *string `pulumi:"destinationPrimaryPrivateIpAddress"`
 	// (Updatable) The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
 	DestinationPrimaryPrivateIpHostnameLabel *string `pulumi:"destinationPrimaryPrivateIpHostnameLabel"`
+	// (Updatable) The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+	DestinationReservedPublicIpId *string `pulumi:"destinationReservedPublicIpId"`
 	// (Updatable) The OCID of the destination subnet to which the source VNIC should connect.          Example: `ocid1.subnet.oc1..uniqueID`
 	DestinationSubnetId *string `pulumi:"destinationSubnetId"`
 	// (Updatable) The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
@@ -4160,6 +5203,8 @@ type DrProtectionGroupMemberVnicMappingArgs struct {
 	DestinationPrimaryPrivateIpAddress pulumi.StringPtrInput `pulumi:"destinationPrimaryPrivateIpAddress"`
 	// (Updatable) The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
 	DestinationPrimaryPrivateIpHostnameLabel pulumi.StringPtrInput `pulumi:"destinationPrimaryPrivateIpHostnameLabel"`
+	// (Updatable) The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+	DestinationReservedPublicIpId pulumi.StringPtrInput `pulumi:"destinationReservedPublicIpId"`
 	// (Updatable) The OCID of the destination subnet to which the source VNIC should connect.          Example: `ocid1.subnet.oc1..uniqueID`
 	DestinationSubnetId pulumi.StringPtrInput `pulumi:"destinationSubnetId"`
 	// (Updatable) The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
@@ -4230,6 +5275,11 @@ func (o DrProtectionGroupMemberVnicMappingOutput) DestinationPrimaryPrivateIpAdd
 // (Updatable) The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
 func (o DrProtectionGroupMemberVnicMappingOutput) DestinationPrimaryPrivateIpHostnameLabel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMemberVnicMapping) *string { return v.DestinationPrimaryPrivateIpHostnameLabel }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+func (o DrProtectionGroupMemberVnicMappingOutput) DestinationReservedPublicIpId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberVnicMapping) *string { return v.DestinationReservedPublicIpId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The OCID of the destination subnet to which the source VNIC should connect.          Example: `ocid1.subnet.oc1..uniqueID`
@@ -4569,6 +5619,8 @@ type GetDrPlanExecutionGroupExecutionStepExecution struct {
 	TimeStarted string `pulumi:"timeStarted"`
 	// The group type.  Example: `BUILT_IN`
 	Type string `pulumi:"type"`
+	// The display name of the DR Plan step type.  Example: `Database Switchover`
+	TypeDisplayName string `pulumi:"typeDisplayName"`
 }
 
 // GetDrPlanExecutionGroupExecutionStepExecutionInput is an input type that accepts GetDrPlanExecutionGroupExecutionStepExecutionArgs and GetDrPlanExecutionGroupExecutionStepExecutionOutput values.
@@ -4603,6 +5655,8 @@ type GetDrPlanExecutionGroupExecutionStepExecutionArgs struct {
 	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
 	// The group type.  Example: `BUILT_IN`
 	Type pulumi.StringInput `pulumi:"type"`
+	// The display name of the DR Plan step type.  Example: `Database Switchover`
+	TypeDisplayName pulumi.StringInput `pulumi:"typeDisplayName"`
 }
 
 func (GetDrPlanExecutionGroupExecutionStepExecutionArgs) ElementType() reflect.Type {
@@ -4706,6 +5760,11 @@ func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) TimeStarted() pulum
 // The group type.  Example: `BUILT_IN`
 func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecution) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The display name of the DR Plan step type.  Example: `Database Switchover`
+func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) TypeDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecution) string { return v.TypeDisplayName }).(pulumi.StringOutput)
 }
 
 type GetDrPlanExecutionGroupExecutionStepExecutionArrayOutput struct{ *pulumi.OutputState }
@@ -5652,6 +6711,8 @@ type GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution
 	TimeStarted string `pulumi:"timeStarted"`
 	// The group type.  Example: `BUILT_IN`
 	Type string `pulumi:"type"`
+	// The display name of the DR Plan step type.  Example: `Database Switchover`
+	TypeDisplayName string `pulumi:"typeDisplayName"`
 }
 
 // GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionInput is an input type that accepts GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionArgs and GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput values.
@@ -5686,6 +6747,8 @@ type GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution
 	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
 	// The group type.  Example: `BUILT_IN`
 	Type pulumi.StringInput `pulumi:"type"`
+	// The display name of the DR Plan step type.  Example: `Database Switchover`
+	TypeDisplayName pulumi.StringInput `pulumi:"typeDisplayName"`
 }
 
 func (GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionArgs) ElementType() reflect.Type {
@@ -5806,6 +6869,13 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecut
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution) string {
 		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+// The display name of the DR Plan step type.  Example: `Database Switchover`
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput) TypeDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution) string {
+		return v.TypeDisplayName
 	}).(pulumi.StringOutput)
 }
 
@@ -6332,6 +7402,8 @@ type GetDrPlanPlanGroupStep struct {
 	Timeout int `pulumi:"timeout"`
 	// The type of the DR plan.
 	Type string `pulumi:"type"`
+	// The display name of the DR Plan step type.  Example: `Database Switchover`
+	TypeDisplayName string `pulumi:"typeDisplayName"`
 	// The details for a user-defined step in a DR plan.
 	UserDefinedSteps []GetDrPlanPlanGroupStepUserDefinedStep `pulumi:"userDefinedSteps"`
 }
@@ -6366,6 +7438,8 @@ type GetDrPlanPlanGroupStepArgs struct {
 	Timeout pulumi.IntInput `pulumi:"timeout"`
 	// The type of the DR plan.
 	Type pulumi.StringInput `pulumi:"type"`
+	// The display name of the DR Plan step type.  Example: `Database Switchover`
+	TypeDisplayName pulumi.StringInput `pulumi:"typeDisplayName"`
 	// The details for a user-defined step in a DR plan.
 	UserDefinedSteps GetDrPlanPlanGroupStepUserDefinedStepArrayInput `pulumi:"userDefinedSteps"`
 }
@@ -6464,6 +7538,11 @@ func (o GetDrPlanPlanGroupStepOutput) Timeout() pulumi.IntOutput {
 // The type of the DR plan.
 func (o GetDrPlanPlanGroupStepOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroupStep) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The display name of the DR Plan step type.  Example: `Database Switchover`
+func (o GetDrPlanPlanGroupStepOutput) TypeDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrPlanPlanGroupStep) string { return v.TypeDisplayName }).(pulumi.StringOutput)
 }
 
 // The details for a user-defined step in a DR plan.
@@ -7287,6 +8366,8 @@ type GetDrPlansDrPlanCollectionItemPlanGroupStep struct {
 	Timeout int `pulumi:"timeout"`
 	// The type of the DR plan.
 	Type string `pulumi:"type"`
+	// The display name of the DR Plan step type.  Example: `Database Switchover`
+	TypeDisplayName string `pulumi:"typeDisplayName"`
 	// The details for a user-defined step in a DR plan.
 	UserDefinedSteps []GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep `pulumi:"userDefinedSteps"`
 }
@@ -7321,6 +8402,8 @@ type GetDrPlansDrPlanCollectionItemPlanGroupStepArgs struct {
 	Timeout pulumi.IntInput `pulumi:"timeout"`
 	// The type of the DR plan.
 	Type pulumi.StringInput `pulumi:"type"`
+	// The display name of the DR Plan step type.  Example: `Database Switchover`
+	TypeDisplayName pulumi.StringInput `pulumi:"typeDisplayName"`
 	// The details for a user-defined step in a DR plan.
 	UserDefinedSteps GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArrayInput `pulumi:"userDefinedSteps"`
 }
@@ -7419,6 +8502,11 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) Timeout() pulumi.IntO
 // The type of the DR plan.
 func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStep) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The display name of the DR Plan step type.  Example: `Database Switchover`
+func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) TypeDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStep) string { return v.TypeDisplayName }).(pulumi.StringOutput)
 }
 
 // The details for a user-defined step in a DR plan.
@@ -8087,24 +9175,34 @@ type GetDrProtectionGroupMember struct {
 	BackupConfigs []GetDrProtectionGroupMemberBackupConfig `pulumi:"backupConfigs"`
 	// The details for object storage backup location of an OKE Cluster
 	BackupLocations []GetDrProtectionGroupMemberBackupLocation `pulumi:"backupLocations"`
-	// Operations performed on a list of block volumes used on the non-movable compute instance.
+	// The details of the block volume operations performed on the non-movable compute instance.
+	BlockVolumeAttachAndMountOperations []GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperation `pulumi:"blockVolumeAttachAndMountOperations"`
+	// Deprecated. Use the 'blockVolumeAttachAndMountOperations' attribute instead of this. Operations performed on a list of block volumes used on the non-movable compute instance.
 	BlockVolumeOperations []GetDrProtectionGroupMemberBlockVolumeOperation `pulumi:"blockVolumeOperations"`
 	// The bucket name inside the object storage namespace.  Example: `bucketName`
 	Bucket string `pulumi:"bucket"`
+	// The OCID of a vault and customer-managed encryption key in the destination region.
+	CommonDestinationKeys []GetDrProtectionGroupMemberCommonDestinationKey `pulumi:"commonDestinationKeys"`
 	// The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
 	ConnectionStringType string `pulumi:"connectionStringType"`
 	// The availability domain of the destination mount target. Example: `BBTh:region-AD`
 	DestinationAvailabilityDomain string `pulumi:"destinationAvailabilityDomain"`
+	// The OCID of the backup policy to use in the destination region. This policy will be used to create backups for this volume group after it moves the destination region.  Example: `ocid1.volumebackuppolicy.oc1..uniqueID`
+	DestinationBackupPolicyId string `pulumi:"destinationBackupPolicyId"`
 	// The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
 	DestinationCapacityReservationId string `pulumi:"destinationCapacityReservationId"`
 	// The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
 	DestinationCompartmentId string `pulumi:"destinationCompartmentId"`
 	// The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
 	DestinationDedicatedVmHostId string `pulumi:"destinationDedicatedVmHostId"`
+	// The OCID of a vault and customer-managed encryption key in the destination region.
+	DestinationEncryptionKeys []GetDrProtectionGroupMemberDestinationEncryptionKey `pulumi:"destinationEncryptionKeys"`
 	// The OCID of the destination Load Balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
 	DestinationLoadBalancerId string `pulumi:"destinationLoadBalancerId"`
 	// The OCID of the destination Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
 	DestinationNetworkLoadBalancerId string `pulumi:"destinationNetworkLoadBalancerId"`
+	// The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.  Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
+	DestinationSnapshotPolicyId string `pulumi:"destinationSnapshotPolicyId"`
 	// A list of mappings between the primary region file system export and destination region mount target.
 	ExportMappings []GetDrProtectionGroupMemberExportMapping `pulumi:"exportMappings"`
 	// Operations performed on a list of file systems used on the non-movable compute instance.
@@ -8133,6 +9231,8 @@ type GetDrProtectionGroupMember struct {
 	PasswordVaultSecretId string `pulumi:"passwordVaultSecretId"`
 	// The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.  Example: `ocid1.cluster.oc1.uniqueID`
 	PeerClusterId string `pulumi:"peerClusterId"`
+	// A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
+	SourceVolumeToDestinationEncryptionKeyMappings []GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping `pulumi:"sourceVolumeToDestinationEncryptionKeyMappings"`
 	// The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
 	VaultMappings []GetDrProtectionGroupMemberVaultMapping `pulumi:"vaultMappings"`
 	// The list of node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
@@ -8163,24 +9263,34 @@ type GetDrProtectionGroupMemberArgs struct {
 	BackupConfigs GetDrProtectionGroupMemberBackupConfigArrayInput `pulumi:"backupConfigs"`
 	// The details for object storage backup location of an OKE Cluster
 	BackupLocations GetDrProtectionGroupMemberBackupLocationArrayInput `pulumi:"backupLocations"`
-	// Operations performed on a list of block volumes used on the non-movable compute instance.
+	// The details of the block volume operations performed on the non-movable compute instance.
+	BlockVolumeAttachAndMountOperations GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArrayInput `pulumi:"blockVolumeAttachAndMountOperations"`
+	// Deprecated. Use the 'blockVolumeAttachAndMountOperations' attribute instead of this. Operations performed on a list of block volumes used on the non-movable compute instance.
 	BlockVolumeOperations GetDrProtectionGroupMemberBlockVolumeOperationArrayInput `pulumi:"blockVolumeOperations"`
 	// The bucket name inside the object storage namespace.  Example: `bucketName`
 	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The OCID of a vault and customer-managed encryption key in the destination region.
+	CommonDestinationKeys GetDrProtectionGroupMemberCommonDestinationKeyArrayInput `pulumi:"commonDestinationKeys"`
 	// The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
 	ConnectionStringType pulumi.StringInput `pulumi:"connectionStringType"`
 	// The availability domain of the destination mount target. Example: `BBTh:region-AD`
 	DestinationAvailabilityDomain pulumi.StringInput `pulumi:"destinationAvailabilityDomain"`
+	// The OCID of the backup policy to use in the destination region. This policy will be used to create backups for this volume group after it moves the destination region.  Example: `ocid1.volumebackuppolicy.oc1..uniqueID`
+	DestinationBackupPolicyId pulumi.StringInput `pulumi:"destinationBackupPolicyId"`
 	// The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
 	DestinationCapacityReservationId pulumi.StringInput `pulumi:"destinationCapacityReservationId"`
 	// The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
 	DestinationCompartmentId pulumi.StringInput `pulumi:"destinationCompartmentId"`
 	// The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
 	DestinationDedicatedVmHostId pulumi.StringInput `pulumi:"destinationDedicatedVmHostId"`
+	// The OCID of a vault and customer-managed encryption key in the destination region.
+	DestinationEncryptionKeys GetDrProtectionGroupMemberDestinationEncryptionKeyArrayInput `pulumi:"destinationEncryptionKeys"`
 	// The OCID of the destination Load Balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
 	DestinationLoadBalancerId pulumi.StringInput `pulumi:"destinationLoadBalancerId"`
 	// The OCID of the destination Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
 	DestinationNetworkLoadBalancerId pulumi.StringInput `pulumi:"destinationNetworkLoadBalancerId"`
+	// The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.  Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
+	DestinationSnapshotPolicyId pulumi.StringInput `pulumi:"destinationSnapshotPolicyId"`
 	// A list of mappings between the primary region file system export and destination region mount target.
 	ExportMappings GetDrProtectionGroupMemberExportMappingArrayInput `pulumi:"exportMappings"`
 	// Operations performed on a list of file systems used on the non-movable compute instance.
@@ -8209,6 +9319,8 @@ type GetDrProtectionGroupMemberArgs struct {
 	PasswordVaultSecretId pulumi.StringInput `pulumi:"passwordVaultSecretId"`
 	// The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.  Example: `ocid1.cluster.oc1.uniqueID`
 	PeerClusterId pulumi.StringInput `pulumi:"peerClusterId"`
+	// A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
+	SourceVolumeToDestinationEncryptionKeyMappings GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayInput `pulumi:"sourceVolumeToDestinationEncryptionKeyMappings"`
 	// The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
 	VaultMappings GetDrProtectionGroupMemberVaultMappingArrayInput `pulumi:"vaultMappings"`
 	// The list of node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
@@ -8294,7 +9406,14 @@ func (o GetDrProtectionGroupMemberOutput) BackupLocations() GetDrProtectionGroup
 	}).(GetDrProtectionGroupMemberBackupLocationArrayOutput)
 }
 
-// Operations performed on a list of block volumes used on the non-movable compute instance.
+// The details of the block volume operations performed on the non-movable compute instance.
+func (o GetDrProtectionGroupMemberOutput) BlockVolumeAttachAndMountOperations() GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) []GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperation {
+		return v.BlockVolumeAttachAndMountOperations
+	}).(GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArrayOutput)
+}
+
+// Deprecated. Use the 'blockVolumeAttachAndMountOperations' attribute instead of this. Operations performed on a list of block volumes used on the non-movable compute instance.
 func (o GetDrProtectionGroupMemberOutput) BlockVolumeOperations() GetDrProtectionGroupMemberBlockVolumeOperationArrayOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) []GetDrProtectionGroupMemberBlockVolumeOperation {
 		return v.BlockVolumeOperations
@@ -8306,6 +9425,13 @@ func (o GetDrProtectionGroupMemberOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
+// The OCID of a vault and customer-managed encryption key in the destination region.
+func (o GetDrProtectionGroupMemberOutput) CommonDestinationKeys() GetDrProtectionGroupMemberCommonDestinationKeyArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) []GetDrProtectionGroupMemberCommonDestinationKey {
+		return v.CommonDestinationKeys
+	}).(GetDrProtectionGroupMemberCommonDestinationKeyArrayOutput)
+}
+
 // The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
 func (o GetDrProtectionGroupMemberOutput) ConnectionStringType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.ConnectionStringType }).(pulumi.StringOutput)
@@ -8314,6 +9440,11 @@ func (o GetDrProtectionGroupMemberOutput) ConnectionStringType() pulumi.StringOu
 // The availability domain of the destination mount target. Example: `BBTh:region-AD`
 func (o GetDrProtectionGroupMemberOutput) DestinationAvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.DestinationAvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// The OCID of the backup policy to use in the destination region. This policy will be used to create backups for this volume group after it moves the destination region.  Example: `ocid1.volumebackuppolicy.oc1..uniqueID`
+func (o GetDrProtectionGroupMemberOutput) DestinationBackupPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.DestinationBackupPolicyId }).(pulumi.StringOutput)
 }
 
 // The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
@@ -8331,6 +9462,13 @@ func (o GetDrProtectionGroupMemberOutput) DestinationDedicatedVmHostId() pulumi.
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.DestinationDedicatedVmHostId }).(pulumi.StringOutput)
 }
 
+// The OCID of a vault and customer-managed encryption key in the destination region.
+func (o GetDrProtectionGroupMemberOutput) DestinationEncryptionKeys() GetDrProtectionGroupMemberDestinationEncryptionKeyArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) []GetDrProtectionGroupMemberDestinationEncryptionKey {
+		return v.DestinationEncryptionKeys
+	}).(GetDrProtectionGroupMemberDestinationEncryptionKeyArrayOutput)
+}
+
 // The OCID of the destination Load Balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
 func (o GetDrProtectionGroupMemberOutput) DestinationLoadBalancerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.DestinationLoadBalancerId }).(pulumi.StringOutput)
@@ -8339,6 +9477,11 @@ func (o GetDrProtectionGroupMemberOutput) DestinationLoadBalancerId() pulumi.Str
 // The OCID of the destination Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
 func (o GetDrProtectionGroupMemberOutput) DestinationNetworkLoadBalancerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.DestinationNetworkLoadBalancerId }).(pulumi.StringOutput)
+}
+
+// The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.  Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
+func (o GetDrProtectionGroupMemberOutput) DestinationSnapshotPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.DestinationSnapshotPolicyId }).(pulumi.StringOutput)
 }
 
 // A list of mappings between the primary region file system export and destination region mount target.
@@ -8417,6 +9560,13 @@ func (o GetDrProtectionGroupMemberOutput) PasswordVaultSecretId() pulumi.StringO
 // The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.  Example: `ocid1.cluster.oc1.uniqueID`
 func (o GetDrProtectionGroupMemberOutput) PeerClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.PeerClusterId }).(pulumi.StringOutput)
+}
+
+// A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
+func (o GetDrProtectionGroupMemberOutput) SourceVolumeToDestinationEncryptionKeyMappings() GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) []GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping {
+		return v.SourceVolumeToDestinationEncryptionKeyMappings
+	}).(GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput)
 }
 
 // The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
@@ -8824,8 +9974,325 @@ func (o GetDrProtectionGroupMemberBackupLocationArrayOutput) Index(i pulumi.IntI
 	}).(GetDrProtectionGroupMemberBackupLocationOutput)
 }
 
+type GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperation struct {
+	// A list of details of attach or detach operations performed on block volumes.
+	Attachments []GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachment `pulumi:"attachments"`
+	// A list of details of mount operations performed on block volumes.
+	Mounts []GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMount `pulumi:"mounts"`
+}
+
+// GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationInput is an input type that accepts GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArgs and GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationInput` via:
+//
+//	GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArgs{...}
+type GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationOutput() GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationOutput
+	ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationOutputWithContext(context.Context) GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationOutput
+}
+
+type GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArgs struct {
+	// A list of details of attach or detach operations performed on block volumes.
+	Attachments GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArrayInput `pulumi:"attachments"`
+	// A list of details of mount operations performed on block volumes.
+	Mounts GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArrayInput `pulumi:"mounts"`
+}
+
+func (GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperation)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArgs) ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationOutput() GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationOutput {
+	return i.ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArgs) ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationOutput)
+}
+
+// GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArrayInput is an input type that accepts GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArray and GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArrayInput` via:
+//
+//	GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArray{ GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArgs{...} }
+type GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArrayOutput() GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArrayOutput
+	ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArrayOutputWithContext(context.Context) GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArrayOutput
+}
+
+type GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArray []GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationInput
+
+func (GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperation)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArray) ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArrayOutput() GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArrayOutput {
+	return i.ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArray) ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArrayOutput)
+}
+
+type GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperation)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationOutput) ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationOutput() GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationOutput) ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationOutput {
+	return o
+}
+
+// A list of details of attach or detach operations performed on block volumes.
+func (o GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationOutput) Attachments() GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperation) []GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachment {
+		return v.Attachments
+	}).(GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutput)
+}
+
+// A list of details of mount operations performed on block volumes.
+func (o GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationOutput) Mounts() GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperation) []GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMount {
+		return v.Mounts
+	}).(GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArrayOutput)
+}
+
+type GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperation)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArrayOutput) ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArrayOutput() GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArrayOutput) ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperation {
+		return vs[0].([]GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperation)[vs[1].(int)]
+	}).(GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationOutput)
+}
+
+type GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachment struct {
+	// The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
+	BlockVolumeId string `pulumi:"blockVolumeId"`
+	// The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+	VolumeAttachmentReferenceInstanceId string `pulumi:"volumeAttachmentReferenceInstanceId"`
+}
+
+// GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentInput is an input type that accepts GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArgs and GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentInput` via:
+//
+//	GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArgs{...}
+type GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentOutput() GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentOutput
+	ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentOutputWithContext(context.Context) GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentOutput
+}
+
+type GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArgs struct {
+	// The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
+	BlockVolumeId pulumi.StringInput `pulumi:"blockVolumeId"`
+	// The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+	VolumeAttachmentReferenceInstanceId pulumi.StringInput `pulumi:"volumeAttachmentReferenceInstanceId"`
+}
+
+func (GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachment)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArgs) ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentOutput() GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentOutput {
+	return i.ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArgs) ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentOutput)
+}
+
+// GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArrayInput is an input type that accepts GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArray and GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArrayInput` via:
+//
+//	GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArray{ GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArgs{...} }
+type GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutput() GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutput
+	ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutputWithContext(context.Context) GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutput
+}
+
+type GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArray []GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentInput
+
+func (GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachment)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArray) ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutput() GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutput {
+	return i.ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArray) ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutput)
+}
+
+type GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachment)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentOutput) ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentOutput() GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentOutput) ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentOutput {
+	return o
+}
+
+// The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
+func (o GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentOutput) BlockVolumeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachment) string {
+		return v.BlockVolumeId
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+func (o GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentOutput) VolumeAttachmentReferenceInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachment) string {
+		return v.VolumeAttachmentReferenceInstanceId
+	}).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachment)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutput) ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutput() GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutput) ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachment {
+		return vs[0].([]GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachment)[vs[1].(int)]
+	}).(GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentOutput)
+}
+
+type GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMount struct {
+	// The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+	MountPoint string `pulumi:"mountPoint"`
+}
+
+// GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountInput is an input type that accepts GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArgs and GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountInput` via:
+//
+//	GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArgs{...}
+type GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountOutput() GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountOutput
+	ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountOutputWithContext(context.Context) GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountOutput
+}
+
+type GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArgs struct {
+	// The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+	MountPoint pulumi.StringInput `pulumi:"mountPoint"`
+}
+
+func (GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMount)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArgs) ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountOutput() GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountOutput {
+	return i.ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArgs) ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountOutput)
+}
+
+// GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArrayInput is an input type that accepts GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArray and GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArrayInput` via:
+//
+//	GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArray{ GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArgs{...} }
+type GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArrayOutput() GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArrayOutput
+	ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArrayOutputWithContext(context.Context) GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArrayOutput
+}
+
+type GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArray []GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountInput
+
+func (GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMount)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArray) ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArrayOutput() GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArrayOutput {
+	return i.ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArray) ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArrayOutput)
+}
+
+type GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMount)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountOutput) ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountOutput() GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountOutput) ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountOutput {
+	return o
+}
+
+// The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+func (o GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountOutput) MountPoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMount) string { return v.MountPoint }).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMount)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArrayOutput) ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArrayOutput() GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArrayOutput) ToGetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMount {
+		return vs[0].([]GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMount)[vs[1].(int)]
+	}).(GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountOutput)
+}
+
 type GetDrProtectionGroupMemberBlockVolumeOperation struct {
-	// The details for attaching or detaching a block volume.
+	// Deprecated. Use the 'ComputeInstanceNonMovableBlockVolumeAttachOperationDetails' definition instead of this. The details for attaching or detaching a block volume.
 	AttachmentDetails []GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail `pulumi:"attachmentDetails"`
 	// The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
 	BlockVolumeId string `pulumi:"blockVolumeId"`
@@ -8845,7 +10312,7 @@ type GetDrProtectionGroupMemberBlockVolumeOperationInput interface {
 }
 
 type GetDrProtectionGroupMemberBlockVolumeOperationArgs struct {
-	// The details for attaching or detaching a block volume.
+	// Deprecated. Use the 'ComputeInstanceNonMovableBlockVolumeAttachOperationDetails' definition instead of this. The details for attaching or detaching a block volume.
 	AttachmentDetails GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayInput `pulumi:"attachmentDetails"`
 	// The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
 	BlockVolumeId pulumi.StringInput `pulumi:"blockVolumeId"`
@@ -8904,7 +10371,7 @@ func (o GetDrProtectionGroupMemberBlockVolumeOperationOutput) ToGetDrProtectionG
 	return o
 }
 
-// The details for attaching or detaching a block volume.
+// Deprecated. Use the 'ComputeInstanceNonMovableBlockVolumeAttachOperationDetails' definition instead of this. The details for attaching or detaching a block volume.
 func (o GetDrProtectionGroupMemberBlockVolumeOperationOutput) AttachmentDetails() GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMemberBlockVolumeOperation) []GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail {
 		return v.AttachmentDetails
@@ -8944,7 +10411,7 @@ func (o GetDrProtectionGroupMemberBlockVolumeOperationArrayOutput) Index(i pulum
 }
 
 type GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail struct {
-	// The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+	// The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
 	VolumeAttachmentReferenceInstanceId string `pulumi:"volumeAttachmentReferenceInstanceId"`
 }
 
@@ -8960,7 +10427,7 @@ type GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailInput interfa
 }
 
 type GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArgs struct {
-	// The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+	// The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
 	VolumeAttachmentReferenceInstanceId pulumi.StringInput `pulumi:"volumeAttachmentReferenceInstanceId"`
 }
 
@@ -9015,7 +10482,7 @@ func (o GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput) To
 	return o
 }
 
-// The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+// The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
 func (o GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput) VolumeAttachmentReferenceInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail) string {
 		return v.VolumeAttachmentReferenceInstanceId
@@ -9137,6 +10604,218 @@ func (o GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutput) In
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberBlockVolumeOperationMountDetail {
 		return vs[0].([]GetDrProtectionGroupMemberBlockVolumeOperationMountDetail)[vs[1].(int)]
 	}).(GetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput)
+}
+
+type GetDrProtectionGroupMemberCommonDestinationKey struct {
+	// The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+	EncryptionKeyId string `pulumi:"encryptionKeyId"`
+	// The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+	VaultId string `pulumi:"vaultId"`
+}
+
+// GetDrProtectionGroupMemberCommonDestinationKeyInput is an input type that accepts GetDrProtectionGroupMemberCommonDestinationKeyArgs and GetDrProtectionGroupMemberCommonDestinationKeyOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberCommonDestinationKeyInput` via:
+//
+//	GetDrProtectionGroupMemberCommonDestinationKeyArgs{...}
+type GetDrProtectionGroupMemberCommonDestinationKeyInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberCommonDestinationKeyOutput() GetDrProtectionGroupMemberCommonDestinationKeyOutput
+	ToGetDrProtectionGroupMemberCommonDestinationKeyOutputWithContext(context.Context) GetDrProtectionGroupMemberCommonDestinationKeyOutput
+}
+
+type GetDrProtectionGroupMemberCommonDestinationKeyArgs struct {
+	// The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+	EncryptionKeyId pulumi.StringInput `pulumi:"encryptionKeyId"`
+	// The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+	VaultId pulumi.StringInput `pulumi:"vaultId"`
+}
+
+func (GetDrProtectionGroupMemberCommonDestinationKeyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberCommonDestinationKey)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberCommonDestinationKeyArgs) ToGetDrProtectionGroupMemberCommonDestinationKeyOutput() GetDrProtectionGroupMemberCommonDestinationKeyOutput {
+	return i.ToGetDrProtectionGroupMemberCommonDestinationKeyOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberCommonDestinationKeyArgs) ToGetDrProtectionGroupMemberCommonDestinationKeyOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberCommonDestinationKeyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberCommonDestinationKeyOutput)
+}
+
+// GetDrProtectionGroupMemberCommonDestinationKeyArrayInput is an input type that accepts GetDrProtectionGroupMemberCommonDestinationKeyArray and GetDrProtectionGroupMemberCommonDestinationKeyArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberCommonDestinationKeyArrayInput` via:
+//
+//	GetDrProtectionGroupMemberCommonDestinationKeyArray{ GetDrProtectionGroupMemberCommonDestinationKeyArgs{...} }
+type GetDrProtectionGroupMemberCommonDestinationKeyArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberCommonDestinationKeyArrayOutput() GetDrProtectionGroupMemberCommonDestinationKeyArrayOutput
+	ToGetDrProtectionGroupMemberCommonDestinationKeyArrayOutputWithContext(context.Context) GetDrProtectionGroupMemberCommonDestinationKeyArrayOutput
+}
+
+type GetDrProtectionGroupMemberCommonDestinationKeyArray []GetDrProtectionGroupMemberCommonDestinationKeyInput
+
+func (GetDrProtectionGroupMemberCommonDestinationKeyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberCommonDestinationKey)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberCommonDestinationKeyArray) ToGetDrProtectionGroupMemberCommonDestinationKeyArrayOutput() GetDrProtectionGroupMemberCommonDestinationKeyArrayOutput {
+	return i.ToGetDrProtectionGroupMemberCommonDestinationKeyArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberCommonDestinationKeyArray) ToGetDrProtectionGroupMemberCommonDestinationKeyArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberCommonDestinationKeyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberCommonDestinationKeyArrayOutput)
+}
+
+type GetDrProtectionGroupMemberCommonDestinationKeyOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberCommonDestinationKeyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberCommonDestinationKey)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberCommonDestinationKeyOutput) ToGetDrProtectionGroupMemberCommonDestinationKeyOutput() GetDrProtectionGroupMemberCommonDestinationKeyOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberCommonDestinationKeyOutput) ToGetDrProtectionGroupMemberCommonDestinationKeyOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberCommonDestinationKeyOutput {
+	return o
+}
+
+// The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+func (o GetDrProtectionGroupMemberCommonDestinationKeyOutput) EncryptionKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberCommonDestinationKey) string { return v.EncryptionKeyId }).(pulumi.StringOutput)
+}
+
+// The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+func (o GetDrProtectionGroupMemberCommonDestinationKeyOutput) VaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberCommonDestinationKey) string { return v.VaultId }).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupMemberCommonDestinationKeyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberCommonDestinationKeyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberCommonDestinationKey)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberCommonDestinationKeyArrayOutput) ToGetDrProtectionGroupMemberCommonDestinationKeyArrayOutput() GetDrProtectionGroupMemberCommonDestinationKeyArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberCommonDestinationKeyArrayOutput) ToGetDrProtectionGroupMemberCommonDestinationKeyArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberCommonDestinationKeyArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberCommonDestinationKeyArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberCommonDestinationKeyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberCommonDestinationKey {
+		return vs[0].([]GetDrProtectionGroupMemberCommonDestinationKey)[vs[1].(int)]
+	}).(GetDrProtectionGroupMemberCommonDestinationKeyOutput)
+}
+
+type GetDrProtectionGroupMemberDestinationEncryptionKey struct {
+	// The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+	EncryptionKeyId string `pulumi:"encryptionKeyId"`
+	// The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+	VaultId string `pulumi:"vaultId"`
+}
+
+// GetDrProtectionGroupMemberDestinationEncryptionKeyInput is an input type that accepts GetDrProtectionGroupMemberDestinationEncryptionKeyArgs and GetDrProtectionGroupMemberDestinationEncryptionKeyOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberDestinationEncryptionKeyInput` via:
+//
+//	GetDrProtectionGroupMemberDestinationEncryptionKeyArgs{...}
+type GetDrProtectionGroupMemberDestinationEncryptionKeyInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberDestinationEncryptionKeyOutput() GetDrProtectionGroupMemberDestinationEncryptionKeyOutput
+	ToGetDrProtectionGroupMemberDestinationEncryptionKeyOutputWithContext(context.Context) GetDrProtectionGroupMemberDestinationEncryptionKeyOutput
+}
+
+type GetDrProtectionGroupMemberDestinationEncryptionKeyArgs struct {
+	// The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+	EncryptionKeyId pulumi.StringInput `pulumi:"encryptionKeyId"`
+	// The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+	VaultId pulumi.StringInput `pulumi:"vaultId"`
+}
+
+func (GetDrProtectionGroupMemberDestinationEncryptionKeyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberDestinationEncryptionKey)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberDestinationEncryptionKeyArgs) ToGetDrProtectionGroupMemberDestinationEncryptionKeyOutput() GetDrProtectionGroupMemberDestinationEncryptionKeyOutput {
+	return i.ToGetDrProtectionGroupMemberDestinationEncryptionKeyOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberDestinationEncryptionKeyArgs) ToGetDrProtectionGroupMemberDestinationEncryptionKeyOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberDestinationEncryptionKeyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberDestinationEncryptionKeyOutput)
+}
+
+// GetDrProtectionGroupMemberDestinationEncryptionKeyArrayInput is an input type that accepts GetDrProtectionGroupMemberDestinationEncryptionKeyArray and GetDrProtectionGroupMemberDestinationEncryptionKeyArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberDestinationEncryptionKeyArrayInput` via:
+//
+//	GetDrProtectionGroupMemberDestinationEncryptionKeyArray{ GetDrProtectionGroupMemberDestinationEncryptionKeyArgs{...} }
+type GetDrProtectionGroupMemberDestinationEncryptionKeyArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberDestinationEncryptionKeyArrayOutput() GetDrProtectionGroupMemberDestinationEncryptionKeyArrayOutput
+	ToGetDrProtectionGroupMemberDestinationEncryptionKeyArrayOutputWithContext(context.Context) GetDrProtectionGroupMemberDestinationEncryptionKeyArrayOutput
+}
+
+type GetDrProtectionGroupMemberDestinationEncryptionKeyArray []GetDrProtectionGroupMemberDestinationEncryptionKeyInput
+
+func (GetDrProtectionGroupMemberDestinationEncryptionKeyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberDestinationEncryptionKey)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberDestinationEncryptionKeyArray) ToGetDrProtectionGroupMemberDestinationEncryptionKeyArrayOutput() GetDrProtectionGroupMemberDestinationEncryptionKeyArrayOutput {
+	return i.ToGetDrProtectionGroupMemberDestinationEncryptionKeyArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberDestinationEncryptionKeyArray) ToGetDrProtectionGroupMemberDestinationEncryptionKeyArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberDestinationEncryptionKeyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberDestinationEncryptionKeyArrayOutput)
+}
+
+type GetDrProtectionGroupMemberDestinationEncryptionKeyOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberDestinationEncryptionKeyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberDestinationEncryptionKey)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberDestinationEncryptionKeyOutput) ToGetDrProtectionGroupMemberDestinationEncryptionKeyOutput() GetDrProtectionGroupMemberDestinationEncryptionKeyOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberDestinationEncryptionKeyOutput) ToGetDrProtectionGroupMemberDestinationEncryptionKeyOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberDestinationEncryptionKeyOutput {
+	return o
+}
+
+// The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+func (o GetDrProtectionGroupMemberDestinationEncryptionKeyOutput) EncryptionKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberDestinationEncryptionKey) string { return v.EncryptionKeyId }).(pulumi.StringOutput)
+}
+
+// The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+func (o GetDrProtectionGroupMemberDestinationEncryptionKeyOutput) VaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberDestinationEncryptionKey) string { return v.VaultId }).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupMemberDestinationEncryptionKeyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberDestinationEncryptionKeyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberDestinationEncryptionKey)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberDestinationEncryptionKeyArrayOutput) ToGetDrProtectionGroupMemberDestinationEncryptionKeyArrayOutput() GetDrProtectionGroupMemberDestinationEncryptionKeyArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberDestinationEncryptionKeyArrayOutput) ToGetDrProtectionGroupMemberDestinationEncryptionKeyArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberDestinationEncryptionKeyArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberDestinationEncryptionKeyArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberDestinationEncryptionKeyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberDestinationEncryptionKey {
+		return vs[0].([]GetDrProtectionGroupMemberDestinationEncryptionKey)[vs[1].(int)]
+	}).(GetDrProtectionGroupMemberDestinationEncryptionKeyOutput)
 }
 
 type GetDrProtectionGroupMemberExportMapping struct {
@@ -9907,6 +11586,226 @@ func (o GetDrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput) Index(i
 	}).(GetDrProtectionGroupMemberNetworkLoadBalancerMappingOutput)
 }
 
+type GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping struct {
+	// The OCID of a vault and customer-managed encryption key in the destination region.
+	DestinationEncryptionKeys []GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey `pulumi:"destinationEncryptionKeys"`
+	// The OCID of the source boot volume or block volume.  Example: `ocid1.volume.oc1..uniqueID`
+	SourceVolumeId string `pulumi:"sourceVolumeId"`
+}
+
+// GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingInput is an input type that accepts GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs and GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingInput` via:
+//
+//	GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs{...}
+type GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput() GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput
+	ToGetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutputWithContext(context.Context) GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput
+}
+
+type GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs struct {
+	// The OCID of a vault and customer-managed encryption key in the destination region.
+	DestinationEncryptionKeys GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayInput `pulumi:"destinationEncryptionKeys"`
+	// The OCID of the source boot volume or block volume.  Example: `ocid1.volume.oc1..uniqueID`
+	SourceVolumeId pulumi.StringInput `pulumi:"sourceVolumeId"`
+}
+
+func (GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs) ToGetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput() GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput {
+	return i.ToGetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs) ToGetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput)
+}
+
+// GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayInput is an input type that accepts GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArray and GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayInput` via:
+//
+//	GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArray{ GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs{...} }
+type GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput() GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput
+	ToGetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutputWithContext(context.Context) GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput
+}
+
+type GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArray []GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingInput
+
+func (GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArray) ToGetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput() GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput {
+	return i.ToGetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArray) ToGetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput)
+}
+
+type GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput) ToGetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput() GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput) ToGetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput {
+	return o
+}
+
+// The OCID of a vault and customer-managed encryption key in the destination region.
+func (o GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput) DestinationEncryptionKeys() GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping) []GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey {
+		return v.DestinationEncryptionKeys
+	}).(GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutput)
+}
+
+// The OCID of the source boot volume or block volume.  Example: `ocid1.volume.oc1..uniqueID`
+func (o GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput) SourceVolumeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping) string {
+		return v.SourceVolumeId
+	}).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput) ToGetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput() GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput) ToGetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping {
+		return vs[0].([]GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping)[vs[1].(int)]
+	}).(GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput)
+}
+
+type GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey struct {
+	// The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+	EncryptionKeyId string `pulumi:"encryptionKeyId"`
+	// The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+	VaultId string `pulumi:"vaultId"`
+}
+
+// GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyInput is an input type that accepts GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs and GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyInput` via:
+//
+//	GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs{...}
+type GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput() GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput
+	ToGetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutputWithContext(context.Context) GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput
+}
+
+type GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs struct {
+	// The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+	EncryptionKeyId pulumi.StringInput `pulumi:"encryptionKeyId"`
+	// The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+	VaultId pulumi.StringInput `pulumi:"vaultId"`
+}
+
+func (GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs) ToGetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput() GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput {
+	return i.ToGetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs) ToGetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput)
+}
+
+// GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayInput is an input type that accepts GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArray and GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayInput` via:
+//
+//	GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArray{ GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs{...} }
+type GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutput() GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutput
+	ToGetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutputWithContext(context.Context) GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutput
+}
+
+type GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArray []GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyInput
+
+func (GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArray) ToGetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutput() GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutput {
+	return i.ToGetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArray) ToGetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutput)
+}
+
+type GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput) ToGetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput() GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput) ToGetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput {
+	return o
+}
+
+// The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+func (o GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput) EncryptionKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey) string {
+		return v.EncryptionKeyId
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+func (o GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput) VaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey) string {
+		return v.VaultId
+	}).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutput) ToGetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutput() GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutput) ToGetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey {
+		return vs[0].([]GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey)[vs[1].(int)]
+	}).(GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput)
+}
+
 type GetDrProtectionGroupMemberVaultMapping struct {
 	// The OCID of the destination Vault.  Example: `ocid1.vault.oc1..uniqueID`
 	DestinationVaultId string `pulumi:"destinationVaultId"`
@@ -10135,6 +12034,8 @@ type GetDrProtectionGroupMemberVnicMapping struct {
 	DestinationPrimaryPrivateIpAddress string `pulumi:"destinationPrimaryPrivateIpAddress"`
 	// The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
 	DestinationPrimaryPrivateIpHostnameLabel string `pulumi:"destinationPrimaryPrivateIpHostnameLabel"`
+	// The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+	DestinationReservedPublicIpId string `pulumi:"destinationReservedPublicIpId"`
 	// The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
 	DestinationSubnetId string `pulumi:"destinationSubnetId"`
 	// The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
@@ -10159,6 +12060,8 @@ type GetDrProtectionGroupMemberVnicMappingArgs struct {
 	DestinationPrimaryPrivateIpAddress pulumi.StringInput `pulumi:"destinationPrimaryPrivateIpAddress"`
 	// The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
 	DestinationPrimaryPrivateIpHostnameLabel pulumi.StringInput `pulumi:"destinationPrimaryPrivateIpHostnameLabel"`
+	// The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+	DestinationReservedPublicIpId pulumi.StringInput `pulumi:"destinationReservedPublicIpId"`
 	// The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
 	DestinationSubnetId pulumi.StringInput `pulumi:"destinationSubnetId"`
 	// The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
@@ -10231,6 +12134,11 @@ func (o GetDrProtectionGroupMemberVnicMappingOutput) DestinationPrimaryPrivateIp
 	return o.ApplyT(func(v GetDrProtectionGroupMemberVnicMapping) string {
 		return v.DestinationPrimaryPrivateIpHostnameLabel
 	}).(pulumi.StringOutput)
+}
+
+// The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+func (o GetDrProtectionGroupMemberVnicMappingOutput) DestinationReservedPublicIpId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberVnicMapping) string { return v.DestinationReservedPublicIpId }).(pulumi.StringOutput)
 }
 
 // The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
@@ -10848,24 +12756,33 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMember struct {
 	BackupConfigs []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfig `pulumi:"backupConfigs"`
 	// The details for object storage backup location of an OKE Cluster
 	BackupLocations []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocation `pulumi:"backupLocations"`
-	// Operations performed on a list of block volumes used on the non-movable compute instance.
+	// The details of the block volume operations performed on the non-movable compute instance.
+	BlockVolumeAttachAndMountOperations []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperation `pulumi:"blockVolumeAttachAndMountOperations"`
+	// Deprecated. Use the 'blockVolumeAttachAndMountOperations' attribute instead of this. Operations performed on a list of block volumes used on the non-movable compute instance.
 	BlockVolumeOperations []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation `pulumi:"blockVolumeOperations"`
 	// The bucket name inside the object storage namespace.  Example: `bucketName`
-	Bucket string `pulumi:"bucket"`
+	Bucket                string                                                                           `pulumi:"bucket"`
+	CommonDestinationKeys []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKey `pulumi:"commonDestinationKeys"`
 	// The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
 	ConnectionStringType string `pulumi:"connectionStringType"`
 	// The availability domain of the destination mount target. Example: `BBTh:region-AD`
 	DestinationAvailabilityDomain string `pulumi:"destinationAvailabilityDomain"`
+	// The OCID of the backup policy to use in the destination region. This policy will be used to create backups for this volume group after it moves the destination region.  Example: `ocid1.volumebackuppolicy.oc1..uniqueID`
+	DestinationBackupPolicyId string `pulumi:"destinationBackupPolicyId"`
 	// The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
 	DestinationCapacityReservationId string `pulumi:"destinationCapacityReservationId"`
 	// The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
 	DestinationCompartmentId string `pulumi:"destinationCompartmentId"`
 	// The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
 	DestinationDedicatedVmHostId string `pulumi:"destinationDedicatedVmHostId"`
+	// The OCID of a vault and customer-managed encryption key in the destination region.
+	DestinationEncryptionKeys []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKey `pulumi:"destinationEncryptionKeys"`
 	// The OCID of the destination Load Balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
 	DestinationLoadBalancerId string `pulumi:"destinationLoadBalancerId"`
 	// The OCID of the destination Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
 	DestinationNetworkLoadBalancerId string `pulumi:"destinationNetworkLoadBalancerId"`
+	// The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.  Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
+	DestinationSnapshotPolicyId string `pulumi:"destinationSnapshotPolicyId"`
 	// A list of mappings between the primary region file system export and destination region mount target.
 	ExportMappings []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping `pulumi:"exportMappings"`
 	// Operations performed on a list of file systems used on the non-movable compute instance.
@@ -10894,6 +12811,8 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMember struct {
 	PasswordVaultSecretId string `pulumi:"passwordVaultSecretId"`
 	// The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.  Example: `ocid1.cluster.oc1.uniqueID`
 	PeerClusterId string `pulumi:"peerClusterId"`
+	// A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
+	SourceVolumeToDestinationEncryptionKeyMappings []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMapping `pulumi:"sourceVolumeToDestinationEncryptionKeyMappings"`
 	// The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
 	VaultMappings []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMapping `pulumi:"vaultMappings"`
 	// The list of node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
@@ -10924,24 +12843,33 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArgs struct {
 	BackupConfigs GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArrayInput `pulumi:"backupConfigs"`
 	// The details for object storage backup location of an OKE Cluster
 	BackupLocations GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArrayInput `pulumi:"backupLocations"`
-	// Operations performed on a list of block volumes used on the non-movable compute instance.
+	// The details of the block volume operations performed on the non-movable compute instance.
+	BlockVolumeAttachAndMountOperations GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArrayInput `pulumi:"blockVolumeAttachAndMountOperations"`
+	// Deprecated. Use the 'blockVolumeAttachAndMountOperations' attribute instead of this. Operations performed on a list of block volumes used on the non-movable compute instance.
 	BlockVolumeOperations GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayInput `pulumi:"blockVolumeOperations"`
 	// The bucket name inside the object storage namespace.  Example: `bucketName`
-	Bucket pulumi.StringInput `pulumi:"bucket"`
+	Bucket                pulumi.StringInput                                                                       `pulumi:"bucket"`
+	CommonDestinationKeys GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArrayInput `pulumi:"commonDestinationKeys"`
 	// The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
 	ConnectionStringType pulumi.StringInput `pulumi:"connectionStringType"`
 	// The availability domain of the destination mount target. Example: `BBTh:region-AD`
 	DestinationAvailabilityDomain pulumi.StringInput `pulumi:"destinationAvailabilityDomain"`
+	// The OCID of the backup policy to use in the destination region. This policy will be used to create backups for this volume group after it moves the destination region.  Example: `ocid1.volumebackuppolicy.oc1..uniqueID`
+	DestinationBackupPolicyId pulumi.StringInput `pulumi:"destinationBackupPolicyId"`
 	// The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
 	DestinationCapacityReservationId pulumi.StringInput `pulumi:"destinationCapacityReservationId"`
 	// The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
 	DestinationCompartmentId pulumi.StringInput `pulumi:"destinationCompartmentId"`
 	// The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
 	DestinationDedicatedVmHostId pulumi.StringInput `pulumi:"destinationDedicatedVmHostId"`
+	// The OCID of a vault and customer-managed encryption key in the destination region.
+	DestinationEncryptionKeys GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArrayInput `pulumi:"destinationEncryptionKeys"`
 	// The OCID of the destination Load Balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
 	DestinationLoadBalancerId pulumi.StringInput `pulumi:"destinationLoadBalancerId"`
 	// The OCID of the destination Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
 	DestinationNetworkLoadBalancerId pulumi.StringInput `pulumi:"destinationNetworkLoadBalancerId"`
+	// The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.  Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
+	DestinationSnapshotPolicyId pulumi.StringInput `pulumi:"destinationSnapshotPolicyId"`
 	// A list of mappings between the primary region file system export and destination region mount target.
 	ExportMappings GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayInput `pulumi:"exportMappings"`
 	// Operations performed on a list of file systems used on the non-movable compute instance.
@@ -10970,6 +12898,8 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArgs struct {
 	PasswordVaultSecretId pulumi.StringInput `pulumi:"passwordVaultSecretId"`
 	// The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.  Example: `ocid1.cluster.oc1.uniqueID`
 	PeerClusterId pulumi.StringInput `pulumi:"peerClusterId"`
+	// A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
+	SourceVolumeToDestinationEncryptionKeyMappings GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArrayInput `pulumi:"sourceVolumeToDestinationEncryptionKeyMappings"`
 	// The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
 	VaultMappings GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArrayInput `pulumi:"vaultMappings"`
 	// The list of node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
@@ -11059,7 +12989,14 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) Backup
 	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArrayOutput)
 }
 
-// Operations performed on a list of block volumes used on the non-movable compute instance.
+// The details of the block volume operations performed on the non-movable compute instance.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) BlockVolumeAttachAndMountOperations() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperation {
+		return v.BlockVolumeAttachAndMountOperations
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArrayOutput)
+}
+
+// Deprecated. Use the 'blockVolumeAttachAndMountOperations' attribute instead of this. Operations performed on a list of block volumes used on the non-movable compute instance.
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) BlockVolumeOperations() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation {
 		return v.BlockVolumeOperations
@@ -11069,6 +13006,12 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) BlockV
 // The bucket name inside the object storage namespace.  Example: `bucketName`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) CommonDestinationKeys() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKey {
+		return v.CommonDestinationKeys
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArrayOutput)
 }
 
 // The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
@@ -11082,6 +13025,13 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) Connec
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) DestinationAvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string {
 		return v.DestinationAvailabilityDomain
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the backup policy to use in the destination region. This policy will be used to create backups for this volume group after it moves the destination region.  Example: `ocid1.volumebackuppolicy.oc1..uniqueID`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) DestinationBackupPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string {
+		return v.DestinationBackupPolicyId
 	}).(pulumi.StringOutput)
 }
 
@@ -11106,6 +13056,13 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) Destin
 	}).(pulumi.StringOutput)
 }
 
+// The OCID of a vault and customer-managed encryption key in the destination region.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) DestinationEncryptionKeys() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKey {
+		return v.DestinationEncryptionKeys
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArrayOutput)
+}
+
 // The OCID of the destination Load Balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) DestinationLoadBalancerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string {
@@ -11117,6 +13074,13 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) Destin
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) DestinationNetworkLoadBalancerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string {
 		return v.DestinationNetworkLoadBalancerId
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.  Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) DestinationSnapshotPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string {
+		return v.DestinationSnapshotPolicyId
 	}).(pulumi.StringOutput)
 }
 
@@ -11200,6 +13164,13 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) Passwo
 // The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.  Example: `ocid1.cluster.oc1.uniqueID`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) PeerClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string { return v.PeerClusterId }).(pulumi.StringOutput)
+}
+
+// A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) SourceVolumeToDestinationEncryptionKeyMappings() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMapping {
+		return v.SourceVolumeToDestinationEncryptionKeyMappings
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput)
 }
 
 // The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
@@ -11635,8 +13606,327 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocation
 	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationOutput)
 }
 
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperation struct {
+	// A list of details of attach or detach operations performed on block volumes.
+	Attachments []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachment `pulumi:"attachments"`
+	// A list of details of mount operations performed on block volumes.
+	Mounts []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMount `pulumi:"mounts"`
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArgs and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArgs{...}
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArgs struct {
+	// A list of details of attach or detach operations performed on block volumes.
+	Attachments GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArrayInput `pulumi:"attachments"`
+	// A list of details of mount operations performed on block volumes.
+	Mounts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArrayInput `pulumi:"mounts"`
+}
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperation)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationOutput)
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArrayInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArray{ GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArgs{...} }
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArrayOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArrayOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArrayOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArray []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationInput
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperation)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArrayOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArrayOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperation)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationOutput {
+	return o
+}
+
+// A list of details of attach or detach operations performed on block volumes.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationOutput) Attachments() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperation) []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachment {
+		return v.Attachments
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutput)
+}
+
+// A list of details of mount operations performed on block volumes.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationOutput) Mounts() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperation) []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMount {
+		return v.Mounts
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArrayOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperation)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperation {
+		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperation)[vs[1].(int)]
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachment struct {
+	// The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
+	BlockVolumeId string `pulumi:"blockVolumeId"`
+	// The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+	VolumeAttachmentReferenceInstanceId string `pulumi:"volumeAttachmentReferenceInstanceId"`
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArgs and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArgs{...}
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArgs struct {
+	// The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
+	BlockVolumeId pulumi.StringInput `pulumi:"blockVolumeId"`
+	// The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+	VolumeAttachmentReferenceInstanceId pulumi.StringInput `pulumi:"volumeAttachmentReferenceInstanceId"`
+}
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachment)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentOutput)
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArrayInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArray{ GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArgs{...} }
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArray []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentInput
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachment)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachment)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentOutput {
+	return o
+}
+
+// The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentOutput) BlockVolumeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachment) string {
+		return v.BlockVolumeId
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentOutput) VolumeAttachmentReferenceInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachment) string {
+		return v.VolumeAttachmentReferenceInstanceId
+	}).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachment)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachment {
+		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachment)[vs[1].(int)]
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMount struct {
+	// The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+	MountPoint string `pulumi:"mountPoint"`
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArgs and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArgs{...}
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArgs struct {
+	// The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+	MountPoint pulumi.StringInput `pulumi:"mountPoint"`
+}
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMount)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountOutput)
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArrayInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArray{ GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArgs{...} }
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArrayOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArrayOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArrayOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArray []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountInput
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMount)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArrayOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArrayOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMount)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountOutput {
+	return o
+}
+
+// The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountOutput) MountPoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMount) string {
+		return v.MountPoint
+	}).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMount)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMount {
+		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMount)[vs[1].(int)]
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountOutput)
+}
+
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation struct {
-	// The details for attaching or detaching a block volume.
+	// Deprecated. Use the 'ComputeInstanceNonMovableBlockVolumeAttachOperationDetails' definition instead of this. The details for attaching or detaching a block volume.
 	AttachmentDetails []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail `pulumi:"attachmentDetails"`
 	// The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
 	BlockVolumeId string `pulumi:"blockVolumeId"`
@@ -11656,7 +13946,7 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperat
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArgs struct {
-	// The details for attaching or detaching a block volume.
+	// Deprecated. Use the 'ComputeInstanceNonMovableBlockVolumeAttachOperationDetails' definition instead of this. The details for attaching or detaching a block volume.
 	AttachmentDetails GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayInput `pulumi:"attachmentDetails"`
 	// The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
 	BlockVolumeId pulumi.StringInput `pulumi:"blockVolumeId"`
@@ -11715,7 +14005,7 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOpe
 	return o
 }
 
-// The details for attaching or detaching a block volume.
+// Deprecated. Use the 'ComputeInstanceNonMovableBlockVolumeAttachOperationDetails' definition instead of this. The details for attaching or detaching a block volume.
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput) AttachmentDetails() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation) []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail {
 		return v.AttachmentDetails
@@ -11757,7 +14047,7 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOpe
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail struct {
-	// The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+	// The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
 	VolumeAttachmentReferenceInstanceId string `pulumi:"volumeAttachmentReferenceInstanceId"`
 }
 
@@ -11773,7 +14063,7 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperat
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArgs struct {
-	// The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+	// The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
 	VolumeAttachmentReferenceInstanceId pulumi.StringInput `pulumi:"volumeAttachmentReferenceInstanceId"`
 }
 
@@ -11828,7 +14118,7 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOpe
 	return o
 }
 
-// The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+// The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput) VolumeAttachmentReferenceInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail) string {
 		return v.VolumeAttachmentReferenceInstanceId
@@ -11952,6 +14242,226 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOpe
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail {
 		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail)[vs[1].(int)]
 	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKey struct {
+	// The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+	EncryptionKeyId string `pulumi:"encryptionKeyId"`
+	// The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+	VaultId string `pulumi:"vaultId"`
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArgs and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArgs{...}
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArgs struct {
+	// The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+	EncryptionKeyId pulumi.StringInput `pulumi:"encryptionKeyId"`
+	// The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+	VaultId pulumi.StringInput `pulumi:"vaultId"`
+}
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKey)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyOutput)
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArrayInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArray{ GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArgs{...} }
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArrayOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArrayOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArrayOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArray []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyInput
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKey)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArrayOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArrayOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKey)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyOutput {
+	return o
+}
+
+// The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyOutput) EncryptionKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKey) string {
+		return v.EncryptionKeyId
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyOutput) VaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKey) string {
+		return v.VaultId
+	}).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKey)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKey {
+		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKey)[vs[1].(int)]
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKey struct {
+	// The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+	EncryptionKeyId string `pulumi:"encryptionKeyId"`
+	// The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+	VaultId string `pulumi:"vaultId"`
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArgs and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArgs{...}
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArgs struct {
+	// The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+	EncryptionKeyId pulumi.StringInput `pulumi:"encryptionKeyId"`
+	// The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+	VaultId pulumi.StringInput `pulumi:"vaultId"`
+}
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKey)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyOutput)
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArrayInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArray{ GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArgs{...} }
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArrayOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArrayOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArrayOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArray []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyInput
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKey)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArrayOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArrayOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKey)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyOutput {
+	return o
+}
+
+// The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyOutput) EncryptionKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKey) string {
+		return v.EncryptionKeyId
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyOutput) VaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKey) string {
+		return v.VaultId
+	}).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKey)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKey {
+		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKey)[vs[1].(int)]
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyOutput)
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping struct {
@@ -12746,6 +15256,226 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBal
 	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingOutput)
 }
 
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMapping struct {
+	// The OCID of a vault and customer-managed encryption key in the destination region.
+	DestinationEncryptionKeys []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey `pulumi:"destinationEncryptionKeys"`
+	// The OCID of the source boot volume or block volume.  Example: `ocid1.volume.oc1..uniqueID`
+	SourceVolumeId string `pulumi:"sourceVolumeId"`
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArgs and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArgs{...}
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArgs struct {
+	// The OCID of a vault and customer-managed encryption key in the destination region.
+	DestinationEncryptionKeys GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayInput `pulumi:"destinationEncryptionKeys"`
+	// The OCID of the source boot volume or block volume.  Example: `ocid1.volume.oc1..uniqueID`
+	SourceVolumeId pulumi.StringInput `pulumi:"sourceVolumeId"`
+}
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMapping)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingOutput)
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArrayInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArray{ GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArgs{...} }
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArray []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingInput
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMapping)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMapping)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingOutput {
+	return o
+}
+
+// The OCID of a vault and customer-managed encryption key in the destination region.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingOutput) DestinationEncryptionKeys() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMapping) []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey {
+		return v.DestinationEncryptionKeys
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutput)
+}
+
+// The OCID of the source boot volume or block volume.  Example: `ocid1.volume.oc1..uniqueID`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingOutput) SourceVolumeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMapping) string {
+		return v.SourceVolumeId
+	}).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMapping)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMapping {
+		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMapping)[vs[1].(int)]
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey struct {
+	// The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+	EncryptionKeyId string `pulumi:"encryptionKeyId"`
+	// The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+	VaultId string `pulumi:"vaultId"`
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs{...}
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs struct {
+	// The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+	EncryptionKeyId pulumi.StringInput `pulumi:"encryptionKeyId"`
+	// The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+	VaultId pulumi.StringInput `pulumi:"vaultId"`
+}
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput)
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArray{ GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs{...} }
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArray []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyInput
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput {
+	return o
+}
+
+// The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput) EncryptionKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey) string {
+		return v.EncryptionKeyId
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput) VaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey) string {
+		return v.VaultId
+	}).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey {
+		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey)[vs[1].(int)]
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput)
+}
+
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMapping struct {
 	// The OCID of the destination Vault.  Example: `ocid1.vault.oc1..uniqueID`
 	DestinationVaultId string `pulumi:"destinationVaultId"`
@@ -12984,6 +15714,8 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping struc
 	DestinationPrimaryPrivateIpAddress string `pulumi:"destinationPrimaryPrivateIpAddress"`
 	// The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
 	DestinationPrimaryPrivateIpHostnameLabel string `pulumi:"destinationPrimaryPrivateIpHostnameLabel"`
+	// The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+	DestinationReservedPublicIpId string `pulumi:"destinationReservedPublicIpId"`
 	// The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
 	DestinationSubnetId string `pulumi:"destinationSubnetId"`
 	// The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
@@ -13008,6 +15740,8 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArgs s
 	DestinationPrimaryPrivateIpAddress pulumi.StringInput `pulumi:"destinationPrimaryPrivateIpAddress"`
 	// The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
 	DestinationPrimaryPrivateIpHostnameLabel pulumi.StringInput `pulumi:"destinationPrimaryPrivateIpHostnameLabel"`
+	// The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+	DestinationReservedPublicIpId pulumi.StringInput `pulumi:"destinationReservedPublicIpId"`
 	// The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
 	DestinationSubnetId pulumi.StringInput `pulumi:"destinationSubnetId"`
 	// The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
@@ -13083,6 +15817,13 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOut
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput) DestinationPrimaryPrivateIpHostnameLabel() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping) string {
 		return v.DestinationPrimaryPrivateIpHostnameLabel
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput) DestinationReservedPublicIpId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping) string {
+		return v.DestinationReservedPublicIpId
 	}).(pulumi.StringOutput)
 }
 
@@ -13257,12 +15998,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberBackupConfigPtrInput)(nil)).Elem(), DrProtectionGroupMemberBackupConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberBackupLocationInput)(nil)).Elem(), DrProtectionGroupMemberBackupLocationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberBackupLocationPtrInput)(nil)).Elem(), DrProtectionGroupMemberBackupLocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsInput)(nil)).Elem(), DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrInput)(nil)).Elem(), DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentInput)(nil)).Elem(), DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArrayInput)(nil)).Elem(), DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountInput)(nil)).Elem(), DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArrayInput)(nil)).Elem(), DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberBlockVolumeOperationInput)(nil)).Elem(), DrProtectionGroupMemberBlockVolumeOperationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberBlockVolumeOperationArrayInput)(nil)).Elem(), DrProtectionGroupMemberBlockVolumeOperationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsInput)(nil)).Elem(), DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrInput)(nil)).Elem(), DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberBlockVolumeOperationMountDetailsInput)(nil)).Elem(), DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrInput)(nil)).Elem(), DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberCommonDestinationKeyInput)(nil)).Elem(), DrProtectionGroupMemberCommonDestinationKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberCommonDestinationKeyPtrInput)(nil)).Elem(), DrProtectionGroupMemberCommonDestinationKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberDestinationEncryptionKeyInput)(nil)).Elem(), DrProtectionGroupMemberDestinationEncryptionKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberDestinationEncryptionKeyPtrInput)(nil)).Elem(), DrProtectionGroupMemberDestinationEncryptionKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberExportMappingInput)(nil)).Elem(), DrProtectionGroupMemberExportMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberExportMappingArrayInput)(nil)).Elem(), DrProtectionGroupMemberExportMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberFileSystemOperationInput)(nil)).Elem(), DrProtectionGroupMemberFileSystemOperationArgs{})
@@ -13277,6 +16028,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberManagedNodePoolConfigArrayInput)(nil)).Elem(), DrProtectionGroupMemberManagedNodePoolConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberNetworkLoadBalancerMappingInput)(nil)).Elem(), DrProtectionGroupMemberNetworkLoadBalancerMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberNetworkLoadBalancerMappingArrayInput)(nil)).Elem(), DrProtectionGroupMemberNetworkLoadBalancerMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingInput)(nil)).Elem(), DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayInput)(nil)).Elem(), DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyInput)(nil)).Elem(), DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrInput)(nil)).Elem(), DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberVaultMappingInput)(nil)).Elem(), DrProtectionGroupMemberVaultMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberVaultMappingArrayInput)(nil)).Elem(), DrProtectionGroupMemberVaultMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberVirtualNodePoolConfigInput)(nil)).Elem(), DrProtectionGroupMemberVirtualNodePoolConfigArgs{})
@@ -13343,12 +16098,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberBackupConfigArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberBackupConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberBackupLocationInput)(nil)).Elem(), GetDrProtectionGroupMemberBackupLocationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberBackupLocationArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberBackupLocationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationInput)(nil)).Elem(), GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentInput)(nil)).Elem(), GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountInput)(nil)).Elem(), GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberBlockVolumeOperationInput)(nil)).Elem(), GetDrProtectionGroupMemberBlockVolumeOperationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberBlockVolumeOperationArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberBlockVolumeOperationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailInput)(nil)).Elem(), GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberBlockVolumeOperationMountDetailInput)(nil)).Elem(), GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberCommonDestinationKeyInput)(nil)).Elem(), GetDrProtectionGroupMemberCommonDestinationKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberCommonDestinationKeyArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberCommonDestinationKeyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberDestinationEncryptionKeyInput)(nil)).Elem(), GetDrProtectionGroupMemberDestinationEncryptionKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberDestinationEncryptionKeyArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberDestinationEncryptionKeyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberExportMappingInput)(nil)).Elem(), GetDrProtectionGroupMemberExportMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberExportMappingArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberExportMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberFileSystemOperationInput)(nil)).Elem(), GetDrProtectionGroupMemberFileSystemOperationArgs{})
@@ -13363,6 +16128,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberManagedNodePoolConfigArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberManagedNodePoolConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberNetworkLoadBalancerMappingInput)(nil)).Elem(), GetDrProtectionGroupMemberNetworkLoadBalancerMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberNetworkLoadBalancerMappingArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberNetworkLoadBalancerMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingInput)(nil)).Elem(), GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyInput)(nil)).Elem(), GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberVaultMappingInput)(nil)).Elem(), GetDrProtectionGroupMemberVaultMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberVaultMappingArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberVaultMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberVirtualNodePoolConfigInput)(nil)).Elem(), GetDrProtectionGroupMemberVirtualNodePoolConfigArgs{})
@@ -13385,12 +16154,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArgs{})
@@ -13405,6 +16184,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArgs{})
@@ -13443,12 +16226,22 @@ func init() {
 	pulumi.RegisterOutputType(DrProtectionGroupMemberBackupConfigPtrOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberBackupLocationOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberBackupLocationPtrOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsPtrOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArrayOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArrayOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberBlockVolumeOperationOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberBlockVolumeOperationArrayOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberCommonDestinationKeyOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberCommonDestinationKeyPtrOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberDestinationEncryptionKeyOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberDestinationEncryptionKeyPtrOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberExportMappingOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberExportMappingArrayOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberFileSystemOperationOutput{})
@@ -13463,6 +16256,10 @@ func init() {
 	pulumi.RegisterOutputType(DrProtectionGroupMemberManagedNodePoolConfigArrayOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberNetworkLoadBalancerMappingOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyPtrOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberVaultMappingOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberVaultMappingArrayOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberVirtualNodePoolConfigOutput{})
@@ -13529,12 +16326,22 @@ func init() {
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberBackupConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberBackupLocationOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberBackupLocationArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberBlockVolumeOperationOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberBlockVolumeOperationArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberCommonDestinationKeyOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberCommonDestinationKeyArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberDestinationEncryptionKeyOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberDestinationEncryptionKeyArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberExportMappingOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberExportMappingArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberFileSystemOperationOutput{})
@@ -13549,6 +16356,10 @@ func init() {
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberManagedNodePoolConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberNetworkLoadBalancerMappingOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberVaultMappingOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberVaultMappingArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberVirtualNodePoolConfigOutput{})
@@ -13571,12 +16382,22 @@ func init() {
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput{})
@@ -13591,6 +16412,10 @@ func init() {
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigOutput{})

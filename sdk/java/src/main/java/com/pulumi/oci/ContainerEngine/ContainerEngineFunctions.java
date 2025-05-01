@@ -774,6 +774,7 @@ public final class ContainerEngineFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCluster = ContainerEngineFunctions.getCluster(GetClusterArgs.builder()
      *             .clusterId(testClusterOciContainerengineCluster.id())
+     *             .shouldIncludeOidcConfigFile(clusterShouldIncludeOidcConfigFile)
      *             .build());
      * 
      *     }
@@ -818,6 +819,7 @@ public final class ContainerEngineFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCluster = ContainerEngineFunctions.getCluster(GetClusterArgs.builder()
      *             .clusterId(testClusterOciContainerengineCluster.id())
+     *             .shouldIncludeOidcConfigFile(clusterShouldIncludeOidcConfigFile)
      *             .build());
      * 
      *     }
@@ -862,6 +864,7 @@ public final class ContainerEngineFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCluster = ContainerEngineFunctions.getCluster(GetClusterArgs.builder()
      *             .clusterId(testClusterOciContainerengineCluster.id())
+     *             .shouldIncludeOidcConfigFile(clusterShouldIncludeOidcConfigFile)
      *             .build());
      * 
      *     }
@@ -906,6 +909,7 @@ public final class ContainerEngineFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCluster = ContainerEngineFunctions.getCluster(GetClusterArgs.builder()
      *             .clusterId(testClusterOciContainerengineCluster.id())
+     *             .shouldIncludeOidcConfigFile(clusterShouldIncludeOidcConfigFile)
      *             .build());
      * 
      *     }
@@ -950,6 +954,7 @@ public final class ContainerEngineFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCluster = ContainerEngineFunctions.getCluster(GetClusterArgs.builder()
      *             .clusterId(testClusterOciContainerengineCluster.id())
+     *             .shouldIncludeOidcConfigFile(clusterShouldIncludeOidcConfigFile)
      *             .build());
      * 
      *     }

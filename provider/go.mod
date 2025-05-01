@@ -11,14 +11,14 @@ replace (
 )
 
 require (
-	github.com/oracle/terraform-provider-oci v1.0.19-0.20250423192041-40005c7bc01e // indirect
+	github.com/oracle/terraform-provider-oci v1.0.19-0.20250430090955-23069688e511 // indirect
 	github.com/oracle/terraform-provider-oci/shim v0.0.0
 	github.com/pulumi/pulumi-terraform-bridge/v3 v3.107.0
 	github.com/pulumi/pulumi/pkg/v3 v3.163.0 // indirect
 	github.com/pulumi/pulumi/sdk/v3 v3.163.0
 )
 
-require github.com/oracle/oci-go-sdk/v65 v65.89.2 // indirect
+require github.com/oracle/oci-go-sdk/v65 v65.89.3 // indirect
 
 require (
 	cloud.google.com/go v0.112.2 // indirect

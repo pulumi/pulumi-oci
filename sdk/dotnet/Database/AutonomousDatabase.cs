@@ -297,6 +297,12 @@ namespace Pulumi.Oci.Database
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
+        /// If omitted or set to false the provider will not delete scheduled_operations from the Autonomous Database. If set to true, provider will delete scheduled_operations from the Autonomous Database.
+        /// </summary>
+        [Output("enableDeleteScheduledOperations")]
+        public Output<bool?> EnableDeleteScheduledOperations { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Details of the Autonomous Database encryption key.
         /// </summary>
         [Output("encryptionKey")]
@@ -1262,6 +1268,12 @@ namespace Pulumi.Oci.Database
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
+        /// If omitted or set to false the provider will not delete scheduled_operations from the Autonomous Database. If set to true, provider will delete scheduled_operations from the Autonomous Database.
+        /// </summary>
+        [Input("enableDeleteScheduledOperations")]
+        public Input<bool>? EnableDeleteScheduledOperations { get; set; }
+
+        /// <summary>
         /// (Updatable) Details of the Autonomous Database encryption key.
         /// </summary>
         [Input("encryptionKey")]
@@ -2027,6 +2039,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
+
+        /// <summary>
+        /// If omitted or set to false the provider will not delete scheduled_operations from the Autonomous Database. If set to true, provider will delete scheduled_operations from the Autonomous Database.
+        /// </summary>
+        [Input("enableDeleteScheduledOperations")]
+        public Input<bool>? EnableDeleteScheduledOperations { get; set; }
 
         /// <summary>
         /// (Updatable) Details of the Autonomous Database encryption key.

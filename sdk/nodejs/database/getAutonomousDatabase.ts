@@ -197,6 +197,10 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly displayName: string;
     /**
+     * If omitted or set to false the provider will not delete scheduledOperations from the Autonomous Database. If set to true, provider will delete scheduledOperations from the Autonomous Database.
+     */
+    readonly enableDeleteScheduledOperations: boolean;
+    /**
      * Key History Entry.
      */
     readonly encryptionKeyHistoryEntries: outputs.Database.GetAutonomousDatabaseEncryptionKeyHistoryEntry[];

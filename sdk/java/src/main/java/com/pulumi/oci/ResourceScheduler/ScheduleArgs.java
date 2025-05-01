@@ -22,6 +22,7 @@ public final class ScheduleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * (Updatable) This is the action that will be executed by the schedule.
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     @Import(name="action", required=true)
@@ -29,6 +30,7 @@ public final class ScheduleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @return (Updatable) This is the action that will be executed by the schedule.
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     public Output<String> action() {
@@ -97,6 +99,7 @@ public final class ScheduleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      */
     @Import(name="freeformTags")
@@ -104,6 +107,7 @@ public final class ScheduleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @return (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      */
     public Optional<Output<Map<String,String>>> freeformTags() {
@@ -113,12 +117,16 @@ public final class ScheduleArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
      * 
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
+     * 
      */
     @Import(name="recurrenceDetails", required=true)
     private Output<String> recurrenceDetails;
 
     /**
      * @return (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
+     * 
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      */
     public Output<String> recurrenceDetails() {
@@ -259,6 +267,7 @@ public final class ScheduleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param action (Updatable) This is the action that will be executed by the schedule.
+         * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
          * 
          * @return builder
          * 
@@ -270,6 +279,7 @@ public final class ScheduleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param action (Updatable) This is the action that will be executed by the schedule.
+         * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
          * 
          * @return builder
          * 
@@ -364,6 +374,7 @@ public final class ScheduleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param freeformTags (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
          * 
          * @return builder
          * 
@@ -375,6 +386,7 @@ public final class ScheduleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param freeformTags (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
          * 
          * @return builder
          * 
@@ -386,6 +398,8 @@ public final class ScheduleArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param recurrenceDetails (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
          * 
+         * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
+         * 
          * @return builder
          * 
          */
@@ -396,6 +410,8 @@ public final class ScheduleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param recurrenceDetails (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
+         * 
+         * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
          * 
          * @return builder
          * 

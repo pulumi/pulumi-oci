@@ -11777,6 +11777,10 @@ export namespace ContainerEngine {
          */
         evictionGraceDuration?: pulumi.Input<string>;
         /**
+         * (Updatable) If the node action should be performed if not all the pods can be evicted in the grace period
+         */
+        isForceActionAfterGraceDuration?: pulumi.Input<boolean>;
+        /**
          * (Updatable) If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
          */
         isForceDeleteAfterGraceDuration?: pulumi.Input<boolean>;
@@ -11784,7 +11788,11 @@ export namespace ContainerEngine {
 
     export interface NodePoolNodePoolCyclingDetails {
         /**
-         * (Updatable) If nodes in the nodepool will be cycled to have new changes.
+         * (Updatable) An ordered list of cycle modes that should be performed on the OKE nodes.
+         */
+        cycleModes?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) If cycling operation should be performed on the nodes in the node pool.
          */
         isNodeCyclingEnabled?: pulumi.Input<boolean>;
         /**
@@ -26526,7 +26534,7 @@ export namespace Database {
         /**
          * (Updatable) Day of the week.
          */
-        dayOfWeek: pulumi.Input<inputs.Database.AutonomousDatabaseScheduledOperationDayOfWeek>;
+        dayOfWeek?: pulumi.Input<inputs.Database.AutonomousDatabaseScheduledOperationDayOfWeek>;
         /**
          * (Updatable) auto start time. value must be of ISO-8601 format "HH:mm"
          */
@@ -36701,6 +36709,10 @@ export namespace DisasterRecovery {
          * The group type.  Example: `BUILT_IN`
          */
         type?: pulumi.Input<string>;
+        /**
+         * The display name of the DR Plan step type.  Example: `Database Switchover`
+         */
+        typeDisplayName?: pulumi.Input<string>;
     }
 
     export interface DrPlanExecutionGroupExecutionStepExecutionLogLocation {
@@ -36797,6 +36809,10 @@ export namespace DisasterRecovery {
          * The type of DR plan to be created.
          */
         type?: pulumi.Input<string>;
+        /**
+         * The display name of the DR Plan step type.  Example: `Database Switchover`
+         */
+        typeDisplayName?: pulumi.Input<string>;
         /**
          * The details for a user-defined step in a DR plan.
          */
@@ -36905,13 +36921,21 @@ export namespace DisasterRecovery {
          */
         backupLocation?: pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberBackupLocation>;
         /**
-         * (Updatable) A list of operations performed on block volumes used by the compute instance.
+         * (Updatable) The details for creating the operations performed on a block volume.
+         */
+        blockVolumeAttachAndMountOperations?: pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberBlockVolumeAttachAndMountOperations>;
+        /**
+         * (Updatable) Deprecated. Use the 'blockVolumeAttachAndMountOperations' attribute instead of this. A list of operations performed on block volumes used by the compute instance.
          */
         blockVolumeOperations?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberBlockVolumeOperation>[]>;
         /**
          * (Updatable) The bucket name inside the object storage namespace.  Example: `bucketName`
          */
         bucket?: pulumi.Input<string>;
+        /**
+         * (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
+         */
+        commonDestinationKey?: pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberCommonDestinationKey>;
         /**
          * (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
          */
@@ -36920,6 +36944,10 @@ export namespace DisasterRecovery {
          * (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
          */
         destinationAvailabilityDomain?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the backup policy to use in the destination region. This policy will be used to create backups  for this volume group after it moves the destination region.  Example: `ocid1.volumebackuppolicy.oc1..uniqueID`
+         */
+        destinationBackupPolicyId?: pulumi.Input<string>;
         /**
          * (Updatable) The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
          */
@@ -36933,6 +36961,10 @@ export namespace DisasterRecovery {
          */
         destinationDedicatedVmHostId?: pulumi.Input<string>;
         /**
+         * (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
+         */
+        destinationEncryptionKey?: pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberDestinationEncryptionKey>;
+        /**
          * (Updatable) The OCID of the destination load balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
          */
         destinationLoadBalancerId?: pulumi.Input<string>;
@@ -36940,6 +36972,10 @@ export namespace DisasterRecovery {
          * (Updatable) The OCID of the destination network load balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
          */
         destinationNetworkLoadBalancerId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.  Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
+         */
+        destinationSnapshotPolicyId?: pulumi.Input<string>;
         /**
          * (Updatable) A list of mappings between file system exports in the primary region and mount targets in the standby region.
          */
@@ -36997,6 +37033,14 @@ export namespace DisasterRecovery {
          */
         peerClusterId?: pulumi.Input<string>;
         /**
+         * (Updatable) A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
+         *
+         * If you add the entry for source volumes and its corresponding vault and encryption keys here, you can not use  'commonDestinationKey' for encrypting all volumes with common encryption key. Similarly, if you specify common vault and encryption key using 'commonDestinationKey', you cannot specify vaults and encryption keys individually  for each volume using 'sourceVolumeToDestinationEncryptionKeyMappings'.
+         *
+         * An entry for each volume in volume group should be added in this list. The encryption key will not be updated  for the volumes that are part of volume group but missing in this list.
+         */
+        sourceVolumeToDestinationEncryptionKeyMappings?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping>[]>;
+        /**
          * (Updatable) The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
          */
         vaultMappings?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberVaultMapping>[]>;
@@ -37043,9 +37087,9 @@ export namespace DisasterRecovery {
          * * Minimum = 1
          * * Maximum = 12
          *
-         * Examples:  FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 > Run a backup every week on monday and wednesday at 10:00 AM. FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 > Invalid configuration (can not specify interval of 2).
+         * Examples:  FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 > Run a backup every Monday and Wednesday at 10:00 AM. FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 > Invalid configuration (Cannot specify an interval of 2).
          *
-         * FREQ=HOURLY;INTERVAL=25 > Invalid configuration (can not specify interval of 25). FREQ=HOURLY;INTERVAL=0 > Invalid configuration (can not specify interval of 0). FREQ=HOURLY;INTERVAL=24 > Run a backup every 24 hours. FREQ=HOURLY;INTERVAL=1 > Run a backup every hour. FREQ=HOURLY;BYMINUTE=30;INTERVAL=15 > Run a backup every 15 hours at the 30th minute. FREQ=DAILY;INTERVAL=31 > Invalid configuration (can not specify interval of 31). FREQ=DAILY;INTERVAL=0 > Invalid configuration (can not specify interval of 0). FREQ=DAILY;INTERVAL=30 > Run a backup every 30 days at 12:00 midnight.  FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 > Run a backup every day at 05:10 PM.
+         * FREQ=HOURLY;INTERVAL=25 > Invalid configuration (Cannot specify an interval of 25). FREQ=HOURLY;INTERVAL=0 > Invalid configuration (Cannot specify an interval of 0). FREQ=HOURLY;INTERVAL=24 > Run a backup every 24 hours. FREQ=HOURLY;INTERVAL=1 > Run a backup every hour. FREQ=HOURLY;BYMINUTE=30;INTERVAL=15 > Run a backup every 15 hours at the 30th minute. FREQ=DAILY;INTERVAL=31 > Invalid configuration (Cannot specify an interval of 31). FREQ=DAILY;INTERVAL=0 > Invalid configuration (Cannot specify an interval of 0). FREQ=DAILY;INTERVAL=30 > Run a backup every 30 days at 12:00 midnight.  FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 > Run a backup daily at 05:10 PM.
          */
         backupSchedule?: pulumi.Input<string>;
         /**
@@ -37081,9 +37125,38 @@ export namespace DisasterRecovery {
         object?: pulumi.Input<string>;
     }
 
+    export interface DrProtectionGroupMemberBlockVolumeAttachAndMountOperations {
+        /**
+         * (Updatable) A list of details of attach or detach operations performed on block volumes.
+         */
+        attachments?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachment>[]>;
+        /**
+         * (Updatable) A list of details of mount operations performed on block volumes.
+         */
+        mounts?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMount>[]>;
+    }
+
+    export interface DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachment {
+        /**
+         * (Updatable) The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
+         */
+        blockVolumeId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+         */
+        volumeAttachmentReferenceInstanceId?: pulumi.Input<string>;
+    }
+
+    export interface DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMount {
+        /**
+         * (Updatable) The physical mount point where the file system is mounted on the block volume.  Example: `/mnt/yourmountpoint`
+         */
+        mountPoint?: pulumi.Input<string>;
+    }
+
     export interface DrProtectionGroupMemberBlockVolumeOperation {
         /**
-         * (Updatable) The details for creating a block volume attachment.
+         * (Updatable) Deprecated. Use the 'CreateComputeInstanceNonMovableBlockVolumeAttachOperationDetails' definition instead of this. The details for creating a block volume attachment.
          */
         attachmentDetails?: pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails>;
         /**
@@ -37098,7 +37171,7 @@ export namespace DisasterRecovery {
 
     export interface DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails {
         /**
-         * (Updatable) The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+         * (Updatable) The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
          */
         volumeAttachmentReferenceInstanceId?: pulumi.Input<string>;
     }
@@ -37108,6 +37181,28 @@ export namespace DisasterRecovery {
          * (Updatable) The physical mount point used for mounting the file system on the block volume.  Example: `/mnt/yourmountpoint`
          */
         mountPoint?: pulumi.Input<string>;
+    }
+
+    export interface DrProtectionGroupMemberCommonDestinationKey {
+        /**
+         * (Updatable) The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+         */
+        encryptionKeyId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+         */
+        vaultId?: pulumi.Input<string>;
+    }
+
+    export interface DrProtectionGroupMemberDestinationEncryptionKey {
+        /**
+         * (Updatable) The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+         */
+        encryptionKeyId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+         */
+        vaultId?: pulumi.Input<string>;
     }
 
     export interface DrProtectionGroupMemberExportMapping {
@@ -37195,6 +37290,28 @@ export namespace DisasterRecovery {
         sourceNetworkLoadBalancerId?: pulumi.Input<string>;
     }
 
+    export interface DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping {
+        /**
+         * (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
+         */
+        destinationEncryptionKey?: pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey>;
+        /**
+         * (Updatable) The OCID of the source boot volume or block volume.  Example: `ocid1.volume.oc1..uniqueID`
+         */
+        sourceVolumeId?: pulumi.Input<string>;
+    }
+
+    export interface DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey {
+        /**
+         * (Updatable) The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+         */
+        encryptionKeyId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+         */
+        vaultId?: pulumi.Input<string>;
+    }
+
     export interface DrProtectionGroupMemberVaultMapping {
         /**
          * (Updatable) The OCID of the destination Vault.  Example: `ocid1.vault.oc1..uniqueID`
@@ -37234,6 +37351,10 @@ export namespace DisasterRecovery {
          * (Updatable) The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
          */
         destinationPrimaryPrivateIpHostnameLabel?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+         */
+        destinationReservedPublicIpId?: pulumi.Input<string>;
         /**
          * (Updatable) The OCID of the destination subnet to which the source VNIC should connect.          Example: `ocid1.subnet.oc1..uniqueID`
          */
@@ -82818,9 +82939,16 @@ export namespace ResourceScheduler {
         /**
          * (Updatable) This is additional information that helps to identity the resource for the schedule.
          *
+         * <<<<<<< ours
          * { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
          */
         metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * (Updatable) This is the user input parameters to use when acting on the resource.
+         *
+         * { "parameters": [ { "parameterType": "BODY", "value": { "ip": "192.168.44.44", "memory": "1024", "syncedFolders": [ { "hostPath": "data/", "guestPath": "/var/www", "type": "default" } ], "forwardedPorts": [] } }, { "parameterType": "PATH", "value": { "compartmentId": "ocid1.compartment.oc1..xxxxx", "instanceId": "ocid1.vcn.oc1..yyyy" } }, { "parameterType": "QUERY", "value": { "limit": "10", "tenantId": "ocid1.tenant.oc1..zzzz" } }, { "parameterType": "HEADER", "value": { "token": "xxxx" } } ] }
+         */
+        parameters?: pulumi.Input<pulumi.Input<inputs.ResourceScheduler.ScheduleResourceParameter>[]>;
     }
 
     export interface ScheduleResourceFilter {
@@ -82854,6 +82982,19 @@ export namespace ResourceScheduler {
         tagKey?: pulumi.Input<string>;
         /**
          * This is the lifecycle state value used for filtering.
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface ScheduleResourceParameter {
+        /**
+         * (Updatable) This is the parameter type on which the input parameter is defined
+         */
+        parameterType: pulumi.Input<string>;
+        /**
+         * (Updatable) This is the HTTP request header value.
+         * =======
+         * { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
          */
         value?: pulumi.Input<string>;
     }

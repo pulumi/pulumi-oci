@@ -14,7 +14,7 @@ namespace Pulumi.Oci.ResourceScheduler
         /// <summary>
         /// This data source provides the list of Schedules in Oracle Cloud Infrastructure Resource Scheduler service.
         /// 
-        /// This API gets a list of schedules
+        /// This API gets a list of schedules. You must provide either a compartmentId or a scheduleId or both. You can list resources in this compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This is required unless a specific schedule ID is passed.
         /// 
         /// 
         /// ## Example Usage
@@ -30,9 +30,8 @@ namespace Pulumi.Oci.ResourceScheduler
         ///     var testSchedules = Oci.ResourceScheduler.GetSchedules.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
-        ///         ScheduleId = testSchedule.Id,
         ///         DisplayName = scheduleDisplayName,
-        ///         State = scheduleState,
+        ///         ResourceId = testResource.Id,
         ///     });
         /// 
         /// });
@@ -44,7 +43,7 @@ namespace Pulumi.Oci.ResourceScheduler
         /// <summary>
         /// This data source provides the list of Schedules in Oracle Cloud Infrastructure Resource Scheduler service.
         /// 
-        /// This API gets a list of schedules
+        /// This API gets a list of schedules. You must provide either a compartmentId or a scheduleId or both. You can list resources in this compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This is required unless a specific schedule ID is passed.
         /// 
         /// 
         /// ## Example Usage
@@ -60,9 +59,8 @@ namespace Pulumi.Oci.ResourceScheduler
         ///     var testSchedules = Oci.ResourceScheduler.GetSchedules.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
-        ///         ScheduleId = testSchedule.Id,
         ///         DisplayName = scheduleDisplayName,
-        ///         State = scheduleState,
+        ///         ResourceId = testResource.Id,
         ///     });
         /// 
         /// });
@@ -74,7 +72,7 @@ namespace Pulumi.Oci.ResourceScheduler
         /// <summary>
         /// This data source provides the list of Schedules in Oracle Cloud Infrastructure Resource Scheduler service.
         /// 
-        /// This API gets a list of schedules
+        /// This API gets a list of schedules. You must provide either a compartmentId or a scheduleId or both. You can list resources in this compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This is required unless a specific schedule ID is passed.
         /// 
         /// 
         /// ## Example Usage
@@ -90,9 +88,8 @@ namespace Pulumi.Oci.ResourceScheduler
         ///     var testSchedules = Oci.ResourceScheduler.GetSchedules.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
-        ///         ScheduleId = testSchedule.Id,
         ///         DisplayName = scheduleDisplayName,
-        ///         State = scheduleState,
+        ///         ResourceId = testResource.Id,
         ///     });
         /// 
         /// });
@@ -124,6 +121,12 @@ namespace Pulumi.Oci.ResourceScheduler
             get => _filters ?? (_filters = new List<Inputs.GetSchedulesFilterArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource affected by the work request.
+        /// </summary>
+        [Input("resourceId")]
+        public string? ResourceId { get; set; }
 
         /// <summary>
         /// This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.  You need to at least provide either `compartment_id` or `schedule_id` or both.
@@ -166,6 +169,12 @@ namespace Pulumi.Oci.ResourceScheduler
         }
 
         /// <summary>
+        /// This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource affected by the work request.
+        /// </summary>
+        [Input("resourceId")]
+        public Input<string>? ResourceId { get; set; }
+
+        /// <summary>
         /// This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.  You need to at least provide either `compartment_id` or `schedule_id` or both.
         /// </summary>
         [Input("scheduleId")]
@@ -200,6 +209,7 @@ namespace Pulumi.Oci.ResourceScheduler
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly string? ResourceId;
         /// <summary>
         /// The list of schedule_collection.
         /// </summary>
@@ -220,6 +230,8 @@ namespace Pulumi.Oci.ResourceScheduler
 
             string id,
 
+            string? resourceId,
+
             ImmutableArray<Outputs.GetSchedulesScheduleCollectionResult> scheduleCollections,
 
             string? scheduleId,
@@ -230,6 +242,7 @@ namespace Pulumi.Oci.ResourceScheduler
             DisplayName = displayName;
             Filters = filters;
             Id = id;
+            ResourceId = resourceId;
             ScheduleCollections = scheduleCollections;
             ScheduleId = scheduleId;
             State = state;

@@ -38,13 +38,17 @@ class ScheduleArgs:
         """
         The set of arguments for constructing a Schedule resource.
         :param pulumi.Input[builtins.str] action: (Updatable) This is the action that will be executed by the schedule.
+               <<<<<<< ours
         :param pulumi.Input[builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the schedule is created
         :param pulumi.Input[builtins.str] recurrence_details: (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
+               
+               >>>>>>> theirs
         :param pulumi.Input[builtins.str] recurrence_type: (Updatable) Type of recurrence of a schedule. Could be set to `ICAL`, `CRON`
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) These are defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[builtins.str] description: (Updatable) This is the description of the schedule.
         :param pulumi.Input[builtins.str] display_name: (Updatable) This is a user-friendly name for the schedule. It does not have to be unique, and it's changeable.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+               >>>>>>> theirs
         :param pulumi.Input[Sequence[pulumi.Input['ScheduleResourceFilterArgs']]] resource_filters: (Updatable) This is a list of resources filters.  The schedule will be applied to resources matching all of them.
         :param pulumi.Input[Sequence[pulumi.Input['ScheduleResourceArgs']]] resources: (Updatable) This is the list of resources to which the scheduled operation is applied.
         :param pulumi.Input[builtins.str] state: (Updatable) The target state for the Schedule. Could be set to `ACTIVE` or `INACTIVE`. 
@@ -83,6 +87,7 @@ class ScheduleArgs:
     def action(self) -> pulumi.Input[builtins.str]:
         """
         (Updatable) This is the action that will be executed by the schedule.
+        <<<<<<< ours
         """
         return pulumi.get(self, "action")
 
@@ -107,6 +112,8 @@ class ScheduleArgs:
     def recurrence_details(self) -> pulumi.Input[builtins.str]:
         """
         (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
+
+        >>>>>>> theirs
         """
         return pulumi.get(self, "recurrence_details")
 
@@ -167,6 +174,7 @@ class ScheduleArgs:
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]:
         """
         (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        >>>>>>> theirs
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -248,6 +256,7 @@ class _ScheduleState:
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
+                 last_run_status: Optional[pulumi.Input[builtins.str]] = None,
                  recurrence_details: Optional[pulumi.Input[builtins.str]] = None,
                  recurrence_type: Optional[pulumi.Input[builtins.str]] = None,
                  resource_filters: Optional[pulumi.Input[Sequence[pulumi.Input['ScheduleResourceFilterArgs']]]] = None,
@@ -263,12 +272,17 @@ class _ScheduleState:
         """
         Input properties used for looking up and filtering Schedule resources.
         :param pulumi.Input[builtins.str] action: (Updatable) This is the action that will be executed by the schedule.
+               <<<<<<< ours
         :param pulumi.Input[builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the schedule is created
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) These are defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[builtins.str] description: (Updatable) This is the description of the schedule.
         :param pulumi.Input[builtins.str] display_name: (Updatable) This is a user-friendly name for the schedule. It does not have to be unique, and it's changeable.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+               >>>>>>> theirs
+        :param pulumi.Input[builtins.str] last_run_status: This is the status of the last work request.
         :param pulumi.Input[builtins.str] recurrence_details: (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
+               
+               >>>>>>> theirs
         :param pulumi.Input[builtins.str] recurrence_type: (Updatable) Type of recurrence of a schedule. Could be set to `ICAL`, `CRON`
         :param pulumi.Input[Sequence[pulumi.Input['ScheduleResourceFilterArgs']]] resource_filters: (Updatable) This is a list of resources filters.  The schedule will be applied to resources matching all of them.
         :param pulumi.Input[Sequence[pulumi.Input['ScheduleResourceArgs']]] resources: (Updatable) This is the list of resources to which the scheduled operation is applied.
@@ -297,6 +311,8 @@ class _ScheduleState:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if last_run_status is not None:
+            pulumi.set(__self__, "last_run_status", last_run_status)
         if recurrence_details is not None:
             pulumi.set(__self__, "recurrence_details", recurrence_details)
         if recurrence_type is not None:
@@ -327,6 +343,7 @@ class _ScheduleState:
     def action(self) -> Optional[pulumi.Input[builtins.str]]:
         """
         (Updatable) This is the action that will be executed by the schedule.
+        <<<<<<< ours
         """
         return pulumi.get(self, "action")
 
@@ -387,6 +404,7 @@ class _ScheduleState:
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]:
         """
         (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        >>>>>>> theirs
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -395,10 +413,24 @@ class _ScheduleState:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="lastRunStatus")
+    def last_run_status(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        This is the status of the last work request.
+        """
+        return pulumi.get(self, "last_run_status")
+
+    @last_run_status.setter
+    def last_run_status(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "last_run_status", value)
+
+    @property
     @pulumi.getter(name="recurrenceDetails")
     def recurrence_details(self) -> Optional[pulumi.Input[builtins.str]]:
         """
         (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
+
+        >>>>>>> theirs
         """
         return pulumi.get(self, "recurrence_details")
 
@@ -568,7 +600,7 @@ class Schedule(pulumi.CustomResource):
         """
         This resource provides the Schedule resource in Oracle Cloud Infrastructure Resource Scheduler service.
 
-        Creates a Schedule
+        This API creates a schedule. You must provide either resources or resourceFilters.
 
         ## Import
 
@@ -581,12 +613,16 @@ class Schedule(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[builtins.str] action: (Updatable) This is the action that will be executed by the schedule.
+               <<<<<<< ours
         :param pulumi.Input[builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the schedule is created
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) These are defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[builtins.str] description: (Updatable) This is the description of the schedule.
         :param pulumi.Input[builtins.str] display_name: (Updatable) This is a user-friendly name for the schedule. It does not have to be unique, and it's changeable.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+               >>>>>>> theirs
         :param pulumi.Input[builtins.str] recurrence_details: (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
+               
+               >>>>>>> theirs
         :param pulumi.Input[builtins.str] recurrence_type: (Updatable) Type of recurrence of a schedule. Could be set to `ICAL`, `CRON`
         :param pulumi.Input[Sequence[pulumi.Input[Union['ScheduleResourceFilterArgs', 'ScheduleResourceFilterArgsDict']]]] resource_filters: (Updatable) This is a list of resources filters.  The schedule will be applied to resources matching all of them.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ScheduleResourceArgs', 'ScheduleResourceArgsDict']]]] resources: (Updatable) This is the list of resources to which the scheduled operation is applied.
@@ -607,7 +643,7 @@ class Schedule(pulumi.CustomResource):
         """
         This resource provides the Schedule resource in Oracle Cloud Infrastructure Resource Scheduler service.
 
-        Creates a Schedule
+        This API creates a schedule. You must provide either resources or resourceFilters.
 
         ## Import
 
@@ -675,6 +711,7 @@ class Schedule(pulumi.CustomResource):
             __props__.__dict__["state"] = state
             __props__.__dict__["time_ends"] = time_ends
             __props__.__dict__["time_starts"] = time_starts
+            __props__.__dict__["last_run_status"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_last_run"] = None
@@ -696,6 +733,7 @@ class Schedule(pulumi.CustomResource):
             description: Optional[pulumi.Input[builtins.str]] = None,
             display_name: Optional[pulumi.Input[builtins.str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
+            last_run_status: Optional[pulumi.Input[builtins.str]] = None,
             recurrence_details: Optional[pulumi.Input[builtins.str]] = None,
             recurrence_type: Optional[pulumi.Input[builtins.str]] = None,
             resource_filters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ScheduleResourceFilterArgs', 'ScheduleResourceFilterArgsDict']]]]] = None,
@@ -716,12 +754,17 @@ class Schedule(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[builtins.str] action: (Updatable) This is the action that will be executed by the schedule.
+               <<<<<<< ours
         :param pulumi.Input[builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the schedule is created
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) These are defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[builtins.str] description: (Updatable) This is the description of the schedule.
         :param pulumi.Input[builtins.str] display_name: (Updatable) This is a user-friendly name for the schedule. It does not have to be unique, and it's changeable.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+               >>>>>>> theirs
+        :param pulumi.Input[builtins.str] last_run_status: This is the status of the last work request.
         :param pulumi.Input[builtins.str] recurrence_details: (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
+               
+               >>>>>>> theirs
         :param pulumi.Input[builtins.str] recurrence_type: (Updatable) Type of recurrence of a schedule. Could be set to `ICAL`, `CRON`
         :param pulumi.Input[Sequence[pulumi.Input[Union['ScheduleResourceFilterArgs', 'ScheduleResourceFilterArgsDict']]]] resource_filters: (Updatable) This is a list of resources filters.  The schedule will be applied to resources matching all of them.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ScheduleResourceArgs', 'ScheduleResourceArgsDict']]]] resources: (Updatable) This is the list of resources to which the scheduled operation is applied.
@@ -748,6 +791,7 @@ class Schedule(pulumi.CustomResource):
         __props__.__dict__["description"] = description
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["last_run_status"] = last_run_status
         __props__.__dict__["recurrence_details"] = recurrence_details
         __props__.__dict__["recurrence_type"] = recurrence_type
         __props__.__dict__["resource_filters"] = resource_filters
@@ -767,6 +811,7 @@ class Schedule(pulumi.CustomResource):
     def action(self) -> pulumi.Output[builtins.str]:
         """
         (Updatable) This is the action that will be executed by the schedule.
+        <<<<<<< ours
         """
         return pulumi.get(self, "action")
 
@@ -807,14 +852,25 @@ class Schedule(pulumi.CustomResource):
     def freeform_tags(self) -> pulumi.Output[Mapping[str, builtins.str]]:
         """
         (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        >>>>>>> theirs
         """
         return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="lastRunStatus")
+    def last_run_status(self) -> pulumi.Output[builtins.str]:
+        """
+        This is the status of the last work request.
+        """
+        return pulumi.get(self, "last_run_status")
 
     @property
     @pulumi.getter(name="recurrenceDetails")
     def recurrence_details(self) -> pulumi.Output[builtins.str]:
         """
         (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
+
+        >>>>>>> theirs
         """
         return pulumi.get(self, "recurrence_details")
 

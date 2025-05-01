@@ -8,6 +8,8 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class GetClusterArgs extends com.pulumi.resources.InvokeArgs {
@@ -29,10 +31,26 @@ public final class GetClusterArgs extends com.pulumi.resources.InvokeArgs {
         return this.clusterId;
     }
 
+    /**
+     * Boolean value to determine if the OpenIdConnectAuth configuration file should be displayed for the provided cluster.
+     * 
+     */
+    @Import(name="shouldIncludeOidcConfigFile")
+    private @Nullable Output<String> shouldIncludeOidcConfigFile;
+
+    /**
+     * @return Boolean value to determine if the OpenIdConnectAuth configuration file should be displayed for the provided cluster.
+     * 
+     */
+    public Optional<Output<String>> shouldIncludeOidcConfigFile() {
+        return Optional.ofNullable(this.shouldIncludeOidcConfigFile);
+    }
+
     private GetClusterArgs() {}
 
     private GetClusterArgs(GetClusterArgs $) {
         this.clusterId = $.clusterId;
+        this.shouldIncludeOidcConfigFile = $.shouldIncludeOidcConfigFile;
     }
 
     public static Builder builder() {
@@ -72,6 +90,27 @@ public final class GetClusterArgs extends com.pulumi.resources.InvokeArgs {
          */
         public Builder clusterId(String clusterId) {
             return clusterId(Output.of(clusterId));
+        }
+
+        /**
+         * @param shouldIncludeOidcConfigFile Boolean value to determine if the OpenIdConnectAuth configuration file should be displayed for the provided cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shouldIncludeOidcConfigFile(@Nullable Output<String> shouldIncludeOidcConfigFile) {
+            $.shouldIncludeOidcConfigFile = shouldIncludeOidcConfigFile;
+            return this;
+        }
+
+        /**
+         * @param shouldIncludeOidcConfigFile Boolean value to determine if the OpenIdConnectAuth configuration file should be displayed for the provided cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shouldIncludeOidcConfigFile(String shouldIncludeOidcConfigFile) {
+            return shouldIncludeOidcConfigFile(Output.of(shouldIncludeOidcConfigFile));
         }
 
         public GetClusterArgs build() {

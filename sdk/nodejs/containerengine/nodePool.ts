@@ -65,11 +65,13 @@ import * as utilities from "../utilities";
  *     },
  *     nodeEvictionNodePoolSettings: {
  *         evictionGraceDuration: nodePoolNodeEvictionNodePoolSettingsEvictionGraceDuration,
+ *         isForceActionAfterGraceDuration: nodePoolNodeEvictionNodePoolSettingsIsForceActionAfterGraceDuration,
  *         isForceDeleteAfterGraceDuration: nodePoolNodeEvictionNodePoolSettingsIsForceDeleteAfterGraceDuration,
  *     },
  *     nodeImageName: testImage.name,
  *     nodeMetadata: nodePoolNodeMetadata,
  *     nodePoolCyclingDetails: {
+ *         cycleModes: nodePoolNodePoolCyclingDetailsCycleModes,
  *         isNodeCyclingEnabled: nodePoolNodePoolCyclingDetailsIsNodeCyclingEnabled,
  *         maximumSurge: nodePoolNodePoolCyclingDetailsMaximumSurge,
  *         maximumUnavailable: nodePoolNodePoolCyclingDetailsMaximumUnavailable,

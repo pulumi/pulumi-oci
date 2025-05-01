@@ -155,6 +155,21 @@ public final class DrPlanPlanGroupStepArgs extends com.pulumi.resources.Resource
     }
 
     /**
+     * The display name of the DR Plan step type.  Example: `Database Switchover`
+     * 
+     */
+    @Import(name="typeDisplayName")
+    private @Nullable Output<String> typeDisplayName;
+
+    /**
+     * @return The display name of the DR Plan step type.  Example: `Database Switchover`
+     * 
+     */
+    public Optional<Output<String>> typeDisplayName() {
+        return Optional.ofNullable(this.typeDisplayName);
+    }
+
+    /**
      * The details for a user-defined step in a DR plan.
      * 
      */
@@ -181,6 +196,7 @@ public final class DrPlanPlanGroupStepArgs extends com.pulumi.resources.Resource
         this.refreshStatus = $.refreshStatus;
         this.timeout = $.timeout;
         this.type = $.type;
+        this.typeDisplayName = $.typeDisplayName;
         this.userDefinedSteps = $.userDefinedSteps;
     }
 
@@ -389,6 +405,27 @@ public final class DrPlanPlanGroupStepArgs extends com.pulumi.resources.Resource
          */
         public Builder type(String type) {
             return type(Output.of(type));
+        }
+
+        /**
+         * @param typeDisplayName The display name of the DR Plan step type.  Example: `Database Switchover`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder typeDisplayName(@Nullable Output<String> typeDisplayName) {
+            $.typeDisplayName = typeDisplayName;
+            return this;
+        }
+
+        /**
+         * @param typeDisplayName The display name of the DR Plan step type.  Example: `Database Switchover`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder typeDisplayName(String typeDisplayName) {
+            return typeDisplayName(Output.of(typeDisplayName));
         }
 
         /**

@@ -19,6 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testCluster = oci.ContainerEngine.getCluster({
  *     clusterId: testClusterOciContainerengineCluster.id,
+ *     shouldIncludeOidcConfigFile: clusterShouldIncludeOidcConfigFile,
  * });
  * ```
  */
@@ -26,6 +27,7 @@ export function getCluster(args: GetClusterArgs, opts?: pulumi.InvokeOptions): P
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ContainerEngine/getCluster:getCluster", {
         "clusterId": args.clusterId,
+        "shouldIncludeOidcConfigFile": args.shouldIncludeOidcConfigFile,
     }, opts);
 }
 
@@ -37,6 +39,10 @@ export interface GetClusterArgs {
      * The OCID of the cluster.
      */
     clusterId: string;
+    /**
+     * Boolean value to determine if the OpenIdConnectAuth configuration file should be displayed for the provided cluster.
+     */
+    shouldIncludeOidcConfigFile?: string;
 }
 
 /**
@@ -105,6 +111,7 @@ export interface GetClusterResult {
      * Optional attributes for the cluster.
      */
     readonly options: outputs.ContainerEngine.GetClusterOption[];
+    readonly shouldIncludeOidcConfigFile?: string;
     /**
      * The state of the cluster masters.
      */
@@ -131,6 +138,7 @@ export interface GetClusterResult {
  *
  * const testCluster = oci.ContainerEngine.getCluster({
  *     clusterId: testClusterOciContainerengineCluster.id,
+ *     shouldIncludeOidcConfigFile: clusterShouldIncludeOidcConfigFile,
  * });
  * ```
  */
@@ -138,6 +146,7 @@ export function getClusterOutput(args: GetClusterOutputArgs, opts?: pulumi.Invok
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ContainerEngine/getCluster:getCluster", {
         "clusterId": args.clusterId,
+        "shouldIncludeOidcConfigFile": args.shouldIncludeOidcConfigFile,
     }, opts);
 }
 
@@ -149,4 +158,8 @@ export interface GetClusterOutputArgs {
      * The OCID of the cluster.
      */
     clusterId: pulumi.Input<string>;
+    /**
+     * Boolean value to determine if the OpenIdConnectAuth configuration file should be displayed for the provided cluster.
+     */
+    shouldIncludeOidcConfigFile?: pulumi.Input<string>;
 }

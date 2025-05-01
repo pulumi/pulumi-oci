@@ -12,8 +12,20 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
 
     public sealed class NodePoolNodePoolCyclingDetailsArgs : global::Pulumi.ResourceArgs
     {
+        [Input("cycleModes")]
+        private InputList<string>? _cycleModes;
+
         /// <summary>
-        /// (Updatable) If nodes in the nodepool will be cycled to have new changes.
+        /// (Updatable) An ordered list of cycle modes that should be performed on the OKE nodes.
+        /// </summary>
+        public InputList<string> CycleModes
+        {
+            get => _cycleModes ?? (_cycleModes = new InputList<string>());
+            set => _cycleModes = value;
+        }
+
+        /// <summary>
+        /// (Updatable) If cycling operation should be performed on the nodes in the node pool.
         /// </summary>
         [Input("isNodeCyclingEnabled")]
         public Input<bool>? IsNodeCyclingEnabled { get; set; }

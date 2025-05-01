@@ -72,6 +72,10 @@ export interface GetScheduleResult {
      */
     readonly id: string;
     /**
+     * This is the status of the last work request.
+     */
+    readonly lastRunStatus: string;
+    /**
      * This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
      */
     readonly recurrenceDetails: string;

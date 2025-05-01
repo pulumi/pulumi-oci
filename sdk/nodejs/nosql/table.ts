@@ -76,7 +76,7 @@ export class Table extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
-     * (Updatable) Complete CREATE TABLE DDL statement. When update ddl_statement, it should be ALTER TABLE DDL statement.
+     * (Updatable) CREATE TABLE DDL statement. While updating an existing table, note that the column order should not be changed, and new columns can only be appended at the end of the table.
      */
     public readonly ddlStatement!: pulumi.Output<string>;
     /**
@@ -216,7 +216,7 @@ export interface TableState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * (Updatable) Complete CREATE TABLE DDL statement. When update ddl_statement, it should be ALTER TABLE DDL statement.
+     * (Updatable) CREATE TABLE DDL statement. While updating an existing table, note that the column order should not be changed, and new columns can only be appended at the end of the table.
      */
     ddlStatement?: pulumi.Input<string>;
     /**
@@ -294,7 +294,7 @@ export interface TableArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * (Updatable) Complete CREATE TABLE DDL statement. When update ddl_statement, it should be ALTER TABLE DDL statement.
+     * (Updatable) CREATE TABLE DDL statement. While updating an existing table, note that the column order should not be changed, and new columns can only be appended at the end of the table.
      */
     ddlStatement: pulumi.Input<string>;
     /**

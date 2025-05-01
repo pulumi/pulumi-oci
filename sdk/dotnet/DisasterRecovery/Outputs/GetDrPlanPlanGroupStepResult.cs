@@ -50,6 +50,10 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string Type;
         /// <summary>
+        /// The display name of the DR Plan step type.  Example: `Database Switchover`
+        /// </summary>
+        public readonly string TypeDisplayName;
+        /// <summary>
         /// The details for a user-defined step in a DR plan.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDrPlanPlanGroupStepUserDefinedStepResult> UserDefinedSteps;
@@ -74,6 +78,8 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
 
             string type,
 
+            string typeDisplayName,
+
             ImmutableArray<Outputs.GetDrPlanPlanGroupStepUserDefinedStepResult> userDefinedSteps)
         {
             DisplayName = displayName;
@@ -85,6 +91,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
             RefreshStatus = refreshStatus;
             Timeout = timeout;
             Type = type;
+            TypeDisplayName = typeDisplayName;
             UserDefinedSteps = userDefinedSteps;
         }
     }

@@ -280,6 +280,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
+        /// If omitted or set to false the provider will not delete scheduled_operations from the Autonomous Database. If set to true, provider will delete scheduled_operations from the Autonomous Database.
+        /// </summary>
+        public readonly bool EnableDeleteScheduledOperations;
+        /// <summary>
         /// Key History Entry.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabaseEncryptionKeyHistoryEntryResult> EncryptionKeyHistoryEntries;
@@ -758,6 +762,8 @@ namespace Pulumi.Oci.Database
 
             string displayName,
 
+            bool enableDeleteScheduledOperations,
+
             ImmutableArray<Outputs.GetAutonomousDatabaseEncryptionKeyHistoryEntryResult> encryptionKeyHistoryEntries,
 
             ImmutableArray<Outputs.GetAutonomousDatabaseEncryptionKeyResult> encryptionKeys,
@@ -1013,6 +1019,7 @@ namespace Pulumi.Oci.Database
             DisasterRecoveryRegionType = disasterRecoveryRegionType;
             DisasterRecoveryType = disasterRecoveryType;
             DisplayName = displayName;
+            EnableDeleteScheduledOperations = enableDeleteScheduledOperations;
             EncryptionKeyHistoryEntries = encryptionKeyHistoryEntries;
             EncryptionKeys = encryptionKeys;
             FailedDataRecoveryInSeconds = failedDataRecoveryInSeconds;

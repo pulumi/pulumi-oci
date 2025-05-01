@@ -18,6 +18,11 @@ public final class NodePoolNodeEvictionNodePoolSettings {
      */
     private @Nullable String evictionGraceDuration;
     /**
+     * @return (Updatable) If the node action should be performed if not all the pods can be evicted in the grace period
+     * 
+     */
+    private @Nullable Boolean isForceActionAfterGraceDuration;
+    /**
      * @return (Updatable) If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
      * 
      */
@@ -30,6 +35,13 @@ public final class NodePoolNodeEvictionNodePoolSettings {
      */
     public Optional<String> evictionGraceDuration() {
         return Optional.ofNullable(this.evictionGraceDuration);
+    }
+    /**
+     * @return (Updatable) If the node action should be performed if not all the pods can be evicted in the grace period
+     * 
+     */
+    public Optional<Boolean> isForceActionAfterGraceDuration() {
+        return Optional.ofNullable(this.isForceActionAfterGraceDuration);
     }
     /**
      * @return (Updatable) If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
@@ -49,11 +61,13 @@ public final class NodePoolNodeEvictionNodePoolSettings {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String evictionGraceDuration;
+        private @Nullable Boolean isForceActionAfterGraceDuration;
         private @Nullable Boolean isForceDeleteAfterGraceDuration;
         public Builder() {}
         public Builder(NodePoolNodeEvictionNodePoolSettings defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.evictionGraceDuration = defaults.evictionGraceDuration;
+    	      this.isForceActionAfterGraceDuration = defaults.isForceActionAfterGraceDuration;
     	      this.isForceDeleteAfterGraceDuration = defaults.isForceDeleteAfterGraceDuration;
         }
 
@@ -61,6 +75,12 @@ public final class NodePoolNodeEvictionNodePoolSettings {
         public Builder evictionGraceDuration(@Nullable String evictionGraceDuration) {
 
             this.evictionGraceDuration = evictionGraceDuration;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isForceActionAfterGraceDuration(@Nullable Boolean isForceActionAfterGraceDuration) {
+
+            this.isForceActionAfterGraceDuration = isForceActionAfterGraceDuration;
             return this;
         }
         @CustomType.Setter
@@ -72,6 +92,7 @@ public final class NodePoolNodeEvictionNodePoolSettings {
         public NodePoolNodeEvictionNodePoolSettings build() {
             final var _resultValue = new NodePoolNodeEvictionNodePoolSettings();
             _resultValue.evictionGraceDuration = evictionGraceDuration;
+            _resultValue.isForceActionAfterGraceDuration = isForceActionAfterGraceDuration;
             _resultValue.isForceDeleteAfterGraceDuration = isForceDeleteAfterGraceDuration;
             return _resultValue;
         }

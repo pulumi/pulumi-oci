@@ -32,6 +32,21 @@ public final class NodePoolNodeEvictionNodePoolSettingsArgs extends com.pulumi.r
     }
 
     /**
+     * (Updatable) If the node action should be performed if not all the pods can be evicted in the grace period
+     * 
+     */
+    @Import(name="isForceActionAfterGraceDuration")
+    private @Nullable Output<Boolean> isForceActionAfterGraceDuration;
+
+    /**
+     * @return (Updatable) If the node action should be performed if not all the pods can be evicted in the grace period
+     * 
+     */
+    public Optional<Output<Boolean>> isForceActionAfterGraceDuration() {
+        return Optional.ofNullable(this.isForceActionAfterGraceDuration);
+    }
+
+    /**
      * (Updatable) If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
      * 
      */
@@ -50,6 +65,7 @@ public final class NodePoolNodeEvictionNodePoolSettingsArgs extends com.pulumi.r
 
     private NodePoolNodeEvictionNodePoolSettingsArgs(NodePoolNodeEvictionNodePoolSettingsArgs $) {
         this.evictionGraceDuration = $.evictionGraceDuration;
+        this.isForceActionAfterGraceDuration = $.isForceActionAfterGraceDuration;
         this.isForceDeleteAfterGraceDuration = $.isForceDeleteAfterGraceDuration;
     }
 
@@ -90,6 +106,27 @@ public final class NodePoolNodeEvictionNodePoolSettingsArgs extends com.pulumi.r
          */
         public Builder evictionGraceDuration(String evictionGraceDuration) {
             return evictionGraceDuration(Output.of(evictionGraceDuration));
+        }
+
+        /**
+         * @param isForceActionAfterGraceDuration (Updatable) If the node action should be performed if not all the pods can be evicted in the grace period
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isForceActionAfterGraceDuration(@Nullable Output<Boolean> isForceActionAfterGraceDuration) {
+            $.isForceActionAfterGraceDuration = isForceActionAfterGraceDuration;
+            return this;
+        }
+
+        /**
+         * @param isForceActionAfterGraceDuration (Updatable) If the node action should be performed if not all the pods can be evicted in the grace period
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isForceActionAfterGraceDuration(Boolean isForceActionAfterGraceDuration) {
+            return isForceActionAfterGraceDuration(Output.of(isForceActionAfterGraceDuration));
         }
 
         /**

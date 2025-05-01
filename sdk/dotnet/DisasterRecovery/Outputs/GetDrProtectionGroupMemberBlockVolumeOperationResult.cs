@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
     public sealed class GetDrProtectionGroupMemberBlockVolumeOperationResult
     {
         /// <summary>
-        /// The details for attaching or detaching a block volume.
+        /// Deprecated. Use the 'ComputeInstanceNonMovableBlockVolumeAttachOperationDetails' definition instead of this. The details for attaching or detaching a block volume.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailResult> AttachmentDetails;
         /// <summary>

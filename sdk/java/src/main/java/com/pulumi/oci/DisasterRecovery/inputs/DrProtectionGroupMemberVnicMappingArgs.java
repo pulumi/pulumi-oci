@@ -62,6 +62,21 @@ public final class DrProtectionGroupMemberVnicMappingArgs extends com.pulumi.res
     }
 
     /**
+     * (Updatable) The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+     * 
+     */
+    @Import(name="destinationReservedPublicIpId")
+    private @Nullable Output<String> destinationReservedPublicIpId;
+
+    /**
+     * @return (Updatable) The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+     * 
+     */
+    public Optional<Output<String>> destinationReservedPublicIpId() {
+        return Optional.ofNullable(this.destinationReservedPublicIpId);
+    }
+
+    /**
      * (Updatable) The OCID of the destination subnet to which the source VNIC should connect.          Example: `ocid1.subnet.oc1..uniqueID`
      * 
      */
@@ -97,6 +112,7 @@ public final class DrProtectionGroupMemberVnicMappingArgs extends com.pulumi.res
         this.destinationNsgIdLists = $.destinationNsgIdLists;
         this.destinationPrimaryPrivateIpAddress = $.destinationPrimaryPrivateIpAddress;
         this.destinationPrimaryPrivateIpHostnameLabel = $.destinationPrimaryPrivateIpHostnameLabel;
+        this.destinationReservedPublicIpId = $.destinationReservedPublicIpId;
         this.destinationSubnetId = $.destinationSubnetId;
         this.sourceVnicId = $.sourceVnicId;
     }
@@ -190,6 +206,27 @@ public final class DrProtectionGroupMemberVnicMappingArgs extends com.pulumi.res
          */
         public Builder destinationPrimaryPrivateIpHostnameLabel(String destinationPrimaryPrivateIpHostnameLabel) {
             return destinationPrimaryPrivateIpHostnameLabel(Output.of(destinationPrimaryPrivateIpHostnameLabel));
+        }
+
+        /**
+         * @param destinationReservedPublicIpId (Updatable) The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder destinationReservedPublicIpId(@Nullable Output<String> destinationReservedPublicIpId) {
+            $.destinationReservedPublicIpId = destinationReservedPublicIpId;
+            return this;
+        }
+
+        /**
+         * @param destinationReservedPublicIpId (Updatable) The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder destinationReservedPublicIpId(String destinationReservedPublicIpId) {
+            return destinationReservedPublicIpId(Output.of(destinationReservedPublicIpId));
         }
 
         /**

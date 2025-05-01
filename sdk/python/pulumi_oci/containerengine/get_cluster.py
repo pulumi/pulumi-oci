@@ -28,7 +28,7 @@ class GetClusterResult:
     """
     A collection of values returned by getCluster.
     """
-    def __init__(__self__, available_kubernetes_upgrades=None, cluster_id=None, cluster_pod_network_options=None, compartment_id=None, defined_tags=None, endpoint_configs=None, endpoints=None, freeform_tags=None, id=None, image_policy_configs=None, kms_key_id=None, kubernetes_version=None, lifecycle_details=None, metadatas=None, name=None, open_id_connect_discovery_endpoint=None, options=None, state=None, type=None, vcn_id=None):
+    def __init__(__self__, available_kubernetes_upgrades=None, cluster_id=None, cluster_pod_network_options=None, compartment_id=None, defined_tags=None, endpoint_configs=None, endpoints=None, freeform_tags=None, id=None, image_policy_configs=None, kms_key_id=None, kubernetes_version=None, lifecycle_details=None, metadatas=None, name=None, open_id_connect_discovery_endpoint=None, options=None, should_include_oidc_config_file=None, state=None, type=None, vcn_id=None):
         if available_kubernetes_upgrades and not isinstance(available_kubernetes_upgrades, list):
             raise TypeError("Expected argument 'available_kubernetes_upgrades' to be a list")
         pulumi.set(__self__, "available_kubernetes_upgrades", available_kubernetes_upgrades)
@@ -80,6 +80,9 @@ class GetClusterResult:
         if options and not isinstance(options, list):
             raise TypeError("Expected argument 'options' to be a list")
         pulumi.set(__self__, "options", options)
+        if should_include_oidc_config_file and not isinstance(should_include_oidc_config_file, str):
+            raise TypeError("Expected argument 'should_include_oidc_config_file' to be a str")
+        pulumi.set(__self__, "should_include_oidc_config_file", should_include_oidc_config_file)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -221,6 +224,11 @@ class GetClusterResult:
         return pulumi.get(self, "options")
 
     @property
+    @pulumi.getter(name="shouldIncludeOidcConfigFile")
+    def should_include_oidc_config_file(self) -> Optional[builtins.str]:
+        return pulumi.get(self, "should_include_oidc_config_file")
+
+    @property
     @pulumi.getter
     def state(self) -> builtins.str:
         """
@@ -268,12 +276,14 @@ class AwaitableGetClusterResult(GetClusterResult):
             name=self.name,
             open_id_connect_discovery_endpoint=self.open_id_connect_discovery_endpoint,
             options=self.options,
+            should_include_oidc_config_file=self.should_include_oidc_config_file,
             state=self.state,
             type=self.type,
             vcn_id=self.vcn_id)
 
 
 def get_cluster(cluster_id: Optional[builtins.str] = None,
+                should_include_oidc_config_file: Optional[builtins.str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetClusterResult:
     """
     This data source provides details about a specific Cluster resource in Oracle Cloud Infrastructure Container Engine service.
@@ -286,14 +296,17 @@ def get_cluster(cluster_id: Optional[builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster = oci.ContainerEngine.get_cluster(cluster_id=test_cluster_oci_containerengine_cluster["id"])
+    test_cluster = oci.ContainerEngine.get_cluster(cluster_id=test_cluster_oci_containerengine_cluster["id"],
+        should_include_oidc_config_file=cluster_should_include_oidc_config_file)
     ```
 
 
     :param builtins.str cluster_id: The OCID of the cluster.
+    :param builtins.str should_include_oidc_config_file: Boolean value to determine if the OpenIdConnectAuth configuration file should be displayed for the provided cluster.
     """
     __args__ = dict()
     __args__['clusterId'] = cluster_id
+    __args__['shouldIncludeOidcConfigFile'] = should_include_oidc_config_file
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:ContainerEngine/getCluster:getCluster', __args__, opts=opts, typ=GetClusterResult).value
 
@@ -315,10 +328,12 @@ def get_cluster(cluster_id: Optional[builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         open_id_connect_discovery_endpoint=pulumi.get(__ret__, 'open_id_connect_discovery_endpoint'),
         options=pulumi.get(__ret__, 'options'),
+        should_include_oidc_config_file=pulumi.get(__ret__, 'should_include_oidc_config_file'),
         state=pulumi.get(__ret__, 'state'),
         type=pulumi.get(__ret__, 'type'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
 def get_cluster_output(cluster_id: Optional[pulumi.Input[builtins.str]] = None,
+                       should_include_oidc_config_file: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetClusterResult]:
     """
     This data source provides details about a specific Cluster resource in Oracle Cloud Infrastructure Container Engine service.
@@ -331,14 +346,17 @@ def get_cluster_output(cluster_id: Optional[pulumi.Input[builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster = oci.ContainerEngine.get_cluster(cluster_id=test_cluster_oci_containerengine_cluster["id"])
+    test_cluster = oci.ContainerEngine.get_cluster(cluster_id=test_cluster_oci_containerengine_cluster["id"],
+        should_include_oidc_config_file=cluster_should_include_oidc_config_file)
     ```
 
 
     :param builtins.str cluster_id: The OCID of the cluster.
+    :param builtins.str should_include_oidc_config_file: Boolean value to determine if the OpenIdConnectAuth configuration file should be displayed for the provided cluster.
     """
     __args__ = dict()
     __args__['clusterId'] = cluster_id
+    __args__['shouldIncludeOidcConfigFile'] = should_include_oidc_config_file
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ContainerEngine/getCluster:getCluster', __args__, opts=opts, typ=GetClusterResult)
     return __ret__.apply(lambda __response__: GetClusterResult(
@@ -359,6 +377,7 @@ def get_cluster_output(cluster_id: Optional[pulumi.Input[builtins.str]] = None,
         name=pulumi.get(__response__, 'name'),
         open_id_connect_discovery_endpoint=pulumi.get(__response__, 'open_id_connect_discovery_endpoint'),
         options=pulumi.get(__response__, 'options'),
+        should_include_oidc_config_file=pulumi.get(__response__, 'should_include_oidc_config_file'),
         state=pulumi.get(__response__, 'state'),
         type=pulumi.get(__response__, 'type'),
         vcn_id=pulumi.get(__response__, 'vcn_id')))

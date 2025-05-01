@@ -53,6 +53,10 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// The group type.  Example: `BUILT_IN`
         /// </summary>
         public readonly string Type;
+        /// <summary>
+        /// The display name of the DR Plan step type.  Example: `Database Switchover`
+        /// </summary>
+        public readonly string TypeDisplayName;
 
         [OutputConstructor]
         private GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionResult(
@@ -74,7 +78,9 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
 
             string timeStarted,
 
-            string type)
+            string type,
+
+            string typeDisplayName)
         {
             DisplayName = displayName;
             ExecutionDurationInSec = executionDurationInSec;
@@ -86,6 +92,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
             TimeEnded = timeEnded;
             TimeStarted = timeStarted;
             Type = type;
+            TypeDisplayName = typeDisplayName;
         }
     }
 }

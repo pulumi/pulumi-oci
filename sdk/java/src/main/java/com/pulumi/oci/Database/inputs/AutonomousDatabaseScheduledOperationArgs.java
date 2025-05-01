@@ -5,7 +5,6 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseScheduledOperationDayOfWeekArgs;
 import java.lang.String;
 import java.util.Objects;
@@ -21,15 +20,15 @@ public final class AutonomousDatabaseScheduledOperationArgs extends com.pulumi.r
      * (Updatable) Day of the week.
      * 
      */
-    @Import(name="dayOfWeek", required=true)
-    private Output<AutonomousDatabaseScheduledOperationDayOfWeekArgs> dayOfWeek;
+    @Import(name="dayOfWeek")
+    private @Nullable Output<AutonomousDatabaseScheduledOperationDayOfWeekArgs> dayOfWeek;
 
     /**
      * @return (Updatable) Day of the week.
      * 
      */
-    public Output<AutonomousDatabaseScheduledOperationDayOfWeekArgs> dayOfWeek() {
-        return this.dayOfWeek;
+    public Optional<Output<AutonomousDatabaseScheduledOperationDayOfWeekArgs>> dayOfWeek() {
+        return Optional.ofNullable(this.dayOfWeek);
     }
 
     /**
@@ -94,7 +93,7 @@ public final class AutonomousDatabaseScheduledOperationArgs extends com.pulumi.r
          * @return builder
          * 
          */
-        public Builder dayOfWeek(Output<AutonomousDatabaseScheduledOperationDayOfWeekArgs> dayOfWeek) {
+        public Builder dayOfWeek(@Nullable Output<AutonomousDatabaseScheduledOperationDayOfWeekArgs> dayOfWeek) {
             $.dayOfWeek = dayOfWeek;
             return this;
         }
@@ -152,9 +151,6 @@ public final class AutonomousDatabaseScheduledOperationArgs extends com.pulumi.r
         }
 
         public AutonomousDatabaseScheduledOperationArgs build() {
-            if ($.dayOfWeek == null) {
-                throw new MissingRequiredPropertyException("AutonomousDatabaseScheduledOperationArgs", "dayOfWeek");
-            }
             return $;
         }
     }

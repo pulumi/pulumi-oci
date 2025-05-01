@@ -27,6 +27,11 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVni
      */
     private String destinationPrimaryPrivateIpHostnameLabel;
     /**
+     * @return The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+     * 
+     */
+    private String destinationReservedPublicIpId;
+    /**
      * @return The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
      * 
      */
@@ -60,6 +65,13 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVni
         return this.destinationPrimaryPrivateIpHostnameLabel;
     }
     /**
+     * @return The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+     * 
+     */
+    public String destinationReservedPublicIpId() {
+        return this.destinationReservedPublicIpId;
+    }
+    /**
      * @return The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
      * 
      */
@@ -86,6 +98,7 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVni
         private List<String> destinationNsgIdLists;
         private String destinationPrimaryPrivateIpAddress;
         private String destinationPrimaryPrivateIpHostnameLabel;
+        private String destinationReservedPublicIpId;
         private String destinationSubnetId;
         private String sourceVnicId;
         public Builder() {}
@@ -94,6 +107,7 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVni
     	      this.destinationNsgIdLists = defaults.destinationNsgIdLists;
     	      this.destinationPrimaryPrivateIpAddress = defaults.destinationPrimaryPrivateIpAddress;
     	      this.destinationPrimaryPrivateIpHostnameLabel = defaults.destinationPrimaryPrivateIpHostnameLabel;
+    	      this.destinationReservedPublicIpId = defaults.destinationReservedPublicIpId;
     	      this.destinationSubnetId = defaults.destinationSubnetId;
     	      this.sourceVnicId = defaults.sourceVnicId;
         }
@@ -126,6 +140,14 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVni
             return this;
         }
         @CustomType.Setter
+        public Builder destinationReservedPublicIpId(String destinationReservedPublicIpId) {
+            if (destinationReservedPublicIpId == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping", "destinationReservedPublicIpId");
+            }
+            this.destinationReservedPublicIpId = destinationReservedPublicIpId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder destinationSubnetId(String destinationSubnetId) {
             if (destinationSubnetId == null) {
               throw new MissingRequiredPropertyException("GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping", "destinationSubnetId");
@@ -146,6 +168,7 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVni
             _resultValue.destinationNsgIdLists = destinationNsgIdLists;
             _resultValue.destinationPrimaryPrivateIpAddress = destinationPrimaryPrivateIpAddress;
             _resultValue.destinationPrimaryPrivateIpHostnameLabel = destinationPrimaryPrivateIpHostnameLabel;
+            _resultValue.destinationReservedPublicIpId = destinationReservedPublicIpId;
             _resultValue.destinationSubnetId = destinationSubnetId;
             _resultValue.sourceVnicId = sourceVnicId;
             return _resultValue;

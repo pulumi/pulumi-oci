@@ -21,15 +21,22 @@ namespace Pulumi.Oci.ResourceScheduler.Outputs
         /// This is additional information that helps to identity the resource for the schedule.
         /// </summary>
         public readonly ImmutableDictionary<string, string> Metadata;
+        /// <summary>
+        /// This is the user input parameters to use when acting on the resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetScheduleResourceParameterResult> Parameters;
 
         [OutputConstructor]
         private GetScheduleResourceResult(
             string id,
 
-            ImmutableDictionary<string, string> metadata)
+            ImmutableDictionary<string, string> metadata,
+
+            ImmutableArray<Outputs.GetScheduleResourceParameterResult> parameters)
         {
             Id = id;
             Metadata = metadata;
+            Parameters = parameters;
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// (Updatable) Day of the week.
         /// </summary>
-        public readonly Outputs.AutonomousDatabaseScheduledOperationDayOfWeek DayOfWeek;
+        public readonly Outputs.AutonomousDatabaseScheduledOperationDayOfWeek? DayOfWeek;
         /// <summary>
         /// (Updatable) auto start time. value must be of ISO-8601 format "HH:mm"
         /// </summary>
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.Database.Outputs
 
         [OutputConstructor]
         private AutonomousDatabaseScheduledOperation(
-            Outputs.AutonomousDatabaseScheduledOperationDayOfWeek dayOfWeek,
+            Outputs.AutonomousDatabaseScheduledOperationDayOfWeek? dayOfWeek,
 
             string? scheduledStartTime,
 

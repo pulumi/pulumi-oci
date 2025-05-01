@@ -14,7 +14,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation {
     /**
-     * @return The details for attaching or detaching a block volume.
+     * @return Deprecated. Use the &#39;ComputeInstanceNonMovableBlockVolumeAttachOperationDetails&#39; definition instead of this. The details for attaching or detaching a block volume.
      * 
      */
     private List<GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail> attachmentDetails;
@@ -31,7 +31,7 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlo
 
     private GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation() {}
     /**
-     * @return The details for attaching or detaching a block volume.
+     * @return Deprecated. Use the &#39;ComputeInstanceNonMovableBlockVolumeAttachOperationDetails&#39; definition instead of this. The details for attaching or detaching a block volume.
      * 
      */
     public List<GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail> attachmentDetails() {

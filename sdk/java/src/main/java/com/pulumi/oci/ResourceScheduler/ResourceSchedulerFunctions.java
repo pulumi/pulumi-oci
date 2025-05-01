@@ -241,7 +241,7 @@ public final class ResourceSchedulerFunctions {
     /**
      * This data source provides the list of Schedules in Oracle Cloud Infrastructure Resource Scheduler service.
      * 
-     * This API gets a list of schedules
+     * This API gets a list of schedules. You must provide either a compartmentId or a scheduleId or both. You can list resources in this compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This is required unless a specific schedule ID is passed.
      * 
      * ## Example Usage
      * 
@@ -270,9 +270,8 @@ public final class ResourceSchedulerFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSchedules = ResourceSchedulerFunctions.getSchedules(GetSchedulesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .scheduleId(testSchedule.id())
      *             .displayName(scheduleDisplayName)
-     *             .state(scheduleState)
+     *             .resourceId(testResource.id())
      *             .build());
      * 
      *     }
@@ -288,7 +287,7 @@ public final class ResourceSchedulerFunctions {
     /**
      * This data source provides the list of Schedules in Oracle Cloud Infrastructure Resource Scheduler service.
      * 
-     * This API gets a list of schedules
+     * This API gets a list of schedules. You must provide either a compartmentId or a scheduleId or both. You can list resources in this compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This is required unless a specific schedule ID is passed.
      * 
      * ## Example Usage
      * 
@@ -317,9 +316,8 @@ public final class ResourceSchedulerFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSchedules = ResourceSchedulerFunctions.getSchedules(GetSchedulesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .scheduleId(testSchedule.id())
      *             .displayName(scheduleDisplayName)
-     *             .state(scheduleState)
+     *             .resourceId(testResource.id())
      *             .build());
      * 
      *     }
@@ -335,7 +333,7 @@ public final class ResourceSchedulerFunctions {
     /**
      * This data source provides the list of Schedules in Oracle Cloud Infrastructure Resource Scheduler service.
      * 
-     * This API gets a list of schedules
+     * This API gets a list of schedules. You must provide either a compartmentId or a scheduleId or both. You can list resources in this compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This is required unless a specific schedule ID is passed.
      * 
      * ## Example Usage
      * 
@@ -364,9 +362,8 @@ public final class ResourceSchedulerFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSchedules = ResourceSchedulerFunctions.getSchedules(GetSchedulesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .scheduleId(testSchedule.id())
      *             .displayName(scheduleDisplayName)
-     *             .state(scheduleState)
+     *             .resourceId(testResource.id())
      *             .build());
      * 
      *     }
@@ -382,7 +379,7 @@ public final class ResourceSchedulerFunctions {
     /**
      * This data source provides the list of Schedules in Oracle Cloud Infrastructure Resource Scheduler service.
      * 
-     * This API gets a list of schedules
+     * This API gets a list of schedules. You must provide either a compartmentId or a scheduleId or both. You can list resources in this compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This is required unless a specific schedule ID is passed.
      * 
      * ## Example Usage
      * 
@@ -411,9 +408,8 @@ public final class ResourceSchedulerFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSchedules = ResourceSchedulerFunctions.getSchedules(GetSchedulesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .scheduleId(testSchedule.id())
      *             .displayName(scheduleDisplayName)
-     *             .state(scheduleState)
+     *             .resourceId(testResource.id())
      *             .build());
      * 
      *     }
@@ -429,7 +425,7 @@ public final class ResourceSchedulerFunctions {
     /**
      * This data source provides the list of Schedules in Oracle Cloud Infrastructure Resource Scheduler service.
      * 
-     * This API gets a list of schedules
+     * This API gets a list of schedules. You must provide either a compartmentId or a scheduleId or both. You can list resources in this compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This is required unless a specific schedule ID is passed.
      * 
      * ## Example Usage
      * 
@@ -458,9 +454,8 @@ public final class ResourceSchedulerFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSchedules = ResourceSchedulerFunctions.getSchedules(GetSchedulesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .scheduleId(testSchedule.id())
      *             .displayName(scheduleDisplayName)
-     *             .state(scheduleState)
+     *             .resourceId(testResource.id())
      *             .build());
      * 
      *     }
@@ -476,7 +471,7 @@ public final class ResourceSchedulerFunctions {
     /**
      * This data source provides the list of Schedules in Oracle Cloud Infrastructure Resource Scheduler service.
      * 
-     * This API gets a list of schedules
+     * This API gets a list of schedules. You must provide either a compartmentId or a scheduleId or both. You can list resources in this compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This is required unless a specific schedule ID is passed.
      * 
      * ## Example Usage
      * 
@@ -505,9 +500,8 @@ public final class ResourceSchedulerFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSchedules = ResourceSchedulerFunctions.getSchedules(GetSchedulesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .scheduleId(testSchedule.id())
      *             .displayName(scheduleDisplayName)
-     *             .state(scheduleState)
+     *             .resourceId(testResource.id())
      *             .build());
      * 
      *     }
@@ -523,7 +517,7 @@ public final class ResourceSchedulerFunctions {
     /**
      * This data source provides the list of Schedules in Oracle Cloud Infrastructure Resource Scheduler service.
      * 
-     * This API gets a list of schedules
+     * This API gets a list of schedules. You must provide either a compartmentId or a scheduleId or both. You can list resources in this compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This is required unless a specific schedule ID is passed.
      * 
      * ## Example Usage
      * 
@@ -552,9 +546,8 @@ public final class ResourceSchedulerFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSchedules = ResourceSchedulerFunctions.getSchedules(GetSchedulesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .scheduleId(testSchedule.id())
      *             .displayName(scheduleDisplayName)
-     *             .state(scheduleState)
+     *             .resourceId(testResource.id())
      *             .build());
      * 
      *     }

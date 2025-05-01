@@ -32,9 +32,14 @@ __all__ = [
     'DrProtectionGroupMemberBackendSetMapping',
     'DrProtectionGroupMemberBackupConfig',
     'DrProtectionGroupMemberBackupLocation',
+    'DrProtectionGroupMemberBlockVolumeAttachAndMountOperations',
+    'DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachment',
+    'DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMount',
     'DrProtectionGroupMemberBlockVolumeOperation',
     'DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails',
     'DrProtectionGroupMemberBlockVolumeOperationMountDetails',
+    'DrProtectionGroupMemberCommonDestinationKey',
+    'DrProtectionGroupMemberDestinationEncryptionKey',
     'DrProtectionGroupMemberExportMapping',
     'DrProtectionGroupMemberFileSystemOperation',
     'DrProtectionGroupMemberFileSystemOperationMountDetails',
@@ -42,6 +47,8 @@ __all__ = [
     'DrProtectionGroupMemberLoadBalancerMapping',
     'DrProtectionGroupMemberManagedNodePoolConfig',
     'DrProtectionGroupMemberNetworkLoadBalancerMapping',
+    'DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping',
+    'DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey',
     'DrProtectionGroupMemberVaultMapping',
     'DrProtectionGroupMemberVirtualNodePoolConfig',
     'DrProtectionGroupMemberVnicMapping',
@@ -75,9 +82,14 @@ __all__ = [
     'GetDrProtectionGroupMemberBackendSetMappingResult',
     'GetDrProtectionGroupMemberBackupConfigResult',
     'GetDrProtectionGroupMemberBackupLocationResult',
+    'GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationResult',
+    'GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentResult',
+    'GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountResult',
     'GetDrProtectionGroupMemberBlockVolumeOperationResult',
     'GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailResult',
     'GetDrProtectionGroupMemberBlockVolumeOperationMountDetailResult',
+    'GetDrProtectionGroupMemberCommonDestinationKeyResult',
+    'GetDrProtectionGroupMemberDestinationEncryptionKeyResult',
     'GetDrProtectionGroupMemberExportMappingResult',
     'GetDrProtectionGroupMemberFileSystemOperationResult',
     'GetDrProtectionGroupMemberFileSystemOperationMountDetailResult',
@@ -85,6 +97,8 @@ __all__ = [
     'GetDrProtectionGroupMemberLoadBalancerMappingResult',
     'GetDrProtectionGroupMemberManagedNodePoolConfigResult',
     'GetDrProtectionGroupMemberNetworkLoadBalancerMappingResult',
+    'GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingResult',
+    'GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyResult',
     'GetDrProtectionGroupMemberVaultMappingResult',
     'GetDrProtectionGroupMemberVirtualNodePoolConfigResult',
     'GetDrProtectionGroupMemberVnicMappingResult',
@@ -96,9 +110,14 @@ __all__ = [
     'GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingResult',
     'GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigResult',
     'GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationResult',
+    'GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationResult',
+    'GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentResult',
+    'GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountResult',
     'GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationResult',
     'GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailResult',
     'GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailResult',
+    'GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyResult',
+    'GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyResult',
     'GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingResult',
     'GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationResult',
     'GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailResult',
@@ -106,6 +125,8 @@ __all__ = [
     'GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMappingResult',
     'GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigResult',
     'GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingResult',
+    'GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingResult',
+    'GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyResult',
     'GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingResult',
     'GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigResult',
     'GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingResult',
@@ -340,6 +361,8 @@ class DrPlanExecutionGroupExecutionStepExecution(dict):
             suggest = "time_ended"
         elif key == "timeStarted":
             suggest = "time_started"
+        elif key == "typeDisplayName":
+            suggest = "type_display_name"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in DrPlanExecutionGroupExecutionStepExecution. Access the value via the '{suggest}' property getter instead.")
@@ -362,7 +385,8 @@ class DrPlanExecutionGroupExecutionStepExecution(dict):
                  step_id: Optional[builtins.str] = None,
                  time_ended: Optional[builtins.str] = None,
                  time_started: Optional[builtins.str] = None,
-                 type: Optional[builtins.str] = None):
+                 type: Optional[builtins.str] = None,
+                 type_display_name: Optional[builtins.str] = None):
         """
         :param builtins.str display_name: (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
         :param builtins.int execution_duration_in_sec: The total duration in seconds taken to complete the step execution.  Example: `35`
@@ -374,6 +398,7 @@ class DrPlanExecutionGroupExecutionStepExecution(dict):
         :param builtins.str time_ended: The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param builtins.str time_started: The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param builtins.str type: The group type.  Example: `BUILT_IN`
+        :param builtins.str type_display_name: The display name of the DR Plan step type.  Example: `Database Switchover`
         """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
@@ -395,6 +420,8 @@ class DrPlanExecutionGroupExecutionStepExecution(dict):
             pulumi.set(__self__, "time_started", time_started)
         if type is not None:
             pulumi.set(__self__, "type", type)
+        if type_display_name is not None:
+            pulumi.set(__self__, "type_display_name", type_display_name)
 
     @property
     @pulumi.getter(name="displayName")
@@ -475,6 +502,14 @@ class DrPlanExecutionGroupExecutionStepExecution(dict):
         The group type.  Example: `BUILT_IN`
         """
         return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="typeDisplayName")
+    def type_display_name(self) -> Optional[builtins.str]:
+        """
+        The display name of the DR Plan step type.  Example: `Database Switchover`
+        """
+        return pulumi.get(self, "type_display_name")
 
 
 @pulumi.output_type
@@ -680,6 +715,8 @@ class DrPlanPlanGroupStep(dict):
             suggest = "member_id"
         elif key == "refreshStatus":
             suggest = "refresh_status"
+        elif key == "typeDisplayName":
+            suggest = "type_display_name"
         elif key == "userDefinedSteps":
             suggest = "user_defined_steps"
 
@@ -704,6 +741,7 @@ class DrPlanPlanGroupStep(dict):
                  refresh_status: Optional[builtins.str] = None,
                  timeout: Optional[builtins.int] = None,
                  type: Optional[builtins.str] = None,
+                 type_display_name: Optional[builtins.str] = None,
                  user_defined_steps: Optional[Sequence['outputs.DrPlanPlanGroupStepUserDefinedStep']] = None):
         """
         :param builtins.str display_name: (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
@@ -715,6 +753,7 @@ class DrPlanPlanGroupStep(dict):
         :param builtins.str refresh_status: The DR plan step refresh status.  Example: `STEP_ADDED`
         :param builtins.int timeout: The timeout in seconds for executing this step.  Example: `600`
         :param builtins.str type: The type of DR plan to be created.
+        :param builtins.str type_display_name: The display name of the DR Plan step type.  Example: `Database Switchover`
         :param Sequence['DrPlanPlanGroupStepUserDefinedStepArgs'] user_defined_steps: The details for a user-defined step in a DR plan.
         """
         if display_name is not None:
@@ -735,6 +774,8 @@ class DrPlanPlanGroupStep(dict):
             pulumi.set(__self__, "timeout", timeout)
         if type is not None:
             pulumi.set(__self__, "type", type)
+        if type_display_name is not None:
+            pulumi.set(__self__, "type_display_name", type_display_name)
         if user_defined_steps is not None:
             pulumi.set(__self__, "user_defined_steps", user_defined_steps)
 
@@ -809,6 +850,14 @@ class DrPlanPlanGroupStep(dict):
         The type of DR plan to be created.
         """
         return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="typeDisplayName")
+    def type_display_name(self) -> Optional[builtins.str]:
+        """
+        The display name of the DR Plan step type.  Example: `Database Switchover`
+        """
+        return pulumi.get(self, "type_display_name")
 
     @property
     @pulumi.getter(name="userDefinedSteps")
@@ -1129,22 +1178,32 @@ class DrProtectionGroupMember(dict):
             suggest = "backup_config"
         elif key == "backupLocation":
             suggest = "backup_location"
+        elif key == "blockVolumeAttachAndMountOperations":
+            suggest = "block_volume_attach_and_mount_operations"
         elif key == "blockVolumeOperations":
             suggest = "block_volume_operations"
+        elif key == "commonDestinationKey":
+            suggest = "common_destination_key"
         elif key == "connectionStringType":
             suggest = "connection_string_type"
         elif key == "destinationAvailabilityDomain":
             suggest = "destination_availability_domain"
+        elif key == "destinationBackupPolicyId":
+            suggest = "destination_backup_policy_id"
         elif key == "destinationCapacityReservationId":
             suggest = "destination_capacity_reservation_id"
         elif key == "destinationCompartmentId":
             suggest = "destination_compartment_id"
         elif key == "destinationDedicatedVmHostId":
             suggest = "destination_dedicated_vm_host_id"
+        elif key == "destinationEncryptionKey":
+            suggest = "destination_encryption_key"
         elif key == "destinationLoadBalancerId":
             suggest = "destination_load_balancer_id"
         elif key == "destinationNetworkLoadBalancerId":
             suggest = "destination_network_load_balancer_id"
+        elif key == "destinationSnapshotPolicyId":
+            suggest = "destination_snapshot_policy_id"
         elif key == "exportMappings":
             suggest = "export_mappings"
         elif key == "fileSystemOperations":
@@ -1167,6 +1226,8 @@ class DrProtectionGroupMember(dict):
             suggest = "password_vault_secret_id"
         elif key == "peerClusterId":
             suggest = "peer_cluster_id"
+        elif key == "sourceVolumeToDestinationEncryptionKeyMappings":
+            suggest = "source_volume_to_destination_encryption_key_mappings"
         elif key == "vaultMappings":
             suggest = "vault_mappings"
         elif key == "virtualNodePoolConfigs":
@@ -1194,15 +1255,20 @@ class DrProtectionGroupMember(dict):
                  backend_set_mappings: Optional[Sequence['outputs.DrProtectionGroupMemberBackendSetMapping']] = None,
                  backup_config: Optional['outputs.DrProtectionGroupMemberBackupConfig'] = None,
                  backup_location: Optional['outputs.DrProtectionGroupMemberBackupLocation'] = None,
+                 block_volume_attach_and_mount_operations: Optional['outputs.DrProtectionGroupMemberBlockVolumeAttachAndMountOperations'] = None,
                  block_volume_operations: Optional[Sequence['outputs.DrProtectionGroupMemberBlockVolumeOperation']] = None,
                  bucket: Optional[builtins.str] = None,
+                 common_destination_key: Optional['outputs.DrProtectionGroupMemberCommonDestinationKey'] = None,
                  connection_string_type: Optional[builtins.str] = None,
                  destination_availability_domain: Optional[builtins.str] = None,
+                 destination_backup_policy_id: Optional[builtins.str] = None,
                  destination_capacity_reservation_id: Optional[builtins.str] = None,
                  destination_compartment_id: Optional[builtins.str] = None,
                  destination_dedicated_vm_host_id: Optional[builtins.str] = None,
+                 destination_encryption_key: Optional['outputs.DrProtectionGroupMemberDestinationEncryptionKey'] = None,
                  destination_load_balancer_id: Optional[builtins.str] = None,
                  destination_network_load_balancer_id: Optional[builtins.str] = None,
+                 destination_snapshot_policy_id: Optional[builtins.str] = None,
                  export_mappings: Optional[Sequence['outputs.DrProtectionGroupMemberExportMapping']] = None,
                  file_system_operations: Optional[Sequence['outputs.DrProtectionGroupMemberFileSystemOperation']] = None,
                  is_movable: Optional[builtins.bool] = None,
@@ -1215,6 +1281,7 @@ class DrProtectionGroupMember(dict):
                  network_load_balancer_mappings: Optional[Sequence['outputs.DrProtectionGroupMemberNetworkLoadBalancerMapping']] = None,
                  password_vault_secret_id: Optional[builtins.str] = None,
                  peer_cluster_id: Optional[builtins.str] = None,
+                 source_volume_to_destination_encryption_key_mappings: Optional[Sequence['outputs.DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping']] = None,
                  vault_mappings: Optional[Sequence['outputs.DrProtectionGroupMemberVaultMapping']] = None,
                  virtual_node_pool_configs: Optional[Sequence['outputs.DrProtectionGroupMemberVirtualNodePoolConfig']] = None,
                  vnic_mapping: Optional[Sequence['outputs.DrProtectionGroupMemberVnicMapping']] = None,
@@ -1226,15 +1293,20 @@ class DrProtectionGroupMember(dict):
         :param Sequence['DrProtectionGroupMemberBackendSetMappingArgs'] backend_set_mappings: (Updatable) A list of backend set mappings that are used to transfer or update backends during DR.
         :param 'DrProtectionGroupMemberBackupConfigArgs' backup_config: (Updatable) Create backup configuration properties for an OKE member.
         :param 'DrProtectionGroupMemberBackupLocationArgs' backup_location: (Updatable) The details for creating the backup location of an OKE Cluster.
-        :param Sequence['DrProtectionGroupMemberBlockVolumeOperationArgs'] block_volume_operations: (Updatable) A list of operations performed on block volumes used by the compute instance.
+        :param 'DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsArgs' block_volume_attach_and_mount_operations: (Updatable) The details for creating the operations performed on a block volume.
+        :param Sequence['DrProtectionGroupMemberBlockVolumeOperationArgs'] block_volume_operations: (Updatable) Deprecated. Use the 'blockVolumeAttachAndMountOperations' attribute instead of this. A list of operations performed on block volumes used by the compute instance.
         :param builtins.str bucket: (Updatable) The bucket name inside the object storage namespace.  Example: `bucket_name`
+        :param 'DrProtectionGroupMemberCommonDestinationKeyArgs' common_destination_key: (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
         :param builtins.str connection_string_type: (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
         :param builtins.str destination_availability_domain: (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
+        :param builtins.str destination_backup_policy_id: (Updatable) The OCID of the backup policy to use in the destination region. This policy will be used to create backups  for this volume group after it moves the destination region.  Example: `ocid1.volumebackuppolicy.oc1..uniqueID`
         :param builtins.str destination_capacity_reservation_id: (Updatable) The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
         :param builtins.str destination_compartment_id: (Updatable) The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
         :param builtins.str destination_dedicated_vm_host_id: (Updatable) The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
+        :param 'DrProtectionGroupMemberDestinationEncryptionKeyArgs' destination_encryption_key: (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
         :param builtins.str destination_load_balancer_id: (Updatable) The OCID of the destination load balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
         :param builtins.str destination_network_load_balancer_id: (Updatable) The OCID of the destination network load balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+        :param builtins.str destination_snapshot_policy_id: (Updatable) The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.  Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
         :param Sequence['DrProtectionGroupMemberExportMappingArgs'] export_mappings: (Updatable) A list of mappings between file system exports in the primary region and mount targets in the standby region.
         :param Sequence['DrProtectionGroupMemberFileSystemOperationArgs'] file_system_operations: (Updatable) A list of operations performed on file systems used by the compute instance.
         :param builtins.bool is_movable: (Updatable) A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
@@ -1247,6 +1319,11 @@ class DrProtectionGroupMember(dict):
         :param Sequence['DrProtectionGroupMemberNetworkLoadBalancerMappingArgs'] network_load_balancer_mappings: (Updatable) The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
         :param builtins.str password_vault_secret_id: (Updatable) The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
         :param builtins.str peer_cluster_id: (Updatable) The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.   Example: `ocid1.cluster.oc1..uniqueID`
+        :param Sequence['DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs'] source_volume_to_destination_encryption_key_mappings: (Updatable) A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
+               
+               If you add the entry for source volumes and its corresponding vault and encryption keys here, you can not use  'commonDestinationKey' for encrypting all volumes with common encryption key. Similarly, if you specify common vault and encryption key using 'commonDestinationKey', you cannot specify vaults and encryption keys individually  for each volume using 'sourceVolumeToDestinationEncryptionKeyMappings'.
+               
+               An entry for each volume in volume group should be added in this list. The encryption key will not be updated  for the volumes that are part of volume group but missing in this list.
         :param Sequence['DrProtectionGroupMemberVaultMappingArgs'] vault_mappings: (Updatable) The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
         :param Sequence['DrProtectionGroupMemberVirtualNodePoolConfigArgs'] virtual_node_pool_configs: (Updatable) The list of virtual node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
         :param Sequence['DrProtectionGroupMemberVnicMappingArgs'] vnic_mapping: (Updatable) A list of compute instance VNIC mappings.
@@ -1262,24 +1339,34 @@ class DrProtectionGroupMember(dict):
             pulumi.set(__self__, "backup_config", backup_config)
         if backup_location is not None:
             pulumi.set(__self__, "backup_location", backup_location)
+        if block_volume_attach_and_mount_operations is not None:
+            pulumi.set(__self__, "block_volume_attach_and_mount_operations", block_volume_attach_and_mount_operations)
         if block_volume_operations is not None:
             pulumi.set(__self__, "block_volume_operations", block_volume_operations)
         if bucket is not None:
             pulumi.set(__self__, "bucket", bucket)
+        if common_destination_key is not None:
+            pulumi.set(__self__, "common_destination_key", common_destination_key)
         if connection_string_type is not None:
             pulumi.set(__self__, "connection_string_type", connection_string_type)
         if destination_availability_domain is not None:
             pulumi.set(__self__, "destination_availability_domain", destination_availability_domain)
+        if destination_backup_policy_id is not None:
+            pulumi.set(__self__, "destination_backup_policy_id", destination_backup_policy_id)
         if destination_capacity_reservation_id is not None:
             pulumi.set(__self__, "destination_capacity_reservation_id", destination_capacity_reservation_id)
         if destination_compartment_id is not None:
             pulumi.set(__self__, "destination_compartment_id", destination_compartment_id)
         if destination_dedicated_vm_host_id is not None:
             pulumi.set(__self__, "destination_dedicated_vm_host_id", destination_dedicated_vm_host_id)
+        if destination_encryption_key is not None:
+            pulumi.set(__self__, "destination_encryption_key", destination_encryption_key)
         if destination_load_balancer_id is not None:
             pulumi.set(__self__, "destination_load_balancer_id", destination_load_balancer_id)
         if destination_network_load_balancer_id is not None:
             pulumi.set(__self__, "destination_network_load_balancer_id", destination_network_load_balancer_id)
+        if destination_snapshot_policy_id is not None:
+            pulumi.set(__self__, "destination_snapshot_policy_id", destination_snapshot_policy_id)
         if export_mappings is not None:
             pulumi.set(__self__, "export_mappings", export_mappings)
         if file_system_operations is not None:
@@ -1304,6 +1391,8 @@ class DrProtectionGroupMember(dict):
             pulumi.set(__self__, "password_vault_secret_id", password_vault_secret_id)
         if peer_cluster_id is not None:
             pulumi.set(__self__, "peer_cluster_id", peer_cluster_id)
+        if source_volume_to_destination_encryption_key_mappings is not None:
+            pulumi.set(__self__, "source_volume_to_destination_encryption_key_mappings", source_volume_to_destination_encryption_key_mappings)
         if vault_mappings is not None:
             pulumi.set(__self__, "vault_mappings", vault_mappings)
         if virtual_node_pool_configs is not None:
@@ -1362,10 +1451,18 @@ class DrProtectionGroupMember(dict):
         return pulumi.get(self, "backup_location")
 
     @property
+    @pulumi.getter(name="blockVolumeAttachAndMountOperations")
+    def block_volume_attach_and_mount_operations(self) -> Optional['outputs.DrProtectionGroupMemberBlockVolumeAttachAndMountOperations']:
+        """
+        (Updatable) The details for creating the operations performed on a block volume.
+        """
+        return pulumi.get(self, "block_volume_attach_and_mount_operations")
+
+    @property
     @pulumi.getter(name="blockVolumeOperations")
     def block_volume_operations(self) -> Optional[Sequence['outputs.DrProtectionGroupMemberBlockVolumeOperation']]:
         """
-        (Updatable) A list of operations performed on block volumes used by the compute instance.
+        (Updatable) Deprecated. Use the 'blockVolumeAttachAndMountOperations' attribute instead of this. A list of operations performed on block volumes used by the compute instance.
         """
         return pulumi.get(self, "block_volume_operations")
 
@@ -1376,6 +1473,14 @@ class DrProtectionGroupMember(dict):
         (Updatable) The bucket name inside the object storage namespace.  Example: `bucket_name`
         """
         return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter(name="commonDestinationKey")
+    def common_destination_key(self) -> Optional['outputs.DrProtectionGroupMemberCommonDestinationKey']:
+        """
+        (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
+        """
+        return pulumi.get(self, "common_destination_key")
 
     @property
     @pulumi.getter(name="connectionStringType")
@@ -1392,6 +1497,14 @@ class DrProtectionGroupMember(dict):
         (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
         """
         return pulumi.get(self, "destination_availability_domain")
+
+    @property
+    @pulumi.getter(name="destinationBackupPolicyId")
+    def destination_backup_policy_id(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The OCID of the backup policy to use in the destination region. This policy will be used to create backups  for this volume group after it moves the destination region.  Example: `ocid1.volumebackuppolicy.oc1..uniqueID`
+        """
+        return pulumi.get(self, "destination_backup_policy_id")
 
     @property
     @pulumi.getter(name="destinationCapacityReservationId")
@@ -1418,6 +1531,14 @@ class DrProtectionGroupMember(dict):
         return pulumi.get(self, "destination_dedicated_vm_host_id")
 
     @property
+    @pulumi.getter(name="destinationEncryptionKey")
+    def destination_encryption_key(self) -> Optional['outputs.DrProtectionGroupMemberDestinationEncryptionKey']:
+        """
+        (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
+        """
+        return pulumi.get(self, "destination_encryption_key")
+
+    @property
     @pulumi.getter(name="destinationLoadBalancerId")
     def destination_load_balancer_id(self) -> Optional[builtins.str]:
         """
@@ -1432,6 +1553,14 @@ class DrProtectionGroupMember(dict):
         (Updatable) The OCID of the destination network load balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
         """
         return pulumi.get(self, "destination_network_load_balancer_id")
+
+    @property
+    @pulumi.getter(name="destinationSnapshotPolicyId")
+    def destination_snapshot_policy_id(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.  Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
+        """
+        return pulumi.get(self, "destination_snapshot_policy_id")
 
     @property
     @pulumi.getter(name="exportMappings")
@@ -1528,6 +1657,18 @@ class DrProtectionGroupMember(dict):
         (Updatable) The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.   Example: `ocid1.cluster.oc1..uniqueID`
         """
         return pulumi.get(self, "peer_cluster_id")
+
+    @property
+    @pulumi.getter(name="sourceVolumeToDestinationEncryptionKeyMappings")
+    def source_volume_to_destination_encryption_key_mappings(self) -> Optional[Sequence['outputs.DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping']]:
+        """
+        (Updatable) A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
+
+        If you add the entry for source volumes and its corresponding vault and encryption keys here, you can not use  'commonDestinationKey' for encrypting all volumes with common encryption key. Similarly, if you specify common vault and encryption key using 'commonDestinationKey', you cannot specify vaults and encryption keys individually  for each volume using 'sourceVolumeToDestinationEncryptionKeyMappings'.
+
+        An entry for each volume in volume group should be added in this list. The encryption key will not be updated  for the volumes that are part of volume group but missing in this list.
+        """
+        return pulumi.get(self, "source_volume_to_destination_encryption_key_mappings")
 
     @property
     @pulumi.getter(name="vaultMappings")
@@ -1670,9 +1811,9 @@ class DrProtectionGroupMemberBackupConfig(dict):
                * Minimum = 1
                * Maximum = 12
                
-               Examples:  FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 > Run a backup every week on monday and wednesday at 10:00 AM. FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 > Invalid configuration (can not specify interval of 2).
+               Examples:  FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 > Run a backup every Monday and Wednesday at 10:00 AM. FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 > Invalid configuration (Cannot specify an interval of 2).
                
-               FREQ=HOURLY;INTERVAL=25 > Invalid configuration (can not specify interval of 25). FREQ=HOURLY;INTERVAL=0 > Invalid configuration (can not specify interval of 0). FREQ=HOURLY;INTERVAL=24 > Run a backup every 24 hours. FREQ=HOURLY;INTERVAL=1 > Run a backup every hour. FREQ=HOURLY;BYMINUTE=30;INTERVAL=15 > Run a backup every 15 hours at the 30th minute. FREQ=DAILY;INTERVAL=31 > Invalid configuration (can not specify interval of 31). FREQ=DAILY;INTERVAL=0 > Invalid configuration (can not specify interval of 0). FREQ=DAILY;INTERVAL=30 > Run a backup every 30 days at 12:00 midnight.  FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 > Run a backup every day at 05:10 PM.
+               FREQ=HOURLY;INTERVAL=25 > Invalid configuration (Cannot specify an interval of 25). FREQ=HOURLY;INTERVAL=0 > Invalid configuration (Cannot specify an interval of 0). FREQ=HOURLY;INTERVAL=24 > Run a backup every 24 hours. FREQ=HOURLY;INTERVAL=1 > Run a backup every hour. FREQ=HOURLY;BYMINUTE=30;INTERVAL=15 > Run a backup every 15 hours at the 30th minute. FREQ=DAILY;INTERVAL=31 > Invalid configuration (Cannot specify an interval of 31). FREQ=DAILY;INTERVAL=0 > Invalid configuration (Cannot specify an interval of 0). FREQ=DAILY;INTERVAL=30 > Run a backup every 30 days at 12:00 midnight.  FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 > Run a backup daily at 05:10 PM.
         :param builtins.str image_replication_vault_secret_id: (Updatable) The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
         :param builtins.int max_number_of_backups_retained: (Updatable) The maximum number of backups that should be retained. This property applies to the OKE cluster member in primary region.
         :param Sequence[builtins.str] namespaces: (Updatable) A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
@@ -1705,9 +1846,9 @@ class DrProtectionGroupMemberBackupConfig(dict):
         * Minimum = 1
         * Maximum = 12
 
-        Examples:  FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 > Run a backup every week on monday and wednesday at 10:00 AM. FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 > Invalid configuration (can not specify interval of 2).
+        Examples:  FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 > Run a backup every Monday and Wednesday at 10:00 AM. FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 > Invalid configuration (Cannot specify an interval of 2).
 
-        FREQ=HOURLY;INTERVAL=25 > Invalid configuration (can not specify interval of 25). FREQ=HOURLY;INTERVAL=0 > Invalid configuration (can not specify interval of 0). FREQ=HOURLY;INTERVAL=24 > Run a backup every 24 hours. FREQ=HOURLY;INTERVAL=1 > Run a backup every hour. FREQ=HOURLY;BYMINUTE=30;INTERVAL=15 > Run a backup every 15 hours at the 30th minute. FREQ=DAILY;INTERVAL=31 > Invalid configuration (can not specify interval of 31). FREQ=DAILY;INTERVAL=0 > Invalid configuration (can not specify interval of 0). FREQ=DAILY;INTERVAL=30 > Run a backup every 30 days at 12:00 midnight.  FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 > Run a backup every day at 05:10 PM.
+        FREQ=HOURLY;INTERVAL=25 > Invalid configuration (Cannot specify an interval of 25). FREQ=HOURLY;INTERVAL=0 > Invalid configuration (Cannot specify an interval of 0). FREQ=HOURLY;INTERVAL=24 > Run a backup every 24 hours. FREQ=HOURLY;INTERVAL=1 > Run a backup every hour. FREQ=HOURLY;BYMINUTE=30;INTERVAL=15 > Run a backup every 15 hours at the 30th minute. FREQ=DAILY;INTERVAL=31 > Invalid configuration (Cannot specify an interval of 31). FREQ=DAILY;INTERVAL=0 > Invalid configuration (Cannot specify an interval of 0). FREQ=DAILY;INTERVAL=30 > Run a backup every 30 days at 12:00 midnight.  FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 > Run a backup daily at 05:10 PM.
         """
         return pulumi.get(self, "backup_schedule")
 
@@ -1788,6 +1929,123 @@ class DrProtectionGroupMemberBackupLocation(dict):
 
 
 @pulumi.output_type
+class DrProtectionGroupMemberBlockVolumeAttachAndMountOperations(dict):
+    def __init__(__self__, *,
+                 attachments: Optional[Sequence['outputs.DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachment']] = None,
+                 mounts: Optional[Sequence['outputs.DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMount']] = None):
+        """
+        :param Sequence['DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArgs'] attachments: (Updatable) A list of details of attach or detach operations performed on block volumes.
+        :param Sequence['DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArgs'] mounts: (Updatable) A list of details of mount operations performed on block volumes.
+        """
+        if attachments is not None:
+            pulumi.set(__self__, "attachments", attachments)
+        if mounts is not None:
+            pulumi.set(__self__, "mounts", mounts)
+
+    @property
+    @pulumi.getter
+    def attachments(self) -> Optional[Sequence['outputs.DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachment']]:
+        """
+        (Updatable) A list of details of attach or detach operations performed on block volumes.
+        """
+        return pulumi.get(self, "attachments")
+
+    @property
+    @pulumi.getter
+    def mounts(self) -> Optional[Sequence['outputs.DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMount']]:
+        """
+        (Updatable) A list of details of mount operations performed on block volumes.
+        """
+        return pulumi.get(self, "mounts")
+
+
+@pulumi.output_type
+class DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachment(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "blockVolumeId":
+            suggest = "block_volume_id"
+        elif key == "volumeAttachmentReferenceInstanceId":
+            suggest = "volume_attachment_reference_instance_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachment. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachment.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachment.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 block_volume_id: Optional[builtins.str] = None,
+                 volume_attachment_reference_instance_id: Optional[builtins.str] = None):
+        """
+        :param builtins.str block_volume_id: (Updatable) The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
+        :param builtins.str volume_attachment_reference_instance_id: (Updatable) The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+        """
+        if block_volume_id is not None:
+            pulumi.set(__self__, "block_volume_id", block_volume_id)
+        if volume_attachment_reference_instance_id is not None:
+            pulumi.set(__self__, "volume_attachment_reference_instance_id", volume_attachment_reference_instance_id)
+
+    @property
+    @pulumi.getter(name="blockVolumeId")
+    def block_volume_id(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
+        """
+        return pulumi.get(self, "block_volume_id")
+
+    @property
+    @pulumi.getter(name="volumeAttachmentReferenceInstanceId")
+    def volume_attachment_reference_instance_id(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+        """
+        return pulumi.get(self, "volume_attachment_reference_instance_id")
+
+
+@pulumi.output_type
+class DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMount(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "mountPoint":
+            suggest = "mount_point"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMount. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMount.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMount.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 mount_point: Optional[builtins.str] = None):
+        """
+        :param builtins.str mount_point: (Updatable) The physical mount point where the file system is mounted on the block volume.  Example: `/mnt/yourmountpoint`
+        """
+        if mount_point is not None:
+            pulumi.set(__self__, "mount_point", mount_point)
+
+    @property
+    @pulumi.getter(name="mountPoint")
+    def mount_point(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The physical mount point where the file system is mounted on the block volume.  Example: `/mnt/yourmountpoint`
+        """
+        return pulumi.get(self, "mount_point")
+
+
+@pulumi.output_type
 class DrProtectionGroupMemberBlockVolumeOperation(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -1815,7 +2073,7 @@ class DrProtectionGroupMemberBlockVolumeOperation(dict):
                  block_volume_id: Optional[builtins.str] = None,
                  mount_details: Optional['outputs.DrProtectionGroupMemberBlockVolumeOperationMountDetails'] = None):
         """
-        :param 'DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs' attachment_details: (Updatable) The details for creating a block volume attachment.
+        :param 'DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs' attachment_details: (Updatable) Deprecated. Use the 'CreateComputeInstanceNonMovableBlockVolumeAttachOperationDetails' definition instead of this. The details for creating a block volume attachment.
         :param builtins.str block_volume_id: (Updatable) The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
         :param 'DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs' mount_details: (Updatable) The details for creating a mount for a file system on a block volume.
         """
@@ -1830,7 +2088,7 @@ class DrProtectionGroupMemberBlockVolumeOperation(dict):
     @pulumi.getter(name="attachmentDetails")
     def attachment_details(self) -> Optional['outputs.DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails']:
         """
-        (Updatable) The details for creating a block volume attachment.
+        (Updatable) Deprecated. Use the 'CreateComputeInstanceNonMovableBlockVolumeAttachOperationDetails' definition instead of this. The details for creating a block volume attachment.
         """
         return pulumi.get(self, "attachment_details")
 
@@ -1873,7 +2131,7 @@ class DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails(dict):
     def __init__(__self__, *,
                  volume_attachment_reference_instance_id: Optional[builtins.str] = None):
         """
-        :param builtins.str volume_attachment_reference_instance_id: (Updatable) The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+        :param builtins.str volume_attachment_reference_instance_id: (Updatable) The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
         """
         if volume_attachment_reference_instance_id is not None:
             pulumi.set(__self__, "volume_attachment_reference_instance_id", volume_attachment_reference_instance_id)
@@ -1882,7 +2140,7 @@ class DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails(dict):
     @pulumi.getter(name="volumeAttachmentReferenceInstanceId")
     def volume_attachment_reference_instance_id(self) -> Optional[builtins.str]:
         """
-        (Updatable) The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+        (Updatable) The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
         """
         return pulumi.get(self, "volume_attachment_reference_instance_id")
 
@@ -1921,6 +2179,106 @@ class DrProtectionGroupMemberBlockVolumeOperationMountDetails(dict):
         (Updatable) The physical mount point used for mounting the file system on the block volume.  Example: `/mnt/yourmountpoint`
         """
         return pulumi.get(self, "mount_point")
+
+
+@pulumi.output_type
+class DrProtectionGroupMemberCommonDestinationKey(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "encryptionKeyId":
+            suggest = "encryption_key_id"
+        elif key == "vaultId":
+            suggest = "vault_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DrProtectionGroupMemberCommonDestinationKey. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DrProtectionGroupMemberCommonDestinationKey.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DrProtectionGroupMemberCommonDestinationKey.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 encryption_key_id: Optional[builtins.str] = None,
+                 vault_id: Optional[builtins.str] = None):
+        """
+        :param builtins.str encryption_key_id: (Updatable) The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+        :param builtins.str vault_id: (Updatable) The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+        """
+        if encryption_key_id is not None:
+            pulumi.set(__self__, "encryption_key_id", encryption_key_id)
+        if vault_id is not None:
+            pulumi.set(__self__, "vault_id", vault_id)
+
+    @property
+    @pulumi.getter(name="encryptionKeyId")
+    def encryption_key_id(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+        """
+        return pulumi.get(self, "encryption_key_id")
+
+    @property
+    @pulumi.getter(name="vaultId")
+    def vault_id(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+        """
+        return pulumi.get(self, "vault_id")
+
+
+@pulumi.output_type
+class DrProtectionGroupMemberDestinationEncryptionKey(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "encryptionKeyId":
+            suggest = "encryption_key_id"
+        elif key == "vaultId":
+            suggest = "vault_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DrProtectionGroupMemberDestinationEncryptionKey. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DrProtectionGroupMemberDestinationEncryptionKey.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DrProtectionGroupMemberDestinationEncryptionKey.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 encryption_key_id: Optional[builtins.str] = None,
+                 vault_id: Optional[builtins.str] = None):
+        """
+        :param builtins.str encryption_key_id: (Updatable) The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+        :param builtins.str vault_id: (Updatable) The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+        """
+        if encryption_key_id is not None:
+            pulumi.set(__self__, "encryption_key_id", encryption_key_id)
+        if vault_id is not None:
+            pulumi.set(__self__, "vault_id", vault_id)
+
+    @property
+    @pulumi.getter(name="encryptionKeyId")
+    def encryption_key_id(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+        """
+        return pulumi.get(self, "encryption_key_id")
+
+    @property
+    @pulumi.getter(name="vaultId")
+    def vault_id(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+        """
+        return pulumi.get(self, "vault_id")
 
 
 @pulumi.output_type
@@ -2281,6 +2639,106 @@ class DrProtectionGroupMemberNetworkLoadBalancerMapping(dict):
 
 
 @pulumi.output_type
+class DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "destinationEncryptionKey":
+            suggest = "destination_encryption_key"
+        elif key == "sourceVolumeId":
+            suggest = "source_volume_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 destination_encryption_key: Optional['outputs.DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey'] = None,
+                 source_volume_id: Optional[builtins.str] = None):
+        """
+        :param 'DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs' destination_encryption_key: (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
+        :param builtins.str source_volume_id: (Updatable) The OCID of the source boot volume or block volume.  Example: `ocid1.volume.oc1..uniqueID`
+        """
+        if destination_encryption_key is not None:
+            pulumi.set(__self__, "destination_encryption_key", destination_encryption_key)
+        if source_volume_id is not None:
+            pulumi.set(__self__, "source_volume_id", source_volume_id)
+
+    @property
+    @pulumi.getter(name="destinationEncryptionKey")
+    def destination_encryption_key(self) -> Optional['outputs.DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey']:
+        """
+        (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
+        """
+        return pulumi.get(self, "destination_encryption_key")
+
+    @property
+    @pulumi.getter(name="sourceVolumeId")
+    def source_volume_id(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The OCID of the source boot volume or block volume.  Example: `ocid1.volume.oc1..uniqueID`
+        """
+        return pulumi.get(self, "source_volume_id")
+
+
+@pulumi.output_type
+class DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "encryptionKeyId":
+            suggest = "encryption_key_id"
+        elif key == "vaultId":
+            suggest = "vault_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 encryption_key_id: Optional[builtins.str] = None,
+                 vault_id: Optional[builtins.str] = None):
+        """
+        :param builtins.str encryption_key_id: (Updatable) The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+        :param builtins.str vault_id: (Updatable) The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+        """
+        if encryption_key_id is not None:
+            pulumi.set(__self__, "encryption_key_id", encryption_key_id)
+        if vault_id is not None:
+            pulumi.set(__self__, "vault_id", vault_id)
+
+    @property
+    @pulumi.getter(name="encryptionKeyId")
+    def encryption_key_id(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+        """
+        return pulumi.get(self, "encryption_key_id")
+
+    @property
+    @pulumi.getter(name="vaultId")
+    def vault_id(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+        """
+        return pulumi.get(self, "vault_id")
+
+
+@pulumi.output_type
 class DrProtectionGroupMemberVaultMapping(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -2384,6 +2842,8 @@ class DrProtectionGroupMemberVnicMapping(dict):
             suggest = "destination_primary_private_ip_address"
         elif key == "destinationPrimaryPrivateIpHostnameLabel":
             suggest = "destination_primary_private_ip_hostname_label"
+        elif key == "destinationReservedPublicIpId":
+            suggest = "destination_reserved_public_ip_id"
         elif key == "destinationSubnetId":
             suggest = "destination_subnet_id"
         elif key == "sourceVnicId":
@@ -2404,12 +2864,14 @@ class DrProtectionGroupMemberVnicMapping(dict):
                  destination_nsg_id_lists: Optional[Sequence[builtins.str]] = None,
                  destination_primary_private_ip_address: Optional[builtins.str] = None,
                  destination_primary_private_ip_hostname_label: Optional[builtins.str] = None,
+                 destination_reserved_public_ip_id: Optional[builtins.str] = None,
                  destination_subnet_id: Optional[builtins.str] = None,
                  source_vnic_id: Optional[builtins.str] = None):
         """
         :param Sequence[builtins.str] destination_nsg_id_lists: (Updatable) A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
         :param builtins.str destination_primary_private_ip_address: (Updatable) The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
         :param builtins.str destination_primary_private_ip_hostname_label: (Updatable) The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+        :param builtins.str destination_reserved_public_ip_id: (Updatable) The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
         :param builtins.str destination_subnet_id: (Updatable) The OCID of the destination subnet to which the source VNIC should connect.          Example: `ocid1.subnet.oc1..uniqueID`
         :param builtins.str source_vnic_id: (Updatable) The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
         """
@@ -2419,6 +2881,8 @@ class DrProtectionGroupMemberVnicMapping(dict):
             pulumi.set(__self__, "destination_primary_private_ip_address", destination_primary_private_ip_address)
         if destination_primary_private_ip_hostname_label is not None:
             pulumi.set(__self__, "destination_primary_private_ip_hostname_label", destination_primary_private_ip_hostname_label)
+        if destination_reserved_public_ip_id is not None:
+            pulumi.set(__self__, "destination_reserved_public_ip_id", destination_reserved_public_ip_id)
         if destination_subnet_id is not None:
             pulumi.set(__self__, "destination_subnet_id", destination_subnet_id)
         if source_vnic_id is not None:
@@ -2447,6 +2911,14 @@ class DrProtectionGroupMemberVnicMapping(dict):
         (Updatable) The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
         """
         return pulumi.get(self, "destination_primary_private_ip_hostname_label")
+
+    @property
+    @pulumi.getter(name="destinationReservedPublicIpId")
+    def destination_reserved_public_ip_id(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+        """
+        return pulumi.get(self, "destination_reserved_public_ip_id")
 
     @property
     @pulumi.getter(name="destinationSubnetId")
@@ -2623,7 +3095,8 @@ class GetDrPlanExecutionGroupExecutionStepExecutionResult(dict):
                  step_id: builtins.str,
                  time_ended: builtins.str,
                  time_started: builtins.str,
-                 type: builtins.str):
+                 type: builtins.str,
+                 type_display_name: builtins.str):
         """
         :param builtins.str display_name: The display name of the step execution.  Example: `DATABASE_SWITCHOVER`
         :param builtins.int execution_duration_in_sec: The total duration in seconds taken to complete the step execution.  Example: `35`
@@ -2635,6 +3108,7 @@ class GetDrPlanExecutionGroupExecutionStepExecutionResult(dict):
         :param builtins.str time_ended: The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param builtins.str time_started: The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param builtins.str type: The group type.  Example: `BUILT_IN`
+        :param builtins.str type_display_name: The display name of the DR Plan step type.  Example: `Database Switchover`
         """
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "execution_duration_in_sec", execution_duration_in_sec)
@@ -2646,6 +3120,7 @@ class GetDrPlanExecutionGroupExecutionStepExecutionResult(dict):
         pulumi.set(__self__, "time_ended", time_ended)
         pulumi.set(__self__, "time_started", time_started)
         pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "type_display_name", type_display_name)
 
     @property
     @pulumi.getter(name="displayName")
@@ -2726,6 +3201,14 @@ class GetDrPlanExecutionGroupExecutionStepExecutionResult(dict):
         The group type.  Example: `BUILT_IN`
         """
         return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="typeDisplayName")
+    def type_display_name(self) -> builtins.str:
+        """
+        The display name of the DR Plan step type.  Example: `Database Switchover`
+        """
+        return pulumi.get(self, "type_display_name")
 
 
 @pulumi.output_type
@@ -3216,7 +3699,8 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutio
                  step_id: builtins.str,
                  time_ended: builtins.str,
                  time_started: builtins.str,
-                 type: builtins.str):
+                 type: builtins.str,
+                 type_display_name: builtins.str):
         """
         :param builtins.str display_name: A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
         :param builtins.int execution_duration_in_sec: The total duration in seconds taken to complete the step execution.  Example: `35`
@@ -3228,6 +3712,7 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutio
         :param builtins.str time_ended: The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param builtins.str time_started: The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param builtins.str type: The group type.  Example: `BUILT_IN`
+        :param builtins.str type_display_name: The display name of the DR Plan step type.  Example: `Database Switchover`
         """
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "execution_duration_in_sec", execution_duration_in_sec)
@@ -3239,6 +3724,7 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutio
         pulumi.set(__self__, "time_ended", time_ended)
         pulumi.set(__self__, "time_started", time_started)
         pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "type_display_name", type_display_name)
 
     @property
     @pulumi.getter(name="displayName")
@@ -3319,6 +3805,14 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutio
         The group type.  Example: `BUILT_IN`
         """
         return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="typeDisplayName")
+    def type_display_name(self) -> builtins.str:
+        """
+        The display name of the DR Plan step type.  Example: `Database Switchover`
+        """
+        return pulumi.get(self, "type_display_name")
 
 
 @pulumi.output_type
@@ -3513,6 +4007,7 @@ class GetDrPlanPlanGroupStepResult(dict):
                  refresh_status: builtins.str,
                  timeout: builtins.int,
                  type: builtins.str,
+                 type_display_name: builtins.str,
                  user_defined_steps: Sequence['outputs.GetDrPlanPlanGroupStepUserDefinedStepResult']):
         """
         :param builtins.str display_name: The display name of the group.  Example: `DATABASE_SWITCHOVER`
@@ -3524,6 +4019,7 @@ class GetDrPlanPlanGroupStepResult(dict):
         :param builtins.str refresh_status: The DR plan step refresh status.  Example: `STEP_ADDED`
         :param builtins.int timeout: The timeout in seconds for executing this step.  Example: `600`
         :param builtins.str type: The type of the DR plan.
+        :param builtins.str type_display_name: The display name of the DR Plan step type.  Example: `Database Switchover`
         :param Sequence['GetDrPlanPlanGroupStepUserDefinedStepArgs'] user_defined_steps: The details for a user-defined step in a DR plan.
         """
         pulumi.set(__self__, "display_name", display_name)
@@ -3535,6 +4031,7 @@ class GetDrPlanPlanGroupStepResult(dict):
         pulumi.set(__self__, "refresh_status", refresh_status)
         pulumi.set(__self__, "timeout", timeout)
         pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "type_display_name", type_display_name)
         pulumi.set(__self__, "user_defined_steps", user_defined_steps)
 
     @property
@@ -3608,6 +4105,14 @@ class GetDrPlanPlanGroupStepResult(dict):
         The type of the DR plan.
         """
         return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="typeDisplayName")
+    def type_display_name(self) -> builtins.str:
+        """
+        The display name of the DR Plan step type.  Example: `Database Switchover`
+        """
+        return pulumi.get(self, "type_display_name")
 
     @property
     @pulumi.getter(name="userDefinedSteps")
@@ -4069,6 +4574,7 @@ class GetDrPlansDrPlanCollectionItemPlanGroupStepResult(dict):
                  refresh_status: builtins.str,
                  timeout: builtins.int,
                  type: builtins.str,
+                 type_display_name: builtins.str,
                  user_defined_steps: Sequence['outputs.GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepResult']):
         """
         :param builtins.str display_name: A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
@@ -4080,6 +4586,7 @@ class GetDrPlansDrPlanCollectionItemPlanGroupStepResult(dict):
         :param builtins.str refresh_status: The DR plan step refresh status.  Example: `STEP_ADDED`
         :param builtins.int timeout: The timeout in seconds for executing this step.  Example: `600`
         :param builtins.str type: The type of the DR plan.
+        :param builtins.str type_display_name: The display name of the DR Plan step type.  Example: `Database Switchover`
         :param Sequence['GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArgs'] user_defined_steps: The details for a user-defined step in a DR plan.
         """
         pulumi.set(__self__, "display_name", display_name)
@@ -4091,6 +4598,7 @@ class GetDrPlansDrPlanCollectionItemPlanGroupStepResult(dict):
         pulumi.set(__self__, "refresh_status", refresh_status)
         pulumi.set(__self__, "timeout", timeout)
         pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "type_display_name", type_display_name)
         pulumi.set(__self__, "user_defined_steps", user_defined_steps)
 
     @property
@@ -4164,6 +4672,14 @@ class GetDrPlansDrPlanCollectionItemPlanGroupStepResult(dict):
         The type of the DR plan.
         """
         return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="typeDisplayName")
+    def type_display_name(self) -> builtins.str:
+        """
+        The display name of the DR Plan step type.  Example: `Database Switchover`
+        """
+        return pulumi.get(self, "type_display_name")
 
     @property
     @pulumi.getter(name="userDefinedSteps")
@@ -4434,15 +4950,20 @@ class GetDrProtectionGroupMemberResult(dict):
                  backend_set_mappings: Sequence['outputs.GetDrProtectionGroupMemberBackendSetMappingResult'],
                  backup_configs: Sequence['outputs.GetDrProtectionGroupMemberBackupConfigResult'],
                  backup_locations: Sequence['outputs.GetDrProtectionGroupMemberBackupLocationResult'],
+                 block_volume_attach_and_mount_operations: Sequence['outputs.GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationResult'],
                  block_volume_operations: Sequence['outputs.GetDrProtectionGroupMemberBlockVolumeOperationResult'],
                  bucket: builtins.str,
+                 common_destination_keys: Sequence['outputs.GetDrProtectionGroupMemberCommonDestinationKeyResult'],
                  connection_string_type: builtins.str,
                  destination_availability_domain: builtins.str,
+                 destination_backup_policy_id: builtins.str,
                  destination_capacity_reservation_id: builtins.str,
                  destination_compartment_id: builtins.str,
                  destination_dedicated_vm_host_id: builtins.str,
+                 destination_encryption_keys: Sequence['outputs.GetDrProtectionGroupMemberDestinationEncryptionKeyResult'],
                  destination_load_balancer_id: builtins.str,
                  destination_network_load_balancer_id: builtins.str,
+                 destination_snapshot_policy_id: builtins.str,
                  export_mappings: Sequence['outputs.GetDrProtectionGroupMemberExportMappingResult'],
                  file_system_operations: Sequence['outputs.GetDrProtectionGroupMemberFileSystemOperationResult'],
                  is_movable: builtins.bool,
@@ -4457,6 +4978,7 @@ class GetDrProtectionGroupMemberResult(dict):
                  network_load_balancer_mappings: Sequence['outputs.GetDrProtectionGroupMemberNetworkLoadBalancerMappingResult'],
                  password_vault_secret_id: builtins.str,
                  peer_cluster_id: builtins.str,
+                 source_volume_to_destination_encryption_key_mappings: Sequence['outputs.GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingResult'],
                  vault_mappings: Sequence['outputs.GetDrProtectionGroupMemberVaultMappingResult'],
                  virtual_node_pool_configs: Sequence['outputs.GetDrProtectionGroupMemberVirtualNodePoolConfigResult'],
                  vnic_mapping: Sequence['outputs.GetDrProtectionGroupMemberVnicMappingResult'],
@@ -4466,15 +4988,20 @@ class GetDrProtectionGroupMemberResult(dict):
         :param Sequence['GetDrProtectionGroupMemberBackendSetMappingArgs'] backend_set_mappings: A list of backend set mappings that are used to transfer or update backends during DR.
         :param Sequence['GetDrProtectionGroupMemberBackupConfigArgs'] backup_configs: The details of backup performed on OKE Cluster.
         :param Sequence['GetDrProtectionGroupMemberBackupLocationArgs'] backup_locations: The details for object storage backup location of an OKE Cluster
-        :param Sequence['GetDrProtectionGroupMemberBlockVolumeOperationArgs'] block_volume_operations: Operations performed on a list of block volumes used on the non-movable compute instance.
+        :param Sequence['GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationArgs'] block_volume_attach_and_mount_operations: The details of the block volume operations performed on the non-movable compute instance.
+        :param Sequence['GetDrProtectionGroupMemberBlockVolumeOperationArgs'] block_volume_operations: Deprecated. Use the 'blockVolumeAttachAndMountOperations' attribute instead of this. Operations performed on a list of block volumes used on the non-movable compute instance.
         :param builtins.str bucket: The bucket name inside the object storage namespace.  Example: `bucket_name`
+        :param Sequence['GetDrProtectionGroupMemberCommonDestinationKeyArgs'] common_destination_keys: The OCID of a vault and customer-managed encryption key in the destination region.
         :param builtins.str connection_string_type: The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
         :param builtins.str destination_availability_domain: The availability domain of the destination mount target. Example: `BBTh:region-AD`
+        :param builtins.str destination_backup_policy_id: The OCID of the backup policy to use in the destination region. This policy will be used to create backups for this volume group after it moves the destination region.  Example: `ocid1.volumebackuppolicy.oc1..uniqueID`
         :param builtins.str destination_capacity_reservation_id: The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
         :param builtins.str destination_compartment_id: The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
         :param builtins.str destination_dedicated_vm_host_id: The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
+        :param Sequence['GetDrProtectionGroupMemberDestinationEncryptionKeyArgs'] destination_encryption_keys: The OCID of a vault and customer-managed encryption key in the destination region.
         :param builtins.str destination_load_balancer_id: The OCID of the destination Load Balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
         :param builtins.str destination_network_load_balancer_id: The OCID of the destination Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+        :param builtins.str destination_snapshot_policy_id: The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.  Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
         :param Sequence['GetDrProtectionGroupMemberExportMappingArgs'] export_mappings: A list of mappings between the primary region file system export and destination region mount target.
         :param Sequence['GetDrProtectionGroupMemberFileSystemOperationArgs'] file_system_operations: Operations performed on a list of file systems used on the non-movable compute instance.
         :param builtins.bool is_movable: A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
@@ -4489,6 +5016,7 @@ class GetDrProtectionGroupMemberResult(dict):
         :param Sequence['GetDrProtectionGroupMemberNetworkLoadBalancerMappingArgs'] network_load_balancer_mappings: The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
         :param builtins.str password_vault_secret_id: The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
         :param builtins.str peer_cluster_id: The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.  Example: `ocid1.cluster.oc1.uniqueID`
+        :param Sequence['GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs'] source_volume_to_destination_encryption_key_mappings: A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
         :param Sequence['GetDrProtectionGroupMemberVaultMappingArgs'] vault_mappings: The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
         :param Sequence['GetDrProtectionGroupMemberVirtualNodePoolConfigArgs'] virtual_node_pool_configs: The list of node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
         :param Sequence['GetDrProtectionGroupMemberVnicMappingArgs'] vnic_mapping: A list of compute instance VNIC mappings.
@@ -4498,15 +5026,20 @@ class GetDrProtectionGroupMemberResult(dict):
         pulumi.set(__self__, "backend_set_mappings", backend_set_mappings)
         pulumi.set(__self__, "backup_configs", backup_configs)
         pulumi.set(__self__, "backup_locations", backup_locations)
+        pulumi.set(__self__, "block_volume_attach_and_mount_operations", block_volume_attach_and_mount_operations)
         pulumi.set(__self__, "block_volume_operations", block_volume_operations)
         pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "common_destination_keys", common_destination_keys)
         pulumi.set(__self__, "connection_string_type", connection_string_type)
         pulumi.set(__self__, "destination_availability_domain", destination_availability_domain)
+        pulumi.set(__self__, "destination_backup_policy_id", destination_backup_policy_id)
         pulumi.set(__self__, "destination_capacity_reservation_id", destination_capacity_reservation_id)
         pulumi.set(__self__, "destination_compartment_id", destination_compartment_id)
         pulumi.set(__self__, "destination_dedicated_vm_host_id", destination_dedicated_vm_host_id)
+        pulumi.set(__self__, "destination_encryption_keys", destination_encryption_keys)
         pulumi.set(__self__, "destination_load_balancer_id", destination_load_balancer_id)
         pulumi.set(__self__, "destination_network_load_balancer_id", destination_network_load_balancer_id)
+        pulumi.set(__self__, "destination_snapshot_policy_id", destination_snapshot_policy_id)
         pulumi.set(__self__, "export_mappings", export_mappings)
         pulumi.set(__self__, "file_system_operations", file_system_operations)
         pulumi.set(__self__, "is_movable", is_movable)
@@ -4521,6 +5054,7 @@ class GetDrProtectionGroupMemberResult(dict):
         pulumi.set(__self__, "network_load_balancer_mappings", network_load_balancer_mappings)
         pulumi.set(__self__, "password_vault_secret_id", password_vault_secret_id)
         pulumi.set(__self__, "peer_cluster_id", peer_cluster_id)
+        pulumi.set(__self__, "source_volume_to_destination_encryption_key_mappings", source_volume_to_destination_encryption_key_mappings)
         pulumi.set(__self__, "vault_mappings", vault_mappings)
         pulumi.set(__self__, "virtual_node_pool_configs", virtual_node_pool_configs)
         pulumi.set(__self__, "vnic_mapping", vnic_mapping)
@@ -4559,10 +5093,18 @@ class GetDrProtectionGroupMemberResult(dict):
         return pulumi.get(self, "backup_locations")
 
     @property
+    @pulumi.getter(name="blockVolumeAttachAndMountOperations")
+    def block_volume_attach_and_mount_operations(self) -> Sequence['outputs.GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationResult']:
+        """
+        The details of the block volume operations performed on the non-movable compute instance.
+        """
+        return pulumi.get(self, "block_volume_attach_and_mount_operations")
+
+    @property
     @pulumi.getter(name="blockVolumeOperations")
     def block_volume_operations(self) -> Sequence['outputs.GetDrProtectionGroupMemberBlockVolumeOperationResult']:
         """
-        Operations performed on a list of block volumes used on the non-movable compute instance.
+        Deprecated. Use the 'blockVolumeAttachAndMountOperations' attribute instead of this. Operations performed on a list of block volumes used on the non-movable compute instance.
         """
         return pulumi.get(self, "block_volume_operations")
 
@@ -4573,6 +5115,14 @@ class GetDrProtectionGroupMemberResult(dict):
         The bucket name inside the object storage namespace.  Example: `bucket_name`
         """
         return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter(name="commonDestinationKeys")
+    def common_destination_keys(self) -> Sequence['outputs.GetDrProtectionGroupMemberCommonDestinationKeyResult']:
+        """
+        The OCID of a vault and customer-managed encryption key in the destination region.
+        """
+        return pulumi.get(self, "common_destination_keys")
 
     @property
     @pulumi.getter(name="connectionStringType")
@@ -4589,6 +5139,14 @@ class GetDrProtectionGroupMemberResult(dict):
         The availability domain of the destination mount target. Example: `BBTh:region-AD`
         """
         return pulumi.get(self, "destination_availability_domain")
+
+    @property
+    @pulumi.getter(name="destinationBackupPolicyId")
+    def destination_backup_policy_id(self) -> builtins.str:
+        """
+        The OCID of the backup policy to use in the destination region. This policy will be used to create backups for this volume group after it moves the destination region.  Example: `ocid1.volumebackuppolicy.oc1..uniqueID`
+        """
+        return pulumi.get(self, "destination_backup_policy_id")
 
     @property
     @pulumi.getter(name="destinationCapacityReservationId")
@@ -4615,6 +5173,14 @@ class GetDrProtectionGroupMemberResult(dict):
         return pulumi.get(self, "destination_dedicated_vm_host_id")
 
     @property
+    @pulumi.getter(name="destinationEncryptionKeys")
+    def destination_encryption_keys(self) -> Sequence['outputs.GetDrProtectionGroupMemberDestinationEncryptionKeyResult']:
+        """
+        The OCID of a vault and customer-managed encryption key in the destination region.
+        """
+        return pulumi.get(self, "destination_encryption_keys")
+
+    @property
     @pulumi.getter(name="destinationLoadBalancerId")
     def destination_load_balancer_id(self) -> builtins.str:
         """
@@ -4629,6 +5195,14 @@ class GetDrProtectionGroupMemberResult(dict):
         The OCID of the destination Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
         """
         return pulumi.get(self, "destination_network_load_balancer_id")
+
+    @property
+    @pulumi.getter(name="destinationSnapshotPolicyId")
+    def destination_snapshot_policy_id(self) -> builtins.str:
+        """
+        The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.  Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
+        """
+        return pulumi.get(self, "destination_snapshot_policy_id")
 
     @property
     @pulumi.getter(name="exportMappings")
@@ -4741,6 +5315,14 @@ class GetDrProtectionGroupMemberResult(dict):
         The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.  Example: `ocid1.cluster.oc1.uniqueID`
         """
         return pulumi.get(self, "peer_cluster_id")
+
+    @property
+    @pulumi.getter(name="sourceVolumeToDestinationEncryptionKeyMappings")
+    def source_volume_to_destination_encryption_key_mappings(self) -> Sequence['outputs.GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingResult']:
+        """
+        A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
+        """
+        return pulumi.get(self, "source_volume_to_destination_encryption_key_mappings")
 
     @property
     @pulumi.getter(name="vaultMappings")
@@ -4918,13 +5500,89 @@ class GetDrProtectionGroupMemberBackupLocationResult(dict):
 
 
 @pulumi.output_type
+class GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationResult(dict):
+    def __init__(__self__, *,
+                 attachments: Sequence['outputs.GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentResult'],
+                 mounts: Sequence['outputs.GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountResult']):
+        """
+        :param Sequence['GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentArgs'] attachments: A list of details of attach or detach operations performed on block volumes.
+        :param Sequence['GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountArgs'] mounts: A list of details of mount operations performed on block volumes.
+        """
+        pulumi.set(__self__, "attachments", attachments)
+        pulumi.set(__self__, "mounts", mounts)
+
+    @property
+    @pulumi.getter
+    def attachments(self) -> Sequence['outputs.GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentResult']:
+        """
+        A list of details of attach or detach operations performed on block volumes.
+        """
+        return pulumi.get(self, "attachments")
+
+    @property
+    @pulumi.getter
+    def mounts(self) -> Sequence['outputs.GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountResult']:
+        """
+        A list of details of mount operations performed on block volumes.
+        """
+        return pulumi.get(self, "mounts")
+
+
+@pulumi.output_type
+class GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationAttachmentResult(dict):
+    def __init__(__self__, *,
+                 block_volume_id: builtins.str,
+                 volume_attachment_reference_instance_id: builtins.str):
+        """
+        :param builtins.str block_volume_id: The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
+        :param builtins.str volume_attachment_reference_instance_id: The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+        """
+        pulumi.set(__self__, "block_volume_id", block_volume_id)
+        pulumi.set(__self__, "volume_attachment_reference_instance_id", volume_attachment_reference_instance_id)
+
+    @property
+    @pulumi.getter(name="blockVolumeId")
+    def block_volume_id(self) -> builtins.str:
+        """
+        The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
+        """
+        return pulumi.get(self, "block_volume_id")
+
+    @property
+    @pulumi.getter(name="volumeAttachmentReferenceInstanceId")
+    def volume_attachment_reference_instance_id(self) -> builtins.str:
+        """
+        The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+        """
+        return pulumi.get(self, "volume_attachment_reference_instance_id")
+
+
+@pulumi.output_type
+class GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperationMountResult(dict):
+    def __init__(__self__, *,
+                 mount_point: builtins.str):
+        """
+        :param builtins.str mount_point: The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+        """
+        pulumi.set(__self__, "mount_point", mount_point)
+
+    @property
+    @pulumi.getter(name="mountPoint")
+    def mount_point(self) -> builtins.str:
+        """
+        The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+        """
+        return pulumi.get(self, "mount_point")
+
+
+@pulumi.output_type
 class GetDrProtectionGroupMemberBlockVolumeOperationResult(dict):
     def __init__(__self__, *,
                  attachment_details: Sequence['outputs.GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailResult'],
                  block_volume_id: builtins.str,
                  mount_details: Sequence['outputs.GetDrProtectionGroupMemberBlockVolumeOperationMountDetailResult']):
         """
-        :param Sequence['GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArgs'] attachment_details: The details for attaching or detaching a block volume.
+        :param Sequence['GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArgs'] attachment_details: Deprecated. Use the 'ComputeInstanceNonMovableBlockVolumeAttachOperationDetails' definition instead of this. The details for attaching or detaching a block volume.
         :param builtins.str block_volume_id: The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
         :param Sequence['GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArgs'] mount_details: Mount details of a file system.
         """
@@ -4936,7 +5594,7 @@ class GetDrProtectionGroupMemberBlockVolumeOperationResult(dict):
     @pulumi.getter(name="attachmentDetails")
     def attachment_details(self) -> Sequence['outputs.GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailResult']:
         """
-        The details for attaching or detaching a block volume.
+        Deprecated. Use the 'ComputeInstanceNonMovableBlockVolumeAttachOperationDetails' definition instead of this. The details for attaching or detaching a block volume.
         """
         return pulumi.get(self, "attachment_details")
 
@@ -4962,7 +5620,7 @@ class GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailResult(dict)
     def __init__(__self__, *,
                  volume_attachment_reference_instance_id: builtins.str):
         """
-        :param builtins.str volume_attachment_reference_instance_id: The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+        :param builtins.str volume_attachment_reference_instance_id: The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
         """
         pulumi.set(__self__, "volume_attachment_reference_instance_id", volume_attachment_reference_instance_id)
 
@@ -4970,7 +5628,7 @@ class GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailResult(dict)
     @pulumi.getter(name="volumeAttachmentReferenceInstanceId")
     def volume_attachment_reference_instance_id(self) -> builtins.str:
         """
-        The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+        The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
         """
         return pulumi.get(self, "volume_attachment_reference_instance_id")
 
@@ -4991,6 +5649,64 @@ class GetDrProtectionGroupMemberBlockVolumeOperationMountDetailResult(dict):
         The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
         """
         return pulumi.get(self, "mount_point")
+
+
+@pulumi.output_type
+class GetDrProtectionGroupMemberCommonDestinationKeyResult(dict):
+    def __init__(__self__, *,
+                 encryption_key_id: builtins.str,
+                 vault_id: builtins.str):
+        """
+        :param builtins.str encryption_key_id: The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+        :param builtins.str vault_id: The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+        """
+        pulumi.set(__self__, "encryption_key_id", encryption_key_id)
+        pulumi.set(__self__, "vault_id", vault_id)
+
+    @property
+    @pulumi.getter(name="encryptionKeyId")
+    def encryption_key_id(self) -> builtins.str:
+        """
+        The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+        """
+        return pulumi.get(self, "encryption_key_id")
+
+    @property
+    @pulumi.getter(name="vaultId")
+    def vault_id(self) -> builtins.str:
+        """
+        The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+        """
+        return pulumi.get(self, "vault_id")
+
+
+@pulumi.output_type
+class GetDrProtectionGroupMemberDestinationEncryptionKeyResult(dict):
+    def __init__(__self__, *,
+                 encryption_key_id: builtins.str,
+                 vault_id: builtins.str):
+        """
+        :param builtins.str encryption_key_id: The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+        :param builtins.str vault_id: The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+        """
+        pulumi.set(__self__, "encryption_key_id", encryption_key_id)
+        pulumi.set(__self__, "vault_id", vault_id)
+
+    @property
+    @pulumi.getter(name="encryptionKeyId")
+    def encryption_key_id(self) -> builtins.str:
+        """
+        The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+        """
+        return pulumi.get(self, "encryption_key_id")
+
+    @property
+    @pulumi.getter(name="vaultId")
+    def vault_id(self) -> builtins.str:
+        """
+        The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+        """
+        return pulumi.get(self, "vault_id")
 
 
 @pulumi.output_type
@@ -5219,6 +5935,64 @@ class GetDrProtectionGroupMemberNetworkLoadBalancerMappingResult(dict):
 
 
 @pulumi.output_type
+class GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingResult(dict):
+    def __init__(__self__, *,
+                 destination_encryption_keys: Sequence['outputs.GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyResult'],
+                 source_volume_id: builtins.str):
+        """
+        :param Sequence['GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs'] destination_encryption_keys: The OCID of a vault and customer-managed encryption key in the destination region.
+        :param builtins.str source_volume_id: The OCID of the source boot volume or block volume.  Example: `ocid1.volume.oc1..uniqueID`
+        """
+        pulumi.set(__self__, "destination_encryption_keys", destination_encryption_keys)
+        pulumi.set(__self__, "source_volume_id", source_volume_id)
+
+    @property
+    @pulumi.getter(name="destinationEncryptionKeys")
+    def destination_encryption_keys(self) -> Sequence['outputs.GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyResult']:
+        """
+        The OCID of a vault and customer-managed encryption key in the destination region.
+        """
+        return pulumi.get(self, "destination_encryption_keys")
+
+    @property
+    @pulumi.getter(name="sourceVolumeId")
+    def source_volume_id(self) -> builtins.str:
+        """
+        The OCID of the source boot volume or block volume.  Example: `ocid1.volume.oc1..uniqueID`
+        """
+        return pulumi.get(self, "source_volume_id")
+
+
+@pulumi.output_type
+class GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyResult(dict):
+    def __init__(__self__, *,
+                 encryption_key_id: builtins.str,
+                 vault_id: builtins.str):
+        """
+        :param builtins.str encryption_key_id: The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+        :param builtins.str vault_id: The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+        """
+        pulumi.set(__self__, "encryption_key_id", encryption_key_id)
+        pulumi.set(__self__, "vault_id", vault_id)
+
+    @property
+    @pulumi.getter(name="encryptionKeyId")
+    def encryption_key_id(self) -> builtins.str:
+        """
+        The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+        """
+        return pulumi.get(self, "encryption_key_id")
+
+    @property
+    @pulumi.getter(name="vaultId")
+    def vault_id(self) -> builtins.str:
+        """
+        The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+        """
+        return pulumi.get(self, "vault_id")
+
+
+@pulumi.output_type
 class GetDrProtectionGroupMemberVaultMappingResult(dict):
     def __init__(__self__, *,
                  destination_vault_id: builtins.str,
@@ -5293,18 +6067,21 @@ class GetDrProtectionGroupMemberVnicMappingResult(dict):
                  destination_nsg_id_lists: Sequence[builtins.str],
                  destination_primary_private_ip_address: builtins.str,
                  destination_primary_private_ip_hostname_label: builtins.str,
+                 destination_reserved_public_ip_id: builtins.str,
                  destination_subnet_id: builtins.str,
                  source_vnic_id: builtins.str):
         """
         :param Sequence[builtins.str] destination_nsg_id_lists: A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
         :param builtins.str destination_primary_private_ip_address: The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
         :param builtins.str destination_primary_private_ip_hostname_label: The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+        :param builtins.str destination_reserved_public_ip_id: The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
         :param builtins.str destination_subnet_id: The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
         :param builtins.str source_vnic_id: The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
         """
         pulumi.set(__self__, "destination_nsg_id_lists", destination_nsg_id_lists)
         pulumi.set(__self__, "destination_primary_private_ip_address", destination_primary_private_ip_address)
         pulumi.set(__self__, "destination_primary_private_ip_hostname_label", destination_primary_private_ip_hostname_label)
+        pulumi.set(__self__, "destination_reserved_public_ip_id", destination_reserved_public_ip_id)
         pulumi.set(__self__, "destination_subnet_id", destination_subnet_id)
         pulumi.set(__self__, "source_vnic_id", source_vnic_id)
 
@@ -5331,6 +6108,14 @@ class GetDrProtectionGroupMemberVnicMappingResult(dict):
         The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
         """
         return pulumi.get(self, "destination_primary_private_ip_hostname_label")
+
+    @property
+    @pulumi.getter(name="destinationReservedPublicIpId")
+    def destination_reserved_public_ip_id(self) -> builtins.str:
+        """
+        The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+        """
+        return pulumi.get(self, "destination_reserved_public_ip_id")
 
     @property
     @pulumi.getter(name="destinationSubnetId")
@@ -5645,15 +6430,20 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
                  backend_set_mappings: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingResult'],
                  backup_configs: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigResult'],
                  backup_locations: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationResult'],
+                 block_volume_attach_and_mount_operations: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationResult'],
                  block_volume_operations: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationResult'],
                  bucket: builtins.str,
+                 common_destination_keys: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyResult'],
                  connection_string_type: builtins.str,
                  destination_availability_domain: builtins.str,
+                 destination_backup_policy_id: builtins.str,
                  destination_capacity_reservation_id: builtins.str,
                  destination_compartment_id: builtins.str,
                  destination_dedicated_vm_host_id: builtins.str,
+                 destination_encryption_keys: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyResult'],
                  destination_load_balancer_id: builtins.str,
                  destination_network_load_balancer_id: builtins.str,
+                 destination_snapshot_policy_id: builtins.str,
                  export_mappings: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingResult'],
                  file_system_operations: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationResult'],
                  is_movable: builtins.bool,
@@ -5668,6 +6458,7 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
                  network_load_balancer_mappings: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingResult'],
                  password_vault_secret_id: builtins.str,
                  peer_cluster_id: builtins.str,
+                 source_volume_to_destination_encryption_key_mappings: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingResult'],
                  vault_mappings: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingResult'],
                  virtual_node_pool_configs: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigResult'],
                  vnic_mapping: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingResult'],
@@ -5677,15 +6468,19 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
         :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArgs'] backend_set_mappings: A list of backend set mappings that are used to transfer or update backends during DR.
         :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArgs'] backup_configs: The details of backup performed on OKE Cluster.
         :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArgs'] backup_locations: The details for object storage backup location of an OKE Cluster
-        :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArgs'] block_volume_operations: Operations performed on a list of block volumes used on the non-movable compute instance.
+        :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArgs'] block_volume_attach_and_mount_operations: The details of the block volume operations performed on the non-movable compute instance.
+        :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArgs'] block_volume_operations: Deprecated. Use the 'blockVolumeAttachAndMountOperations' attribute instead of this. Operations performed on a list of block volumes used on the non-movable compute instance.
         :param builtins.str bucket: The bucket name inside the object storage namespace.  Example: `bucket_name`
         :param builtins.str connection_string_type: The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
         :param builtins.str destination_availability_domain: The availability domain of the destination mount target. Example: `BBTh:region-AD`
+        :param builtins.str destination_backup_policy_id: The OCID of the backup policy to use in the destination region. This policy will be used to create backups for this volume group after it moves the destination region.  Example: `ocid1.volumebackuppolicy.oc1..uniqueID`
         :param builtins.str destination_capacity_reservation_id: The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
         :param builtins.str destination_compartment_id: The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
         :param builtins.str destination_dedicated_vm_host_id: The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
+        :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArgs'] destination_encryption_keys: The OCID of a vault and customer-managed encryption key in the destination region.
         :param builtins.str destination_load_balancer_id: The OCID of the destination Load Balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
         :param builtins.str destination_network_load_balancer_id: The OCID of the destination Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+        :param builtins.str destination_snapshot_policy_id: The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.  Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
         :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArgs'] export_mappings: A list of mappings between the primary region file system export and destination region mount target.
         :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArgs'] file_system_operations: Operations performed on a list of file systems used on the non-movable compute instance.
         :param builtins.bool is_movable: A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
@@ -5700,6 +6495,7 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
         :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArgs'] network_load_balancer_mappings: The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
         :param builtins.str password_vault_secret_id: The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
         :param builtins.str peer_cluster_id: The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.  Example: `ocid1.cluster.oc1.uniqueID`
+        :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArgs'] source_volume_to_destination_encryption_key_mappings: A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
         :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArgs'] vault_mappings: The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
         :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArgs'] virtual_node_pool_configs: The list of node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
         :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArgs'] vnic_mapping: A list of compute instance VNIC mappings.
@@ -5709,15 +6505,20 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
         pulumi.set(__self__, "backend_set_mappings", backend_set_mappings)
         pulumi.set(__self__, "backup_configs", backup_configs)
         pulumi.set(__self__, "backup_locations", backup_locations)
+        pulumi.set(__self__, "block_volume_attach_and_mount_operations", block_volume_attach_and_mount_operations)
         pulumi.set(__self__, "block_volume_operations", block_volume_operations)
         pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "common_destination_keys", common_destination_keys)
         pulumi.set(__self__, "connection_string_type", connection_string_type)
         pulumi.set(__self__, "destination_availability_domain", destination_availability_domain)
+        pulumi.set(__self__, "destination_backup_policy_id", destination_backup_policy_id)
         pulumi.set(__self__, "destination_capacity_reservation_id", destination_capacity_reservation_id)
         pulumi.set(__self__, "destination_compartment_id", destination_compartment_id)
         pulumi.set(__self__, "destination_dedicated_vm_host_id", destination_dedicated_vm_host_id)
+        pulumi.set(__self__, "destination_encryption_keys", destination_encryption_keys)
         pulumi.set(__self__, "destination_load_balancer_id", destination_load_balancer_id)
         pulumi.set(__self__, "destination_network_load_balancer_id", destination_network_load_balancer_id)
+        pulumi.set(__self__, "destination_snapshot_policy_id", destination_snapshot_policy_id)
         pulumi.set(__self__, "export_mappings", export_mappings)
         pulumi.set(__self__, "file_system_operations", file_system_operations)
         pulumi.set(__self__, "is_movable", is_movable)
@@ -5732,6 +6533,7 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
         pulumi.set(__self__, "network_load_balancer_mappings", network_load_balancer_mappings)
         pulumi.set(__self__, "password_vault_secret_id", password_vault_secret_id)
         pulumi.set(__self__, "peer_cluster_id", peer_cluster_id)
+        pulumi.set(__self__, "source_volume_to_destination_encryption_key_mappings", source_volume_to_destination_encryption_key_mappings)
         pulumi.set(__self__, "vault_mappings", vault_mappings)
         pulumi.set(__self__, "virtual_node_pool_configs", virtual_node_pool_configs)
         pulumi.set(__self__, "vnic_mapping", vnic_mapping)
@@ -5770,10 +6572,18 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
         return pulumi.get(self, "backup_locations")
 
     @property
+    @pulumi.getter(name="blockVolumeAttachAndMountOperations")
+    def block_volume_attach_and_mount_operations(self) -> Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationResult']:
+        """
+        The details of the block volume operations performed on the non-movable compute instance.
+        """
+        return pulumi.get(self, "block_volume_attach_and_mount_operations")
+
+    @property
     @pulumi.getter(name="blockVolumeOperations")
     def block_volume_operations(self) -> Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationResult']:
         """
-        Operations performed on a list of block volumes used on the non-movable compute instance.
+        Deprecated. Use the 'blockVolumeAttachAndMountOperations' attribute instead of this. Operations performed on a list of block volumes used on the non-movable compute instance.
         """
         return pulumi.get(self, "block_volume_operations")
 
@@ -5784,6 +6594,11 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
         The bucket name inside the object storage namespace.  Example: `bucket_name`
         """
         return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter(name="commonDestinationKeys")
+    def common_destination_keys(self) -> Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyResult']:
+        return pulumi.get(self, "common_destination_keys")
 
     @property
     @pulumi.getter(name="connectionStringType")
@@ -5800,6 +6615,14 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
         The availability domain of the destination mount target. Example: `BBTh:region-AD`
         """
         return pulumi.get(self, "destination_availability_domain")
+
+    @property
+    @pulumi.getter(name="destinationBackupPolicyId")
+    def destination_backup_policy_id(self) -> builtins.str:
+        """
+        The OCID of the backup policy to use in the destination region. This policy will be used to create backups for this volume group after it moves the destination region.  Example: `ocid1.volumebackuppolicy.oc1..uniqueID`
+        """
+        return pulumi.get(self, "destination_backup_policy_id")
 
     @property
     @pulumi.getter(name="destinationCapacityReservationId")
@@ -5826,6 +6649,14 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
         return pulumi.get(self, "destination_dedicated_vm_host_id")
 
     @property
+    @pulumi.getter(name="destinationEncryptionKeys")
+    def destination_encryption_keys(self) -> Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyResult']:
+        """
+        The OCID of a vault and customer-managed encryption key in the destination region.
+        """
+        return pulumi.get(self, "destination_encryption_keys")
+
+    @property
     @pulumi.getter(name="destinationLoadBalancerId")
     def destination_load_balancer_id(self) -> builtins.str:
         """
@@ -5840,6 +6671,14 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
         The OCID of the destination Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
         """
         return pulumi.get(self, "destination_network_load_balancer_id")
+
+    @property
+    @pulumi.getter(name="destinationSnapshotPolicyId")
+    def destination_snapshot_policy_id(self) -> builtins.str:
+        """
+        The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.  Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
+        """
+        return pulumi.get(self, "destination_snapshot_policy_id")
 
     @property
     @pulumi.getter(name="exportMappings")
@@ -5952,6 +6791,14 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
         The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.  Example: `ocid1.cluster.oc1.uniqueID`
         """
         return pulumi.get(self, "peer_cluster_id")
+
+    @property
+    @pulumi.getter(name="sourceVolumeToDestinationEncryptionKeyMappings")
+    def source_volume_to_destination_encryption_key_mappings(self) -> Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingResult']:
+        """
+        A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
+        """
+        return pulumi.get(self, "source_volume_to_destination_encryption_key_mappings")
 
     @property
     @pulumi.getter(name="vaultMappings")
@@ -6129,13 +6976,89 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationRe
 
 
 @pulumi.output_type
+class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationResult(dict):
+    def __init__(__self__, *,
+                 attachments: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentResult'],
+                 mounts: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountResult']):
+        """
+        :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentArgs'] attachments: A list of details of attach or detach operations performed on block volumes.
+        :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountArgs'] mounts: A list of details of mount operations performed on block volumes.
+        """
+        pulumi.set(__self__, "attachments", attachments)
+        pulumi.set(__self__, "mounts", mounts)
+
+    @property
+    @pulumi.getter
+    def attachments(self) -> Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentResult']:
+        """
+        A list of details of attach or detach operations performed on block volumes.
+        """
+        return pulumi.get(self, "attachments")
+
+    @property
+    @pulumi.getter
+    def mounts(self) -> Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountResult']:
+        """
+        A list of details of mount operations performed on block volumes.
+        """
+        return pulumi.get(self, "mounts")
+
+
+@pulumi.output_type
+class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationAttachmentResult(dict):
+    def __init__(__self__, *,
+                 block_volume_id: builtins.str,
+                 volume_attachment_reference_instance_id: builtins.str):
+        """
+        :param builtins.str block_volume_id: The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
+        :param builtins.str volume_attachment_reference_instance_id: The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+        """
+        pulumi.set(__self__, "block_volume_id", block_volume_id)
+        pulumi.set(__self__, "volume_attachment_reference_instance_id", volume_attachment_reference_instance_id)
+
+    @property
+    @pulumi.getter(name="blockVolumeId")
+    def block_volume_id(self) -> builtins.str:
+        """
+        The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
+        """
+        return pulumi.get(self, "block_volume_id")
+
+    @property
+    @pulumi.getter(name="volumeAttachmentReferenceInstanceId")
+    def volume_attachment_reference_instance_id(self) -> builtins.str:
+        """
+        The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+        """
+        return pulumi.get(self, "volume_attachment_reference_instance_id")
+
+
+@pulumi.output_type
+class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationMountResult(dict):
+    def __init__(__self__, *,
+                 mount_point: builtins.str):
+        """
+        :param builtins.str mount_point: The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+        """
+        pulumi.set(__self__, "mount_point", mount_point)
+
+    @property
+    @pulumi.getter(name="mountPoint")
+    def mount_point(self) -> builtins.str:
+        """
+        The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+        """
+        return pulumi.get(self, "mount_point")
+
+
+@pulumi.output_type
 class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationResult(dict):
     def __init__(__self__, *,
                  attachment_details: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailResult'],
                  block_volume_id: builtins.str,
                  mount_details: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailResult']):
         """
-        :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArgs'] attachment_details: The details for attaching or detaching a block volume.
+        :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArgs'] attachment_details: Deprecated. Use the 'ComputeInstanceNonMovableBlockVolumeAttachOperationDetails' definition instead of this. The details for attaching or detaching a block volume.
         :param builtins.str block_volume_id: The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
         :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArgs'] mount_details: Mount details of a file system.
         """
@@ -6147,7 +7070,7 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOpera
     @pulumi.getter(name="attachmentDetails")
     def attachment_details(self) -> Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailResult']:
         """
-        The details for attaching or detaching a block volume.
+        Deprecated. Use the 'ComputeInstanceNonMovableBlockVolumeAttachOperationDetails' definition instead of this. The details for attaching or detaching a block volume.
         """
         return pulumi.get(self, "attachment_details")
 
@@ -6173,7 +7096,7 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOpera
     def __init__(__self__, *,
                  volume_attachment_reference_instance_id: builtins.str):
         """
-        :param builtins.str volume_attachment_reference_instance_id: The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+        :param builtins.str volume_attachment_reference_instance_id: The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
         """
         pulumi.set(__self__, "volume_attachment_reference_instance_id", volume_attachment_reference_instance_id)
 
@@ -6181,7 +7104,7 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOpera
     @pulumi.getter(name="volumeAttachmentReferenceInstanceId")
     def volume_attachment_reference_instance_id(self) -> builtins.str:
         """
-        The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+        The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
         """
         return pulumi.get(self, "volume_attachment_reference_instance_id")
 
@@ -6202,6 +7125,64 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOpera
         The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
         """
         return pulumi.get(self, "mount_point")
+
+
+@pulumi.output_type
+class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyResult(dict):
+    def __init__(__self__, *,
+                 encryption_key_id: builtins.str,
+                 vault_id: builtins.str):
+        """
+        :param builtins.str encryption_key_id: The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+        :param builtins.str vault_id: The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+        """
+        pulumi.set(__self__, "encryption_key_id", encryption_key_id)
+        pulumi.set(__self__, "vault_id", vault_id)
+
+    @property
+    @pulumi.getter(name="encryptionKeyId")
+    def encryption_key_id(self) -> builtins.str:
+        """
+        The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+        """
+        return pulumi.get(self, "encryption_key_id")
+
+    @property
+    @pulumi.getter(name="vaultId")
+    def vault_id(self) -> builtins.str:
+        """
+        The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+        """
+        return pulumi.get(self, "vault_id")
+
+
+@pulumi.output_type
+class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyResult(dict):
+    def __init__(__self__, *,
+                 encryption_key_id: builtins.str,
+                 vault_id: builtins.str):
+        """
+        :param builtins.str encryption_key_id: The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+        :param builtins.str vault_id: The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+        """
+        pulumi.set(__self__, "encryption_key_id", encryption_key_id)
+        pulumi.set(__self__, "vault_id", vault_id)
+
+    @property
+    @pulumi.getter(name="encryptionKeyId")
+    def encryption_key_id(self) -> builtins.str:
+        """
+        The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+        """
+        return pulumi.get(self, "encryption_key_id")
+
+    @property
+    @pulumi.getter(name="vaultId")
+    def vault_id(self) -> builtins.str:
+        """
+        The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+        """
+        return pulumi.get(self, "vault_id")
 
 
 @pulumi.output_type
@@ -6430,6 +7411,64 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalan
 
 
 @pulumi.output_type
+class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingResult(dict):
+    def __init__(__self__, *,
+                 destination_encryption_keys: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyResult'],
+                 source_volume_id: builtins.str):
+        """
+        :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs'] destination_encryption_keys: The OCID of a vault and customer-managed encryption key in the destination region.
+        :param builtins.str source_volume_id: The OCID of the source boot volume or block volume.  Example: `ocid1.volume.oc1..uniqueID`
+        """
+        pulumi.set(__self__, "destination_encryption_keys", destination_encryption_keys)
+        pulumi.set(__self__, "source_volume_id", source_volume_id)
+
+    @property
+    @pulumi.getter(name="destinationEncryptionKeys")
+    def destination_encryption_keys(self) -> Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyResult']:
+        """
+        The OCID of a vault and customer-managed encryption key in the destination region.
+        """
+        return pulumi.get(self, "destination_encryption_keys")
+
+    @property
+    @pulumi.getter(name="sourceVolumeId")
+    def source_volume_id(self) -> builtins.str:
+        """
+        The OCID of the source boot volume or block volume.  Example: `ocid1.volume.oc1..uniqueID`
+        """
+        return pulumi.get(self, "source_volume_id")
+
+
+@pulumi.output_type
+class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyResult(dict):
+    def __init__(__self__, *,
+                 encryption_key_id: builtins.str,
+                 vault_id: builtins.str):
+        """
+        :param builtins.str encryption_key_id: The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+        :param builtins.str vault_id: The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+        """
+        pulumi.set(__self__, "encryption_key_id", encryption_key_id)
+        pulumi.set(__self__, "vault_id", vault_id)
+
+    @property
+    @pulumi.getter(name="encryptionKeyId")
+    def encryption_key_id(self) -> builtins.str:
+        """
+        The OCID of the customer-managed encryption key in the destination region vault.  Example: `ocid1.key.oc1..uniqueID`
+        """
+        return pulumi.get(self, "encryption_key_id")
+
+    @property
+    @pulumi.getter(name="vaultId")
+    def vault_id(self) -> builtins.str:
+        """
+        The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
+        """
+        return pulumi.get(self, "vault_id")
+
+
+@pulumi.output_type
 class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingResult(dict):
     def __init__(__self__, *,
                  destination_vault_id: builtins.str,
@@ -6504,18 +7543,21 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingResul
                  destination_nsg_id_lists: Sequence[builtins.str],
                  destination_primary_private_ip_address: builtins.str,
                  destination_primary_private_ip_hostname_label: builtins.str,
+                 destination_reserved_public_ip_id: builtins.str,
                  destination_subnet_id: builtins.str,
                  source_vnic_id: builtins.str):
         """
         :param Sequence[builtins.str] destination_nsg_id_lists: A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
         :param builtins.str destination_primary_private_ip_address: The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
         :param builtins.str destination_primary_private_ip_hostname_label: The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+        :param builtins.str destination_reserved_public_ip_id: The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
         :param builtins.str destination_subnet_id: The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
         :param builtins.str source_vnic_id: The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
         """
         pulumi.set(__self__, "destination_nsg_id_lists", destination_nsg_id_lists)
         pulumi.set(__self__, "destination_primary_private_ip_address", destination_primary_private_ip_address)
         pulumi.set(__self__, "destination_primary_private_ip_hostname_label", destination_primary_private_ip_hostname_label)
+        pulumi.set(__self__, "destination_reserved_public_ip_id", destination_reserved_public_ip_id)
         pulumi.set(__self__, "destination_subnet_id", destination_subnet_id)
         pulumi.set(__self__, "source_vnic_id", source_vnic_id)
 
@@ -6542,6 +7584,14 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingResul
         The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
         """
         return pulumi.get(self, "destination_primary_private_ip_hostname_label")
+
+    @property
+    @pulumi.getter(name="destinationReservedPublicIpId")
+    def destination_reserved_public_ip_id(self) -> builtins.str:
+        """
+        The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+        """
+        return pulumi.get(self, "destination_reserved_public_ip_id")
 
     @property
     @pulumi.getter(name="destinationSubnetId")

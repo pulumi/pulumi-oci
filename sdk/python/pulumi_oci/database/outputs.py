@@ -5303,7 +5303,7 @@ class AutonomousDatabaseScheduledOperation(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 day_of_week: 'outputs.AutonomousDatabaseScheduledOperationDayOfWeek',
+                 day_of_week: Optional['outputs.AutonomousDatabaseScheduledOperationDayOfWeek'] = None,
                  scheduled_start_time: Optional[builtins.str] = None,
                  scheduled_stop_time: Optional[builtins.str] = None):
         """
@@ -5311,7 +5311,8 @@ class AutonomousDatabaseScheduledOperation(dict):
         :param builtins.str scheduled_start_time: (Updatable) auto start time. value must be of ISO-8601 format "HH:mm"
         :param builtins.str scheduled_stop_time: (Updatable) auto stop time. value must be of ISO-8601 format "HH:mm"
         """
-        pulumi.set(__self__, "day_of_week", day_of_week)
+        if day_of_week is not None:
+            pulumi.set(__self__, "day_of_week", day_of_week)
         if scheduled_start_time is not None:
             pulumi.set(__self__, "scheduled_start_time", scheduled_start_time)
         if scheduled_stop_time is not None:
@@ -5319,7 +5320,7 @@ class AutonomousDatabaseScheduledOperation(dict):
 
     @property
     @pulumi.getter(name="dayOfWeek")
-    def day_of_week(self) -> 'outputs.AutonomousDatabaseScheduledOperationDayOfWeek':
+    def day_of_week(self) -> Optional['outputs.AutonomousDatabaseScheduledOperationDayOfWeek']:
         """
         (Updatable) Day of the week.
         """
@@ -23819,6 +23820,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  disaster_recovery_region_type: builtins.str,
                  disaster_recovery_type: builtins.str,
                  display_name: builtins.str,
+                 enable_delete_scheduled_operations: builtins.bool,
                  encryption_key_history_entries: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntryResult'],
                  encryption_keys: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyResult'],
                  failed_data_recovery_in_seconds: builtins.int,
@@ -23963,6 +23965,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param builtins.str disaster_recovery_region_type: **Deprecated.** The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
         :param builtins.str disaster_recovery_type: Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param builtins.str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
+        :param builtins.bool enable_delete_scheduled_operations: If omitted or set to false the provider will not delete scheduled_operations from the Autonomous Database. If set to true, provider will delete scheduled_operations from the Autonomous Database.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntryArgs'] encryption_key_history_entries: Key History Entry.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyArgs'] encryption_keys: Details of the Autonomous Database encryption key.
         :param builtins.int failed_data_recovery_in_seconds: Indicates the number of seconds of data loss for a Data Guard failover.
@@ -24102,6 +24105,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "disaster_recovery_region_type", disaster_recovery_region_type)
         pulumi.set(__self__, "disaster_recovery_type", disaster_recovery_type)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "enable_delete_scheduled_operations", enable_delete_scheduled_operations)
         pulumi.set(__self__, "encryption_key_history_entries", encryption_key_history_entries)
         pulumi.set(__self__, "encryption_keys", encryption_keys)
         pulumi.set(__self__, "failed_data_recovery_in_seconds", failed_data_recovery_in_seconds)
@@ -24522,6 +24526,14 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         A filter to return only resources that match the entire display name given. The match is not case sensitive.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="enableDeleteScheduledOperations")
+    def enable_delete_scheduled_operations(self) -> builtins.bool:
+        """
+        If omitted or set to false the provider will not delete scheduled_operations from the Autonomous Database. If set to true, provider will delete scheduled_operations from the Autonomous Database.
+        """
+        return pulumi.get(self, "enable_delete_scheduled_operations")
 
     @property
     @pulumi.getter(name="encryptionKeyHistoryEntries")

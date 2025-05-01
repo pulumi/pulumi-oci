@@ -65,7 +65,7 @@ namespace Pulumi.Oci.Nosql
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Complete CREATE TABLE DDL statement. When update ddl_statement, it should be ALTER TABLE DDL statement.
+        /// (Updatable) CREATE TABLE DDL statement. While updating an existing table, note that the column order should not be changed, and new columns can only be appended at the end of the table.
         /// </summary>
         [Output("ddlStatement")]
         public Output<string> DdlStatement { get; private set; } = null!;
@@ -219,7 +219,7 @@ namespace Pulumi.Oci.Nosql
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Complete CREATE TABLE DDL statement. When update ddl_statement, it should be ALTER TABLE DDL statement.
+        /// (Updatable) CREATE TABLE DDL statement. While updating an existing table, note that the column order should not be changed, and new columns can only be appended at the end of the table.
         /// </summary>
         [Input("ddlStatement", required: true)]
         public Input<string> DdlStatement { get; set; } = null!;
@@ -281,7 +281,7 @@ namespace Pulumi.Oci.Nosql
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// (Updatable) Complete CREATE TABLE DDL statement. When update ddl_statement, it should be ALTER TABLE DDL statement.
+        /// (Updatable) CREATE TABLE DDL statement. While updating an existing table, note that the column order should not be changed, and new columns can only be appended at the end of the table.
         /// </summary>
         [Input("ddlStatement")]
         public Input<string>? DdlStatement { get; set; }

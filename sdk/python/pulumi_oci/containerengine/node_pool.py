@@ -823,11 +823,13 @@ class NodePool(pulumi.CustomResource):
             },
             node_eviction_node_pool_settings={
                 "eviction_grace_duration": node_pool_node_eviction_node_pool_settings_eviction_grace_duration,
+                "is_force_action_after_grace_duration": node_pool_node_eviction_node_pool_settings_is_force_action_after_grace_duration,
                 "is_force_delete_after_grace_duration": node_pool_node_eviction_node_pool_settings_is_force_delete_after_grace_duration,
             },
             node_image_name=test_image["name"],
             node_metadata=node_pool_node_metadata,
             node_pool_cycling_details={
+                "cycle_modes": node_pool_node_pool_cycling_details_cycle_modes,
                 "is_node_cycling_enabled": node_pool_node_pool_cycling_details_is_node_cycling_enabled,
                 "maximum_surge": node_pool_node_pool_cycling_details_maximum_surge,
                 "maximum_unavailable": node_pool_node_pool_cycling_details_maximum_unavailable,
@@ -945,11 +947,13 @@ class NodePool(pulumi.CustomResource):
             },
             node_eviction_node_pool_settings={
                 "eviction_grace_duration": node_pool_node_eviction_node_pool_settings_eviction_grace_duration,
+                "is_force_action_after_grace_duration": node_pool_node_eviction_node_pool_settings_is_force_action_after_grace_duration,
                 "is_force_delete_after_grace_duration": node_pool_node_eviction_node_pool_settings_is_force_delete_after_grace_duration,
             },
             node_image_name=test_image["name"],
             node_metadata=node_pool_node_metadata,
             node_pool_cycling_details={
+                "cycle_modes": node_pool_node_pool_cycling_details_cycle_modes,
                 "is_node_cycling_enabled": node_pool_node_pool_cycling_details_is_node_cycling_enabled,
                 "maximum_surge": node_pool_node_pool_cycling_details_maximum_surge,
                 "maximum_unavailable": node_pool_node_pool_cycling_details_maximum_unavailable,

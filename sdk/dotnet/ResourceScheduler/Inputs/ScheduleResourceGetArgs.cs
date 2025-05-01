@@ -24,12 +24,27 @@ namespace Pulumi.Oci.ResourceScheduler.Inputs
         /// <summary>
         /// (Updatable) This is additional information that helps to identity the resource for the schedule.
         /// 
+        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
         /// { "id": "&lt;OCID_of_bucket&gt;" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
         /// </summary>
         public InputMap<string> Metadata
         {
             get => _metadata ?? (_metadata = new InputMap<string>());
             set => _metadata = value;
+        }
+
+        [Input("parameters")]
+        private InputList<Inputs.ScheduleResourceParameterGetArgs>? _parameters;
+
+        /// <summary>
+        /// (Updatable) This is the user input parameters to use when acting on the resource.
+        /// 
+        /// { "parameters": [ { "parameterType": "BODY", "value": { "ip": "192.168.44.44", "memory": "1024", "synced_folders": [ { "host_path": "data/", "guest_path": "/var/www", "type": "default" } ], "forwarded_ports": [] } }, { "parameterType": "PATH", "value": { "compartmentId": "ocid1.compartment.oc1..xxxxx", "instanceId": "ocid1.vcn.oc1..yyyy" } }, { "parameterType": "QUERY", "value": { "limit": "10", "tenantId": "ocid1.tenant.oc1..zzzz" } }, { "parameterType": "HEADER", "value": { "token": "xxxx" } } ] }
+        /// </summary>
+        public InputList<Inputs.ScheduleResourceParameterGetArgs> Parameters
+        {
+            get => _parameters ?? (_parameters = new InputList<Inputs.ScheduleResourceParameterGetArgs>());
+            set => _parameters = value;
         }
 
         public ScheduleResourceGetArgs()

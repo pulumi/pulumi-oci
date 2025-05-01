@@ -29,7 +29,7 @@ public final class GetSchedulesScheduleCollectionItemResourceFilter {
      */
     private Boolean shouldIncludeChildCompartments;
     /**
-     * @return This is the value of the defined tag.
+     * @return This is the HTTP request header value.
      * 
      */
     private List<GetSchedulesScheduleCollectionItemResourceFilterValue> values;
@@ -57,7 +57,7 @@ public final class GetSchedulesScheduleCollectionItemResourceFilter {
         return this.shouldIncludeChildCompartments;
     }
     /**
-     * @return This is the value of the defined tag.
+     * @return This is the HTTP request header value.
      * 
      */
     public List<GetSchedulesScheduleCollectionItemResourceFilterValue> values() {

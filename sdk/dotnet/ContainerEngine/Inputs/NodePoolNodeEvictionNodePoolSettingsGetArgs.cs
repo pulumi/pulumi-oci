@@ -19,6 +19,12 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public Input<string>? EvictionGraceDuration { get; set; }
 
         /// <summary>
+        /// (Updatable) If the node action should be performed if not all the pods can be evicted in the grace period
+        /// </summary>
+        [Input("isForceActionAfterGraceDuration")]
+        public Input<bool>? IsForceActionAfterGraceDuration { get; set; }
+
+        /// <summary>
         /// (Updatable) If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
         /// </summary>
         [Input("isForceDeleteAfterGraceDuration")]

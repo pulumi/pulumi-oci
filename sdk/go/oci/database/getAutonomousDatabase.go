@@ -139,6 +139,8 @@ type LookupAutonomousDatabaseResult struct {
 	DisasterRecoveryType string `pulumi:"disasterRecoveryType"`
 	// The user-friendly name for the Autonomous Database. The name does not have to be unique.
 	DisplayName string `pulumi:"displayName"`
+	// If omitted or set to false the provider will not delete scheduledOperations from the Autonomous Database. If set to true, provider will delete scheduledOperations from the Autonomous Database.
+	EnableDeleteScheduledOperations bool `pulumi:"enableDeleteScheduledOperations"`
 	// Key History Entry.
 	EncryptionKeyHistoryEntries []GetAutonomousDatabaseEncryptionKeyHistoryEntry `pulumi:"encryptionKeyHistoryEntries"`
 	// Details of the Autonomous Database encryption key.
@@ -586,6 +588,11 @@ func (o LookupAutonomousDatabaseResultOutput) DisasterRecoveryType() pulumi.Stri
 // The user-friendly name for the Autonomous Database. The name does not have to be unique.
 func (o LookupAutonomousDatabaseResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// If omitted or set to false the provider will not delete scheduledOperations from the Autonomous Database. If set to true, provider will delete scheduledOperations from the Autonomous Database.
+func (o LookupAutonomousDatabaseResultOutput) EnableDeleteScheduledOperations() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.EnableDeleteScheduledOperations }).(pulumi.BoolOutput)
 }
 
 // Key History Entry.

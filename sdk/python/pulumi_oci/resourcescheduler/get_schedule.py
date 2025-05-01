@@ -28,7 +28,7 @@ class GetScheduleResult:
     """
     A collection of values returned by getSchedule.
     """
-    def __init__(__self__, action=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, recurrence_details=None, recurrence_type=None, resource_filters=None, resources=None, schedule_id=None, state=None, system_tags=None, time_created=None, time_ends=None, time_last_run=None, time_next_run=None, time_starts=None, time_updated=None):
+    def __init__(__self__, action=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, last_run_status=None, recurrence_details=None, recurrence_type=None, resource_filters=None, resources=None, schedule_id=None, state=None, system_tags=None, time_created=None, time_ends=None, time_last_run=None, time_next_run=None, time_starts=None, time_updated=None):
         if action and not isinstance(action, str):
             raise TypeError("Expected argument 'action' to be a str")
         pulumi.set(__self__, "action", action)
@@ -50,6 +50,9 @@ class GetScheduleResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if last_run_status and not isinstance(last_run_status, str):
+            raise TypeError("Expected argument 'last_run_status' to be a str")
+        pulumi.set(__self__, "last_run_status", last_run_status)
         if recurrence_details and not isinstance(recurrence_details, str):
             raise TypeError("Expected argument 'recurrence_details' to be a str")
         pulumi.set(__self__, "recurrence_details", recurrence_details)
@@ -145,6 +148,14 @@ class GetScheduleResult:
         This is the resource OCID.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lastRunStatus")
+    def last_run_status(self) -> builtins.str:
+        """
+        This is the status of the last work request.
+        """
+        return pulumi.get(self, "last_run_status")
 
     @property
     @pulumi.getter(name="recurrenceDetails")
@@ -261,6 +272,7 @@ class AwaitableGetScheduleResult(GetScheduleResult):
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            last_run_status=self.last_run_status,
             recurrence_details=self.recurrence_details,
             recurrence_type=self.recurrence_type,
             resource_filters=self.resource_filters,
@@ -308,6 +320,7 @@ def get_schedule(schedule_id: Optional[builtins.str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        last_run_status=pulumi.get(__ret__, 'last_run_status'),
         recurrence_details=pulumi.get(__ret__, 'recurrence_details'),
         recurrence_type=pulumi.get(__ret__, 'recurrence_type'),
         resource_filters=pulumi.get(__ret__, 'resource_filters'),
@@ -352,6 +365,7 @@ def get_schedule_output(schedule_id: Optional[pulumi.Input[builtins.str]] = None
         display_name=pulumi.get(__response__, 'display_name'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
+        last_run_status=pulumi.get(__response__, 'last_run_status'),
         recurrence_details=pulumi.get(__response__, 'recurrence_details'),
         recurrence_type=pulumi.get(__response__, 'recurrence_type'),
         resource_filters=pulumi.get(__response__, 'resource_filters'),

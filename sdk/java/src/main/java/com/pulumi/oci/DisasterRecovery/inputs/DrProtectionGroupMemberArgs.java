@@ -9,12 +9,16 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberBackendSetMappingArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberBackupConfigArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberBackupLocationArgs;
+import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberBlockVolumeOperationArgs;
+import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberCommonDestinationKeyArgs;
+import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberDestinationEncryptionKeyArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberExportMappingArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberFileSystemOperationArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberLoadBalancerMappingArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberManagedNodePoolConfigArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberNetworkLoadBalancerMappingArgs;
+import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberVaultMappingArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberVirtualNodePoolConfigArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberVnicMappingArgs;
@@ -91,14 +95,29 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) A list of operations performed on block volumes used by the compute instance.
+     * (Updatable) The details for creating the operations performed on a block volume.
+     * 
+     */
+    @Import(name="blockVolumeAttachAndMountOperations")
+    private @Nullable Output<DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsArgs> blockVolumeAttachAndMountOperations;
+
+    /**
+     * @return (Updatable) The details for creating the operations performed on a block volume.
+     * 
+     */
+    public Optional<Output<DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsArgs>> blockVolumeAttachAndMountOperations() {
+        return Optional.ofNullable(this.blockVolumeAttachAndMountOperations);
+    }
+
+    /**
+     * (Updatable) Deprecated. Use the &#39;blockVolumeAttachAndMountOperations&#39; attribute instead of this. A list of operations performed on block volumes used by the compute instance.
      * 
      */
     @Import(name="blockVolumeOperations")
     private @Nullable Output<List<DrProtectionGroupMemberBlockVolumeOperationArgs>> blockVolumeOperations;
 
     /**
-     * @return (Updatable) A list of operations performed on block volumes used by the compute instance.
+     * @return (Updatable) Deprecated. Use the &#39;blockVolumeAttachAndMountOperations&#39; attribute instead of this. A list of operations performed on block volumes used by the compute instance.
      * 
      */
     public Optional<Output<List<DrProtectionGroupMemberBlockVolumeOperationArgs>>> blockVolumeOperations() {
@@ -118,6 +137,21 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
      */
     public Optional<Output<String>> bucket() {
         return Optional.ofNullable(this.bucket);
+    }
+
+    /**
+     * (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
+     * 
+     */
+    @Import(name="commonDestinationKey")
+    private @Nullable Output<DrProtectionGroupMemberCommonDestinationKeyArgs> commonDestinationKey;
+
+    /**
+     * @return (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
+     * 
+     */
+    public Optional<Output<DrProtectionGroupMemberCommonDestinationKeyArgs>> commonDestinationKey() {
+        return Optional.ofNullable(this.commonDestinationKey);
     }
 
     /**
@@ -148,6 +182,21 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
      */
     public Optional<Output<String>> destinationAvailabilityDomain() {
         return Optional.ofNullable(this.destinationAvailabilityDomain);
+    }
+
+    /**
+     * (Updatable) The OCID of the backup policy to use in the destination region. This policy will be used to create backups  for this volume group after it moves the destination region.  Example: `ocid1.volumebackuppolicy.oc1..uniqueID`
+     * 
+     */
+    @Import(name="destinationBackupPolicyId")
+    private @Nullable Output<String> destinationBackupPolicyId;
+
+    /**
+     * @return (Updatable) The OCID of the backup policy to use in the destination region. This policy will be used to create backups  for this volume group after it moves the destination region.  Example: `ocid1.volumebackuppolicy.oc1..uniqueID`
+     * 
+     */
+    public Optional<Output<String>> destinationBackupPolicyId() {
+        return Optional.ofNullable(this.destinationBackupPolicyId);
     }
 
     /**
@@ -196,6 +245,21 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
     }
 
     /**
+     * (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
+     * 
+     */
+    @Import(name="destinationEncryptionKey")
+    private @Nullable Output<DrProtectionGroupMemberDestinationEncryptionKeyArgs> destinationEncryptionKey;
+
+    /**
+     * @return (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
+     * 
+     */
+    public Optional<Output<DrProtectionGroupMemberDestinationEncryptionKeyArgs>> destinationEncryptionKey() {
+        return Optional.ofNullable(this.destinationEncryptionKey);
+    }
+
+    /**
      * (Updatable) The OCID of the destination load balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
      * 
      */
@@ -223,6 +287,21 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
      */
     public Optional<Output<String>> destinationNetworkLoadBalancerId() {
         return Optional.ofNullable(this.destinationNetworkLoadBalancerId);
+    }
+
+    /**
+     * (Updatable) The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.  Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
+     * 
+     */
+    @Import(name="destinationSnapshotPolicyId")
+    private @Nullable Output<String> destinationSnapshotPolicyId;
+
+    /**
+     * @return (Updatable) The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.  Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
+     * 
+     */
+    public Optional<Output<String>> destinationSnapshotPolicyId() {
+        return Optional.ofNullable(this.destinationSnapshotPolicyId);
     }
 
     /**
@@ -436,6 +515,29 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
     }
 
     /**
+     * (Updatable) A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
+     * 
+     * If you add the entry for source volumes and its corresponding vault and encryption keys here, you can not use  &#39;commonDestinationKey&#39; for encrypting all volumes with common encryption key. Similarly, if you specify common vault and encryption key using &#39;commonDestinationKey&#39;, you cannot specify vaults and encryption keys individually  for each volume using &#39;sourceVolumeToDestinationEncryptionKeyMappings&#39;.
+     * 
+     * An entry for each volume in volume group should be added in this list. The encryption key will not be updated  for the volumes that are part of volume group but missing in this list.
+     * 
+     */
+    @Import(name="sourceVolumeToDestinationEncryptionKeyMappings")
+    private @Nullable Output<List<DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs>> sourceVolumeToDestinationEncryptionKeyMappings;
+
+    /**
+     * @return (Updatable) A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
+     * 
+     * If you add the entry for source volumes and its corresponding vault and encryption keys here, you can not use  &#39;commonDestinationKey&#39; for encrypting all volumes with common encryption key. Similarly, if you specify common vault and encryption key using &#39;commonDestinationKey&#39;, you cannot specify vaults and encryption keys individually  for each volume using &#39;sourceVolumeToDestinationEncryptionKeyMappings&#39;.
+     * 
+     * An entry for each volume in volume group should be added in this list. The encryption key will not be updated  for the volumes that are part of volume group but missing in this list.
+     * 
+     */
+    public Optional<Output<List<DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs>>> sourceVolumeToDestinationEncryptionKeyMappings() {
+        return Optional.ofNullable(this.sourceVolumeToDestinationEncryptionKeyMappings);
+    }
+
+    /**
      * (Updatable) The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
      * 
      */
@@ -502,15 +604,20 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         this.backendSetMappings = $.backendSetMappings;
         this.backupConfig = $.backupConfig;
         this.backupLocation = $.backupLocation;
+        this.blockVolumeAttachAndMountOperations = $.blockVolumeAttachAndMountOperations;
         this.blockVolumeOperations = $.blockVolumeOperations;
         this.bucket = $.bucket;
+        this.commonDestinationKey = $.commonDestinationKey;
         this.connectionStringType = $.connectionStringType;
         this.destinationAvailabilityDomain = $.destinationAvailabilityDomain;
+        this.destinationBackupPolicyId = $.destinationBackupPolicyId;
         this.destinationCapacityReservationId = $.destinationCapacityReservationId;
         this.destinationCompartmentId = $.destinationCompartmentId;
         this.destinationDedicatedVmHostId = $.destinationDedicatedVmHostId;
+        this.destinationEncryptionKey = $.destinationEncryptionKey;
         this.destinationLoadBalancerId = $.destinationLoadBalancerId;
         this.destinationNetworkLoadBalancerId = $.destinationNetworkLoadBalancerId;
+        this.destinationSnapshotPolicyId = $.destinationSnapshotPolicyId;
         this.exportMappings = $.exportMappings;
         this.fileSystemOperations = $.fileSystemOperations;
         this.isMovable = $.isMovable;
@@ -525,6 +632,7 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         this.networkLoadBalancerMappings = $.networkLoadBalancerMappings;
         this.passwordVaultSecretId = $.passwordVaultSecretId;
         this.peerClusterId = $.peerClusterId;
+        this.sourceVolumeToDestinationEncryptionKeyMappings = $.sourceVolumeToDestinationEncryptionKeyMappings;
         this.vaultMappings = $.vaultMappings;
         this.virtualNodePoolConfigs = $.virtualNodePoolConfigs;
         this.vnicMapping = $.vnicMapping;
@@ -644,7 +752,28 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param blockVolumeOperations (Updatable) A list of operations performed on block volumes used by the compute instance.
+         * @param blockVolumeAttachAndMountOperations (Updatable) The details for creating the operations performed on a block volume.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder blockVolumeAttachAndMountOperations(@Nullable Output<DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsArgs> blockVolumeAttachAndMountOperations) {
+            $.blockVolumeAttachAndMountOperations = blockVolumeAttachAndMountOperations;
+            return this;
+        }
+
+        /**
+         * @param blockVolumeAttachAndMountOperations (Updatable) The details for creating the operations performed on a block volume.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder blockVolumeAttachAndMountOperations(DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsArgs blockVolumeAttachAndMountOperations) {
+            return blockVolumeAttachAndMountOperations(Output.of(blockVolumeAttachAndMountOperations));
+        }
+
+        /**
+         * @param blockVolumeOperations (Updatable) Deprecated. Use the &#39;blockVolumeAttachAndMountOperations&#39; attribute instead of this. A list of operations performed on block volumes used by the compute instance.
          * 
          * @return builder
          * 
@@ -655,7 +784,7 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param blockVolumeOperations (Updatable) A list of operations performed on block volumes used by the compute instance.
+         * @param blockVolumeOperations (Updatable) Deprecated. Use the &#39;blockVolumeAttachAndMountOperations&#39; attribute instead of this. A list of operations performed on block volumes used by the compute instance.
          * 
          * @return builder
          * 
@@ -665,7 +794,7 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param blockVolumeOperations (Updatable) A list of operations performed on block volumes used by the compute instance.
+         * @param blockVolumeOperations (Updatable) Deprecated. Use the &#39;blockVolumeAttachAndMountOperations&#39; attribute instead of this. A list of operations performed on block volumes used by the compute instance.
          * 
          * @return builder
          * 
@@ -693,6 +822,27 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
          */
         public Builder bucket(String bucket) {
             return bucket(Output.of(bucket));
+        }
+
+        /**
+         * @param commonDestinationKey (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder commonDestinationKey(@Nullable Output<DrProtectionGroupMemberCommonDestinationKeyArgs> commonDestinationKey) {
+            $.commonDestinationKey = commonDestinationKey;
+            return this;
+        }
+
+        /**
+         * @param commonDestinationKey (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder commonDestinationKey(DrProtectionGroupMemberCommonDestinationKeyArgs commonDestinationKey) {
+            return commonDestinationKey(Output.of(commonDestinationKey));
         }
 
         /**
@@ -735,6 +885,27 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
          */
         public Builder destinationAvailabilityDomain(String destinationAvailabilityDomain) {
             return destinationAvailabilityDomain(Output.of(destinationAvailabilityDomain));
+        }
+
+        /**
+         * @param destinationBackupPolicyId (Updatable) The OCID of the backup policy to use in the destination region. This policy will be used to create backups  for this volume group after it moves the destination region.  Example: `ocid1.volumebackuppolicy.oc1..uniqueID`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder destinationBackupPolicyId(@Nullable Output<String> destinationBackupPolicyId) {
+            $.destinationBackupPolicyId = destinationBackupPolicyId;
+            return this;
+        }
+
+        /**
+         * @param destinationBackupPolicyId (Updatable) The OCID of the backup policy to use in the destination region. This policy will be used to create backups  for this volume group after it moves the destination region.  Example: `ocid1.volumebackuppolicy.oc1..uniqueID`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder destinationBackupPolicyId(String destinationBackupPolicyId) {
+            return destinationBackupPolicyId(Output.of(destinationBackupPolicyId));
         }
 
         /**
@@ -801,6 +972,27 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
+         * @param destinationEncryptionKey (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder destinationEncryptionKey(@Nullable Output<DrProtectionGroupMemberDestinationEncryptionKeyArgs> destinationEncryptionKey) {
+            $.destinationEncryptionKey = destinationEncryptionKey;
+            return this;
+        }
+
+        /**
+         * @param destinationEncryptionKey (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder destinationEncryptionKey(DrProtectionGroupMemberDestinationEncryptionKeyArgs destinationEncryptionKey) {
+            return destinationEncryptionKey(Output.of(destinationEncryptionKey));
+        }
+
+        /**
          * @param destinationLoadBalancerId (Updatable) The OCID of the destination load balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
          * 
          * @return builder
@@ -840,6 +1032,27 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
          */
         public Builder destinationNetworkLoadBalancerId(String destinationNetworkLoadBalancerId) {
             return destinationNetworkLoadBalancerId(Output.of(destinationNetworkLoadBalancerId));
+        }
+
+        /**
+         * @param destinationSnapshotPolicyId (Updatable) The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.  Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder destinationSnapshotPolicyId(@Nullable Output<String> destinationSnapshotPolicyId) {
+            $.destinationSnapshotPolicyId = destinationSnapshotPolicyId;
+            return this;
+        }
+
+        /**
+         * @param destinationSnapshotPolicyId (Updatable) The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.  Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder destinationSnapshotPolicyId(String destinationSnapshotPolicyId) {
+            return destinationSnapshotPolicyId(Output.of(destinationSnapshotPolicyId));
         }
 
         /**
@@ -1184,6 +1397,49 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
          */
         public Builder peerClusterId(String peerClusterId) {
             return peerClusterId(Output.of(peerClusterId));
+        }
+
+        /**
+         * @param sourceVolumeToDestinationEncryptionKeyMappings (Updatable) A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
+         * 
+         * If you add the entry for source volumes and its corresponding vault and encryption keys here, you can not use  &#39;commonDestinationKey&#39; for encrypting all volumes with common encryption key. Similarly, if you specify common vault and encryption key using &#39;commonDestinationKey&#39;, you cannot specify vaults and encryption keys individually  for each volume using &#39;sourceVolumeToDestinationEncryptionKeyMappings&#39;.
+         * 
+         * An entry for each volume in volume group should be added in this list. The encryption key will not be updated  for the volumes that are part of volume group but missing in this list.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceVolumeToDestinationEncryptionKeyMappings(@Nullable Output<List<DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs>> sourceVolumeToDestinationEncryptionKeyMappings) {
+            $.sourceVolumeToDestinationEncryptionKeyMappings = sourceVolumeToDestinationEncryptionKeyMappings;
+            return this;
+        }
+
+        /**
+         * @param sourceVolumeToDestinationEncryptionKeyMappings (Updatable) A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
+         * 
+         * If you add the entry for source volumes and its corresponding vault and encryption keys here, you can not use  &#39;commonDestinationKey&#39; for encrypting all volumes with common encryption key. Similarly, if you specify common vault and encryption key using &#39;commonDestinationKey&#39;, you cannot specify vaults and encryption keys individually  for each volume using &#39;sourceVolumeToDestinationEncryptionKeyMappings&#39;.
+         * 
+         * An entry for each volume in volume group should be added in this list. The encryption key will not be updated  for the volumes that are part of volume group but missing in this list.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceVolumeToDestinationEncryptionKeyMappings(List<DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs> sourceVolumeToDestinationEncryptionKeyMappings) {
+            return sourceVolumeToDestinationEncryptionKeyMappings(Output.of(sourceVolumeToDestinationEncryptionKeyMappings));
+        }
+
+        /**
+         * @param sourceVolumeToDestinationEncryptionKeyMappings (Updatable) A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
+         * 
+         * If you add the entry for source volumes and its corresponding vault and encryption keys here, you can not use  &#39;commonDestinationKey&#39; for encrypting all volumes with common encryption key. Similarly, if you specify common vault and encryption key using &#39;commonDestinationKey&#39;, you cannot specify vaults and encryption keys individually  for each volume using &#39;sourceVolumeToDestinationEncryptionKeyMappings&#39;.
+         * 
+         * An entry for each volume in volume group should be added in this list. The encryption key will not be updated  for the volumes that are part of volume group but missing in this list.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceVolumeToDestinationEncryptionKeyMappings(DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs... sourceVolumeToDestinationEncryptionKeyMappings) {
+            return sourceVolumeToDestinationEncryptionKeyMappings(List.of(sourceVolumeToDestinationEncryptionKeyMappings));
         }
 
         /**

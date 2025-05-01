@@ -6,7 +6,9 @@ package com.pulumi.oci.ResourceScheduler.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.ResourceScheduler.inputs.ScheduleResourceParameterArgs;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -35,6 +37,7 @@ public final class ScheduleResourceArgs extends com.pulumi.resources.ResourceArg
     /**
      * (Updatable) This is additional information that helps to identity the resource for the schedule.
      * 
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * { &#34;id&#34;: &#34;&lt;OCID_of_bucket&gt;&#34; &#34;metadata&#34;: { &#34;namespaceName&#34;: &#34;sampleNamespace&#34;, &#34;bucketName&#34;: &#34;sampleBucket&#34; } }
      * 
      */
@@ -44,6 +47,7 @@ public final class ScheduleResourceArgs extends com.pulumi.resources.ResourceArg
     /**
      * @return (Updatable) This is additional information that helps to identity the resource for the schedule.
      * 
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * { &#34;id&#34;: &#34;&lt;OCID_of_bucket&gt;&#34; &#34;metadata&#34;: { &#34;namespaceName&#34;: &#34;sampleNamespace&#34;, &#34;bucketName&#34;: &#34;sampleBucket&#34; } }
      * 
      */
@@ -51,11 +55,31 @@ public final class ScheduleResourceArgs extends com.pulumi.resources.ResourceArg
         return Optional.ofNullable(this.metadata);
     }
 
+    /**
+     * (Updatable) This is the user input parameters to use when acting on the resource.
+     * 
+     * { &#34;parameters&#34;: [ { &#34;parameterType&#34;: &#34;BODY&#34;, &#34;value&#34;: { &#34;ip&#34;: &#34;192.168.44.44&#34;, &#34;memory&#34;: &#34;1024&#34;, &#34;synced_folders&#34;: [ { &#34;host_path&#34;: &#34;data/&#34;, &#34;guest_path&#34;: &#34;/var/www&#34;, &#34;type&#34;: &#34;default&#34; } ], &#34;forwarded_ports&#34;: [] } }, { &#34;parameterType&#34;: &#34;PATH&#34;, &#34;value&#34;: { &#34;compartmentId&#34;: &#34;ocid1.compartment.oc1..xxxxx&#34;, &#34;instanceId&#34;: &#34;ocid1.vcn.oc1..yyyy&#34; } }, { &#34;parameterType&#34;: &#34;QUERY&#34;, &#34;value&#34;: { &#34;limit&#34;: &#34;10&#34;, &#34;tenantId&#34;: &#34;ocid1.tenant.oc1..zzzz&#34; } }, { &#34;parameterType&#34;: &#34;HEADER&#34;, &#34;value&#34;: { &#34;token&#34;: &#34;xxxx&#34; } } ] }
+     * 
+     */
+    @Import(name="parameters")
+    private @Nullable Output<List<ScheduleResourceParameterArgs>> parameters;
+
+    /**
+     * @return (Updatable) This is the user input parameters to use when acting on the resource.
+     * 
+     * { &#34;parameters&#34;: [ { &#34;parameterType&#34;: &#34;BODY&#34;, &#34;value&#34;: { &#34;ip&#34;: &#34;192.168.44.44&#34;, &#34;memory&#34;: &#34;1024&#34;, &#34;synced_folders&#34;: [ { &#34;host_path&#34;: &#34;data/&#34;, &#34;guest_path&#34;: &#34;/var/www&#34;, &#34;type&#34;: &#34;default&#34; } ], &#34;forwarded_ports&#34;: [] } }, { &#34;parameterType&#34;: &#34;PATH&#34;, &#34;value&#34;: { &#34;compartmentId&#34;: &#34;ocid1.compartment.oc1..xxxxx&#34;, &#34;instanceId&#34;: &#34;ocid1.vcn.oc1..yyyy&#34; } }, { &#34;parameterType&#34;: &#34;QUERY&#34;, &#34;value&#34;: { &#34;limit&#34;: &#34;10&#34;, &#34;tenantId&#34;: &#34;ocid1.tenant.oc1..zzzz&#34; } }, { &#34;parameterType&#34;: &#34;HEADER&#34;, &#34;value&#34;: { &#34;token&#34;: &#34;xxxx&#34; } } ] }
+     * 
+     */
+    public Optional<Output<List<ScheduleResourceParameterArgs>>> parameters() {
+        return Optional.ofNullable(this.parameters);
+    }
+
     private ScheduleResourceArgs() {}
 
     private ScheduleResourceArgs(ScheduleResourceArgs $) {
         this.id = $.id;
         this.metadata = $.metadata;
+        this.parameters = $.parameters;
     }
 
     public static Builder builder() {
@@ -100,6 +124,7 @@ public final class ScheduleResourceArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param metadata (Updatable) This is additional information that helps to identity the resource for the schedule.
          * 
+         * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
          * { &#34;id&#34;: &#34;&lt;OCID_of_bucket&gt;&#34; &#34;metadata&#34;: { &#34;namespaceName&#34;: &#34;sampleNamespace&#34;, &#34;bucketName&#34;: &#34;sampleBucket&#34; } }
          * 
          * @return builder
@@ -113,6 +138,7 @@ public final class ScheduleResourceArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param metadata (Updatable) This is additional information that helps to identity the resource for the schedule.
          * 
+         * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
          * { &#34;id&#34;: &#34;&lt;OCID_of_bucket&gt;&#34; &#34;metadata&#34;: { &#34;namespaceName&#34;: &#34;sampleNamespace&#34;, &#34;bucketName&#34;: &#34;sampleBucket&#34; } }
          * 
          * @return builder
@@ -120,6 +146,43 @@ public final class ScheduleResourceArgs extends com.pulumi.resources.ResourceArg
          */
         public Builder metadata(Map<String,String> metadata) {
             return metadata(Output.of(metadata));
+        }
+
+        /**
+         * @param parameters (Updatable) This is the user input parameters to use when acting on the resource.
+         * 
+         * { &#34;parameters&#34;: [ { &#34;parameterType&#34;: &#34;BODY&#34;, &#34;value&#34;: { &#34;ip&#34;: &#34;192.168.44.44&#34;, &#34;memory&#34;: &#34;1024&#34;, &#34;synced_folders&#34;: [ { &#34;host_path&#34;: &#34;data/&#34;, &#34;guest_path&#34;: &#34;/var/www&#34;, &#34;type&#34;: &#34;default&#34; } ], &#34;forwarded_ports&#34;: [] } }, { &#34;parameterType&#34;: &#34;PATH&#34;, &#34;value&#34;: { &#34;compartmentId&#34;: &#34;ocid1.compartment.oc1..xxxxx&#34;, &#34;instanceId&#34;: &#34;ocid1.vcn.oc1..yyyy&#34; } }, { &#34;parameterType&#34;: &#34;QUERY&#34;, &#34;value&#34;: { &#34;limit&#34;: &#34;10&#34;, &#34;tenantId&#34;: &#34;ocid1.tenant.oc1..zzzz&#34; } }, { &#34;parameterType&#34;: &#34;HEADER&#34;, &#34;value&#34;: { &#34;token&#34;: &#34;xxxx&#34; } } ] }
+         * 
+         * @return builder
+         * 
+         */
+        public Builder parameters(@Nullable Output<List<ScheduleResourceParameterArgs>> parameters) {
+            $.parameters = parameters;
+            return this;
+        }
+
+        /**
+         * @param parameters (Updatable) This is the user input parameters to use when acting on the resource.
+         * 
+         * { &#34;parameters&#34;: [ { &#34;parameterType&#34;: &#34;BODY&#34;, &#34;value&#34;: { &#34;ip&#34;: &#34;192.168.44.44&#34;, &#34;memory&#34;: &#34;1024&#34;, &#34;synced_folders&#34;: [ { &#34;host_path&#34;: &#34;data/&#34;, &#34;guest_path&#34;: &#34;/var/www&#34;, &#34;type&#34;: &#34;default&#34; } ], &#34;forwarded_ports&#34;: [] } }, { &#34;parameterType&#34;: &#34;PATH&#34;, &#34;value&#34;: { &#34;compartmentId&#34;: &#34;ocid1.compartment.oc1..xxxxx&#34;, &#34;instanceId&#34;: &#34;ocid1.vcn.oc1..yyyy&#34; } }, { &#34;parameterType&#34;: &#34;QUERY&#34;, &#34;value&#34;: { &#34;limit&#34;: &#34;10&#34;, &#34;tenantId&#34;: &#34;ocid1.tenant.oc1..zzzz&#34; } }, { &#34;parameterType&#34;: &#34;HEADER&#34;, &#34;value&#34;: { &#34;token&#34;: &#34;xxxx&#34; } } ] }
+         * 
+         * @return builder
+         * 
+         */
+        public Builder parameters(List<ScheduleResourceParameterArgs> parameters) {
+            return parameters(Output.of(parameters));
+        }
+
+        /**
+         * @param parameters (Updatable) This is the user input parameters to use when acting on the resource.
+         * 
+         * { &#34;parameters&#34;: [ { &#34;parameterType&#34;: &#34;BODY&#34;, &#34;value&#34;: { &#34;ip&#34;: &#34;192.168.44.44&#34;, &#34;memory&#34;: &#34;1024&#34;, &#34;synced_folders&#34;: [ { &#34;host_path&#34;: &#34;data/&#34;, &#34;guest_path&#34;: &#34;/var/www&#34;, &#34;type&#34;: &#34;default&#34; } ], &#34;forwarded_ports&#34;: [] } }, { &#34;parameterType&#34;: &#34;PATH&#34;, &#34;value&#34;: { &#34;compartmentId&#34;: &#34;ocid1.compartment.oc1..xxxxx&#34;, &#34;instanceId&#34;: &#34;ocid1.vcn.oc1..yyyy&#34; } }, { &#34;parameterType&#34;: &#34;QUERY&#34;, &#34;value&#34;: { &#34;limit&#34;: &#34;10&#34;, &#34;tenantId&#34;: &#34;ocid1.tenant.oc1..zzzz&#34; } }, { &#34;parameterType&#34;: &#34;HEADER&#34;, &#34;value&#34;: { &#34;token&#34;: &#34;xxxx&#34; } } ] }
+         * 
+         * @return builder
+         * 
+         */
+        public Builder parameters(ScheduleResourceParameterArgs... parameters) {
+            return parameters(List.of(parameters));
         }
 
         public ScheduleResourceArgs build() {

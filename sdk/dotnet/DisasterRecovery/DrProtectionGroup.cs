@@ -14,6 +14,237 @@ namespace Pulumi.Oci.DisasterRecovery
     /// 
     /// Create a DR protection group.
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var config = new Config();
+    ///     var disassociateTrigger = config.GetDouble("disassociateTrigger") ?? 0;
+    ///     var testDrProtectionGroup = new Oci.DisasterRecovery.DrProtectionGroup("test_dr_protection_group", new()
+    ///     {
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = drProtectionGroupDisplayName,
+    ///         LogLocation = new Oci.DisasterRecovery.Inputs.DrProtectionGroupLogLocationArgs
+    ///         {
+    ///             Bucket = drProtectionGroupLogLocationBucket,
+    ///             Namespace = drProtectionGroupLogLocationNamespace,
+    ///         },
+    ///         Association = new Oci.DisasterRecovery.Inputs.DrProtectionGroupAssociationArgs
+    ///         {
+    ///             Role = drProtectionGroupAssociationRole,
+    ///             PeerId = drProtectionGroupAssociationPeerId,
+    ///             PeerRegion = drProtectionGroupAssociationPeerRegion,
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         DisassociateTrigger = disassociateTrigger,
+    ///         Members = new[]
+    ///         {
+    ///             new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberArgs
+    ///             {
+    ///                 MemberId = drProtectionGroupMembersMemberId,
+    ///                 MemberType = drProtectionGroupMembersMemberType,
+    ///                 AutonomousDatabaseStandbyTypeForDrDrills = drProtectionGroupMembersAutonomousDatabaseStandbyTypeForDrDrills,
+    ///                 BackendSetMappings = new[]
+    ///                 {
+    ///                     new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberBackendSetMappingArgs
+    ///                     {
+    ///                         DestinationBackendSetName = testBackendSet.Name,
+    ///                         IsBackendSetForNonMovable = drProtectionGroupMembersBackendSetMappingsIsBackendSetForNonMovable,
+    ///                         SourceBackendSetName = testBackendSet.Name,
+    ///                     },
+    ///                 },
+    ///                 BackupConfig = new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberBackupConfigArgs
+    ///                 {
+    ///                     BackupSchedule = drProtectionGroupMembersBackupConfigBackupSchedule,
+    ///                     ImageReplicationVaultSecretId = testSecret.Id,
+    ///                     MaxNumberOfBackupsRetained = drProtectionGroupMembersBackupConfigMaxNumberOfBackupsRetained,
+    ///                     Namespaces = drProtectionGroupMembersBackupConfigNamespaces,
+    ///                     ReplicateImages = drProtectionGroupMembersBackupConfigReplicateImages,
+    ///                 },
+    ///                 BackupLocation = new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberBackupLocationArgs
+    ///                 {
+    ///                     Bucket = drProtectionGroupMembersBackupLocationBucket,
+    ///                     Namespace = drProtectionGroupMembersBackupLocationNamespace,
+    ///                 },
+    ///                 BlockVolumeAttachAndMountOperations = new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsArgs
+    ///                 {
+    ///                     Attachments = new[]
+    ///                     {
+    ///                         new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArgs
+    ///                         {
+    ///                             BlockVolumeId = testVolume.Id,
+    ///                             VolumeAttachmentReferenceInstanceId = testInstance.Id,
+    ///                         },
+    ///                     },
+    ///                     Mounts = new[]
+    ///                     {
+    ///                         new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArgs
+    ///                         {
+    ///                             MountPoint = drProtectionGroupMembersBlockVolumeAttachAndMountOperationsMountsMountPoint,
+    ///                         },
+    ///                     },
+    ///                 },
+    ///                 BlockVolumeOperations = new[]
+    ///                 {
+    ///                     new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberBlockVolumeOperationArgs
+    ///                     {
+    ///                         AttachmentDetails = new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs
+    ///                         {
+    ///                             VolumeAttachmentReferenceInstanceId = testInstance.Id,
+    ///                         },
+    ///                         BlockVolumeId = testVolume.Id,
+    ///                         MountDetails = new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs
+    ///                         {
+    ///                             MountPoint = drProtectionGroupMembersBlockVolumeOperationsMountDetailsMountPoint,
+    ///                         },
+    ///                     },
+    ///                 },
+    ///                 Bucket = drProtectionGroupMembersBucket,
+    ///                 CommonDestinationKey = new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberCommonDestinationKeyArgs
+    ///                 {
+    ///                     EncryptionKeyId = testKey.Id,
+    ///                     VaultId = testVault.Id,
+    ///                 },
+    ///                 ConnectionStringType = drProtectionGroupMembersConnectionStringType,
+    ///                 DestinationAvailabilityDomain = drProtectionGroupMembersDestinationAvailabilityDomain,
+    ///                 DestinationBackupPolicyId = testPolicy.Id,
+    ///                 DestinationCapacityReservationId = destinationCapacityReservationId,
+    ///                 DestinationCompartmentId = testCompartment.Id,
+    ///                 DestinationDedicatedVmHostId = testDedicatedVmHost.Id,
+    ///                 DestinationEncryptionKey = new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberDestinationEncryptionKeyArgs
+    ///                 {
+    ///                     EncryptionKeyId = testKey.Id,
+    ///                     VaultId = testVault.Id,
+    ///                 },
+    ///                 DestinationLoadBalancerId = testLoadBalancer.Id,
+    ///                 DestinationNetworkLoadBalancerId = testNetworkLoadBalancer.Id,
+    ///                 DestinationSnapshotPolicyId = testPolicy.Id,
+    ///                 ExportMappings = new[]
+    ///                 {
+    ///                     new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberExportMappingArgs
+    ///                     {
+    ///                         DestinationMountTargetId = testMountTarget.Id,
+    ///                         ExportId = testExport.Id,
+    ///                     },
+    ///                 },
+    ///                 FileSystemOperations = new[]
+    ///                 {
+    ///                     new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberFileSystemOperationArgs
+    ///                     {
+    ///                         ExportPath = drProtectionGroupMembersFileSystemOperationsExportPath,
+    ///                         MountDetails = new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberFileSystemOperationMountDetailsArgs
+    ///                         {
+    ///                             MountTargetId = testMountTarget.Id,
+    ///                         },
+    ///                         MountPoint = drProtectionGroupMembersFileSystemOperationsMountPoint,
+    ///                         MountTargetId = testMountTarget.Id,
+    ///                         UnmountDetails = new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs
+    ///                         {
+    ///                             MountTargetId = testMountTarget.Id,
+    ///                         },
+    ///                     },
+    ///                 },
+    ///                 IsMovable = drProtectionGroupMembersIsMovable,
+    ///                 IsRetainFaultDomain = drProtectionGroupMembersIsRetainFaultDomain,
+    ///                 IsStartStopEnabled = drProtectionGroupMembersIsStartStopEnabled,
+    ///                 JumpHostId = testJumpHost.Id,
+    ///                 LoadBalancerMappings = new[]
+    ///                 {
+    ///                     new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberLoadBalancerMappingArgs
+    ///                     {
+    ///                         DestinationLoadBalancerId = testLoadBalancer.Id,
+    ///                         SourceLoadBalancerId = testLoadBalancer.Id,
+    ///                     },
+    ///                 },
+    ///                 ManagedNodePoolConfigs = new[]
+    ///                 {
+    ///                     new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberManagedNodePoolConfigArgs
+    ///                     {
+    ///                         Id = drProtectionGroupMembersManagedNodePoolConfigsId,
+    ///                         Maximum = drProtectionGroupMembersManagedNodePoolConfigsMaximum,
+    ///                         Minimum = drProtectionGroupMembersManagedNodePoolConfigsMinimum,
+    ///                     },
+    ///                 },
+    ///                 Namespace = drProtectionGroupMembersNamespace,
+    ///                 PasswordVaultSecretId = passwordVaultSecretId,
+    ///                 NetworkLoadBalancerMappings = new[]
+    ///                 {
+    ///                     new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberNetworkLoadBalancerMappingArgs
+    ///                     {
+    ///                         DestinationNetworkLoadBalancerId = testNetworkLoadBalancer.Id,
+    ///                         SourceNetworkLoadBalancerId = testNetworkLoadBalancer.Id,
+    ///                     },
+    ///                 },
+    ///                 PeerClusterId = testCluster.Id,
+    ///                 SourceVolumeToDestinationEncryptionKeyMappings = new[]
+    ///                 {
+    ///                     new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs
+    ///                     {
+    ///                         DestinationEncryptionKey = new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs
+    ///                         {
+    ///                             EncryptionKeyId = testKey.Id,
+    ///                             VaultId = testVault.Id,
+    ///                         },
+    ///                         SourceVolumeId = testVolume.Id,
+    ///                     },
+    ///                 },
+    ///                 VaultMappings = new[]
+    ///                 {
+    ///                     new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberVaultMappingArgs
+    ///                     {
+    ///                         DestinationVaultId = testVault.Id,
+    ///                         SourceVaultId = testVault.Id,
+    ///                     },
+    ///                 },
+    ///                 VirtualNodePoolConfigs = new[]
+    ///                 {
+    ///                     new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberVirtualNodePoolConfigArgs
+    ///                     {
+    ///                         Id = drProtectionGroupMembersVirtualNodePoolConfigsId,
+    ///                         Maximum = drProtectionGroupMembersVirtualNodePoolConfigsMaximum,
+    ///                         Minimum = drProtectionGroupMembersVirtualNodePoolConfigsMinimum,
+    ///                     },
+    ///                 },
+    ///                 VnicMappings = new[]
+    ///                 {
+    ///                     new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberVnicMappingArgs
+    ///                     {
+    ///                         DestinationNsgIdLists = drProtectionGroupMembersVnicMappingDestinationNsgIdList,
+    ///                         DestinationPrimaryPrivateIpAddress = drProtectionGroupMembersVnicMappingDestinationPrimaryPrivateIpAddress,
+    ///                         DestinationPrimaryPrivateIpHostnameLabel = drProtectionGroupMembersVnicMappingDestinationPrimaryPrivateIpHostnameLabel,
+    ///                         DestinationSubnetId = testSubnet.Id,
+    ///                         SourceVnicId = testVnic.Id,
+    ///                     },
+    ///                     new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberVnicMappingArgs
+    ///                     {
+    ///                         DestinationNsgIdLists = drProtectionGroupMembersVnicMappingsDestinationNsgIdList,
+    ///                         DestinationPrimaryPrivateIpAddress = drProtectionGroupMembersVnicMappingsDestinationPrimaryPrivateIpAddress,
+    ///                         DestinationPrimaryPrivateIpHostnameLabel = drProtectionGroupMembersVnicMappingsDestinationPrimaryPrivateIpHostnameLabel,
+    ///                         DestinationReservedPublicIpId = testPublicIp.Id,
+    ///                         DestinationSubnetId = testSubnet.Id,
+    ///                         SourceVnicId = testVnic.Id,
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Create
     /// 
     /// Create DR Protection Group resource with a default value of `disassociate_trigger` property, e.g.

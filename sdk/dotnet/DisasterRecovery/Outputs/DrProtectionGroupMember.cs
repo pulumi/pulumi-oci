@@ -30,13 +30,21 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly Outputs.DrProtectionGroupMemberBackupLocation? BackupLocation;
         /// <summary>
-        /// (Updatable) A list of operations performed on block volumes used by the compute instance.
+        /// (Updatable) The details for creating the operations performed on a block volume.
+        /// </summary>
+        public readonly Outputs.DrProtectionGroupMemberBlockVolumeAttachAndMountOperations? BlockVolumeAttachAndMountOperations;
+        /// <summary>
+        /// (Updatable) Deprecated. Use the 'blockVolumeAttachAndMountOperations' attribute instead of this. A list of operations performed on block volumes used by the compute instance.
         /// </summary>
         public readonly ImmutableArray<Outputs.DrProtectionGroupMemberBlockVolumeOperation> BlockVolumeOperations;
         /// <summary>
         /// (Updatable) The bucket name inside the object storage namespace.  Example: `bucket_name`
         /// </summary>
         public readonly string? Bucket;
+        /// <summary>
+        /// (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
+        /// </summary>
+        public readonly Outputs.DrProtectionGroupMemberCommonDestinationKey? CommonDestinationKey;
         /// <summary>
         /// (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
         /// </summary>
@@ -45,6 +53,10 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
         /// </summary>
         public readonly string? DestinationAvailabilityDomain;
+        /// <summary>
+        /// (Updatable) The OCID of the backup policy to use in the destination region. This policy will be used to create backups  for this volume group after it moves the destination region.  Example: `ocid1.volumebackuppolicy.oc1..uniqueID`
+        /// </summary>
+        public readonly string? DestinationBackupPolicyId;
         /// <summary>
         /// (Updatable) The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
         /// </summary>
@@ -58,6 +70,10 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string? DestinationDedicatedVmHostId;
         /// <summary>
+        /// (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
+        /// </summary>
+        public readonly Outputs.DrProtectionGroupMemberDestinationEncryptionKey? DestinationEncryptionKey;
+        /// <summary>
         /// (Updatable) The OCID of the destination load balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
         /// </summary>
         public readonly string? DestinationLoadBalancerId;
@@ -65,6 +81,10 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// (Updatable) The OCID of the destination network load balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
         /// </summary>
         public readonly string? DestinationNetworkLoadBalancerId;
+        /// <summary>
+        /// (Updatable) The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.  Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
+        /// </summary>
+        public readonly string? DestinationSnapshotPolicyId;
         /// <summary>
         /// (Updatable) A list of mappings between file system exports in the primary region and mount targets in the standby region.
         /// </summary>
@@ -122,6 +142,14 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string? PeerClusterId;
         /// <summary>
+        /// (Updatable) A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
+        /// 
+        /// If you add the entry for source volumes and its corresponding vault and encryption keys here, you can not use  'commonDestinationKey' for encrypting all volumes with common encryption key. Similarly, if you specify common vault and encryption key using 'commonDestinationKey', you cannot specify vaults and encryption keys individually  for each volume using 'sourceVolumeToDestinationEncryptionKeyMappings'.
+        /// 
+        /// An entry for each volume in volume group should be added in this list. The encryption key will not be updated  for the volumes that are part of volume group but missing in this list.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping> SourceVolumeToDestinationEncryptionKeyMappings;
+        /// <summary>
         /// (Updatable) The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
         /// </summary>
         public readonly ImmutableArray<Outputs.DrProtectionGroupMemberVaultMapping> VaultMappings;
@@ -148,13 +176,19 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
 
             Outputs.DrProtectionGroupMemberBackupLocation? backupLocation,
 
+            Outputs.DrProtectionGroupMemberBlockVolumeAttachAndMountOperations? blockVolumeAttachAndMountOperations,
+
             ImmutableArray<Outputs.DrProtectionGroupMemberBlockVolumeOperation> blockVolumeOperations,
 
             string? bucket,
 
+            Outputs.DrProtectionGroupMemberCommonDestinationKey? commonDestinationKey,
+
             string? connectionStringType,
 
             string? destinationAvailabilityDomain,
+
+            string? destinationBackupPolicyId,
 
             string? destinationCapacityReservationId,
 
@@ -162,9 +196,13 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
 
             string? destinationDedicatedVmHostId,
 
+            Outputs.DrProtectionGroupMemberDestinationEncryptionKey? destinationEncryptionKey,
+
             string? destinationLoadBalancerId,
 
             string? destinationNetworkLoadBalancerId,
+
+            string? destinationSnapshotPolicyId,
 
             ImmutableArray<Outputs.DrProtectionGroupMemberExportMapping> exportMappings,
 
@@ -194,6 +232,8 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
 
             string? peerClusterId,
 
+            ImmutableArray<Outputs.DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping> sourceVolumeToDestinationEncryptionKeyMappings,
+
             ImmutableArray<Outputs.DrProtectionGroupMemberVaultMapping> vaultMappings,
 
             ImmutableArray<Outputs.DrProtectionGroupMemberVirtualNodePoolConfig> virtualNodePoolConfigs,
@@ -206,15 +246,20 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
             BackendSetMappings = backendSetMappings;
             BackupConfig = backupConfig;
             BackupLocation = backupLocation;
+            BlockVolumeAttachAndMountOperations = blockVolumeAttachAndMountOperations;
             BlockVolumeOperations = blockVolumeOperations;
             Bucket = bucket;
+            CommonDestinationKey = commonDestinationKey;
             ConnectionStringType = connectionStringType;
             DestinationAvailabilityDomain = destinationAvailabilityDomain;
+            DestinationBackupPolicyId = destinationBackupPolicyId;
             DestinationCapacityReservationId = destinationCapacityReservationId;
             DestinationCompartmentId = destinationCompartmentId;
             DestinationDedicatedVmHostId = destinationDedicatedVmHostId;
+            DestinationEncryptionKey = destinationEncryptionKey;
             DestinationLoadBalancerId = destinationLoadBalancerId;
             DestinationNetworkLoadBalancerId = destinationNetworkLoadBalancerId;
+            DestinationSnapshotPolicyId = destinationSnapshotPolicyId;
             ExportMappings = exportMappings;
             FileSystemOperations = fileSystemOperations;
             IsMovable = isMovable;
@@ -229,6 +274,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
             NetworkLoadBalancerMappings = networkLoadBalancerMappings;
             PasswordVaultSecretId = passwordVaultSecretId;
             PeerClusterId = peerClusterId;
+            SourceVolumeToDestinationEncryptionKeyMappings = sourceVolumeToDestinationEncryptionKeyMappings;
             VaultMappings = vaultMappings;
             VirtualNodePoolConfigs = virtualNodePoolConfigs;
             VnicMapping = vnicMapping;

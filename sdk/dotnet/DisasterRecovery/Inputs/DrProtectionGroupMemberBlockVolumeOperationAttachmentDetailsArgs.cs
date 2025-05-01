@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
     public sealed class DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+        /// (Updatable) The OCID of the reference compute instance needed to obtain the volume attachment details. This reference compute instance belongs to the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
         /// </summary>
         [Input("volumeAttachmentReferenceInstanceId")]
         public Input<string>? VolumeAttachmentReferenceInstanceId { get; set; }

@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -17,14 +18,29 @@ public final class NodePoolNodePoolCyclingDetailsArgs extends com.pulumi.resourc
     public static final NodePoolNodePoolCyclingDetailsArgs Empty = new NodePoolNodePoolCyclingDetailsArgs();
 
     /**
-     * (Updatable) If nodes in the nodepool will be cycled to have new changes.
+     * (Updatable) An ordered list of cycle modes that should be performed on the OKE nodes.
+     * 
+     */
+    @Import(name="cycleModes")
+    private @Nullable Output<List<String>> cycleModes;
+
+    /**
+     * @return (Updatable) An ordered list of cycle modes that should be performed on the OKE nodes.
+     * 
+     */
+    public Optional<Output<List<String>>> cycleModes() {
+        return Optional.ofNullable(this.cycleModes);
+    }
+
+    /**
+     * (Updatable) If cycling operation should be performed on the nodes in the node pool.
      * 
      */
     @Import(name="isNodeCyclingEnabled")
     private @Nullable Output<Boolean> isNodeCyclingEnabled;
 
     /**
-     * @return (Updatable) If nodes in the nodepool will be cycled to have new changes.
+     * @return (Updatable) If cycling operation should be performed on the nodes in the node pool.
      * 
      */
     public Optional<Output<Boolean>> isNodeCyclingEnabled() {
@@ -64,6 +80,7 @@ public final class NodePoolNodePoolCyclingDetailsArgs extends com.pulumi.resourc
     private NodePoolNodePoolCyclingDetailsArgs() {}
 
     private NodePoolNodePoolCyclingDetailsArgs(NodePoolNodePoolCyclingDetailsArgs $) {
+        this.cycleModes = $.cycleModes;
         this.isNodeCyclingEnabled = $.isNodeCyclingEnabled;
         this.maximumSurge = $.maximumSurge;
         this.maximumUnavailable = $.maximumUnavailable;
@@ -88,7 +105,38 @@ public final class NodePoolNodePoolCyclingDetailsArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param isNodeCyclingEnabled (Updatable) If nodes in the nodepool will be cycled to have new changes.
+         * @param cycleModes (Updatable) An ordered list of cycle modes that should be performed on the OKE nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cycleModes(@Nullable Output<List<String>> cycleModes) {
+            $.cycleModes = cycleModes;
+            return this;
+        }
+
+        /**
+         * @param cycleModes (Updatable) An ordered list of cycle modes that should be performed on the OKE nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cycleModes(List<String> cycleModes) {
+            return cycleModes(Output.of(cycleModes));
+        }
+
+        /**
+         * @param cycleModes (Updatable) An ordered list of cycle modes that should be performed on the OKE nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cycleModes(String... cycleModes) {
+            return cycleModes(List.of(cycleModes));
+        }
+
+        /**
+         * @param isNodeCyclingEnabled (Updatable) If cycling operation should be performed on the nodes in the node pool.
          * 
          * @return builder
          * 
@@ -99,7 +147,7 @@ public final class NodePoolNodePoolCyclingDetailsArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param isNodeCyclingEnabled (Updatable) If nodes in the nodepool will be cycled to have new changes.
+         * @param isNodeCyclingEnabled (Updatable) If cycling operation should be performed on the nodes in the node pool.
          * 
          * @return builder
          * 

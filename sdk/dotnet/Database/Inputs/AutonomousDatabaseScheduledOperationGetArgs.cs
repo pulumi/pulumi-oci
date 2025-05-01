@@ -15,8 +15,8 @@ namespace Pulumi.Oci.Database.Inputs
         /// <summary>
         /// (Updatable) Day of the week.
         /// </summary>
-        [Input("dayOfWeek", required: true)]
-        public Input<Inputs.AutonomousDatabaseScheduledOperationDayOfWeekGetArgs> DayOfWeek { get; set; } = null!;
+        [Input("dayOfWeek")]
+        public Input<Inputs.AutonomousDatabaseScheduledOperationDayOfWeekGetArgs>? DayOfWeek { get; set; }
 
         /// <summary>
         /// (Updatable) auto start time. value must be of ISO-8601 format "HH:mm"

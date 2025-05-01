@@ -168,6 +168,21 @@ public final class DrPlanExecutionGroupExecutionStepExecutionArgs extends com.pu
         return Optional.ofNullable(this.type);
     }
 
+    /**
+     * The display name of the DR Plan step type.  Example: `Database Switchover`
+     * 
+     */
+    @Import(name="typeDisplayName")
+    private @Nullable Output<String> typeDisplayName;
+
+    /**
+     * @return The display name of the DR Plan step type.  Example: `Database Switchover`
+     * 
+     */
+    public Optional<Output<String>> typeDisplayName() {
+        return Optional.ofNullable(this.typeDisplayName);
+    }
+
     private DrPlanExecutionGroupExecutionStepExecutionArgs() {}
 
     private DrPlanExecutionGroupExecutionStepExecutionArgs(DrPlanExecutionGroupExecutionStepExecutionArgs $) {
@@ -181,6 +196,7 @@ public final class DrPlanExecutionGroupExecutionStepExecutionArgs extends com.pu
         this.timeEnded = $.timeEnded;
         this.timeStarted = $.timeStarted;
         this.type = $.type;
+        this.typeDisplayName = $.typeDisplayName;
     }
 
     public static Builder builder() {
@@ -419,6 +435,27 @@ public final class DrPlanExecutionGroupExecutionStepExecutionArgs extends com.pu
          */
         public Builder type(String type) {
             return type(Output.of(type));
+        }
+
+        /**
+         * @param typeDisplayName The display name of the DR Plan step type.  Example: `Database Switchover`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder typeDisplayName(@Nullable Output<String> typeDisplayName) {
+            $.typeDisplayName = typeDisplayName;
+            return this;
+        }
+
+        /**
+         * @param typeDisplayName The display name of the DR Plan step type.  Example: `Database Switchover`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder typeDisplayName(String typeDisplayName) {
+            return typeDisplayName(Output.of(typeDisplayName));
         }
 
         public DrPlanExecutionGroupExecutionStepExecutionArgs build() {

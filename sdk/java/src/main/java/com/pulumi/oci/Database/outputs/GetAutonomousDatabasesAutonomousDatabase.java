@@ -217,6 +217,11 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private String displayName;
     /**
+     * @return If omitted or set to false the provider will not delete scheduled_operations from the Autonomous Database. If set to true, provider will delete scheduled_operations from the Autonomous Database.
+     * 
+     */
+    private Boolean enableDeleteScheduledOperations;
+    /**
      * @return Key History Entry.
      * 
      */
@@ -978,6 +983,13 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.displayName;
     }
     /**
+     * @return If omitted or set to false the provider will not delete scheduled_operations from the Autonomous Database. If set to true, provider will delete scheduled_operations from the Autonomous Database.
+     * 
+     */
+    public Boolean enableDeleteScheduledOperations() {
+        return this.enableDeleteScheduledOperations;
+    }
+    /**
      * @return Key History Entry.
      * 
      */
@@ -1734,6 +1746,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         private String disasterRecoveryRegionType;
         private String disasterRecoveryType;
         private String displayName;
+        private Boolean enableDeleteScheduledOperations;
         private List<GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntry> encryptionKeyHistoryEntries;
         private List<GetAutonomousDatabasesAutonomousDatabaseEncryptionKey> encryptionKeys;
         private Integer failedDataRecoveryInSeconds;
@@ -1885,6 +1898,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     	      this.disasterRecoveryRegionType = defaults.disasterRecoveryRegionType;
     	      this.disasterRecoveryType = defaults.disasterRecoveryType;
     	      this.displayName = defaults.displayName;
+    	      this.enableDeleteScheduledOperations = defaults.enableDeleteScheduledOperations;
     	      this.encryptionKeyHistoryEntries = defaults.encryptionKeyHistoryEntries;
     	      this.encryptionKeys = defaults.encryptionKeys;
     	      this.failedDataRecoveryInSeconds = defaults.failedDataRecoveryInSeconds;
@@ -2344,6 +2358,14 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "displayName");
             }
             this.displayName = displayName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder enableDeleteScheduledOperations(Boolean enableDeleteScheduledOperations) {
+            if (enableDeleteScheduledOperations == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "enableDeleteScheduledOperations");
+            }
+            this.enableDeleteScheduledOperations = enableDeleteScheduledOperations;
             return this;
         }
         @CustomType.Setter
@@ -3293,6 +3315,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             _resultValue.disasterRecoveryRegionType = disasterRecoveryRegionType;
             _resultValue.disasterRecoveryType = disasterRecoveryType;
             _resultValue.displayName = displayName;
+            _resultValue.enableDeleteScheduledOperations = enableDeleteScheduledOperations;
             _resultValue.encryptionKeyHistoryEntries = encryptionKeyHistoryEntries;
             _resultValue.encryptionKeys = encryptionKeys;
             _resultValue.failedDataRecoveryInSeconds = failedDataRecoveryInSeconds;

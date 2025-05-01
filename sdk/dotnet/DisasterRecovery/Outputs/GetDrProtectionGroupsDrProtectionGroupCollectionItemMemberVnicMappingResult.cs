@@ -26,6 +26,10 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string DestinationPrimaryPrivateIpHostnameLabel;
         /// <summary>
+        /// The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+        /// </summary>
+        public readonly string DestinationReservedPublicIpId;
+        /// <summary>
         /// The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
         /// </summary>
         public readonly string DestinationSubnetId;
@@ -42,6 +46,8 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
 
             string destinationPrimaryPrivateIpHostnameLabel,
 
+            string destinationReservedPublicIpId,
+
             string destinationSubnetId,
 
             string sourceVnicId)
@@ -49,6 +55,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
             DestinationNsgIdLists = destinationNsgIdLists;
             DestinationPrimaryPrivateIpAddress = destinationPrimaryPrivateIpAddress;
             DestinationPrimaryPrivateIpHostnameLabel = destinationPrimaryPrivateIpHostnameLabel;
+            DestinationReservedPublicIpId = destinationReservedPublicIpId;
             DestinationSubnetId = destinationSubnetId;
             SourceVnicId = sourceVnicId;
         }

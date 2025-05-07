@@ -446,10 +446,8 @@ class _PrivateEndpointState:
         pulumi.set(self, "vcn_id", value)
 
 
+@pulumi.type_token("oci:GloballyDistributedDatabase/privateEndpoint:PrivateEndpoint")
 class PrivateEndpoint(pulumi.CustomResource):
-
-    pulumi_type = "oci:GloballyDistributedDatabase/privateEndpoint:PrivateEndpoint"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

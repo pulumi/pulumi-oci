@@ -444,10 +444,8 @@ class _BackendSetState:
         pulumi.set(self, "state", value)
 
 
+@pulumi.type_token("oci:LoadBalancer/backendSet:BackendSet")
 class BackendSet(pulumi.CustomResource):
-
-    pulumi_type = "oci:LoadBalancer/backendSet:BackendSet"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

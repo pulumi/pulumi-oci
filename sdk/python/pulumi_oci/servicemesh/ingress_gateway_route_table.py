@@ -368,10 +368,8 @@ class _IngressGatewayRouteTableState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:ServiceMesh/ingressGatewayRouteTable:IngressGatewayRouteTable")
 class IngressGatewayRouteTable(pulumi.CustomResource):
-
-    pulumi_type = "oci:ServiceMesh/ingressGatewayRouteTable:IngressGatewayRouteTable"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

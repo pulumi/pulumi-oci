@@ -144,10 +144,8 @@ class _CustomTableState:
         pulumi.set(self, "saved_report_id", value)
 
 
+@pulumi.type_token("oci:MeteringComputation/customTable:CustomTable")
 class CustomTable(pulumi.CustomResource):
-
-    pulumi_type = "oci:MeteringComputation/customTable:CustomTable"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

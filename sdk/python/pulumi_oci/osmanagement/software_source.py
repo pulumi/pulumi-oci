@@ -560,10 +560,8 @@ class _SoftwareSourceState:
         pulumi.set(self, "url", value)
 
 
+@pulumi.type_token("oci:OsManagement/softwareSource:SoftwareSource")
 class SoftwareSource(pulumi.CustomResource):
-
-    pulumi_type = "oci:OsManagement/softwareSource:SoftwareSource"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

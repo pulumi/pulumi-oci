@@ -1808,10 +1808,8 @@ class _SddcState:
         pulumi.set(self, "workload_network_cidr", value)
 
 
+@pulumi.type_token("oci:Ocvp/sddc:Sddc")
 class Sddc(pulumi.CustomResource):
-
-    pulumi_type = "oci:Ocvp/sddc:Sddc"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

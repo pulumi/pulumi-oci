@@ -462,10 +462,8 @@ class _TargetAssetState:
         pulumi.set(self, "user_spec", value)
 
 
+@pulumi.type_token("oci:CloudMigrations/targetAsset:TargetAsset")
 class TargetAsset(pulumi.CustomResource):
-
-    pulumi_type = "oci:CloudMigrations/targetAsset:TargetAsset"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

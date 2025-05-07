@@ -523,10 +523,8 @@ class _QueueState:
         pulumi.set(self, "visibility_in_seconds", value)
 
 
+@pulumi.type_token("oci:Queue/queue:Queue")
 class Queue(pulumi.CustomResource):
-
-    pulumi_type = "oci:Queue/queue:Queue"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

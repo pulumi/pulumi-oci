@@ -79,10 +79,8 @@ class _MaskingPoliciesApplyDifferenceToMaskingColumnsState:
         pulumi.set(self, "sdm_masking_policy_difference_id", value)
 
 
+@pulumi.type_token("oci:DataSafe/maskingPoliciesApplyDifferenceToMaskingColumns:MaskingPoliciesApplyDifferenceToMaskingColumns")
 class MaskingPoliciesApplyDifferenceToMaskingColumns(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataSafe/maskingPoliciesApplyDifferenceToMaskingColumns:MaskingPoliciesApplyDifferenceToMaskingColumns"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

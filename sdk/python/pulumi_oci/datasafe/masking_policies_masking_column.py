@@ -447,10 +447,8 @@ class _MaskingPoliciesMaskingColumnState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:DataSafe/maskingPoliciesMaskingColumn:MaskingPoliciesMaskingColumn")
 class MaskingPoliciesMaskingColumn(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataSafe/maskingPoliciesMaskingColumn:MaskingPoliciesMaskingColumn"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -473,10 +473,8 @@ class _NamespaceScheduledTaskState:
         pulumi.set(self, "work_request_id", value)
 
 
+@pulumi.type_token("oci:LogAnalytics/namespaceScheduledTask:NamespaceScheduledTask")
 class NamespaceScheduledTask(pulumi.CustomResource):
-
-    pulumi_type = "oci:LogAnalytics/namespaceScheduledTask:NamespaceScheduledTask"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

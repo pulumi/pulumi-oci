@@ -303,10 +303,8 @@ class _ApmDomainState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Apm/apmDomain:ApmDomain")
 class ApmDomain(pulumi.CustomResource):
-
-    pulumi_type = "oci:Apm/apmDomain:ApmDomain"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

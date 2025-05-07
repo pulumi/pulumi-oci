@@ -335,10 +335,8 @@ class _ModelVersionSetState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:DataScience/modelVersionSet:ModelVersionSet")
 class ModelVersionSet(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataScience/modelVersionSet:ModelVersionSet"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

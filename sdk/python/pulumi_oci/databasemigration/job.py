@@ -370,10 +370,8 @@ class _JobState:
         pulumi.set(self, "unsupported_objects", value)
 
 
+@pulumi.type_token("oci:DatabaseMigration/job:Job")
 class Job(pulumi.CustomResource):
-
-    pulumi_type = "oci:DatabaseMigration/job:Job"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

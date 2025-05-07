@@ -655,10 +655,8 @@ class _AnalyticsInstanceState:
         pulumi.set(self, "update_channel", value)
 
 
+@pulumi.type_token("oci:Analytics/analyticsInstance:AnalyticsInstance")
 class AnalyticsInstance(pulumi.CustomResource):
-
-    pulumi_type = "oci:Analytics/analyticsInstance:AnalyticsInstance"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

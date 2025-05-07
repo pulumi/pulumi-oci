@@ -322,10 +322,8 @@ class _ManagedInstanceManagementState:
         pulumi.set(self, "updates_available", value)
 
 
+@pulumi.type_token("oci:OsManagement/managedInstanceManagement:ManagedInstanceManagement")
 class ManagedInstanceManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:OsManagement/managedInstanceManagement:ManagedInstanceManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -341,10 +341,8 @@ class _WlpAgentState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:CloudGuard/wlpAgent:WlpAgent")
 class WlpAgent(pulumi.CustomResource):
-
-    pulumi_type = "oci:CloudGuard/wlpAgent:WlpAgent"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

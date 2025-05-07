@@ -338,10 +338,8 @@ class _BuildPipelineState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:DevOps/buildPipeline:BuildPipeline")
 class BuildPipeline(pulumi.CustomResource):
-
-    pulumi_type = "oci:DevOps/buildPipeline:BuildPipeline"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

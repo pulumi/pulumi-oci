@@ -456,10 +456,8 @@ class _SteeringPolicyState:
         pulumi.set(self, "ttl", value)
 
 
+@pulumi.type_token("oci:Dns/steeringPolicy:SteeringPolicy")
 class SteeringPolicy(pulumi.CustomResource):
-
-    pulumi_type = "oci:Dns/steeringPolicy:SteeringPolicy"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

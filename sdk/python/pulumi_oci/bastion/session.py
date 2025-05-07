@@ -352,10 +352,8 @@ class _SessionState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Bastion/session:Session")
 class Session(pulumi.CustomResource):
-
-    pulumi_type = "oci:Bastion/session:Session"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

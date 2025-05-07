@@ -143,10 +143,8 @@ class _SoftwareSourceAddPackagesManagementState:
         pulumi.set(self, "software_source_id", value)
 
 
+@pulumi.type_token("oci:OsManagementHub/softwareSourceAddPackagesManagement:SoftwareSourceAddPackagesManagement")
 class SoftwareSourceAddPackagesManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:OsManagementHub/softwareSourceAddPackagesManagement:SoftwareSourceAddPackagesManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

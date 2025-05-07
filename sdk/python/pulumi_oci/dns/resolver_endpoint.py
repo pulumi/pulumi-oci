@@ -445,10 +445,8 @@ class _ResolverEndpointState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Dns/resolverEndpoint:ResolverEndpoint")
 class ResolverEndpoint(pulumi.CustomResource):
-
-    pulumi_type = "oci:Dns/resolverEndpoint:ResolverEndpoint"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

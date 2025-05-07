@@ -593,10 +593,8 @@ class _AuditTrailManagementState:
         pulumi.set(self, "work_request_id", value)
 
 
+@pulumi.type_token("oci:DataSafe/auditTrailManagement:AuditTrailManagement")
 class AuditTrailManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataSafe/auditTrailManagement:AuditTrailManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -176,10 +176,8 @@ class _AutonomousDatabaseInstanceWalletManagementState:
         pulumi.set(self, "time_rotated", value)
 
 
+@pulumi.type_token("oci:Database/autonomousDatabaseInstanceWalletManagement:AutonomousDatabaseInstanceWalletManagement")
 class AutonomousDatabaseInstanceWalletManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/autonomousDatabaseInstanceWalletManagement:AutonomousDatabaseInstanceWalletManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

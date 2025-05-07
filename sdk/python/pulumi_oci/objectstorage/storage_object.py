@@ -612,10 +612,8 @@ class _StorageObjectState:
         pulumi.set(self, "work_request_id", value)
 
 
+@pulumi.type_token("oci:ObjectStorage/storageObject:StorageObject")
 class StorageObject(pulumi.CustomResource):
-
-    pulumi_type = "oci:ObjectStorage/storageObject:StorageObject"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

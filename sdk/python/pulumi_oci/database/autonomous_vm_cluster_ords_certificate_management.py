@@ -207,10 +207,8 @@ class _AutonomousVmClusterOrdsCertificateManagementState:
         pulumi.set(self, "certificate_id", value)
 
 
+@pulumi.type_token("oci:Database/autonomousVmClusterOrdsCertificateManagement:AutonomousVmClusterOrdsCertificateManagement")
 class AutonomousVmClusterOrdsCertificateManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/autonomousVmClusterOrdsCertificateManagement:AutonomousVmClusterOrdsCertificateManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

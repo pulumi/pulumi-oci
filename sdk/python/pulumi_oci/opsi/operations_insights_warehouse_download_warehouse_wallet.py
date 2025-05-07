@@ -111,10 +111,8 @@ class _OperationsInsightsWarehouseDownloadWarehouseWalletState:
         pulumi.set(self, "operations_insights_warehouse_wallet_password", value)
 
 
+@pulumi.type_token("oci:Opsi/operationsInsightsWarehouseDownloadWarehouseWallet:OperationsInsightsWarehouseDownloadWarehouseWallet")
 class OperationsInsightsWarehouseDownloadWarehouseWallet(pulumi.CustomResource):
-
-    pulumi_type = "oci:Opsi/operationsInsightsWarehouseDownloadWarehouseWallet:OperationsInsightsWarehouseDownloadWarehouseWallet"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

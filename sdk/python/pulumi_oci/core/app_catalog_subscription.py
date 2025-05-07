@@ -347,10 +347,8 @@ class _AppCatalogSubscriptionState:
         pulumi.set(self, "time_retrieved", value)
 
 
+@pulumi.type_token("oci:Core/appCatalogSubscription:AppCatalogSubscription")
 class AppCatalogSubscription(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/appCatalogSubscription:AppCatalogSubscription"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -584,10 +584,8 @@ class _PipelineRunState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:DataScience/pipelineRun:PipelineRun")
 class PipelineRun(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataScience/pipelineRun:PipelineRun"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

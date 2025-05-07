@@ -1230,10 +1230,8 @@ class _AutonomousContainerDatabaseAddStandbyState:
         pulumi.set(self, "vm_failover_reservation", value)
 
 
+@pulumi.type_token("oci:Database/autonomousContainerDatabaseAddStandby:AutonomousContainerDatabaseAddStandby")
 class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/autonomousContainerDatabaseAddStandby:AutonomousContainerDatabaseAddStandby"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

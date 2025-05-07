@@ -332,10 +332,8 @@ class _BdsInstanceMetastoreConfigState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:BigDataService/bdsInstanceMetastoreConfig:BdsInstanceMetastoreConfig")
 class BdsInstanceMetastoreConfig(pulumi.CustomResource):
-
-    pulumi_type = "oci:BigDataService/bdsInstanceMetastoreConfig:BdsInstanceMetastoreConfig"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

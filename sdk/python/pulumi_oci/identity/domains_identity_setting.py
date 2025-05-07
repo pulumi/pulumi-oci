@@ -1432,10 +1432,8 @@ class _DomainsIdentitySettingState:
         pulumi.set(self, "user_allowed_to_set_recovery_email", value)
 
 
+@pulumi.type_token("oci:Identity/domainsIdentitySetting:DomainsIdentitySetting")
 class DomainsIdentitySetting(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/domainsIdentitySetting:DomainsIdentitySetting"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -226,10 +226,8 @@ class _DefaultSecurityListState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Core/defaultSecurityList:DefaultSecurityList")
 class DefaultSecurityList(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/defaultSecurityList:DefaultSecurityList"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

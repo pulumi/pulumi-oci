@@ -286,10 +286,8 @@ class _PingProbeState:
         pulumi.set(self, "vantage_point_names", value)
 
 
+@pulumi.type_token("oci:HealthChecks/pingProbe:PingProbe")
 class PingProbe(pulumi.CustomResource):
-
-    pulumi_type = "oci:HealthChecks/pingProbe:PingProbe"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

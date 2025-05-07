@@ -130,10 +130,8 @@ class _LifecycleStageRebootManagementState:
         pulumi.set(self, "work_request_details", value)
 
 
+@pulumi.type_token("oci:OsManagementHub/lifecycleStageRebootManagement:LifecycleStageRebootManagement")
 class LifecycleStageRebootManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:OsManagementHub/lifecycleStageRebootManagement:LifecycleStageRebootManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

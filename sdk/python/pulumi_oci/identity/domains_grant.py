@@ -1289,10 +1289,8 @@ class _DomainsGrantState:
         pulumi.set(self, "tenancy_ocid", value)
 
 
+@pulumi.type_token("oci:Identity/domainsGrant:DomainsGrant")
 class DomainsGrant(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/domainsGrant:DomainsGrant"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

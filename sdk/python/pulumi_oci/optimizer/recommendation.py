@@ -361,10 +361,8 @@ class _RecommendationState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Optimizer/recommendation:Recommendation")
 class Recommendation(pulumi.CustomResource):
-
-    pulumi_type = "oci:Optimizer/recommendation:Recommendation"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

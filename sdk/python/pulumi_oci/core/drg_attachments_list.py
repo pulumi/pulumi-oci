@@ -162,10 +162,8 @@ class _DrgAttachmentsListState:
         pulumi.set(self, "is_cross_tenancy", value)
 
 
+@pulumi.type_token("oci:Core/drgAttachmentsList:DrgAttachmentsList")
 class DrgAttachmentsList(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/drgAttachmentsList:DrgAttachmentsList"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -605,10 +605,8 @@ class _SensitiveDataModelsSensitiveColumnState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:DataSafe/sensitiveDataModelsSensitiveColumn:SensitiveDataModelsSensitiveColumn")
 class SensitiveDataModelsSensitiveColumn(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataSafe/sensitiveDataModelsSensitiveColumn:SensitiveDataModelsSensitiveColumn"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -407,10 +407,8 @@ class _StreamPackagingConfigState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:MediaServices/streamPackagingConfig:StreamPackagingConfig")
 class StreamPackagingConfig(pulumi.CustomResource):
-
-    pulumi_type = "oci:MediaServices/streamPackagingConfig:StreamPackagingConfig"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

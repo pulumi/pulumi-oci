@@ -624,10 +624,8 @@ class _LogAnalyticsEntityState:
         pulumi.set(self, "timezone_region", value)
 
 
+@pulumi.type_token("oci:LogAnalytics/logAnalyticsEntity:LogAnalyticsEntity")
 class LogAnalyticsEntity(pulumi.CustomResource):
-
-    pulumi_type = "oci:LogAnalytics/logAnalyticsEntity:LogAnalyticsEntity"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

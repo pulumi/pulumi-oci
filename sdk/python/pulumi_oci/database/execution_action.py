@@ -433,10 +433,8 @@ class _ExecutionActionState:
         pulumi.set(self, "total_time_taken_in_mins", value)
 
 
+@pulumi.type_token("oci:Database/executionAction:ExecutionAction")
 class ExecutionAction(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/executionAction:ExecutionAction"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

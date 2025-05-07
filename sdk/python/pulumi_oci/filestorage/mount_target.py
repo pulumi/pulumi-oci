@@ -696,10 +696,8 @@ class _MountTargetState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:FileStorage/mountTarget:MountTarget")
 class MountTarget(pulumi.CustomResource):
-
-    pulumi_type = "oci:FileStorage/mountTarget:MountTarget"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

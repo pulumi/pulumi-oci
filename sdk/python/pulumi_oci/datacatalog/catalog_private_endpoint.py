@@ -352,10 +352,8 @@ class _CatalogPrivateEndpointState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:DataCatalog/catalogPrivateEndpoint:CatalogPrivateEndpoint")
 class CatalogPrivateEndpoint(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataCatalog/catalogPrivateEndpoint:CatalogPrivateEndpoint"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

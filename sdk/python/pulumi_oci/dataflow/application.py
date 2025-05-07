@@ -1048,10 +1048,8 @@ class _ApplicationState:
         pulumi.set(self, "warehouse_bucket_uri", value)
 
 
+@pulumi.type_token("oci:DataFlow/application:Application")
 class Application(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataFlow/application:Application"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

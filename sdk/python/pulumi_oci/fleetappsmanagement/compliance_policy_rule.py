@@ -446,10 +446,8 @@ class _CompliancePolicyRuleState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:FleetAppsManagement/compliancePolicyRule:CompliancePolicyRule")
 class CompliancePolicyRule(pulumi.CustomResource):
-
-    pulumi_type = "oci:FleetAppsManagement/compliancePolicyRule:CompliancePolicyRule"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

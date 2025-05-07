@@ -159,10 +159,8 @@ class _RepositoryProtectedBranchManagementState:
         pulumi.set(self, "repository_id", value)
 
 
+@pulumi.type_token("oci:DevOps/repositoryProtectedBranchManagement:RepositoryProtectedBranchManagement")
 class RepositoryProtectedBranchManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:DevOps/repositoryProtectedBranchManagement:RepositoryProtectedBranchManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

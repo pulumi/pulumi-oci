@@ -446,10 +446,8 @@ class _ExternalExadataStorageConnectorState:
         pulumi.set(self, "version", value)
 
 
+@pulumi.type_token("oci:DatabaseManagement/externalExadataStorageConnector:ExternalExadataStorageConnector")
 class ExternalExadataStorageConnector(pulumi.CustomResource):
-
-    pulumi_type = "oci:DatabaseManagement/externalExadataStorageConnector:ExternalExadataStorageConnector"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -111,10 +111,8 @@ class _ManagementStationSynchronizeMirrorsManagementState:
         pulumi.set(self, "software_source_lists", value)
 
 
+@pulumi.type_token("oci:OsManagementHub/managementStationSynchronizeMirrorsManagement:ManagementStationSynchronizeMirrorsManagement")
 class ManagementStationSynchronizeMirrorsManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:OsManagementHub/managementStationSynchronizeMirrorsManagement:ManagementStationSynchronizeMirrorsManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -384,10 +384,8 @@ class _LogState:
         pulumi.set(self, "time_last_modified", value)
 
 
+@pulumi.type_token("oci:Logging/log:Log")
 class Log(pulumi.CustomResource):
-
-    pulumi_type = "oci:Logging/log:Log"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

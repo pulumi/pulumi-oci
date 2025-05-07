@@ -609,10 +609,8 @@ class _BucketState:
         pulumi.set(self, "versioning", value)
 
 
+@pulumi.type_token("oci:ObjectStorage/bucket:Bucket")
 class Bucket(pulumi.CustomResource):
-
-    pulumi_type = "oci:ObjectStorage/bucket:Bucket"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

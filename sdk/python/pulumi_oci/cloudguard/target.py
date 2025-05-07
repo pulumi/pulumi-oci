@@ -487,10 +487,8 @@ class _TargetState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:CloudGuard/target:Target")
 class Target(pulumi.CustomResource):
-
-    pulumi_type = "oci:CloudGuard/target:Target"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

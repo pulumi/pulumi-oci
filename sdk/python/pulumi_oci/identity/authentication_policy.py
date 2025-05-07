@@ -130,10 +130,8 @@ class _AuthenticationPolicyState:
         pulumi.set(self, "password_policy", value)
 
 
+@pulumi.type_token("oci:Identity/authenticationPolicy:AuthenticationPolicy")
 class AuthenticationPolicy(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/authenticationPolicy:AuthenticationPolicy"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

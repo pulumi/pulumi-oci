@@ -446,10 +446,8 @@ class _DeploymentCertificateState:
         pulumi.set(self, "version", value)
 
 
+@pulumi.type_token("oci:GoldenGate/deploymentCertificate:DeploymentCertificate")
 class DeploymentCertificate(pulumi.CustomResource):
-
-    pulumi_type = "oci:GoldenGate/deploymentCertificate:DeploymentCertificate"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

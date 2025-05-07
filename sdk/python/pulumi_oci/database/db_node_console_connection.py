@@ -271,10 +271,8 @@ class _DbNodeConsoleConnectionState:
         pulumi.set(self, "state", value)
 
 
+@pulumi.type_token("oci:Database/dbNodeConsoleConnection:DbNodeConsoleConnection")
 class DbNodeConsoleConnection(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/dbNodeConsoleConnection:DbNodeConsoleConnection"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -2120,10 +2120,8 @@ class _DomainsSelfRegistrationProfileState:
         pulumi.set(self, "user_attributes", value)
 
 
+@pulumi.type_token("oci:Identity/domainsSelfRegistrationProfile:DomainsSelfRegistrationProfile")
 class DomainsSelfRegistrationProfile(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/domainsSelfRegistrationProfile:DomainsSelfRegistrationProfile"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

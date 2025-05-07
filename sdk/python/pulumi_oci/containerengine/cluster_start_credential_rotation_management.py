@@ -111,10 +111,8 @@ class _ClusterStartCredentialRotationManagementState:
         pulumi.set(self, "cluster_id", value)
 
 
+@pulumi.type_token("oci:ContainerEngine/clusterStartCredentialRotationManagement:ClusterStartCredentialRotationManagement")
 class ClusterStartCredentialRotationManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:ContainerEngine/clusterStartCredentialRotationManagement:ClusterStartCredentialRotationManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

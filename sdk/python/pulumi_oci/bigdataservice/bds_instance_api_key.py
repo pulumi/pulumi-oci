@@ -317,10 +317,8 @@ class _BdsInstanceApiKeyState:
         pulumi.set(self, "user_id", value)
 
 
+@pulumi.type_token("oci:BigDataService/bdsInstanceApiKey:BdsInstanceApiKey")
 class BdsInstanceApiKey(pulumi.CustomResource):
-
-    pulumi_type = "oci:BigDataService/bdsInstanceApiKey:BdsInstanceApiKey"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

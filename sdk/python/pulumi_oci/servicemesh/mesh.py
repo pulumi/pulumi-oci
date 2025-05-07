@@ -336,10 +336,8 @@ class _MeshState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:ServiceMesh/mesh:Mesh")
 class Mesh(pulumi.CustomResource):
-
-    pulumi_type = "oci:ServiceMesh/mesh:Mesh"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

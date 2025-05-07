@@ -623,10 +623,8 @@ class _SecretState:
         pulumi.set(self, "vault_id", value)
 
 
+@pulumi.type_token("oci:Vault/secret:Secret")
 class Secret(pulumi.CustomResource):
-
-    pulumi_type = "oci:Vault/secret:Secret"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

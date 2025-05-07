@@ -277,10 +277,8 @@ class _DrgRouteTableRouteRuleState:
         pulumi.set(self, "route_type", value)
 
 
+@pulumi.type_token("oci:Core/drgRouteTableRouteRule:DrgRouteTableRouteRule")
 class DrgRouteTableRouteRule(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/drgRouteTableRouteRule:DrgRouteTableRouteRule"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

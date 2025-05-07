@@ -671,10 +671,8 @@ class _WorkspaceState:
         pulumi.set(self, "vcn_id", value)
 
 
+@pulumi.type_token("oci:DataIntegration/workspace:Workspace")
 class Workspace(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataIntegration/workspace:Workspace"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -288,10 +288,8 @@ class _JavaDownloadsJavaLicenseAcceptanceRecordState:
         pulumi.set(self, "time_last_updated", value)
 
 
+@pulumi.type_token("oci:Jms/javaDownloadsJavaLicenseAcceptanceRecord:JavaDownloadsJavaLicenseAcceptanceRecord")
 class JavaDownloadsJavaLicenseAcceptanceRecord(pulumi.CustomResource):
-
-    pulumi_type = "oci:Jms/javaDownloadsJavaLicenseAcceptanceRecord:JavaDownloadsJavaLicenseAcceptanceRecord"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

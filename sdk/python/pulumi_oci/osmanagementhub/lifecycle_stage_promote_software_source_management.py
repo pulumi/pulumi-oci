@@ -130,10 +130,8 @@ class _LifecycleStagePromoteSoftwareSourceManagementState:
         pulumi.set(self, "work_request_details", value)
 
 
+@pulumi.type_token("oci:OsManagementHub/lifecycleStagePromoteSoftwareSourceManagement:LifecycleStagePromoteSoftwareSourceManagement")
 class LifecycleStagePromoteSoftwareSourceManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:OsManagementHub/lifecycleStagePromoteSoftwareSourceManagement:LifecycleStagePromoteSoftwareSourceManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

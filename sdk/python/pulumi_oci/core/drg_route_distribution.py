@@ -255,10 +255,8 @@ class _DrgRouteDistributionState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Core/drgRouteDistribution:DrgRouteDistribution")
 class DrgRouteDistribution(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/drgRouteDistribution:DrgRouteDistribution"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

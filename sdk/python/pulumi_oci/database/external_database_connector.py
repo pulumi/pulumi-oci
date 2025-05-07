@@ -398,10 +398,8 @@ class _ExternalDatabaseConnectorState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Database/externalDatabaseConnector:ExternalDatabaseConnector")
 class ExternalDatabaseConnector(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/externalDatabaseConnector:ExternalDatabaseConnector"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

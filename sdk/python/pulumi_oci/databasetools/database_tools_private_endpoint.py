@@ -527,10 +527,8 @@ class _DatabaseToolsPrivateEndpointState:
         pulumi.set(self, "vcn_id", value)
 
 
+@pulumi.type_token("oci:DatabaseTools/databaseToolsPrivateEndpoint:DatabaseToolsPrivateEndpoint")
 class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
-
-    pulumi_type = "oci:DatabaseTools/databaseToolsPrivateEndpoint:DatabaseToolsPrivateEndpoint"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

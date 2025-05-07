@@ -417,10 +417,8 @@ class _ContainerRepositoryState:
         pulumi.set(self, "time_last_pushed", value)
 
 
+@pulumi.type_token("oci:Artifacts/containerRepository:ContainerRepository")
 class ContainerRepository(pulumi.CustomResource):
-
-    pulumi_type = "oci:Artifacts/containerRepository:ContainerRepository"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

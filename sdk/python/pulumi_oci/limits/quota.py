@@ -316,10 +316,8 @@ class _QuotaState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Limits/quota:Quota")
 class Quota(pulumi.CustomResource):
-
-    pulumi_type = "oci:Limits/quota:Quota"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

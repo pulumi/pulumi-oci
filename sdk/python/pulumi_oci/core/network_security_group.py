@@ -239,10 +239,8 @@ class _NetworkSecurityGroupState:
         pulumi.set(self, "vcn_id", value)
 
 
+@pulumi.type_token("oci:Core/networkSecurityGroup:NetworkSecurityGroup")
 class NetworkSecurityGroup(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/networkSecurityGroup:NetworkSecurityGroup"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

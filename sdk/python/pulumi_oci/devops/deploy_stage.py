@@ -2160,10 +2160,8 @@ class _DeployStageState:
         pulumi.set(self, "wait_criteria", value)
 
 
+@pulumi.type_token("oci:DevOps/deployStage:DeployStage")
 class DeployStage(pulumi.CustomResource):
-
-    pulumi_type = "oci:DevOps/deployStage:DeployStage"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

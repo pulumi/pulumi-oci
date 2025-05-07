@@ -261,10 +261,8 @@ class _MonitoredResourcesAssociateMonitoredResourceState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:StackMonitoring/monitoredResourcesAssociateMonitoredResource:MonitoredResourcesAssociateMonitoredResource")
 class MonitoredResourcesAssociateMonitoredResource(pulumi.CustomResource):
-
-    pulumi_type = "oci:StackMonitoring/monitoredResourcesAssociateMonitoredResource:MonitoredResourcesAssociateMonitoredResource"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

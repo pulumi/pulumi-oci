@@ -352,10 +352,8 @@ class _ExternalAsmInstanceState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:DatabaseManagement/externalAsmInstance:ExternalAsmInstance")
 class ExternalAsmInstance(pulumi.CustomResource):
-
-    pulumi_type = "oci:DatabaseManagement/externalAsmInstance:ExternalAsmInstance"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

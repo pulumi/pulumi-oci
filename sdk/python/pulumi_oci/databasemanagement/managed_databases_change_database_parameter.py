@@ -216,10 +216,8 @@ class _ManagedDatabasesChangeDatabaseParameterState:
         pulumi.set(self, "scope", value)
 
 
+@pulumi.type_token("oci:DatabaseManagement/managedDatabasesChangeDatabaseParameter:ManagedDatabasesChangeDatabaseParameter")
 class ManagedDatabasesChangeDatabaseParameter(pulumi.CustomResource):
-
-    pulumi_type = "oci:DatabaseManagement/managedDatabasesChangeDatabaseParameter:ManagedDatabasesChangeDatabaseParameter"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

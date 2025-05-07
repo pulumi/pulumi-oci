@@ -495,10 +495,8 @@ class _DatabaseSoftwareImageState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Database/databaseSoftwareImage:DatabaseSoftwareImage")
 class DatabaseSoftwareImage(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/databaseSoftwareImage:DatabaseSoftwareImage"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

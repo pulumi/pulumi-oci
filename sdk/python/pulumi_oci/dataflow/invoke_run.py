@@ -1178,10 +1178,8 @@ class _InvokeRunState:
         pulumi.set(self, "warehouse_bucket_uri", value)
 
 
+@pulumi.type_token("oci:DataFlow/invokeRun:InvokeRun")
 class InvokeRun(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataFlow/invokeRun:InvokeRun"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

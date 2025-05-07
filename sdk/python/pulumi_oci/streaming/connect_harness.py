@@ -224,10 +224,8 @@ class _ConnectHarnessState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Streaming/connectHarness:ConnectHarness")
 class ConnectHarness(pulumi.CustomResource):
-
-    pulumi_type = "oci:Streaming/connectHarness:ConnectHarness"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -799,10 +799,8 @@ class _ModelState:
         pulumi.set(self, "version_label", value)
 
 
+@pulumi.type_token("oci:DataScience/model:Model")
 class Model(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataScience/model:Model"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

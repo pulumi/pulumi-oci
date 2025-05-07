@@ -439,10 +439,8 @@ class _ManagedListState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:CloudGuard/managedList:ManagedList")
 class ManagedList(pulumi.CustomResource):
-
-    pulumi_type = "oci:CloudGuard/managedList:ManagedList"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

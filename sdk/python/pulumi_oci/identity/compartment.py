@@ -300,10 +300,8 @@ class _CompartmentState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Identity/compartment:Compartment")
 class Compartment(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/compartment:Compartment"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

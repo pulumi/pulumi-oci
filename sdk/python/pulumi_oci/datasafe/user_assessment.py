@@ -569,10 +569,8 @@ class _UserAssessmentState:
         pulumi.set(self, "type", value)
 
 
+@pulumi.type_token("oci:DataSafe/userAssessment:UserAssessment")
 class UserAssessment(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataSafe/userAssessment:UserAssessment"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -344,10 +344,8 @@ class _ServiceGatewayState:
         pulumi.set(self, "vcn_id", value)
 
 
+@pulumi.type_token("oci:Core/serviceGateway:ServiceGateway")
 class ServiceGateway(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/serviceGateway:ServiceGateway"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

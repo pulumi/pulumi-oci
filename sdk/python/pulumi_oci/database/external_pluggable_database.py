@@ -480,10 +480,8 @@ class _ExternalPluggableDatabaseState:
         pulumi.set(self, "time_zone", value)
 
 
+@pulumi.type_token("oci:Database/externalPluggableDatabase:ExternalPluggableDatabase")
 class ExternalPluggableDatabase(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/externalPluggableDatabase:ExternalPluggableDatabase"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

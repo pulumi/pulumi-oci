@@ -500,10 +500,8 @@ class _VaultState:
         pulumi.set(self, "vault_type", value)
 
 
+@pulumi.type_token("oci:Kms/vault:Vault")
 class Vault(pulumi.CustomResource):
-
-    pulumi_type = "oci:Kms/vault:Vault"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

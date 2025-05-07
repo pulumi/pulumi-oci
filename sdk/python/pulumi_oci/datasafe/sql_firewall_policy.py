@@ -592,10 +592,8 @@ class _SqlFirewallPolicyState:
         pulumi.set(self, "violation_audit", value)
 
 
+@pulumi.type_token("oci:DataSafe/sqlFirewallPolicy:SqlFirewallPolicy")
 class SqlFirewallPolicy(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataSafe/sqlFirewallPolicy:SqlFirewallPolicy"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

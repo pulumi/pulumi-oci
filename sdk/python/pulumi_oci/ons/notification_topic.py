@@ -304,10 +304,8 @@ class _NotificationTopicState:
         pulumi.set(self, "topic_id", value)
 
 
+@pulumi.type_token("oci:Ons/notificationTopic:NotificationTopic")
 class NotificationTopic(pulumi.CustomResource):
-
-    pulumi_type = "oci:Ons/notificationTopic:NotificationTopic"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -443,10 +443,8 @@ class _IdentityProviderState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Identity/identityProvider:IdentityProvider")
 class IdentityProvider(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/identityProvider:IdentityProvider"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

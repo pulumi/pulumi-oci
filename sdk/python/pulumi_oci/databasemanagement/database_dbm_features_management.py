@@ -169,10 +169,8 @@ class _DatabaseDbmFeaturesManagementState:
         pulumi.set(self, "modify_database_dbm_feature", value)
 
 
+@pulumi.type_token("oci:DatabaseManagement/databaseDbmFeaturesManagement:DatabaseDbmFeaturesManagement")
 class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:DatabaseManagement/databaseDbmFeaturesManagement:DatabaseDbmFeaturesManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

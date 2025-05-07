@@ -288,10 +288,8 @@ class _NetworkFirewallPolicySecurityRuleState:
         pulumi.set(self, "priority_order", value)
 
 
+@pulumi.type_token("oci:NetworkFirewall/networkFirewallPolicySecurityRule:NetworkFirewallPolicySecurityRule")
 class NetworkFirewallPolicySecurityRule(pulumi.CustomResource):
-
-    pulumi_type = "oci:NetworkFirewall/networkFirewallPolicySecurityRule:NetworkFirewallPolicySecurityRule"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

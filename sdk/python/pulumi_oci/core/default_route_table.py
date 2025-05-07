@@ -202,10 +202,8 @@ class _DefaultRouteTableState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Core/defaultRouteTable:DefaultRouteTable")
 class DefaultRouteTable(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/defaultRouteTable:DefaultRouteTable"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -369,10 +369,8 @@ class _OccCustomerGroupState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:CapacityManagement/occCustomerGroup:OccCustomerGroup")
 class OccCustomerGroup(pulumi.CustomResource):
-
-    pulumi_type = "oci:CapacityManagement/occCustomerGroup:OccCustomerGroup"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

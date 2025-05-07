@@ -402,10 +402,8 @@ class _BuildRunState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:DevOps/buildRun:BuildRun")
 class BuildRun(pulumi.CustomResource):
-
-    pulumi_type = "oci:DevOps/buildRun:BuildRun"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

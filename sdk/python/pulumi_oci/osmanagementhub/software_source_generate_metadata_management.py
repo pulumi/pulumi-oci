@@ -80,10 +80,8 @@ class _SoftwareSourceGenerateMetadataManagementState:
         pulumi.set(self, "software_source_id", value)
 
 
+@pulumi.type_token("oci:OsManagementHub/softwareSourceGenerateMetadataManagement:SoftwareSourceGenerateMetadataManagement")
 class SoftwareSourceGenerateMetadataManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:OsManagementHub/softwareSourceGenerateMetadataManagement:SoftwareSourceGenerateMetadataManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -406,10 +406,8 @@ class _EventState:
         pulumi.set(self, "type", value)
 
 
+@pulumi.type_token("oci:OsManagementHub/event:Event")
 class Event(pulumi.CustomResource):
-
-    pulumi_type = "oci:OsManagementHub/event:Event"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

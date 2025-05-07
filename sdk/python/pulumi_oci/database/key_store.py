@@ -280,10 +280,8 @@ class _KeyStoreState:
         pulumi.set(self, "type_details", value)
 
 
+@pulumi.type_token("oci:Database/keyStore:KeyStore")
 class KeyStore(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/keyStore:KeyStore"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

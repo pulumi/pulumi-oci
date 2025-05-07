@@ -1172,10 +1172,8 @@ class _ExadbVmClusterState:
         pulumi.set(self, "zone_id", value)
 
 
+@pulumi.type_token("oci:Database/exadbVmCluster:ExadbVmCluster")
 class ExadbVmCluster(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/exadbVmCluster:ExadbVmCluster"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

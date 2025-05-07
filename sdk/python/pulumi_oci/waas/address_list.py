@@ -254,10 +254,8 @@ class _AddressListState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Waas/addressList:AddressList")
 class AddressList(pulumi.CustomResource):
-
-    pulumi_type = "oci:Waas/addressList:AddressList"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

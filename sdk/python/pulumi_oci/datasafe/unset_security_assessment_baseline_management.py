@@ -111,10 +111,8 @@ class _UnsetSecurityAssessmentBaselineManagementState:
         pulumi.set(self, "security_assessment_id", value)
 
 
+@pulumi.type_token("oci:DataSafe/unsetSecurityAssessmentBaselineManagement:UnsetSecurityAssessmentBaselineManagement")
 class UnsetSecurityAssessmentBaselineManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataSafe/unsetSecurityAssessmentBaselineManagement:UnsetSecurityAssessmentBaselineManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -526,10 +526,8 @@ class _ConfigurationState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Psql/configuration:Configuration")
 class Configuration(pulumi.CustomResource):
-
-    pulumi_type = "oci:Psql/configuration:Configuration"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

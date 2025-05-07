@@ -376,10 +376,8 @@ class _StreamCdnConfigState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:MediaServices/streamCdnConfig:StreamCdnConfig")
 class StreamCdnConfig(pulumi.CustomResource):
-
-    pulumi_type = "oci:MediaServices/streamCdnConfig:StreamCdnConfig"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

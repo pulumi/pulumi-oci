@@ -1704,10 +1704,8 @@ class _DbSystemState:
         pulumi.set(self, "zone_id", value)
 
 
+@pulumi.type_token("oci:Database/dbSystem:DbSystem")
 class DbSystem(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/dbSystem:DbSystem"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

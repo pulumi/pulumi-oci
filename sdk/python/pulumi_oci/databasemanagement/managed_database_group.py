@@ -290,10 +290,8 @@ class _ManagedDatabaseGroupState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:DatabaseManagement/managedDatabaseGroup:ManagedDatabaseGroup")
 class ManagedDatabaseGroup(pulumi.CustomResource):
-
-    pulumi_type = "oci:DatabaseManagement/managedDatabaseGroup:ManagedDatabaseGroup"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

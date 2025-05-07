@@ -297,10 +297,8 @@ class _StreamDistributionChannelState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:MediaServices/streamDistributionChannel:StreamDistributionChannel")
 class StreamDistributionChannel(pulumi.CustomResource):
-
-    pulumi_type = "oci:MediaServices/streamDistributionChannel:StreamDistributionChannel"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

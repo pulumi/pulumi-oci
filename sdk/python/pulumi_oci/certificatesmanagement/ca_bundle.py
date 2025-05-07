@@ -287,10 +287,8 @@ class _CaBundleState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:CertificatesManagement/caBundle:CaBundle")
 class CaBundle(pulumi.CustomResource):
-
-    pulumi_type = "oci:CertificatesManagement/caBundle:CaBundle"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

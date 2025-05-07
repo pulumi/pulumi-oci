@@ -418,10 +418,8 @@ class _DatabaseSecurityConfigState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:DataSafe/databaseSecurityConfig:DatabaseSecurityConfig")
 class DatabaseSecurityConfig(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataSafe/databaseSecurityConfig:DatabaseSecurityConfig"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

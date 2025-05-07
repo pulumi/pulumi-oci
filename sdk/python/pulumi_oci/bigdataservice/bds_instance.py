@@ -1089,10 +1089,8 @@ class _BdsInstanceState:
         pulumi.set(self, "worker_node", value)
 
 
+@pulumi.type_token("oci:BigDataService/bdsInstance:BdsInstance")
 class BdsInstance(pulumi.CustomResource):
-
-    pulumi_type = "oci:BigDataService/bdsInstance:BdsInstance"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -322,10 +322,8 @@ class _MonitoredResourcesSearchAssociationState:
         pulumi.set(self, "source_resource_type", value)
 
 
+@pulumi.type_token("oci:StackMonitoring/monitoredResourcesSearchAssociation:MonitoredResourcesSearchAssociation")
 class MonitoredResourcesSearchAssociation(pulumi.CustomResource):
-
-    pulumi_type = "oci:StackMonitoring/monitoredResourcesSearchAssociation:MonitoredResourcesSearchAssociation"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

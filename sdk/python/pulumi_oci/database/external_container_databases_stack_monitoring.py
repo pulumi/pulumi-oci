@@ -142,10 +142,8 @@ class _ExternalContainerDatabasesStackMonitoringState:
         pulumi.set(self, "external_database_connector_id", value)
 
 
+@pulumi.type_token("oci:Database/externalContainerDatabasesStackMonitoring:ExternalContainerDatabasesStackMonitoring")
 class ExternalContainerDatabasesStackMonitoring(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/externalContainerDatabasesStackMonitoring:ExternalContainerDatabasesStackMonitoring"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

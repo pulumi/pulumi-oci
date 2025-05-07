@@ -1051,10 +1051,8 @@ class _DomainsAccountRecoverySettingState:
         pulumi.set(self, "tenancy_ocid", value)
 
 
+@pulumi.type_token("oci:Identity/domainsAccountRecoverySetting:DomainsAccountRecoverySetting")
 class DomainsAccountRecoverySetting(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/domainsAccountRecoverySetting:DomainsAccountRecoverySetting"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

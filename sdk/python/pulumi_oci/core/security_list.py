@@ -305,10 +305,8 @@ class _SecurityListState:
         pulumi.set(self, "vcn_id", value)
 
 
+@pulumi.type_token("oci:Core/securityList:SecurityList")
 class SecurityList(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/securityList:SecurityList"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

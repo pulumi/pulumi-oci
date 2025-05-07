@@ -272,10 +272,8 @@ class _ProcessSetState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:StackMonitoring/processSet:ProcessSet")
 class ProcessSet(pulumi.CustomResource):
-
-    pulumi_type = "oci:StackMonitoring/processSet:ProcessSet"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

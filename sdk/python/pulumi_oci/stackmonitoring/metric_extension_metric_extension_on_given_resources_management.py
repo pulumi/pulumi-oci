@@ -142,10 +142,8 @@ class _MetricExtensionMetricExtensionOnGivenResourcesManagementState:
         pulumi.set(self, "resource_ids", value)
 
 
+@pulumi.type_token("oci:StackMonitoring/metricExtensionMetricExtensionOnGivenResourcesManagement:MetricExtensionMetricExtensionOnGivenResourcesManagement")
 class MetricExtensionMetricExtensionOnGivenResourcesManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:StackMonitoring/metricExtensionMetricExtensionOnGivenResourcesManagement:MetricExtensionMetricExtensionOnGivenResourcesManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

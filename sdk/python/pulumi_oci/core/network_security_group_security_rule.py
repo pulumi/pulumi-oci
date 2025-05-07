@@ -468,10 +468,8 @@ class _NetworkSecurityGroupSecurityRuleState:
         pulumi.set(self, "udp_options", value)
 
 
+@pulumi.type_token("oci:Core/networkSecurityGroupSecurityRule:NetworkSecurityGroupSecurityRule")
 class NetworkSecurityGroupSecurityRule(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/networkSecurityGroupSecurityRule:NetworkSecurityGroupSecurityRule"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

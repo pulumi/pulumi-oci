@@ -430,10 +430,8 @@ class _OperationsInsightsWarehouseState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Opsi/operationsInsightsWarehouse:OperationsInsightsWarehouse")
 class OperationsInsightsWarehouse(pulumi.CustomResource):
-
-    pulumi_type = "oci:Opsi/operationsInsightsWarehouse:OperationsInsightsWarehouse"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

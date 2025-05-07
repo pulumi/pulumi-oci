@@ -593,10 +593,8 @@ class _SensitiveDataModelState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:DataSafe/sensitiveDataModel:SensitiveDataModel")
 class SensitiveDataModel(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataSafe/sensitiveDataModel:SensitiveDataModel"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

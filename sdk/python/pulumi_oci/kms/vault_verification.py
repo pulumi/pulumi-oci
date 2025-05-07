@@ -125,10 +125,8 @@ class _VaultVerificationState:
         pulumi.set(self, "vault_id", value)
 
 
+@pulumi.type_token("oci:Kms/vaultVerification:VaultVerification")
 class VaultVerification(pulumi.CustomResource):
-
-    pulumi_type = "oci:Kms/vaultVerification:VaultVerification"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

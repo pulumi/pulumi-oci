@@ -143,10 +143,8 @@ class _ExternalDbSystemDatabaseManagementsManagementState:
         pulumi.set(self, "license_model", value)
 
 
+@pulumi.type_token("oci:DatabaseManagement/externalDbSystemDatabaseManagementsManagement:ExternalDbSystemDatabaseManagementsManagement")
 class ExternalDbSystemDatabaseManagementsManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:DatabaseManagement/externalDbSystemDatabaseManagementsManagement:ExternalDbSystemDatabaseManagementsManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

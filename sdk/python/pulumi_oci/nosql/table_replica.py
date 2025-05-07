@@ -207,10 +207,8 @@ class _TableReplicaState:
         pulumi.set(self, "table_name_or_id", value)
 
 
+@pulumi.type_token("oci:Nosql/tableReplica:TableReplica")
 class TableReplica(pulumi.CustomResource):
-
-    pulumi_type = "oci:Nosql/tableReplica:TableReplica"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

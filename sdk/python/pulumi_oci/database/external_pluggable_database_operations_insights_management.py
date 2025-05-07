@@ -138,10 +138,8 @@ class _ExternalPluggableDatabaseOperationsInsightsManagementState:
         pulumi.set(self, "external_pluggable_database_id", value)
 
 
+@pulumi.type_token("oci:Database/externalPluggableDatabaseOperationsInsightsManagement:ExternalPluggableDatabaseOperationsInsightsManagement")
 class ExternalPluggableDatabaseOperationsInsightsManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/externalPluggableDatabaseOperationsInsightsManagement:ExternalPluggableDatabaseOperationsInsightsManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

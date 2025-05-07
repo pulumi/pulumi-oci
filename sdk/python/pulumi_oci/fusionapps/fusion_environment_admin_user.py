@@ -254,10 +254,8 @@ class _FusionEnvironmentAdminUserState:
         pulumi.set(self, "username", value)
 
 
+@pulumi.type_token("oci:FusionApps/fusionEnvironmentAdminUser:FusionEnvironmentAdminUser")
 class FusionEnvironmentAdminUser(pulumi.CustomResource):
-
-    pulumi_type = "oci:FusionApps/fusionEnvironmentAdminUser:FusionEnvironmentAdminUser"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

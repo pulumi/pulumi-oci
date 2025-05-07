@@ -191,10 +191,8 @@ class _SubscriptionMappingState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Tenantmanagercontrolplane/subscriptionMapping:SubscriptionMapping")
 class SubscriptionMapping(pulumi.CustomResource):
-
-    pulumi_type = "oci:Tenantmanagercontrolplane/subscriptionMapping:SubscriptionMapping"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -207,10 +207,8 @@ class _SuppressionState:
         pulumi.set(self, "time_last_suppressed", value)
 
 
+@pulumi.type_token("oci:Email/suppression:Suppression")
 class Suppression(pulumi.CustomResource):
-
-    pulumi_type = "oci:Email/suppression:Suppression"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

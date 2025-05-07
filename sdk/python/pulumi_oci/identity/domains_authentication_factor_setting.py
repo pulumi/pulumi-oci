@@ -2456,10 +2456,8 @@ class _DomainsAuthenticationFactorSettingState:
         pulumi.set(self, "yubico_otp_enabled", value)
 
 
+@pulumi.type_token("oci:Identity/domainsAuthenticationFactorSetting:DomainsAuthenticationFactorSetting")
 class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/domainsAuthenticationFactorSetting:DomainsAuthenticationFactorSetting"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

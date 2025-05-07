@@ -527,10 +527,8 @@ class _ExascaleDbStorageVaultState:
         pulumi.set(self, "vm_cluster_ids", value)
 
 
+@pulumi.type_token("oci:Database/exascaleDbStorageVault:ExascaleDbStorageVault")
 class ExascaleDbStorageVault(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/exascaleDbStorageVault:ExascaleDbStorageVault"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -352,10 +352,8 @@ class _ClusterNetworkState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Core/clusterNetwork:ClusterNetwork")
 class ClusterNetwork(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/clusterNetwork:ClusterNetwork"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

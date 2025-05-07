@@ -561,10 +561,8 @@ class _DeploymentState:
         pulumi.set(self, "trigger_new_devops_deployment", value)
 
 
+@pulumi.type_token("oci:DevOps/deployment:Deployment")
 class Deployment(pulumi.CustomResource):
-
-    pulumi_type = "oci:DevOps/deployment:Deployment"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -677,10 +677,8 @@ class _VtapState:
         pulumi.set(self, "vxlan_network_identifier", value)
 
 
+@pulumi.type_token("oci:Core/vtap:Vtap")
 class Vtap(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/vtap:Vtap"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -129,10 +129,8 @@ class _ManagementStationAssociateManagedInstancesManagementState:
         pulumi.set(self, "work_request_details", value)
 
 
+@pulumi.type_token("oci:OsManagementHub/managementStationAssociateManagedInstancesManagement:ManagementStationAssociateManagedInstancesManagement")
 class ManagementStationAssociateManagedInstancesManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:OsManagementHub/managementStationAssociateManagedInstancesManagement:ManagementStationAssociateManagedInstancesManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

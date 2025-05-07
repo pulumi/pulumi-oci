@@ -416,10 +416,8 @@ class _NetworkLoadBalancersBackendSetsUnifiedState:
         pulumi.set(self, "policy", value)
 
 
+@pulumi.type_token("oci:NetworkLoadBalancer/networkLoadBalancersBackendSetsUnified:NetworkLoadBalancersBackendSetsUnified")
 class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
-
-    pulumi_type = "oci:NetworkLoadBalancer/networkLoadBalancersBackendSetsUnified:NetworkLoadBalancersBackendSetsUnified"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

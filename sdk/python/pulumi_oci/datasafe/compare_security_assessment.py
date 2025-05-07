@@ -111,10 +111,8 @@ class _CompareSecurityAssessmentState:
         pulumi.set(self, "security_assessment_id", value)
 
 
+@pulumi.type_token("oci:DataSafe/compareSecurityAssessment:CompareSecurityAssessment")
 class CompareSecurityAssessment(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataSafe/compareSecurityAssessment:CompareSecurityAssessment"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

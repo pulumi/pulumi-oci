@@ -146,10 +146,8 @@ class _WorkRequestRerunManagementState:
         pulumi.set(self, "work_request_id", value)
 
 
+@pulumi.type_token("oci:OsManagementHub/workRequestRerunManagement:WorkRequestRerunManagement")
 class WorkRequestRerunManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:OsManagementHub/workRequestRerunManagement:WorkRequestRerunManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

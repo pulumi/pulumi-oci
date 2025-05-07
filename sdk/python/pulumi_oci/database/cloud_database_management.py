@@ -365,10 +365,8 @@ class _CloudDatabaseManagementState:
         pulumi.set(self, "ssl_secret_id", value)
 
 
+@pulumi.type_token("oci:Database/cloudDatabaseManagement:CloudDatabaseManagement")
 class CloudDatabaseManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/cloudDatabaseManagement:CloudDatabaseManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

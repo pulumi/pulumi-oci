@@ -252,10 +252,8 @@ class _ExportSetState:
         pulumi.set(self, "vcn_id", value)
 
 
+@pulumi.type_token("oci:FileStorage/exportSet:ExportSet")
 class ExportSet(pulumi.CustomResource):
-
-    pulumi_type = "oci:FileStorage/exportSet:ExportSet"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

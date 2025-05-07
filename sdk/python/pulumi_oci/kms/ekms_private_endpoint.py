@@ -380,10 +380,8 @@ class _EkmsPrivateEndpointState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Kms/ekmsPrivateEndpoint:EkmsPrivateEndpoint")
 class EkmsPrivateEndpoint(pulumi.CustomResource):
-
-    pulumi_type = "oci:Kms/ekmsPrivateEndpoint:EkmsPrivateEndpoint"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

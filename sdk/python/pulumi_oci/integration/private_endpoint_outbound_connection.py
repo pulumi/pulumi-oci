@@ -127,10 +127,8 @@ class _PrivateEndpointOutboundConnectionState:
         pulumi.set(self, "subnet_id", value)
 
 
+@pulumi.type_token("oci:Integration/privateEndpointOutboundConnection:PrivateEndpointOutboundConnection")
 class PrivateEndpointOutboundConnection(pulumi.CustomResource):
-
-    pulumi_type = "oci:Integration/privateEndpointOutboundConnection:PrivateEndpointOutboundConnection"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

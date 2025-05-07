@@ -673,10 +673,8 @@ class _FileSystemState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:FileStorage/fileSystem:FileSystem")
 class FileSystem(pulumi.CustomResource):
-
-    pulumi_type = "oci:FileStorage/fileSystem:FileSystem"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -317,10 +317,8 @@ class _FileSystemQuotaRuleState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:FileStorage/fileSystemQuotaRule:FileSystemQuotaRule")
 class FileSystemQuotaRule(pulumi.CustomResource):
-
-    pulumi_type = "oci:FileStorage/fileSystemQuotaRule:FileSystemQuotaRule"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

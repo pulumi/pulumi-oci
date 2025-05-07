@@ -786,10 +786,8 @@ class _ManagedInstanceState:
         pulumi.set(self, "work_request_count", value)
 
 
+@pulumi.type_token("oci:OsManagementHub/managedInstance:ManagedInstance")
 class ManagedInstance(pulumi.CustomResource):
-
-    pulumi_type = "oci:OsManagementHub/managedInstance:ManagedInstance"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

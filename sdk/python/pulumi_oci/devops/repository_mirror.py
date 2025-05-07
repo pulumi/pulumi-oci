@@ -80,10 +80,8 @@ class _RepositoryMirrorState:
         pulumi.set(self, "repository_id", value)
 
 
+@pulumi.type_token("oci:DevOps/repositoryMirror:RepositoryMirror")
 class RepositoryMirror(pulumi.CustomResource):
-
-    pulumi_type = "oci:DevOps/repositoryMirror:RepositoryMirror"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

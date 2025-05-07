@@ -475,10 +475,8 @@ class _VolumeBackupState:
         pulumi.set(self, "volume_id", value)
 
 
+@pulumi.type_token("oci:Core/volumeBackup:VolumeBackup")
 class VolumeBackup(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/volumeBackup:VolumeBackup"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

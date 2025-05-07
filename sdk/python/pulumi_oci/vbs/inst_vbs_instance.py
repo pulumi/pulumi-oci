@@ -399,10 +399,8 @@ class _InstVbsInstanceState:
         pulumi.set(self, "vbs_access_url", value)
 
 
+@pulumi.type_token("oci:Vbs/instVbsInstance:InstVbsInstance")
 class InstVbsInstance(pulumi.CustomResource):
-
-    pulumi_type = "oci:Vbs/instVbsInstance:InstVbsInstance"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

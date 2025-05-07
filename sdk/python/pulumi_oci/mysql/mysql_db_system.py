@@ -1335,10 +1335,8 @@ class _MysqlDbSystemState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Mysql/mysqlDbSystem:MysqlDbSystem")
 class MysqlDbSystem(pulumi.CustomResource):
-
-    pulumi_type = "oci:Mysql/mysqlDbSystem:MysqlDbSystem"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

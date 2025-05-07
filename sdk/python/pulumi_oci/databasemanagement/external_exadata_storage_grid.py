@@ -370,10 +370,8 @@ class _ExternalExadataStorageGridState:
         pulumi.set(self, "version", value)
 
 
+@pulumi.type_token("oci:DatabaseManagement/externalExadataStorageGrid:ExternalExadataStorageGrid")
 class ExternalExadataStorageGrid(pulumi.CustomResource):
-
-    pulumi_type = "oci:DatabaseManagement/externalExadataStorageGrid:ExternalExadataStorageGrid"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

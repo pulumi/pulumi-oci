@@ -352,10 +352,8 @@ class _ExportState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:FileStorage/export:Export")
 class Export(pulumi.CustomResource):
-
-    pulumi_type = "oci:FileStorage/export:Export"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

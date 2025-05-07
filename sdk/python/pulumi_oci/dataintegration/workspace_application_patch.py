@@ -576,10 +576,8 @@ class _WorkspaceApplicationPatchState:
         pulumi.set(self, "workspace_id", value)
 
 
+@pulumi.type_token("oci:DataIntegration/workspaceApplicationPatch:WorkspaceApplicationPatch")
 class WorkspaceApplicationPatch(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataIntegration/workspaceApplicationPatch:WorkspaceApplicationPatch"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -143,10 +143,8 @@ class _ExternalExadataInfrastructureExadataManagementState:
         pulumi.set(self, "license_model", value)
 
 
+@pulumi.type_token("oci:DatabaseManagement/externalExadataInfrastructureExadataManagement:ExternalExadataInfrastructureExadataManagement")
 class ExternalExadataInfrastructureExadataManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:DatabaseManagement/externalExadataInfrastructureExadataManagement:ExternalExadataInfrastructureExadataManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

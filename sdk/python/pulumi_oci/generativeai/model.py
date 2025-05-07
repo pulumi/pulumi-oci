@@ -496,10 +496,8 @@ class _ModelState:
         pulumi.set(self, "version", value)
 
 
+@pulumi.type_token("oci:GenerativeAi/model:Model")
 class Model(pulumi.CustomResource):
-
-    pulumi_type = "oci:GenerativeAi/model:Model"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

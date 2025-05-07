@@ -599,10 +599,8 @@ class _AutonomousExadataInfrastructureState:
         pulumi.set(self, "zone_id", value)
 
 
+@pulumi.type_token("oci:Database/autonomousExadataInfrastructure:AutonomousExadataInfrastructure")
 class AutonomousExadataInfrastructure(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/autonomousExadataInfrastructure:AutonomousExadataInfrastructure"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

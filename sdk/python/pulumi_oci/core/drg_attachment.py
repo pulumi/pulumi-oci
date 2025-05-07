@@ -462,10 +462,8 @@ class _DrgAttachmentState:
         pulumi.set(self, "vcn_id", value)
 
 
+@pulumi.type_token("oci:Core/drgAttachment:DrgAttachment")
 class DrgAttachment(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/drgAttachment:DrgAttachment"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

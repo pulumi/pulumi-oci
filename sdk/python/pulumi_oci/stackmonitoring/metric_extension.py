@@ -509,10 +509,8 @@ class _MetricExtensionState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:StackMonitoring/metricExtension:MetricExtension")
 class MetricExtension(pulumi.CustomResource):
-
-    pulumi_type = "oci:StackMonitoring/metricExtension:MetricExtension"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

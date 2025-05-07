@@ -465,10 +465,8 @@ class _DeployEnvironmentState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:DevOps/deployEnvironment:DeployEnvironment")
 class DeployEnvironment(pulumi.CustomResource):
-
-    pulumi_type = "oci:DevOps/deployEnvironment:DeployEnvironment"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

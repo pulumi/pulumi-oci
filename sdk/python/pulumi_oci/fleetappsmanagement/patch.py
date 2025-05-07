@@ -509,10 +509,8 @@ class _PatchState:
         pulumi.set(self, "type", value)
 
 
+@pulumi.type_token("oci:FleetAppsManagement/patch:Patch")
 class Patch(pulumi.CustomResource):
-
-    pulumi_type = "oci:FleetAppsManagement/patch:Patch"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

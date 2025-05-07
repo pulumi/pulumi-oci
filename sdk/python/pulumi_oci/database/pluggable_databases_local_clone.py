@@ -433,10 +433,8 @@ class _PluggableDatabasesLocalCloneState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Database/pluggableDatabasesLocalClone:PluggableDatabasesLocalClone")
 class PluggableDatabasesLocalClone(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/pluggableDatabasesLocalClone:PluggableDatabasesLocalClone"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

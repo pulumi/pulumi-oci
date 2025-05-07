@@ -719,10 +719,8 @@ class _FsuCycleState:
         pulumi.set(self, "type", value)
 
 
+@pulumi.type_token("oci:FleetSoftwareUpdate/fsuCycle:FsuCycle")
 class FsuCycle(pulumi.CustomResource):
-
-    pulumi_type = "oci:FleetSoftwareUpdate/fsuCycle:FsuCycle"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -268,10 +268,8 @@ class _AnalyticsInstanceVanityUrlState:
         pulumi.set(self, "public_certificate", value)
 
 
+@pulumi.type_token("oci:Analytics/analyticsInstanceVanityUrl:AnalyticsInstanceVanityUrl")
 class AnalyticsInstanceVanityUrl(pulumi.CustomResource):
-
-    pulumi_type = "oci:Analytics/analyticsInstanceVanityUrl:AnalyticsInstanceVanityUrl"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -337,10 +337,8 @@ class _AgentDataIngestionJobState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:GenerativeAi/agentDataIngestionJob:AgentDataIngestionJob")
 class AgentDataIngestionJob(pulumi.CustomResource):
-
-    pulumi_type = "oci:GenerativeAi/agentDataIngestionJob:AgentDataIngestionJob"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

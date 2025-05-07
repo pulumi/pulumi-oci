@@ -504,10 +504,8 @@ class _BackupDestinationState:
         pulumi.set(self, "vpc_users", value)
 
 
+@pulumi.type_token("oci:Database/backupDestination:BackupDestination")
 class BackupDestination(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/backupDestination:BackupDestination"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

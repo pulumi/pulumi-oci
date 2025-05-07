@@ -451,10 +451,8 @@ class _BootVolumeBackupState:
         pulumi.set(self, "unique_size_in_gbs", value)
 
 
+@pulumi.type_token("oci:Core/bootVolumeBackup:BootVolumeBackup")
 class BootVolumeBackup(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/bootVolumeBackup:BootVolumeBackup"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

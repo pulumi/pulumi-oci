@@ -353,10 +353,8 @@ class _NetworkSourceState:
         pulumi.set(self, "virtual_source_lists", value)
 
 
+@pulumi.type_token("oci:Identity/networkSource:NetworkSource")
 class NetworkSource(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/networkSource:NetworkSource"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

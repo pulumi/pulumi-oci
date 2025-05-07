@@ -588,10 +588,8 @@ class _AssetSourceState:
         pulumi.set(self, "vcenter_endpoint", value)
 
 
+@pulumi.type_token("oci:CloudBridge/assetSource:AssetSource")
 class AssetSource(pulumi.CustomResource):
-
-    pulumi_type = "oci:CloudBridge/assetSource:AssetSource"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

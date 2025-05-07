@@ -447,10 +447,8 @@ class _VolumeGroupBackupState:
         pulumi.set(self, "volume_group_id", value)
 
 
+@pulumi.type_token("oci:Core/volumeGroupBackup:VolumeGroupBackup")
 class VolumeGroupBackup(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/volumeGroupBackup:VolumeGroupBackup"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

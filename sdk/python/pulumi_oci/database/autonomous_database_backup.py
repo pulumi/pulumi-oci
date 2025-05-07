@@ -482,10 +482,8 @@ class _AutonomousDatabaseBackupState:
         pulumi.set(self, "vault_id", value)
 
 
+@pulumi.type_token("oci:Database/autonomousDatabaseBackup:AutonomousDatabaseBackup")
 class AutonomousDatabaseBackup(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/autonomousDatabaseBackup:AutonomousDatabaseBackup"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

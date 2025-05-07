@@ -463,10 +463,8 @@ class _ClusterPlacementGroupState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:ClusterPlacementGroups/clusterPlacementGroup:ClusterPlacementGroup")
 class ClusterPlacementGroup(pulumi.CustomResource):
-
-    pulumi_type = "oci:ClusterPlacementGroups/clusterPlacementGroup:ClusterPlacementGroup"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

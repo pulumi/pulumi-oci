@@ -398,10 +398,8 @@ class _BaselineableMetricState:
         pulumi.set(self, "time_last_updated", value)
 
 
+@pulumi.type_token("oci:StackMonitoring/baselineableMetric:BaselineableMetric")
 class BaselineableMetric(pulumi.CustomResource):
-
-    pulumi_type = "oci:StackMonitoring/baselineableMetric:BaselineableMetric"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

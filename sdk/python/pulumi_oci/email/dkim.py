@@ -428,10 +428,8 @@ class _DkimState:
         pulumi.set(self, "txt_record_value", value)
 
 
+@pulumi.type_token("oci:Email/dkim:Dkim")
 class Dkim(pulumi.CustomResource):
-
-    pulumi_type = "oci:Email/dkim:Dkim"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

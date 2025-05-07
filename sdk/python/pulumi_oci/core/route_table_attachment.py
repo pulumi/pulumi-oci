@@ -95,10 +95,8 @@ class _RouteTableAttachmentState:
         pulumi.set(self, "subnet_id", value)
 
 
+@pulumi.type_token("oci:Core/routeTableAttachment:RouteTableAttachment")
 class RouteTableAttachment(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/routeTableAttachment:RouteTableAttachment"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

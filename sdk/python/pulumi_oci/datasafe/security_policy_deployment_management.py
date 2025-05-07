@@ -321,10 +321,8 @@ class _SecurityPolicyDeploymentManagementState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:DataSafe/securityPolicyDeploymentManagement:SecurityPolicyDeploymentManagement")
 class SecurityPolicyDeploymentManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataSafe/securityPolicyDeploymentManagement:SecurityPolicyDeploymentManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

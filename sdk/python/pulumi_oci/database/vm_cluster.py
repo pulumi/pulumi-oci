@@ -984,10 +984,8 @@ class _VmClusterState:
         pulumi.set(self, "vm_cluster_type", value)
 
 
+@pulumi.type_token("oci:Database/vmCluster:VmCluster")
 class VmCluster(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/vmCluster:VmCluster"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -495,10 +495,8 @@ class _PluggableDatabasesRemoteCloneState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Database/pluggableDatabasesRemoteClone:PluggableDatabasesRemoteClone")
 class PluggableDatabasesRemoteClone(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/pluggableDatabasesRemoteClone:PluggableDatabasesRemoteClone"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

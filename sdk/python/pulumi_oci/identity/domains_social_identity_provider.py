@@ -2684,10 +2684,8 @@ class _DomainsSocialIdentityProviderState:
         pulumi.set(self, "tenancy_ocid", value)
 
 
+@pulumi.type_token("oci:Identity/domainsSocialIdentityProvider:DomainsSocialIdentityProvider")
 class DomainsSocialIdentityProvider(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/domainsSocialIdentityProvider:DomainsSocialIdentityProvider"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

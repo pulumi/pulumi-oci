@@ -528,10 +528,8 @@ class _ClusterState:
         pulumi.set(self, "vcn_id", value)
 
 
+@pulumi.type_token("oci:ContainerEngine/cluster:Cluster")
 class Cluster(pulumi.CustomResource):
-
-    pulumi_type = "oci:ContainerEngine/cluster:Cluster"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

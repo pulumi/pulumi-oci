@@ -390,10 +390,8 @@ class _RecoveryServiceSubnetState:
         pulumi.set(self, "vcn_id", value)
 
 
+@pulumi.type_token("oci:RecoveryMod/recoveryServiceSubnet:RecoveryServiceSubnet")
 class RecoveryServiceSubnet(pulumi.CustomResource):
-
-    pulumi_type = "oci:RecoveryMod/recoveryServiceSubnet:RecoveryServiceSubnet"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -301,10 +301,8 @@ class _ReplicationPolicyState:
         pulumi.set(self, "time_last_sync", value)
 
 
+@pulumi.type_token("oci:ObjectStorage/replicationPolicy:ReplicationPolicy")
 class ReplicationPolicy(pulumi.CustomResource):
-
-    pulumi_type = "oci:ObjectStorage/replicationPolicy:ReplicationPolicy"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

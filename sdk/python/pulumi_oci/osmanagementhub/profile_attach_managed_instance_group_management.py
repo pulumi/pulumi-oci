@@ -111,10 +111,8 @@ class _ProfileAttachManagedInstanceGroupManagementState:
         pulumi.set(self, "profile_id", value)
 
 
+@pulumi.type_token("oci:OsManagementHub/profileAttachManagedInstanceGroupManagement:ProfileAttachManagedInstanceGroupManagement")
 class ProfileAttachManagedInstanceGroupManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:OsManagementHub/profileAttachManagedInstanceGroupManagement:ProfileAttachManagedInstanceGroupManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -512,10 +512,8 @@ class _AtCustomerCccInfrastructureState:
         pulumi.set(self, "upgrade_informations", value)
 
 
+@pulumi.type_token("oci:ComputeCloud/atCustomerCccInfrastructure:AtCustomerCccInfrastructure")
 class AtCustomerCccInfrastructure(pulumi.CustomResource):
-
-    pulumi_type = "oci:ComputeCloud/atCustomerCccInfrastructure:AtCustomerCccInfrastructure"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

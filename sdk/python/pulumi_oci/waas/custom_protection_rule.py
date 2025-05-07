@@ -350,10 +350,8 @@ class _CustomProtectionRuleState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Waas/customProtectionRule:CustomProtectionRule")
 class CustomProtectionRule(pulumi.CustomResource):
-
-    pulumi_type = "oci:Waas/customProtectionRule:CustomProtectionRule"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -175,10 +175,8 @@ class _DrgRouteDistributionStatementState:
         pulumi.set(self, "priority", value)
 
 
+@pulumi.type_token("oci:Core/drgRouteDistributionStatement:DrgRouteDistributionStatement")
 class DrgRouteDistributionStatement(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/drgRouteDistributionStatement:DrgRouteDistributionStatement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

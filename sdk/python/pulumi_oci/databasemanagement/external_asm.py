@@ -418,10 +418,8 @@ class _ExternalAsmState:
         pulumi.set(self, "version", value)
 
 
+@pulumi.type_token("oci:DatabaseManagement/externalAsm:ExternalAsm")
 class ExternalAsm(pulumi.CustomResource):
-
-    pulumi_type = "oci:DatabaseManagement/externalAsm:ExternalAsm"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

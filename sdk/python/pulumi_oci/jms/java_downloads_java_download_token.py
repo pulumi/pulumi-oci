@@ -477,10 +477,8 @@ class _JavaDownloadsJavaDownloadTokenState:
         pulumi.set(self, "value", value)
 
 
+@pulumi.type_token("oci:Jms/javaDownloadsJavaDownloadToken:JavaDownloadsJavaDownloadToken")
 class JavaDownloadsJavaDownloadToken(pulumi.CustomResource):
-
-    pulumi_type = "oci:Jms/javaDownloadsJavaDownloadToken:JavaDownloadsJavaDownloadToken"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

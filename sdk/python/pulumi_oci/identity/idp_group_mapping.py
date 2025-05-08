@@ -206,10 +206,8 @@ class _IdpGroupMappingState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Identity/idpGroupMapping:IdpGroupMapping")
 class IdpGroupMapping(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/idpGroupMapping:IdpGroupMapping"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

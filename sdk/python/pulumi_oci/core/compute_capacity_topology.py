@@ -288,10 +288,8 @@ class _ComputeCapacityTopologyState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Core/computeCapacityTopology:ComputeCapacityTopology")
 class ComputeCapacityTopology(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/computeCapacityTopology:ComputeCapacityTopology"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

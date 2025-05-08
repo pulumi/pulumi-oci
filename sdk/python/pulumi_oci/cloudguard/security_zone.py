@@ -342,10 +342,8 @@ class _SecurityZoneState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:CloudGuard/securityZone:SecurityZone")
 class SecurityZone(pulumi.CustomResource):
-
-    pulumi_type = "oci:CloudGuard/securityZone:SecurityZone"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

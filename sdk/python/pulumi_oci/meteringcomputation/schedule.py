@@ -463,10 +463,8 @@ class _ScheduleState:
         pulumi.set(self, "time_scheduled", value)
 
 
+@pulumi.type_token("oci:MeteringComputation/schedule:Schedule")
 class Schedule(pulumi.CustomResource):
-
-    pulumi_type = "oci:MeteringComputation/schedule:Schedule"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

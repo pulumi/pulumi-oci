@@ -319,10 +319,8 @@ class _ManagementAgentInstallKeyState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:ManagementAgent/managementAgentInstallKey:ManagementAgentInstallKey")
 class ManagementAgentInstallKey(pulumi.CustomResource):
-
-    pulumi_type = "oci:ManagementAgent/managementAgentInstallKey:ManagementAgentInstallKey"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -621,10 +621,8 @@ class _VmClusterAddVirtualNetworkState:
         pulumi.set(self, "vm_cluster_type", value)
 
 
+@pulumi.type_token("oci:Database/vmClusterAddVirtualNetwork:VmClusterAddVirtualNetwork")
 class VmClusterAddVirtualNetwork(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/vmClusterAddVirtualNetwork:VmClusterAddVirtualNetwork"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -344,10 +344,8 @@ class _FusionEnvironmentFamilyState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:FusionApps/fusionEnvironmentFamily:FusionEnvironmentFamily")
 class FusionEnvironmentFamily(pulumi.CustomResource):
-
-    pulumi_type = "oci:FusionApps/fusionEnvironmentFamily:FusionEnvironmentFamily"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

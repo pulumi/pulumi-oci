@@ -56,10 +56,8 @@ class _AddSdmColumnsState:
         pulumi.set(self, "masking_policy_id", value)
 
 
+@pulumi.type_token("oci:DataSafe/addSdmColumns:AddSdmColumns")
 class AddSdmColumns(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataSafe/addSdmColumns:AddSdmColumns"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

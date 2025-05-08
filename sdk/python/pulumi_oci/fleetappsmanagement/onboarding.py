@@ -290,10 +290,8 @@ class _OnboardingState:
         pulumi.set(self, "version", value)
 
 
+@pulumi.type_token("oci:FleetAppsManagement/onboarding:Onboarding")
 class Onboarding(pulumi.CustomResource):
-
-    pulumi_type = "oci:FleetAppsManagement/onboarding:Onboarding"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

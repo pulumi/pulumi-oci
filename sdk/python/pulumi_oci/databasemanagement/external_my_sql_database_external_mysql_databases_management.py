@@ -143,10 +143,8 @@ class _ExternalMySqlDatabaseExternalMysqlDatabasesManagementState:
         pulumi.set(self, "external_my_sql_database_id", value)
 
 
+@pulumi.type_token("oci:DatabaseManagement/externalMySqlDatabaseExternalMysqlDatabasesManagement:ExternalMySqlDatabaseExternalMysqlDatabasesManagement")
 class ExternalMySqlDatabaseExternalMysqlDatabasesManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:DatabaseManagement/externalMySqlDatabaseExternalMysqlDatabasesManagement:ExternalMySqlDatabaseExternalMysqlDatabasesManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

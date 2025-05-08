@@ -145,10 +145,8 @@ class _ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementStat
         pulumi.set(self, "feature_details", value)
 
 
+@pulumi.type_token("oci:DatabaseManagement/externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement:ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement")
 class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:DatabaseManagement/externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement:ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

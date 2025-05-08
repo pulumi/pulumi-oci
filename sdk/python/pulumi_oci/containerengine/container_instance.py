@@ -661,10 +661,8 @@ class _ContainerInstanceState:
         pulumi.set(self, "volumes", value)
 
 
+@pulumi.type_token("oci:ContainerEngine/containerInstance:ContainerInstance")
 class ContainerInstance(pulumi.CustomResource):
-
-    pulumi_type = "oci:ContainerEngine/containerInstance:ContainerInstance"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

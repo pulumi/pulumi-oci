@@ -409,10 +409,8 @@ class _Ipv6State:
         pulumi.set(self, "vnic_id", value)
 
 
+@pulumi.type_token("oci:Core/ipv6:Ipv6")
 class Ipv6(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/ipv6:Ipv6"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

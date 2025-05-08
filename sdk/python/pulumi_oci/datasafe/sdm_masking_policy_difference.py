@@ -319,10 +319,8 @@ class _SdmMaskingPolicyDifferenceState:
         pulumi.set(self, "time_creation_started", value)
 
 
+@pulumi.type_token("oci:DataSafe/sdmMaskingPolicyDifference:SdmMaskingPolicyDifference")
 class SdmMaskingPolicyDifference(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataSafe/sdmMaskingPolicyDifference:SdmMaskingPolicyDifference"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

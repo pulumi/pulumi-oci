@@ -376,10 +376,8 @@ class _CloudGuardDataSourceState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:CloudGuard/cloudGuardDataSource:CloudGuardDataSource")
 class CloudGuardDataSource(pulumi.CustomResource):
-
-    pulumi_type = "oci:CloudGuard/cloudGuardDataSource:CloudGuardDataSource"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

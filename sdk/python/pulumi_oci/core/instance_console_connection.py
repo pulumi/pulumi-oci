@@ -271,10 +271,8 @@ class _InstanceConsoleConnectionState:
         pulumi.set(self, "vnc_connection_string", value)
 
 
+@pulumi.type_token("oci:Core/instanceConsoleConnection:InstanceConsoleConnection")
 class InstanceConsoleConnection(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/instanceConsoleConnection:InstanceConsoleConnection"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

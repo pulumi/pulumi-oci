@@ -440,10 +440,8 @@ class _WorkspaceFolderState:
         pulumi.set(self, "workspace_id", value)
 
 
+@pulumi.type_token("oci:DataIntegration/workspaceFolder:WorkspaceFolder")
 class WorkspaceFolder(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataIntegration/workspaceFolder:WorkspaceFolder"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

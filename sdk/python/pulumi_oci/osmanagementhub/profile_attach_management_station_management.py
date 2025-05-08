@@ -111,10 +111,8 @@ class _ProfileAttachManagementStationManagementState:
         pulumi.set(self, "profile_id", value)
 
 
+@pulumi.type_token("oci:OsManagementHub/profileAttachManagementStationManagement:ProfileAttachManagementStationManagement")
 class ProfileAttachManagementStationManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:OsManagementHub/profileAttachManagementStationManagement:ProfileAttachManagementStationManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

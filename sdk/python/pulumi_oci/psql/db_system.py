@@ -797,10 +797,8 @@ class _DbSystemState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Psql/dbSystem:DbSystem")
 class DbSystem(pulumi.CustomResource):
-
-    pulumi_type = "oci:Psql/dbSystem:DbSystem"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

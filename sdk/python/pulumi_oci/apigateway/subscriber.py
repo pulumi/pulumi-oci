@@ -304,10 +304,8 @@ class _SubscriberState:
         pulumi.set(self, "usage_plans", value)
 
 
+@pulumi.type_token("oci:ApiGateway/subscriber:Subscriber")
 class Subscriber(pulumi.CustomResource):
-
-    pulumi_type = "oci:ApiGateway/subscriber:Subscriber"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

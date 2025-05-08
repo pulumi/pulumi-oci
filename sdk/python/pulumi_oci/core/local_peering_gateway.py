@@ -399,10 +399,8 @@ class _LocalPeeringGatewayState:
         pulumi.set(self, "vcn_id", value)
 
 
+@pulumi.type_token("oci:Core/localPeeringGateway:LocalPeeringGateway")
 class LocalPeeringGateway(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/localPeeringGateway:LocalPeeringGateway"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -484,10 +484,8 @@ class _MigrationAssetState:
         pulumi.set(self, "type", value)
 
 
+@pulumi.type_token("oci:CloudMigrations/migrationAsset:MigrationAsset")
 class MigrationAsset(pulumi.CustomResource):
-
-    pulumi_type = "oci:CloudMigrations/migrationAsset:MigrationAsset"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

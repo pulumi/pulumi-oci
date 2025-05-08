@@ -287,10 +287,8 @@ class _AgentPluginState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:CloudBridge/agentPlugin:AgentPlugin")
 class AgentPlugin(pulumi.CustomResource):
-
-    pulumi_type = "oci:CloudBridge/agentPlugin:AgentPlugin"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

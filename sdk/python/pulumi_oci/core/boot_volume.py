@@ -688,10 +688,8 @@ class _BootVolumeState:
         pulumi.set(self, "xrc_kms_key_id", value)
 
 
+@pulumi.type_token("oci:Core/bootVolume:BootVolume")
 class BootVolume(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/bootVolume:BootVolume"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -448,10 +448,8 @@ class _DrProtectionGroupState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:DisasterRecovery/drProtectionGroup:DrProtectionGroup")
 class DrProtectionGroup(pulumi.CustomResource):
-
-    pulumi_type = "oci:DisasterRecovery/drProtectionGroup:DrProtectionGroup"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

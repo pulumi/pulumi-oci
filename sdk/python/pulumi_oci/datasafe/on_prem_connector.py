@@ -304,10 +304,8 @@ class _OnPremConnectorState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:DataSafe/onPremConnector:OnPremConnector")
 class OnPremConnector(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataSafe/onPremConnector:OnPremConnector"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

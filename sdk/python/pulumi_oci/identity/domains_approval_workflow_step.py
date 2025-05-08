@@ -1113,10 +1113,8 @@ class _DomainsApprovalWorkflowStepState:
         pulumi.set(self, "type", value)
 
 
+@pulumi.type_token("oci:Identity/domainsApprovalWorkflowStep:DomainsApprovalWorkflowStep")
 class DomainsApprovalWorkflowStep(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/domainsApprovalWorkflowStep:DomainsApprovalWorkflowStep"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

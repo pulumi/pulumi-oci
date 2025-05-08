@@ -288,10 +288,8 @@ class _ProjectState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:AiLanguage/project:Project")
 class Project(pulumi.CustomResource):
-
-    pulumi_type = "oci:AiLanguage/project:Project"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

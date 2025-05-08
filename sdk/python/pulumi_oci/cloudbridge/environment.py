@@ -256,10 +256,8 @@ class _EnvironmentState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:CloudBridge/environment:Environment")
 class Environment(pulumi.CustomResource):
-
-    pulumi_type = "oci:CloudBridge/environment:Environment"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

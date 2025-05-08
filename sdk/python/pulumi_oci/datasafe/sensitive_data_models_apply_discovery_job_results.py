@@ -79,10 +79,8 @@ class _SensitiveDataModelsApplyDiscoveryJobResultsState:
         pulumi.set(self, "sensitive_data_model_id", value)
 
 
+@pulumi.type_token("oci:DataSafe/sensitiveDataModelsApplyDiscoveryJobResults:SensitiveDataModelsApplyDiscoveryJobResults")
 class SensitiveDataModelsApplyDiscoveryJobResults(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataSafe/sensitiveDataModelsApplyDiscoveryJobResults:SensitiveDataModelsApplyDiscoveryJobResults"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

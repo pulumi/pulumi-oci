@@ -890,10 +890,8 @@ class _DomainsMySupportAccountState:
         pulumi.set(self, "user_id", value)
 
 
+@pulumi.type_token("oci:Identity/domainsMySupportAccount:DomainsMySupportAccount")
 class DomainsMySupportAccount(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/domainsMySupportAccount:DomainsMySupportAccount"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

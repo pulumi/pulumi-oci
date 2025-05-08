@@ -353,10 +353,8 @@ class _TagState:
         pulumi.set(self, "validator", value)
 
 
+@pulumi.type_token("oci:Identity/tag:Tag")
 class Tag(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/tag:Tag"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

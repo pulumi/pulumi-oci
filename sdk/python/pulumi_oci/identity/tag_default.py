@@ -254,10 +254,8 @@ class _TagDefaultState:
         pulumi.set(self, "value", value)
 
 
+@pulumi.type_token("oci:Identity/tagDefault:TagDefault")
 class TagDefault(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/tagDefault:TagDefault"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

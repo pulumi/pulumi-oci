@@ -550,10 +550,8 @@ class _ManagementAgentState:
         pulumi.set(self, "version", value)
 
 
+@pulumi.type_token("oci:ManagementAgent/managementAgent:ManagementAgent")
 class ManagementAgent(pulumi.CustomResource):
-
-    pulumi_type = "oci:ManagementAgent/managementAgent:ManagementAgent"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

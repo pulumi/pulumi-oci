@@ -223,10 +223,8 @@ class _AlertPolicyRuleState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:DataSafe/alertPolicyRule:AlertPolicyRule")
 class AlertPolicyRule(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataSafe/alertPolicyRule:AlertPolicyRule"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

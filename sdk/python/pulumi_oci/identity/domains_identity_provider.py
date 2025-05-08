@@ -4085,10 +4085,8 @@ class _DomainsIdentityProviderState:
         pulumi.set(self, "user_mapping_store_attribute", value)
 
 
+@pulumi.type_token("oci:Identity/domainsIdentityProvider:DomainsIdentityProvider")
 class DomainsIdentityProvider(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/domainsIdentityProvider:DomainsIdentityProvider"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

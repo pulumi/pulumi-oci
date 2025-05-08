@@ -1227,10 +1227,8 @@ class _ConnectionState:
         pulumi.set(self, "wallet", value)
 
 
+@pulumi.type_token("oci:DatabaseMigration/connection:Connection")
 class Connection(pulumi.CustomResource):
-
-    pulumi_type = "oci:DatabaseMigration/connection:Connection"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

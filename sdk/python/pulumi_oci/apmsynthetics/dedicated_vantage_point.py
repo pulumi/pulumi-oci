@@ -335,10 +335,8 @@ class _DedicatedVantagePointState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:ApmSynthetics/dedicatedVantagePoint:DedicatedVantagePoint")
 class DedicatedVantagePoint(pulumi.CustomResource):
-
-    pulumi_type = "oci:ApmSynthetics/dedicatedVantagePoint:DedicatedVantagePoint"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

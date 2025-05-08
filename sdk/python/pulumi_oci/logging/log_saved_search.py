@@ -287,10 +287,8 @@ class _LogSavedSearchState:
         pulumi.set(self, "time_last_modified", value)
 
 
+@pulumi.type_token("oci:Logging/logSavedSearch:LogSavedSearch")
 class LogSavedSearch(pulumi.CustomResource):
-
-    pulumi_type = "oci:Logging/logSavedSearch:LogSavedSearch"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

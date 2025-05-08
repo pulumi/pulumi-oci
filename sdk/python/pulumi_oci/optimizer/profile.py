@@ -380,10 +380,8 @@ class _ProfileState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Optimizer/profile:Profile")
 class Profile(pulumi.CustomResource):
-
-    pulumi_type = "oci:Optimizer/profile:Profile"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

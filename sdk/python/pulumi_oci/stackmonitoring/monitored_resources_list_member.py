@@ -162,10 +162,8 @@ class _MonitoredResourcesListMemberState:
         pulumi.set(self, "monitored_resource_id", value)
 
 
+@pulumi.type_token("oci:StackMonitoring/monitoredResourcesListMember:MonitoredResourcesListMember")
 class MonitoredResourcesListMember(pulumi.CustomResource):
-
-    pulumi_type = "oci:StackMonitoring/monitoredResourcesListMember:MonitoredResourcesListMember"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

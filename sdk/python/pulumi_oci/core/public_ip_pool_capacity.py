@@ -138,10 +138,8 @@ class _PublicIpPoolCapacityState:
         pulumi.set(self, "public_ip_pool_id", value)
 
 
+@pulumi.type_token("oci:Core/publicIpPoolCapacity:PublicIpPoolCapacity")
 class PublicIpPoolCapacity(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/publicIpPoolCapacity:PublicIpPoolCapacity"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

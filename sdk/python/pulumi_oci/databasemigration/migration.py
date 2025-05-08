@@ -782,10 +782,8 @@ class _MigrationState:
         pulumi.set(self, "wait_after", value)
 
 
+@pulumi.type_token("oci:DatabaseMigration/migration:Migration")
 class Migration(pulumi.CustomResource):
-
-    pulumi_type = "oci:DatabaseMigration/migration:Migration"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -510,10 +510,8 @@ class _AssetState:
         pulumi.set(self, "vmware_vm", value)
 
 
+@pulumi.type_token("oci:CloudBridge/asset:Asset")
 class Asset(pulumi.CustomResource):
-
-    pulumi_type = "oci:CloudBridge/asset:Asset"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

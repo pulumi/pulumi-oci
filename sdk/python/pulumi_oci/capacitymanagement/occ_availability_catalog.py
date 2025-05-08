@@ -446,10 +446,8 @@ class _OccAvailabilityCatalogState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:CapacityManagement/occAvailabilityCatalog:OccAvailabilityCatalog")
 class OccAvailabilityCatalog(pulumi.CustomResource):
-
-    pulumi_type = "oci:CapacityManagement/occAvailabilityCatalog:OccAvailabilityCatalog"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -657,10 +657,8 @@ class _PluggableDatabaseState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Database/pluggableDatabase:PluggableDatabase")
 class PluggableDatabase(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/pluggableDatabase:PluggableDatabase"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -126,10 +126,8 @@ class _AutonomousContainerDatabaseDataguardAssociationOperationState:
         pulumi.set(self, "operation", value)
 
 
+@pulumi.type_token("oci:Database/autonomousContainerDatabaseDataguardAssociationOperation:AutonomousContainerDatabaseDataguardAssociationOperation")
 class AutonomousContainerDatabaseDataguardAssociationOperation(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/autonomousContainerDatabaseDataguardAssociationOperation:AutonomousContainerDatabaseDataguardAssociationOperation"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

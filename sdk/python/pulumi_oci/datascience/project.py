@@ -272,10 +272,8 @@ class _ProjectState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:DataScience/project:Project")
 class Project(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataScience/project:Project"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

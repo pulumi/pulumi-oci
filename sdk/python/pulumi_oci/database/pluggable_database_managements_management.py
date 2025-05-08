@@ -526,10 +526,8 @@ class _PluggableDatabaseManagementsManagementState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Database/pluggableDatabaseManagementsManagement:PluggableDatabaseManagementsManagement")
 class PluggableDatabaseManagementsManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/pluggableDatabaseManagementsManagement:PluggableDatabaseManagementsManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

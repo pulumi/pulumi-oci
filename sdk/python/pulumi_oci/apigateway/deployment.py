@@ -335,10 +335,8 @@ class _DeploymentState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:ApiGateway/deployment:Deployment")
 class Deployment(pulumi.CustomResource):
-
-    pulumi_type = "oci:ApiGateway/deployment:Deployment"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

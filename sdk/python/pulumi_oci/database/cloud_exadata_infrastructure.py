@@ -895,10 +895,8 @@ class _CloudExadataInfrastructureState:
         pulumi.set(self, "total_storage_size_in_gbs", value)
 
 
+@pulumi.type_token("oci:Database/cloudExadataInfrastructure:CloudExadataInfrastructure")
 class CloudExadataInfrastructure(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/cloudExadataInfrastructure:CloudExadataInfrastructure"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

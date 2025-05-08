@@ -448,10 +448,8 @@ class _WorkspaceImportRequestState:
         pulumi.set(self, "workspace_id", value)
 
 
+@pulumi.type_token("oci:DataIntegration/workspaceImportRequest:WorkspaceImportRequest")
 class WorkspaceImportRequest(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataIntegration/workspaceImportRequest:WorkspaceImportRequest"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

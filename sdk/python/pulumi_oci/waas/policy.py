@@ -401,10 +401,8 @@ class _PolicyState:
         pulumi.set(self, "waf_config", value)
 
 
+@pulumi.type_token("oci:Waas/policy:Policy")
 class Policy(pulumi.CustomResource):
-
-    pulumi_type = "oci:Waas/policy:Policy"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

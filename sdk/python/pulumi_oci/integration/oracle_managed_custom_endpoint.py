@@ -175,10 +175,8 @@ class _OracleManagedCustomEndpointState:
         pulumi.set(self, "state", value)
 
 
+@pulumi.type_token("oci:Integration/oracleManagedCustomEndpoint:OracleManagedCustomEndpoint")
 class OracleManagedCustomEndpoint(pulumi.CustomResource):
-
-    pulumi_type = "oci:Integration/oracleManagedCustomEndpoint:OracleManagedCustomEndpoint"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

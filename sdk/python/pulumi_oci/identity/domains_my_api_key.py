@@ -906,10 +906,8 @@ class _DomainsMyApiKeyState:
         pulumi.set(self, "user", value)
 
 
+@pulumi.type_token("oci:Identity/domainsMyApiKey:DomainsMyApiKey")
 class DomainsMyApiKey(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/domainsMyApiKey:DomainsMyApiKey"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

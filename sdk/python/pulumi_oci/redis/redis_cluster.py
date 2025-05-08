@@ -557,10 +557,8 @@ class _RedisClusterState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Redis/redisCluster:RedisCluster")
 class RedisCluster(pulumi.CustomResource):
-
-    pulumi_type = "oci:Redis/redisCluster:RedisCluster"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

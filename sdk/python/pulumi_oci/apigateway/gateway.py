@@ -464,10 +464,8 @@ class _GatewayState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:ApiGateway/gateway:Gateway")
 class Gateway(pulumi.CustomResource):
-
-    pulumi_type = "oci:ApiGateway/gateway:Gateway"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

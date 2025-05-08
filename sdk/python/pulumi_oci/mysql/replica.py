@@ -482,10 +482,8 @@ class _ReplicaState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Mysql/replica:Replica")
 class Replica(pulumi.CustomResource):
-
-    pulumi_type = "oci:Mysql/replica:Replica"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

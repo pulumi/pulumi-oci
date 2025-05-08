@@ -513,10 +513,8 @@ class _MlApplicationImplementationState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:DataScience/mlApplicationImplementation:MlApplicationImplementation")
 class MlApplicationImplementation(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataScience/mlApplicationImplementation:MlApplicationImplementation"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

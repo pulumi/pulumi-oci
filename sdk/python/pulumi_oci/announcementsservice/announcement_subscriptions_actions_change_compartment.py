@@ -111,10 +111,8 @@ class _AnnouncementSubscriptionsActionsChangeCompartmentState:
         pulumi.set(self, "compartment_id", value)
 
 
+@pulumi.type_token("oci:AnnouncementsService/announcementSubscriptionsActionsChangeCompartment:AnnouncementSubscriptionsActionsChangeCompartment")
 class AnnouncementSubscriptionsActionsChangeCompartment(pulumi.CustomResource):
-
-    pulumi_type = "oci:AnnouncementsService/announcementSubscriptionsActionsChangeCompartment:AnnouncementSubscriptionsActionsChangeCompartment"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

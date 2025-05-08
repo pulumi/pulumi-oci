@@ -700,10 +700,8 @@ class _NetworkLoadBalancerState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:NetworkLoadBalancer/networkLoadBalancer:NetworkLoadBalancer")
 class NetworkLoadBalancer(pulumi.CustomResource):
-
-    pulumi_type = "oci:NetworkLoadBalancer/networkLoadBalancer:NetworkLoadBalancer"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

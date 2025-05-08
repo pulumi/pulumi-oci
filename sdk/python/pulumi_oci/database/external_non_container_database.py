@@ -417,10 +417,8 @@ class _ExternalNonContainerDatabaseState:
         pulumi.set(self, "time_zone", value)
 
 
+@pulumi.type_token("oci:Database/externalNonContainerDatabase:ExternalNonContainerDatabase")
 class ExternalNonContainerDatabase(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/externalNonContainerDatabase:ExternalNonContainerDatabase"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

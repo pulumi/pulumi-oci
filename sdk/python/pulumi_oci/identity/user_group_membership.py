@@ -191,10 +191,8 @@ class _UserGroupMembershipState:
         pulumi.set(self, "user_id", value)
 
 
+@pulumi.type_token("oci:Identity/userGroupMembership:UserGroupMembership")
 class UserGroupMembership(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/userGroupMembership:UserGroupMembership"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -205,10 +205,8 @@ class _ModelDefinedMetadataArtifactState:
         pulumi.set(self, "model_id", value)
 
 
+@pulumi.type_token("oci:DataScience/modelDefinedMetadataArtifact:ModelDefinedMetadataArtifact")
 class ModelDefinedMetadataArtifact(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataScience/modelDefinedMetadataArtifact:ModelDefinedMetadataArtifact"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

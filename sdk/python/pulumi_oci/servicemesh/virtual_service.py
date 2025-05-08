@@ -417,10 +417,8 @@ class _VirtualServiceState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:ServiceMesh/virtualService:VirtualService")
 class VirtualService(pulumi.CustomResource):
-
-    pulumi_type = "oci:ServiceMesh/virtualService:VirtualService"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -635,10 +635,8 @@ class _HostInsightState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Opsi/hostInsight:HostInsight")
 class HostInsight(pulumi.CustomResource):
-
-    pulumi_type = "oci:Opsi/hostInsight:HostInsight"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

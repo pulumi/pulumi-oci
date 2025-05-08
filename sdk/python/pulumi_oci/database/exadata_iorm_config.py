@@ -177,10 +177,8 @@ class _ExadataIormConfigState:
         pulumi.set(self, "state", value)
 
 
+@pulumi.type_token("oci:Database/exadataIormConfig:ExadataIormConfig")
 class ExadataIormConfig(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/exadataIormConfig:ExadataIormConfig"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

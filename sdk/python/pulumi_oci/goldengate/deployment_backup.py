@@ -597,10 +597,8 @@ class _DeploymentBackupState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:GoldenGate/deploymentBackup:DeploymentBackup")
 class DeploymentBackup(pulumi.CustomResource):
-
-    pulumi_type = "oci:GoldenGate/deploymentBackup:DeploymentBackup"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

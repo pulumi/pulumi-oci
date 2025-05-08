@@ -916,10 +916,8 @@ class _DesktopPoolState:
         pulumi.set(self, "use_dedicated_vm_host", value)
 
 
+@pulumi.type_token("oci:Desktops/desktopPool:DesktopPool")
 class DesktopPool(pulumi.CustomResource):
-
-    pulumi_type = "oci:Desktops/desktopPool:DesktopPool"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -354,10 +354,8 @@ class _RemediationRunState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Adm/remediationRun:RemediationRun")
 class RemediationRun(pulumi.CustomResource):
-
-    pulumi_type = "oci:Adm/remediationRun:RemediationRun"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

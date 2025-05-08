@@ -161,10 +161,8 @@ class _ManagedInstanceGroupInstallPackagesManagementState:
         pulumi.set(self, "work_request_details", value)
 
 
+@pulumi.type_token("oci:OsManagementHub/managedInstanceGroupInstallPackagesManagement:ManagedInstanceGroupInstallPackagesManagement")
 class ManagedInstanceGroupInstallPackagesManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:OsManagementHub/managedInstanceGroupInstallPackagesManagement:ManagedInstanceGroupInstallPackagesManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

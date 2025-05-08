@@ -528,10 +528,8 @@ class _DbNodeState:
         pulumi.set(self, "vnic_id", value)
 
 
+@pulumi.type_token("oci:Database/dbNode:DbNode")
 class DbNode(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/dbNode:DbNode"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

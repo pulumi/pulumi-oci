@@ -1280,10 +1280,8 @@ class _DeploymentState:
         pulumi.set(self, "time_upgrade_required", value)
 
 
+@pulumi.type_token("oci:GoldenGate/deployment:Deployment")
 class Deployment(pulumi.CustomResource):
-
-    pulumi_type = "oci:GoldenGate/deployment:Deployment"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -429,10 +429,8 @@ class _AuditArchiveRetrievalState:
         pulumi.set(self, "time_requested", value)
 
 
+@pulumi.type_token("oci:DataSafe/auditArchiveRetrieval:AuditArchiveRetrieval")
 class AuditArchiveRetrieval(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataSafe/auditArchiveRetrieval:AuditArchiveRetrieval"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

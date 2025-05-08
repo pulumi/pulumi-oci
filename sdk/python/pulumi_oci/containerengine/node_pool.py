@@ -736,10 +736,8 @@ class _NodePoolState:
         pulumi.set(self, "subnet_ids", value)
 
 
+@pulumi.type_token("oci:ContainerEngine/nodePool:NodePool")
 class NodePool(pulumi.CustomResource):
-
-    pulumi_type = "oci:ContainerEngine/nodePool:NodePool"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -268,10 +268,8 @@ class _HeatWaveClusterState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Mysql/heatWaveCluster:HeatWaveCluster")
 class HeatWaveCluster(pulumi.CustomResource):
-
-    pulumi_type = "oci:Mysql/heatWaveCluster:HeatWaveCluster"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

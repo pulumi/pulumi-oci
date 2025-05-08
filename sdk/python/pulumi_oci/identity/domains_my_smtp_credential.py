@@ -989,10 +989,8 @@ class _DomainsMySmtpCredentialState:
         pulumi.set(self, "user_name", value)
 
 
+@pulumi.type_token("oci:Identity/domainsMySmtpCredential:DomainsMySmtpCredential")
 class DomainsMySmtpCredential(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/domainsMySmtpCredential:DomainsMySmtpCredential"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

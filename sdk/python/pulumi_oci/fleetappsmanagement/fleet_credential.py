@@ -301,10 +301,8 @@ class _FleetCredentialState:
         pulumi.set(self, "user", value)
 
 
+@pulumi.type_token("oci:FleetAppsManagement/fleetCredential:FleetCredential")
 class FleetCredential(pulumi.CustomResource):
-
-    pulumi_type = "oci:FleetAppsManagement/fleetCredential:FleetCredential"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

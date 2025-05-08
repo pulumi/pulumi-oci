@@ -432,10 +432,8 @@ class _PoolState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:DataFlow/pool:Pool")
 class Pool(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataFlow/pool:Pool"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

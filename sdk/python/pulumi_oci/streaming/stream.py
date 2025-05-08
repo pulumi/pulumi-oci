@@ -336,10 +336,8 @@ class _StreamState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Streaming/stream:Stream")
 class Stream(pulumi.CustomResource):
-
-    pulumi_type = "oci:Streaming/stream:Stream"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

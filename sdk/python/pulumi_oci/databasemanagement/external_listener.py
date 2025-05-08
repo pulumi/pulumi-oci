@@ -562,10 +562,8 @@ class _ExternalListenerState:
         pulumi.set(self, "version", value)
 
 
+@pulumi.type_token("oci:DatabaseManagement/externalListener:ExternalListener")
 class ExternalListener(pulumi.CustomResource):
-
-    pulumi_type = "oci:DatabaseManagement/externalListener:ExternalListener"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

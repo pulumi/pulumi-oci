@@ -112,10 +112,8 @@ class _DomainReplicationToRegionState:
         pulumi.set(self, "replica_region", value)
 
 
+@pulumi.type_token("oci:Identity/domainReplicationToRegion:DomainReplicationToRegion")
 class DomainReplicationToRegion(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/domainReplicationToRegion:DomainReplicationToRegion"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

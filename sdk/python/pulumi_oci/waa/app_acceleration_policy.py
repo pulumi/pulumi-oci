@@ -354,10 +354,8 @@ class _AppAccelerationPolicyState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Waa/appAccelerationPolicy:AppAccelerationPolicy")
 class AppAccelerationPolicy(pulumi.CustomResource):
-
-    pulumi_type = "oci:Waa/appAccelerationPolicy:AppAccelerationPolicy"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -301,10 +301,8 @@ class _FusionEnvironmentRefreshActivityState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:FusionApps/fusionEnvironmentRefreshActivity:FusionEnvironmentRefreshActivity")
 class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
-
-    pulumi_type = "oci:FusionApps/fusionEnvironmentRefreshActivity:FusionEnvironmentRefreshActivity"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

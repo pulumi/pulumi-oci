@@ -146,10 +146,8 @@ class _ProjectRepositorySettingState:
         pulumi.set(self, "project_id", value)
 
 
+@pulumi.type_token("oci:DevOps/projectRepositorySetting:ProjectRepositorySetting")
 class ProjectRepositorySetting(pulumi.CustomResource):
-
-    pulumi_type = "oci:DevOps/projectRepositorySetting:ProjectRepositorySetting"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -654,10 +654,8 @@ class _ManagementStationState:
         pulumi.set(self, "total_mirrors", value)
 
 
+@pulumi.type_token("oci:OsManagementHub/managementStation:ManagementStation")
 class ManagementStation(pulumi.CustomResource):
-
-    pulumi_type = "oci:OsManagementHub/managementStation:ManagementStation"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

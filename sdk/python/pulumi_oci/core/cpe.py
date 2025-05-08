@@ -311,10 +311,8 @@ class _CpeState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Core/cpe:Cpe")
 class Cpe(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/cpe:Cpe"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

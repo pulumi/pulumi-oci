@@ -159,10 +159,8 @@ class _ListingResourceVersionAgreementState:
         pulumi.set(self, "time_retrieved", value)
 
 
+@pulumi.type_token("oci:Core/listingResourceVersionAgreement:ListingResourceVersionAgreement")
 class ListingResourceVersionAgreement(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/listingResourceVersionAgreement:ListingResourceVersionAgreement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

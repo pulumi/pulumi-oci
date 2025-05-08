@@ -1166,10 +1166,8 @@ class _DomainsMyOauth2clientCredentialState:
         pulumi.set(self, "user", value)
 
 
+@pulumi.type_token("oci:Identity/domainsMyOauth2clientCredential:DomainsMyOauth2clientCredential")
 class DomainsMyOauth2clientCredential(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/domainsMyOauth2clientCredential:DomainsMyOauth2clientCredential"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

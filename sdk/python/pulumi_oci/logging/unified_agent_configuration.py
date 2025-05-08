@@ -350,10 +350,8 @@ class _UnifiedAgentConfigurationState:
         pulumi.set(self, "time_last_modified", value)
 
 
+@pulumi.type_token("oci:Logging/unifiedAgentConfiguration:UnifiedAgentConfiguration")
 class UnifiedAgentConfiguration(pulumi.CustomResource):
-
-    pulumi_type = "oci:Logging/unifiedAgentConfiguration:UnifiedAgentConfiguration"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

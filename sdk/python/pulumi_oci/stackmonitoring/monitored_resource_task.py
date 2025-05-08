@@ -305,10 +305,8 @@ class _MonitoredResourceTaskState:
         pulumi.set(self, "work_request_ids", value)
 
 
+@pulumi.type_token("oci:StackMonitoring/monitoredResourceTask:MonitoredResourceTask")
 class MonitoredResourceTask(pulumi.CustomResource):
-
-    pulumi_type = "oci:StackMonitoring/monitoredResourceTask:MonitoredResourceTask"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -338,10 +338,8 @@ class _PathAnalysiState:
         pulumi.set(self, "type", value)
 
 
+@pulumi.type_token("oci:VnMonitoring/pathAnalysi:PathAnalysi")
 class PathAnalysi(pulumi.CustomResource):
-
-    pulumi_type = "oci:VnMonitoring/pathAnalysi:PathAnalysi"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

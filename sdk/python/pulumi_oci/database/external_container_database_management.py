@@ -162,10 +162,8 @@ class _ExternalContainerDatabaseManagementState:
         pulumi.set(self, "license_model", value)
 
 
+@pulumi.type_token("oci:Database/externalContainerDatabaseManagement:ExternalContainerDatabaseManagement")
 class ExternalContainerDatabaseManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/externalContainerDatabaseManagement:ExternalContainerDatabaseManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

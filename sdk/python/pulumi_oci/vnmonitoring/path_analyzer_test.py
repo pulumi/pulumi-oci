@@ -383,10 +383,8 @@ class _PathAnalyzerTestState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:VnMonitoring/pathAnalyzerTest:PathAnalyzerTest")
 class PathAnalyzerTest(pulumi.CustomResource):
-
-    pulumi_type = "oci:VnMonitoring/pathAnalyzerTest:PathAnalyzerTest"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

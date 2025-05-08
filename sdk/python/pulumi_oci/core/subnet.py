@@ -754,10 +754,8 @@ class _SubnetState:
         pulumi.set(self, "virtual_router_mac", value)
 
 
+@pulumi.type_token("oci:Core/subnet:Subnet")
 class Subnet(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/subnet:Subnet"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

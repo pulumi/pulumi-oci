@@ -418,10 +418,8 @@ class _VirtualNetworkState:
         pulumi.set(self, "vcn_domain_name", value)
 
 
+@pulumi.type_token("oci:Core/virtualNetwork:VirtualNetwork")
 class VirtualNetwork(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/virtualNetwork:VirtualNetwork"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

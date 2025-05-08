@@ -449,10 +449,8 @@ class _DrPlanExecutionState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:DisasterRecovery/drPlanExecution:DrPlanExecution")
 class DrPlanExecution(pulumi.CustomResource):
-
-    pulumi_type = "oci:DisasterRecovery/drPlanExecution:DrPlanExecution"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

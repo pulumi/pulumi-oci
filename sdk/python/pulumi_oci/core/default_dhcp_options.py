@@ -225,10 +225,8 @@ class _DefaultDhcpOptionsState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Core/defaultDhcpOptions:DefaultDhcpOptions")
 class DefaultDhcpOptions(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/defaultDhcpOptions:DefaultDhcpOptions"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

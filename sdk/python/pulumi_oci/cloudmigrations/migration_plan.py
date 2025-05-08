@@ -416,10 +416,8 @@ class _MigrationPlanState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:CloudMigrations/migrationPlan:MigrationPlan")
 class MigrationPlan(pulumi.CustomResource):
-
-    pulumi_type = "oci:CloudMigrations/migrationPlan:MigrationPlan"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -111,10 +111,8 @@ class _GenerateOnPremConnectorConfigurationState:
         pulumi.set(self, "password", value)
 
 
+@pulumi.type_token("oci:DataSafe/generateOnPremConnectorConfiguration:GenerateOnPremConnectorConfiguration")
 class GenerateOnPremConnectorConfiguration(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataSafe/generateOnPremConnectorConfiguration:GenerateOnPremConnectorConfiguration"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

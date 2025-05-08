@@ -290,10 +290,8 @@ class _CrossConnectGroupState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Core/crossConnectGroup:CrossConnectGroup")
 class CrossConnectGroup(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/crossConnectGroup:CrossConnectGroup"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

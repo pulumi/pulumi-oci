@@ -668,10 +668,8 @@ class _FileStorageLustreFileSystemState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Lustre/fileStorageLustreFileSystem:FileStorageLustreFileSystem")
 class FileStorageLustreFileSystem(pulumi.CustomResource):
-
-    pulumi_type = "oci:Lustre/fileStorageLustreFileSystem:FileStorageLustreFileSystem"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

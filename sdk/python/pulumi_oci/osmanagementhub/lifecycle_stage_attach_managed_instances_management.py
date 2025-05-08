@@ -97,10 +97,8 @@ class _LifecycleStageAttachManagedInstancesManagementState:
         pulumi.set(self, "managed_instance_details", value)
 
 
+@pulumi.type_token("oci:OsManagementHub/lifecycleStageAttachManagedInstancesManagement:LifecycleStageAttachManagedInstancesManagement")
 class LifecycleStageAttachManagedInstancesManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:OsManagementHub/lifecycleStageAttachManagedInstancesManagement:LifecycleStageAttachManagedInstancesManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

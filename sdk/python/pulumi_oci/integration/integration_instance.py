@@ -906,10 +906,8 @@ class _IntegrationInstanceState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Integration/integrationInstance:IntegrationInstance")
 class IntegrationInstance(pulumi.CustomResource):
-
-    pulumi_type = "oci:Integration/integrationInstance:IntegrationInstance"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

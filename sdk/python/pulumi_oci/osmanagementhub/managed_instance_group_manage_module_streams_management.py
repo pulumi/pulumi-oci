@@ -258,10 +258,8 @@ class _ManagedInstanceGroupManageModuleStreamsManagementState:
         pulumi.set(self, "work_request_details", value)
 
 
+@pulumi.type_token("oci:OsManagementHub/managedInstanceGroupManageModuleStreamsManagement:ManagedInstanceGroupManageModuleStreamsManagement")
 class ManagedInstanceGroupManageModuleStreamsManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:OsManagementHub/managedInstanceGroupManageModuleStreamsManagement:ManagedInstanceGroupManageModuleStreamsManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

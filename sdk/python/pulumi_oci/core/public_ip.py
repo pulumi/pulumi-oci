@@ -403,10 +403,8 @@ class _PublicIpState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Core/publicIp:PublicIp")
 class PublicIp(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/publicIp:PublicIp"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

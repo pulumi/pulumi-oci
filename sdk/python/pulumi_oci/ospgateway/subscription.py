@@ -526,10 +526,8 @@ class _SubscriptionState:
         pulumi.set(self, "upgrade_state_details", value)
 
 
+@pulumi.type_token("oci:OspGateway/subscription:Subscription")
 class Subscription(pulumi.CustomResource):
-
-    pulumi_type = "oci:OspGateway/subscription:Subscription"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

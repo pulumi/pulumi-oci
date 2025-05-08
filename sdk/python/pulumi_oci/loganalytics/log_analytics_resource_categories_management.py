@@ -173,10 +173,8 @@ class _LogAnalyticsResourceCategoriesManagementState:
         pulumi.set(self, "resource_type", value)
 
 
+@pulumi.type_token("oci:LogAnalytics/logAnalyticsResourceCategoriesManagement:LogAnalyticsResourceCategoriesManagement")
 class LogAnalyticsResourceCategoriesManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:LogAnalytics/logAnalyticsResourceCategoriesManagement:LogAnalyticsResourceCategoriesManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -415,10 +415,8 @@ class _ScheduledActionState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Database/scheduledAction:ScheduledAction")
 class ScheduledAction(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/scheduledAction:ScheduledAction"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

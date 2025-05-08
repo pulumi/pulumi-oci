@@ -481,10 +481,8 @@ class _BackupState:
         pulumi.set(self, "version", value)
 
 
+@pulumi.type_token("oci:Database/backup:Backup")
 class Backup(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/backup:Backup"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -3343,10 +3343,8 @@ class _DomainsPasswordPolicyState:
         pulumi.set(self, "user_name_disallowed", value)
 
 
+@pulumi.type_token("oci:Identity/domainsPasswordPolicy:DomainsPasswordPolicy")
 class DomainsPasswordPolicy(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/domainsPasswordPolicy:DomainsPasswordPolicy"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

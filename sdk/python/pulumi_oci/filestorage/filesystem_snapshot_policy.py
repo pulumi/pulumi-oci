@@ -401,10 +401,8 @@ class _FilesystemSnapshotPolicyState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:FileStorage/filesystemSnapshotPolicy:FilesystemSnapshotPolicy")
 class FilesystemSnapshotPolicy(pulumi.CustomResource):
-
-    pulumi_type = "oci:FileStorage/filesystemSnapshotPolicy:FilesystemSnapshotPolicy"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

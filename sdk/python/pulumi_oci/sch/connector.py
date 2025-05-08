@@ -415,10 +415,8 @@ class _ConnectorState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Sch/connector:Connector")
 class Connector(pulumi.CustomResource):
-
-    pulumi_type = "oci:Sch/connector:Connector"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

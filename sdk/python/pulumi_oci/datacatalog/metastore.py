@@ -336,10 +336,8 @@ class _MetastoreState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:DataCatalog/metastore:Metastore")
 class Metastore(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataCatalog/metastore:Metastore"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

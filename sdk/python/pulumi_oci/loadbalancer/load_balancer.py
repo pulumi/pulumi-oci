@@ -795,10 +795,8 @@ class _LoadBalancerState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:LoadBalancer/loadBalancer:LoadBalancer")
 class LoadBalancer(pulumi.CustomResource):
-
-    pulumi_type = "oci:LoadBalancer/loadBalancer:LoadBalancer"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

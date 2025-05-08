@@ -415,10 +415,8 @@ class _DetectAnomalyJobState:
         pulumi.set(self, "time_started", value)
 
 
+@pulumi.type_token("oci:AiAnomalyDetection/detectAnomalyJob:DetectAnomalyJob")
 class DetectAnomalyJob(pulumi.CustomResource):
-
-    pulumi_type = "oci:AiAnomalyDetection/detectAnomalyJob:DetectAnomalyJob"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -433,10 +433,8 @@ class _NotebookSessionState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:DataScience/notebookSession:NotebookSession")
 class NotebookSession(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataScience/notebookSession:NotebookSession"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

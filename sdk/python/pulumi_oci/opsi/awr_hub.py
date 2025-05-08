@@ -350,10 +350,8 @@ class _AwrHubState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Opsi/awrHub:AwrHub")
 class AwrHub(pulumi.CustomResource):
-
-    pulumi_type = "oci:Opsi/awrHub:AwrHub"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

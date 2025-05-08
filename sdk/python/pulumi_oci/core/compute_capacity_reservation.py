@@ -360,10 +360,8 @@ class _ComputeCapacityReservationState:
         pulumi.set(self, "used_instance_count", value)
 
 
+@pulumi.type_token("oci:Core/computeCapacityReservation:ComputeCapacityReservation")
 class ComputeCapacityReservation(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/computeCapacityReservation:ComputeCapacityReservation"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

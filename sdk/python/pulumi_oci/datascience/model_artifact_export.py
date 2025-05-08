@@ -171,10 +171,8 @@ class _ModelArtifactExportState:
         pulumi.set(self, "source_region", value)
 
 
+@pulumi.type_token("oci:DataScience/modelArtifactExport:ModelArtifactExport")
 class ModelArtifactExport(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataScience/modelArtifactExport:ModelArtifactExport"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

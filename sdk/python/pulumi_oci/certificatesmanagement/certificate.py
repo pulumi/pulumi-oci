@@ -465,10 +465,8 @@ class _CertificateState:
         pulumi.set(self, "time_of_deletion", value)
 
 
+@pulumi.type_token("oci:CertificatesManagement/certificate:Certificate")
 class Certificate(pulumi.CustomResource):
-
-    pulumi_type = "oci:CertificatesManagement/certificate:Certificate"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

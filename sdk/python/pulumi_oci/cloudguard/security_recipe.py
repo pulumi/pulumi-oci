@@ -334,10 +334,8 @@ class _SecurityRecipeState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:CloudGuard/securityRecipe:SecurityRecipe")
 class SecurityRecipe(pulumi.CustomResource):
-
-    pulumi_type = "oci:CloudGuard/securityRecipe:SecurityRecipe"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

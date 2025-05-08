@@ -143,10 +143,8 @@ class _ZoneStageDnssecKeyVersionState:
         pulumi.set(self, "zone_id", value)
 
 
+@pulumi.type_token("oci:Dns/zoneStageDnssecKeyVersion:ZoneStageDnssecKeyVersion")
 class ZoneStageDnssecKeyVersion(pulumi.CustomResource):
-
-    pulumi_type = "oci:Dns/zoneStageDnssecKeyVersion:ZoneStageDnssecKeyVersion"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

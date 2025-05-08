@@ -495,10 +495,8 @@ class _ProductLicenseState:
         pulumi.set(self, "vendor_name", value)
 
 
+@pulumi.type_token("oci:LicenseManager/productLicense:ProductLicense")
 class ProductLicense(pulumi.CustomResource):
-
-    pulumi_type = "oci:LicenseManager/productLicense:ProductLicense"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

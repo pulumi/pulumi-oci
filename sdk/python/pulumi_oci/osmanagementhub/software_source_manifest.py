@@ -112,10 +112,8 @@ class _SoftwareSourceManifestState:
         pulumi.set(self, "software_source_id", value)
 
 
+@pulumi.type_token("oci:OsManagementHub/softwareSourceManifest:SoftwareSourceManifest")
 class SoftwareSourceManifest(pulumi.CustomResource):
-
-    pulumi_type = "oci:OsManagementHub/softwareSourceManifest:SoftwareSourceManifest"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

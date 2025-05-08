@@ -664,10 +664,8 @@ class _ModelState:
         pulumi.set(self, "validation_dataset", value)
 
 
+@pulumi.type_token("oci:AiDocument/model:Model")
 class Model(pulumi.CustomResource):
-
-    pulumi_type = "oci:AiDocument/model:Model"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -336,10 +336,8 @@ class _EmailDomainState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Email/emailDomain:EmailDomain")
 class EmailDomain(pulumi.CustomResource):
-
-    pulumi_type = "oci:Email/emailDomain:EmailDomain"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

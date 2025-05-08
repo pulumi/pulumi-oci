@@ -334,10 +334,8 @@ class _DelegationSubscriptionState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:DelegateAccessControl/delegationSubscription:DelegationSubscription")
 class DelegationSubscription(pulumi.CustomResource):
-
-    pulumi_type = "oci:DelegateAccessControl/delegationSubscription:DelegationSubscription"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

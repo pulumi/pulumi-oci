@@ -352,10 +352,8 @@ class _MaintenanceWindowState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:StackMonitoring/maintenanceWindow:MaintenanceWindow")
 class MaintenanceWindow(pulumi.CustomResource):
-
-    pulumi_type = "oci:StackMonitoring/maintenanceWindow:MaintenanceWindow"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -826,10 +826,8 @@ class _OperatorControlAssignmentState:
         pulumi.set(self, "validate_assignment_trigger", value)
 
 
+@pulumi.type_token("oci:OperatorAccessControl/operatorControlAssignment:OperatorControlAssignment")
 class OperatorControlAssignment(pulumi.CustomResource):
-
-    pulumi_type = "oci:OperatorAccessControl/operatorControlAssignment:OperatorControlAssignment"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

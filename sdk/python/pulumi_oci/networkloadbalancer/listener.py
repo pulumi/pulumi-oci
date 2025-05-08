@@ -365,10 +365,8 @@ class _ListenerState:
         pulumi.set(self, "udp_idle_timeout", value)
 
 
+@pulumi.type_token("oci:NetworkLoadBalancer/listener:Listener")
 class Listener(pulumi.CustomResource):
-
-    pulumi_type = "oci:NetworkLoadBalancer/listener:Listener"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -696,10 +696,8 @@ class _MaintenanceRunState:
         pulumi.set(self, "total_time_taken_in_mins", value)
 
 
+@pulumi.type_token("oci:Database/maintenanceRun:MaintenanceRun")
 class MaintenanceRun(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/maintenanceRun:MaintenanceRun"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -304,10 +304,8 @@ class _ViewState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Dns/view:View")
 class View(pulumi.CustomResource):
-
-    pulumi_type = "oci:Dns/view:View"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

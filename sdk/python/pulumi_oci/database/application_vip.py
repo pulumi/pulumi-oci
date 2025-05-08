@@ -334,10 +334,8 @@ class _ApplicationVipState:
         pulumi.set(self, "time_assigned", value)
 
 
+@pulumi.type_token("oci:Database/applicationVip:ApplicationVip")
 class ApplicationVip(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/applicationVip:ApplicationVip"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

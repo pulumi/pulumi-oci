@@ -258,10 +258,8 @@ class _DrgState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Core/drg:Drg")
 class Drg(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/drg:Drg"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

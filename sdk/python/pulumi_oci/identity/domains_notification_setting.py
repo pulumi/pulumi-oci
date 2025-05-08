@@ -1347,10 +1347,8 @@ class _DomainsNotificationSettingState:
         pulumi.set(self, "test_recipients", value)
 
 
+@pulumi.type_token("oci:Identity/domainsNotificationSetting:DomainsNotificationSetting")
 class DomainsNotificationSetting(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/domainsNotificationSetting:DomainsNotificationSetting"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

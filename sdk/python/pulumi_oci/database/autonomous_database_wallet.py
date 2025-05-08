@@ -239,10 +239,8 @@ class _AutonomousDatabaseWalletState:
         pulumi.set(self, "password", value)
 
 
+@pulumi.type_token("oci:Database/autonomousDatabaseWallet:AutonomousDatabaseWallet")
 class AutonomousDatabaseWallet(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/autonomousDatabaseWallet:AutonomousDatabaseWallet"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

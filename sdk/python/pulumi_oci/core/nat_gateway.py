@@ -359,10 +359,8 @@ class _NatGatewayState:
         pulumi.set(self, "vcn_id", value)
 
 
+@pulumi.type_token("oci:Core/natGateway:NatGateway")
 class NatGateway(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/natGateway:NatGateway"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

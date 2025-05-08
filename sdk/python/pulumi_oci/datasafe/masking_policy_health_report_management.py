@@ -233,10 +233,8 @@ class _MaskingPolicyHealthReportManagementState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:DataSafe/maskingPolicyHealthReportManagement:MaskingPolicyHealthReportManagement")
 class MaskingPolicyHealthReportManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataSafe/maskingPolicyHealthReportManagement:MaskingPolicyHealthReportManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

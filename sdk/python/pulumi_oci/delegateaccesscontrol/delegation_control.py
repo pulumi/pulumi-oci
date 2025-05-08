@@ -618,10 +618,8 @@ class _DelegationControlState:
         pulumi.set(self, "vault_key_id", value)
 
 
+@pulumi.type_token("oci:DelegateAccessControl/delegationControl:DelegationControl")
 class DelegationControl(pulumi.CustomResource):
-
-    pulumi_type = "oci:DelegateAccessControl/delegationControl:DelegationControl"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -399,10 +399,8 @@ class _DeployArtifactState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:DevOps/deployArtifact:DeployArtifact")
 class DeployArtifact(pulumi.CustomResource):
-
-    pulumi_type = "oci:DevOps/deployArtifact:DeployArtifact"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

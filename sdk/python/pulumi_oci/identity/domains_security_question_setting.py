@@ -1130,10 +1130,8 @@ class _DomainsSecurityQuestionSettingState:
         pulumi.set(self, "tenancy_ocid", value)
 
 
+@pulumi.type_token("oci:Identity/domainsSecurityQuestionSetting:DomainsSecurityQuestionSetting")
 class DomainsSecurityQuestionSetting(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/domainsSecurityQuestionSetting:DomainsSecurityQuestionSetting"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -336,10 +336,8 @@ class _AccessPolicyState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:ServiceMesh/accessPolicy:AccessPolicy")
 class AccessPolicy(pulumi.CustomResource):
-
-    pulumi_type = "oci:ServiceMesh/accessPolicy:AccessPolicy"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -126,10 +126,8 @@ class _AutonomousContainerDatabaseDataguardRoleChangeState:
         pulumi.set(self, "role", value)
 
 
+@pulumi.type_token("oci:Database/autonomousContainerDatabaseDataguardRoleChange:AutonomousContainerDatabaseDataguardRoleChange")
 class AutonomousContainerDatabaseDataguardRoleChange(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/autonomousContainerDatabaseDataguardRoleChange:AutonomousContainerDatabaseDataguardRoleChange"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

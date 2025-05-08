@@ -157,10 +157,8 @@ class _RuleSetState:
         pulumi.set(self, "state", value)
 
 
+@pulumi.type_token("oci:LoadBalancer/ruleSet:RuleSet")
 class RuleSet(pulumi.CustomResource):
-
-    pulumi_type = "oci:LoadBalancer/ruleSet:RuleSet"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

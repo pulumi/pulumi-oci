@@ -191,10 +191,8 @@ class _AuthTokenState:
         pulumi.set(self, "user_id", value)
 
 
+@pulumi.type_token("oci:Identity/authToken:AuthToken")
 class AuthToken(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/authToken:AuthToken"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

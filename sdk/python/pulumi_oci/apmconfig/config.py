@@ -624,10 +624,8 @@ class _ConfigState:
         pulumi.set(self, "updated_by", value)
 
 
+@pulumi.type_token("oci:ApmConfig/config:Config")
 class Config(pulumi.CustomResource):
-
-    pulumi_type = "oci:ApmConfig/config:Config"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

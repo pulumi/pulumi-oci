@@ -313,10 +313,8 @@ class _AgentKnowledgeBaseState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:GenerativeAi/agentKnowledgeBase:AgentKnowledgeBase")
 class AgentKnowledgeBase(pulumi.CustomResource):
-
-    pulumi_type = "oci:GenerativeAi/agentKnowledgeBase:AgentKnowledgeBase"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

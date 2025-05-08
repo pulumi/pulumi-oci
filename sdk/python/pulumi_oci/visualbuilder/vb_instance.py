@@ -560,10 +560,8 @@ class _VbInstanceState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:VisualBuilder/vbInstance:VbInstance")
 class VbInstance(pulumi.CustomResource):
-
-    pulumi_type = "oci:VisualBuilder/vbInstance:VbInstance"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

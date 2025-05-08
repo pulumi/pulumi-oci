@@ -175,10 +175,8 @@ class _OdaPrivateEndpointAttachmentState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Oda/odaPrivateEndpointAttachment:OdaPrivateEndpointAttachment")
 class OdaPrivateEndpointAttachment(pulumi.CustomResource):
-
-    pulumi_type = "oci:Oda/odaPrivateEndpointAttachment:OdaPrivateEndpointAttachment"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

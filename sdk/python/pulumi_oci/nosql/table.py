@@ -433,10 +433,8 @@ class _TableState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Nosql/table:Table")
 class Table(pulumi.CustomResource):
-
-    pulumi_type = "oci:Nosql/table:Table"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -707,10 +707,8 @@ class _ExadataInfrastructureStorageState:
         pulumi.set(self, "time_zone", value)
 
 
+@pulumi.type_token("oci:Database/exadataInfrastructureStorage:ExadataInfrastructureStorage")
 class ExadataInfrastructureStorage(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/exadataInfrastructureStorage:ExadataInfrastructureStorage"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

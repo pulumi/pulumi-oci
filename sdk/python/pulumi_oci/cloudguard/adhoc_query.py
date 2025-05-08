@@ -297,10 +297,8 @@ class _AdhocQueryState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:CloudGuard/adhocQuery:AdhocQuery")
 class AdhocQuery(pulumi.CustomResource):
-
-    pulumi_type = "oci:CloudGuard/adhocQuery:AdhocQuery"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

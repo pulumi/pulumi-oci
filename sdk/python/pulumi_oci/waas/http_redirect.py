@@ -288,10 +288,8 @@ class _HttpRedirectState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Waas/httpRedirect:HttpRedirect")
 class HttpRedirect(pulumi.CustomResource):
-
-    pulumi_type = "oci:Waas/httpRedirect:HttpRedirect"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

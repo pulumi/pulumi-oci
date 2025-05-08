@@ -377,10 +377,8 @@ class _BackendState:
         pulumi.set(self, "weight", value)
 
 
+@pulumi.type_token("oci:LoadBalancer/backend:Backend")
 class Backend(pulumi.CustomResource):
-
-    pulumi_type = "oci:LoadBalancer/backend:Backend"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

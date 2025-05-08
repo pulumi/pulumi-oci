@@ -143,10 +143,8 @@ class _ConfigurationState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:LicenseManager/configuration:Configuration")
 class Configuration(pulumi.CustomResource):
-
-    pulumi_type = "oci:LicenseManager/configuration:Configuration"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -222,10 +222,8 @@ class _ListingPackageAgreementState:
         pulumi.set(self, "signature", value)
 
 
+@pulumi.type_token("oci:Marketplace/listingPackageAgreement:ListingPackageAgreement")
 class ListingPackageAgreement(pulumi.CustomResource):
-
-    pulumi_type = "oci:Marketplace/listingPackageAgreement:ListingPackageAgreement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

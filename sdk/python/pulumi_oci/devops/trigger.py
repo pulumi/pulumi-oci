@@ -448,10 +448,8 @@ class _TriggerState:
         pulumi.set(self, "trigger_url", value)
 
 
+@pulumi.type_token("oci:DevOps/trigger:Trigger")
 class Trigger(pulumi.CustomResource):
-
-    pulumi_type = "oci:DevOps/trigger:Trigger"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

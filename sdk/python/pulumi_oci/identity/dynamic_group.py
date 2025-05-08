@@ -286,10 +286,8 @@ class _DynamicGroupState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Identity/dynamicGroup:DynamicGroup")
 class DynamicGroup(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/dynamicGroup:DynamicGroup"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

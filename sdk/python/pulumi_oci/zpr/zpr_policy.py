@@ -318,10 +318,8 @@ class _ZprPolicyState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Zpr/zprPolicy:ZprPolicy")
 class ZprPolicy(pulumi.CustomResource):
-
-    pulumi_type = "oci:Zpr/zprPolicy:ZprPolicy"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

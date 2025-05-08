@@ -627,10 +627,8 @@ class _JobState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:DataScience/job:Job")
 class Job(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataScience/job:Job"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -609,10 +609,8 @@ class _DatabaseUpgradeState:
         pulumi.set(self, "vm_cluster_id", value)
 
 
+@pulumi.type_token("oci:Database/databaseUpgrade:DatabaseUpgrade")
 class DatabaseUpgrade(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/databaseUpgrade:DatabaseUpgrade"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

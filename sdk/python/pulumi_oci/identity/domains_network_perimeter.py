@@ -1014,10 +1014,8 @@ class _DomainsNetworkPerimeterState:
         pulumi.set(self, "tenancy_ocid", value)
 
 
+@pulumi.type_token("oci:Identity/domainsNetworkPerimeter:DomainsNetworkPerimeter")
 class DomainsNetworkPerimeter(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/domainsNetworkPerimeter:DomainsNetworkPerimeter"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

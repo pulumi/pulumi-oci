@@ -1356,10 +1356,8 @@ class _ShardedDatabaseState:
         pulumi.set(self, "validate_network_trigger", value)
 
 
+@pulumi.type_token("oci:GloballyDistributedDatabase/shardedDatabase:ShardedDatabase")
 class ShardedDatabase(pulumi.CustomResource):
-
-    pulumi_type = "oci:GloballyDistributedDatabase/shardedDatabase:ShardedDatabase"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -375,10 +375,8 @@ class _CertificateState:
         pulumi.set(self, "state", value)
 
 
+@pulumi.type_token("oci:LoadBalancer/certificate:Certificate")
 class Certificate(pulumi.CustomResource):
-
-    pulumi_type = "oci:LoadBalancer/certificate:Certificate"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

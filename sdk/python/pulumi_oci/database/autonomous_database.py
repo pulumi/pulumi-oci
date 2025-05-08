@@ -4085,10 +4085,8 @@ class _AutonomousDatabaseState:
         pulumi.set(self, "whitelisted_ips", value)
 
 
+@pulumi.type_token("oci:Database/autonomousDatabase:AutonomousDatabase")
 class AutonomousDatabase(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/autonomousDatabase:AutonomousDatabase"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

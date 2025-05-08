@@ -161,10 +161,8 @@ class _OsnState:
         pulumi.set(self, "state", value)
 
 
+@pulumi.type_token("oci:Blockchain/osn:Osn")
 class Osn(pulumi.CustomResource):
-
-    pulumi_type = "oci:Blockchain/osn:Osn"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

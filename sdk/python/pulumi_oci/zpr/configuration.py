@@ -256,10 +256,8 @@ class _ConfigurationState:
         pulumi.set(self, "zpr_status", value)
 
 
+@pulumi.type_token("oci:Zpr/configuration:Configuration")
 class Configuration(pulumi.CustomResource):
-
-    pulumi_type = "oci:Zpr/configuration:Configuration"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

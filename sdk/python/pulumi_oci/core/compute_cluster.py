@@ -239,10 +239,8 @@ class _ComputeClusterState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Core/computeCluster:ComputeCluster")
 class ComputeCluster(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/computeCluster:ComputeCluster"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

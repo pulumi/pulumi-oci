@@ -745,10 +745,8 @@ class _MediaAssetState:
         pulumi.set(self, "type", value)
 
 
+@pulumi.type_token("oci:MediaServices/mediaAsset:MediaAsset")
 class MediaAsset(pulumi.CustomResource):
-
-    pulumi_type = "oci:MediaServices/mediaAsset:MediaAsset"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

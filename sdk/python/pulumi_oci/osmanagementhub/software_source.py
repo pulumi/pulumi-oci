@@ -1045,10 +1045,8 @@ class _SoftwareSourceState:
         pulumi.set(self, "vendor_software_sources", value)
 
 
+@pulumi.type_token("oci:OsManagementHub/softwareSource:SoftwareSource")
 class SoftwareSource(pulumi.CustomResource):
-
-    pulumi_type = "oci:OsManagementHub/softwareSource:SoftwareSource"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

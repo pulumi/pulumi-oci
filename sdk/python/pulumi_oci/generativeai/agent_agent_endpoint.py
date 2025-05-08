@@ -489,10 +489,8 @@ class _AgentAgentEndpointState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:GenerativeAi/agentAgentEndpoint:AgentAgentEndpoint")
 class AgentAgentEndpoint(pulumi.CustomResource):
-
-    pulumi_type = "oci:GenerativeAi/agentAgentEndpoint:AgentAgentEndpoint"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

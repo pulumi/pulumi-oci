@@ -731,10 +731,8 @@ class _ClusterState:
         pulumi.set(self, "workload_network_cidr", value)
 
 
+@pulumi.type_token("oci:Ocvp/cluster:Cluster")
 class Cluster(pulumi.CustomResource):
-
-    pulumi_type = "oci:Ocvp/cluster:Cluster"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

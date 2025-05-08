@@ -318,10 +318,8 @@ class _TsigKeyState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Dns/tsigKey:TsigKey")
 class TsigKey(pulumi.CustomResource):
-
-    pulumi_type = "oci:Dns/tsigKey:TsigKey"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

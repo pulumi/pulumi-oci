@@ -366,10 +366,8 @@ class _CertificateState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:ApiGateway/certificate:Certificate")
 class Certificate(pulumi.CustomResource):
-
-    pulumi_type = "oci:ApiGateway/certificate:Certificate"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -478,10 +478,8 @@ class _BdsInstanceIdentityConfigurationState:
         pulumi.set(self, "upst_configurations", value)
 
 
+@pulumi.type_token("oci:BigDataService/bdsInstanceIdentityConfiguration:BdsInstanceIdentityConfiguration")
 class BdsInstanceIdentityConfiguration(pulumi.CustomResource):
-
-    pulumi_type = "oci:BigDataService/bdsInstanceIdentityConfiguration:BdsInstanceIdentityConfiguration"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

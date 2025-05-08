@@ -312,10 +312,8 @@ class _InvokeFunctionState:
         pulumi.set(self, "is_dry_run", value)
 
 
+@pulumi.type_token("oci:Functions/invokeFunction:InvokeFunction")
 class InvokeFunction(pulumi.CustomResource):
-
-    pulumi_type = "oci:Functions/invokeFunction:InvokeFunction"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

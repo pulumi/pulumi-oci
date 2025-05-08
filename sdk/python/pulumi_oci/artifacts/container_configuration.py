@@ -103,10 +103,8 @@ class _ContainerConfigurationState:
         pulumi.set(self, "namespace", value)
 
 
+@pulumi.type_token("oci:Artifacts/containerConfiguration:ContainerConfiguration")
 class ContainerConfiguration(pulumi.CustomResource):
-
-    pulumi_type = "oci:Artifacts/containerConfiguration:ContainerConfiguration"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

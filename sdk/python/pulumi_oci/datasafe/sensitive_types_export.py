@@ -336,10 +336,8 @@ class _SensitiveTypesExportState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:DataSafe/sensitiveTypesExport:SensitiveTypesExport")
 class SensitiveTypesExport(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataSafe/sensitiveTypesExport:SensitiveTypesExport"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

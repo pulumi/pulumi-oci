@@ -338,10 +338,8 @@ class _InstanceConfigurationState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Core/instanceConfiguration:InstanceConfiguration")
 class InstanceConfiguration(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/instanceConfiguration:InstanceConfiguration"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

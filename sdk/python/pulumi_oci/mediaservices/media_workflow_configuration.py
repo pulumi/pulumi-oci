@@ -344,10 +344,8 @@ class _MediaWorkflowConfigurationState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:MediaServices/mediaWorkflowConfiguration:MediaWorkflowConfiguration")
 class MediaWorkflowConfiguration(pulumi.CustomResource):
-
-    pulumi_type = "oci:MediaServices/mediaWorkflowConfiguration:MediaWorkflowConfiguration"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

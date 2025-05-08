@@ -553,10 +553,8 @@ class _MediaWorkflowJobState:
         pulumi.set(self, "workflow_identifier_type", value)
 
 
+@pulumi.type_token("oci:MediaServices/mediaWorkflowJob:MediaWorkflowJob")
 class MediaWorkflowJob(pulumi.CustomResource):
-
-    pulumi_type = "oci:MediaServices/mediaWorkflowJob:MediaWorkflowJob"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

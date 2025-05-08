@@ -145,10 +145,8 @@ class _ObjectLifecyclePolicyState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:ObjectStorage/objectLifecyclePolicy:ObjectLifecyclePolicy")
 class ObjectLifecyclePolicy(pulumi.CustomResource):
-
-    pulumi_type = "oci:ObjectStorage/objectLifecyclePolicy:ObjectLifecyclePolicy"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

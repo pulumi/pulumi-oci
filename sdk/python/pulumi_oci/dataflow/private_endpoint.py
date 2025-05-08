@@ -464,10 +464,8 @@ class _PrivateEndpointState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:DataFlow/privateEndpoint:PrivateEndpoint")
 class PrivateEndpoint(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataFlow/privateEndpoint:PrivateEndpoint"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

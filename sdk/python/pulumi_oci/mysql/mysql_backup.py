@@ -571,10 +571,8 @@ class _MysqlBackupState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Mysql/mysqlBackup:MysqlBackup")
 class MysqlBackup(pulumi.CustomResource):
-
-    pulumi_type = "oci:Mysql/mysqlBackup:MysqlBackup"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

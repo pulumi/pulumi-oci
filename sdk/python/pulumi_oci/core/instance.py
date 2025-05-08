@@ -1629,10 +1629,8 @@ class _InstanceState:
         pulumi.set(self, "update_operation_constraint", value)
 
 
+@pulumi.type_token("oci:Core/instance:Instance")
 class Instance(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/instance:Instance"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

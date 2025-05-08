@@ -145,10 +145,8 @@ class _AnnouncementSubscriptionsFilterGroupState:
         pulumi.set(self, "name", value)
 
 
+@pulumi.type_token("oci:AnnouncementsService/announcementSubscriptionsFilterGroup:AnnouncementSubscriptionsFilterGroup")
 class AnnouncementSubscriptionsFilterGroup(pulumi.CustomResource):
-
-    pulumi_type = "oci:AnnouncementsService/announcementSubscriptionsFilterGroup:AnnouncementSubscriptionsFilterGroup"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

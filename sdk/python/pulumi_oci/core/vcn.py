@@ -614,10 +614,8 @@ class _VcnState:
         pulumi.set(self, "vcn_domain_name", value)
 
 
+@pulumi.type_token("oci:Core/vcn:Vcn")
 class Vcn(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/vcn:Vcn"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -206,10 +206,8 @@ class _DbCredentialState:
         pulumi.set(self, "user_id", value)
 
 
+@pulumi.type_token("oci:Identity/dbCredential:DbCredential")
 class DbCredential(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/dbCredential:DbCredential"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

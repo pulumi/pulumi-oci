@@ -1238,10 +1238,8 @@ class _DomainsGroupState:
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionrequestable_group", value)
 
 
+@pulumi.type_token("oci:Identity/domainsGroup:DomainsGroup")
 class DomainsGroup(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/domainsGroup:DomainsGroup"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

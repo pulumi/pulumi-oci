@@ -416,10 +416,8 @@ class _IngressGatewayState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:ServiceMesh/ingressGateway:IngressGateway")
 class IngressGateway(pulumi.CustomResource):
-
-    pulumi_type = "oci:ServiceMesh/ingressGateway:IngressGateway"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

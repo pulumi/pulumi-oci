@@ -606,10 +606,8 @@ class _SqlCollectionState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:DataSafe/sqlCollection:SqlCollection")
 class SqlCollection(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataSafe/sqlCollection:SqlCollection"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

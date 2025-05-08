@@ -767,10 +767,8 @@ class _ScheduledJobState:
         pulumi.set(self, "work_request_ids", value)
 
 
+@pulumi.type_token("oci:OsManagementHub/scheduledJob:ScheduledJob")
 class ScheduledJob(pulumi.CustomResource):
-
-    pulumi_type = "oci:OsManagementHub/scheduledJob:ScheduledJob"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

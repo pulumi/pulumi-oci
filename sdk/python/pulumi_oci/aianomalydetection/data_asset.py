@@ -368,10 +368,8 @@ class _DataAssetState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:AiAnomalyDetection/dataAsset:DataAsset")
 class DataAsset(pulumi.CustomResource):
-
-    pulumi_type = "oci:AiAnomalyDetection/dataAsset:DataAsset"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

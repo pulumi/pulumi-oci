@@ -239,10 +239,8 @@ class _SensitiveDataModelReferentialRelationState:
         pulumi.set(self, "state", value)
 
 
+@pulumi.type_token("oci:DataSafe/sensitiveDataModelReferentialRelation:SensitiveDataModelReferentialRelation")
 class SensitiveDataModelReferentialRelation(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataSafe/sensitiveDataModelReferentialRelation:SensitiveDataModelReferentialRelation"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

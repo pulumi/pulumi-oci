@@ -400,10 +400,8 @@ class _AlertPolicyState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:DataSafe/alertPolicy:AlertPolicy")
 class AlertPolicy(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataSafe/alertPolicy:AlertPolicy"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

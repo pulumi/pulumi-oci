@@ -111,10 +111,8 @@ class _AwrHubSourceAwrhubsourcesManagementState:
         pulumi.set(self, "enable_awrhubsource", value)
 
 
+@pulumi.type_token("oci:Opsi/awrHubSourceAwrhubsourcesManagement:AwrHubSourceAwrhubsourcesManagement")
 class AwrHubSourceAwrhubsourcesManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:Opsi/awrHubSourceAwrhubsourcesManagement:AwrHubSourceAwrhubsourcesManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -373,10 +373,8 @@ class _PreauthrequestState:
         pulumi.set(self, "time_expires", value)
 
 
+@pulumi.type_token("oci:ObjectStorage/preauthrequest:Preauthrequest")
 class Preauthrequest(pulumi.CustomResource):
-
-    pulumi_type = "oci:ObjectStorage/preauthrequest:Preauthrequest"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

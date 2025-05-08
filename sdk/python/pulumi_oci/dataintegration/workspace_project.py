@@ -409,10 +409,8 @@ class _WorkspaceProjectState:
         pulumi.set(self, "workspace_id", value)
 
 
+@pulumi.type_token("oci:DataIntegration/workspaceProject:WorkspaceProject")
 class WorkspaceProject(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataIntegration/workspaceProject:WorkspaceProject"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

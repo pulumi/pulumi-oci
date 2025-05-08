@@ -287,10 +287,8 @@ class _GeneratedKeyState:
         pulumi.set(self, "plaintext_checksum", value)
 
 
+@pulumi.type_token("oci:Kms/generatedKey:GeneratedKey")
 class GeneratedKey(pulumi.CustomResource):
-
-    pulumi_type = "oci:Kms/generatedKey:GeneratedKey"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

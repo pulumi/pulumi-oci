@@ -141,10 +141,8 @@ class _PathRouteSetState:
         pulumi.set(self, "state", value)
 
 
+@pulumi.type_token("oci:LoadBalancer/pathRouteSet:PathRouteSet")
 class PathRouteSet(pulumi.CustomResource):
-
-    pulumi_type = "oci:LoadBalancer/pathRouteSet:PathRouteSet"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

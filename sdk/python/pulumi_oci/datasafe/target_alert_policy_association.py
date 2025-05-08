@@ -381,10 +381,8 @@ class _TargetAlertPolicyAssociationState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:DataSafe/targetAlertPolicyAssociation:TargetAlertPolicyAssociation")
 class TargetAlertPolicyAssociation(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataSafe/targetAlertPolicyAssociation:TargetAlertPolicyAssociation"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

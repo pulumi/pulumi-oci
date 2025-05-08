@@ -89,10 +89,8 @@ class _ManagementDashboardsImportState:
         pulumi.set(self, "import_details_file", value)
 
 
+@pulumi.type_token("oci:ManagementDashboard/managementDashboardsImport:ManagementDashboardsImport")
 class ManagementDashboardsImport(pulumi.CustomResource):
-
-    pulumi_type = "oci:ManagementDashboard/managementDashboardsImport:ManagementDashboardsImport"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

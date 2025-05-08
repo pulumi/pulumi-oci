@@ -223,10 +223,8 @@ class _ConnectionAssignmentState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:GoldenGate/connectionAssignment:ConnectionAssignment")
 class ConnectionAssignment(pulumi.CustomResource):
-
-    pulumi_type = "oci:GoldenGate/connectionAssignment:ConnectionAssignment"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

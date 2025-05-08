@@ -1481,10 +1481,8 @@ class _DataGuardAssociationState:
         pulumi.set(self, "transport_type", value)
 
 
+@pulumi.type_token("oci:Database/dataGuardAssociation:DataGuardAssociation")
 class DataGuardAssociation(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/dataGuardAssociation:DataGuardAssociation"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -463,10 +463,8 @@ class _AlarmSuppressionState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Monitoring/alarmSuppression:AlarmSuppression")
 class AlarmSuppression(pulumi.CustomResource):
-
-    pulumi_type = "oci:Monitoring/alarmSuppression:AlarmSuppression"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

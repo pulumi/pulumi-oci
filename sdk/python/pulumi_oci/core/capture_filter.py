@@ -289,10 +289,8 @@ class _CaptureFilterState:
         pulumi.set(self, "vtap_capture_filter_rules", value)
 
 
+@pulumi.type_token("oci:Core/captureFilter:CaptureFilter")
 class CaptureFilter(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/captureFilter:CaptureFilter"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

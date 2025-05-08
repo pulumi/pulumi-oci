@@ -207,10 +207,8 @@ class _SslCipherSuiteState:
         pulumi.set(self, "state", value)
 
 
+@pulumi.type_token("oci:LoadBalancer/sslCipherSuite:SslCipherSuite")
 class SslCipherSuite(pulumi.CustomResource):
-
-    pulumi_type = "oci:LoadBalancer/sslCipherSuite:SslCipherSuite"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

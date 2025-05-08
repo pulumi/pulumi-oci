@@ -415,10 +415,8 @@ class _NamedCredentialState:
         pulumi.set(self, "type", value)
 
 
+@pulumi.type_token("oci:DatabaseManagement/namedCredential:NamedCredential")
 class NamedCredential(pulumi.CustomResource):
-
-    pulumi_type = "oci:DatabaseManagement/namedCredential:NamedCredential"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

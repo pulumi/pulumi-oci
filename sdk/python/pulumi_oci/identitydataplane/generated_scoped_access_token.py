@@ -127,10 +127,8 @@ class _GeneratedScopedAccessTokenState:
         pulumi.set(self, "token", value)
 
 
+@pulumi.type_token("oci:IdentityDataPlane/generatedScopedAccessToken:GeneratedScopedAccessToken")
 class GeneratedScopedAccessToken(pulumi.CustomResource):
-
-    pulumi_type = "oci:IdentityDataPlane/generatedScopedAccessToken:GeneratedScopedAccessToken"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

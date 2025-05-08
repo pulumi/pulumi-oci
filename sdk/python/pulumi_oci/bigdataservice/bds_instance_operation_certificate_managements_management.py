@@ -302,10 +302,8 @@ class _BdsInstanceOperationCertificateManagementsManagementState:
         pulumi.set(self, "services", value)
 
 
+@pulumi.type_token("oci:BigDataService/bdsInstanceOperationCertificateManagementsManagement:BdsInstanceOperationCertificateManagementsManagement")
 class BdsInstanceOperationCertificateManagementsManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:BigDataService/bdsInstanceOperationCertificateManagementsManagement:BdsInstanceOperationCertificateManagementsManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

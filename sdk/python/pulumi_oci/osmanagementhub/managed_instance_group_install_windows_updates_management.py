@@ -129,10 +129,8 @@ class _ManagedInstanceGroupInstallWindowsUpdatesManagementState:
         pulumi.set(self, "work_request_details", value)
 
 
+@pulumi.type_token("oci:OsManagementHub/managedInstanceGroupInstallWindowsUpdatesManagement:ManagedInstanceGroupInstallWindowsUpdatesManagement")
 class ManagedInstanceGroupInstallWindowsUpdatesManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:OsManagementHub/managedInstanceGroupInstallWindowsUpdatesManagement:ManagedInstanceGroupInstallWindowsUpdatesManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

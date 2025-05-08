@@ -365,10 +365,8 @@ class _ExternalDbSystemDiscoveryState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:DatabaseManagement/externalDbSystemDiscovery:ExternalDbSystemDiscovery")
 class ExternalDbSystemDiscovery(pulumi.CustomResource):
-
-    pulumi_type = "oci:DatabaseManagement/externalDbSystemDiscovery:ExternalDbSystemDiscovery"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

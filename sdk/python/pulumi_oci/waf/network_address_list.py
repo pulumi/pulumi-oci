@@ -353,10 +353,8 @@ class _NetworkAddressListState:
         pulumi.set(self, "vcn_addresses", value)
 
 
+@pulumi.type_token("oci:Waf/networkAddressList:NetworkAddressList")
 class NetworkAddressList(pulumi.CustomResource):
-
-    pulumi_type = "oci:Waf/networkAddressList:NetworkAddressList"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -161,10 +161,8 @@ class _CalculateAuditVolumeCollectedState:
         pulumi.set(self, "time_to_month", value)
 
 
+@pulumi.type_token("oci:DataSafe/calculateAuditVolumeCollected:CalculateAuditVolumeCollected")
 class CalculateAuditVolumeCollected(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataSafe/calculateAuditVolumeCollected:CalculateAuditVolumeCollected"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

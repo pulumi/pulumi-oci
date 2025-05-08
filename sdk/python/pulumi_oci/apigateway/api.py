@@ -320,10 +320,8 @@ class _ApiState:
         pulumi.set(self, "validation_results", value)
 
 
+@pulumi.type_token("oci:ApiGateway/api:Api")
 class Api(pulumi.CustomResource):
-
-    pulumi_type = "oci:ApiGateway/api:Api"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

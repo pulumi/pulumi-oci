@@ -255,10 +255,8 @@ class _InventoryState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:CloudBridge/inventory:Inventory")
 class Inventory(pulumi.CustomResource):
-
-    pulumi_type = "oci:CloudBridge/inventory:Inventory"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

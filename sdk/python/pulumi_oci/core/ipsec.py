@@ -491,10 +491,8 @@ class _IpsecState:
         pulumi.set(self, "tunnel_configurations", value)
 
 
+@pulumi.type_token("oci:Core/ipsec:Ipsec")
 class Ipsec(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/ipsec:Ipsec"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

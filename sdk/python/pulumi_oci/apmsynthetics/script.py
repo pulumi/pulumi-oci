@@ -367,10 +367,8 @@ class _ScriptState:
         pulumi.set(self, "time_uploaded", value)
 
 
+@pulumi.type_token("oci:ApmSynthetics/script:Script")
 class Script(pulumi.CustomResource):
-
-    pulumi_type = "oci:ApmSynthetics/script:Script"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

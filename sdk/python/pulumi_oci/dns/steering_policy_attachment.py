@@ -254,10 +254,8 @@ class _SteeringPolicyAttachmentState:
         pulumi.set(self, "zone_id", value)
 
 
+@pulumi.type_token("oci:Dns/steeringPolicyAttachment:SteeringPolicyAttachment")
 class SteeringPolicyAttachment(pulumi.CustomResource):
-
-    pulumi_type = "oci:Dns/steeringPolicyAttachment:SteeringPolicyAttachment"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

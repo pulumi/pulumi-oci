@@ -561,10 +561,8 @@ class _ConfigState:
         pulumi.set(self, "version", value)
 
 
+@pulumi.type_token("oci:StackMonitoring/config:Config")
 class Config(pulumi.CustomResource):
-
-    pulumi_type = "oci:StackMonitoring/config:Config"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

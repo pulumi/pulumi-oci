@@ -112,10 +112,8 @@ class _PurgeCacheState:
         pulumi.set(self, "waas_policy_id", value)
 
 
+@pulumi.type_token("oci:Waas/purgeCache:PurgeCache")
 class PurgeCache(pulumi.CustomResource):
-
-    pulumi_type = "oci:Waas/purgeCache:PurgeCache"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -161,10 +161,8 @@ class _CloudVmClusterIormConfigState:
         pulumi.set(self, "state", value)
 
 
+@pulumi.type_token("oci:Database/cloudVmClusterIormConfig:CloudVmClusterIormConfig")
 class CloudVmClusterIormConfig(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/cloudVmClusterIormConfig:CloudVmClusterIormConfig"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

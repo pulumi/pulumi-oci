@@ -273,10 +273,8 @@ class _RouteTableState:
         pulumi.set(self, "vcn_id", value)
 
 
+@pulumi.type_token("oci:Core/routeTable:RouteTable")
 class RouteTable(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/routeTable:RouteTable"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

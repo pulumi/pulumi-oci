@@ -881,10 +881,8 @@ class _ExadataInfrastructureConfigureExascaleManagementState:
         pulumi.set(self, "total_storage_in_gbs", value)
 
 
+@pulumi.type_token("oci:Database/exadataInfrastructureConfigureExascaleManagement:ExadataInfrastructureConfigureExascaleManagement")
 class ExadataInfrastructureConfigureExascaleManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/exadataInfrastructureConfigureExascaleManagement:ExadataInfrastructureConfigureExascaleManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

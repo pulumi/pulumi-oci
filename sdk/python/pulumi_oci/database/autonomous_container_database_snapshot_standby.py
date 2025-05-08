@@ -143,10 +143,8 @@ class _AutonomousContainerDatabaseSnapshotStandbyState:
         pulumi.set(self, "role", value)
 
 
+@pulumi.type_token("oci:Database/autonomousContainerDatabaseSnapshotStandby:AutonomousContainerDatabaseSnapshotStandby")
 class AutonomousContainerDatabaseSnapshotStandby(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/autonomousContainerDatabaseSnapshotStandby:AutonomousContainerDatabaseSnapshotStandby"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

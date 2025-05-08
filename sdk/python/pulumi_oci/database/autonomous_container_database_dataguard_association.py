@@ -664,10 +664,8 @@ class _AutonomousContainerDatabaseDataguardAssociationState:
         pulumi.set(self, "transport_lag", value)
 
 
+@pulumi.type_token("oci:Database/autonomousContainerDatabaseDataguardAssociation:AutonomousContainerDatabaseDataguardAssociation")
 class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/autonomousContainerDatabaseDataguardAssociation:AutonomousContainerDatabaseDataguardAssociation"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

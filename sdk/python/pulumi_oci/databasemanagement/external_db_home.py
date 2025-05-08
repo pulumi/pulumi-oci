@@ -320,10 +320,8 @@ class _ExternalDbHomeState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:DatabaseManagement/externalDbHome:ExternalDbHome")
 class ExternalDbHome(pulumi.CustomResource):
-
-    pulumi_type = "oci:DatabaseManagement/externalDbHome:ExternalDbHome"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

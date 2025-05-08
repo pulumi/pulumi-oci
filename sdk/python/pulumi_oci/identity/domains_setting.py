@@ -3987,10 +3987,8 @@ class _DomainsSettingState:
         pulumi.set(self, "timezone", value)
 
 
+@pulumi.type_token("oci:Identity/domainsSetting:DomainsSetting")
 class DomainsSetting(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/domainsSetting:DomainsSetting"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

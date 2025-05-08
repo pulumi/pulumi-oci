@@ -462,10 +462,8 @@ class _ScheduleState:
         pulumi.set(self, "trigger", value)
 
 
+@pulumi.type_token("oci:DataScience/schedule:Schedule")
 class Schedule(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataScience/schedule:Schedule"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

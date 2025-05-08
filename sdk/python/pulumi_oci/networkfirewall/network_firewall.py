@@ -446,10 +446,8 @@ class _NetworkFirewallState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:NetworkFirewall/networkFirewall:NetworkFirewall")
 class NetworkFirewall(pulumi.CustomResource):
-
-    pulumi_type = "oci:NetworkFirewall/networkFirewall:NetworkFirewall"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

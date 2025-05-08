@@ -2013,10 +2013,8 @@ class _DomainsIdentityPropagationTrustState:
         pulumi.set(self, "type", value)
 
 
+@pulumi.type_token("oci:Identity/domainsIdentityPropagationTrust:DomainsIdentityPropagationTrust")
 class DomainsIdentityPropagationTrust(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/domainsIdentityPropagationTrust:DomainsIdentityPropagationTrust"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

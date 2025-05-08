@@ -193,10 +193,8 @@ class _RunStatementState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:DataFlow/runStatement:RunStatement")
 class RunStatement(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataFlow/runStatement:RunStatement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

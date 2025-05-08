@@ -303,10 +303,8 @@ class _SecurityAttributeNamespaceState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:SecurityAttribute/securityAttributeNamespace:SecurityAttributeNamespace")
 class SecurityAttributeNamespace(pulumi.CustomResource):
-
-    pulumi_type = "oci:SecurityAttribute/securityAttributeNamespace:SecurityAttributeNamespace"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

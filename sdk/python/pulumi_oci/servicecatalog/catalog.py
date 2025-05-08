@@ -223,10 +223,8 @@ class _CatalogState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:ServiceCatalog/catalog:Catalog")
 class Catalog(pulumi.CustomResource):
-
-    pulumi_type = "oci:ServiceCatalog/catalog:Catalog"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

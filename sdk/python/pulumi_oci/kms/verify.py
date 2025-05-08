@@ -283,10 +283,8 @@ class _VerifyState:
         pulumi.set(self, "signing_algorithm", value)
 
 
+@pulumi.type_token("oci:Kms/verify:Verify")
 class Verify(pulumi.CustomResource):
-
-    pulumi_type = "oci:Kms/verify:Verify"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

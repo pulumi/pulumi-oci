@@ -385,10 +385,8 @@ class _ExternalDbSystemState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:DatabaseManagement/externalDbSystem:ExternalDbSystem")
 class ExternalDbSystem(pulumi.CustomResource):
-
-    pulumi_type = "oci:DatabaseManagement/externalDbSystem:ExternalDbSystem"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

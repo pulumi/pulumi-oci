@@ -257,10 +257,8 @@ class _LogAnalyticsImportCustomContentState:
         pulumi.set(self, "source_names", value)
 
 
+@pulumi.type_token("oci:LogAnalytics/logAnalyticsImportCustomContent:LogAnalyticsImportCustomContent")
 class LogAnalyticsImportCustomContent(pulumi.CustomResource):
-
-    pulumi_type = "oci:LogAnalytics/logAnalyticsImportCustomContent:LogAnalyticsImportCustomContent"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

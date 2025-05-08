@@ -461,10 +461,8 @@ class _FleetResourceState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:FleetAppsManagement/fleetResource:FleetResource")
 class FleetResource(pulumi.CustomResource):
-
-    pulumi_type = "oci:FleetAppsManagement/fleetResource:FleetResource"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

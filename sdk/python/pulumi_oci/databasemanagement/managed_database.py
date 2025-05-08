@@ -450,10 +450,8 @@ class _ManagedDatabaseState:
         pulumi.set(self, "workload_type", value)
 
 
+@pulumi.type_token("oci:DatabaseManagement/managedDatabase:ManagedDatabase")
 class ManagedDatabase(pulumi.CustomResource):
-
-    pulumi_type = "oci:DatabaseManagement/managedDatabase:ManagedDatabase"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

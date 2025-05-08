@@ -943,10 +943,8 @@ class _DbSystemsUpgradeState:
         pulumi.set(self, "zone_id", value)
 
 
+@pulumi.type_token("oci:Database/dbSystemsUpgrade:DbSystemsUpgrade")
 class DbSystemsUpgrade(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/dbSystemsUpgrade:DbSystemsUpgrade"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

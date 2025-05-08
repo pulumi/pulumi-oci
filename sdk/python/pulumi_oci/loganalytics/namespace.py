@@ -126,10 +126,8 @@ class _NamespaceState:
         pulumi.set(self, "namespace", value)
 
 
+@pulumi.type_token("oci:LogAnalytics/namespace:Namespace")
 class Namespace(pulumi.CustomResource):
-
-    pulumi_type = "oci:LogAnalytics/namespace:Namespace"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

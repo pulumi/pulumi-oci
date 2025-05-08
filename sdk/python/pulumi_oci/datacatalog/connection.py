@@ -436,10 +436,8 @@ class _ConnectionState:
         pulumi.set(self, "uri", value)
 
 
+@pulumi.type_token("oci:DataCatalog/connection:Connection")
 class Connection(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataCatalog/connection:Connection"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

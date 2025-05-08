@@ -1410,10 +1410,8 @@ class _DomainsCloudGateMappingState:
         pulumi.set(self, "upstream_server_group", value)
 
 
+@pulumi.type_token("oci:Identity/domainsCloudGateMapping:DomainsCloudGateMapping")
 class DomainsCloudGateMapping(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/domainsCloudGateMapping:DomainsCloudGateMapping"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

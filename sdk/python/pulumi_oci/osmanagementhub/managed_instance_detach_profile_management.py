@@ -80,10 +80,8 @@ class _ManagedInstanceDetachProfileManagementState:
         pulumi.set(self, "managed_instance_id", value)
 
 
+@pulumi.type_token("oci:OsManagementHub/managedInstanceDetachProfileManagement:ManagedInstanceDetachProfileManagement")
 class ManagedInstanceDetachProfileManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:OsManagementHub/managedInstanceDetachProfileManagement:ManagedInstanceDetachProfileManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

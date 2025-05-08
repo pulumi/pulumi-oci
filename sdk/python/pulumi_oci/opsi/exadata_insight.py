@@ -625,10 +625,8 @@ class _ExadataInsightState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Opsi/exadataInsight:ExadataInsight")
 class ExadataInsight(pulumi.CustomResource):
-
-    pulumi_type = "oci:Opsi/exadataInsight:ExadataInsight"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

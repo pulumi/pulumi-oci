@@ -287,10 +287,8 @@ class _DiscoveryScheduleState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:CloudBridge/discoverySchedule:DiscoverySchedule")
 class DiscoverySchedule(pulumi.CustomResource):
-
-    pulumi_type = "oci:CloudBridge/discoverySchedule:DiscoverySchedule"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

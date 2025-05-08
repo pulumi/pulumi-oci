@@ -138,10 +138,8 @@ class _ExternalNonContainerDatabaseOperationsInsightsManagementState:
         pulumi.set(self, "external_non_container_database_id", value)
 
 
+@pulumi.type_token("oci:Database/externalNonContainerDatabaseOperationsInsightsManagement:ExternalNonContainerDatabaseOperationsInsightsManagement")
 class ExternalNonContainerDatabaseOperationsInsightsManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/externalNonContainerDatabaseOperationsInsightsManagement:ExternalNonContainerDatabaseOperationsInsightsManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

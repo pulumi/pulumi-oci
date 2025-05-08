@@ -559,10 +559,8 @@ class _SensitiveTypeState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:DataSafe/sensitiveType:SensitiveType")
 class SensitiveType(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataSafe/sensitiveType:SensitiveType"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -319,10 +319,8 @@ class _OdaPrivateEndpointState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Oda/odaPrivateEndpoint:OdaPrivateEndpoint")
 class OdaPrivateEndpoint(pulumi.CustomResource):
-
-    pulumi_type = "oci:Oda/odaPrivateEndpoint:OdaPrivateEndpoint"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

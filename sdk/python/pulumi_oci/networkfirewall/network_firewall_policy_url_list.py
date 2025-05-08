@@ -161,10 +161,8 @@ class _NetworkFirewallPolicyUrlListState:
         pulumi.set(self, "urls", value)
 
 
+@pulumi.type_token("oci:NetworkFirewall/networkFirewallPolicyUrlList:NetworkFirewallPolicyUrlList")
 class NetworkFirewallPolicyUrlList(pulumi.CustomResource):
-
-    pulumi_type = "oci:NetworkFirewall/networkFirewallPolicyUrlList:NetworkFirewallPolicyUrlList"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

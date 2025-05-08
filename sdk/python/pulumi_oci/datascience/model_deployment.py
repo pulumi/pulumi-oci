@@ -448,10 +448,8 @@ class _ModelDeploymentState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:DataScience/modelDeployment:ModelDeployment")
 class ModelDeployment(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataScience/modelDeployment:ModelDeployment"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

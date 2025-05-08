@@ -302,10 +302,8 @@ class _FusionEnvironmentServiceAttachmentState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:FusionApps/fusionEnvironmentServiceAttachment:FusionEnvironmentServiceAttachment")
 class FusionEnvironmentServiceAttachment(pulumi.CustomResource):
-
-    pulumi_type = "oci:FusionApps/fusionEnvironmentServiceAttachment:FusionEnvironmentServiceAttachment"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -111,10 +111,8 @@ class _ManagedInstanceGroupDetachManagedInstancesManagementState:
         pulumi.set(self, "managed_instances", value)
 
 
+@pulumi.type_token("oci:OsManagementHub/managedInstanceGroupDetachManagedInstancesManagement:ManagedInstanceGroupDetachManagedInstancesManagement")
 class ManagedInstanceGroupDetachManagedInstancesManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:OsManagementHub/managedInstanceGroupDetachManagedInstancesManagement:ManagedInstanceGroupDetachManagedInstancesManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

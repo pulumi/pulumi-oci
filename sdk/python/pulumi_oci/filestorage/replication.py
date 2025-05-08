@@ -488,10 +488,8 @@ class _ReplicationState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:FileStorage/replication:Replication")
 class Replication(pulumi.CustomResource):
-
-    pulumi_type = "oci:FileStorage/replication:Replication"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

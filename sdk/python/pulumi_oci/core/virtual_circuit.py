@@ -829,10 +829,8 @@ class _VirtualCircuitState:
         pulumi.set(self, "virtual_circuit_redundancy_metadatas", value)
 
 
+@pulumi.type_token("oci:Core/virtualCircuit:VirtualCircuit")
 class VirtualCircuit(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/virtualCircuit:VirtualCircuit"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

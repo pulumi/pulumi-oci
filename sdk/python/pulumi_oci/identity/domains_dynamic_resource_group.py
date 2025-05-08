@@ -1051,10 +1051,8 @@ class _DomainsDynamicResourceGroupState:
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextension_oci_tags", value)
 
 
+@pulumi.type_token("oci:Identity/domainsDynamicResourceGroup:DomainsDynamicResourceGroup")
 class DomainsDynamicResourceGroup(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/domainsDynamicResourceGroup:DomainsDynamicResourceGroup"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

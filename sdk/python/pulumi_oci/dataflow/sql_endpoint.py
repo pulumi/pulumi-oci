@@ -666,10 +666,8 @@ class _SqlEndpointState:
         pulumi.set(self, "warehouse_bucket_uri", value)
 
 
+@pulumi.type_token("oci:DataFlow/sqlEndpoint:SqlEndpoint")
 class SqlEndpoint(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataFlow/sqlEndpoint:SqlEndpoint"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -333,10 +333,8 @@ class _AutonomousDatabaseSoftwareImageState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Database/autonomousDatabaseSoftwareImage:AutonomousDatabaseSoftwareImage")
 class AutonomousDatabaseSoftwareImage(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/autonomousDatabaseSoftwareImage:AutonomousDatabaseSoftwareImage"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

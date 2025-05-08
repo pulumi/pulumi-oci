@@ -825,10 +825,8 @@ class _EsxiHostState:
         pulumi.set(self, "vmware_software_version", value)
 
 
+@pulumi.type_token("oci:Ocvp/esxiHost:EsxiHost")
 class EsxiHost(pulumi.CustomResource):
-
-    pulumi_type = "oci:Ocvp/esxiHost:EsxiHost"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

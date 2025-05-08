@@ -3102,10 +3102,8 @@ class _DomainsUserState:
         pulumi.set(self, "x509certificates", value)
 
 
+@pulumi.type_token("oci:Identity/domainsUser:DomainsUser")
 class DomainsUser(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/domainsUser:DomainsUser"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

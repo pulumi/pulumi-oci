@@ -720,10 +720,8 @@ class _BuildPipelineStageState:
         pulumi.set(self, "wait_criteria", value)
 
 
+@pulumi.type_token("oci:DevOps/buildPipelineStage:BuildPipelineStage")
 class BuildPipelineStage(pulumi.CustomResource):
-
-    pulumi_type = "oci:DevOps/buildPipelineStage:BuildPipelineStage"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

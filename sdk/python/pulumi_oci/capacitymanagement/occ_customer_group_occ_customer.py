@@ -206,10 +206,8 @@ class _OccCustomerGroupOccCustomerState:
         pulumi.set(self, "tenancy_id", value)
 
 
+@pulumi.type_token("oci:CapacityManagement/occCustomerGroupOccCustomer:OccCustomerGroupOccCustomer")
 class OccCustomerGroupOccCustomer(pulumi.CustomResource):
-
-    pulumi_type = "oci:CapacityManagement/occCustomerGroupOccCustomer:OccCustomerGroupOccCustomer"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

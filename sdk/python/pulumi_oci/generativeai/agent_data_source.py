@@ -360,10 +360,8 @@ class _AgentDataSourceState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:GenerativeAi/agentDataSource:AgentDataSource")
 class AgentDataSource(pulumi.CustomResource):
-
-    pulumi_type = "oci:GenerativeAi/agentDataSource:AgentDataSource"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

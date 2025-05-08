@@ -176,10 +176,8 @@ class _BdsInstanceOsPatchActionState:
         pulumi.set(self, "patching_configs", value)
 
 
+@pulumi.type_token("oci:BigDataService/bdsInstanceOsPatchAction:BdsInstanceOsPatchAction")
 class BdsInstanceOsPatchAction(pulumi.CustomResource):
-
-    pulumi_type = "oci:BigDataService/bdsInstanceOsPatchAction:BdsInstanceOsPatchAction"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

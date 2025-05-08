@@ -3515,10 +3515,8 @@ class _ConnectionState:
         pulumi.set(self, "wallet_secret_id", value)
 
 
+@pulumi.type_token("oci:GoldenGate/connection:Connection")
 class Connection(pulumi.CustomResource):
-
-    pulumi_type = "oci:GoldenGate/connection:Connection"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -310,10 +310,8 @@ class _SavedQueryState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:CloudGuard/savedQuery:SavedQuery")
 class SavedQuery(pulumi.CustomResource):
-
-    pulumi_type = "oci:CloudGuard/savedQuery:SavedQuery"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

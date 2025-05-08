@@ -352,10 +352,8 @@ class _AgentAgentState:
         pulumi.set(self, "welcome_message", value)
 
 
+@pulumi.type_token("oci:GenerativeAi/agentAgent:AgentAgent")
 class AgentAgent(pulumi.CustomResource):
-
-    pulumi_type = "oci:GenerativeAi/agentAgent:AgentAgent"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

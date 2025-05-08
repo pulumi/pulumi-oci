@@ -512,10 +512,8 @@ class _ExternalExadataInfrastructureState:
         pulumi.set(self, "version", value)
 
 
+@pulumi.type_token("oci:DatabaseManagement/externalExadataInfrastructure:ExternalExadataInfrastructure")
 class ExternalExadataInfrastructure(pulumi.CustomResource):
-
-    pulumi_type = "oci:DatabaseManagement/externalExadataInfrastructure:ExternalExadataInfrastructure"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

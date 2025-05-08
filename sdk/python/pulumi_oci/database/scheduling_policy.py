@@ -320,10 +320,8 @@ class _SchedulingPolicyState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Database/schedulingPolicy:SchedulingPolicy")
 class SchedulingPolicy(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/schedulingPolicy:SchedulingPolicy"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

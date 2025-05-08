@@ -877,10 +877,8 @@ class _LogAnalyticsObjectCollectionRuleState:
         pulumi.set(self, "timezone", value)
 
 
+@pulumi.type_token("oci:LogAnalytics/logAnalyticsObjectCollectionRule:LogAnalyticsObjectCollectionRule")
 class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
-
-    pulumi_type = "oci:LogAnalytics/logAnalyticsObjectCollectionRule:LogAnalyticsObjectCollectionRule"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

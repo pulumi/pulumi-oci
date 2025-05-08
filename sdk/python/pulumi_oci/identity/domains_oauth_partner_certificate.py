@@ -1282,10 +1282,8 @@ class _DomainsOauthPartnerCertificateState:
         pulumi.set(self, "x509base64certificate", value)
 
 
+@pulumi.type_token("oci:Identity/domainsOauthPartnerCertificate:DomainsOauthPartnerCertificate")
 class DomainsOauthPartnerCertificate(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/domainsOauthPartnerCertificate:DomainsOauthPartnerCertificate"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -731,10 +731,8 @@ class _InstanceState:
         pulumi.set(self, "waf_primary_domain", value)
 
 
+@pulumi.type_token("oci:Oce/instance:Instance")
 class Instance(pulumi.CustomResource):
-
-    pulumi_type = "oci:Oce/instance:Instance"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

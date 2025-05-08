@@ -390,10 +390,8 @@ class _PrivateEndpointState:
         pulumi.set(self, "time_modified", value)
 
 
+@pulumi.type_token("oci:ObjectStorage/privateEndpoint:PrivateEndpoint")
 class PrivateEndpoint(pulumi.CustomResource):
-
-    pulumi_type = "oci:ObjectStorage/privateEndpoint:PrivateEndpoint"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

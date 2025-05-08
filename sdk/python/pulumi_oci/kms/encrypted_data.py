@@ -286,10 +286,8 @@ class _EncryptedDataState:
         pulumi.set(self, "plaintext", value)
 
 
+@pulumi.type_token("oci:Kms/encryptedData:EncryptedData")
 class EncryptedData(pulumi.CustomResource):
-
-    pulumi_type = "oci:Kms/encryptedData:EncryptedData"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

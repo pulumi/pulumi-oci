@@ -111,10 +111,8 @@ class _ProfileAttachSoftwareSourcesManagementState:
         pulumi.set(self, "software_sources", value)
 
 
+@pulumi.type_token("oci:OsManagementHub/profileAttachSoftwareSourcesManagement:ProfileAttachSoftwareSourcesManagement")
 class ProfileAttachSoftwareSourcesManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:OsManagementHub/profileAttachSoftwareSourcesManagement:ProfileAttachSoftwareSourcesManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

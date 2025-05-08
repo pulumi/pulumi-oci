@@ -184,10 +184,8 @@ class _UsageStatementEmailRecipientsGroupState:
         pulumi.set(self, "subscription_id", value)
 
 
+@pulumi.type_token("oci:MeteringComputation/usageStatementEmailRecipientsGroup:UsageStatementEmailRecipientsGroup")
 class UsageStatementEmailRecipientsGroup(pulumi.CustomResource):
-
-    pulumi_type = "oci:MeteringComputation/usageStatementEmailRecipientsGroup:UsageStatementEmailRecipientsGroup"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

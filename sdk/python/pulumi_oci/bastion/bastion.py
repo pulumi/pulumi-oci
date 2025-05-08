@@ -526,10 +526,8 @@ class _BastionState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Bastion/bastion:Bastion")
 class Bastion(pulumi.CustomResource):
-
-    pulumi_type = "oci:Bastion/bastion:Bastion"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

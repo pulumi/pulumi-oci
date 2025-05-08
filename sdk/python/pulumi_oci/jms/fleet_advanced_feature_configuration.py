@@ -338,10 +338,8 @@ class _FleetAdvancedFeatureConfigurationState:
         pulumi.set(self, "time_last_modified", value)
 
 
+@pulumi.type_token("oci:Jms/fleetAdvancedFeatureConfiguration:FleetAdvancedFeatureConfiguration")
 class FleetAdvancedFeatureConfiguration(pulumi.CustomResource):
-
-    pulumi_type = "oci:Jms/fleetAdvancedFeatureConfiguration:FleetAdvancedFeatureConfiguration"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

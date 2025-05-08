@@ -512,10 +512,8 @@ class _CrossConnectState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Core/crossConnect:CrossConnect")
 class CrossConnect(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/crossConnect:CrossConnect"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

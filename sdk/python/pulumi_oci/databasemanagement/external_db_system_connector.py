@@ -417,10 +417,8 @@ class _ExternalDbSystemConnectorState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:DatabaseManagement/externalDbSystemConnector:ExternalDbSystemConnector")
 class ExternalDbSystemConnector(pulumi.CustomResource):
-
-    pulumi_type = "oci:DatabaseManagement/externalDbSystemConnector:ExternalDbSystemConnector"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

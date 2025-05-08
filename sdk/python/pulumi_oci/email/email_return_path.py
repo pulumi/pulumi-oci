@@ -336,10 +336,8 @@ class _EmailReturnPathState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Email/emailReturnPath:EmailReturnPath")
 class EmailReturnPath(pulumi.CustomResource):
-
-    pulumi_type = "oci:Email/emailReturnPath:EmailReturnPath"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

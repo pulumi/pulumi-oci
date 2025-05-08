@@ -587,10 +587,8 @@ class _ManagementAgentDataSourceState:
         pulumi.set(self, "url", value)
 
 
+@pulumi.type_token("oci:ManagementAgent/managementAgentDataSource:ManagementAgentDataSource")
 class ManagementAgentDataSource(pulumi.CustomResource):
-
-    pulumi_type = "oci:ManagementAgent/managementAgentDataSource:ManagementAgentDataSource"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

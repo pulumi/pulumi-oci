@@ -475,10 +475,8 @@ class _AgentDependencyState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:CloudBridge/agentDependency:AgentDependency")
 class AgentDependency(pulumi.CustomResource):
-
-    pulumi_type = "oci:CloudBridge/agentDependency:AgentDependency"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

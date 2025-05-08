@@ -688,10 +688,8 @@ class _ProfileState:
         pulumi.set(self, "vendor_name", value)
 
 
+@pulumi.type_token("oci:OsManagementHub/profile:Profile")
 class Profile(pulumi.CustomResource):
-
-    pulumi_type = "oci:OsManagementHub/profile:Profile"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

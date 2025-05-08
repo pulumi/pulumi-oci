@@ -287,10 +287,8 @@ class _ProcessorJobState:
         pulumi.set(self, "time_started", value)
 
 
+@pulumi.type_token("oci:AiDocument/processorJob:ProcessorJob")
 class ProcessorJob(pulumi.CustomResource):
-
-    pulumi_type = "oci:AiDocument/processorJob:ProcessorJob"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

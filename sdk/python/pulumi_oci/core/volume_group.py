@@ -532,10 +532,8 @@ class _VolumeGroupState:
         pulumi.set(self, "xrc_kms_key_id", value)
 
 
+@pulumi.type_token("oci:Core/volumeGroup:VolumeGroup")
 class VolumeGroup(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/volumeGroup:VolumeGroup"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

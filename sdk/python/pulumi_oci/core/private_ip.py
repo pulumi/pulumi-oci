@@ -493,10 +493,8 @@ class _PrivateIpState:
         pulumi.set(self, "vnic_id", value)
 
 
+@pulumi.type_token("oci:Core/privateIp:PrivateIp")
 class PrivateIp(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/privateIp:PrivateIp"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

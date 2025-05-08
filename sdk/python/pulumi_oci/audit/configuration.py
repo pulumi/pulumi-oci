@@ -111,10 +111,8 @@ class _ConfigurationState:
         pulumi.set(self, "retention_period_days", value)
 
 
+@pulumi.type_token("oci:Audit/configuration:Configuration")
 class Configuration(pulumi.CustomResource):
-
-    pulumi_type = "oci:Audit/configuration:Configuration"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

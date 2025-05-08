@@ -284,10 +284,8 @@ class _RrsetState:
         pulumi.set(self, "zone_name_or_id", value)
 
 
+@pulumi.type_token("oci:Dns/rrset:Rrset")
 class Rrset(pulumi.CustomResource):
-
-    pulumi_type = "oci:Dns/rrset:Rrset"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

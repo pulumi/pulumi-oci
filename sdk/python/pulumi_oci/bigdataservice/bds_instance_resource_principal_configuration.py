@@ -270,10 +270,8 @@ class _BdsInstanceResourcePrincipalConfigurationState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:BigDataService/bdsInstanceResourcePrincipalConfiguration:BdsInstanceResourcePrincipalConfiguration")
 class BdsInstanceResourcePrincipalConfiguration(pulumi.CustomResource):
-
-    pulumi_type = "oci:BigDataService/bdsInstanceResourcePrincipalConfiguration:BdsInstanceResourcePrincipalConfiguration"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

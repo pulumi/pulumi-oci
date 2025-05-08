@@ -393,10 +393,8 @@ class _JavaDownloadsJavaDownloadReportState:
         pulumi.set(self, "time_start", value)
 
 
+@pulumi.type_token("oci:Jms/javaDownloadsJavaDownloadReport:JavaDownloadsJavaDownloadReport")
 class JavaDownloadsJavaDownloadReport(pulumi.CustomResource):
-
-    pulumi_type = "oci:Jms/javaDownloadsJavaDownloadReport:JavaDownloadsJavaDownloadReport"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

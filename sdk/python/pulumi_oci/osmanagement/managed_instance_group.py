@@ -317,10 +317,8 @@ class _ManagedInstanceGroupState:
         pulumi.set(self, "state", value)
 
 
+@pulumi.type_token("oci:OsManagement/managedInstanceGroup:ManagedInstanceGroup")
 class ManagedInstanceGroup(pulumi.CustomResource):
-
-    pulumi_type = "oci:OsManagement/managedInstanceGroup:ManagedInstanceGroup"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

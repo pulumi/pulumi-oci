@@ -860,10 +860,8 @@ class _DatabaseState:
         pulumi.set(self, "vm_cluster_id", value)
 
 
+@pulumi.type_token("oci:Database/database:Database")
 class Database(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/database:Database"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

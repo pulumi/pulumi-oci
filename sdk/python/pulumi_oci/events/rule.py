@@ -398,10 +398,8 @@ class _RuleState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Events/rule:Rule")
 class Rule(pulumi.CustomResource):
-
-    pulumi_type = "oci:Events/rule:Rule"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

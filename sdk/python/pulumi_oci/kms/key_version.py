@@ -357,10 +357,8 @@ class _KeyVersionState:
         pulumi.set(self, "vault_id", value)
 
 
+@pulumi.type_token("oci:Kms/keyVersion:KeyVersion")
 class KeyVersion(pulumi.CustomResource):
-
-    pulumi_type = "oci:Kms/keyVersion:KeyVersion"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

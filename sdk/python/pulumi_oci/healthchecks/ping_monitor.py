@@ -444,10 +444,8 @@ class _PingMonitorState:
         pulumi.set(self, "vantage_point_names", value)
 
 
+@pulumi.type_token("oci:HealthChecks/pingMonitor:PingMonitor")
 class PingMonitor(pulumi.CustomResource):
-
-    pulumi_type = "oci:HealthChecks/pingMonitor:PingMonitor"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

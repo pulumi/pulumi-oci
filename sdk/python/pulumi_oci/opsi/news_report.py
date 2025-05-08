@@ -573,10 +573,8 @@ class _NewsReportState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Opsi/newsReport:NewsReport")
 class NewsReport(pulumi.CustomResource):
-
-    pulumi_type = "oci:Opsi/newsReport:NewsReport"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

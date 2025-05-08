@@ -240,10 +240,8 @@ class _UserCapabilitiesManagementState:
         pulumi.set(self, "user_id", value)
 
 
+@pulumi.type_token("oci:Identity/userCapabilitiesManagement:UserCapabilitiesManagement")
 class UserCapabilitiesManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/userCapabilitiesManagement:UserCapabilitiesManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

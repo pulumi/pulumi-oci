@@ -255,10 +255,8 @@ class _PeerState:
         pulumi.set(self, "state", value)
 
 
+@pulumi.type_token("oci:Blockchain/peer:Peer")
 class Peer(pulumi.CustomResource):
-
-    pulumi_type = "oci:Blockchain/peer:Peer"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

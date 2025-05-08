@@ -303,10 +303,8 @@ class _InternetGatewayState:
         pulumi.set(self, "vcn_id", value)
 
 
+@pulumi.type_token("oci:Core/internetGateway:InternetGateway")
 class InternetGateway(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/internetGateway:InternetGateway"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

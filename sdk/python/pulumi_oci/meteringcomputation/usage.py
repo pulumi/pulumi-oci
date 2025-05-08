@@ -415,10 +415,8 @@ class _UsageState:
         pulumi.set(self, "time_usage_started", value)
 
 
+@pulumi.type_token("oci:MeteringComputation/usage:Usage")
 class Usage(pulumi.CustomResource):
-
-    pulumi_type = "oci:MeteringComputation/usage:Usage"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

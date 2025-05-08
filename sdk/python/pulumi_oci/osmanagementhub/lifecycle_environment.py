@@ -445,10 +445,8 @@ class _LifecycleEnvironmentState:
         pulumi.set(self, "vendor_name", value)
 
 
+@pulumi.type_token("oci:OsManagementHub/lifecycleEnvironment:LifecycleEnvironment")
 class LifecycleEnvironment(pulumi.CustomResource):
-
-    pulumi_type = "oci:OsManagementHub/lifecycleEnvironment:LifecycleEnvironment"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

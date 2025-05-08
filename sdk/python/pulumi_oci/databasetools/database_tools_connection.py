@@ -622,10 +622,8 @@ class _DatabaseToolsConnectionState:
         pulumi.set(self, "user_password", value)
 
 
+@pulumi.type_token("oci:DatabaseTools/databaseToolsConnection:DatabaseToolsConnection")
 class DatabaseToolsConnection(pulumi.CustomResource):
-
-    pulumi_type = "oci:DatabaseTools/databaseToolsConnection:DatabaseToolsConnection"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

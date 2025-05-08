@@ -645,10 +645,8 @@ class _ProtectedDatabaseState:
         pulumi.set(self, "vpc_user_name", value)
 
 
+@pulumi.type_token("oci:RecoveryMod/protectedDatabase:ProtectedDatabase")
 class ProtectedDatabase(pulumi.CustomResource):
-
-    pulumi_type = "oci:RecoveryMod/protectedDatabase:ProtectedDatabase"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

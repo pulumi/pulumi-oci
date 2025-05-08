@@ -390,10 +390,8 @@ class _HttpProbeState:
         pulumi.set(self, "vantage_point_names", value)
 
 
+@pulumi.type_token("oci:HealthChecks/httpProbe:HttpProbe")
 class HttpProbe(pulumi.CustomResource):
-
-    pulumi_type = "oci:HealthChecks/httpProbe:HttpProbe"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

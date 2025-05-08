@@ -367,10 +367,8 @@ class _EndpointState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:AiLanguage/endpoint:Endpoint")
 class Endpoint(pulumi.CustomResource):
-
-    pulumi_type = "oci:AiLanguage/endpoint:Endpoint"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

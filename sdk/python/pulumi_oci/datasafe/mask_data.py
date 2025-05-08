@@ -79,10 +79,8 @@ class _MaskDataState:
         pulumi.set(self, "target_id", value)
 
 
+@pulumi.type_token("oci:DataSafe/maskData:MaskData")
 class MaskData(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataSafe/maskData:MaskData"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -464,10 +464,8 @@ class _ExternalMySqlDatabaseConnectorState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:DatabaseManagement/externalMySqlDatabaseConnector:ExternalMySqlDatabaseConnector")
 class ExternalMySqlDatabaseConnector(pulumi.CustomResource):
-
-    pulumi_type = "oci:DatabaseManagement/externalMySqlDatabaseConnector:ExternalMySqlDatabaseConnector"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -632,10 +632,8 @@ class _VolumeAttachmentState:
         pulumi.set(self, "volume_id", value)
 
 
+@pulumi.type_token("oci:Core/volumeAttachment:VolumeAttachment")
 class VolumeAttachment(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/volumeAttachment:VolumeAttachment"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

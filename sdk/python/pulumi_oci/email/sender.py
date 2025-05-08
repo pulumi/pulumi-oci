@@ -255,10 +255,8 @@ class _SenderState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Email/sender:Sender")
 class Sender(pulumi.CustomResource):
-
-    pulumi_type = "oci:Email/sender:Sender"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

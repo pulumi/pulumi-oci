@@ -408,10 +408,8 @@ class _ResponderRecipeState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:CloudGuard/responderRecipe:ResponderRecipe")
 class ResponderRecipe(pulumi.CustomResource):
-
-    pulumi_type = "oci:CloudGuard/responderRecipe:ResponderRecipe"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -444,10 +444,8 @@ class _OperationsInsightsPrivateEndpointState:
         pulumi.set(self, "vcn_id", value)
 
 
+@pulumi.type_token("oci:Opsi/operationsInsightsPrivateEndpoint:OperationsInsightsPrivateEndpoint")
 class OperationsInsightsPrivateEndpoint(pulumi.CustomResource):
-
-    pulumi_type = "oci:Opsi/operationsInsightsPrivateEndpoint:OperationsInsightsPrivateEndpoint"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

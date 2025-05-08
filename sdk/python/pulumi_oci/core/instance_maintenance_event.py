@@ -584,10 +584,8 @@ class _InstanceMaintenanceEventState:
         pulumi.set(self, "time_window_start", value)
 
 
+@pulumi.type_token("oci:Core/instanceMaintenanceEvent:InstanceMaintenanceEvent")
 class InstanceMaintenanceEvent(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/instanceMaintenanceEvent:InstanceMaintenanceEvent"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

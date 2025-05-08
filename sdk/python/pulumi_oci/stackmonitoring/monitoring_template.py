@@ -527,10 +527,8 @@ class _MonitoringTemplateState:
         pulumi.set(self, "total_applied_alarm_conditions", value)
 
 
+@pulumi.type_token("oci:StackMonitoring/monitoringTemplate:MonitoringTemplate")
 class MonitoringTemplate(pulumi.CustomResource):
-
-    pulumi_type = "oci:StackMonitoring/monitoringTemplate:MonitoringTemplate"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

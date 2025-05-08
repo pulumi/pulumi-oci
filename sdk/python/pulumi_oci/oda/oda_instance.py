@@ -545,10 +545,8 @@ class _OdaInstanceState:
         pulumi.set(self, "web_app_url", value)
 
 
+@pulumi.type_token("oci:Oda/odaInstance:OdaInstance")
 class OdaInstance(pulumi.CustomResource):
-
-    pulumi_type = "oci:Oda/odaInstance:OdaInstance"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

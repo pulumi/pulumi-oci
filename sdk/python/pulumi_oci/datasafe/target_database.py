@@ -465,10 +465,8 @@ class _TargetDatabaseState:
         pulumi.set(self, "tls_config", value)
 
 
+@pulumi.type_token("oci:DataSafe/targetDatabase:TargetDatabase")
 class TargetDatabase(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataSafe/targetDatabase:TargetDatabase"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

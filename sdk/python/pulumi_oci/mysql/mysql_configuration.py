@@ -401,10 +401,8 @@ class _MysqlConfigurationState:
         pulumi.set(self, "variables", value)
 
 
+@pulumi.type_token("oci:Mysql/mysqlConfiguration:MysqlConfiguration")
 class MysqlConfiguration(pulumi.CustomResource):
-
-    pulumi_type = "oci:Mysql/mysqlConfiguration:MysqlConfiguration"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

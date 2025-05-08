@@ -159,10 +159,8 @@ class _CatalogAssociationState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:ServiceCatalog/catalogAssociation:CatalogAssociation")
 class CatalogAssociation(pulumi.CustomResource):
-
-    pulumi_type = "oci:ServiceCatalog/catalogAssociation:CatalogAssociation"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

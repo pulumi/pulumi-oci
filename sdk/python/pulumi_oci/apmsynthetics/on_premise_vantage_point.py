@@ -306,10 +306,8 @@ class _OnPremiseVantagePointState:
         pulumi.set(self, "workers_summaries", value)
 
 
+@pulumi.type_token("oci:ApmSynthetics/onPremiseVantagePoint:OnPremiseVantagePoint")
 class OnPremiseVantagePoint(pulumi.CustomResource):
-
-    pulumi_type = "oci:ApmSynthetics/onPremiseVantagePoint:OnPremiseVantagePoint"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

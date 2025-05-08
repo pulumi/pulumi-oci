@@ -318,10 +318,8 @@ class _AnalyticsInstancePrivateAccessChannelState:
         pulumi.set(self, "vcn_id", value)
 
 
+@pulumi.type_token("oci:Analytics/analyticsInstancePrivateAccessChannel:AnalyticsInstancePrivateAccessChannel")
 class AnalyticsInstancePrivateAccessChannel(pulumi.CustomResource):
-
-    pulumi_type = "oci:Analytics/analyticsInstancePrivateAccessChannel:AnalyticsInstancePrivateAccessChannel"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

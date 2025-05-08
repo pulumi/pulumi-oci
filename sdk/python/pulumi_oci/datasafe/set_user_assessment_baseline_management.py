@@ -135,10 +135,8 @@ class _SetUserAssessmentBaselineManagementState:
         pulumi.set(self, "user_assessment_id", value)
 
 
+@pulumi.type_token("oci:DataSafe/setUserAssessmentBaselineManagement:SetUserAssessmentBaselineManagement")
 class SetUserAssessmentBaselineManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataSafe/setUserAssessmentBaselineManagement:SetUserAssessmentBaselineManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -382,10 +382,8 @@ class _DedicatedVmHostState:
         pulumi.set(self, "total_ocpus", value)
 
 
+@pulumi.type_token("oci:Core/dedicatedVmHost:DedicatedVmHost")
 class DedicatedVmHost(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/dedicatedVmHost:DedicatedVmHost"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

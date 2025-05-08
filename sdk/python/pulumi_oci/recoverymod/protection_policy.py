@@ -390,10 +390,8 @@ class _ProtectionPolicyState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:RecoveryMod/protectionPolicy:ProtectionPolicy")
 class ProtectionPolicy(pulumi.CustomResource):
-
-    pulumi_type = "oci:RecoveryMod/protectionPolicy:ProtectionPolicy"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

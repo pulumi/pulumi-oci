@@ -439,10 +439,8 @@ class _InstancePoolState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Core/instancePool:InstancePool")
 class InstancePool(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/instancePool:InstancePool"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -286,10 +286,8 @@ class _ReplicationScheduleState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:CloudMigrations/replicationSchedule:ReplicationSchedule")
 class ReplicationSchedule(pulumi.CustomResource):
-
-    pulumi_type = "oci:CloudMigrations/replicationSchedule:ReplicationSchedule"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

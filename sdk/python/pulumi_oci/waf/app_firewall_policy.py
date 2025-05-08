@@ -466,10 +466,8 @@ class _AppFirewallPolicyState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Waf/appFirewallPolicy:AppFirewallPolicy")
 class AppFirewallPolicy(pulumi.CustomResource):
-
-    pulumi_type = "oci:Waf/appFirewallPolicy:AppFirewallPolicy"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

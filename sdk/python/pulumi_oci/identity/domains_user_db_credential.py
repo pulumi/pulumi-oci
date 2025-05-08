@@ -1284,10 +1284,8 @@ class _DomainsUserDbCredentialState:
         pulumi.set(self, "user", value)
 
 
+@pulumi.type_token("oci:Identity/domainsUserDbCredential:DomainsUserDbCredential")
 class DomainsUserDbCredential(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/domainsUserDbCredential:DomainsUserDbCredential"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

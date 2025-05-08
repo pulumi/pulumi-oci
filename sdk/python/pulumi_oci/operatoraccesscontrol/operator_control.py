@@ -572,10 +572,8 @@ class _OperatorControlState:
         pulumi.set(self, "time_of_modification", value)
 
 
+@pulumi.type_token("oci:OperatorAccessControl/operatorControl:OperatorControl")
 class OperatorControl(pulumi.CustomResource):
-
-    pulumi_type = "oci:OperatorAccessControl/operatorControl:OperatorControl"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -1440,10 +1440,8 @@ class _DomainsRuleState:
         pulumi.set(self, "tenancy_ocid", value)
 
 
+@pulumi.type_token("oci:Identity/domainsRule:DomainsRule")
 class DomainsRule(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/domainsRule:DomainsRule"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

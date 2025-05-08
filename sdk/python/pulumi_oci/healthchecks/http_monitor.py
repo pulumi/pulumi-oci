@@ -548,10 +548,8 @@ class _HttpMonitorState:
         pulumi.set(self, "vantage_point_names", value)
 
 
+@pulumi.type_token("oci:HealthChecks/httpMonitor:HttpMonitor")
 class HttpMonitor(pulumi.CustomResource):
-
-    pulumi_type = "oci:HealthChecks/httpMonitor:HttpMonitor"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

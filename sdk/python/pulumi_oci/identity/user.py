@@ -408,10 +408,8 @@ class _UserState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Identity/user:User")
 class User(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/user:User"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

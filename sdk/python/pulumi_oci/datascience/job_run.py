@@ -544,10 +544,8 @@ class _JobRunState:
         pulumi.set(self, "time_started", value)
 
 
+@pulumi.type_token("oci:DataScience/jobRun:JobRun")
 class JobRun(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataScience/jobRun:JobRun"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

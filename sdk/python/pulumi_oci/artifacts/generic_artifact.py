@@ -288,10 +288,8 @@ class _GenericArtifactState:
         pulumi.set(self, "version", value)
 
 
+@pulumi.type_token("oci:Artifacts/genericArtifact:GenericArtifact")
 class GenericArtifact(pulumi.CustomResource):
-
-    pulumi_type = "oci:Artifacts/genericArtifact:GenericArtifact"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -657,10 +657,8 @@ class _DiscoveryModState:
         pulumi.set(self, "total_schemas_scanned", value)
 
 
+@pulumi.type_token("oci:DataSafe/discoveryMod:DiscoveryMod")
 class DiscoveryMod(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataSafe/discoveryMod:DiscoveryMod"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

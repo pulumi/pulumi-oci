@@ -270,10 +270,8 @@ class _LogAnalyticsLogGroupState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:LogAnalytics/logAnalyticsLogGroup:LogAnalyticsLogGroup")
 class LogAnalyticsLogGroup(pulumi.CustomResource):
-
-    pulumi_type = "oci:LogAnalytics/logAnalyticsLogGroup:LogAnalyticsLogGroup"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

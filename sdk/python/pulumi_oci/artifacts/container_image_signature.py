@@ -410,10 +410,8 @@ class _ContainerImageSignatureState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Artifacts/containerImageSignature:ContainerImageSignature")
 class ContainerImageSignature(pulumi.CustomResource):
-
-    pulumi_type = "oci:Artifacts/containerImageSignature:ContainerImageSignature"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

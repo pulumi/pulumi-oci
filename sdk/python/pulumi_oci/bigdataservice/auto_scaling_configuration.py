@@ -343,10 +343,8 @@ class _AutoScalingConfigurationState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:BigDataService/autoScalingConfiguration:AutoScalingConfiguration")
 class AutoScalingConfiguration(pulumi.CustomResource):
-
-    pulumi_type = "oci:BigDataService/autoScalingConfiguration:AutoScalingConfiguration"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

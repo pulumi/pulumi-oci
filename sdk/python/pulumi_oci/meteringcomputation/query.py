@@ -97,10 +97,8 @@ class _QueryState:
         pulumi.set(self, "query_definition", value)
 
 
+@pulumi.type_token("oci:MeteringComputation/query:Query")
 class Query(pulumi.CustomResource):
-
-    pulumi_type = "oci:MeteringComputation/query:Query"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

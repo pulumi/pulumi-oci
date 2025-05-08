@@ -464,10 +464,8 @@ class _DrPlanState:
         pulumi.set(self, "verify_trigger", value)
 
 
+@pulumi.type_token("oci:DisasterRecovery/drPlan:DrPlan")
 class DrPlan(pulumi.CustomResource):
-
-    pulumi_type = "oci:DisasterRecovery/drPlan:DrPlan"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

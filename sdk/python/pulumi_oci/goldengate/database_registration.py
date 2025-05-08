@@ -731,10 +731,8 @@ class _DatabaseRegistrationState:
         pulumi.set(self, "wallet", value)
 
 
+@pulumi.type_token("oci:GoldenGate/databaseRegistration:DatabaseRegistration")
 class DatabaseRegistration(pulumi.CustomResource):
-
-    pulumi_type = "oci:GoldenGate/databaseRegistration:DatabaseRegistration"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

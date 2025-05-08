@@ -240,10 +240,8 @@ class _KnowledgeBaseState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Adm/knowledgeBase:KnowledgeBase")
 class KnowledgeBase(pulumi.CustomResource):
-
-    pulumi_type = "oci:Adm/knowledgeBase:KnowledgeBase"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -512,10 +512,8 @@ class _WorkspaceApplicationScheduleState:
         pulumi.set(self, "workspace_id", value)
 
 
+@pulumi.type_token("oci:DataIntegration/workspaceApplicationSchedule:WorkspaceApplicationSchedule")
 class WorkspaceApplicationSchedule(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataIntegration/workspaceApplicationSchedule:WorkspaceApplicationSchedule"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

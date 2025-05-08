@@ -254,10 +254,8 @@ class _ClusterWorkloadMappingState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:ContainerEngine/clusterWorkloadMapping:ClusterWorkloadMapping")
 class ClusterWorkloadMapping(pulumi.CustomResource):
-
-    pulumi_type = "oci:ContainerEngine/clusterWorkloadMapping:ClusterWorkloadMapping"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

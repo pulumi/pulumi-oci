@@ -544,10 +544,8 @@ class _OpaInstanceState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Opa/opaInstance:OpaInstance")
 class OpaInstance(pulumi.CustomResource):
-
-    pulumi_type = "oci:Opa/opaInstance:OpaInstance"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

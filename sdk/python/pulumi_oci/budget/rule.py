@@ -429,10 +429,8 @@ class _RuleState:
         pulumi.set(self, "version", value)
 
 
+@pulumi.type_token("oci:Budget/rule:Rule")
 class Rule(pulumi.CustomResource):
-
-    pulumi_type = "oci:Budget/rule:Rule"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

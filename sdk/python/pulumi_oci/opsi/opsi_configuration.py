@@ -498,10 +498,8 @@ class _OpsiConfigurationState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:Opsi/opsiConfiguration:OpsiConfiguration")
 class OpsiConfiguration(pulumi.CustomResource):
-
-    pulumi_type = "oci:Opsi/opsiConfiguration:OpsiConfiguration"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

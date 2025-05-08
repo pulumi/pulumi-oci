@@ -194,10 +194,8 @@ class _CalculateAuditVolumeAvailableState:
         pulumi.set(self, "trail_locations", value)
 
 
+@pulumi.type_token("oci:DataSafe/calculateAuditVolumeAvailable:CalculateAuditVolumeAvailable")
 class CalculateAuditVolumeAvailable(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataSafe/calculateAuditVolumeAvailable:CalculateAuditVolumeAvailable"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

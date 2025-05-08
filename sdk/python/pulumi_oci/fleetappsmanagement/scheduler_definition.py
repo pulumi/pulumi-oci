@@ -544,10 +544,8 @@ class _SchedulerDefinitionState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:FleetAppsManagement/schedulerDefinition:SchedulerDefinition")
 class SchedulerDefinition(pulumi.CustomResource):
-
-    pulumi_type = "oci:FleetAppsManagement/schedulerDefinition:SchedulerDefinition"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

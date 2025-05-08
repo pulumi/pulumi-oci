@@ -413,10 +413,8 @@ class _DataSafePrivateEndpointState:
         pulumi.set(self, "vcn_id", value)
 
 
+@pulumi.type_token("oci:DataSafe/dataSafePrivateEndpoint:DataSafePrivateEndpoint")
 class DataSafePrivateEndpoint(pulumi.CustomResource):
-
-    pulumi_type = "oci:DataSafe/dataSafePrivateEndpoint:DataSafePrivateEndpoint"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

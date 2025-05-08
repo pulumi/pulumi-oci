@@ -224,10 +224,8 @@ class _PublicIpPoolState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Core/publicIpPool:PublicIpPool")
 class PublicIpPool(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/publicIpPool:PublicIpPool"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

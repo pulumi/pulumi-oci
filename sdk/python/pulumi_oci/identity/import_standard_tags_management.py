@@ -123,10 +123,8 @@ class _ImportStandardTagsManagementState:
         pulumi.set(self, "work_request_id", value)
 
 
+@pulumi.type_token("oci:Identity/importStandardTagsManagement:ImportStandardTagsManagement")
 class ImportStandardTagsManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/importStandardTagsManagement:ImportStandardTagsManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

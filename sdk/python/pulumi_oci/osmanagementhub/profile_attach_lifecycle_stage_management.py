@@ -111,10 +111,8 @@ class _ProfileAttachLifecycleStageManagementState:
         pulumi.set(self, "profile_id", value)
 
 
+@pulumi.type_token("oci:OsManagementHub/profileAttachLifecycleStageManagement:ProfileAttachLifecycleStageManagement")
 class ProfileAttachLifecycleStageManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:OsManagementHub/profileAttachLifecycleStageManagement:ProfileAttachLifecycleStageManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

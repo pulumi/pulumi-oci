@@ -160,10 +160,8 @@ class _FusionEnvironmentDataMaskingActivityState:
         pulumi.set(self, "time_masking_start", value)
 
 
+@pulumi.type_token("oci:FusionApps/fusionEnvironmentDataMaskingActivity:FusionEnvironmentDataMaskingActivity")
 class FusionEnvironmentDataMaskingActivity(pulumi.CustomResource):
-
-    pulumi_type = "oci:FusionApps/fusionEnvironmentDataMaskingActivity:FusionEnvironmentDataMaskingActivity"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

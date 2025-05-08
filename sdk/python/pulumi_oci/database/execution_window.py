@@ -461,10 +461,8 @@ class _ExecutionWindowState:
         pulumi.set(self, "window_type", value)
 
 
+@pulumi.type_token("oci:Database/executionWindow:ExecutionWindow")
 class ExecutionWindow(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/executionWindow:ExecutionWindow"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

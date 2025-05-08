@@ -360,10 +360,8 @@ class _OccDemandSignalState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:DemandSignal/occDemandSignal:OccDemandSignal")
 class OccDemandSignal(pulumi.CustomResource):
-
-    pulumi_type = "oci:DemandSignal/occDemandSignal:OccDemandSignal"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

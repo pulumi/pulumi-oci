@@ -320,10 +320,8 @@ class _DrgRouteTableState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Core/drgRouteTable:DrgRouteTable")
 class DrgRouteTable(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/drgRouteTable:DrgRouteTable"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

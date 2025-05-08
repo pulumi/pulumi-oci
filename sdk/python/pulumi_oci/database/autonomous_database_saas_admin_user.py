@@ -264,10 +264,8 @@ class _AutonomousDatabaseSaasAdminUserState:
         pulumi.set(self, "time_saas_admin_user_enabled", value)
 
 
+@pulumi.type_token("oci:Database/autonomousDatabaseSaasAdminUser:AutonomousDatabaseSaasAdminUser")
 class AutonomousDatabaseSaasAdminUser(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/autonomousDatabaseSaasAdminUser:AutonomousDatabaseSaasAdminUser"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

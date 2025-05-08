@@ -142,10 +142,8 @@ class _NamespaceIngestTimeRulesManagementState:
         pulumi.set(self, "namespace", value)
 
 
+@pulumi.type_token("oci:LogAnalytics/namespaceIngestTimeRulesManagement:NamespaceIngestTimeRulesManagement")
 class NamespaceIngestTimeRulesManagement(pulumi.CustomResource):
-
-    pulumi_type = "oci:LogAnalytics/namespaceIngestTimeRulesManagement:NamespaceIngestTimeRulesManagement"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -385,10 +385,8 @@ class _DiscoveryJobState:
         pulumi.set(self, "user_id", value)
 
 
+@pulumi.type_token("oci:StackMonitoring/discoveryJob:DiscoveryJob")
 class DiscoveryJob(pulumi.CustomResource):
-
-    pulumi_type = "oci:StackMonitoring/discoveryJob:DiscoveryJob"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

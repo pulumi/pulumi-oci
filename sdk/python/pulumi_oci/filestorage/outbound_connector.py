@@ -470,10 +470,8 @@ class _OutboundConnectorState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:FileStorage/outboundConnector:OutboundConnector")
 class OutboundConnector(pulumi.CustomResource):
-
-    pulumi_type = "oci:FileStorage/outboundConnector:OutboundConnector"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

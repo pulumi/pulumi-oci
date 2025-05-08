@@ -603,10 +603,8 @@ class _DbHomeState:
         pulumi.set(self, "vm_cluster_id", value)
 
 
+@pulumi.type_token("oci:Database/dbHome:DbHome")
 class DbHome(pulumi.CustomResource):
-
-    pulumi_type = "oci:Database/dbHome:DbHome"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

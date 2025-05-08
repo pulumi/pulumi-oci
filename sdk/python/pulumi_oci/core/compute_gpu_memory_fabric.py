@@ -368,10 +368,8 @@ class _ComputeGpuMemoryFabricState:
         pulumi.set(self, "total_host_count", value)
 
 
+@pulumi.type_token("oci:Core/computeGpuMemoryFabric:ComputeGpuMemoryFabric")
 class ComputeGpuMemoryFabric(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/computeGpuMemoryFabric:ComputeGpuMemoryFabric"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

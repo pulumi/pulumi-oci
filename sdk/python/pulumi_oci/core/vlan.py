@@ -438,10 +438,8 @@ class _VlanState:
         pulumi.set(self, "vlan_tag", value)
 
 
+@pulumi.type_token("oci:Core/vlan:Vlan")
 class Vlan(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/vlan:Vlan"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

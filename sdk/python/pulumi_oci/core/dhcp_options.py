@@ -304,10 +304,8 @@ class _DhcpOptionsState:
         pulumi.set(self, "vcn_id", value)
 
 
+@pulumi.type_token("oci:Core/dhcpOptions:DhcpOptions")
 class DhcpOptions(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/dhcpOptions:DhcpOptions"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

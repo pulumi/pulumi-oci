@@ -1350,10 +1350,8 @@ class _DomainsCloudGateState:
         pulumi.set(self, "upstream_servers", value)
 
 
+@pulumi.type_token("oci:Identity/domainsCloudGate:DomainsCloudGate")
 class DomainsCloudGate(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/domainsCloudGate:DomainsCloudGate"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

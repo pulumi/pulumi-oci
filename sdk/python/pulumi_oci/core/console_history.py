@@ -240,10 +240,8 @@ class _ConsoleHistoryState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Core/consoleHistory:ConsoleHistory")
 class ConsoleHistory(pulumi.CustomResource):
-
-    pulumi_type = "oci:Core/consoleHistory:ConsoleHistory"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

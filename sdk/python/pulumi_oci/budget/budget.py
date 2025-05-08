@@ -630,10 +630,8 @@ class _BudgetState:
         pulumi.set(self, "version", value)
 
 
+@pulumi.type_token("oci:Budget/budget:Budget")
 class Budget(pulumi.CustomResource):
-
-    pulumi_type = "oci:Budget/budget:Budget"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

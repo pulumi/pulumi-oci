@@ -207,10 +207,8 @@ class _OdaPrivateEndpointScanProxyState:
         pulumi.set(self, "time_created", value)
 
 
+@pulumi.type_token("oci:Oda/odaPrivateEndpointScanProxy:OdaPrivateEndpointScanProxy")
 class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
-
-    pulumi_type = "oci:Oda/odaPrivateEndpointScanProxy:OdaPrivateEndpointScanProxy"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

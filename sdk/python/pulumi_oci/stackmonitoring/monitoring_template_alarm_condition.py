@@ -413,10 +413,8 @@ class _MonitoringTemplateAlarmConditionState:
         pulumi.set(self, "time_updated", value)
 
 
+@pulumi.type_token("oci:StackMonitoring/monitoringTemplateAlarmCondition:MonitoringTemplateAlarmCondition")
 class MonitoringTemplateAlarmCondition(pulumi.CustomResource):
-
-    pulumi_type = "oci:StackMonitoring/monitoringTemplateAlarmCondition:MonitoringTemplateAlarmCondition"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

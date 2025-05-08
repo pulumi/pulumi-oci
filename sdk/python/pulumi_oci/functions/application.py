@@ -440,10 +440,8 @@ class _ApplicationState:
         pulumi.set(self, "trace_config", value)
 
 
+@pulumi.type_token("oci:Functions/application:Application")
 class Application(pulumi.CustomResource):
-
-    pulumi_type = "oci:Functions/application:Application"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

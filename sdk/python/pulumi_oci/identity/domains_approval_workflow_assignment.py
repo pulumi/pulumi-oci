@@ -944,10 +944,8 @@ class _DomainsApprovalWorkflowAssignmentState:
         pulumi.set(self, "tenancy_ocid", value)
 
 
+@pulumi.type_token("oci:Identity/domainsApprovalWorkflowAssignment:DomainsApprovalWorkflowAssignment")
 class DomainsApprovalWorkflowAssignment(pulumi.CustomResource):
-
-    pulumi_type = "oci:Identity/domainsApprovalWorkflowAssignment:DomainsApprovalWorkflowAssignment"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -1,4 +1,4 @@
 [submodule "upstream"]
 	path = upstream
-	url = git@github.com:oracle/terraform-provider-oci.git
+	url = https://github.com/oracle/terraform-provider-oci.git
 	ignore = dirty

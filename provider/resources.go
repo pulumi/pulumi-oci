@@ -326,6 +326,9 @@ func Provider() tfbridge.ProviderInfo {
 		Config:      map[string]*tfbridge.SchemaInfo{},
 		GitHubOrg:   "oracle",
 		Version:     version.Version,
+
+		UpstreamRepoPath: "./upstream",
+
 		DocRules: &tfbridge.DocRuleInfo{
 			AlternativeNames: func(info tfbridge.DocsPathInfo) []string {
 				if rest, ok := strings.CutPrefix(info.TfToken, "oci_datascience"); ok {

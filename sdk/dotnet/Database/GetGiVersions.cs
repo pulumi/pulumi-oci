@@ -30,6 +30,7 @@ namespace Pulumi.Oci.Database
         ///     {
         ///         CompartmentId = compartmentId,
         ///         AvailabilityDomain = giVersionAvailabilityDomain,
+        ///         ResourceId = testResource.Id,
         ///         Shape = giVersionShape,
         ///     });
         /// 
@@ -58,6 +59,7 @@ namespace Pulumi.Oci.Database
         ///     {
         ///         CompartmentId = compartmentId,
         ///         AvailabilityDomain = giVersionAvailabilityDomain,
+        ///         ResourceId = testResource.Id,
         ///         Shape = giVersionShape,
         ///     });
         /// 
@@ -86,6 +88,7 @@ namespace Pulumi.Oci.Database
         ///     {
         ///         CompartmentId = compartmentId,
         ///         AvailabilityDomain = giVersionAvailabilityDomain,
+        ///         ResourceId = testResource.Id,
         ///         Shape = giVersionShape,
         ///     });
         /// 
@@ -118,6 +121,12 @@ namespace Pulumi.Oci.Database
             get => _filters ?? (_filters = new List<Inputs.GetGiVersionsFilterArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// If provided, filters the results for the specified resource Id.
+        /// </summary>
+        [Input("resourceId")]
+        public string? ResourceId { get; set; }
 
         /// <summary>
         /// If provided, filters the results for the given shape.
@@ -154,6 +163,12 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
+        /// If provided, filters the results for the specified resource Id.
+        /// </summary>
+        [Input("resourceId")]
+        public Input<string>? ResourceId { get; set; }
+
+        /// <summary>
         /// If provided, filters the results for the given shape.
         /// </summary>
         [Input("shape")]
@@ -180,6 +195,7 @@ namespace Pulumi.Oci.Database
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly string? ResourceId;
         public readonly string? Shape;
 
         [OutputConstructor]
@@ -194,6 +210,8 @@ namespace Pulumi.Oci.Database
 
             string id,
 
+            string? resourceId,
+
             string? shape)
         {
             AvailabilityDomain = availabilityDomain;
@@ -201,6 +219,7 @@ namespace Pulumi.Oci.Database
             Filters = filters;
             GiVersions = giVersions;
             Id = id;
+            ResourceId = resourceId;
             Shape = shape;
         }
     }

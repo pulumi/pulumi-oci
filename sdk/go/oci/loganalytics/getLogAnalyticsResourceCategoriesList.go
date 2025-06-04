@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -31,6 +31,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := loganalytics.GetLogAnalyticsResourceCategoriesList(ctx, &loganalytics.GetLogAnalyticsResourceCategoriesListArgs{
 //				Namespace:          logAnalyticsResourceCategoriesListNamespace,
+//				CompartmentId:      pulumi.StringRef(logAnalyticsResourceCategoriesCompartmentId),
 //				ResourceIds:        pulumi.StringRef(logAnalyticsResourceCategoriesListResourceIds),
 //				ResourceTypes:      pulumi.StringRef(logAnalyticsResourceCategoriesListResourceTypes),
 //				ResourceCategories: pulumi.StringRef(logAnalyticsResourceCategoriesListResourceCategories),
@@ -55,6 +56,8 @@ func GetLogAnalyticsResourceCategoriesList(ctx *pulumi.Context, args *GetLogAnal
 
 // A collection of arguments for invoking getLogAnalyticsResourceCategoriesList.
 type GetLogAnalyticsResourceCategoriesListArgs struct {
+	// The compartment id in which to list resources.
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The Logging Analytics namespace used for the request.
 	Namespace string `pulumi:"namespace"`
 	// A comma-separated list of category names used for filtering
@@ -69,6 +72,8 @@ type GetLogAnalyticsResourceCategoriesListArgs struct {
 type GetLogAnalyticsResourceCategoriesListResult struct {
 	// An array of categories. The array contents include detailed information about the distinct set of categories assigned to all the listed resources under items.
 	Categories []GetLogAnalyticsResourceCategoriesListCategory `pulumi:"categories"`
+	// The compartment ID of the resource, if applicable.
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// A list of resources and their category assignments
@@ -90,6 +95,8 @@ func GetLogAnalyticsResourceCategoriesListOutput(ctx *pulumi.Context, args GetLo
 
 // A collection of arguments for invoking getLogAnalyticsResourceCategoriesList.
 type GetLogAnalyticsResourceCategoriesListOutputArgs struct {
+	// The compartment id in which to list resources.
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The Logging Analytics namespace used for the request.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// A comma-separated list of category names used for filtering
@@ -124,6 +131,11 @@ func (o GetLogAnalyticsResourceCategoriesListResultOutput) Categories() GetLogAn
 	return o.ApplyT(func(v GetLogAnalyticsResourceCategoriesListResult) []GetLogAnalyticsResourceCategoriesListCategory {
 		return v.Categories
 	}).(GetLogAnalyticsResourceCategoriesListCategoryArrayOutput)
+}
+
+// The compartment ID of the resource, if applicable.
+func (o GetLogAnalyticsResourceCategoriesListResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsResourceCategoriesListResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.

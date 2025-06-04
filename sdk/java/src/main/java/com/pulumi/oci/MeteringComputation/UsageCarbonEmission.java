@@ -21,7 +21,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Usage Carbon Emission resource in Oracle Cloud Infrastructure Metering Computation service.
  * 
- * Returns usage carbon emission for the given account.
+ * Returns carbon emission usage for the given account.
  * 
  * ## Example Usage
  * 
@@ -54,6 +54,9 @@ import javax.annotation.Nullable;
  *             .timeUsageEnded(usageCarbonEmissionTimeUsageEnded)
  *             .timeUsageStarted(usageCarbonEmissionTimeUsageStarted)
  *             .compartmentDepth(usageCarbonEmissionCompartmentDepth)
+ *             .emissionCalculationMethod(usageCarbonEmissionEmissionCalculationMethod)
+ *             .emissionType(usageCarbonEmissionEmissionType)
+ *             .granularity(usageCarbonEmissionGranularity)
  *             .groupBies(usageCarbonEmissionGroupBy)
  *             .groupByTags(UsageCarbonEmissionGroupByTagArgs.builder()
  *                 .key(usageCarbonEmissionGroupByTagKey)
@@ -96,6 +99,48 @@ public class UsageCarbonEmission extends com.pulumi.resources.CustomResource {
         return this.compartmentDepth;
     }
     /**
+     * Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+     * 
+     */
+    @Export(name="emissionCalculationMethod", refs={String.class}, tree="[0]")
+    private Output<String> emissionCalculationMethod;
+
+    /**
+     * @return Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+     * 
+     */
+    public Output<String> emissionCalculationMethod() {
+        return this.emissionCalculationMethod;
+    }
+    /**
+     * Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+     * 
+     */
+    @Export(name="emissionType", refs={String.class}, tree="[0]")
+    private Output<String> emissionType;
+
+    /**
+     * @return Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+     * 
+     */
+    public Output<String> emissionType() {
+        return this.emissionType;
+    }
+    /**
+     * The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+     * 
+     */
+    @Export(name="granularity", refs={String.class}, tree="[0]")
+    private Output<String> granularity;
+
+    /**
+     * @return The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+     * 
+     */
+    public Output<String> granularity() {
+        return this.granularity;
+    }
+    /**
      * Aggregate the result by. For example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;resourceName&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;, &#34;subscriptionId&#34;]`
      * 
      */
@@ -124,28 +169,28 @@ public class UsageCarbonEmission extends com.pulumi.resources.CustomResource {
         return this.groupByTags;
     }
     /**
-     * Specifies whether aggregated by time. If isAggregateByTime is true, all usage carbon emissions over the query time period will be added up.
+     * Specifies whether aggregated by time. If isAggregateByTime is true, all carbon emissions usage over the query time period are summed.
      * 
      */
     @Export(name="isAggregateByTime", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isAggregateByTime;
 
     /**
-     * @return Specifies whether aggregated by time. If isAggregateByTime is true, all usage carbon emissions over the query time period will be added up.
+     * @return Specifies whether aggregated by time. If isAggregateByTime is true, all carbon emissions usage over the query time period are summed.
      * 
      */
     public Output<Boolean> isAggregateByTime() {
         return this.isAggregateByTime;
     }
     /**
-     * A list of usage carbon emission items.
+     * A list of carbon emission usage items.
      * 
      */
     @Export(name="items", refs={List.class,UsageCarbonEmissionItem.class}, tree="[0,1]")
     private Output<List<UsageCarbonEmissionItem>> items;
 
     /**
-     * @return A list of usage carbon emission items.
+     * @return A list of carbon emission usage items.
      * 
      */
     public Output<List<UsageCarbonEmissionItem>> items() {

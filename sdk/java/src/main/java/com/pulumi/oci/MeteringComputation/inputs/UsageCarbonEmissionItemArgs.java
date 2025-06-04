@@ -79,14 +79,14 @@ public final class UsageCarbonEmissionItemArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * The carbon emission in MTCO2 unit.
+     * The carbon emission usage in MTCO2 units.
      * 
      */
     @Import(name="computedCarbonEmission")
     private @Nullable Output<Double> computedCarbonEmission;
 
     /**
-     * @return The carbon emission in MTCO2 unit.
+     * @return The carbon emission usage in MTCO2 units.
      * 
      */
     public Optional<Output<Double>> computedCarbonEmission() {
@@ -94,18 +94,33 @@ public final class UsageCarbonEmissionItemArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * The method used to calculate carbon emission.
+     * Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
      * 
      */
     @Import(name="emissionCalculationMethod")
     private @Nullable Output<String> emissionCalculationMethod;
 
     /**
-     * @return The method used to calculate carbon emission.
+     * @return Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
      * 
      */
     public Optional<Output<String>> emissionCalculationMethod() {
         return Optional.ofNullable(this.emissionCalculationMethod);
+    }
+
+    /**
+     * Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+     * 
+     */
+    @Import(name="emissionType")
+    private @Nullable Output<String> emissionType;
+
+    /**
+     * @return Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+     * 
+     */
+    public Optional<Output<String>> emissionType() {
+        return Optional.ofNullable(this.emissionType);
     }
 
     /**
@@ -312,6 +327,7 @@ public final class UsageCarbonEmissionItemArgs extends com.pulumi.resources.Reso
         this.compartmentPath = $.compartmentPath;
         this.computedCarbonEmission = $.computedCarbonEmission;
         this.emissionCalculationMethod = $.emissionCalculationMethod;
+        this.emissionType = $.emissionType;
         this.platform = $.platform;
         this.region = $.region;
         this.resourceId = $.resourceId;
@@ -430,7 +446,7 @@ public final class UsageCarbonEmissionItemArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param computedCarbonEmission The carbon emission in MTCO2 unit.
+         * @param computedCarbonEmission The carbon emission usage in MTCO2 units.
          * 
          * @return builder
          * 
@@ -441,7 +457,7 @@ public final class UsageCarbonEmissionItemArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param computedCarbonEmission The carbon emission in MTCO2 unit.
+         * @param computedCarbonEmission The carbon emission usage in MTCO2 units.
          * 
          * @return builder
          * 
@@ -451,7 +467,7 @@ public final class UsageCarbonEmissionItemArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param emissionCalculationMethod The method used to calculate carbon emission.
+         * @param emissionCalculationMethod Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
          * 
          * @return builder
          * 
@@ -462,13 +478,34 @@ public final class UsageCarbonEmissionItemArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param emissionCalculationMethod The method used to calculate carbon emission.
+         * @param emissionCalculationMethod Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
          * 
          * @return builder
          * 
          */
         public Builder emissionCalculationMethod(String emissionCalculationMethod) {
             return emissionCalculationMethod(Output.of(emissionCalculationMethod));
+        }
+
+        /**
+         * @param emissionType Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder emissionType(@Nullable Output<String> emissionType) {
+            $.emissionType = emissionType;
+            return this;
+        }
+
+        /**
+         * @param emissionType Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder emissionType(String emissionType) {
+            return emissionType(Output.of(emissionType));
         }
 
         /**

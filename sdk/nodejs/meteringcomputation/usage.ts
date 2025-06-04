@@ -89,7 +89,7 @@ export class Usage extends pulumi.CustomResource {
      */
     public readonly granularity!: pulumi.Output<string>;
     /**
-     * Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+     * Aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
      */
     public readonly groupBies!: pulumi.Output<string[]>;
     /**
@@ -97,7 +97,7 @@ export class Usage extends pulumi.CustomResource {
      */
     public readonly groupByTags!: pulumi.Output<outputs.MeteringComputation.UsageGroupByTag[]>;
     /**
-     * Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+     * Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
      */
     public readonly isAggregateByTime!: pulumi.Output<boolean>;
     /**
@@ -203,7 +203,7 @@ export interface UsageState {
      */
     granularity?: pulumi.Input<string>;
     /**
-     * Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+     * Aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
      */
     groupBies?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -211,7 +211,7 @@ export interface UsageState {
      */
     groupByTags?: pulumi.Input<pulumi.Input<inputs.MeteringComputation.UsageGroupByTag>[]>;
     /**
-     * Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+     * Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
      */
     isAggregateByTime?: pulumi.Input<boolean>;
     /**
@@ -261,7 +261,7 @@ export interface UsageArgs {
      */
     granularity: pulumi.Input<string>;
     /**
-     * Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+     * Aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
      */
     groupBies?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -269,7 +269,7 @@ export interface UsageArgs {
      */
     groupByTags?: pulumi.Input<pulumi.Input<inputs.MeteringComputation.UsageGroupByTag>[]>;
     /**
-     * Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+     * Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
      */
     isAggregateByTime?: pulumi.Input<boolean>;
     /**

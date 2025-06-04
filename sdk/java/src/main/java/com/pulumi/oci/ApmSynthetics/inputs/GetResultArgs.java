@@ -75,14 +75,14 @@ public final class GetResultArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * The result type: har, screenshot, log, or network.
+     * The result type: har, screenshot, log, network, diagnostics or script.
      * 
      */
     @Import(name="resultType", required=true)
     private Output<String> resultType;
 
     /**
-     * @return The result type: har, screenshot, log, or network.
+     * @return The result type: har, screenshot, log, network, diagnostics or script.
      * 
      */
     public Output<String> resultType() {
@@ -218,7 +218,7 @@ public final class GetResultArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param resultType The result type: har, screenshot, log, or network.
+         * @param resultType The result type: har, screenshot, log, network, diagnostics or script.
          * 
          * @return builder
          * 
@@ -229,7 +229,7 @@ public final class GetResultArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param resultType The result type: har, screenshot, log, or network.
+         * @param resultType The result type: har, screenshot, log, network, diagnostics or script.
          * 
          * @return builder
          * 

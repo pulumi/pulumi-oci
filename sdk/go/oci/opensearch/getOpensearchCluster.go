@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -31,7 +31,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/opensearch"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/opensearch"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -80,6 +80,8 @@ type GetOpensearchClusterResult struct {
 	DataNodeHostMemoryGb int `pulumi:"dataNodeHostMemoryGb"`
 	// The number of OCPUs configured for the cluster's data nodes.
 	DataNodeHostOcpuCount int `pulumi:"dataNodeHostOcpuCount"`
+	// The node shape for the cluster's data nodes.
+	DataNodeHostShape string `pulumi:"dataNodeHostShape"`
 	// The instance type for the cluster's data nodes.
 	DataNodeHostType string `pulumi:"dataNodeHostType"`
 	// The amount of storage in GB, to configure per node for the cluster's data nodes.
@@ -108,6 +110,8 @@ type GetOpensearchClusterResult struct {
 	MasterNodeHostMemoryGb int `pulumi:"masterNodeHostMemoryGb"`
 	// The number of OCPUs configured for cluster's master nodes.
 	MasterNodeHostOcpuCount int `pulumi:"masterNodeHostOcpuCount"`
+	// The node shape for the cluster's master nodes.
+	MasterNodeHostShape string `pulumi:"masterNodeHostShape"`
 	// The instance type for the cluster's master nodes.
 	MasterNodeHostType string `pulumi:"masterNodeHostType"`
 	// The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
@@ -118,6 +122,8 @@ type GetOpensearchClusterResult struct {
 	OpendashboardNodeHostMemoryGb int `pulumi:"opendashboardNodeHostMemoryGb"`
 	// The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
 	OpendashboardNodeHostOcpuCount int `pulumi:"opendashboardNodeHostOcpuCount"`
+	// The node shape for the cluster's OpenSearch Dashboard nodes.
+	OpendashboardNodeHostShape string `pulumi:"opendashboardNodeHostShape"`
 	// The private IP address for the cluster's OpenSearch Dashboard.
 	OpendashboardPrivateIp string `pulumi:"opendashboardPrivateIp"`
 	OpensearchClusterId    string `pulumi:"opensearchClusterId"`
@@ -131,12 +137,25 @@ type GetOpensearchClusterResult struct {
 	ReverseConnectionEndpointCustomerIps []string `pulumi:"reverseConnectionEndpointCustomerIps"`
 	// The list of reverse connection endpoints.
 	ReverseConnectionEndpoints []GetOpensearchClusterReverseConnectionEndpoint `pulumi:"reverseConnectionEndpoints"`
+	// The number of search nodes configured for the cluster.
+	SearchNodeCount int `pulumi:"searchNodeCount"`
+	// The amount of memory in GB, for the cluster's search nodes.
+	SearchNodeHostMemoryGb int `pulumi:"searchNodeHostMemoryGb"`
+	// The number of OCPUs configured for the cluster's search nodes.
+	SearchNodeHostOcpuCount int `pulumi:"searchNodeHostOcpuCount"`
+	// The node shape for the cluster's search nodes.
+	SearchNodeHostShape string `pulumi:"searchNodeHostShape"`
+	// The instance type for the cluster's search nodes.
+	SearchNodeHostType string `pulumi:"searchNodeHostType"`
+	// The amount of storage in GB, to configure per node for the cluster's search nodes.
+	SearchNodeStorageGb int `pulumi:"searchNodeStorageGb"`
 	// The name of the master user that are used to manage security config
 	SecurityMasterUserName string `pulumi:"securityMasterUserName"`
 	// The password hash of the master user that are used to manage security config
 	SecurityMasterUserPasswordHash string `pulumi:"securityMasterUserPasswordHash"`
 	// The security mode of the cluster.
-	SecurityMode string `pulumi:"securityMode"`
+	SecurityMode        string                                   `pulumi:"securityMode"`
+	SecuritySamlConfigs []GetOpensearchClusterSecuritySamlConfig `pulumi:"securitySamlConfigs"`
 	// The software version the cluster is running.
 	SoftwareVersion string `pulumi:"softwareVersion"`
 	// The current state of the cluster.
@@ -230,6 +249,11 @@ func (o GetOpensearchClusterResultOutput) DataNodeHostOcpuCount() pulumi.IntOutp
 	return o.ApplyT(func(v GetOpensearchClusterResult) int { return v.DataNodeHostOcpuCount }).(pulumi.IntOutput)
 }
 
+// The node shape for the cluster's data nodes.
+func (o GetOpensearchClusterResultOutput) DataNodeHostShape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.DataNodeHostShape }).(pulumi.StringOutput)
+}
+
 // The instance type for the cluster's data nodes.
 func (o GetOpensearchClusterResultOutput) DataNodeHostType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.DataNodeHostType }).(pulumi.StringOutput)
@@ -302,6 +326,11 @@ func (o GetOpensearchClusterResultOutput) MasterNodeHostOcpuCount() pulumi.IntOu
 	return o.ApplyT(func(v GetOpensearchClusterResult) int { return v.MasterNodeHostOcpuCount }).(pulumi.IntOutput)
 }
 
+// The node shape for the cluster's master nodes.
+func (o GetOpensearchClusterResultOutput) MasterNodeHostShape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.MasterNodeHostShape }).(pulumi.StringOutput)
+}
+
 // The instance type for the cluster's master nodes.
 func (o GetOpensearchClusterResultOutput) MasterNodeHostType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.MasterNodeHostType }).(pulumi.StringOutput)
@@ -325,6 +354,11 @@ func (o GetOpensearchClusterResultOutput) OpendashboardNodeHostMemoryGb() pulumi
 // The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
 func (o GetOpensearchClusterResultOutput) OpendashboardNodeHostOcpuCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetOpensearchClusterResult) int { return v.OpendashboardNodeHostOcpuCount }).(pulumi.IntOutput)
+}
+
+// The node shape for the cluster's OpenSearch Dashboard nodes.
+func (o GetOpensearchClusterResultOutput) OpendashboardNodeHostShape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.OpendashboardNodeHostShape }).(pulumi.StringOutput)
 }
 
 // The private IP address for the cluster's OpenSearch Dashboard.
@@ -365,6 +399,36 @@ func (o GetOpensearchClusterResultOutput) ReverseConnectionEndpoints() GetOpense
 	}).(GetOpensearchClusterReverseConnectionEndpointArrayOutput)
 }
 
+// The number of search nodes configured for the cluster.
+func (o GetOpensearchClusterResultOutput) SearchNodeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) int { return v.SearchNodeCount }).(pulumi.IntOutput)
+}
+
+// The amount of memory in GB, for the cluster's search nodes.
+func (o GetOpensearchClusterResultOutput) SearchNodeHostMemoryGb() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) int { return v.SearchNodeHostMemoryGb }).(pulumi.IntOutput)
+}
+
+// The number of OCPUs configured for the cluster's search nodes.
+func (o GetOpensearchClusterResultOutput) SearchNodeHostOcpuCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) int { return v.SearchNodeHostOcpuCount }).(pulumi.IntOutput)
+}
+
+// The node shape for the cluster's search nodes.
+func (o GetOpensearchClusterResultOutput) SearchNodeHostShape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.SearchNodeHostShape }).(pulumi.StringOutput)
+}
+
+// The instance type for the cluster's search nodes.
+func (o GetOpensearchClusterResultOutput) SearchNodeHostType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.SearchNodeHostType }).(pulumi.StringOutput)
+}
+
+// The amount of storage in GB, to configure per node for the cluster's search nodes.
+func (o GetOpensearchClusterResultOutput) SearchNodeStorageGb() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) int { return v.SearchNodeStorageGb }).(pulumi.IntOutput)
+}
+
 // The name of the master user that are used to manage security config
 func (o GetOpensearchClusterResultOutput) SecurityMasterUserName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.SecurityMasterUserName }).(pulumi.StringOutput)
@@ -378,6 +442,12 @@ func (o GetOpensearchClusterResultOutput) SecurityMasterUserPasswordHash() pulum
 // The security mode of the cluster.
 func (o GetOpensearchClusterResultOutput) SecurityMode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.SecurityMode }).(pulumi.StringOutput)
+}
+
+func (o GetOpensearchClusterResultOutput) SecuritySamlConfigs() GetOpensearchClusterSecuritySamlConfigArrayOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) []GetOpensearchClusterSecuritySamlConfig {
+		return v.SecuritySamlConfigs
+	}).(GetOpensearchClusterSecuritySamlConfigArrayOutput)
 }
 
 // The software version the cluster is running.

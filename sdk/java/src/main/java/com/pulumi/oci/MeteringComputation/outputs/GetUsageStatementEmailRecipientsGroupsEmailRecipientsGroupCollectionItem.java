@@ -24,17 +24,17 @@ public final class GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCol
      */
     private String id;
     /**
-     * @return The list of recipient will receive the usage statement email.
+     * @return The list of recipients that will receive usage statement emails.
      * 
      */
     private List<GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsList> recipientsLists;
     /**
-     * @return The email recipient group lifecycle state.
+     * @return The email recipients group lifecycle state.
      * 
      */
     private String state;
     /**
-     * @return The UsageStatement Subscription unique OCID.
+     * @return The usage statement subscription unique OCID.
      * 
      */
     private String subscriptionId;
@@ -58,21 +58,21 @@ public final class GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCol
         return this.id;
     }
     /**
-     * @return The list of recipient will receive the usage statement email.
+     * @return The list of recipients that will receive usage statement emails.
      * 
      */
     public List<GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsList> recipientsLists() {
         return this.recipientsLists;
     }
     /**
-     * @return The email recipient group lifecycle state.
+     * @return The email recipients group lifecycle state.
      * 
      */
     public String state() {
         return this.state;
     }
     /**
-     * @return The UsageStatement Subscription unique OCID.
+     * @return The usage statement subscription unique OCID.
      * 
      */
     public String subscriptionId() {

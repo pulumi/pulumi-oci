@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -23,7 +23,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/mysql"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/mysql"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -44,6 +44,7 @@ import (
 //				ReplicaOverrides: &mysql.ReplicaReplicaOverridesArgs{
 //					ConfigurationId: pulumi.Any(testMysqlConfiguration.Id),
 //					MysqlVersion:    pulumi.Any(replicaReplicaOverridesMysqlVersion),
+//					NsgIds:          pulumi.Any(replicaReplicaOverridesNsgIds),
 //					ShapeName:       pulumi.Any(testShape.Name),
 //				},
 //			})
@@ -92,6 +93,8 @@ type Replica struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The MySQL version to be used by the read replica.
 	MysqlVersion pulumi.StringOutput `pulumi:"mysqlVersion"`
+	// Network Security Group OCIDs used for the VNIC attachment.
+	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
 	// The port the read replica is configured to listen on.
 	Port pulumi.IntOutput `pulumi:"port"`
 	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
@@ -169,6 +172,8 @@ type replicaState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The MySQL version to be used by the read replica.
 	MysqlVersion *string `pulumi:"mysqlVersion"`
+	// Network Security Group OCIDs used for the VNIC attachment.
+	NsgIds []string `pulumi:"nsgIds"`
 	// The port the read replica is configured to listen on.
 	Port *int `pulumi:"port"`
 	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
@@ -214,6 +219,8 @@ type ReplicaState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// The MySQL version to be used by the read replica.
 	MysqlVersion pulumi.StringPtrInput
+	// Network Security Group OCIDs used for the VNIC attachment.
+	NsgIds pulumi.StringArrayInput
 	// The port the read replica is configured to listen on.
 	Port pulumi.IntPtrInput
 	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
@@ -421,6 +428,11 @@ func (o ReplicaOutput) LifecycleDetails() pulumi.StringOutput {
 // The MySQL version to be used by the read replica.
 func (o ReplicaOutput) MysqlVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *Replica) pulumi.StringOutput { return v.MysqlVersion }).(pulumi.StringOutput)
+}
+
+// Network Security Group OCIDs used for the VNIC attachment.
+func (o ReplicaOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *Replica) pulumi.StringArrayOutput { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
 
 // The port the read replica is configured to listen on.

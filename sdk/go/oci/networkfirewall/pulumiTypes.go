@@ -7,11 +7,167 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 var _ = internal.GetEnvOrDefault
+
+type NetworkFirewallNatConfiguration struct {
+	// (Updatable) To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall. The value of this field can not be false to release the NAT IPs given that the attached network firewall policy does not contains any NAT rules. The value of this field should be set to true if the network firewall policy being applied contains NAT rules.
+	MustEnablePrivateNat bool `pulumi:"mustEnablePrivateNat"`
+	// An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+	NatIpAddressLists []string `pulumi:"natIpAddressLists"`
+}
+
+// NetworkFirewallNatConfigurationInput is an input type that accepts NetworkFirewallNatConfigurationArgs and NetworkFirewallNatConfigurationOutput values.
+// You can construct a concrete instance of `NetworkFirewallNatConfigurationInput` via:
+//
+//	NetworkFirewallNatConfigurationArgs{...}
+type NetworkFirewallNatConfigurationInput interface {
+	pulumi.Input
+
+	ToNetworkFirewallNatConfigurationOutput() NetworkFirewallNatConfigurationOutput
+	ToNetworkFirewallNatConfigurationOutputWithContext(context.Context) NetworkFirewallNatConfigurationOutput
+}
+
+type NetworkFirewallNatConfigurationArgs struct {
+	// (Updatable) To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall. The value of this field can not be false to release the NAT IPs given that the attached network firewall policy does not contains any NAT rules. The value of this field should be set to true if the network firewall policy being applied contains NAT rules.
+	MustEnablePrivateNat pulumi.BoolInput `pulumi:"mustEnablePrivateNat"`
+	// An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+	NatIpAddressLists pulumi.StringArrayInput `pulumi:"natIpAddressLists"`
+}
+
+func (NetworkFirewallNatConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NetworkFirewallNatConfiguration)(nil)).Elem()
+}
+
+func (i NetworkFirewallNatConfigurationArgs) ToNetworkFirewallNatConfigurationOutput() NetworkFirewallNatConfigurationOutput {
+	return i.ToNetworkFirewallNatConfigurationOutputWithContext(context.Background())
+}
+
+func (i NetworkFirewallNatConfigurationArgs) ToNetworkFirewallNatConfigurationOutputWithContext(ctx context.Context) NetworkFirewallNatConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallNatConfigurationOutput)
+}
+
+func (i NetworkFirewallNatConfigurationArgs) ToNetworkFirewallNatConfigurationPtrOutput() NetworkFirewallNatConfigurationPtrOutput {
+	return i.ToNetworkFirewallNatConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i NetworkFirewallNatConfigurationArgs) ToNetworkFirewallNatConfigurationPtrOutputWithContext(ctx context.Context) NetworkFirewallNatConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallNatConfigurationOutput).ToNetworkFirewallNatConfigurationPtrOutputWithContext(ctx)
+}
+
+// NetworkFirewallNatConfigurationPtrInput is an input type that accepts NetworkFirewallNatConfigurationArgs, NetworkFirewallNatConfigurationPtr and NetworkFirewallNatConfigurationPtrOutput values.
+// You can construct a concrete instance of `NetworkFirewallNatConfigurationPtrInput` via:
+//
+//	        NetworkFirewallNatConfigurationArgs{...}
+//
+//	or:
+//
+//	        nil
+type NetworkFirewallNatConfigurationPtrInput interface {
+	pulumi.Input
+
+	ToNetworkFirewallNatConfigurationPtrOutput() NetworkFirewallNatConfigurationPtrOutput
+	ToNetworkFirewallNatConfigurationPtrOutputWithContext(context.Context) NetworkFirewallNatConfigurationPtrOutput
+}
+
+type networkFirewallNatConfigurationPtrType NetworkFirewallNatConfigurationArgs
+
+func NetworkFirewallNatConfigurationPtr(v *NetworkFirewallNatConfigurationArgs) NetworkFirewallNatConfigurationPtrInput {
+	return (*networkFirewallNatConfigurationPtrType)(v)
+}
+
+func (*networkFirewallNatConfigurationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**NetworkFirewallNatConfiguration)(nil)).Elem()
+}
+
+func (i *networkFirewallNatConfigurationPtrType) ToNetworkFirewallNatConfigurationPtrOutput() NetworkFirewallNatConfigurationPtrOutput {
+	return i.ToNetworkFirewallNatConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i *networkFirewallNatConfigurationPtrType) ToNetworkFirewallNatConfigurationPtrOutputWithContext(ctx context.Context) NetworkFirewallNatConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallNatConfigurationPtrOutput)
+}
+
+type NetworkFirewallNatConfigurationOutput struct{ *pulumi.OutputState }
+
+func (NetworkFirewallNatConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NetworkFirewallNatConfiguration)(nil)).Elem()
+}
+
+func (o NetworkFirewallNatConfigurationOutput) ToNetworkFirewallNatConfigurationOutput() NetworkFirewallNatConfigurationOutput {
+	return o
+}
+
+func (o NetworkFirewallNatConfigurationOutput) ToNetworkFirewallNatConfigurationOutputWithContext(ctx context.Context) NetworkFirewallNatConfigurationOutput {
+	return o
+}
+
+func (o NetworkFirewallNatConfigurationOutput) ToNetworkFirewallNatConfigurationPtrOutput() NetworkFirewallNatConfigurationPtrOutput {
+	return o.ToNetworkFirewallNatConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (o NetworkFirewallNatConfigurationOutput) ToNetworkFirewallNatConfigurationPtrOutputWithContext(ctx context.Context) NetworkFirewallNatConfigurationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v NetworkFirewallNatConfiguration) *NetworkFirewallNatConfiguration {
+		return &v
+	}).(NetworkFirewallNatConfigurationPtrOutput)
+}
+
+// (Updatable) To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall. The value of this field can not be false to release the NAT IPs given that the attached network firewall policy does not contains any NAT rules. The value of this field should be set to true if the network firewall policy being applied contains NAT rules.
+func (o NetworkFirewallNatConfigurationOutput) MustEnablePrivateNat() pulumi.BoolOutput {
+	return o.ApplyT(func(v NetworkFirewallNatConfiguration) bool { return v.MustEnablePrivateNat }).(pulumi.BoolOutput)
+}
+
+// An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+func (o NetworkFirewallNatConfigurationOutput) NatIpAddressLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v NetworkFirewallNatConfiguration) []string { return v.NatIpAddressLists }).(pulumi.StringArrayOutput)
+}
+
+type NetworkFirewallNatConfigurationPtrOutput struct{ *pulumi.OutputState }
+
+func (NetworkFirewallNatConfigurationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**NetworkFirewallNatConfiguration)(nil)).Elem()
+}
+
+func (o NetworkFirewallNatConfigurationPtrOutput) ToNetworkFirewallNatConfigurationPtrOutput() NetworkFirewallNatConfigurationPtrOutput {
+	return o
+}
+
+func (o NetworkFirewallNatConfigurationPtrOutput) ToNetworkFirewallNatConfigurationPtrOutputWithContext(ctx context.Context) NetworkFirewallNatConfigurationPtrOutput {
+	return o
+}
+
+func (o NetworkFirewallNatConfigurationPtrOutput) Elem() NetworkFirewallNatConfigurationOutput {
+	return o.ApplyT(func(v *NetworkFirewallNatConfiguration) NetworkFirewallNatConfiguration {
+		if v != nil {
+			return *v
+		}
+		var ret NetworkFirewallNatConfiguration
+		return ret
+	}).(NetworkFirewallNatConfigurationOutput)
+}
+
+// (Updatable) To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall. The value of this field can not be false to release the NAT IPs given that the attached network firewall policy does not contains any NAT rules. The value of this field should be set to true if the network firewall policy being applied contains NAT rules.
+func (o NetworkFirewallNatConfigurationPtrOutput) MustEnablePrivateNat() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallNatConfiguration) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.MustEnablePrivateNat
+	}).(pulumi.BoolPtrOutput)
+}
+
+// An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+func (o NetworkFirewallNatConfigurationPtrOutput) NatIpAddressLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *NetworkFirewallNatConfiguration) []string {
+		if v == nil {
+			return nil
+		}
+		return v.NatIpAddressLists
+	}).(pulumi.StringArrayOutput)
+}
 
 type NetworkFirewallPolicyDecryptionRuleCondition struct {
 	// (Updatable) An array of address list names to be evaluated against the traffic destination address.
@@ -330,6 +486,337 @@ func (o NetworkFirewallPolicyDecryptionRulePositionPtrOutput) AfterRule() pulumi
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o NetworkFirewallPolicyDecryptionRulePositionPtrOutput) BeforeRule() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NetworkFirewallPolicyDecryptionRulePosition) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BeforeRule
+	}).(pulumi.StringPtrOutput)
+}
+
+type NetworkFirewallPolicyNatRuleCondition struct {
+	// (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+	DestinationAddresses []string `pulumi:"destinationAddresses"`
+	// (Updatable) A Service name to be evaluated against the traffic protocol and protocol-specific parameters.
+	Service *string `pulumi:"service"`
+	// (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+	SourceAddresses []string `pulumi:"sourceAddresses"`
+}
+
+// NetworkFirewallPolicyNatRuleConditionInput is an input type that accepts NetworkFirewallPolicyNatRuleConditionArgs and NetworkFirewallPolicyNatRuleConditionOutput values.
+// You can construct a concrete instance of `NetworkFirewallPolicyNatRuleConditionInput` via:
+//
+//	NetworkFirewallPolicyNatRuleConditionArgs{...}
+type NetworkFirewallPolicyNatRuleConditionInput interface {
+	pulumi.Input
+
+	ToNetworkFirewallPolicyNatRuleConditionOutput() NetworkFirewallPolicyNatRuleConditionOutput
+	ToNetworkFirewallPolicyNatRuleConditionOutputWithContext(context.Context) NetworkFirewallPolicyNatRuleConditionOutput
+}
+
+type NetworkFirewallPolicyNatRuleConditionArgs struct {
+	// (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+	DestinationAddresses pulumi.StringArrayInput `pulumi:"destinationAddresses"`
+	// (Updatable) A Service name to be evaluated against the traffic protocol and protocol-specific parameters.
+	Service pulumi.StringPtrInput `pulumi:"service"`
+	// (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+	SourceAddresses pulumi.StringArrayInput `pulumi:"sourceAddresses"`
+}
+
+func (NetworkFirewallPolicyNatRuleConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NetworkFirewallPolicyNatRuleCondition)(nil)).Elem()
+}
+
+func (i NetworkFirewallPolicyNatRuleConditionArgs) ToNetworkFirewallPolicyNatRuleConditionOutput() NetworkFirewallPolicyNatRuleConditionOutput {
+	return i.ToNetworkFirewallPolicyNatRuleConditionOutputWithContext(context.Background())
+}
+
+func (i NetworkFirewallPolicyNatRuleConditionArgs) ToNetworkFirewallPolicyNatRuleConditionOutputWithContext(ctx context.Context) NetworkFirewallPolicyNatRuleConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyNatRuleConditionOutput)
+}
+
+func (i NetworkFirewallPolicyNatRuleConditionArgs) ToNetworkFirewallPolicyNatRuleConditionPtrOutput() NetworkFirewallPolicyNatRuleConditionPtrOutput {
+	return i.ToNetworkFirewallPolicyNatRuleConditionPtrOutputWithContext(context.Background())
+}
+
+func (i NetworkFirewallPolicyNatRuleConditionArgs) ToNetworkFirewallPolicyNatRuleConditionPtrOutputWithContext(ctx context.Context) NetworkFirewallPolicyNatRuleConditionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyNatRuleConditionOutput).ToNetworkFirewallPolicyNatRuleConditionPtrOutputWithContext(ctx)
+}
+
+// NetworkFirewallPolicyNatRuleConditionPtrInput is an input type that accepts NetworkFirewallPolicyNatRuleConditionArgs, NetworkFirewallPolicyNatRuleConditionPtr and NetworkFirewallPolicyNatRuleConditionPtrOutput values.
+// You can construct a concrete instance of `NetworkFirewallPolicyNatRuleConditionPtrInput` via:
+//
+//	        NetworkFirewallPolicyNatRuleConditionArgs{...}
+//
+//	or:
+//
+//	        nil
+type NetworkFirewallPolicyNatRuleConditionPtrInput interface {
+	pulumi.Input
+
+	ToNetworkFirewallPolicyNatRuleConditionPtrOutput() NetworkFirewallPolicyNatRuleConditionPtrOutput
+	ToNetworkFirewallPolicyNatRuleConditionPtrOutputWithContext(context.Context) NetworkFirewallPolicyNatRuleConditionPtrOutput
+}
+
+type networkFirewallPolicyNatRuleConditionPtrType NetworkFirewallPolicyNatRuleConditionArgs
+
+func NetworkFirewallPolicyNatRuleConditionPtr(v *NetworkFirewallPolicyNatRuleConditionArgs) NetworkFirewallPolicyNatRuleConditionPtrInput {
+	return (*networkFirewallPolicyNatRuleConditionPtrType)(v)
+}
+
+func (*networkFirewallPolicyNatRuleConditionPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**NetworkFirewallPolicyNatRuleCondition)(nil)).Elem()
+}
+
+func (i *networkFirewallPolicyNatRuleConditionPtrType) ToNetworkFirewallPolicyNatRuleConditionPtrOutput() NetworkFirewallPolicyNatRuleConditionPtrOutput {
+	return i.ToNetworkFirewallPolicyNatRuleConditionPtrOutputWithContext(context.Background())
+}
+
+func (i *networkFirewallPolicyNatRuleConditionPtrType) ToNetworkFirewallPolicyNatRuleConditionPtrOutputWithContext(ctx context.Context) NetworkFirewallPolicyNatRuleConditionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyNatRuleConditionPtrOutput)
+}
+
+type NetworkFirewallPolicyNatRuleConditionOutput struct{ *pulumi.OutputState }
+
+func (NetworkFirewallPolicyNatRuleConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NetworkFirewallPolicyNatRuleCondition)(nil)).Elem()
+}
+
+func (o NetworkFirewallPolicyNatRuleConditionOutput) ToNetworkFirewallPolicyNatRuleConditionOutput() NetworkFirewallPolicyNatRuleConditionOutput {
+	return o
+}
+
+func (o NetworkFirewallPolicyNatRuleConditionOutput) ToNetworkFirewallPolicyNatRuleConditionOutputWithContext(ctx context.Context) NetworkFirewallPolicyNatRuleConditionOutput {
+	return o
+}
+
+func (o NetworkFirewallPolicyNatRuleConditionOutput) ToNetworkFirewallPolicyNatRuleConditionPtrOutput() NetworkFirewallPolicyNatRuleConditionPtrOutput {
+	return o.ToNetworkFirewallPolicyNatRuleConditionPtrOutputWithContext(context.Background())
+}
+
+func (o NetworkFirewallPolicyNatRuleConditionOutput) ToNetworkFirewallPolicyNatRuleConditionPtrOutputWithContext(ctx context.Context) NetworkFirewallPolicyNatRuleConditionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v NetworkFirewallPolicyNatRuleCondition) *NetworkFirewallPolicyNatRuleCondition {
+		return &v
+	}).(NetworkFirewallPolicyNatRuleConditionPtrOutput)
+}
+
+// (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+func (o NetworkFirewallPolicyNatRuleConditionOutput) DestinationAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v NetworkFirewallPolicyNatRuleCondition) []string { return v.DestinationAddresses }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) A Service name to be evaluated against the traffic protocol and protocol-specific parameters.
+func (o NetworkFirewallPolicyNatRuleConditionOutput) Service() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NetworkFirewallPolicyNatRuleCondition) *string { return v.Service }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+func (o NetworkFirewallPolicyNatRuleConditionOutput) SourceAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v NetworkFirewallPolicyNatRuleCondition) []string { return v.SourceAddresses }).(pulumi.StringArrayOutput)
+}
+
+type NetworkFirewallPolicyNatRuleConditionPtrOutput struct{ *pulumi.OutputState }
+
+func (NetworkFirewallPolicyNatRuleConditionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**NetworkFirewallPolicyNatRuleCondition)(nil)).Elem()
+}
+
+func (o NetworkFirewallPolicyNatRuleConditionPtrOutput) ToNetworkFirewallPolicyNatRuleConditionPtrOutput() NetworkFirewallPolicyNatRuleConditionPtrOutput {
+	return o
+}
+
+func (o NetworkFirewallPolicyNatRuleConditionPtrOutput) ToNetworkFirewallPolicyNatRuleConditionPtrOutputWithContext(ctx context.Context) NetworkFirewallPolicyNatRuleConditionPtrOutput {
+	return o
+}
+
+func (o NetworkFirewallPolicyNatRuleConditionPtrOutput) Elem() NetworkFirewallPolicyNatRuleConditionOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyNatRuleCondition) NetworkFirewallPolicyNatRuleCondition {
+		if v != nil {
+			return *v
+		}
+		var ret NetworkFirewallPolicyNatRuleCondition
+		return ret
+	}).(NetworkFirewallPolicyNatRuleConditionOutput)
+}
+
+// (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+func (o NetworkFirewallPolicyNatRuleConditionPtrOutput) DestinationAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyNatRuleCondition) []string {
+		if v == nil {
+			return nil
+		}
+		return v.DestinationAddresses
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) A Service name to be evaluated against the traffic protocol and protocol-specific parameters.
+func (o NetworkFirewallPolicyNatRuleConditionPtrOutput) Service() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyNatRuleCondition) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Service
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+func (o NetworkFirewallPolicyNatRuleConditionPtrOutput) SourceAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyNatRuleCondition) []string {
+		if v == nil {
+			return nil
+		}
+		return v.SourceAddresses
+	}).(pulumi.StringArrayOutput)
+}
+
+type NetworkFirewallPolicyNatRulePosition struct {
+	// (Updatable) Identifier for rule after which this rule lies.
+	AfterRule *string `pulumi:"afterRule"`
+	// (Updatable) Identifier for rule before which this rule lies.
+	BeforeRule *string `pulumi:"beforeRule"`
+}
+
+// NetworkFirewallPolicyNatRulePositionInput is an input type that accepts NetworkFirewallPolicyNatRulePositionArgs and NetworkFirewallPolicyNatRulePositionOutput values.
+// You can construct a concrete instance of `NetworkFirewallPolicyNatRulePositionInput` via:
+//
+//	NetworkFirewallPolicyNatRulePositionArgs{...}
+type NetworkFirewallPolicyNatRulePositionInput interface {
+	pulumi.Input
+
+	ToNetworkFirewallPolicyNatRulePositionOutput() NetworkFirewallPolicyNatRulePositionOutput
+	ToNetworkFirewallPolicyNatRulePositionOutputWithContext(context.Context) NetworkFirewallPolicyNatRulePositionOutput
+}
+
+type NetworkFirewallPolicyNatRulePositionArgs struct {
+	// (Updatable) Identifier for rule after which this rule lies.
+	AfterRule pulumi.StringPtrInput `pulumi:"afterRule"`
+	// (Updatable) Identifier for rule before which this rule lies.
+	BeforeRule pulumi.StringPtrInput `pulumi:"beforeRule"`
+}
+
+func (NetworkFirewallPolicyNatRulePositionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NetworkFirewallPolicyNatRulePosition)(nil)).Elem()
+}
+
+func (i NetworkFirewallPolicyNatRulePositionArgs) ToNetworkFirewallPolicyNatRulePositionOutput() NetworkFirewallPolicyNatRulePositionOutput {
+	return i.ToNetworkFirewallPolicyNatRulePositionOutputWithContext(context.Background())
+}
+
+func (i NetworkFirewallPolicyNatRulePositionArgs) ToNetworkFirewallPolicyNatRulePositionOutputWithContext(ctx context.Context) NetworkFirewallPolicyNatRulePositionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyNatRulePositionOutput)
+}
+
+func (i NetworkFirewallPolicyNatRulePositionArgs) ToNetworkFirewallPolicyNatRulePositionPtrOutput() NetworkFirewallPolicyNatRulePositionPtrOutput {
+	return i.ToNetworkFirewallPolicyNatRulePositionPtrOutputWithContext(context.Background())
+}
+
+func (i NetworkFirewallPolicyNatRulePositionArgs) ToNetworkFirewallPolicyNatRulePositionPtrOutputWithContext(ctx context.Context) NetworkFirewallPolicyNatRulePositionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyNatRulePositionOutput).ToNetworkFirewallPolicyNatRulePositionPtrOutputWithContext(ctx)
+}
+
+// NetworkFirewallPolicyNatRulePositionPtrInput is an input type that accepts NetworkFirewallPolicyNatRulePositionArgs, NetworkFirewallPolicyNatRulePositionPtr and NetworkFirewallPolicyNatRulePositionPtrOutput values.
+// You can construct a concrete instance of `NetworkFirewallPolicyNatRulePositionPtrInput` via:
+//
+//	        NetworkFirewallPolicyNatRulePositionArgs{...}
+//
+//	or:
+//
+//	        nil
+type NetworkFirewallPolicyNatRulePositionPtrInput interface {
+	pulumi.Input
+
+	ToNetworkFirewallPolicyNatRulePositionPtrOutput() NetworkFirewallPolicyNatRulePositionPtrOutput
+	ToNetworkFirewallPolicyNatRulePositionPtrOutputWithContext(context.Context) NetworkFirewallPolicyNatRulePositionPtrOutput
+}
+
+type networkFirewallPolicyNatRulePositionPtrType NetworkFirewallPolicyNatRulePositionArgs
+
+func NetworkFirewallPolicyNatRulePositionPtr(v *NetworkFirewallPolicyNatRulePositionArgs) NetworkFirewallPolicyNatRulePositionPtrInput {
+	return (*networkFirewallPolicyNatRulePositionPtrType)(v)
+}
+
+func (*networkFirewallPolicyNatRulePositionPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**NetworkFirewallPolicyNatRulePosition)(nil)).Elem()
+}
+
+func (i *networkFirewallPolicyNatRulePositionPtrType) ToNetworkFirewallPolicyNatRulePositionPtrOutput() NetworkFirewallPolicyNatRulePositionPtrOutput {
+	return i.ToNetworkFirewallPolicyNatRulePositionPtrOutputWithContext(context.Background())
+}
+
+func (i *networkFirewallPolicyNatRulePositionPtrType) ToNetworkFirewallPolicyNatRulePositionPtrOutputWithContext(ctx context.Context) NetworkFirewallPolicyNatRulePositionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyNatRulePositionPtrOutput)
+}
+
+type NetworkFirewallPolicyNatRulePositionOutput struct{ *pulumi.OutputState }
+
+func (NetworkFirewallPolicyNatRulePositionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NetworkFirewallPolicyNatRulePosition)(nil)).Elem()
+}
+
+func (o NetworkFirewallPolicyNatRulePositionOutput) ToNetworkFirewallPolicyNatRulePositionOutput() NetworkFirewallPolicyNatRulePositionOutput {
+	return o
+}
+
+func (o NetworkFirewallPolicyNatRulePositionOutput) ToNetworkFirewallPolicyNatRulePositionOutputWithContext(ctx context.Context) NetworkFirewallPolicyNatRulePositionOutput {
+	return o
+}
+
+func (o NetworkFirewallPolicyNatRulePositionOutput) ToNetworkFirewallPolicyNatRulePositionPtrOutput() NetworkFirewallPolicyNatRulePositionPtrOutput {
+	return o.ToNetworkFirewallPolicyNatRulePositionPtrOutputWithContext(context.Background())
+}
+
+func (o NetworkFirewallPolicyNatRulePositionOutput) ToNetworkFirewallPolicyNatRulePositionPtrOutputWithContext(ctx context.Context) NetworkFirewallPolicyNatRulePositionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v NetworkFirewallPolicyNatRulePosition) *NetworkFirewallPolicyNatRulePosition {
+		return &v
+	}).(NetworkFirewallPolicyNatRulePositionPtrOutput)
+}
+
+// (Updatable) Identifier for rule after which this rule lies.
+func (o NetworkFirewallPolicyNatRulePositionOutput) AfterRule() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NetworkFirewallPolicyNatRulePosition) *string { return v.AfterRule }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Identifier for rule before which this rule lies.
+func (o NetworkFirewallPolicyNatRulePositionOutput) BeforeRule() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NetworkFirewallPolicyNatRulePosition) *string { return v.BeforeRule }).(pulumi.StringPtrOutput)
+}
+
+type NetworkFirewallPolicyNatRulePositionPtrOutput struct{ *pulumi.OutputState }
+
+func (NetworkFirewallPolicyNatRulePositionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**NetworkFirewallPolicyNatRulePosition)(nil)).Elem()
+}
+
+func (o NetworkFirewallPolicyNatRulePositionPtrOutput) ToNetworkFirewallPolicyNatRulePositionPtrOutput() NetworkFirewallPolicyNatRulePositionPtrOutput {
+	return o
+}
+
+func (o NetworkFirewallPolicyNatRulePositionPtrOutput) ToNetworkFirewallPolicyNatRulePositionPtrOutputWithContext(ctx context.Context) NetworkFirewallPolicyNatRulePositionPtrOutput {
+	return o
+}
+
+func (o NetworkFirewallPolicyNatRulePositionPtrOutput) Elem() NetworkFirewallPolicyNatRulePositionOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyNatRulePosition) NetworkFirewallPolicyNatRulePosition {
+		if v != nil {
+			return *v
+		}
+		var ret NetworkFirewallPolicyNatRulePosition
+		return ret
+	}).(NetworkFirewallPolicyNatRulePositionOutput)
+}
+
+// (Updatable) Identifier for rule after which this rule lies.
+func (o NetworkFirewallPolicyNatRulePositionPtrOutput) AfterRule() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyNatRulePosition) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AfterRule
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Identifier for rule before which this rule lies.
+func (o NetworkFirewallPolicyNatRulePositionPtrOutput) BeforeRule() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyNatRulePosition) *string {
 		if v == nil {
 			return nil
 		}
@@ -1336,6 +1823,112 @@ func (o NetworkFirewallPolicyUrlListUrlArrayOutput) Index(i pulumi.IntInput) Net
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NetworkFirewallPolicyUrlListUrl {
 		return vs[0].([]NetworkFirewallPolicyUrlListUrl)[vs[1].(int)]
 	}).(NetworkFirewallPolicyUrlListUrlOutput)
+}
+
+type GetNetworkFirewallNatConfiguration struct {
+	// To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall.
+	MustEnablePrivateNat bool `pulumi:"mustEnablePrivateNat"`
+	// An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+	NatIpAddressLists []string `pulumi:"natIpAddressLists"`
+}
+
+// GetNetworkFirewallNatConfigurationInput is an input type that accepts GetNetworkFirewallNatConfigurationArgs and GetNetworkFirewallNatConfigurationOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallNatConfigurationInput` via:
+//
+//	GetNetworkFirewallNatConfigurationArgs{...}
+type GetNetworkFirewallNatConfigurationInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallNatConfigurationOutput() GetNetworkFirewallNatConfigurationOutput
+	ToGetNetworkFirewallNatConfigurationOutputWithContext(context.Context) GetNetworkFirewallNatConfigurationOutput
+}
+
+type GetNetworkFirewallNatConfigurationArgs struct {
+	// To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall.
+	MustEnablePrivateNat pulumi.BoolInput `pulumi:"mustEnablePrivateNat"`
+	// An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+	NatIpAddressLists pulumi.StringArrayInput `pulumi:"natIpAddressLists"`
+}
+
+func (GetNetworkFirewallNatConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallNatConfiguration)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallNatConfigurationArgs) ToGetNetworkFirewallNatConfigurationOutput() GetNetworkFirewallNatConfigurationOutput {
+	return i.ToGetNetworkFirewallNatConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallNatConfigurationArgs) ToGetNetworkFirewallNatConfigurationOutputWithContext(ctx context.Context) GetNetworkFirewallNatConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallNatConfigurationOutput)
+}
+
+// GetNetworkFirewallNatConfigurationArrayInput is an input type that accepts GetNetworkFirewallNatConfigurationArray and GetNetworkFirewallNatConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallNatConfigurationArrayInput` via:
+//
+//	GetNetworkFirewallNatConfigurationArray{ GetNetworkFirewallNatConfigurationArgs{...} }
+type GetNetworkFirewallNatConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallNatConfigurationArrayOutput() GetNetworkFirewallNatConfigurationArrayOutput
+	ToGetNetworkFirewallNatConfigurationArrayOutputWithContext(context.Context) GetNetworkFirewallNatConfigurationArrayOutput
+}
+
+type GetNetworkFirewallNatConfigurationArray []GetNetworkFirewallNatConfigurationInput
+
+func (GetNetworkFirewallNatConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkFirewallNatConfiguration)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallNatConfigurationArray) ToGetNetworkFirewallNatConfigurationArrayOutput() GetNetworkFirewallNatConfigurationArrayOutput {
+	return i.ToGetNetworkFirewallNatConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallNatConfigurationArray) ToGetNetworkFirewallNatConfigurationArrayOutputWithContext(ctx context.Context) GetNetworkFirewallNatConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallNatConfigurationArrayOutput)
+}
+
+type GetNetworkFirewallNatConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallNatConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallNatConfiguration)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallNatConfigurationOutput) ToGetNetworkFirewallNatConfigurationOutput() GetNetworkFirewallNatConfigurationOutput {
+	return o
+}
+
+func (o GetNetworkFirewallNatConfigurationOutput) ToGetNetworkFirewallNatConfigurationOutputWithContext(ctx context.Context) GetNetworkFirewallNatConfigurationOutput {
+	return o
+}
+
+// To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall.
+func (o GetNetworkFirewallNatConfigurationOutput) MustEnablePrivateNat() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNetworkFirewallNatConfiguration) bool { return v.MustEnablePrivateNat }).(pulumi.BoolOutput)
+}
+
+// An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+func (o GetNetworkFirewallNatConfigurationOutput) NatIpAddressLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNetworkFirewallNatConfiguration) []string { return v.NatIpAddressLists }).(pulumi.StringArrayOutput)
+}
+
+type GetNetworkFirewallNatConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallNatConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkFirewallNatConfiguration)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallNatConfigurationArrayOutput) ToGetNetworkFirewallNatConfigurationArrayOutput() GetNetworkFirewallNatConfigurationArrayOutput {
+	return o
+}
+
+func (o GetNetworkFirewallNatConfigurationArrayOutput) ToGetNetworkFirewallNatConfigurationArrayOutputWithContext(ctx context.Context) GetNetworkFirewallNatConfigurationArrayOutput {
+	return o
+}
+
+func (o GetNetworkFirewallNatConfigurationArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallNatConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkFirewallNatConfiguration {
+		return vs[0].([]GetNetworkFirewallNatConfiguration)[vs[1].(int)]
+	}).(GetNetworkFirewallNatConfigurationOutput)
 }
 
 type GetNetworkFirewallPoliciesFilter struct {
@@ -4231,6 +4824,746 @@ func (o GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItemAr
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItem {
 		return vs[0].([]GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItem)[vs[1].(int)]
 	}).(GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItemOutput)
+}
+
+type GetNetworkFirewallPolicyNatRuleCondition struct {
+	// An array of IP address list names to be evaluated against the traffic destination address.
+	DestinationAddresses []string `pulumi:"destinationAddresses"`
+	// A Service name to be evaluated against the traffic protocol and protocol-specific parameters.
+	Service string `pulumi:"service"`
+	// An array of IP address list names to be evaluated against the traffic source address.
+	SourceAddresses []string `pulumi:"sourceAddresses"`
+}
+
+// GetNetworkFirewallPolicyNatRuleConditionInput is an input type that accepts GetNetworkFirewallPolicyNatRuleConditionArgs and GetNetworkFirewallPolicyNatRuleConditionOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallPolicyNatRuleConditionInput` via:
+//
+//	GetNetworkFirewallPolicyNatRuleConditionArgs{...}
+type GetNetworkFirewallPolicyNatRuleConditionInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallPolicyNatRuleConditionOutput() GetNetworkFirewallPolicyNatRuleConditionOutput
+	ToGetNetworkFirewallPolicyNatRuleConditionOutputWithContext(context.Context) GetNetworkFirewallPolicyNatRuleConditionOutput
+}
+
+type GetNetworkFirewallPolicyNatRuleConditionArgs struct {
+	// An array of IP address list names to be evaluated against the traffic destination address.
+	DestinationAddresses pulumi.StringArrayInput `pulumi:"destinationAddresses"`
+	// A Service name to be evaluated against the traffic protocol and protocol-specific parameters.
+	Service pulumi.StringInput `pulumi:"service"`
+	// An array of IP address list names to be evaluated against the traffic source address.
+	SourceAddresses pulumi.StringArrayInput `pulumi:"sourceAddresses"`
+}
+
+func (GetNetworkFirewallPolicyNatRuleConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPolicyNatRuleCondition)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallPolicyNatRuleConditionArgs) ToGetNetworkFirewallPolicyNatRuleConditionOutput() GetNetworkFirewallPolicyNatRuleConditionOutput {
+	return i.ToGetNetworkFirewallPolicyNatRuleConditionOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallPolicyNatRuleConditionArgs) ToGetNetworkFirewallPolicyNatRuleConditionOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyNatRuleConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyNatRuleConditionOutput)
+}
+
+// GetNetworkFirewallPolicyNatRuleConditionArrayInput is an input type that accepts GetNetworkFirewallPolicyNatRuleConditionArray and GetNetworkFirewallPolicyNatRuleConditionArrayOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallPolicyNatRuleConditionArrayInput` via:
+//
+//	GetNetworkFirewallPolicyNatRuleConditionArray{ GetNetworkFirewallPolicyNatRuleConditionArgs{...} }
+type GetNetworkFirewallPolicyNatRuleConditionArrayInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallPolicyNatRuleConditionArrayOutput() GetNetworkFirewallPolicyNatRuleConditionArrayOutput
+	ToGetNetworkFirewallPolicyNatRuleConditionArrayOutputWithContext(context.Context) GetNetworkFirewallPolicyNatRuleConditionArrayOutput
+}
+
+type GetNetworkFirewallPolicyNatRuleConditionArray []GetNetworkFirewallPolicyNatRuleConditionInput
+
+func (GetNetworkFirewallPolicyNatRuleConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkFirewallPolicyNatRuleCondition)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallPolicyNatRuleConditionArray) ToGetNetworkFirewallPolicyNatRuleConditionArrayOutput() GetNetworkFirewallPolicyNatRuleConditionArrayOutput {
+	return i.ToGetNetworkFirewallPolicyNatRuleConditionArrayOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallPolicyNatRuleConditionArray) ToGetNetworkFirewallPolicyNatRuleConditionArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyNatRuleConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyNatRuleConditionArrayOutput)
+}
+
+type GetNetworkFirewallPolicyNatRuleConditionOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallPolicyNatRuleConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPolicyNatRuleCondition)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallPolicyNatRuleConditionOutput) ToGetNetworkFirewallPolicyNatRuleConditionOutput() GetNetworkFirewallPolicyNatRuleConditionOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyNatRuleConditionOutput) ToGetNetworkFirewallPolicyNatRuleConditionOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyNatRuleConditionOutput {
+	return o
+}
+
+// An array of IP address list names to be evaluated against the traffic destination address.
+func (o GetNetworkFirewallPolicyNatRuleConditionOutput) DestinationAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyNatRuleCondition) []string { return v.DestinationAddresses }).(pulumi.StringArrayOutput)
+}
+
+// A Service name to be evaluated against the traffic protocol and protocol-specific parameters.
+func (o GetNetworkFirewallPolicyNatRuleConditionOutput) Service() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyNatRuleCondition) string { return v.Service }).(pulumi.StringOutput)
+}
+
+// An array of IP address list names to be evaluated against the traffic source address.
+func (o GetNetworkFirewallPolicyNatRuleConditionOutput) SourceAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyNatRuleCondition) []string { return v.SourceAddresses }).(pulumi.StringArrayOutput)
+}
+
+type GetNetworkFirewallPolicyNatRuleConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallPolicyNatRuleConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkFirewallPolicyNatRuleCondition)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallPolicyNatRuleConditionArrayOutput) ToGetNetworkFirewallPolicyNatRuleConditionArrayOutput() GetNetworkFirewallPolicyNatRuleConditionArrayOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyNatRuleConditionArrayOutput) ToGetNetworkFirewallPolicyNatRuleConditionArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyNatRuleConditionArrayOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyNatRuleConditionArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPolicyNatRuleConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkFirewallPolicyNatRuleCondition {
+		return vs[0].([]GetNetworkFirewallPolicyNatRuleCondition)[vs[1].(int)]
+	}).(GetNetworkFirewallPolicyNatRuleConditionOutput)
+}
+
+type GetNetworkFirewallPolicyNatRulePosition struct {
+	// Identifier for rule after which this rule lies.
+	AfterRule string `pulumi:"afterRule"`
+	// Identifier for rule before which this rule lies.
+	BeforeRule string `pulumi:"beforeRule"`
+}
+
+// GetNetworkFirewallPolicyNatRulePositionInput is an input type that accepts GetNetworkFirewallPolicyNatRulePositionArgs and GetNetworkFirewallPolicyNatRulePositionOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallPolicyNatRulePositionInput` via:
+//
+//	GetNetworkFirewallPolicyNatRulePositionArgs{...}
+type GetNetworkFirewallPolicyNatRulePositionInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallPolicyNatRulePositionOutput() GetNetworkFirewallPolicyNatRulePositionOutput
+	ToGetNetworkFirewallPolicyNatRulePositionOutputWithContext(context.Context) GetNetworkFirewallPolicyNatRulePositionOutput
+}
+
+type GetNetworkFirewallPolicyNatRulePositionArgs struct {
+	// Identifier for rule after which this rule lies.
+	AfterRule pulumi.StringInput `pulumi:"afterRule"`
+	// Identifier for rule before which this rule lies.
+	BeforeRule pulumi.StringInput `pulumi:"beforeRule"`
+}
+
+func (GetNetworkFirewallPolicyNatRulePositionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPolicyNatRulePosition)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallPolicyNatRulePositionArgs) ToGetNetworkFirewallPolicyNatRulePositionOutput() GetNetworkFirewallPolicyNatRulePositionOutput {
+	return i.ToGetNetworkFirewallPolicyNatRulePositionOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallPolicyNatRulePositionArgs) ToGetNetworkFirewallPolicyNatRulePositionOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyNatRulePositionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyNatRulePositionOutput)
+}
+
+// GetNetworkFirewallPolicyNatRulePositionArrayInput is an input type that accepts GetNetworkFirewallPolicyNatRulePositionArray and GetNetworkFirewallPolicyNatRulePositionArrayOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallPolicyNatRulePositionArrayInput` via:
+//
+//	GetNetworkFirewallPolicyNatRulePositionArray{ GetNetworkFirewallPolicyNatRulePositionArgs{...} }
+type GetNetworkFirewallPolicyNatRulePositionArrayInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallPolicyNatRulePositionArrayOutput() GetNetworkFirewallPolicyNatRulePositionArrayOutput
+	ToGetNetworkFirewallPolicyNatRulePositionArrayOutputWithContext(context.Context) GetNetworkFirewallPolicyNatRulePositionArrayOutput
+}
+
+type GetNetworkFirewallPolicyNatRulePositionArray []GetNetworkFirewallPolicyNatRulePositionInput
+
+func (GetNetworkFirewallPolicyNatRulePositionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkFirewallPolicyNatRulePosition)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallPolicyNatRulePositionArray) ToGetNetworkFirewallPolicyNatRulePositionArrayOutput() GetNetworkFirewallPolicyNatRulePositionArrayOutput {
+	return i.ToGetNetworkFirewallPolicyNatRulePositionArrayOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallPolicyNatRulePositionArray) ToGetNetworkFirewallPolicyNatRulePositionArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyNatRulePositionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyNatRulePositionArrayOutput)
+}
+
+type GetNetworkFirewallPolicyNatRulePositionOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallPolicyNatRulePositionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPolicyNatRulePosition)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallPolicyNatRulePositionOutput) ToGetNetworkFirewallPolicyNatRulePositionOutput() GetNetworkFirewallPolicyNatRulePositionOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyNatRulePositionOutput) ToGetNetworkFirewallPolicyNatRulePositionOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyNatRulePositionOutput {
+	return o
+}
+
+// Identifier for rule after which this rule lies.
+func (o GetNetworkFirewallPolicyNatRulePositionOutput) AfterRule() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyNatRulePosition) string { return v.AfterRule }).(pulumi.StringOutput)
+}
+
+// Identifier for rule before which this rule lies.
+func (o GetNetworkFirewallPolicyNatRulePositionOutput) BeforeRule() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyNatRulePosition) string { return v.BeforeRule }).(pulumi.StringOutput)
+}
+
+type GetNetworkFirewallPolicyNatRulePositionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallPolicyNatRulePositionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkFirewallPolicyNatRulePosition)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallPolicyNatRulePositionArrayOutput) ToGetNetworkFirewallPolicyNatRulePositionArrayOutput() GetNetworkFirewallPolicyNatRulePositionArrayOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyNatRulePositionArrayOutput) ToGetNetworkFirewallPolicyNatRulePositionArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyNatRulePositionArrayOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyNatRulePositionArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPolicyNatRulePositionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkFirewallPolicyNatRulePosition {
+		return vs[0].([]GetNetworkFirewallPolicyNatRulePosition)[vs[1].(int)]
+	}).(GetNetworkFirewallPolicyNatRulePositionOutput)
+}
+
+type GetNetworkFirewallPolicyNatRulesFilter struct {
+	// Name for the NAT rule, must be unique within the policy.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetNetworkFirewallPolicyNatRulesFilterInput is an input type that accepts GetNetworkFirewallPolicyNatRulesFilterArgs and GetNetworkFirewallPolicyNatRulesFilterOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallPolicyNatRulesFilterInput` via:
+//
+//	GetNetworkFirewallPolicyNatRulesFilterArgs{...}
+type GetNetworkFirewallPolicyNatRulesFilterInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallPolicyNatRulesFilterOutput() GetNetworkFirewallPolicyNatRulesFilterOutput
+	ToGetNetworkFirewallPolicyNatRulesFilterOutputWithContext(context.Context) GetNetworkFirewallPolicyNatRulesFilterOutput
+}
+
+type GetNetworkFirewallPolicyNatRulesFilterArgs struct {
+	// Name for the NAT rule, must be unique within the policy.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetNetworkFirewallPolicyNatRulesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPolicyNatRulesFilter)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallPolicyNatRulesFilterArgs) ToGetNetworkFirewallPolicyNatRulesFilterOutput() GetNetworkFirewallPolicyNatRulesFilterOutput {
+	return i.ToGetNetworkFirewallPolicyNatRulesFilterOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallPolicyNatRulesFilterArgs) ToGetNetworkFirewallPolicyNatRulesFilterOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyNatRulesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyNatRulesFilterOutput)
+}
+
+// GetNetworkFirewallPolicyNatRulesFilterArrayInput is an input type that accepts GetNetworkFirewallPolicyNatRulesFilterArray and GetNetworkFirewallPolicyNatRulesFilterArrayOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallPolicyNatRulesFilterArrayInput` via:
+//
+//	GetNetworkFirewallPolicyNatRulesFilterArray{ GetNetworkFirewallPolicyNatRulesFilterArgs{...} }
+type GetNetworkFirewallPolicyNatRulesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallPolicyNatRulesFilterArrayOutput() GetNetworkFirewallPolicyNatRulesFilterArrayOutput
+	ToGetNetworkFirewallPolicyNatRulesFilterArrayOutputWithContext(context.Context) GetNetworkFirewallPolicyNatRulesFilterArrayOutput
+}
+
+type GetNetworkFirewallPolicyNatRulesFilterArray []GetNetworkFirewallPolicyNatRulesFilterInput
+
+func (GetNetworkFirewallPolicyNatRulesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkFirewallPolicyNatRulesFilter)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallPolicyNatRulesFilterArray) ToGetNetworkFirewallPolicyNatRulesFilterArrayOutput() GetNetworkFirewallPolicyNatRulesFilterArrayOutput {
+	return i.ToGetNetworkFirewallPolicyNatRulesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallPolicyNatRulesFilterArray) ToGetNetworkFirewallPolicyNatRulesFilterArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyNatRulesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyNatRulesFilterArrayOutput)
+}
+
+type GetNetworkFirewallPolicyNatRulesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallPolicyNatRulesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPolicyNatRulesFilter)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallPolicyNatRulesFilterOutput) ToGetNetworkFirewallPolicyNatRulesFilterOutput() GetNetworkFirewallPolicyNatRulesFilterOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyNatRulesFilterOutput) ToGetNetworkFirewallPolicyNatRulesFilterOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyNatRulesFilterOutput {
+	return o
+}
+
+// Name for the NAT rule, must be unique within the policy.
+func (o GetNetworkFirewallPolicyNatRulesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyNatRulesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetNetworkFirewallPolicyNatRulesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyNatRulesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetNetworkFirewallPolicyNatRulesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyNatRulesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetNetworkFirewallPolicyNatRulesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallPolicyNatRulesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkFirewallPolicyNatRulesFilter)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallPolicyNatRulesFilterArrayOutput) ToGetNetworkFirewallPolicyNatRulesFilterArrayOutput() GetNetworkFirewallPolicyNatRulesFilterArrayOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyNatRulesFilterArrayOutput) ToGetNetworkFirewallPolicyNatRulesFilterArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyNatRulesFilterArrayOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyNatRulesFilterArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPolicyNatRulesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkFirewallPolicyNatRulesFilter {
+		return vs[0].([]GetNetworkFirewallPolicyNatRulesFilter)[vs[1].(int)]
+	}).(GetNetworkFirewallPolicyNatRulesFilterOutput)
+}
+
+type GetNetworkFirewallPolicyNatRulesNatRuleCollection struct {
+	Items []GetNetworkFirewallPolicyNatRulesNatRuleCollectionItem `pulumi:"items"`
+}
+
+// GetNetworkFirewallPolicyNatRulesNatRuleCollectionInput is an input type that accepts GetNetworkFirewallPolicyNatRulesNatRuleCollectionArgs and GetNetworkFirewallPolicyNatRulesNatRuleCollectionOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallPolicyNatRulesNatRuleCollectionInput` via:
+//
+//	GetNetworkFirewallPolicyNatRulesNatRuleCollectionArgs{...}
+type GetNetworkFirewallPolicyNatRulesNatRuleCollectionInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionOutput() GetNetworkFirewallPolicyNatRulesNatRuleCollectionOutput
+	ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionOutputWithContext(context.Context) GetNetworkFirewallPolicyNatRulesNatRuleCollectionOutput
+}
+
+type GetNetworkFirewallPolicyNatRulesNatRuleCollectionArgs struct {
+	Items GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetNetworkFirewallPolicyNatRulesNatRuleCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPolicyNatRulesNatRuleCollection)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallPolicyNatRulesNatRuleCollectionArgs) ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionOutput() GetNetworkFirewallPolicyNatRulesNatRuleCollectionOutput {
+	return i.ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallPolicyNatRulesNatRuleCollectionArgs) ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyNatRulesNatRuleCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyNatRulesNatRuleCollectionOutput)
+}
+
+// GetNetworkFirewallPolicyNatRulesNatRuleCollectionArrayInput is an input type that accepts GetNetworkFirewallPolicyNatRulesNatRuleCollectionArray and GetNetworkFirewallPolicyNatRulesNatRuleCollectionArrayOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallPolicyNatRulesNatRuleCollectionArrayInput` via:
+//
+//	GetNetworkFirewallPolicyNatRulesNatRuleCollectionArray{ GetNetworkFirewallPolicyNatRulesNatRuleCollectionArgs{...} }
+type GetNetworkFirewallPolicyNatRulesNatRuleCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionArrayOutput() GetNetworkFirewallPolicyNatRulesNatRuleCollectionArrayOutput
+	ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionArrayOutputWithContext(context.Context) GetNetworkFirewallPolicyNatRulesNatRuleCollectionArrayOutput
+}
+
+type GetNetworkFirewallPolicyNatRulesNatRuleCollectionArray []GetNetworkFirewallPolicyNatRulesNatRuleCollectionInput
+
+func (GetNetworkFirewallPolicyNatRulesNatRuleCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkFirewallPolicyNatRulesNatRuleCollection)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallPolicyNatRulesNatRuleCollectionArray) ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionArrayOutput() GetNetworkFirewallPolicyNatRulesNatRuleCollectionArrayOutput {
+	return i.ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallPolicyNatRulesNatRuleCollectionArray) ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyNatRulesNatRuleCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyNatRulesNatRuleCollectionArrayOutput)
+}
+
+type GetNetworkFirewallPolicyNatRulesNatRuleCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallPolicyNatRulesNatRuleCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPolicyNatRulesNatRuleCollection)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionOutput) ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionOutput() GetNetworkFirewallPolicyNatRulesNatRuleCollectionOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionOutput) ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyNatRulesNatRuleCollectionOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionOutput) Items() GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyNatRulesNatRuleCollection) []GetNetworkFirewallPolicyNatRulesNatRuleCollectionItem {
+		return v.Items
+	}).(GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArrayOutput)
+}
+
+type GetNetworkFirewallPolicyNatRulesNatRuleCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallPolicyNatRulesNatRuleCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkFirewallPolicyNatRulesNatRuleCollection)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionArrayOutput) ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionArrayOutput() GetNetworkFirewallPolicyNatRulesNatRuleCollectionArrayOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionArrayOutput) ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyNatRulesNatRuleCollectionArrayOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPolicyNatRulesNatRuleCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkFirewallPolicyNatRulesNatRuleCollection {
+		return vs[0].([]GetNetworkFirewallPolicyNatRulesNatRuleCollection)[vs[1].(int)]
+	}).(GetNetworkFirewallPolicyNatRulesNatRuleCollectionOutput)
+}
+
+type GetNetworkFirewallPolicyNatRulesNatRuleCollectionItem struct {
+	// action:
+	// * DIPP_SRC_NAT - Dynamic-ip-port source NAT.
+	Action string `pulumi:"action"`
+	// Match criteria used in NAT Rule used on the firewall policy.
+	Condition GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemCondition `pulumi:"condition"`
+	// Description of a NAT rule. This field can be used to add additional info.
+	Description *string `pulumi:"description"`
+	// Name for the NAT rule, must be unique within the policy.
+	Name string `pulumi:"name"`
+	// Unique Network Firewall Policy identifier
+	NetworkFirewallPolicyId string `pulumi:"networkFirewallPolicyId"`
+	// OCID of the Network Firewall Policy this decryption profile belongs to.
+	ParentResourceId string `pulumi:"parentResourceId"`
+	// An object which defines the position of the rule.
+	Position GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPosition `pulumi:"position"`
+	// The priority order in which this rule should be evaluated
+	PriorityOrder string `pulumi:"priorityOrder"`
+	// NAT type:
+	// * NATV4 - NATV4 type NAT.
+	Type string `pulumi:"type"`
+}
+
+// GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemInput is an input type that accepts GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArgs and GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemInput` via:
+//
+//	GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArgs{...}
+type GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionItemOutput() GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemOutput
+	ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionItemOutputWithContext(context.Context) GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemOutput
+}
+
+type GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArgs struct {
+	// action:
+	// * DIPP_SRC_NAT - Dynamic-ip-port source NAT.
+	Action pulumi.StringInput `pulumi:"action"`
+	// Match criteria used in NAT Rule used on the firewall policy.
+	Condition GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionInput `pulumi:"condition"`
+	// Description of a NAT rule. This field can be used to add additional info.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// Name for the NAT rule, must be unique within the policy.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Unique Network Firewall Policy identifier
+	NetworkFirewallPolicyId pulumi.StringInput `pulumi:"networkFirewallPolicyId"`
+	// OCID of the Network Firewall Policy this decryption profile belongs to.
+	ParentResourceId pulumi.StringInput `pulumi:"parentResourceId"`
+	// An object which defines the position of the rule.
+	Position GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionInput `pulumi:"position"`
+	// The priority order in which this rule should be evaluated
+	PriorityOrder pulumi.StringInput `pulumi:"priorityOrder"`
+	// NAT type:
+	// * NATV4 - NATV4 type NAT.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPolicyNatRulesNatRuleCollectionItem)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArgs) ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionItemOutput() GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemOutput {
+	return i.ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArgs) ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionItemOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemOutput)
+}
+
+// GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArrayInput is an input type that accepts GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArray and GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArrayInput` via:
+//
+//	GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArray{ GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArgs{...} }
+type GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArrayOutput() GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArrayOutput
+	ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArrayOutputWithContext(context.Context) GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArrayOutput
+}
+
+type GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArray []GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemInput
+
+func (GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkFirewallPolicyNatRulesNatRuleCollectionItem)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArray) ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArrayOutput() GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArrayOutput {
+	return i.ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArray) ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArrayOutput)
+}
+
+type GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPolicyNatRulesNatRuleCollectionItem)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemOutput) ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionItemOutput() GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemOutput) ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionItemOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemOutput {
+	return o
+}
+
+// action:
+// * DIPP_SRC_NAT - Dynamic-ip-port source NAT.
+func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyNatRulesNatRuleCollectionItem) string { return v.Action }).(pulumi.StringOutput)
+}
+
+// Match criteria used in NAT Rule used on the firewall policy.
+func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemOutput) Condition() GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyNatRulesNatRuleCollectionItem) GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemCondition {
+		return v.Condition
+	}).(GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionOutput)
+}
+
+// Description of a NAT rule. This field can be used to add additional info.
+func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyNatRulesNatRuleCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// Name for the NAT rule, must be unique within the policy.
+func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyNatRulesNatRuleCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Unique Network Firewall Policy identifier
+func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemOutput) NetworkFirewallPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyNatRulesNatRuleCollectionItem) string { return v.NetworkFirewallPolicyId }).(pulumi.StringOutput)
+}
+
+// OCID of the Network Firewall Policy this decryption profile belongs to.
+func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemOutput) ParentResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyNatRulesNatRuleCollectionItem) string { return v.ParentResourceId }).(pulumi.StringOutput)
+}
+
+// An object which defines the position of the rule.
+func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemOutput) Position() GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyNatRulesNatRuleCollectionItem) GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPosition {
+		return v.Position
+	}).(GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionOutput)
+}
+
+// The priority order in which this rule should be evaluated
+func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemOutput) PriorityOrder() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyNatRulesNatRuleCollectionItem) string { return v.PriorityOrder }).(pulumi.StringOutput)
+}
+
+// NAT type:
+// * NATV4 - NATV4 type NAT.
+func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyNatRulesNatRuleCollectionItem) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkFirewallPolicyNatRulesNatRuleCollectionItem)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArrayOutput) ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArrayOutput() GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArrayOutput) ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkFirewallPolicyNatRulesNatRuleCollectionItem {
+		return vs[0].([]GetNetworkFirewallPolicyNatRulesNatRuleCollectionItem)[vs[1].(int)]
+	}).(GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemOutput)
+}
+
+type GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemCondition struct {
+	// An array of IP address list names to be evaluated against the traffic destination address.
+	DestinationAddresses []string `pulumi:"destinationAddresses"`
+	// A Service name to be evaluated against the traffic protocol and protocol-specific parameters.
+	Service *string `pulumi:"service"`
+	// An array of IP address list names to be evaluated against the traffic source address.
+	SourceAddresses []string `pulumi:"sourceAddresses"`
+}
+
+// GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionInput is an input type that accepts GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionArgs and GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionInput` via:
+//
+//	GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionArgs{...}
+type GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionOutput() GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionOutput
+	ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionOutputWithContext(context.Context) GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionOutput
+}
+
+type GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionArgs struct {
+	// An array of IP address list names to be evaluated against the traffic destination address.
+	DestinationAddresses pulumi.StringArrayInput `pulumi:"destinationAddresses"`
+	// A Service name to be evaluated against the traffic protocol and protocol-specific parameters.
+	Service pulumi.StringPtrInput `pulumi:"service"`
+	// An array of IP address list names to be evaluated against the traffic source address.
+	SourceAddresses pulumi.StringArrayInput `pulumi:"sourceAddresses"`
+}
+
+func (GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemCondition)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionArgs) ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionOutput() GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionOutput {
+	return i.ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionArgs) ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionOutput)
+}
+
+type GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemCondition)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionOutput) ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionOutput() GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionOutput) ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionOutput {
+	return o
+}
+
+// An array of IP address list names to be evaluated against the traffic destination address.
+func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionOutput) DestinationAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemCondition) []string {
+		return v.DestinationAddresses
+	}).(pulumi.StringArrayOutput)
+}
+
+// A Service name to be evaluated against the traffic protocol and protocol-specific parameters.
+func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionOutput) Service() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemCondition) *string { return v.Service }).(pulumi.StringPtrOutput)
+}
+
+// An array of IP address list names to be evaluated against the traffic source address.
+func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionOutput) SourceAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemCondition) []string {
+		return v.SourceAddresses
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPosition struct {
+	// Identifier for rule after which this rule lies.
+	AfterRule string `pulumi:"afterRule"`
+	// Identifier for rule before which this rule lies.
+	BeforeRule string `pulumi:"beforeRule"`
+}
+
+// GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionInput is an input type that accepts GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionArgs and GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionInput` via:
+//
+//	GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionArgs{...}
+type GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionOutput() GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionOutput
+	ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionOutputWithContext(context.Context) GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionOutput
+}
+
+type GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionArgs struct {
+	// Identifier for rule after which this rule lies.
+	AfterRule pulumi.StringInput `pulumi:"afterRule"`
+	// Identifier for rule before which this rule lies.
+	BeforeRule pulumi.StringInput `pulumi:"beforeRule"`
+}
+
+func (GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPosition)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionArgs) ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionOutput() GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionOutput {
+	return i.ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionArgs) ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionOutput)
+}
+
+type GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPosition)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionOutput) ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionOutput() GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionOutput) ToGetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionOutput {
+	return o
+}
+
+// Identifier for rule after which this rule lies.
+func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionOutput) AfterRule() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPosition) string { return v.AfterRule }).(pulumi.StringOutput)
+}
+
+// Identifier for rule before which this rule lies.
+func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionOutput) BeforeRule() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPosition) string { return v.BeforeRule }).(pulumi.StringOutput)
 }
 
 type GetNetworkFirewallPolicySecurityRuleCondition struct {
@@ -7651,6 +8984,8 @@ type GetNetworkFirewallsNetworkFirewallCollectionItem struct {
 	Ipv6address string `pulumi:"ipv6address"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'FAILED' state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Nat Configuration response.
+	NatConfigurations []GetNetworkFirewallsNetworkFirewallCollectionItemNatConfiguration `pulumi:"natConfigurations"`
 	// A filter to return only resources that match the entire networkFirewallPolicyId given.
 	NetworkFirewallPolicyId string `pulumi:"networkFirewallPolicyId"`
 	// An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
@@ -7697,6 +9032,8 @@ type GetNetworkFirewallsNetworkFirewallCollectionItemArgs struct {
 	Ipv6address pulumi.StringInput `pulumi:"ipv6address"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'FAILED' state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Nat Configuration response.
+	NatConfigurations GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArrayInput `pulumi:"natConfigurations"`
 	// A filter to return only resources that match the entire networkFirewallPolicyId given.
 	NetworkFirewallPolicyId pulumi.StringInput `pulumi:"networkFirewallPolicyId"`
 	// An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
@@ -7809,6 +9146,13 @@ func (o GetNetworkFirewallsNetworkFirewallCollectionItemOutput) LifecycleDetails
 	return o.ApplyT(func(v GetNetworkFirewallsNetworkFirewallCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Nat Configuration response.
+func (o GetNetworkFirewallsNetworkFirewallCollectionItemOutput) NatConfigurations() GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArrayOutput {
+	return o.ApplyT(func(v GetNetworkFirewallsNetworkFirewallCollectionItem) []GetNetworkFirewallsNetworkFirewallCollectionItemNatConfiguration {
+		return v.NatConfigurations
+	}).(GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArrayOutput)
+}
+
 // A filter to return only resources that match the entire networkFirewallPolicyId given.
 func (o GetNetworkFirewallsNetworkFirewallCollectionItemOutput) NetworkFirewallPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkFirewallsNetworkFirewallCollectionItem) string { return v.NetworkFirewallPolicyId }).(pulumi.StringOutput)
@@ -7864,11 +9208,127 @@ func (o GetNetworkFirewallsNetworkFirewallCollectionItemArrayOutput) Index(i pul
 	}).(GetNetworkFirewallsNetworkFirewallCollectionItemOutput)
 }
 
+type GetNetworkFirewallsNetworkFirewallCollectionItemNatConfiguration struct {
+	// To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall.
+	MustEnablePrivateNat bool `pulumi:"mustEnablePrivateNat"`
+	// An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+	NatIpAddressLists []string `pulumi:"natIpAddressLists"`
+}
+
+// GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationInput is an input type that accepts GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArgs and GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationInput` via:
+//
+//	GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArgs{...}
+type GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationOutput() GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationOutput
+	ToGetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationOutputWithContext(context.Context) GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationOutput
+}
+
+type GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArgs struct {
+	// To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall.
+	MustEnablePrivateNat pulumi.BoolInput `pulumi:"mustEnablePrivateNat"`
+	// An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+	NatIpAddressLists pulumi.StringArrayInput `pulumi:"natIpAddressLists"`
+}
+
+func (GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallsNetworkFirewallCollectionItemNatConfiguration)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArgs) ToGetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationOutput() GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationOutput {
+	return i.ToGetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArgs) ToGetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationOutputWithContext(ctx context.Context) GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationOutput)
+}
+
+// GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArrayInput is an input type that accepts GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArray and GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArrayInput` via:
+//
+//	GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArray{ GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArgs{...} }
+type GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArrayOutput() GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArrayOutput
+	ToGetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArrayOutputWithContext(context.Context) GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArrayOutput
+}
+
+type GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArray []GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationInput
+
+func (GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkFirewallsNetworkFirewallCollectionItemNatConfiguration)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArray) ToGetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArrayOutput() GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArrayOutput {
+	return i.ToGetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArray) ToGetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArrayOutputWithContext(ctx context.Context) GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArrayOutput)
+}
+
+type GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallsNetworkFirewallCollectionItemNatConfiguration)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationOutput) ToGetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationOutput() GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationOutput {
+	return o
+}
+
+func (o GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationOutput) ToGetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationOutputWithContext(ctx context.Context) GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationOutput {
+	return o
+}
+
+// To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall.
+func (o GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationOutput) MustEnablePrivateNat() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNetworkFirewallsNetworkFirewallCollectionItemNatConfiguration) bool {
+		return v.MustEnablePrivateNat
+	}).(pulumi.BoolOutput)
+}
+
+// An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+func (o GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationOutput) NatIpAddressLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNetworkFirewallsNetworkFirewallCollectionItemNatConfiguration) []string {
+		return v.NatIpAddressLists
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkFirewallsNetworkFirewallCollectionItemNatConfiguration)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArrayOutput) ToGetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArrayOutput() GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArrayOutput {
+	return o
+}
+
+func (o GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArrayOutput) ToGetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArrayOutputWithContext(ctx context.Context) GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArrayOutput {
+	return o
+}
+
+func (o GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkFirewallsNetworkFirewallCollectionItemNatConfiguration {
+		return vs[0].([]GetNetworkFirewallsNetworkFirewallCollectionItemNatConfiguration)[vs[1].(int)]
+	}).(GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationOutput)
+}
+
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallNatConfigurationInput)(nil)).Elem(), NetworkFirewallNatConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallNatConfigurationPtrInput)(nil)).Elem(), NetworkFirewallNatConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallPolicyDecryptionRuleConditionInput)(nil)).Elem(), NetworkFirewallPolicyDecryptionRuleConditionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallPolicyDecryptionRuleConditionPtrInput)(nil)).Elem(), NetworkFirewallPolicyDecryptionRuleConditionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallPolicyDecryptionRulePositionInput)(nil)).Elem(), NetworkFirewallPolicyDecryptionRulePositionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallPolicyDecryptionRulePositionPtrInput)(nil)).Elem(), NetworkFirewallPolicyDecryptionRulePositionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallPolicyNatRuleConditionInput)(nil)).Elem(), NetworkFirewallPolicyNatRuleConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallPolicyNatRuleConditionPtrInput)(nil)).Elem(), NetworkFirewallPolicyNatRuleConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallPolicyNatRulePositionInput)(nil)).Elem(), NetworkFirewallPolicyNatRulePositionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallPolicyNatRulePositionPtrInput)(nil)).Elem(), NetworkFirewallPolicyNatRulePositionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallPolicySecurityRuleConditionInput)(nil)).Elem(), NetworkFirewallPolicySecurityRuleConditionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallPolicySecurityRuleConditionPtrInput)(nil)).Elem(), NetworkFirewallPolicySecurityRuleConditionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallPolicySecurityRulePositionInput)(nil)).Elem(), NetworkFirewallPolicySecurityRulePositionArgs{})
@@ -7883,6 +9343,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallPolicyTunnelInspectionRuleProfilePtrInput)(nil)).Elem(), NetworkFirewallPolicyTunnelInspectionRuleProfileArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallPolicyUrlListUrlInput)(nil)).Elem(), NetworkFirewallPolicyUrlListUrlArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallPolicyUrlListUrlArrayInput)(nil)).Elem(), NetworkFirewallPolicyUrlListUrlArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallNatConfigurationInput)(nil)).Elem(), GetNetworkFirewallNatConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallNatConfigurationArrayInput)(nil)).Elem(), GetNetworkFirewallNatConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPoliciesFilterInput)(nil)).Elem(), GetNetworkFirewallPoliciesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPoliciesFilterArrayInput)(nil)).Elem(), GetNetworkFirewallPoliciesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionInput)(nil)).Elem(), GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionArgs{})
@@ -7929,6 +9391,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionArrayInput)(nil)).Elem(), GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItemInput)(nil)).Elem(), GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItemArrayInput)(nil)).Elem(), GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyNatRuleConditionInput)(nil)).Elem(), GetNetworkFirewallPolicyNatRuleConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyNatRuleConditionArrayInput)(nil)).Elem(), GetNetworkFirewallPolicyNatRuleConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyNatRulePositionInput)(nil)).Elem(), GetNetworkFirewallPolicyNatRulePositionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyNatRulePositionArrayInput)(nil)).Elem(), GetNetworkFirewallPolicyNatRulePositionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyNatRulesFilterInput)(nil)).Elem(), GetNetworkFirewallPolicyNatRulesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyNatRulesFilterArrayInput)(nil)).Elem(), GetNetworkFirewallPolicyNatRulesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyNatRulesNatRuleCollectionInput)(nil)).Elem(), GetNetworkFirewallPolicyNatRulesNatRuleCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyNatRulesNatRuleCollectionArrayInput)(nil)).Elem(), GetNetworkFirewallPolicyNatRulesNatRuleCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemInput)(nil)).Elem(), GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArrayInput)(nil)).Elem(), GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionInput)(nil)).Elem(), GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionInput)(nil)).Elem(), GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicySecurityRuleConditionInput)(nil)).Elem(), GetNetworkFirewallPolicySecurityRuleConditionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicySecurityRuleConditionArrayInput)(nil)).Elem(), GetNetworkFirewallPolicySecurityRuleConditionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicySecurityRulePositionInput)(nil)).Elem(), GetNetworkFirewallPolicySecurityRulePositionArgs{})
@@ -7989,10 +9463,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallsNetworkFirewallCollectionArrayInput)(nil)).Elem(), GetNetworkFirewallsNetworkFirewallCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallsNetworkFirewallCollectionItemInput)(nil)).Elem(), GetNetworkFirewallsNetworkFirewallCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallsNetworkFirewallCollectionItemArrayInput)(nil)).Elem(), GetNetworkFirewallsNetworkFirewallCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationInput)(nil)).Elem(), GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArrayInput)(nil)).Elem(), GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArray{})
+	pulumi.RegisterOutputType(NetworkFirewallNatConfigurationOutput{})
+	pulumi.RegisterOutputType(NetworkFirewallNatConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(NetworkFirewallPolicyDecryptionRuleConditionOutput{})
 	pulumi.RegisterOutputType(NetworkFirewallPolicyDecryptionRuleConditionPtrOutput{})
 	pulumi.RegisterOutputType(NetworkFirewallPolicyDecryptionRulePositionOutput{})
 	pulumi.RegisterOutputType(NetworkFirewallPolicyDecryptionRulePositionPtrOutput{})
+	pulumi.RegisterOutputType(NetworkFirewallPolicyNatRuleConditionOutput{})
+	pulumi.RegisterOutputType(NetworkFirewallPolicyNatRuleConditionPtrOutput{})
+	pulumi.RegisterOutputType(NetworkFirewallPolicyNatRulePositionOutput{})
+	pulumi.RegisterOutputType(NetworkFirewallPolicyNatRulePositionPtrOutput{})
 	pulumi.RegisterOutputType(NetworkFirewallPolicySecurityRuleConditionOutput{})
 	pulumi.RegisterOutputType(NetworkFirewallPolicySecurityRuleConditionPtrOutput{})
 	pulumi.RegisterOutputType(NetworkFirewallPolicySecurityRulePositionOutput{})
@@ -8007,6 +9489,8 @@ func init() {
 	pulumi.RegisterOutputType(NetworkFirewallPolicyTunnelInspectionRuleProfilePtrOutput{})
 	pulumi.RegisterOutputType(NetworkFirewallPolicyUrlListUrlOutput{})
 	pulumi.RegisterOutputType(NetworkFirewallPolicyUrlListUrlArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallNatConfigurationOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallNatConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetNetworkFirewallPoliciesFilterOutput{})
 	pulumi.RegisterOutputType(GetNetworkFirewallPoliciesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionOutput{})
@@ -8053,6 +9537,18 @@ func init() {
 	pulumi.RegisterOutputType(GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallPolicyNatRuleConditionOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallPolicyNatRuleConditionArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallPolicyNatRulePositionOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallPolicyNatRulePositionArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallPolicyNatRulesFilterOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallPolicyNatRulesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallPolicyNatRulesNatRuleCollectionOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallPolicyNatRulesNatRuleCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionOutput{})
 	pulumi.RegisterOutputType(GetNetworkFirewallPolicySecurityRuleConditionOutput{})
 	pulumi.RegisterOutputType(GetNetworkFirewallPolicySecurityRuleConditionArrayOutput{})
 	pulumi.RegisterOutputType(GetNetworkFirewallPolicySecurityRulePositionOutput{})
@@ -8113,4 +9609,6 @@ func init() {
 	pulumi.RegisterOutputType(GetNetworkFirewallsNetworkFirewallCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetNetworkFirewallsNetworkFirewallCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetNetworkFirewallsNetworkFirewallCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArrayOutput{})
 }

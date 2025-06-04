@@ -198,7 +198,7 @@ namespace Pulumi.Oci.BigDataService
         /// </summary>
         public readonly ImmutableArray<Outputs.GetBdsInstancePatchHistoriesPatchHistoryResult> PatchHistories;
         /// <summary>
-        /// The type of current patch history. DP - Data Plane patch(This history type is internal available only) ODH - Oracle Distribution of Hadoop patch OS - Operating System patch
+        /// The type of current patch history. DP - Data Plane patch(This history type is internal available only) ODH - Oracle Distribution of Hadoop update OS - Operating System update BDS - Big Data Service update
         /// </summary>
         public readonly string? PatchType;
         public readonly string? PatchVersion;

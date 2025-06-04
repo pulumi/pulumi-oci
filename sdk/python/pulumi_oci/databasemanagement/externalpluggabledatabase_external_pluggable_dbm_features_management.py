@@ -24,6 +24,7 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementArgs:
     def __init__(__self__, *,
                  enable_external_pluggable_dbm_feature: pulumi.Input[builtins.bool],
                  external_pluggable_database_id: pulumi.Input[builtins.str],
+                 feature: Optional[pulumi.Input[builtins.str]] = None,
                  feature_details: Optional[pulumi.Input['ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgs']] = None):
         """
         The set of arguments for constructing a ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement resource.
@@ -37,6 +38,8 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementArgs:
         """
         pulumi.set(__self__, "enable_external_pluggable_dbm_feature", enable_external_pluggable_dbm_feature)
         pulumi.set(__self__, "external_pluggable_database_id", external_pluggable_database_id)
+        if feature is not None:
+            pulumi.set(__self__, "feature", feature)
         if feature_details is not None:
             pulumi.set(__self__, "feature_details", feature_details)
 
@@ -69,6 +72,15 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementArgs:
         pulumi.set(self, "external_pluggable_database_id", value)
 
     @property
+    @pulumi.getter
+    def feature(self) -> Optional[pulumi.Input[builtins.str]]:
+        return pulumi.get(self, "feature")
+
+    @feature.setter
+    def feature(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "feature", value)
+
+    @property
     @pulumi.getter(name="featureDetails")
     def feature_details(self) -> Optional[pulumi.Input['ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgs']]:
         """
@@ -86,6 +98,7 @@ class _ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementState:
     def __init__(__self__, *,
                  enable_external_pluggable_dbm_feature: Optional[pulumi.Input[builtins.bool]] = None,
                  external_pluggable_database_id: Optional[pulumi.Input[builtins.str]] = None,
+                 feature: Optional[pulumi.Input[builtins.str]] = None,
                  feature_details: Optional[pulumi.Input['ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgs']] = None):
         """
         Input properties used for looking up and filtering ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement resources.
@@ -101,6 +114,8 @@ class _ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementState:
             pulumi.set(__self__, "enable_external_pluggable_dbm_feature", enable_external_pluggable_dbm_feature)
         if external_pluggable_database_id is not None:
             pulumi.set(__self__, "external_pluggable_database_id", external_pluggable_database_id)
+        if feature is not None:
+            pulumi.set(__self__, "feature", feature)
         if feature_details is not None:
             pulumi.set(__self__, "feature_details", feature_details)
 
@@ -133,6 +148,15 @@ class _ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementState:
         pulumi.set(self, "external_pluggable_database_id", value)
 
     @property
+    @pulumi.getter
+    def feature(self) -> Optional[pulumi.Input[builtins.str]]:
+        return pulumi.get(self, "feature")
+
+    @feature.setter
+    def feature(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "feature", value)
+
+    @property
     @pulumi.getter(name="featureDetails")
     def feature_details(self) -> Optional[pulumi.Input['ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgs']]:
         """
@@ -153,6 +177,7 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement(pulumi.Cus
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enable_external_pluggable_dbm_feature: Optional[pulumi.Input[builtins.bool]] = None,
                  external_pluggable_database_id: Optional[pulumi.Input[builtins.str]] = None,
+                 feature: Optional[pulumi.Input[builtins.str]] = None,
                  feature_details: Optional[pulumi.Input[Union['ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgs', 'ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
                  __props__=None):
         """
@@ -198,6 +223,7 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement(pulumi.Cus
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enable_external_pluggable_dbm_feature: Optional[pulumi.Input[builtins.bool]] = None,
                  external_pluggable_database_id: Optional[pulumi.Input[builtins.str]] = None,
+                 feature: Optional[pulumi.Input[builtins.str]] = None,
                  feature_details: Optional[pulumi.Input[Union['ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgs', 'ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -214,6 +240,7 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement(pulumi.Cus
             if external_pluggable_database_id is None and not opts.urn:
                 raise TypeError("Missing required property 'external_pluggable_database_id'")
             __props__.__dict__["external_pluggable_database_id"] = external_pluggable_database_id
+            __props__.__dict__["feature"] = feature
             __props__.__dict__["feature_details"] = feature_details
         super(ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement, __self__).__init__(
             'oci:DatabaseManagement/externalpluggabledatabaseExternalPluggableDbmFeaturesManagement:ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement',
@@ -227,6 +254,7 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement(pulumi.Cus
             opts: Optional[pulumi.ResourceOptions] = None,
             enable_external_pluggable_dbm_feature: Optional[pulumi.Input[builtins.bool]] = None,
             external_pluggable_database_id: Optional[pulumi.Input[builtins.str]] = None,
+            feature: Optional[pulumi.Input[builtins.str]] = None,
             feature_details: Optional[pulumi.Input[Union['ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgs', 'ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgsDict']]] = None) -> 'ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement':
         """
         Get an existing ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement resource's state with the given name, id, and optional extra
@@ -249,6 +277,7 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement(pulumi.Cus
 
         __props__.__dict__["enable_external_pluggable_dbm_feature"] = enable_external_pluggable_dbm_feature
         __props__.__dict__["external_pluggable_database_id"] = external_pluggable_database_id
+        __props__.__dict__["feature"] = feature
         __props__.__dict__["feature_details"] = feature_details
         return ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement(resource_name, opts=opts, __props__=__props__)
 
@@ -271,6 +300,11 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement(pulumi.Cus
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external pluggable database.
         """
         return pulumi.get(self, "external_pluggable_database_id")
+
+    @property
+    @pulumi.getter
+    def feature(self) -> pulumi.Output[Optional[builtins.str]]:
+        return pulumi.get(self, "feature")
 
     @property
     @pulumi.getter(name="featureDetails")

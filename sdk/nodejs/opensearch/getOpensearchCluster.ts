@@ -78,6 +78,10 @@ export interface GetOpensearchClusterResult {
      */
     readonly dataNodeHostOcpuCount: number;
     /**
+     * The node shape for the cluster's data nodes.
+     */
+    readonly dataNodeHostShape: string;
+    /**
      * The instance type for the cluster's data nodes.
      */
     readonly dataNodeHostType: string;
@@ -134,6 +138,10 @@ export interface GetOpensearchClusterResult {
      */
     readonly masterNodeHostOcpuCount: number;
     /**
+     * The node shape for the cluster's master nodes.
+     */
+    readonly masterNodeHostShape: string;
+    /**
      * The instance type for the cluster's master nodes.
      */
     readonly masterNodeHostType: string;
@@ -153,6 +161,10 @@ export interface GetOpensearchClusterResult {
      * The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
      */
     readonly opendashboardNodeHostOcpuCount: number;
+    /**
+     * The node shape for the cluster's OpenSearch Dashboard nodes.
+     */
+    readonly opendashboardNodeHostShape: string;
     /**
      * The private IP address for the cluster's OpenSearch Dashboard.
      */
@@ -179,6 +191,30 @@ export interface GetOpensearchClusterResult {
      */
     readonly reverseConnectionEndpoints: outputs.Opensearch.GetOpensearchClusterReverseConnectionEndpoint[];
     /**
+     * The number of search nodes configured for the cluster.
+     */
+    readonly searchNodeCount: number;
+    /**
+     * The amount of memory in GB, for the cluster's search nodes.
+     */
+    readonly searchNodeHostMemoryGb: number;
+    /**
+     * The number of OCPUs configured for the cluster's search nodes.
+     */
+    readonly searchNodeHostOcpuCount: number;
+    /**
+     * The node shape for the cluster's search nodes.
+     */
+    readonly searchNodeHostShape: string;
+    /**
+     * The instance type for the cluster's search nodes.
+     */
+    readonly searchNodeHostType: string;
+    /**
+     * The amount of storage in GB, to configure per node for the cluster's search nodes.
+     */
+    readonly searchNodeStorageGb: number;
+    /**
      * The name of the master user that are used to manage security config
      */
     readonly securityMasterUserName: string;
@@ -190,6 +226,7 @@ export interface GetOpensearchClusterResult {
      * The security mode of the cluster.
      */
     readonly securityMode: string;
+    readonly securitySamlConfigs: outputs.Opensearch.GetOpensearchClusterSecuritySamlConfig[];
     /**
      * The software version the cluster is running.
      */

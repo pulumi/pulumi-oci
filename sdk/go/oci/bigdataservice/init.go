@@ -7,7 +7,7 @@ import (
 	"fmt"
 
 	"github.com/blang/semver"
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -23,6 +23,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "oci:BigDataService/autoScalingConfiguration:AutoScalingConfiguration":
 		r = &AutoScalingConfiguration{}
+	case "oci:BigDataService/bdsCapacityReport:BdsCapacityReport":
+		r = &BdsCapacityReport{}
 	case "oci:BigDataService/bdsInstance:BdsInstance":
 		r = &BdsInstance{}
 	case "oci:BigDataService/bdsInstanceApiKey:BdsInstanceApiKey":
@@ -39,6 +41,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &BdsInstancePatchAction{}
 	case "oci:BigDataService/bdsInstanceResourcePrincipalConfiguration:BdsInstanceResourcePrincipalConfiguration":
 		r = &BdsInstanceResourcePrincipalConfiguration{}
+	case "oci:BigDataService/bdsInstanceSoftwareUpdateAction:BdsInstanceSoftwareUpdateAction":
+		r = &BdsInstanceSoftwareUpdateAction{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -55,6 +59,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"BigDataService/autoScalingConfiguration",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"BigDataService/bdsCapacityReport",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -95,6 +104,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"BigDataService/bdsInstanceResourcePrincipalConfiguration",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"BigDataService/bdsInstanceSoftwareUpdateAction",
 		&module{version},
 	)
 }

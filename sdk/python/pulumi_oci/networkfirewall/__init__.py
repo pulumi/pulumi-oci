@@ -21,6 +21,8 @@ from .get_network_firewall_policy_decryption_rule import *
 from .get_network_firewall_policy_decryption_rules import *
 from .get_network_firewall_policy_mapped_secret import *
 from .get_network_firewall_policy_mapped_secrets import *
+from .get_network_firewall_policy_nat_rule import *
+from .get_network_firewall_policy_nat_rules import *
 from .get_network_firewall_policy_security_rule import *
 from .get_network_firewall_policy_security_rules import *
 from .get_network_firewall_policy_service import *
@@ -40,6 +42,7 @@ from .network_firewall_policy_application_group import *
 from .network_firewall_policy_decryption_profile import *
 from .network_firewall_policy_decryption_rule import *
 from .network_firewall_policy_mapped_secret import *
+from .network_firewall_policy_nat_rule import *
 from .network_firewall_policy_security_rule import *
 from .network_firewall_policy_service import *
 from .network_firewall_policy_service_list import *

@@ -24,7 +24,7 @@ public final class UsageCarbonEmissionsQueryQueryDefinition {
      */
     private String displayName;
     /**
-     * @return (Updatable) The request of the generated usage carbon emissions report.
+     * @return (Updatable) The request of the generated carbon emissions usage report.
      * 
      */
     private UsageCarbonEmissionsQueryQueryDefinitionReportQuery reportQuery;
@@ -53,7 +53,7 @@ public final class UsageCarbonEmissionsQueryQueryDefinition {
         return this.displayName;
     }
     /**
-     * @return (Updatable) The request of the generated usage carbon emissions report.
+     * @return (Updatable) The request of the generated carbon emissions usage report.
      * 
      */
     public UsageCarbonEmissionsQueryQueryDefinitionReportQuery reportQuery() {

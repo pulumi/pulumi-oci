@@ -17,6 +17,21 @@ public final class GetLogAnalyticsResourceCategoriesListArgs extends com.pulumi.
     public static final GetLogAnalyticsResourceCategoriesListArgs Empty = new GetLogAnalyticsResourceCategoriesListArgs();
 
     /**
+     * The compartment id in which to list resources.
+     * 
+     */
+    @Import(name="compartmentId")
+    private @Nullable Output<String> compartmentId;
+
+    /**
+     * @return The compartment id in which to list resources.
+     * 
+     */
+    public Optional<Output<String>> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
+    }
+
+    /**
      * The Logging Analytics namespace used for the request.
      * 
      */
@@ -79,6 +94,7 @@ public final class GetLogAnalyticsResourceCategoriesListArgs extends com.pulumi.
     private GetLogAnalyticsResourceCategoriesListArgs() {}
 
     private GetLogAnalyticsResourceCategoriesListArgs(GetLogAnalyticsResourceCategoriesListArgs $) {
+        this.compartmentId = $.compartmentId;
         this.namespace = $.namespace;
         this.resourceCategories = $.resourceCategories;
         this.resourceIds = $.resourceIds;
@@ -101,6 +117,27 @@ public final class GetLogAnalyticsResourceCategoriesListArgs extends com.pulumi.
 
         public Builder(GetLogAnalyticsResourceCategoriesListArgs defaults) {
             $ = new GetLogAnalyticsResourceCategoriesListArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param compartmentId The compartment id in which to list resources.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentId(@Nullable Output<String> compartmentId) {
+            $.compartmentId = compartmentId;
+            return this;
+        }
+
+        /**
+         * @param compartmentId The compartment id in which to list resources.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentId(String compartmentId) {
+            return compartmentId(Output.of(compartmentId));
         }
 
         /**

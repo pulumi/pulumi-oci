@@ -28,10 +28,13 @@ class GetLogAnalyticsResourceCategoriesListResult:
     """
     A collection of values returned by getLogAnalyticsResourceCategoriesList.
     """
-    def __init__(__self__, categories=None, id=None, items=None, namespace=None, resource_categories=None, resource_ids=None, resource_types=None):
+    def __init__(__self__, categories=None, compartment_id=None, id=None, items=None, namespace=None, resource_categories=None, resource_ids=None, resource_types=None):
         if categories and not isinstance(categories, list):
             raise TypeError("Expected argument 'categories' to be a list")
         pulumi.set(__self__, "categories", categories)
+        if compartment_id and not isinstance(compartment_id, str):
+            raise TypeError("Expected argument 'compartment_id' to be a str")
+        pulumi.set(__self__, "compartment_id", compartment_id)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -58,6 +61,14 @@ class GetLogAnalyticsResourceCategoriesListResult:
         An array of categories. The array contents include detailed information about the distinct set of categories assigned to all the listed resources under items.
         """
         return pulumi.get(self, "categories")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[builtins.str]:
+        """
+        The compartment ID of the resource, if applicable.
+        """
+        return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
@@ -103,6 +114,7 @@ class AwaitableGetLogAnalyticsResourceCategoriesListResult(GetLogAnalyticsResour
             yield self
         return GetLogAnalyticsResourceCategoriesListResult(
             categories=self.categories,
+            compartment_id=self.compartment_id,
             id=self.id,
             items=self.items,
             namespace=self.namespace,
@@ -111,7 +123,8 @@ class AwaitableGetLogAnalyticsResourceCategoriesListResult(GetLogAnalyticsResour
             resource_types=self.resource_types)
 
 
-def get_log_analytics_resource_categories_list(namespace: Optional[builtins.str] = None,
+def get_log_analytics_resource_categories_list(compartment_id: Optional[builtins.str] = None,
+                                               namespace: Optional[builtins.str] = None,
                                                resource_categories: Optional[builtins.str] = None,
                                                resource_ids: Optional[builtins.str] = None,
                                                resource_types: Optional[builtins.str] = None,
@@ -128,18 +141,21 @@ def get_log_analytics_resource_categories_list(namespace: Optional[builtins.str]
     import pulumi_oci as oci
 
     test_log_analytics_resource_categories_list = oci.LogAnalytics.get_log_analytics_resource_categories_list(namespace=log_analytics_resource_categories_list_namespace,
+        compartment_id=log_analytics_resource_categories_compartment_id,
         resource_ids=log_analytics_resource_categories_list_resource_ids,
         resource_types=log_analytics_resource_categories_list_resource_types,
         resource_categories=log_analytics_resource_categories_list_resource_categories)
     ```
 
 
+    :param builtins.str compartment_id: The compartment id in which to list resources.
     :param builtins.str namespace: The Logging Analytics namespace used for the request.
     :param builtins.str resource_categories: A comma-separated list of category names used for filtering
     :param builtins.str resource_ids: A comma-separated list of resource unique identifiers used for filtering. Only resources with matching unique identifiers will be returned.
     :param builtins.str resource_types: A comma-separated list of resource types used for filtering. Only resources of the types specified will be returned. Examples include SOURCE, PARSER, LOOKUP, etc.
     """
     __args__ = dict()
+    __args__['compartmentId'] = compartment_id
     __args__['namespace'] = namespace
     __args__['resourceCategories'] = resource_categories
     __args__['resourceIds'] = resource_ids
@@ -149,13 +165,15 @@ def get_log_analytics_resource_categories_list(namespace: Optional[builtins.str]
 
     return AwaitableGetLogAnalyticsResourceCategoriesListResult(
         categories=pulumi.get(__ret__, 'categories'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
         id=pulumi.get(__ret__, 'id'),
         items=pulumi.get(__ret__, 'items'),
         namespace=pulumi.get(__ret__, 'namespace'),
         resource_categories=pulumi.get(__ret__, 'resource_categories'),
         resource_ids=pulumi.get(__ret__, 'resource_ids'),
         resource_types=pulumi.get(__ret__, 'resource_types'))
-def get_log_analytics_resource_categories_list_output(namespace: Optional[pulumi.Input[builtins.str]] = None,
+def get_log_analytics_resource_categories_list_output(compartment_id: Optional[pulumi.Input[Optional[builtins.str]]] = None,
+                                                      namespace: Optional[pulumi.Input[builtins.str]] = None,
                                                       resource_categories: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                                                       resource_ids: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                                                       resource_types: Optional[pulumi.Input[Optional[builtins.str]]] = None,
@@ -172,18 +190,21 @@ def get_log_analytics_resource_categories_list_output(namespace: Optional[pulumi
     import pulumi_oci as oci
 
     test_log_analytics_resource_categories_list = oci.LogAnalytics.get_log_analytics_resource_categories_list(namespace=log_analytics_resource_categories_list_namespace,
+        compartment_id=log_analytics_resource_categories_compartment_id,
         resource_ids=log_analytics_resource_categories_list_resource_ids,
         resource_types=log_analytics_resource_categories_list_resource_types,
         resource_categories=log_analytics_resource_categories_list_resource_categories)
     ```
 
 
+    :param builtins.str compartment_id: The compartment id in which to list resources.
     :param builtins.str namespace: The Logging Analytics namespace used for the request.
     :param builtins.str resource_categories: A comma-separated list of category names used for filtering
     :param builtins.str resource_ids: A comma-separated list of resource unique identifiers used for filtering. Only resources with matching unique identifiers will be returned.
     :param builtins.str resource_types: A comma-separated list of resource types used for filtering. Only resources of the types specified will be returned. Examples include SOURCE, PARSER, LOOKUP, etc.
     """
     __args__ = dict()
+    __args__['compartmentId'] = compartment_id
     __args__['namespace'] = namespace
     __args__['resourceCategories'] = resource_categories
     __args__['resourceIds'] = resource_ids
@@ -192,6 +213,7 @@ def get_log_analytics_resource_categories_list_output(namespace: Optional[pulumi
     __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getLogAnalyticsResourceCategoriesList:getLogAnalyticsResourceCategoriesList', __args__, opts=opts, typ=GetLogAnalyticsResourceCategoriesListResult)
     return __ret__.apply(lambda __response__: GetLogAnalyticsResourceCategoriesListResult(
         categories=pulumi.get(__response__, 'categories'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
         id=pulumi.get(__response__, 'id'),
         items=pulumi.get(__response__, 'items'),
         namespace=pulumi.get(__response__, 'namespace'),

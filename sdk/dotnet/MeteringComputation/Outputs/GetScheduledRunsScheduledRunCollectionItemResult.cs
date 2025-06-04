@@ -14,27 +14,27 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
     public sealed class GetScheduledRunsScheduledRunCollectionItemResult
     {
         /// <summary>
-        /// The ocid representing unique shedule run
+        /// The OCID representing a unique shedule run.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Additional details about scheduled run failure
+        /// Additional details about the scheduled run.
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// The unique ID of a schedule.
+        /// The schedule unique ID.
         /// </summary>
         public readonly string ScheduleId;
         /// <summary>
-        /// Specifies if the schedule job was run successfully or not.
+        /// Specifies whether or not the schedule job was successfully run.
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// The time when schedule started executing
+        /// The time the schedule started executing.
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The time when schedule finished executing
+        /// The time the schedule finished executing.
         /// </summary>
         public readonly string TimeFinished;
 

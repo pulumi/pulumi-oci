@@ -15,36 +15,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// This data source provides the list of Log Analytics Entities in Oracle Cloud Infrastructure Log Analytics service.
         /// 
         /// Return a list of log analytics entities.
-        /// 
-        /// ## Example Usage
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Oci = Pulumi.Oci;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var testLogAnalyticsEntities = Oci.LogAnalytics.GetLogAnalyticsEntities.Invoke(new()
-        ///     {
-        ///         CompartmentId = compartmentId,
-        ///         Namespace = logAnalyticsEntityNamespace,
-        ///         CloudResourceId = testCloudResource.Id,
-        ///         EntityTypeNames = logAnalyticsEntityEntityTypeName,
-        ///         Hostname = logAnalyticsEntityHostname,
-        ///         HostnameContains = logAnalyticsEntityHostnameContains,
-        ///         IsManagementAgentIdNull = logAnalyticsEntityIsManagementAgentIdNull,
-        ///         LifecycleDetailsContains = logAnalyticsEntityLifecycleDetailsContains,
-        ///         MetadataEquals = logAnalyticsEntityMetadataEquals,
-        ///         Name = logAnalyticsEntityName,
-        ///         NameContains = logAnalyticsEntityNameContains,
-        ///         SourceId = testSource.Id,
-        ///         State = logAnalyticsEntityState,
-        ///     });
-        /// 
-        /// });
-        /// ```
         /// </summary>
         public static Task<GetLogAnalyticsEntitiesResult> InvokeAsync(GetLogAnalyticsEntitiesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetLogAnalyticsEntitiesResult>("oci:LogAnalytics/getLogAnalyticsEntities:getLogAnalyticsEntities", args ?? new GetLogAnalyticsEntitiesArgs(), options.WithDefaults());
@@ -53,36 +23,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// This data source provides the list of Log Analytics Entities in Oracle Cloud Infrastructure Log Analytics service.
         /// 
         /// Return a list of log analytics entities.
-        /// 
-        /// ## Example Usage
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Oci = Pulumi.Oci;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var testLogAnalyticsEntities = Oci.LogAnalytics.GetLogAnalyticsEntities.Invoke(new()
-        ///     {
-        ///         CompartmentId = compartmentId,
-        ///         Namespace = logAnalyticsEntityNamespace,
-        ///         CloudResourceId = testCloudResource.Id,
-        ///         EntityTypeNames = logAnalyticsEntityEntityTypeName,
-        ///         Hostname = logAnalyticsEntityHostname,
-        ///         HostnameContains = logAnalyticsEntityHostnameContains,
-        ///         IsManagementAgentIdNull = logAnalyticsEntityIsManagementAgentIdNull,
-        ///         LifecycleDetailsContains = logAnalyticsEntityLifecycleDetailsContains,
-        ///         MetadataEquals = logAnalyticsEntityMetadataEquals,
-        ///         Name = logAnalyticsEntityName,
-        ///         NameContains = logAnalyticsEntityNameContains,
-        ///         SourceId = testSource.Id,
-        ///         State = logAnalyticsEntityState,
-        ///     });
-        /// 
-        /// });
-        /// ```
         /// </summary>
         public static Output<GetLogAnalyticsEntitiesResult> Invoke(GetLogAnalyticsEntitiesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsEntitiesResult>("oci:LogAnalytics/getLogAnalyticsEntities:getLogAnalyticsEntities", args ?? new GetLogAnalyticsEntitiesInvokeArgs(), options.WithDefaults());
@@ -91,36 +31,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// This data source provides the list of Log Analytics Entities in Oracle Cloud Infrastructure Log Analytics service.
         /// 
         /// Return a list of log analytics entities.
-        /// 
-        /// ## Example Usage
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Oci = Pulumi.Oci;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var testLogAnalyticsEntities = Oci.LogAnalytics.GetLogAnalyticsEntities.Invoke(new()
-        ///     {
-        ///         CompartmentId = compartmentId,
-        ///         Namespace = logAnalyticsEntityNamespace,
-        ///         CloudResourceId = testCloudResource.Id,
-        ///         EntityTypeNames = logAnalyticsEntityEntityTypeName,
-        ///         Hostname = logAnalyticsEntityHostname,
-        ///         HostnameContains = logAnalyticsEntityHostnameContains,
-        ///         IsManagementAgentIdNull = logAnalyticsEntityIsManagementAgentIdNull,
-        ///         LifecycleDetailsContains = logAnalyticsEntityLifecycleDetailsContains,
-        ///         MetadataEquals = logAnalyticsEntityMetadataEquals,
-        ///         Name = logAnalyticsEntityName,
-        ///         NameContains = logAnalyticsEntityNameContains,
-        ///         SourceId = testSource.Id,
-        ///         State = logAnalyticsEntityState,
-        ///     });
-        /// 
-        /// });
-        /// ```
         /// </summary>
         public static Output<GetLogAnalyticsEntitiesResult> Invoke(GetLogAnalyticsEntitiesInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsEntitiesResult>("oci:LogAnalytics/getLogAnalyticsEntities:getLogAnalyticsEntities", args ?? new GetLogAnalyticsEntitiesInvokeArgs(), options.WithDefaults());
@@ -140,6 +50,30 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         [Input("compartmentId", required: true)]
         public string CompartmentId { get; set; } = null!;
+
+        [Input("definedTagEquals")]
+        private List<string>? _definedTagEquals;
+
+        /// <summary>
+        /// A list of tag filters to apply.  Only entities with a defined tag matching the value will be returned. Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+        /// </summary>
+        public List<string> DefinedTagEquals
+        {
+            get => _definedTagEquals ?? (_definedTagEquals = new List<string>());
+            set => _definedTagEquals = value;
+        }
+
+        [Input("definedTagExists")]
+        private List<string>? _definedTagExists;
+
+        /// <summary>
+        /// A list of tag existence filters to apply.  Only entities for which the specified defined tags exist will be returned. Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag) or "{namespace}.true".  All inputs are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+        /// </summary>
+        public List<string> DefinedTagExists
+        {
+            get => _definedTagExists ?? (_definedTagExists = new List<string>());
+            set => _definedTagExists = value;
+        }
 
         [Input("entityTypeNames")]
         private List<string>? _entityTypeNames;
@@ -161,6 +95,30 @@ namespace Pulumi.Oci.LogAnalytics
             set => _filters = value;
         }
 
+        [Input("freeformTagEquals")]
+        private List<string>? _freeformTagEquals;
+
+        /// <summary>
+        /// A list of tag filters to apply.  Only entities with a freeform tag matching the value will be returned. The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive. Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+        /// </summary>
+        public List<string> FreeformTagEquals
+        {
+            get => _freeformTagEquals ?? (_freeformTagEquals = new List<string>());
+            set => _freeformTagEquals = value;
+        }
+
+        [Input("freeformTagExists")]
+        private List<string>? _freeformTagExists;
+
+        /// <summary>
+        /// A list of tag existence filters to apply.  Only entities for which the specified freeform tags exist the value will be returned. The key for each tag is "{tagName}.true".  All inputs are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported. Multiple values for different tag names are interpreted as "AND".
+        /// </summary>
+        public List<string> FreeformTagExists
+        {
+            get => _freeformTagExists ?? (_freeformTagExists = new List<string>());
+            set => _freeformTagExists = value;
+        }
+
         /// <summary>
         /// A filter to return only log analytics entities whose hostname matches the entire hostname given.
         /// </summary>
@@ -178,6 +136,12 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         [Input("isManagementAgentIdNull")]
         public string? IsManagementAgentIdNull { get; set; }
+
+        /// <summary>
+        /// Option to return count of associated log sources for log analytics entity(s).
+        /// </summary>
+        [Input("isShowAssociatedSourcesCount")]
+        public bool? IsShowAssociatedSourcesCount { get; set; }
 
         /// <summary>
         /// A filter to return only log analytics entities whose lifecycleDetails contains the specified string.
@@ -247,6 +211,30 @@ namespace Pulumi.Oci.LogAnalytics
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
+        [Input("definedTagEquals")]
+        private InputList<string>? _definedTagEquals;
+
+        /// <summary>
+        /// A list of tag filters to apply.  Only entities with a defined tag matching the value will be returned. Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+        /// </summary>
+        public InputList<string> DefinedTagEquals
+        {
+            get => _definedTagEquals ?? (_definedTagEquals = new InputList<string>());
+            set => _definedTagEquals = value;
+        }
+
+        [Input("definedTagExists")]
+        private InputList<string>? _definedTagExists;
+
+        /// <summary>
+        /// A list of tag existence filters to apply.  Only entities for which the specified defined tags exist will be returned. Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag) or "{namespace}.true".  All inputs are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+        /// </summary>
+        public InputList<string> DefinedTagExists
+        {
+            get => _definedTagExists ?? (_definedTagExists = new InputList<string>());
+            set => _definedTagExists = value;
+        }
+
         [Input("entityTypeNames")]
         private InputList<string>? _entityTypeNames;
 
@@ -267,6 +255,30 @@ namespace Pulumi.Oci.LogAnalytics
             set => _filters = value;
         }
 
+        [Input("freeformTagEquals")]
+        private InputList<string>? _freeformTagEquals;
+
+        /// <summary>
+        /// A list of tag filters to apply.  Only entities with a freeform tag matching the value will be returned. The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive. Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+        /// </summary>
+        public InputList<string> FreeformTagEquals
+        {
+            get => _freeformTagEquals ?? (_freeformTagEquals = new InputList<string>());
+            set => _freeformTagEquals = value;
+        }
+
+        [Input("freeformTagExists")]
+        private InputList<string>? _freeformTagExists;
+
+        /// <summary>
+        /// A list of tag existence filters to apply.  Only entities for which the specified freeform tags exist the value will be returned. The key for each tag is "{tagName}.true".  All inputs are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported. Multiple values for different tag names are interpreted as "AND".
+        /// </summary>
+        public InputList<string> FreeformTagExists
+        {
+            get => _freeformTagExists ?? (_freeformTagExists = new InputList<string>());
+            set => _freeformTagExists = value;
+        }
+
         /// <summary>
         /// A filter to return only log analytics entities whose hostname matches the entire hostname given.
         /// </summary>
@@ -284,6 +296,12 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         [Input("isManagementAgentIdNull")]
         public Input<string>? IsManagementAgentIdNull { get; set; }
+
+        /// <summary>
+        /// Option to return count of associated log sources for log analytics entity(s).
+        /// </summary>
+        [Input("isShowAssociatedSourcesCount")]
+        public Input<bool>? IsShowAssociatedSourcesCount { get; set; }
 
         /// <summary>
         /// A filter to return only log analytics entities whose lifecycleDetails contains the specified string.
@@ -351,11 +369,15 @@ namespace Pulumi.Oci.LogAnalytics
         /// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string CompartmentId;
+        public readonly ImmutableArray<string> DefinedTagEquals;
+        public readonly ImmutableArray<string> DefinedTagExists;
         /// <summary>
         /// Log analytics entity type name.
         /// </summary>
         public readonly ImmutableArray<string> EntityTypeNames;
         public readonly ImmutableArray<Outputs.GetLogAnalyticsEntitiesFilterResult> Filters;
+        public readonly ImmutableArray<string> FreeformTagEquals;
+        public readonly ImmutableArray<string> FreeformTagExists;
         /// <summary>
         /// The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
         /// </summary>
@@ -366,6 +388,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         public readonly string Id;
         public readonly string? IsManagementAgentIdNull;
+        public readonly bool? IsShowAssociatedSourcesCount;
         public readonly string? LifecycleDetailsContains;
         /// <summary>
         /// The list of log_analytics_entity_collection.
@@ -393,9 +416,17 @@ namespace Pulumi.Oci.LogAnalytics
 
             string compartmentId,
 
+            ImmutableArray<string> definedTagEquals,
+
+            ImmutableArray<string> definedTagExists,
+
             ImmutableArray<string> entityTypeNames,
 
             ImmutableArray<Outputs.GetLogAnalyticsEntitiesFilterResult> filters,
+
+            ImmutableArray<string> freeformTagEquals,
+
+            ImmutableArray<string> freeformTagExists,
 
             string? hostname,
 
@@ -404,6 +435,8 @@ namespace Pulumi.Oci.LogAnalytics
             string id,
 
             string? isManagementAgentIdNull,
+
+            bool? isShowAssociatedSourcesCount,
 
             string? lifecycleDetailsContains,
 
@@ -423,12 +456,17 @@ namespace Pulumi.Oci.LogAnalytics
         {
             CloudResourceId = cloudResourceId;
             CompartmentId = compartmentId;
+            DefinedTagEquals = definedTagEquals;
+            DefinedTagExists = definedTagExists;
             EntityTypeNames = entityTypeNames;
             Filters = filters;
+            FreeformTagEquals = freeformTagEquals;
+            FreeformTagExists = freeformTagExists;
             Hostname = hostname;
             HostnameContains = hostnameContains;
             Id = id;
             IsManagementAgentIdNull = isManagementAgentIdNull;
+            IsShowAssociatedSourcesCount = isShowAssociatedSourcesCount;
             LifecycleDetailsContains = lifecycleDetailsContains;
             LogAnalyticsEntityCollections = logAnalyticsEntityCollections;
             MetadataEquals = metadataEquals;

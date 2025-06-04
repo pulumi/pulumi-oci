@@ -14,15 +14,15 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
     public sealed class UsageStatementEmailRecipientsGroupRecipientsList
     {
         /// <summary>
-        /// (Updatable) the email of the recipient.
+        /// (Updatable) The recipient email address.
         /// </summary>
         public readonly string EmailId;
         /// <summary>
-        /// (Updatable) the first name of the recipient.
+        /// (Updatable) The recipient first name.
         /// </summary>
         public readonly string? FirstName;
         /// <summary>
-        /// (Updatable) the last name of the recipient.
+        /// (Updatable) The recipient last name.
         /// </summary>
         public readonly string? LastName;
         /// <summary>

@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Scheduled Runs in Oracle Cloud Infrastructure Metering Computation service.
  *
- * Returns schedule history list.
+ * Returns the schedule history list.
  *
  * ## Example Usage
  *
@@ -36,7 +36,7 @@ export function getScheduledRuns(args: GetScheduledRunsArgs, opts?: pulumi.Invok
 export interface GetScheduledRunsArgs {
     filters?: inputs.MeteringComputation.GetScheduledRunsFilter[];
     /**
-     * The unique ID of a schedule.
+     * The schedule unique ID.
      */
     scheduleId: string;
 }
@@ -51,7 +51,7 @@ export interface GetScheduledRunsResult {
      */
     readonly id: string;
     /**
-     * The ocid representing unique shedule
+     * The OCID representing a unique shedule.
      */
     readonly scheduleId: string;
     /**
@@ -62,7 +62,7 @@ export interface GetScheduledRunsResult {
 /**
  * This data source provides the list of Scheduled Runs in Oracle Cloud Infrastructure Metering Computation service.
  *
- * Returns schedule history list.
+ * Returns the schedule history list.
  *
  * ## Example Usage
  *
@@ -89,7 +89,7 @@ export function getScheduledRunsOutput(args: GetScheduledRunsOutputArgs, opts?: 
 export interface GetScheduledRunsOutputArgs {
     filters?: pulumi.Input<pulumi.Input<inputs.MeteringComputation.GetScheduledRunsFilterArgs>[]>;
     /**
-     * The unique ID of a schedule.
+     * The schedule unique ID.
      */
     scheduleId: pulumi.Input<string>;
 }

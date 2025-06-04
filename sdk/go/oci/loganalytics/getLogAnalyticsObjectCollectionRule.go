@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -81,6 +81,8 @@ type LookupLogAnalyticsObjectCollectionRuleResult struct {
 	IsEnabled bool `pulumi:"isEnabled"`
 	// Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
 	IsForceHistoricCollection bool `pulumi:"isForceHistoricCollection"`
+	// Last Collected Object for the rule
+	LastCollectedObject string `pulumi:"lastCollectedObject"`
 	// A detailed status of the life cycle state.
 	LifecycleDetails                   string `pulumi:"lifecycleDetails"`
 	LogAnalyticsObjectCollectionRuleId string `pulumi:"logAnalyticsObjectCollectionRuleId"`
@@ -113,6 +115,12 @@ type LookupLogAnalyticsObjectCollectionRuleResult struct {
 	PollTill string `pulumi:"pollTill"`
 	// The current state of the rule.
 	State string `pulumi:"state"`
+	// The time from which to consume the objects, if streamCursorType is AT_TIME.
+	StreamCursorTime string `pulumi:"streamCursorTime"`
+	// Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
+	StreamCursorType string `pulumi:"streamCursorType"`
+	// A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+	StreamId string `pulumi:"streamId"`
 	// The time when this rule was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time when this rule was last updated. An RFC3339 formatted datetime string.
@@ -207,6 +215,11 @@ func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) IsForceHistoricColle
 	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) bool { return v.IsForceHistoricCollection }).(pulumi.BoolOutput)
 }
 
+// Last Collected Object for the rule
+func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) LastCollectedObject() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) string { return v.LastCollectedObject }).(pulumi.StringOutput)
+}
+
 // A detailed status of the life cycle state.
 func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
@@ -292,6 +305,21 @@ func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) PollTill() pulumi.St
 // The current state of the rule.
 func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The time from which to consume the objects, if streamCursorType is AT_TIME.
+func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) StreamCursorTime() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) string { return v.StreamCursorTime }).(pulumi.StringOutput)
+}
+
+// Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
+func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) StreamCursorType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) string { return v.StreamCursorType }).(pulumi.StringOutput)
+}
+
+// A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) StreamId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) string { return v.StreamId }).(pulumi.StringOutput)
 }
 
 // The time when this rule was created. An RFC3339 formatted datetime string.

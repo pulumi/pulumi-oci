@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -18,13 +18,15 @@ import (
 type DatabaseDbmFeaturesManagement struct {
 	pulumi.CustomResourceState
 
+	CanDisableAllPdbs pulumi.BoolPtrOutput `pulumi:"canDisableAllPdbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
 	DatabaseId pulumi.StringOutput `pulumi:"databaseId"`
 	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	EnableDatabaseDbmFeature pulumi.BoolOutput `pulumi:"enableDatabaseDbmFeature"`
+	EnableDatabaseDbmFeature pulumi.BoolOutput      `pulumi:"enableDatabaseDbmFeature"`
+	Feature                  pulumi.StringPtrOutput `pulumi:"feature"`
 	// The details required to enable the specified Database Management feature.
 	FeatureDetails           DatabaseDbmFeaturesManagementFeatureDetailsPtrOutput `pulumi:"featureDetails"`
 	ModifyDatabaseDbmFeature pulumi.BoolPtrOutput                                 `pulumi:"modifyDatabaseDbmFeature"`
@@ -66,19 +68,22 @@ func GetDatabaseDbmFeaturesManagement(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DatabaseDbmFeaturesManagement resources.
 type databaseDbmFeaturesManagementState struct {
+	CanDisableAllPdbs *bool `pulumi:"canDisableAllPdbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
 	DatabaseId *string `pulumi:"databaseId"`
 	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	EnableDatabaseDbmFeature *bool `pulumi:"enableDatabaseDbmFeature"`
+	EnableDatabaseDbmFeature *bool   `pulumi:"enableDatabaseDbmFeature"`
+	Feature                  *string `pulumi:"feature"`
 	// The details required to enable the specified Database Management feature.
 	FeatureDetails           *DatabaseDbmFeaturesManagementFeatureDetails `pulumi:"featureDetails"`
 	ModifyDatabaseDbmFeature *bool                                        `pulumi:"modifyDatabaseDbmFeature"`
 }
 
 type DatabaseDbmFeaturesManagementState struct {
+	CanDisableAllPdbs pulumi.BoolPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
 	DatabaseId pulumi.StringPtrInput
 	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
@@ -86,6 +91,7 @@ type DatabaseDbmFeaturesManagementState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableDatabaseDbmFeature pulumi.BoolPtrInput
+	Feature                  pulumi.StringPtrInput
 	// The details required to enable the specified Database Management feature.
 	FeatureDetails           DatabaseDbmFeaturesManagementFeatureDetailsPtrInput
 	ModifyDatabaseDbmFeature pulumi.BoolPtrInput
@@ -96,13 +102,15 @@ func (DatabaseDbmFeaturesManagementState) ElementType() reflect.Type {
 }
 
 type databaseDbmFeaturesManagementArgs struct {
+	CanDisableAllPdbs *bool `pulumi:"canDisableAllPdbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
 	DatabaseId string `pulumi:"databaseId"`
 	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	EnableDatabaseDbmFeature bool `pulumi:"enableDatabaseDbmFeature"`
+	EnableDatabaseDbmFeature bool    `pulumi:"enableDatabaseDbmFeature"`
+	Feature                  *string `pulumi:"feature"`
 	// The details required to enable the specified Database Management feature.
 	FeatureDetails           *DatabaseDbmFeaturesManagementFeatureDetails `pulumi:"featureDetails"`
 	ModifyDatabaseDbmFeature *bool                                        `pulumi:"modifyDatabaseDbmFeature"`
@@ -110,6 +118,7 @@ type databaseDbmFeaturesManagementArgs struct {
 
 // The set of arguments for constructing a DatabaseDbmFeaturesManagement resource.
 type DatabaseDbmFeaturesManagementArgs struct {
+	CanDisableAllPdbs pulumi.BoolPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
 	DatabaseId pulumi.StringInput
 	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
@@ -117,6 +126,7 @@ type DatabaseDbmFeaturesManagementArgs struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableDatabaseDbmFeature pulumi.BoolInput
+	Feature                  pulumi.StringPtrInput
 	// The details required to enable the specified Database Management feature.
 	FeatureDetails           DatabaseDbmFeaturesManagementFeatureDetailsPtrInput
 	ModifyDatabaseDbmFeature pulumi.BoolPtrInput
@@ -209,6 +219,10 @@ func (o DatabaseDbmFeaturesManagementOutput) ToDatabaseDbmFeaturesManagementOutp
 	return o
 }
 
+func (o DatabaseDbmFeaturesManagementOutput) CanDisableAllPdbs() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DatabaseDbmFeaturesManagement) pulumi.BoolPtrOutput { return v.CanDisableAllPdbs }).(pulumi.BoolPtrOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
 func (o DatabaseDbmFeaturesManagementOutput) DatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseDbmFeaturesManagement) pulumi.StringOutput { return v.DatabaseId }).(pulumi.StringOutput)
@@ -220,6 +234,10 @@ func (o DatabaseDbmFeaturesManagementOutput) DatabaseId() pulumi.StringOutput {
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DatabaseDbmFeaturesManagementOutput) EnableDatabaseDbmFeature() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DatabaseDbmFeaturesManagement) pulumi.BoolOutput { return v.EnableDatabaseDbmFeature }).(pulumi.BoolOutput)
+}
+
+func (o DatabaseDbmFeaturesManagementOutput) Feature() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseDbmFeaturesManagement) pulumi.StringPtrOutput { return v.Feature }).(pulumi.StringPtrOutput)
 }
 
 // The details required to enable the specified Database Management feature.

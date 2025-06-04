@@ -46,6 +46,8 @@ __all__ = [
     'MysqlBackupDbSystemSnapshotMaintenanceArgsDict',
     'MysqlBackupDbSystemSnapshotReadEndpointArgs',
     'MysqlBackupDbSystemSnapshotReadEndpointArgsDict',
+    'MysqlBackupDbSystemSnapshotRestArgs',
+    'MysqlBackupDbSystemSnapshotRestArgsDict',
     'MysqlBackupDbSystemSnapshotSecureConnectionArgs',
     'MysqlBackupDbSystemSnapshotSecureConnectionArgsDict',
     'MysqlBackupDbSystemSnapshotSummaryArgs',
@@ -92,6 +94,8 @@ __all__ = [
     'MysqlDbSystemPointInTimeRecoveryDetailArgsDict',
     'MysqlDbSystemReadEndpointArgs',
     'MysqlDbSystemReadEndpointArgsDict',
+    'MysqlDbSystemRestArgs',
+    'MysqlDbSystemRestArgsDict',
     'MysqlDbSystemSecureConnectionsArgs',
     'MysqlDbSystemSecureConnectionsArgsDict',
     'MysqlDbSystemSourceArgs',
@@ -835,9 +839,13 @@ if not MYPY:
         """
         The MySQL server version of the DB System used for backup.
         """
+        nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        Network Security Group OCIDs used for the VNIC attachment.
+        """
         port: NotRequired[pulumi.Input[builtins.int]]
         """
-        The port for primary endpoint of the DB System to listen on.
+        The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
         """
         port_x: NotRequired[pulumi.Input[builtins.int]]
         """
@@ -850,6 +858,10 @@ if not MYPY:
         region: NotRequired[pulumi.Input[builtins.str]]
         """
         The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+        """
+        rests: NotRequired[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotRestArgsDict']]]]
+        """
+        REST configuration details.
         """
         secure_connections: NotRequired[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotSecureConnectionArgsDict']]]]
         """
@@ -891,10 +903,12 @@ class MysqlBackupDbSystemSnapshotArgs:
                  is_highly_available: Optional[pulumi.Input[builtins.bool]] = None,
                  maintenances: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotMaintenanceArgs']]]] = None,
                  mysql_version: Optional[pulumi.Input[builtins.str]] = None,
+                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  port: Optional[pulumi.Input[builtins.int]] = None,
                  port_x: Optional[pulumi.Input[builtins.int]] = None,
                  read_endpoints: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotReadEndpointArgs']]]] = None,
                  region: Optional[pulumi.Input[builtins.str]] = None,
+                 rests: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotRestArgs']]]] = None,
                  secure_connections: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotSecureConnectionArgs']]]] = None,
                  shape_name: Optional[pulumi.Input[builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[builtins.str]] = None):
@@ -921,10 +935,12 @@ class MysqlBackupDbSystemSnapshotArgs:
         :param pulumi.Input[builtins.bool] is_highly_available: Specifies if the DB System is highly available.
         :param pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotMaintenanceArgs']]] maintenances: The Maintenance Policy for the DB System or Read Replica that this model is included in.
         :param pulumi.Input[builtins.str] mysql_version: The MySQL server version of the DB System used for backup.
-        :param pulumi.Input[builtins.int] port: The port for primary endpoint of the DB System to listen on.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] nsg_ids: Network Security Group OCIDs used for the VNIC attachment.
+        :param pulumi.Input[builtins.int] port: The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
         :param pulumi.Input[builtins.int] port_x: The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
         :param pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotReadEndpointArgs']]] read_endpoints: The read endpoint of a DB System.
         :param pulumi.Input[builtins.str] region: The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+        :param pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotRestArgs']]] rests: REST configuration details.
         :param pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotSecureConnectionArgs']]] secure_connections: Secure connection configuration details.
         :param pulumi.Input[builtins.str] shape_name: The shape of the DB System instance used for backup.
         :param pulumi.Input[builtins.str] subnet_id: The OCID of the subnet the DB System is associated with.
@@ -973,6 +989,8 @@ class MysqlBackupDbSystemSnapshotArgs:
             pulumi.set(__self__, "maintenances", maintenances)
         if mysql_version is not None:
             pulumi.set(__self__, "mysql_version", mysql_version)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
         if port is not None:
             pulumi.set(__self__, "port", port)
         if port_x is not None:
@@ -981,6 +999,8 @@ class MysqlBackupDbSystemSnapshotArgs:
             pulumi.set(__self__, "read_endpoints", read_endpoints)
         if region is not None:
             pulumi.set(__self__, "region", region)
+        if rests is not None:
+            pulumi.set(__self__, "rests", rests)
         if secure_connections is not None:
             pulumi.set(__self__, "secure_connections", secure_connections)
         if shape_name is not None:
@@ -1253,10 +1273,22 @@ class MysqlBackupDbSystemSnapshotArgs:
         pulumi.set(self, "mysql_version", value)
 
     @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        Network Security Group OCIDs used for the VNIC attachment.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @nsg_ids.setter
+    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "nsg_ids", value)
+
+    @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        The port for primary endpoint of the DB System to listen on.
+        The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
         """
         return pulumi.get(self, "port")
 
@@ -1299,6 +1331,18 @@ class MysqlBackupDbSystemSnapshotArgs:
     @region.setter
     def region(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "region", value)
+
+    @property
+    @pulumi.getter
+    def rests(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotRestArgs']]]]:
+        """
+        REST configuration details.
+        """
+        return pulumi.get(self, "rests")
+
+    @rests.setter
+    def rests(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotRestArgs']]]]):
+        pulumi.set(self, "rests", value)
 
     @property
     @pulumi.getter(name="secureConnections")
@@ -1773,7 +1817,7 @@ if not MYPY:
         """
         port: NotRequired[pulumi.Input[builtins.int]]
         """
-        The port for primary endpoint of the DB System to listen on.
+        The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
         """
         port_x: NotRequired[pulumi.Input[builtins.int]]
         """
@@ -1814,7 +1858,7 @@ class MysqlBackupDbSystemSnapshotEndpointArgs:
         :param pulumi.Input[builtins.str] hostname: The network address of the DB System.
         :param pulumi.Input[builtins.str] ip_address: The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] modes: The access modes from the client that this endpoint supports.
-        :param pulumi.Input[builtins.int] port: The port for primary endpoint of the DB System to listen on.
+        :param pulumi.Input[builtins.int] port: The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
         :param pulumi.Input[builtins.int] port_x: The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
         :param pulumi.Input[builtins.str] resource_id: The OCID of the resource that this endpoint is attached to.
         :param pulumi.Input[builtins.str] resource_type: The type of endpoint that clients and connectors can connect to.
@@ -1880,7 +1924,7 @@ class MysqlBackupDbSystemSnapshotEndpointArgs:
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        The port for primary endpoint of the DB System to listen on.
+        The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
         """
         return pulumi.get(self, "port")
 
@@ -2071,6 +2115,58 @@ class MysqlBackupDbSystemSnapshotReadEndpointArgs:
     @read_endpoint_ip_address.setter
     def read_endpoint_ip_address(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "read_endpoint_ip_address", value)
+
+
+if not MYPY:
+    class MysqlBackupDbSystemSnapshotRestArgsDict(TypedDict):
+        configuration: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Select how REST is configured across the DB System instances.
+        """
+        port: NotRequired[pulumi.Input[builtins.int]]
+        """
+        The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+        """
+elif False:
+    MysqlBackupDbSystemSnapshotRestArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MysqlBackupDbSystemSnapshotRestArgs:
+    def __init__(__self__, *,
+                 configuration: Optional[pulumi.Input[builtins.str]] = None,
+                 port: Optional[pulumi.Input[builtins.int]] = None):
+        """
+        :param pulumi.Input[builtins.str] configuration: Select how REST is configured across the DB System instances.
+        :param pulumi.Input[builtins.int] port: The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+        """
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Select how REST is configured across the DB System instances.
+        """
+        return pulumi.get(self, "configuration")
+
+    @configuration.setter
+    def configuration(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "configuration", value)
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+        """
+        return pulumi.get(self, "port")
+
+    @port.setter
+    def port(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "port", value)
 
 
 if not MYPY:
@@ -7159,6 +7255,57 @@ class MysqlDbSystemReadEndpointArgs:
 
 
 if not MYPY:
+    class MysqlDbSystemRestArgsDict(TypedDict):
+        configuration: pulumi.Input[builtins.str]
+        """
+        (Updatable) Select how REST is configured across the DB System instances.
+        """
+        port: NotRequired[pulumi.Input[builtins.int]]
+        """
+        (Updatable) The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+        """
+elif False:
+    MysqlDbSystemRestArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MysqlDbSystemRestArgs:
+    def __init__(__self__, *,
+                 configuration: pulumi.Input[builtins.str],
+                 port: Optional[pulumi.Input[builtins.int]] = None):
+        """
+        :param pulumi.Input[builtins.str] configuration: (Updatable) Select how REST is configured across the DB System instances.
+        :param pulumi.Input[builtins.int] port: (Updatable) The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+        """
+        pulumi.set(__self__, "configuration", configuration)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> pulumi.Input[builtins.str]:
+        """
+        (Updatable) Select how REST is configured across the DB System instances.
+        """
+        return pulumi.get(self, "configuration")
+
+    @configuration.setter
+    def configuration(self, value: pulumi.Input[builtins.str]):
+        pulumi.set(self, "configuration", value)
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        (Updatable) The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+        """
+        return pulumi.get(self, "port")
+
+    @port.setter
+    def port(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "port", value)
+
+
+if not MYPY:
     class MysqlDbSystemSecureConnectionsArgsDict(TypedDict):
         certificate_generation_type: pulumi.Input[builtins.str]
         """
@@ -7330,6 +7477,10 @@ if not MYPY:
         """
         (Updatable) The MySQL version to be used by the read replica.
         """
+        nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        (Updatable) Network Security Group OCIDs used for the VNIC attachment.
+        """
         shape_name: NotRequired[pulumi.Input[builtins.str]]
         """
         (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation. 
@@ -7346,10 +7497,12 @@ class ReplicaReplicaOverridesArgs:
     def __init__(__self__, *,
                  configuration_id: Optional[pulumi.Input[builtins.str]] = None,
                  mysql_version: Optional[pulumi.Input[builtins.str]] = None,
+                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  shape_name: Optional[pulumi.Input[builtins.str]] = None):
         """
         :param pulumi.Input[builtins.str] configuration_id: (Updatable) The OCID of the Configuration to be used by the read replica.
         :param pulumi.Input[builtins.str] mysql_version: (Updatable) The MySQL version to be used by the read replica.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] nsg_ids: (Updatable) Network Security Group OCIDs used for the VNIC attachment.
         :param pulumi.Input[builtins.str] shape_name: (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation. 
                
                
@@ -7360,6 +7513,8 @@ class ReplicaReplicaOverridesArgs:
             pulumi.set(__self__, "configuration_id", configuration_id)
         if mysql_version is not None:
             pulumi.set(__self__, "mysql_version", mysql_version)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
         if shape_name is not None:
             pulumi.set(__self__, "shape_name", shape_name)
 
@@ -7386,6 +7541,18 @@ class ReplicaReplicaOverridesArgs:
     @mysql_version.setter
     def mysql_version(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "mysql_version", value)
+
+    @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        (Updatable) Network Security Group OCIDs used for the VNIC attachment.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @nsg_ids.setter
+    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "nsg_ids", value)
 
     @property
     @pulumi.getter(name="shapeName")

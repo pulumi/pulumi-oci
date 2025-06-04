@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Usage Statement Email Recipients Groups in Oracle Cloud Infrastructure Metering Computation service.
  *
- * Return the saved usage statement email recipient group.
+ * Returns the saved usage statement email recipients group.
  *
  * ## Example Usage
  *
@@ -42,7 +42,7 @@ export interface GetUsageStatementEmailRecipientsGroupsArgs {
     compartmentId: string;
     filters?: inputs.MeteringComputation.GetUsageStatementEmailRecipientsGroupsFilter[];
     /**
-     * The UsageStatement Subscription unique OCID.
+     * The usage statement subscription unique OCID.
      */
     subscriptionId: string;
 }
@@ -69,7 +69,7 @@ export interface GetUsageStatementEmailRecipientsGroupsResult {
 /**
  * This data source provides the list of Usage Statement Email Recipients Groups in Oracle Cloud Infrastructure Metering Computation service.
  *
- * Return the saved usage statement email recipient group.
+ * Returns the saved usage statement email recipients group.
  *
  * ## Example Usage
  *
@@ -102,7 +102,7 @@ export interface GetUsageStatementEmailRecipientsGroupsOutputArgs {
     compartmentId: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.MeteringComputation.GetUsageStatementEmailRecipientsGroupsFilterArgs>[]>;
     /**
-     * The UsageStatement Subscription unique OCID.
+     * The usage statement subscription unique OCID.
      */
     subscriptionId: pulumi.Input<string>;
 }

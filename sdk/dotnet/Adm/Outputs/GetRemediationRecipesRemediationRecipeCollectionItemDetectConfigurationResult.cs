@@ -18,15 +18,15 @@ namespace Pulumi.Oci.Adm.Outputs
         /// </summary>
         public readonly ImmutableArray<string> Exclusions;
         /// <summary>
-        /// The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+        /// The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. A vulnerability with a CVSS V2 score below this value is not considered for remediation.
         /// </summary>
         public readonly double MaxPermissibleCvssV2score;
         /// <summary>
-        /// The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+        /// The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. A vulnerability with a CVSS V3 score below this value is not considered for patching.
         /// </summary>
         public readonly double MaxPermissibleCvssV3score;
         /// <summary>
-        /// The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered for patching.
+        /// The maximum ADM Severity. A vulnerability with an severity below this value is not considered for remediation.
         /// </summary>
         public readonly string MaxPermissibleSeverity;
         /// <summary>

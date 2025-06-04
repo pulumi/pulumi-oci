@@ -190,6 +190,10 @@ export class Cluster extends pulumi.CustomResource {
      */
     public /*out*/ readonly openIdConnectDiscoveryEndpoint!: pulumi.Output<string>;
     /**
+     * The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
+     */
+    public /*out*/ readonly openIdConnectDiscoveryKey!: pulumi.Output<string>;
+    /**
      * (Updatable) Optional attributes for the cluster.
      */
     public readonly options!: pulumi.Output<outputs.ContainerEngine.ClusterOptions>;
@@ -237,6 +241,7 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["metadatas"] = state ? state.metadatas : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["openIdConnectDiscoveryEndpoint"] = state ? state.openIdConnectDiscoveryEndpoint : undefined;
+            resourceInputs["openIdConnectDiscoveryKey"] = state ? state.openIdConnectDiscoveryKey : undefined;
             resourceInputs["options"] = state ? state.options : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["type"] = state ? state.type : undefined;
@@ -269,6 +274,7 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["metadatas"] = undefined /*out*/;
             resourceInputs["openIdConnectDiscoveryEndpoint"] = undefined /*out*/;
+            resourceInputs["openIdConnectDiscoveryKey"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -336,6 +342,10 @@ export interface ClusterState {
      * The cluster-specific OpenID Connect Discovery endpoint
      */
     openIdConnectDiscoveryEndpoint?: pulumi.Input<string>;
+    /**
+     * The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
+     */
+    openIdConnectDiscoveryKey?: pulumi.Input<string>;
     /**
      * (Updatable) Optional attributes for the cluster.
      */

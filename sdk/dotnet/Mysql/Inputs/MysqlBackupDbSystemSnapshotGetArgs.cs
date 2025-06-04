@@ -186,8 +186,20 @@ namespace Pulumi.Oci.Mysql.Inputs
         [Input("mysqlVersion")]
         public Input<string>? MysqlVersion { get; set; }
 
+        [Input("nsgIds")]
+        private InputList<string>? _nsgIds;
+
         /// <summary>
-        /// The port for primary endpoint of the DB System to listen on.
+        /// Network Security Group OCIDs used for the VNIC attachment.
+        /// </summary>
+        public InputList<string> NsgIds
+        {
+            get => _nsgIds ?? (_nsgIds = new InputList<string>());
+            set => _nsgIds = value;
+        }
+
+        /// <summary>
+        /// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
         /// </summary>
         [Input("port")]
         public Input<int>? Port { get; set; }
@@ -215,6 +227,18 @@ namespace Pulumi.Oci.Mysql.Inputs
         /// </summary>
         [Input("region")]
         public Input<string>? Region { get; set; }
+
+        [Input("rests")]
+        private InputList<Inputs.MysqlBackupDbSystemSnapshotRestGetArgs>? _rests;
+
+        /// <summary>
+        /// REST configuration details.
+        /// </summary>
+        public InputList<Inputs.MysqlBackupDbSystemSnapshotRestGetArgs> Rests
+        {
+            get => _rests ?? (_rests = new InputList<Inputs.MysqlBackupDbSystemSnapshotRestGetArgs>());
+            set => _rests = value;
+        }
 
         [Input("secureConnections")]
         private InputList<Inputs.MysqlBackupDbSystemSnapshotSecureConnectionGetArgs>? _secureConnections;

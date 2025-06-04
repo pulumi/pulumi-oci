@@ -18,9 +18,17 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// </summary>
         public readonly string CategoryName;
         /// <summary>
+        /// The compartment id in which to list resources.
+        /// </summary>
+        public readonly string CompartmentId;
+        /// <summary>
         /// The system flag. A value of false denotes a user-created category assignment. A value of true denotes an Oracle-defined category assignment.
         /// </summary>
         public readonly bool IsSystem;
+        /// <summary>
+        /// The resource display name.
+        /// </summary>
+        public readonly string ResourceDisplayName;
         /// <summary>
         /// The unique identifier of the resource, usually a name or ocid.
         /// </summary>
@@ -34,14 +42,20 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         private GetLogAnalyticsResourceCategoriesListItemResult(
             string categoryName,
 
+            string compartmentId,
+
             bool isSystem,
+
+            string resourceDisplayName,
 
             string resourceId,
 
             string resourceType)
         {
             CategoryName = categoryName;
+            CompartmentId = compartmentId;
             IsSystem = isSystem;
+            ResourceDisplayName = resourceDisplayName;
             ResourceId = resourceId;
             ResourceType = resourceType;
         }

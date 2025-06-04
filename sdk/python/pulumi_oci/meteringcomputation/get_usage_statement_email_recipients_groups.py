@@ -101,7 +101,7 @@ def get_usage_statement_email_recipients_groups(compartment_id: Optional[builtin
     """
     This data source provides the list of Usage Statement Email Recipients Groups in Oracle Cloud Infrastructure Metering Computation service.
 
-    Return the saved usage statement email recipient group.
+    Returns the saved usage statement email recipients group.
 
     ## Example Usage
 
@@ -115,7 +115,7 @@ def get_usage_statement_email_recipients_groups(compartment_id: Optional[builtin
 
 
     :param builtins.str compartment_id: The compartment ID in which to list resources.
-    :param builtins.str subscription_id: The UsageStatement Subscription unique OCID.
+    :param builtins.str subscription_id: The usage statement subscription unique OCID.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -137,7 +137,7 @@ def get_usage_statement_email_recipients_groups_output(compartment_id: Optional[
     """
     This data source provides the list of Usage Statement Email Recipients Groups in Oracle Cloud Infrastructure Metering Computation service.
 
-    Return the saved usage statement email recipient group.
+    Returns the saved usage statement email recipients group.
 
     ## Example Usage
 
@@ -151,7 +151,7 @@ def get_usage_statement_email_recipients_groups_output(compartment_id: Optional[
 
 
     :param builtins.str compartment_id: The compartment ID in which to list resources.
-    :param builtins.str subscription_id: The UsageStatement Subscription unique OCID.
+    :param builtins.str subscription_id: The usage statement subscription unique OCID.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id

@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/containerengine"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/containerengine"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -89,8 +89,11 @@ type LookupClusterResult struct {
 	// Metadata about the cluster.
 	Metadatas []GetClusterMetadata `pulumi:"metadatas"`
 	// The name of the cluster.
-	Name                           string `pulumi:"name"`
+	Name string `pulumi:"name"`
+	// The cluster-specific OpenID Connect Discovery endpoint
 	OpenIdConnectDiscoveryEndpoint string `pulumi:"openIdConnectDiscoveryEndpoint"`
+	// The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
+	OpenIdConnectDiscoveryKey string `pulumi:"openIdConnectDiscoveryKey"`
 	// Optional attributes for the cluster.
 	Options                     []GetClusterOption `pulumi:"options"`
 	ShouldIncludeOidcConfigFile *string            `pulumi:"shouldIncludeOidcConfigFile"`
@@ -212,8 +215,14 @@ func (o LookupClusterResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
+// The cluster-specific OpenID Connect Discovery endpoint
 func (o LookupClusterResultOutput) OpenIdConnectDiscoveryEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterResult) string { return v.OpenIdConnectDiscoveryEndpoint }).(pulumi.StringOutput)
+}
+
+// The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
+func (o LookupClusterResultOutput) OpenIdConnectDiscoveryKey() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupClusterResult) string { return v.OpenIdConnectDiscoveryKey }).(pulumi.StringOutput)
 }
 
 // Optional attributes for the cluster.

@@ -8,13 +8,13 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 // This resource provides the Usage Statement Email Recipients Group resource in Oracle Cloud Infrastructure Metering Computation service.
 //
-// Add a list of email recipients that can receive usage statements for the subscription.
+// Creates a list of email recipients that can receive usage statements for the subscription.
 //
 // ## Example Usage
 //
@@ -23,7 +23,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/meteringcomputation"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/meteringcomputation"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -64,11 +64,11 @@ type UsageStatementEmailRecipientsGroup struct {
 	// (Updatable) The customer tenancy.
 	CompartmentId          pulumi.StringOutput `pulumi:"compartmentId"`
 	EmailRecipientsGroupId pulumi.StringOutput `pulumi:"emailRecipientsGroupId"`
-	// (Updatable) The list of recipient will receive the usage statement email.
+	// (Updatable) The list of recipients that will receive usage statement emails.
 	RecipientsLists UsageStatementEmailRecipientsGroupRecipientsListArrayOutput `pulumi:"recipientsLists"`
-	// The email recipient group lifecycle state.
+	// The email recipients group lifecycle state.
 	State pulumi.StringOutput `pulumi:"state"`
-	// The UsageStatement Subscription unique OCID.
+	// The usage statement subscription unique OCID.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -117,11 +117,11 @@ type usageStatementEmailRecipientsGroupState struct {
 	// (Updatable) The customer tenancy.
 	CompartmentId          *string `pulumi:"compartmentId"`
 	EmailRecipientsGroupId *string `pulumi:"emailRecipientsGroupId"`
-	// (Updatable) The list of recipient will receive the usage statement email.
+	// (Updatable) The list of recipients that will receive usage statement emails.
 	RecipientsLists []UsageStatementEmailRecipientsGroupRecipientsList `pulumi:"recipientsLists"`
-	// The email recipient group lifecycle state.
+	// The email recipients group lifecycle state.
 	State *string `pulumi:"state"`
-	// The UsageStatement Subscription unique OCID.
+	// The usage statement subscription unique OCID.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -132,11 +132,11 @@ type UsageStatementEmailRecipientsGroupState struct {
 	// (Updatable) The customer tenancy.
 	CompartmentId          pulumi.StringPtrInput
 	EmailRecipientsGroupId pulumi.StringPtrInput
-	// (Updatable) The list of recipient will receive the usage statement email.
+	// (Updatable) The list of recipients that will receive usage statement emails.
 	RecipientsLists UsageStatementEmailRecipientsGroupRecipientsListArrayInput
-	// The email recipient group lifecycle state.
+	// The email recipients group lifecycle state.
 	State pulumi.StringPtrInput
-	// The UsageStatement Subscription unique OCID.
+	// The usage statement subscription unique OCID.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -151,9 +151,9 @@ type usageStatementEmailRecipientsGroupArgs struct {
 	// (Updatable) The customer tenancy.
 	CompartmentId          string  `pulumi:"compartmentId"`
 	EmailRecipientsGroupId *string `pulumi:"emailRecipientsGroupId"`
-	// (Updatable) The list of recipient will receive the usage statement email.
+	// (Updatable) The list of recipients that will receive usage statement emails.
 	RecipientsLists []UsageStatementEmailRecipientsGroupRecipientsList `pulumi:"recipientsLists"`
-	// The UsageStatement Subscription unique OCID.
+	// The usage statement subscription unique OCID.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -165,9 +165,9 @@ type UsageStatementEmailRecipientsGroupArgs struct {
 	// (Updatable) The customer tenancy.
 	CompartmentId          pulumi.StringInput
 	EmailRecipientsGroupId pulumi.StringPtrInput
-	// (Updatable) The list of recipient will receive the usage statement email.
+	// (Updatable) The list of recipients that will receive usage statement emails.
 	RecipientsLists UsageStatementEmailRecipientsGroupRecipientsListArrayInput
-	// The UsageStatement Subscription unique OCID.
+	// The usage statement subscription unique OCID.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -270,19 +270,19 @@ func (o UsageStatementEmailRecipientsGroupOutput) EmailRecipientsGroupId() pulum
 	return o.ApplyT(func(v *UsageStatementEmailRecipientsGroup) pulumi.StringOutput { return v.EmailRecipientsGroupId }).(pulumi.StringOutput)
 }
 
-// (Updatable) The list of recipient will receive the usage statement email.
+// (Updatable) The list of recipients that will receive usage statement emails.
 func (o UsageStatementEmailRecipientsGroupOutput) RecipientsLists() UsageStatementEmailRecipientsGroupRecipientsListArrayOutput {
 	return o.ApplyT(func(v *UsageStatementEmailRecipientsGroup) UsageStatementEmailRecipientsGroupRecipientsListArrayOutput {
 		return v.RecipientsLists
 	}).(UsageStatementEmailRecipientsGroupRecipientsListArrayOutput)
 }
 
-// The email recipient group lifecycle state.
+// The email recipients group lifecycle state.
 func (o UsageStatementEmailRecipientsGroupOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *UsageStatementEmailRecipientsGroup) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
 
-// The UsageStatement Subscription unique OCID.
+// The usage statement subscription unique OCID.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

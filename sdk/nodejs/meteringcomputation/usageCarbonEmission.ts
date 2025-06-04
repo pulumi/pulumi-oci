@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Usage Carbon Emission resource in Oracle Cloud Infrastructure Metering Computation service.
  *
- * Returns usage carbon emission for the given account.
+ * Returns carbon emission usage for the given account.
  *
  * ## Example Usage
  *
@@ -22,6 +22,9 @@ import * as utilities from "../utilities";
  *     timeUsageEnded: usageCarbonEmissionTimeUsageEnded,
  *     timeUsageStarted: usageCarbonEmissionTimeUsageStarted,
  *     compartmentDepth: usageCarbonEmissionCompartmentDepth,
+ *     emissionCalculationMethod: usageCarbonEmissionEmissionCalculationMethod,
+ *     emissionType: usageCarbonEmissionEmissionType,
+ *     granularity: usageCarbonEmissionGranularity,
  *     groupBies: usageCarbonEmissionGroupBy,
  *     groupByTags: [{
  *         key: usageCarbonEmissionGroupByTagKey,
@@ -74,6 +77,18 @@ export class UsageCarbonEmission extends pulumi.CustomResource {
      */
     public readonly compartmentDepth!: pulumi.Output<number>;
     /**
+     * Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+     */
+    public readonly emissionCalculationMethod!: pulumi.Output<string>;
+    /**
+     * Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+     */
+    public readonly emissionType!: pulumi.Output<string>;
+    /**
+     * The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+     */
+    public readonly granularity!: pulumi.Output<string>;
+    /**
      * Aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "resourceName", "tenantId", "tenantName", "subscriptionId"]`
      */
     public readonly groupBies!: pulumi.Output<string[]>;
@@ -82,11 +97,11 @@ export class UsageCarbonEmission extends pulumi.CustomResource {
      */
     public readonly groupByTags!: pulumi.Output<outputs.MeteringComputation.UsageCarbonEmissionGroupByTag[]>;
     /**
-     * Specifies whether aggregated by time. If isAggregateByTime is true, all usage carbon emissions over the query time period will be added up.
+     * Specifies whether aggregated by time. If isAggregateByTime is true, all carbon emissions usage over the query time period are summed.
      */
     public readonly isAggregateByTime!: pulumi.Output<boolean>;
     /**
-     * A list of usage carbon emission items.
+     * A list of carbon emission usage items.
      */
     public /*out*/ readonly items!: pulumi.Output<outputs.MeteringComputation.UsageCarbonEmissionItem[]>;
     /**
@@ -124,6 +139,9 @@ export class UsageCarbonEmission extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as UsageCarbonEmissionState | undefined;
             resourceInputs["compartmentDepth"] = state ? state.compartmentDepth : undefined;
+            resourceInputs["emissionCalculationMethod"] = state ? state.emissionCalculationMethod : undefined;
+            resourceInputs["emissionType"] = state ? state.emissionType : undefined;
+            resourceInputs["granularity"] = state ? state.granularity : undefined;
             resourceInputs["groupBies"] = state ? state.groupBies : undefined;
             resourceInputs["groupByTags"] = state ? state.groupByTags : undefined;
             resourceInputs["isAggregateByTime"] = state ? state.isAggregateByTime : undefined;
@@ -144,6 +162,9 @@ export class UsageCarbonEmission extends pulumi.CustomResource {
                 throw new Error("Missing required property 'timeUsageStarted'");
             }
             resourceInputs["compartmentDepth"] = args ? args.compartmentDepth : undefined;
+            resourceInputs["emissionCalculationMethod"] = args ? args.emissionCalculationMethod : undefined;
+            resourceInputs["emissionType"] = args ? args.emissionType : undefined;
+            resourceInputs["granularity"] = args ? args.granularity : undefined;
             resourceInputs["groupBies"] = args ? args.groupBies : undefined;
             resourceInputs["groupByTags"] = args ? args.groupByTags : undefined;
             resourceInputs["isAggregateByTime"] = args ? args.isAggregateByTime : undefined;
@@ -167,6 +188,18 @@ export interface UsageCarbonEmissionState {
      */
     compartmentDepth?: pulumi.Input<number>;
     /**
+     * Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+     */
+    emissionCalculationMethod?: pulumi.Input<string>;
+    /**
+     * Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+     */
+    emissionType?: pulumi.Input<string>;
+    /**
+     * The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+     */
+    granularity?: pulumi.Input<string>;
+    /**
      * Aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "resourceName", "tenantId", "tenantName", "subscriptionId"]`
      */
     groupBies?: pulumi.Input<pulumi.Input<string>[]>;
@@ -175,11 +208,11 @@ export interface UsageCarbonEmissionState {
      */
     groupByTags?: pulumi.Input<pulumi.Input<inputs.MeteringComputation.UsageCarbonEmissionGroupByTag>[]>;
     /**
-     * Specifies whether aggregated by time. If isAggregateByTime is true, all usage carbon emissions over the query time period will be added up.
+     * Specifies whether aggregated by time. If isAggregateByTime is true, all carbon emissions usage over the query time period are summed.
      */
     isAggregateByTime?: pulumi.Input<boolean>;
     /**
-     * A list of usage carbon emission items.
+     * A list of carbon emission usage items.
      */
     items?: pulumi.Input<pulumi.Input<inputs.MeteringComputation.UsageCarbonEmissionItem>[]>;
     /**
@@ -213,6 +246,18 @@ export interface UsageCarbonEmissionArgs {
      */
     compartmentDepth?: pulumi.Input<number>;
     /**
+     * Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+     */
+    emissionCalculationMethod?: pulumi.Input<string>;
+    /**
+     * Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+     */
+    emissionType?: pulumi.Input<string>;
+    /**
+     * The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+     */
+    granularity?: pulumi.Input<string>;
+    /**
      * Aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "resourceName", "tenantId", "tenantName", "subscriptionId"]`
      */
     groupBies?: pulumi.Input<pulumi.Input<string>[]>;
@@ -221,7 +266,7 @@ export interface UsageCarbonEmissionArgs {
      */
     groupByTags?: pulumi.Input<pulumi.Input<inputs.MeteringComputation.UsageCarbonEmissionGroupByTag>[]>;
     /**
-     * Specifies whether aggregated by time. If isAggregateByTime is true, all usage carbon emissions over the query time period will be added up.
+     * Specifies whether aggregated by time. If isAggregateByTime is true, all carbon emissions usage over the query time period are summed.
      */
     isAggregateByTime?: pulumi.Input<boolean>;
     /**

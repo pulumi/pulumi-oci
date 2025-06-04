@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -1188,7 +1188,9 @@ type MysqlBackupDbSystemSnapshot struct {
 	Maintenances []MysqlBackupDbSystemSnapshotMaintenance `pulumi:"maintenances"`
 	// The MySQL server version of the DB System used for backup.
 	MysqlVersion *string `pulumi:"mysqlVersion"`
-	// The port for primary endpoint of the DB System to listen on.
+	// Network Security Group OCIDs used for the VNIC attachment.
+	NsgIds []string `pulumi:"nsgIds"`
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 	Port *int `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX *int `pulumi:"portX"`
@@ -1196,6 +1198,8 @@ type MysqlBackupDbSystemSnapshot struct {
 	ReadEndpoints []MysqlBackupDbSystemSnapshotReadEndpoint `pulumi:"readEndpoints"`
 	// The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
 	Region *string `pulumi:"region"`
+	// REST configuration details.
+	Rests []MysqlBackupDbSystemSnapshotRest `pulumi:"rests"`
 	// Secure connection configuration details.
 	SecureConnections []MysqlBackupDbSystemSnapshotSecureConnection `pulumi:"secureConnections"`
 	// The shape of the DB System instance used for backup.
@@ -1260,7 +1264,9 @@ type MysqlBackupDbSystemSnapshotArgs struct {
 	Maintenances MysqlBackupDbSystemSnapshotMaintenanceArrayInput `pulumi:"maintenances"`
 	// The MySQL server version of the DB System used for backup.
 	MysqlVersion pulumi.StringPtrInput `pulumi:"mysqlVersion"`
-	// The port for primary endpoint of the DB System to listen on.
+	// Network Security Group OCIDs used for the VNIC attachment.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX pulumi.IntPtrInput `pulumi:"portX"`
@@ -1268,6 +1274,8 @@ type MysqlBackupDbSystemSnapshotArgs struct {
 	ReadEndpoints MysqlBackupDbSystemSnapshotReadEndpointArrayInput `pulumi:"readEndpoints"`
 	// The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
 	Region pulumi.StringPtrInput `pulumi:"region"`
+	// REST configuration details.
+	Rests MysqlBackupDbSystemSnapshotRestArrayInput `pulumi:"rests"`
 	// Secure connection configuration details.
 	SecureConnections MysqlBackupDbSystemSnapshotSecureConnectionArrayInput `pulumi:"secureConnections"`
 	// The shape of the DB System instance used for backup.
@@ -1439,7 +1447,12 @@ func (o MysqlBackupDbSystemSnapshotOutput) MysqlVersion() pulumi.StringPtrOutput
 	return o.ApplyT(func(v MysqlBackupDbSystemSnapshot) *string { return v.MysqlVersion }).(pulumi.StringPtrOutput)
 }
 
-// The port for primary endpoint of the DB System to listen on.
+// Network Security Group OCIDs used for the VNIC attachment.
+func (o MysqlBackupDbSystemSnapshotOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshot) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 func (o MysqlBackupDbSystemSnapshotOutput) Port() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v MysqlBackupDbSystemSnapshot) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
@@ -1457,6 +1470,11 @@ func (o MysqlBackupDbSystemSnapshotOutput) ReadEndpoints() MysqlBackupDbSystemSn
 // The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
 func (o MysqlBackupDbSystemSnapshotOutput) Region() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlBackupDbSystemSnapshot) *string { return v.Region }).(pulumi.StringPtrOutput)
+}
+
+// REST configuration details.
+func (o MysqlBackupDbSystemSnapshotOutput) Rests() MysqlBackupDbSystemSnapshotRestArrayOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshot) []MysqlBackupDbSystemSnapshotRest { return v.Rests }).(MysqlBackupDbSystemSnapshotRestArrayOutput)
 }
 
 // Secure connection configuration details.
@@ -2109,7 +2127,7 @@ type MysqlBackupDbSystemSnapshotEndpoint struct {
 	IpAddress *string `pulumi:"ipAddress"`
 	// The access modes from the client that this endpoint supports.
 	Modes []string `pulumi:"modes"`
-	// The port for primary endpoint of the DB System to listen on.
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 	Port *int `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX *int `pulumi:"portX"`
@@ -2141,7 +2159,7 @@ type MysqlBackupDbSystemSnapshotEndpointArgs struct {
 	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
 	// The access modes from the client that this endpoint supports.
 	Modes pulumi.StringArrayInput `pulumi:"modes"`
-	// The port for primary endpoint of the DB System to listen on.
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX pulumi.IntPtrInput `pulumi:"portX"`
@@ -2221,7 +2239,7 @@ func (o MysqlBackupDbSystemSnapshotEndpointOutput) Modes() pulumi.StringArrayOut
 	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotEndpoint) []string { return v.Modes }).(pulumi.StringArrayOutput)
 }
 
-// The port for primary endpoint of the DB System to listen on.
+// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 func (o MysqlBackupDbSystemSnapshotEndpointOutput) Port() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotEndpoint) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
@@ -2490,6 +2508,112 @@ func (o MysqlBackupDbSystemSnapshotReadEndpointArrayOutput) Index(i pulumi.IntIn
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlBackupDbSystemSnapshotReadEndpoint {
 		return vs[0].([]MysqlBackupDbSystemSnapshotReadEndpoint)[vs[1].(int)]
 	}).(MysqlBackupDbSystemSnapshotReadEndpointOutput)
+}
+
+type MysqlBackupDbSystemSnapshotRest struct {
+	// Select how REST is configured across the DB System instances.
+	Configuration *string `pulumi:"configuration"`
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+	Port *int `pulumi:"port"`
+}
+
+// MysqlBackupDbSystemSnapshotRestInput is an input type that accepts MysqlBackupDbSystemSnapshotRestArgs and MysqlBackupDbSystemSnapshotRestOutput values.
+// You can construct a concrete instance of `MysqlBackupDbSystemSnapshotRestInput` via:
+//
+//	MysqlBackupDbSystemSnapshotRestArgs{...}
+type MysqlBackupDbSystemSnapshotRestInput interface {
+	pulumi.Input
+
+	ToMysqlBackupDbSystemSnapshotRestOutput() MysqlBackupDbSystemSnapshotRestOutput
+	ToMysqlBackupDbSystemSnapshotRestOutputWithContext(context.Context) MysqlBackupDbSystemSnapshotRestOutput
+}
+
+type MysqlBackupDbSystemSnapshotRestArgs struct {
+	// Select how REST is configured across the DB System instances.
+	Configuration pulumi.StringPtrInput `pulumi:"configuration"`
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+	Port pulumi.IntPtrInput `pulumi:"port"`
+}
+
+func (MysqlBackupDbSystemSnapshotRestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlBackupDbSystemSnapshotRest)(nil)).Elem()
+}
+
+func (i MysqlBackupDbSystemSnapshotRestArgs) ToMysqlBackupDbSystemSnapshotRestOutput() MysqlBackupDbSystemSnapshotRestOutput {
+	return i.ToMysqlBackupDbSystemSnapshotRestOutputWithContext(context.Background())
+}
+
+func (i MysqlBackupDbSystemSnapshotRestArgs) ToMysqlBackupDbSystemSnapshotRestOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotRestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotRestOutput)
+}
+
+// MysqlBackupDbSystemSnapshotRestArrayInput is an input type that accepts MysqlBackupDbSystemSnapshotRestArray and MysqlBackupDbSystemSnapshotRestArrayOutput values.
+// You can construct a concrete instance of `MysqlBackupDbSystemSnapshotRestArrayInput` via:
+//
+//	MysqlBackupDbSystemSnapshotRestArray{ MysqlBackupDbSystemSnapshotRestArgs{...} }
+type MysqlBackupDbSystemSnapshotRestArrayInput interface {
+	pulumi.Input
+
+	ToMysqlBackupDbSystemSnapshotRestArrayOutput() MysqlBackupDbSystemSnapshotRestArrayOutput
+	ToMysqlBackupDbSystemSnapshotRestArrayOutputWithContext(context.Context) MysqlBackupDbSystemSnapshotRestArrayOutput
+}
+
+type MysqlBackupDbSystemSnapshotRestArray []MysqlBackupDbSystemSnapshotRestInput
+
+func (MysqlBackupDbSystemSnapshotRestArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlBackupDbSystemSnapshotRest)(nil)).Elem()
+}
+
+func (i MysqlBackupDbSystemSnapshotRestArray) ToMysqlBackupDbSystemSnapshotRestArrayOutput() MysqlBackupDbSystemSnapshotRestArrayOutput {
+	return i.ToMysqlBackupDbSystemSnapshotRestArrayOutputWithContext(context.Background())
+}
+
+func (i MysqlBackupDbSystemSnapshotRestArray) ToMysqlBackupDbSystemSnapshotRestArrayOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotRestArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotRestArrayOutput)
+}
+
+type MysqlBackupDbSystemSnapshotRestOutput struct{ *pulumi.OutputState }
+
+func (MysqlBackupDbSystemSnapshotRestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlBackupDbSystemSnapshotRest)(nil)).Elem()
+}
+
+func (o MysqlBackupDbSystemSnapshotRestOutput) ToMysqlBackupDbSystemSnapshotRestOutput() MysqlBackupDbSystemSnapshotRestOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotRestOutput) ToMysqlBackupDbSystemSnapshotRestOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotRestOutput {
+	return o
+}
+
+// Select how REST is configured across the DB System instances.
+func (o MysqlBackupDbSystemSnapshotRestOutput) Configuration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotRest) *string { return v.Configuration }).(pulumi.StringPtrOutput)
+}
+
+// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+func (o MysqlBackupDbSystemSnapshotRestOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotRest) *int { return v.Port }).(pulumi.IntPtrOutput)
+}
+
+type MysqlBackupDbSystemSnapshotRestArrayOutput struct{ *pulumi.OutputState }
+
+func (MysqlBackupDbSystemSnapshotRestArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlBackupDbSystemSnapshotRest)(nil)).Elem()
+}
+
+func (o MysqlBackupDbSystemSnapshotRestArrayOutput) ToMysqlBackupDbSystemSnapshotRestArrayOutput() MysqlBackupDbSystemSnapshotRestArrayOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotRestArrayOutput) ToMysqlBackupDbSystemSnapshotRestArrayOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotRestArrayOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotRestArrayOutput) Index(i pulumi.IntInput) MysqlBackupDbSystemSnapshotRestOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlBackupDbSystemSnapshotRest {
+		return vs[0].([]MysqlBackupDbSystemSnapshotRest)[vs[1].(int)]
+	}).(MysqlBackupDbSystemSnapshotRestOutput)
 }
 
 type MysqlBackupDbSystemSnapshotSecureConnection struct {
@@ -8968,6 +9092,162 @@ func (o MysqlDbSystemReadEndpointPtrOutput) ReadEndpointIpAddress() pulumi.Strin
 	}).(pulumi.StringPtrOutput)
 }
 
+type MysqlDbSystemRest struct {
+	// (Updatable) Select how REST is configured across the DB System instances.
+	Configuration string `pulumi:"configuration"`
+	// (Updatable) The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+	Port *int `pulumi:"port"`
+}
+
+// MysqlDbSystemRestInput is an input type that accepts MysqlDbSystemRestArgs and MysqlDbSystemRestOutput values.
+// You can construct a concrete instance of `MysqlDbSystemRestInput` via:
+//
+//	MysqlDbSystemRestArgs{...}
+type MysqlDbSystemRestInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemRestOutput() MysqlDbSystemRestOutput
+	ToMysqlDbSystemRestOutputWithContext(context.Context) MysqlDbSystemRestOutput
+}
+
+type MysqlDbSystemRestArgs struct {
+	// (Updatable) Select how REST is configured across the DB System instances.
+	Configuration pulumi.StringInput `pulumi:"configuration"`
+	// (Updatable) The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+	Port pulumi.IntPtrInput `pulumi:"port"`
+}
+
+func (MysqlDbSystemRestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemRest)(nil)).Elem()
+}
+
+func (i MysqlDbSystemRestArgs) ToMysqlDbSystemRestOutput() MysqlDbSystemRestOutput {
+	return i.ToMysqlDbSystemRestOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemRestArgs) ToMysqlDbSystemRestOutputWithContext(ctx context.Context) MysqlDbSystemRestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemRestOutput)
+}
+
+func (i MysqlDbSystemRestArgs) ToMysqlDbSystemRestPtrOutput() MysqlDbSystemRestPtrOutput {
+	return i.ToMysqlDbSystemRestPtrOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemRestArgs) ToMysqlDbSystemRestPtrOutputWithContext(ctx context.Context) MysqlDbSystemRestPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemRestOutput).ToMysqlDbSystemRestPtrOutputWithContext(ctx)
+}
+
+// MysqlDbSystemRestPtrInput is an input type that accepts MysqlDbSystemRestArgs, MysqlDbSystemRestPtr and MysqlDbSystemRestPtrOutput values.
+// You can construct a concrete instance of `MysqlDbSystemRestPtrInput` via:
+//
+//	        MysqlDbSystemRestArgs{...}
+//
+//	or:
+//
+//	        nil
+type MysqlDbSystemRestPtrInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemRestPtrOutput() MysqlDbSystemRestPtrOutput
+	ToMysqlDbSystemRestPtrOutputWithContext(context.Context) MysqlDbSystemRestPtrOutput
+}
+
+type mysqlDbSystemRestPtrType MysqlDbSystemRestArgs
+
+func MysqlDbSystemRestPtr(v *MysqlDbSystemRestArgs) MysqlDbSystemRestPtrInput {
+	return (*mysqlDbSystemRestPtrType)(v)
+}
+
+func (*mysqlDbSystemRestPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MysqlDbSystemRest)(nil)).Elem()
+}
+
+func (i *mysqlDbSystemRestPtrType) ToMysqlDbSystemRestPtrOutput() MysqlDbSystemRestPtrOutput {
+	return i.ToMysqlDbSystemRestPtrOutputWithContext(context.Background())
+}
+
+func (i *mysqlDbSystemRestPtrType) ToMysqlDbSystemRestPtrOutputWithContext(ctx context.Context) MysqlDbSystemRestPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemRestPtrOutput)
+}
+
+type MysqlDbSystemRestOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemRestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemRest)(nil)).Elem()
+}
+
+func (o MysqlDbSystemRestOutput) ToMysqlDbSystemRestOutput() MysqlDbSystemRestOutput {
+	return o
+}
+
+func (o MysqlDbSystemRestOutput) ToMysqlDbSystemRestOutputWithContext(ctx context.Context) MysqlDbSystemRestOutput {
+	return o
+}
+
+func (o MysqlDbSystemRestOutput) ToMysqlDbSystemRestPtrOutput() MysqlDbSystemRestPtrOutput {
+	return o.ToMysqlDbSystemRestPtrOutputWithContext(context.Background())
+}
+
+func (o MysqlDbSystemRestOutput) ToMysqlDbSystemRestPtrOutputWithContext(ctx context.Context) MysqlDbSystemRestPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MysqlDbSystemRest) *MysqlDbSystemRest {
+		return &v
+	}).(MysqlDbSystemRestPtrOutput)
+}
+
+// (Updatable) Select how REST is configured across the DB System instances.
+func (o MysqlDbSystemRestOutput) Configuration() pulumi.StringOutput {
+	return o.ApplyT(func(v MysqlDbSystemRest) string { return v.Configuration }).(pulumi.StringOutput)
+}
+
+// (Updatable) The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+func (o MysqlDbSystemRestOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemRest) *int { return v.Port }).(pulumi.IntPtrOutput)
+}
+
+type MysqlDbSystemRestPtrOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemRestPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MysqlDbSystemRest)(nil)).Elem()
+}
+
+func (o MysqlDbSystemRestPtrOutput) ToMysqlDbSystemRestPtrOutput() MysqlDbSystemRestPtrOutput {
+	return o
+}
+
+func (o MysqlDbSystemRestPtrOutput) ToMysqlDbSystemRestPtrOutputWithContext(ctx context.Context) MysqlDbSystemRestPtrOutput {
+	return o
+}
+
+func (o MysqlDbSystemRestPtrOutput) Elem() MysqlDbSystemRestOutput {
+	return o.ApplyT(func(v *MysqlDbSystemRest) MysqlDbSystemRest {
+		if v != nil {
+			return *v
+		}
+		var ret MysqlDbSystemRest
+		return ret
+	}).(MysqlDbSystemRestOutput)
+}
+
+// (Updatable) Select how REST is configured across the DB System instances.
+func (o MysqlDbSystemRestPtrOutput) Configuration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemRest) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Configuration
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+func (o MysqlDbSystemRestPtrOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemRest) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Port
+	}).(pulumi.IntPtrOutput)
+}
+
 type MysqlDbSystemSecureConnections struct {
 	// (Updatable) Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
 	CertificateGenerationType string `pulumi:"certificateGenerationType"`
@@ -9342,6 +9622,8 @@ type ReplicaReplicaOverrides struct {
 	ConfigurationId *string `pulumi:"configurationId"`
 	// (Updatable) The MySQL version to be used by the read replica.
 	MysqlVersion *string `pulumi:"mysqlVersion"`
+	// (Updatable) Network Security Group OCIDs used for the VNIC attachment.
+	NsgIds []string `pulumi:"nsgIds"`
 	// (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	//
 	// ** IMPORTANT **
@@ -9365,6 +9647,8 @@ type ReplicaReplicaOverridesArgs struct {
 	ConfigurationId pulumi.StringPtrInput `pulumi:"configurationId"`
 	// (Updatable) The MySQL version to be used by the read replica.
 	MysqlVersion pulumi.StringPtrInput `pulumi:"mysqlVersion"`
+	// (Updatable) Network Security Group OCIDs used for the VNIC attachment.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	//
 	// ** IMPORTANT **
@@ -9459,6 +9743,11 @@ func (o ReplicaReplicaOverridesOutput) MysqlVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ReplicaReplicaOverrides) *string { return v.MysqlVersion }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Network Security Group OCIDs used for the VNIC attachment.
+func (o ReplicaReplicaOverridesOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ReplicaReplicaOverrides) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
 // (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 //
 // ** IMPORTANT **
@@ -9509,6 +9798,16 @@ func (o ReplicaReplicaOverridesPtrOutput) MysqlVersion() pulumi.StringPtrOutput 
 		}
 		return v.MysqlVersion
 	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Network Security Group OCIDs used for the VNIC attachment.
+func (o ReplicaReplicaOverridesPtrOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ReplicaReplicaOverrides) []string {
+		if v == nil {
+			return nil
+		}
+		return v.NsgIds
+	}).(pulumi.StringArrayOutput)
 }
 
 // (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
@@ -11415,7 +11714,9 @@ type GetMysqlBackupDbSystemSnapshot struct {
 	Maintenances []GetMysqlBackupDbSystemSnapshotMaintenance `pulumi:"maintenances"`
 	// The MySQL server version of the DB System used for backup.
 	MysqlVersion string `pulumi:"mysqlVersion"`
-	// The port for primary endpoint of the DB System to listen on.
+	// Network Security Group OCIDs used for the VNIC attachment.
+	NsgIds []string `pulumi:"nsgIds"`
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 	Port int `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX int `pulumi:"portX"`
@@ -11423,6 +11724,8 @@ type GetMysqlBackupDbSystemSnapshot struct {
 	ReadEndpoints []GetMysqlBackupDbSystemSnapshotReadEndpoint `pulumi:"readEndpoints"`
 	// The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
 	Region string `pulumi:"region"`
+	// REST configuration details.
+	Rests []GetMysqlBackupDbSystemSnapshotRest `pulumi:"rests"`
 	// Secure connection configuration details.
 	SecureConnections []GetMysqlBackupDbSystemSnapshotSecureConnection `pulumi:"secureConnections"`
 	// The shape of the DB System instance used for backup.
@@ -11487,7 +11790,9 @@ type GetMysqlBackupDbSystemSnapshotArgs struct {
 	Maintenances GetMysqlBackupDbSystemSnapshotMaintenanceArrayInput `pulumi:"maintenances"`
 	// The MySQL server version of the DB System used for backup.
 	MysqlVersion pulumi.StringInput `pulumi:"mysqlVersion"`
-	// The port for primary endpoint of the DB System to listen on.
+	// Network Security Group OCIDs used for the VNIC attachment.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 	Port pulumi.IntInput `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX pulumi.IntInput `pulumi:"portX"`
@@ -11495,6 +11800,8 @@ type GetMysqlBackupDbSystemSnapshotArgs struct {
 	ReadEndpoints GetMysqlBackupDbSystemSnapshotReadEndpointArrayInput `pulumi:"readEndpoints"`
 	// The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
 	Region pulumi.StringInput `pulumi:"region"`
+	// REST configuration details.
+	Rests GetMysqlBackupDbSystemSnapshotRestArrayInput `pulumi:"rests"`
 	// Secure connection configuration details.
 	SecureConnections GetMysqlBackupDbSystemSnapshotSecureConnectionArrayInput `pulumi:"secureConnections"`
 	// The shape of the DB System instance used for backup.
@@ -11672,7 +11979,12 @@ func (o GetMysqlBackupDbSystemSnapshotOutput) MysqlVersion() pulumi.StringOutput
 	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) string { return v.MysqlVersion }).(pulumi.StringOutput)
 }
 
-// The port for primary endpoint of the DB System to listen on.
+// Network Security Group OCIDs used for the VNIC attachment.
+func (o GetMysqlBackupDbSystemSnapshotOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 func (o GetMysqlBackupDbSystemSnapshotOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) int { return v.Port }).(pulumi.IntOutput)
 }
@@ -11692,6 +12004,11 @@ func (o GetMysqlBackupDbSystemSnapshotOutput) ReadEndpoints() GetMysqlBackupDbSy
 // The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
 func (o GetMysqlBackupDbSystemSnapshotOutput) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) string { return v.Region }).(pulumi.StringOutput)
+}
+
+// REST configuration details.
+func (o GetMysqlBackupDbSystemSnapshotOutput) Rests() GetMysqlBackupDbSystemSnapshotRestArrayOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) []GetMysqlBackupDbSystemSnapshotRest { return v.Rests }).(GetMysqlBackupDbSystemSnapshotRestArrayOutput)
 }
 
 // Secure connection configuration details.
@@ -12344,7 +12661,7 @@ type GetMysqlBackupDbSystemSnapshotEndpoint struct {
 	IpAddress string `pulumi:"ipAddress"`
 	// The access modes from the client that this endpoint supports.
 	Modes []string `pulumi:"modes"`
-	// The port for primary endpoint of the DB System to listen on.
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 	Port int `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX int `pulumi:"portX"`
@@ -12376,7 +12693,7 @@ type GetMysqlBackupDbSystemSnapshotEndpointArgs struct {
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
 	// The access modes from the client that this endpoint supports.
 	Modes pulumi.StringArrayInput `pulumi:"modes"`
-	// The port for primary endpoint of the DB System to listen on.
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 	Port pulumi.IntInput `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX pulumi.IntInput `pulumi:"portX"`
@@ -12456,7 +12773,7 @@ func (o GetMysqlBackupDbSystemSnapshotEndpointOutput) Modes() pulumi.StringArray
 	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotEndpoint) []string { return v.Modes }).(pulumi.StringArrayOutput)
 }
 
-// The port for primary endpoint of the DB System to listen on.
+// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 func (o GetMysqlBackupDbSystemSnapshotEndpointOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotEndpoint) int { return v.Port }).(pulumi.IntOutput)
 }
@@ -12725,6 +13042,112 @@ func (o GetMysqlBackupDbSystemSnapshotReadEndpointArrayOutput) Index(i pulumi.In
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupDbSystemSnapshotReadEndpoint {
 		return vs[0].([]GetMysqlBackupDbSystemSnapshotReadEndpoint)[vs[1].(int)]
 	}).(GetMysqlBackupDbSystemSnapshotReadEndpointOutput)
+}
+
+type GetMysqlBackupDbSystemSnapshotRest struct {
+	// Select how REST is configured across the DB System instances.
+	Configuration string `pulumi:"configuration"`
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+	Port int `pulumi:"port"`
+}
+
+// GetMysqlBackupDbSystemSnapshotRestInput is an input type that accepts GetMysqlBackupDbSystemSnapshotRestArgs and GetMysqlBackupDbSystemSnapshotRestOutput values.
+// You can construct a concrete instance of `GetMysqlBackupDbSystemSnapshotRestInput` via:
+//
+//	GetMysqlBackupDbSystemSnapshotRestArgs{...}
+type GetMysqlBackupDbSystemSnapshotRestInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupDbSystemSnapshotRestOutput() GetMysqlBackupDbSystemSnapshotRestOutput
+	ToGetMysqlBackupDbSystemSnapshotRestOutputWithContext(context.Context) GetMysqlBackupDbSystemSnapshotRestOutput
+}
+
+type GetMysqlBackupDbSystemSnapshotRestArgs struct {
+	// Select how REST is configured across the DB System instances.
+	Configuration pulumi.StringInput `pulumi:"configuration"`
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+	Port pulumi.IntInput `pulumi:"port"`
+}
+
+func (GetMysqlBackupDbSystemSnapshotRestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotRest)(nil)).Elem()
+}
+
+func (i GetMysqlBackupDbSystemSnapshotRestArgs) ToGetMysqlBackupDbSystemSnapshotRestOutput() GetMysqlBackupDbSystemSnapshotRestOutput {
+	return i.ToGetMysqlBackupDbSystemSnapshotRestOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupDbSystemSnapshotRestArgs) ToGetMysqlBackupDbSystemSnapshotRestOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotRestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotRestOutput)
+}
+
+// GetMysqlBackupDbSystemSnapshotRestArrayInput is an input type that accepts GetMysqlBackupDbSystemSnapshotRestArray and GetMysqlBackupDbSystemSnapshotRestArrayOutput values.
+// You can construct a concrete instance of `GetMysqlBackupDbSystemSnapshotRestArrayInput` via:
+//
+//	GetMysqlBackupDbSystemSnapshotRestArray{ GetMysqlBackupDbSystemSnapshotRestArgs{...} }
+type GetMysqlBackupDbSystemSnapshotRestArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupDbSystemSnapshotRestArrayOutput() GetMysqlBackupDbSystemSnapshotRestArrayOutput
+	ToGetMysqlBackupDbSystemSnapshotRestArrayOutputWithContext(context.Context) GetMysqlBackupDbSystemSnapshotRestArrayOutput
+}
+
+type GetMysqlBackupDbSystemSnapshotRestArray []GetMysqlBackupDbSystemSnapshotRestInput
+
+func (GetMysqlBackupDbSystemSnapshotRestArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupDbSystemSnapshotRest)(nil)).Elem()
+}
+
+func (i GetMysqlBackupDbSystemSnapshotRestArray) ToGetMysqlBackupDbSystemSnapshotRestArrayOutput() GetMysqlBackupDbSystemSnapshotRestArrayOutput {
+	return i.ToGetMysqlBackupDbSystemSnapshotRestArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupDbSystemSnapshotRestArray) ToGetMysqlBackupDbSystemSnapshotRestArrayOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotRestArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotRestArrayOutput)
+}
+
+type GetMysqlBackupDbSystemSnapshotRestOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupDbSystemSnapshotRestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotRest)(nil)).Elem()
+}
+
+func (o GetMysqlBackupDbSystemSnapshotRestOutput) ToGetMysqlBackupDbSystemSnapshotRestOutput() GetMysqlBackupDbSystemSnapshotRestOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotRestOutput) ToGetMysqlBackupDbSystemSnapshotRestOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotRestOutput {
+	return o
+}
+
+// Select how REST is configured across the DB System instances.
+func (o GetMysqlBackupDbSystemSnapshotRestOutput) Configuration() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotRest) string { return v.Configuration }).(pulumi.StringOutput)
+}
+
+// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+func (o GetMysqlBackupDbSystemSnapshotRestOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotRest) int { return v.Port }).(pulumi.IntOutput)
+}
+
+type GetMysqlBackupDbSystemSnapshotRestArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupDbSystemSnapshotRestArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupDbSystemSnapshotRest)(nil)).Elem()
+}
+
+func (o GetMysqlBackupDbSystemSnapshotRestArrayOutput) ToGetMysqlBackupDbSystemSnapshotRestArrayOutput() GetMysqlBackupDbSystemSnapshotRestArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotRestArrayOutput) ToGetMysqlBackupDbSystemSnapshotRestArrayOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotRestArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotRestArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupDbSystemSnapshotRestOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupDbSystemSnapshotRest {
+		return vs[0].([]GetMysqlBackupDbSystemSnapshotRest)[vs[1].(int)]
+	}).(GetMysqlBackupDbSystemSnapshotRestOutput)
 }
 
 type GetMysqlBackupDbSystemSnapshotSecureConnection struct {
@@ -13417,7 +13840,9 @@ type GetMysqlBackupsBackupDbSystemSnapshot struct {
 	Maintenances []GetMysqlBackupsBackupDbSystemSnapshotMaintenance `pulumi:"maintenances"`
 	// The MySQL server version of the DB System used for backup.
 	MysqlVersion string `pulumi:"mysqlVersion"`
-	// The port for primary endpoint of the DB System to listen on.
+	// Network Security Group OCIDs used for the VNIC attachment.
+	NsgIds []string `pulumi:"nsgIds"`
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 	Port int `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX int `pulumi:"portX"`
@@ -13425,6 +13850,8 @@ type GetMysqlBackupsBackupDbSystemSnapshot struct {
 	ReadEndpoints []GetMysqlBackupsBackupDbSystemSnapshotReadEndpoint `pulumi:"readEndpoints"`
 	// The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
 	Region string `pulumi:"region"`
+	// REST configuration details.
+	Rests []GetMysqlBackupsBackupDbSystemSnapshotRest `pulumi:"rests"`
 	// Secure connection configuration details.
 	SecureConnections []GetMysqlBackupsBackupDbSystemSnapshotSecureConnection `pulumi:"secureConnections"`
 	// The shape of the DB System instance used for backup.
@@ -13489,7 +13916,9 @@ type GetMysqlBackupsBackupDbSystemSnapshotArgs struct {
 	Maintenances GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayInput `pulumi:"maintenances"`
 	// The MySQL server version of the DB System used for backup.
 	MysqlVersion pulumi.StringInput `pulumi:"mysqlVersion"`
-	// The port for primary endpoint of the DB System to listen on.
+	// Network Security Group OCIDs used for the VNIC attachment.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 	Port pulumi.IntInput `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX pulumi.IntInput `pulumi:"portX"`
@@ -13497,6 +13926,8 @@ type GetMysqlBackupsBackupDbSystemSnapshotArgs struct {
 	ReadEndpoints GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayInput `pulumi:"readEndpoints"`
 	// The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
 	Region pulumi.StringInput `pulumi:"region"`
+	// REST configuration details.
+	Rests GetMysqlBackupsBackupDbSystemSnapshotRestArrayInput `pulumi:"rests"`
 	// Secure connection configuration details.
 	SecureConnections GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayInput `pulumi:"secureConnections"`
 	// The shape of the DB System instance used for backup.
@@ -13676,7 +14107,12 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) MysqlVersion() pulumi.Strin
 	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) string { return v.MysqlVersion }).(pulumi.StringOutput)
 }
 
-// The port for primary endpoint of the DB System to listen on.
+// Network Security Group OCIDs used for the VNIC attachment.
+func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) int { return v.Port }).(pulumi.IntOutput)
 }
@@ -13696,6 +14132,13 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) ReadEndpoints() GetMysqlBac
 // The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
 func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) string { return v.Region }).(pulumi.StringOutput)
+}
+
+// REST configuration details.
+func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) Rests() GetMysqlBackupsBackupDbSystemSnapshotRestArrayOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) []GetMysqlBackupsBackupDbSystemSnapshotRest {
+		return v.Rests
+	}).(GetMysqlBackupsBackupDbSystemSnapshotRestArrayOutput)
 }
 
 // Secure connection configuration details.
@@ -14350,7 +14793,7 @@ type GetMysqlBackupsBackupDbSystemSnapshotEndpoint struct {
 	IpAddress string `pulumi:"ipAddress"`
 	// The access modes from the client that this endpoint supports.
 	Modes []string `pulumi:"modes"`
-	// The port for primary endpoint of the DB System to listen on.
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 	Port int `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX int `pulumi:"portX"`
@@ -14382,7 +14825,7 @@ type GetMysqlBackupsBackupDbSystemSnapshotEndpointArgs struct {
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
 	// The access modes from the client that this endpoint supports.
 	Modes pulumi.StringArrayInput `pulumi:"modes"`
-	// The port for primary endpoint of the DB System to listen on.
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 	Port pulumi.IntInput `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX pulumi.IntInput `pulumi:"portX"`
@@ -14462,7 +14905,7 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) Modes() pulumi.Stri
 	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotEndpoint) []string { return v.Modes }).(pulumi.StringArrayOutput)
 }
 
-// The port for primary endpoint of the DB System to listen on.
+// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotEndpoint) int { return v.Port }).(pulumi.IntOutput)
 }
@@ -14731,6 +15174,112 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput) Index(i pu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackupDbSystemSnapshotReadEndpoint {
 		return vs[0].([]GetMysqlBackupsBackupDbSystemSnapshotReadEndpoint)[vs[1].(int)]
 	}).(GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput)
+}
+
+type GetMysqlBackupsBackupDbSystemSnapshotRest struct {
+	// Select how REST is configured across the DB System instances.
+	Configuration string `pulumi:"configuration"`
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+	Port int `pulumi:"port"`
+}
+
+// GetMysqlBackupsBackupDbSystemSnapshotRestInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotRestArgs and GetMysqlBackupsBackupDbSystemSnapshotRestOutput values.
+// You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotRestInput` via:
+//
+//	GetMysqlBackupsBackupDbSystemSnapshotRestArgs{...}
+type GetMysqlBackupsBackupDbSystemSnapshotRestInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupsBackupDbSystemSnapshotRestOutput() GetMysqlBackupsBackupDbSystemSnapshotRestOutput
+	ToGetMysqlBackupsBackupDbSystemSnapshotRestOutputWithContext(context.Context) GetMysqlBackupsBackupDbSystemSnapshotRestOutput
+}
+
+type GetMysqlBackupsBackupDbSystemSnapshotRestArgs struct {
+	// Select how REST is configured across the DB System instances.
+	Configuration pulumi.StringInput `pulumi:"configuration"`
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+	Port pulumi.IntInput `pulumi:"port"`
+}
+
+func (GetMysqlBackupsBackupDbSystemSnapshotRestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotRest)(nil)).Elem()
+}
+
+func (i GetMysqlBackupsBackupDbSystemSnapshotRestArgs) ToGetMysqlBackupsBackupDbSystemSnapshotRestOutput() GetMysqlBackupsBackupDbSystemSnapshotRestOutput {
+	return i.ToGetMysqlBackupsBackupDbSystemSnapshotRestOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupsBackupDbSystemSnapshotRestArgs) ToGetMysqlBackupsBackupDbSystemSnapshotRestOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotRestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotRestOutput)
+}
+
+// GetMysqlBackupsBackupDbSystemSnapshotRestArrayInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotRestArray and GetMysqlBackupsBackupDbSystemSnapshotRestArrayOutput values.
+// You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotRestArrayInput` via:
+//
+//	GetMysqlBackupsBackupDbSystemSnapshotRestArray{ GetMysqlBackupsBackupDbSystemSnapshotRestArgs{...} }
+type GetMysqlBackupsBackupDbSystemSnapshotRestArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupsBackupDbSystemSnapshotRestArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotRestArrayOutput
+	ToGetMysqlBackupsBackupDbSystemSnapshotRestArrayOutputWithContext(context.Context) GetMysqlBackupsBackupDbSystemSnapshotRestArrayOutput
+}
+
+type GetMysqlBackupsBackupDbSystemSnapshotRestArray []GetMysqlBackupsBackupDbSystemSnapshotRestInput
+
+func (GetMysqlBackupsBackupDbSystemSnapshotRestArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupsBackupDbSystemSnapshotRest)(nil)).Elem()
+}
+
+func (i GetMysqlBackupsBackupDbSystemSnapshotRestArray) ToGetMysqlBackupsBackupDbSystemSnapshotRestArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotRestArrayOutput {
+	return i.ToGetMysqlBackupsBackupDbSystemSnapshotRestArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupsBackupDbSystemSnapshotRestArray) ToGetMysqlBackupsBackupDbSystemSnapshotRestArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotRestArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotRestArrayOutput)
+}
+
+type GetMysqlBackupsBackupDbSystemSnapshotRestOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupsBackupDbSystemSnapshotRestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotRest)(nil)).Elem()
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotRestOutput) ToGetMysqlBackupsBackupDbSystemSnapshotRestOutput() GetMysqlBackupsBackupDbSystemSnapshotRestOutput {
+	return o
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotRestOutput) ToGetMysqlBackupsBackupDbSystemSnapshotRestOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotRestOutput {
+	return o
+}
+
+// Select how REST is configured across the DB System instances.
+func (o GetMysqlBackupsBackupDbSystemSnapshotRestOutput) Configuration() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotRest) string { return v.Configuration }).(pulumi.StringOutput)
+}
+
+// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+func (o GetMysqlBackupsBackupDbSystemSnapshotRestOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotRest) int { return v.Port }).(pulumi.IntOutput)
+}
+
+type GetMysqlBackupsBackupDbSystemSnapshotRestArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupsBackupDbSystemSnapshotRestArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupsBackupDbSystemSnapshotRest)(nil)).Elem()
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotRestArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotRestArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotRestArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotRestArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotRestArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotRestArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotRestArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupsBackupDbSystemSnapshotRestOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackupDbSystemSnapshotRest {
+		return vs[0].([]GetMysqlBackupsBackupDbSystemSnapshotRest)[vs[1].(int)]
+	}).(GetMysqlBackupsBackupDbSystemSnapshotRestOutput)
 }
 
 type GetMysqlBackupsBackupDbSystemSnapshotSecureConnection struct {
@@ -18690,7 +19239,7 @@ type GetMysqlDbSystemChannelSource struct {
 	AnonymousTransactionsHandlings []GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling `pulumi:"anonymousTransactionsHandlings"`
 	// The network address of the DB System.
 	Hostname string `pulumi:"hostname"`
-	// The port for primary endpoint of the DB System to listen on.
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 	Port int `pulumi:"port"`
 	// The specific source identifier.
 	SourceType string `pulumi:"sourceType"`
@@ -18718,7 +19267,7 @@ type GetMysqlDbSystemChannelSourceArgs struct {
 	AnonymousTransactionsHandlings GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayInput `pulumi:"anonymousTransactionsHandlings"`
 	// The network address of the DB System.
 	Hostname pulumi.StringInput `pulumi:"hostname"`
-	// The port for primary endpoint of the DB System to listen on.
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 	Port pulumi.IntInput `pulumi:"port"`
 	// The specific source identifier.
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
@@ -18793,7 +19342,7 @@ func (o GetMysqlDbSystemChannelSourceOutput) Hostname() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemChannelSource) string { return v.Hostname }).(pulumi.StringOutput)
 }
 
-// The port for primary endpoint of the DB System to listen on.
+// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 func (o GetMysqlDbSystemChannelSourceOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemChannelSource) int { return v.Port }).(pulumi.IntOutput)
 }
@@ -19789,7 +20338,7 @@ type GetMysqlDbSystemEndpoint struct {
 	IpAddress string `pulumi:"ipAddress"`
 	// The access modes from the client that this endpoint supports.
 	Modes []string `pulumi:"modes"`
-	// The port for primary endpoint of the DB System to listen on.
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 	Port int `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX int `pulumi:"portX"`
@@ -19821,7 +20370,7 @@ type GetMysqlDbSystemEndpointArgs struct {
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
 	// The access modes from the client that this endpoint supports.
 	Modes pulumi.StringArrayInput `pulumi:"modes"`
-	// The port for primary endpoint of the DB System to listen on.
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 	Port pulumi.IntInput `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX pulumi.IntInput `pulumi:"portX"`
@@ -19901,7 +20450,7 @@ func (o GetMysqlDbSystemEndpointOutput) Modes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemEndpoint) []string { return v.Modes }).(pulumi.StringArrayOutput)
 }
 
-// The port for primary endpoint of the DB System to listen on.
+// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 func (o GetMysqlDbSystemEndpointOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemEndpoint) int { return v.Port }).(pulumi.IntOutput)
 }
@@ -20420,6 +20969,112 @@ func (o GetMysqlDbSystemReadEndpointArrayOutput) Index(i pulumi.IntInput) GetMys
 	}).(GetMysqlDbSystemReadEndpointOutput)
 }
 
+type GetMysqlDbSystemRest struct {
+	// Select how REST is configured across the DB System instances.
+	Configuration string `pulumi:"configuration"`
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+	Port int `pulumi:"port"`
+}
+
+// GetMysqlDbSystemRestInput is an input type that accepts GetMysqlDbSystemRestArgs and GetMysqlDbSystemRestOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemRestInput` via:
+//
+//	GetMysqlDbSystemRestArgs{...}
+type GetMysqlDbSystemRestInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemRestOutput() GetMysqlDbSystemRestOutput
+	ToGetMysqlDbSystemRestOutputWithContext(context.Context) GetMysqlDbSystemRestOutput
+}
+
+type GetMysqlDbSystemRestArgs struct {
+	// Select how REST is configured across the DB System instances.
+	Configuration pulumi.StringInput `pulumi:"configuration"`
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+	Port pulumi.IntInput `pulumi:"port"`
+}
+
+func (GetMysqlDbSystemRestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemRest)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemRestArgs) ToGetMysqlDbSystemRestOutput() GetMysqlDbSystemRestOutput {
+	return i.ToGetMysqlDbSystemRestOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemRestArgs) ToGetMysqlDbSystemRestOutputWithContext(ctx context.Context) GetMysqlDbSystemRestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemRestOutput)
+}
+
+// GetMysqlDbSystemRestArrayInput is an input type that accepts GetMysqlDbSystemRestArray and GetMysqlDbSystemRestArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemRestArrayInput` via:
+//
+//	GetMysqlDbSystemRestArray{ GetMysqlDbSystemRestArgs{...} }
+type GetMysqlDbSystemRestArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemRestArrayOutput() GetMysqlDbSystemRestArrayOutput
+	ToGetMysqlDbSystemRestArrayOutputWithContext(context.Context) GetMysqlDbSystemRestArrayOutput
+}
+
+type GetMysqlDbSystemRestArray []GetMysqlDbSystemRestInput
+
+func (GetMysqlDbSystemRestArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemRest)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemRestArray) ToGetMysqlDbSystemRestArrayOutput() GetMysqlDbSystemRestArrayOutput {
+	return i.ToGetMysqlDbSystemRestArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemRestArray) ToGetMysqlDbSystemRestArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemRestArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemRestArrayOutput)
+}
+
+type GetMysqlDbSystemRestOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemRestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemRest)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemRestOutput) ToGetMysqlDbSystemRestOutput() GetMysqlDbSystemRestOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemRestOutput) ToGetMysqlDbSystemRestOutputWithContext(ctx context.Context) GetMysqlDbSystemRestOutput {
+	return o
+}
+
+// Select how REST is configured across the DB System instances.
+func (o GetMysqlDbSystemRestOutput) Configuration() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemRest) string { return v.Configuration }).(pulumi.StringOutput)
+}
+
+// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+func (o GetMysqlDbSystemRestOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemRest) int { return v.Port }).(pulumi.IntOutput)
+}
+
+type GetMysqlDbSystemRestArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemRestArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemRest)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemRestArrayOutput) ToGetMysqlDbSystemRestArrayOutput() GetMysqlDbSystemRestArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemRestArrayOutput) ToGetMysqlDbSystemRestArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemRestArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemRestArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemRestOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemRest {
+		return vs[0].([]GetMysqlDbSystemRest)[vs[1].(int)]
+	}).(GetMysqlDbSystemRestOutput)
+}
+
 type GetMysqlDbSystemSecureConnection struct {
 	// Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
 	CertificateGenerationType string `pulumi:"certificateGenerationType"`
@@ -20721,14 +21376,18 @@ type GetMysqlDbSystemsDbSystem struct {
 	Maintenances []GetMysqlDbSystemsDbSystemMaintenance `pulumi:"maintenances"`
 	// Name of the MySQL Version in use for the DB System.
 	MysqlVersion string `pulumi:"mysqlVersion"`
+	// Network Security Group OCIDs used for the VNIC attachment.
+	NsgIds []string `pulumi:"nsgIds"`
 	// Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
 	PointInTimeRecoveryDetails []GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail `pulumi:"pointInTimeRecoveryDetails"`
-	// The port for primary endpoint of the DB System to listen on.
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 	Port int `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX int `pulumi:"portX"`
 	// The read endpoint of a DB System.
 	ReadEndpoints []GetMysqlDbSystemsDbSystemReadEndpoint `pulumi:"readEndpoints"`
+	// REST configuration details.
+	Rests []GetMysqlDbSystemsDbSystemRest `pulumi:"rests"`
 	// Secure connection configuration details.
 	SecureConnections []GetMysqlDbSystemsDbSystemSecureConnection `pulumi:"secureConnections"`
 	// The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
@@ -20824,14 +21483,18 @@ type GetMysqlDbSystemsDbSystemArgs struct {
 	Maintenances GetMysqlDbSystemsDbSystemMaintenanceArrayInput `pulumi:"maintenances"`
 	// Name of the MySQL Version in use for the DB System.
 	MysqlVersion pulumi.StringInput `pulumi:"mysqlVersion"`
+	// Network Security Group OCIDs used for the VNIC attachment.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
 	PointInTimeRecoveryDetails GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayInput `pulumi:"pointInTimeRecoveryDetails"`
-	// The port for primary endpoint of the DB System to listen on.
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 	Port pulumi.IntInput `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX pulumi.IntInput `pulumi:"portX"`
 	// The read endpoint of a DB System.
 	ReadEndpoints GetMysqlDbSystemsDbSystemReadEndpointArrayInput `pulumi:"readEndpoints"`
+	// REST configuration details.
+	Rests GetMysqlDbSystemsDbSystemRestArrayInput `pulumi:"rests"`
 	// Secure connection configuration details.
 	SecureConnections GetMysqlDbSystemsDbSystemSecureConnectionArrayInput `pulumi:"secureConnections"`
 	// The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
@@ -21065,6 +21728,11 @@ func (o GetMysqlDbSystemsDbSystemOutput) MysqlVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) string { return v.MysqlVersion }).(pulumi.StringOutput)
 }
 
+// Network Security Group OCIDs used for the VNIC attachment.
+func (o GetMysqlDbSystemsDbSystemOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
 // Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
 func (o GetMysqlDbSystemsDbSystemOutput) PointInTimeRecoveryDetails() GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) []GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail {
@@ -21072,7 +21740,7 @@ func (o GetMysqlDbSystemsDbSystemOutput) PointInTimeRecoveryDetails() GetMysqlDb
 	}).(GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput)
 }
 
-// The port for primary endpoint of the DB System to listen on.
+// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 func (o GetMysqlDbSystemsDbSystemOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) int { return v.Port }).(pulumi.IntOutput)
 }
@@ -21085,6 +21753,11 @@ func (o GetMysqlDbSystemsDbSystemOutput) PortX() pulumi.IntOutput {
 // The read endpoint of a DB System.
 func (o GetMysqlDbSystemsDbSystemOutput) ReadEndpoints() GetMysqlDbSystemsDbSystemReadEndpointArrayOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) []GetMysqlDbSystemsDbSystemReadEndpoint { return v.ReadEndpoints }).(GetMysqlDbSystemsDbSystemReadEndpointArrayOutput)
+}
+
+// REST configuration details.
+func (o GetMysqlDbSystemsDbSystemOutput) Rests() GetMysqlDbSystemsDbSystemRestArrayOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) []GetMysqlDbSystemsDbSystemRest { return v.Rests }).(GetMysqlDbSystemsDbSystemRestArrayOutput)
 }
 
 // Secure connection configuration details.
@@ -21721,7 +22394,7 @@ type GetMysqlDbSystemsDbSystemChannelSource struct {
 	AnonymousTransactionsHandlings []GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling `pulumi:"anonymousTransactionsHandlings"`
 	// The network address of the DB System.
 	Hostname string `pulumi:"hostname"`
-	// The port for primary endpoint of the DB System to listen on.
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 	Port int `pulumi:"port"`
 	// The specific source identifier.
 	SourceType string `pulumi:"sourceType"`
@@ -21749,7 +22422,7 @@ type GetMysqlDbSystemsDbSystemChannelSourceArgs struct {
 	AnonymousTransactionsHandlings GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayInput `pulumi:"anonymousTransactionsHandlings"`
 	// The network address of the DB System.
 	Hostname pulumi.StringInput `pulumi:"hostname"`
-	// The port for primary endpoint of the DB System to listen on.
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 	Port pulumi.IntInput `pulumi:"port"`
 	// The specific source identifier.
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
@@ -21824,7 +22497,7 @@ func (o GetMysqlDbSystemsDbSystemChannelSourceOutput) Hostname() pulumi.StringOu
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelSource) string { return v.Hostname }).(pulumi.StringOutput)
 }
 
-// The port for primary endpoint of the DB System to listen on.
+// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 func (o GetMysqlDbSystemsDbSystemChannelSourceOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelSource) int { return v.Port }).(pulumi.IntOutput)
 }
@@ -22822,7 +23495,7 @@ type GetMysqlDbSystemsDbSystemEndpoint struct {
 	IpAddress string `pulumi:"ipAddress"`
 	// The access modes from the client that this endpoint supports.
 	Modes []string `pulumi:"modes"`
-	// The port for primary endpoint of the DB System to listen on.
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 	Port int `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX int `pulumi:"portX"`
@@ -22854,7 +23527,7 @@ type GetMysqlDbSystemsDbSystemEndpointArgs struct {
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
 	// The access modes from the client that this endpoint supports.
 	Modes pulumi.StringArrayInput `pulumi:"modes"`
-	// The port for primary endpoint of the DB System to listen on.
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 	Port pulumi.IntInput `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX pulumi.IntInput `pulumi:"portX"`
@@ -22934,7 +23607,7 @@ func (o GetMysqlDbSystemsDbSystemEndpointOutput) Modes() pulumi.StringArrayOutpu
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemEndpoint) []string { return v.Modes }).(pulumi.StringArrayOutput)
 }
 
-// The port for primary endpoint of the DB System to listen on.
+// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 func (o GetMysqlDbSystemsDbSystemEndpointOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemEndpoint) int { return v.Port }).(pulumi.IntOutput)
 }
@@ -23451,6 +24124,112 @@ func (o GetMysqlDbSystemsDbSystemReadEndpointArrayOutput) Index(i pulumi.IntInpu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemReadEndpoint {
 		return vs[0].([]GetMysqlDbSystemsDbSystemReadEndpoint)[vs[1].(int)]
 	}).(GetMysqlDbSystemsDbSystemReadEndpointOutput)
+}
+
+type GetMysqlDbSystemsDbSystemRest struct {
+	// Select how REST is configured across the DB System instances.
+	Configuration string `pulumi:"configuration"`
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+	Port int `pulumi:"port"`
+}
+
+// GetMysqlDbSystemsDbSystemRestInput is an input type that accepts GetMysqlDbSystemsDbSystemRestArgs and GetMysqlDbSystemsDbSystemRestOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemRestInput` via:
+//
+//	GetMysqlDbSystemsDbSystemRestArgs{...}
+type GetMysqlDbSystemsDbSystemRestInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemRestOutput() GetMysqlDbSystemsDbSystemRestOutput
+	ToGetMysqlDbSystemsDbSystemRestOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemRestOutput
+}
+
+type GetMysqlDbSystemsDbSystemRestArgs struct {
+	// Select how REST is configured across the DB System instances.
+	Configuration pulumi.StringInput `pulumi:"configuration"`
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+	Port pulumi.IntInput `pulumi:"port"`
+}
+
+func (GetMysqlDbSystemsDbSystemRestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemRest)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemRestArgs) ToGetMysqlDbSystemsDbSystemRestOutput() GetMysqlDbSystemsDbSystemRestOutput {
+	return i.ToGetMysqlDbSystemsDbSystemRestOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemRestArgs) ToGetMysqlDbSystemsDbSystemRestOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemRestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemRestOutput)
+}
+
+// GetMysqlDbSystemsDbSystemRestArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemRestArray and GetMysqlDbSystemsDbSystemRestArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemRestArrayInput` via:
+//
+//	GetMysqlDbSystemsDbSystemRestArray{ GetMysqlDbSystemsDbSystemRestArgs{...} }
+type GetMysqlDbSystemsDbSystemRestArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemRestArrayOutput() GetMysqlDbSystemsDbSystemRestArrayOutput
+	ToGetMysqlDbSystemsDbSystemRestArrayOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemRestArrayOutput
+}
+
+type GetMysqlDbSystemsDbSystemRestArray []GetMysqlDbSystemsDbSystemRestInput
+
+func (GetMysqlDbSystemsDbSystemRestArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemRest)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemRestArray) ToGetMysqlDbSystemsDbSystemRestArrayOutput() GetMysqlDbSystemsDbSystemRestArrayOutput {
+	return i.ToGetMysqlDbSystemsDbSystemRestArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemRestArray) ToGetMysqlDbSystemsDbSystemRestArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemRestArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemRestArrayOutput)
+}
+
+type GetMysqlDbSystemsDbSystemRestOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemRestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemRest)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemRestOutput) ToGetMysqlDbSystemsDbSystemRestOutput() GetMysqlDbSystemsDbSystemRestOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemRestOutput) ToGetMysqlDbSystemsDbSystemRestOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemRestOutput {
+	return o
+}
+
+// Select how REST is configured across the DB System instances.
+func (o GetMysqlDbSystemsDbSystemRestOutput) Configuration() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemRest) string { return v.Configuration }).(pulumi.StringOutput)
+}
+
+// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+func (o GetMysqlDbSystemsDbSystemRestOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemRest) int { return v.Port }).(pulumi.IntOutput)
+}
+
+type GetMysqlDbSystemsDbSystemRestArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemRestArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemRest)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemRestArrayOutput) ToGetMysqlDbSystemsDbSystemRestArrayOutput() GetMysqlDbSystemsDbSystemRestArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemRestArrayOutput) ToGetMysqlDbSystemsDbSystemRestArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemRestArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemRestArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemRestOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemRest {
+		return vs[0].([]GetMysqlDbSystemsDbSystemRest)[vs[1].(int)]
+	}).(GetMysqlDbSystemsDbSystemRestOutput)
 }
 
 type GetMysqlDbSystemsDbSystemSecureConnection struct {
@@ -24118,6 +24897,8 @@ type GetReplicaReplicaOverride struct {
 	ConfigurationId string `pulumi:"configurationId"`
 	// The MySQL version to be used by the read replica.
 	MysqlVersion string `pulumi:"mysqlVersion"`
+	// Network Security Group OCIDs used for the VNIC attachment.
+	NsgIds []string `pulumi:"nsgIds"`
 	// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName string `pulumi:"shapeName"`
 }
@@ -24138,6 +24919,8 @@ type GetReplicaReplicaOverrideArgs struct {
 	ConfigurationId pulumi.StringInput `pulumi:"configurationId"`
 	// The MySQL version to be used by the read replica.
 	MysqlVersion pulumi.StringInput `pulumi:"mysqlVersion"`
+	// Network Security Group OCIDs used for the VNIC attachment.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName pulumi.StringInput `pulumi:"shapeName"`
 }
@@ -24201,6 +24984,11 @@ func (o GetReplicaReplicaOverrideOutput) ConfigurationId() pulumi.StringOutput {
 // The MySQL version to be used by the read replica.
 func (o GetReplicaReplicaOverrideOutput) MysqlVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReplicaReplicaOverride) string { return v.MysqlVersion }).(pulumi.StringOutput)
+}
+
+// Network Security Group OCIDs used for the VNIC attachment.
+func (o GetReplicaReplicaOverrideOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetReplicaReplicaOverride) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
 
 // The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
@@ -24469,6 +25257,8 @@ type GetReplicasReplica struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The MySQL version to be used by the read replica.
 	MysqlVersion string `pulumi:"mysqlVersion"`
+	// Network Security Group OCIDs used for the VNIC attachment.
+	NsgIds []string `pulumi:"nsgIds"`
 	// The port the read replica is configured to listen on.
 	Port int `pulumi:"port"`
 	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
@@ -24527,6 +25317,8 @@ type GetReplicasReplicaArgs struct {
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// The MySQL version to be used by the read replica.
 	MysqlVersion pulumi.StringInput `pulumi:"mysqlVersion"`
+	// Network Security Group OCIDs used for the VNIC attachment.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// The port the read replica is configured to listen on.
 	Port pulumi.IntInput `pulumi:"port"`
 	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
@@ -24666,6 +25458,11 @@ func (o GetReplicasReplicaOutput) MysqlVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReplicasReplica) string { return v.MysqlVersion }).(pulumi.StringOutput)
 }
 
+// Network Security Group OCIDs used for the VNIC attachment.
+func (o GetReplicasReplicaOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetReplicasReplica) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
 // The port the read replica is configured to listen on.
 func (o GetReplicasReplicaOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v GetReplicasReplica) int { return v.Port }).(pulumi.IntOutput)
@@ -24731,6 +25528,8 @@ type GetReplicasReplicaReplicaOverride struct {
 	ConfigurationId string `pulumi:"configurationId"`
 	// The MySQL version to be used by the read replica.
 	MysqlVersion string `pulumi:"mysqlVersion"`
+	// Network Security Group OCIDs used for the VNIC attachment.
+	NsgIds []string `pulumi:"nsgIds"`
 	// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName string `pulumi:"shapeName"`
 }
@@ -24751,6 +25550,8 @@ type GetReplicasReplicaReplicaOverrideArgs struct {
 	ConfigurationId pulumi.StringInput `pulumi:"configurationId"`
 	// The MySQL version to be used by the read replica.
 	MysqlVersion pulumi.StringInput `pulumi:"mysqlVersion"`
+	// Network Security Group OCIDs used for the VNIC attachment.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName pulumi.StringInput `pulumi:"shapeName"`
 }
@@ -24814,6 +25615,11 @@ func (o GetReplicasReplicaReplicaOverrideOutput) ConfigurationId() pulumi.String
 // The MySQL version to be used by the read replica.
 func (o GetReplicasReplicaReplicaOverrideOutput) MysqlVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReplicasReplicaReplicaOverride) string { return v.MysqlVersion }).(pulumi.StringOutput)
+}
+
+// Network Security Group OCIDs used for the VNIC attachment.
+func (o GetReplicasReplicaReplicaOverrideOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetReplicasReplicaReplicaOverride) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
 
 // The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
@@ -25211,6 +26017,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotMaintenanceArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotMaintenanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotReadEndpointInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotReadEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotReadEndpointArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotReadEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotRestInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotRestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotRestArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotRestArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotSecureConnectionInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotSecureConnectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotSecureConnectionArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotSecureConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotSummaryInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotSummaryArgs{})
@@ -25257,6 +26065,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemPointInTimeRecoveryDetailArrayInput)(nil)).Elem(), MysqlDbSystemPointInTimeRecoveryDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemReadEndpointInput)(nil)).Elem(), MysqlDbSystemReadEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemReadEndpointPtrInput)(nil)).Elem(), MysqlDbSystemReadEndpointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemRestInput)(nil)).Elem(), MysqlDbSystemRestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemRestPtrInput)(nil)).Elem(), MysqlDbSystemRestArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemSecureConnectionsInput)(nil)).Elem(), MysqlDbSystemSecureConnectionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemSecureConnectionsPtrInput)(nil)).Elem(), MysqlDbSystemSecureConnectionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemSourceInput)(nil)).Elem(), MysqlDbSystemSourceArgs{})
@@ -25309,6 +26119,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotMaintenanceArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotMaintenanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotReadEndpointInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotReadEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotReadEndpointArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotReadEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotRestInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotRestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotRestArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotRestArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotSecureConnectionInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotSecureConnectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotSecureConnectionArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotSecureConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotSummaryInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotSummaryArgs{})
@@ -25335,6 +26147,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotReadEndpointInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotRestInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotRestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotRestArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotRestArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotSummaryInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotSummaryArgs{})
@@ -25391,6 +26205,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemPointInTimeRecoveryDetailArrayInput)(nil)).Elem(), GetMysqlDbSystemPointInTimeRecoveryDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemReadEndpointInput)(nil)).Elem(), GetMysqlDbSystemReadEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemReadEndpointArrayInput)(nil)).Elem(), GetMysqlDbSystemReadEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemRestInput)(nil)).Elem(), GetMysqlDbSystemRestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemRestArrayInput)(nil)).Elem(), GetMysqlDbSystemRestArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemSecureConnectionInput)(nil)).Elem(), GetMysqlDbSystemSecureConnectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemSecureConnectionArrayInput)(nil)).Elem(), GetMysqlDbSystemSecureConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemSourceInput)(nil)).Elem(), GetMysqlDbSystemSourceArgs{})
@@ -25433,6 +26249,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemReadEndpointInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemReadEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemReadEndpointArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemReadEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemRestInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemRestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemRestArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemRestArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemSecureConnectionInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemSecureConnectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemSecureConnectionArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemSecureConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemSourceInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemSourceArgs{})
@@ -25491,6 +26309,8 @@ func init() {
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotMaintenanceArrayOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotReadEndpointOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotReadEndpointArrayOutput{})
+	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotRestOutput{})
+	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotRestArrayOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotSecureConnectionOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotSecureConnectionArrayOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotSummaryOutput{})
@@ -25537,6 +26357,8 @@ func init() {
 	pulumi.RegisterOutputType(MysqlDbSystemPointInTimeRecoveryDetailArrayOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemReadEndpointOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemReadEndpointPtrOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemRestOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemRestPtrOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemSecureConnectionsOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemSecureConnectionsPtrOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemSourceOutput{})
@@ -25589,6 +26411,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotMaintenanceArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotReadEndpointOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotReadEndpointArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotRestOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotRestArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotSecureConnectionOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotSecureConnectionArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotSummaryOutput{})
@@ -25615,6 +26439,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotRestOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotRestArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotSummaryOutput{})
@@ -25671,6 +26497,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemReadEndpointOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemReadEndpointArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemRestOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemRestArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemSecureConnectionOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemSecureConnectionArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemSourceOutput{})
@@ -25713,6 +26541,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemReadEndpointOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemReadEndpointArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemRestOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemRestArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemSecureConnectionOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemSecureConnectionArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemSourceOutput{})

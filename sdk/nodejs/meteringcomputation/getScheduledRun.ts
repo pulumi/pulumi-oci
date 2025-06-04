@@ -32,7 +32,7 @@ export function getScheduledRun(args: GetScheduledRunArgs, opts?: pulumi.InvokeO
  */
 export interface GetScheduledRunArgs {
     /**
-     * The scheduledRun unique OCID
+     * The scheduled run unique OCID.
      */
     scheduledRunId: string;
 }
@@ -46,24 +46,24 @@ export interface GetScheduledRunResult {
      */
     readonly id: string;
     /**
-     * Additional details about scheduled run failure
+     * Additional details about the scheduled run.
      */
     readonly lifecycleDetails: string;
     /**
-     * The ocid representing unique shedule
+     * The OCID representing a unique shedule.
      */
     readonly scheduleId: string;
     readonly scheduledRunId: string;
     /**
-     * Specifies if the schedule job was run successfully or not.
+     * Specifies whether or not the schedule job was successfully run.
      */
     readonly state: string;
     /**
-     * The time when schedule started executing
+     * The time the schedule started executing.
      */
     readonly timeCreated: string;
     /**
-     * The time when schedule finished executing
+     * The time the schedule finished executing.
      */
     readonly timeFinished: string;
 }
@@ -95,7 +95,7 @@ export function getScheduledRunOutput(args: GetScheduledRunOutputArgs, opts?: pu
  */
 export interface GetScheduledRunOutputArgs {
     /**
-     * The scheduledRun unique OCID
+     * The scheduled run unique OCID.
      */
     scheduledRunId: pulumi.Input<string>;
 }

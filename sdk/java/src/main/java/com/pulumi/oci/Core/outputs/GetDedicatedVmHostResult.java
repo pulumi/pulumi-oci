@@ -5,8 +5,10 @@ package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Core.outputs.GetDedicatedVmHostPlacementConstraintDetail;
 import java.lang.Double;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -53,6 +55,11 @@ public final class GetDedicatedVmHostResult {
      * 
      */
     private String id;
+    /**
+     * @return Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+     * 
+     */
+    private List<GetDedicatedVmHostPlacementConstraintDetail> placementConstraintDetails;
     /**
      * @return The current available memory of the dedicated VM host, in GBs.
      * 
@@ -145,6 +152,13 @@ public final class GetDedicatedVmHostResult {
         return this.id;
     }
     /**
+     * @return Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+     * 
+     */
+    public List<GetDedicatedVmHostPlacementConstraintDetail> placementConstraintDetails() {
+        return this.placementConstraintDetails;
+    }
+    /**
      * @return The current available memory of the dedicated VM host, in GBs.
      * 
      */
@@ -205,6 +219,7 @@ public final class GetDedicatedVmHostResult {
         private String faultDomain;
         private Map<String,String> freeformTags;
         private String id;
+        private List<GetDedicatedVmHostPlacementConstraintDetail> placementConstraintDetails;
         private Double remainingMemoryInGbs;
         private Double remainingOcpus;
         private String state;
@@ -223,6 +238,7 @@ public final class GetDedicatedVmHostResult {
     	      this.faultDomain = defaults.faultDomain;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.placementConstraintDetails = defaults.placementConstraintDetails;
     	      this.remainingMemoryInGbs = defaults.remainingMemoryInGbs;
     	      this.remainingOcpus = defaults.remainingOcpus;
     	      this.state = defaults.state;
@@ -304,6 +320,17 @@ public final class GetDedicatedVmHostResult {
             return this;
         }
         @CustomType.Setter
+        public Builder placementConstraintDetails(List<GetDedicatedVmHostPlacementConstraintDetail> placementConstraintDetails) {
+            if (placementConstraintDetails == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostResult", "placementConstraintDetails");
+            }
+            this.placementConstraintDetails = placementConstraintDetails;
+            return this;
+        }
+        public Builder placementConstraintDetails(GetDedicatedVmHostPlacementConstraintDetail... placementConstraintDetails) {
+            return placementConstraintDetails(List.of(placementConstraintDetails));
+        }
+        @CustomType.Setter
         public Builder remainingMemoryInGbs(Double remainingMemoryInGbs) {
             if (remainingMemoryInGbs == null) {
               throw new MissingRequiredPropertyException("GetDedicatedVmHostResult", "remainingMemoryInGbs");
@@ -362,6 +389,7 @@ public final class GetDedicatedVmHostResult {
             _resultValue.faultDomain = faultDomain;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.placementConstraintDetails = placementConstraintDetails;
             _resultValue.remainingMemoryInGbs = remainingMemoryInGbs;
             _resultValue.remainingOcpus = remainingOcpus;
             _resultValue.state = state;

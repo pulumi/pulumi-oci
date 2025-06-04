@@ -36,6 +36,11 @@ public final class GetMonitorResult {
      */
     private List<GetMonitorConfiguration> configurations;
     /**
+     * @return Content type of the script.
+     * 
+     */
+    private String contentType;
+    /**
      * @return Name of the user that created the monitor.
      * 
      */
@@ -176,6 +181,13 @@ public final class GetMonitorResult {
      */
     public List<GetMonitorConfiguration> configurations() {
         return this.configurations;
+    }
+    /**
+     * @return Content type of the script.
+     * 
+     */
+    public String contentType() {
+        return this.contentType;
     }
     /**
      * @return Name of the user that created the monitor.
@@ -355,6 +367,7 @@ public final class GetMonitorResult {
         private List<GetMonitorAvailabilityConfiguration> availabilityConfigurations;
         private Integer batchIntervalInSeconds;
         private List<GetMonitorConfiguration> configurations;
+        private String contentType;
         private String createdBy;
         private Map<String,String> definedTags;
         private String displayName;
@@ -386,6 +399,7 @@ public final class GetMonitorResult {
     	      this.availabilityConfigurations = defaults.availabilityConfigurations;
     	      this.batchIntervalInSeconds = defaults.batchIntervalInSeconds;
     	      this.configurations = defaults.configurations;
+    	      this.contentType = defaults.contentType;
     	      this.createdBy = defaults.createdBy;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
@@ -449,6 +463,14 @@ public final class GetMonitorResult {
         }
         public Builder configurations(GetMonitorConfiguration... configurations) {
             return configurations(List.of(configurations));
+        }
+        @CustomType.Setter
+        public Builder contentType(String contentType) {
+            if (contentType == null) {
+              throw new MissingRequiredPropertyException("GetMonitorResult", "contentType");
+            }
+            this.contentType = contentType;
+            return this;
         }
         @CustomType.Setter
         public Builder createdBy(String createdBy) {
@@ -657,6 +679,7 @@ public final class GetMonitorResult {
             _resultValue.availabilityConfigurations = availabilityConfigurations;
             _resultValue.batchIntervalInSeconds = batchIntervalInSeconds;
             _resultValue.configurations = configurations;
+            _resultValue.contentType = contentType;
             _resultValue.createdBy = createdBy;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;

@@ -48,14 +48,14 @@ public final class GetSchedulesPlainArgs extends com.pulumi.resources.InvokeArgs
     }
 
     /**
-     * Query parameter for filtering by name
+     * The query parameter for filtering by name.
      * 
      */
     @Import(name="name")
     private @Nullable String name;
 
     /**
-     * @return Query parameter for filtering by name
+     * @return The query parameter for filtering by name.
      * 
      */
     public Optional<String> name() {
@@ -121,7 +121,7 @@ public final class GetSchedulesPlainArgs extends com.pulumi.resources.InvokeArgs
         }
 
         /**
-         * @param name Query parameter for filtering by name
+         * @param name The query parameter for filtering by name.
          * 
          * @return builder
          * 

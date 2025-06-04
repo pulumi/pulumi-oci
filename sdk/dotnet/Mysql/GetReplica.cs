@@ -180,6 +180,10 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         public readonly string MysqlVersion;
         /// <summary>
+        /// Network Security Group OCIDs used for the VNIC attachment.
+        /// </summary>
+        public readonly ImmutableArray<string> NsgIds;
+        /// <summary>
         /// The port the read replica is configured to listen on.
         /// </summary>
         public readonly int Port;
@@ -243,6 +247,8 @@ namespace Pulumi.Oci.Mysql
 
             string mysqlVersion,
 
+            ImmutableArray<string> nsgIds,
+
             int port,
 
             int portX,
@@ -275,6 +281,7 @@ namespace Pulumi.Oci.Mysql
             IsDeleteProtected = isDeleteProtected;
             LifecycleDetails = lifecycleDetails;
             MysqlVersion = mysqlVersion;
+            NsgIds = nsgIds;
             Port = port;
             PortX = portX;
             ReplicaId = replicaId;

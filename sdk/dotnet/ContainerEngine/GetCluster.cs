@@ -195,7 +195,14 @@ namespace Pulumi.Oci.ContainerEngine
         /// The name of the cluster.
         /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// The cluster-specific OpenID Connect Discovery endpoint
+        /// </summary>
         public readonly string OpenIdConnectDiscoveryEndpoint;
+        /// <summary>
+        /// The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
+        /// </summary>
+        public readonly string OpenIdConnectDiscoveryKey;
         /// <summary>
         /// Optional attributes for the cluster.
         /// </summary>
@@ -248,6 +255,8 @@ namespace Pulumi.Oci.ContainerEngine
 
             string openIdConnectDiscoveryEndpoint,
 
+            string openIdConnectDiscoveryKey,
+
             ImmutableArray<Outputs.GetClusterOptionResult> options,
 
             string? shouldIncludeOidcConfigFile,
@@ -274,6 +283,7 @@ namespace Pulumi.Oci.ContainerEngine
             Metadatas = metadatas;
             Name = name;
             OpenIdConnectDiscoveryEndpoint = openIdConnectDiscoveryEndpoint;
+            OpenIdConnectDiscoveryKey = openIdConnectDiscoveryKey;
             Options = options;
             ShouldIncludeOidcConfigFile = shouldIncludeOidcConfigFile;
             State = state;

@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Adm.Outputs
         /// </summary>
         public readonly string NodeId;
         /// <summary>
-        /// A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+        /// A filter to return only resources that match the entire purl given.
         /// </summary>
         public readonly string Purl;
         /// <summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.Adm.Outputs
         /// </summary>
         public readonly string RecommendedGav;
         /// <summary>
-        /// Recommended application dependency in PURL format, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.2.0
+        /// Recommended application dependency in purl format, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.2.0
         /// </summary>
         public readonly string RecommendedPurl;
 

@@ -18,11 +18,21 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
+        /// This indicates if old data can be archived for a tenancy
+        /// </summary>
+        public readonly bool IsArchivingEnabled;
+        /// <summary>
+        /// This indicates if the tenancy is data ever ingested
+        /// </summary>
+        public readonly bool IsDataEverIngested;
+        public readonly bool IsLogsetEnabled;
+        /// <summary>
         /// This indicates if the tenancy is onboarded to Logging Analytics
         /// </summary>
         public readonly bool IsOnboarded;
         /// <summary>
         /// This is the namespace name of a tenancy
+        /// * `is_logSet_enabled` - This indicates if the tenancy is logSet enable
         /// </summary>
         public readonly string Namespace;
 
@@ -30,11 +40,20 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         private GetNamespacesNamespaceCollectionItemResult(
             string compartmentId,
 
+            bool isArchivingEnabled,
+
+            bool isDataEverIngested,
+
+            bool isLogsetEnabled,
+
             bool isOnboarded,
 
             string @namespace)
         {
             CompartmentId = compartmentId;
+            IsArchivingEnabled = isArchivingEnabled;
+            IsDataEverIngested = isDataEverIngested;
+            IsLogsetEnabled = isLogsetEnabled;
             IsOnboarded = isOnboarded;
             Namespace = @namespace;
         }

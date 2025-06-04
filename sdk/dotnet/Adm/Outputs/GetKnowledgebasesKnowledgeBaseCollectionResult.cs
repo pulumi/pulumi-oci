@@ -13,6 +13,9 @@ namespace Pulumi.Oci.Adm.Outputs
     [OutputType]
     public sealed class GetKnowledgebasesKnowledgeBaseCollectionResult
     {
+        /// <summary>
+        /// List of knowledge base summaries.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetKnowledgebasesKnowledgeBaseCollectionItemResult> Items;
 
         [OutputConstructor]

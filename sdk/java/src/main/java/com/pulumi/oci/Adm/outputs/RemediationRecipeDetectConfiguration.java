@@ -19,17 +19,17 @@ public final class RemediationRecipeDetectConfiguration {
      */
     private @Nullable List<String> exclusions;
     /**
-     * @return (Updatable) The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+     * @return (Updatable) The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. A vulnerability with a CVSS V2 score below this value is not considered for remediation.
      * 
      */
     private @Nullable Double maxPermissibleCvssV2score;
     /**
-     * @return (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+     * @return (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. A vulnerability with a CVSS V3 score below this value is not considered for patching.
      * 
      */
     private @Nullable Double maxPermissibleCvssV3score;
     /**
-     * @return (Updatable) The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered for patching.
+     * @return (Updatable) The maximum ADM Severity. A vulnerability with an severity below this value is not considered for remediation.
      * 
      */
     private @Nullable String maxPermissibleSeverity;
@@ -48,21 +48,21 @@ public final class RemediationRecipeDetectConfiguration {
         return this.exclusions == null ? List.of() : this.exclusions;
     }
     /**
-     * @return (Updatable) The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+     * @return (Updatable) The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. A vulnerability with a CVSS V2 score below this value is not considered for remediation.
      * 
      */
     public Optional<Double> maxPermissibleCvssV2score() {
         return Optional.ofNullable(this.maxPermissibleCvssV2score);
     }
     /**
-     * @return (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+     * @return (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. A vulnerability with a CVSS V3 score below this value is not considered for patching.
      * 
      */
     public Optional<Double> maxPermissibleCvssV3score() {
         return Optional.ofNullable(this.maxPermissibleCvssV3score);
     }
     /**
-     * @return (Updatable) The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered for patching.
+     * @return (Updatable) The maximum ADM Severity. A vulnerability with an severity below this value is not considered for remediation.
      * 
      */
     public Optional<String> maxPermissibleSeverity() {

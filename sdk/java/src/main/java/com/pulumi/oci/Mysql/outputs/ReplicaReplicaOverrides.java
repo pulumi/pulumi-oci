@@ -5,6 +5,7 @@ package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -21,6 +22,11 @@ public final class ReplicaReplicaOverrides {
      * 
      */
     private @Nullable String mysqlVersion;
+    /**
+     * @return (Updatable) Network Security Group OCIDs used for the VNIC attachment.
+     * 
+     */
+    private @Nullable List<String> nsgIds;
     /**
      * @return (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      * 
@@ -46,6 +52,13 @@ public final class ReplicaReplicaOverrides {
         return Optional.ofNullable(this.mysqlVersion);
     }
     /**
+     * @return (Updatable) Network Security Group OCIDs used for the VNIC attachment.
+     * 
+     */
+    public List<String> nsgIds() {
+        return this.nsgIds == null ? List.of() : this.nsgIds;
+    }
+    /**
      * @return (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      * 
      * ** IMPORTANT **
@@ -67,12 +80,14 @@ public final class ReplicaReplicaOverrides {
     public static final class Builder {
         private @Nullable String configurationId;
         private @Nullable String mysqlVersion;
+        private @Nullable List<String> nsgIds;
         private @Nullable String shapeName;
         public Builder() {}
         public Builder(ReplicaReplicaOverrides defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.configurationId = defaults.configurationId;
     	      this.mysqlVersion = defaults.mysqlVersion;
+    	      this.nsgIds = defaults.nsgIds;
     	      this.shapeName = defaults.shapeName;
         }
 
@@ -89,6 +104,15 @@ public final class ReplicaReplicaOverrides {
             return this;
         }
         @CustomType.Setter
+        public Builder nsgIds(@Nullable List<String> nsgIds) {
+
+            this.nsgIds = nsgIds;
+            return this;
+        }
+        public Builder nsgIds(String... nsgIds) {
+            return nsgIds(List.of(nsgIds));
+        }
+        @CustomType.Setter
         public Builder shapeName(@Nullable String shapeName) {
 
             this.shapeName = shapeName;
@@ -98,6 +122,7 @@ public final class ReplicaReplicaOverrides {
             final var _resultValue = new ReplicaReplicaOverrides();
             _resultValue.configurationId = configurationId;
             _resultValue.mysqlVersion = mysqlVersion;
+            _resultValue.nsgIds = nsgIds;
             _resultValue.shapeName = shapeName;
             return _resultValue;
         }

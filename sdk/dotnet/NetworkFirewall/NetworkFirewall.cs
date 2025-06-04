@@ -41,6 +41,10 @@ namespace Pulumi.Oci.NetworkFirewall
     ///         },
     ///         Ipv4address = networkFirewallIpv4address,
     ///         Ipv6address = networkFirewallIpv6address,
+    ///         NatConfiguration = new Oci.NetworkFirewall.Inputs.NetworkFirewallNatConfigurationArgs
+    ///         {
+    ///             MustEnablePrivateNat = networkFirewallNatConfigurationMustEnablePrivateNat,
+    ///         },
     ///         NetworkSecurityGroupIds = networkFirewallNetworkSecurityGroupIds,
     ///     });
     /// 
@@ -105,6 +109,12 @@ namespace Pulumi.Oci.NetworkFirewall
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Nat Configuration request to use Nat feature on firewall.
+        /// </summary>
+        [Output("natConfiguration")]
+        public Output<Outputs.NetworkFirewallNatConfiguration> NatConfiguration { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
@@ -253,6 +263,12 @@ namespace Pulumi.Oci.NetworkFirewall
         public Input<string>? Ipv6address { get; set; }
 
         /// <summary>
+        /// (Updatable) Nat Configuration request to use Nat feature on firewall.
+        /// </summary>
+        [Input("natConfiguration")]
+        public Input<Inputs.NetworkFirewallNatConfigurationArgs>? NatConfiguration { get; set; }
+
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
         /// </summary>
         [Input("networkFirewallPolicyId", required: true)]
@@ -347,6 +363,12 @@ namespace Pulumi.Oci.NetworkFirewall
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
+
+        /// <summary>
+        /// (Updatable) Nat Configuration request to use Nat feature on firewall.
+        /// </summary>
+        [Input("natConfiguration")]
+        public Input<Inputs.NetworkFirewallNatConfigurationGetArgs>? NatConfiguration { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.

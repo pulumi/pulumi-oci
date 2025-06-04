@@ -68,7 +68,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public Output<string> DatabaseVersion { get; private set; } = null!;
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system that this Managed Database is part of.
         /// </summary>
         [Output("dbSystemId")]
         public Output<string> DbSystemId { get; private set; } = null!;
@@ -298,7 +298,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public Input<string>? DatabaseVersion { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system that this Managed Database is part of.
         /// </summary>
         [Input("dbSystemId")]
         public Input<string>? DbSystemId { get; set; }

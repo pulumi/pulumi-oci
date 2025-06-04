@@ -56,6 +56,21 @@ public final class GetGiVersionsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
+     * If provided, filters the results for the specified resource Id.
+     * 
+     */
+    @Import(name="resourceId")
+    private @Nullable Output<String> resourceId;
+
+    /**
+     * @return If provided, filters the results for the specified resource Id.
+     * 
+     */
+    public Optional<Output<String>> resourceId() {
+        return Optional.ofNullable(this.resourceId);
+    }
+
+    /**
      * If provided, filters the results for the given shape.
      * 
      */
@@ -76,6 +91,7 @@ public final class GetGiVersionsArgs extends com.pulumi.resources.InvokeArgs {
         this.availabilityDomain = $.availabilityDomain;
         this.compartmentId = $.compartmentId;
         this.filters = $.filters;
+        this.resourceId = $.resourceId;
         this.shape = $.shape;
     }
 
@@ -150,6 +166,27 @@ public final class GetGiVersionsArgs extends com.pulumi.resources.InvokeArgs {
 
         public Builder filters(GetGiVersionsFilterArgs... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param resourceId If provided, filters the results for the specified resource Id.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceId(@Nullable Output<String> resourceId) {
+            $.resourceId = resourceId;
+            return this;
+        }
+
+        /**
+         * @param resourceId If provided, filters the results for the specified resource Id.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceId(String resourceId) {
+            return resourceId(Output.of(resourceId));
         }
 
         /**

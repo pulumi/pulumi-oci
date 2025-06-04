@@ -75,6 +75,7 @@ import * as utilities from "../utilities";
  *     maintenance: {
  *         windowStartTime: mysqlDbSystemMaintenanceWindowStartTime,
  *     },
+ *     nsgIds: mysqlDbSystemNsgIds,
  *     port: mysqlDbSystemPort,
  *     portX: mysqlDbSystemPortX,
  *     readEndpoint: {
@@ -82,6 +83,10 @@ import * as utilities from "../utilities";
  *         isEnabled: mysqlDbSystemReadEndpointIsEnabled,
  *         readEndpointHostnameLabel: mysqlDbSystemReadEndpointReadEndpointHostnameLabel,
  *         readEndpointIpAddress: mysqlDbSystemReadEndpointReadEndpointIpAddress,
+ *     },
+ *     rest: {
+ *         configuration: mysqlDbSystemRestConfiguration,
+ *         port: mysqlDbSystemRestPort,
  *     },
  *     secureConnections: {
  *         certificateGenerationType: mysqlDbSystemSecureConnectionsCertificateGenerationType,
@@ -269,6 +274,10 @@ export class MysqlDbSystem extends pulumi.CustomResource {
      */
     public readonly mysqlVersion!: pulumi.Output<string>;
     /**
+     * (Updatable) Network Security Group OCIDs used for the VNIC attachment.
+     */
+    public readonly nsgIds!: pulumi.Output<string[]>;
+    /**
      * Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
      */
     public /*out*/ readonly pointInTimeRecoveryDetails!: pulumi.Output<outputs.Mysql.MysqlDbSystemPointInTimeRecoveryDetail[]>;
@@ -284,6 +293,10 @@ export class MysqlDbSystem extends pulumi.CustomResource {
      * (Updatable) Details required to create a Read Endpoint.
      */
     public readonly readEndpoint!: pulumi.Output<outputs.Mysql.MysqlDbSystemReadEndpoint>;
+    /**
+     * (Updatable) Details required to configure REST while creating a DB System.
+     */
+    public readonly rest!: pulumi.Output<outputs.Mysql.MysqlDbSystemRest>;
     /**
      * (Updatable) Secure connection configuration details.
      */
@@ -368,10 +381,12 @@ export class MysqlDbSystem extends pulumi.CustomResource {
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["maintenance"] = state ? state.maintenance : undefined;
             resourceInputs["mysqlVersion"] = state ? state.mysqlVersion : undefined;
+            resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
             resourceInputs["pointInTimeRecoveryDetails"] = state ? state.pointInTimeRecoveryDetails : undefined;
             resourceInputs["port"] = state ? state.port : undefined;
             resourceInputs["portX"] = state ? state.portX : undefined;
             resourceInputs["readEndpoint"] = state ? state.readEndpoint : undefined;
+            resourceInputs["rest"] = state ? state.rest : undefined;
             resourceInputs["secureConnections"] = state ? state.secureConnections : undefined;
             resourceInputs["shapeName"] = state ? state.shapeName : undefined;
             resourceInputs["shutdownType"] = state ? state.shutdownType : undefined;
@@ -419,9 +434,11 @@ export class MysqlDbSystem extends pulumi.CustomResource {
             resourceInputs["isHighlyAvailable"] = args ? args.isHighlyAvailable : undefined;
             resourceInputs["maintenance"] = args ? args.maintenance : undefined;
             resourceInputs["mysqlVersion"] = args ? args.mysqlVersion : undefined;
+            resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
             resourceInputs["port"] = args ? args.port : undefined;
             resourceInputs["portX"] = args ? args.portX : undefined;
             resourceInputs["readEndpoint"] = args ? args.readEndpoint : undefined;
+            resourceInputs["rest"] = args ? args.rest : undefined;
             resourceInputs["secureConnections"] = args ? args.secureConnections : undefined;
             resourceInputs["shapeName"] = args ? args.shapeName : undefined;
             resourceInputs["shutdownType"] = args ? args.shutdownType : undefined;
@@ -589,6 +606,10 @@ export interface MysqlDbSystemState {
      */
     mysqlVersion?: pulumi.Input<string>;
     /**
+     * (Updatable) Network Security Group OCIDs used for the VNIC attachment.
+     */
+    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
      * Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
      */
     pointInTimeRecoveryDetails?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlDbSystemPointInTimeRecoveryDetail>[]>;
@@ -604,6 +625,10 @@ export interface MysqlDbSystemState {
      * (Updatable) Details required to create a Read Endpoint.
      */
     readEndpoint?: pulumi.Input<inputs.Mysql.MysqlDbSystemReadEndpoint>;
+    /**
+     * (Updatable) Details required to configure REST while creating a DB System.
+     */
+    rest?: pulumi.Input<inputs.Mysql.MysqlDbSystemRest>;
     /**
      * (Updatable) Secure connection configuration details.
      */
@@ -765,6 +790,10 @@ export interface MysqlDbSystemArgs {
      */
     mysqlVersion?: pulumi.Input<string>;
     /**
+     * (Updatable) Network Security Group OCIDs used for the VNIC attachment.
+     */
+    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
      * The port for primary endpoint of the DB System to listen on.
      */
     port?: pulumi.Input<number>;
@@ -776,6 +805,10 @@ export interface MysqlDbSystemArgs {
      * (Updatable) Details required to create a Read Endpoint.
      */
     readEndpoint?: pulumi.Input<inputs.Mysql.MysqlDbSystemReadEndpoint>;
+    /**
+     * (Updatable) Details required to configure REST while creating a DB System.
+     */
+    rest?: pulumi.Input<inputs.Mysql.MysqlDbSystemRest>;
     /**
      * (Updatable) Secure connection configuration details.
      */

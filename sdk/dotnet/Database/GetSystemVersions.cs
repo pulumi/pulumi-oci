@@ -30,6 +30,8 @@ namespace Pulumi.Oci.Database
         ///     {
         ///         CompartmentId = compartmentId,
         ///         GiVersion = systemVersionGiVersion,
+        ///         IsLatest = systemVersionIsLatest,
+        ///         ResourceId = testResource.Id,
         ///         Shape = systemVersionShape,
         ///     });
         /// 
@@ -58,6 +60,8 @@ namespace Pulumi.Oci.Database
         ///     {
         ///         CompartmentId = compartmentId,
         ///         GiVersion = systemVersionGiVersion,
+        ///         IsLatest = systemVersionIsLatest,
+        ///         ResourceId = testResource.Id,
         ///         Shape = systemVersionShape,
         ///     });
         /// 
@@ -86,6 +90,8 @@ namespace Pulumi.Oci.Database
         ///     {
         ///         CompartmentId = compartmentId,
         ///         GiVersion = systemVersionGiVersion,
+        ///         IsLatest = systemVersionIsLatest,
+        ///         ResourceId = testResource.Id,
         ///         Shape = systemVersionShape,
         ///     });
         /// 
@@ -120,10 +126,22 @@ namespace Pulumi.Oci.Database
         public string GiVersion { get; set; } = null!;
 
         /// <summary>
-        /// Specifies shape query parameter.
+        /// If provided, return highest versions from each major version family.
         /// </summary>
-        [Input("shape", required: true)]
-        public string Shape { get; set; } = null!;
+        [Input("isLatest")]
+        public bool? IsLatest { get; set; }
+
+        /// <summary>
+        /// If provided, filters the results for the specified resource Id.
+        /// </summary>
+        [Input("resourceId")]
+        public string? ResourceId { get; set; }
+
+        /// <summary>
+        /// If provided, filters the results for the given shape.
+        /// </summary>
+        [Input("shape")]
+        public string? Shape { get; set; }
 
         public GetSystemVersionsArgs()
         {
@@ -154,10 +172,22 @@ namespace Pulumi.Oci.Database
         public Input<string> GiVersion { get; set; } = null!;
 
         /// <summary>
-        /// Specifies shape query parameter.
+        /// If provided, return highest versions from each major version family.
         /// </summary>
-        [Input("shape", required: true)]
-        public Input<string> Shape { get; set; } = null!;
+        [Input("isLatest")]
+        public Input<bool>? IsLatest { get; set; }
+
+        /// <summary>
+        /// If provided, filters the results for the specified resource Id.
+        /// </summary>
+        [Input("resourceId")]
+        public Input<string>? ResourceId { get; set; }
+
+        /// <summary>
+        /// If provided, filters the results for the given shape.
+        /// </summary>
+        [Input("shape")]
+        public Input<string>? Shape { get; set; }
 
         public GetSystemVersionsInvokeArgs()
         {
@@ -179,10 +209,12 @@ namespace Pulumi.Oci.Database
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly bool? IsLatest;
+        public readonly string? ResourceId;
         /// <summary>
         /// Exadata shape.
         /// </summary>
-        public readonly string Shape;
+        public readonly string? Shape;
         /// <summary>
         /// The list of system_version_collection.
         /// </summary>
@@ -198,7 +230,11 @@ namespace Pulumi.Oci.Database
 
             string id,
 
-            string shape,
+            bool? isLatest,
+
+            string? resourceId,
+
+            string? shape,
 
             ImmutableArray<Outputs.GetSystemVersionsSystemVersionCollectionResult> systemVersionCollections)
         {
@@ -206,6 +242,8 @@ namespace Pulumi.Oci.Database
             Filters = filters;
             GiVersion = giVersion;
             Id = id;
+            IsLatest = isLatest;
+            ResourceId = resourceId;
             Shape = shape;
             SystemVersionCollections = systemVersionCollections;
         }

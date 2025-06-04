@@ -11,74 +11,74 @@ import java.util.Objects;
 @CustomType
 public final class GetScheduledRunsScheduledRunCollectionItem {
     /**
-     * @return The ocid representing unique shedule run
+     * @return The OCID representing a unique shedule run.
      * 
      */
     private String id;
     /**
-     * @return Additional details about scheduled run failure
+     * @return Additional details about the scheduled run.
      * 
      */
     private String lifecycleDetails;
     /**
-     * @return The unique ID of a schedule.
+     * @return The schedule unique ID.
      * 
      */
     private String scheduleId;
     /**
-     * @return Specifies if the schedule job was run successfully or not.
+     * @return Specifies whether or not the schedule job was successfully run.
      * 
      */
     private String state;
     /**
-     * @return The time when schedule started executing
+     * @return The time the schedule started executing.
      * 
      */
     private String timeCreated;
     /**
-     * @return The time when schedule finished executing
+     * @return The time the schedule finished executing.
      * 
      */
     private String timeFinished;
 
     private GetScheduledRunsScheduledRunCollectionItem() {}
     /**
-     * @return The ocid representing unique shedule run
+     * @return The OCID representing a unique shedule run.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return Additional details about scheduled run failure
+     * @return Additional details about the scheduled run.
      * 
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
     }
     /**
-     * @return The unique ID of a schedule.
+     * @return The schedule unique ID.
      * 
      */
     public String scheduleId() {
         return this.scheduleId;
     }
     /**
-     * @return Specifies if the schedule job was run successfully or not.
+     * @return Specifies whether or not the schedule job was successfully run.
      * 
      */
     public String state() {
         return this.state;
     }
     /**
-     * @return The time when schedule started executing
+     * @return The time the schedule started executing.
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The time when schedule finished executing
+     * @return The time the schedule finished executing.
      * 
      */
     public String timeFinished() {

@@ -24,7 +24,6 @@ class LogAnalyticsObjectCollectionRuleArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[builtins.str],
                  log_group_id: pulumi.Input[builtins.str],
-                 log_source_name: pulumi.Input[builtins.str],
                  namespace: pulumi.Input[builtins.str],
                  os_bucket_name: pulumi.Input[builtins.str],
                  os_namespace: pulumi.Input[builtins.str],
@@ -39,18 +38,21 @@ class LogAnalyticsObjectCollectionRuleArgs:
                  log_set: Optional[pulumi.Input[builtins.str]] = None,
                  log_set_ext_regex: Optional[pulumi.Input[builtins.str]] = None,
                  log_set_key: Optional[pulumi.Input[builtins.str]] = None,
+                 log_source_name: Optional[pulumi.Input[builtins.str]] = None,
                  log_type: Optional[pulumi.Input[builtins.str]] = None,
                  name: Optional[pulumi.Input[builtins.str]] = None,
                  object_name_filters: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  overrides: Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsObjectCollectionRuleOverrideArgs']]]] = None,
                  poll_since: Optional[pulumi.Input[builtins.str]] = None,
                  poll_till: Optional[pulumi.Input[builtins.str]] = None,
+                 stream_cursor_time: Optional[pulumi.Input[builtins.str]] = None,
+                 stream_cursor_type: Optional[pulumi.Input[builtins.str]] = None,
+                 stream_id: Optional[pulumi.Input[builtins.str]] = None,
                  timezone: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a LogAnalyticsObjectCollectionRule resource.
         :param pulumi.Input[builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
         :param pulumi.Input[builtins.str] log_group_id: (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
-        :param pulumi.Input[builtins.str] log_source_name: (Updatable) Name of the Logging Analytics Source to use for the processing.
         :param pulumi.Input[builtins.str] namespace: The Logging Analytics namespace used for the request.
         :param pulumi.Input[builtins.str] os_bucket_name: Name of the Object Storage bucket.
         :param pulumi.Input[builtins.str] os_namespace: Object Storage namespace.
@@ -65,12 +67,16 @@ class LogAnalyticsObjectCollectionRuleArgs:
         :param pulumi.Input[builtins.str] log_set: (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
         :param pulumi.Input[builtins.str] log_set_ext_regex: (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
         :param pulumi.Input[builtins.str] log_set_key: (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
+        :param pulumi.Input[builtins.str] log_source_name: (Updatable) Name of the Logging Analytics Source to use for the processing.
         :param pulumi.Input[builtins.str] log_type: Type of files/objects in this object collection rule.
         :param pulumi.Input[builtins.str] name: A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] object_name_filters: (Updatable) When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
         :param pulumi.Input[Sequence[pulumi.Input['LogAnalyticsObjectCollectionRuleOverrideArgs']]] overrides: (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are: logSourceName, charEncoding, entityId. Supported matchType for override are "contains".
         :param pulumi.Input[builtins.str] poll_since: The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
         :param pulumi.Input[builtins.str] poll_till: The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
+        :param pulumi.Input[builtins.str] stream_cursor_time: (Updatable) The time from which to consume the objects, if streamCursorType is AT_TIME.
+        :param pulumi.Input[builtins.str] stream_cursor_type: (Updatable) Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
+        :param pulumi.Input[builtins.str] stream_id: (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
         :param pulumi.Input[builtins.str] timezone: (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used. 
                
                
@@ -79,7 +85,6 @@ class LogAnalyticsObjectCollectionRuleArgs:
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_source_name", log_source_name)
         pulumi.set(__self__, "namespace", namespace)
         pulumi.set(__self__, "os_bucket_name", os_bucket_name)
         pulumi.set(__self__, "os_namespace", os_namespace)
@@ -105,6 +110,8 @@ class LogAnalyticsObjectCollectionRuleArgs:
             pulumi.set(__self__, "log_set_ext_regex", log_set_ext_regex)
         if log_set_key is not None:
             pulumi.set(__self__, "log_set_key", log_set_key)
+        if log_source_name is not None:
+            pulumi.set(__self__, "log_source_name", log_source_name)
         if log_type is not None:
             pulumi.set(__self__, "log_type", log_type)
         if name is not None:
@@ -117,6 +124,12 @@ class LogAnalyticsObjectCollectionRuleArgs:
             pulumi.set(__self__, "poll_since", poll_since)
         if poll_till is not None:
             pulumi.set(__self__, "poll_till", poll_till)
+        if stream_cursor_time is not None:
+            pulumi.set(__self__, "stream_cursor_time", stream_cursor_time)
+        if stream_cursor_type is not None:
+            pulumi.set(__self__, "stream_cursor_type", stream_cursor_type)
+        if stream_id is not None:
+            pulumi.set(__self__, "stream_id", stream_id)
         if timezone is not None:
             pulumi.set(__self__, "timezone", timezone)
 
@@ -143,18 +156,6 @@ class LogAnalyticsObjectCollectionRuleArgs:
     @log_group_id.setter
     def log_group_id(self, value: pulumi.Input[builtins.str]):
         pulumi.set(self, "log_group_id", value)
-
-    @property
-    @pulumi.getter(name="logSourceName")
-    def log_source_name(self) -> pulumi.Input[builtins.str]:
-        """
-        (Updatable) Name of the Logging Analytics Source to use for the processing.
-        """
-        return pulumi.get(self, "log_source_name")
-
-    @log_source_name.setter
-    def log_source_name(self, value: pulumi.Input[builtins.str]):
-        pulumi.set(self, "log_source_name", value)
 
     @property
     @pulumi.getter
@@ -325,6 +326,18 @@ class LogAnalyticsObjectCollectionRuleArgs:
         pulumi.set(self, "log_set_key", value)
 
     @property
+    @pulumi.getter(name="logSourceName")
+    def log_source_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) Name of the Logging Analytics Source to use for the processing.
+        """
+        return pulumi.get(self, "log_source_name")
+
+    @log_source_name.setter
+    def log_source_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "log_source_name", value)
+
+    @property
     @pulumi.getter(name="logType")
     def log_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -397,6 +410,42 @@ class LogAnalyticsObjectCollectionRuleArgs:
         pulumi.set(self, "poll_till", value)
 
     @property
+    @pulumi.getter(name="streamCursorTime")
+    def stream_cursor_time(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The time from which to consume the objects, if streamCursorType is AT_TIME.
+        """
+        return pulumi.get(self, "stream_cursor_time")
+
+    @stream_cursor_time.setter
+    def stream_cursor_time(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "stream_cursor_time", value)
+
+    @property
+    @pulumi.getter(name="streamCursorType")
+    def stream_cursor_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
+        """
+        return pulumi.get(self, "stream_cursor_type")
+
+    @stream_cursor_type.setter
+    def stream_cursor_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "stream_cursor_type", value)
+
+    @property
+    @pulumi.getter(name="streamId")
+    def stream_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+        """
+        return pulumi.get(self, "stream_id")
+
+    @stream_id.setter
+    def stream_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "stream_id", value)
+
+    @property
     @pulumi.getter
     def timezone(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -425,6 +474,7 @@ class _LogAnalyticsObjectCollectionRuleState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  is_enabled: Optional[pulumi.Input[builtins.bool]] = None,
                  is_force_historic_collection: Optional[pulumi.Input[builtins.bool]] = None,
+                 last_collected_object: Optional[pulumi.Input[builtins.str]] = None,
                  lifecycle_details: Optional[pulumi.Input[builtins.str]] = None,
                  log_group_id: Optional[pulumi.Input[builtins.str]] = None,
                  log_set: Optional[pulumi.Input[builtins.str]] = None,
@@ -441,6 +491,9 @@ class _LogAnalyticsObjectCollectionRuleState:
                  poll_since: Optional[pulumi.Input[builtins.str]] = None,
                  poll_till: Optional[pulumi.Input[builtins.str]] = None,
                  state: Optional[pulumi.Input[builtins.str]] = None,
+                 stream_cursor_time: Optional[pulumi.Input[builtins.str]] = None,
+                 stream_cursor_type: Optional[pulumi.Input[builtins.str]] = None,
+                 stream_id: Optional[pulumi.Input[builtins.str]] = None,
                  time_created: Optional[pulumi.Input[builtins.str]] = None,
                  time_updated: Optional[pulumi.Input[builtins.str]] = None,
                  timezone: Optional[pulumi.Input[builtins.str]] = None):
@@ -455,6 +508,7 @@ class _LogAnalyticsObjectCollectionRuleState:
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[builtins.bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.
         :param pulumi.Input[builtins.bool] is_force_historic_collection: Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
+        :param pulumi.Input[builtins.str] last_collected_object: Last Collected Object for the rule
         :param pulumi.Input[builtins.str] lifecycle_details: A detailed status of the life cycle state.
         :param pulumi.Input[builtins.str] log_group_id: (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
         :param pulumi.Input[builtins.str] log_set: (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
@@ -471,6 +525,9 @@ class _LogAnalyticsObjectCollectionRuleState:
         :param pulumi.Input[builtins.str] poll_since: The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
         :param pulumi.Input[builtins.str] poll_till: The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
         :param pulumi.Input[builtins.str] state: The current state of the rule.
+        :param pulumi.Input[builtins.str] stream_cursor_time: (Updatable) The time from which to consume the objects, if streamCursorType is AT_TIME.
+        :param pulumi.Input[builtins.str] stream_cursor_type: (Updatable) Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
+        :param pulumi.Input[builtins.str] stream_id: (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
         :param pulumi.Input[builtins.str] time_created: The time when this rule was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[builtins.str] time_updated: The time when this rule was last updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[builtins.str] timezone: (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used. 
@@ -497,6 +554,8 @@ class _LogAnalyticsObjectCollectionRuleState:
             pulumi.set(__self__, "is_enabled", is_enabled)
         if is_force_historic_collection is not None:
             pulumi.set(__self__, "is_force_historic_collection", is_force_historic_collection)
+        if last_collected_object is not None:
+            pulumi.set(__self__, "last_collected_object", last_collected_object)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if log_group_id is not None:
@@ -529,6 +588,12 @@ class _LogAnalyticsObjectCollectionRuleState:
             pulumi.set(__self__, "poll_till", poll_till)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if stream_cursor_time is not None:
+            pulumi.set(__self__, "stream_cursor_time", stream_cursor_time)
+        if stream_cursor_type is not None:
+            pulumi.set(__self__, "stream_cursor_type", stream_cursor_type)
+        if stream_id is not None:
+            pulumi.set(__self__, "stream_id", stream_id)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
@@ -643,6 +708,18 @@ class _LogAnalyticsObjectCollectionRuleState:
     @is_force_historic_collection.setter
     def is_force_historic_collection(self, value: Optional[pulumi.Input[builtins.bool]]):
         pulumi.set(self, "is_force_historic_collection", value)
+
+    @property
+    @pulumi.getter(name="lastCollectedObject")
+    def last_collected_object(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Last Collected Object for the rule
+        """
+        return pulumi.get(self, "last_collected_object")
+
+    @last_collected_object.setter
+    def last_collected_object(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "last_collected_object", value)
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -837,6 +914,42 @@ class _LogAnalyticsObjectCollectionRuleState:
         pulumi.set(self, "state", value)
 
     @property
+    @pulumi.getter(name="streamCursorTime")
+    def stream_cursor_time(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The time from which to consume the objects, if streamCursorType is AT_TIME.
+        """
+        return pulumi.get(self, "stream_cursor_time")
+
+    @stream_cursor_time.setter
+    def stream_cursor_time(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "stream_cursor_time", value)
+
+    @property
+    @pulumi.getter(name="streamCursorType")
+    def stream_cursor_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
+        """
+        return pulumi.get(self, "stream_cursor_type")
+
+    @stream_cursor_type.setter
+    def stream_cursor_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "stream_cursor_type", value)
+
+    @property
+    @pulumi.getter(name="streamId")
+    def stream_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+        """
+        return pulumi.get(self, "stream_id")
+
+    @stream_id.setter
+    def stream_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "stream_id", value)
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -906,6 +1019,9 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
                  overrides: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LogAnalyticsObjectCollectionRuleOverrideArgs', 'LogAnalyticsObjectCollectionRuleOverrideArgsDict']]]]] = None,
                  poll_since: Optional[pulumi.Input[builtins.str]] = None,
                  poll_till: Optional[pulumi.Input[builtins.str]] = None,
+                 stream_cursor_time: Optional[pulumi.Input[builtins.str]] = None,
+                 stream_cursor_type: Optional[pulumi.Input[builtins.str]] = None,
+                 stream_id: Optional[pulumi.Input[builtins.str]] = None,
                  timezone: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
@@ -921,8 +1037,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
 
         test_log_analytics_object_collection_rule = oci.log_analytics.LogAnalyticsObjectCollectionRule("test_log_analytics_object_collection_rule",
             compartment_id=compartment_id,
-            log_group_id=test_log_group["id"],
-            log_source_name=log_analytics_object_collection_rule_log_source_name,
+            log_group_id=test_log_analytics_log_group["id"],
             name=log_analytics_object_collection_rule_name,
             namespace=log_analytics_object_collection_rule_namespace,
             os_bucket_name=test_bucket["name"],
@@ -942,11 +1057,15 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
             log_set=log_analytics_object_collection_rule_log_set,
             log_set_ext_regex=log_analytics_object_collection_rule_log_set_ext_regex,
             log_set_key=log_analytics_object_collection_rule_log_set_key,
+            log_source_name=log_analytics_object_collection_rule_log_source_name,
             log_type=log_analytics_object_collection_rule_log_type,
             object_name_filters=log_analytics_object_collection_rule_object_name_filters,
             overrides=log_analytics_object_collection_rule_overrides,
             poll_since=log_analytics_object_collection_rule_poll_since,
             poll_till=log_analytics_object_collection_rule_poll_till,
+            stream_cursor_time=log_analytics_object_collection_rule_stream_cursor_time,
+            stream_cursor_type=log_analytics_object_collection_rule_stream_cursor_type,
+            stream_id=test_stream["id"],
             timezone=log_analytics_object_collection_rule_timezone)
         ```
 
@@ -983,6 +1102,9 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['LogAnalyticsObjectCollectionRuleOverrideArgs', 'LogAnalyticsObjectCollectionRuleOverrideArgsDict']]]] overrides: (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are: logSourceName, charEncoding, entityId. Supported matchType for override are "contains".
         :param pulumi.Input[builtins.str] poll_since: The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
         :param pulumi.Input[builtins.str] poll_till: The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
+        :param pulumi.Input[builtins.str] stream_cursor_time: (Updatable) The time from which to consume the objects, if streamCursorType is AT_TIME.
+        :param pulumi.Input[builtins.str] stream_cursor_type: (Updatable) Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
+        :param pulumi.Input[builtins.str] stream_id: (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
         :param pulumi.Input[builtins.str] timezone: (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used. 
                
                
@@ -1008,8 +1130,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
 
         test_log_analytics_object_collection_rule = oci.log_analytics.LogAnalyticsObjectCollectionRule("test_log_analytics_object_collection_rule",
             compartment_id=compartment_id,
-            log_group_id=test_log_group["id"],
-            log_source_name=log_analytics_object_collection_rule_log_source_name,
+            log_group_id=test_log_analytics_log_group["id"],
             name=log_analytics_object_collection_rule_name,
             namespace=log_analytics_object_collection_rule_namespace,
             os_bucket_name=test_bucket["name"],
@@ -1029,11 +1150,15 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
             log_set=log_analytics_object_collection_rule_log_set,
             log_set_ext_regex=log_analytics_object_collection_rule_log_set_ext_regex,
             log_set_key=log_analytics_object_collection_rule_log_set_key,
+            log_source_name=log_analytics_object_collection_rule_log_source_name,
             log_type=log_analytics_object_collection_rule_log_type,
             object_name_filters=log_analytics_object_collection_rule_object_name_filters,
             overrides=log_analytics_object_collection_rule_overrides,
             poll_since=log_analytics_object_collection_rule_poll_since,
             poll_till=log_analytics_object_collection_rule_poll_till,
+            stream_cursor_time=log_analytics_object_collection_rule_stream_cursor_time,
+            stream_cursor_type=log_analytics_object_collection_rule_stream_cursor_type,
+            stream_id=test_stream["id"],
             timezone=log_analytics_object_collection_rule_timezone)
         ```
 
@@ -1083,6 +1208,9 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
                  overrides: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LogAnalyticsObjectCollectionRuleOverrideArgs', 'LogAnalyticsObjectCollectionRuleOverrideArgsDict']]]]] = None,
                  poll_since: Optional[pulumi.Input[builtins.str]] = None,
                  poll_till: Optional[pulumi.Input[builtins.str]] = None,
+                 stream_cursor_time: Optional[pulumi.Input[builtins.str]] = None,
+                 stream_cursor_type: Optional[pulumi.Input[builtins.str]] = None,
+                 stream_id: Optional[pulumi.Input[builtins.str]] = None,
                  timezone: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -1110,8 +1238,6 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
             __props__.__dict__["log_set"] = log_set
             __props__.__dict__["log_set_ext_regex"] = log_set_ext_regex
             __props__.__dict__["log_set_key"] = log_set_key
-            if log_source_name is None and not opts.urn:
-                raise TypeError("Missing required property 'log_source_name'")
             __props__.__dict__["log_source_name"] = log_source_name
             __props__.__dict__["log_type"] = log_type
             __props__.__dict__["name"] = name
@@ -1128,7 +1254,11 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
             __props__.__dict__["overrides"] = overrides
             __props__.__dict__["poll_since"] = poll_since
             __props__.__dict__["poll_till"] = poll_till
+            __props__.__dict__["stream_cursor_time"] = stream_cursor_time
+            __props__.__dict__["stream_cursor_type"] = stream_cursor_type
+            __props__.__dict__["stream_id"] = stream_id
             __props__.__dict__["timezone"] = timezone
+            __props__.__dict__["last_collected_object"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
@@ -1152,6 +1282,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             is_enabled: Optional[pulumi.Input[builtins.bool]] = None,
             is_force_historic_collection: Optional[pulumi.Input[builtins.bool]] = None,
+            last_collected_object: Optional[pulumi.Input[builtins.str]] = None,
             lifecycle_details: Optional[pulumi.Input[builtins.str]] = None,
             log_group_id: Optional[pulumi.Input[builtins.str]] = None,
             log_set: Optional[pulumi.Input[builtins.str]] = None,
@@ -1168,6 +1299,9 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
             poll_since: Optional[pulumi.Input[builtins.str]] = None,
             poll_till: Optional[pulumi.Input[builtins.str]] = None,
             state: Optional[pulumi.Input[builtins.str]] = None,
+            stream_cursor_time: Optional[pulumi.Input[builtins.str]] = None,
+            stream_cursor_type: Optional[pulumi.Input[builtins.str]] = None,
+            stream_id: Optional[pulumi.Input[builtins.str]] = None,
             time_created: Optional[pulumi.Input[builtins.str]] = None,
             time_updated: Optional[pulumi.Input[builtins.str]] = None,
             timezone: Optional[pulumi.Input[builtins.str]] = None) -> 'LogAnalyticsObjectCollectionRule':
@@ -1187,6 +1321,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[builtins.bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.
         :param pulumi.Input[builtins.bool] is_force_historic_collection: Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
+        :param pulumi.Input[builtins.str] last_collected_object: Last Collected Object for the rule
         :param pulumi.Input[builtins.str] lifecycle_details: A detailed status of the life cycle state.
         :param pulumi.Input[builtins.str] log_group_id: (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
         :param pulumi.Input[builtins.str] log_set: (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
@@ -1203,6 +1338,9 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] poll_since: The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
         :param pulumi.Input[builtins.str] poll_till: The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
         :param pulumi.Input[builtins.str] state: The current state of the rule.
+        :param pulumi.Input[builtins.str] stream_cursor_time: (Updatable) The time from which to consume the objects, if streamCursorType is AT_TIME.
+        :param pulumi.Input[builtins.str] stream_cursor_type: (Updatable) Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
+        :param pulumi.Input[builtins.str] stream_id: (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
         :param pulumi.Input[builtins.str] time_created: The time when this rule was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[builtins.str] time_updated: The time when this rule was last updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[builtins.str] timezone: (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used. 
@@ -1224,6 +1362,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_enabled"] = is_enabled
         __props__.__dict__["is_force_historic_collection"] = is_force_historic_collection
+        __props__.__dict__["last_collected_object"] = last_collected_object
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["log_group_id"] = log_group_id
         __props__.__dict__["log_set"] = log_set
@@ -1240,6 +1379,9 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
         __props__.__dict__["poll_since"] = poll_since
         __props__.__dict__["poll_till"] = poll_till
         __props__.__dict__["state"] = state
+        __props__.__dict__["stream_cursor_time"] = stream_cursor_time
+        __props__.__dict__["stream_cursor_type"] = stream_cursor_type
+        __props__.__dict__["stream_id"] = stream_id
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
         __props__.__dict__["timezone"] = timezone
@@ -1316,6 +1458,14 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
         Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
         """
         return pulumi.get(self, "is_force_historic_collection")
+
+    @property
+    @pulumi.getter(name="lastCollectedObject")
+    def last_collected_object(self) -> pulumi.Output[builtins.str]:
+        """
+        Last Collected Object for the rule
+        """
+        return pulumi.get(self, "last_collected_object")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -1444,6 +1594,30 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
         The current state of the rule.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="streamCursorTime")
+    def stream_cursor_time(self) -> pulumi.Output[builtins.str]:
+        """
+        (Updatable) The time from which to consume the objects, if streamCursorType is AT_TIME.
+        """
+        return pulumi.get(self, "stream_cursor_time")
+
+    @property
+    @pulumi.getter(name="streamCursorType")
+    def stream_cursor_type(self) -> pulumi.Output[builtins.str]:
+        """
+        (Updatable) Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
+        """
+        return pulumi.get(self, "stream_cursor_type")
+
+    @property
+    @pulumi.getter(name="streamId")
+    def stream_id(self) -> pulumi.Output[builtins.str]:
+        """
+        (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+        """
+        return pulumi.get(self, "stream_id")
 
     @property
     @pulumi.getter(name="timeCreated")

@@ -85,6 +85,21 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Content type of the script.
+     * 
+     */
+    @Import(name="contentType")
+    private @Nullable Output<String> contentType;
+
+    /**
+     * @return Content type of the script.
+     * 
+     */
+    public Optional<Output<String>> contentType() {
+        return Optional.ofNullable(this.contentType);
+    }
+
+    /**
      * Name of the user that created the monitor.
      * 
      */
@@ -427,6 +442,7 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
         this.availabilityConfiguration = $.availabilityConfiguration;
         this.batchIntervalInSeconds = $.batchIntervalInSeconds;
         this.configuration = $.configuration;
+        this.contentType = $.contentType;
         this.createdBy = $.createdBy;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
@@ -551,6 +567,27 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder configuration(ConfigConfigurationArgs configuration) {
             return configuration(Output.of(configuration));
+        }
+
+        /**
+         * @param contentType Content type of the script.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder contentType(@Nullable Output<String> contentType) {
+            $.contentType = contentType;
+            return this;
+        }
+
+        /**
+         * @param contentType Content type of the script.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder contentType(String contentType) {
+            return contentType(Output.of(contentType));
         }
 
         /**

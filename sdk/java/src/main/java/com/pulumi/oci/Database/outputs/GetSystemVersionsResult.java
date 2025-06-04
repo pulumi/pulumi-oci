@@ -7,9 +7,11 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetSystemVersionsFilter;
 import com.pulumi.oci.Database.outputs.GetSystemVersionsSystemVersionCollection;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -26,11 +28,13 @@ public final class GetSystemVersionsResult {
      * 
      */
     private String id;
+    private @Nullable Boolean isLatest;
+    private @Nullable String resourceId;
     /**
      * @return Exadata shape.
      * 
      */
-    private String shape;
+    private @Nullable String shape;
     /**
      * @return The list of system_version_collection.
      * 
@@ -58,12 +62,18 @@ public final class GetSystemVersionsResult {
     public String id() {
         return this.id;
     }
+    public Optional<Boolean> isLatest() {
+        return Optional.ofNullable(this.isLatest);
+    }
+    public Optional<String> resourceId() {
+        return Optional.ofNullable(this.resourceId);
+    }
     /**
      * @return Exadata shape.
      * 
      */
-    public String shape() {
-        return this.shape;
+    public Optional<String> shape() {
+        return Optional.ofNullable(this.shape);
     }
     /**
      * @return The list of system_version_collection.
@@ -86,7 +96,9 @@ public final class GetSystemVersionsResult {
         private @Nullable List<GetSystemVersionsFilter> filters;
         private String giVersion;
         private String id;
-        private String shape;
+        private @Nullable Boolean isLatest;
+        private @Nullable String resourceId;
+        private @Nullable String shape;
         private List<GetSystemVersionsSystemVersionCollection> systemVersionCollections;
         public Builder() {}
         public Builder(GetSystemVersionsResult defaults) {
@@ -95,6 +107,8 @@ public final class GetSystemVersionsResult {
     	      this.filters = defaults.filters;
     	      this.giVersion = defaults.giVersion;
     	      this.id = defaults.id;
+    	      this.isLatest = defaults.isLatest;
+    	      this.resourceId = defaults.resourceId;
     	      this.shape = defaults.shape;
     	      this.systemVersionCollections = defaults.systemVersionCollections;
         }
@@ -133,10 +147,20 @@ public final class GetSystemVersionsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder shape(String shape) {
-            if (shape == null) {
-              throw new MissingRequiredPropertyException("GetSystemVersionsResult", "shape");
-            }
+        public Builder isLatest(@Nullable Boolean isLatest) {
+
+            this.isLatest = isLatest;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder resourceId(@Nullable String resourceId) {
+
+            this.resourceId = resourceId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder shape(@Nullable String shape) {
+
             this.shape = shape;
             return this;
         }
@@ -157,6 +181,8 @@ public final class GetSystemVersionsResult {
             _resultValue.filters = filters;
             _resultValue.giVersion = giVersion;
             _resultValue.id = id;
+            _resultValue.isLatest = isLatest;
+            _resultValue.resourceId = resourceId;
             _resultValue.shape = shape;
             _resultValue.systemVersionCollections = systemVersionCollections;
             return _resultValue;

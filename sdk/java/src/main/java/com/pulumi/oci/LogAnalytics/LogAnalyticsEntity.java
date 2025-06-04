@@ -12,6 +12,7 @@ import com.pulumi.oci.LogAnalytics.inputs.LogAnalyticsEntityState;
 import com.pulumi.oci.LogAnalytics.outputs.LogAnalyticsEntityMetadata;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Map;
 import javax.annotation.Nullable;
@@ -100,6 +101,20 @@ public class LogAnalyticsEntity extends com.pulumi.resources.CustomResource {
      */
     public Output<Boolean> areLogsCollected() {
         return this.areLogsCollected;
+    }
+    /**
+     * The count of associated log sources for a given log analytics entity.
+     * 
+     */
+    @Export(name="associatedSourcesCount", refs={Integer.class}, tree="[0]")
+    private Output<Integer> associatedSourcesCount;
+
+    /**
+     * @return The count of associated log sources for a given log analytics entity.
+     * 
+     */
+    public Output<Integer> associatedSourcesCount() {
+        return this.associatedSourcesCount;
     }
     /**
      * The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.

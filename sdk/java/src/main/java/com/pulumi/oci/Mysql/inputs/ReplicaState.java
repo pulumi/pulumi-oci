@@ -217,6 +217,21 @@ public final class ReplicaState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Network Security Group OCIDs used for the VNIC attachment.
+     * 
+     */
+    @Import(name="nsgIds")
+    private @Nullable Output<List<String>> nsgIds;
+
+    /**
+     * @return Network Security Group OCIDs used for the VNIC attachment.
+     * 
+     */
+    public Optional<Output<List<String>>> nsgIds() {
+        return Optional.ofNullable(this.nsgIds);
+    }
+
+    /**
      * The port the read replica is configured to listen on.
      * 
      */
@@ -352,6 +367,7 @@ public final class ReplicaState extends com.pulumi.resources.ResourceArgs {
         this.isDeleteProtected = $.isDeleteProtected;
         this.lifecycleDetails = $.lifecycleDetails;
         this.mysqlVersion = $.mysqlVersion;
+        this.nsgIds = $.nsgIds;
         this.port = $.port;
         this.portX = $.portX;
         this.replicaOverrides = $.replicaOverrides;
@@ -651,6 +667,37 @@ public final class ReplicaState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder mysqlVersion(String mysqlVersion) {
             return mysqlVersion(Output.of(mysqlVersion));
+        }
+
+        /**
+         * @param nsgIds Network Security Group OCIDs used for the VNIC attachment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nsgIds(@Nullable Output<List<String>> nsgIds) {
+            $.nsgIds = nsgIds;
+            return this;
+        }
+
+        /**
+         * @param nsgIds Network Security Group OCIDs used for the VNIC attachment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nsgIds(List<String> nsgIds) {
+            return nsgIds(Output.of(nsgIds));
+        }
+
+        /**
+         * @param nsgIds Network Security Group OCIDs used for the VNIC attachment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nsgIds(String... nsgIds) {
+            return nsgIds(List.of(nsgIds));
         }
 
         /**

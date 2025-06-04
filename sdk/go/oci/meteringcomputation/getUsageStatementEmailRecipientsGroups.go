@@ -7,13 +7,13 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 // This data source provides the list of Usage Statement Email Recipients Groups in Oracle Cloud Infrastructure Metering Computation service.
 //
-// Return the saved usage statement email recipient group.
+// Returns the saved usage statement email recipients group.
 //
 // ## Example Usage
 //
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/meteringcomputation"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/meteringcomputation"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -56,7 +56,7 @@ type GetUsageStatementEmailRecipientsGroupsArgs struct {
 	// The compartment ID in which to list resources.
 	CompartmentId string                                         `pulumi:"compartmentId"`
 	Filters       []GetUsageStatementEmailRecipientsGroupsFilter `pulumi:"filters"`
-	// The UsageStatement Subscription unique OCID.
+	// The usage statement subscription unique OCID.
 	SubscriptionId string `pulumi:"subscriptionId"`
 }
 
@@ -86,7 +86,7 @@ type GetUsageStatementEmailRecipientsGroupsOutputArgs struct {
 	// The compartment ID in which to list resources.
 	CompartmentId pulumi.StringInput                                     `pulumi:"compartmentId"`
 	Filters       GetUsageStatementEmailRecipientsGroupsFilterArrayInput `pulumi:"filters"`
-	// The UsageStatement Subscription unique OCID.
+	// The usage statement subscription unique OCID.
 	SubscriptionId pulumi.StringInput `pulumi:"subscriptionId"`
 }
 

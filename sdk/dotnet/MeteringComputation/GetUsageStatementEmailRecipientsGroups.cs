@@ -14,7 +14,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// <summary>
         /// This data source provides the list of Usage Statement Email Recipients Groups in Oracle Cloud Infrastructure Metering Computation service.
         /// 
-        /// Return the saved usage statement email recipient group.
+        /// Returns the saved usage statement email recipients group.
         /// 
         /// 
         /// ## Example Usage
@@ -42,7 +42,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// <summary>
         /// This data source provides the list of Usage Statement Email Recipients Groups in Oracle Cloud Infrastructure Metering Computation service.
         /// 
-        /// Return the saved usage statement email recipient group.
+        /// Returns the saved usage statement email recipients group.
         /// 
         /// 
         /// ## Example Usage
@@ -70,7 +70,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// <summary>
         /// This data source provides the list of Usage Statement Email Recipients Groups in Oracle Cloud Infrastructure Metering Computation service.
         /// 
-        /// Return the saved usage statement email recipient group.
+        /// Returns the saved usage statement email recipients group.
         /// 
         /// 
         /// ## Example Usage
@@ -114,7 +114,7 @@ namespace Pulumi.Oci.MeteringComputation
         }
 
         /// <summary>
-        /// The UsageStatement Subscription unique OCID.
+        /// The usage statement subscription unique OCID.
         /// </summary>
         [Input("subscriptionId", required: true)]
         public string SubscriptionId { get; set; } = null!;
@@ -142,7 +142,7 @@ namespace Pulumi.Oci.MeteringComputation
         }
 
         /// <summary>
-        /// The UsageStatement Subscription unique OCID.
+        /// The usage statement subscription unique OCID.
         /// </summary>
         [Input("subscriptionId", required: true)]
         public Input<string> SubscriptionId { get; set; } = null!;

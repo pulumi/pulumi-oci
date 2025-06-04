@@ -34,7 +34,7 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// </summary>
         public readonly string Granularity;
         /// <summary>
-        /// Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+        /// Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
         /// </summary>
         public readonly ImmutableArray<string> GroupBies;
         /// <summary>
@@ -42,11 +42,16 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetQueryQueryDefinitionReportQueryGroupByTagResult> GroupByTags;
         /// <summary>
-        /// Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+        /// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
         /// </summary>
         public readonly bool IsAggregateByTime;
         /// <summary>
-        /// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
+        /// The query usage type. COST by default if it is missing.
+        /// * Usage: Query the usage data.
+        /// * Cost: Query the cost/billing data.
+        /// * Credit: Query the credit adjustments data.
+        /// * ExpiredCredit: Query the expired credits data.
+        /// * AllCredit: Query the credit adjustments and expired credit.
         /// </summary>
         public readonly string QueryType;
         /// <summary>

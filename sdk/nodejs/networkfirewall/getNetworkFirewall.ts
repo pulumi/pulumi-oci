@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -77,6 +79,10 @@ export interface GetNetworkFirewallResult {
      * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'FAILED' state.
      */
     readonly lifecycleDetails: string;
+    /**
+     * Nat Configuration response.
+     */
+    readonly natConfigurations: outputs.NetworkFirewall.GetNetworkFirewallNatConfiguration[];
     readonly networkFirewallId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.

@@ -28,7 +28,7 @@ class GetReplicaResult:
     """
     A collection of values returned by getReplica.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, configuration_id=None, db_system_id=None, defined_tags=None, description=None, display_name=None, fault_domain=None, freeform_tags=None, id=None, ip_address=None, is_delete_protected=None, lifecycle_details=None, mysql_version=None, port=None, port_x=None, replica_id=None, replica_overrides=None, secure_connections=None, shape_name=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, configuration_id=None, db_system_id=None, defined_tags=None, description=None, display_name=None, fault_domain=None, freeform_tags=None, id=None, ip_address=None, is_delete_protected=None, lifecycle_details=None, mysql_version=None, nsg_ids=None, port=None, port_x=None, replica_id=None, replica_overrides=None, secure_connections=None, shape_name=None, state=None, time_created=None, time_updated=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -71,6 +71,9 @@ class GetReplicaResult:
         if mysql_version and not isinstance(mysql_version, str):
             raise TypeError("Expected argument 'mysql_version' to be a str")
         pulumi.set(__self__, "mysql_version", mysql_version)
+        if nsg_ids and not isinstance(nsg_ids, list):
+            raise TypeError("Expected argument 'nsg_ids' to be a list")
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
         if port and not isinstance(port, int):
             raise TypeError("Expected argument 'port' to be a int")
         pulumi.set(__self__, "port", port)
@@ -212,6 +215,14 @@ class GetReplicaResult:
         return pulumi.get(self, "mysql_version")
 
     @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Sequence[builtins.str]:
+        """
+        Network Security Group OCIDs used for the VNIC attachment.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @property
     @pulumi.getter
     def port(self) -> builtins.int:
         """
@@ -301,6 +312,7 @@ class AwaitableGetReplicaResult(GetReplicaResult):
             is_delete_protected=self.is_delete_protected,
             lifecycle_details=self.lifecycle_details,
             mysql_version=self.mysql_version,
+            nsg_ids=self.nsg_ids,
             port=self.port,
             port_x=self.port_x,
             replica_id=self.replica_id,
@@ -351,6 +363,7 @@ def get_replica(replica_id: Optional[builtins.str] = None,
         is_delete_protected=pulumi.get(__ret__, 'is_delete_protected'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         mysql_version=pulumi.get(__ret__, 'mysql_version'),
+        nsg_ids=pulumi.get(__ret__, 'nsg_ids'),
         port=pulumi.get(__ret__, 'port'),
         port_x=pulumi.get(__ret__, 'port_x'),
         replica_id=pulumi.get(__ret__, 'replica_id'),
@@ -398,6 +411,7 @@ def get_replica_output(replica_id: Optional[pulumi.Input[builtins.str]] = None,
         is_delete_protected=pulumi.get(__response__, 'is_delete_protected'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         mysql_version=pulumi.get(__response__, 'mysql_version'),
+        nsg_ids=pulumi.get(__response__, 'nsg_ids'),
         port=pulumi.get(__response__, 'port'),
         port_x=pulumi.get(__response__, 'port_x'),
         replica_id=pulumi.get(__response__, 'replica_id'),

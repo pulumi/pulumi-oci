@@ -28,6 +28,7 @@ public final class GetGiVersionsResult {
      * 
      */
     private String id;
+    private @Nullable String resourceId;
     private @Nullable String shape;
 
     private GetGiVersionsResult() {}
@@ -54,6 +55,9 @@ public final class GetGiVersionsResult {
     public String id() {
         return this.id;
     }
+    public Optional<String> resourceId() {
+        return Optional.ofNullable(this.resourceId);
+    }
     public Optional<String> shape() {
         return Optional.ofNullable(this.shape);
     }
@@ -72,6 +76,7 @@ public final class GetGiVersionsResult {
         private @Nullable List<GetGiVersionsFilter> filters;
         private List<GetGiVersionsGiVersion> giVersions;
         private String id;
+        private @Nullable String resourceId;
         private @Nullable String shape;
         public Builder() {}
         public Builder(GetGiVersionsResult defaults) {
@@ -81,6 +86,7 @@ public final class GetGiVersionsResult {
     	      this.filters = defaults.filters;
     	      this.giVersions = defaults.giVersions;
     	      this.id = defaults.id;
+    	      this.resourceId = defaults.resourceId;
     	      this.shape = defaults.shape;
         }
 
@@ -127,6 +133,12 @@ public final class GetGiVersionsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder resourceId(@Nullable String resourceId) {
+
+            this.resourceId = resourceId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder shape(@Nullable String shape) {
 
             this.shape = shape;
@@ -139,6 +151,7 @@ public final class GetGiVersionsResult {
             _resultValue.filters = filters;
             _resultValue.giVersions = giVersions;
             _resultValue.id = id;
+            _resultValue.resourceId = resourceId;
             _resultValue.shape = shape;
             return _resultValue;
         }

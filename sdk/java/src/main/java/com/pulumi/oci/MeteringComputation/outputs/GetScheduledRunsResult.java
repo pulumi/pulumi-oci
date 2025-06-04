@@ -21,7 +21,7 @@ public final class GetScheduledRunsResult {
      */
     private String id;
     /**
-     * @return The ocid representing unique shedule
+     * @return The OCID representing a unique shedule.
      * 
      */
     private String scheduleId;
@@ -43,7 +43,7 @@ public final class GetScheduledRunsResult {
         return this.id;
     }
     /**
-     * @return The ocid representing unique shedule
+     * @return The OCID representing a unique shedule.
      * 
      */
     public String scheduleId() {

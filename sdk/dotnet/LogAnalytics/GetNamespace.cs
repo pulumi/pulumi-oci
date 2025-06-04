@@ -135,11 +135,21 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// This indicates if old data can be archived for a tenancy
+        /// </summary>
+        public readonly bool IsArchivingEnabled;
+        /// <summary>
+        /// This indicates if the tenancy is data ever ingested
+        /// </summary>
+        public readonly bool IsDataEverIngested;
+        public readonly bool IsLogsetEnabled;
+        /// <summary>
         /// This indicates if the tenancy is onboarded to Logging Analytics
         /// </summary>
         public readonly bool IsOnboarded;
         /// <summary>
         /// This is the namespace name of a tenancy
+        /// * `is_logSet_enabled` - This indicates if the tenancy is logSet enable
         /// </summary>
         public readonly string Namespace;
 
@@ -149,12 +159,21 @@ namespace Pulumi.Oci.LogAnalytics
 
             string id,
 
+            bool isArchivingEnabled,
+
+            bool isDataEverIngested,
+
+            bool isLogsetEnabled,
+
             bool isOnboarded,
 
             string @namespace)
         {
             CompartmentId = compartmentId;
             Id = id;
+            IsArchivingEnabled = isArchivingEnabled;
+            IsDataEverIngested = isDataEverIngested;
+            IsLogsetEnabled = isLogsetEnabled;
             IsOnboarded = isOnboarded;
             Namespace = @namespace;
         }

@@ -260,6 +260,7 @@ class LogAnalyticsEntityArgs:
 class _LogAnalyticsEntityState:
     def __init__(__self__, *,
                  are_logs_collected: Optional[pulumi.Input[builtins.bool]] = None,
+                 associated_sources_count: Optional[pulumi.Input[builtins.int]] = None,
                  cloud_resource_id: Optional[pulumi.Input[builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
@@ -284,6 +285,7 @@ class _LogAnalyticsEntityState:
         """
         Input properties used for looking up and filtering LogAnalyticsEntity resources.
         :param pulumi.Input[builtins.bool] are_logs_collected: The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
+        :param pulumi.Input[builtins.int] associated_sources_count: The count of associated log sources for a given log analytics entity.
         :param pulumi.Input[builtins.str] cloud_resource_id: The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
         :param pulumi.Input[builtins.str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -312,6 +314,8 @@ class _LogAnalyticsEntityState:
         """
         if are_logs_collected is not None:
             pulumi.set(__self__, "are_logs_collected", are_logs_collected)
+        if associated_sources_count is not None:
+            pulumi.set(__self__, "associated_sources_count", associated_sources_count)
         if cloud_resource_id is not None:
             pulumi.set(__self__, "cloud_resource_id", cloud_resource_id)
         if compartment_id is not None:
@@ -366,6 +370,18 @@ class _LogAnalyticsEntityState:
     @are_logs_collected.setter
     def are_logs_collected(self, value: Optional[pulumi.Input[builtins.bool]]):
         pulumi.set(self, "are_logs_collected", value)
+
+    @property
+    @pulumi.getter(name="associatedSourcesCount")
+    def associated_sources_count(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        The count of associated log sources for a given log analytics entity.
+        """
+        return pulumi.get(self, "associated_sources_count")
+
+    @associated_sources_count.setter
+    def associated_sources_count(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "associated_sources_count", value)
 
     @property
     @pulumi.getter(name="cloudResourceId")
@@ -823,6 +839,7 @@ class LogAnalyticsEntity(pulumi.CustomResource):
             __props__.__dict__["time_last_discovered"] = time_last_discovered
             __props__.__dict__["timezone_region"] = timezone_region
             __props__.__dict__["are_logs_collected"] = None
+            __props__.__dict__["associated_sources_count"] = None
             __props__.__dict__["entity_type_internal_name"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["management_agent_compartment_id"] = None
@@ -841,6 +858,7 @@ class LogAnalyticsEntity(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             are_logs_collected: Optional[pulumi.Input[builtins.bool]] = None,
+            associated_sources_count: Optional[pulumi.Input[builtins.int]] = None,
             cloud_resource_id: Optional[pulumi.Input[builtins.str]] = None,
             compartment_id: Optional[pulumi.Input[builtins.str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
@@ -870,6 +888,7 @@ class LogAnalyticsEntity(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[builtins.bool] are_logs_collected: The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
+        :param pulumi.Input[builtins.int] associated_sources_count: The count of associated log sources for a given log analytics entity.
         :param pulumi.Input[builtins.str] cloud_resource_id: The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
         :param pulumi.Input[builtins.str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -901,6 +920,7 @@ class LogAnalyticsEntity(pulumi.CustomResource):
         __props__ = _LogAnalyticsEntityState.__new__(_LogAnalyticsEntityState)
 
         __props__.__dict__["are_logs_collected"] = are_logs_collected
+        __props__.__dict__["associated_sources_count"] = associated_sources_count
         __props__.__dict__["cloud_resource_id"] = cloud_resource_id
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
@@ -931,6 +951,14 @@ class LogAnalyticsEntity(pulumi.CustomResource):
         The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
         """
         return pulumi.get(self, "are_logs_collected")
+
+    @property
+    @pulumi.getter(name="associatedSourcesCount")
+    def associated_sources_count(self) -> pulumi.Output[builtins.int]:
+        """
+        The count of associated log sources for a given log analytics entity.
+        """
+        return pulumi.get(self, "associated_sources_count")
 
     @property
     @pulumi.getter(name="cloudResourceId")

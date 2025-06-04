@@ -29,7 +29,7 @@ public final class MysqlBackupDbSystemSnapshotEndpoint {
      */
     private @Nullable List<String> modes;
     /**
-     * @return The port for primary endpoint of the DB System to listen on.
+     * @return The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
      * 
      */
     private @Nullable Integer port;
@@ -82,7 +82,7 @@ public final class MysqlBackupDbSystemSnapshotEndpoint {
         return this.modes == null ? List.of() : this.modes;
     }
     /**
-     * @return The port for primary endpoint of the DB System to listen on.
+     * @return The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
      * 
      */
     public Optional<Integer> port() {

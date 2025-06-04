@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/bigdataservice"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/bigdataservice"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -74,7 +74,7 @@ type GetBdsInstancePatchHistoriesResult struct {
 	Id string `pulumi:"id"`
 	// The list of patch_histories.
 	PatchHistories []GetBdsInstancePatchHistoriesPatchHistory `pulumi:"patchHistories"`
-	// The type of current patch history. DP - Data Plane patch(This history type is internal available only) ODH - Oracle Distribution of Hadoop patch OS - Operating System patch
+	// The type of current patch history. DP - Data Plane patch(This history type is internal available only) ODH - Oracle Distribution of Hadoop update OS - Operating System update BDS - Big Data Service update
 	PatchType    *string `pulumi:"patchType"`
 	PatchVersion *string `pulumi:"patchVersion"`
 	// The status of this patch.
@@ -142,7 +142,7 @@ func (o GetBdsInstancePatchHistoriesResultOutput) PatchHistories() GetBdsInstanc
 	}).(GetBdsInstancePatchHistoriesPatchHistoryArrayOutput)
 }
 
-// The type of current patch history. DP - Data Plane patch(This history type is internal available only) ODH - Oracle Distribution of Hadoop patch OS - Operating System patch
+// The type of current patch history. DP - Data Plane patch(This history type is internal available only) ODH - Oracle Distribution of Hadoop update OS - Operating System update BDS - Big Data Service update
 func (o GetBdsInstancePatchHistoriesResultOutput) PatchType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetBdsInstancePatchHistoriesResult) *string { return v.PatchType }).(pulumi.StringPtrOutput)
 }

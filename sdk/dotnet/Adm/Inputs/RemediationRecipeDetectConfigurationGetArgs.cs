@@ -25,19 +25,19 @@ namespace Pulumi.Oci.Adm.Inputs
         }
 
         /// <summary>
-        /// (Updatable) The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+        /// (Updatable) The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. A vulnerability with a CVSS V2 score below this value is not considered for remediation.
         /// </summary>
         [Input("maxPermissibleCvssV2score")]
         public Input<double>? MaxPermissibleCvssV2score { get; set; }
 
         /// <summary>
-        /// (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+        /// (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. A vulnerability with a CVSS V3 score below this value is not considered for patching.
         /// </summary>
         [Input("maxPermissibleCvssV3score")]
         public Input<double>? MaxPermissibleCvssV3score { get; set; }
 
         /// <summary>
-        /// (Updatable) The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered for patching.
+        /// (Updatable) The maximum ADM Severity. A vulnerability with an severity below this value is not considered for remediation.
         /// </summary>
         [Input("maxPermissibleSeverity")]
         public Input<string>? MaxPermissibleSeverity { get; set; }

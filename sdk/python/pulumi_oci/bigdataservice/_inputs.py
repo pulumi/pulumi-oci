@@ -56,6 +56,14 @@ __all__ = [
     'AutoScalingConfigurationPolicyRuleMetricArgsDict',
     'AutoScalingConfigurationPolicyRuleMetricThresholdArgs',
     'AutoScalingConfigurationPolicyRuleMetricThresholdArgsDict',
+    'BdsCapacityReportShapeAvailabilityArgs',
+    'BdsCapacityReportShapeAvailabilityArgsDict',
+    'BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArgs',
+    'BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArgsDict',
+    'BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArgs',
+    'BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArgsDict',
+    'BdsCapacityReportShapeAvailabilityShapeConfigArgs',
+    'BdsCapacityReportShapeAvailabilityShapeConfigArgsDict',
     'BdsInstanceBdsClusterVersionSummaryArgs',
     'BdsInstanceBdsClusterVersionSummaryArgsDict',
     'BdsInstanceCloudSqlDetailArgs',
@@ -96,8 +104,8 @@ __all__ = [
     'BdsInstanceNodeAttachedBlockVolumeArgsDict',
     'BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs',
     'BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgsDict',
-    'BdsInstanceOsPatchActionPatchingConfigArgs',
-    'BdsInstanceOsPatchActionPatchingConfigArgsDict',
+    'BdsInstanceOsPatchActionPatchingConfigsArgs',
+    'BdsInstanceOsPatchActionPatchingConfigsArgsDict',
     'BdsInstancePatchActionPatchingConfigArgs',
     'BdsInstancePatchActionPatchingConfigArgsDict',
     'BdsInstanceStartClusterShapeConfigArgs',
@@ -132,6 +140,8 @@ __all__ = [
     'GetBdsInstancePatchesFilterArgsDict',
     'GetBdsInstanceResourcePrincipalConfigurationsFilterArgs',
     'GetBdsInstanceResourcePrincipalConfigurationsFilterArgsDict',
+    'GetBdsInstanceSoftwareUpdatesFilterArgs',
+    'GetBdsInstanceSoftwareUpdatesFilterArgsDict',
     'GetBdsInstancesFilterArgs',
     'GetBdsInstancesFilterArgsDict',
 ]
@@ -1638,6 +1648,305 @@ class AutoScalingConfigurationPolicyRuleMetricThresholdArgs:
     @value.setter
     def value(self, value: pulumi.Input[builtins.int]):
         pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class BdsCapacityReportShapeAvailabilityArgsDict(TypedDict):
+        shape: pulumi.Input[builtins.str]
+        """
+        The shape that you want to request a capacity report for.
+        """
+        domain_level_capacity_reports: NotRequired[pulumi.Input[Sequence[pulumi.Input['BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArgsDict']]]]
+        """
+        Information about the capacity in each domain.
+        """
+        shape_config: NotRequired[pulumi.Input['BdsCapacityReportShapeAvailabilityShapeConfigArgsDict']]
+        """
+        The shape configuration requested for the node.
+        """
+elif False:
+    BdsCapacityReportShapeAvailabilityArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class BdsCapacityReportShapeAvailabilityArgs:
+    def __init__(__self__, *,
+                 shape: pulumi.Input[builtins.str],
+                 domain_level_capacity_reports: Optional[pulumi.Input[Sequence[pulumi.Input['BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArgs']]]] = None,
+                 shape_config: Optional[pulumi.Input['BdsCapacityReportShapeAvailabilityShapeConfigArgs']] = None):
+        """
+        :param pulumi.Input[builtins.str] shape: The shape that you want to request a capacity report for.
+        :param pulumi.Input[Sequence[pulumi.Input['BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArgs']]] domain_level_capacity_reports: Information about the capacity in each domain.
+        :param pulumi.Input['BdsCapacityReportShapeAvailabilityShapeConfigArgs'] shape_config: The shape configuration requested for the node.
+        """
+        pulumi.set(__self__, "shape", shape)
+        if domain_level_capacity_reports is not None:
+            pulumi.set(__self__, "domain_level_capacity_reports", domain_level_capacity_reports)
+        if shape_config is not None:
+            pulumi.set(__self__, "shape_config", shape_config)
+
+    @property
+    @pulumi.getter
+    def shape(self) -> pulumi.Input[builtins.str]:
+        """
+        The shape that you want to request a capacity report for.
+        """
+        return pulumi.get(self, "shape")
+
+    @shape.setter
+    def shape(self, value: pulumi.Input[builtins.str]):
+        pulumi.set(self, "shape", value)
+
+    @property
+    @pulumi.getter(name="domainLevelCapacityReports")
+    def domain_level_capacity_reports(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArgs']]]]:
+        """
+        Information about the capacity in each domain.
+        """
+        return pulumi.get(self, "domain_level_capacity_reports")
+
+    @domain_level_capacity_reports.setter
+    def domain_level_capacity_reports(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArgs']]]]):
+        pulumi.set(self, "domain_level_capacity_reports", value)
+
+    @property
+    @pulumi.getter(name="shapeConfig")
+    def shape_config(self) -> Optional[pulumi.Input['BdsCapacityReportShapeAvailabilityShapeConfigArgs']]:
+        """
+        The shape configuration requested for the node.
+        """
+        return pulumi.get(self, "shape_config")
+
+    @shape_config.setter
+    def shape_config(self, value: Optional[pulumi.Input['BdsCapacityReportShapeAvailabilityShapeConfigArgs']]):
+        pulumi.set(self, "shape_config", value)
+
+
+if not MYPY:
+    class BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArgsDict(TypedDict):
+        availability_domain: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The availability domain for the capacity report.
+        """
+        capacity_availabilities: NotRequired[pulumi.Input[Sequence[pulumi.Input['BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArgsDict']]]]
+        """
+        Information about the available capacity for a shape.
+        """
+        domain_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Type of domain level for the capacity report.
+        """
+        fault_domain: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The fault domain for the capacity report.
+        """
+elif False:
+    BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArgs:
+    def __init__(__self__, *,
+                 availability_domain: Optional[pulumi.Input[builtins.str]] = None,
+                 capacity_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input['BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArgs']]]] = None,
+                 domain_type: Optional[pulumi.Input[builtins.str]] = None,
+                 fault_domain: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] availability_domain: The availability domain for the capacity report.
+        :param pulumi.Input[Sequence[pulumi.Input['BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArgs']]] capacity_availabilities: Information about the available capacity for a shape.
+        :param pulumi.Input[builtins.str] domain_type: Type of domain level for the capacity report.
+        :param pulumi.Input[builtins.str] fault_domain: The fault domain for the capacity report.
+        """
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
+        if capacity_availabilities is not None:
+            pulumi.set(__self__, "capacity_availabilities", capacity_availabilities)
+        if domain_type is not None:
+            pulumi.set(__self__, "domain_type", domain_type)
+        if fault_domain is not None:
+            pulumi.set(__self__, "fault_domain", fault_domain)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The availability domain for the capacity report.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @availability_domain.setter
+    def availability_domain(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "availability_domain", value)
+
+    @property
+    @pulumi.getter(name="capacityAvailabilities")
+    def capacity_availabilities(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArgs']]]]:
+        """
+        Information about the available capacity for a shape.
+        """
+        return pulumi.get(self, "capacity_availabilities")
+
+    @capacity_availabilities.setter
+    def capacity_availabilities(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArgs']]]]):
+        pulumi.set(self, "capacity_availabilities", value)
+
+    @property
+    @pulumi.getter(name="domainType")
+    def domain_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Type of domain level for the capacity report.
+        """
+        return pulumi.get(self, "domain_type")
+
+    @domain_type.setter
+    def domain_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "domain_type", value)
+
+    @property
+    @pulumi.getter(name="faultDomain")
+    def fault_domain(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The fault domain for the capacity report.
+        """
+        return pulumi.get(self, "fault_domain")
+
+    @fault_domain.setter
+    def fault_domain(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "fault_domain", value)
+
+
+if not MYPY:
+    class BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArgsDict(TypedDict):
+        availability_status: NotRequired[pulumi.Input[builtins.str]]
+        """
+        A flag denoting whether capacity is available.
+        """
+        available_count: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The total number of new cluster nodes that can be created with the specified shape configuration.
+        """
+elif False:
+    BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArgs:
+    def __init__(__self__, *,
+                 availability_status: Optional[pulumi.Input[builtins.str]] = None,
+                 available_count: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] availability_status: A flag denoting whether capacity is available.
+        :param pulumi.Input[builtins.str] available_count: The total number of new cluster nodes that can be created with the specified shape configuration.
+        """
+        if availability_status is not None:
+            pulumi.set(__self__, "availability_status", availability_status)
+        if available_count is not None:
+            pulumi.set(__self__, "available_count", available_count)
+
+    @property
+    @pulumi.getter(name="availabilityStatus")
+    def availability_status(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        A flag denoting whether capacity is available.
+        """
+        return pulumi.get(self, "availability_status")
+
+    @availability_status.setter
+    def availability_status(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "availability_status", value)
+
+    @property
+    @pulumi.getter(name="availableCount")
+    def available_count(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The total number of new cluster nodes that can be created with the specified shape configuration.
+        """
+        return pulumi.get(self, "available_count")
+
+    @available_count.setter
+    def available_count(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "available_count", value)
+
+
+if not MYPY:
+    class BdsCapacityReportShapeAvailabilityShapeConfigArgsDict(TypedDict):
+        memory_in_gbs: NotRequired[pulumi.Input[builtins.int]]
+        """
+        The total amount of memory available to the node, in gigabytes.
+        """
+        nvmes: NotRequired[pulumi.Input[builtins.int]]
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available. This parameter is used only for dense shapes.
+        """
+        ocpus: NotRequired[pulumi.Input[builtins.int]]
+        """
+        The total number of OCPUs available to the node.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    BdsCapacityReportShapeAvailabilityShapeConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class BdsCapacityReportShapeAvailabilityShapeConfigArgs:
+    def __init__(__self__, *,
+                 memory_in_gbs: Optional[pulumi.Input[builtins.int]] = None,
+                 nvmes: Optional[pulumi.Input[builtins.int]] = None,
+                 ocpus: Optional[pulumi.Input[builtins.int]] = None):
+        """
+        :param pulumi.Input[builtins.int] memory_in_gbs: The total amount of memory available to the node, in gigabytes.
+        :param pulumi.Input[builtins.int] nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available. This parameter is used only for dense shapes.
+        :param pulumi.Input[builtins.int] ocpus: The total number of OCPUs available to the node.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if nvmes is not None:
+            pulumi.set(__self__, "nvmes", nvmes)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        The total amount of memory available to the node, in gigabytes.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @memory_in_gbs.setter
+    def memory_in_gbs(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "memory_in_gbs", value)
+
+    @property
+    @pulumi.getter
+    def nvmes(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available. This parameter is used only for dense shapes.
+        """
+        return pulumi.get(self, "nvmes")
+
+    @nvmes.setter
+    def nvmes(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "nvmes", value)
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        The total number of OCPUs available to the node.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "ocpus")
+
+    @ocpus.setter
+    def ocpus(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "ocpus", value)
 
 
 if not MYPY:
@@ -3926,7 +4235,7 @@ class BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs:
 
 
 if not MYPY:
-    class BdsInstanceOsPatchActionPatchingConfigArgsDict(TypedDict):
+    class BdsInstanceOsPatchActionPatchingConfigsArgsDict(TypedDict):
         patching_config_strategy: pulumi.Input[builtins.str]
         """
         Type of strategy used for detailed patching configuration
@@ -3952,10 +4261,10 @@ if not MYPY:
         The wait time between AD/FD in seconds.
         """
 elif False:
-    BdsInstanceOsPatchActionPatchingConfigArgsDict: TypeAlias = Mapping[str, Any]
+    BdsInstanceOsPatchActionPatchingConfigsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
-class BdsInstanceOsPatchActionPatchingConfigArgs:
+class BdsInstanceOsPatchActionPatchingConfigsArgs:
     def __init__(__self__, *,
                  patching_config_strategy: pulumi.Input[builtins.str],
                  batch_size: Optional[pulumi.Input[builtins.int]] = None,
@@ -5050,6 +5359,53 @@ elif False:
 
 @pulumi.input_type
 class GetBdsInstanceResourcePrincipalConfigurationsFilterArgs:
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: builtins.str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetBdsInstanceSoftwareUpdatesFilterArgsDict(TypedDict):
+        name: builtins.str
+        values: Sequence[builtins.str]
+        regex: NotRequired[builtins.bool]
+elif False:
+    GetBdsInstanceSoftwareUpdatesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetBdsInstanceSoftwareUpdatesFilterArgs:
     def __init__(__self__, *,
                  name: builtins.str,
                  values: Sequence[builtins.str],

@@ -1,6 +1,6 @@
 {
     "name": "@pulumi/oci",
-    "version": "2.0.0-alpha.0+dev",
+    "version": "3.0.0-alpha.0+dev",
     "description": "A Pulumi package for creating and managing Oracle Cloud Infrastructure resources.",
     "keywords": [
         "pulumi",
@@ -25,6 +25,6 @@
     "pulumi": {
         "resource": true,
         "name": "oci",
-        "version": "2.0.0-alpha.0+dev"
+        "version": "3.0.0-alpha.0+dev"
     }
 }

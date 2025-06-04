@@ -126,6 +126,21 @@ public final class OpensearchClusterPipelineState extends com.pulumi.resources.R
     }
 
     /**
+     * (Updatable) The pipeline node shape.
+     * 
+     */
+    @Import(name="nodeShape")
+    private @Nullable Output<String> nodeShape;
+
+    /**
+     * @return (Updatable) The pipeline node shape.
+     * 
+     */
+    public Optional<Output<String>> nodeShape() {
+        return Optional.ofNullable(this.nodeShape);
+    }
+
+    /**
      * (Updatable) The OCID of the NSG where the pipeline private endpoint vnic will be attached.
      * 
      */
@@ -381,6 +396,7 @@ public final class OpensearchClusterPipelineState extends com.pulumi.resources.R
         this.freeformTags = $.freeformTags;
         this.memoryGb = $.memoryGb;
         this.nodeCount = $.nodeCount;
+        this.nodeShape = $.nodeShape;
         this.nsgId = $.nsgId;
         this.ocpuCount = $.ocpuCount;
         this.opcDryRun = $.opcDryRun;
@@ -562,6 +578,27 @@ public final class OpensearchClusterPipelineState extends com.pulumi.resources.R
          */
         public Builder nodeCount(Integer nodeCount) {
             return nodeCount(Output.of(nodeCount));
+        }
+
+        /**
+         * @param nodeShape (Updatable) The pipeline node shape.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nodeShape(@Nullable Output<String> nodeShape) {
+            $.nodeShape = nodeShape;
+            return this;
+        }
+
+        /**
+         * @param nodeShape (Updatable) The pipeline node shape.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nodeShape(String nodeShape) {
+            return nodeShape(Output.of(nodeShape));
         }
 
         /**

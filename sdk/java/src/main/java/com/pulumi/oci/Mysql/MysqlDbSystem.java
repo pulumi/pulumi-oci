@@ -20,6 +20,7 @@ import com.pulumi.oci.Mysql.outputs.MysqlDbSystemHeatWaveCluster;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemMaintenance;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemPointInTimeRecoveryDetail;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemReadEndpoint;
+import com.pulumi.oci.Mysql.outputs.MysqlDbSystemRest;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemSecureConnections;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemSource;
 import com.pulumi.oci.Utilities;
@@ -55,6 +56,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemDeletionPolicyArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemMaintenanceArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemReadEndpointArgs;
+ * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemRestArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemSecureConnectionsArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemSourceArgs;
  * import java.util.List;
@@ -120,6 +122,7 @@ import javax.annotation.Nullable;
  *             .maintenance(MysqlDbSystemMaintenanceArgs.builder()
  *                 .windowStartTime(mysqlDbSystemMaintenanceWindowStartTime)
  *                 .build())
+ *             .nsgIds(mysqlDbSystemNsgIds)
  *             .port(mysqlDbSystemPort)
  *             .portX(mysqlDbSystemPortX)
  *             .readEndpoint(MysqlDbSystemReadEndpointArgs.builder()
@@ -127,6 +130,10 @@ import javax.annotation.Nullable;
  *                 .isEnabled(mysqlDbSystemReadEndpointIsEnabled)
  *                 .readEndpointHostnameLabel(mysqlDbSystemReadEndpointReadEndpointHostnameLabel)
  *                 .readEndpointIpAddress(mysqlDbSystemReadEndpointReadEndpointIpAddress)
+ *                 .build())
+ *             .rest(MysqlDbSystemRestArgs.builder()
+ *                 .configuration(mysqlDbSystemRestConfiguration)
+ *                 .port(mysqlDbSystemRestPort)
  *                 .build())
  *             .secureConnections(MysqlDbSystemSecureConnectionsArgs.builder()
  *                 .certificateGenerationType(mysqlDbSystemSecureConnectionsCertificateGenerationType)
@@ -612,6 +619,20 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
         return this.mysqlVersion;
     }
     /**
+     * (Updatable) Network Security Group OCIDs used for the VNIC attachment.
+     * 
+     */
+    @Export(name="nsgIds", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> nsgIds;
+
+    /**
+     * @return (Updatable) Network Security Group OCIDs used for the VNIC attachment.
+     * 
+     */
+    public Output<List<String>> nsgIds() {
+        return this.nsgIds;
+    }
+    /**
      * Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
      * 
      */
@@ -666,6 +687,20 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      */
     public Output<MysqlDbSystemReadEndpoint> readEndpoint() {
         return this.readEndpoint;
+    }
+    /**
+     * (Updatable) Details required to configure REST while creating a DB System.
+     * 
+     */
+    @Export(name="rest", refs={MysqlDbSystemRest.class}, tree="[0]")
+    private Output<MysqlDbSystemRest> rest;
+
+    /**
+     * @return (Updatable) Details required to configure REST while creating a DB System.
+     * 
+     */
+    public Output<MysqlDbSystemRest> rest() {
+        return this.rest;
     }
     /**
      * (Updatable) Secure connection configuration details.

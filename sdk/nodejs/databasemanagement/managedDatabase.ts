@@ -76,7 +76,7 @@ export class ManagedDatabase extends pulumi.CustomResource {
      */
     public /*out*/ readonly databaseVersion!: pulumi.Output<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system that this Managed Database is part of.
      */
     public /*out*/ readonly dbSystemId!: pulumi.Output<string>;
     /**
@@ -241,7 +241,7 @@ export interface ManagedDatabaseState {
      */
     databaseVersion?: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system that this Managed Database is part of.
      */
     dbSystemId?: pulumi.Input<string>;
     /**

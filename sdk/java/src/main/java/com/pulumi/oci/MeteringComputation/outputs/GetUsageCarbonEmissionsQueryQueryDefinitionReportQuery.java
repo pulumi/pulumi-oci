@@ -20,10 +20,25 @@ public final class GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery {
      */
     private Integer compartmentDepth;
     /**
-     * @return The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+     * @return The user interface date range, for example, LAST_THREE_MONTHS. Overrides the timeUsageStarted and timeUsageEnded properties.
      * 
      */
     private String dateRangeName;
+    /**
+     * @return Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+     * 
+     */
+    private String emissionCalculationMethod;
+    /**
+     * @return Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+     * 
+     */
+    private String emissionType;
+    /**
+     * @return The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+     * 
+     */
+    private String granularity;
     /**
      * @return Specifies what to aggregate the result by. For example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;]`
      * 
@@ -35,7 +50,7 @@ public final class GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery {
      */
     private List<GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag> groupByTags;
     /**
-     * @return Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+     * @return Specifies whether aggregated by time. If isAggregateByTime is true, all usage or costs over the query time period are summed.
      * 
      */
     private Boolean isAggregateByTime;
@@ -69,11 +84,32 @@ public final class GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery {
         return this.compartmentDepth;
     }
     /**
-     * @return The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+     * @return The user interface date range, for example, LAST_THREE_MONTHS. Overrides the timeUsageStarted and timeUsageEnded properties.
      * 
      */
     public String dateRangeName() {
         return this.dateRangeName;
+    }
+    /**
+     * @return Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+     * 
+     */
+    public String emissionCalculationMethod() {
+        return this.emissionCalculationMethod;
+    }
+    /**
+     * @return Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+     * 
+     */
+    public String emissionType() {
+        return this.emissionType;
+    }
+    /**
+     * @return The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+     * 
+     */
+    public String granularity() {
+        return this.granularity;
     }
     /**
      * @return Specifies what to aggregate the result by. For example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;]`
@@ -90,7 +126,7 @@ public final class GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery {
         return this.groupByTags;
     }
     /**
-     * @return Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+     * @return Specifies whether aggregated by time. If isAggregateByTime is true, all usage or costs over the query time period are summed.
      * 
      */
     public Boolean isAggregateByTime() {
@@ -136,6 +172,9 @@ public final class GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery {
     public static final class Builder {
         private Integer compartmentDepth;
         private String dateRangeName;
+        private String emissionCalculationMethod;
+        private String emissionType;
+        private String granularity;
         private List<String> groupBies;
         private List<GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag> groupByTags;
         private Boolean isAggregateByTime;
@@ -148,6 +187,9 @@ public final class GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentDepth = defaults.compartmentDepth;
     	      this.dateRangeName = defaults.dateRangeName;
+    	      this.emissionCalculationMethod = defaults.emissionCalculationMethod;
+    	      this.emissionType = defaults.emissionType;
+    	      this.granularity = defaults.granularity;
     	      this.groupBies = defaults.groupBies;
     	      this.groupByTags = defaults.groupByTags;
     	      this.isAggregateByTime = defaults.isAggregateByTime;
@@ -171,6 +213,30 @@ public final class GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery {
               throw new MissingRequiredPropertyException("GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery", "dateRangeName");
             }
             this.dateRangeName = dateRangeName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder emissionCalculationMethod(String emissionCalculationMethod) {
+            if (emissionCalculationMethod == null) {
+              throw new MissingRequiredPropertyException("GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery", "emissionCalculationMethod");
+            }
+            this.emissionCalculationMethod = emissionCalculationMethod;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder emissionType(String emissionType) {
+            if (emissionType == null) {
+              throw new MissingRequiredPropertyException("GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery", "emissionType");
+            }
+            this.emissionType = emissionType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder granularity(String granularity) {
+            if (granularity == null) {
+              throw new MissingRequiredPropertyException("GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery", "granularity");
+            }
+            this.granularity = granularity;
             return this;
         }
         @CustomType.Setter
@@ -239,6 +305,9 @@ public final class GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery {
             final var _resultValue = new GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery();
             _resultValue.compartmentDepth = compartmentDepth;
             _resultValue.dateRangeName = dateRangeName;
+            _resultValue.emissionCalculationMethod = emissionCalculationMethod;
+            _resultValue.emissionType = emissionType;
+            _resultValue.granularity = granularity;
             _resultValue.groupBies = groupBies;
             _resultValue.groupByTags = groupByTags;
             _resultValue.isAggregateByTime = isAggregateByTime;

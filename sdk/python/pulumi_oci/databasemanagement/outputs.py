@@ -826,7 +826,9 @@ class DatabaseDbmFeaturesManagementFeatureDetails(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "connectorDetails":
+        if key == "canEnableAllCurrentPdbs":
+            suggest = "can_enable_all_current_pdbs"
+        elif key == "connectorDetails":
             suggest = "connector_details"
         elif key == "databaseConnectionDetails":
             suggest = "database_connection_details"
@@ -848,18 +850,22 @@ class DatabaseDbmFeaturesManagementFeatureDetails(dict):
 
     def __init__(__self__, *,
                  feature: builtins.str,
+                 can_enable_all_current_pdbs: Optional[builtins.bool] = None,
                  connector_details: Optional['outputs.DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetails'] = None,
                  database_connection_details: Optional['outputs.DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetails'] = None,
                  is_auto_enable_pluggable_database: Optional[builtins.bool] = None,
                  management_type: Optional[builtins.str] = None):
         """
         :param builtins.str feature: The name of the Database Management feature.
+        :param builtins.bool can_enable_all_current_pdbs: Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
         :param 'DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs' connector_details: The connector details required to connect to an Oracle cloud database.
         :param 'DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs' database_connection_details: The connection details required to connect to the database.
-        :param builtins.bool is_auto_enable_pluggable_database: Indicates whether the pluggable database can be enabled automatically.
+        :param builtins.bool is_auto_enable_pluggable_database: Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
         :param builtins.str management_type: The management type for the database.
         """
         pulumi.set(__self__, "feature", feature)
+        if can_enable_all_current_pdbs is not None:
+            pulumi.set(__self__, "can_enable_all_current_pdbs", can_enable_all_current_pdbs)
         if connector_details is not None:
             pulumi.set(__self__, "connector_details", connector_details)
         if database_connection_details is not None:
@@ -876,6 +882,14 @@ class DatabaseDbmFeaturesManagementFeatureDetails(dict):
         The name of the Database Management feature.
         """
         return pulumi.get(self, "feature")
+
+    @property
+    @pulumi.getter(name="canEnableAllCurrentPdbs")
+    def can_enable_all_current_pdbs(self) -> Optional[builtins.bool]:
+        """
+        Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+        """
+        return pulumi.get(self, "can_enable_all_current_pdbs")
 
     @property
     @pulumi.getter(name="connectorDetails")
@@ -897,7 +911,7 @@ class DatabaseDbmFeaturesManagementFeatureDetails(dict):
     @pulumi.getter(name="isAutoEnablePluggableDatabase")
     def is_auto_enable_pluggable_database(self) -> Optional[builtins.bool]:
         """
-        Indicates whether the pluggable database can be enabled automatically.
+        Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
         """
         return pulumi.get(self, "is_auto_enable_pluggable_database")
 
@@ -2001,6 +2015,8 @@ class ExternalDbSystemDiscoveryDiscoveredComponent(dict):
             suggest = "asm_instances"
         elif key == "associatedComponents":
             suggest = "associated_components"
+        elif key == "canEnableAllCurrentPdbs":
+            suggest = "can_enable_all_current_pdbs"
         elif key == "clusterId":
             suggest = "cluster_id"
         elif key == "clusterInstances":
@@ -2045,6 +2061,8 @@ class ExternalDbSystemDiscoveryDiscoveredComponent(dict):
             suggest = "host_name"
         elif key == "instanceName":
             suggest = "instance_name"
+        elif key == "isAutoEnablePluggableDatabase":
+            suggest = "is_auto_enable_pluggable_database"
         elif key == "isCluster":
             suggest = "is_cluster"
         elif key == "isFlexCluster":
@@ -2095,6 +2113,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponent(dict):
                  adr_home_directory: Optional[builtins.str] = None,
                  asm_instances: Optional[Sequence['outputs.ExternalDbSystemDiscoveryDiscoveredComponentAsmInstance']] = None,
                  associated_components: Optional[Sequence['outputs.ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponent']] = None,
+                 can_enable_all_current_pdbs: Optional[builtins.bool] = None,
                  cluster_id: Optional[builtins.str] = None,
                  cluster_instances: Optional[Sequence['outputs.ExternalDbSystemDiscoveryDiscoveredComponentClusterInstance']] = None,
                  compartment_id: Optional[builtins.str] = None,
@@ -2120,6 +2139,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponent(dict):
                  home_directory: Optional[builtins.str] = None,
                  host_name: Optional[builtins.str] = None,
                  instance_name: Optional[builtins.str] = None,
+                 is_auto_enable_pluggable_database: Optional[builtins.bool] = None,
                  is_cluster: Optional[builtins.bool] = None,
                  is_flex_cluster: Optional[builtins.bool] = None,
                  is_flex_enabled: Optional[builtins.bool] = None,
@@ -2142,6 +2162,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponent(dict):
         """
         :param builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
         :param Sequence['ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs'] associated_components: The list of associated components.
+        :param builtins.bool can_enable_all_current_pdbs: Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
         :param builtins.str cluster_id: The unique identifier of the Oracle cluster.
         :param builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
         :param builtins.str component_id: The identifier of the discovered DB system component.
@@ -2166,6 +2187,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponent(dict):
         :param builtins.str home_directory: The location of the DB home.
         :param builtins.str host_name: The host name of the database or the SCAN name in case of a RAC database.
         :param builtins.str instance_name: The name of the ASM instance.
+        :param builtins.bool is_auto_enable_pluggable_database: Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
         :param builtins.bool is_cluster: Indicates whether the Oracle Database is part of a cluster.
         :param builtins.bool is_flex_cluster: Indicates whether the cluster is an Oracle Flex Cluster or not.
         :param builtins.bool is_flex_enabled: Indicates whether Oracle Flex ASM is enabled or not.
@@ -2192,6 +2214,8 @@ class ExternalDbSystemDiscoveryDiscoveredComponent(dict):
             pulumi.set(__self__, "asm_instances", asm_instances)
         if associated_components is not None:
             pulumi.set(__self__, "associated_components", associated_components)
+        if can_enable_all_current_pdbs is not None:
+            pulumi.set(__self__, "can_enable_all_current_pdbs", can_enable_all_current_pdbs)
         if cluster_id is not None:
             pulumi.set(__self__, "cluster_id", cluster_id)
         if cluster_instances is not None:
@@ -2242,6 +2266,8 @@ class ExternalDbSystemDiscoveryDiscoveredComponent(dict):
             pulumi.set(__self__, "host_name", host_name)
         if instance_name is not None:
             pulumi.set(__self__, "instance_name", instance_name)
+        if is_auto_enable_pluggable_database is not None:
+            pulumi.set(__self__, "is_auto_enable_pluggable_database", is_auto_enable_pluggable_database)
         if is_cluster is not None:
             pulumi.set(__self__, "is_cluster", is_cluster)
         if is_flex_cluster is not None:
@@ -2301,6 +2327,14 @@ class ExternalDbSystemDiscoveryDiscoveredComponent(dict):
         The list of associated components.
         """
         return pulumi.get(self, "associated_components")
+
+    @property
+    @pulumi.getter(name="canEnableAllCurrentPdbs")
+    def can_enable_all_current_pdbs(self) -> Optional[builtins.bool]:
+        """
+        Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+        """
+        return pulumi.get(self, "can_enable_all_current_pdbs")
 
     @property
     @pulumi.getter(name="clusterId")
@@ -2498,6 +2532,14 @@ class ExternalDbSystemDiscoveryDiscoveredComponent(dict):
         The name of the ASM instance.
         """
         return pulumi.get(self, "instance_name")
+
+    @property
+    @pulumi.getter(name="isAutoEnablePluggableDatabase")
+    def is_auto_enable_pluggable_database(self) -> Optional[builtins.bool]:
+        """
+        Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
+        """
+        return pulumi.get(self, "is_auto_enable_pluggable_database")
 
     @property
     @pulumi.getter(name="isCluster")
@@ -6649,8 +6691,12 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDeta
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "connectorDetails":
+        if key == "canEnableAllCurrentPdbs":
+            suggest = "can_enable_all_current_pdbs"
+        elif key == "connectorDetails":
             suggest = "connector_details"
+        elif key == "isAutoEnablePluggableDatabase":
+            suggest = "is_auto_enable_pluggable_database"
         elif key == "licenseModel":
             suggest = "license_model"
 
@@ -6667,16 +6713,24 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDeta
 
     def __init__(__self__, *,
                  feature: builtins.str,
+                 can_enable_all_current_pdbs: Optional[builtins.bool] = None,
                  connector_details: Optional['outputs.ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetails'] = None,
+                 is_auto_enable_pluggable_database: Optional[builtins.bool] = None,
                  license_model: Optional[builtins.str] = None):
         """
         :param builtins.str feature: The name of the Database Management feature.
+        :param builtins.bool can_enable_all_current_pdbs: Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
         :param 'ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs' connector_details: The connector details required to connect to an Oracle cloud database.
+        :param builtins.bool is_auto_enable_pluggable_database: Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
         :param builtins.str license_model: The Oracle license model that applies to the external database.
         """
         pulumi.set(__self__, "feature", feature)
+        if can_enable_all_current_pdbs is not None:
+            pulumi.set(__self__, "can_enable_all_current_pdbs", can_enable_all_current_pdbs)
         if connector_details is not None:
             pulumi.set(__self__, "connector_details", connector_details)
+        if is_auto_enable_pluggable_database is not None:
+            pulumi.set(__self__, "is_auto_enable_pluggable_database", is_auto_enable_pluggable_database)
         if license_model is not None:
             pulumi.set(__self__, "license_model", license_model)
 
@@ -6689,12 +6743,28 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDeta
         return pulumi.get(self, "feature")
 
     @property
+    @pulumi.getter(name="canEnableAllCurrentPdbs")
+    def can_enable_all_current_pdbs(self) -> Optional[builtins.bool]:
+        """
+        Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+        """
+        return pulumi.get(self, "can_enable_all_current_pdbs")
+
+    @property
     @pulumi.getter(name="connectorDetails")
     def connector_details(self) -> Optional['outputs.ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetails']:
         """
         The connector details required to connect to an Oracle cloud database.
         """
         return pulumi.get(self, "connector_details")
+
+    @property
+    @pulumi.getter(name="isAutoEnablePluggableDatabase")
+    def is_auto_enable_pluggable_database(self) -> Optional[builtins.bool]:
+        """
+        Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
+        """
+        return pulumi.get(self, "is_auto_enable_pluggable_database")
 
     @property
     @pulumi.getter(name="licenseModel")
@@ -6796,8 +6866,12 @@ class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatu
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "connectorDetails":
+        if key == "canEnableAllCurrentPdbs":
+            suggest = "can_enable_all_current_pdbs"
+        elif key == "connectorDetails":
             suggest = "connector_details"
+        elif key == "isAutoEnablePluggableDatabase":
+            suggest = "is_auto_enable_pluggable_database"
         elif key == "licenseModel":
             suggest = "license_model"
 
@@ -6814,16 +6888,24 @@ class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatu
 
     def __init__(__self__, *,
                  feature: builtins.str,
+                 can_enable_all_current_pdbs: Optional[builtins.bool] = None,
                  connector_details: Optional['outputs.ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetails'] = None,
+                 is_auto_enable_pluggable_database: Optional[builtins.bool] = None,
                  license_model: Optional[builtins.str] = None):
         """
         :param builtins.str feature: The name of the Database Management feature.
+        :param builtins.bool can_enable_all_current_pdbs: Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
         :param 'ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs' connector_details: The connector details required to connect to an Oracle cloud database.
+        :param builtins.bool is_auto_enable_pluggable_database: Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
         :param builtins.str license_model: The Oracle license model that applies to the external database.
         """
         pulumi.set(__self__, "feature", feature)
+        if can_enable_all_current_pdbs is not None:
+            pulumi.set(__self__, "can_enable_all_current_pdbs", can_enable_all_current_pdbs)
         if connector_details is not None:
             pulumi.set(__self__, "connector_details", connector_details)
+        if is_auto_enable_pluggable_database is not None:
+            pulumi.set(__self__, "is_auto_enable_pluggable_database", is_auto_enable_pluggable_database)
         if license_model is not None:
             pulumi.set(__self__, "license_model", license_model)
 
@@ -6836,12 +6918,28 @@ class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatu
         return pulumi.get(self, "feature")
 
     @property
+    @pulumi.getter(name="canEnableAllCurrentPdbs")
+    def can_enable_all_current_pdbs(self) -> Optional[builtins.bool]:
+        """
+        Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+        """
+        return pulumi.get(self, "can_enable_all_current_pdbs")
+
+    @property
     @pulumi.getter(name="connectorDetails")
     def connector_details(self) -> Optional['outputs.ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetails']:
         """
         The connector details required to connect to an Oracle cloud database.
         """
         return pulumi.get(self, "connector_details")
+
+    @property
+    @pulumi.getter(name="isAutoEnablePluggableDatabase")
+    def is_auto_enable_pluggable_database(self) -> Optional[builtins.bool]:
+        """
+        Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
+        """
+        return pulumi.get(self, "is_auto_enable_pluggable_database")
 
     @property
     @pulumi.getter(name="licenseModel")
@@ -8221,7 +8319,9 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetails(dict
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "connectorDetails":
+        if key == "canEnableAllCurrentPdbs":
+            suggest = "can_enable_all_current_pdbs"
+        elif key == "connectorDetails":
             suggest = "connector_details"
         elif key == "databaseConnectionDetails":
             suggest = "database_connection_details"
@@ -8243,18 +8343,22 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetails(dict
 
     def __init__(__self__, *,
                  feature: builtins.str,
+                 can_enable_all_current_pdbs: Optional[builtins.bool] = None,
                  connector_details: Optional['outputs.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetails'] = None,
                  database_connection_details: Optional['outputs.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetails'] = None,
                  is_auto_enable_pluggable_database: Optional[builtins.bool] = None,
                  management_type: Optional[builtins.str] = None):
         """
         :param builtins.str feature: The name of the Database Management feature.
+        :param builtins.bool can_enable_all_current_pdbs: Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
         :param 'PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs' connector_details: The connector details required to connect to an Oracle cloud database.
         :param 'PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs' database_connection_details: The connection details required to connect to the database.
-        :param builtins.bool is_auto_enable_pluggable_database: Indicates whether the pluggable database can be enabled automatically.
+        :param builtins.bool is_auto_enable_pluggable_database: Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
         :param builtins.str management_type: The management type for the database.
         """
         pulumi.set(__self__, "feature", feature)
+        if can_enable_all_current_pdbs is not None:
+            pulumi.set(__self__, "can_enable_all_current_pdbs", can_enable_all_current_pdbs)
         if connector_details is not None:
             pulumi.set(__self__, "connector_details", connector_details)
         if database_connection_details is not None:
@@ -8271,6 +8375,14 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetails(dict
         The name of the Database Management feature.
         """
         return pulumi.get(self, "feature")
+
+    @property
+    @pulumi.getter(name="canEnableAllCurrentPdbs")
+    def can_enable_all_current_pdbs(self) -> Optional[builtins.bool]:
+        """
+        Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+        """
+        return pulumi.get(self, "can_enable_all_current_pdbs")
 
     @property
     @pulumi.getter(name="connectorDetails")
@@ -8292,7 +8404,7 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetails(dict
     @pulumi.getter(name="isAutoEnablePluggableDatabase")
     def is_auto_enable_pluggable_database(self) -> Optional[builtins.bool]:
         """
-        Indicates whether the pluggable database can be enabled automatically.
+        Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
         """
         return pulumi.get(self, "is_auto_enable_pluggable_database")
 
@@ -12976,6 +13088,7 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
                  adr_home_directory: builtins.str,
                  asm_instances: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAsmInstanceResult'],
                  associated_components: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAssociatedComponentResult'],
+                 can_enable_all_current_pdbs: builtins.bool,
                  cluster_id: builtins.str,
                  cluster_instances: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceResult'],
                  compartment_id: builtins.str,
@@ -13001,6 +13114,7 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
                  home_directory: builtins.str,
                  host_name: builtins.str,
                  instance_name: builtins.str,
+                 is_auto_enable_pluggable_database: builtins.bool,
                  is_cluster: builtins.bool,
                  is_flex_cluster: builtins.bool,
                  is_flex_enabled: builtins.bool,
@@ -13023,6 +13137,7 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
         """
         :param builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
         :param Sequence['GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAssociatedComponentArgs'] associated_components: The list of associated components.
+        :param builtins.bool can_enable_all_current_pdbs: Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
         :param builtins.str cluster_id: The unique identifier of the Oracle cluster.
         :param builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param builtins.str component_id: The identifier of the discovered DB system component.
@@ -13047,6 +13162,7 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
         :param builtins.str home_directory: The location of the DB home.
         :param builtins.str host_name: The host name of the database or the SCAN name in case of a RAC database.
         :param builtins.str instance_name: The name of the ASM instance.
+        :param builtins.bool is_auto_enable_pluggable_database: Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
         :param builtins.bool is_cluster: Indicates whether the Oracle Database is part of a cluster.
         :param builtins.bool is_flex_cluster: Indicates whether the cluster is an Oracle Flex Cluster or not.
         :param builtins.bool is_flex_enabled: Indicates whether Oracle Flex ASM is enabled or not.
@@ -13070,6 +13186,7 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
         pulumi.set(__self__, "adr_home_directory", adr_home_directory)
         pulumi.set(__self__, "asm_instances", asm_instances)
         pulumi.set(__self__, "associated_components", associated_components)
+        pulumi.set(__self__, "can_enable_all_current_pdbs", can_enable_all_current_pdbs)
         pulumi.set(__self__, "cluster_id", cluster_id)
         pulumi.set(__self__, "cluster_instances", cluster_instances)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -13095,6 +13212,7 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
         pulumi.set(__self__, "home_directory", home_directory)
         pulumi.set(__self__, "host_name", host_name)
         pulumi.set(__self__, "instance_name", instance_name)
+        pulumi.set(__self__, "is_auto_enable_pluggable_database", is_auto_enable_pluggable_database)
         pulumi.set(__self__, "is_cluster", is_cluster)
         pulumi.set(__self__, "is_flex_cluster", is_flex_cluster)
         pulumi.set(__self__, "is_flex_enabled", is_flex_enabled)
@@ -13135,6 +13253,14 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
         The list of associated components.
         """
         return pulumi.get(self, "associated_components")
+
+    @property
+    @pulumi.getter(name="canEnableAllCurrentPdbs")
+    def can_enable_all_current_pdbs(self) -> builtins.bool:
+        """
+        Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+        """
+        return pulumi.get(self, "can_enable_all_current_pdbs")
 
     @property
     @pulumi.getter(name="clusterId")
@@ -13332,6 +13458,14 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
         The name of the ASM instance.
         """
         return pulumi.get(self, "instance_name")
+
+    @property
+    @pulumi.getter(name="isAutoEnablePluggableDatabase")
+    def is_auto_enable_pluggable_database(self) -> builtins.bool:
+        """
+        Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
+        """
+        return pulumi.get(self, "is_auto_enable_pluggable_database")
 
     @property
     @pulumi.getter(name="isCluster")
@@ -15281,6 +15415,7 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentResult(dict):
                  adr_home_directory: builtins.str,
                  asm_instances: Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceResult'],
                  associated_components: Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentResult'],
+                 can_enable_all_current_pdbs: builtins.bool,
                  cluster_id: builtins.str,
                  cluster_instances: Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceResult'],
                  compartment_id: builtins.str,
@@ -15306,6 +15441,7 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentResult(dict):
                  home_directory: builtins.str,
                  host_name: builtins.str,
                  instance_name: builtins.str,
+                 is_auto_enable_pluggable_database: builtins.bool,
                  is_cluster: builtins.bool,
                  is_flex_cluster: builtins.bool,
                  is_flex_enabled: builtins.bool,
@@ -15328,6 +15464,7 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentResult(dict):
         """
         :param builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
         :param Sequence['GetExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs'] associated_components: The list of associated components.
+        :param builtins.bool can_enable_all_current_pdbs: Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
         :param builtins.str cluster_id: The unique identifier of the Oracle cluster.
         :param builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param builtins.str component_id: The identifier of the discovered DB system component.
@@ -15352,6 +15489,7 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentResult(dict):
         :param builtins.str home_directory: The location of the DB home.
         :param builtins.str host_name: The host name of the database or the SCAN name in case of a RAC database.
         :param builtins.str instance_name: The name of the ASM instance.
+        :param builtins.bool is_auto_enable_pluggable_database: Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
         :param builtins.bool is_cluster: Indicates whether the Oracle Database is part of a cluster.
         :param builtins.bool is_flex_cluster: Indicates whether the cluster is an Oracle Flex Cluster or not.
         :param builtins.bool is_flex_enabled: Indicates whether Oracle Flex ASM is enabled or not.
@@ -15375,6 +15513,7 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentResult(dict):
         pulumi.set(__self__, "adr_home_directory", adr_home_directory)
         pulumi.set(__self__, "asm_instances", asm_instances)
         pulumi.set(__self__, "associated_components", associated_components)
+        pulumi.set(__self__, "can_enable_all_current_pdbs", can_enable_all_current_pdbs)
         pulumi.set(__self__, "cluster_id", cluster_id)
         pulumi.set(__self__, "cluster_instances", cluster_instances)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -15400,6 +15539,7 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentResult(dict):
         pulumi.set(__self__, "home_directory", home_directory)
         pulumi.set(__self__, "host_name", host_name)
         pulumi.set(__self__, "instance_name", instance_name)
+        pulumi.set(__self__, "is_auto_enable_pluggable_database", is_auto_enable_pluggable_database)
         pulumi.set(__self__, "is_cluster", is_cluster)
         pulumi.set(__self__, "is_flex_cluster", is_flex_cluster)
         pulumi.set(__self__, "is_flex_enabled", is_flex_enabled)
@@ -15440,6 +15580,14 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentResult(dict):
         The list of associated components.
         """
         return pulumi.get(self, "associated_components")
+
+    @property
+    @pulumi.getter(name="canEnableAllCurrentPdbs")
+    def can_enable_all_current_pdbs(self) -> builtins.bool:
+        """
+        Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+        """
+        return pulumi.get(self, "can_enable_all_current_pdbs")
 
     @property
     @pulumi.getter(name="clusterId")
@@ -15637,6 +15785,14 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentResult(dict):
         The name of the ASM instance.
         """
         return pulumi.get(self, "instance_name")
+
+    @property
+    @pulumi.getter(name="isAutoEnablePluggableDatabase")
+    def is_auto_enable_pluggable_database(self) -> builtins.bool:
+        """
+        Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
+        """
+        return pulumi.get(self, "is_auto_enable_pluggable_database")
 
     @property
     @pulumi.getter(name="isCluster")
@@ -29139,7 +29295,7 @@ class GetManagedDatabasesManagedDatabaseCollectionItemResult(dict):
         :param builtins.str database_sub_type: The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
         :param builtins.str database_type: The type of Oracle Database installation.
         :param builtins.str database_version: The Oracle Database version.
-        :param builtins.str db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
+        :param builtins.str db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system that this Managed Database is part of.
         :param Sequence['GetManagedDatabasesManagedDatabaseCollectionItemDbmgmtFeatureConfigArgs'] dbmgmt_feature_configs: The list of feature configurations
         :param Mapping[str, builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param builtins.str deployment_type: A filter to return Managed Databases of the specified deployment type.
@@ -29238,7 +29394,7 @@ class GetManagedDatabasesManagedDatabaseCollectionItemResult(dict):
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system that this Managed Database is part of.
         """
         return pulumi.get(self, "db_system_id")
 

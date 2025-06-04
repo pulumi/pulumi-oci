@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.inputs;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.GetSystemVersionsFilter;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -55,18 +56,48 @@ public final class GetSystemVersionsPlainArgs extends com.pulumi.resources.Invok
     }
 
     /**
-     * Specifies shape query parameter.
+     * If provided, return highest versions from each major version family.
      * 
      */
-    @Import(name="shape", required=true)
-    private String shape;
+    @Import(name="isLatest")
+    private @Nullable Boolean isLatest;
 
     /**
-     * @return Specifies shape query parameter.
+     * @return If provided, return highest versions from each major version family.
      * 
      */
-    public String shape() {
-        return this.shape;
+    public Optional<Boolean> isLatest() {
+        return Optional.ofNullable(this.isLatest);
+    }
+
+    /**
+     * If provided, filters the results for the specified resource Id.
+     * 
+     */
+    @Import(name="resourceId")
+    private @Nullable String resourceId;
+
+    /**
+     * @return If provided, filters the results for the specified resource Id.
+     * 
+     */
+    public Optional<String> resourceId() {
+        return Optional.ofNullable(this.resourceId);
+    }
+
+    /**
+     * If provided, filters the results for the given shape.
+     * 
+     */
+    @Import(name="shape")
+    private @Nullable String shape;
+
+    /**
+     * @return If provided, filters the results for the given shape.
+     * 
+     */
+    public Optional<String> shape() {
+        return Optional.ofNullable(this.shape);
     }
 
     private GetSystemVersionsPlainArgs() {}
@@ -75,6 +106,8 @@ public final class GetSystemVersionsPlainArgs extends com.pulumi.resources.Invok
         this.compartmentId = $.compartmentId;
         this.filters = $.filters;
         this.giVersion = $.giVersion;
+        this.isLatest = $.isLatest;
+        this.resourceId = $.resourceId;
         this.shape = $.shape;
     }
 
@@ -128,12 +161,34 @@ public final class GetSystemVersionsPlainArgs extends com.pulumi.resources.Invok
         }
 
         /**
-         * @param shape Specifies shape query parameter.
+         * @param isLatest If provided, return highest versions from each major version family.
          * 
          * @return builder
          * 
          */
-        public Builder shape(String shape) {
+        public Builder isLatest(@Nullable Boolean isLatest) {
+            $.isLatest = isLatest;
+            return this;
+        }
+
+        /**
+         * @param resourceId If provided, filters the results for the specified resource Id.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceId(@Nullable String resourceId) {
+            $.resourceId = resourceId;
+            return this;
+        }
+
+        /**
+         * @param shape If provided, filters the results for the given shape.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shape(@Nullable String shape) {
             $.shape = shape;
             return this;
         }
@@ -144,9 +199,6 @@ public final class GetSystemVersionsPlainArgs extends com.pulumi.resources.Invok
             }
             if ($.giVersion == null) {
                 throw new MissingRequiredPropertyException("GetSystemVersionsPlainArgs", "giVersion");
-            }
-            if ($.shape == null) {
-                throw new MissingRequiredPropertyException("GetSystemVersionsPlainArgs", "shape");
             }
             return $;
         }

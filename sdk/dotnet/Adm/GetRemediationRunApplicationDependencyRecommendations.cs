@@ -114,7 +114,7 @@ namespace Pulumi.Oci.Adm
         public string? Gav { get; set; }
 
         /// <summary>
-        /// A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+        /// A filter to return only resources that match the entire purl given.
         /// </summary>
         [Input("purl")]
         public string? Purl { get; set; }
@@ -148,7 +148,7 @@ namespace Pulumi.Oci.Adm
         public Input<string>? Gav { get; set; }
 
         /// <summary>
-        /// A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+        /// A filter to return only resources that match the entire purl given.
         /// </summary>
         [Input("purl")]
         public Input<string>? Purl { get; set; }
@@ -183,7 +183,7 @@ namespace Pulumi.Oci.Adm
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+        /// Package URL identifier, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
         /// </summary>
         public readonly string? Purl;
         public readonly string RemediationRunId;

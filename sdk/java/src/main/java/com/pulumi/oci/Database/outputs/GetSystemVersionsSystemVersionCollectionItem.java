@@ -17,7 +17,7 @@ public final class GetSystemVersionsSystemVersionCollectionItem {
      */
     private String giVersion;
     /**
-     * @return Specifies shape query parameter.
+     * @return If provided, filters the results for the given shape.
      * 
      */
     private String shape;
@@ -36,7 +36,7 @@ public final class GetSystemVersionsSystemVersionCollectionItem {
         return this.giVersion;
     }
     /**
-     * @return Specifies shape query parameter.
+     * @return If provided, filters the results for the given shape.
      * 
      */
     public String shape() {

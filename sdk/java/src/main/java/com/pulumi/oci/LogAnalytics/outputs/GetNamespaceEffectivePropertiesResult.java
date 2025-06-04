@@ -38,6 +38,7 @@ public final class GetNamespaceEffectivePropertiesResult {
     private @Nullable String name;
     private String namespace;
     private @Nullable Integer patternId;
+    private @Nullable String patternIdLong;
     private @Nullable String sourceName;
 
     private GetNamespaceEffectivePropertiesResult() {}
@@ -80,6 +81,9 @@ public final class GetNamespaceEffectivePropertiesResult {
     public Optional<Integer> patternId() {
         return Optional.ofNullable(this.patternId);
     }
+    public Optional<String> patternIdLong() {
+        return Optional.ofNullable(this.patternIdLong);
+    }
     public Optional<String> sourceName() {
         return Optional.ofNullable(this.sourceName);
     }
@@ -102,6 +106,7 @@ public final class GetNamespaceEffectivePropertiesResult {
         private @Nullable String name;
         private String namespace;
         private @Nullable Integer patternId;
+        private @Nullable String patternIdLong;
         private @Nullable String sourceName;
         public Builder() {}
         public Builder(GetNamespaceEffectivePropertiesResult defaults) {
@@ -115,6 +120,7 @@ public final class GetNamespaceEffectivePropertiesResult {
     	      this.name = defaults.name;
     	      this.namespace = defaults.namespace;
     	      this.patternId = defaults.patternId;
+    	      this.patternIdLong = defaults.patternIdLong;
     	      this.sourceName = defaults.sourceName;
         }
 
@@ -185,6 +191,12 @@ public final class GetNamespaceEffectivePropertiesResult {
             return this;
         }
         @CustomType.Setter
+        public Builder patternIdLong(@Nullable String patternIdLong) {
+
+            this.patternIdLong = patternIdLong;
+            return this;
+        }
+        @CustomType.Setter
         public Builder sourceName(@Nullable String sourceName) {
 
             this.sourceName = sourceName;
@@ -201,6 +213,7 @@ public final class GetNamespaceEffectivePropertiesResult {
             _resultValue.name = name;
             _resultValue.namespace = namespace;
             _resultValue.patternId = patternId;
+            _resultValue.patternIdLong = patternIdLong;
             _resultValue.sourceName = sourceName;
             return _resultValue;
         }

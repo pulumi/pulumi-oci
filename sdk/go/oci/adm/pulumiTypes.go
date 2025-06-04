@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -16,11 +16,11 @@ var _ = internal.GetEnvOrDefault
 type RemediationRecipeDetectConfiguration struct {
 	// (Updatable) The list of dependencies to be ignored by the recommendation algorithm. The dependency pattern is matched against the 'group:artifact:version' or the purl of a dependency. An asterisk (*) at the end in the dependency pattern acts as a wildcard and matches zero or more characters.
 	Exclusions []string `pulumi:"exclusions"`
-	// (Updatable) The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+	// (Updatable) The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. A vulnerability with a CVSS V2 score below this value is not considered for remediation.
 	MaxPermissibleCvssV2score *float64 `pulumi:"maxPermissibleCvssV2score"`
-	// (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+	// (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. A vulnerability with a CVSS V3 score below this value is not considered for patching.
 	MaxPermissibleCvssV3score *float64 `pulumi:"maxPermissibleCvssV3score"`
-	// (Updatable) The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered for patching.
+	// (Updatable) The maximum ADM Severity. A vulnerability with an severity below this value is not considered for remediation.
 	MaxPermissibleSeverity *string `pulumi:"maxPermissibleSeverity"`
 	// (Updatable) The upgrade policy for recommendations. The `Nearest` upgrade policy upgrades a dependency to the oldest version that meets both of the following criteria: it is newer than the current version and it is not affected by a vulnerability.
 	UpgradePolicy *string `pulumi:"upgradePolicy"`
@@ -40,11 +40,11 @@ type RemediationRecipeDetectConfigurationInput interface {
 type RemediationRecipeDetectConfigurationArgs struct {
 	// (Updatable) The list of dependencies to be ignored by the recommendation algorithm. The dependency pattern is matched against the 'group:artifact:version' or the purl of a dependency. An asterisk (*) at the end in the dependency pattern acts as a wildcard and matches zero or more characters.
 	Exclusions pulumi.StringArrayInput `pulumi:"exclusions"`
-	// (Updatable) The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+	// (Updatable) The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. A vulnerability with a CVSS V2 score below this value is not considered for remediation.
 	MaxPermissibleCvssV2score pulumi.Float64PtrInput `pulumi:"maxPermissibleCvssV2score"`
-	// (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+	// (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. A vulnerability with a CVSS V3 score below this value is not considered for patching.
 	MaxPermissibleCvssV3score pulumi.Float64PtrInput `pulumi:"maxPermissibleCvssV3score"`
-	// (Updatable) The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered for patching.
+	// (Updatable) The maximum ADM Severity. A vulnerability with an severity below this value is not considered for remediation.
 	MaxPermissibleSeverity pulumi.StringPtrInput `pulumi:"maxPermissibleSeverity"`
 	// (Updatable) The upgrade policy for recommendations. The `Nearest` upgrade policy upgrades a dependency to the oldest version that meets both of the following criteria: it is newer than the current version and it is not affected by a vulnerability.
 	UpgradePolicy pulumi.StringPtrInput `pulumi:"upgradePolicy"`
@@ -132,17 +132,17 @@ func (o RemediationRecipeDetectConfigurationOutput) Exclusions() pulumi.StringAr
 	return o.ApplyT(func(v RemediationRecipeDetectConfiguration) []string { return v.Exclusions }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+// (Updatable) The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. A vulnerability with a CVSS V2 score below this value is not considered for remediation.
 func (o RemediationRecipeDetectConfigurationOutput) MaxPermissibleCvssV2score() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v RemediationRecipeDetectConfiguration) *float64 { return v.MaxPermissibleCvssV2score }).(pulumi.Float64PtrOutput)
 }
 
-// (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+// (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. A vulnerability with a CVSS V3 score below this value is not considered for patching.
 func (o RemediationRecipeDetectConfigurationOutput) MaxPermissibleCvssV3score() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v RemediationRecipeDetectConfiguration) *float64 { return v.MaxPermissibleCvssV3score }).(pulumi.Float64PtrOutput)
 }
 
-// (Updatable) The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered for patching.
+// (Updatable) The maximum ADM Severity. A vulnerability with an severity below this value is not considered for remediation.
 func (o RemediationRecipeDetectConfigurationOutput) MaxPermissibleSeverity() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RemediationRecipeDetectConfiguration) *string { return v.MaxPermissibleSeverity }).(pulumi.StringPtrOutput)
 }
@@ -186,7 +186,7 @@ func (o RemediationRecipeDetectConfigurationPtrOutput) Exclusions() pulumi.Strin
 	}).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+// (Updatable) The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. A vulnerability with a CVSS V2 score below this value is not considered for remediation.
 func (o RemediationRecipeDetectConfigurationPtrOutput) MaxPermissibleCvssV2score() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *RemediationRecipeDetectConfiguration) *float64 {
 		if v == nil {
@@ -196,7 +196,7 @@ func (o RemediationRecipeDetectConfigurationPtrOutput) MaxPermissibleCvssV2score
 	}).(pulumi.Float64PtrOutput)
 }
 
-// (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+// (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. A vulnerability with a CVSS V3 score below this value is not considered for patching.
 func (o RemediationRecipeDetectConfigurationPtrOutput) MaxPermissibleCvssV3score() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *RemediationRecipeDetectConfiguration) *float64 {
 		if v == nil {
@@ -206,7 +206,7 @@ func (o RemediationRecipeDetectConfigurationPtrOutput) MaxPermissibleCvssV3score
 	}).(pulumi.Float64PtrOutput)
 }
 
-// (Updatable) The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered for patching.
+// (Updatable) The maximum ADM Severity. A vulnerability with an severity below this value is not considered for remediation.
 func (o RemediationRecipeDetectConfigurationPtrOutput) MaxPermissibleSeverity() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RemediationRecipeDetectConfiguration) *string {
 		if v == nil {
@@ -1119,7 +1119,7 @@ type VulnerabilityAuditApplicationDependency struct {
 	Gav *string `pulumi:"gav"`
 	// Unique identifier of an application dependency, for example nodeId1. The nodeId can be generated by assigning a unique id to each application dependency in the tree of application dependencies. Every node, even those who share the same GAV, should have a different nodeId. The preferred way of constructing a nodeId is to assign incremental integers during a breadth first or depth first search. A nodeId can be reused only it refers to the same subtree of application dependencies. (This is not equivalent to referring to the same GAV, that is, a GAV can have multiple transitive dependencies.)
 	NodeId string `pulumi:"nodeId"`
-	// Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+	// Package URL identifier, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
 	Purl *string `pulumi:"purl"`
 }
 
@@ -1141,7 +1141,7 @@ type VulnerabilityAuditApplicationDependencyArgs struct {
 	Gav pulumi.StringPtrInput `pulumi:"gav"`
 	// Unique identifier of an application dependency, for example nodeId1. The nodeId can be generated by assigning a unique id to each application dependency in the tree of application dependencies. Every node, even those who share the same GAV, should have a different nodeId. The preferred way of constructing a nodeId is to assign incremental integers during a breadth first or depth first search. A nodeId can be reused only it refers to the same subtree of application dependencies. (This is not equivalent to referring to the same GAV, that is, a GAV can have multiple transitive dependencies.)
 	NodeId pulumi.StringInput `pulumi:"nodeId"`
-	// Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+	// Package URL identifier, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
 	Purl pulumi.StringPtrInput `pulumi:"purl"`
 }
 
@@ -1211,7 +1211,7 @@ func (o VulnerabilityAuditApplicationDependencyOutput) NodeId() pulumi.StringOut
 	return o.ApplyT(func(v VulnerabilityAuditApplicationDependency) string { return v.NodeId }).(pulumi.StringOutput)
 }
 
-// Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+// Package URL identifier, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
 func (o VulnerabilityAuditApplicationDependencyOutput) Purl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VulnerabilityAuditApplicationDependency) *string { return v.Purl }).(pulumi.StringPtrOutput)
 }
@@ -1812,9 +1812,9 @@ func (o VulnerabilityAuditUsageDataPtrOutput) SourceType() pulumi.StringPtrOutpu
 }
 
 type VulnerabilityAuditVulnerability struct {
-	// Common Vulnerability Scoring System (CVSS) Version 2.
+	// Common Vulnerability Scoring System (CVSS) Version 2, calculated from the metrics provided in the CVSS vector provided from the vulnerability source. This field is deprecated and will be removed in the future. The cvssV2Score can be obtained from the metrics field of the listVulnerabilities endpoint.
 	CvssV2score *float64 `pulumi:"cvssV2score"`
-	// Common Vulnerability Scoring System (CVSS) Version 3.
+	// Common Vulnerability Scoring System (CVSS) Version 3, calculated from the metrics provided in the CVSS vector provided from the vulnerability source. This field is deprecated and will be removed in the future. The cvssV3Score can be obtained from the metrics field of the listVulnerabilities endpoint.
 	CvssV3score *float64 `pulumi:"cvssV3score"`
 	// Unique vulnerability identifier, e.g. CVE-1999-0067.
 	Id *string `pulumi:"id"`
@@ -1840,9 +1840,9 @@ type VulnerabilityAuditVulnerabilityInput interface {
 }
 
 type VulnerabilityAuditVulnerabilityArgs struct {
-	// Common Vulnerability Scoring System (CVSS) Version 2.
+	// Common Vulnerability Scoring System (CVSS) Version 2, calculated from the metrics provided in the CVSS vector provided from the vulnerability source. This field is deprecated and will be removed in the future. The cvssV2Score can be obtained from the metrics field of the listVulnerabilities endpoint.
 	CvssV2score pulumi.Float64PtrInput `pulumi:"cvssV2score"`
-	// Common Vulnerability Scoring System (CVSS) Version 3.
+	// Common Vulnerability Scoring System (CVSS) Version 3, calculated from the metrics provided in the CVSS vector provided from the vulnerability source. This field is deprecated and will be removed in the future. The cvssV3Score can be obtained from the metrics field of the listVulnerabilities endpoint.
 	CvssV3score pulumi.Float64PtrInput `pulumi:"cvssV3score"`
 	// Unique vulnerability identifier, e.g. CVE-1999-0067.
 	Id pulumi.StringPtrInput `pulumi:"id"`
@@ -1907,12 +1907,12 @@ func (o VulnerabilityAuditVulnerabilityOutput) ToVulnerabilityAuditVulnerability
 	return o
 }
 
-// Common Vulnerability Scoring System (CVSS) Version 2.
+// Common Vulnerability Scoring System (CVSS) Version 2, calculated from the metrics provided in the CVSS vector provided from the vulnerability source. This field is deprecated and will be removed in the future. The cvssV2Score can be obtained from the metrics field of the listVulnerabilities endpoint.
 func (o VulnerabilityAuditVulnerabilityOutput) CvssV2score() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v VulnerabilityAuditVulnerability) *float64 { return v.CvssV2score }).(pulumi.Float64PtrOutput)
 }
 
-// Common Vulnerability Scoring System (CVSS) Version 3.
+// Common Vulnerability Scoring System (CVSS) Version 3, calculated from the metrics provided in the CVSS vector provided from the vulnerability source. This field is deprecated and will be removed in the future. The cvssV3Score can be obtained from the metrics field of the listVulnerabilities endpoint.
 func (o VulnerabilityAuditVulnerabilityOutput) CvssV3score() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v VulnerabilityAuditVulnerability) *float64 { return v.CvssV3score }).(pulumi.Float64PtrOutput)
 }
@@ -2069,6 +2069,7 @@ func (o GetKnowledgebasesFilterArrayOutput) Index(i pulumi.IntInput) GetKnowledg
 }
 
 type GetKnowledgebasesKnowledgeBaseCollection struct {
+	// List of knowledge base summaries.
 	Items []GetKnowledgebasesKnowledgeBaseCollectionItem `pulumi:"items"`
 }
 
@@ -2084,6 +2085,7 @@ type GetKnowledgebasesKnowledgeBaseCollectionInput interface {
 }
 
 type GetKnowledgebasesKnowledgeBaseCollectionArgs struct {
+	// List of knowledge base summaries.
 	Items GetKnowledgebasesKnowledgeBaseCollectionItemArrayInput `pulumi:"items"`
 }
 
@@ -2138,6 +2140,7 @@ func (o GetKnowledgebasesKnowledgeBaseCollectionOutput) ToGetKnowledgebasesKnowl
 	return o
 }
 
+// List of knowledge base summaries.
 func (o GetKnowledgebasesKnowledgeBaseCollectionOutput) Items() GetKnowledgebasesKnowledgeBaseCollectionItemArrayOutput {
 	return o.ApplyT(func(v GetKnowledgebasesKnowledgeBaseCollection) []GetKnowledgebasesKnowledgeBaseCollectionItem {
 		return v.Items
@@ -2336,11 +2339,11 @@ func (o GetKnowledgebasesKnowledgeBaseCollectionItemArrayOutput) Index(i pulumi.
 type GetRemediationRecipeDetectConfiguration struct {
 	// The list of dependencies to be ignored by the recommendation algorithm. The dependency pattern is matched against the 'group:artifact:version' or the purl of a dependency. An asterisk (*) at the end in the dependency pattern acts as a wildcard and matches zero or more characters.
 	Exclusions []string `pulumi:"exclusions"`
-	// The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+	// The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. A vulnerability with a CVSS V2 score below this value is not considered for remediation.
 	MaxPermissibleCvssV2score float64 `pulumi:"maxPermissibleCvssV2score"`
-	// The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+	// The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. A vulnerability with a CVSS V3 score below this value is not considered for patching.
 	MaxPermissibleCvssV3score float64 `pulumi:"maxPermissibleCvssV3score"`
-	// The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered for patching.
+	// The maximum ADM Severity. A vulnerability with an severity below this value is not considered for remediation.
 	MaxPermissibleSeverity string `pulumi:"maxPermissibleSeverity"`
 	// The upgrade policy for recommendations. The `Nearest` upgrade policy upgrades a dependency to the oldest version that meets both of the following criteria: it is newer than the current version and it is not affected by a vulnerability.
 	UpgradePolicy string `pulumi:"upgradePolicy"`
@@ -2360,11 +2363,11 @@ type GetRemediationRecipeDetectConfigurationInput interface {
 type GetRemediationRecipeDetectConfigurationArgs struct {
 	// The list of dependencies to be ignored by the recommendation algorithm. The dependency pattern is matched against the 'group:artifact:version' or the purl of a dependency. An asterisk (*) at the end in the dependency pattern acts as a wildcard and matches zero or more characters.
 	Exclusions pulumi.StringArrayInput `pulumi:"exclusions"`
-	// The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+	// The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. A vulnerability with a CVSS V2 score below this value is not considered for remediation.
 	MaxPermissibleCvssV2score pulumi.Float64Input `pulumi:"maxPermissibleCvssV2score"`
-	// The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+	// The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. A vulnerability with a CVSS V3 score below this value is not considered for patching.
 	MaxPermissibleCvssV3score pulumi.Float64Input `pulumi:"maxPermissibleCvssV3score"`
-	// The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered for patching.
+	// The maximum ADM Severity. A vulnerability with an severity below this value is not considered for remediation.
 	MaxPermissibleSeverity pulumi.StringInput `pulumi:"maxPermissibleSeverity"`
 	// The upgrade policy for recommendations. The `Nearest` upgrade policy upgrades a dependency to the oldest version that meets both of the following criteria: it is newer than the current version and it is not affected by a vulnerability.
 	UpgradePolicy pulumi.StringInput `pulumi:"upgradePolicy"`
@@ -2426,17 +2429,17 @@ func (o GetRemediationRecipeDetectConfigurationOutput) Exclusions() pulumi.Strin
 	return o.ApplyT(func(v GetRemediationRecipeDetectConfiguration) []string { return v.Exclusions }).(pulumi.StringArrayOutput)
 }
 
-// The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+// The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. A vulnerability with a CVSS V2 score below this value is not considered for remediation.
 func (o GetRemediationRecipeDetectConfigurationOutput) MaxPermissibleCvssV2score() pulumi.Float64Output {
 	return o.ApplyT(func(v GetRemediationRecipeDetectConfiguration) float64 { return v.MaxPermissibleCvssV2score }).(pulumi.Float64Output)
 }
 
-// The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+// The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. A vulnerability with a CVSS V3 score below this value is not considered for patching.
 func (o GetRemediationRecipeDetectConfigurationOutput) MaxPermissibleCvssV3score() pulumi.Float64Output {
 	return o.ApplyT(func(v GetRemediationRecipeDetectConfiguration) float64 { return v.MaxPermissibleCvssV3score }).(pulumi.Float64Output)
 }
 
-// The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered for patching.
+// The maximum ADM Severity. A vulnerability with an severity below this value is not considered for remediation.
 func (o GetRemediationRecipeDetectConfigurationOutput) MaxPermissibleSeverity() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRemediationRecipeDetectConfiguration) string { return v.MaxPermissibleSeverity }).(pulumi.StringOutput)
 }
@@ -3126,7 +3129,7 @@ type GetRemediationRecipesRemediationRecipeCollectionItem struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	// A configuration to define the constraints when detecting vulnerable dependencies.
+	// A configuration to define the constraints when detecting vulnerable dependencies and recommending remediations.
 	DetectConfigurations []GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration `pulumi:"detectConfigurations"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
@@ -3138,7 +3141,7 @@ type GetRemediationRecipesRemediationRecipeCollectionItem struct {
 	IsRunTriggeredOnKbChange bool `pulumi:"isRunTriggeredOnKbChange"`
 	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
 	KnowledgeBaseId string `pulumi:"knowledgeBaseId"`
-	// A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+	// A network configuration defines the required network characteristics for the remediation run of the recipe to access the source repository and/or verify build services.
 	NetworkConfigurations []GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration `pulumi:"networkConfigurations"`
 	// A configuration for the Source Code Management tool/platform used by a remediation recipe.
 	ScmConfigurations []GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration `pulumi:"scmConfigurations"`
@@ -3170,7 +3173,7 @@ type GetRemediationRecipesRemediationRecipeCollectionItemArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
-	// A configuration to define the constraints when detecting vulnerable dependencies.
+	// A configuration to define the constraints when detecting vulnerable dependencies and recommending remediations.
 	DetectConfigurations GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayInput `pulumi:"detectConfigurations"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
@@ -3182,7 +3185,7 @@ type GetRemediationRecipesRemediationRecipeCollectionItemArgs struct {
 	IsRunTriggeredOnKbChange pulumi.BoolInput `pulumi:"isRunTriggeredOnKbChange"`
 	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
 	KnowledgeBaseId pulumi.StringInput `pulumi:"knowledgeBaseId"`
-	// A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+	// A network configuration defines the required network characteristics for the remediation run of the recipe to access the source repository and/or verify build services.
 	NetworkConfigurations GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayInput `pulumi:"networkConfigurations"`
 	// A configuration for the Source Code Management tool/platform used by a remediation recipe.
 	ScmConfigurations GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayInput `pulumi:"scmConfigurations"`
@@ -3259,7 +3262,7 @@ func (o GetRemediationRecipesRemediationRecipeCollectionItemOutput) DefinedTags(
 	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
-// A configuration to define the constraints when detecting vulnerable dependencies.
+// A configuration to define the constraints when detecting vulnerable dependencies and recommending remediations.
 func (o GetRemediationRecipesRemediationRecipeCollectionItemOutput) DetectConfigurations() GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayOutput {
 	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItem) []GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration {
 		return v.DetectConfigurations
@@ -3291,7 +3294,7 @@ func (o GetRemediationRecipesRemediationRecipeCollectionItemOutput) KnowledgeBas
 	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItem) string { return v.KnowledgeBaseId }).(pulumi.StringOutput)
 }
 
-// A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+// A network configuration defines the required network characteristics for the remediation run of the recipe to access the source repository and/or verify build services.
 func (o GetRemediationRecipesRemediationRecipeCollectionItemOutput) NetworkConfigurations() GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayOutput {
 	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItem) []GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration {
 		return v.NetworkConfigurations
@@ -3355,11 +3358,11 @@ func (o GetRemediationRecipesRemediationRecipeCollectionItemArrayOutput) Index(i
 type GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration struct {
 	// The list of dependencies to be ignored by the recommendation algorithm. The dependency pattern is matched against the 'group:artifact:version' or the purl of a dependency. An asterisk (*) at the end in the dependency pattern acts as a wildcard and matches zero or more characters.
 	Exclusions []string `pulumi:"exclusions"`
-	// The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+	// The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. A vulnerability with a CVSS V2 score below this value is not considered for remediation.
 	MaxPermissibleCvssV2score float64 `pulumi:"maxPermissibleCvssV2score"`
-	// The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+	// The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. A vulnerability with a CVSS V3 score below this value is not considered for patching.
 	MaxPermissibleCvssV3score float64 `pulumi:"maxPermissibleCvssV3score"`
-	// The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered for patching.
+	// The maximum ADM Severity. A vulnerability with an severity below this value is not considered for remediation.
 	MaxPermissibleSeverity string `pulumi:"maxPermissibleSeverity"`
 	// The upgrade policy for recommendations. The `Nearest` upgrade policy upgrades a dependency to the oldest version that meets both of the following criteria: it is newer than the current version and it is not affected by a vulnerability.
 	UpgradePolicy string `pulumi:"upgradePolicy"`
@@ -3379,11 +3382,11 @@ type GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationInpu
 type GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArgs struct {
 	// The list of dependencies to be ignored by the recommendation algorithm. The dependency pattern is matched against the 'group:artifact:version' or the purl of a dependency. An asterisk (*) at the end in the dependency pattern acts as a wildcard and matches zero or more characters.
 	Exclusions pulumi.StringArrayInput `pulumi:"exclusions"`
-	// The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+	// The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. A vulnerability with a CVSS V2 score below this value is not considered for remediation.
 	MaxPermissibleCvssV2score pulumi.Float64Input `pulumi:"maxPermissibleCvssV2score"`
-	// The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+	// The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. A vulnerability with a CVSS V3 score below this value is not considered for patching.
 	MaxPermissibleCvssV3score pulumi.Float64Input `pulumi:"maxPermissibleCvssV3score"`
-	// The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered for patching.
+	// The maximum ADM Severity. A vulnerability with an severity below this value is not considered for remediation.
 	MaxPermissibleSeverity pulumi.StringInput `pulumi:"maxPermissibleSeverity"`
 	// The upgrade policy for recommendations. The `Nearest` upgrade policy upgrades a dependency to the oldest version that meets both of the following criteria: it is newer than the current version and it is not affected by a vulnerability.
 	UpgradePolicy pulumi.StringInput `pulumi:"upgradePolicy"`
@@ -3447,21 +3450,21 @@ func (o GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationO
 	}).(pulumi.StringArrayOutput)
 }
 
-// The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+// The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. A vulnerability with a CVSS V2 score below this value is not considered for remediation.
 func (o GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutput) MaxPermissibleCvssV2score() pulumi.Float64Output {
 	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration) float64 {
 		return v.MaxPermissibleCvssV2score
 	}).(pulumi.Float64Output)
 }
 
-// The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+// The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. A vulnerability with a CVSS V3 score below this value is not considered for patching.
 func (o GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutput) MaxPermissibleCvssV3score() pulumi.Float64Output {
 	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration) float64 {
 		return v.MaxPermissibleCvssV3score
 	}).(pulumi.Float64Output)
 }
 
-// The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered for patching.
+// The maximum ADM Severity. A vulnerability with an severity below this value is not considered for remediation.
 func (o GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutput) MaxPermissibleSeverity() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration) string {
 		return v.MaxPermissibleSeverity
@@ -4090,11 +4093,11 @@ type GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyR
 	Gav string `pulumi:"gav"`
 	// Unique node identifier of an application dependency with an associated Recommendation, e.g. nodeId1.
 	NodeId string `pulumi:"nodeId"`
-	// A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+	// A filter to return only resources that match the entire purl given.
 	Purl string `pulumi:"purl"`
 	// Recommended application dependency in "group:artifact:version" (GAV) format, e.g. org.graalvm.nativeimage:svm:21.2.0.
 	RecommendedGav string `pulumi:"recommendedGav"`
-	// Recommended application dependency in PURL format, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.2.0
+	// Recommended application dependency in purl format, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.2.0
 	RecommendedPurl string `pulumi:"recommendedPurl"`
 }
 
@@ -4116,11 +4119,11 @@ type GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyR
 	Gav pulumi.StringInput `pulumi:"gav"`
 	// Unique node identifier of an application dependency with an associated Recommendation, e.g. nodeId1.
 	NodeId pulumi.StringInput `pulumi:"nodeId"`
-	// A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+	// A filter to return only resources that match the entire purl given.
 	Purl pulumi.StringInput `pulumi:"purl"`
 	// Recommended application dependency in "group:artifact:version" (GAV) format, e.g. org.graalvm.nativeimage:svm:21.2.0.
 	RecommendedGav pulumi.StringInput `pulumi:"recommendedGav"`
-	// Recommended application dependency in PURL format, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.2.0
+	// Recommended application dependency in purl format, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.2.0
 	RecommendedPurl pulumi.StringInput `pulumi:"recommendedPurl"`
 }
 
@@ -4196,7 +4199,7 @@ func (o GetRemediationRunApplicationDependencyRecommendationsApplicationDependen
 	}).(pulumi.StringOutput)
 }
 
-// A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+// A filter to return only resources that match the entire purl given.
 func (o GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutput) Purl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem) string {
 		return v.Purl
@@ -4210,7 +4213,7 @@ func (o GetRemediationRunApplicationDependencyRecommendationsApplicationDependen
 	}).(pulumi.StringOutput)
 }
 
-// Recommended application dependency in PURL format, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.2.0
+// Recommended application dependency in purl format, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.2.0
 func (o GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutput) RecommendedPurl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem) string {
 		return v.RecommendedPurl
@@ -6095,14 +6098,26 @@ type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepende
 	ApplicationDependencyNodeIds []string `pulumi:"applicationDependencyNodeIds"`
 	// A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
 	Gav string `pulumi:"gav"`
-	// Indicates if the artifact is found in the knowledge base.
+	// Indicates if the artifact is found in the knowledge base, this field is deprecated and will be removed in the future.
 	IsFoundInKnowledgeBase bool `pulumi:"isFoundInKnowledgeBase"`
 	// Unique identifier of an application dependency, for example nodeId1.
 	NodeId string `pulumi:"nodeId"`
-	// A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+	// A filter to return only resources that match the entire purl given.
 	Purl string `pulumi:"purl"`
 	// List of vulnerabilities for the application dependency.
 	Vulnerabilities []GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerability `pulumi:"vulnerabilities"`
+	// Potential issues in the artifact identifiers (purls) provided by the user, that the user is alerted about. ADM supports the following warnings:
+	// * MISSING_VERSION: Missing version
+	// * INCORRECT_FORMAT_VERSION: Version can not be parsed according to the ecosystem
+	// * UNKNOWN_ECOSYSTEM: The purl's ecosystem is unknown to ADM
+	// * INCORRECT_FORMAT_EPOCH: Epoch qualifier can not be parsed according to the ecosystem
+	// * MISSING_DISTRO: The distro qualifier is required for the ecosystem, but was not provided in the purl
+	// * UNKNOWN_DISTRO: ADM does not have data for the provided distro value for the given ecosystem
+	// * MISSING_ARCH: The arch qualifier is required for the ecosystem and distro, but was not provided in the purl
+	// * UNKNOWN_ARCH: ADM does not have data for the provided arch value for the given ecosystem and distro
+	// * EPOCH_VALUE_MISMATCH: Epoch value in qualifier is not the same as the epoch value in version
+	// * INVALID_PURL: The provided PURL could not be parsed
+	Warnings []string `pulumi:"warnings"`
 }
 
 // GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArgs and GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemOutput values.
@@ -6121,14 +6136,26 @@ type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepende
 	ApplicationDependencyNodeIds pulumi.StringArrayInput `pulumi:"applicationDependencyNodeIds"`
 	// A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
 	Gav pulumi.StringInput `pulumi:"gav"`
-	// Indicates if the artifact is found in the knowledge base.
+	// Indicates if the artifact is found in the knowledge base, this field is deprecated and will be removed in the future.
 	IsFoundInKnowledgeBase pulumi.BoolInput `pulumi:"isFoundInKnowledgeBase"`
 	// Unique identifier of an application dependency, for example nodeId1.
 	NodeId pulumi.StringInput `pulumi:"nodeId"`
-	// A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+	// A filter to return only resources that match the entire purl given.
 	Purl pulumi.StringInput `pulumi:"purl"`
 	// List of vulnerabilities for the application dependency.
 	Vulnerabilities GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityArrayInput `pulumi:"vulnerabilities"`
+	// Potential issues in the artifact identifiers (purls) provided by the user, that the user is alerted about. ADM supports the following warnings:
+	// * MISSING_VERSION: Missing version
+	// * INCORRECT_FORMAT_VERSION: Version can not be parsed according to the ecosystem
+	// * UNKNOWN_ECOSYSTEM: The purl's ecosystem is unknown to ADM
+	// * INCORRECT_FORMAT_EPOCH: Epoch qualifier can not be parsed according to the ecosystem
+	// * MISSING_DISTRO: The distro qualifier is required for the ecosystem, but was not provided in the purl
+	// * UNKNOWN_DISTRO: ADM does not have data for the provided distro value for the given ecosystem
+	// * MISSING_ARCH: The arch qualifier is required for the ecosystem and distro, but was not provided in the purl
+	// * UNKNOWN_ARCH: ADM does not have data for the provided arch value for the given ecosystem and distro
+	// * EPOCH_VALUE_MISMATCH: Epoch value in qualifier is not the same as the epoch value in version
+	// * INVALID_PURL: The provided PURL could not be parsed
+	Warnings pulumi.StringArrayInput `pulumi:"warnings"`
 }
 
 func (GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArgs) ElementType() reflect.Type {
@@ -6196,7 +6223,7 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 	}).(pulumi.StringOutput)
 }
 
-// Indicates if the artifact is found in the knowledge base.
+// Indicates if the artifact is found in the knowledge base, this field is deprecated and will be removed in the future.
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemOutput) IsFoundInKnowledgeBase() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItem) bool {
 		return v.IsFoundInKnowledgeBase
@@ -6210,7 +6237,7 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 	}).(pulumi.StringOutput)
 }
 
-// A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+// A filter to return only resources that match the entire purl given.
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemOutput) Purl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItem) string {
 		return v.Purl
@@ -6222,6 +6249,23 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 	return o.ApplyT(func(v GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItem) []GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerability {
 		return v.Vulnerabilities
 	}).(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityArrayOutput)
+}
+
+// Potential issues in the artifact identifiers (purls) provided by the user, that the user is alerted about. ADM supports the following warnings:
+// * MISSING_VERSION: Missing version
+// * INCORRECT_FORMAT_VERSION: Version can not be parsed according to the ecosystem
+// * UNKNOWN_ECOSYSTEM: The purl's ecosystem is unknown to ADM
+// * INCORRECT_FORMAT_EPOCH: Epoch qualifier can not be parsed according to the ecosystem
+// * MISSING_DISTRO: The distro qualifier is required for the ecosystem, but was not provided in the purl
+// * UNKNOWN_DISTRO: ADM does not have data for the provided distro value for the given ecosystem
+// * MISSING_ARCH: The arch qualifier is required for the ecosystem and distro, but was not provided in the purl
+// * UNKNOWN_ARCH: ADM does not have data for the provided arch value for the given ecosystem and distro
+// * EPOCH_VALUE_MISMATCH: Epoch value in qualifier is not the same as the epoch value in version
+// * INVALID_PURL: The provided PURL could not be parsed
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemOutput) Warnings() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItem) []string {
+		return v.Warnings
+	}).(pulumi.StringArrayOutput)
 }
 
 type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -6245,9 +6289,9 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 }
 
 type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerability struct {
-	// Common Vulnerability Scoring System (CVSS) Version 2.
+	// Common Vulnerability Scoring System (CVSS) Version 2, calculated from the metrics provided in the CVSS vector provided from the vulnerability source. This field is deprecated and will be removed in the future. The cvssV2Score can be obtained from the metrics field of the listVulnerabilities endpoint.
 	CvssV2score float64 `pulumi:"cvssV2score"`
-	// Common Vulnerability Scoring System (CVSS) Version 3.
+	// Common Vulnerability Scoring System (CVSS) Version 3, calculated from the metrics provided in the CVSS vector provided from the vulnerability source. This field is deprecated and will be removed in the future. The cvssV3Score can be obtained from the metrics field of the listVulnerabilities endpoint.
 	CvssV3score float64 `pulumi:"cvssV3score"`
 	// Unique vulnerability identifier, e.g. CVE-1999-0067.
 	Id string `pulumi:"id"`
@@ -6273,9 +6317,9 @@ type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepende
 }
 
 type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityArgs struct {
-	// Common Vulnerability Scoring System (CVSS) Version 2.
+	// Common Vulnerability Scoring System (CVSS) Version 2, calculated from the metrics provided in the CVSS vector provided from the vulnerability source. This field is deprecated and will be removed in the future. The cvssV2Score can be obtained from the metrics field of the listVulnerabilities endpoint.
 	CvssV2score pulumi.Float64Input `pulumi:"cvssV2score"`
-	// Common Vulnerability Scoring System (CVSS) Version 3.
+	// Common Vulnerability Scoring System (CVSS) Version 3, calculated from the metrics provided in the CVSS vector provided from the vulnerability source. This field is deprecated and will be removed in the future. The cvssV3Score can be obtained from the metrics field of the listVulnerabilities endpoint.
 	CvssV3score pulumi.Float64Input `pulumi:"cvssV3score"`
 	// Unique vulnerability identifier, e.g. CVE-1999-0067.
 	Id pulumi.StringInput `pulumi:"id"`
@@ -6340,14 +6384,14 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 	return o
 }
 
-// Common Vulnerability Scoring System (CVSS) Version 2.
+// Common Vulnerability Scoring System (CVSS) Version 2, calculated from the metrics provided in the CVSS vector provided from the vulnerability source. This field is deprecated and will be removed in the future. The cvssV2Score can be obtained from the metrics field of the listVulnerabilities endpoint.
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityOutput) CvssV2score() pulumi.Float64Output {
 	return o.ApplyT(func(v GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerability) float64 {
 		return v.CvssV2score
 	}).(pulumi.Float64Output)
 }
 
-// Common Vulnerability Scoring System (CVSS) Version 3.
+// Common Vulnerability Scoring System (CVSS) Version 3, calculated from the metrics provided in the CVSS vector provided from the vulnerability source. This field is deprecated and will be removed in the future. The cvssV3Score can be obtained from the metrics field of the listVulnerabilities endpoint.
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityOutput) CvssV3score() pulumi.Float64Output {
 	return o.ApplyT(func(v GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerability) float64 {
 		return v.CvssV3score
@@ -7178,9 +7222,9 @@ func (o GetVulnerabilityAuditUsageDataArrayOutput) Index(i pulumi.IntInput) GetV
 }
 
 type GetVulnerabilityAuditVulnerability struct {
-	// Common Vulnerability Scoring System (CVSS) Version 2.
+	// Common Vulnerability Scoring System (CVSS) Version 2, calculated from the metrics provided in the CVSS vector provided from the vulnerability source. This field is deprecated and will be removed in the future. The cvssV2Score can be obtained from the metrics field of the listVulnerabilities endpoint.
 	CvssV2score float64 `pulumi:"cvssV2score"`
-	// Common Vulnerability Scoring System (CVSS) Version 3.
+	// Common Vulnerability Scoring System (CVSS) Version 3, calculated from the metrics provided in the CVSS vector provided from the vulnerability source. This field is deprecated and will be removed in the future. The cvssV3Score can be obtained from the metrics field of the listVulnerabilities endpoint.
 	CvssV3score float64 `pulumi:"cvssV3score"`
 	// Unique vulnerability identifier, e.g. CVE-1999-0067.
 	Id string `pulumi:"id"`
@@ -7206,9 +7250,9 @@ type GetVulnerabilityAuditVulnerabilityInput interface {
 }
 
 type GetVulnerabilityAuditVulnerabilityArgs struct {
-	// Common Vulnerability Scoring System (CVSS) Version 2.
+	// Common Vulnerability Scoring System (CVSS) Version 2, calculated from the metrics provided in the CVSS vector provided from the vulnerability source. This field is deprecated and will be removed in the future. The cvssV2Score can be obtained from the metrics field of the listVulnerabilities endpoint.
 	CvssV2score pulumi.Float64Input `pulumi:"cvssV2score"`
-	// Common Vulnerability Scoring System (CVSS) Version 3.
+	// Common Vulnerability Scoring System (CVSS) Version 3, calculated from the metrics provided in the CVSS vector provided from the vulnerability source. This field is deprecated and will be removed in the future. The cvssV3Score can be obtained from the metrics field of the listVulnerabilities endpoint.
 	CvssV3score pulumi.Float64Input `pulumi:"cvssV3score"`
 	// Unique vulnerability identifier, e.g. CVE-1999-0067.
 	Id pulumi.StringInput `pulumi:"id"`
@@ -7273,12 +7317,12 @@ func (o GetVulnerabilityAuditVulnerabilityOutput) ToGetVulnerabilityAuditVulnera
 	return o
 }
 
-// Common Vulnerability Scoring System (CVSS) Version 2.
+// Common Vulnerability Scoring System (CVSS) Version 2, calculated from the metrics provided in the CVSS vector provided from the vulnerability source. This field is deprecated and will be removed in the future. The cvssV2Score can be obtained from the metrics field of the listVulnerabilities endpoint.
 func (o GetVulnerabilityAuditVulnerabilityOutput) CvssV2score() pulumi.Float64Output {
 	return o.ApplyT(func(v GetVulnerabilityAuditVulnerability) float64 { return v.CvssV2score }).(pulumi.Float64Output)
 }
 
-// Common Vulnerability Scoring System (CVSS) Version 3.
+// Common Vulnerability Scoring System (CVSS) Version 3, calculated from the metrics provided in the CVSS vector provided from the vulnerability source. This field is deprecated and will be removed in the future. The cvssV3Score can be obtained from the metrics field of the listVulnerabilities endpoint.
 func (o GetVulnerabilityAuditVulnerabilityOutput) CvssV3score() pulumi.Float64Output {
 	return o.ApplyT(func(v GetVulnerabilityAuditVulnerability) float64 { return v.CvssV3score }).(pulumi.Float64Output)
 }
@@ -8365,9 +8409,9 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArrayOutp
 }
 
 type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerability struct {
-	// Common Vulnerability Scoring System (CVSS) Version 2.
+	// Common Vulnerability Scoring System (CVSS) Version 2, calculated from the metrics provided in the CVSS vector provided from the vulnerability source. This field is deprecated and will be removed in the future. The cvssV2Score can be obtained from the metrics field of the listVulnerabilities endpoint.
 	CvssV2score float64 `pulumi:"cvssV2score"`
-	// Common Vulnerability Scoring System (CVSS) Version 3.
+	// Common Vulnerability Scoring System (CVSS) Version 3, calculated from the metrics provided in the CVSS vector provided from the vulnerability source. This field is deprecated and will be removed in the future. The cvssV3Score can be obtained from the metrics field of the listVulnerabilities endpoint.
 	CvssV3score float64 `pulumi:"cvssV3score"`
 	// A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
 	Id string `pulumi:"id"`
@@ -8393,9 +8437,9 @@ type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityInput in
 }
 
 type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArgs struct {
-	// Common Vulnerability Scoring System (CVSS) Version 2.
+	// Common Vulnerability Scoring System (CVSS) Version 2, calculated from the metrics provided in the CVSS vector provided from the vulnerability source. This field is deprecated and will be removed in the future. The cvssV2Score can be obtained from the metrics field of the listVulnerabilities endpoint.
 	CvssV2score pulumi.Float64Input `pulumi:"cvssV2score"`
-	// Common Vulnerability Scoring System (CVSS) Version 3.
+	// Common Vulnerability Scoring System (CVSS) Version 3, calculated from the metrics provided in the CVSS vector provided from the vulnerability source. This field is deprecated and will be removed in the future. The cvssV3Score can be obtained from the metrics field of the listVulnerabilities endpoint.
 	CvssV3score pulumi.Float64Input `pulumi:"cvssV3score"`
 	// A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
 	Id pulumi.StringInput `pulumi:"id"`
@@ -8460,14 +8504,14 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityOutpu
 	return o
 }
 
-// Common Vulnerability Scoring System (CVSS) Version 2.
+// Common Vulnerability Scoring System (CVSS) Version 2, calculated from the metrics provided in the CVSS vector provided from the vulnerability source. This field is deprecated and will be removed in the future. The cvssV2Score can be obtained from the metrics field of the listVulnerabilities endpoint.
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityOutput) CvssV2score() pulumi.Float64Output {
 	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerability) float64 {
 		return v.CvssV2score
 	}).(pulumi.Float64Output)
 }
 
-// Common Vulnerability Scoring System (CVSS) Version 3.
+// Common Vulnerability Scoring System (CVSS) Version 3, calculated from the metrics provided in the CVSS vector provided from the vulnerability source. This field is deprecated and will be removed in the future. The cvssV3Score can be obtained from the metrics field of the listVulnerabilities endpoint.
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityOutput) CvssV3score() pulumi.Float64Output {
 	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerability) float64 {
 		return v.CvssV3score

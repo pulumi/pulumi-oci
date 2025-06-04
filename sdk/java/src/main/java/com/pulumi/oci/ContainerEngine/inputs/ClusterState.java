@@ -234,6 +234,21 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
+     * 
+     */
+    @Import(name="openIdConnectDiscoveryKey")
+    private @Nullable Output<String> openIdConnectDiscoveryKey;
+
+    /**
+     * @return The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
+     * 
+     */
+    public Optional<Output<String>> openIdConnectDiscoveryKey() {
+        return Optional.ofNullable(this.openIdConnectDiscoveryKey);
+    }
+
+    /**
      * (Updatable) Optional attributes for the cluster.
      * 
      */
@@ -316,6 +331,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         this.metadatas = $.metadatas;
         this.name = $.name;
         this.openIdConnectDiscoveryEndpoint = $.openIdConnectDiscoveryEndpoint;
+        this.openIdConnectDiscoveryKey = $.openIdConnectDiscoveryKey;
         this.options = $.options;
         this.state = $.state;
         this.type = $.type;
@@ -672,6 +688,27 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder openIdConnectDiscoveryEndpoint(String openIdConnectDiscoveryEndpoint) {
             return openIdConnectDiscoveryEndpoint(Output.of(openIdConnectDiscoveryEndpoint));
+        }
+
+        /**
+         * @param openIdConnectDiscoveryKey The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
+         * 
+         * @return builder
+         * 
+         */
+        public Builder openIdConnectDiscoveryKey(@Nullable Output<String> openIdConnectDiscoveryKey) {
+            $.openIdConnectDiscoveryKey = openIdConnectDiscoveryKey;
+            return this;
+        }
+
+        /**
+         * @param openIdConnectDiscoveryKey The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
+         * 
+         * @return builder
+         * 
+         */
+        public Builder openIdConnectDiscoveryKey(String openIdConnectDiscoveryKey) {
+            return openIdConnectDiscoveryKey(Output.of(openIdConnectDiscoveryKey));
         }
 
         /**

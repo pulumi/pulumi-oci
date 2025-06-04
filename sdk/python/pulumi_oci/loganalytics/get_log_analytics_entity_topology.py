@@ -15,6 +15,7 @@ else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
+from ._inputs import *
 
 __all__ = [
     'GetLogAnalyticsEntityTopologyResult',
@@ -28,7 +29,13 @@ class GetLogAnalyticsEntityTopologyResult:
     """
     A collection of values returned by getLogAnalyticsEntityTopology.
     """
-    def __init__(__self__, id=None, items=None, log_analytics_entity_id=None, metadata_equals=None, namespace=None, state=None):
+    def __init__(__self__, context=None, filters=None, id=None, items=None, log_analytics_entity_id=None, metadata_equals=None, namespace=None, state=None):
+        if context and not isinstance(context, str):
+            raise TypeError("Expected argument 'context' to be a str")
+        pulumi.set(__self__, "context", context)
+        if filters and not isinstance(filters, list):
+            raise TypeError("Expected argument 'filters' to be a list")
+        pulumi.set(__self__, "filters", filters)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -47,6 +54,16 @@ class GetLogAnalyticsEntityTopologyResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+
+    @property
+    @pulumi.getter
+    def context(self) -> Optional[builtins.str]:
+        return pulumi.get(self, "context")
+
+    @property
+    @pulumi.getter
+    def filters(self) -> Optional[Sequence['outputs.GetLogAnalyticsEntityTopologyFilterResult']]:
+        return pulumi.get(self, "filters")
 
     @property
     @pulumi.getter
@@ -94,6 +111,8 @@ class AwaitableGetLogAnalyticsEntityTopologyResult(GetLogAnalyticsEntityTopology
         if False:
             yield self
         return GetLogAnalyticsEntityTopologyResult(
+            context=self.context,
+            filters=self.filters,
             id=self.id,
             items=self.items,
             log_analytics_entity_id=self.log_analytics_entity_id,
@@ -102,7 +121,9 @@ class AwaitableGetLogAnalyticsEntityTopologyResult(GetLogAnalyticsEntityTopology
             state=self.state)
 
 
-def get_log_analytics_entity_topology(log_analytics_entity_id: Optional[builtins.str] = None,
+def get_log_analytics_entity_topology(context: Optional[builtins.str] = None,
+                                      filters: Optional[Sequence[Union['GetLogAnalyticsEntityTopologyFilterArgs', 'GetLogAnalyticsEntityTopologyFilterArgsDict']]] = None,
+                                      log_analytics_entity_id: Optional[builtins.str] = None,
                                       metadata_equals: Optional[Sequence[builtins.str]] = None,
                                       namespace: Optional[builtins.str] = None,
                                       state: Optional[builtins.str] = None,
@@ -120,17 +141,21 @@ def get_log_analytics_entity_topology(log_analytics_entity_id: Optional[builtins
 
     test_log_analytics_entity_topology = oci.LogAnalytics.get_log_analytics_entity_topology(log_analytics_entity_id=test_log_analytics_entity["id"],
         namespace=log_analytics_entity_topology_namespace,
+        context=log_analytics_entity_topology_context,
         metadata_equals=log_analytics_entity_topology_metadata_equals,
         state=log_analytics_entity_topology_state)
     ```
 
 
+    :param builtins.str context: A filter to return log analytics entity toplogy whose context matches the specified string.
     :param builtins.str log_analytics_entity_id: The log analytics entity OCID.
     :param Sequence[builtins.str] metadata_equals: A filter to return only log analytics entities whose metadata name, value and type matches the specified string. Each item in the array has the format "{name}:{value}:{type}".  All inputs are case-insensitive.
     :param builtins.str namespace: The Logging Analytics namespace used for the request.
     :param builtins.str state: A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
     """
     __args__ = dict()
+    __args__['context'] = context
+    __args__['filters'] = filters
     __args__['logAnalyticsEntityId'] = log_analytics_entity_id
     __args__['metadataEquals'] = metadata_equals
     __args__['namespace'] = namespace
@@ -139,13 +164,17 @@ def get_log_analytics_entity_topology(log_analytics_entity_id: Optional[builtins
     __ret__ = pulumi.runtime.invoke('oci:LogAnalytics/getLogAnalyticsEntityTopology:getLogAnalyticsEntityTopology', __args__, opts=opts, typ=GetLogAnalyticsEntityTopologyResult).value
 
     return AwaitableGetLogAnalyticsEntityTopologyResult(
+        context=pulumi.get(__ret__, 'context'),
+        filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         items=pulumi.get(__ret__, 'items'),
         log_analytics_entity_id=pulumi.get(__ret__, 'log_analytics_entity_id'),
         metadata_equals=pulumi.get(__ret__, 'metadata_equals'),
         namespace=pulumi.get(__ret__, 'namespace'),
         state=pulumi.get(__ret__, 'state'))
-def get_log_analytics_entity_topology_output(log_analytics_entity_id: Optional[pulumi.Input[builtins.str]] = None,
+def get_log_analytics_entity_topology_output(context: Optional[pulumi.Input[Optional[builtins.str]]] = None,
+                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetLogAnalyticsEntityTopologyFilterArgs', 'GetLogAnalyticsEntityTopologyFilterArgsDict']]]]] = None,
+                                             log_analytics_entity_id: Optional[pulumi.Input[builtins.str]] = None,
                                              metadata_equals: Optional[pulumi.Input[Optional[Sequence[builtins.str]]]] = None,
                                              namespace: Optional[pulumi.Input[builtins.str]] = None,
                                              state: Optional[pulumi.Input[Optional[builtins.str]]] = None,
@@ -163,17 +192,21 @@ def get_log_analytics_entity_topology_output(log_analytics_entity_id: Optional[p
 
     test_log_analytics_entity_topology = oci.LogAnalytics.get_log_analytics_entity_topology(log_analytics_entity_id=test_log_analytics_entity["id"],
         namespace=log_analytics_entity_topology_namespace,
+        context=log_analytics_entity_topology_context,
         metadata_equals=log_analytics_entity_topology_metadata_equals,
         state=log_analytics_entity_topology_state)
     ```
 
 
+    :param builtins.str context: A filter to return log analytics entity toplogy whose context matches the specified string.
     :param builtins.str log_analytics_entity_id: The log analytics entity OCID.
     :param Sequence[builtins.str] metadata_equals: A filter to return only log analytics entities whose metadata name, value and type matches the specified string. Each item in the array has the format "{name}:{value}:{type}".  All inputs are case-insensitive.
     :param builtins.str namespace: The Logging Analytics namespace used for the request.
     :param builtins.str state: A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
     """
     __args__ = dict()
+    __args__['context'] = context
+    __args__['filters'] = filters
     __args__['logAnalyticsEntityId'] = log_analytics_entity_id
     __args__['metadataEquals'] = metadata_equals
     __args__['namespace'] = namespace
@@ -181,6 +214,8 @@ def get_log_analytics_entity_topology_output(log_analytics_entity_id: Optional[p
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getLogAnalyticsEntityTopology:getLogAnalyticsEntityTopology', __args__, opts=opts, typ=GetLogAnalyticsEntityTopologyResult)
     return __ret__.apply(lambda __response__: GetLogAnalyticsEntityTopologyResult(
+        context=pulumi.get(__response__, 'context'),
+        filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
         items=pulumi.get(__response__, 'items'),
         log_analytics_entity_id=pulumi.get(__response__, 'log_analytics_entity_id'),

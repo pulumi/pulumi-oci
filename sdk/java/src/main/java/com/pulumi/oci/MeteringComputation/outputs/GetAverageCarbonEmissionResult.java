@@ -22,7 +22,7 @@ public final class GetAverageCarbonEmissionResult {
      */
     private String id;
     /**
-     * @return The sku part number.
+     * @return The SKU part number.
      * 
      */
     private String skuPartNumber;
@@ -43,7 +43,7 @@ public final class GetAverageCarbonEmissionResult {
         return this.id;
     }
     /**
-     * @return The sku part number.
+     * @return The SKU part number.
      * 
      */
     public String skuPartNumber() {

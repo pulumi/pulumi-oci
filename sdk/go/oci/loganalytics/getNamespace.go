@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -62,9 +62,15 @@ type LookupNamespaceResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+	// This indicates if old data can be archived for a tenancy
+	IsArchivingEnabled bool `pulumi:"isArchivingEnabled"`
+	// This indicates if the tenancy is data ever ingested
+	IsDataEverIngested bool `pulumi:"isDataEverIngested"`
+	IsLogsetEnabled    bool `pulumi:"isLogsetEnabled"`
 	// This indicates if the tenancy is onboarded to Logging Analytics
 	IsOnboarded bool `pulumi:"isOnboarded"`
 	// This is the namespace name of a tenancy
+	// * `is_logSet_enabled` - This indicates if the tenancy is logSet enable
 	Namespace string `pulumi:"namespace"`
 }
 
@@ -112,12 +118,27 @@ func (o LookupNamespaceResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNamespaceResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// This indicates if old data can be archived for a tenancy
+func (o LookupNamespaceResultOutput) IsArchivingEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupNamespaceResult) bool { return v.IsArchivingEnabled }).(pulumi.BoolOutput)
+}
+
+// This indicates if the tenancy is data ever ingested
+func (o LookupNamespaceResultOutput) IsDataEverIngested() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupNamespaceResult) bool { return v.IsDataEverIngested }).(pulumi.BoolOutput)
+}
+
+func (o LookupNamespaceResultOutput) IsLogsetEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupNamespaceResult) bool { return v.IsLogsetEnabled }).(pulumi.BoolOutput)
+}
+
 // This indicates if the tenancy is onboarded to Logging Analytics
 func (o LookupNamespaceResultOutput) IsOnboarded() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupNamespaceResult) bool { return v.IsOnboarded }).(pulumi.BoolOutput)
 }
 
 // This is the namespace name of a tenancy
+// * `is_logSet_enabled` - This indicates if the tenancy is logSet enable
 func (o LookupNamespaceResultOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNamespaceResult) string { return v.Namespace }).(pulumi.StringOutput)
 }

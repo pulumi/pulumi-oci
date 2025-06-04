@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -23,7 +23,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/opensearch"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/opensearch"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -44,6 +44,7 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"bar-key": pulumi.String("value"),
 //				},
+//				NodeShape: pulumi.Any(opensearchClusterPipelineNodeShape),
 //				NsgId:     pulumi.Any(testNsg.Id),
 //				OpcDryRun: pulumi.Any(opensearchClusterPipelineOpcDryRun),
 //				ReverseConnectionEndpoints: opensearch.OpensearchClusterPipelineReverseConnectionEndpointArray{
@@ -90,6 +91,8 @@ type OpensearchClusterPipeline struct {
 	MemoryGb pulumi.IntOutput `pulumi:"memoryGb"`
 	// (Updatable) The number of nodes configured for the pipeline.
 	NodeCount pulumi.IntOutput `pulumi:"nodeCount"`
+	// (Updatable) The pipeline node shape.
+	NodeShape pulumi.StringOutput `pulumi:"nodeShape"`
 	// (Updatable) The OCID of the NSG where the pipeline private endpoint vnic will be attached.
 	NsgId pulumi.StringOutput `pulumi:"nsgId"`
 	// (Updatable) The number of OCPUs configured for each pipeline node.
@@ -192,6 +195,8 @@ type opensearchClusterPipelineState struct {
 	MemoryGb *int `pulumi:"memoryGb"`
 	// (Updatable) The number of nodes configured for the pipeline.
 	NodeCount *int `pulumi:"nodeCount"`
+	// (Updatable) The pipeline node shape.
+	NodeShape *string `pulumi:"nodeShape"`
 	// (Updatable) The OCID of the NSG where the pipeline private endpoint vnic will be attached.
 	NsgId *string `pulumi:"nsgId"`
 	// (Updatable) The number of OCPUs configured for each pipeline node.
@@ -244,6 +249,8 @@ type OpensearchClusterPipelineState struct {
 	MemoryGb pulumi.IntPtrInput
 	// (Updatable) The number of nodes configured for the pipeline.
 	NodeCount pulumi.IntPtrInput
+	// (Updatable) The pipeline node shape.
+	NodeShape pulumi.StringPtrInput
 	// (Updatable) The OCID of the NSG where the pipeline private endpoint vnic will be attached.
 	NsgId pulumi.StringPtrInput
 	// (Updatable) The number of OCPUs configured for each pipeline node.
@@ -300,6 +307,8 @@ type opensearchClusterPipelineArgs struct {
 	MemoryGb int `pulumi:"memoryGb"`
 	// (Updatable) The number of nodes configured for the pipeline.
 	NodeCount int `pulumi:"nodeCount"`
+	// (Updatable) The pipeline node shape.
+	NodeShape *string `pulumi:"nodeShape"`
 	// (Updatable) The OCID of the NSG where the pipeline private endpoint vnic will be attached.
 	NsgId *string `pulumi:"nsgId"`
 	// (Updatable) The number of OCPUs configured for each pipeline node.
@@ -339,6 +348,8 @@ type OpensearchClusterPipelineArgs struct {
 	MemoryGb pulumi.IntInput
 	// (Updatable) The number of nodes configured for the pipeline.
 	NodeCount pulumi.IntInput
+	// (Updatable) The pipeline node shape.
+	NodeShape pulumi.StringPtrInput
 	// (Updatable) The OCID of the NSG where the pipeline private endpoint vnic will be attached.
 	NsgId pulumi.StringPtrInput
 	// (Updatable) The number of OCPUs configured for each pipeline node.
@@ -482,6 +493,11 @@ func (o OpensearchClusterPipelineOutput) MemoryGb() pulumi.IntOutput {
 // (Updatable) The number of nodes configured for the pipeline.
 func (o OpensearchClusterPipelineOutput) NodeCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *OpensearchClusterPipeline) pulumi.IntOutput { return v.NodeCount }).(pulumi.IntOutput)
+}
+
+// (Updatable) The pipeline node shape.
+func (o OpensearchClusterPipelineOutput) NodeShape() pulumi.StringOutput {
+	return o.ApplyT(func(v *OpensearchClusterPipeline) pulumi.StringOutput { return v.NodeShape }).(pulumi.StringOutput)
 }
 
 // (Updatable) The OCID of the NSG where the pipeline private endpoint vnic will be attached.

@@ -29,14 +29,14 @@ public final class GetUsageStatementEmailRecipientsGroupPlainArgs extends com.pu
     }
 
     /**
-     * The email recipient group OCID.
+     * The email recipients group OCID.
      * 
      */
     @Import(name="emailRecipientsGroupId", required=true)
     private String emailRecipientsGroupId;
 
     /**
-     * @return The email recipient group OCID.
+     * @return The email recipients group OCID.
      * 
      */
     public String emailRecipientsGroupId() {
@@ -44,14 +44,14 @@ public final class GetUsageStatementEmailRecipientsGroupPlainArgs extends com.pu
     }
 
     /**
-     * The UsageStatement Subscription unique OCID.
+     * The usage statement subscription unique OCID.
      * 
      */
     @Import(name="subscriptionId", required=true)
     private String subscriptionId;
 
     /**
-     * @return The UsageStatement Subscription unique OCID.
+     * @return The usage statement subscription unique OCID.
      * 
      */
     public String subscriptionId() {
@@ -96,7 +96,7 @@ public final class GetUsageStatementEmailRecipientsGroupPlainArgs extends com.pu
         }
 
         /**
-         * @param emailRecipientsGroupId The email recipient group OCID.
+         * @param emailRecipientsGroupId The email recipients group OCID.
          * 
          * @return builder
          * 
@@ -107,7 +107,7 @@ public final class GetUsageStatementEmailRecipientsGroupPlainArgs extends com.pu
         }
 
         /**
-         * @param subscriptionId The UsageStatement Subscription unique OCID.
+         * @param subscriptionId The usage statement subscription unique OCID.
          * 
          * @return builder
          * 

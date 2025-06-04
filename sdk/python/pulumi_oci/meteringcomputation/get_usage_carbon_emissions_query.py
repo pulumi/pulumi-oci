@@ -89,7 +89,7 @@ def get_usage_carbon_emissions_query(usage_carbon_emissions_query_id: Optional[b
     """
     This data source provides details about a specific Usage Carbon Emissions Query resource in Oracle Cloud Infrastructure Metering Computation service.
 
-    Returns the usage carbon emissions saved query.
+    Returns the carbon emissions usage saved query.
 
     ## Example Usage
 
@@ -118,7 +118,7 @@ def get_usage_carbon_emissions_query_output(usage_carbon_emissions_query_id: Opt
     """
     This data source provides details about a specific Usage Carbon Emissions Query resource in Oracle Cloud Infrastructure Metering Computation service.
 
-    Returns the usage carbon emissions saved query.
+    Returns the carbon emissions usage saved query.
 
     ## Example Usage
 

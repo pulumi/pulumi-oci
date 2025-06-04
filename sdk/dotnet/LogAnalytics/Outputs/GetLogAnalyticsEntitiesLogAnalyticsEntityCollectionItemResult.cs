@@ -18,6 +18,10 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// </summary>
         public readonly bool AreLogsCollected;
         /// <summary>
+        /// The count of associated log sources for a given log analytics entity.
+        /// </summary>
+        public readonly int AssociatedSourcesCount;
+        /// <summary>
         /// A filter to return only log analytics entities whose cloudResourceId matches the cloudResourceId given.
         /// </summary>
         public readonly string CloudResourceId;
@@ -110,6 +114,8 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         private GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemResult(
             bool areLogsCollected,
 
+            int associatedSourcesCount,
+
             string cloudResourceId,
 
             string compartmentId,
@@ -155,6 +161,7 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
             string timezoneRegion)
         {
             AreLogsCollected = areLogsCollected;
+            AssociatedSourcesCount = associatedSourcesCount;
             CloudResourceId = cloudResourceId;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

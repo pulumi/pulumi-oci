@@ -15,14 +15,14 @@ public final class GetScheduledRunArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetScheduledRunArgs Empty = new GetScheduledRunArgs();
 
     /**
-     * The scheduledRun unique OCID
+     * The scheduled run unique OCID.
      * 
      */
     @Import(name="scheduledRunId", required=true)
     private Output<String> scheduledRunId;
 
     /**
-     * @return The scheduledRun unique OCID
+     * @return The scheduled run unique OCID.
      * 
      */
     public Output<String> scheduledRunId() {
@@ -54,7 +54,7 @@ public final class GetScheduledRunArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param scheduledRunId The scheduledRun unique OCID
+         * @param scheduledRunId The scheduled run unique OCID.
          * 
          * @return builder
          * 
@@ -65,7 +65,7 @@ public final class GetScheduledRunArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param scheduledRunId The scheduledRun unique OCID
+         * @param scheduledRunId The scheduled run unique OCID.
          * 
          * @return builder
          * 

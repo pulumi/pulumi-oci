@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/adm"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/adm"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -57,7 +57,7 @@ type GetRemediationRunApplicationDependencyRecommendationsArgs struct {
 	Filters []GetRemediationRunApplicationDependencyRecommendationsFilter `pulumi:"filters"`
 	// A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
 	Gav *string `pulumi:"gav"`
-	// A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+	// A filter to return only resources that match the entire purl given.
 	Purl *string `pulumi:"purl"`
 	// Unique Remediation Run identifier path parameter.
 	RemediationRunId string `pulumi:"remediationRunId"`
@@ -72,7 +72,7 @@ type GetRemediationRunApplicationDependencyRecommendationsResult struct {
 	Gav *string `pulumi:"gav"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+	// Package URL identifier, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
 	Purl             *string `pulumi:"purl"`
 	RemediationRunId string  `pulumi:"remediationRunId"`
 }
@@ -91,7 +91,7 @@ type GetRemediationRunApplicationDependencyRecommendationsOutputArgs struct {
 	Filters GetRemediationRunApplicationDependencyRecommendationsFilterArrayInput `pulumi:"filters"`
 	// A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
 	Gav pulumi.StringPtrInput `pulumi:"gav"`
-	// A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+	// A filter to return only resources that match the entire purl given.
 	Purl pulumi.StringPtrInput `pulumi:"purl"`
 	// Unique Remediation Run identifier path parameter.
 	RemediationRunId pulumi.StringInput `pulumi:"remediationRunId"`
@@ -139,7 +139,7 @@ func (o GetRemediationRunApplicationDependencyRecommendationsResultOutput) Id() 
 	return o.ApplyT(func(v GetRemediationRunApplicationDependencyRecommendationsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+// Package URL identifier, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
 func (o GetRemediationRunApplicationDependencyRecommendationsResultOutput) Purl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetRemediationRunApplicationDependencyRecommendationsResult) *string { return v.Purl }).(pulumi.StringPtrOutput)
 }

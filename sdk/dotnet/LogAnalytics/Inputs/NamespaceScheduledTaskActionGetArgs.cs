@@ -49,10 +49,16 @@ namespace Pulumi.Oci.LogAnalytics.Inputs
         public Input<string>? QueryString { get; set; }
 
         /// <summary>
-        /// The ManagementSavedSearch id [OCID] utilized in the action.
+        /// The ManagementSavedSearch id [OCID] utilized in the action.  Should not be provided when a template ID is present.
         /// </summary>
         [Input("savedSearchId")]
         public Input<string>? SavedSearchId { get; set; }
+
+        /// <summary>
+        /// details for scheduled task using template
+        /// </summary>
+        [Input("templateDetails")]
+        public Input<Inputs.NamespaceScheduledTaskActionTemplateDetailsGetArgs>? TemplateDetails { get; set; }
 
         /// <summary>
         /// Action type discriminator.

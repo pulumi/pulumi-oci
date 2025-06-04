@@ -37,6 +37,10 @@ __all__ = [
     'AutoScalingConfigurationPolicyRule',
     'AutoScalingConfigurationPolicyRuleMetric',
     'AutoScalingConfigurationPolicyRuleMetricThreshold',
+    'BdsCapacityReportShapeAvailability',
+    'BdsCapacityReportShapeAvailabilityDomainLevelCapacityReport',
+    'BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailability',
+    'BdsCapacityReportShapeAvailabilityShapeConfig',
     'BdsInstanceBdsClusterVersionSummary',
     'BdsInstanceCloudSqlDetail',
     'BdsInstanceCloudSqlDetailKerberosDetail',
@@ -57,7 +61,7 @@ __all__ = [
     'BdsInstanceNode',
     'BdsInstanceNodeAttachedBlockVolume',
     'BdsInstanceOperationCertificateManagementsManagementHostCertDetail',
-    'BdsInstanceOsPatchActionPatchingConfig',
+    'BdsInstanceOsPatchActionPatchingConfigs',
     'BdsInstancePatchActionPatchingConfig',
     'BdsInstanceStartClusterShapeConfig',
     'BdsInstanceStartClusterShapeConfigNodeTypeShapeConfig',
@@ -148,6 +152,9 @@ __all__ = [
     'GetBdsInstancePatchesPatchResult',
     'GetBdsInstanceResourcePrincipalConfigurationsFilterResult',
     'GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationResult',
+    'GetBdsInstanceSoftwareUpdatesFilterResult',
+    'GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionResult',
+    'GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemResult',
     'GetBdsInstanceStartClusterShapeConfigResult',
     'GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigResult',
     'GetBdsInstanceUtilNodeResult',
@@ -1436,6 +1443,263 @@ class AutoScalingConfigurationPolicyRuleMetricThreshold(dict):
         (Updatable) Integer non-negative value. 0 < value < 100
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class BdsCapacityReportShapeAvailability(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "domainLevelCapacityReports":
+            suggest = "domain_level_capacity_reports"
+        elif key == "shapeConfig":
+            suggest = "shape_config"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BdsCapacityReportShapeAvailability. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BdsCapacityReportShapeAvailability.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BdsCapacityReportShapeAvailability.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 shape: builtins.str,
+                 domain_level_capacity_reports: Optional[Sequence['outputs.BdsCapacityReportShapeAvailabilityDomainLevelCapacityReport']] = None,
+                 shape_config: Optional['outputs.BdsCapacityReportShapeAvailabilityShapeConfig'] = None):
+        """
+        :param builtins.str shape: The shape that you want to request a capacity report for.
+        :param Sequence['BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArgs'] domain_level_capacity_reports: Information about the capacity in each domain.
+        :param 'BdsCapacityReportShapeAvailabilityShapeConfigArgs' shape_config: The shape configuration requested for the node.
+        """
+        pulumi.set(__self__, "shape", shape)
+        if domain_level_capacity_reports is not None:
+            pulumi.set(__self__, "domain_level_capacity_reports", domain_level_capacity_reports)
+        if shape_config is not None:
+            pulumi.set(__self__, "shape_config", shape_config)
+
+    @property
+    @pulumi.getter
+    def shape(self) -> builtins.str:
+        """
+        The shape that you want to request a capacity report for.
+        """
+        return pulumi.get(self, "shape")
+
+    @property
+    @pulumi.getter(name="domainLevelCapacityReports")
+    def domain_level_capacity_reports(self) -> Optional[Sequence['outputs.BdsCapacityReportShapeAvailabilityDomainLevelCapacityReport']]:
+        """
+        Information about the capacity in each domain.
+        """
+        return pulumi.get(self, "domain_level_capacity_reports")
+
+    @property
+    @pulumi.getter(name="shapeConfig")
+    def shape_config(self) -> Optional['outputs.BdsCapacityReportShapeAvailabilityShapeConfig']:
+        """
+        The shape configuration requested for the node.
+        """
+        return pulumi.get(self, "shape_config")
+
+
+@pulumi.output_type
+class BdsCapacityReportShapeAvailabilityDomainLevelCapacityReport(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "availabilityDomain":
+            suggest = "availability_domain"
+        elif key == "capacityAvailabilities":
+            suggest = "capacity_availabilities"
+        elif key == "domainType":
+            suggest = "domain_type"
+        elif key == "faultDomain":
+            suggest = "fault_domain"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BdsCapacityReportShapeAvailabilityDomainLevelCapacityReport. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BdsCapacityReportShapeAvailabilityDomainLevelCapacityReport.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BdsCapacityReportShapeAvailabilityDomainLevelCapacityReport.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 availability_domain: Optional[builtins.str] = None,
+                 capacity_availabilities: Optional[Sequence['outputs.BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailability']] = None,
+                 domain_type: Optional[builtins.str] = None,
+                 fault_domain: Optional[builtins.str] = None):
+        """
+        :param builtins.str availability_domain: The availability domain for the capacity report.
+        :param Sequence['BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArgs'] capacity_availabilities: Information about the available capacity for a shape.
+        :param builtins.str domain_type: Type of domain level for the capacity report.
+        :param builtins.str fault_domain: The fault domain for the capacity report.
+        """
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
+        if capacity_availabilities is not None:
+            pulumi.set(__self__, "capacity_availabilities", capacity_availabilities)
+        if domain_type is not None:
+            pulumi.set(__self__, "domain_type", domain_type)
+        if fault_domain is not None:
+            pulumi.set(__self__, "fault_domain", fault_domain)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> Optional[builtins.str]:
+        """
+        The availability domain for the capacity report.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="capacityAvailabilities")
+    def capacity_availabilities(self) -> Optional[Sequence['outputs.BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailability']]:
+        """
+        Information about the available capacity for a shape.
+        """
+        return pulumi.get(self, "capacity_availabilities")
+
+    @property
+    @pulumi.getter(name="domainType")
+    def domain_type(self) -> Optional[builtins.str]:
+        """
+        Type of domain level for the capacity report.
+        """
+        return pulumi.get(self, "domain_type")
+
+    @property
+    @pulumi.getter(name="faultDomain")
+    def fault_domain(self) -> Optional[builtins.str]:
+        """
+        The fault domain for the capacity report.
+        """
+        return pulumi.get(self, "fault_domain")
+
+
+@pulumi.output_type
+class BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailability(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "availabilityStatus":
+            suggest = "availability_status"
+        elif key == "availableCount":
+            suggest = "available_count"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailability. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailability.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailability.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 availability_status: Optional[builtins.str] = None,
+                 available_count: Optional[builtins.str] = None):
+        """
+        :param builtins.str availability_status: A flag denoting whether capacity is available.
+        :param builtins.str available_count: The total number of new cluster nodes that can be created with the specified shape configuration.
+        """
+        if availability_status is not None:
+            pulumi.set(__self__, "availability_status", availability_status)
+        if available_count is not None:
+            pulumi.set(__self__, "available_count", available_count)
+
+    @property
+    @pulumi.getter(name="availabilityStatus")
+    def availability_status(self) -> Optional[builtins.str]:
+        """
+        A flag denoting whether capacity is available.
+        """
+        return pulumi.get(self, "availability_status")
+
+    @property
+    @pulumi.getter(name="availableCount")
+    def available_count(self) -> Optional[builtins.str]:
+        """
+        The total number of new cluster nodes that can be created with the specified shape configuration.
+        """
+        return pulumi.get(self, "available_count")
+
+
+@pulumi.output_type
+class BdsCapacityReportShapeAvailabilityShapeConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "memoryInGbs":
+            suggest = "memory_in_gbs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BdsCapacityReportShapeAvailabilityShapeConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BdsCapacityReportShapeAvailabilityShapeConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BdsCapacityReportShapeAvailabilityShapeConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 memory_in_gbs: Optional[builtins.int] = None,
+                 nvmes: Optional[builtins.int] = None,
+                 ocpus: Optional[builtins.int] = None):
+        """
+        :param builtins.int memory_in_gbs: The total amount of memory available to the node, in gigabytes.
+        :param builtins.int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available. This parameter is used only for dense shapes.
+        :param builtins.int ocpus: The total number of OCPUs available to the node.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if nvmes is not None:
+            pulumi.set(__self__, "nvmes", nvmes)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[builtins.int]:
+        """
+        The total amount of memory available to the node, in gigabytes.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def nvmes(self) -> Optional[builtins.int]:
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available. This parameter is used only for dense shapes.
+        """
+        return pulumi.get(self, "nvmes")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> Optional[builtins.int]:
+        """
+        The total number of OCPUs available to the node.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
@@ -3263,7 +3527,7 @@ class BdsInstanceOperationCertificateManagementsManagementHostCertDetail(dict):
 
 
 @pulumi.output_type
-class BdsInstanceOsPatchActionPatchingConfig(dict):
+class BdsInstanceOsPatchActionPatchingConfigs(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
@@ -3281,14 +3545,14 @@ class BdsInstanceOsPatchActionPatchingConfig(dict):
             suggest = "wait_time_between_domain_in_seconds"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in BdsInstanceOsPatchActionPatchingConfig. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in BdsInstanceOsPatchActionPatchingConfigs. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        BdsInstanceOsPatchActionPatchingConfig.__key_warning(key)
+        BdsInstanceOsPatchActionPatchingConfigs.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        BdsInstanceOsPatchActionPatchingConfig.__key_warning(key)
+        BdsInstanceOsPatchActionPatchingConfigs.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
@@ -6093,16 +6357,19 @@ class GetBdsInstanceGetOsPatchFilterResult(dict):
 class GetBdsInstanceGetOsPatchTargetPackageResult(dict):
     def __init__(__self__, *,
                  package_name: builtins.str,
+                 package_type: builtins.str,
                  related_cv_es: Sequence[builtins.str],
                  target_version: builtins.str,
                  update_type: builtins.str):
         """
         :param builtins.str package_name: The package's name.
+        :param builtins.str package_type: Package type based on package installation manager.
         :param Sequence[builtins.str] related_cv_es: Related CVEs of the package update.
         :param builtins.str target_version: The target version of the package.
         :param builtins.str update_type: The action that current package will be executed on the cluster.
         """
         pulumi.set(__self__, "package_name", package_name)
+        pulumi.set(__self__, "package_type", package_type)
         pulumi.set(__self__, "related_cv_es", related_cv_es)
         pulumi.set(__self__, "target_version", target_version)
         pulumi.set(__self__, "update_type", update_type)
@@ -6114,6 +6381,14 @@ class GetBdsInstanceGetOsPatchTargetPackageResult(dict):
         The package's name.
         """
         return pulumi.get(self, "package_name")
+
+    @property
+    @pulumi.getter(name="packageType")
+    def package_type(self) -> builtins.str:
+        """
+        Package type based on package installation manager.
+        """
+        return pulumi.get(self, "package_type")
 
     @property
     @pulumi.getter(name="relatedCvEs")
@@ -7740,6 +8015,120 @@ class GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfiguratio
         The time the ResourcePrincipalConfiguration was updated, shown as an RFC 3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetBdsInstanceSoftwareUpdatesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 software_update_key: builtins.str,
+                 software_update_type: builtins.str,
+                 software_update_version: builtins.str,
+                 state: builtins.str,
+                 time_due: builtins.str,
+                 time_released: builtins.str):
+        """
+        :param builtins.str software_update_key: Unique identifier of a given software update
+        :param builtins.str software_update_type: type of current software update.
+               * Big Data Service's micro service. BDS version will be changed after upgrade.
+        :param builtins.str software_update_version: The version of the software update.
+        :param builtins.str state: The lifecycle state of the software update.
+        :param builtins.str time_due: The due date for the software update. Big Data Service will be updated automatically after this date.
+        :param builtins.str time_released: The time when the software update was released.
+        """
+        pulumi.set(__self__, "software_update_key", software_update_key)
+        pulumi.set(__self__, "software_update_type", software_update_type)
+        pulumi.set(__self__, "software_update_version", software_update_version)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_due", time_due)
+        pulumi.set(__self__, "time_released", time_released)
+
+    @property
+    @pulumi.getter(name="softwareUpdateKey")
+    def software_update_key(self) -> builtins.str:
+        """
+        Unique identifier of a given software update
+        """
+        return pulumi.get(self, "software_update_key")
+
+    @property
+    @pulumi.getter(name="softwareUpdateType")
+    def software_update_type(self) -> builtins.str:
+        """
+        type of current software update.
+        * Big Data Service's micro service. BDS version will be changed after upgrade.
+        """
+        return pulumi.get(self, "software_update_type")
+
+    @property
+    @pulumi.getter(name="softwareUpdateVersion")
+    def software_update_version(self) -> builtins.str:
+        """
+        The version of the software update.
+        """
+        return pulumi.get(self, "software_update_version")
+
+    @property
+    @pulumi.getter
+    def state(self) -> builtins.str:
+        """
+        The lifecycle state of the software update.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeDue")
+    def time_due(self) -> builtins.str:
+        """
+        The due date for the software update. Big Data Service will be updated automatically after this date.
+        """
+        return pulumi.get(self, "time_due")
+
+    @property
+    @pulumi.getter(name="timeReleased")
+    def time_released(self) -> builtins.str:
+        """
+        The time when the software update was released.
+        """
+        return pulumi.get(self, "time_released")
 
 
 @pulumi.output_type

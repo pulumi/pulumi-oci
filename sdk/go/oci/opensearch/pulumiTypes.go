@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -602,6 +602,257 @@ func (o ClusterReverseConnectionEndpointArrayOutput) Index(i pulumi.IntInput) Cl
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ClusterReverseConnectionEndpoint {
 		return vs[0].([]ClusterReverseConnectionEndpoint)[vs[1].(int)]
 	}).(ClusterReverseConnectionEndpointOutput)
+}
+
+type ClusterSecuritySamlConfig struct {
+	// The backend role of admins who have all permissions like local master user
+	AdminBackendRole *string `pulumi:"adminBackendRole"`
+	// The unique name for a identity provider entity
+	IdpEntityId string `pulumi:"idpEntityId"`
+	// The content of identity provider metadata
+	IdpMetadataContent string `pulumi:"idpMetadataContent"`
+	// A flag determine whether SAML is enabled
+	IsEnabled bool `pulumi:"isEnabled"`
+	// The endpoint of opendashboard
+	OpendashboardUrl *string `pulumi:"opendashboardUrl"`
+	// The roles key is sued to get backend roles from SAML assertion
+	RolesKey *string `pulumi:"rolesKey"`
+	// The subject key is used to get username from SAML assertion. By default, it is NameID
+	SubjectKey *string `pulumi:"subjectKey"`
+}
+
+// ClusterSecuritySamlConfigInput is an input type that accepts ClusterSecuritySamlConfigArgs and ClusterSecuritySamlConfigOutput values.
+// You can construct a concrete instance of `ClusterSecuritySamlConfigInput` via:
+//
+//	ClusterSecuritySamlConfigArgs{...}
+type ClusterSecuritySamlConfigInput interface {
+	pulumi.Input
+
+	ToClusterSecuritySamlConfigOutput() ClusterSecuritySamlConfigOutput
+	ToClusterSecuritySamlConfigOutputWithContext(context.Context) ClusterSecuritySamlConfigOutput
+}
+
+type ClusterSecuritySamlConfigArgs struct {
+	// The backend role of admins who have all permissions like local master user
+	AdminBackendRole pulumi.StringPtrInput `pulumi:"adminBackendRole"`
+	// The unique name for a identity provider entity
+	IdpEntityId pulumi.StringInput `pulumi:"idpEntityId"`
+	// The content of identity provider metadata
+	IdpMetadataContent pulumi.StringInput `pulumi:"idpMetadataContent"`
+	// A flag determine whether SAML is enabled
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	// The endpoint of opendashboard
+	OpendashboardUrl pulumi.StringPtrInput `pulumi:"opendashboardUrl"`
+	// The roles key is sued to get backend roles from SAML assertion
+	RolesKey pulumi.StringPtrInput `pulumi:"rolesKey"`
+	// The subject key is used to get username from SAML assertion. By default, it is NameID
+	SubjectKey pulumi.StringPtrInput `pulumi:"subjectKey"`
+}
+
+func (ClusterSecuritySamlConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterSecuritySamlConfig)(nil)).Elem()
+}
+
+func (i ClusterSecuritySamlConfigArgs) ToClusterSecuritySamlConfigOutput() ClusterSecuritySamlConfigOutput {
+	return i.ToClusterSecuritySamlConfigOutputWithContext(context.Background())
+}
+
+func (i ClusterSecuritySamlConfigArgs) ToClusterSecuritySamlConfigOutputWithContext(ctx context.Context) ClusterSecuritySamlConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterSecuritySamlConfigOutput)
+}
+
+func (i ClusterSecuritySamlConfigArgs) ToClusterSecuritySamlConfigPtrOutput() ClusterSecuritySamlConfigPtrOutput {
+	return i.ToClusterSecuritySamlConfigPtrOutputWithContext(context.Background())
+}
+
+func (i ClusterSecuritySamlConfigArgs) ToClusterSecuritySamlConfigPtrOutputWithContext(ctx context.Context) ClusterSecuritySamlConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterSecuritySamlConfigOutput).ToClusterSecuritySamlConfigPtrOutputWithContext(ctx)
+}
+
+// ClusterSecuritySamlConfigPtrInput is an input type that accepts ClusterSecuritySamlConfigArgs, ClusterSecuritySamlConfigPtr and ClusterSecuritySamlConfigPtrOutput values.
+// You can construct a concrete instance of `ClusterSecuritySamlConfigPtrInput` via:
+//
+//	        ClusterSecuritySamlConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type ClusterSecuritySamlConfigPtrInput interface {
+	pulumi.Input
+
+	ToClusterSecuritySamlConfigPtrOutput() ClusterSecuritySamlConfigPtrOutput
+	ToClusterSecuritySamlConfigPtrOutputWithContext(context.Context) ClusterSecuritySamlConfigPtrOutput
+}
+
+type clusterSecuritySamlConfigPtrType ClusterSecuritySamlConfigArgs
+
+func ClusterSecuritySamlConfigPtr(v *ClusterSecuritySamlConfigArgs) ClusterSecuritySamlConfigPtrInput {
+	return (*clusterSecuritySamlConfigPtrType)(v)
+}
+
+func (*clusterSecuritySamlConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClusterSecuritySamlConfig)(nil)).Elem()
+}
+
+func (i *clusterSecuritySamlConfigPtrType) ToClusterSecuritySamlConfigPtrOutput() ClusterSecuritySamlConfigPtrOutput {
+	return i.ToClusterSecuritySamlConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *clusterSecuritySamlConfigPtrType) ToClusterSecuritySamlConfigPtrOutputWithContext(ctx context.Context) ClusterSecuritySamlConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterSecuritySamlConfigPtrOutput)
+}
+
+type ClusterSecuritySamlConfigOutput struct{ *pulumi.OutputState }
+
+func (ClusterSecuritySamlConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterSecuritySamlConfig)(nil)).Elem()
+}
+
+func (o ClusterSecuritySamlConfigOutput) ToClusterSecuritySamlConfigOutput() ClusterSecuritySamlConfigOutput {
+	return o
+}
+
+func (o ClusterSecuritySamlConfigOutput) ToClusterSecuritySamlConfigOutputWithContext(ctx context.Context) ClusterSecuritySamlConfigOutput {
+	return o
+}
+
+func (o ClusterSecuritySamlConfigOutput) ToClusterSecuritySamlConfigPtrOutput() ClusterSecuritySamlConfigPtrOutput {
+	return o.ToClusterSecuritySamlConfigPtrOutputWithContext(context.Background())
+}
+
+func (o ClusterSecuritySamlConfigOutput) ToClusterSecuritySamlConfigPtrOutputWithContext(ctx context.Context) ClusterSecuritySamlConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ClusterSecuritySamlConfig) *ClusterSecuritySamlConfig {
+		return &v
+	}).(ClusterSecuritySamlConfigPtrOutput)
+}
+
+// The backend role of admins who have all permissions like local master user
+func (o ClusterSecuritySamlConfigOutput) AdminBackendRole() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterSecuritySamlConfig) *string { return v.AdminBackendRole }).(pulumi.StringPtrOutput)
+}
+
+// The unique name for a identity provider entity
+func (o ClusterSecuritySamlConfigOutput) IdpEntityId() pulumi.StringOutput {
+	return o.ApplyT(func(v ClusterSecuritySamlConfig) string { return v.IdpEntityId }).(pulumi.StringOutput)
+}
+
+// The content of identity provider metadata
+func (o ClusterSecuritySamlConfigOutput) IdpMetadataContent() pulumi.StringOutput {
+	return o.ApplyT(func(v ClusterSecuritySamlConfig) string { return v.IdpMetadataContent }).(pulumi.StringOutput)
+}
+
+// A flag determine whether SAML is enabled
+func (o ClusterSecuritySamlConfigOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v ClusterSecuritySamlConfig) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+// The endpoint of opendashboard
+func (o ClusterSecuritySamlConfigOutput) OpendashboardUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterSecuritySamlConfig) *string { return v.OpendashboardUrl }).(pulumi.StringPtrOutput)
+}
+
+// The roles key is sued to get backend roles from SAML assertion
+func (o ClusterSecuritySamlConfigOutput) RolesKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterSecuritySamlConfig) *string { return v.RolesKey }).(pulumi.StringPtrOutput)
+}
+
+// The subject key is used to get username from SAML assertion. By default, it is NameID
+func (o ClusterSecuritySamlConfigOutput) SubjectKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterSecuritySamlConfig) *string { return v.SubjectKey }).(pulumi.StringPtrOutput)
+}
+
+type ClusterSecuritySamlConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (ClusterSecuritySamlConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClusterSecuritySamlConfig)(nil)).Elem()
+}
+
+func (o ClusterSecuritySamlConfigPtrOutput) ToClusterSecuritySamlConfigPtrOutput() ClusterSecuritySamlConfigPtrOutput {
+	return o
+}
+
+func (o ClusterSecuritySamlConfigPtrOutput) ToClusterSecuritySamlConfigPtrOutputWithContext(ctx context.Context) ClusterSecuritySamlConfigPtrOutput {
+	return o
+}
+
+func (o ClusterSecuritySamlConfigPtrOutput) Elem() ClusterSecuritySamlConfigOutput {
+	return o.ApplyT(func(v *ClusterSecuritySamlConfig) ClusterSecuritySamlConfig {
+		if v != nil {
+			return *v
+		}
+		var ret ClusterSecuritySamlConfig
+		return ret
+	}).(ClusterSecuritySamlConfigOutput)
+}
+
+// The backend role of admins who have all permissions like local master user
+func (o ClusterSecuritySamlConfigPtrOutput) AdminBackendRole() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterSecuritySamlConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AdminBackendRole
+	}).(pulumi.StringPtrOutput)
+}
+
+// The unique name for a identity provider entity
+func (o ClusterSecuritySamlConfigPtrOutput) IdpEntityId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterSecuritySamlConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.IdpEntityId
+	}).(pulumi.StringPtrOutput)
+}
+
+// The content of identity provider metadata
+func (o ClusterSecuritySamlConfigPtrOutput) IdpMetadataContent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterSecuritySamlConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.IdpMetadataContent
+	}).(pulumi.StringPtrOutput)
+}
+
+// A flag determine whether SAML is enabled
+func (o ClusterSecuritySamlConfigPtrOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ClusterSecuritySamlConfig) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.IsEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// The endpoint of opendashboard
+func (o ClusterSecuritySamlConfigPtrOutput) OpendashboardUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterSecuritySamlConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.OpendashboardUrl
+	}).(pulumi.StringPtrOutput)
+}
+
+// The roles key is sued to get backend roles from SAML assertion
+func (o ClusterSecuritySamlConfigPtrOutput) RolesKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterSecuritySamlConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RolesKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// The subject key is used to get username from SAML assertion. By default, it is NameID
+func (o ClusterSecuritySamlConfigPtrOutput) SubjectKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterSecuritySamlConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SubjectKey
+	}).(pulumi.StringPtrOutput)
 }
 
 type OpensearchClusterPipelineReverseConnectionEndpoint struct {
@@ -1400,6 +1651,8 @@ type GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItem struct
 	MemoryGb int `pulumi:"memoryGb"`
 	// The number of nodes configured for the pipeline.
 	NodeCount int `pulumi:"nodeCount"`
+	// The pipeline node shape.
+	NodeShape string `pulumi:"nodeShape"`
 	// The OCID of the NSG where the pipeline private endpoint vnic will be attached.
 	NsgId string `pulumi:"nsgId"`
 	// The number of OCPUs configured for each pipeline node.
@@ -1461,6 +1714,8 @@ type GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArgs st
 	MemoryGb pulumi.IntInput `pulumi:"memoryGb"`
 	// The number of nodes configured for the pipeline.
 	NodeCount pulumi.IntInput `pulumi:"nodeCount"`
+	// The pipeline node shape.
+	NodeShape pulumi.StringInput `pulumi:"nodeShape"`
 	// The OCID of the NSG where the pipeline private endpoint vnic will be attached.
 	NsgId pulumi.StringInput `pulumi:"nsgId"`
 	// The number of OCPUs configured for each pipeline node.
@@ -1593,6 +1848,13 @@ func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutp
 // The number of nodes configured for the pipeline.
 func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput) NodeCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItem) int { return v.NodeCount }).(pulumi.IntOutput)
+}
+
+// The pipeline node shape.
+func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemOutput) NodeShape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItem) string {
+		return v.NodeShape
+	}).(pulumi.StringOutput)
 }
 
 // The OCID of the NSG where the pipeline private endpoint vnic will be attached.
@@ -1930,6 +2192,139 @@ func (o GetOpensearchClusterReverseConnectionEndpointArrayOutput) Index(i pulumi
 	}).(GetOpensearchClusterReverseConnectionEndpointOutput)
 }
 
+type GetOpensearchClusterSecuritySamlConfig struct {
+	AdminBackendRole   string `pulumi:"adminBackendRole"`
+	IdpEntityId        string `pulumi:"idpEntityId"`
+	IdpMetadataContent string `pulumi:"idpMetadataContent"`
+	// Flag to indicate whether outbound cluster configuration is enabled
+	IsEnabled        bool   `pulumi:"isEnabled"`
+	OpendashboardUrl string `pulumi:"opendashboardUrl"`
+	RolesKey         string `pulumi:"rolesKey"`
+	SubjectKey       string `pulumi:"subjectKey"`
+}
+
+// GetOpensearchClusterSecuritySamlConfigInput is an input type that accepts GetOpensearchClusterSecuritySamlConfigArgs and GetOpensearchClusterSecuritySamlConfigOutput values.
+// You can construct a concrete instance of `GetOpensearchClusterSecuritySamlConfigInput` via:
+//
+//	GetOpensearchClusterSecuritySamlConfigArgs{...}
+type GetOpensearchClusterSecuritySamlConfigInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClusterSecuritySamlConfigOutput() GetOpensearchClusterSecuritySamlConfigOutput
+	ToGetOpensearchClusterSecuritySamlConfigOutputWithContext(context.Context) GetOpensearchClusterSecuritySamlConfigOutput
+}
+
+type GetOpensearchClusterSecuritySamlConfigArgs struct {
+	AdminBackendRole   pulumi.StringInput `pulumi:"adminBackendRole"`
+	IdpEntityId        pulumi.StringInput `pulumi:"idpEntityId"`
+	IdpMetadataContent pulumi.StringInput `pulumi:"idpMetadataContent"`
+	// Flag to indicate whether outbound cluster configuration is enabled
+	IsEnabled        pulumi.BoolInput   `pulumi:"isEnabled"`
+	OpendashboardUrl pulumi.StringInput `pulumi:"opendashboardUrl"`
+	RolesKey         pulumi.StringInput `pulumi:"rolesKey"`
+	SubjectKey       pulumi.StringInput `pulumi:"subjectKey"`
+}
+
+func (GetOpensearchClusterSecuritySamlConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClusterSecuritySamlConfig)(nil)).Elem()
+}
+
+func (i GetOpensearchClusterSecuritySamlConfigArgs) ToGetOpensearchClusterSecuritySamlConfigOutput() GetOpensearchClusterSecuritySamlConfigOutput {
+	return i.ToGetOpensearchClusterSecuritySamlConfigOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClusterSecuritySamlConfigArgs) ToGetOpensearchClusterSecuritySamlConfigOutputWithContext(ctx context.Context) GetOpensearchClusterSecuritySamlConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClusterSecuritySamlConfigOutput)
+}
+
+// GetOpensearchClusterSecuritySamlConfigArrayInput is an input type that accepts GetOpensearchClusterSecuritySamlConfigArray and GetOpensearchClusterSecuritySamlConfigArrayOutput values.
+// You can construct a concrete instance of `GetOpensearchClusterSecuritySamlConfigArrayInput` via:
+//
+//	GetOpensearchClusterSecuritySamlConfigArray{ GetOpensearchClusterSecuritySamlConfigArgs{...} }
+type GetOpensearchClusterSecuritySamlConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClusterSecuritySamlConfigArrayOutput() GetOpensearchClusterSecuritySamlConfigArrayOutput
+	ToGetOpensearchClusterSecuritySamlConfigArrayOutputWithContext(context.Context) GetOpensearchClusterSecuritySamlConfigArrayOutput
+}
+
+type GetOpensearchClusterSecuritySamlConfigArray []GetOpensearchClusterSecuritySamlConfigInput
+
+func (GetOpensearchClusterSecuritySamlConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClusterSecuritySamlConfig)(nil)).Elem()
+}
+
+func (i GetOpensearchClusterSecuritySamlConfigArray) ToGetOpensearchClusterSecuritySamlConfigArrayOutput() GetOpensearchClusterSecuritySamlConfigArrayOutput {
+	return i.ToGetOpensearchClusterSecuritySamlConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClusterSecuritySamlConfigArray) ToGetOpensearchClusterSecuritySamlConfigArrayOutputWithContext(ctx context.Context) GetOpensearchClusterSecuritySamlConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClusterSecuritySamlConfigArrayOutput)
+}
+
+type GetOpensearchClusterSecuritySamlConfigOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClusterSecuritySamlConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClusterSecuritySamlConfig)(nil)).Elem()
+}
+
+func (o GetOpensearchClusterSecuritySamlConfigOutput) ToGetOpensearchClusterSecuritySamlConfigOutput() GetOpensearchClusterSecuritySamlConfigOutput {
+	return o
+}
+
+func (o GetOpensearchClusterSecuritySamlConfigOutput) ToGetOpensearchClusterSecuritySamlConfigOutputWithContext(ctx context.Context) GetOpensearchClusterSecuritySamlConfigOutput {
+	return o
+}
+
+func (o GetOpensearchClusterSecuritySamlConfigOutput) AdminBackendRole() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterSecuritySamlConfig) string { return v.AdminBackendRole }).(pulumi.StringOutput)
+}
+
+func (o GetOpensearchClusterSecuritySamlConfigOutput) IdpEntityId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterSecuritySamlConfig) string { return v.IdpEntityId }).(pulumi.StringOutput)
+}
+
+func (o GetOpensearchClusterSecuritySamlConfigOutput) IdpMetadataContent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterSecuritySamlConfig) string { return v.IdpMetadataContent }).(pulumi.StringOutput)
+}
+
+// Flag to indicate whether outbound cluster configuration is enabled
+func (o GetOpensearchClusterSecuritySamlConfigOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetOpensearchClusterSecuritySamlConfig) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+func (o GetOpensearchClusterSecuritySamlConfigOutput) OpendashboardUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterSecuritySamlConfig) string { return v.OpendashboardUrl }).(pulumi.StringOutput)
+}
+
+func (o GetOpensearchClusterSecuritySamlConfigOutput) RolesKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterSecuritySamlConfig) string { return v.RolesKey }).(pulumi.StringOutput)
+}
+
+func (o GetOpensearchClusterSecuritySamlConfigOutput) SubjectKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterSecuritySamlConfig) string { return v.SubjectKey }).(pulumi.StringOutput)
+}
+
+type GetOpensearchClusterSecuritySamlConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClusterSecuritySamlConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClusterSecuritySamlConfig)(nil)).Elem()
+}
+
+func (o GetOpensearchClusterSecuritySamlConfigArrayOutput) ToGetOpensearchClusterSecuritySamlConfigArrayOutput() GetOpensearchClusterSecuritySamlConfigArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClusterSecuritySamlConfigArrayOutput) ToGetOpensearchClusterSecuritySamlConfigArrayOutputWithContext(ctx context.Context) GetOpensearchClusterSecuritySamlConfigArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClusterSecuritySamlConfigArrayOutput) Index(i pulumi.IntInput) GetOpensearchClusterSecuritySamlConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClusterSecuritySamlConfig {
+		return vs[0].([]GetOpensearchClusterSecuritySamlConfig)[vs[1].(int)]
+	}).(GetOpensearchClusterSecuritySamlConfigOutput)
+}
+
 type GetOpensearchClustersFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -2146,6 +2541,8 @@ type GetOpensearchClustersOpensearchClusterCollectionItem struct {
 	DataNodeHostMemoryGb int `pulumi:"dataNodeHostMemoryGb"`
 	// The number of OCPUs configured for the cluster's data nodes.
 	DataNodeHostOcpuCount int `pulumi:"dataNodeHostOcpuCount"`
+	// The node shape for the cluster's data nodes.
+	DataNodeHostShape string `pulumi:"dataNodeHostShape"`
 	// The instance type for the cluster's data nodes.
 	DataNodeHostType string `pulumi:"dataNodeHostType"`
 	// The amount of storage in GB, to configure per node for the cluster's data nodes.
@@ -2174,6 +2571,8 @@ type GetOpensearchClustersOpensearchClusterCollectionItem struct {
 	MasterNodeHostMemoryGb int `pulumi:"masterNodeHostMemoryGb"`
 	// The number of OCPUs configured for cluster's master nodes.
 	MasterNodeHostOcpuCount int `pulumi:"masterNodeHostOcpuCount"`
+	// The node shape for the cluster's master nodes.
+	MasterNodeHostShape string `pulumi:"masterNodeHostShape"`
 	// The instance type for the cluster's master nodes.
 	MasterNodeHostType string `pulumi:"masterNodeHostType"`
 	// The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
@@ -2184,6 +2583,8 @@ type GetOpensearchClustersOpensearchClusterCollectionItem struct {
 	OpendashboardNodeHostMemoryGb int `pulumi:"opendashboardNodeHostMemoryGb"`
 	// The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
 	OpendashboardNodeHostOcpuCount int `pulumi:"opendashboardNodeHostOcpuCount"`
+	// The node shape for the cluster's OpenSearch Dashboard nodes.
+	OpendashboardNodeHostShape string `pulumi:"opendashboardNodeHostShape"`
 	// The private IP address for the cluster's OpenSearch Dashboard.
 	OpendashboardPrivateIp string `pulumi:"opendashboardPrivateIp"`
 	// The fully qualified domain name (FQDN) for the cluster's API endpoint.
@@ -2196,12 +2597,25 @@ type GetOpensearchClustersOpensearchClusterCollectionItem struct {
 	ReverseConnectionEndpointCustomerIps []string `pulumi:"reverseConnectionEndpointCustomerIps"`
 	// The list of reverse connection endpoints.
 	ReverseConnectionEndpoints []GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpoint `pulumi:"reverseConnectionEndpoints"`
+	// The number of search nodes configured for the cluster.
+	SearchNodeCount int `pulumi:"searchNodeCount"`
+	// The amount of memory in GB, for the cluster's search nodes.
+	SearchNodeHostMemoryGb int `pulumi:"searchNodeHostMemoryGb"`
+	// The number of OCPUs configured for the cluster's search nodes.
+	SearchNodeHostOcpuCount int `pulumi:"searchNodeHostOcpuCount"`
+	// The node shape for the cluster's search nodes.
+	SearchNodeHostShape string `pulumi:"searchNodeHostShape"`
+	// The instance type for the cluster's search nodes.
+	SearchNodeHostType string `pulumi:"searchNodeHostType"`
+	// The amount of storage in GB, to configure per node for the cluster's search nodes.
+	SearchNodeStorageGb int `pulumi:"searchNodeStorageGb"`
 	// The name of the master user that are used to manage security config
 	SecurityMasterUserName string `pulumi:"securityMasterUserName"`
 	// The password hash of the master user that are used to manage security config
 	SecurityMasterUserPasswordHash string `pulumi:"securityMasterUserPasswordHash"`
 	// The security mode of the cluster.
-	SecurityMode string `pulumi:"securityMode"`
+	SecurityMode        string                                                                   `pulumi:"securityMode"`
+	SecuritySamlConfigs []GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfig `pulumi:"securitySamlConfigs"`
 	// The software version the cluster is running.
 	SoftwareVersion string `pulumi:"softwareVersion"`
 	// A filter to return only OpensearchClusters their lifecycleState matches the given lifecycleState.
@@ -2252,6 +2666,8 @@ type GetOpensearchClustersOpensearchClusterCollectionItemArgs struct {
 	DataNodeHostMemoryGb pulumi.IntInput `pulumi:"dataNodeHostMemoryGb"`
 	// The number of OCPUs configured for the cluster's data nodes.
 	DataNodeHostOcpuCount pulumi.IntInput `pulumi:"dataNodeHostOcpuCount"`
+	// The node shape for the cluster's data nodes.
+	DataNodeHostShape pulumi.StringInput `pulumi:"dataNodeHostShape"`
 	// The instance type for the cluster's data nodes.
 	DataNodeHostType pulumi.StringInput `pulumi:"dataNodeHostType"`
 	// The amount of storage in GB, to configure per node for the cluster's data nodes.
@@ -2280,6 +2696,8 @@ type GetOpensearchClustersOpensearchClusterCollectionItemArgs struct {
 	MasterNodeHostMemoryGb pulumi.IntInput `pulumi:"masterNodeHostMemoryGb"`
 	// The number of OCPUs configured for cluster's master nodes.
 	MasterNodeHostOcpuCount pulumi.IntInput `pulumi:"masterNodeHostOcpuCount"`
+	// The node shape for the cluster's master nodes.
+	MasterNodeHostShape pulumi.StringInput `pulumi:"masterNodeHostShape"`
 	// The instance type for the cluster's master nodes.
 	MasterNodeHostType pulumi.StringInput `pulumi:"masterNodeHostType"`
 	// The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
@@ -2290,6 +2708,8 @@ type GetOpensearchClustersOpensearchClusterCollectionItemArgs struct {
 	OpendashboardNodeHostMemoryGb pulumi.IntInput `pulumi:"opendashboardNodeHostMemoryGb"`
 	// The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
 	OpendashboardNodeHostOcpuCount pulumi.IntInput `pulumi:"opendashboardNodeHostOcpuCount"`
+	// The node shape for the cluster's OpenSearch Dashboard nodes.
+	OpendashboardNodeHostShape pulumi.StringInput `pulumi:"opendashboardNodeHostShape"`
 	// The private IP address for the cluster's OpenSearch Dashboard.
 	OpendashboardPrivateIp pulumi.StringInput `pulumi:"opendashboardPrivateIp"`
 	// The fully qualified domain name (FQDN) for the cluster's API endpoint.
@@ -2302,12 +2722,25 @@ type GetOpensearchClustersOpensearchClusterCollectionItemArgs struct {
 	ReverseConnectionEndpointCustomerIps pulumi.StringArrayInput `pulumi:"reverseConnectionEndpointCustomerIps"`
 	// The list of reverse connection endpoints.
 	ReverseConnectionEndpoints GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArrayInput `pulumi:"reverseConnectionEndpoints"`
+	// The number of search nodes configured for the cluster.
+	SearchNodeCount pulumi.IntInput `pulumi:"searchNodeCount"`
+	// The amount of memory in GB, for the cluster's search nodes.
+	SearchNodeHostMemoryGb pulumi.IntInput `pulumi:"searchNodeHostMemoryGb"`
+	// The number of OCPUs configured for the cluster's search nodes.
+	SearchNodeHostOcpuCount pulumi.IntInput `pulumi:"searchNodeHostOcpuCount"`
+	// The node shape for the cluster's search nodes.
+	SearchNodeHostShape pulumi.StringInput `pulumi:"searchNodeHostShape"`
+	// The instance type for the cluster's search nodes.
+	SearchNodeHostType pulumi.StringInput `pulumi:"searchNodeHostType"`
+	// The amount of storage in GB, to configure per node for the cluster's search nodes.
+	SearchNodeStorageGb pulumi.IntInput `pulumi:"searchNodeStorageGb"`
 	// The name of the master user that are used to manage security config
 	SecurityMasterUserName pulumi.StringInput `pulumi:"securityMasterUserName"`
 	// The password hash of the master user that are used to manage security config
 	SecurityMasterUserPasswordHash pulumi.StringInput `pulumi:"securityMasterUserPasswordHash"`
 	// The security mode of the cluster.
-	SecurityMode pulumi.StringInput `pulumi:"securityMode"`
+	SecurityMode        pulumi.StringInput                                                               `pulumi:"securityMode"`
+	SecuritySamlConfigs GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArrayInput `pulumi:"securitySamlConfigs"`
 	// The software version the cluster is running.
 	SoftwareVersion pulumi.StringInput `pulumi:"softwareVersion"`
 	// A filter to return only OpensearchClusters their lifecycleState matches the given lifecycleState.
@@ -2422,6 +2855,11 @@ func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) DataNodeHost
 	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) int { return v.DataNodeHostOcpuCount }).(pulumi.IntOutput)
 }
 
+// The node shape for the cluster's data nodes.
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) DataNodeHostShape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.DataNodeHostShape }).(pulumi.StringOutput)
+}
+
 // The instance type for the cluster's data nodes.
 func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) DataNodeHostType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.DataNodeHostType }).(pulumi.StringOutput)
@@ -2496,6 +2934,11 @@ func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) MasterNodeHo
 	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) int { return v.MasterNodeHostOcpuCount }).(pulumi.IntOutput)
 }
 
+// The node shape for the cluster's master nodes.
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) MasterNodeHostShape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.MasterNodeHostShape }).(pulumi.StringOutput)
+}
+
 // The instance type for the cluster's master nodes.
 func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) MasterNodeHostType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.MasterNodeHostType }).(pulumi.StringOutput)
@@ -2523,6 +2966,13 @@ func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) Opendashboar
 	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) int {
 		return v.OpendashboardNodeHostOcpuCount
 	}).(pulumi.IntOutput)
+}
+
+// The node shape for the cluster's OpenSearch Dashboard nodes.
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) OpendashboardNodeHostShape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string {
+		return v.OpendashboardNodeHostShape
+	}).(pulumi.StringOutput)
 }
 
 // The private IP address for the cluster's OpenSearch Dashboard.
@@ -2561,6 +3011,36 @@ func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) ReverseConne
 	}).(GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArrayOutput)
 }
 
+// The number of search nodes configured for the cluster.
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) SearchNodeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) int { return v.SearchNodeCount }).(pulumi.IntOutput)
+}
+
+// The amount of memory in GB, for the cluster's search nodes.
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) SearchNodeHostMemoryGb() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) int { return v.SearchNodeHostMemoryGb }).(pulumi.IntOutput)
+}
+
+// The number of OCPUs configured for the cluster's search nodes.
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) SearchNodeHostOcpuCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) int { return v.SearchNodeHostOcpuCount }).(pulumi.IntOutput)
+}
+
+// The node shape for the cluster's search nodes.
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) SearchNodeHostShape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.SearchNodeHostShape }).(pulumi.StringOutput)
+}
+
+// The instance type for the cluster's search nodes.
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) SearchNodeHostType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.SearchNodeHostType }).(pulumi.StringOutput)
+}
+
+// The amount of storage in GB, to configure per node for the cluster's search nodes.
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) SearchNodeStorageGb() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) int { return v.SearchNodeStorageGb }).(pulumi.IntOutput)
+}
+
 // The name of the master user that are used to manage security config
 func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) SecurityMasterUserName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.SecurityMasterUserName }).(pulumi.StringOutput)
@@ -2576,6 +3056,12 @@ func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) SecurityMast
 // The security mode of the cluster.
 func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) SecurityMode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.SecurityMode }).(pulumi.StringOutput)
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) SecuritySamlConfigs() GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArrayOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) []GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfig {
+		return v.SecuritySamlConfigs
+	}).(GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArrayOutput)
 }
 
 // The software version the cluster is running.
@@ -3148,6 +3634,153 @@ func (o GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEnd
 	}).(GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointOutput)
 }
 
+type GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfig struct {
+	AdminBackendRole   string `pulumi:"adminBackendRole"`
+	IdpEntityId        string `pulumi:"idpEntityId"`
+	IdpMetadataContent string `pulumi:"idpMetadataContent"`
+	// Flag to indicate whether outbound cluster configuration is enabled
+	IsEnabled        bool   `pulumi:"isEnabled"`
+	OpendashboardUrl string `pulumi:"opendashboardUrl"`
+	RolesKey         string `pulumi:"rolesKey"`
+	SubjectKey       string `pulumi:"subjectKey"`
+}
+
+// GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigInput is an input type that accepts GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArgs and GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigOutput values.
+// You can construct a concrete instance of `GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigInput` via:
+//
+//	GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArgs{...}
+type GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigOutput() GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigOutput
+	ToGetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigOutputWithContext(context.Context) GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigOutput
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArgs struct {
+	AdminBackendRole   pulumi.StringInput `pulumi:"adminBackendRole"`
+	IdpEntityId        pulumi.StringInput `pulumi:"idpEntityId"`
+	IdpMetadataContent pulumi.StringInput `pulumi:"idpMetadataContent"`
+	// Flag to indicate whether outbound cluster configuration is enabled
+	IsEnabled        pulumi.BoolInput   `pulumi:"isEnabled"`
+	OpendashboardUrl pulumi.StringInput `pulumi:"opendashboardUrl"`
+	RolesKey         pulumi.StringInput `pulumi:"rolesKey"`
+	SubjectKey       pulumi.StringInput `pulumi:"subjectKey"`
+}
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfig)(nil)).Elem()
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArgs) ToGetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigOutput() GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigOutput {
+	return i.ToGetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArgs) ToGetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigOutput)
+}
+
+// GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArrayInput is an input type that accepts GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArray and GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArrayOutput values.
+// You can construct a concrete instance of `GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArrayInput` via:
+//
+//	GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArray{ GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArgs{...} }
+type GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArrayOutput() GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArrayOutput
+	ToGetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArrayOutputWithContext(context.Context) GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArrayOutput
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArray []GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigInput
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfig)(nil)).Elem()
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArray) ToGetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArrayOutput() GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArrayOutput {
+	return i.ToGetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArray) ToGetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArrayOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArrayOutput)
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfig)(nil)).Elem()
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigOutput() GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigOutput) AdminBackendRole() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfig) string {
+		return v.AdminBackendRole
+	}).(pulumi.StringOutput)
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigOutput) IdpEntityId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfig) string {
+		return v.IdpEntityId
+	}).(pulumi.StringOutput)
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigOutput) IdpMetadataContent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfig) string {
+		return v.IdpMetadataContent
+	}).(pulumi.StringOutput)
+}
+
+// Flag to indicate whether outbound cluster configuration is enabled
+func (o GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfig) bool {
+		return v.IsEnabled
+	}).(pulumi.BoolOutput)
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigOutput) OpendashboardUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfig) string {
+		return v.OpendashboardUrl
+	}).(pulumi.StringOutput)
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigOutput) RolesKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfig) string {
+		return v.RolesKey
+	}).(pulumi.StringOutput)
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigOutput) SubjectKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfig) string {
+		return v.SubjectKey
+	}).(pulumi.StringOutput)
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfig)(nil)).Elem()
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArrayOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArrayOutput() GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArrayOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArrayOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArrayOutput) Index(i pulumi.IntInput) GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfig {
+		return vs[0].([]GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfig)[vs[1].(int)]
+	}).(GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigOutput)
+}
+
 type GetOpensearchVersionItem struct {
 	// The version of OpenSearch.
 	Version string `pulumi:"version"`
@@ -3556,6 +4189,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterOutboundClusterConfigOutboundClusterArrayInput)(nil)).Elem(), ClusterOutboundClusterConfigOutboundClusterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterReverseConnectionEndpointInput)(nil)).Elem(), ClusterReverseConnectionEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterReverseConnectionEndpointArrayInput)(nil)).Elem(), ClusterReverseConnectionEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterSecuritySamlConfigInput)(nil)).Elem(), ClusterSecuritySamlConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterSecuritySamlConfigPtrInput)(nil)).Elem(), ClusterSecuritySamlConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpensearchClusterPipelineReverseConnectionEndpointInput)(nil)).Elem(), OpensearchClusterPipelineReverseConnectionEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpensearchClusterPipelineReverseConnectionEndpointArrayInput)(nil)).Elem(), OpensearchClusterPipelineReverseConnectionEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterMaintenanceDetailInput)(nil)).Elem(), GetOpensearchClusterMaintenanceDetailArgs{})
@@ -3576,6 +4211,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArrayInput)(nil)).Elem(), GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterReverseConnectionEndpointInput)(nil)).Elem(), GetOpensearchClusterReverseConnectionEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterReverseConnectionEndpointArrayInput)(nil)).Elem(), GetOpensearchClusterReverseConnectionEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterSecuritySamlConfigInput)(nil)).Elem(), GetOpensearchClusterSecuritySamlConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterSecuritySamlConfigArrayInput)(nil)).Elem(), GetOpensearchClusterSecuritySamlConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersFilterInput)(nil)).Elem(), GetOpensearchClustersFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersFilterArrayInput)(nil)).Elem(), GetOpensearchClustersFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionArgs{})
@@ -3590,6 +4227,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArrayInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArrayInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArrayInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchVersionItemInput)(nil)).Elem(), GetOpensearchVersionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchVersionItemArrayInput)(nil)).Elem(), GetOpensearchVersionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchVersionsFilterInput)(nil)).Elem(), GetOpensearchVersionsFilterArgs{})
@@ -3606,6 +4245,8 @@ func init() {
 	pulumi.RegisterOutputType(ClusterOutboundClusterConfigOutboundClusterArrayOutput{})
 	pulumi.RegisterOutputType(ClusterReverseConnectionEndpointOutput{})
 	pulumi.RegisterOutputType(ClusterReverseConnectionEndpointArrayOutput{})
+	pulumi.RegisterOutputType(ClusterSecuritySamlConfigOutput{})
+	pulumi.RegisterOutputType(ClusterSecuritySamlConfigPtrOutput{})
 	pulumi.RegisterOutputType(OpensearchClusterPipelineReverseConnectionEndpointOutput{})
 	pulumi.RegisterOutputType(OpensearchClusterPipelineReverseConnectionEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClusterMaintenanceDetailOutput{})
@@ -3626,6 +4267,8 @@ func init() {
 	pulumi.RegisterOutputType(GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClusterReverseConnectionEndpointOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClusterReverseConnectionEndpointArrayOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClusterSecuritySamlConfigOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClusterSecuritySamlConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClustersFilterOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClustersFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionOutput{})
@@ -3640,6 +4283,8 @@ func init() {
 	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArrayOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArrayOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetOpensearchVersionItemOutput{})
 	pulumi.RegisterOutputType(GetOpensearchVersionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetOpensearchVersionsFilterOutput{})

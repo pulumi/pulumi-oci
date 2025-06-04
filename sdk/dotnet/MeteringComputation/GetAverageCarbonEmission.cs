@@ -135,7 +135,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The sku part number.
+        /// The SKU part number.
         /// </summary>
         public readonly string SkuPartNumber;
 

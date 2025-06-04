@@ -11,6 +11,7 @@ import com.pulumi.oci.Mysql.outputs.GetMysqlBackupsBackupDbSystemSnapshotDeletio
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupsBackupDbSystemSnapshotEndpoint;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupsBackupDbSystemSnapshotMaintenance;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupsBackupDbSystemSnapshotReadEndpoint;
+import com.pulumi.oci.Mysql.outputs.GetMysqlBackupsBackupDbSystemSnapshotRest;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupsBackupDbSystemSnapshotSecureConnection;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -132,7 +133,12 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
      */
     private String mysqlVersion;
     /**
-     * @return The port for primary endpoint of the DB System to listen on.
+     * @return Network Security Group OCIDs used for the VNIC attachment.
+     * 
+     */
+    private List<String> nsgIds;
+    /**
+     * @return The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
      * 
      */
     private Integer port;
@@ -151,6 +157,11 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
      * 
      */
     private String region;
+    /**
+     * @return REST configuration details.
+     * 
+     */
+    private List<GetMysqlBackupsBackupDbSystemSnapshotRest> rests;
     /**
      * @return Secure connection configuration details.
      * 
@@ -323,7 +334,14 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
         return this.mysqlVersion;
     }
     /**
-     * @return The port for primary endpoint of the DB System to listen on.
+     * @return Network Security Group OCIDs used for the VNIC attachment.
+     * 
+     */
+    public List<String> nsgIds() {
+        return this.nsgIds;
+    }
+    /**
+     * @return The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
      * 
      */
     public Integer port() {
@@ -349,6 +367,13 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
      */
     public String region() {
         return this.region;
+    }
+    /**
+     * @return REST configuration details.
+     * 
+     */
+    public List<GetMysqlBackupsBackupDbSystemSnapshotRest> rests() {
+        return this.rests;
     }
     /**
      * @return Secure connection configuration details.
@@ -403,10 +428,12 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
         private Boolean isHighlyAvailable;
         private List<GetMysqlBackupsBackupDbSystemSnapshotMaintenance> maintenances;
         private String mysqlVersion;
+        private List<String> nsgIds;
         private Integer port;
         private Integer portX;
         private List<GetMysqlBackupsBackupDbSystemSnapshotReadEndpoint> readEndpoints;
         private String region;
+        private List<GetMysqlBackupsBackupDbSystemSnapshotRest> rests;
         private List<GetMysqlBackupsBackupDbSystemSnapshotSecureConnection> secureConnections;
         private String shapeName;
         private String subnetId;
@@ -435,10 +462,12 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
     	      this.isHighlyAvailable = defaults.isHighlyAvailable;
     	      this.maintenances = defaults.maintenances;
     	      this.mysqlVersion = defaults.mysqlVersion;
+    	      this.nsgIds = defaults.nsgIds;
     	      this.port = defaults.port;
     	      this.portX = defaults.portX;
     	      this.readEndpoints = defaults.readEndpoints;
     	      this.region = defaults.region;
+    	      this.rests = defaults.rests;
     	      this.secureConnections = defaults.secureConnections;
     	      this.shapeName = defaults.shapeName;
     	      this.subnetId = defaults.subnetId;
@@ -636,6 +665,17 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
             return this;
         }
         @CustomType.Setter
+        public Builder nsgIds(List<String> nsgIds) {
+            if (nsgIds == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackupDbSystemSnapshot", "nsgIds");
+            }
+            this.nsgIds = nsgIds;
+            return this;
+        }
+        public Builder nsgIds(String... nsgIds) {
+            return nsgIds(List.of(nsgIds));
+        }
+        @CustomType.Setter
         public Builder port(Integer port) {
             if (port == null) {
               throw new MissingRequiredPropertyException("GetMysqlBackupsBackupDbSystemSnapshot", "port");
@@ -669,6 +709,17 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
             }
             this.region = region;
             return this;
+        }
+        @CustomType.Setter
+        public Builder rests(List<GetMysqlBackupsBackupDbSystemSnapshotRest> rests) {
+            if (rests == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackupDbSystemSnapshot", "rests");
+            }
+            this.rests = rests;
+            return this;
+        }
+        public Builder rests(GetMysqlBackupsBackupDbSystemSnapshotRest... rests) {
+            return rests(List.of(rests));
         }
         @CustomType.Setter
         public Builder secureConnections(List<GetMysqlBackupsBackupDbSystemSnapshotSecureConnection> secureConnections) {
@@ -721,10 +772,12 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
             _resultValue.isHighlyAvailable = isHighlyAvailable;
             _resultValue.maintenances = maintenances;
             _resultValue.mysqlVersion = mysqlVersion;
+            _resultValue.nsgIds = nsgIds;
             _resultValue.port = port;
             _resultValue.portX = portX;
             _resultValue.readEndpoints = readEndpoints;
             _resultValue.region = region;
+            _resultValue.rests = rests;
             _resultValue.secureConnections = secureConnections;
             _resultValue.shapeName = shapeName;
             _resultValue.subnetId = subnetId;

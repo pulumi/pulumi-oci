@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemMetadata;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -19,6 +20,11 @@ public final class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem {
      * 
      */
     private Boolean areLogsCollected;
+    /**
+     * @return The count of associated log sources for a given log analytics entity.
+     * 
+     */
+    private Integer associatedSourcesCount;
     /**
      * @return A filter to return only log analytics entities whose cloudResourceId matches the cloudResourceId given.
      * 
@@ -137,6 +143,13 @@ public final class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem {
      */
     public Boolean areLogsCollected() {
         return this.areLogsCollected;
+    }
+    /**
+     * @return The count of associated log sources for a given log analytics entity.
+     * 
+     */
+    public Integer associatedSourcesCount() {
+        return this.associatedSourcesCount;
     }
     /**
      * @return A filter to return only log analytics entities whose cloudResourceId matches the cloudResourceId given.
@@ -303,6 +316,7 @@ public final class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem {
     @CustomType.Builder
     public static final class Builder {
         private Boolean areLogsCollected;
+        private Integer associatedSourcesCount;
         private String cloudResourceId;
         private String compartmentId;
         private Map<String,String> definedTags;
@@ -329,6 +343,7 @@ public final class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem {
         public Builder(GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.areLogsCollected = defaults.areLogsCollected;
+    	      this.associatedSourcesCount = defaults.associatedSourcesCount;
     	      this.cloudResourceId = defaults.cloudResourceId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
@@ -359,6 +374,14 @@ public final class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem {
               throw new MissingRequiredPropertyException("GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem", "areLogsCollected");
             }
             this.areLogsCollected = areLogsCollected;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder associatedSourcesCount(Integer associatedSourcesCount) {
+            if (associatedSourcesCount == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem", "associatedSourcesCount");
+            }
+            this.associatedSourcesCount = associatedSourcesCount;
             return this;
         }
         @CustomType.Setter
@@ -543,6 +566,7 @@ public final class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem {
         public GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem build() {
             final var _resultValue = new GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem();
             _resultValue.areLogsCollected = areLogsCollected;
+            _resultValue.associatedSourcesCount = associatedSourcesCount;
             _resultValue.cloudResourceId = cloudResourceId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;

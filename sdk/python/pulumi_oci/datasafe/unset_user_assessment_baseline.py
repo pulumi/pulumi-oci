@@ -254,7 +254,7 @@ class UnsetUserAssessmentBaseline(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="targetIds")
-    def target_ids(self) -> pulumi.Output[Sequence[builtins.str]]:
+    def target_ids(self) -> pulumi.Output[Optional[Sequence[builtins.str]]]:
         """
         The list of database target OCIDs for which the user intends to unset the baseline.
         """

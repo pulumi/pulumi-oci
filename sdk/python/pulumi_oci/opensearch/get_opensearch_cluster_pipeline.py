@@ -28,7 +28,7 @@ class GetOpensearchClusterPipelineResult:
     """
     A collection of values returned by getOpensearchClusterPipeline.
     """
-    def __init__(__self__, compartment_id=None, data_prepper_configuration_body=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, memory_gb=None, node_count=None, nsg_id=None, ocpu_count=None, opc_dry_run=None, opensearch_cluster_pipeline_id=None, opensearch_pipeline_fqdn=None, opensearch_pipeline_private_ip=None, pipeline_configuration_body=None, pipeline_mode=None, reverse_connection_endpoints=None, state=None, subnet_compartment_id=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None, vcn_compartment_id=None, vcn_id=None):
+    def __init__(__self__, compartment_id=None, data_prepper_configuration_body=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, memory_gb=None, node_count=None, node_shape=None, nsg_id=None, ocpu_count=None, opc_dry_run=None, opensearch_cluster_pipeline_id=None, opensearch_pipeline_fqdn=None, opensearch_pipeline_private_ip=None, pipeline_configuration_body=None, pipeline_mode=None, reverse_connection_endpoints=None, state=None, subnet_compartment_id=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None, vcn_compartment_id=None, vcn_id=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -53,6 +53,9 @@ class GetOpensearchClusterPipelineResult:
         if node_count and not isinstance(node_count, int):
             raise TypeError("Expected argument 'node_count' to be a int")
         pulumi.set(__self__, "node_count", node_count)
+        if node_shape and not isinstance(node_shape, str):
+            raise TypeError("Expected argument 'node_shape' to be a str")
+        pulumi.set(__self__, "node_shape", node_shape)
         if nsg_id and not isinstance(nsg_id, str):
             raise TypeError("Expected argument 'nsg_id' to be a str")
         pulumi.set(__self__, "nsg_id", nsg_id)
@@ -168,6 +171,14 @@ class GetOpensearchClusterPipelineResult:
         The number of nodes configured for the pipeline.
         """
         return pulumi.get(self, "node_count")
+
+    @property
+    @pulumi.getter(name="nodeShape")
+    def node_shape(self) -> builtins.str:
+        """
+        The pipeline node shape.
+        """
+        return pulumi.get(self, "node_shape")
 
     @property
     @pulumi.getter(name="nsgId")
@@ -314,6 +325,7 @@ class AwaitableGetOpensearchClusterPipelineResult(GetOpensearchClusterPipelineRe
             id=self.id,
             memory_gb=self.memory_gb,
             node_count=self.node_count,
+            node_shape=self.node_shape,
             nsg_id=self.nsg_id,
             ocpu_count=self.ocpu_count,
             opc_dry_run=self.opc_dry_run,
@@ -366,6 +378,7 @@ def get_opensearch_cluster_pipeline(opensearch_cluster_pipeline_id: Optional[bui
         id=pulumi.get(__ret__, 'id'),
         memory_gb=pulumi.get(__ret__, 'memory_gb'),
         node_count=pulumi.get(__ret__, 'node_count'),
+        node_shape=pulumi.get(__ret__, 'node_shape'),
         nsg_id=pulumi.get(__ret__, 'nsg_id'),
         ocpu_count=pulumi.get(__ret__, 'ocpu_count'),
         opc_dry_run=pulumi.get(__ret__, 'opc_dry_run'),
@@ -415,6 +428,7 @@ def get_opensearch_cluster_pipeline_output(opensearch_cluster_pipeline_id: Optio
         id=pulumi.get(__response__, 'id'),
         memory_gb=pulumi.get(__response__, 'memory_gb'),
         node_count=pulumi.get(__response__, 'node_count'),
+        node_shape=pulumi.get(__response__, 'node_shape'),
         nsg_id=pulumi.get(__response__, 'nsg_id'),
         ocpu_count=pulumi.get(__response__, 'ocpu_count'),
         opc_dry_run=pulumi.get(__response__, 'opc_dry_run'),

@@ -22,7 +22,7 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// The request of the generated usage carbon emissions report.
+        /// The request of the generated carbon emissions usage report.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryResult> ReportQueries;
         /// <summary>

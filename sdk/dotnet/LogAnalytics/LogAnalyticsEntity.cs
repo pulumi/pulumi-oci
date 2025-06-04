@@ -80,6 +80,12 @@ namespace Pulumi.Oci.LogAnalytics
         public Output<bool> AreLogsCollected { get; private set; } = null!;
 
         /// <summary>
+        /// The count of associated log sources for a given log analytics entity.
+        /// </summary>
+        [Output("associatedSourcesCount")]
+        public Output<int> AssociatedSourcesCount { get; private set; } = null!;
+
+        /// <summary>
         /// The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
         /// </summary>
         [Output("cloudResourceId")]
@@ -374,6 +380,12 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         [Input("areLogsCollected")]
         public Input<bool>? AreLogsCollected { get; set; }
+
+        /// <summary>
+        /// The count of associated log sources for a given log analytics entity.
+        /// </summary>
+        [Input("associatedSourcesCount")]
+        public Input<int>? AssociatedSourcesCount { get; set; }
 
         /// <summary>
         /// The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.

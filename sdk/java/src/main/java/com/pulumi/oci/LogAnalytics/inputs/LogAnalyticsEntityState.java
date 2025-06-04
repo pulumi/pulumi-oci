@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.LogAnalytics.inputs.LogAnalyticsEntityMetadataArgs;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -31,6 +32,21 @@ public final class LogAnalyticsEntityState extends com.pulumi.resources.Resource
      */
     public Optional<Output<Boolean>> areLogsCollected() {
         return Optional.ofNullable(this.areLogsCollected);
+    }
+
+    /**
+     * The count of associated log sources for a given log analytics entity.
+     * 
+     */
+    @Import(name="associatedSourcesCount")
+    private @Nullable Output<Integer> associatedSourcesCount;
+
+    /**
+     * @return The count of associated log sources for a given log analytics entity.
+     * 
+     */
+    public Optional<Output<Integer>> associatedSourcesCount() {
+        return Optional.ofNullable(this.associatedSourcesCount);
     }
 
     /**
@@ -358,6 +374,7 @@ public final class LogAnalyticsEntityState extends com.pulumi.resources.Resource
 
     private LogAnalyticsEntityState(LogAnalyticsEntityState $) {
         this.areLogsCollected = $.areLogsCollected;
+        this.associatedSourcesCount = $.associatedSourcesCount;
         this.cloudResourceId = $.cloudResourceId;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
@@ -418,6 +435,27 @@ public final class LogAnalyticsEntityState extends com.pulumi.resources.Resource
          */
         public Builder areLogsCollected(Boolean areLogsCollected) {
             return areLogsCollected(Output.of(areLogsCollected));
+        }
+
+        /**
+         * @param associatedSourcesCount The count of associated log sources for a given log analytics entity.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder associatedSourcesCount(@Nullable Output<Integer> associatedSourcesCount) {
+            $.associatedSourcesCount = associatedSourcesCount;
+            return this;
+        }
+
+        /**
+         * @param associatedSourcesCount The count of associated log sources for a given log analytics entity.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder associatedSourcesCount(Integer associatedSourcesCount) {
+            return associatedSourcesCount(Output.of(associatedSourcesCount));
         }
 
         /**

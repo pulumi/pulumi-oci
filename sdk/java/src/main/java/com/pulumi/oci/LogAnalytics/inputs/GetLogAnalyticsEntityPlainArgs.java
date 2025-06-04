@@ -7,11 +7,28 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class GetLogAnalyticsEntityPlainArgs extends com.pulumi.resources.InvokeArgs {
 
     public static final GetLogAnalyticsEntityPlainArgs Empty = new GetLogAnalyticsEntityPlainArgs();
+
+    /**
+     * Option to return count of associated log sources for log analytics entity(s).
+     * 
+     */
+    @Import(name="isShowAssociatedSourcesCount")
+    private @Nullable String isShowAssociatedSourcesCount;
+
+    /**
+     * @return Option to return count of associated log sources for log analytics entity(s).
+     * 
+     */
+    public Optional<String> isShowAssociatedSourcesCount() {
+        return Optional.ofNullable(this.isShowAssociatedSourcesCount);
+    }
 
     /**
      * The log analytics entity OCID.
@@ -46,6 +63,7 @@ public final class GetLogAnalyticsEntityPlainArgs extends com.pulumi.resources.I
     private GetLogAnalyticsEntityPlainArgs() {}
 
     private GetLogAnalyticsEntityPlainArgs(GetLogAnalyticsEntityPlainArgs $) {
+        this.isShowAssociatedSourcesCount = $.isShowAssociatedSourcesCount;
         this.logAnalyticsEntityId = $.logAnalyticsEntityId;
         this.namespace = $.namespace;
     }
@@ -66,6 +84,17 @@ public final class GetLogAnalyticsEntityPlainArgs extends com.pulumi.resources.I
 
         public Builder(GetLogAnalyticsEntityPlainArgs defaults) {
             $ = new GetLogAnalyticsEntityPlainArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param isShowAssociatedSourcesCount Option to return count of associated log sources for log analytics entity(s).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isShowAssociatedSourcesCount(@Nullable String isShowAssociatedSourcesCount) {
+            $.isShowAssociatedSourcesCount = isShowAssociatedSourcesCount;
+            return this;
         }
 
         /**

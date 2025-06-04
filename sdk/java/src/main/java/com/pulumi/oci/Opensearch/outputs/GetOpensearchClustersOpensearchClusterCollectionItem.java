@@ -8,6 +8,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opensearch.outputs.GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetail;
 import com.pulumi.oci.Opensearch.outputs.GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfig;
 import com.pulumi.oci.Opensearch.outputs.GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpoint;
+import com.pulumi.oci.Opensearch.outputs.GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfig;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -47,6 +48,11 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
      * 
      */
     private Integer dataNodeHostOcpuCount;
+    /**
+     * @return The node shape for the cluster&#39;s data nodes.
+     * 
+     */
+    private String dataNodeHostShape;
     /**
      * @return The instance type for the cluster&#39;s data nodes.
      * 
@@ -118,6 +124,11 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
      */
     private Integer masterNodeHostOcpuCount;
     /**
+     * @return The node shape for the cluster&#39;s master nodes.
+     * 
+     */
+    private String masterNodeHostShape;
+    /**
      * @return The instance type for the cluster&#39;s master nodes.
      * 
      */
@@ -142,6 +153,11 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
      * 
      */
     private Integer opendashboardNodeHostOcpuCount;
+    /**
+     * @return The node shape for the cluster&#39;s OpenSearch Dashboard nodes.
+     * 
+     */
+    private String opendashboardNodeHostShape;
     /**
      * @return The private IP address for the cluster&#39;s OpenSearch Dashboard.
      * 
@@ -173,6 +189,36 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
      */
     private List<GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpoint> reverseConnectionEndpoints;
     /**
+     * @return The number of search nodes configured for the cluster.
+     * 
+     */
+    private Integer searchNodeCount;
+    /**
+     * @return The amount of memory in GB, for the cluster&#39;s search nodes.
+     * 
+     */
+    private Integer searchNodeHostMemoryGb;
+    /**
+     * @return The number of OCPUs configured for the cluster&#39;s search nodes.
+     * 
+     */
+    private Integer searchNodeHostOcpuCount;
+    /**
+     * @return The node shape for the cluster&#39;s search nodes.
+     * 
+     */
+    private String searchNodeHostShape;
+    /**
+     * @return The instance type for the cluster&#39;s search nodes.
+     * 
+     */
+    private String searchNodeHostType;
+    /**
+     * @return The amount of storage in GB, to configure per node for the cluster&#39;s search nodes.
+     * 
+     */
+    private Integer searchNodeStorageGb;
+    /**
      * @return The name of the master user that are used to manage security config
      * 
      */
@@ -187,6 +233,7 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
      * 
      */
     private String securityMode;
+    private List<GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfig> securitySamlConfigs;
     /**
      * @return The software version the cluster is running.
      * 
@@ -291,6 +338,13 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
         return this.dataNodeHostOcpuCount;
     }
     /**
+     * @return The node shape for the cluster&#39;s data nodes.
+     * 
+     */
+    public String dataNodeHostShape() {
+        return this.dataNodeHostShape;
+    }
+    /**
      * @return The instance type for the cluster&#39;s data nodes.
      * 
      */
@@ -389,6 +443,13 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
         return this.masterNodeHostOcpuCount;
     }
     /**
+     * @return The node shape for the cluster&#39;s master nodes.
+     * 
+     */
+    public String masterNodeHostShape() {
+        return this.masterNodeHostShape;
+    }
+    /**
      * @return The instance type for the cluster&#39;s master nodes.
      * 
      */
@@ -422,6 +483,13 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
      */
     public Integer opendashboardNodeHostOcpuCount() {
         return this.opendashboardNodeHostOcpuCount;
+    }
+    /**
+     * @return The node shape for the cluster&#39;s OpenSearch Dashboard nodes.
+     * 
+     */
+    public String opendashboardNodeHostShape() {
+        return this.opendashboardNodeHostShape;
     }
     /**
      * @return The private IP address for the cluster&#39;s OpenSearch Dashboard.
@@ -466,6 +534,48 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
         return this.reverseConnectionEndpoints;
     }
     /**
+     * @return The number of search nodes configured for the cluster.
+     * 
+     */
+    public Integer searchNodeCount() {
+        return this.searchNodeCount;
+    }
+    /**
+     * @return The amount of memory in GB, for the cluster&#39;s search nodes.
+     * 
+     */
+    public Integer searchNodeHostMemoryGb() {
+        return this.searchNodeHostMemoryGb;
+    }
+    /**
+     * @return The number of OCPUs configured for the cluster&#39;s search nodes.
+     * 
+     */
+    public Integer searchNodeHostOcpuCount() {
+        return this.searchNodeHostOcpuCount;
+    }
+    /**
+     * @return The node shape for the cluster&#39;s search nodes.
+     * 
+     */
+    public String searchNodeHostShape() {
+        return this.searchNodeHostShape;
+    }
+    /**
+     * @return The instance type for the cluster&#39;s search nodes.
+     * 
+     */
+    public String searchNodeHostType() {
+        return this.searchNodeHostType;
+    }
+    /**
+     * @return The amount of storage in GB, to configure per node for the cluster&#39;s search nodes.
+     * 
+     */
+    public Integer searchNodeStorageGb() {
+        return this.searchNodeStorageGb;
+    }
+    /**
      * @return The name of the master user that are used to manage security config
      * 
      */
@@ -485,6 +595,9 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
      */
     public String securityMode() {
         return this.securityMode;
+    }
+    public List<GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfig> securitySamlConfigs() {
+        return this.securitySamlConfigs;
     }
     /**
      * @return The software version the cluster is running.
@@ -583,6 +696,7 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
         private String dataNodeHostBareMetalShape;
         private Integer dataNodeHostMemoryGb;
         private Integer dataNodeHostOcpuCount;
+        private String dataNodeHostShape;
         private String dataNodeHostType;
         private Integer dataNodeStorageGb;
         private Map<String,String> definedTags;
@@ -597,20 +711,29 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
         private String masterNodeHostBareMetalShape;
         private Integer masterNodeHostMemoryGb;
         private Integer masterNodeHostOcpuCount;
+        private String masterNodeHostShape;
         private String masterNodeHostType;
         private String opendashboardFqdn;
         private Integer opendashboardNodeCount;
         private Integer opendashboardNodeHostMemoryGb;
         private Integer opendashboardNodeHostOcpuCount;
+        private String opendashboardNodeHostShape;
         private String opendashboardPrivateIp;
         private String opensearchFqdn;
         private String opensearchPrivateIp;
         private List<GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfig> outboundClusterConfigs;
         private List<String> reverseConnectionEndpointCustomerIps;
         private List<GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpoint> reverseConnectionEndpoints;
+        private Integer searchNodeCount;
+        private Integer searchNodeHostMemoryGb;
+        private Integer searchNodeHostOcpuCount;
+        private String searchNodeHostShape;
+        private String searchNodeHostType;
+        private Integer searchNodeStorageGb;
         private String securityMasterUserName;
         private String securityMasterUserPasswordHash;
         private String securityMode;
+        private List<GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfig> securitySamlConfigs;
         private String softwareVersion;
         private String state;
         private String subnetCompartmentId;
@@ -633,6 +756,7 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
     	      this.dataNodeHostBareMetalShape = defaults.dataNodeHostBareMetalShape;
     	      this.dataNodeHostMemoryGb = defaults.dataNodeHostMemoryGb;
     	      this.dataNodeHostOcpuCount = defaults.dataNodeHostOcpuCount;
+    	      this.dataNodeHostShape = defaults.dataNodeHostShape;
     	      this.dataNodeHostType = defaults.dataNodeHostType;
     	      this.dataNodeStorageGb = defaults.dataNodeStorageGb;
     	      this.definedTags = defaults.definedTags;
@@ -647,20 +771,29 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
     	      this.masterNodeHostBareMetalShape = defaults.masterNodeHostBareMetalShape;
     	      this.masterNodeHostMemoryGb = defaults.masterNodeHostMemoryGb;
     	      this.masterNodeHostOcpuCount = defaults.masterNodeHostOcpuCount;
+    	      this.masterNodeHostShape = defaults.masterNodeHostShape;
     	      this.masterNodeHostType = defaults.masterNodeHostType;
     	      this.opendashboardFqdn = defaults.opendashboardFqdn;
     	      this.opendashboardNodeCount = defaults.opendashboardNodeCount;
     	      this.opendashboardNodeHostMemoryGb = defaults.opendashboardNodeHostMemoryGb;
     	      this.opendashboardNodeHostOcpuCount = defaults.opendashboardNodeHostOcpuCount;
+    	      this.opendashboardNodeHostShape = defaults.opendashboardNodeHostShape;
     	      this.opendashboardPrivateIp = defaults.opendashboardPrivateIp;
     	      this.opensearchFqdn = defaults.opensearchFqdn;
     	      this.opensearchPrivateIp = defaults.opensearchPrivateIp;
     	      this.outboundClusterConfigs = defaults.outboundClusterConfigs;
     	      this.reverseConnectionEndpointCustomerIps = defaults.reverseConnectionEndpointCustomerIps;
     	      this.reverseConnectionEndpoints = defaults.reverseConnectionEndpoints;
+    	      this.searchNodeCount = defaults.searchNodeCount;
+    	      this.searchNodeHostMemoryGb = defaults.searchNodeHostMemoryGb;
+    	      this.searchNodeHostOcpuCount = defaults.searchNodeHostOcpuCount;
+    	      this.searchNodeHostShape = defaults.searchNodeHostShape;
+    	      this.searchNodeHostType = defaults.searchNodeHostType;
+    	      this.searchNodeStorageGb = defaults.searchNodeStorageGb;
     	      this.securityMasterUserName = defaults.securityMasterUserName;
     	      this.securityMasterUserPasswordHash = defaults.securityMasterUserPasswordHash;
     	      this.securityMode = defaults.securityMode;
+    	      this.securitySamlConfigs = defaults.securitySamlConfigs;
     	      this.softwareVersion = defaults.softwareVersion;
     	      this.state = defaults.state;
     	      this.subnetCompartmentId = defaults.subnetCompartmentId;
@@ -732,6 +865,14 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
               throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "dataNodeHostOcpuCount");
             }
             this.dataNodeHostOcpuCount = dataNodeHostOcpuCount;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder dataNodeHostShape(String dataNodeHostShape) {
+            if (dataNodeHostShape == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "dataNodeHostShape");
+            }
+            this.dataNodeHostShape = dataNodeHostShape;
             return this;
         }
         @CustomType.Setter
@@ -853,6 +994,14 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder masterNodeHostShape(String masterNodeHostShape) {
+            if (masterNodeHostShape == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "masterNodeHostShape");
+            }
+            this.masterNodeHostShape = masterNodeHostShape;
+            return this;
+        }
+        @CustomType.Setter
         public Builder masterNodeHostType(String masterNodeHostType) {
             if (masterNodeHostType == null) {
               throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "masterNodeHostType");
@@ -890,6 +1039,14 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
               throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "opendashboardNodeHostOcpuCount");
             }
             this.opendashboardNodeHostOcpuCount = opendashboardNodeHostOcpuCount;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder opendashboardNodeHostShape(String opendashboardNodeHostShape) {
+            if (opendashboardNodeHostShape == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "opendashboardNodeHostShape");
+            }
+            this.opendashboardNodeHostShape = opendashboardNodeHostShape;
             return this;
         }
         @CustomType.Setter
@@ -950,6 +1107,54 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
             return reverseConnectionEndpoints(List.of(reverseConnectionEndpoints));
         }
         @CustomType.Setter
+        public Builder searchNodeCount(Integer searchNodeCount) {
+            if (searchNodeCount == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "searchNodeCount");
+            }
+            this.searchNodeCount = searchNodeCount;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder searchNodeHostMemoryGb(Integer searchNodeHostMemoryGb) {
+            if (searchNodeHostMemoryGb == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "searchNodeHostMemoryGb");
+            }
+            this.searchNodeHostMemoryGb = searchNodeHostMemoryGb;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder searchNodeHostOcpuCount(Integer searchNodeHostOcpuCount) {
+            if (searchNodeHostOcpuCount == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "searchNodeHostOcpuCount");
+            }
+            this.searchNodeHostOcpuCount = searchNodeHostOcpuCount;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder searchNodeHostShape(String searchNodeHostShape) {
+            if (searchNodeHostShape == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "searchNodeHostShape");
+            }
+            this.searchNodeHostShape = searchNodeHostShape;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder searchNodeHostType(String searchNodeHostType) {
+            if (searchNodeHostType == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "searchNodeHostType");
+            }
+            this.searchNodeHostType = searchNodeHostType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder searchNodeStorageGb(Integer searchNodeStorageGb) {
+            if (searchNodeStorageGb == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "searchNodeStorageGb");
+            }
+            this.searchNodeStorageGb = searchNodeStorageGb;
+            return this;
+        }
+        @CustomType.Setter
         public Builder securityMasterUserName(String securityMasterUserName) {
             if (securityMasterUserName == null) {
               throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "securityMasterUserName");
@@ -972,6 +1177,17 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
             }
             this.securityMode = securityMode;
             return this;
+        }
+        @CustomType.Setter
+        public Builder securitySamlConfigs(List<GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfig> securitySamlConfigs) {
+            if (securitySamlConfigs == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "securitySamlConfigs");
+            }
+            this.securitySamlConfigs = securitySamlConfigs;
+            return this;
+        }
+        public Builder securitySamlConfigs(GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfig... securitySamlConfigs) {
+            return securitySamlConfigs(List.of(securitySamlConfigs));
         }
         @CustomType.Setter
         public Builder softwareVersion(String softwareVersion) {
@@ -1078,6 +1294,7 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
             _resultValue.dataNodeHostBareMetalShape = dataNodeHostBareMetalShape;
             _resultValue.dataNodeHostMemoryGb = dataNodeHostMemoryGb;
             _resultValue.dataNodeHostOcpuCount = dataNodeHostOcpuCount;
+            _resultValue.dataNodeHostShape = dataNodeHostShape;
             _resultValue.dataNodeHostType = dataNodeHostType;
             _resultValue.dataNodeStorageGb = dataNodeStorageGb;
             _resultValue.definedTags = definedTags;
@@ -1092,20 +1309,29 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
             _resultValue.masterNodeHostBareMetalShape = masterNodeHostBareMetalShape;
             _resultValue.masterNodeHostMemoryGb = masterNodeHostMemoryGb;
             _resultValue.masterNodeHostOcpuCount = masterNodeHostOcpuCount;
+            _resultValue.masterNodeHostShape = masterNodeHostShape;
             _resultValue.masterNodeHostType = masterNodeHostType;
             _resultValue.opendashboardFqdn = opendashboardFqdn;
             _resultValue.opendashboardNodeCount = opendashboardNodeCount;
             _resultValue.opendashboardNodeHostMemoryGb = opendashboardNodeHostMemoryGb;
             _resultValue.opendashboardNodeHostOcpuCount = opendashboardNodeHostOcpuCount;
+            _resultValue.opendashboardNodeHostShape = opendashboardNodeHostShape;
             _resultValue.opendashboardPrivateIp = opendashboardPrivateIp;
             _resultValue.opensearchFqdn = opensearchFqdn;
             _resultValue.opensearchPrivateIp = opensearchPrivateIp;
             _resultValue.outboundClusterConfigs = outboundClusterConfigs;
             _resultValue.reverseConnectionEndpointCustomerIps = reverseConnectionEndpointCustomerIps;
             _resultValue.reverseConnectionEndpoints = reverseConnectionEndpoints;
+            _resultValue.searchNodeCount = searchNodeCount;
+            _resultValue.searchNodeHostMemoryGb = searchNodeHostMemoryGb;
+            _resultValue.searchNodeHostOcpuCount = searchNodeHostOcpuCount;
+            _resultValue.searchNodeHostShape = searchNodeHostShape;
+            _resultValue.searchNodeHostType = searchNodeHostType;
+            _resultValue.searchNodeStorageGb = searchNodeStorageGb;
             _resultValue.securityMasterUserName = securityMasterUserName;
             _resultValue.securityMasterUserPasswordHash = securityMasterUserPasswordHash;
             _resultValue.securityMode = securityMode;
+            _resultValue.securitySamlConfigs = securitySamlConfigs;
             _resultValue.softwareVersion = softwareVersion;
             _resultValue.state = state;
             _resultValue.subnetCompartmentId = subnetCompartmentId;

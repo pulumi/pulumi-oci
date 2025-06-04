@@ -51,7 +51,7 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
      */
     private String databaseVersion;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system that this Managed Database is part of.
      * 
      */
     private String dbSystemId;
@@ -177,7 +177,7 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
         return this.databaseVersion;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system that this Managed Database is part of.
      * 
      */
     public String dbSystemId() {

@@ -21,6 +21,11 @@ public final class GetLogAnalyticsResourceCategoriesListResult {
      */
     private List<GetLogAnalyticsResourceCategoriesListCategory> categories;
     /**
+     * @return The compartment ID of the resource, if applicable.
+     * 
+     */
+    private @Nullable String compartmentId;
+    /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
@@ -42,6 +47,13 @@ public final class GetLogAnalyticsResourceCategoriesListResult {
      */
     public List<GetLogAnalyticsResourceCategoriesListCategory> categories() {
         return this.categories;
+    }
+    /**
+     * @return The compartment ID of the resource, if applicable.
+     * 
+     */
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
@@ -80,6 +92,7 @@ public final class GetLogAnalyticsResourceCategoriesListResult {
     @CustomType.Builder
     public static final class Builder {
         private List<GetLogAnalyticsResourceCategoriesListCategory> categories;
+        private @Nullable String compartmentId;
         private String id;
         private List<GetLogAnalyticsResourceCategoriesListItem> items;
         private String namespace;
@@ -90,6 +103,7 @@ public final class GetLogAnalyticsResourceCategoriesListResult {
         public Builder(GetLogAnalyticsResourceCategoriesListResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.categories = defaults.categories;
+    	      this.compartmentId = defaults.compartmentId;
     	      this.id = defaults.id;
     	      this.items = defaults.items;
     	      this.namespace = defaults.namespace;
@@ -108,6 +122,12 @@ public final class GetLogAnalyticsResourceCategoriesListResult {
         }
         public Builder categories(GetLogAnalyticsResourceCategoriesListCategory... categories) {
             return categories(List.of(categories));
+        }
+        @CustomType.Setter
+        public Builder compartmentId(@Nullable String compartmentId) {
+
+            this.compartmentId = compartmentId;
+            return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
@@ -157,6 +177,7 @@ public final class GetLogAnalyticsResourceCategoriesListResult {
         public GetLogAnalyticsResourceCategoriesListResult build() {
             final var _resultValue = new GetLogAnalyticsResourceCategoriesListResult();
             _resultValue.categories = categories;
+            _resultValue.compartmentId = compartmentId;
             _resultValue.id = id;
             _resultValue.items = items;
             _resultValue.namespace = namespace;

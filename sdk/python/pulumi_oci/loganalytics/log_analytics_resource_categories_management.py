@@ -29,7 +29,7 @@ class LogAnalyticsResourceCategoriesManagementArgs:
         :param pulumi.Input[builtins.str] namespace: The Logging Analytics namespace used for the request.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] resource_categories: The list of categories to be assigned to the resource.
         :param pulumi.Input[builtins.str] resource_id: The resource unique identifier for which catagories are managed.
-        :param pulumi.Input[builtins.str] resource_type: The resource type of the resource for which categories are managed. 
+        :param pulumi.Input[builtins.str] resource_type: The resource type of the resource for which categories are managed.
                
                
                ** IMPORTANT **
@@ -80,7 +80,7 @@ class LogAnalyticsResourceCategoriesManagementArgs:
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> pulumi.Input[builtins.str]:
         """
-        The resource type of the resource for which categories are managed. 
+        The resource type of the resource for which categories are managed.
 
 
         ** IMPORTANT **
@@ -105,7 +105,7 @@ class _LogAnalyticsResourceCategoriesManagementState:
         :param pulumi.Input[builtins.str] namespace: The Logging Analytics namespace used for the request.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] resource_categories: The list of categories to be assigned to the resource.
         :param pulumi.Input[builtins.str] resource_id: The resource unique identifier for which catagories are managed.
-        :param pulumi.Input[builtins.str] resource_type: The resource type of the resource for which categories are managed. 
+        :param pulumi.Input[builtins.str] resource_type: The resource type of the resource for which categories are managed.
                
                
                ** IMPORTANT **
@@ -160,7 +160,7 @@ class _LogAnalyticsResourceCategoriesManagementState:
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        The resource type of the resource for which categories are managed. 
+        The resource type of the resource for which categories are managed.
 
 
         ** IMPORTANT **
@@ -211,7 +211,7 @@ class LogAnalyticsResourceCategoriesManagement(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] namespace: The Logging Analytics namespace used for the request.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] resource_categories: The list of categories to be assigned to the resource.
         :param pulumi.Input[builtins.str] resource_id: The resource unique identifier for which catagories are managed.
-        :param pulumi.Input[builtins.str] resource_type: The resource type of the resource for which categories are managed. 
+        :param pulumi.Input[builtins.str] resource_type: The resource type of the resource for which categories are managed.
                
                
                ** IMPORTANT **
@@ -309,7 +309,7 @@ class LogAnalyticsResourceCategoriesManagement(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] namespace: The Logging Analytics namespace used for the request.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] resource_categories: The list of categories to be assigned to the resource.
         :param pulumi.Input[builtins.str] resource_id: The resource unique identifier for which catagories are managed.
-        :param pulumi.Input[builtins.str] resource_type: The resource type of the resource for which categories are managed. 
+        :param pulumi.Input[builtins.str] resource_type: The resource type of the resource for which categories are managed.
                
                
                ** IMPORTANT **
@@ -353,7 +353,7 @@ class LogAnalyticsResourceCategoriesManagement(pulumi.CustomResource):
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> pulumi.Output[builtins.str]:
         """
-        The resource type of the resource for which categories are managed. 
+        The resource type of the resource for which categories are managed.
 
 
         ** IMPORTANT **

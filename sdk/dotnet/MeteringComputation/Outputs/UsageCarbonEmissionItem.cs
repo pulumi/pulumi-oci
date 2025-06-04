@@ -30,13 +30,17 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// </summary>
         public readonly string? CompartmentPath;
         /// <summary>
-        /// The carbon emission in MTCO2 unit.
+        /// The carbon emission usage in MTCO2 units.
         /// </summary>
         public readonly double? ComputedCarbonEmission;
         /// <summary>
-        /// The method used to calculate carbon emission.
+        /// Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
         /// </summary>
         public readonly string? EmissionCalculationMethod;
+        /// <summary>
+        /// Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+        /// </summary>
+        public readonly string? EmissionType;
         /// <summary>
         /// Platform for the cost.
         /// </summary>
@@ -104,6 +108,8 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
 
             string? emissionCalculationMethod,
 
+            string? emissionType,
+
             string? platform,
 
             string? region,
@@ -136,6 +142,7 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
             CompartmentPath = compartmentPath;
             ComputedCarbonEmission = computedCarbonEmission;
             EmissionCalculationMethod = emissionCalculationMethod;
+            EmissionType = emissionType;
             Platform = platform;
             Region = region;
             ResourceId = resourceId;

@@ -7,7 +7,7 @@ import (
 	"fmt"
 
 	"github.com/blang/semver"
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -41,8 +41,18 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &NamespaceIngestTimeRule{}
 	case "oci:LogAnalytics/namespaceIngestTimeRulesManagement:NamespaceIngestTimeRulesManagement":
 		r = &NamespaceIngestTimeRulesManagement{}
+	case "oci:LogAnalytics/namespaceLookup:NamespaceLookup":
+		r = &NamespaceLookup{}
+	case "oci:LogAnalytics/namespaceLookupsAppendDataManagement:NamespaceLookupsAppendDataManagement":
+		r = &NamespaceLookupsAppendDataManagement{}
+	case "oci:LogAnalytics/namespaceLookupsUpdateDataManagement:NamespaceLookupsUpdateDataManagement":
+		r = &NamespaceLookupsUpdateDataManagement{}
 	case "oci:LogAnalytics/namespaceScheduledTask:NamespaceScheduledTask":
 		r = &NamespaceScheduledTask{}
+	case "oci:LogAnalytics/namespaceStorageArchivalConfig:NamespaceStorageArchivalConfig":
+		r = &NamespaceStorageArchivalConfig{}
+	case "oci:LogAnalytics/namespaceStorageEnableDisableArchiving:NamespaceStorageEnableDisableArchiving":
+		r = &NamespaceStorageEnableDisableArchiving{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -108,7 +118,32 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"LogAnalytics/namespaceLookup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"LogAnalytics/namespaceLookupsAppendDataManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"LogAnalytics/namespaceLookupsUpdateDataManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"LogAnalytics/namespaceScheduledTask",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"LogAnalytics/namespaceStorageArchivalConfig",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"LogAnalytics/namespaceStorageEnableDisableArchiving",
 		&module{version},
 	)
 }

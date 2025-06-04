@@ -10,40 +10,22 @@ import * as utilities from "../utilities";
  * This data source provides the list of Log Analytics Entities in Oracle Cloud Infrastructure Log Analytics service.
  *
  * Return a list of log analytics entities.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testLogAnalyticsEntities = oci.LogAnalytics.getLogAnalyticsEntities({
- *     compartmentId: compartmentId,
- *     namespace: logAnalyticsEntityNamespace,
- *     cloudResourceId: testCloudResource.id,
- *     entityTypeNames: logAnalyticsEntityEntityTypeName,
- *     hostname: logAnalyticsEntityHostname,
- *     hostnameContains: logAnalyticsEntityHostnameContains,
- *     isManagementAgentIdNull: logAnalyticsEntityIsManagementAgentIdNull,
- *     lifecycleDetailsContains: logAnalyticsEntityLifecycleDetailsContains,
- *     metadataEquals: logAnalyticsEntityMetadataEquals,
- *     name: logAnalyticsEntityName,
- *     nameContains: logAnalyticsEntityNameContains,
- *     sourceId: testSource.id,
- *     state: logAnalyticsEntityState,
- * });
- * ```
  */
 export function getLogAnalyticsEntities(args: GetLogAnalyticsEntitiesArgs, opts?: pulumi.InvokeOptions): Promise<GetLogAnalyticsEntitiesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getLogAnalyticsEntities:getLogAnalyticsEntities", {
         "cloudResourceId": args.cloudResourceId,
         "compartmentId": args.compartmentId,
+        "definedTagEquals": args.definedTagEquals,
+        "definedTagExists": args.definedTagExists,
         "entityTypeNames": args.entityTypeNames,
         "filters": args.filters,
+        "freeformTagEquals": args.freeformTagEquals,
+        "freeformTagExists": args.freeformTagExists,
         "hostname": args.hostname,
         "hostnameContains": args.hostnameContains,
         "isManagementAgentIdNull": args.isManagementAgentIdNull,
+        "isShowAssociatedSourcesCount": args.isShowAssociatedSourcesCount,
         "lifecycleDetailsContains": args.lifecycleDetailsContains,
         "metadataEquals": args.metadataEquals,
         "name": args.name,
@@ -67,10 +49,26 @@ export interface GetLogAnalyticsEntitiesArgs {
      */
     compartmentId: string;
     /**
+     * A list of tag filters to apply.  Only entities with a defined tag matching the value will be returned. Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+     */
+    definedTagEquals?: string[];
+    /**
+     * A list of tag existence filters to apply.  Only entities for which the specified defined tags exist will be returned. Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag) or "{namespace}.true".  All inputs are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+     */
+    definedTagExists?: string[];
+    /**
      * A filter to return only log analytics entities whose entityTypeName matches the entire log analytics entity type name of one of the entityTypeNames given in the list. The match is case-insensitive.
      */
     entityTypeNames?: string[];
     filters?: inputs.LogAnalytics.GetLogAnalyticsEntitiesFilter[];
+    /**
+     * A list of tag filters to apply.  Only entities with a freeform tag matching the value will be returned. The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive. Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+     */
+    freeformTagEquals?: string[];
+    /**
+     * A list of tag existence filters to apply.  Only entities for which the specified freeform tags exist the value will be returned. The key for each tag is "{tagName}.true".  All inputs are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported. Multiple values for different tag names are interpreted as "AND".
+     */
+    freeformTagExists?: string[];
     /**
      * A filter to return only log analytics entities whose hostname matches the entire hostname given.
      */
@@ -83,6 +81,10 @@ export interface GetLogAnalyticsEntitiesArgs {
      * A filter to return only those log analytics entities whose managementAgentId is null or is not null.
      */
     isManagementAgentIdNull?: string;
+    /**
+     * Option to return count of associated log sources for log analytics entity(s).
+     */
+    isShowAssociatedSourcesCount?: boolean;
     /**
      * A filter to return only log analytics entities whose lifecycleDetails contains the specified string.
      */
@@ -125,11 +127,15 @@ export interface GetLogAnalyticsEntitiesResult {
      * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     readonly compartmentId: string;
+    readonly definedTagEquals?: string[];
+    readonly definedTagExists?: string[];
     /**
      * Log analytics entity type name.
      */
     readonly entityTypeNames?: string[];
     readonly filters?: outputs.LogAnalytics.GetLogAnalyticsEntitiesFilter[];
+    readonly freeformTagEquals?: string[];
+    readonly freeformTagExists?: string[];
     /**
      * The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
      */
@@ -140,6 +146,7 @@ export interface GetLogAnalyticsEntitiesResult {
      */
     readonly id: string;
     readonly isManagementAgentIdNull?: string;
+    readonly isShowAssociatedSourcesCount?: boolean;
     readonly lifecycleDetailsContains?: string;
     /**
      * The list of log_analytics_entity_collection.
@@ -165,40 +172,22 @@ export interface GetLogAnalyticsEntitiesResult {
  * This data source provides the list of Log Analytics Entities in Oracle Cloud Infrastructure Log Analytics service.
  *
  * Return a list of log analytics entities.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testLogAnalyticsEntities = oci.LogAnalytics.getLogAnalyticsEntities({
- *     compartmentId: compartmentId,
- *     namespace: logAnalyticsEntityNamespace,
- *     cloudResourceId: testCloudResource.id,
- *     entityTypeNames: logAnalyticsEntityEntityTypeName,
- *     hostname: logAnalyticsEntityHostname,
- *     hostnameContains: logAnalyticsEntityHostnameContains,
- *     isManagementAgentIdNull: logAnalyticsEntityIsManagementAgentIdNull,
- *     lifecycleDetailsContains: logAnalyticsEntityLifecycleDetailsContains,
- *     metadataEquals: logAnalyticsEntityMetadataEquals,
- *     name: logAnalyticsEntityName,
- *     nameContains: logAnalyticsEntityNameContains,
- *     sourceId: testSource.id,
- *     state: logAnalyticsEntityState,
- * });
- * ```
  */
 export function getLogAnalyticsEntitiesOutput(args: GetLogAnalyticsEntitiesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLogAnalyticsEntitiesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LogAnalytics/getLogAnalyticsEntities:getLogAnalyticsEntities", {
         "cloudResourceId": args.cloudResourceId,
         "compartmentId": args.compartmentId,
+        "definedTagEquals": args.definedTagEquals,
+        "definedTagExists": args.definedTagExists,
         "entityTypeNames": args.entityTypeNames,
         "filters": args.filters,
+        "freeformTagEquals": args.freeformTagEquals,
+        "freeformTagExists": args.freeformTagExists,
         "hostname": args.hostname,
         "hostnameContains": args.hostnameContains,
         "isManagementAgentIdNull": args.isManagementAgentIdNull,
+        "isShowAssociatedSourcesCount": args.isShowAssociatedSourcesCount,
         "lifecycleDetailsContains": args.lifecycleDetailsContains,
         "metadataEquals": args.metadataEquals,
         "name": args.name,
@@ -222,10 +211,26 @@ export interface GetLogAnalyticsEntitiesOutputArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
+     * A list of tag filters to apply.  Only entities with a defined tag matching the value will be returned. Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+     */
+    definedTagEquals?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * A list of tag existence filters to apply.  Only entities for which the specified defined tags exist will be returned. Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag) or "{namespace}.true".  All inputs are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+     */
+    definedTagExists?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
      * A filter to return only log analytics entities whose entityTypeName matches the entire log analytics entity type name of one of the entityTypeNames given in the list. The match is case-insensitive.
      */
     entityTypeNames?: pulumi.Input<pulumi.Input<string>[]>;
     filters?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.GetLogAnalyticsEntitiesFilterArgs>[]>;
+    /**
+     * A list of tag filters to apply.  Only entities with a freeform tag matching the value will be returned. The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive. Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+     */
+    freeformTagEquals?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * A list of tag existence filters to apply.  Only entities for which the specified freeform tags exist the value will be returned. The key for each tag is "{tagName}.true".  All inputs are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported. Multiple values for different tag names are interpreted as "AND".
+     */
+    freeformTagExists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * A filter to return only log analytics entities whose hostname matches the entire hostname given.
      */
@@ -238,6 +243,10 @@ export interface GetLogAnalyticsEntitiesOutputArgs {
      * A filter to return only those log analytics entities whose managementAgentId is null or is not null.
      */
     isManagementAgentIdNull?: pulumi.Input<string>;
+    /**
+     * Option to return count of associated log sources for log analytics entity(s).
+     */
+    isShowAssociatedSourcesCount?: pulumi.Input<boolean>;
     /**
      * A filter to return only log analytics entities whose lifecycleDetails contains the specified string.
      */

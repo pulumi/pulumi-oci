@@ -10,6 +10,11 @@ export type AutoScalingConfiguration = import("./autoScalingConfiguration").Auto
 export const AutoScalingConfiguration: typeof import("./autoScalingConfiguration").AutoScalingConfiguration = null as any;
 utilities.lazyLoad(exports, ["AutoScalingConfiguration"], () => require("./autoScalingConfiguration"));
 
+export { BdsCapacityReportArgs, BdsCapacityReportState } from "./bdsCapacityReport";
+export type BdsCapacityReport = import("./bdsCapacityReport").BdsCapacityReport;
+export const BdsCapacityReport: typeof import("./bdsCapacityReport").BdsCapacityReport = null as any;
+utilities.lazyLoad(exports, ["BdsCapacityReport"], () => require("./bdsCapacityReport"));
+
 export { BdsInstanceArgs, BdsInstanceState } from "./bdsInstance";
 export type BdsInstance = import("./bdsInstance").BdsInstance;
 export const BdsInstance: typeof import("./bdsInstance").BdsInstance = null as any;
@@ -49,6 +54,11 @@ export { BdsInstanceResourcePrincipalConfigurationArgs, BdsInstanceResourcePrinc
 export type BdsInstanceResourcePrincipalConfiguration = import("./bdsInstanceResourcePrincipalConfiguration").BdsInstanceResourcePrincipalConfiguration;
 export const BdsInstanceResourcePrincipalConfiguration: typeof import("./bdsInstanceResourcePrincipalConfiguration").BdsInstanceResourcePrincipalConfiguration = null as any;
 utilities.lazyLoad(exports, ["BdsInstanceResourcePrincipalConfiguration"], () => require("./bdsInstanceResourcePrincipalConfiguration"));
+
+export { BdsInstanceSoftwareUpdateActionArgs, BdsInstanceSoftwareUpdateActionState } from "./bdsInstanceSoftwareUpdateAction";
+export type BdsInstanceSoftwareUpdateAction = import("./bdsInstanceSoftwareUpdateAction").BdsInstanceSoftwareUpdateAction;
+export const BdsInstanceSoftwareUpdateAction: typeof import("./bdsInstanceSoftwareUpdateAction").BdsInstanceSoftwareUpdateAction = null as any;
+utilities.lazyLoad(exports, ["BdsInstanceSoftwareUpdateAction"], () => require("./bdsInstanceSoftwareUpdateAction"));
 
 export { GetAutoScalingConfigurationArgs, GetAutoScalingConfigurationResult, GetAutoScalingConfigurationOutputArgs } from "./getAutoScalingConfiguration";
 export const getAutoScalingConfiguration: typeof import("./getAutoScalingConfiguration").getAutoScalingConfiguration = null as any;
@@ -130,6 +140,16 @@ export const getBdsInstanceResourcePrincipalConfigurations: typeof import("./get
 export const getBdsInstanceResourcePrincipalConfigurationsOutput: typeof import("./getBdsInstanceResourcePrincipalConfigurations").getBdsInstanceResourcePrincipalConfigurationsOutput = null as any;
 utilities.lazyLoad(exports, ["getBdsInstanceResourcePrincipalConfigurations","getBdsInstanceResourcePrincipalConfigurationsOutput"], () => require("./getBdsInstanceResourcePrincipalConfigurations"));
 
+export { GetBdsInstanceSoftwareUpdateArgs, GetBdsInstanceSoftwareUpdateResult, GetBdsInstanceSoftwareUpdateOutputArgs } from "./getBdsInstanceSoftwareUpdate";
+export const getBdsInstanceSoftwareUpdate: typeof import("./getBdsInstanceSoftwareUpdate").getBdsInstanceSoftwareUpdate = null as any;
+export const getBdsInstanceSoftwareUpdateOutput: typeof import("./getBdsInstanceSoftwareUpdate").getBdsInstanceSoftwareUpdateOutput = null as any;
+utilities.lazyLoad(exports, ["getBdsInstanceSoftwareUpdate","getBdsInstanceSoftwareUpdateOutput"], () => require("./getBdsInstanceSoftwareUpdate"));
+
+export { GetBdsInstanceSoftwareUpdatesArgs, GetBdsInstanceSoftwareUpdatesResult, GetBdsInstanceSoftwareUpdatesOutputArgs } from "./getBdsInstanceSoftwareUpdates";
+export const getBdsInstanceSoftwareUpdates: typeof import("./getBdsInstanceSoftwareUpdates").getBdsInstanceSoftwareUpdates = null as any;
+export const getBdsInstanceSoftwareUpdatesOutput: typeof import("./getBdsInstanceSoftwareUpdates").getBdsInstanceSoftwareUpdatesOutput = null as any;
+utilities.lazyLoad(exports, ["getBdsInstanceSoftwareUpdates","getBdsInstanceSoftwareUpdatesOutput"], () => require("./getBdsInstanceSoftwareUpdates"));
+
 export { GetBdsInstancesArgs, GetBdsInstancesResult, GetBdsInstancesOutputArgs } from "./getBdsInstances";
 export const getBdsInstances: typeof import("./getBdsInstances").getBdsInstances = null as any;
 export const getBdsInstancesOutput: typeof import("./getBdsInstances").getBdsInstancesOutput = null as any;
@@ -142,6 +162,8 @@ const _module = {
         switch (type) {
             case "oci:BigDataService/autoScalingConfiguration:AutoScalingConfiguration":
                 return new AutoScalingConfiguration(name, <any>undefined, { urn })
+            case "oci:BigDataService/bdsCapacityReport:BdsCapacityReport":
+                return new BdsCapacityReport(name, <any>undefined, { urn })
             case "oci:BigDataService/bdsInstance:BdsInstance":
                 return new BdsInstance(name, <any>undefined, { urn })
             case "oci:BigDataService/bdsInstanceApiKey:BdsInstanceApiKey":
@@ -158,12 +180,15 @@ const _module = {
                 return new BdsInstancePatchAction(name, <any>undefined, { urn })
             case "oci:BigDataService/bdsInstanceResourcePrincipalConfiguration:BdsInstanceResourcePrincipalConfiguration":
                 return new BdsInstanceResourcePrincipalConfiguration(name, <any>undefined, { urn })
+            case "oci:BigDataService/bdsInstanceSoftwareUpdateAction:BdsInstanceSoftwareUpdateAction":
+                return new BdsInstanceSoftwareUpdateAction(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
 pulumi.runtime.registerResourceModule("oci", "BigDataService/autoScalingConfiguration", _module)
+pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsCapacityReport", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstance", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceApiKey", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceIdentityConfiguration", _module)
@@ -172,3 +197,4 @@ pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceOperatio
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceOsPatchAction", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstancePatchAction", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceResourcePrincipalConfiguration", _module)
+pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceSoftwareUpdateAction", _module)

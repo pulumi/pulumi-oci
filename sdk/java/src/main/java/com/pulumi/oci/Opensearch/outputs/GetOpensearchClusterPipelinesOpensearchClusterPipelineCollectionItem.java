@@ -56,6 +56,11 @@ public final class GetOpensearchClusterPipelinesOpensearchClusterPipelineCollect
      */
     private Integer nodeCount;
     /**
+     * @return The pipeline node shape.
+     * 
+     */
+    private String nodeShape;
+    /**
      * @return The OCID of the NSG where the pipeline private endpoint vnic will be attached.
      * 
      */
@@ -190,6 +195,13 @@ public final class GetOpensearchClusterPipelinesOpensearchClusterPipelineCollect
         return this.nodeCount;
     }
     /**
+     * @return The pipeline node shape.
+     * 
+     */
+    public String nodeShape() {
+        return this.nodeShape;
+    }
+    /**
      * @return The OCID of the NSG where the pipeline private endpoint vnic will be attached.
      * 
      */
@@ -315,6 +327,7 @@ public final class GetOpensearchClusterPipelinesOpensearchClusterPipelineCollect
         private String id;
         private Integer memoryGb;
         private Integer nodeCount;
+        private String nodeShape;
         private String nsgId;
         private Integer ocpuCount;
         private Boolean opcDryRun;
@@ -342,6 +355,7 @@ public final class GetOpensearchClusterPipelinesOpensearchClusterPipelineCollect
     	      this.id = defaults.id;
     	      this.memoryGb = defaults.memoryGb;
     	      this.nodeCount = defaults.nodeCount;
+    	      this.nodeShape = defaults.nodeShape;
     	      this.nsgId = defaults.nsgId;
     	      this.ocpuCount = defaults.ocpuCount;
     	      this.opcDryRun = defaults.opcDryRun;
@@ -422,6 +436,14 @@ public final class GetOpensearchClusterPipelinesOpensearchClusterPipelineCollect
               throw new MissingRequiredPropertyException("GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItem", "nodeCount");
             }
             this.nodeCount = nodeCount;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder nodeShape(String nodeShape) {
+            if (nodeShape == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItem", "nodeShape");
+            }
+            this.nodeShape = nodeShape;
             return this;
         }
         @CustomType.Setter
@@ -565,6 +587,7 @@ public final class GetOpensearchClusterPipelinesOpensearchClusterPipelineCollect
             _resultValue.id = id;
             _resultValue.memoryGb = memoryGb;
             _resultValue.nodeCount = nodeCount;
+            _resultValue.nodeShape = nodeShape;
             _resultValue.nsgId = nsgId;
             _resultValue.ocpuCount = ocpuCount;
             _resultValue.opcDryRun = opcDryRun;

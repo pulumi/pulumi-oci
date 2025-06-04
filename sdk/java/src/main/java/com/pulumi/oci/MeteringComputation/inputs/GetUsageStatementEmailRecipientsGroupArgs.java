@@ -30,14 +30,14 @@ public final class GetUsageStatementEmailRecipientsGroupArgs extends com.pulumi.
     }
 
     /**
-     * The email recipient group OCID.
+     * The email recipients group OCID.
      * 
      */
     @Import(name="emailRecipientsGroupId", required=true)
     private Output<String> emailRecipientsGroupId;
 
     /**
-     * @return The email recipient group OCID.
+     * @return The email recipients group OCID.
      * 
      */
     public Output<String> emailRecipientsGroupId() {
@@ -45,14 +45,14 @@ public final class GetUsageStatementEmailRecipientsGroupArgs extends com.pulumi.
     }
 
     /**
-     * The UsageStatement Subscription unique OCID.
+     * The usage statement subscription unique OCID.
      * 
      */
     @Import(name="subscriptionId", required=true)
     private Output<String> subscriptionId;
 
     /**
-     * @return The UsageStatement Subscription unique OCID.
+     * @return The usage statement subscription unique OCID.
      * 
      */
     public Output<String> subscriptionId() {
@@ -107,7 +107,7 @@ public final class GetUsageStatementEmailRecipientsGroupArgs extends com.pulumi.
         }
 
         /**
-         * @param emailRecipientsGroupId The email recipient group OCID.
+         * @param emailRecipientsGroupId The email recipients group OCID.
          * 
          * @return builder
          * 
@@ -118,7 +118,7 @@ public final class GetUsageStatementEmailRecipientsGroupArgs extends com.pulumi.
         }
 
         /**
-         * @param emailRecipientsGroupId The email recipient group OCID.
+         * @param emailRecipientsGroupId The email recipients group OCID.
          * 
          * @return builder
          * 
@@ -128,7 +128,7 @@ public final class GetUsageStatementEmailRecipientsGroupArgs extends com.pulumi.
         }
 
         /**
-         * @param subscriptionId The UsageStatement Subscription unique OCID.
+         * @param subscriptionId The usage statement subscription unique OCID.
          * 
          * @return builder
          * 
@@ -139,7 +139,7 @@ public final class GetUsageStatementEmailRecipientsGroupArgs extends com.pulumi.
         }
 
         /**
-         * @param subscriptionId The UsageStatement Subscription unique OCID.
+         * @param subscriptionId The usage statement subscription unique OCID.
          * 
          * @return builder
          * 

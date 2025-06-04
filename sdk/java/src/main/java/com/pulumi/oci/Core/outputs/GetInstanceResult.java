@@ -12,6 +12,7 @@ import com.pulumi.oci.Core.outputs.GetInstanceInstanceOption;
 import com.pulumi.oci.Core.outputs.GetInstanceLaunchOption;
 import com.pulumi.oci.Core.outputs.GetInstanceLaunchVolumeAttachment;
 import com.pulumi.oci.Core.outputs.GetInstanceLicensingConfig;
+import com.pulumi.oci.Core.outputs.GetInstancePlacementConstraintDetail;
 import com.pulumi.oci.Core.outputs.GetInstancePlatformConfig;
 import com.pulumi.oci.Core.outputs.GetInstancePreemptibleInstanceConfig;
 import com.pulumi.oci.Core.outputs.GetInstanceShapeConfig;
@@ -166,6 +167,11 @@ public final class GetInstanceResult {
      * 
      */
     private Map<String,String> metadata;
+    /**
+     * @return Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+     * 
+     */
+    private List<GetInstancePlacementConstraintDetail> placementConstraintDetails;
     /**
      * @return The platform configuration for the instance.
      * 
@@ -451,6 +457,13 @@ public final class GetInstanceResult {
         return this.metadata;
     }
     /**
+     * @return Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+     * 
+     */
+    public List<GetInstancePlacementConstraintDetail> placementConstraintDetails() {
+        return this.placementConstraintDetails;
+    }
+    /**
      * @return The platform configuration for the instance.
      * 
      */
@@ -606,6 +619,7 @@ public final class GetInstanceResult {
         private List<GetInstanceLaunchVolumeAttachment> launchVolumeAttachments;
         private List<GetInstanceLicensingConfig> licensingConfigs;
         private Map<String,String> metadata;
+        private List<GetInstancePlacementConstraintDetail> placementConstraintDetails;
         private List<GetInstancePlatformConfig> platformConfigs;
         private List<GetInstancePreemptibleInstanceConfig> preemptibleInstanceConfigs;
         private Boolean preserveBootVolume;
@@ -657,6 +671,7 @@ public final class GetInstanceResult {
     	      this.launchVolumeAttachments = defaults.launchVolumeAttachments;
     	      this.licensingConfigs = defaults.licensingConfigs;
     	      this.metadata = defaults.metadata;
+    	      this.placementConstraintDetails = defaults.placementConstraintDetails;
     	      this.platformConfigs = defaults.platformConfigs;
     	      this.preemptibleInstanceConfigs = defaults.preemptibleInstanceConfigs;
     	      this.preserveBootVolume = defaults.preserveBootVolume;
@@ -939,6 +954,17 @@ public final class GetInstanceResult {
             return this;
         }
         @CustomType.Setter
+        public Builder placementConstraintDetails(List<GetInstancePlacementConstraintDetail> placementConstraintDetails) {
+            if (placementConstraintDetails == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "placementConstraintDetails");
+            }
+            this.placementConstraintDetails = placementConstraintDetails;
+            return this;
+        }
+        public Builder placementConstraintDetails(GetInstancePlacementConstraintDetail... placementConstraintDetails) {
+            return placementConstraintDetails(List.of(placementConstraintDetails));
+        }
+        @CustomType.Setter
         public Builder platformConfigs(List<GetInstancePlatformConfig> platformConfigs) {
             if (platformConfigs == null) {
               throw new MissingRequiredPropertyException("GetInstanceResult", "platformConfigs");
@@ -1126,6 +1152,7 @@ public final class GetInstanceResult {
             _resultValue.launchVolumeAttachments = launchVolumeAttachments;
             _resultValue.licensingConfigs = licensingConfigs;
             _resultValue.metadata = metadata;
+            _resultValue.placementConstraintDetails = placementConstraintDetails;
             _resultValue.platformConfigs = platformConfigs;
             _resultValue.preemptibleInstanceConfigs = preemptibleInstanceConfigs;
             _resultValue.preserveBootVolume = preserveBootVolume;

@@ -267,6 +267,20 @@ public class Config extends com.pulumi.resources.CustomResource {
         return this.configuration;
     }
     /**
+     * Content type of the script.
+     * 
+     */
+    @Export(name="contentType", refs={String.class}, tree="[0]")
+    private Output<String> contentType;
+
+    /**
+     * @return Content type of the script.
+     * 
+     */
+    public Output<String> contentType() {
+        return this.contentType;
+    }
+    /**
      * Name of the user that created the monitor.
      * 
      */

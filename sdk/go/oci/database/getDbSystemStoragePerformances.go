@@ -7,40 +7,13 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 // This data source provides the list of Db System Storage Performances in Oracle Cloud Infrastructure Database service.
 //
 // Gets a list of possible expected storage performance parameters of a VMDB System based on Configuration.
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/database"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := database.GetDbSystemStoragePerformances(ctx, &database.GetDbSystemStoragePerformancesArgs{
-//				StorageManagement: dbSystemStoragePerformanceStorageManagement,
-//				ShapeType:         pulumi.StringRef(dbSystemStoragePerformanceShapeType),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 func GetDbSystemStoragePerformances(ctx *pulumi.Context, args *GetDbSystemStoragePerformancesArgs, opts ...pulumi.InvokeOption) (*GetDbSystemStoragePerformancesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDbSystemStoragePerformancesResult
@@ -53,7 +26,14 @@ func GetDbSystemStoragePerformances(ctx *pulumi.Context, args *GetDbSystemStorag
 
 // A collection of arguments for invoking getDbSystemStoragePerformances.
 type GetDbSystemStoragePerformancesArgs struct {
-	Filters []GetDbSystemStoragePerformancesFilter `pulumi:"filters"`
+	// Optional. Filters the performance results by database edition. Valid values are:
+	// * STANDARD_EDITION
+	// * ENTERPRISE_EDITION
+	// * ENTERPRISE_EDITION_HIGH_PERFORMANCE
+	// * ENTERPRISE_EDITION_EXTREME
+	// * ENTERPRISE_EDITION_DEVELOPER
+	DatabaseEdition *string                                `pulumi:"databaseEdition"`
+	Filters         []GetDbSystemStoragePerformancesFilter `pulumi:"filters"`
 	// Optional. Filters the performance results by shape type.
 	ShapeType *string `pulumi:"shapeType"`
 	// The DB system storage management option. Used to list database versions available for that storage manager. Valid values are `ASM` and `LVM`.
@@ -64,6 +44,7 @@ type GetDbSystemStoragePerformancesArgs struct {
 
 // A collection of values returned by getDbSystemStoragePerformances.
 type GetDbSystemStoragePerformancesResult struct {
+	DatabaseEdition *string `pulumi:"databaseEdition"`
 	// The list of db_system_storage_performances.
 	DbSystemStoragePerformances []GetDbSystemStoragePerformancesDbSystemStoragePerformance `pulumi:"dbSystemStoragePerformances"`
 	Filters                     []GetDbSystemStoragePerformancesFilter                     `pulumi:"filters"`
@@ -85,7 +66,14 @@ func GetDbSystemStoragePerformancesOutput(ctx *pulumi.Context, args GetDbSystemS
 
 // A collection of arguments for invoking getDbSystemStoragePerformances.
 type GetDbSystemStoragePerformancesOutputArgs struct {
-	Filters GetDbSystemStoragePerformancesFilterArrayInput `pulumi:"filters"`
+	// Optional. Filters the performance results by database edition. Valid values are:
+	// * STANDARD_EDITION
+	// * ENTERPRISE_EDITION
+	// * ENTERPRISE_EDITION_HIGH_PERFORMANCE
+	// * ENTERPRISE_EDITION_EXTREME
+	// * ENTERPRISE_EDITION_DEVELOPER
+	DatabaseEdition pulumi.StringPtrInput                          `pulumi:"databaseEdition"`
+	Filters         GetDbSystemStoragePerformancesFilterArrayInput `pulumi:"filters"`
 	// Optional. Filters the performance results by shape type.
 	ShapeType pulumi.StringPtrInput `pulumi:"shapeType"`
 	// The DB system storage management option. Used to list database versions available for that storage manager. Valid values are `ASM` and `LVM`.
@@ -111,6 +99,10 @@ func (o GetDbSystemStoragePerformancesResultOutput) ToGetDbSystemStoragePerforma
 
 func (o GetDbSystemStoragePerformancesResultOutput) ToGetDbSystemStoragePerformancesResultOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesResultOutput {
 	return o
+}
+
+func (o GetDbSystemStoragePerformancesResultOutput) DatabaseEdition() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesResult) *string { return v.DatabaseEdition }).(pulumi.StringPtrOutput)
 }
 
 // The list of db_system_storage_performances.

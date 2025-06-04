@@ -29,7 +29,7 @@ class GetSystemVersionsResult:
     """
     A collection of values returned by getSystemVersions.
     """
-    def __init__(__self__, compartment_id=None, filters=None, gi_version=None, id=None, shape=None, system_version_collections=None):
+    def __init__(__self__, compartment_id=None, filters=None, gi_version=None, id=None, is_latest=None, resource_id=None, shape=None, system_version_collections=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -42,6 +42,12 @@ class GetSystemVersionsResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_latest and not isinstance(is_latest, bool):
+            raise TypeError("Expected argument 'is_latest' to be a bool")
+        pulumi.set(__self__, "is_latest", is_latest)
+        if resource_id and not isinstance(resource_id, str):
+            raise TypeError("Expected argument 'resource_id' to be a str")
+        pulumi.set(__self__, "resource_id", resource_id)
         if shape and not isinstance(shape, str):
             raise TypeError("Expected argument 'shape' to be a str")
         pulumi.set(__self__, "shape", shape)
@@ -76,8 +82,18 @@ class GetSystemVersionsResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isLatest")
+    def is_latest(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "is_latest")
+
+    @property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> Optional[builtins.str]:
+        return pulumi.get(self, "resource_id")
+
+    @property
     @pulumi.getter
-    def shape(self) -> builtins.str:
+    def shape(self) -> Optional[builtins.str]:
         """
         Exadata shape.
         """
@@ -102,6 +118,8 @@ class AwaitableGetSystemVersionsResult(GetSystemVersionsResult):
             filters=self.filters,
             gi_version=self.gi_version,
             id=self.id,
+            is_latest=self.is_latest,
+            resource_id=self.resource_id,
             shape=self.shape,
             system_version_collections=self.system_version_collections)
 
@@ -109,6 +127,8 @@ class AwaitableGetSystemVersionsResult(GetSystemVersionsResult):
 def get_system_versions(compartment_id: Optional[builtins.str] = None,
                         filters: Optional[Sequence[Union['GetSystemVersionsFilterArgs', 'GetSystemVersionsFilterArgsDict']]] = None,
                         gi_version: Optional[builtins.str] = None,
+                        is_latest: Optional[builtins.bool] = None,
+                        resource_id: Optional[builtins.str] = None,
                         shape: Optional[builtins.str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSystemVersionsResult:
     """
@@ -124,18 +144,24 @@ def get_system_versions(compartment_id: Optional[builtins.str] = None,
 
     test_system_versions = oci.Database.get_system_versions(compartment_id=compartment_id,
         gi_version=system_version_gi_version,
+        is_latest=system_version_is_latest,
+        resource_id=test_resource["id"],
         shape=system_version_shape)
     ```
 
 
     :param builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param builtins.str gi_version: Specifies gi version query parameter.
-    :param builtins.str shape: Specifies shape query parameter.
+    :param builtins.bool is_latest: If provided, return highest versions from each major version family.
+    :param builtins.str resource_id: If provided, filters the results for the specified resource Id.
+    :param builtins.str shape: If provided, filters the results for the given shape.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     __args__['giVersion'] = gi_version
+    __args__['isLatest'] = is_latest
+    __args__['resourceId'] = resource_id
     __args__['shape'] = shape
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:Database/getSystemVersions:getSystemVersions', __args__, opts=opts, typ=GetSystemVersionsResult).value
@@ -145,12 +171,16 @@ def get_system_versions(compartment_id: Optional[builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         gi_version=pulumi.get(__ret__, 'gi_version'),
         id=pulumi.get(__ret__, 'id'),
+        is_latest=pulumi.get(__ret__, 'is_latest'),
+        resource_id=pulumi.get(__ret__, 'resource_id'),
         shape=pulumi.get(__ret__, 'shape'),
         system_version_collections=pulumi.get(__ret__, 'system_version_collections'))
 def get_system_versions_output(compartment_id: Optional[pulumi.Input[builtins.str]] = None,
                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSystemVersionsFilterArgs', 'GetSystemVersionsFilterArgsDict']]]]] = None,
                                gi_version: Optional[pulumi.Input[builtins.str]] = None,
-                               shape: Optional[pulumi.Input[builtins.str]] = None,
+                               is_latest: Optional[pulumi.Input[Optional[builtins.bool]]] = None,
+                               resource_id: Optional[pulumi.Input[Optional[builtins.str]]] = None,
+                               shape: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSystemVersionsResult]:
     """
     This data source provides the list of System Versions in Oracle Cloud Infrastructure Database service.
@@ -165,18 +195,24 @@ def get_system_versions_output(compartment_id: Optional[pulumi.Input[builtins.st
 
     test_system_versions = oci.Database.get_system_versions(compartment_id=compartment_id,
         gi_version=system_version_gi_version,
+        is_latest=system_version_is_latest,
+        resource_id=test_resource["id"],
         shape=system_version_shape)
     ```
 
 
     :param builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param builtins.str gi_version: Specifies gi version query parameter.
-    :param builtins.str shape: Specifies shape query parameter.
+    :param builtins.bool is_latest: If provided, return highest versions from each major version family.
+    :param builtins.str resource_id: If provided, filters the results for the specified resource Id.
+    :param builtins.str shape: If provided, filters the results for the given shape.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     __args__['giVersion'] = gi_version
+    __args__['isLatest'] = is_latest
+    __args__['resourceId'] = resource_id
     __args__['shape'] = shape
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getSystemVersions:getSystemVersions', __args__, opts=opts, typ=GetSystemVersionsResult)
@@ -185,5 +221,7 @@ def get_system_versions_output(compartment_id: Optional[pulumi.Input[builtins.st
         filters=pulumi.get(__response__, 'filters'),
         gi_version=pulumi.get(__response__, 'gi_version'),
         id=pulumi.get(__response__, 'id'),
+        is_latest=pulumi.get(__response__, 'is_latest'),
+        resource_id=pulumi.get(__response__, 'resource_id'),
         shape=pulumi.get(__response__, 'shape'),
         system_version_collections=pulumi.get(__response__, 'system_version_collections')))

@@ -29,7 +29,7 @@ class GetGiVersionsResult:
     """
     A collection of values returned by getGiVersions.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, filters=None, gi_versions=None, id=None, shape=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, filters=None, gi_versions=None, id=None, resource_id=None, shape=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -45,6 +45,9 @@ class GetGiVersionsResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if resource_id and not isinstance(resource_id, str):
+            raise TypeError("Expected argument 'resource_id' to be a str")
+        pulumi.set(__self__, "resource_id", resource_id)
         if shape and not isinstance(shape, str):
             raise TypeError("Expected argument 'shape' to be a str")
         pulumi.set(__self__, "shape", shape)
@@ -81,6 +84,11 @@ class GetGiVersionsResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> Optional[builtins.str]:
+        return pulumi.get(self, "resource_id")
+
+    @property
     @pulumi.getter
     def shape(self) -> Optional[builtins.str]:
         return pulumi.get(self, "shape")
@@ -97,12 +105,14 @@ class AwaitableGetGiVersionsResult(GetGiVersionsResult):
             filters=self.filters,
             gi_versions=self.gi_versions,
             id=self.id,
+            resource_id=self.resource_id,
             shape=self.shape)
 
 
 def get_gi_versions(availability_domain: Optional[builtins.str] = None,
                     compartment_id: Optional[builtins.str] = None,
                     filters: Optional[Sequence[Union['GetGiVersionsFilterArgs', 'GetGiVersionsFilterArgsDict']]] = None,
+                    resource_id: Optional[builtins.str] = None,
                     shape: Optional[builtins.str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetGiVersionsResult:
     """
@@ -118,18 +128,21 @@ def get_gi_versions(availability_domain: Optional[builtins.str] = None,
 
     test_gi_versions = oci.Database.get_gi_versions(compartment_id=compartment_id,
         availability_domain=gi_version_availability_domain,
+        resource_id=test_resource["id"],
         shape=gi_version_shape)
     ```
 
 
     :param builtins.str availability_domain: The target availability domain. Only passed if the limit is AD-specific.
     :param builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    :param builtins.str resource_id: If provided, filters the results for the specified resource Id.
     :param builtins.str shape: If provided, filters the results for the given shape.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
+    __args__['resourceId'] = resource_id
     __args__['shape'] = shape
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:Database/getGiVersions:getGiVersions', __args__, opts=opts, typ=GetGiVersionsResult).value
@@ -140,10 +153,12 @@ def get_gi_versions(availability_domain: Optional[builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         gi_versions=pulumi.get(__ret__, 'gi_versions'),
         id=pulumi.get(__ret__, 'id'),
+        resource_id=pulumi.get(__ret__, 'resource_id'),
         shape=pulumi.get(__ret__, 'shape'))
 def get_gi_versions_output(availability_domain: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                            compartment_id: Optional[pulumi.Input[builtins.str]] = None,
                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetGiVersionsFilterArgs', 'GetGiVersionsFilterArgsDict']]]]] = None,
+                           resource_id: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                            shape: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGiVersionsResult]:
     """
@@ -159,18 +174,21 @@ def get_gi_versions_output(availability_domain: Optional[pulumi.Input[Optional[b
 
     test_gi_versions = oci.Database.get_gi_versions(compartment_id=compartment_id,
         availability_domain=gi_version_availability_domain,
+        resource_id=test_resource["id"],
         shape=gi_version_shape)
     ```
 
 
     :param builtins.str availability_domain: The target availability domain. Only passed if the limit is AD-specific.
     :param builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    :param builtins.str resource_id: If provided, filters the results for the specified resource Id.
     :param builtins.str shape: If provided, filters the results for the given shape.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
+    __args__['resourceId'] = resource_id
     __args__['shape'] = shape
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getGiVersions:getGiVersions', __args__, opts=opts, typ=GetGiVersionsResult)
@@ -180,4 +198,5 @@ def get_gi_versions_output(availability_domain: Optional[pulumi.Input[Optional[b
         filters=pulumi.get(__response__, 'filters'),
         gi_versions=pulumi.get(__response__, 'gi_versions'),
         id=pulumi.get(__response__, 'id'),
+        resource_id=pulumi.get(__response__, 'resource_id'),
         shape=pulumi.get(__response__, 'shape')))

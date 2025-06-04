@@ -31,6 +31,7 @@ import * as utilities from "../utilities";
  *     replicaOverrides: {
  *         configurationId: testMysqlConfiguration.id,
  *         mysqlVersion: replicaReplicaOverridesMysqlVersion,
+ *         nsgIds: replicaReplicaOverridesNsgIds,
  *         shapeName: testShape.name,
  *     },
  * });
@@ -125,6 +126,10 @@ export class Replica extends pulumi.CustomResource {
      */
     public /*out*/ readonly mysqlVersion!: pulumi.Output<string>;
     /**
+     * Network Security Group OCIDs used for the VNIC attachment.
+     */
+    public /*out*/ readonly nsgIds!: pulumi.Output<string[]>;
+    /**
      * The port the read replica is configured to listen on.
      */
     public /*out*/ readonly port!: pulumi.Output<number>;
@@ -183,6 +188,7 @@ export class Replica extends pulumi.CustomResource {
             resourceInputs["isDeleteProtected"] = state ? state.isDeleteProtected : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["mysqlVersion"] = state ? state.mysqlVersion : undefined;
+            resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
             resourceInputs["port"] = state ? state.port : undefined;
             resourceInputs["portX"] = state ? state.portX : undefined;
             resourceInputs["replicaOverrides"] = state ? state.replicaOverrides : undefined;
@@ -210,6 +216,7 @@ export class Replica extends pulumi.CustomResource {
             resourceInputs["ipAddress"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["mysqlVersion"] = undefined /*out*/;
+            resourceInputs["nsgIds"] = undefined /*out*/;
             resourceInputs["port"] = undefined /*out*/;
             resourceInputs["portX"] = undefined /*out*/;
             resourceInputs["secureConnections"] = undefined /*out*/;
@@ -279,6 +286,10 @@ export interface ReplicaState {
      * The MySQL version to be used by the read replica.
      */
     mysqlVersion?: pulumi.Input<string>;
+    /**
+     * Network Security Group OCIDs used for the VNIC attachment.
+     */
+    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The port the read replica is configured to listen on.
      */

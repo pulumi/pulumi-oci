@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -24,7 +24,8 @@ type ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableExternalPluggableDbmFeature pulumi.BoolOutput `pulumi:"enableExternalPluggableDbmFeature"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external pluggable database.
-	ExternalPluggableDatabaseId pulumi.StringOutput `pulumi:"externalPluggableDatabaseId"`
+	ExternalPluggableDatabaseId pulumi.StringOutput    `pulumi:"externalPluggableDatabaseId"`
+	Feature                     pulumi.StringPtrOutput `pulumi:"feature"`
 	// The details required to enable the specified Database Management feature.
 	FeatureDetails ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsOutput `pulumi:"featureDetails"`
 }
@@ -72,6 +73,7 @@ type externalpluggabledatabaseExternalPluggableDbmFeaturesManagementState struct
 	EnableExternalPluggableDbmFeature *bool `pulumi:"enableExternalPluggableDbmFeature"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external pluggable database.
 	ExternalPluggableDatabaseId *string `pulumi:"externalPluggableDatabaseId"`
+	Feature                     *string `pulumi:"feature"`
 	// The details required to enable the specified Database Management feature.
 	FeatureDetails *ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetails `pulumi:"featureDetails"`
 }
@@ -84,6 +86,7 @@ type ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementState struct
 	EnableExternalPluggableDbmFeature pulumi.BoolPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external pluggable database.
 	ExternalPluggableDatabaseId pulumi.StringPtrInput
+	Feature                     pulumi.StringPtrInput
 	// The details required to enable the specified Database Management feature.
 	FeatureDetails ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsPtrInput
 }
@@ -99,7 +102,8 @@ type externalpluggabledatabaseExternalPluggableDbmFeaturesManagementArgs struct 
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableExternalPluggableDbmFeature bool `pulumi:"enableExternalPluggableDbmFeature"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external pluggable database.
-	ExternalPluggableDatabaseId string `pulumi:"externalPluggableDatabaseId"`
+	ExternalPluggableDatabaseId string  `pulumi:"externalPluggableDatabaseId"`
+	Feature                     *string `pulumi:"feature"`
 	// The details required to enable the specified Database Management feature.
 	FeatureDetails *ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetails `pulumi:"featureDetails"`
 }
@@ -113,6 +117,7 @@ type ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementArgs struct 
 	EnableExternalPluggableDbmFeature pulumi.BoolInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external pluggable database.
 	ExternalPluggableDatabaseId pulumi.StringInput
+	Feature                     pulumi.StringPtrInput
 	// The details required to enable the specified Database Management feature.
 	FeatureDetails ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsPtrInput
 }
@@ -219,6 +224,12 @@ func (o ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementOutput) E
 	return o.ApplyT(func(v *ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement) pulumi.StringOutput {
 		return v.ExternalPluggableDatabaseId
 	}).(pulumi.StringOutput)
+}
+
+func (o ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementOutput) Feature() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement) pulumi.StringPtrOutput {
+		return v.Feature
+	}).(pulumi.StringPtrOutput)
 }
 
 // The details required to enable the specified Database Management feature.

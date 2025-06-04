@@ -756,6 +756,10 @@ if not MYPY:
         """
         The name of the Database Management feature.
         """
+        can_enable_all_current_pdbs: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+        """
         connector_details: NotRequired[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict']]
         """
         The connector details required to connect to an Oracle cloud database.
@@ -766,7 +770,7 @@ if not MYPY:
         """
         is_auto_enable_pluggable_database: NotRequired[pulumi.Input[builtins.bool]]
         """
-        Indicates whether the pluggable database can be enabled automatically.
+        Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
         """
         management_type: NotRequired[pulumi.Input[builtins.str]]
         """
@@ -779,18 +783,22 @@ elif False:
 class DatabaseDbmFeaturesManagementFeatureDetailsArgs:
     def __init__(__self__, *,
                  feature: pulumi.Input[builtins.str],
+                 can_enable_all_current_pdbs: Optional[pulumi.Input[builtins.bool]] = None,
                  connector_details: Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']] = None,
                  database_connection_details: Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs']] = None,
                  is_auto_enable_pluggable_database: Optional[pulumi.Input[builtins.bool]] = None,
                  management_type: Optional[pulumi.Input[builtins.str]] = None):
         """
         :param pulumi.Input[builtins.str] feature: The name of the Database Management feature.
+        :param pulumi.Input[builtins.bool] can_enable_all_current_pdbs: Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
         :param pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs'] connector_details: The connector details required to connect to an Oracle cloud database.
         :param pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs'] database_connection_details: The connection details required to connect to the database.
-        :param pulumi.Input[builtins.bool] is_auto_enable_pluggable_database: Indicates whether the pluggable database can be enabled automatically.
+        :param pulumi.Input[builtins.bool] is_auto_enable_pluggable_database: Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
         :param pulumi.Input[builtins.str] management_type: The management type for the database.
         """
         pulumi.set(__self__, "feature", feature)
+        if can_enable_all_current_pdbs is not None:
+            pulumi.set(__self__, "can_enable_all_current_pdbs", can_enable_all_current_pdbs)
         if connector_details is not None:
             pulumi.set(__self__, "connector_details", connector_details)
         if database_connection_details is not None:
@@ -811,6 +819,18 @@ class DatabaseDbmFeaturesManagementFeatureDetailsArgs:
     @feature.setter
     def feature(self, value: pulumi.Input[builtins.str]):
         pulumi.set(self, "feature", value)
+
+    @property
+    @pulumi.getter(name="canEnableAllCurrentPdbs")
+    def can_enable_all_current_pdbs(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+        """
+        return pulumi.get(self, "can_enable_all_current_pdbs")
+
+    @can_enable_all_current_pdbs.setter
+    def can_enable_all_current_pdbs(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "can_enable_all_current_pdbs", value)
 
     @property
     @pulumi.getter(name="connectorDetails")
@@ -840,7 +860,7 @@ class DatabaseDbmFeaturesManagementFeatureDetailsArgs:
     @pulumi.getter(name="isAutoEnablePluggableDatabase")
     def is_auto_enable_pluggable_database(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        Indicates whether the pluggable database can be enabled automatically.
+        Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
         """
         return pulumi.get(self, "is_auto_enable_pluggable_database")
 
@@ -2207,6 +2227,10 @@ if not MYPY:
         """
         The list of associated components.
         """
+        can_enable_all_current_pdbs: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+        """
         cluster_id: NotRequired[pulumi.Input[builtins.str]]
         """
         The unique identifier of the Oracle cluster.
@@ -2304,6 +2328,10 @@ if not MYPY:
         """
         The name of the ASM instance.
         """
+        is_auto_enable_pluggable_database: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
+        """
         is_cluster: NotRequired[pulumi.Input[builtins.bool]]
         """
         Indicates whether the Oracle Database is part of a cluster.
@@ -2389,6 +2417,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
                  adr_home_directory: Optional[pulumi.Input[builtins.str]] = None,
                  asm_instances: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs']]]] = None,
                  associated_components: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs']]]] = None,
+                 can_enable_all_current_pdbs: Optional[pulumi.Input[builtins.bool]] = None,
                  cluster_id: Optional[pulumi.Input[builtins.str]] = None,
                  cluster_instances: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs']]]] = None,
                  compartment_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -2414,6 +2443,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
                  home_directory: Optional[pulumi.Input[builtins.str]] = None,
                  host_name: Optional[pulumi.Input[builtins.str]] = None,
                  instance_name: Optional[pulumi.Input[builtins.str]] = None,
+                 is_auto_enable_pluggable_database: Optional[pulumi.Input[builtins.bool]] = None,
                  is_cluster: Optional[pulumi.Input[builtins.bool]] = None,
                  is_flex_cluster: Optional[pulumi.Input[builtins.bool]] = None,
                  is_flex_enabled: Optional[pulumi.Input[builtins.bool]] = None,
@@ -2436,6 +2466,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
         """
         :param pulumi.Input[builtins.str] adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
         :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs']]] associated_components: The list of associated components.
+        :param pulumi.Input[builtins.bool] can_enable_all_current_pdbs: Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
         :param pulumi.Input[builtins.str] cluster_id: The unique identifier of the Oracle cluster.
         :param pulumi.Input[builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
         :param pulumi.Input[builtins.str] component_id: The identifier of the discovered DB system component.
@@ -2460,6 +2491,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
         :param pulumi.Input[builtins.str] home_directory: The location of the DB home.
         :param pulumi.Input[builtins.str] host_name: The host name of the database or the SCAN name in case of a RAC database.
         :param pulumi.Input[builtins.str] instance_name: The name of the ASM instance.
+        :param pulumi.Input[builtins.bool] is_auto_enable_pluggable_database: Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
         :param pulumi.Input[builtins.bool] is_cluster: Indicates whether the Oracle Database is part of a cluster.
         :param pulumi.Input[builtins.bool] is_flex_cluster: Indicates whether the cluster is an Oracle Flex Cluster or not.
         :param pulumi.Input[builtins.bool] is_flex_enabled: Indicates whether Oracle Flex ASM is enabled or not.
@@ -2486,6 +2518,8 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
             pulumi.set(__self__, "asm_instances", asm_instances)
         if associated_components is not None:
             pulumi.set(__self__, "associated_components", associated_components)
+        if can_enable_all_current_pdbs is not None:
+            pulumi.set(__self__, "can_enable_all_current_pdbs", can_enable_all_current_pdbs)
         if cluster_id is not None:
             pulumi.set(__self__, "cluster_id", cluster_id)
         if cluster_instances is not None:
@@ -2536,6 +2570,8 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
             pulumi.set(__self__, "host_name", host_name)
         if instance_name is not None:
             pulumi.set(__self__, "instance_name", instance_name)
+        if is_auto_enable_pluggable_database is not None:
+            pulumi.set(__self__, "is_auto_enable_pluggable_database", is_auto_enable_pluggable_database)
         if is_cluster is not None:
             pulumi.set(__self__, "is_cluster", is_cluster)
         if is_flex_cluster is not None:
@@ -2607,6 +2643,18 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @associated_components.setter
     def associated_components(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs']]]]):
         pulumi.set(self, "associated_components", value)
+
+    @property
+    @pulumi.getter(name="canEnableAllCurrentPdbs")
+    def can_enable_all_current_pdbs(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+        """
+        return pulumi.get(self, "can_enable_all_current_pdbs")
+
+    @can_enable_all_current_pdbs.setter
+    def can_enable_all_current_pdbs(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "can_enable_all_current_pdbs", value)
 
     @property
     @pulumi.getter(name="clusterId")
@@ -2904,6 +2952,18 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @instance_name.setter
     def instance_name(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "instance_name", value)
+
+    @property
+    @pulumi.getter(name="isAutoEnablePluggableDatabase")
+    def is_auto_enable_pluggable_database(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
+        """
+        return pulumi.get(self, "is_auto_enable_pluggable_database")
+
+    @is_auto_enable_pluggable_database.setter
+    def is_auto_enable_pluggable_database(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_auto_enable_pluggable_database", value)
 
     @property
     @pulumi.getter(name="isCluster")
@@ -8359,9 +8419,17 @@ if not MYPY:
         """
         The name of the Database Management feature.
         """
+        can_enable_all_current_pdbs: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+        """
         connector_details: NotRequired[pulumi.Input['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict']]
         """
         The connector details required to connect to an Oracle cloud database.
+        """
+        is_auto_enable_pluggable_database: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
         """
         license_model: NotRequired[pulumi.Input[builtins.str]]
         """
@@ -8374,16 +8442,24 @@ elif False:
 class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs:
     def __init__(__self__, *,
                  feature: pulumi.Input[builtins.str],
+                 can_enable_all_current_pdbs: Optional[pulumi.Input[builtins.bool]] = None,
                  connector_details: Optional[pulumi.Input['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']] = None,
+                 is_auto_enable_pluggable_database: Optional[pulumi.Input[builtins.bool]] = None,
                  license_model: Optional[pulumi.Input[builtins.str]] = None):
         """
         :param pulumi.Input[builtins.str] feature: The name of the Database Management feature.
+        :param pulumi.Input[builtins.bool] can_enable_all_current_pdbs: Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
         :param pulumi.Input['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs'] connector_details: The connector details required to connect to an Oracle cloud database.
+        :param pulumi.Input[builtins.bool] is_auto_enable_pluggable_database: Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
         :param pulumi.Input[builtins.str] license_model: The Oracle license model that applies to the external database.
         """
         pulumi.set(__self__, "feature", feature)
+        if can_enable_all_current_pdbs is not None:
+            pulumi.set(__self__, "can_enable_all_current_pdbs", can_enable_all_current_pdbs)
         if connector_details is not None:
             pulumi.set(__self__, "connector_details", connector_details)
+        if is_auto_enable_pluggable_database is not None:
+            pulumi.set(__self__, "is_auto_enable_pluggable_database", is_auto_enable_pluggable_database)
         if license_model is not None:
             pulumi.set(__self__, "license_model", license_model)
 
@@ -8400,6 +8476,18 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDeta
         pulumi.set(self, "feature", value)
 
     @property
+    @pulumi.getter(name="canEnableAllCurrentPdbs")
+    def can_enable_all_current_pdbs(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+        """
+        return pulumi.get(self, "can_enable_all_current_pdbs")
+
+    @can_enable_all_current_pdbs.setter
+    def can_enable_all_current_pdbs(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "can_enable_all_current_pdbs", value)
+
+    @property
     @pulumi.getter(name="connectorDetails")
     def connector_details(self) -> Optional[pulumi.Input['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]:
         """
@@ -8410,6 +8498,18 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDeta
     @connector_details.setter
     def connector_details(self, value: Optional[pulumi.Input['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]):
         pulumi.set(self, "connector_details", value)
+
+    @property
+    @pulumi.getter(name="isAutoEnablePluggableDatabase")
+    def is_auto_enable_pluggable_database(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
+        """
+        return pulumi.get(self, "is_auto_enable_pluggable_database")
+
+    @is_auto_enable_pluggable_database.setter
+    def is_auto_enable_pluggable_database(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_auto_enable_pluggable_database", value)
 
     @property
     @pulumi.getter(name="licenseModel")
@@ -8534,9 +8634,17 @@ if not MYPY:
         """
         The name of the Database Management feature.
         """
+        can_enable_all_current_pdbs: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+        """
         connector_details: NotRequired[pulumi.Input['ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict']]
         """
         The connector details required to connect to an Oracle cloud database.
+        """
+        is_auto_enable_pluggable_database: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
         """
         license_model: NotRequired[pulumi.Input[builtins.str]]
         """
@@ -8549,16 +8657,24 @@ elif False:
 class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsArgs:
     def __init__(__self__, *,
                  feature: pulumi.Input[builtins.str],
+                 can_enable_all_current_pdbs: Optional[pulumi.Input[builtins.bool]] = None,
                  connector_details: Optional[pulumi.Input['ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']] = None,
+                 is_auto_enable_pluggable_database: Optional[pulumi.Input[builtins.bool]] = None,
                  license_model: Optional[pulumi.Input[builtins.str]] = None):
         """
         :param pulumi.Input[builtins.str] feature: The name of the Database Management feature.
+        :param pulumi.Input[builtins.bool] can_enable_all_current_pdbs: Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
         :param pulumi.Input['ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs'] connector_details: The connector details required to connect to an Oracle cloud database.
+        :param pulumi.Input[builtins.bool] is_auto_enable_pluggable_database: Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
         :param pulumi.Input[builtins.str] license_model: The Oracle license model that applies to the external database.
         """
         pulumi.set(__self__, "feature", feature)
+        if can_enable_all_current_pdbs is not None:
+            pulumi.set(__self__, "can_enable_all_current_pdbs", can_enable_all_current_pdbs)
         if connector_details is not None:
             pulumi.set(__self__, "connector_details", connector_details)
+        if is_auto_enable_pluggable_database is not None:
+            pulumi.set(__self__, "is_auto_enable_pluggable_database", is_auto_enable_pluggable_database)
         if license_model is not None:
             pulumi.set(__self__, "license_model", license_model)
 
@@ -8575,6 +8691,18 @@ class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatu
         pulumi.set(self, "feature", value)
 
     @property
+    @pulumi.getter(name="canEnableAllCurrentPdbs")
+    def can_enable_all_current_pdbs(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+        """
+        return pulumi.get(self, "can_enable_all_current_pdbs")
+
+    @can_enable_all_current_pdbs.setter
+    def can_enable_all_current_pdbs(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "can_enable_all_current_pdbs", value)
+
+    @property
     @pulumi.getter(name="connectorDetails")
     def connector_details(self) -> Optional[pulumi.Input['ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]:
         """
@@ -8585,6 +8713,18 @@ class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatu
     @connector_details.setter
     def connector_details(self, value: Optional[pulumi.Input['ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]):
         pulumi.set(self, "connector_details", value)
+
+    @property
+    @pulumi.getter(name="isAutoEnablePluggableDatabase")
+    def is_auto_enable_pluggable_database(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
+        """
+        return pulumi.get(self, "is_auto_enable_pluggable_database")
+
+    @is_auto_enable_pluggable_database.setter
+    def is_auto_enable_pluggable_database(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_auto_enable_pluggable_database", value)
 
     @property
     @pulumi.getter(name="licenseModel")
@@ -10315,6 +10455,10 @@ if not MYPY:
         """
         The name of the Database Management feature.
         """
+        can_enable_all_current_pdbs: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+        """
         connector_details: NotRequired[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict']]
         """
         The connector details required to connect to an Oracle cloud database.
@@ -10325,7 +10469,7 @@ if not MYPY:
         """
         is_auto_enable_pluggable_database: NotRequired[pulumi.Input[builtins.bool]]
         """
-        Indicates whether the pluggable database can be enabled automatically.
+        Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
         """
         management_type: NotRequired[pulumi.Input[builtins.str]]
         """
@@ -10338,18 +10482,22 @@ elif False:
 class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs:
     def __init__(__self__, *,
                  feature: pulumi.Input[builtins.str],
+                 can_enable_all_current_pdbs: Optional[pulumi.Input[builtins.bool]] = None,
                  connector_details: Optional[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']] = None,
                  database_connection_details: Optional[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs']] = None,
                  is_auto_enable_pluggable_database: Optional[pulumi.Input[builtins.bool]] = None,
                  management_type: Optional[pulumi.Input[builtins.str]] = None):
         """
         :param pulumi.Input[builtins.str] feature: The name of the Database Management feature.
+        :param pulumi.Input[builtins.bool] can_enable_all_current_pdbs: Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
         :param pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs'] connector_details: The connector details required to connect to an Oracle cloud database.
         :param pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs'] database_connection_details: The connection details required to connect to the database.
-        :param pulumi.Input[builtins.bool] is_auto_enable_pluggable_database: Indicates whether the pluggable database can be enabled automatically.
+        :param pulumi.Input[builtins.bool] is_auto_enable_pluggable_database: Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
         :param pulumi.Input[builtins.str] management_type: The management type for the database.
         """
         pulumi.set(__self__, "feature", feature)
+        if can_enable_all_current_pdbs is not None:
+            pulumi.set(__self__, "can_enable_all_current_pdbs", can_enable_all_current_pdbs)
         if connector_details is not None:
             pulumi.set(__self__, "connector_details", connector_details)
         if database_connection_details is not None:
@@ -10370,6 +10518,18 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs:
     @feature.setter
     def feature(self, value: pulumi.Input[builtins.str]):
         pulumi.set(self, "feature", value)
+
+    @property
+    @pulumi.getter(name="canEnableAllCurrentPdbs")
+    def can_enable_all_current_pdbs(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+        """
+        return pulumi.get(self, "can_enable_all_current_pdbs")
+
+    @can_enable_all_current_pdbs.setter
+    def can_enable_all_current_pdbs(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "can_enable_all_current_pdbs", value)
 
     @property
     @pulumi.getter(name="connectorDetails")
@@ -10399,7 +10559,7 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs:
     @pulumi.getter(name="isAutoEnablePluggableDatabase")
     def is_auto_enable_pluggable_database(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        Indicates whether the pluggable database can be enabled automatically.
+        Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
         """
         return pulumi.get(self, "is_auto_enable_pluggable_database")
 

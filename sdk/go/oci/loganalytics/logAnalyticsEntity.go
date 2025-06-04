@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -23,7 +23,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -79,6 +79,8 @@ type LogAnalyticsEntity struct {
 
 	// The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
 	AreLogsCollected pulumi.BoolOutput `pulumi:"areLogsCollected"`
+	// The count of associated log sources for a given log analytics entity.
+	AssociatedSourcesCount pulumi.IntOutput `pulumi:"associatedSourcesCount"`
 	// The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
 	CloudResourceId pulumi.StringOutput `pulumi:"cloudResourceId"`
 	// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -167,6 +169,8 @@ func GetLogAnalyticsEntity(ctx *pulumi.Context,
 type logAnalyticsEntityState struct {
 	// The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
 	AreLogsCollected *bool `pulumi:"areLogsCollected"`
+	// The count of associated log sources for a given log analytics entity.
+	AssociatedSourcesCount *int `pulumi:"associatedSourcesCount"`
 	// The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
 	CloudResourceId *string `pulumi:"cloudResourceId"`
 	// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -217,6 +221,8 @@ type logAnalyticsEntityState struct {
 type LogAnalyticsEntityState struct {
 	// The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
 	AreLogsCollected pulumi.BoolPtrInput
+	// The count of associated log sources for a given log analytics entity.
+	AssociatedSourcesCount pulumi.IntPtrInput
 	// The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
 	CloudResourceId pulumi.StringPtrInput
 	// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -427,6 +433,11 @@ func (o LogAnalyticsEntityOutput) ToLogAnalyticsEntityOutputWithContext(ctx cont
 // The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
 func (o LogAnalyticsEntityOutput) AreLogsCollected() pulumi.BoolOutput {
 	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.BoolOutput { return v.AreLogsCollected }).(pulumi.BoolOutput)
+}
+
+// The count of associated log sources for a given log analytics entity.
+func (o LogAnalyticsEntityOutput) AssociatedSourcesCount() pulumi.IntOutput {
+	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.IntOutput { return v.AssociatedSourcesCount }).(pulumi.IntOutput)
 }
 
 // The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.

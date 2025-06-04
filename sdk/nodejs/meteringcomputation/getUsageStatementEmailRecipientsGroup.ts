@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Usage Statement Email Recipients Group resource in Oracle Cloud Infrastructure Metering Computation service.
  *
- * Return the saved usage statement email recipient group.
+ * Returns the saved usage statement email recipients group.
  *
  * ## Example Usage
  *
@@ -42,11 +42,11 @@ export interface GetUsageStatementEmailRecipientsGroupArgs {
      */
     compartmentId: string;
     /**
-     * The email recipient group OCID.
+     * The email recipients group OCID.
      */
     emailRecipientsGroupId: string;
     /**
-     * The UsageStatement Subscription unique OCID.
+     * The usage statement subscription unique OCID.
      */
     subscriptionId: string;
 }
@@ -65,11 +65,11 @@ export interface GetUsageStatementEmailRecipientsGroupResult {
      */
     readonly id: string;
     /**
-     * The list of recipient will receive the usage statement email.
+     * The list of recipients that will receive usage statement emails.
      */
     readonly recipientsLists: outputs.MeteringComputation.GetUsageStatementEmailRecipientsGroupRecipientsList[];
     /**
-     * The email recipient group lifecycle state.
+     * The email recipients group lifecycle state.
      */
     readonly state: string;
     readonly subscriptionId: string;
@@ -77,7 +77,7 @@ export interface GetUsageStatementEmailRecipientsGroupResult {
 /**
  * This data source provides details about a specific Usage Statement Email Recipients Group resource in Oracle Cloud Infrastructure Metering Computation service.
  *
- * Return the saved usage statement email recipient group.
+ * Returns the saved usage statement email recipients group.
  *
  * ## Example Usage
  *
@@ -110,11 +110,11 @@ export interface GetUsageStatementEmailRecipientsGroupOutputArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * The email recipient group OCID.
+     * The email recipients group OCID.
      */
     emailRecipientsGroupId: pulumi.Input<string>;
     /**
-     * The UsageStatement Subscription unique OCID.
+     * The usage statement subscription unique OCID.
      */
     subscriptionId: pulumi.Input<string>;
 }

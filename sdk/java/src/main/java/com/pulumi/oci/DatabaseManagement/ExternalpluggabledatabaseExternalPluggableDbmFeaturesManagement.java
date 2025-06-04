@@ -13,6 +13,7 @@ import com.pulumi.oci.DatabaseManagement.outputs.ExternalpluggabledatabaseExtern
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -61,6 +62,12 @@ public class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement ext
      */
     public Output<String> externalPluggableDatabaseId() {
         return this.externalPluggableDatabaseId;
+    }
+    @Export(name="feature", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> feature;
+
+    public Output<Optional<String>> feature() {
+        return Codegen.optional(this.feature);
     }
     /**
      * The details required to enable the specified Database Management feature.

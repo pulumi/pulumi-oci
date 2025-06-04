@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/networkfirewall"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/networkfirewall"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -75,8 +75,10 @@ type LookupNetworkFirewallResult struct {
 	// IPv6 address for the Network Firewall.
 	Ipv6address string `pulumi:"ipv6address"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'FAILED' state.
-	LifecycleDetails  string `pulumi:"lifecycleDetails"`
-	NetworkFirewallId string `pulumi:"networkFirewallId"`
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Nat Configuration response.
+	NatConfigurations []GetNetworkFirewallNatConfiguration `pulumi:"natConfigurations"`
+	NetworkFirewallId string                               `pulumi:"networkFirewallId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
 	NetworkFirewallPolicyId string `pulumi:"networkFirewallPolicyId"`
 	// An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
@@ -170,6 +172,11 @@ func (o LookupNetworkFirewallResultOutput) Ipv6address() pulumi.StringOutput {
 // A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'FAILED' state.
 func (o LookupNetworkFirewallResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNetworkFirewallResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Nat Configuration response.
+func (o LookupNetworkFirewallResultOutput) NatConfigurations() GetNetworkFirewallNatConfigurationArrayOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallResult) []GetNetworkFirewallNatConfiguration { return v.NatConfigurations }).(GetNetworkFirewallNatConfigurationArrayOutput)
 }
 
 func (o LookupNetworkFirewallResultOutput) NetworkFirewallId() pulumi.StringOutput {

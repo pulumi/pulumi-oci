@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -23,7 +23,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/meteringcomputation"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/meteringcomputation"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -76,11 +76,11 @@ type Usage struct {
 	Forecast UsageForecastOutput `pulumi:"forecast"`
 	// The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
 	Granularity pulumi.StringOutput `pulumi:"granularity"`
-	// Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+	// Aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	GroupBies pulumi.StringArrayOutput `pulumi:"groupBies"`
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
 	GroupByTags UsageGroupByTagArrayOutput `pulumi:"groupByTags"`
-	// Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
 	IsAggregateByTime pulumi.BoolOutput `pulumi:"isAggregateByTime"`
 	// A list of usage items.
 	Items UsageItemArrayOutput `pulumi:"items"`
@@ -147,11 +147,11 @@ type usageState struct {
 	Forecast *UsageForecast `pulumi:"forecast"`
 	// The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
 	Granularity *string `pulumi:"granularity"`
-	// Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+	// Aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	GroupBies []string `pulumi:"groupBies"`
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
 	GroupByTags []UsageGroupByTag `pulumi:"groupByTags"`
-	// Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
 	IsAggregateByTime *bool `pulumi:"isAggregateByTime"`
 	// A list of usage items.
 	Items []UsageItem `pulumi:"items"`
@@ -177,11 +177,11 @@ type UsageState struct {
 	Forecast UsageForecastPtrInput
 	// The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
 	Granularity pulumi.StringPtrInput
-	// Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+	// Aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	GroupBies pulumi.StringArrayInput
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
 	GroupByTags UsageGroupByTagArrayInput
-	// Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
 	IsAggregateByTime pulumi.BoolPtrInput
 	// A list of usage items.
 	Items UsageItemArrayInput
@@ -211,11 +211,11 @@ type usageArgs struct {
 	Forecast *UsageForecast `pulumi:"forecast"`
 	// The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
 	Granularity string `pulumi:"granularity"`
-	// Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+	// Aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	GroupBies []string `pulumi:"groupBies"`
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
 	GroupByTags []UsageGroupByTag `pulumi:"groupByTags"`
-	// Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
 	IsAggregateByTime *bool `pulumi:"isAggregateByTime"`
 	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit.
 	QueryType *string `pulumi:"queryType"`
@@ -240,11 +240,11 @@ type UsageArgs struct {
 	Forecast UsageForecastPtrInput
 	// The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
 	Granularity pulumi.StringInput
-	// Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+	// Aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	GroupBies pulumi.StringArrayInput
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
 	GroupByTags UsageGroupByTagArrayInput
-	// Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
 	IsAggregateByTime pulumi.BoolPtrInput
 	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit.
 	QueryType pulumi.StringPtrInput
@@ -366,7 +366,7 @@ func (o UsageOutput) Granularity() pulumi.StringOutput {
 	return o.ApplyT(func(v *Usage) pulumi.StringOutput { return v.Granularity }).(pulumi.StringOutput)
 }
 
-// Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+// Aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 func (o UsageOutput) GroupBies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Usage) pulumi.StringArrayOutput { return v.GroupBies }).(pulumi.StringArrayOutput)
 }
@@ -376,7 +376,7 @@ func (o UsageOutput) GroupByTags() UsageGroupByTagArrayOutput {
 	return o.ApplyT(func(v *Usage) UsageGroupByTagArrayOutput { return v.GroupByTags }).(UsageGroupByTagArrayOutput)
 }
 
-// Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
 func (o UsageOutput) IsAggregateByTime() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Usage) pulumi.BoolOutput { return v.IsAggregateByTime }).(pulumi.BoolOutput)
 }

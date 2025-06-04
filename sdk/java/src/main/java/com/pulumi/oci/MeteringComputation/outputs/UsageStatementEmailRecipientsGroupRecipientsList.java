@@ -13,17 +13,17 @@ import javax.annotation.Nullable;
 @CustomType
 public final class UsageStatementEmailRecipientsGroupRecipientsList {
     /**
-     * @return (Updatable) the email of the recipient.
+     * @return (Updatable) The recipient email address.
      * 
      */
     private String emailId;
     /**
-     * @return (Updatable) the first name of the recipient.
+     * @return (Updatable) The recipient first name.
      * 
      */
     private @Nullable String firstName;
     /**
-     * @return (Updatable) the last name of the recipient.
+     * @return (Updatable) The recipient last name.
      * 
      */
     private @Nullable String lastName;
@@ -35,21 +35,21 @@ public final class UsageStatementEmailRecipientsGroupRecipientsList {
 
     private UsageStatementEmailRecipientsGroupRecipientsList() {}
     /**
-     * @return (Updatable) the email of the recipient.
+     * @return (Updatable) The recipient email address.
      * 
      */
     public String emailId() {
         return this.emailId;
     }
     /**
-     * @return (Updatable) the first name of the recipient.
+     * @return (Updatable) The recipient first name.
      * 
      */
     public Optional<String> firstName() {
         return Optional.ofNullable(this.firstName);
     }
     /**
-     * @return (Updatable) the last name of the recipient.
+     * @return (Updatable) The recipient last name.
      * 
      */
     public Optional<String> lastName() {

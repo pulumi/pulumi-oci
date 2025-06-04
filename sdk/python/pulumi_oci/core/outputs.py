@@ -61,6 +61,7 @@ __all__ = [
     'CrossConnectGroupMacsecPropertiesPrimaryKey',
     'CrossConnectMacsecProperties',
     'CrossConnectMacsecPropertiesPrimaryKey',
+    'DedicatedVmHostPlacementConstraintDetails',
     'DefaultDhcpOptionsOption',
     'DefaultRouteTableRouteRule',
     'DefaultSecurityListEgressSecurityRule',
@@ -144,6 +145,7 @@ __all__ = [
     'InstanceLaunchVolumeAttachment',
     'InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetails',
     'InstanceLicensingConfigs',
+    'InstancePlacementConstraintDetails',
     'InstancePlatformConfig',
     'InstancePoolInstanceLoadBalancerBackend',
     'InstancePoolLoadBalancer',
@@ -381,9 +383,11 @@ __all__ = [
     'GetDedicatedVmHostInstanceShapesFilterResult',
     'GetDedicatedVmHostInstancesDedicatedVmHostInstanceResult',
     'GetDedicatedVmHostInstancesFilterResult',
+    'GetDedicatedVmHostPlacementConstraintDetailResult',
     'GetDedicatedVmHostShapesDedicatedVmHostShapeResult',
     'GetDedicatedVmHostShapesFilterResult',
     'GetDedicatedVmHostsDedicatedVmHostResult',
+    'GetDedicatedVmHostsDedicatedVmHostPlacementConstraintDetailResult',
     'GetDedicatedVmHostsFilterResult',
     'GetDhcpOptionsFilterResult',
     'GetDhcpOptionsOptionResult',
@@ -540,6 +544,7 @@ __all__ = [
     'GetInstanceMeasuredBootReportMeasurementResult',
     'GetInstanceMeasuredBootReportMeasurementActualResult',
     'GetInstanceMeasuredBootReportMeasurementPolicyResult',
+    'GetInstancePlacementConstraintDetailResult',
     'GetInstancePlatformConfigResult',
     'GetInstancePoolInstancesFilterResult',
     'GetInstancePoolInstancesInstanceResult',
@@ -575,6 +580,7 @@ __all__ = [
     'GetInstancesInstanceLaunchVolumeAttachmentResult',
     'GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailResult',
     'GetInstancesInstanceLicensingConfigResult',
+    'GetInstancesInstancePlacementConstraintDetailResult',
     'GetInstancesInstancePlatformConfigResult',
     'GetInstancesInstancePreemptibleInstanceConfigResult',
     'GetInstancesInstancePreemptibleInstanceConfigPreemptionActionResult',
@@ -3684,6 +3690,61 @@ class CrossConnectMacsecPropertiesPrimaryKey(dict):
         The secret version of the connectivity association name secret in Vault.
         """
         return pulumi.get(self, "connectivity_association_name_secret_version")
+
+
+@pulumi.output_type
+class DedicatedVmHostPlacementConstraintDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "computeBareMetalHostId":
+            suggest = "compute_bare_metal_host_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DedicatedVmHostPlacementConstraintDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DedicatedVmHostPlacementConstraintDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DedicatedVmHostPlacementConstraintDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: builtins.str,
+                 compute_bare_metal_host_id: Optional[builtins.str] = None):
+        """
+        :param builtins.str type: Determines the type of targeted launch.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param builtins.str compute_bare_metal_host_id: The OCID of the compute bare metal host.
+        """
+        pulumi.set(__self__, "type", type)
+        if compute_bare_metal_host_id is not None:
+            pulumi.set(__self__, "compute_bare_metal_host_id", compute_bare_metal_host_id)
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        Determines the type of targeted launch.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="computeBareMetalHostId")
+    def compute_bare_metal_host_id(self) -> Optional[builtins.str]:
+        """
+        The OCID of the compute bare metal host.
+        """
+        return pulumi.get(self, "compute_bare_metal_host_id")
 
 
 @pulumi.output_type
@@ -11326,6 +11387,67 @@ class InstanceLicensingConfigs(dict):
         The Operating System version of the license config.
         """
         return pulumi.get(self, "os_version")
+
+
+@pulumi.output_type
+class InstancePlacementConstraintDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "computeBareMetalHostId":
+            suggest = "compute_bare_metal_host_id"
+        elif key == "computeHostGroupId":
+            suggest = "compute_host_group_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InstancePlacementConstraintDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InstancePlacementConstraintDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InstancePlacementConstraintDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: builtins.str,
+                 compute_bare_metal_host_id: Optional[builtins.str] = None,
+                 compute_host_group_id: Optional[builtins.str] = None):
+        """
+        :param builtins.str type: Determines the type of targeted launch.
+        :param builtins.str compute_bare_metal_host_id: The OCID of the compute bare metal host.
+        :param builtins.str compute_host_group_id: The OCID of the compute host group.
+        """
+        pulumi.set(__self__, "type", type)
+        if compute_bare_metal_host_id is not None:
+            pulumi.set(__self__, "compute_bare_metal_host_id", compute_bare_metal_host_id)
+        if compute_host_group_id is not None:
+            pulumi.set(__self__, "compute_host_group_id", compute_host_group_id)
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        Determines the type of targeted launch.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="computeBareMetalHostId")
+    def compute_bare_metal_host_id(self) -> Optional[builtins.str]:
+        """
+        The OCID of the compute bare metal host.
+        """
+        return pulumi.get(self, "compute_bare_metal_host_id")
+
+    @property
+    @pulumi.getter(name="computeHostGroupId")
+    def compute_host_group_id(self) -> Optional[builtins.str]:
+        """
+        The OCID of the compute host group.
+        """
+        return pulumi.get(self, "compute_host_group_id")
 
 
 @pulumi.output_type
@@ -25552,6 +25674,35 @@ class GetDedicatedVmHostInstancesFilterResult(dict):
 
 
 @pulumi.output_type
+class GetDedicatedVmHostPlacementConstraintDetailResult(dict):
+    def __init__(__self__, *,
+                 compute_bare_metal_host_id: builtins.str,
+                 type: builtins.str):
+        """
+        :param builtins.str compute_bare_metal_host_id: The OCID of the compute bare metal host.
+        :param builtins.str type: Determines the type of targeted launch.
+        """
+        pulumi.set(__self__, "compute_bare_metal_host_id", compute_bare_metal_host_id)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="computeBareMetalHostId")
+    def compute_bare_metal_host_id(self) -> builtins.str:
+        """
+        The OCID of the compute bare metal host.
+        """
+        return pulumi.get(self, "compute_bare_metal_host_id")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        Determines the type of targeted launch.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
 class GetDedicatedVmHostShapesDedicatedVmHostShapeResult(dict):
     def __init__(__self__, *,
                  availability_domain: builtins.str,
@@ -25618,6 +25769,7 @@ class GetDedicatedVmHostsDedicatedVmHostResult(dict):
                  fault_domain: builtins.str,
                  freeform_tags: Mapping[str, builtins.str],
                  id: builtins.str,
+                 placement_constraint_details: Sequence['outputs.GetDedicatedVmHostsDedicatedVmHostPlacementConstraintDetailResult'],
                  remaining_memory_in_gbs: builtins.float,
                  remaining_ocpus: builtins.float,
                  state: builtins.str,
@@ -25633,6 +25785,7 @@ class GetDedicatedVmHostsDedicatedVmHostResult(dict):
         :param builtins.str fault_domain: The fault domain for the dedicated virtual machine host's assigned instances. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault).
         :param Mapping[str, builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated VM host.
+        :param Sequence['GetDedicatedVmHostsDedicatedVmHostPlacementConstraintDetailArgs'] placement_constraint_details: Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
         :param builtins.float remaining_memory_in_gbs: The current available memory of the dedicated VM host, in GBs.
         :param builtins.float remaining_ocpus: The current available OCPUs of the dedicated VM host.
         :param builtins.str state: A filter to only return resources that match the given lifecycle state.
@@ -25648,6 +25801,7 @@ class GetDedicatedVmHostsDedicatedVmHostResult(dict):
         pulumi.set(__self__, "fault_domain", fault_domain)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "placement_constraint_details", placement_constraint_details)
         pulumi.set(__self__, "remaining_memory_in_gbs", remaining_memory_in_gbs)
         pulumi.set(__self__, "remaining_ocpus", remaining_ocpus)
         pulumi.set(__self__, "state", state)
@@ -25720,6 +25874,14 @@ class GetDedicatedVmHostsDedicatedVmHostResult(dict):
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="placementConstraintDetails")
+    def placement_constraint_details(self) -> Sequence['outputs.GetDedicatedVmHostsDedicatedVmHostPlacementConstraintDetailResult']:
+        """
+        Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+        """
+        return pulumi.get(self, "placement_constraint_details")
+
+    @property
     @pulumi.getter(name="remainingMemoryInGbs")
     def remaining_memory_in_gbs(self) -> builtins.float:
         """
@@ -25766,6 +25928,35 @@ class GetDedicatedVmHostsDedicatedVmHostResult(dict):
         The current total OCPUs of the dedicated VM host.
         """
         return pulumi.get(self, "total_ocpus")
+
+
+@pulumi.output_type
+class GetDedicatedVmHostsDedicatedVmHostPlacementConstraintDetailResult(dict):
+    def __init__(__self__, *,
+                 compute_bare_metal_host_id: builtins.str,
+                 type: builtins.str):
+        """
+        :param builtins.str compute_bare_metal_host_id: The OCID of the compute bare metal host.
+        :param builtins.str type: Determines the type of targeted launch.
+        """
+        pulumi.set(__self__, "compute_bare_metal_host_id", compute_bare_metal_host_id)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="computeBareMetalHostId")
+    def compute_bare_metal_host_id(self) -> builtins.str:
+        """
+        The OCID of the compute bare metal host.
+        """
+        return pulumi.get(self, "compute_bare_metal_host_id")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        Determines the type of targeted launch.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -36509,6 +36700,46 @@ class GetInstanceMeasuredBootReportMeasurementPolicyResult(dict):
 
 
 @pulumi.output_type
+class GetInstancePlacementConstraintDetailResult(dict):
+    def __init__(__self__, *,
+                 compute_bare_metal_host_id: builtins.str,
+                 compute_host_group_id: builtins.str,
+                 type: builtins.str):
+        """
+        :param builtins.str compute_bare_metal_host_id: The OCID of the compute bare metal host.
+        :param builtins.str compute_host_group_id: The OCID of the compute host group.
+        :param builtins.str type: (Required) The type of action to run when the instance is interrupted for eviction.
+        """
+        pulumi.set(__self__, "compute_bare_metal_host_id", compute_bare_metal_host_id)
+        pulumi.set(__self__, "compute_host_group_id", compute_host_group_id)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="computeBareMetalHostId")
+    def compute_bare_metal_host_id(self) -> builtins.str:
+        """
+        The OCID of the compute bare metal host.
+        """
+        return pulumi.get(self, "compute_bare_metal_host_id")
+
+    @property
+    @pulumi.getter(name="computeHostGroupId")
+    def compute_host_group_id(self) -> builtins.str:
+        """
+        The OCID of the compute host group.
+        """
+        return pulumi.get(self, "compute_host_group_id")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        (Required) The type of action to run when the instance is interrupted for eviction.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
 class GetInstancePlatformConfigResult(dict):
     def __init__(__self__, *,
                  are_virtual_instructions_enabled: builtins.bool,
@@ -38015,6 +38246,7 @@ class GetInstancesInstanceResult(dict):
                  launch_volume_attachments: Sequence['outputs.GetInstancesInstanceLaunchVolumeAttachmentResult'],
                  licensing_configs: Sequence['outputs.GetInstancesInstanceLicensingConfigResult'],
                  metadata: Mapping[str, builtins.str],
+                 placement_constraint_details: Sequence['outputs.GetInstancesInstancePlacementConstraintDetailResult'],
                  platform_configs: Sequence['outputs.GetInstancesInstancePlatformConfigResult'],
                  preemptible_instance_configs: Sequence['outputs.GetInstancesInstancePreemptibleInstanceConfigResult'],
                  preserve_boot_volume: builtins.bool,
@@ -38063,6 +38295,7 @@ class GetInstancesInstanceResult(dict):
         :param Sequence['GetInstancesInstanceLaunchOptionArgs'] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param Sequence['GetInstancesInstanceLicensingConfigArgs'] licensing_configs: List of licensing configurations associated with the instance.
         :param Mapping[str, builtins.str] metadata: Custom metadata that you provide.
+        :param Sequence['GetInstancesInstancePlacementConstraintDetailArgs'] placement_constraint_details: Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
         :param Sequence['GetInstancesInstancePlatformConfigArgs'] platform_configs: The platform configuration for the instance.
         :param Sequence['GetInstancesInstancePreemptibleInstanceConfigArgs'] preemptible_instance_configs: (Optional) Configuration options for preemptible instances.
         :param builtins.bool preserve_boot_volume: (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
@@ -38105,6 +38338,7 @@ class GetInstancesInstanceResult(dict):
         pulumi.set(__self__, "launch_volume_attachments", launch_volume_attachments)
         pulumi.set(__self__, "licensing_configs", licensing_configs)
         pulumi.set(__self__, "metadata", metadata)
+        pulumi.set(__self__, "placement_constraint_details", placement_constraint_details)
         pulumi.set(__self__, "platform_configs", platform_configs)
         pulumi.set(__self__, "preemptible_instance_configs", preemptible_instance_configs)
         pulumi.set(__self__, "preserve_boot_volume", preserve_boot_volume)
@@ -38349,6 +38583,14 @@ class GetInstancesInstanceResult(dict):
         Custom metadata that you provide.
         """
         return pulumi.get(self, "metadata")
+
+    @property
+    @pulumi.getter(name="placementConstraintDetails")
+    def placement_constraint_details(self) -> Sequence['outputs.GetInstancesInstancePlacementConstraintDetailResult']:
+        """
+        Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+        """
+        return pulumi.get(self, "placement_constraint_details")
 
     @property
     @pulumi.getter(name="platformConfigs")
@@ -39043,6 +39285,46 @@ class GetInstancesInstanceLicensingConfigResult(dict):
         The Operating System version of the license config.
         """
         return pulumi.get(self, "os_version")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        (Required) The type of action to run when the instance is interrupted for eviction.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetInstancesInstancePlacementConstraintDetailResult(dict):
+    def __init__(__self__, *,
+                 compute_bare_metal_host_id: builtins.str,
+                 compute_host_group_id: builtins.str,
+                 type: builtins.str):
+        """
+        :param builtins.str compute_bare_metal_host_id: The OCID of the compute bare metal host.
+        :param builtins.str compute_host_group_id: The OCID of the compute host group.
+        :param builtins.str type: (Required) The type of action to run when the instance is interrupted for eviction.
+        """
+        pulumi.set(__self__, "compute_bare_metal_host_id", compute_bare_metal_host_id)
+        pulumi.set(__self__, "compute_host_group_id", compute_host_group_id)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="computeBareMetalHostId")
+    def compute_bare_metal_host_id(self) -> builtins.str:
+        """
+        The OCID of the compute bare metal host.
+        """
+        return pulumi.get(self, "compute_bare_metal_host_id")
+
+    @property
+    @pulumi.getter(name="computeHostGroupId")
+    def compute_host_group_id(self) -> builtins.str:
+        """
+        The OCID of the compute host group.
+        """
+        return pulumi.get(self, "compute_host_group_id")
 
     @property
     @pulumi.getter

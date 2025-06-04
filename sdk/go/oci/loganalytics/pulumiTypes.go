@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -1124,6 +1124,529 @@ func (o NamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutput) Index(i
 	}).(NamespaceIngestTimeRuleConditionsAdditionalConditionOutput)
 }
 
+type NamespaceLookupCategory struct {
+	// (Updatable) The category description.
+	Description *string `pulumi:"description"`
+	// (Updatable) The category display name.
+	DisplayName *string `pulumi:"displayName"`
+	// (Updatable) The system flag. A value of false denotes a user-created category. A value of true denotes an Oracle-defined category.
+	IsSystem *bool `pulumi:"isSystem"`
+	// (Updatable) The unique name that identifies the category.
+	Name *string `pulumi:"name"`
+	// (Updatable) The category type. Values include "PRODUCT", "TIER", "VENDOR" and "GENERIC".
+	Type *string `pulumi:"type"`
+}
+
+// NamespaceLookupCategoryInput is an input type that accepts NamespaceLookupCategoryArgs and NamespaceLookupCategoryOutput values.
+// You can construct a concrete instance of `NamespaceLookupCategoryInput` via:
+//
+//	NamespaceLookupCategoryArgs{...}
+type NamespaceLookupCategoryInput interface {
+	pulumi.Input
+
+	ToNamespaceLookupCategoryOutput() NamespaceLookupCategoryOutput
+	ToNamespaceLookupCategoryOutputWithContext(context.Context) NamespaceLookupCategoryOutput
+}
+
+type NamespaceLookupCategoryArgs struct {
+	// (Updatable) The category description.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// (Updatable) The category display name.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// (Updatable) The system flag. A value of false denotes a user-created category. A value of true denotes an Oracle-defined category.
+	IsSystem pulumi.BoolPtrInput `pulumi:"isSystem"`
+	// (Updatable) The unique name that identifies the category.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// (Updatable) The category type. Values include "PRODUCT", "TIER", "VENDOR" and "GENERIC".
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (NamespaceLookupCategoryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NamespaceLookupCategory)(nil)).Elem()
+}
+
+func (i NamespaceLookupCategoryArgs) ToNamespaceLookupCategoryOutput() NamespaceLookupCategoryOutput {
+	return i.ToNamespaceLookupCategoryOutputWithContext(context.Background())
+}
+
+func (i NamespaceLookupCategoryArgs) ToNamespaceLookupCategoryOutputWithContext(ctx context.Context) NamespaceLookupCategoryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NamespaceLookupCategoryOutput)
+}
+
+// NamespaceLookupCategoryArrayInput is an input type that accepts NamespaceLookupCategoryArray and NamespaceLookupCategoryArrayOutput values.
+// You can construct a concrete instance of `NamespaceLookupCategoryArrayInput` via:
+//
+//	NamespaceLookupCategoryArray{ NamespaceLookupCategoryArgs{...} }
+type NamespaceLookupCategoryArrayInput interface {
+	pulumi.Input
+
+	ToNamespaceLookupCategoryArrayOutput() NamespaceLookupCategoryArrayOutput
+	ToNamespaceLookupCategoryArrayOutputWithContext(context.Context) NamespaceLookupCategoryArrayOutput
+}
+
+type NamespaceLookupCategoryArray []NamespaceLookupCategoryInput
+
+func (NamespaceLookupCategoryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NamespaceLookupCategory)(nil)).Elem()
+}
+
+func (i NamespaceLookupCategoryArray) ToNamespaceLookupCategoryArrayOutput() NamespaceLookupCategoryArrayOutput {
+	return i.ToNamespaceLookupCategoryArrayOutputWithContext(context.Background())
+}
+
+func (i NamespaceLookupCategoryArray) ToNamespaceLookupCategoryArrayOutputWithContext(ctx context.Context) NamespaceLookupCategoryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NamespaceLookupCategoryArrayOutput)
+}
+
+type NamespaceLookupCategoryOutput struct{ *pulumi.OutputState }
+
+func (NamespaceLookupCategoryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NamespaceLookupCategory)(nil)).Elem()
+}
+
+func (o NamespaceLookupCategoryOutput) ToNamespaceLookupCategoryOutput() NamespaceLookupCategoryOutput {
+	return o
+}
+
+func (o NamespaceLookupCategoryOutput) ToNamespaceLookupCategoryOutputWithContext(ctx context.Context) NamespaceLookupCategoryOutput {
+	return o
+}
+
+// (Updatable) The category description.
+func (o NamespaceLookupCategoryOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NamespaceLookupCategory) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The category display name.
+func (o NamespaceLookupCategoryOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NamespaceLookupCategory) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The system flag. A value of false denotes a user-created category. A value of true denotes an Oracle-defined category.
+func (o NamespaceLookupCategoryOutput) IsSystem() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v NamespaceLookupCategory) *bool { return v.IsSystem }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The unique name that identifies the category.
+func (o NamespaceLookupCategoryOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NamespaceLookupCategory) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The category type. Values include "PRODUCT", "TIER", "VENDOR" and "GENERIC".
+func (o NamespaceLookupCategoryOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NamespaceLookupCategory) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type NamespaceLookupCategoryArrayOutput struct{ *pulumi.OutputState }
+
+func (NamespaceLookupCategoryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NamespaceLookupCategory)(nil)).Elem()
+}
+
+func (o NamespaceLookupCategoryArrayOutput) ToNamespaceLookupCategoryArrayOutput() NamespaceLookupCategoryArrayOutput {
+	return o
+}
+
+func (o NamespaceLookupCategoryArrayOutput) ToNamespaceLookupCategoryArrayOutputWithContext(ctx context.Context) NamespaceLookupCategoryArrayOutput {
+	return o
+}
+
+func (o NamespaceLookupCategoryArrayOutput) Index(i pulumi.IntInput) NamespaceLookupCategoryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NamespaceLookupCategory {
+		return vs[0].([]NamespaceLookupCategory)[vs[1].(int)]
+	}).(NamespaceLookupCategoryOutput)
+}
+
+type NamespaceLookupField struct {
+	// (Updatable) The common field name.
+	CommonFieldName *string `pulumi:"commonFieldName"`
+	// (Updatable) The default match value.
+	DefaultMatchValue *string `pulumi:"defaultMatchValue"`
+	// (Updatable) The display name.
+	DisplayName *string `pulumi:"displayName"`
+	// (Updatable) A flag indicating whether or not the field is a common field.
+	IsCommonField *bool `pulumi:"isCommonField"`
+	// (Updatable) The match operator.
+	MatchOperator *string `pulumi:"matchOperator"`
+	// (Updatable) The field name.
+	Name *string `pulumi:"name"`
+	// (Updatable) The position.
+	Position *string `pulumi:"position"`
+}
+
+// NamespaceLookupFieldInput is an input type that accepts NamespaceLookupFieldArgs and NamespaceLookupFieldOutput values.
+// You can construct a concrete instance of `NamespaceLookupFieldInput` via:
+//
+//	NamespaceLookupFieldArgs{...}
+type NamespaceLookupFieldInput interface {
+	pulumi.Input
+
+	ToNamespaceLookupFieldOutput() NamespaceLookupFieldOutput
+	ToNamespaceLookupFieldOutputWithContext(context.Context) NamespaceLookupFieldOutput
+}
+
+type NamespaceLookupFieldArgs struct {
+	// (Updatable) The common field name.
+	CommonFieldName pulumi.StringPtrInput `pulumi:"commonFieldName"`
+	// (Updatable) The default match value.
+	DefaultMatchValue pulumi.StringPtrInput `pulumi:"defaultMatchValue"`
+	// (Updatable) The display name.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// (Updatable) A flag indicating whether or not the field is a common field.
+	IsCommonField pulumi.BoolPtrInput `pulumi:"isCommonField"`
+	// (Updatable) The match operator.
+	MatchOperator pulumi.StringPtrInput `pulumi:"matchOperator"`
+	// (Updatable) The field name.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// (Updatable) The position.
+	Position pulumi.StringPtrInput `pulumi:"position"`
+}
+
+func (NamespaceLookupFieldArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NamespaceLookupField)(nil)).Elem()
+}
+
+func (i NamespaceLookupFieldArgs) ToNamespaceLookupFieldOutput() NamespaceLookupFieldOutput {
+	return i.ToNamespaceLookupFieldOutputWithContext(context.Background())
+}
+
+func (i NamespaceLookupFieldArgs) ToNamespaceLookupFieldOutputWithContext(ctx context.Context) NamespaceLookupFieldOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NamespaceLookupFieldOutput)
+}
+
+// NamespaceLookupFieldArrayInput is an input type that accepts NamespaceLookupFieldArray and NamespaceLookupFieldArrayOutput values.
+// You can construct a concrete instance of `NamespaceLookupFieldArrayInput` via:
+//
+//	NamespaceLookupFieldArray{ NamespaceLookupFieldArgs{...} }
+type NamespaceLookupFieldArrayInput interface {
+	pulumi.Input
+
+	ToNamespaceLookupFieldArrayOutput() NamespaceLookupFieldArrayOutput
+	ToNamespaceLookupFieldArrayOutputWithContext(context.Context) NamespaceLookupFieldArrayOutput
+}
+
+type NamespaceLookupFieldArray []NamespaceLookupFieldInput
+
+func (NamespaceLookupFieldArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NamespaceLookupField)(nil)).Elem()
+}
+
+func (i NamespaceLookupFieldArray) ToNamespaceLookupFieldArrayOutput() NamespaceLookupFieldArrayOutput {
+	return i.ToNamespaceLookupFieldArrayOutputWithContext(context.Background())
+}
+
+func (i NamespaceLookupFieldArray) ToNamespaceLookupFieldArrayOutputWithContext(ctx context.Context) NamespaceLookupFieldArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NamespaceLookupFieldArrayOutput)
+}
+
+type NamespaceLookupFieldOutput struct{ *pulumi.OutputState }
+
+func (NamespaceLookupFieldOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NamespaceLookupField)(nil)).Elem()
+}
+
+func (o NamespaceLookupFieldOutput) ToNamespaceLookupFieldOutput() NamespaceLookupFieldOutput {
+	return o
+}
+
+func (o NamespaceLookupFieldOutput) ToNamespaceLookupFieldOutputWithContext(ctx context.Context) NamespaceLookupFieldOutput {
+	return o
+}
+
+// (Updatable) The common field name.
+func (o NamespaceLookupFieldOutput) CommonFieldName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NamespaceLookupField) *string { return v.CommonFieldName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The default match value.
+func (o NamespaceLookupFieldOutput) DefaultMatchValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NamespaceLookupField) *string { return v.DefaultMatchValue }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The display name.
+func (o NamespaceLookupFieldOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NamespaceLookupField) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) A flag indicating whether or not the field is a common field.
+func (o NamespaceLookupFieldOutput) IsCommonField() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v NamespaceLookupField) *bool { return v.IsCommonField }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The match operator.
+func (o NamespaceLookupFieldOutput) MatchOperator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NamespaceLookupField) *string { return v.MatchOperator }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The field name.
+func (o NamespaceLookupFieldOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NamespaceLookupField) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The position.
+func (o NamespaceLookupFieldOutput) Position() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NamespaceLookupField) *string { return v.Position }).(pulumi.StringPtrOutput)
+}
+
+type NamespaceLookupFieldArrayOutput struct{ *pulumi.OutputState }
+
+func (NamespaceLookupFieldArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NamespaceLookupField)(nil)).Elem()
+}
+
+func (o NamespaceLookupFieldArrayOutput) ToNamespaceLookupFieldArrayOutput() NamespaceLookupFieldArrayOutput {
+	return o
+}
+
+func (o NamespaceLookupFieldArrayOutput) ToNamespaceLookupFieldArrayOutputWithContext(ctx context.Context) NamespaceLookupFieldArrayOutput {
+	return o
+}
+
+func (o NamespaceLookupFieldArrayOutput) Index(i pulumi.IntInput) NamespaceLookupFieldOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NamespaceLookupField {
+		return vs[0].([]NamespaceLookupField)[vs[1].(int)]
+	}).(NamespaceLookupFieldOutput)
+}
+
+type NamespaceLookupReferringSource struct {
+	// The canonical link.
+	CanonicalLink *string `pulumi:"canonicalLink"`
+	// The total count.
+	TotalCount *string `pulumi:"totalCount"`
+}
+
+// NamespaceLookupReferringSourceInput is an input type that accepts NamespaceLookupReferringSourceArgs and NamespaceLookupReferringSourceOutput values.
+// You can construct a concrete instance of `NamespaceLookupReferringSourceInput` via:
+//
+//	NamespaceLookupReferringSourceArgs{...}
+type NamespaceLookupReferringSourceInput interface {
+	pulumi.Input
+
+	ToNamespaceLookupReferringSourceOutput() NamespaceLookupReferringSourceOutput
+	ToNamespaceLookupReferringSourceOutputWithContext(context.Context) NamespaceLookupReferringSourceOutput
+}
+
+type NamespaceLookupReferringSourceArgs struct {
+	// The canonical link.
+	CanonicalLink pulumi.StringPtrInput `pulumi:"canonicalLink"`
+	// The total count.
+	TotalCount pulumi.StringPtrInput `pulumi:"totalCount"`
+}
+
+func (NamespaceLookupReferringSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NamespaceLookupReferringSource)(nil)).Elem()
+}
+
+func (i NamespaceLookupReferringSourceArgs) ToNamespaceLookupReferringSourceOutput() NamespaceLookupReferringSourceOutput {
+	return i.ToNamespaceLookupReferringSourceOutputWithContext(context.Background())
+}
+
+func (i NamespaceLookupReferringSourceArgs) ToNamespaceLookupReferringSourceOutputWithContext(ctx context.Context) NamespaceLookupReferringSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NamespaceLookupReferringSourceOutput)
+}
+
+// NamespaceLookupReferringSourceArrayInput is an input type that accepts NamespaceLookupReferringSourceArray and NamespaceLookupReferringSourceArrayOutput values.
+// You can construct a concrete instance of `NamespaceLookupReferringSourceArrayInput` via:
+//
+//	NamespaceLookupReferringSourceArray{ NamespaceLookupReferringSourceArgs{...} }
+type NamespaceLookupReferringSourceArrayInput interface {
+	pulumi.Input
+
+	ToNamespaceLookupReferringSourceArrayOutput() NamespaceLookupReferringSourceArrayOutput
+	ToNamespaceLookupReferringSourceArrayOutputWithContext(context.Context) NamespaceLookupReferringSourceArrayOutput
+}
+
+type NamespaceLookupReferringSourceArray []NamespaceLookupReferringSourceInput
+
+func (NamespaceLookupReferringSourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NamespaceLookupReferringSource)(nil)).Elem()
+}
+
+func (i NamespaceLookupReferringSourceArray) ToNamespaceLookupReferringSourceArrayOutput() NamespaceLookupReferringSourceArrayOutput {
+	return i.ToNamespaceLookupReferringSourceArrayOutputWithContext(context.Background())
+}
+
+func (i NamespaceLookupReferringSourceArray) ToNamespaceLookupReferringSourceArrayOutputWithContext(ctx context.Context) NamespaceLookupReferringSourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NamespaceLookupReferringSourceArrayOutput)
+}
+
+type NamespaceLookupReferringSourceOutput struct{ *pulumi.OutputState }
+
+func (NamespaceLookupReferringSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NamespaceLookupReferringSource)(nil)).Elem()
+}
+
+func (o NamespaceLookupReferringSourceOutput) ToNamespaceLookupReferringSourceOutput() NamespaceLookupReferringSourceOutput {
+	return o
+}
+
+func (o NamespaceLookupReferringSourceOutput) ToNamespaceLookupReferringSourceOutputWithContext(ctx context.Context) NamespaceLookupReferringSourceOutput {
+	return o
+}
+
+// The canonical link.
+func (o NamespaceLookupReferringSourceOutput) CanonicalLink() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NamespaceLookupReferringSource) *string { return v.CanonicalLink }).(pulumi.StringPtrOutput)
+}
+
+// The total count.
+func (o NamespaceLookupReferringSourceOutput) TotalCount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NamespaceLookupReferringSource) *string { return v.TotalCount }).(pulumi.StringPtrOutput)
+}
+
+type NamespaceLookupReferringSourceArrayOutput struct{ *pulumi.OutputState }
+
+func (NamespaceLookupReferringSourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NamespaceLookupReferringSource)(nil)).Elem()
+}
+
+func (o NamespaceLookupReferringSourceArrayOutput) ToNamespaceLookupReferringSourceArrayOutput() NamespaceLookupReferringSourceArrayOutput {
+	return o
+}
+
+func (o NamespaceLookupReferringSourceArrayOutput) ToNamespaceLookupReferringSourceArrayOutputWithContext(ctx context.Context) NamespaceLookupReferringSourceArrayOutput {
+	return o
+}
+
+func (o NamespaceLookupReferringSourceArrayOutput) Index(i pulumi.IntInput) NamespaceLookupReferringSourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NamespaceLookupReferringSource {
+		return vs[0].([]NamespaceLookupReferringSource)[vs[1].(int)]
+	}).(NamespaceLookupReferringSourceOutput)
+}
+
+type NamespaceLookupStatusSummary struct {
+	// The number of chunks processed.
+	ChunksProcessed *string `pulumi:"chunksProcessed"`
+	// The failure details, if any.
+	FailureDetails *string `pulumi:"failureDetails"`
+	// The filename.
+	Filename *string `pulumi:"filename"`
+	// The status.
+	Status *string `pulumi:"status"`
+	// The total number of chunks.
+	TotalChunks *string `pulumi:"totalChunks"`
+}
+
+// NamespaceLookupStatusSummaryInput is an input type that accepts NamespaceLookupStatusSummaryArgs and NamespaceLookupStatusSummaryOutput values.
+// You can construct a concrete instance of `NamespaceLookupStatusSummaryInput` via:
+//
+//	NamespaceLookupStatusSummaryArgs{...}
+type NamespaceLookupStatusSummaryInput interface {
+	pulumi.Input
+
+	ToNamespaceLookupStatusSummaryOutput() NamespaceLookupStatusSummaryOutput
+	ToNamespaceLookupStatusSummaryOutputWithContext(context.Context) NamespaceLookupStatusSummaryOutput
+}
+
+type NamespaceLookupStatusSummaryArgs struct {
+	// The number of chunks processed.
+	ChunksProcessed pulumi.StringPtrInput `pulumi:"chunksProcessed"`
+	// The failure details, if any.
+	FailureDetails pulumi.StringPtrInput `pulumi:"failureDetails"`
+	// The filename.
+	Filename pulumi.StringPtrInput `pulumi:"filename"`
+	// The status.
+	Status pulumi.StringPtrInput `pulumi:"status"`
+	// The total number of chunks.
+	TotalChunks pulumi.StringPtrInput `pulumi:"totalChunks"`
+}
+
+func (NamespaceLookupStatusSummaryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NamespaceLookupStatusSummary)(nil)).Elem()
+}
+
+func (i NamespaceLookupStatusSummaryArgs) ToNamespaceLookupStatusSummaryOutput() NamespaceLookupStatusSummaryOutput {
+	return i.ToNamespaceLookupStatusSummaryOutputWithContext(context.Background())
+}
+
+func (i NamespaceLookupStatusSummaryArgs) ToNamespaceLookupStatusSummaryOutputWithContext(ctx context.Context) NamespaceLookupStatusSummaryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NamespaceLookupStatusSummaryOutput)
+}
+
+// NamespaceLookupStatusSummaryArrayInput is an input type that accepts NamespaceLookupStatusSummaryArray and NamespaceLookupStatusSummaryArrayOutput values.
+// You can construct a concrete instance of `NamespaceLookupStatusSummaryArrayInput` via:
+//
+//	NamespaceLookupStatusSummaryArray{ NamespaceLookupStatusSummaryArgs{...} }
+type NamespaceLookupStatusSummaryArrayInput interface {
+	pulumi.Input
+
+	ToNamespaceLookupStatusSummaryArrayOutput() NamespaceLookupStatusSummaryArrayOutput
+	ToNamespaceLookupStatusSummaryArrayOutputWithContext(context.Context) NamespaceLookupStatusSummaryArrayOutput
+}
+
+type NamespaceLookupStatusSummaryArray []NamespaceLookupStatusSummaryInput
+
+func (NamespaceLookupStatusSummaryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NamespaceLookupStatusSummary)(nil)).Elem()
+}
+
+func (i NamespaceLookupStatusSummaryArray) ToNamespaceLookupStatusSummaryArrayOutput() NamespaceLookupStatusSummaryArrayOutput {
+	return i.ToNamespaceLookupStatusSummaryArrayOutputWithContext(context.Background())
+}
+
+func (i NamespaceLookupStatusSummaryArray) ToNamespaceLookupStatusSummaryArrayOutputWithContext(ctx context.Context) NamespaceLookupStatusSummaryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NamespaceLookupStatusSummaryArrayOutput)
+}
+
+type NamespaceLookupStatusSummaryOutput struct{ *pulumi.OutputState }
+
+func (NamespaceLookupStatusSummaryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NamespaceLookupStatusSummary)(nil)).Elem()
+}
+
+func (o NamespaceLookupStatusSummaryOutput) ToNamespaceLookupStatusSummaryOutput() NamespaceLookupStatusSummaryOutput {
+	return o
+}
+
+func (o NamespaceLookupStatusSummaryOutput) ToNamespaceLookupStatusSummaryOutputWithContext(ctx context.Context) NamespaceLookupStatusSummaryOutput {
+	return o
+}
+
+// The number of chunks processed.
+func (o NamespaceLookupStatusSummaryOutput) ChunksProcessed() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NamespaceLookupStatusSummary) *string { return v.ChunksProcessed }).(pulumi.StringPtrOutput)
+}
+
+// The failure details, if any.
+func (o NamespaceLookupStatusSummaryOutput) FailureDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NamespaceLookupStatusSummary) *string { return v.FailureDetails }).(pulumi.StringPtrOutput)
+}
+
+// The filename.
+func (o NamespaceLookupStatusSummaryOutput) Filename() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NamespaceLookupStatusSummary) *string { return v.Filename }).(pulumi.StringPtrOutput)
+}
+
+// The status.
+func (o NamespaceLookupStatusSummaryOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NamespaceLookupStatusSummary) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+// The total number of chunks.
+func (o NamespaceLookupStatusSummaryOutput) TotalChunks() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NamespaceLookupStatusSummary) *string { return v.TotalChunks }).(pulumi.StringPtrOutput)
+}
+
+type NamespaceLookupStatusSummaryArrayOutput struct{ *pulumi.OutputState }
+
+func (NamespaceLookupStatusSummaryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NamespaceLookupStatusSummary)(nil)).Elem()
+}
+
+func (o NamespaceLookupStatusSummaryArrayOutput) ToNamespaceLookupStatusSummaryArrayOutput() NamespaceLookupStatusSummaryArrayOutput {
+	return o
+}
+
+func (o NamespaceLookupStatusSummaryArrayOutput) ToNamespaceLookupStatusSummaryArrayOutputWithContext(ctx context.Context) NamespaceLookupStatusSummaryArrayOutput {
+	return o
+}
+
+func (o NamespaceLookupStatusSummaryArrayOutput) Index(i pulumi.IntInput) NamespaceLookupStatusSummaryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NamespaceLookupStatusSummary {
+		return vs[0].([]NamespaceLookupStatusSummary)[vs[1].(int)]
+	}).(NamespaceLookupStatusSummaryOutput)
+}
+
 type NamespaceScheduledTaskAction struct {
 	// if true, purge child compartments data
 	CompartmentIdInSubtree *bool `pulumi:"compartmentIdInSubtree"`
@@ -1137,8 +1660,10 @@ type NamespaceScheduledTaskAction struct {
 	PurgeDuration *string `pulumi:"purgeDuration"`
 	// Purge query string.
 	QueryString *string `pulumi:"queryString"`
-	// The ManagementSavedSearch id [OCID] utilized in the action.
+	// The ManagementSavedSearch id [OCID] utilized in the action.  Should not be provided when a template ID is present.
 	SavedSearchId *string `pulumi:"savedSearchId"`
+	// details for scheduled task using template
+	TemplateDetails *NamespaceScheduledTaskActionTemplateDetails `pulumi:"templateDetails"`
 	// Action type discriminator.
 	Type string `pulumi:"type"`
 }
@@ -1167,8 +1692,10 @@ type NamespaceScheduledTaskActionArgs struct {
 	PurgeDuration pulumi.StringPtrInput `pulumi:"purgeDuration"`
 	// Purge query string.
 	QueryString pulumi.StringPtrInput `pulumi:"queryString"`
-	// The ManagementSavedSearch id [OCID] utilized in the action.
+	// The ManagementSavedSearch id [OCID] utilized in the action.  Should not be provided when a template ID is present.
 	SavedSearchId pulumi.StringPtrInput `pulumi:"savedSearchId"`
+	// details for scheduled task using template
+	TemplateDetails NamespaceScheduledTaskActionTemplateDetailsPtrInput `pulumi:"templateDetails"`
 	// Action type discriminator.
 	Type pulumi.StringInput `pulumi:"type"`
 }
@@ -1282,9 +1809,16 @@ func (o NamespaceScheduledTaskActionOutput) QueryString() pulumi.StringPtrOutput
 	return o.ApplyT(func(v NamespaceScheduledTaskAction) *string { return v.QueryString }).(pulumi.StringPtrOutput)
 }
 
-// The ManagementSavedSearch id [OCID] utilized in the action.
+// The ManagementSavedSearch id [OCID] utilized in the action.  Should not be provided when a template ID is present.
 func (o NamespaceScheduledTaskActionOutput) SavedSearchId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NamespaceScheduledTaskAction) *string { return v.SavedSearchId }).(pulumi.StringPtrOutput)
+}
+
+// details for scheduled task using template
+func (o NamespaceScheduledTaskActionOutput) TemplateDetails() NamespaceScheduledTaskActionTemplateDetailsPtrOutput {
+	return o.ApplyT(func(v NamespaceScheduledTaskAction) *NamespaceScheduledTaskActionTemplateDetails {
+		return v.TemplateDetails
+	}).(NamespaceScheduledTaskActionTemplateDetailsPtrOutput)
 }
 
 // Action type discriminator.
@@ -1376,7 +1910,7 @@ func (o NamespaceScheduledTaskActionPtrOutput) QueryString() pulumi.StringPtrOut
 	}).(pulumi.StringPtrOutput)
 }
 
-// The ManagementSavedSearch id [OCID] utilized in the action.
+// The ManagementSavedSearch id [OCID] utilized in the action.  Should not be provided when a template ID is present.
 func (o NamespaceScheduledTaskActionPtrOutput) SavedSearchId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NamespaceScheduledTaskAction) *string {
 		if v == nil {
@@ -1384,6 +1918,16 @@ func (o NamespaceScheduledTaskActionPtrOutput) SavedSearchId() pulumi.StringPtrO
 		}
 		return v.SavedSearchId
 	}).(pulumi.StringPtrOutput)
+}
+
+// details for scheduled task using template
+func (o NamespaceScheduledTaskActionPtrOutput) TemplateDetails() NamespaceScheduledTaskActionTemplateDetailsPtrOutput {
+	return o.ApplyT(func(v *NamespaceScheduledTaskAction) *NamespaceScheduledTaskActionTemplateDetails {
+		if v == nil {
+			return nil
+		}
+		return v.TemplateDetails
+	}).(NamespaceScheduledTaskActionTemplateDetailsPtrOutput)
 }
 
 // Action type discriminator.
@@ -1588,6 +2132,270 @@ func (o NamespaceScheduledTaskActionMetricExtractionPtrOutput) ResourceGroup() p
 		}
 		return v.ResourceGroup
 	}).(pulumi.StringPtrOutput)
+}
+
+type NamespaceScheduledTaskActionTemplateDetails struct {
+	// The template Id of a particular template.  Should not be provided when a saved search ID is present.
+	TemplateId *string `pulumi:"templateId"`
+	// To store macro params.
+	TemplateParams []NamespaceScheduledTaskActionTemplateDetailsTemplateParam `pulumi:"templateParams"`
+}
+
+// NamespaceScheduledTaskActionTemplateDetailsInput is an input type that accepts NamespaceScheduledTaskActionTemplateDetailsArgs and NamespaceScheduledTaskActionTemplateDetailsOutput values.
+// You can construct a concrete instance of `NamespaceScheduledTaskActionTemplateDetailsInput` via:
+//
+//	NamespaceScheduledTaskActionTemplateDetailsArgs{...}
+type NamespaceScheduledTaskActionTemplateDetailsInput interface {
+	pulumi.Input
+
+	ToNamespaceScheduledTaskActionTemplateDetailsOutput() NamespaceScheduledTaskActionTemplateDetailsOutput
+	ToNamespaceScheduledTaskActionTemplateDetailsOutputWithContext(context.Context) NamespaceScheduledTaskActionTemplateDetailsOutput
+}
+
+type NamespaceScheduledTaskActionTemplateDetailsArgs struct {
+	// The template Id of a particular template.  Should not be provided when a saved search ID is present.
+	TemplateId pulumi.StringPtrInput `pulumi:"templateId"`
+	// To store macro params.
+	TemplateParams NamespaceScheduledTaskActionTemplateDetailsTemplateParamArrayInput `pulumi:"templateParams"`
+}
+
+func (NamespaceScheduledTaskActionTemplateDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NamespaceScheduledTaskActionTemplateDetails)(nil)).Elem()
+}
+
+func (i NamespaceScheduledTaskActionTemplateDetailsArgs) ToNamespaceScheduledTaskActionTemplateDetailsOutput() NamespaceScheduledTaskActionTemplateDetailsOutput {
+	return i.ToNamespaceScheduledTaskActionTemplateDetailsOutputWithContext(context.Background())
+}
+
+func (i NamespaceScheduledTaskActionTemplateDetailsArgs) ToNamespaceScheduledTaskActionTemplateDetailsOutputWithContext(ctx context.Context) NamespaceScheduledTaskActionTemplateDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NamespaceScheduledTaskActionTemplateDetailsOutput)
+}
+
+func (i NamespaceScheduledTaskActionTemplateDetailsArgs) ToNamespaceScheduledTaskActionTemplateDetailsPtrOutput() NamespaceScheduledTaskActionTemplateDetailsPtrOutput {
+	return i.ToNamespaceScheduledTaskActionTemplateDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i NamespaceScheduledTaskActionTemplateDetailsArgs) ToNamespaceScheduledTaskActionTemplateDetailsPtrOutputWithContext(ctx context.Context) NamespaceScheduledTaskActionTemplateDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NamespaceScheduledTaskActionTemplateDetailsOutput).ToNamespaceScheduledTaskActionTemplateDetailsPtrOutputWithContext(ctx)
+}
+
+// NamespaceScheduledTaskActionTemplateDetailsPtrInput is an input type that accepts NamespaceScheduledTaskActionTemplateDetailsArgs, NamespaceScheduledTaskActionTemplateDetailsPtr and NamespaceScheduledTaskActionTemplateDetailsPtrOutput values.
+// You can construct a concrete instance of `NamespaceScheduledTaskActionTemplateDetailsPtrInput` via:
+//
+//	        NamespaceScheduledTaskActionTemplateDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type NamespaceScheduledTaskActionTemplateDetailsPtrInput interface {
+	pulumi.Input
+
+	ToNamespaceScheduledTaskActionTemplateDetailsPtrOutput() NamespaceScheduledTaskActionTemplateDetailsPtrOutput
+	ToNamespaceScheduledTaskActionTemplateDetailsPtrOutputWithContext(context.Context) NamespaceScheduledTaskActionTemplateDetailsPtrOutput
+}
+
+type namespaceScheduledTaskActionTemplateDetailsPtrType NamespaceScheduledTaskActionTemplateDetailsArgs
+
+func NamespaceScheduledTaskActionTemplateDetailsPtr(v *NamespaceScheduledTaskActionTemplateDetailsArgs) NamespaceScheduledTaskActionTemplateDetailsPtrInput {
+	return (*namespaceScheduledTaskActionTemplateDetailsPtrType)(v)
+}
+
+func (*namespaceScheduledTaskActionTemplateDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**NamespaceScheduledTaskActionTemplateDetails)(nil)).Elem()
+}
+
+func (i *namespaceScheduledTaskActionTemplateDetailsPtrType) ToNamespaceScheduledTaskActionTemplateDetailsPtrOutput() NamespaceScheduledTaskActionTemplateDetailsPtrOutput {
+	return i.ToNamespaceScheduledTaskActionTemplateDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *namespaceScheduledTaskActionTemplateDetailsPtrType) ToNamespaceScheduledTaskActionTemplateDetailsPtrOutputWithContext(ctx context.Context) NamespaceScheduledTaskActionTemplateDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NamespaceScheduledTaskActionTemplateDetailsPtrOutput)
+}
+
+type NamespaceScheduledTaskActionTemplateDetailsOutput struct{ *pulumi.OutputState }
+
+func (NamespaceScheduledTaskActionTemplateDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NamespaceScheduledTaskActionTemplateDetails)(nil)).Elem()
+}
+
+func (o NamespaceScheduledTaskActionTemplateDetailsOutput) ToNamespaceScheduledTaskActionTemplateDetailsOutput() NamespaceScheduledTaskActionTemplateDetailsOutput {
+	return o
+}
+
+func (o NamespaceScheduledTaskActionTemplateDetailsOutput) ToNamespaceScheduledTaskActionTemplateDetailsOutputWithContext(ctx context.Context) NamespaceScheduledTaskActionTemplateDetailsOutput {
+	return o
+}
+
+func (o NamespaceScheduledTaskActionTemplateDetailsOutput) ToNamespaceScheduledTaskActionTemplateDetailsPtrOutput() NamespaceScheduledTaskActionTemplateDetailsPtrOutput {
+	return o.ToNamespaceScheduledTaskActionTemplateDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o NamespaceScheduledTaskActionTemplateDetailsOutput) ToNamespaceScheduledTaskActionTemplateDetailsPtrOutputWithContext(ctx context.Context) NamespaceScheduledTaskActionTemplateDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v NamespaceScheduledTaskActionTemplateDetails) *NamespaceScheduledTaskActionTemplateDetails {
+		return &v
+	}).(NamespaceScheduledTaskActionTemplateDetailsPtrOutput)
+}
+
+// The template Id of a particular template.  Should not be provided when a saved search ID is present.
+func (o NamespaceScheduledTaskActionTemplateDetailsOutput) TemplateId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NamespaceScheduledTaskActionTemplateDetails) *string { return v.TemplateId }).(pulumi.StringPtrOutput)
+}
+
+// To store macro params.
+func (o NamespaceScheduledTaskActionTemplateDetailsOutput) TemplateParams() NamespaceScheduledTaskActionTemplateDetailsTemplateParamArrayOutput {
+	return o.ApplyT(func(v NamespaceScheduledTaskActionTemplateDetails) []NamespaceScheduledTaskActionTemplateDetailsTemplateParam {
+		return v.TemplateParams
+	}).(NamespaceScheduledTaskActionTemplateDetailsTemplateParamArrayOutput)
+}
+
+type NamespaceScheduledTaskActionTemplateDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (NamespaceScheduledTaskActionTemplateDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**NamespaceScheduledTaskActionTemplateDetails)(nil)).Elem()
+}
+
+func (o NamespaceScheduledTaskActionTemplateDetailsPtrOutput) ToNamespaceScheduledTaskActionTemplateDetailsPtrOutput() NamespaceScheduledTaskActionTemplateDetailsPtrOutput {
+	return o
+}
+
+func (o NamespaceScheduledTaskActionTemplateDetailsPtrOutput) ToNamespaceScheduledTaskActionTemplateDetailsPtrOutputWithContext(ctx context.Context) NamespaceScheduledTaskActionTemplateDetailsPtrOutput {
+	return o
+}
+
+func (o NamespaceScheduledTaskActionTemplateDetailsPtrOutput) Elem() NamespaceScheduledTaskActionTemplateDetailsOutput {
+	return o.ApplyT(func(v *NamespaceScheduledTaskActionTemplateDetails) NamespaceScheduledTaskActionTemplateDetails {
+		if v != nil {
+			return *v
+		}
+		var ret NamespaceScheduledTaskActionTemplateDetails
+		return ret
+	}).(NamespaceScheduledTaskActionTemplateDetailsOutput)
+}
+
+// The template Id of a particular template.  Should not be provided when a saved search ID is present.
+func (o NamespaceScheduledTaskActionTemplateDetailsPtrOutput) TemplateId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NamespaceScheduledTaskActionTemplateDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TemplateId
+	}).(pulumi.StringPtrOutput)
+}
+
+// To store macro params.
+func (o NamespaceScheduledTaskActionTemplateDetailsPtrOutput) TemplateParams() NamespaceScheduledTaskActionTemplateDetailsTemplateParamArrayOutput {
+	return o.ApplyT(func(v *NamespaceScheduledTaskActionTemplateDetails) []NamespaceScheduledTaskActionTemplateDetailsTemplateParam {
+		if v == nil {
+			return nil
+		}
+		return v.TemplateParams
+	}).(NamespaceScheduledTaskActionTemplateDetailsTemplateParamArrayOutput)
+}
+
+type NamespaceScheduledTaskActionTemplateDetailsTemplateParam struct {
+	// Contains a template parameter's name.
+	KeyField *string `pulumi:"keyField"`
+	// Contains the desired value for a given parameter.
+	ValueField *string `pulumi:"valueField"`
+}
+
+// NamespaceScheduledTaskActionTemplateDetailsTemplateParamInput is an input type that accepts NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgs and NamespaceScheduledTaskActionTemplateDetailsTemplateParamOutput values.
+// You can construct a concrete instance of `NamespaceScheduledTaskActionTemplateDetailsTemplateParamInput` via:
+//
+//	NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgs{...}
+type NamespaceScheduledTaskActionTemplateDetailsTemplateParamInput interface {
+	pulumi.Input
+
+	ToNamespaceScheduledTaskActionTemplateDetailsTemplateParamOutput() NamespaceScheduledTaskActionTemplateDetailsTemplateParamOutput
+	ToNamespaceScheduledTaskActionTemplateDetailsTemplateParamOutputWithContext(context.Context) NamespaceScheduledTaskActionTemplateDetailsTemplateParamOutput
+}
+
+type NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgs struct {
+	// Contains a template parameter's name.
+	KeyField pulumi.StringPtrInput `pulumi:"keyField"`
+	// Contains the desired value for a given parameter.
+	ValueField pulumi.StringPtrInput `pulumi:"valueField"`
+}
+
+func (NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NamespaceScheduledTaskActionTemplateDetailsTemplateParam)(nil)).Elem()
+}
+
+func (i NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgs) ToNamespaceScheduledTaskActionTemplateDetailsTemplateParamOutput() NamespaceScheduledTaskActionTemplateDetailsTemplateParamOutput {
+	return i.ToNamespaceScheduledTaskActionTemplateDetailsTemplateParamOutputWithContext(context.Background())
+}
+
+func (i NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgs) ToNamespaceScheduledTaskActionTemplateDetailsTemplateParamOutputWithContext(ctx context.Context) NamespaceScheduledTaskActionTemplateDetailsTemplateParamOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NamespaceScheduledTaskActionTemplateDetailsTemplateParamOutput)
+}
+
+// NamespaceScheduledTaskActionTemplateDetailsTemplateParamArrayInput is an input type that accepts NamespaceScheduledTaskActionTemplateDetailsTemplateParamArray and NamespaceScheduledTaskActionTemplateDetailsTemplateParamArrayOutput values.
+// You can construct a concrete instance of `NamespaceScheduledTaskActionTemplateDetailsTemplateParamArrayInput` via:
+//
+//	NamespaceScheduledTaskActionTemplateDetailsTemplateParamArray{ NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgs{...} }
+type NamespaceScheduledTaskActionTemplateDetailsTemplateParamArrayInput interface {
+	pulumi.Input
+
+	ToNamespaceScheduledTaskActionTemplateDetailsTemplateParamArrayOutput() NamespaceScheduledTaskActionTemplateDetailsTemplateParamArrayOutput
+	ToNamespaceScheduledTaskActionTemplateDetailsTemplateParamArrayOutputWithContext(context.Context) NamespaceScheduledTaskActionTemplateDetailsTemplateParamArrayOutput
+}
+
+type NamespaceScheduledTaskActionTemplateDetailsTemplateParamArray []NamespaceScheduledTaskActionTemplateDetailsTemplateParamInput
+
+func (NamespaceScheduledTaskActionTemplateDetailsTemplateParamArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NamespaceScheduledTaskActionTemplateDetailsTemplateParam)(nil)).Elem()
+}
+
+func (i NamespaceScheduledTaskActionTemplateDetailsTemplateParamArray) ToNamespaceScheduledTaskActionTemplateDetailsTemplateParamArrayOutput() NamespaceScheduledTaskActionTemplateDetailsTemplateParamArrayOutput {
+	return i.ToNamespaceScheduledTaskActionTemplateDetailsTemplateParamArrayOutputWithContext(context.Background())
+}
+
+func (i NamespaceScheduledTaskActionTemplateDetailsTemplateParamArray) ToNamespaceScheduledTaskActionTemplateDetailsTemplateParamArrayOutputWithContext(ctx context.Context) NamespaceScheduledTaskActionTemplateDetailsTemplateParamArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NamespaceScheduledTaskActionTemplateDetailsTemplateParamArrayOutput)
+}
+
+type NamespaceScheduledTaskActionTemplateDetailsTemplateParamOutput struct{ *pulumi.OutputState }
+
+func (NamespaceScheduledTaskActionTemplateDetailsTemplateParamOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NamespaceScheduledTaskActionTemplateDetailsTemplateParam)(nil)).Elem()
+}
+
+func (o NamespaceScheduledTaskActionTemplateDetailsTemplateParamOutput) ToNamespaceScheduledTaskActionTemplateDetailsTemplateParamOutput() NamespaceScheduledTaskActionTemplateDetailsTemplateParamOutput {
+	return o
+}
+
+func (o NamespaceScheduledTaskActionTemplateDetailsTemplateParamOutput) ToNamespaceScheduledTaskActionTemplateDetailsTemplateParamOutputWithContext(ctx context.Context) NamespaceScheduledTaskActionTemplateDetailsTemplateParamOutput {
+	return o
+}
+
+// Contains a template parameter's name.
+func (o NamespaceScheduledTaskActionTemplateDetailsTemplateParamOutput) KeyField() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NamespaceScheduledTaskActionTemplateDetailsTemplateParam) *string { return v.KeyField }).(pulumi.StringPtrOutput)
+}
+
+// Contains the desired value for a given parameter.
+func (o NamespaceScheduledTaskActionTemplateDetailsTemplateParamOutput) ValueField() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NamespaceScheduledTaskActionTemplateDetailsTemplateParam) *string { return v.ValueField }).(pulumi.StringPtrOutput)
+}
+
+type NamespaceScheduledTaskActionTemplateDetailsTemplateParamArrayOutput struct{ *pulumi.OutputState }
+
+func (NamespaceScheduledTaskActionTemplateDetailsTemplateParamArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NamespaceScheduledTaskActionTemplateDetailsTemplateParam)(nil)).Elem()
+}
+
+func (o NamespaceScheduledTaskActionTemplateDetailsTemplateParamArrayOutput) ToNamespaceScheduledTaskActionTemplateDetailsTemplateParamArrayOutput() NamespaceScheduledTaskActionTemplateDetailsTemplateParamArrayOutput {
+	return o
+}
+
+func (o NamespaceScheduledTaskActionTemplateDetailsTemplateParamArrayOutput) ToNamespaceScheduledTaskActionTemplateDetailsTemplateParamArrayOutputWithContext(ctx context.Context) NamespaceScheduledTaskActionTemplateDetailsTemplateParamArrayOutput {
+	return o
+}
+
+func (o NamespaceScheduledTaskActionTemplateDetailsTemplateParamArrayOutput) Index(i pulumi.IntInput) NamespaceScheduledTaskActionTemplateDetailsTemplateParamOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NamespaceScheduledTaskActionTemplateDetailsTemplateParam {
+		return vs[0].([]NamespaceScheduledTaskActionTemplateDetailsTemplateParam)[vs[1].(int)]
+	}).(NamespaceScheduledTaskActionTemplateDetailsTemplateParamOutput)
 }
 
 type NamespaceScheduledTaskSchedules struct {
@@ -1863,6 +2671,162 @@ func (o NamespaceScheduledTaskSchedulesScheduleArrayOutput) Index(i pulumi.IntIn
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NamespaceScheduledTaskSchedulesSchedule {
 		return vs[0].([]NamespaceScheduledTaskSchedulesSchedule)[vs[1].(int)]
 	}).(NamespaceScheduledTaskSchedulesScheduleOutput)
+}
+
+type NamespaceStorageArchivalConfigArchivingConfiguration struct {
+	// (Updatable) This is the duration data in active storage before data is archived, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+	ActiveStorageDuration *string `pulumi:"activeStorageDuration"`
+	// (Updatable) This is the duration before archived data is deleted from object storage, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+	ArchivalStorageDuration *string `pulumi:"archivalStorageDuration"`
+}
+
+// NamespaceStorageArchivalConfigArchivingConfigurationInput is an input type that accepts NamespaceStorageArchivalConfigArchivingConfigurationArgs and NamespaceStorageArchivalConfigArchivingConfigurationOutput values.
+// You can construct a concrete instance of `NamespaceStorageArchivalConfigArchivingConfigurationInput` via:
+//
+//	NamespaceStorageArchivalConfigArchivingConfigurationArgs{...}
+type NamespaceStorageArchivalConfigArchivingConfigurationInput interface {
+	pulumi.Input
+
+	ToNamespaceStorageArchivalConfigArchivingConfigurationOutput() NamespaceStorageArchivalConfigArchivingConfigurationOutput
+	ToNamespaceStorageArchivalConfigArchivingConfigurationOutputWithContext(context.Context) NamespaceStorageArchivalConfigArchivingConfigurationOutput
+}
+
+type NamespaceStorageArchivalConfigArchivingConfigurationArgs struct {
+	// (Updatable) This is the duration data in active storage before data is archived, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+	ActiveStorageDuration pulumi.StringPtrInput `pulumi:"activeStorageDuration"`
+	// (Updatable) This is the duration before archived data is deleted from object storage, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+	ArchivalStorageDuration pulumi.StringPtrInput `pulumi:"archivalStorageDuration"`
+}
+
+func (NamespaceStorageArchivalConfigArchivingConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NamespaceStorageArchivalConfigArchivingConfiguration)(nil)).Elem()
+}
+
+func (i NamespaceStorageArchivalConfigArchivingConfigurationArgs) ToNamespaceStorageArchivalConfigArchivingConfigurationOutput() NamespaceStorageArchivalConfigArchivingConfigurationOutput {
+	return i.ToNamespaceStorageArchivalConfigArchivingConfigurationOutputWithContext(context.Background())
+}
+
+func (i NamespaceStorageArchivalConfigArchivingConfigurationArgs) ToNamespaceStorageArchivalConfigArchivingConfigurationOutputWithContext(ctx context.Context) NamespaceStorageArchivalConfigArchivingConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NamespaceStorageArchivalConfigArchivingConfigurationOutput)
+}
+
+func (i NamespaceStorageArchivalConfigArchivingConfigurationArgs) ToNamespaceStorageArchivalConfigArchivingConfigurationPtrOutput() NamespaceStorageArchivalConfigArchivingConfigurationPtrOutput {
+	return i.ToNamespaceStorageArchivalConfigArchivingConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i NamespaceStorageArchivalConfigArchivingConfigurationArgs) ToNamespaceStorageArchivalConfigArchivingConfigurationPtrOutputWithContext(ctx context.Context) NamespaceStorageArchivalConfigArchivingConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NamespaceStorageArchivalConfigArchivingConfigurationOutput).ToNamespaceStorageArchivalConfigArchivingConfigurationPtrOutputWithContext(ctx)
+}
+
+// NamespaceStorageArchivalConfigArchivingConfigurationPtrInput is an input type that accepts NamespaceStorageArchivalConfigArchivingConfigurationArgs, NamespaceStorageArchivalConfigArchivingConfigurationPtr and NamespaceStorageArchivalConfigArchivingConfigurationPtrOutput values.
+// You can construct a concrete instance of `NamespaceStorageArchivalConfigArchivingConfigurationPtrInput` via:
+//
+//	        NamespaceStorageArchivalConfigArchivingConfigurationArgs{...}
+//
+//	or:
+//
+//	        nil
+type NamespaceStorageArchivalConfigArchivingConfigurationPtrInput interface {
+	pulumi.Input
+
+	ToNamespaceStorageArchivalConfigArchivingConfigurationPtrOutput() NamespaceStorageArchivalConfigArchivingConfigurationPtrOutput
+	ToNamespaceStorageArchivalConfigArchivingConfigurationPtrOutputWithContext(context.Context) NamespaceStorageArchivalConfigArchivingConfigurationPtrOutput
+}
+
+type namespaceStorageArchivalConfigArchivingConfigurationPtrType NamespaceStorageArchivalConfigArchivingConfigurationArgs
+
+func NamespaceStorageArchivalConfigArchivingConfigurationPtr(v *NamespaceStorageArchivalConfigArchivingConfigurationArgs) NamespaceStorageArchivalConfigArchivingConfigurationPtrInput {
+	return (*namespaceStorageArchivalConfigArchivingConfigurationPtrType)(v)
+}
+
+func (*namespaceStorageArchivalConfigArchivingConfigurationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**NamespaceStorageArchivalConfigArchivingConfiguration)(nil)).Elem()
+}
+
+func (i *namespaceStorageArchivalConfigArchivingConfigurationPtrType) ToNamespaceStorageArchivalConfigArchivingConfigurationPtrOutput() NamespaceStorageArchivalConfigArchivingConfigurationPtrOutput {
+	return i.ToNamespaceStorageArchivalConfigArchivingConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i *namespaceStorageArchivalConfigArchivingConfigurationPtrType) ToNamespaceStorageArchivalConfigArchivingConfigurationPtrOutputWithContext(ctx context.Context) NamespaceStorageArchivalConfigArchivingConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NamespaceStorageArchivalConfigArchivingConfigurationPtrOutput)
+}
+
+type NamespaceStorageArchivalConfigArchivingConfigurationOutput struct{ *pulumi.OutputState }
+
+func (NamespaceStorageArchivalConfigArchivingConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NamespaceStorageArchivalConfigArchivingConfiguration)(nil)).Elem()
+}
+
+func (o NamespaceStorageArchivalConfigArchivingConfigurationOutput) ToNamespaceStorageArchivalConfigArchivingConfigurationOutput() NamespaceStorageArchivalConfigArchivingConfigurationOutput {
+	return o
+}
+
+func (o NamespaceStorageArchivalConfigArchivingConfigurationOutput) ToNamespaceStorageArchivalConfigArchivingConfigurationOutputWithContext(ctx context.Context) NamespaceStorageArchivalConfigArchivingConfigurationOutput {
+	return o
+}
+
+func (o NamespaceStorageArchivalConfigArchivingConfigurationOutput) ToNamespaceStorageArchivalConfigArchivingConfigurationPtrOutput() NamespaceStorageArchivalConfigArchivingConfigurationPtrOutput {
+	return o.ToNamespaceStorageArchivalConfigArchivingConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (o NamespaceStorageArchivalConfigArchivingConfigurationOutput) ToNamespaceStorageArchivalConfigArchivingConfigurationPtrOutputWithContext(ctx context.Context) NamespaceStorageArchivalConfigArchivingConfigurationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v NamespaceStorageArchivalConfigArchivingConfiguration) *NamespaceStorageArchivalConfigArchivingConfiguration {
+		return &v
+	}).(NamespaceStorageArchivalConfigArchivingConfigurationPtrOutput)
+}
+
+// (Updatable) This is the duration data in active storage before data is archived, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+func (o NamespaceStorageArchivalConfigArchivingConfigurationOutput) ActiveStorageDuration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NamespaceStorageArchivalConfigArchivingConfiguration) *string { return v.ActiveStorageDuration }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) This is the duration before archived data is deleted from object storage, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+func (o NamespaceStorageArchivalConfigArchivingConfigurationOutput) ArchivalStorageDuration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NamespaceStorageArchivalConfigArchivingConfiguration) *string { return v.ArchivalStorageDuration }).(pulumi.StringPtrOutput)
+}
+
+type NamespaceStorageArchivalConfigArchivingConfigurationPtrOutput struct{ *pulumi.OutputState }
+
+func (NamespaceStorageArchivalConfigArchivingConfigurationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**NamespaceStorageArchivalConfigArchivingConfiguration)(nil)).Elem()
+}
+
+func (o NamespaceStorageArchivalConfigArchivingConfigurationPtrOutput) ToNamespaceStorageArchivalConfigArchivingConfigurationPtrOutput() NamespaceStorageArchivalConfigArchivingConfigurationPtrOutput {
+	return o
+}
+
+func (o NamespaceStorageArchivalConfigArchivingConfigurationPtrOutput) ToNamespaceStorageArchivalConfigArchivingConfigurationPtrOutputWithContext(ctx context.Context) NamespaceStorageArchivalConfigArchivingConfigurationPtrOutput {
+	return o
+}
+
+func (o NamespaceStorageArchivalConfigArchivingConfigurationPtrOutput) Elem() NamespaceStorageArchivalConfigArchivingConfigurationOutput {
+	return o.ApplyT(func(v *NamespaceStorageArchivalConfigArchivingConfiguration) NamespaceStorageArchivalConfigArchivingConfiguration {
+		if v != nil {
+			return *v
+		}
+		var ret NamespaceStorageArchivalConfigArchivingConfiguration
+		return ret
+	}).(NamespaceStorageArchivalConfigArchivingConfigurationOutput)
+}
+
+// (Updatable) This is the duration data in active storage before data is archived, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+func (o NamespaceStorageArchivalConfigArchivingConfigurationPtrOutput) ActiveStorageDuration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NamespaceStorageArchivalConfigArchivingConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ActiveStorageDuration
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) This is the duration before archived data is deleted from object storage, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+func (o NamespaceStorageArchivalConfigArchivingConfigurationPtrOutput) ArchivalStorageDuration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NamespaceStorageArchivalConfigArchivingConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ArchivalStorageDuration
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetLogAnalyticsCategoriesListItem struct {
@@ -2209,6 +3173,8 @@ func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArrayOutput) Index(i 
 type GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem struct {
 	// The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
 	AreLogsCollected bool `pulumi:"areLogsCollected"`
+	// The count of associated log sources for a given log analytics entity.
+	AssociatedSourcesCount int `pulumi:"associatedSourcesCount"`
 	// A filter to return only log analytics entities whose cloudResourceId matches the cloudResourceId given.
 	CloudResourceId string `pulumi:"cloudResourceId"`
 	// The ID of the compartment in which to list resources.
@@ -2269,6 +3235,8 @@ type GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemInput interface {
 type GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArgs struct {
 	// The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
 	AreLogsCollected pulumi.BoolInput `pulumi:"areLogsCollected"`
+	// The count of associated log sources for a given log analytics entity.
+	AssociatedSourcesCount pulumi.IntInput `pulumi:"associatedSourcesCount"`
 	// A filter to return only log analytics entities whose cloudResourceId matches the cloudResourceId given.
 	CloudResourceId pulumi.StringInput `pulumi:"cloudResourceId"`
 	// The ID of the compartment in which to list resources.
@@ -2369,6 +3337,11 @@ func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) ToGetLogA
 // The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
 func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) AreLogsCollected() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) bool { return v.AreLogsCollected }).(pulumi.BoolOutput)
+}
+
+// The count of associated log sources for a given log analytics entity.
+func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) AssociatedSourcesCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) int { return v.AssociatedSourcesCount }).(pulumi.IntOutput)
 }
 
 // A filter to return only log analytics entities whose cloudResourceId matches the cloudResourceId given.
@@ -2937,6 +3910,115 @@ func (o GetLogAnalyticsEntityMetadataItemArrayOutput) Index(i pulumi.IntInput) G
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLogAnalyticsEntityMetadataItem {
 		return vs[0].([]GetLogAnalyticsEntityMetadataItem)[vs[1].(int)]
 	}).(GetLogAnalyticsEntityMetadataItemOutput)
+}
+
+type GetLogAnalyticsEntityTopologyFilter struct {
+	// Log analytics entity name.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetLogAnalyticsEntityTopologyFilterInput is an input type that accepts GetLogAnalyticsEntityTopologyFilterArgs and GetLogAnalyticsEntityTopologyFilterOutput values.
+// You can construct a concrete instance of `GetLogAnalyticsEntityTopologyFilterInput` via:
+//
+//	GetLogAnalyticsEntityTopologyFilterArgs{...}
+type GetLogAnalyticsEntityTopologyFilterInput interface {
+	pulumi.Input
+
+	ToGetLogAnalyticsEntityTopologyFilterOutput() GetLogAnalyticsEntityTopologyFilterOutput
+	ToGetLogAnalyticsEntityTopologyFilterOutputWithContext(context.Context) GetLogAnalyticsEntityTopologyFilterOutput
+}
+
+type GetLogAnalyticsEntityTopologyFilterArgs struct {
+	// Log analytics entity name.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetLogAnalyticsEntityTopologyFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLogAnalyticsEntityTopologyFilter)(nil)).Elem()
+}
+
+func (i GetLogAnalyticsEntityTopologyFilterArgs) ToGetLogAnalyticsEntityTopologyFilterOutput() GetLogAnalyticsEntityTopologyFilterOutput {
+	return i.ToGetLogAnalyticsEntityTopologyFilterOutputWithContext(context.Background())
+}
+
+func (i GetLogAnalyticsEntityTopologyFilterArgs) ToGetLogAnalyticsEntityTopologyFilterOutputWithContext(ctx context.Context) GetLogAnalyticsEntityTopologyFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntityTopologyFilterOutput)
+}
+
+// GetLogAnalyticsEntityTopologyFilterArrayInput is an input type that accepts GetLogAnalyticsEntityTopologyFilterArray and GetLogAnalyticsEntityTopologyFilterArrayOutput values.
+// You can construct a concrete instance of `GetLogAnalyticsEntityTopologyFilterArrayInput` via:
+//
+//	GetLogAnalyticsEntityTopologyFilterArray{ GetLogAnalyticsEntityTopologyFilterArgs{...} }
+type GetLogAnalyticsEntityTopologyFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetLogAnalyticsEntityTopologyFilterArrayOutput() GetLogAnalyticsEntityTopologyFilterArrayOutput
+	ToGetLogAnalyticsEntityTopologyFilterArrayOutputWithContext(context.Context) GetLogAnalyticsEntityTopologyFilterArrayOutput
+}
+
+type GetLogAnalyticsEntityTopologyFilterArray []GetLogAnalyticsEntityTopologyFilterInput
+
+func (GetLogAnalyticsEntityTopologyFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLogAnalyticsEntityTopologyFilter)(nil)).Elem()
+}
+
+func (i GetLogAnalyticsEntityTopologyFilterArray) ToGetLogAnalyticsEntityTopologyFilterArrayOutput() GetLogAnalyticsEntityTopologyFilterArrayOutput {
+	return i.ToGetLogAnalyticsEntityTopologyFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetLogAnalyticsEntityTopologyFilterArray) ToGetLogAnalyticsEntityTopologyFilterArrayOutputWithContext(ctx context.Context) GetLogAnalyticsEntityTopologyFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntityTopologyFilterArrayOutput)
+}
+
+type GetLogAnalyticsEntityTopologyFilterOutput struct{ *pulumi.OutputState }
+
+func (GetLogAnalyticsEntityTopologyFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLogAnalyticsEntityTopologyFilter)(nil)).Elem()
+}
+
+func (o GetLogAnalyticsEntityTopologyFilterOutput) ToGetLogAnalyticsEntityTopologyFilterOutput() GetLogAnalyticsEntityTopologyFilterOutput {
+	return o
+}
+
+func (o GetLogAnalyticsEntityTopologyFilterOutput) ToGetLogAnalyticsEntityTopologyFilterOutputWithContext(ctx context.Context) GetLogAnalyticsEntityTopologyFilterOutput {
+	return o
+}
+
+// Log analytics entity name.
+func (o GetLogAnalyticsEntityTopologyFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetLogAnalyticsEntityTopologyFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetLogAnalyticsEntityTopologyFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetLogAnalyticsEntityTopologyFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLogAnalyticsEntityTopologyFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLogAnalyticsEntityTopologyFilter)(nil)).Elem()
+}
+
+func (o GetLogAnalyticsEntityTopologyFilterArrayOutput) ToGetLogAnalyticsEntityTopologyFilterArrayOutput() GetLogAnalyticsEntityTopologyFilterArrayOutput {
+	return o
+}
+
+func (o GetLogAnalyticsEntityTopologyFilterArrayOutput) ToGetLogAnalyticsEntityTopologyFilterArrayOutputWithContext(ctx context.Context) GetLogAnalyticsEntityTopologyFilterArrayOutput {
+	return o
+}
+
+func (o GetLogAnalyticsEntityTopologyFilterArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsEntityTopologyFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLogAnalyticsEntityTopologyFilter {
+		return vs[0].([]GetLogAnalyticsEntityTopologyFilter)[vs[1].(int)]
+	}).(GetLogAnalyticsEntityTopologyFilterOutput)
 }
 
 type GetLogAnalyticsEntityTopologyItem struct {
@@ -4296,6 +5378,8 @@ type GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollect
 	IsEnabled bool `pulumi:"isEnabled"`
 	// Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
 	IsForceHistoricCollection bool `pulumi:"isForceHistoricCollection"`
+	// Last Collected Object for the rule
+	LastCollectedObject string `pulumi:"lastCollectedObject"`
 	// A detailed status of the life cycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Logging Analytics Log group OCID to associate the processed logs with.
@@ -4328,6 +5412,12 @@ type GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollect
 	PollTill string `pulumi:"pollTill"`
 	// Lifecycle state filter.
 	State string `pulumi:"state"`
+	// The time from which to consume the objects, if streamCursorType is AT_TIME.
+	StreamCursorTime string `pulumi:"streamCursorTime"`
+	// Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
+	StreamCursorType string `pulumi:"streamCursorType"`
+	// A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+	StreamId string `pulumi:"streamId"`
 	// The time when this rule was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time when this rule was last updated. An RFC3339 formatted datetime string.
@@ -4368,6 +5458,8 @@ type GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollect
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
 	IsForceHistoricCollection pulumi.BoolInput `pulumi:"isForceHistoricCollection"`
+	// Last Collected Object for the rule
+	LastCollectedObject pulumi.StringInput `pulumi:"lastCollectedObject"`
 	// A detailed status of the life cycle state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// Logging Analytics Log group OCID to associate the processed logs with.
@@ -4400,6 +5492,12 @@ type GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollect
 	PollTill pulumi.StringInput `pulumi:"pollTill"`
 	// Lifecycle state filter.
 	State pulumi.StringInput `pulumi:"state"`
+	// The time from which to consume the objects, if streamCursorType is AT_TIME.
+	StreamCursorTime pulumi.StringInput `pulumi:"streamCursorTime"`
+	// Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
+	StreamCursorType pulumi.StringInput `pulumi:"streamCursorType"`
+	// A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+	StreamId pulumi.StringInput `pulumi:"streamId"`
 	// The time when this rule was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time when this rule was last updated. An RFC3339 formatted datetime string.
@@ -4529,6 +5627,13 @@ func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 	}).(pulumi.BoolOutput)
 }
 
+// Last Collected Object for the rule
+func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) LastCollectedObject() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) string {
+		return v.LastCollectedObject
+	}).(pulumi.StringOutput)
+}
+
 // A detailed status of the life cycle state.
 func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) string {
@@ -4638,6 +5743,27 @@ func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) string {
 		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// The time from which to consume the objects, if streamCursorType is AT_TIME.
+func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) StreamCursorTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) string {
+		return v.StreamCursorTime
+	}).(pulumi.StringOutput)
+}
+
+// Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
+func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) StreamCursorType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) string {
+		return v.StreamCursorType
+	}).(pulumi.StringOutput)
+}
+
+// A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) StreamId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) string {
+		return v.StreamId
 	}).(pulumi.StringOutput)
 }
 
@@ -5044,8 +6170,12 @@ func (o GetLogAnalyticsResourceCategoriesListCategoryArrayOutput) Index(i pulumi
 type GetLogAnalyticsResourceCategoriesListItem struct {
 	// The category name to which this resource belongs.
 	CategoryName string `pulumi:"categoryName"`
+	// The compartment id in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
 	// The system flag. A value of false denotes a user-created category assignment. A value of true denotes an Oracle-defined category assignment.
 	IsSystem bool `pulumi:"isSystem"`
+	// The resource display name.
+	ResourceDisplayName string `pulumi:"resourceDisplayName"`
 	// The unique identifier of the resource, usually a name or ocid.
 	ResourceId string `pulumi:"resourceId"`
 	// The resource type.
@@ -5066,8 +6196,12 @@ type GetLogAnalyticsResourceCategoriesListItemInput interface {
 type GetLogAnalyticsResourceCategoriesListItemArgs struct {
 	// The category name to which this resource belongs.
 	CategoryName pulumi.StringInput `pulumi:"categoryName"`
+	// The compartment id in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The system flag. A value of false denotes a user-created category assignment. A value of true denotes an Oracle-defined category assignment.
 	IsSystem pulumi.BoolInput `pulumi:"isSystem"`
+	// The resource display name.
+	ResourceDisplayName pulumi.StringInput `pulumi:"resourceDisplayName"`
 	// The unique identifier of the resource, usually a name or ocid.
 	ResourceId pulumi.StringInput `pulumi:"resourceId"`
 	// The resource type.
@@ -5130,9 +6264,19 @@ func (o GetLogAnalyticsResourceCategoriesListItemOutput) CategoryName() pulumi.S
 	return o.ApplyT(func(v GetLogAnalyticsResourceCategoriesListItem) string { return v.CategoryName }).(pulumi.StringOutput)
 }
 
+// The compartment id in which to list resources.
+func (o GetLogAnalyticsResourceCategoriesListItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLogAnalyticsResourceCategoriesListItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
 // The system flag. A value of false denotes a user-created category assignment. A value of true denotes an Oracle-defined category assignment.
 func (o GetLogAnalyticsResourceCategoriesListItemOutput) IsSystem() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetLogAnalyticsResourceCategoriesListItem) bool { return v.IsSystem }).(pulumi.BoolOutput)
+}
+
+// The resource display name.
+func (o GetLogAnalyticsResourceCategoriesListItemOutput) ResourceDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLogAnalyticsResourceCategoriesListItem) string { return v.ResourceDisplayName }).(pulumi.StringOutput)
 }
 
 // The unique identifier of the resource, usually a name or ocid.
@@ -5614,6 +6758,704 @@ func (o GetNamespaceEffectivePropertiesFilterArrayOutput) Index(i pulumi.IntInpu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceEffectivePropertiesFilter {
 		return vs[0].([]GetNamespaceEffectivePropertiesFilter)[vs[1].(int)]
 	}).(GetNamespaceEffectivePropertiesFilterOutput)
+}
+
+type GetNamespaceFieldUsageDependentParser struct {
+	// The list of dependencies defined by the source.
+	Dependencies []GetNamespaceFieldUsageDependentParserDependency `pulumi:"dependencies"`
+	// The system flag.  A value of false denotes a custom, or user defined object.  A value of true denotes a built in object.
+	IsSystem bool `pulumi:"isSystem"`
+	// The parser display name.
+	ParserDisplayName string `pulumi:"parserDisplayName"`
+	// The parser unique identifier.
+	ParserId string `pulumi:"parserId"`
+	// The parser name.
+	ParserName string `pulumi:"parserName"`
+	// The parser type
+	ParserType string `pulumi:"parserType"`
+}
+
+// GetNamespaceFieldUsageDependentParserInput is an input type that accepts GetNamespaceFieldUsageDependentParserArgs and GetNamespaceFieldUsageDependentParserOutput values.
+// You can construct a concrete instance of `GetNamespaceFieldUsageDependentParserInput` via:
+//
+//	GetNamespaceFieldUsageDependentParserArgs{...}
+type GetNamespaceFieldUsageDependentParserInput interface {
+	pulumi.Input
+
+	ToGetNamespaceFieldUsageDependentParserOutput() GetNamespaceFieldUsageDependentParserOutput
+	ToGetNamespaceFieldUsageDependentParserOutputWithContext(context.Context) GetNamespaceFieldUsageDependentParserOutput
+}
+
+type GetNamespaceFieldUsageDependentParserArgs struct {
+	// The list of dependencies defined by the source.
+	Dependencies GetNamespaceFieldUsageDependentParserDependencyArrayInput `pulumi:"dependencies"`
+	// The system flag.  A value of false denotes a custom, or user defined object.  A value of true denotes a built in object.
+	IsSystem pulumi.BoolInput `pulumi:"isSystem"`
+	// The parser display name.
+	ParserDisplayName pulumi.StringInput `pulumi:"parserDisplayName"`
+	// The parser unique identifier.
+	ParserId pulumi.StringInput `pulumi:"parserId"`
+	// The parser name.
+	ParserName pulumi.StringInput `pulumi:"parserName"`
+	// The parser type
+	ParserType pulumi.StringInput `pulumi:"parserType"`
+}
+
+func (GetNamespaceFieldUsageDependentParserArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceFieldUsageDependentParser)(nil)).Elem()
+}
+
+func (i GetNamespaceFieldUsageDependentParserArgs) ToGetNamespaceFieldUsageDependentParserOutput() GetNamespaceFieldUsageDependentParserOutput {
+	return i.ToGetNamespaceFieldUsageDependentParserOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceFieldUsageDependentParserArgs) ToGetNamespaceFieldUsageDependentParserOutputWithContext(ctx context.Context) GetNamespaceFieldUsageDependentParserOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceFieldUsageDependentParserOutput)
+}
+
+// GetNamespaceFieldUsageDependentParserArrayInput is an input type that accepts GetNamespaceFieldUsageDependentParserArray and GetNamespaceFieldUsageDependentParserArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceFieldUsageDependentParserArrayInput` via:
+//
+//	GetNamespaceFieldUsageDependentParserArray{ GetNamespaceFieldUsageDependentParserArgs{...} }
+type GetNamespaceFieldUsageDependentParserArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceFieldUsageDependentParserArrayOutput() GetNamespaceFieldUsageDependentParserArrayOutput
+	ToGetNamespaceFieldUsageDependentParserArrayOutputWithContext(context.Context) GetNamespaceFieldUsageDependentParserArrayOutput
+}
+
+type GetNamespaceFieldUsageDependentParserArray []GetNamespaceFieldUsageDependentParserInput
+
+func (GetNamespaceFieldUsageDependentParserArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceFieldUsageDependentParser)(nil)).Elem()
+}
+
+func (i GetNamespaceFieldUsageDependentParserArray) ToGetNamespaceFieldUsageDependentParserArrayOutput() GetNamespaceFieldUsageDependentParserArrayOutput {
+	return i.ToGetNamespaceFieldUsageDependentParserArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceFieldUsageDependentParserArray) ToGetNamespaceFieldUsageDependentParserArrayOutputWithContext(ctx context.Context) GetNamespaceFieldUsageDependentParserArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceFieldUsageDependentParserArrayOutput)
+}
+
+type GetNamespaceFieldUsageDependentParserOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceFieldUsageDependentParserOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceFieldUsageDependentParser)(nil)).Elem()
+}
+
+func (o GetNamespaceFieldUsageDependentParserOutput) ToGetNamespaceFieldUsageDependentParserOutput() GetNamespaceFieldUsageDependentParserOutput {
+	return o
+}
+
+func (o GetNamespaceFieldUsageDependentParserOutput) ToGetNamespaceFieldUsageDependentParserOutputWithContext(ctx context.Context) GetNamespaceFieldUsageDependentParserOutput {
+	return o
+}
+
+// The list of dependencies defined by the source.
+func (o GetNamespaceFieldUsageDependentParserOutput) Dependencies() GetNamespaceFieldUsageDependentParserDependencyArrayOutput {
+	return o.ApplyT(func(v GetNamespaceFieldUsageDependentParser) []GetNamespaceFieldUsageDependentParserDependency {
+		return v.Dependencies
+	}).(GetNamespaceFieldUsageDependentParserDependencyArrayOutput)
+}
+
+// The system flag.  A value of false denotes a custom, or user defined object.  A value of true denotes a built in object.
+func (o GetNamespaceFieldUsageDependentParserOutput) IsSystem() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNamespaceFieldUsageDependentParser) bool { return v.IsSystem }).(pulumi.BoolOutput)
+}
+
+// The parser display name.
+func (o GetNamespaceFieldUsageDependentParserOutput) ParserDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceFieldUsageDependentParser) string { return v.ParserDisplayName }).(pulumi.StringOutput)
+}
+
+// The parser unique identifier.
+func (o GetNamespaceFieldUsageDependentParserOutput) ParserId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceFieldUsageDependentParser) string { return v.ParserId }).(pulumi.StringOutput)
+}
+
+// The parser name.
+func (o GetNamespaceFieldUsageDependentParserOutput) ParserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceFieldUsageDependentParser) string { return v.ParserName }).(pulumi.StringOutput)
+}
+
+// The parser type
+func (o GetNamespaceFieldUsageDependentParserOutput) ParserType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceFieldUsageDependentParser) string { return v.ParserType }).(pulumi.StringOutput)
+}
+
+type GetNamespaceFieldUsageDependentParserArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceFieldUsageDependentParserArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceFieldUsageDependentParser)(nil)).Elem()
+}
+
+func (o GetNamespaceFieldUsageDependentParserArrayOutput) ToGetNamespaceFieldUsageDependentParserArrayOutput() GetNamespaceFieldUsageDependentParserArrayOutput {
+	return o
+}
+
+func (o GetNamespaceFieldUsageDependentParserArrayOutput) ToGetNamespaceFieldUsageDependentParserArrayOutputWithContext(ctx context.Context) GetNamespaceFieldUsageDependentParserArrayOutput {
+	return o
+}
+
+func (o GetNamespaceFieldUsageDependentParserArrayOutput) Index(i pulumi.IntInput) GetNamespaceFieldUsageDependentParserOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceFieldUsageDependentParser {
+		return vs[0].([]GetNamespaceFieldUsageDependentParser)[vs[1].(int)]
+	}).(GetNamespaceFieldUsageDependentParserOutput)
+}
+
+type GetNamespaceFieldUsageDependentParserDependency struct {
+	// The display name of the dependency object
+	ReferenceDisplayName string `pulumi:"referenceDisplayName"`
+	// The unique identifier of the reference, if available.
+	ReferenceId string `pulumi:"referenceId"`
+	// The name of the dependency object
+	ReferenceName string `pulumi:"referenceName"`
+	// The type of reference that defines the dependency.
+	ReferenceType string `pulumi:"referenceType"`
+	// The dependency type.
+	Type string `pulumi:"type"`
+}
+
+// GetNamespaceFieldUsageDependentParserDependencyInput is an input type that accepts GetNamespaceFieldUsageDependentParserDependencyArgs and GetNamespaceFieldUsageDependentParserDependencyOutput values.
+// You can construct a concrete instance of `GetNamespaceFieldUsageDependentParserDependencyInput` via:
+//
+//	GetNamespaceFieldUsageDependentParserDependencyArgs{...}
+type GetNamespaceFieldUsageDependentParserDependencyInput interface {
+	pulumi.Input
+
+	ToGetNamespaceFieldUsageDependentParserDependencyOutput() GetNamespaceFieldUsageDependentParserDependencyOutput
+	ToGetNamespaceFieldUsageDependentParserDependencyOutputWithContext(context.Context) GetNamespaceFieldUsageDependentParserDependencyOutput
+}
+
+type GetNamespaceFieldUsageDependentParserDependencyArgs struct {
+	// The display name of the dependency object
+	ReferenceDisplayName pulumi.StringInput `pulumi:"referenceDisplayName"`
+	// The unique identifier of the reference, if available.
+	ReferenceId pulumi.StringInput `pulumi:"referenceId"`
+	// The name of the dependency object
+	ReferenceName pulumi.StringInput `pulumi:"referenceName"`
+	// The type of reference that defines the dependency.
+	ReferenceType pulumi.StringInput `pulumi:"referenceType"`
+	// The dependency type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetNamespaceFieldUsageDependentParserDependencyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceFieldUsageDependentParserDependency)(nil)).Elem()
+}
+
+func (i GetNamespaceFieldUsageDependentParserDependencyArgs) ToGetNamespaceFieldUsageDependentParserDependencyOutput() GetNamespaceFieldUsageDependentParserDependencyOutput {
+	return i.ToGetNamespaceFieldUsageDependentParserDependencyOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceFieldUsageDependentParserDependencyArgs) ToGetNamespaceFieldUsageDependentParserDependencyOutputWithContext(ctx context.Context) GetNamespaceFieldUsageDependentParserDependencyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceFieldUsageDependentParserDependencyOutput)
+}
+
+// GetNamespaceFieldUsageDependentParserDependencyArrayInput is an input type that accepts GetNamespaceFieldUsageDependentParserDependencyArray and GetNamespaceFieldUsageDependentParserDependencyArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceFieldUsageDependentParserDependencyArrayInput` via:
+//
+//	GetNamespaceFieldUsageDependentParserDependencyArray{ GetNamespaceFieldUsageDependentParserDependencyArgs{...} }
+type GetNamespaceFieldUsageDependentParserDependencyArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceFieldUsageDependentParserDependencyArrayOutput() GetNamespaceFieldUsageDependentParserDependencyArrayOutput
+	ToGetNamespaceFieldUsageDependentParserDependencyArrayOutputWithContext(context.Context) GetNamespaceFieldUsageDependentParserDependencyArrayOutput
+}
+
+type GetNamespaceFieldUsageDependentParserDependencyArray []GetNamespaceFieldUsageDependentParserDependencyInput
+
+func (GetNamespaceFieldUsageDependentParserDependencyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceFieldUsageDependentParserDependency)(nil)).Elem()
+}
+
+func (i GetNamespaceFieldUsageDependentParserDependencyArray) ToGetNamespaceFieldUsageDependentParserDependencyArrayOutput() GetNamespaceFieldUsageDependentParserDependencyArrayOutput {
+	return i.ToGetNamespaceFieldUsageDependentParserDependencyArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceFieldUsageDependentParserDependencyArray) ToGetNamespaceFieldUsageDependentParserDependencyArrayOutputWithContext(ctx context.Context) GetNamespaceFieldUsageDependentParserDependencyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceFieldUsageDependentParserDependencyArrayOutput)
+}
+
+type GetNamespaceFieldUsageDependentParserDependencyOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceFieldUsageDependentParserDependencyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceFieldUsageDependentParserDependency)(nil)).Elem()
+}
+
+func (o GetNamespaceFieldUsageDependentParserDependencyOutput) ToGetNamespaceFieldUsageDependentParserDependencyOutput() GetNamespaceFieldUsageDependentParserDependencyOutput {
+	return o
+}
+
+func (o GetNamespaceFieldUsageDependentParserDependencyOutput) ToGetNamespaceFieldUsageDependentParserDependencyOutputWithContext(ctx context.Context) GetNamespaceFieldUsageDependentParserDependencyOutput {
+	return o
+}
+
+// The display name of the dependency object
+func (o GetNamespaceFieldUsageDependentParserDependencyOutput) ReferenceDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceFieldUsageDependentParserDependency) string { return v.ReferenceDisplayName }).(pulumi.StringOutput)
+}
+
+// The unique identifier of the reference, if available.
+func (o GetNamespaceFieldUsageDependentParserDependencyOutput) ReferenceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceFieldUsageDependentParserDependency) string { return v.ReferenceId }).(pulumi.StringOutput)
+}
+
+// The name of the dependency object
+func (o GetNamespaceFieldUsageDependentParserDependencyOutput) ReferenceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceFieldUsageDependentParserDependency) string { return v.ReferenceName }).(pulumi.StringOutput)
+}
+
+// The type of reference that defines the dependency.
+func (o GetNamespaceFieldUsageDependentParserDependencyOutput) ReferenceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceFieldUsageDependentParserDependency) string { return v.ReferenceType }).(pulumi.StringOutput)
+}
+
+// The dependency type.
+func (o GetNamespaceFieldUsageDependentParserDependencyOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceFieldUsageDependentParserDependency) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetNamespaceFieldUsageDependentParserDependencyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceFieldUsageDependentParserDependencyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceFieldUsageDependentParserDependency)(nil)).Elem()
+}
+
+func (o GetNamespaceFieldUsageDependentParserDependencyArrayOutput) ToGetNamespaceFieldUsageDependentParserDependencyArrayOutput() GetNamespaceFieldUsageDependentParserDependencyArrayOutput {
+	return o
+}
+
+func (o GetNamespaceFieldUsageDependentParserDependencyArrayOutput) ToGetNamespaceFieldUsageDependentParserDependencyArrayOutputWithContext(ctx context.Context) GetNamespaceFieldUsageDependentParserDependencyArrayOutput {
+	return o
+}
+
+func (o GetNamespaceFieldUsageDependentParserDependencyArrayOutput) Index(i pulumi.IntInput) GetNamespaceFieldUsageDependentParserDependencyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceFieldUsageDependentParserDependency {
+		return vs[0].([]GetNamespaceFieldUsageDependentParserDependency)[vs[1].(int)]
+	}).(GetNamespaceFieldUsageDependentParserDependencyOutput)
+}
+
+type GetNamespaceFieldUsageDependentSource struct {
+	// The list of dependencies defined by the source.
+	Dependencies []GetNamespaceFieldUsageDependentSourceDependency `pulumi:"dependencies"`
+	// The entity types.
+	EntityTypes []GetNamespaceFieldUsageDependentSourceEntityType `pulumi:"entityTypes"`
+	// A flag indicating whether or not the source is marked for auto association.
+	IsAutoAssociationEnabled bool `pulumi:"isAutoAssociationEnabled"`
+	// The system flag.  A value of false denotes a custom, or user defined object.  A value of true denotes a built in object.
+	IsSystem bool `pulumi:"isSystem"`
+	// The source display name.
+	SourceDisplayName string `pulumi:"sourceDisplayName"`
+	// The source unique identifier.
+	SourceId string `pulumi:"sourceId"`
+	// The source name.
+	SourceName string `pulumi:"sourceName"`
+	// The source type.
+	SourceType string `pulumi:"sourceType"`
+}
+
+// GetNamespaceFieldUsageDependentSourceInput is an input type that accepts GetNamespaceFieldUsageDependentSourceArgs and GetNamespaceFieldUsageDependentSourceOutput values.
+// You can construct a concrete instance of `GetNamespaceFieldUsageDependentSourceInput` via:
+//
+//	GetNamespaceFieldUsageDependentSourceArgs{...}
+type GetNamespaceFieldUsageDependentSourceInput interface {
+	pulumi.Input
+
+	ToGetNamespaceFieldUsageDependentSourceOutput() GetNamespaceFieldUsageDependentSourceOutput
+	ToGetNamespaceFieldUsageDependentSourceOutputWithContext(context.Context) GetNamespaceFieldUsageDependentSourceOutput
+}
+
+type GetNamespaceFieldUsageDependentSourceArgs struct {
+	// The list of dependencies defined by the source.
+	Dependencies GetNamespaceFieldUsageDependentSourceDependencyArrayInput `pulumi:"dependencies"`
+	// The entity types.
+	EntityTypes GetNamespaceFieldUsageDependentSourceEntityTypeArrayInput `pulumi:"entityTypes"`
+	// A flag indicating whether or not the source is marked for auto association.
+	IsAutoAssociationEnabled pulumi.BoolInput `pulumi:"isAutoAssociationEnabled"`
+	// The system flag.  A value of false denotes a custom, or user defined object.  A value of true denotes a built in object.
+	IsSystem pulumi.BoolInput `pulumi:"isSystem"`
+	// The source display name.
+	SourceDisplayName pulumi.StringInput `pulumi:"sourceDisplayName"`
+	// The source unique identifier.
+	SourceId pulumi.StringInput `pulumi:"sourceId"`
+	// The source name.
+	SourceName pulumi.StringInput `pulumi:"sourceName"`
+	// The source type.
+	SourceType pulumi.StringInput `pulumi:"sourceType"`
+}
+
+func (GetNamespaceFieldUsageDependentSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceFieldUsageDependentSource)(nil)).Elem()
+}
+
+func (i GetNamespaceFieldUsageDependentSourceArgs) ToGetNamespaceFieldUsageDependentSourceOutput() GetNamespaceFieldUsageDependentSourceOutput {
+	return i.ToGetNamespaceFieldUsageDependentSourceOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceFieldUsageDependentSourceArgs) ToGetNamespaceFieldUsageDependentSourceOutputWithContext(ctx context.Context) GetNamespaceFieldUsageDependentSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceFieldUsageDependentSourceOutput)
+}
+
+// GetNamespaceFieldUsageDependentSourceArrayInput is an input type that accepts GetNamespaceFieldUsageDependentSourceArray and GetNamespaceFieldUsageDependentSourceArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceFieldUsageDependentSourceArrayInput` via:
+//
+//	GetNamespaceFieldUsageDependentSourceArray{ GetNamespaceFieldUsageDependentSourceArgs{...} }
+type GetNamespaceFieldUsageDependentSourceArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceFieldUsageDependentSourceArrayOutput() GetNamespaceFieldUsageDependentSourceArrayOutput
+	ToGetNamespaceFieldUsageDependentSourceArrayOutputWithContext(context.Context) GetNamespaceFieldUsageDependentSourceArrayOutput
+}
+
+type GetNamespaceFieldUsageDependentSourceArray []GetNamespaceFieldUsageDependentSourceInput
+
+func (GetNamespaceFieldUsageDependentSourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceFieldUsageDependentSource)(nil)).Elem()
+}
+
+func (i GetNamespaceFieldUsageDependentSourceArray) ToGetNamespaceFieldUsageDependentSourceArrayOutput() GetNamespaceFieldUsageDependentSourceArrayOutput {
+	return i.ToGetNamespaceFieldUsageDependentSourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceFieldUsageDependentSourceArray) ToGetNamespaceFieldUsageDependentSourceArrayOutputWithContext(ctx context.Context) GetNamespaceFieldUsageDependentSourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceFieldUsageDependentSourceArrayOutput)
+}
+
+type GetNamespaceFieldUsageDependentSourceOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceFieldUsageDependentSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceFieldUsageDependentSource)(nil)).Elem()
+}
+
+func (o GetNamespaceFieldUsageDependentSourceOutput) ToGetNamespaceFieldUsageDependentSourceOutput() GetNamespaceFieldUsageDependentSourceOutput {
+	return o
+}
+
+func (o GetNamespaceFieldUsageDependentSourceOutput) ToGetNamespaceFieldUsageDependentSourceOutputWithContext(ctx context.Context) GetNamespaceFieldUsageDependentSourceOutput {
+	return o
+}
+
+// The list of dependencies defined by the source.
+func (o GetNamespaceFieldUsageDependentSourceOutput) Dependencies() GetNamespaceFieldUsageDependentSourceDependencyArrayOutput {
+	return o.ApplyT(func(v GetNamespaceFieldUsageDependentSource) []GetNamespaceFieldUsageDependentSourceDependency {
+		return v.Dependencies
+	}).(GetNamespaceFieldUsageDependentSourceDependencyArrayOutput)
+}
+
+// The entity types.
+func (o GetNamespaceFieldUsageDependentSourceOutput) EntityTypes() GetNamespaceFieldUsageDependentSourceEntityTypeArrayOutput {
+	return o.ApplyT(func(v GetNamespaceFieldUsageDependentSource) []GetNamespaceFieldUsageDependentSourceEntityType {
+		return v.EntityTypes
+	}).(GetNamespaceFieldUsageDependentSourceEntityTypeArrayOutput)
+}
+
+// A flag indicating whether or not the source is marked for auto association.
+func (o GetNamespaceFieldUsageDependentSourceOutput) IsAutoAssociationEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNamespaceFieldUsageDependentSource) bool { return v.IsAutoAssociationEnabled }).(pulumi.BoolOutput)
+}
+
+// The system flag.  A value of false denotes a custom, or user defined object.  A value of true denotes a built in object.
+func (o GetNamespaceFieldUsageDependentSourceOutput) IsSystem() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNamespaceFieldUsageDependentSource) bool { return v.IsSystem }).(pulumi.BoolOutput)
+}
+
+// The source display name.
+func (o GetNamespaceFieldUsageDependentSourceOutput) SourceDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceFieldUsageDependentSource) string { return v.SourceDisplayName }).(pulumi.StringOutput)
+}
+
+// The source unique identifier.
+func (o GetNamespaceFieldUsageDependentSourceOutput) SourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceFieldUsageDependentSource) string { return v.SourceId }).(pulumi.StringOutput)
+}
+
+// The source name.
+func (o GetNamespaceFieldUsageDependentSourceOutput) SourceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceFieldUsageDependentSource) string { return v.SourceName }).(pulumi.StringOutput)
+}
+
+// The source type.
+func (o GetNamespaceFieldUsageDependentSourceOutput) SourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceFieldUsageDependentSource) string { return v.SourceType }).(pulumi.StringOutput)
+}
+
+type GetNamespaceFieldUsageDependentSourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceFieldUsageDependentSourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceFieldUsageDependentSource)(nil)).Elem()
+}
+
+func (o GetNamespaceFieldUsageDependentSourceArrayOutput) ToGetNamespaceFieldUsageDependentSourceArrayOutput() GetNamespaceFieldUsageDependentSourceArrayOutput {
+	return o
+}
+
+func (o GetNamespaceFieldUsageDependentSourceArrayOutput) ToGetNamespaceFieldUsageDependentSourceArrayOutputWithContext(ctx context.Context) GetNamespaceFieldUsageDependentSourceArrayOutput {
+	return o
+}
+
+func (o GetNamespaceFieldUsageDependentSourceArrayOutput) Index(i pulumi.IntInput) GetNamespaceFieldUsageDependentSourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceFieldUsageDependentSource {
+		return vs[0].([]GetNamespaceFieldUsageDependentSource)[vs[1].(int)]
+	}).(GetNamespaceFieldUsageDependentSourceOutput)
+}
+
+type GetNamespaceFieldUsageDependentSourceDependency struct {
+	// The display name of the dependency object
+	ReferenceDisplayName string `pulumi:"referenceDisplayName"`
+	// The unique identifier of the reference, if available.
+	ReferenceId string `pulumi:"referenceId"`
+	// The name of the dependency object
+	ReferenceName string `pulumi:"referenceName"`
+	// The type of reference that defines the dependency.
+	ReferenceType string `pulumi:"referenceType"`
+	// The dependency type.
+	Type string `pulumi:"type"`
+}
+
+// GetNamespaceFieldUsageDependentSourceDependencyInput is an input type that accepts GetNamespaceFieldUsageDependentSourceDependencyArgs and GetNamespaceFieldUsageDependentSourceDependencyOutput values.
+// You can construct a concrete instance of `GetNamespaceFieldUsageDependentSourceDependencyInput` via:
+//
+//	GetNamespaceFieldUsageDependentSourceDependencyArgs{...}
+type GetNamespaceFieldUsageDependentSourceDependencyInput interface {
+	pulumi.Input
+
+	ToGetNamespaceFieldUsageDependentSourceDependencyOutput() GetNamespaceFieldUsageDependentSourceDependencyOutput
+	ToGetNamespaceFieldUsageDependentSourceDependencyOutputWithContext(context.Context) GetNamespaceFieldUsageDependentSourceDependencyOutput
+}
+
+type GetNamespaceFieldUsageDependentSourceDependencyArgs struct {
+	// The display name of the dependency object
+	ReferenceDisplayName pulumi.StringInput `pulumi:"referenceDisplayName"`
+	// The unique identifier of the reference, if available.
+	ReferenceId pulumi.StringInput `pulumi:"referenceId"`
+	// The name of the dependency object
+	ReferenceName pulumi.StringInput `pulumi:"referenceName"`
+	// The type of reference that defines the dependency.
+	ReferenceType pulumi.StringInput `pulumi:"referenceType"`
+	// The dependency type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetNamespaceFieldUsageDependentSourceDependencyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceFieldUsageDependentSourceDependency)(nil)).Elem()
+}
+
+func (i GetNamespaceFieldUsageDependentSourceDependencyArgs) ToGetNamespaceFieldUsageDependentSourceDependencyOutput() GetNamespaceFieldUsageDependentSourceDependencyOutput {
+	return i.ToGetNamespaceFieldUsageDependentSourceDependencyOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceFieldUsageDependentSourceDependencyArgs) ToGetNamespaceFieldUsageDependentSourceDependencyOutputWithContext(ctx context.Context) GetNamespaceFieldUsageDependentSourceDependencyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceFieldUsageDependentSourceDependencyOutput)
+}
+
+// GetNamespaceFieldUsageDependentSourceDependencyArrayInput is an input type that accepts GetNamespaceFieldUsageDependentSourceDependencyArray and GetNamespaceFieldUsageDependentSourceDependencyArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceFieldUsageDependentSourceDependencyArrayInput` via:
+//
+//	GetNamespaceFieldUsageDependentSourceDependencyArray{ GetNamespaceFieldUsageDependentSourceDependencyArgs{...} }
+type GetNamespaceFieldUsageDependentSourceDependencyArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceFieldUsageDependentSourceDependencyArrayOutput() GetNamespaceFieldUsageDependentSourceDependencyArrayOutput
+	ToGetNamespaceFieldUsageDependentSourceDependencyArrayOutputWithContext(context.Context) GetNamespaceFieldUsageDependentSourceDependencyArrayOutput
+}
+
+type GetNamespaceFieldUsageDependentSourceDependencyArray []GetNamespaceFieldUsageDependentSourceDependencyInput
+
+func (GetNamespaceFieldUsageDependentSourceDependencyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceFieldUsageDependentSourceDependency)(nil)).Elem()
+}
+
+func (i GetNamespaceFieldUsageDependentSourceDependencyArray) ToGetNamespaceFieldUsageDependentSourceDependencyArrayOutput() GetNamespaceFieldUsageDependentSourceDependencyArrayOutput {
+	return i.ToGetNamespaceFieldUsageDependentSourceDependencyArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceFieldUsageDependentSourceDependencyArray) ToGetNamespaceFieldUsageDependentSourceDependencyArrayOutputWithContext(ctx context.Context) GetNamespaceFieldUsageDependentSourceDependencyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceFieldUsageDependentSourceDependencyArrayOutput)
+}
+
+type GetNamespaceFieldUsageDependentSourceDependencyOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceFieldUsageDependentSourceDependencyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceFieldUsageDependentSourceDependency)(nil)).Elem()
+}
+
+func (o GetNamespaceFieldUsageDependentSourceDependencyOutput) ToGetNamespaceFieldUsageDependentSourceDependencyOutput() GetNamespaceFieldUsageDependentSourceDependencyOutput {
+	return o
+}
+
+func (o GetNamespaceFieldUsageDependentSourceDependencyOutput) ToGetNamespaceFieldUsageDependentSourceDependencyOutputWithContext(ctx context.Context) GetNamespaceFieldUsageDependentSourceDependencyOutput {
+	return o
+}
+
+// The display name of the dependency object
+func (o GetNamespaceFieldUsageDependentSourceDependencyOutput) ReferenceDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceFieldUsageDependentSourceDependency) string { return v.ReferenceDisplayName }).(pulumi.StringOutput)
+}
+
+// The unique identifier of the reference, if available.
+func (o GetNamespaceFieldUsageDependentSourceDependencyOutput) ReferenceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceFieldUsageDependentSourceDependency) string { return v.ReferenceId }).(pulumi.StringOutput)
+}
+
+// The name of the dependency object
+func (o GetNamespaceFieldUsageDependentSourceDependencyOutput) ReferenceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceFieldUsageDependentSourceDependency) string { return v.ReferenceName }).(pulumi.StringOutput)
+}
+
+// The type of reference that defines the dependency.
+func (o GetNamespaceFieldUsageDependentSourceDependencyOutput) ReferenceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceFieldUsageDependentSourceDependency) string { return v.ReferenceType }).(pulumi.StringOutput)
+}
+
+// The dependency type.
+func (o GetNamespaceFieldUsageDependentSourceDependencyOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceFieldUsageDependentSourceDependency) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetNamespaceFieldUsageDependentSourceDependencyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceFieldUsageDependentSourceDependencyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceFieldUsageDependentSourceDependency)(nil)).Elem()
+}
+
+func (o GetNamespaceFieldUsageDependentSourceDependencyArrayOutput) ToGetNamespaceFieldUsageDependentSourceDependencyArrayOutput() GetNamespaceFieldUsageDependentSourceDependencyArrayOutput {
+	return o
+}
+
+func (o GetNamespaceFieldUsageDependentSourceDependencyArrayOutput) ToGetNamespaceFieldUsageDependentSourceDependencyArrayOutputWithContext(ctx context.Context) GetNamespaceFieldUsageDependentSourceDependencyArrayOutput {
+	return o
+}
+
+func (o GetNamespaceFieldUsageDependentSourceDependencyArrayOutput) Index(i pulumi.IntInput) GetNamespaceFieldUsageDependentSourceDependencyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceFieldUsageDependentSourceDependency {
+		return vs[0].([]GetNamespaceFieldUsageDependentSourceDependency)[vs[1].(int)]
+	}).(GetNamespaceFieldUsageDependentSourceDependencyOutput)
+}
+
+type GetNamespaceFieldUsageDependentSourceEntityType struct {
+	// The entity type.
+	EntityType string `pulumi:"entityType"`
+	// The type category.
+	EntityTypeCategory string `pulumi:"entityTypeCategory"`
+	// The entity type display name.
+	EntityTypeDisplayName string `pulumi:"entityTypeDisplayName"`
+	// The source unique identifier.
+	SourceId string `pulumi:"sourceId"`
+}
+
+// GetNamespaceFieldUsageDependentSourceEntityTypeInput is an input type that accepts GetNamespaceFieldUsageDependentSourceEntityTypeArgs and GetNamespaceFieldUsageDependentSourceEntityTypeOutput values.
+// You can construct a concrete instance of `GetNamespaceFieldUsageDependentSourceEntityTypeInput` via:
+//
+//	GetNamespaceFieldUsageDependentSourceEntityTypeArgs{...}
+type GetNamespaceFieldUsageDependentSourceEntityTypeInput interface {
+	pulumi.Input
+
+	ToGetNamespaceFieldUsageDependentSourceEntityTypeOutput() GetNamespaceFieldUsageDependentSourceEntityTypeOutput
+	ToGetNamespaceFieldUsageDependentSourceEntityTypeOutputWithContext(context.Context) GetNamespaceFieldUsageDependentSourceEntityTypeOutput
+}
+
+type GetNamespaceFieldUsageDependentSourceEntityTypeArgs struct {
+	// The entity type.
+	EntityType pulumi.StringInput `pulumi:"entityType"`
+	// The type category.
+	EntityTypeCategory pulumi.StringInput `pulumi:"entityTypeCategory"`
+	// The entity type display name.
+	EntityTypeDisplayName pulumi.StringInput `pulumi:"entityTypeDisplayName"`
+	// The source unique identifier.
+	SourceId pulumi.StringInput `pulumi:"sourceId"`
+}
+
+func (GetNamespaceFieldUsageDependentSourceEntityTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceFieldUsageDependentSourceEntityType)(nil)).Elem()
+}
+
+func (i GetNamespaceFieldUsageDependentSourceEntityTypeArgs) ToGetNamespaceFieldUsageDependentSourceEntityTypeOutput() GetNamespaceFieldUsageDependentSourceEntityTypeOutput {
+	return i.ToGetNamespaceFieldUsageDependentSourceEntityTypeOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceFieldUsageDependentSourceEntityTypeArgs) ToGetNamespaceFieldUsageDependentSourceEntityTypeOutputWithContext(ctx context.Context) GetNamespaceFieldUsageDependentSourceEntityTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceFieldUsageDependentSourceEntityTypeOutput)
+}
+
+// GetNamespaceFieldUsageDependentSourceEntityTypeArrayInput is an input type that accepts GetNamespaceFieldUsageDependentSourceEntityTypeArray and GetNamespaceFieldUsageDependentSourceEntityTypeArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceFieldUsageDependentSourceEntityTypeArrayInput` via:
+//
+//	GetNamespaceFieldUsageDependentSourceEntityTypeArray{ GetNamespaceFieldUsageDependentSourceEntityTypeArgs{...} }
+type GetNamespaceFieldUsageDependentSourceEntityTypeArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceFieldUsageDependentSourceEntityTypeArrayOutput() GetNamespaceFieldUsageDependentSourceEntityTypeArrayOutput
+	ToGetNamespaceFieldUsageDependentSourceEntityTypeArrayOutputWithContext(context.Context) GetNamespaceFieldUsageDependentSourceEntityTypeArrayOutput
+}
+
+type GetNamespaceFieldUsageDependentSourceEntityTypeArray []GetNamespaceFieldUsageDependentSourceEntityTypeInput
+
+func (GetNamespaceFieldUsageDependentSourceEntityTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceFieldUsageDependentSourceEntityType)(nil)).Elem()
+}
+
+func (i GetNamespaceFieldUsageDependentSourceEntityTypeArray) ToGetNamespaceFieldUsageDependentSourceEntityTypeArrayOutput() GetNamespaceFieldUsageDependentSourceEntityTypeArrayOutput {
+	return i.ToGetNamespaceFieldUsageDependentSourceEntityTypeArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceFieldUsageDependentSourceEntityTypeArray) ToGetNamespaceFieldUsageDependentSourceEntityTypeArrayOutputWithContext(ctx context.Context) GetNamespaceFieldUsageDependentSourceEntityTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceFieldUsageDependentSourceEntityTypeArrayOutput)
+}
+
+type GetNamespaceFieldUsageDependentSourceEntityTypeOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceFieldUsageDependentSourceEntityTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceFieldUsageDependentSourceEntityType)(nil)).Elem()
+}
+
+func (o GetNamespaceFieldUsageDependentSourceEntityTypeOutput) ToGetNamespaceFieldUsageDependentSourceEntityTypeOutput() GetNamespaceFieldUsageDependentSourceEntityTypeOutput {
+	return o
+}
+
+func (o GetNamespaceFieldUsageDependentSourceEntityTypeOutput) ToGetNamespaceFieldUsageDependentSourceEntityTypeOutputWithContext(ctx context.Context) GetNamespaceFieldUsageDependentSourceEntityTypeOutput {
+	return o
+}
+
+// The entity type.
+func (o GetNamespaceFieldUsageDependentSourceEntityTypeOutput) EntityType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceFieldUsageDependentSourceEntityType) string { return v.EntityType }).(pulumi.StringOutput)
+}
+
+// The type category.
+func (o GetNamespaceFieldUsageDependentSourceEntityTypeOutput) EntityTypeCategory() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceFieldUsageDependentSourceEntityType) string { return v.EntityTypeCategory }).(pulumi.StringOutput)
+}
+
+// The entity type display name.
+func (o GetNamespaceFieldUsageDependentSourceEntityTypeOutput) EntityTypeDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceFieldUsageDependentSourceEntityType) string { return v.EntityTypeDisplayName }).(pulumi.StringOutput)
+}
+
+// The source unique identifier.
+func (o GetNamespaceFieldUsageDependentSourceEntityTypeOutput) SourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceFieldUsageDependentSourceEntityType) string { return v.SourceId }).(pulumi.StringOutput)
+}
+
+type GetNamespaceFieldUsageDependentSourceEntityTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceFieldUsageDependentSourceEntityTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceFieldUsageDependentSourceEntityType)(nil)).Elem()
+}
+
+func (o GetNamespaceFieldUsageDependentSourceEntityTypeArrayOutput) ToGetNamespaceFieldUsageDependentSourceEntityTypeArrayOutput() GetNamespaceFieldUsageDependentSourceEntityTypeArrayOutput {
+	return o
+}
+
+func (o GetNamespaceFieldUsageDependentSourceEntityTypeArrayOutput) ToGetNamespaceFieldUsageDependentSourceEntityTypeArrayOutputWithContext(ctx context.Context) GetNamespaceFieldUsageDependentSourceEntityTypeArrayOutput {
+	return o
+}
+
+func (o GetNamespaceFieldUsageDependentSourceEntityTypeArrayOutput) Index(i pulumi.IntInput) GetNamespaceFieldUsageDependentSourceEntityTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceFieldUsageDependentSourceEntityType {
+		return vs[0].([]GetNamespaceFieldUsageDependentSourceEntityType)[vs[1].(int)]
+	}).(GetNamespaceFieldUsageDependentSourceEntityTypeOutput)
 }
 
 type GetNamespaceIngestTimeRuleAction struct {
@@ -6417,6 +8259,852 @@ func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutpu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem {
 		return vs[0].([]GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem)[vs[1].(int)]
 	}).(GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput)
+}
+
+type GetNamespaceLookupCategory struct {
+	// The lookup description.
+	Description string `pulumi:"description"`
+	// The field display name.
+	DisplayName string `pulumi:"displayName"`
+	// The system flag. A value of false denotes a user-created category. A value of true denotes an Oracle-defined category.
+	IsSystem bool `pulumi:"isSystem"`
+	// The field name.
+	Name string `pulumi:"name"`
+	// The lookup type. Valid values are Lookup, Dictionary or Module.
+	Type string `pulumi:"type"`
+}
+
+// GetNamespaceLookupCategoryInput is an input type that accepts GetNamespaceLookupCategoryArgs and GetNamespaceLookupCategoryOutput values.
+// You can construct a concrete instance of `GetNamespaceLookupCategoryInput` via:
+//
+//	GetNamespaceLookupCategoryArgs{...}
+type GetNamespaceLookupCategoryInput interface {
+	pulumi.Input
+
+	ToGetNamespaceLookupCategoryOutput() GetNamespaceLookupCategoryOutput
+	ToGetNamespaceLookupCategoryOutputWithContext(context.Context) GetNamespaceLookupCategoryOutput
+}
+
+type GetNamespaceLookupCategoryArgs struct {
+	// The lookup description.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The field display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The system flag. A value of false denotes a user-created category. A value of true denotes an Oracle-defined category.
+	IsSystem pulumi.BoolInput `pulumi:"isSystem"`
+	// The field name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The lookup type. Valid values are Lookup, Dictionary or Module.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetNamespaceLookupCategoryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceLookupCategory)(nil)).Elem()
+}
+
+func (i GetNamespaceLookupCategoryArgs) ToGetNamespaceLookupCategoryOutput() GetNamespaceLookupCategoryOutput {
+	return i.ToGetNamespaceLookupCategoryOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceLookupCategoryArgs) ToGetNamespaceLookupCategoryOutputWithContext(ctx context.Context) GetNamespaceLookupCategoryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceLookupCategoryOutput)
+}
+
+// GetNamespaceLookupCategoryArrayInput is an input type that accepts GetNamespaceLookupCategoryArray and GetNamespaceLookupCategoryArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceLookupCategoryArrayInput` via:
+//
+//	GetNamespaceLookupCategoryArray{ GetNamespaceLookupCategoryArgs{...} }
+type GetNamespaceLookupCategoryArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceLookupCategoryArrayOutput() GetNamespaceLookupCategoryArrayOutput
+	ToGetNamespaceLookupCategoryArrayOutputWithContext(context.Context) GetNamespaceLookupCategoryArrayOutput
+}
+
+type GetNamespaceLookupCategoryArray []GetNamespaceLookupCategoryInput
+
+func (GetNamespaceLookupCategoryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceLookupCategory)(nil)).Elem()
+}
+
+func (i GetNamespaceLookupCategoryArray) ToGetNamespaceLookupCategoryArrayOutput() GetNamespaceLookupCategoryArrayOutput {
+	return i.ToGetNamespaceLookupCategoryArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceLookupCategoryArray) ToGetNamespaceLookupCategoryArrayOutputWithContext(ctx context.Context) GetNamespaceLookupCategoryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceLookupCategoryArrayOutput)
+}
+
+type GetNamespaceLookupCategoryOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceLookupCategoryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceLookupCategory)(nil)).Elem()
+}
+
+func (o GetNamespaceLookupCategoryOutput) ToGetNamespaceLookupCategoryOutput() GetNamespaceLookupCategoryOutput {
+	return o
+}
+
+func (o GetNamespaceLookupCategoryOutput) ToGetNamespaceLookupCategoryOutputWithContext(ctx context.Context) GetNamespaceLookupCategoryOutput {
+	return o
+}
+
+// The lookup description.
+func (o GetNamespaceLookupCategoryOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceLookupCategory) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The field display name.
+func (o GetNamespaceLookupCategoryOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceLookupCategory) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The system flag. A value of false denotes a user-created category. A value of true denotes an Oracle-defined category.
+func (o GetNamespaceLookupCategoryOutput) IsSystem() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNamespaceLookupCategory) bool { return v.IsSystem }).(pulumi.BoolOutput)
+}
+
+// The field name.
+func (o GetNamespaceLookupCategoryOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceLookupCategory) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The lookup type. Valid values are Lookup, Dictionary or Module.
+func (o GetNamespaceLookupCategoryOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceLookupCategory) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetNamespaceLookupCategoryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceLookupCategoryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceLookupCategory)(nil)).Elem()
+}
+
+func (o GetNamespaceLookupCategoryArrayOutput) ToGetNamespaceLookupCategoryArrayOutput() GetNamespaceLookupCategoryArrayOutput {
+	return o
+}
+
+func (o GetNamespaceLookupCategoryArrayOutput) ToGetNamespaceLookupCategoryArrayOutputWithContext(ctx context.Context) GetNamespaceLookupCategoryArrayOutput {
+	return o
+}
+
+func (o GetNamespaceLookupCategoryArrayOutput) Index(i pulumi.IntInput) GetNamespaceLookupCategoryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceLookupCategory {
+		return vs[0].([]GetNamespaceLookupCategory)[vs[1].(int)]
+	}).(GetNamespaceLookupCategoryOutput)
+}
+
+type GetNamespaceLookupField struct {
+	// The common field name.
+	CommonFieldName string `pulumi:"commonFieldName"`
+	// The default match value.
+	DefaultMatchValue string `pulumi:"defaultMatchValue"`
+	// The field display name.
+	DisplayName string `pulumi:"displayName"`
+	// A flag indicating whether or not the lookup field is a common field.
+	IsCommonField bool `pulumi:"isCommonField"`
+	// The match operator.
+	MatchOperator string `pulumi:"matchOperator"`
+	// The field name.
+	Name string `pulumi:"name"`
+	// THe field position.
+	Position string `pulumi:"position"`
+}
+
+// GetNamespaceLookupFieldInput is an input type that accepts GetNamespaceLookupFieldArgs and GetNamespaceLookupFieldOutput values.
+// You can construct a concrete instance of `GetNamespaceLookupFieldInput` via:
+//
+//	GetNamespaceLookupFieldArgs{...}
+type GetNamespaceLookupFieldInput interface {
+	pulumi.Input
+
+	ToGetNamespaceLookupFieldOutput() GetNamespaceLookupFieldOutput
+	ToGetNamespaceLookupFieldOutputWithContext(context.Context) GetNamespaceLookupFieldOutput
+}
+
+type GetNamespaceLookupFieldArgs struct {
+	// The common field name.
+	CommonFieldName pulumi.StringInput `pulumi:"commonFieldName"`
+	// The default match value.
+	DefaultMatchValue pulumi.StringInput `pulumi:"defaultMatchValue"`
+	// The field display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// A flag indicating whether or not the lookup field is a common field.
+	IsCommonField pulumi.BoolInput `pulumi:"isCommonField"`
+	// The match operator.
+	MatchOperator pulumi.StringInput `pulumi:"matchOperator"`
+	// The field name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// THe field position.
+	Position pulumi.StringInput `pulumi:"position"`
+}
+
+func (GetNamespaceLookupFieldArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceLookupField)(nil)).Elem()
+}
+
+func (i GetNamespaceLookupFieldArgs) ToGetNamespaceLookupFieldOutput() GetNamespaceLookupFieldOutput {
+	return i.ToGetNamespaceLookupFieldOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceLookupFieldArgs) ToGetNamespaceLookupFieldOutputWithContext(ctx context.Context) GetNamespaceLookupFieldOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceLookupFieldOutput)
+}
+
+// GetNamespaceLookupFieldArrayInput is an input type that accepts GetNamespaceLookupFieldArray and GetNamespaceLookupFieldArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceLookupFieldArrayInput` via:
+//
+//	GetNamespaceLookupFieldArray{ GetNamespaceLookupFieldArgs{...} }
+type GetNamespaceLookupFieldArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceLookupFieldArrayOutput() GetNamespaceLookupFieldArrayOutput
+	ToGetNamespaceLookupFieldArrayOutputWithContext(context.Context) GetNamespaceLookupFieldArrayOutput
+}
+
+type GetNamespaceLookupFieldArray []GetNamespaceLookupFieldInput
+
+func (GetNamespaceLookupFieldArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceLookupField)(nil)).Elem()
+}
+
+func (i GetNamespaceLookupFieldArray) ToGetNamespaceLookupFieldArrayOutput() GetNamespaceLookupFieldArrayOutput {
+	return i.ToGetNamespaceLookupFieldArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceLookupFieldArray) ToGetNamespaceLookupFieldArrayOutputWithContext(ctx context.Context) GetNamespaceLookupFieldArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceLookupFieldArrayOutput)
+}
+
+type GetNamespaceLookupFieldOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceLookupFieldOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceLookupField)(nil)).Elem()
+}
+
+func (o GetNamespaceLookupFieldOutput) ToGetNamespaceLookupFieldOutput() GetNamespaceLookupFieldOutput {
+	return o
+}
+
+func (o GetNamespaceLookupFieldOutput) ToGetNamespaceLookupFieldOutputWithContext(ctx context.Context) GetNamespaceLookupFieldOutput {
+	return o
+}
+
+// The common field name.
+func (o GetNamespaceLookupFieldOutput) CommonFieldName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceLookupField) string { return v.CommonFieldName }).(pulumi.StringOutput)
+}
+
+// The default match value.
+func (o GetNamespaceLookupFieldOutput) DefaultMatchValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceLookupField) string { return v.DefaultMatchValue }).(pulumi.StringOutput)
+}
+
+// The field display name.
+func (o GetNamespaceLookupFieldOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceLookupField) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// A flag indicating whether or not the lookup field is a common field.
+func (o GetNamespaceLookupFieldOutput) IsCommonField() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNamespaceLookupField) bool { return v.IsCommonField }).(pulumi.BoolOutput)
+}
+
+// The match operator.
+func (o GetNamespaceLookupFieldOutput) MatchOperator() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceLookupField) string { return v.MatchOperator }).(pulumi.StringOutput)
+}
+
+// The field name.
+func (o GetNamespaceLookupFieldOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceLookupField) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// THe field position.
+func (o GetNamespaceLookupFieldOutput) Position() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceLookupField) string { return v.Position }).(pulumi.StringOutput)
+}
+
+type GetNamespaceLookupFieldArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceLookupFieldArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceLookupField)(nil)).Elem()
+}
+
+func (o GetNamespaceLookupFieldArrayOutput) ToGetNamespaceLookupFieldArrayOutput() GetNamespaceLookupFieldArrayOutput {
+	return o
+}
+
+func (o GetNamespaceLookupFieldArrayOutput) ToGetNamespaceLookupFieldArrayOutputWithContext(ctx context.Context) GetNamespaceLookupFieldArrayOutput {
+	return o
+}
+
+func (o GetNamespaceLookupFieldArrayOutput) Index(i pulumi.IntInput) GetNamespaceLookupFieldOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceLookupField {
+		return vs[0].([]GetNamespaceLookupField)[vs[1].(int)]
+	}).(GetNamespaceLookupFieldOutput)
+}
+
+type GetNamespaceLookupReferringSource struct {
+	// The canonical link.
+	CanonicalLink string `pulumi:"canonicalLink"`
+	// The total count.
+	TotalCount string `pulumi:"totalCount"`
+}
+
+// GetNamespaceLookupReferringSourceInput is an input type that accepts GetNamespaceLookupReferringSourceArgs and GetNamespaceLookupReferringSourceOutput values.
+// You can construct a concrete instance of `GetNamespaceLookupReferringSourceInput` via:
+//
+//	GetNamespaceLookupReferringSourceArgs{...}
+type GetNamespaceLookupReferringSourceInput interface {
+	pulumi.Input
+
+	ToGetNamespaceLookupReferringSourceOutput() GetNamespaceLookupReferringSourceOutput
+	ToGetNamespaceLookupReferringSourceOutputWithContext(context.Context) GetNamespaceLookupReferringSourceOutput
+}
+
+type GetNamespaceLookupReferringSourceArgs struct {
+	// The canonical link.
+	CanonicalLink pulumi.StringInput `pulumi:"canonicalLink"`
+	// The total count.
+	TotalCount pulumi.StringInput `pulumi:"totalCount"`
+}
+
+func (GetNamespaceLookupReferringSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceLookupReferringSource)(nil)).Elem()
+}
+
+func (i GetNamespaceLookupReferringSourceArgs) ToGetNamespaceLookupReferringSourceOutput() GetNamespaceLookupReferringSourceOutput {
+	return i.ToGetNamespaceLookupReferringSourceOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceLookupReferringSourceArgs) ToGetNamespaceLookupReferringSourceOutputWithContext(ctx context.Context) GetNamespaceLookupReferringSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceLookupReferringSourceOutput)
+}
+
+// GetNamespaceLookupReferringSourceArrayInput is an input type that accepts GetNamespaceLookupReferringSourceArray and GetNamespaceLookupReferringSourceArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceLookupReferringSourceArrayInput` via:
+//
+//	GetNamespaceLookupReferringSourceArray{ GetNamespaceLookupReferringSourceArgs{...} }
+type GetNamespaceLookupReferringSourceArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceLookupReferringSourceArrayOutput() GetNamespaceLookupReferringSourceArrayOutput
+	ToGetNamespaceLookupReferringSourceArrayOutputWithContext(context.Context) GetNamespaceLookupReferringSourceArrayOutput
+}
+
+type GetNamespaceLookupReferringSourceArray []GetNamespaceLookupReferringSourceInput
+
+func (GetNamespaceLookupReferringSourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceLookupReferringSource)(nil)).Elem()
+}
+
+func (i GetNamespaceLookupReferringSourceArray) ToGetNamespaceLookupReferringSourceArrayOutput() GetNamespaceLookupReferringSourceArrayOutput {
+	return i.ToGetNamespaceLookupReferringSourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceLookupReferringSourceArray) ToGetNamespaceLookupReferringSourceArrayOutputWithContext(ctx context.Context) GetNamespaceLookupReferringSourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceLookupReferringSourceArrayOutput)
+}
+
+type GetNamespaceLookupReferringSourceOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceLookupReferringSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceLookupReferringSource)(nil)).Elem()
+}
+
+func (o GetNamespaceLookupReferringSourceOutput) ToGetNamespaceLookupReferringSourceOutput() GetNamespaceLookupReferringSourceOutput {
+	return o
+}
+
+func (o GetNamespaceLookupReferringSourceOutput) ToGetNamespaceLookupReferringSourceOutputWithContext(ctx context.Context) GetNamespaceLookupReferringSourceOutput {
+	return o
+}
+
+// The canonical link.
+func (o GetNamespaceLookupReferringSourceOutput) CanonicalLink() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceLookupReferringSource) string { return v.CanonicalLink }).(pulumi.StringOutput)
+}
+
+// The total count.
+func (o GetNamespaceLookupReferringSourceOutput) TotalCount() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceLookupReferringSource) string { return v.TotalCount }).(pulumi.StringOutput)
+}
+
+type GetNamespaceLookupReferringSourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceLookupReferringSourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceLookupReferringSource)(nil)).Elem()
+}
+
+func (o GetNamespaceLookupReferringSourceArrayOutput) ToGetNamespaceLookupReferringSourceArrayOutput() GetNamespaceLookupReferringSourceArrayOutput {
+	return o
+}
+
+func (o GetNamespaceLookupReferringSourceArrayOutput) ToGetNamespaceLookupReferringSourceArrayOutputWithContext(ctx context.Context) GetNamespaceLookupReferringSourceArrayOutput {
+	return o
+}
+
+func (o GetNamespaceLookupReferringSourceArrayOutput) Index(i pulumi.IntInput) GetNamespaceLookupReferringSourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceLookupReferringSource {
+		return vs[0].([]GetNamespaceLookupReferringSource)[vs[1].(int)]
+	}).(GetNamespaceLookupReferringSourceOutput)
+}
+
+type GetNamespaceLookupStatusSummary struct {
+	// The number of chunks processed.
+	ChunksProcessed string `pulumi:"chunksProcessed"`
+	// The failure details, if any.
+	FailureDetails string `pulumi:"failureDetails"`
+	// The filename.
+	Filename string `pulumi:"filename"`
+	// The status.
+	Status string `pulumi:"status"`
+	// The total number of chunks.
+	TotalChunks string `pulumi:"totalChunks"`
+}
+
+// GetNamespaceLookupStatusSummaryInput is an input type that accepts GetNamespaceLookupStatusSummaryArgs and GetNamespaceLookupStatusSummaryOutput values.
+// You can construct a concrete instance of `GetNamespaceLookupStatusSummaryInput` via:
+//
+//	GetNamespaceLookupStatusSummaryArgs{...}
+type GetNamespaceLookupStatusSummaryInput interface {
+	pulumi.Input
+
+	ToGetNamespaceLookupStatusSummaryOutput() GetNamespaceLookupStatusSummaryOutput
+	ToGetNamespaceLookupStatusSummaryOutputWithContext(context.Context) GetNamespaceLookupStatusSummaryOutput
+}
+
+type GetNamespaceLookupStatusSummaryArgs struct {
+	// The number of chunks processed.
+	ChunksProcessed pulumi.StringInput `pulumi:"chunksProcessed"`
+	// The failure details, if any.
+	FailureDetails pulumi.StringInput `pulumi:"failureDetails"`
+	// The filename.
+	Filename pulumi.StringInput `pulumi:"filename"`
+	// The status.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The total number of chunks.
+	TotalChunks pulumi.StringInput `pulumi:"totalChunks"`
+}
+
+func (GetNamespaceLookupStatusSummaryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceLookupStatusSummary)(nil)).Elem()
+}
+
+func (i GetNamespaceLookupStatusSummaryArgs) ToGetNamespaceLookupStatusSummaryOutput() GetNamespaceLookupStatusSummaryOutput {
+	return i.ToGetNamespaceLookupStatusSummaryOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceLookupStatusSummaryArgs) ToGetNamespaceLookupStatusSummaryOutputWithContext(ctx context.Context) GetNamespaceLookupStatusSummaryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceLookupStatusSummaryOutput)
+}
+
+// GetNamespaceLookupStatusSummaryArrayInput is an input type that accepts GetNamespaceLookupStatusSummaryArray and GetNamespaceLookupStatusSummaryArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceLookupStatusSummaryArrayInput` via:
+//
+//	GetNamespaceLookupStatusSummaryArray{ GetNamespaceLookupStatusSummaryArgs{...} }
+type GetNamespaceLookupStatusSummaryArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceLookupStatusSummaryArrayOutput() GetNamespaceLookupStatusSummaryArrayOutput
+	ToGetNamespaceLookupStatusSummaryArrayOutputWithContext(context.Context) GetNamespaceLookupStatusSummaryArrayOutput
+}
+
+type GetNamespaceLookupStatusSummaryArray []GetNamespaceLookupStatusSummaryInput
+
+func (GetNamespaceLookupStatusSummaryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceLookupStatusSummary)(nil)).Elem()
+}
+
+func (i GetNamespaceLookupStatusSummaryArray) ToGetNamespaceLookupStatusSummaryArrayOutput() GetNamespaceLookupStatusSummaryArrayOutput {
+	return i.ToGetNamespaceLookupStatusSummaryArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceLookupStatusSummaryArray) ToGetNamespaceLookupStatusSummaryArrayOutputWithContext(ctx context.Context) GetNamespaceLookupStatusSummaryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceLookupStatusSummaryArrayOutput)
+}
+
+type GetNamespaceLookupStatusSummaryOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceLookupStatusSummaryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceLookupStatusSummary)(nil)).Elem()
+}
+
+func (o GetNamespaceLookupStatusSummaryOutput) ToGetNamespaceLookupStatusSummaryOutput() GetNamespaceLookupStatusSummaryOutput {
+	return o
+}
+
+func (o GetNamespaceLookupStatusSummaryOutput) ToGetNamespaceLookupStatusSummaryOutputWithContext(ctx context.Context) GetNamespaceLookupStatusSummaryOutput {
+	return o
+}
+
+// The number of chunks processed.
+func (o GetNamespaceLookupStatusSummaryOutput) ChunksProcessed() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceLookupStatusSummary) string { return v.ChunksProcessed }).(pulumi.StringOutput)
+}
+
+// The failure details, if any.
+func (o GetNamespaceLookupStatusSummaryOutput) FailureDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceLookupStatusSummary) string { return v.FailureDetails }).(pulumi.StringOutput)
+}
+
+// The filename.
+func (o GetNamespaceLookupStatusSummaryOutput) Filename() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceLookupStatusSummary) string { return v.Filename }).(pulumi.StringOutput)
+}
+
+// The status.
+func (o GetNamespaceLookupStatusSummaryOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceLookupStatusSummary) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The total number of chunks.
+func (o GetNamespaceLookupStatusSummaryOutput) TotalChunks() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceLookupStatusSummary) string { return v.TotalChunks }).(pulumi.StringOutput)
+}
+
+type GetNamespaceLookupStatusSummaryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceLookupStatusSummaryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceLookupStatusSummary)(nil)).Elem()
+}
+
+func (o GetNamespaceLookupStatusSummaryArrayOutput) ToGetNamespaceLookupStatusSummaryArrayOutput() GetNamespaceLookupStatusSummaryArrayOutput {
+	return o
+}
+
+func (o GetNamespaceLookupStatusSummaryArrayOutput) ToGetNamespaceLookupStatusSummaryArrayOutputWithContext(ctx context.Context) GetNamespaceLookupStatusSummaryArrayOutput {
+	return o
+}
+
+func (o GetNamespaceLookupStatusSummaryArrayOutput) Index(i pulumi.IntInput) GetNamespaceLookupStatusSummaryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceLookupStatusSummary {
+		return vs[0].([]GetNamespaceLookupStatusSummary)[vs[1].(int)]
+	}).(GetNamespaceLookupStatusSummaryOutput)
+}
+
+type GetNamespaceParserActionsFilter struct {
+	// The parser action name used for filtering.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetNamespaceParserActionsFilterInput is an input type that accepts GetNamespaceParserActionsFilterArgs and GetNamespaceParserActionsFilterOutput values.
+// You can construct a concrete instance of `GetNamespaceParserActionsFilterInput` via:
+//
+//	GetNamespaceParserActionsFilterArgs{...}
+type GetNamespaceParserActionsFilterInput interface {
+	pulumi.Input
+
+	ToGetNamespaceParserActionsFilterOutput() GetNamespaceParserActionsFilterOutput
+	ToGetNamespaceParserActionsFilterOutputWithContext(context.Context) GetNamespaceParserActionsFilterOutput
+}
+
+type GetNamespaceParserActionsFilterArgs struct {
+	// The parser action name used for filtering.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetNamespaceParserActionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceParserActionsFilter)(nil)).Elem()
+}
+
+func (i GetNamespaceParserActionsFilterArgs) ToGetNamespaceParserActionsFilterOutput() GetNamespaceParserActionsFilterOutput {
+	return i.ToGetNamespaceParserActionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceParserActionsFilterArgs) ToGetNamespaceParserActionsFilterOutputWithContext(ctx context.Context) GetNamespaceParserActionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceParserActionsFilterOutput)
+}
+
+// GetNamespaceParserActionsFilterArrayInput is an input type that accepts GetNamespaceParserActionsFilterArray and GetNamespaceParserActionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceParserActionsFilterArrayInput` via:
+//
+//	GetNamespaceParserActionsFilterArray{ GetNamespaceParserActionsFilterArgs{...} }
+type GetNamespaceParserActionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceParserActionsFilterArrayOutput() GetNamespaceParserActionsFilterArrayOutput
+	ToGetNamespaceParserActionsFilterArrayOutputWithContext(context.Context) GetNamespaceParserActionsFilterArrayOutput
+}
+
+type GetNamespaceParserActionsFilterArray []GetNamespaceParserActionsFilterInput
+
+func (GetNamespaceParserActionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceParserActionsFilter)(nil)).Elem()
+}
+
+func (i GetNamespaceParserActionsFilterArray) ToGetNamespaceParserActionsFilterArrayOutput() GetNamespaceParserActionsFilterArrayOutput {
+	return i.ToGetNamespaceParserActionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceParserActionsFilterArray) ToGetNamespaceParserActionsFilterArrayOutputWithContext(ctx context.Context) GetNamespaceParserActionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceParserActionsFilterArrayOutput)
+}
+
+type GetNamespaceParserActionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceParserActionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceParserActionsFilter)(nil)).Elem()
+}
+
+func (o GetNamespaceParserActionsFilterOutput) ToGetNamespaceParserActionsFilterOutput() GetNamespaceParserActionsFilterOutput {
+	return o
+}
+
+func (o GetNamespaceParserActionsFilterOutput) ToGetNamespaceParserActionsFilterOutputWithContext(ctx context.Context) GetNamespaceParserActionsFilterOutput {
+	return o
+}
+
+// The parser action name used for filtering.
+func (o GetNamespaceParserActionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceParserActionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetNamespaceParserActionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNamespaceParserActionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetNamespaceParserActionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNamespaceParserActionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetNamespaceParserActionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceParserActionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceParserActionsFilter)(nil)).Elem()
+}
+
+func (o GetNamespaceParserActionsFilterArrayOutput) ToGetNamespaceParserActionsFilterArrayOutput() GetNamespaceParserActionsFilterArrayOutput {
+	return o
+}
+
+func (o GetNamespaceParserActionsFilterArrayOutput) ToGetNamespaceParserActionsFilterArrayOutputWithContext(ctx context.Context) GetNamespaceParserActionsFilterArrayOutput {
+	return o
+}
+
+func (o GetNamespaceParserActionsFilterArrayOutput) Index(i pulumi.IntInput) GetNamespaceParserActionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceParserActionsFilter {
+		return vs[0].([]GetNamespaceParserActionsFilter)[vs[1].(int)]
+	}).(GetNamespaceParserActionsFilterOutput)
+}
+
+type GetNamespaceParserActionsParserActionSummaryCollection struct {
+	// An array of parser action summary objects.
+	Items []GetNamespaceParserActionsParserActionSummaryCollectionItem `pulumi:"items"`
+}
+
+// GetNamespaceParserActionsParserActionSummaryCollectionInput is an input type that accepts GetNamespaceParserActionsParserActionSummaryCollectionArgs and GetNamespaceParserActionsParserActionSummaryCollectionOutput values.
+// You can construct a concrete instance of `GetNamespaceParserActionsParserActionSummaryCollectionInput` via:
+//
+//	GetNamespaceParserActionsParserActionSummaryCollectionArgs{...}
+type GetNamespaceParserActionsParserActionSummaryCollectionInput interface {
+	pulumi.Input
+
+	ToGetNamespaceParserActionsParserActionSummaryCollectionOutput() GetNamespaceParserActionsParserActionSummaryCollectionOutput
+	ToGetNamespaceParserActionsParserActionSummaryCollectionOutputWithContext(context.Context) GetNamespaceParserActionsParserActionSummaryCollectionOutput
+}
+
+type GetNamespaceParserActionsParserActionSummaryCollectionArgs struct {
+	// An array of parser action summary objects.
+	Items GetNamespaceParserActionsParserActionSummaryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetNamespaceParserActionsParserActionSummaryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceParserActionsParserActionSummaryCollection)(nil)).Elem()
+}
+
+func (i GetNamespaceParserActionsParserActionSummaryCollectionArgs) ToGetNamespaceParserActionsParserActionSummaryCollectionOutput() GetNamespaceParserActionsParserActionSummaryCollectionOutput {
+	return i.ToGetNamespaceParserActionsParserActionSummaryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceParserActionsParserActionSummaryCollectionArgs) ToGetNamespaceParserActionsParserActionSummaryCollectionOutputWithContext(ctx context.Context) GetNamespaceParserActionsParserActionSummaryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceParserActionsParserActionSummaryCollectionOutput)
+}
+
+// GetNamespaceParserActionsParserActionSummaryCollectionArrayInput is an input type that accepts GetNamespaceParserActionsParserActionSummaryCollectionArray and GetNamespaceParserActionsParserActionSummaryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceParserActionsParserActionSummaryCollectionArrayInput` via:
+//
+//	GetNamespaceParserActionsParserActionSummaryCollectionArray{ GetNamespaceParserActionsParserActionSummaryCollectionArgs{...} }
+type GetNamespaceParserActionsParserActionSummaryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceParserActionsParserActionSummaryCollectionArrayOutput() GetNamespaceParserActionsParserActionSummaryCollectionArrayOutput
+	ToGetNamespaceParserActionsParserActionSummaryCollectionArrayOutputWithContext(context.Context) GetNamespaceParserActionsParserActionSummaryCollectionArrayOutput
+}
+
+type GetNamespaceParserActionsParserActionSummaryCollectionArray []GetNamespaceParserActionsParserActionSummaryCollectionInput
+
+func (GetNamespaceParserActionsParserActionSummaryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceParserActionsParserActionSummaryCollection)(nil)).Elem()
+}
+
+func (i GetNamespaceParserActionsParserActionSummaryCollectionArray) ToGetNamespaceParserActionsParserActionSummaryCollectionArrayOutput() GetNamespaceParserActionsParserActionSummaryCollectionArrayOutput {
+	return i.ToGetNamespaceParserActionsParserActionSummaryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceParserActionsParserActionSummaryCollectionArray) ToGetNamespaceParserActionsParserActionSummaryCollectionArrayOutputWithContext(ctx context.Context) GetNamespaceParserActionsParserActionSummaryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceParserActionsParserActionSummaryCollectionArrayOutput)
+}
+
+type GetNamespaceParserActionsParserActionSummaryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceParserActionsParserActionSummaryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceParserActionsParserActionSummaryCollection)(nil)).Elem()
+}
+
+func (o GetNamespaceParserActionsParserActionSummaryCollectionOutput) ToGetNamespaceParserActionsParserActionSummaryCollectionOutput() GetNamespaceParserActionsParserActionSummaryCollectionOutput {
+	return o
+}
+
+func (o GetNamespaceParserActionsParserActionSummaryCollectionOutput) ToGetNamespaceParserActionsParserActionSummaryCollectionOutputWithContext(ctx context.Context) GetNamespaceParserActionsParserActionSummaryCollectionOutput {
+	return o
+}
+
+// An array of parser action summary objects.
+func (o GetNamespaceParserActionsParserActionSummaryCollectionOutput) Items() GetNamespaceParserActionsParserActionSummaryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetNamespaceParserActionsParserActionSummaryCollection) []GetNamespaceParserActionsParserActionSummaryCollectionItem {
+		return v.Items
+	}).(GetNamespaceParserActionsParserActionSummaryCollectionItemArrayOutput)
+}
+
+type GetNamespaceParserActionsParserActionSummaryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceParserActionsParserActionSummaryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceParserActionsParserActionSummaryCollection)(nil)).Elem()
+}
+
+func (o GetNamespaceParserActionsParserActionSummaryCollectionArrayOutput) ToGetNamespaceParserActionsParserActionSummaryCollectionArrayOutput() GetNamespaceParserActionsParserActionSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetNamespaceParserActionsParserActionSummaryCollectionArrayOutput) ToGetNamespaceParserActionsParserActionSummaryCollectionArrayOutputWithContext(ctx context.Context) GetNamespaceParserActionsParserActionSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetNamespaceParserActionsParserActionSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetNamespaceParserActionsParserActionSummaryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceParserActionsParserActionSummaryCollection {
+		return vs[0].([]GetNamespaceParserActionsParserActionSummaryCollection)[vs[1].(int)]
+	}).(GetNamespaceParserActionsParserActionSummaryCollectionOutput)
+}
+
+type GetNamespaceParserActionsParserActionSummaryCollectionItem struct {
+	// The parser action description.
+	Description string `pulumi:"description"`
+	// The parser action display name.
+	DisplayName string `pulumi:"displayName"`
+	// The parser action name used for filtering.
+	Name string `pulumi:"name"`
+}
+
+// GetNamespaceParserActionsParserActionSummaryCollectionItemInput is an input type that accepts GetNamespaceParserActionsParserActionSummaryCollectionItemArgs and GetNamespaceParserActionsParserActionSummaryCollectionItemOutput values.
+// You can construct a concrete instance of `GetNamespaceParserActionsParserActionSummaryCollectionItemInput` via:
+//
+//	GetNamespaceParserActionsParserActionSummaryCollectionItemArgs{...}
+type GetNamespaceParserActionsParserActionSummaryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetNamespaceParserActionsParserActionSummaryCollectionItemOutput() GetNamespaceParserActionsParserActionSummaryCollectionItemOutput
+	ToGetNamespaceParserActionsParserActionSummaryCollectionItemOutputWithContext(context.Context) GetNamespaceParserActionsParserActionSummaryCollectionItemOutput
+}
+
+type GetNamespaceParserActionsParserActionSummaryCollectionItemArgs struct {
+	// The parser action description.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The parser action display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The parser action name used for filtering.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetNamespaceParserActionsParserActionSummaryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceParserActionsParserActionSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetNamespaceParserActionsParserActionSummaryCollectionItemArgs) ToGetNamespaceParserActionsParserActionSummaryCollectionItemOutput() GetNamespaceParserActionsParserActionSummaryCollectionItemOutput {
+	return i.ToGetNamespaceParserActionsParserActionSummaryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceParserActionsParserActionSummaryCollectionItemArgs) ToGetNamespaceParserActionsParserActionSummaryCollectionItemOutputWithContext(ctx context.Context) GetNamespaceParserActionsParserActionSummaryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceParserActionsParserActionSummaryCollectionItemOutput)
+}
+
+// GetNamespaceParserActionsParserActionSummaryCollectionItemArrayInput is an input type that accepts GetNamespaceParserActionsParserActionSummaryCollectionItemArray and GetNamespaceParserActionsParserActionSummaryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceParserActionsParserActionSummaryCollectionItemArrayInput` via:
+//
+//	GetNamespaceParserActionsParserActionSummaryCollectionItemArray{ GetNamespaceParserActionsParserActionSummaryCollectionItemArgs{...} }
+type GetNamespaceParserActionsParserActionSummaryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceParserActionsParserActionSummaryCollectionItemArrayOutput() GetNamespaceParserActionsParserActionSummaryCollectionItemArrayOutput
+	ToGetNamespaceParserActionsParserActionSummaryCollectionItemArrayOutputWithContext(context.Context) GetNamespaceParserActionsParserActionSummaryCollectionItemArrayOutput
+}
+
+type GetNamespaceParserActionsParserActionSummaryCollectionItemArray []GetNamespaceParserActionsParserActionSummaryCollectionItemInput
+
+func (GetNamespaceParserActionsParserActionSummaryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceParserActionsParserActionSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetNamespaceParserActionsParserActionSummaryCollectionItemArray) ToGetNamespaceParserActionsParserActionSummaryCollectionItemArrayOutput() GetNamespaceParserActionsParserActionSummaryCollectionItemArrayOutput {
+	return i.ToGetNamespaceParserActionsParserActionSummaryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceParserActionsParserActionSummaryCollectionItemArray) ToGetNamespaceParserActionsParserActionSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetNamespaceParserActionsParserActionSummaryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceParserActionsParserActionSummaryCollectionItemArrayOutput)
+}
+
+type GetNamespaceParserActionsParserActionSummaryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceParserActionsParserActionSummaryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceParserActionsParserActionSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetNamespaceParserActionsParserActionSummaryCollectionItemOutput) ToGetNamespaceParserActionsParserActionSummaryCollectionItemOutput() GetNamespaceParserActionsParserActionSummaryCollectionItemOutput {
+	return o
+}
+
+func (o GetNamespaceParserActionsParserActionSummaryCollectionItemOutput) ToGetNamespaceParserActionsParserActionSummaryCollectionItemOutputWithContext(ctx context.Context) GetNamespaceParserActionsParserActionSummaryCollectionItemOutput {
+	return o
+}
+
+// The parser action description.
+func (o GetNamespaceParserActionsParserActionSummaryCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceParserActionsParserActionSummaryCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The parser action display name.
+func (o GetNamespaceParserActionsParserActionSummaryCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceParserActionsParserActionSummaryCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The parser action name used for filtering.
+func (o GetNamespaceParserActionsParserActionSummaryCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceParserActionsParserActionSummaryCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetNamespaceParserActionsParserActionSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceParserActionsParserActionSummaryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceParserActionsParserActionSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetNamespaceParserActionsParserActionSummaryCollectionItemArrayOutput) ToGetNamespaceParserActionsParserActionSummaryCollectionItemArrayOutput() GetNamespaceParserActionsParserActionSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetNamespaceParserActionsParserActionSummaryCollectionItemArrayOutput) ToGetNamespaceParserActionsParserActionSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetNamespaceParserActionsParserActionSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetNamespaceParserActionsParserActionSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetNamespaceParserActionsParserActionSummaryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceParserActionsParserActionSummaryCollectionItem {
+		return vs[0].([]GetNamespaceParserActionsParserActionSummaryCollectionItem)[vs[1].(int)]
+	}).(GetNamespaceParserActionsParserActionSummaryCollectionItemOutput)
 }
 
 type GetNamespacePropertiesMetadataFilter struct {
@@ -7310,6 +9998,8 @@ type GetNamespaceScheduledTaskAction struct {
 	QueryString string `pulumi:"queryString"`
 	// The ManagementSavedSearch id [OCID] utilized in the action.
 	SavedSearchId string `pulumi:"savedSearchId"`
+	// details for scheduled task using template
+	TemplateDetails []GetNamespaceScheduledTaskActionTemplateDetail `pulumi:"templateDetails"`
 	// Schedule type discriminator.
 	Type string `pulumi:"type"`
 }
@@ -7340,6 +10030,8 @@ type GetNamespaceScheduledTaskActionArgs struct {
 	QueryString pulumi.StringInput `pulumi:"queryString"`
 	// The ManagementSavedSearch id [OCID] utilized in the action.
 	SavedSearchId pulumi.StringInput `pulumi:"savedSearchId"`
+	// details for scheduled task using template
+	TemplateDetails GetNamespaceScheduledTaskActionTemplateDetailArrayInput `pulumi:"templateDetails"`
 	// Schedule type discriminator.
 	Type pulumi.StringInput `pulumi:"type"`
 }
@@ -7430,6 +10122,13 @@ func (o GetNamespaceScheduledTaskActionOutput) QueryString() pulumi.StringOutput
 // The ManagementSavedSearch id [OCID] utilized in the action.
 func (o GetNamespaceScheduledTaskActionOutput) SavedSearchId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNamespaceScheduledTaskAction) string { return v.SavedSearchId }).(pulumi.StringOutput)
+}
+
+// details for scheduled task using template
+func (o GetNamespaceScheduledTaskActionOutput) TemplateDetails() GetNamespaceScheduledTaskActionTemplateDetailArrayOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTaskAction) []GetNamespaceScheduledTaskActionTemplateDetail {
+		return v.TemplateDetails
+	}).(GetNamespaceScheduledTaskActionTemplateDetailArrayOutput)
 }
 
 // Schedule type discriminator.
@@ -7579,6 +10278,220 @@ func (o GetNamespaceScheduledTaskActionMetricExtractionArrayOutput) Index(i pulu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceScheduledTaskActionMetricExtraction {
 		return vs[0].([]GetNamespaceScheduledTaskActionMetricExtraction)[vs[1].(int)]
 	}).(GetNamespaceScheduledTaskActionMetricExtractionOutput)
+}
+
+type GetNamespaceScheduledTaskActionTemplateDetail struct {
+	// The Config template Id of a particular template.
+	TemplateId string `pulumi:"templateId"`
+	// To store macro params.
+	TemplateParams []GetNamespaceScheduledTaskActionTemplateDetailTemplateParam `pulumi:"templateParams"`
+}
+
+// GetNamespaceScheduledTaskActionTemplateDetailInput is an input type that accepts GetNamespaceScheduledTaskActionTemplateDetailArgs and GetNamespaceScheduledTaskActionTemplateDetailOutput values.
+// You can construct a concrete instance of `GetNamespaceScheduledTaskActionTemplateDetailInput` via:
+//
+//	GetNamespaceScheduledTaskActionTemplateDetailArgs{...}
+type GetNamespaceScheduledTaskActionTemplateDetailInput interface {
+	pulumi.Input
+
+	ToGetNamespaceScheduledTaskActionTemplateDetailOutput() GetNamespaceScheduledTaskActionTemplateDetailOutput
+	ToGetNamespaceScheduledTaskActionTemplateDetailOutputWithContext(context.Context) GetNamespaceScheduledTaskActionTemplateDetailOutput
+}
+
+type GetNamespaceScheduledTaskActionTemplateDetailArgs struct {
+	// The Config template Id of a particular template.
+	TemplateId pulumi.StringInput `pulumi:"templateId"`
+	// To store macro params.
+	TemplateParams GetNamespaceScheduledTaskActionTemplateDetailTemplateParamArrayInput `pulumi:"templateParams"`
+}
+
+func (GetNamespaceScheduledTaskActionTemplateDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceScheduledTaskActionTemplateDetail)(nil)).Elem()
+}
+
+func (i GetNamespaceScheduledTaskActionTemplateDetailArgs) ToGetNamespaceScheduledTaskActionTemplateDetailOutput() GetNamespaceScheduledTaskActionTemplateDetailOutput {
+	return i.ToGetNamespaceScheduledTaskActionTemplateDetailOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceScheduledTaskActionTemplateDetailArgs) ToGetNamespaceScheduledTaskActionTemplateDetailOutputWithContext(ctx context.Context) GetNamespaceScheduledTaskActionTemplateDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTaskActionTemplateDetailOutput)
+}
+
+// GetNamespaceScheduledTaskActionTemplateDetailArrayInput is an input type that accepts GetNamespaceScheduledTaskActionTemplateDetailArray and GetNamespaceScheduledTaskActionTemplateDetailArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceScheduledTaskActionTemplateDetailArrayInput` via:
+//
+//	GetNamespaceScheduledTaskActionTemplateDetailArray{ GetNamespaceScheduledTaskActionTemplateDetailArgs{...} }
+type GetNamespaceScheduledTaskActionTemplateDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceScheduledTaskActionTemplateDetailArrayOutput() GetNamespaceScheduledTaskActionTemplateDetailArrayOutput
+	ToGetNamespaceScheduledTaskActionTemplateDetailArrayOutputWithContext(context.Context) GetNamespaceScheduledTaskActionTemplateDetailArrayOutput
+}
+
+type GetNamespaceScheduledTaskActionTemplateDetailArray []GetNamespaceScheduledTaskActionTemplateDetailInput
+
+func (GetNamespaceScheduledTaskActionTemplateDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceScheduledTaskActionTemplateDetail)(nil)).Elem()
+}
+
+func (i GetNamespaceScheduledTaskActionTemplateDetailArray) ToGetNamespaceScheduledTaskActionTemplateDetailArrayOutput() GetNamespaceScheduledTaskActionTemplateDetailArrayOutput {
+	return i.ToGetNamespaceScheduledTaskActionTemplateDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceScheduledTaskActionTemplateDetailArray) ToGetNamespaceScheduledTaskActionTemplateDetailArrayOutputWithContext(ctx context.Context) GetNamespaceScheduledTaskActionTemplateDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTaskActionTemplateDetailArrayOutput)
+}
+
+type GetNamespaceScheduledTaskActionTemplateDetailOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceScheduledTaskActionTemplateDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceScheduledTaskActionTemplateDetail)(nil)).Elem()
+}
+
+func (o GetNamespaceScheduledTaskActionTemplateDetailOutput) ToGetNamespaceScheduledTaskActionTemplateDetailOutput() GetNamespaceScheduledTaskActionTemplateDetailOutput {
+	return o
+}
+
+func (o GetNamespaceScheduledTaskActionTemplateDetailOutput) ToGetNamespaceScheduledTaskActionTemplateDetailOutputWithContext(ctx context.Context) GetNamespaceScheduledTaskActionTemplateDetailOutput {
+	return o
+}
+
+// The Config template Id of a particular template.
+func (o GetNamespaceScheduledTaskActionTemplateDetailOutput) TemplateId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTaskActionTemplateDetail) string { return v.TemplateId }).(pulumi.StringOutput)
+}
+
+// To store macro params.
+func (o GetNamespaceScheduledTaskActionTemplateDetailOutput) TemplateParams() GetNamespaceScheduledTaskActionTemplateDetailTemplateParamArrayOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTaskActionTemplateDetail) []GetNamespaceScheduledTaskActionTemplateDetailTemplateParam {
+		return v.TemplateParams
+	}).(GetNamespaceScheduledTaskActionTemplateDetailTemplateParamArrayOutput)
+}
+
+type GetNamespaceScheduledTaskActionTemplateDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceScheduledTaskActionTemplateDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceScheduledTaskActionTemplateDetail)(nil)).Elem()
+}
+
+func (o GetNamespaceScheduledTaskActionTemplateDetailArrayOutput) ToGetNamespaceScheduledTaskActionTemplateDetailArrayOutput() GetNamespaceScheduledTaskActionTemplateDetailArrayOutput {
+	return o
+}
+
+func (o GetNamespaceScheduledTaskActionTemplateDetailArrayOutput) ToGetNamespaceScheduledTaskActionTemplateDetailArrayOutputWithContext(ctx context.Context) GetNamespaceScheduledTaskActionTemplateDetailArrayOutput {
+	return o
+}
+
+func (o GetNamespaceScheduledTaskActionTemplateDetailArrayOutput) Index(i pulumi.IntInput) GetNamespaceScheduledTaskActionTemplateDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceScheduledTaskActionTemplateDetail {
+		return vs[0].([]GetNamespaceScheduledTaskActionTemplateDetail)[vs[1].(int)]
+	}).(GetNamespaceScheduledTaskActionTemplateDetailOutput)
+}
+
+type GetNamespaceScheduledTaskActionTemplateDetailTemplateParam struct {
+	// Contains macro parameter's names.
+	KeyField string `pulumi:"keyField"`
+	// Contains macro parameter's value.
+	ValueField string `pulumi:"valueField"`
+}
+
+// GetNamespaceScheduledTaskActionTemplateDetailTemplateParamInput is an input type that accepts GetNamespaceScheduledTaskActionTemplateDetailTemplateParamArgs and GetNamespaceScheduledTaskActionTemplateDetailTemplateParamOutput values.
+// You can construct a concrete instance of `GetNamespaceScheduledTaskActionTemplateDetailTemplateParamInput` via:
+//
+//	GetNamespaceScheduledTaskActionTemplateDetailTemplateParamArgs{...}
+type GetNamespaceScheduledTaskActionTemplateDetailTemplateParamInput interface {
+	pulumi.Input
+
+	ToGetNamespaceScheduledTaskActionTemplateDetailTemplateParamOutput() GetNamespaceScheduledTaskActionTemplateDetailTemplateParamOutput
+	ToGetNamespaceScheduledTaskActionTemplateDetailTemplateParamOutputWithContext(context.Context) GetNamespaceScheduledTaskActionTemplateDetailTemplateParamOutput
+}
+
+type GetNamespaceScheduledTaskActionTemplateDetailTemplateParamArgs struct {
+	// Contains macro parameter's names.
+	KeyField pulumi.StringInput `pulumi:"keyField"`
+	// Contains macro parameter's value.
+	ValueField pulumi.StringInput `pulumi:"valueField"`
+}
+
+func (GetNamespaceScheduledTaskActionTemplateDetailTemplateParamArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceScheduledTaskActionTemplateDetailTemplateParam)(nil)).Elem()
+}
+
+func (i GetNamespaceScheduledTaskActionTemplateDetailTemplateParamArgs) ToGetNamespaceScheduledTaskActionTemplateDetailTemplateParamOutput() GetNamespaceScheduledTaskActionTemplateDetailTemplateParamOutput {
+	return i.ToGetNamespaceScheduledTaskActionTemplateDetailTemplateParamOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceScheduledTaskActionTemplateDetailTemplateParamArgs) ToGetNamespaceScheduledTaskActionTemplateDetailTemplateParamOutputWithContext(ctx context.Context) GetNamespaceScheduledTaskActionTemplateDetailTemplateParamOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTaskActionTemplateDetailTemplateParamOutput)
+}
+
+// GetNamespaceScheduledTaskActionTemplateDetailTemplateParamArrayInput is an input type that accepts GetNamespaceScheduledTaskActionTemplateDetailTemplateParamArray and GetNamespaceScheduledTaskActionTemplateDetailTemplateParamArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceScheduledTaskActionTemplateDetailTemplateParamArrayInput` via:
+//
+//	GetNamespaceScheduledTaskActionTemplateDetailTemplateParamArray{ GetNamespaceScheduledTaskActionTemplateDetailTemplateParamArgs{...} }
+type GetNamespaceScheduledTaskActionTemplateDetailTemplateParamArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceScheduledTaskActionTemplateDetailTemplateParamArrayOutput() GetNamespaceScheduledTaskActionTemplateDetailTemplateParamArrayOutput
+	ToGetNamespaceScheduledTaskActionTemplateDetailTemplateParamArrayOutputWithContext(context.Context) GetNamespaceScheduledTaskActionTemplateDetailTemplateParamArrayOutput
+}
+
+type GetNamespaceScheduledTaskActionTemplateDetailTemplateParamArray []GetNamespaceScheduledTaskActionTemplateDetailTemplateParamInput
+
+func (GetNamespaceScheduledTaskActionTemplateDetailTemplateParamArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceScheduledTaskActionTemplateDetailTemplateParam)(nil)).Elem()
+}
+
+func (i GetNamespaceScheduledTaskActionTemplateDetailTemplateParamArray) ToGetNamespaceScheduledTaskActionTemplateDetailTemplateParamArrayOutput() GetNamespaceScheduledTaskActionTemplateDetailTemplateParamArrayOutput {
+	return i.ToGetNamespaceScheduledTaskActionTemplateDetailTemplateParamArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceScheduledTaskActionTemplateDetailTemplateParamArray) ToGetNamespaceScheduledTaskActionTemplateDetailTemplateParamArrayOutputWithContext(ctx context.Context) GetNamespaceScheduledTaskActionTemplateDetailTemplateParamArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTaskActionTemplateDetailTemplateParamArrayOutput)
+}
+
+type GetNamespaceScheduledTaskActionTemplateDetailTemplateParamOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceScheduledTaskActionTemplateDetailTemplateParamOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceScheduledTaskActionTemplateDetailTemplateParam)(nil)).Elem()
+}
+
+func (o GetNamespaceScheduledTaskActionTemplateDetailTemplateParamOutput) ToGetNamespaceScheduledTaskActionTemplateDetailTemplateParamOutput() GetNamespaceScheduledTaskActionTemplateDetailTemplateParamOutput {
+	return o
+}
+
+func (o GetNamespaceScheduledTaskActionTemplateDetailTemplateParamOutput) ToGetNamespaceScheduledTaskActionTemplateDetailTemplateParamOutputWithContext(ctx context.Context) GetNamespaceScheduledTaskActionTemplateDetailTemplateParamOutput {
+	return o
+}
+
+// Contains macro parameter's names.
+func (o GetNamespaceScheduledTaskActionTemplateDetailTemplateParamOutput) KeyField() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTaskActionTemplateDetailTemplateParam) string { return v.KeyField }).(pulumi.StringOutput)
+}
+
+// Contains macro parameter's value.
+func (o GetNamespaceScheduledTaskActionTemplateDetailTemplateParamOutput) ValueField() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTaskActionTemplateDetailTemplateParam) string { return v.ValueField }).(pulumi.StringOutput)
+}
+
+type GetNamespaceScheduledTaskActionTemplateDetailTemplateParamArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceScheduledTaskActionTemplateDetailTemplateParamArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceScheduledTaskActionTemplateDetailTemplateParam)(nil)).Elem()
+}
+
+func (o GetNamespaceScheduledTaskActionTemplateDetailTemplateParamArrayOutput) ToGetNamespaceScheduledTaskActionTemplateDetailTemplateParamArrayOutput() GetNamespaceScheduledTaskActionTemplateDetailTemplateParamArrayOutput {
+	return o
+}
+
+func (o GetNamespaceScheduledTaskActionTemplateDetailTemplateParamArrayOutput) ToGetNamespaceScheduledTaskActionTemplateDetailTemplateParamArrayOutputWithContext(ctx context.Context) GetNamespaceScheduledTaskActionTemplateDetailTemplateParamArrayOutput {
+	return o
+}
+
+func (o GetNamespaceScheduledTaskActionTemplateDetailTemplateParamArrayOutput) Index(i pulumi.IntInput) GetNamespaceScheduledTaskActionTemplateDetailTemplateParamOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceScheduledTaskActionTemplateDetailTemplateParam {
+		return vs[0].([]GetNamespaceScheduledTaskActionTemplateDetailTemplateParam)[vs[1].(int)]
+	}).(GetNamespaceScheduledTaskActionTemplateDetailTemplateParamOutput)
 }
 
 type GetNamespaceScheduledTaskSchedule struct {
@@ -8283,6 +11196,8 @@ type GetNamespaceScheduledTasksScheduledTaskCollectionItemAction struct {
 	QueryString string `pulumi:"queryString"`
 	// The ManagementSavedSearch id [OCID] utilized in the action.
 	SavedSearchId string `pulumi:"savedSearchId"`
+	// details for scheduled task using template
+	TemplateDetails []GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetail `pulumi:"templateDetails"`
 	// Schedule type discriminator.
 	Type string `pulumi:"type"`
 }
@@ -8312,6 +11227,8 @@ type GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArgs struct {
 	QueryString pulumi.StringInput `pulumi:"queryString"`
 	// The ManagementSavedSearch id [OCID] utilized in the action.
 	SavedSearchId pulumi.StringInput `pulumi:"savedSearchId"`
+	// details for scheduled task using template
+	TemplateDetails GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArrayInput `pulumi:"templateDetails"`
 	// Schedule type discriminator.
 	Type pulumi.StringInput `pulumi:"type"`
 }
@@ -8405,6 +11322,13 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput) Query
 // The ManagementSavedSearch id [OCID] utilized in the action.
 func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput) SavedSearchId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemAction) string { return v.SavedSearchId }).(pulumi.StringOutput)
+}
+
+// details for scheduled task using template
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput) TemplateDetails() GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArrayOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemAction) []GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetail {
+		return v.TemplateDetails
+	}).(GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArrayOutput)
 }
 
 // Schedule type discriminator.
@@ -8556,6 +11480,226 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtract
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction {
 		return vs[0].([]GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction)[vs[1].(int)]
 	}).(GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput)
+}
+
+type GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetail struct {
+	// A filter to return only scheduled tasks whose stream action templateId matches the given id  exactly.
+	TemplateId string `pulumi:"templateId"`
+	// To store macro params.
+	TemplateParams []GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParam `pulumi:"templateParams"`
+}
+
+// GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailInput is an input type that accepts GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArgs and GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailOutput values.
+// You can construct a concrete instance of `GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailInput` via:
+//
+//	GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArgs{...}
+type GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailInput interface {
+	pulumi.Input
+
+	ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailOutput() GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailOutput
+	ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailOutputWithContext(context.Context) GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailOutput
+}
+
+type GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArgs struct {
+	// A filter to return only scheduled tasks whose stream action templateId matches the given id  exactly.
+	TemplateId pulumi.StringInput `pulumi:"templateId"`
+	// To store macro params.
+	TemplateParams GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArrayInput `pulumi:"templateParams"`
+}
+
+func (GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetail)(nil)).Elem()
+}
+
+func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArgs) ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailOutput() GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailOutput {
+	return i.ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArgs) ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailOutputWithContext(ctx context.Context) GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailOutput)
+}
+
+// GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArrayInput is an input type that accepts GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArray and GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArrayInput` via:
+//
+//	GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArray{ GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArgs{...} }
+type GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArrayOutput() GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArrayOutput
+	ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArrayOutputWithContext(context.Context) GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArrayOutput
+}
+
+type GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArray []GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailInput
+
+func (GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetail)(nil)).Elem()
+}
+
+func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArray) ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArrayOutput() GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArrayOutput {
+	return i.ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArray) ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArrayOutputWithContext(ctx context.Context) GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArrayOutput)
+}
+
+type GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetail)(nil)).Elem()
+}
+
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailOutput) ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailOutput() GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailOutput {
+	return o
+}
+
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailOutput) ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailOutputWithContext(ctx context.Context) GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailOutput {
+	return o
+}
+
+// A filter to return only scheduled tasks whose stream action templateId matches the given id  exactly.
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailOutput) TemplateId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetail) string {
+		return v.TemplateId
+	}).(pulumi.StringOutput)
+}
+
+// To store macro params.
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailOutput) TemplateParams() GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArrayOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetail) []GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParam {
+		return v.TemplateParams
+	}).(GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArrayOutput)
+}
+
+type GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetail)(nil)).Elem()
+}
+
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArrayOutput) ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArrayOutput() GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArrayOutput {
+	return o
+}
+
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArrayOutput) ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArrayOutputWithContext(ctx context.Context) GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArrayOutput {
+	return o
+}
+
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArrayOutput) Index(i pulumi.IntInput) GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetail {
+		return vs[0].([]GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetail)[vs[1].(int)]
+	}).(GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailOutput)
+}
+
+type GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParam struct {
+	// Contains macro parameter's names.
+	KeyField string `pulumi:"keyField"`
+	// Contains macro parameter's value.
+	ValueField string `pulumi:"valueField"`
+}
+
+// GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamInput is an input type that accepts GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArgs and GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamOutput values.
+// You can construct a concrete instance of `GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamInput` via:
+//
+//	GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArgs{...}
+type GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamInput interface {
+	pulumi.Input
+
+	ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamOutput() GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamOutput
+	ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamOutputWithContext(context.Context) GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamOutput
+}
+
+type GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArgs struct {
+	// Contains macro parameter's names.
+	KeyField pulumi.StringInput `pulumi:"keyField"`
+	// Contains macro parameter's value.
+	ValueField pulumi.StringInput `pulumi:"valueField"`
+}
+
+func (GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParam)(nil)).Elem()
+}
+
+func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArgs) ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamOutput() GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamOutput {
+	return i.ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArgs) ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamOutputWithContext(ctx context.Context) GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamOutput)
+}
+
+// GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArrayInput is an input type that accepts GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArray and GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArrayInput` via:
+//
+//	GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArray{ GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArgs{...} }
+type GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArrayOutput() GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArrayOutput
+	ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArrayOutputWithContext(context.Context) GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArrayOutput
+}
+
+type GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArray []GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamInput
+
+func (GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParam)(nil)).Elem()
+}
+
+func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArray) ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArrayOutput() GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArrayOutput {
+	return i.ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArray) ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArrayOutputWithContext(ctx context.Context) GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArrayOutput)
+}
+
+type GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParam)(nil)).Elem()
+}
+
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamOutput) ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamOutput() GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamOutput {
+	return o
+}
+
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamOutput) ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamOutputWithContext(ctx context.Context) GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamOutput {
+	return o
+}
+
+// Contains macro parameter's names.
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamOutput) KeyField() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParam) string {
+		return v.KeyField
+	}).(pulumi.StringOutput)
+}
+
+// Contains macro parameter's value.
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamOutput) ValueField() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParam) string {
+		return v.ValueField
+	}).(pulumi.StringOutput)
+}
+
+type GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParam)(nil)).Elem()
+}
+
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArrayOutput) ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArrayOutput() GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArrayOutput {
+	return o
+}
+
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArrayOutput) ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArrayOutputWithContext(ctx context.Context) GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArrayOutput {
+	return o
+}
+
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArrayOutput) Index(i pulumi.IntInput) GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParam {
+		return vs[0].([]GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParam)[vs[1].(int)]
+	}).(GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamOutput)
 }
 
 type GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule struct {
@@ -8804,6 +11948,114 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArr
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule {
 		return vs[0].([]GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule)[vs[1].(int)]
 	}).(GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOutput)
+}
+
+type GetNamespaceStorageArchivalConfigArchivingConfiguration struct {
+	// This is the duration data in active storage before data is archived, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+	ActiveStorageDuration string `pulumi:"activeStorageDuration"`
+	// This is the duration before archived data is deleted from object storage, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+	ArchivalStorageDuration string `pulumi:"archivalStorageDuration"`
+}
+
+// GetNamespaceStorageArchivalConfigArchivingConfigurationInput is an input type that accepts GetNamespaceStorageArchivalConfigArchivingConfigurationArgs and GetNamespaceStorageArchivalConfigArchivingConfigurationOutput values.
+// You can construct a concrete instance of `GetNamespaceStorageArchivalConfigArchivingConfigurationInput` via:
+//
+//	GetNamespaceStorageArchivalConfigArchivingConfigurationArgs{...}
+type GetNamespaceStorageArchivalConfigArchivingConfigurationInput interface {
+	pulumi.Input
+
+	ToGetNamespaceStorageArchivalConfigArchivingConfigurationOutput() GetNamespaceStorageArchivalConfigArchivingConfigurationOutput
+	ToGetNamespaceStorageArchivalConfigArchivingConfigurationOutputWithContext(context.Context) GetNamespaceStorageArchivalConfigArchivingConfigurationOutput
+}
+
+type GetNamespaceStorageArchivalConfigArchivingConfigurationArgs struct {
+	// This is the duration data in active storage before data is archived, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+	ActiveStorageDuration pulumi.StringInput `pulumi:"activeStorageDuration"`
+	// This is the duration before archived data is deleted from object storage, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+	ArchivalStorageDuration pulumi.StringInput `pulumi:"archivalStorageDuration"`
+}
+
+func (GetNamespaceStorageArchivalConfigArchivingConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceStorageArchivalConfigArchivingConfiguration)(nil)).Elem()
+}
+
+func (i GetNamespaceStorageArchivalConfigArchivingConfigurationArgs) ToGetNamespaceStorageArchivalConfigArchivingConfigurationOutput() GetNamespaceStorageArchivalConfigArchivingConfigurationOutput {
+	return i.ToGetNamespaceStorageArchivalConfigArchivingConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceStorageArchivalConfigArchivingConfigurationArgs) ToGetNamespaceStorageArchivalConfigArchivingConfigurationOutputWithContext(ctx context.Context) GetNamespaceStorageArchivalConfigArchivingConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceStorageArchivalConfigArchivingConfigurationOutput)
+}
+
+// GetNamespaceStorageArchivalConfigArchivingConfigurationArrayInput is an input type that accepts GetNamespaceStorageArchivalConfigArchivingConfigurationArray and GetNamespaceStorageArchivalConfigArchivingConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceStorageArchivalConfigArchivingConfigurationArrayInput` via:
+//
+//	GetNamespaceStorageArchivalConfigArchivingConfigurationArray{ GetNamespaceStorageArchivalConfigArchivingConfigurationArgs{...} }
+type GetNamespaceStorageArchivalConfigArchivingConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceStorageArchivalConfigArchivingConfigurationArrayOutput() GetNamespaceStorageArchivalConfigArchivingConfigurationArrayOutput
+	ToGetNamespaceStorageArchivalConfigArchivingConfigurationArrayOutputWithContext(context.Context) GetNamespaceStorageArchivalConfigArchivingConfigurationArrayOutput
+}
+
+type GetNamespaceStorageArchivalConfigArchivingConfigurationArray []GetNamespaceStorageArchivalConfigArchivingConfigurationInput
+
+func (GetNamespaceStorageArchivalConfigArchivingConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceStorageArchivalConfigArchivingConfiguration)(nil)).Elem()
+}
+
+func (i GetNamespaceStorageArchivalConfigArchivingConfigurationArray) ToGetNamespaceStorageArchivalConfigArchivingConfigurationArrayOutput() GetNamespaceStorageArchivalConfigArchivingConfigurationArrayOutput {
+	return i.ToGetNamespaceStorageArchivalConfigArchivingConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceStorageArchivalConfigArchivingConfigurationArray) ToGetNamespaceStorageArchivalConfigArchivingConfigurationArrayOutputWithContext(ctx context.Context) GetNamespaceStorageArchivalConfigArchivingConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceStorageArchivalConfigArchivingConfigurationArrayOutput)
+}
+
+type GetNamespaceStorageArchivalConfigArchivingConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceStorageArchivalConfigArchivingConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceStorageArchivalConfigArchivingConfiguration)(nil)).Elem()
+}
+
+func (o GetNamespaceStorageArchivalConfigArchivingConfigurationOutput) ToGetNamespaceStorageArchivalConfigArchivingConfigurationOutput() GetNamespaceStorageArchivalConfigArchivingConfigurationOutput {
+	return o
+}
+
+func (o GetNamespaceStorageArchivalConfigArchivingConfigurationOutput) ToGetNamespaceStorageArchivalConfigArchivingConfigurationOutputWithContext(ctx context.Context) GetNamespaceStorageArchivalConfigArchivingConfigurationOutput {
+	return o
+}
+
+// This is the duration data in active storage before data is archived, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+func (o GetNamespaceStorageArchivalConfigArchivingConfigurationOutput) ActiveStorageDuration() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceStorageArchivalConfigArchivingConfiguration) string { return v.ActiveStorageDuration }).(pulumi.StringOutput)
+}
+
+// This is the duration before archived data is deleted from object storage, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+func (o GetNamespaceStorageArchivalConfigArchivingConfigurationOutput) ArchivalStorageDuration() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceStorageArchivalConfigArchivingConfiguration) string {
+		return v.ArchivalStorageDuration
+	}).(pulumi.StringOutput)
+}
+
+type GetNamespaceStorageArchivalConfigArchivingConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceStorageArchivalConfigArchivingConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceStorageArchivalConfigArchivingConfiguration)(nil)).Elem()
+}
+
+func (o GetNamespaceStorageArchivalConfigArchivingConfigurationArrayOutput) ToGetNamespaceStorageArchivalConfigArchivingConfigurationArrayOutput() GetNamespaceStorageArchivalConfigArchivingConfigurationArrayOutput {
+	return o
+}
+
+func (o GetNamespaceStorageArchivalConfigArchivingConfigurationArrayOutput) ToGetNamespaceStorageArchivalConfigArchivingConfigurationArrayOutputWithContext(ctx context.Context) GetNamespaceStorageArchivalConfigArchivingConfigurationArrayOutput {
+	return o
+}
+
+func (o GetNamespaceStorageArchivalConfigArchivingConfigurationArrayOutput) Index(i pulumi.IntInput) GetNamespaceStorageArchivalConfigArchivingConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceStorageArchivalConfigArchivingConfiguration {
+		return vs[0].([]GetNamespaceStorageArchivalConfigArchivingConfiguration)[vs[1].(int)]
+	}).(GetNamespaceStorageArchivalConfigArchivingConfigurationOutput)
 }
 
 type GetNamespaceStorageEncryptionKeyInfoItem struct {
@@ -9316,6 +12568,670 @@ func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArra
 	}).(GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput)
 }
 
+type GetNamespaceTemplateFacet struct {
+	// The template name.
+	Name string `pulumi:"name"`
+	// The facet value.
+	Value string `pulumi:"value"`
+}
+
+// GetNamespaceTemplateFacetInput is an input type that accepts GetNamespaceTemplateFacetArgs and GetNamespaceTemplateFacetOutput values.
+// You can construct a concrete instance of `GetNamespaceTemplateFacetInput` via:
+//
+//	GetNamespaceTemplateFacetArgs{...}
+type GetNamespaceTemplateFacetInput interface {
+	pulumi.Input
+
+	ToGetNamespaceTemplateFacetOutput() GetNamespaceTemplateFacetOutput
+	ToGetNamespaceTemplateFacetOutputWithContext(context.Context) GetNamespaceTemplateFacetOutput
+}
+
+type GetNamespaceTemplateFacetArgs struct {
+	// The template name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The facet value.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetNamespaceTemplateFacetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceTemplateFacet)(nil)).Elem()
+}
+
+func (i GetNamespaceTemplateFacetArgs) ToGetNamespaceTemplateFacetOutput() GetNamespaceTemplateFacetOutput {
+	return i.ToGetNamespaceTemplateFacetOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceTemplateFacetArgs) ToGetNamespaceTemplateFacetOutputWithContext(ctx context.Context) GetNamespaceTemplateFacetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceTemplateFacetOutput)
+}
+
+// GetNamespaceTemplateFacetArrayInput is an input type that accepts GetNamespaceTemplateFacetArray and GetNamespaceTemplateFacetArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceTemplateFacetArrayInput` via:
+//
+//	GetNamespaceTemplateFacetArray{ GetNamespaceTemplateFacetArgs{...} }
+type GetNamespaceTemplateFacetArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceTemplateFacetArrayOutput() GetNamespaceTemplateFacetArrayOutput
+	ToGetNamespaceTemplateFacetArrayOutputWithContext(context.Context) GetNamespaceTemplateFacetArrayOutput
+}
+
+type GetNamespaceTemplateFacetArray []GetNamespaceTemplateFacetInput
+
+func (GetNamespaceTemplateFacetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceTemplateFacet)(nil)).Elem()
+}
+
+func (i GetNamespaceTemplateFacetArray) ToGetNamespaceTemplateFacetArrayOutput() GetNamespaceTemplateFacetArrayOutput {
+	return i.ToGetNamespaceTemplateFacetArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceTemplateFacetArray) ToGetNamespaceTemplateFacetArrayOutputWithContext(ctx context.Context) GetNamespaceTemplateFacetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceTemplateFacetArrayOutput)
+}
+
+type GetNamespaceTemplateFacetOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceTemplateFacetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceTemplateFacet)(nil)).Elem()
+}
+
+func (o GetNamespaceTemplateFacetOutput) ToGetNamespaceTemplateFacetOutput() GetNamespaceTemplateFacetOutput {
+	return o
+}
+
+func (o GetNamespaceTemplateFacetOutput) ToGetNamespaceTemplateFacetOutputWithContext(ctx context.Context) GetNamespaceTemplateFacetOutput {
+	return o
+}
+
+// The template name.
+func (o GetNamespaceTemplateFacetOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceTemplateFacet) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The facet value.
+func (o GetNamespaceTemplateFacetOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceTemplateFacet) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetNamespaceTemplateFacetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceTemplateFacetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceTemplateFacet)(nil)).Elem()
+}
+
+func (o GetNamespaceTemplateFacetArrayOutput) ToGetNamespaceTemplateFacetArrayOutput() GetNamespaceTemplateFacetArrayOutput {
+	return o
+}
+
+func (o GetNamespaceTemplateFacetArrayOutput) ToGetNamespaceTemplateFacetArrayOutputWithContext(ctx context.Context) GetNamespaceTemplateFacetArrayOutput {
+	return o
+}
+
+func (o GetNamespaceTemplateFacetArrayOutput) Index(i pulumi.IntInput) GetNamespaceTemplateFacetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceTemplateFacet {
+		return vs[0].([]GetNamespaceTemplateFacet)[vs[1].(int)]
+	}).(GetNamespaceTemplateFacetOutput)
+}
+
+type GetNamespaceTemplatesFilter struct {
+	// The template name used for filtering.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetNamespaceTemplatesFilterInput is an input type that accepts GetNamespaceTemplatesFilterArgs and GetNamespaceTemplatesFilterOutput values.
+// You can construct a concrete instance of `GetNamespaceTemplatesFilterInput` via:
+//
+//	GetNamespaceTemplatesFilterArgs{...}
+type GetNamespaceTemplatesFilterInput interface {
+	pulumi.Input
+
+	ToGetNamespaceTemplatesFilterOutput() GetNamespaceTemplatesFilterOutput
+	ToGetNamespaceTemplatesFilterOutputWithContext(context.Context) GetNamespaceTemplatesFilterOutput
+}
+
+type GetNamespaceTemplatesFilterArgs struct {
+	// The template name used for filtering.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetNamespaceTemplatesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceTemplatesFilter)(nil)).Elem()
+}
+
+func (i GetNamespaceTemplatesFilterArgs) ToGetNamespaceTemplatesFilterOutput() GetNamespaceTemplatesFilterOutput {
+	return i.ToGetNamespaceTemplatesFilterOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceTemplatesFilterArgs) ToGetNamespaceTemplatesFilterOutputWithContext(ctx context.Context) GetNamespaceTemplatesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceTemplatesFilterOutput)
+}
+
+// GetNamespaceTemplatesFilterArrayInput is an input type that accepts GetNamespaceTemplatesFilterArray and GetNamespaceTemplatesFilterArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceTemplatesFilterArrayInput` via:
+//
+//	GetNamespaceTemplatesFilterArray{ GetNamespaceTemplatesFilterArgs{...} }
+type GetNamespaceTemplatesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceTemplatesFilterArrayOutput() GetNamespaceTemplatesFilterArrayOutput
+	ToGetNamespaceTemplatesFilterArrayOutputWithContext(context.Context) GetNamespaceTemplatesFilterArrayOutput
+}
+
+type GetNamespaceTemplatesFilterArray []GetNamespaceTemplatesFilterInput
+
+func (GetNamespaceTemplatesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceTemplatesFilter)(nil)).Elem()
+}
+
+func (i GetNamespaceTemplatesFilterArray) ToGetNamespaceTemplatesFilterArrayOutput() GetNamespaceTemplatesFilterArrayOutput {
+	return i.ToGetNamespaceTemplatesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceTemplatesFilterArray) ToGetNamespaceTemplatesFilterArrayOutputWithContext(ctx context.Context) GetNamespaceTemplatesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceTemplatesFilterArrayOutput)
+}
+
+type GetNamespaceTemplatesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceTemplatesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceTemplatesFilter)(nil)).Elem()
+}
+
+func (o GetNamespaceTemplatesFilterOutput) ToGetNamespaceTemplatesFilterOutput() GetNamespaceTemplatesFilterOutput {
+	return o
+}
+
+func (o GetNamespaceTemplatesFilterOutput) ToGetNamespaceTemplatesFilterOutputWithContext(ctx context.Context) GetNamespaceTemplatesFilterOutput {
+	return o
+}
+
+// The template name used for filtering.
+func (o GetNamespaceTemplatesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceTemplatesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetNamespaceTemplatesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNamespaceTemplatesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetNamespaceTemplatesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNamespaceTemplatesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetNamespaceTemplatesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceTemplatesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceTemplatesFilter)(nil)).Elem()
+}
+
+func (o GetNamespaceTemplatesFilterArrayOutput) ToGetNamespaceTemplatesFilterArrayOutput() GetNamespaceTemplatesFilterArrayOutput {
+	return o
+}
+
+func (o GetNamespaceTemplatesFilterArrayOutput) ToGetNamespaceTemplatesFilterArrayOutputWithContext(ctx context.Context) GetNamespaceTemplatesFilterArrayOutput {
+	return o
+}
+
+func (o GetNamespaceTemplatesFilterArrayOutput) Index(i pulumi.IntInput) GetNamespaceTemplatesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceTemplatesFilter {
+		return vs[0].([]GetNamespaceTemplatesFilter)[vs[1].(int)]
+	}).(GetNamespaceTemplatesFilterOutput)
+}
+
+type GetNamespaceTemplatesLogAnalyticsTemplateCollection struct {
+	Items []GetNamespaceTemplatesLogAnalyticsTemplateCollectionItem `pulumi:"items"`
+}
+
+// GetNamespaceTemplatesLogAnalyticsTemplateCollectionInput is an input type that accepts GetNamespaceTemplatesLogAnalyticsTemplateCollectionArgs and GetNamespaceTemplatesLogAnalyticsTemplateCollectionOutput values.
+// You can construct a concrete instance of `GetNamespaceTemplatesLogAnalyticsTemplateCollectionInput` via:
+//
+//	GetNamespaceTemplatesLogAnalyticsTemplateCollectionArgs{...}
+type GetNamespaceTemplatesLogAnalyticsTemplateCollectionInput interface {
+	pulumi.Input
+
+	ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionOutput() GetNamespaceTemplatesLogAnalyticsTemplateCollectionOutput
+	ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionOutputWithContext(context.Context) GetNamespaceTemplatesLogAnalyticsTemplateCollectionOutput
+}
+
+type GetNamespaceTemplatesLogAnalyticsTemplateCollectionArgs struct {
+	Items GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetNamespaceTemplatesLogAnalyticsTemplateCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceTemplatesLogAnalyticsTemplateCollection)(nil)).Elem()
+}
+
+func (i GetNamespaceTemplatesLogAnalyticsTemplateCollectionArgs) ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionOutput() GetNamespaceTemplatesLogAnalyticsTemplateCollectionOutput {
+	return i.ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceTemplatesLogAnalyticsTemplateCollectionArgs) ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionOutputWithContext(ctx context.Context) GetNamespaceTemplatesLogAnalyticsTemplateCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceTemplatesLogAnalyticsTemplateCollectionOutput)
+}
+
+// GetNamespaceTemplatesLogAnalyticsTemplateCollectionArrayInput is an input type that accepts GetNamespaceTemplatesLogAnalyticsTemplateCollectionArray and GetNamespaceTemplatesLogAnalyticsTemplateCollectionArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceTemplatesLogAnalyticsTemplateCollectionArrayInput` via:
+//
+//	GetNamespaceTemplatesLogAnalyticsTemplateCollectionArray{ GetNamespaceTemplatesLogAnalyticsTemplateCollectionArgs{...} }
+type GetNamespaceTemplatesLogAnalyticsTemplateCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionArrayOutput() GetNamespaceTemplatesLogAnalyticsTemplateCollectionArrayOutput
+	ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionArrayOutputWithContext(context.Context) GetNamespaceTemplatesLogAnalyticsTemplateCollectionArrayOutput
+}
+
+type GetNamespaceTemplatesLogAnalyticsTemplateCollectionArray []GetNamespaceTemplatesLogAnalyticsTemplateCollectionInput
+
+func (GetNamespaceTemplatesLogAnalyticsTemplateCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceTemplatesLogAnalyticsTemplateCollection)(nil)).Elem()
+}
+
+func (i GetNamespaceTemplatesLogAnalyticsTemplateCollectionArray) ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionArrayOutput() GetNamespaceTemplatesLogAnalyticsTemplateCollectionArrayOutput {
+	return i.ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceTemplatesLogAnalyticsTemplateCollectionArray) ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionArrayOutputWithContext(ctx context.Context) GetNamespaceTemplatesLogAnalyticsTemplateCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceTemplatesLogAnalyticsTemplateCollectionArrayOutput)
+}
+
+type GetNamespaceTemplatesLogAnalyticsTemplateCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceTemplatesLogAnalyticsTemplateCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceTemplatesLogAnalyticsTemplateCollection)(nil)).Elem()
+}
+
+func (o GetNamespaceTemplatesLogAnalyticsTemplateCollectionOutput) ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionOutput() GetNamespaceTemplatesLogAnalyticsTemplateCollectionOutput {
+	return o
+}
+
+func (o GetNamespaceTemplatesLogAnalyticsTemplateCollectionOutput) ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionOutputWithContext(ctx context.Context) GetNamespaceTemplatesLogAnalyticsTemplateCollectionOutput {
+	return o
+}
+
+func (o GetNamespaceTemplatesLogAnalyticsTemplateCollectionOutput) Items() GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetNamespaceTemplatesLogAnalyticsTemplateCollection) []GetNamespaceTemplatesLogAnalyticsTemplateCollectionItem {
+		return v.Items
+	}).(GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArrayOutput)
+}
+
+type GetNamespaceTemplatesLogAnalyticsTemplateCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceTemplatesLogAnalyticsTemplateCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceTemplatesLogAnalyticsTemplateCollection)(nil)).Elem()
+}
+
+func (o GetNamespaceTemplatesLogAnalyticsTemplateCollectionArrayOutput) ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionArrayOutput() GetNamespaceTemplatesLogAnalyticsTemplateCollectionArrayOutput {
+	return o
+}
+
+func (o GetNamespaceTemplatesLogAnalyticsTemplateCollectionArrayOutput) ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionArrayOutputWithContext(ctx context.Context) GetNamespaceTemplatesLogAnalyticsTemplateCollectionArrayOutput {
+	return o
+}
+
+func (o GetNamespaceTemplatesLogAnalyticsTemplateCollectionArrayOutput) Index(i pulumi.IntInput) GetNamespaceTemplatesLogAnalyticsTemplateCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceTemplatesLogAnalyticsTemplateCollection {
+		return vs[0].([]GetNamespaceTemplatesLogAnalyticsTemplateCollection)[vs[1].(int)]
+	}).(GetNamespaceTemplatesLogAnalyticsTemplateCollectionOutput)
+}
+
+type GetNamespaceTemplatesLogAnalyticsTemplateCollectionItem struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Base64 encoded template content.
+	Content string `pulumi:"content"`
+	// Content format. For example - XML.
+	ContentFormat string `pulumi:"contentFormat"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Description for this resource.
+	Description string `pulumi:"description"`
+	// Facets of the template
+	Facets []GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacet `pulumi:"facets"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
+	Id string `pulumi:"id"`
+	// The system flag.  A value of false denotes a custom, or user defined object.  A value of true denotes a built in object.
+	IsSystem bool `pulumi:"isSystem"`
+	// The template name used for filtering.
+	Name string `pulumi:"name"`
+	// Base64 encoded template parameters.
+	Parameters string `pulumi:"parameters"`
+	// Parameters format.  For example - NAME_VALUE_PAIR.
+	ParametersFormat string `pulumi:"parametersFormat"`
+	// Base64 encoded parameters metadata definition.
+	ParametersMetadata string `pulumi:"parametersMetadata"`
+	// The template lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
+	State string `pulumi:"state"`
+	// The date and time the resource was created, in the format defined by RFC3339.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the resource was last updated, in the format defined by RFC3339.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The template type used for filtering. Only templates of the specified type will be returned.
+	Type string `pulumi:"type"`
+}
+
+// GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemInput is an input type that accepts GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArgs and GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutput values.
+// You can construct a concrete instance of `GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemInput` via:
+//
+//	GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArgs{...}
+type GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutput() GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutput
+	ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutputWithContext(context.Context) GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutput
+}
+
+type GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArgs struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Base64 encoded template content.
+	Content pulumi.StringInput `pulumi:"content"`
+	// Content format. For example - XML.
+	ContentFormat pulumi.StringInput `pulumi:"contentFormat"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Description for this resource.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Facets of the template
+	Facets GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArrayInput `pulumi:"facets"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The system flag.  A value of false denotes a custom, or user defined object.  A value of true denotes a built in object.
+	IsSystem pulumi.BoolInput `pulumi:"isSystem"`
+	// The template name used for filtering.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Base64 encoded template parameters.
+	Parameters pulumi.StringInput `pulumi:"parameters"`
+	// Parameters format.  For example - NAME_VALUE_PAIR.
+	ParametersFormat pulumi.StringInput `pulumi:"parametersFormat"`
+	// Base64 encoded parameters metadata definition.
+	ParametersMetadata pulumi.StringInput `pulumi:"parametersMetadata"`
+	// The template lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the resource was created, in the format defined by RFC3339.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the resource was last updated, in the format defined by RFC3339.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The template type used for filtering. Only templates of the specified type will be returned.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceTemplatesLogAnalyticsTemplateCollectionItem)(nil)).Elem()
+}
+
+func (i GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArgs) ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutput() GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutput {
+	return i.ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArgs) ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutputWithContext(ctx context.Context) GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutput)
+}
+
+// GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArrayInput is an input type that accepts GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArray and GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArrayInput` via:
+//
+//	GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArray{ GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArgs{...} }
+type GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArrayOutput() GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArrayOutput
+	ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArrayOutputWithContext(context.Context) GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArrayOutput
+}
+
+type GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArray []GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemInput
+
+func (GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceTemplatesLogAnalyticsTemplateCollectionItem)(nil)).Elem()
+}
+
+func (i GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArray) ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArrayOutput() GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArrayOutput {
+	return i.ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArray) ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArrayOutputWithContext(ctx context.Context) GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArrayOutput)
+}
+
+type GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceTemplatesLogAnalyticsTemplateCollectionItem)(nil)).Elem()
+}
+
+func (o GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutput) ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutput() GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutput {
+	return o
+}
+
+func (o GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutput) ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutputWithContext(ctx context.Context) GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutput {
+	return o
+}
+
+// The ID of the compartment in which to list resources.
+func (o GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceTemplatesLogAnalyticsTemplateCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Base64 encoded template content.
+func (o GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutput) Content() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceTemplatesLogAnalyticsTemplateCollectionItem) string { return v.Content }).(pulumi.StringOutput)
+}
+
+// Content format. For example - XML.
+func (o GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutput) ContentFormat() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceTemplatesLogAnalyticsTemplateCollectionItem) string { return v.ContentFormat }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNamespaceTemplatesLogAnalyticsTemplateCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Description for this resource.
+func (o GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceTemplatesLogAnalyticsTemplateCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Facets of the template
+func (o GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutput) Facets() GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArrayOutput {
+	return o.ApplyT(func(v GetNamespaceTemplatesLogAnalyticsTemplateCollectionItem) []GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacet {
+		return v.Facets
+	}).(GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArrayOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNamespaceTemplatesLogAnalyticsTemplateCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
+func (o GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceTemplatesLogAnalyticsTemplateCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The system flag.  A value of false denotes a custom, or user defined object.  A value of true denotes a built in object.
+func (o GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutput) IsSystem() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNamespaceTemplatesLogAnalyticsTemplateCollectionItem) bool { return v.IsSystem }).(pulumi.BoolOutput)
+}
+
+// The template name used for filtering.
+func (o GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceTemplatesLogAnalyticsTemplateCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Base64 encoded template parameters.
+func (o GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutput) Parameters() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceTemplatesLogAnalyticsTemplateCollectionItem) string { return v.Parameters }).(pulumi.StringOutput)
+}
+
+// Parameters format.  For example - NAME_VALUE_PAIR.
+func (o GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutput) ParametersFormat() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceTemplatesLogAnalyticsTemplateCollectionItem) string { return v.ParametersFormat }).(pulumi.StringOutput)
+}
+
+// Base64 encoded parameters metadata definition.
+func (o GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutput) ParametersMetadata() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceTemplatesLogAnalyticsTemplateCollectionItem) string { return v.ParametersMetadata }).(pulumi.StringOutput)
+}
+
+// The template lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
+func (o GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceTemplatesLogAnalyticsTemplateCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the resource was created, in the format defined by RFC3339.
+func (o GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceTemplatesLogAnalyticsTemplateCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the resource was last updated, in the format defined by RFC3339.
+func (o GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceTemplatesLogAnalyticsTemplateCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The template type used for filtering. Only templates of the specified type will be returned.
+func (o GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceTemplatesLogAnalyticsTemplateCollectionItem) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceTemplatesLogAnalyticsTemplateCollectionItem)(nil)).Elem()
+}
+
+func (o GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArrayOutput) ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArrayOutput() GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArrayOutput) ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArrayOutputWithContext(ctx context.Context) GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArrayOutput) Index(i pulumi.IntInput) GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceTemplatesLogAnalyticsTemplateCollectionItem {
+		return vs[0].([]GetNamespaceTemplatesLogAnalyticsTemplateCollectionItem)[vs[1].(int)]
+	}).(GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutput)
+}
+
+type GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacet struct {
+	// The template name used for filtering.
+	Name string `pulumi:"name"`
+	// The facet value.
+	Value string `pulumi:"value"`
+}
+
+// GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetInput is an input type that accepts GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArgs and GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetOutput values.
+// You can construct a concrete instance of `GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetInput` via:
+//
+//	GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArgs{...}
+type GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetInput interface {
+	pulumi.Input
+
+	ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetOutput() GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetOutput
+	ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetOutputWithContext(context.Context) GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetOutput
+}
+
+type GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArgs struct {
+	// The template name used for filtering.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The facet value.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacet)(nil)).Elem()
+}
+
+func (i GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArgs) ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetOutput() GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetOutput {
+	return i.ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArgs) ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetOutputWithContext(ctx context.Context) GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetOutput)
+}
+
+// GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArrayInput is an input type that accepts GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArray and GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArrayOutput values.
+// You can construct a concrete instance of `GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArrayInput` via:
+//
+//	GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArray{ GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArgs{...} }
+type GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArrayInput interface {
+	pulumi.Input
+
+	ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArrayOutput() GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArrayOutput
+	ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArrayOutputWithContext(context.Context) GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArrayOutput
+}
+
+type GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArray []GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetInput
+
+func (GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacet)(nil)).Elem()
+}
+
+func (i GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArray) ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArrayOutput() GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArrayOutput {
+	return i.ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArray) ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArrayOutputWithContext(ctx context.Context) GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArrayOutput)
+}
+
+type GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacet)(nil)).Elem()
+}
+
+func (o GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetOutput) ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetOutput() GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetOutput {
+	return o
+}
+
+func (o GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetOutput) ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetOutputWithContext(ctx context.Context) GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetOutput {
+	return o
+}
+
+// The template name used for filtering.
+func (o GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacet) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The facet value.
+func (o GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacet) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacet)(nil)).Elem()
+}
+
+func (o GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArrayOutput) ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArrayOutput() GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArrayOutput {
+	return o
+}
+
+func (o GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArrayOutput) ToGetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArrayOutputWithContext(ctx context.Context) GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArrayOutput {
+	return o
+}
+
+func (o GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArrayOutput) Index(i pulumi.IntInput) GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacet {
+		return vs[0].([]GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacet)[vs[1].(int)]
+	}).(GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetOutput)
+}
+
 type GetNamespacesFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -9519,9 +13435,15 @@ func (o GetNamespacesNamespaceCollectionArrayOutput) Index(i pulumi.IntInput) Ge
 type GetNamespacesNamespaceCollectionItem struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
+	// This indicates if old data can be archived for a tenancy
+	IsArchivingEnabled bool `pulumi:"isArchivingEnabled"`
+	// This indicates if the tenancy is data ever ingested
+	IsDataEverIngested bool `pulumi:"isDataEverIngested"`
+	IsLogsetEnabled    bool `pulumi:"isLogsetEnabled"`
 	// This indicates if the tenancy is onboarded to Logging Analytics
 	IsOnboarded bool `pulumi:"isOnboarded"`
 	// This is the namespace name of a tenancy
+	// * `is_logSet_enabled` - This indicates if the tenancy is logSet enable
 	Namespace string `pulumi:"namespace"`
 }
 
@@ -9539,9 +13461,15 @@ type GetNamespacesNamespaceCollectionItemInput interface {
 type GetNamespacesNamespaceCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// This indicates if old data can be archived for a tenancy
+	IsArchivingEnabled pulumi.BoolInput `pulumi:"isArchivingEnabled"`
+	// This indicates if the tenancy is data ever ingested
+	IsDataEverIngested pulumi.BoolInput `pulumi:"isDataEverIngested"`
+	IsLogsetEnabled    pulumi.BoolInput `pulumi:"isLogsetEnabled"`
 	// This indicates if the tenancy is onboarded to Logging Analytics
 	IsOnboarded pulumi.BoolInput `pulumi:"isOnboarded"`
 	// This is the namespace name of a tenancy
+	// * `is_logSet_enabled` - This indicates if the tenancy is logSet enable
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 }
 
@@ -9601,12 +13529,27 @@ func (o GetNamespacesNamespaceCollectionItemOutput) CompartmentId() pulumi.Strin
 	return o.ApplyT(func(v GetNamespacesNamespaceCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// This indicates if old data can be archived for a tenancy
+func (o GetNamespacesNamespaceCollectionItemOutput) IsArchivingEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNamespacesNamespaceCollectionItem) bool { return v.IsArchivingEnabled }).(pulumi.BoolOutput)
+}
+
+// This indicates if the tenancy is data ever ingested
+func (o GetNamespacesNamespaceCollectionItemOutput) IsDataEverIngested() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNamespacesNamespaceCollectionItem) bool { return v.IsDataEverIngested }).(pulumi.BoolOutput)
+}
+
+func (o GetNamespacesNamespaceCollectionItemOutput) IsLogsetEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNamespacesNamespaceCollectionItem) bool { return v.IsLogsetEnabled }).(pulumi.BoolOutput)
+}
+
 // This indicates if the tenancy is onboarded to Logging Analytics
 func (o GetNamespacesNamespaceCollectionItemOutput) IsOnboarded() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNamespacesNamespaceCollectionItem) bool { return v.IsOnboarded }).(pulumi.BoolOutput)
 }
 
 // This is the namespace name of a tenancy
+// * `is_logSet_enabled` - This indicates if the tenancy is logSet enable
 func (o GetNamespacesNamespaceCollectionItemOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNamespacesNamespaceCollectionItem) string { return v.Namespace }).(pulumi.StringOutput)
 }
@@ -9648,14 +13591,28 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceIngestTimeRuleConditionsPtrInput)(nil)).Elem(), NamespaceIngestTimeRuleConditionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceIngestTimeRuleConditionsAdditionalConditionInput)(nil)).Elem(), NamespaceIngestTimeRuleConditionsAdditionalConditionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceIngestTimeRuleConditionsAdditionalConditionArrayInput)(nil)).Elem(), NamespaceIngestTimeRuleConditionsAdditionalConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceLookupCategoryInput)(nil)).Elem(), NamespaceLookupCategoryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceLookupCategoryArrayInput)(nil)).Elem(), NamespaceLookupCategoryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceLookupFieldInput)(nil)).Elem(), NamespaceLookupFieldArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceLookupFieldArrayInput)(nil)).Elem(), NamespaceLookupFieldArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceLookupReferringSourceInput)(nil)).Elem(), NamespaceLookupReferringSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceLookupReferringSourceArrayInput)(nil)).Elem(), NamespaceLookupReferringSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceLookupStatusSummaryInput)(nil)).Elem(), NamespaceLookupStatusSummaryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceLookupStatusSummaryArrayInput)(nil)).Elem(), NamespaceLookupStatusSummaryArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceScheduledTaskActionInput)(nil)).Elem(), NamespaceScheduledTaskActionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceScheduledTaskActionPtrInput)(nil)).Elem(), NamespaceScheduledTaskActionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceScheduledTaskActionMetricExtractionInput)(nil)).Elem(), NamespaceScheduledTaskActionMetricExtractionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceScheduledTaskActionMetricExtractionPtrInput)(nil)).Elem(), NamespaceScheduledTaskActionMetricExtractionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceScheduledTaskActionTemplateDetailsInput)(nil)).Elem(), NamespaceScheduledTaskActionTemplateDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceScheduledTaskActionTemplateDetailsPtrInput)(nil)).Elem(), NamespaceScheduledTaskActionTemplateDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceScheduledTaskActionTemplateDetailsTemplateParamInput)(nil)).Elem(), NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceScheduledTaskActionTemplateDetailsTemplateParamArrayInput)(nil)).Elem(), NamespaceScheduledTaskActionTemplateDetailsTemplateParamArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceScheduledTaskSchedulesInput)(nil)).Elem(), NamespaceScheduledTaskSchedulesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceScheduledTaskSchedulesPtrInput)(nil)).Elem(), NamespaceScheduledTaskSchedulesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceScheduledTaskSchedulesScheduleInput)(nil)).Elem(), NamespaceScheduledTaskSchedulesScheduleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceScheduledTaskSchedulesScheduleArrayInput)(nil)).Elem(), NamespaceScheduledTaskSchedulesScheduleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceStorageArchivalConfigArchivingConfigurationInput)(nil)).Elem(), NamespaceStorageArchivalConfigArchivingConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceStorageArchivalConfigArchivingConfigurationPtrInput)(nil)).Elem(), NamespaceStorageArchivalConfigArchivingConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLogAnalyticsCategoriesListItemInput)(nil)).Elem(), GetLogAnalyticsCategoriesListItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLogAnalyticsCategoriesListItemArrayInput)(nil)).Elem(), GetLogAnalyticsCategoriesListItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLogAnalyticsEntitiesFilterInput)(nil)).Elem(), GetLogAnalyticsEntitiesFilterArgs{})
@@ -9672,6 +13629,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLogAnalyticsEntityMetadataArrayInput)(nil)).Elem(), GetLogAnalyticsEntityMetadataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLogAnalyticsEntityMetadataItemInput)(nil)).Elem(), GetLogAnalyticsEntityMetadataItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLogAnalyticsEntityMetadataItemArrayInput)(nil)).Elem(), GetLogAnalyticsEntityMetadataItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLogAnalyticsEntityTopologyFilterInput)(nil)).Elem(), GetLogAnalyticsEntityTopologyFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLogAnalyticsEntityTopologyFilterArrayInput)(nil)).Elem(), GetLogAnalyticsEntityTopologyFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLogAnalyticsEntityTopologyItemInput)(nil)).Elem(), GetLogAnalyticsEntityTopologyItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLogAnalyticsEntityTopologyItemArrayInput)(nil)).Elem(), GetLogAnalyticsEntityTopologyItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLogAnalyticsEntityTopologyItemLinkInput)(nil)).Elem(), GetLogAnalyticsEntityTopologyItemLinkArgs{})
@@ -9712,6 +13671,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayInput)(nil)).Elem(), GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceEffectivePropertiesFilterInput)(nil)).Elem(), GetNamespaceEffectivePropertiesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceEffectivePropertiesFilterArrayInput)(nil)).Elem(), GetNamespaceEffectivePropertiesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceFieldUsageDependentParserInput)(nil)).Elem(), GetNamespaceFieldUsageDependentParserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceFieldUsageDependentParserArrayInput)(nil)).Elem(), GetNamespaceFieldUsageDependentParserArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceFieldUsageDependentParserDependencyInput)(nil)).Elem(), GetNamespaceFieldUsageDependentParserDependencyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceFieldUsageDependentParserDependencyArrayInput)(nil)).Elem(), GetNamespaceFieldUsageDependentParserDependencyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceFieldUsageDependentSourceInput)(nil)).Elem(), GetNamespaceFieldUsageDependentSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceFieldUsageDependentSourceArrayInput)(nil)).Elem(), GetNamespaceFieldUsageDependentSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceFieldUsageDependentSourceDependencyInput)(nil)).Elem(), GetNamespaceFieldUsageDependentSourceDependencyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceFieldUsageDependentSourceDependencyArrayInput)(nil)).Elem(), GetNamespaceFieldUsageDependentSourceDependencyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceFieldUsageDependentSourceEntityTypeInput)(nil)).Elem(), GetNamespaceFieldUsageDependentSourceEntityTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceFieldUsageDependentSourceEntityTypeArrayInput)(nil)).Elem(), GetNamespaceFieldUsageDependentSourceEntityTypeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceIngestTimeRuleActionInput)(nil)).Elem(), GetNamespaceIngestTimeRuleActionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceIngestTimeRuleActionArrayInput)(nil)).Elem(), GetNamespaceIngestTimeRuleActionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceIngestTimeRuleConditionInput)(nil)).Elem(), GetNamespaceIngestTimeRuleConditionArgs{})
@@ -9724,6 +13693,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayInput)(nil)).Elem(), GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemInput)(nil)).Elem(), GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayInput)(nil)).Elem(), GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceLookupCategoryInput)(nil)).Elem(), GetNamespaceLookupCategoryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceLookupCategoryArrayInput)(nil)).Elem(), GetNamespaceLookupCategoryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceLookupFieldInput)(nil)).Elem(), GetNamespaceLookupFieldArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceLookupFieldArrayInput)(nil)).Elem(), GetNamespaceLookupFieldArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceLookupReferringSourceInput)(nil)).Elem(), GetNamespaceLookupReferringSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceLookupReferringSourceArrayInput)(nil)).Elem(), GetNamespaceLookupReferringSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceLookupStatusSummaryInput)(nil)).Elem(), GetNamespaceLookupStatusSummaryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceLookupStatusSummaryArrayInput)(nil)).Elem(), GetNamespaceLookupStatusSummaryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceParserActionsFilterInput)(nil)).Elem(), GetNamespaceParserActionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceParserActionsFilterArrayInput)(nil)).Elem(), GetNamespaceParserActionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceParserActionsParserActionSummaryCollectionInput)(nil)).Elem(), GetNamespaceParserActionsParserActionSummaryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceParserActionsParserActionSummaryCollectionArrayInput)(nil)).Elem(), GetNamespaceParserActionsParserActionSummaryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceParserActionsParserActionSummaryCollectionItemInput)(nil)).Elem(), GetNamespaceParserActionsParserActionSummaryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceParserActionsParserActionSummaryCollectionItemArrayInput)(nil)).Elem(), GetNamespaceParserActionsParserActionSummaryCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespacePropertiesMetadataFilterInput)(nil)).Elem(), GetNamespacePropertiesMetadataFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespacePropertiesMetadataFilterArrayInput)(nil)).Elem(), GetNamespacePropertiesMetadataFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionInput)(nil)).Elem(), GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArgs{})
@@ -9742,6 +13725,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTaskActionArrayInput)(nil)).Elem(), GetNamespaceScheduledTaskActionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTaskActionMetricExtractionInput)(nil)).Elem(), GetNamespaceScheduledTaskActionMetricExtractionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTaskActionMetricExtractionArrayInput)(nil)).Elem(), GetNamespaceScheduledTaskActionMetricExtractionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTaskActionTemplateDetailInput)(nil)).Elem(), GetNamespaceScheduledTaskActionTemplateDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTaskActionTemplateDetailArrayInput)(nil)).Elem(), GetNamespaceScheduledTaskActionTemplateDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTaskActionTemplateDetailTemplateParamInput)(nil)).Elem(), GetNamespaceScheduledTaskActionTemplateDetailTemplateParamArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTaskActionTemplateDetailTemplateParamArrayInput)(nil)).Elem(), GetNamespaceScheduledTaskActionTemplateDetailTemplateParamArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTaskScheduleInput)(nil)).Elem(), GetNamespaceScheduledTaskScheduleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTaskScheduleArrayInput)(nil)).Elem(), GetNamespaceScheduledTaskScheduleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTaskScheduleScheduleInput)(nil)).Elem(), GetNamespaceScheduledTaskScheduleScheduleArgs{})
@@ -9756,10 +13743,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArrayInput)(nil)).Elem(), GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionInput)(nil)).Elem(), GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayInput)(nil)).Elem(), GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailInput)(nil)).Elem(), GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArrayInput)(nil)).Elem(), GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamInput)(nil)).Elem(), GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArrayInput)(nil)).Elem(), GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleInput)(nil)).Elem(), GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArrayInput)(nil)).Elem(), GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleInput)(nil)).Elem(), GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArrayInput)(nil)).Elem(), GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceStorageArchivalConfigArchivingConfigurationInput)(nil)).Elem(), GetNamespaceStorageArchivalConfigArchivingConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceStorageArchivalConfigArchivingConfigurationArrayInput)(nil)).Elem(), GetNamespaceStorageArchivalConfigArchivingConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceStorageEncryptionKeyInfoItemInput)(nil)).Elem(), GetNamespaceStorageEncryptionKeyInfoItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceStorageEncryptionKeyInfoItemArrayInput)(nil)).Elem(), GetNamespaceStorageEncryptionKeyInfoItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceStorageOverlappingRecallsFilterInput)(nil)).Elem(), GetNamespaceStorageOverlappingRecallsFilterArgs{})
@@ -9768,6 +13761,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayInput)(nil)).Elem(), GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemInput)(nil)).Elem(), GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayInput)(nil)).Elem(), GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceTemplateFacetInput)(nil)).Elem(), GetNamespaceTemplateFacetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceTemplateFacetArrayInput)(nil)).Elem(), GetNamespaceTemplateFacetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceTemplatesFilterInput)(nil)).Elem(), GetNamespaceTemplatesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceTemplatesFilterArrayInput)(nil)).Elem(), GetNamespaceTemplatesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceTemplatesLogAnalyticsTemplateCollectionInput)(nil)).Elem(), GetNamespaceTemplatesLogAnalyticsTemplateCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceTemplatesLogAnalyticsTemplateCollectionArrayInput)(nil)).Elem(), GetNamespaceTemplatesLogAnalyticsTemplateCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemInput)(nil)).Elem(), GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArrayInput)(nil)).Elem(), GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetInput)(nil)).Elem(), GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArrayInput)(nil)).Elem(), GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespacesFilterInput)(nil)).Elem(), GetNamespacesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespacesFilterArrayInput)(nil)).Elem(), GetNamespacesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespacesNamespaceCollectionInput)(nil)).Elem(), GetNamespacesNamespaceCollectionArgs{})
@@ -9790,14 +13793,28 @@ func init() {
 	pulumi.RegisterOutputType(NamespaceIngestTimeRuleConditionsPtrOutput{})
 	pulumi.RegisterOutputType(NamespaceIngestTimeRuleConditionsAdditionalConditionOutput{})
 	pulumi.RegisterOutputType(NamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutput{})
+	pulumi.RegisterOutputType(NamespaceLookupCategoryOutput{})
+	pulumi.RegisterOutputType(NamespaceLookupCategoryArrayOutput{})
+	pulumi.RegisterOutputType(NamespaceLookupFieldOutput{})
+	pulumi.RegisterOutputType(NamespaceLookupFieldArrayOutput{})
+	pulumi.RegisterOutputType(NamespaceLookupReferringSourceOutput{})
+	pulumi.RegisterOutputType(NamespaceLookupReferringSourceArrayOutput{})
+	pulumi.RegisterOutputType(NamespaceLookupStatusSummaryOutput{})
+	pulumi.RegisterOutputType(NamespaceLookupStatusSummaryArrayOutput{})
 	pulumi.RegisterOutputType(NamespaceScheduledTaskActionOutput{})
 	pulumi.RegisterOutputType(NamespaceScheduledTaskActionPtrOutput{})
 	pulumi.RegisterOutputType(NamespaceScheduledTaskActionMetricExtractionOutput{})
 	pulumi.RegisterOutputType(NamespaceScheduledTaskActionMetricExtractionPtrOutput{})
+	pulumi.RegisterOutputType(NamespaceScheduledTaskActionTemplateDetailsOutput{})
+	pulumi.RegisterOutputType(NamespaceScheduledTaskActionTemplateDetailsPtrOutput{})
+	pulumi.RegisterOutputType(NamespaceScheduledTaskActionTemplateDetailsTemplateParamOutput{})
+	pulumi.RegisterOutputType(NamespaceScheduledTaskActionTemplateDetailsTemplateParamArrayOutput{})
 	pulumi.RegisterOutputType(NamespaceScheduledTaskSchedulesOutput{})
 	pulumi.RegisterOutputType(NamespaceScheduledTaskSchedulesPtrOutput{})
 	pulumi.RegisterOutputType(NamespaceScheduledTaskSchedulesScheduleOutput{})
 	pulumi.RegisterOutputType(NamespaceScheduledTaskSchedulesScheduleArrayOutput{})
+	pulumi.RegisterOutputType(NamespaceStorageArchivalConfigArchivingConfigurationOutput{})
+	pulumi.RegisterOutputType(NamespaceStorageArchivalConfigArchivingConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(GetLogAnalyticsCategoriesListItemOutput{})
 	pulumi.RegisterOutputType(GetLogAnalyticsCategoriesListItemArrayOutput{})
 	pulumi.RegisterOutputType(GetLogAnalyticsEntitiesFilterOutput{})
@@ -9814,6 +13831,8 @@ func init() {
 	pulumi.RegisterOutputType(GetLogAnalyticsEntityMetadataArrayOutput{})
 	pulumi.RegisterOutputType(GetLogAnalyticsEntityMetadataItemOutput{})
 	pulumi.RegisterOutputType(GetLogAnalyticsEntityMetadataItemArrayOutput{})
+	pulumi.RegisterOutputType(GetLogAnalyticsEntityTopologyFilterOutput{})
+	pulumi.RegisterOutputType(GetLogAnalyticsEntityTopologyFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetLogAnalyticsEntityTopologyItemOutput{})
 	pulumi.RegisterOutputType(GetLogAnalyticsEntityTopologyItemArrayOutput{})
 	pulumi.RegisterOutputType(GetLogAnalyticsEntityTopologyItemLinkOutput{})
@@ -9854,6 +13873,16 @@ func init() {
 	pulumi.RegisterOutputType(GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutput{})
 	pulumi.RegisterOutputType(GetNamespaceEffectivePropertiesFilterOutput{})
 	pulumi.RegisterOutputType(GetNamespaceEffectivePropertiesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceFieldUsageDependentParserOutput{})
+	pulumi.RegisterOutputType(GetNamespaceFieldUsageDependentParserArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceFieldUsageDependentParserDependencyOutput{})
+	pulumi.RegisterOutputType(GetNamespaceFieldUsageDependentParserDependencyArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceFieldUsageDependentSourceOutput{})
+	pulumi.RegisterOutputType(GetNamespaceFieldUsageDependentSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceFieldUsageDependentSourceDependencyOutput{})
+	pulumi.RegisterOutputType(GetNamespaceFieldUsageDependentSourceDependencyArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceFieldUsageDependentSourceEntityTypeOutput{})
+	pulumi.RegisterOutputType(GetNamespaceFieldUsageDependentSourceEntityTypeArrayOutput{})
 	pulumi.RegisterOutputType(GetNamespaceIngestTimeRuleActionOutput{})
 	pulumi.RegisterOutputType(GetNamespaceIngestTimeRuleActionArrayOutput{})
 	pulumi.RegisterOutputType(GetNamespaceIngestTimeRuleConditionOutput{})
@@ -9866,6 +13895,20 @@ func init() {
 	pulumi.RegisterOutputType(GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceLookupCategoryOutput{})
+	pulumi.RegisterOutputType(GetNamespaceLookupCategoryArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceLookupFieldOutput{})
+	pulumi.RegisterOutputType(GetNamespaceLookupFieldArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceLookupReferringSourceOutput{})
+	pulumi.RegisterOutputType(GetNamespaceLookupReferringSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceLookupStatusSummaryOutput{})
+	pulumi.RegisterOutputType(GetNamespaceLookupStatusSummaryArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceParserActionsFilterOutput{})
+	pulumi.RegisterOutputType(GetNamespaceParserActionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceParserActionsParserActionSummaryCollectionOutput{})
+	pulumi.RegisterOutputType(GetNamespaceParserActionsParserActionSummaryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceParserActionsParserActionSummaryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetNamespaceParserActionsParserActionSummaryCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetNamespacePropertiesMetadataFilterOutput{})
 	pulumi.RegisterOutputType(GetNamespacePropertiesMetadataFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutput{})
@@ -9884,6 +13927,10 @@ func init() {
 	pulumi.RegisterOutputType(GetNamespaceScheduledTaskActionArrayOutput{})
 	pulumi.RegisterOutputType(GetNamespaceScheduledTaskActionMetricExtractionOutput{})
 	pulumi.RegisterOutputType(GetNamespaceScheduledTaskActionMetricExtractionArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceScheduledTaskActionTemplateDetailOutput{})
+	pulumi.RegisterOutputType(GetNamespaceScheduledTaskActionTemplateDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceScheduledTaskActionTemplateDetailTemplateParamOutput{})
+	pulumi.RegisterOutputType(GetNamespaceScheduledTaskActionTemplateDetailTemplateParamArrayOutput{})
 	pulumi.RegisterOutputType(GetNamespaceScheduledTaskScheduleOutput{})
 	pulumi.RegisterOutputType(GetNamespaceScheduledTaskScheduleArrayOutput{})
 	pulumi.RegisterOutputType(GetNamespaceScheduledTaskScheduleScheduleOutput{})
@@ -9898,10 +13945,16 @@ func init() {
 	pulumi.RegisterOutputType(GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArrayOutput{})
 	pulumi.RegisterOutputType(GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput{})
 	pulumi.RegisterOutputType(GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailOutput{})
+	pulumi.RegisterOutputType(GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamOutput{})
+	pulumi.RegisterOutputType(GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArrayOutput{})
 	pulumi.RegisterOutputType(GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleOutput{})
 	pulumi.RegisterOutputType(GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArrayOutput{})
 	pulumi.RegisterOutputType(GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOutput{})
 	pulumi.RegisterOutputType(GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceStorageArchivalConfigArchivingConfigurationOutput{})
+	pulumi.RegisterOutputType(GetNamespaceStorageArchivalConfigArchivingConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetNamespaceStorageEncryptionKeyInfoItemOutput{})
 	pulumi.RegisterOutputType(GetNamespaceStorageEncryptionKeyInfoItemArrayOutput{})
 	pulumi.RegisterOutputType(GetNamespaceStorageOverlappingRecallsFilterOutput{})
@@ -9910,6 +13963,16 @@ func init() {
 	pulumi.RegisterOutputType(GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceTemplateFacetOutput{})
+	pulumi.RegisterOutputType(GetNamespaceTemplateFacetArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceTemplatesFilterOutput{})
+	pulumi.RegisterOutputType(GetNamespaceTemplatesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceTemplatesLogAnalyticsTemplateCollectionOutput{})
+	pulumi.RegisterOutputType(GetNamespaceTemplatesLogAnalyticsTemplateCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetOutput{})
+	pulumi.RegisterOutputType(GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArrayOutput{})
 	pulumi.RegisterOutputType(GetNamespacesFilterOutput{})
 	pulumi.RegisterOutputType(GetNamespacesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetNamespacesNamespaceCollectionOutput{})

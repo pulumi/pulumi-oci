@@ -14,6 +14,7 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetNetworkFirewallResult',
@@ -27,7 +28,7 @@ class GetNetworkFirewallResult:
     """
     A collection of values returned by getNetworkFirewall.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, ipv4address=None, ipv6address=None, lifecycle_details=None, network_firewall_id=None, network_firewall_policy_id=None, network_security_group_ids=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, ipv4address=None, ipv6address=None, lifecycle_details=None, nat_configurations=None, network_firewall_id=None, network_firewall_policy_id=None, network_security_group_ids=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -55,6 +56,9 @@ class GetNetworkFirewallResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if nat_configurations and not isinstance(nat_configurations, list):
+            raise TypeError("Expected argument 'nat_configurations' to be a list")
+        pulumi.set(__self__, "nat_configurations", nat_configurations)
         if network_firewall_id and not isinstance(network_firewall_id, str):
             raise TypeError("Expected argument 'network_firewall_id' to be a str")
         pulumi.set(__self__, "network_firewall_id", network_firewall_id)
@@ -153,6 +157,14 @@ class GetNetworkFirewallResult:
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="natConfigurations")
+    def nat_configurations(self) -> Sequence['outputs.GetNetworkFirewallNatConfigurationResult']:
+        """
+        Nat Configuration response.
+        """
+        return pulumi.get(self, "nat_configurations")
+
+    @property
     @pulumi.getter(name="networkFirewallId")
     def network_firewall_id(self) -> builtins.str:
         return pulumi.get(self, "network_firewall_id")
@@ -229,6 +241,7 @@ class AwaitableGetNetworkFirewallResult(GetNetworkFirewallResult):
             ipv4address=self.ipv4address,
             ipv6address=self.ipv6address,
             lifecycle_details=self.lifecycle_details,
+            nat_configurations=self.nat_configurations,
             network_firewall_id=self.network_firewall_id,
             network_firewall_policy_id=self.network_firewall_policy_id,
             network_security_group_ids=self.network_security_group_ids,
@@ -273,6 +286,7 @@ def get_network_firewall(network_firewall_id: Optional[builtins.str] = None,
         ipv4address=pulumi.get(__ret__, 'ipv4address'),
         ipv6address=pulumi.get(__ret__, 'ipv6address'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        nat_configurations=pulumi.get(__ret__, 'nat_configurations'),
         network_firewall_id=pulumi.get(__ret__, 'network_firewall_id'),
         network_firewall_policy_id=pulumi.get(__ret__, 'network_firewall_policy_id'),
         network_security_group_ids=pulumi.get(__ret__, 'network_security_group_ids'),
@@ -314,6 +328,7 @@ def get_network_firewall_output(network_firewall_id: Optional[pulumi.Input[built
         ipv4address=pulumi.get(__response__, 'ipv4address'),
         ipv6address=pulumi.get(__response__, 'ipv6address'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        nat_configurations=pulumi.get(__response__, 'nat_configurations'),
         network_firewall_id=pulumi.get(__response__, 'network_firewall_id'),
         network_firewall_policy_id=pulumi.get(__response__, 'network_firewall_policy_id'),
         network_security_group_ids=pulumi.get(__response__, 'network_security_group_ids'),

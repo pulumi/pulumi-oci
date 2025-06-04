@@ -16,7 +16,7 @@ namespace Pulumi.Oci.MeteringComputation.Inputs
         private InputList<string>? _columnGroupBies;
 
         /// <summary>
-        /// (Updatable) The column groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+        /// (Updatable) The column groupBy key list. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
         /// </summary>
         public InputList<string> ColumnGroupBies
         {
@@ -52,7 +52,7 @@ namespace Pulumi.Oci.MeteringComputation.Inputs
         private InputList<string>? _rowGroupBies;
 
         /// <summary>
-        /// (Updatable) The row groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+        /// (Updatable) The row groupBy key list. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
         /// </summary>
         public InputList<string> RowGroupBies
         {

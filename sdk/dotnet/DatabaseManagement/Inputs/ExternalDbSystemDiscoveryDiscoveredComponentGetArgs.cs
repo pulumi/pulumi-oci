@@ -39,6 +39,12 @@ namespace Pulumi.Oci.DatabaseManagement.Inputs
         }
 
         /// <summary>
+        /// Indicates whether Diagnostics &amp; Management should be enabled for all the current pluggable databases in the container database.
+        /// </summary>
+        [Input("canEnableAllCurrentPdbs")]
+        public Input<bool>? CanEnableAllCurrentPdbs { get; set; }
+
+        /// <summary>
         /// The unique identifier of the Oracle cluster.
         /// </summary>
         [Input("clusterId")]
@@ -201,6 +207,12 @@ namespace Pulumi.Oci.DatabaseManagement.Inputs
         /// </summary>
         [Input("instanceName")]
         public Input<string>? InstanceName { get; set; }
+
+        /// <summary>
+        /// Indicates whether Diagnostics &amp; Management should be enabled automatically for all the pluggable databases in the container database.
+        /// </summary>
+        [Input("isAutoEnablePluggableDatabase")]
+        public Input<bool>? IsAutoEnablePluggableDatabase { get; set; }
 
         /// <summary>
         /// Indicates whether the Oracle Database is part of a cluster.

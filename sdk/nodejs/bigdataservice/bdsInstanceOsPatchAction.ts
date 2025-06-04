@@ -21,14 +21,15 @@ import * as utilities from "../utilities";
  *     bdsInstanceId: testBdsInstance.id,
  *     clusterAdminPassword: bdsInstanceOsPatchActionClusterAdminPassword,
  *     osPatchVersion: bdsInstanceOsPatchActionOsPatchVersion,
- *     patchingConfigs: [{
+ *     isDryRun: isDryRun,
+ *     patchingConfigs: {
  *         patchingConfigStrategy: bdsInstanceOsPatchActionPatchingConfigStrategy,
  *         batchSize: bdsInstanceOsPatchActionBatchSize,
  *         waitTimeBetweenBatchInSeconds: bdsInstanceOsPatchActionWaitTimeBetweenBatchInSeconds,
  *         toleranceThresholdPerBatch: bdsInstanceOsPatchActionToleranceThresholdPerBatch,
  *         waitTimeBetweenDomainInSeconds: bdsInstanceOsPatchActionWaitTimeBetweenDomainInSeconds,
  *         toleranceThresholdPerDomain: bdsInstanceOsPatchActionToleranceThresholdPerDomain,
- *     }],
+ *     },
  * });
  * ```
  *
@@ -70,8 +71,10 @@ export class BdsInstanceOsPatchAction extends pulumi.CustomResource {
     public readonly bdsInstanceId!: pulumi.Output<string>;
     /**
      * Base-64 encoded password for the cluster admin user.
+     * * `isDryRun` - (Optional) Perform dry run for the patch and stop without actually patching the cluster.
      */
     public readonly clusterAdminPassword!: pulumi.Output<string>;
+    public readonly isDryRun!: pulumi.Output<boolean | undefined>;
     /**
      * The version of the OS patch to be installed.
      *
@@ -83,7 +86,7 @@ export class BdsInstanceOsPatchAction extends pulumi.CustomResource {
     /**
      * Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
      */
-    public readonly patchingConfigs!: pulumi.Output<outputs.BigDataService.BdsInstanceOsPatchActionPatchingConfig[]>;
+    public readonly patchingConfigs!: pulumi.Output<outputs.BigDataService.BdsInstanceOsPatchActionPatchingConfigs>;
 
     /**
      * Create a BdsInstanceOsPatchAction resource with the given unique name, arguments, and options.
@@ -100,6 +103,7 @@ export class BdsInstanceOsPatchAction extends pulumi.CustomResource {
             const state = argsOrState as BdsInstanceOsPatchActionState | undefined;
             resourceInputs["bdsInstanceId"] = state ? state.bdsInstanceId : undefined;
             resourceInputs["clusterAdminPassword"] = state ? state.clusterAdminPassword : undefined;
+            resourceInputs["isDryRun"] = state ? state.isDryRun : undefined;
             resourceInputs["osPatchVersion"] = state ? state.osPatchVersion : undefined;
             resourceInputs["patchingConfigs"] = state ? state.patchingConfigs : undefined;
         } else {
@@ -115,6 +119,7 @@ export class BdsInstanceOsPatchAction extends pulumi.CustomResource {
             }
             resourceInputs["bdsInstanceId"] = args ? args.bdsInstanceId : undefined;
             resourceInputs["clusterAdminPassword"] = args?.clusterAdminPassword ? pulumi.secret(args.clusterAdminPassword) : undefined;
+            resourceInputs["isDryRun"] = args ? args.isDryRun : undefined;
             resourceInputs["osPatchVersion"] = args ? args.osPatchVersion : undefined;
             resourceInputs["patchingConfigs"] = args ? args.patchingConfigs : undefined;
         }
@@ -135,8 +140,10 @@ export interface BdsInstanceOsPatchActionState {
     bdsInstanceId?: pulumi.Input<string>;
     /**
      * Base-64 encoded password for the cluster admin user.
+     * * `isDryRun` - (Optional) Perform dry run for the patch and stop without actually patching the cluster.
      */
     clusterAdminPassword?: pulumi.Input<string>;
+    isDryRun?: pulumi.Input<boolean>;
     /**
      * The version of the OS patch to be installed.
      *
@@ -148,7 +155,7 @@ export interface BdsInstanceOsPatchActionState {
     /**
      * Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
      */
-    patchingConfigs?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceOsPatchActionPatchingConfig>[]>;
+    patchingConfigs?: pulumi.Input<inputs.BigDataService.BdsInstanceOsPatchActionPatchingConfigs>;
 }
 
 /**
@@ -161,8 +168,10 @@ export interface BdsInstanceOsPatchActionArgs {
     bdsInstanceId: pulumi.Input<string>;
     /**
      * Base-64 encoded password for the cluster admin user.
+     * * `isDryRun` - (Optional) Perform dry run for the patch and stop without actually patching the cluster.
      */
     clusterAdminPassword: pulumi.Input<string>;
+    isDryRun?: pulumi.Input<boolean>;
     /**
      * The version of the OS patch to be installed.
      *
@@ -174,5 +183,5 @@ export interface BdsInstanceOsPatchActionArgs {
     /**
      * Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
      */
-    patchingConfigs?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceOsPatchActionPatchingConfig>[]>;
+    patchingConfigs?: pulumi.Input<inputs.BigDataService.BdsInstanceOsPatchActionPatchingConfigs>;
 }

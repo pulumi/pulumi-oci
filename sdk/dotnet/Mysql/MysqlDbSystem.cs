@@ -103,6 +103,7 @@ namespace Pulumi.Oci.Mysql
     ///         {
     ///             WindowStartTime = mysqlDbSystemMaintenanceWindowStartTime,
     ///         },
+    ///         NsgIds = mysqlDbSystemNsgIds,
     ///         Port = mysqlDbSystemPort,
     ///         PortX = mysqlDbSystemPortX,
     ///         ReadEndpoint = new Oci.Mysql.Inputs.MysqlDbSystemReadEndpointArgs
@@ -111,6 +112,11 @@ namespace Pulumi.Oci.Mysql
     ///             IsEnabled = mysqlDbSystemReadEndpointIsEnabled,
     ///             ReadEndpointHostnameLabel = mysqlDbSystemReadEndpointReadEndpointHostnameLabel,
     ///             ReadEndpointIpAddress = mysqlDbSystemReadEndpointReadEndpointIpAddress,
+    ///         },
+    ///         Rest = new Oci.Mysql.Inputs.MysqlDbSystemRestArgs
+    ///         {
+    ///             Configuration = mysqlDbSystemRestConfiguration,
+    ///             Port = mysqlDbSystemRestPort,
     ///         },
     ///         SecureConnections = new Oci.Mysql.Inputs.MysqlDbSystemSecureConnectionsArgs
     ///         {
@@ -337,6 +343,12 @@ namespace Pulumi.Oci.Mysql
         public Output<string> MysqlVersion { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Network Security Group OCIDs used for the VNIC attachment.
+        /// </summary>
+        [Output("nsgIds")]
+        public Output<ImmutableArray<string>> NsgIds { get; private set; } = null!;
+
+        /// <summary>
         /// Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
         /// </summary>
         [Output("pointInTimeRecoveryDetails")]
@@ -359,6 +371,12 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Output("readEndpoint")]
         public Output<Outputs.MysqlDbSystemReadEndpoint> ReadEndpoint { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Details required to configure REST while creating a DB System.
+        /// </summary>
+        [Output("rest")]
+        public Output<Outputs.MysqlDbSystemRest> Rest { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Secure connection configuration details.
@@ -664,6 +682,18 @@ namespace Pulumi.Oci.Mysql
         [Input("mysqlVersion")]
         public Input<string>? MysqlVersion { get; set; }
 
+        [Input("nsgIds")]
+        private InputList<string>? _nsgIds;
+
+        /// <summary>
+        /// (Updatable) Network Security Group OCIDs used for the VNIC attachment.
+        /// </summary>
+        public InputList<string> NsgIds
+        {
+            get => _nsgIds ?? (_nsgIds = new InputList<string>());
+            set => _nsgIds = value;
+        }
+
         /// <summary>
         /// The port for primary endpoint of the DB System to listen on.
         /// </summary>
@@ -681,6 +711,12 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Input("readEndpoint")]
         public Input<Inputs.MysqlDbSystemReadEndpointArgs>? ReadEndpoint { get; set; }
+
+        /// <summary>
+        /// (Updatable) Details required to configure REST while creating a DB System.
+        /// </summary>
+        [Input("rest")]
+        public Input<Inputs.MysqlDbSystemRestArgs>? Rest { get; set; }
 
         /// <summary>
         /// (Updatable) Secure connection configuration details.
@@ -986,6 +1022,18 @@ namespace Pulumi.Oci.Mysql
         [Input("mysqlVersion")]
         public Input<string>? MysqlVersion { get; set; }
 
+        [Input("nsgIds")]
+        private InputList<string>? _nsgIds;
+
+        /// <summary>
+        /// (Updatable) Network Security Group OCIDs used for the VNIC attachment.
+        /// </summary>
+        public InputList<string> NsgIds
+        {
+            get => _nsgIds ?? (_nsgIds = new InputList<string>());
+            set => _nsgIds = value;
+        }
+
         [Input("pointInTimeRecoveryDetails")]
         private InputList<Inputs.MysqlDbSystemPointInTimeRecoveryDetailGetArgs>? _pointInTimeRecoveryDetails;
 
@@ -1015,6 +1063,12 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Input("readEndpoint")]
         public Input<Inputs.MysqlDbSystemReadEndpointGetArgs>? ReadEndpoint { get; set; }
+
+        /// <summary>
+        /// (Updatable) Details required to configure REST while creating a DB System.
+        /// </summary>
+        [Input("rest")]
+        public Input<Inputs.MysqlDbSystemRestGetArgs>? Rest { get; set; }
 
         /// <summary>
         /// (Updatable) Secure connection configuration details.

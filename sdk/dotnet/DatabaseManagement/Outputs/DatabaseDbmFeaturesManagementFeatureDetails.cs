@@ -14,6 +14,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
     public sealed class DatabaseDbmFeaturesManagementFeatureDetails
     {
         /// <summary>
+        /// Indicates whether Diagnostics &amp; Management should be enabled for all the current pluggable databases in the container database.
+        /// </summary>
+        public readonly bool? CanEnableAllCurrentPdbs;
+        /// <summary>
         /// The connector details required to connect to an Oracle cloud database.
         /// </summary>
         public readonly Outputs.DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetails? ConnectorDetails;
@@ -26,7 +30,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string Feature;
         /// <summary>
-        /// Indicates whether the pluggable database can be enabled automatically.
+        /// Indicates whether Diagnostics &amp; Management should be enabled automatically for all the pluggable databases in the container database.
         /// </summary>
         public readonly bool? IsAutoEnablePluggableDatabase;
         /// <summary>
@@ -36,6 +40,8 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
         [OutputConstructor]
         private DatabaseDbmFeaturesManagementFeatureDetails(
+            bool? canEnableAllCurrentPdbs,
+
             Outputs.DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetails? connectorDetails,
 
             Outputs.DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetails? databaseConnectionDetails,
@@ -46,6 +52,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
             string? managementType)
         {
+            CanEnableAllCurrentPdbs = canEnableAllCurrentPdbs;
             ConnectorDetails = connectorDetails;
             DatabaseConnectionDetails = databaseConnectionDetails;
             Feature = feature;

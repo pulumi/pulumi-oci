@@ -16,6 +16,7 @@ import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemHeatWaveCluster;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemMaintenance;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemReadEndpoint;
+import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemRest;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemSecureConnection;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemSource;
 import java.lang.Boolean;
@@ -179,12 +180,17 @@ public final class GetMysqlDbSystemsDbSystem {
      */
     private String mysqlVersion;
     /**
+     * @return Network Security Group OCIDs used for the VNIC attachment.
+     * 
+     */
+    private List<String> nsgIds;
+    /**
      * @return Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
      * 
      */
     private List<GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail> pointInTimeRecoveryDetails;
     /**
-     * @return The port for primary endpoint of the DB System to listen on.
+     * @return The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
      * 
      */
     private Integer port;
@@ -198,6 +204,11 @@ public final class GetMysqlDbSystemsDbSystem {
      * 
      */
     private List<GetMysqlDbSystemsDbSystemReadEndpoint> readEndpoints;
+    /**
+     * @return REST configuration details.
+     * 
+     */
+    private List<GetMysqlDbSystemsDbSystemRest> rests;
     /**
      * @return Secure connection configuration details.
      * 
@@ -455,6 +466,13 @@ public final class GetMysqlDbSystemsDbSystem {
         return this.mysqlVersion;
     }
     /**
+     * @return Network Security Group OCIDs used for the VNIC attachment.
+     * 
+     */
+    public List<String> nsgIds() {
+        return this.nsgIds;
+    }
+    /**
      * @return Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
      * 
      */
@@ -462,7 +480,7 @@ public final class GetMysqlDbSystemsDbSystem {
         return this.pointInTimeRecoveryDetails;
     }
     /**
-     * @return The port for primary endpoint of the DB System to listen on.
+     * @return The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
      * 
      */
     public Integer port() {
@@ -481,6 +499,13 @@ public final class GetMysqlDbSystemsDbSystem {
      */
     public List<GetMysqlDbSystemsDbSystemReadEndpoint> readEndpoints() {
         return this.readEndpoints;
+    }
+    /**
+     * @return REST configuration details.
+     * 
+     */
+    public List<GetMysqlDbSystemsDbSystemRest> rests() {
+        return this.rests;
     }
     /**
      * @return Secure connection configuration details.
@@ -582,10 +607,12 @@ public final class GetMysqlDbSystemsDbSystem {
         private String lifecycleDetails;
         private List<GetMysqlDbSystemsDbSystemMaintenance> maintenances;
         private String mysqlVersion;
+        private List<String> nsgIds;
         private List<GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail> pointInTimeRecoveryDetails;
         private Integer port;
         private Integer portX;
         private List<GetMysqlDbSystemsDbSystemReadEndpoint> readEndpoints;
+        private List<GetMysqlDbSystemsDbSystemRest> rests;
         private List<GetMysqlDbSystemsDbSystemSecureConnection> secureConnections;
         private String shapeName;
         private String shutdownType;
@@ -629,10 +656,12 @@ public final class GetMysqlDbSystemsDbSystem {
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.maintenances = defaults.maintenances;
     	      this.mysqlVersion = defaults.mysqlVersion;
+    	      this.nsgIds = defaults.nsgIds;
     	      this.pointInTimeRecoveryDetails = defaults.pointInTimeRecoveryDetails;
     	      this.port = defaults.port;
     	      this.portX = defaults.portX;
     	      this.readEndpoints = defaults.readEndpoints;
+    	      this.rests = defaults.rests;
     	      this.secureConnections = defaults.secureConnections;
     	      this.shapeName = defaults.shapeName;
     	      this.shutdownType = defaults.shutdownType;
@@ -920,6 +949,17 @@ public final class GetMysqlDbSystemsDbSystem {
             return this;
         }
         @CustomType.Setter
+        public Builder nsgIds(List<String> nsgIds) {
+            if (nsgIds == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemsDbSystem", "nsgIds");
+            }
+            this.nsgIds = nsgIds;
+            return this;
+        }
+        public Builder nsgIds(String... nsgIds) {
+            return nsgIds(List.of(nsgIds));
+        }
+        @CustomType.Setter
         public Builder pointInTimeRecoveryDetails(List<GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail> pointInTimeRecoveryDetails) {
             if (pointInTimeRecoveryDetails == null) {
               throw new MissingRequiredPropertyException("GetMysqlDbSystemsDbSystem", "pointInTimeRecoveryDetails");
@@ -956,6 +996,17 @@ public final class GetMysqlDbSystemsDbSystem {
         }
         public Builder readEndpoints(GetMysqlDbSystemsDbSystemReadEndpoint... readEndpoints) {
             return readEndpoints(List.of(readEndpoints));
+        }
+        @CustomType.Setter
+        public Builder rests(List<GetMysqlDbSystemsDbSystemRest> rests) {
+            if (rests == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemsDbSystem", "rests");
+            }
+            this.rests = rests;
+            return this;
+        }
+        public Builder rests(GetMysqlDbSystemsDbSystemRest... rests) {
+            return rests(List.of(rests));
         }
         @CustomType.Setter
         public Builder secureConnections(List<GetMysqlDbSystemsDbSystemSecureConnection> secureConnections) {
@@ -1068,10 +1119,12 @@ public final class GetMysqlDbSystemsDbSystem {
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.maintenances = maintenances;
             _resultValue.mysqlVersion = mysqlVersion;
+            _resultValue.nsgIds = nsgIds;
             _resultValue.pointInTimeRecoveryDetails = pointInTimeRecoveryDetails;
             _resultValue.port = port;
             _resultValue.portX = portX;
             _resultValue.readEndpoints = readEndpoints;
+            _resultValue.rests = rests;
             _resultValue.secureConnections = secureConnections;
             _resultValue.shapeName = shapeName;
             _resultValue.shutdownType = shutdownType;

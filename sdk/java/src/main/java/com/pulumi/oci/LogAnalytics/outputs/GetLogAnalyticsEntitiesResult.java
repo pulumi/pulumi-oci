@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsEntitiesFilter;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsEntitiesLogAnalyticsEntityCollection;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -25,12 +26,16 @@ public final class GetLogAnalyticsEntitiesResult {
      * 
      */
     private String compartmentId;
+    private @Nullable List<String> definedTagEquals;
+    private @Nullable List<String> definedTagExists;
     /**
      * @return Log analytics entity type name.
      * 
      */
     private @Nullable List<String> entityTypeNames;
     private @Nullable List<GetLogAnalyticsEntitiesFilter> filters;
+    private @Nullable List<String> freeformTagEquals;
+    private @Nullable List<String> freeformTagExists;
     /**
      * @return The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
      * 
@@ -43,6 +48,7 @@ public final class GetLogAnalyticsEntitiesResult {
      */
     private String id;
     private @Nullable String isManagementAgentIdNull;
+    private @Nullable Boolean isShowAssociatedSourcesCount;
     private @Nullable String lifecycleDetailsContains;
     /**
      * @return The list of log_analytics_entity_collection.
@@ -83,6 +89,12 @@ public final class GetLogAnalyticsEntitiesResult {
     public String compartmentId() {
         return this.compartmentId;
     }
+    public List<String> definedTagEquals() {
+        return this.definedTagEquals == null ? List.of() : this.definedTagEquals;
+    }
+    public List<String> definedTagExists() {
+        return this.definedTagExists == null ? List.of() : this.definedTagExists;
+    }
     /**
      * @return Log analytics entity type name.
      * 
@@ -92,6 +104,12 @@ public final class GetLogAnalyticsEntitiesResult {
     }
     public List<GetLogAnalyticsEntitiesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
+    }
+    public List<String> freeformTagEquals() {
+        return this.freeformTagEquals == null ? List.of() : this.freeformTagEquals;
+    }
+    public List<String> freeformTagExists() {
+        return this.freeformTagExists == null ? List.of() : this.freeformTagExists;
     }
     /**
      * @return The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
@@ -112,6 +130,9 @@ public final class GetLogAnalyticsEntitiesResult {
     }
     public Optional<String> isManagementAgentIdNull() {
         return Optional.ofNullable(this.isManagementAgentIdNull);
+    }
+    public Optional<Boolean> isShowAssociatedSourcesCount() {
+        return Optional.ofNullable(this.isShowAssociatedSourcesCount);
     }
     public Optional<String> lifecycleDetailsContains() {
         return Optional.ofNullable(this.lifecycleDetailsContains);
@@ -165,12 +186,17 @@ public final class GetLogAnalyticsEntitiesResult {
     public static final class Builder {
         private @Nullable String cloudResourceId;
         private String compartmentId;
+        private @Nullable List<String> definedTagEquals;
+        private @Nullable List<String> definedTagExists;
         private @Nullable List<String> entityTypeNames;
         private @Nullable List<GetLogAnalyticsEntitiesFilter> filters;
+        private @Nullable List<String> freeformTagEquals;
+        private @Nullable List<String> freeformTagExists;
         private @Nullable String hostname;
         private @Nullable String hostnameContains;
         private String id;
         private @Nullable String isManagementAgentIdNull;
+        private @Nullable Boolean isShowAssociatedSourcesCount;
         private @Nullable String lifecycleDetailsContains;
         private List<GetLogAnalyticsEntitiesLogAnalyticsEntityCollection> logAnalyticsEntityCollections;
         private @Nullable List<String> metadataEquals;
@@ -184,12 +210,17 @@ public final class GetLogAnalyticsEntitiesResult {
     	      Objects.requireNonNull(defaults);
     	      this.cloudResourceId = defaults.cloudResourceId;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.definedTagEquals = defaults.definedTagEquals;
+    	      this.definedTagExists = defaults.definedTagExists;
     	      this.entityTypeNames = defaults.entityTypeNames;
     	      this.filters = defaults.filters;
+    	      this.freeformTagEquals = defaults.freeformTagEquals;
+    	      this.freeformTagExists = defaults.freeformTagExists;
     	      this.hostname = defaults.hostname;
     	      this.hostnameContains = defaults.hostnameContains;
     	      this.id = defaults.id;
     	      this.isManagementAgentIdNull = defaults.isManagementAgentIdNull;
+    	      this.isShowAssociatedSourcesCount = defaults.isShowAssociatedSourcesCount;
     	      this.lifecycleDetailsContains = defaults.lifecycleDetailsContains;
     	      this.logAnalyticsEntityCollections = defaults.logAnalyticsEntityCollections;
     	      this.metadataEquals = defaults.metadataEquals;
@@ -215,6 +246,24 @@ public final class GetLogAnalyticsEntitiesResult {
             return this;
         }
         @CustomType.Setter
+        public Builder definedTagEquals(@Nullable List<String> definedTagEquals) {
+
+            this.definedTagEquals = definedTagEquals;
+            return this;
+        }
+        public Builder definedTagEquals(String... definedTagEquals) {
+            return definedTagEquals(List.of(definedTagEquals));
+        }
+        @CustomType.Setter
+        public Builder definedTagExists(@Nullable List<String> definedTagExists) {
+
+            this.definedTagExists = definedTagExists;
+            return this;
+        }
+        public Builder definedTagExists(String... definedTagExists) {
+            return definedTagExists(List.of(definedTagExists));
+        }
+        @CustomType.Setter
         public Builder entityTypeNames(@Nullable List<String> entityTypeNames) {
 
             this.entityTypeNames = entityTypeNames;
@@ -231,6 +280,24 @@ public final class GetLogAnalyticsEntitiesResult {
         }
         public Builder filters(GetLogAnalyticsEntitiesFilter... filters) {
             return filters(List.of(filters));
+        }
+        @CustomType.Setter
+        public Builder freeformTagEquals(@Nullable List<String> freeformTagEquals) {
+
+            this.freeformTagEquals = freeformTagEquals;
+            return this;
+        }
+        public Builder freeformTagEquals(String... freeformTagEquals) {
+            return freeformTagEquals(List.of(freeformTagEquals));
+        }
+        @CustomType.Setter
+        public Builder freeformTagExists(@Nullable List<String> freeformTagExists) {
+
+            this.freeformTagExists = freeformTagExists;
+            return this;
+        }
+        public Builder freeformTagExists(String... freeformTagExists) {
+            return freeformTagExists(List.of(freeformTagExists));
         }
         @CustomType.Setter
         public Builder hostname(@Nullable String hostname) {
@@ -256,6 +323,12 @@ public final class GetLogAnalyticsEntitiesResult {
         public Builder isManagementAgentIdNull(@Nullable String isManagementAgentIdNull) {
 
             this.isManagementAgentIdNull = isManagementAgentIdNull;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isShowAssociatedSourcesCount(@Nullable Boolean isShowAssociatedSourcesCount) {
+
+            this.isShowAssociatedSourcesCount = isShowAssociatedSourcesCount;
             return this;
         }
         @CustomType.Setter
@@ -320,12 +393,17 @@ public final class GetLogAnalyticsEntitiesResult {
             final var _resultValue = new GetLogAnalyticsEntitiesResult();
             _resultValue.cloudResourceId = cloudResourceId;
             _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTagEquals = definedTagEquals;
+            _resultValue.definedTagExists = definedTagExists;
             _resultValue.entityTypeNames = entityTypeNames;
             _resultValue.filters = filters;
+            _resultValue.freeformTagEquals = freeformTagEquals;
+            _resultValue.freeformTagExists = freeformTagExists;
             _resultValue.hostname = hostname;
             _resultValue.hostnameContains = hostnameContains;
             _resultValue.id = id;
             _resultValue.isManagementAgentIdNull = isManagementAgentIdNull;
+            _resultValue.isShowAssociatedSourcesCount = isShowAssociatedSourcesCount;
             _resultValue.lifecycleDetailsContains = lifecycleDetailsContains;
             _resultValue.logAnalyticsEntityCollections = logAnalyticsEntityCollections;
             _resultValue.metadataEquals = metadataEquals;

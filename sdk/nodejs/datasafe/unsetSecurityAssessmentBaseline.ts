@@ -70,7 +70,7 @@ export class UnsetSecurityAssessmentBaseline extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly targetIds!: pulumi.Output<string[]>;
+    public readonly targetIds!: pulumi.Output<string[] | undefined>;
 
     /**
      * Create a UnsetSecurityAssessmentBaseline resource with the given unique name, arguments, and options.

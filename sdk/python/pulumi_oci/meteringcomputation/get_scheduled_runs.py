@@ -60,7 +60,7 @@ class GetScheduledRunsResult:
     @pulumi.getter(name="scheduleId")
     def schedule_id(self) -> builtins.str:
         """
-        The ocid representing unique shedule
+        The OCID representing a unique shedule.
         """
         return pulumi.get(self, "schedule_id")
 
@@ -91,7 +91,7 @@ def get_scheduled_runs(filters: Optional[Sequence[Union['GetScheduledRunsFilterA
     """
     This data source provides the list of Scheduled Runs in Oracle Cloud Infrastructure Metering Computation service.
 
-    Returns schedule history list.
+    Returns the schedule history list.
 
     ## Example Usage
 
@@ -103,7 +103,7 @@ def get_scheduled_runs(filters: Optional[Sequence[Union['GetScheduledRunsFilterA
     ```
 
 
-    :param builtins.str schedule_id: The unique ID of a schedule.
+    :param builtins.str schedule_id: The schedule unique ID.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -122,7 +122,7 @@ def get_scheduled_runs_output(filters: Optional[pulumi.Input[Optional[Sequence[U
     """
     This data source provides the list of Scheduled Runs in Oracle Cloud Infrastructure Metering Computation service.
 
-    Returns schedule history list.
+    Returns the schedule history list.
 
     ## Example Usage
 
@@ -134,7 +134,7 @@ def get_scheduled_runs_output(filters: Optional[pulumi.Input[Optional[Sequence[U
     ```
 
 
-    :param builtins.str schedule_id: The unique ID of a schedule.
+    :param builtins.str schedule_id: The schedule unique ID.
     """
     __args__ = dict()
     __args__['filters'] = filters

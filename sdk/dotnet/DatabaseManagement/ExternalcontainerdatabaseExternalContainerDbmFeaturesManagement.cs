@@ -17,6 +17,9 @@ namespace Pulumi.Oci.DatabaseManagement
     [OciResourceType("oci:DatabaseManagement/externalcontainerdatabaseExternalContainerDbmFeaturesManagement:ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement")]
     public partial class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement : global::Pulumi.CustomResource
     {
+        [Output("canDisableAllPdbs")]
+        public Output<bool?> CanDisableAllPdbs { get; private set; } = null!;
+
         /// <summary>
         /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
         /// 
@@ -32,6 +35,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         [Output("externalContainerDatabaseId")]
         public Output<string> ExternalContainerDatabaseId { get; private set; } = null!;
+
+        [Output("feature")]
+        public Output<string?> Feature { get; private set; } = null!;
 
         /// <summary>
         /// The details required to enable the specified Database Management feature.
@@ -85,6 +91,9 @@ namespace Pulumi.Oci.DatabaseManagement
 
     public sealed class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementArgs : global::Pulumi.ResourceArgs
     {
+        [Input("canDisableAllPdbs")]
+        public Input<bool>? CanDisableAllPdbs { get; set; }
+
         /// <summary>
         /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
         /// 
@@ -101,6 +110,9 @@ namespace Pulumi.Oci.DatabaseManagement
         [Input("externalContainerDatabaseId", required: true)]
         public Input<string> ExternalContainerDatabaseId { get; set; } = null!;
 
+        [Input("feature")]
+        public Input<string>? Feature { get; set; }
+
         /// <summary>
         /// The details required to enable the specified Database Management feature.
         /// </summary>
@@ -115,6 +127,9 @@ namespace Pulumi.Oci.DatabaseManagement
 
     public sealed class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementState : global::Pulumi.ResourceArgs
     {
+        [Input("canDisableAllPdbs")]
+        public Input<bool>? CanDisableAllPdbs { get; set; }
+
         /// <summary>
         /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
         /// 
@@ -130,6 +145,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         [Input("externalContainerDatabaseId")]
         public Input<string>? ExternalContainerDatabaseId { get; set; }
+
+        [Input("feature")]
+        public Input<string>? Feature { get; set; }
 
         /// <summary>
         /// The details required to enable the specified Database Management feature.

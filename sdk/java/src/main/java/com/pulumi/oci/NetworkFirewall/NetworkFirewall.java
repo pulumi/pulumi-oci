@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.NetworkFirewall.NetworkFirewallArgs;
 import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallState;
+import com.pulumi.oci.NetworkFirewall.outputs.NetworkFirewallNatConfiguration;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
 import java.util.List;
@@ -32,6 +33,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.NetworkFirewall.NetworkFirewall;
  * import com.pulumi.oci.NetworkFirewall.NetworkFirewallArgs;
+ * import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallNatConfigurationArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -55,6 +57,9 @@ import javax.annotation.Nullable;
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .ipv4address(networkFirewallIpv4address)
  *             .ipv6address(networkFirewallIpv6address)
+ *             .natConfiguration(NetworkFirewallNatConfigurationArgs.builder()
+ *                 .mustEnablePrivateNat(networkFirewallNatConfigurationMustEnablePrivateNat)
+ *                 .build())
  *             .networkSecurityGroupIds(networkFirewallNetworkSecurityGroupIds)
  *             .build());
  * 
@@ -186,6 +191,20 @@ public class NetworkFirewall extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * (Updatable) Nat Configuration request to use Nat feature on firewall.
+     * 
+     */
+    @Export(name="natConfiguration", refs={NetworkFirewallNatConfiguration.class}, tree="[0]")
+    private Output<NetworkFirewallNatConfiguration> natConfiguration;
+
+    /**
+     * @return (Updatable) Nat Configuration request to use Nat feature on firewall.
+     * 
+     */
+    public Output<NetworkFirewallNatConfiguration> natConfiguration() {
+        return this.natConfiguration;
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.

@@ -20,6 +20,8 @@ import * as utilities from "../utilities";
  * const testSystemVersions = oci.Database.getSystemVersions({
  *     compartmentId: compartmentId,
  *     giVersion: systemVersionGiVersion,
+ *     isLatest: systemVersionIsLatest,
+ *     resourceId: testResource.id,
  *     shape: systemVersionShape,
  * });
  * ```
@@ -30,6 +32,8 @@ export function getSystemVersions(args: GetSystemVersionsArgs, opts?: pulumi.Inv
         "compartmentId": args.compartmentId,
         "filters": args.filters,
         "giVersion": args.giVersion,
+        "isLatest": args.isLatest,
+        "resourceId": args.resourceId,
         "shape": args.shape,
     }, opts);
 }
@@ -48,9 +52,17 @@ export interface GetSystemVersionsArgs {
      */
     giVersion: string;
     /**
-     * Specifies shape query parameter.
+     * If provided, return highest versions from each major version family.
      */
-    shape: string;
+    isLatest?: boolean;
+    /**
+     * If provided, filters the results for the specified resource Id.
+     */
+    resourceId?: string;
+    /**
+     * If provided, filters the results for the given shape.
+     */
+    shape?: string;
 }
 
 /**
@@ -67,10 +79,12 @@ export interface GetSystemVersionsResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly isLatest?: boolean;
+    readonly resourceId?: string;
     /**
      * Exadata shape.
      */
-    readonly shape: string;
+    readonly shape?: string;
     /**
      * The list of system_version_collection.
      */
@@ -90,6 +104,8 @@ export interface GetSystemVersionsResult {
  * const testSystemVersions = oci.Database.getSystemVersions({
  *     compartmentId: compartmentId,
  *     giVersion: systemVersionGiVersion,
+ *     isLatest: systemVersionIsLatest,
+ *     resourceId: testResource.id,
  *     shape: systemVersionShape,
  * });
  * ```
@@ -100,6 +116,8 @@ export function getSystemVersionsOutput(args: GetSystemVersionsOutputArgs, opts?
         "compartmentId": args.compartmentId,
         "filters": args.filters,
         "giVersion": args.giVersion,
+        "isLatest": args.isLatest,
+        "resourceId": args.resourceId,
         "shape": args.shape,
     }, opts);
 }
@@ -118,7 +136,15 @@ export interface GetSystemVersionsOutputArgs {
      */
     giVersion: pulumi.Input<string>;
     /**
-     * Specifies shape query parameter.
+     * If provided, return highest versions from each major version family.
      */
-    shape: pulumi.Input<string>;
+    isLatest?: pulumi.Input<boolean>;
+    /**
+     * If provided, filters the results for the specified resource Id.
+     */
+    resourceId?: pulumi.Input<string>;
+    /**
+     * If provided, filters the results for the given shape.
+     */
+    shape?: pulumi.Input<string>;
 }

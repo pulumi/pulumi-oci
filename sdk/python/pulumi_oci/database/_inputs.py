@@ -586,6 +586,8 @@ __all__ = [
     'GetSchedulingPolicyRecommendedScheduledActionsFilterArgsDict',
     'GetSchedulingPolicySchedulingWindowsFilterArgs',
     'GetSchedulingPolicySchedulingWindowsFilterArgsDict',
+    'GetSystemVersionMinorVersionsFilterArgs',
+    'GetSystemVersionMinorVersionsFilterArgsDict',
     'GetSystemVersionsFilterArgs',
     'GetSystemVersionsFilterArgsDict',
     'GetVmClusterNetworksFilterArgs',
@@ -25211,6 +25213,53 @@ class GetSchedulingPolicySchedulingWindowsFilterArgs:
         """
         Name of the month of the year.
         """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: builtins.str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetSystemVersionMinorVersionsFilterArgsDict(TypedDict):
+        name: builtins.str
+        values: Sequence[builtins.str]
+        regex: NotRequired[builtins.bool]
+elif False:
+    GetSystemVersionMinorVersionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetSystemVersionMinorVersionsFilterArgs:
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
         return pulumi.get(self, "name")
 
     @name.setter

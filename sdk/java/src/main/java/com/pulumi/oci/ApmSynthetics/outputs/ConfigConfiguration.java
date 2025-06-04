@@ -90,7 +90,7 @@ public final class ConfigConfiguration {
      */
     private @Nullable String ftpRequestType;
     /**
-     * @return (Updatable) If enabled, Active mode will be used for the FTP connection.
+     * @return (Updatable) If enabled, Active mode will be used for the FTP connection. Not supported for SFTP protocol.
      * 
      */
     private @Nullable Boolean isActiveMode;
@@ -288,7 +288,7 @@ public final class ConfigConfiguration {
         return Optional.ofNullable(this.ftpRequestType);
     }
     /**
-     * @return (Updatable) If enabled, Active mode will be used for the FTP connection.
+     * @return (Updatable) If enabled, Active mode will be used for the FTP connection. Not supported for SFTP protocol.
      * 
      */
     public Optional<Boolean> isActiveMode() {

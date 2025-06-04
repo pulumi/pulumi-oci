@@ -12,6 +12,7 @@ import com.pulumi.oci.Opensearch.inputs.ClusterState;
 import com.pulumi.oci.Opensearch.outputs.ClusterMaintenanceDetails;
 import com.pulumi.oci.Opensearch.outputs.ClusterOutboundClusterConfig;
 import com.pulumi.oci.Opensearch.outputs.ClusterReverseConnectionEndpoint;
+import com.pulumi.oci.Opensearch.outputs.ClusterSecuritySamlConfig;
 import com.pulumi.oci.Utilities;
 import java.lang.Integer;
 import java.lang.String;
@@ -142,6 +143,20 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> dataNodeHostOcpuCount() {
         return this.dataNodeHostOcpuCount;
+    }
+    /**
+     * (Updatable) The node shape for the cluster&#39;s data nodes.
+     * 
+     */
+    @Export(name="dataNodeHostShape", refs={String.class}, tree="[0]")
+    private Output<String> dataNodeHostShape;
+
+    /**
+     * @return (Updatable) The node shape for the cluster&#39;s data nodes.
+     * 
+     */
+    public Output<String> dataNodeHostShape() {
+        return this.dataNodeHostShape;
     }
     /**
      * TThe instance type for the cluster&#39;s data nodes.
@@ -326,6 +341,20 @@ public class Cluster extends com.pulumi.resources.CustomResource {
         return this.masterNodeHostOcpuCount;
     }
     /**
+     * (Updatable) The node shape for the cluster&#39;s master nodes.
+     * 
+     */
+    @Export(name="masterNodeHostShape", refs={String.class}, tree="[0]")
+    private Output<String> masterNodeHostShape;
+
+    /**
+     * @return (Updatable) The node shape for the cluster&#39;s master nodes.
+     * 
+     */
+    public Output<String> masterNodeHostShape() {
+        return this.masterNodeHostShape;
+    }
+    /**
      * The instance type for the cluster&#39;s master nodes.
      * 
      */
@@ -394,6 +423,20 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> opendashboardNodeHostOcpuCount() {
         return this.opendashboardNodeHostOcpuCount;
+    }
+    /**
+     * (Updatable) The node shape for the cluster&#39;s OpenSearch Dashboard nodes.
+     * 
+     */
+    @Export(name="opendashboardNodeHostShape", refs={String.class}, tree="[0]")
+    private Output<String> opendashboardNodeHostShape;
+
+    /**
+     * @return (Updatable) The node shape for the cluster&#39;s OpenSearch Dashboard nodes.
+     * 
+     */
+    public Output<String> opendashboardNodeHostShape() {
+        return this.opendashboardNodeHostShape;
     }
     /**
      * The private IP address for the cluster&#39;s OpenSearch Dashboard.
@@ -480,6 +523,90 @@ public class Cluster extends com.pulumi.resources.CustomResource {
         return this.reverseConnectionEndpoints;
     }
     /**
+     * (Updatable) The number of search nodes configured for the cluster.
+     * 
+     */
+    @Export(name="searchNodeCount", refs={Integer.class}, tree="[0]")
+    private Output<Integer> searchNodeCount;
+
+    /**
+     * @return (Updatable) The number of search nodes configured for the cluster.
+     * 
+     */
+    public Output<Integer> searchNodeCount() {
+        return this.searchNodeCount;
+    }
+    /**
+     * (Updatable) The amount of memory in GB, for the cluster&#39;s search nodes.
+     * 
+     */
+    @Export(name="searchNodeHostMemoryGb", refs={Integer.class}, tree="[0]")
+    private Output<Integer> searchNodeHostMemoryGb;
+
+    /**
+     * @return (Updatable) The amount of memory in GB, for the cluster&#39;s search nodes.
+     * 
+     */
+    public Output<Integer> searchNodeHostMemoryGb() {
+        return this.searchNodeHostMemoryGb;
+    }
+    /**
+     * (Updatable) The number of OCPUs configured for the cluster&#39;s search nodes.
+     * 
+     */
+    @Export(name="searchNodeHostOcpuCount", refs={Integer.class}, tree="[0]")
+    private Output<Integer> searchNodeHostOcpuCount;
+
+    /**
+     * @return (Updatable) The number of OCPUs configured for the cluster&#39;s search nodes.
+     * 
+     */
+    public Output<Integer> searchNodeHostOcpuCount() {
+        return this.searchNodeHostOcpuCount;
+    }
+    /**
+     * (Updatable) The node shape for the cluster&#39;s search nodes.
+     * 
+     */
+    @Export(name="searchNodeHostShape", refs={String.class}, tree="[0]")
+    private Output<String> searchNodeHostShape;
+
+    /**
+     * @return (Updatable) The node shape for the cluster&#39;s search nodes.
+     * 
+     */
+    public Output<String> searchNodeHostShape() {
+        return this.searchNodeHostShape;
+    }
+    /**
+     * The instance type for the cluster&#39;s search nodes.
+     * 
+     */
+    @Export(name="searchNodeHostType", refs={String.class}, tree="[0]")
+    private Output<String> searchNodeHostType;
+
+    /**
+     * @return The instance type for the cluster&#39;s search nodes.
+     * 
+     */
+    public Output<String> searchNodeHostType() {
+        return this.searchNodeHostType;
+    }
+    /**
+     * (Updatable) The amount of storage in GB, to configure per node for the cluster&#39;s search nodes.
+     * 
+     */
+    @Export(name="searchNodeStorageGb", refs={Integer.class}, tree="[0]")
+    private Output<Integer> searchNodeStorageGb;
+
+    /**
+     * @return (Updatable) The amount of storage in GB, to configure per node for the cluster&#39;s search nodes.
+     * 
+     */
+    public Output<Integer> searchNodeStorageGb() {
+        return this.searchNodeStorageGb;
+    }
+    /**
      * (Updatable) The name of the master user that are used to manage security config
      * 
      */
@@ -520,6 +647,20 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      */
     public Output<String> securityMode() {
         return this.securityMode;
+    }
+    /**
+     * SAML policy is optionally used for Opensearch cluster to config SAML authentication
+     * 
+     */
+    @Export(name="securitySamlConfig", refs={ClusterSecuritySamlConfig.class}, tree="[0]")
+    private Output<ClusterSecuritySamlConfig> securitySamlConfig;
+
+    /**
+     * @return SAML policy is optionally used for Opensearch cluster to config SAML authentication
+     * 
+     */
+    public Output<ClusterSecuritySamlConfig> securitySamlConfig() {
+        return this.securitySamlConfig;
     }
     /**
      * (Updatable) The version of the software the cluster is running.
@@ -736,7 +877,8 @@ public class Cluster extends com.pulumi.resources.CustomResource {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .additionalSecretOutputs(List.of(
-                "securityMasterUserPasswordHash"
+                "securityMasterUserPasswordHash",
+                "securitySamlConfig"
             ))
             .build();
         return com.pulumi.resources.CustomResourceOptions.merge(defaultOptions, options, id);

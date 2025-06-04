@@ -90,6 +90,11 @@ export const getNamespaceEffectiveProperties: typeof import("./getNamespaceEffec
 export const getNamespaceEffectivePropertiesOutput: typeof import("./getNamespaceEffectiveProperties").getNamespaceEffectivePropertiesOutput = null as any;
 utilities.lazyLoad(exports, ["getNamespaceEffectiveProperties","getNamespaceEffectivePropertiesOutput"], () => require("./getNamespaceEffectiveProperties"));
 
+export { GetNamespaceFieldUsageArgs, GetNamespaceFieldUsageResult, GetNamespaceFieldUsageOutputArgs } from "./getNamespaceFieldUsage";
+export const getNamespaceFieldUsage: typeof import("./getNamespaceFieldUsage").getNamespaceFieldUsage = null as any;
+export const getNamespaceFieldUsageOutput: typeof import("./getNamespaceFieldUsage").getNamespaceFieldUsageOutput = null as any;
+utilities.lazyLoad(exports, ["getNamespaceFieldUsage","getNamespaceFieldUsageOutput"], () => require("./getNamespaceFieldUsage"));
+
 export { GetNamespaceIngestTimeRuleArgs, GetNamespaceIngestTimeRuleResult, GetNamespaceIngestTimeRuleOutputArgs } from "./getNamespaceIngestTimeRule";
 export const getNamespaceIngestTimeRule: typeof import("./getNamespaceIngestTimeRule").getNamespaceIngestTimeRule = null as any;
 export const getNamespaceIngestTimeRuleOutput: typeof import("./getNamespaceIngestTimeRule").getNamespaceIngestTimeRuleOutput = null as any;
@@ -99,6 +104,16 @@ export { GetNamespaceIngestTimeRulesArgs, GetNamespaceIngestTimeRulesResult, Get
 export const getNamespaceIngestTimeRules: typeof import("./getNamespaceIngestTimeRules").getNamespaceIngestTimeRules = null as any;
 export const getNamespaceIngestTimeRulesOutput: typeof import("./getNamespaceIngestTimeRules").getNamespaceIngestTimeRulesOutput = null as any;
 utilities.lazyLoad(exports, ["getNamespaceIngestTimeRules","getNamespaceIngestTimeRulesOutput"], () => require("./getNamespaceIngestTimeRules"));
+
+export { GetNamespaceLookupArgs, GetNamespaceLookupResult, GetNamespaceLookupOutputArgs } from "./getNamespaceLookup";
+export const getNamespaceLookup: typeof import("./getNamespaceLookup").getNamespaceLookup = null as any;
+export const getNamespaceLookupOutput: typeof import("./getNamespaceLookup").getNamespaceLookupOutput = null as any;
+utilities.lazyLoad(exports, ["getNamespaceLookup","getNamespaceLookupOutput"], () => require("./getNamespaceLookup"));
+
+export { GetNamespaceParserActionsArgs, GetNamespaceParserActionsResult, GetNamespaceParserActionsOutputArgs } from "./getNamespaceParserActions";
+export const getNamespaceParserActions: typeof import("./getNamespaceParserActions").getNamespaceParserActions = null as any;
+export const getNamespaceParserActionsOutput: typeof import("./getNamespaceParserActions").getNamespaceParserActionsOutput = null as any;
+utilities.lazyLoad(exports, ["getNamespaceParserActions","getNamespaceParserActionsOutput"], () => require("./getNamespaceParserActions"));
 
 export { GetNamespacePropertiesMetadataArgs, GetNamespacePropertiesMetadataResult, GetNamespacePropertiesMetadataOutputArgs } from "./getNamespacePropertiesMetadata";
 export const getNamespacePropertiesMetadata: typeof import("./getNamespacePropertiesMetadata").getNamespacePropertiesMetadata = null as any;
@@ -125,6 +140,11 @@ export const getNamespaceScheduledTasks: typeof import("./getNamespaceScheduledT
 export const getNamespaceScheduledTasksOutput: typeof import("./getNamespaceScheduledTasks").getNamespaceScheduledTasksOutput = null as any;
 utilities.lazyLoad(exports, ["getNamespaceScheduledTasks","getNamespaceScheduledTasksOutput"], () => require("./getNamespaceScheduledTasks"));
 
+export { GetNamespaceStorageArchivalConfigArgs, GetNamespaceStorageArchivalConfigResult, GetNamespaceStorageArchivalConfigOutputArgs } from "./getNamespaceStorageArchivalConfig";
+export const getNamespaceStorageArchivalConfig: typeof import("./getNamespaceStorageArchivalConfig").getNamespaceStorageArchivalConfig = null as any;
+export const getNamespaceStorageArchivalConfigOutput: typeof import("./getNamespaceStorageArchivalConfig").getNamespaceStorageArchivalConfigOutput = null as any;
+utilities.lazyLoad(exports, ["getNamespaceStorageArchivalConfig","getNamespaceStorageArchivalConfigOutput"], () => require("./getNamespaceStorageArchivalConfig"));
+
 export { GetNamespaceStorageEncryptionKeyInfoArgs, GetNamespaceStorageEncryptionKeyInfoResult, GetNamespaceStorageEncryptionKeyInfoOutputArgs } from "./getNamespaceStorageEncryptionKeyInfo";
 export const getNamespaceStorageEncryptionKeyInfo: typeof import("./getNamespaceStorageEncryptionKeyInfo").getNamespaceStorageEncryptionKeyInfo = null as any;
 export const getNamespaceStorageEncryptionKeyInfoOutput: typeof import("./getNamespaceStorageEncryptionKeyInfo").getNamespaceStorageEncryptionKeyInfoOutput = null as any;
@@ -144,6 +164,16 @@ export { GetNamespaceStorageRecalledDataSizeArgs, GetNamespaceStorageRecalledDat
 export const getNamespaceStorageRecalledDataSize: typeof import("./getNamespaceStorageRecalledDataSize").getNamespaceStorageRecalledDataSize = null as any;
 export const getNamespaceStorageRecalledDataSizeOutput: typeof import("./getNamespaceStorageRecalledDataSize").getNamespaceStorageRecalledDataSizeOutput = null as any;
 utilities.lazyLoad(exports, ["getNamespaceStorageRecalledDataSize","getNamespaceStorageRecalledDataSizeOutput"], () => require("./getNamespaceStorageRecalledDataSize"));
+
+export { GetNamespaceTemplateArgs, GetNamespaceTemplateResult, GetNamespaceTemplateOutputArgs } from "./getNamespaceTemplate";
+export const getNamespaceTemplate: typeof import("./getNamespaceTemplate").getNamespaceTemplate = null as any;
+export const getNamespaceTemplateOutput: typeof import("./getNamespaceTemplate").getNamespaceTemplateOutput = null as any;
+utilities.lazyLoad(exports, ["getNamespaceTemplate","getNamespaceTemplateOutput"], () => require("./getNamespaceTemplate"));
+
+export { GetNamespaceTemplatesArgs, GetNamespaceTemplatesResult, GetNamespaceTemplatesOutputArgs } from "./getNamespaceTemplates";
+export const getNamespaceTemplates: typeof import("./getNamespaceTemplates").getNamespaceTemplates = null as any;
+export const getNamespaceTemplatesOutput: typeof import("./getNamespaceTemplates").getNamespaceTemplatesOutput = null as any;
+utilities.lazyLoad(exports, ["getNamespaceTemplates","getNamespaceTemplatesOutput"], () => require("./getNamespaceTemplates"));
 
 export { GetNamespacesArgs, GetNamespacesResult, GetNamespacesOutputArgs } from "./getNamespaces";
 export const getNamespaces: typeof import("./getNamespaces").getNamespaces = null as any;
@@ -200,10 +230,35 @@ export type NamespaceIngestTimeRulesManagement = import("./namespaceIngestTimeRu
 export const NamespaceIngestTimeRulesManagement: typeof import("./namespaceIngestTimeRulesManagement").NamespaceIngestTimeRulesManagement = null as any;
 utilities.lazyLoad(exports, ["NamespaceIngestTimeRulesManagement"], () => require("./namespaceIngestTimeRulesManagement"));
 
+export { NamespaceLookupArgs, NamespaceLookupState } from "./namespaceLookup";
+export type NamespaceLookup = import("./namespaceLookup").NamespaceLookup;
+export const NamespaceLookup: typeof import("./namespaceLookup").NamespaceLookup = null as any;
+utilities.lazyLoad(exports, ["NamespaceLookup"], () => require("./namespaceLookup"));
+
+export { NamespaceLookupsAppendDataManagementArgs, NamespaceLookupsAppendDataManagementState } from "./namespaceLookupsAppendDataManagement";
+export type NamespaceLookupsAppendDataManagement = import("./namespaceLookupsAppendDataManagement").NamespaceLookupsAppendDataManagement;
+export const NamespaceLookupsAppendDataManagement: typeof import("./namespaceLookupsAppendDataManagement").NamespaceLookupsAppendDataManagement = null as any;
+utilities.lazyLoad(exports, ["NamespaceLookupsAppendDataManagement"], () => require("./namespaceLookupsAppendDataManagement"));
+
+export { NamespaceLookupsUpdateDataManagementArgs, NamespaceLookupsUpdateDataManagementState } from "./namespaceLookupsUpdateDataManagement";
+export type NamespaceLookupsUpdateDataManagement = import("./namespaceLookupsUpdateDataManagement").NamespaceLookupsUpdateDataManagement;
+export const NamespaceLookupsUpdateDataManagement: typeof import("./namespaceLookupsUpdateDataManagement").NamespaceLookupsUpdateDataManagement = null as any;
+utilities.lazyLoad(exports, ["NamespaceLookupsUpdateDataManagement"], () => require("./namespaceLookupsUpdateDataManagement"));
+
 export { NamespaceScheduledTaskArgs, NamespaceScheduledTaskState } from "./namespaceScheduledTask";
 export type NamespaceScheduledTask = import("./namespaceScheduledTask").NamespaceScheduledTask;
 export const NamespaceScheduledTask: typeof import("./namespaceScheduledTask").NamespaceScheduledTask = null as any;
 utilities.lazyLoad(exports, ["NamespaceScheduledTask"], () => require("./namespaceScheduledTask"));
+
+export { NamespaceStorageArchivalConfigArgs, NamespaceStorageArchivalConfigState } from "./namespaceStorageArchivalConfig";
+export type NamespaceStorageArchivalConfig = import("./namespaceStorageArchivalConfig").NamespaceStorageArchivalConfig;
+export const NamespaceStorageArchivalConfig: typeof import("./namespaceStorageArchivalConfig").NamespaceStorageArchivalConfig = null as any;
+utilities.lazyLoad(exports, ["NamespaceStorageArchivalConfig"], () => require("./namespaceStorageArchivalConfig"));
+
+export { NamespaceStorageEnableDisableArchivingArgs, NamespaceStorageEnableDisableArchivingState } from "./namespaceStorageEnableDisableArchiving";
+export type NamespaceStorageEnableDisableArchiving = import("./namespaceStorageEnableDisableArchiving").NamespaceStorageEnableDisableArchiving;
+export const NamespaceStorageEnableDisableArchiving: typeof import("./namespaceStorageEnableDisableArchiving").NamespaceStorageEnableDisableArchiving = null as any;
+utilities.lazyLoad(exports, ["NamespaceStorageEnableDisableArchiving"], () => require("./namespaceStorageEnableDisableArchiving"));
 
 
 const _module = {
@@ -230,8 +285,18 @@ const _module = {
                 return new NamespaceIngestTimeRule(name, <any>undefined, { urn })
             case "oci:LogAnalytics/namespaceIngestTimeRulesManagement:NamespaceIngestTimeRulesManagement":
                 return new NamespaceIngestTimeRulesManagement(name, <any>undefined, { urn })
+            case "oci:LogAnalytics/namespaceLookup:NamespaceLookup":
+                return new NamespaceLookup(name, <any>undefined, { urn })
+            case "oci:LogAnalytics/namespaceLookupsAppendDataManagement:NamespaceLookupsAppendDataManagement":
+                return new NamespaceLookupsAppendDataManagement(name, <any>undefined, { urn })
+            case "oci:LogAnalytics/namespaceLookupsUpdateDataManagement:NamespaceLookupsUpdateDataManagement":
+                return new NamespaceLookupsUpdateDataManagement(name, <any>undefined, { urn })
             case "oci:LogAnalytics/namespaceScheduledTask:NamespaceScheduledTask":
                 return new NamespaceScheduledTask(name, <any>undefined, { urn })
+            case "oci:LogAnalytics/namespaceStorageArchivalConfig:NamespaceStorageArchivalConfig":
+                return new NamespaceStorageArchivalConfig(name, <any>undefined, { urn })
+            case "oci:LogAnalytics/namespaceStorageEnableDisableArchiving:NamespaceStorageEnableDisableArchiving":
+                return new NamespaceStorageEnableDisableArchiving(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -247,4 +312,9 @@ pulumi.runtime.registerResourceModule("oci", "LogAnalytics/logAnalyticsUnprocess
 pulumi.runtime.registerResourceModule("oci", "LogAnalytics/namespace", _module)
 pulumi.runtime.registerResourceModule("oci", "LogAnalytics/namespaceIngestTimeRule", _module)
 pulumi.runtime.registerResourceModule("oci", "LogAnalytics/namespaceIngestTimeRulesManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "LogAnalytics/namespaceLookup", _module)
+pulumi.runtime.registerResourceModule("oci", "LogAnalytics/namespaceLookupsAppendDataManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "LogAnalytics/namespaceLookupsUpdateDataManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "LogAnalytics/namespaceScheduledTask", _module)
+pulumi.runtime.registerResourceModule("oci", "LogAnalytics/namespaceStorageArchivalConfig", _module)
+pulumi.runtime.registerResourceModule("oci", "LogAnalytics/namespaceStorageEnableDisableArchiving", _module)

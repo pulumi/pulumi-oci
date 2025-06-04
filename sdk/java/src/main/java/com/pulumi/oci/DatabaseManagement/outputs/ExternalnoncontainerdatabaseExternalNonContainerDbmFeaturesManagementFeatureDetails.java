@@ -6,6 +6,7 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetails;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -13,6 +14,11 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetails {
+    /**
+     * @return Indicates whether Diagnostics &amp; Management should be enabled for all the current pluggable databases in the container database.
+     * 
+     */
+    private @Nullable Boolean canEnableAllCurrentPdbs;
     /**
      * @return The connector details required to connect to an Oracle cloud database.
      * 
@@ -24,12 +30,24 @@ public final class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesMa
      */
     private String feature;
     /**
+     * @return Indicates whether Diagnostics &amp; Management should be enabled automatically for all the pluggable databases in the container database.
+     * 
+     */
+    private @Nullable Boolean isAutoEnablePluggableDatabase;
+    /**
      * @return The Oracle license model that applies to the external database.
      * 
      */
     private @Nullable String licenseModel;
 
     private ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetails() {}
+    /**
+     * @return Indicates whether Diagnostics &amp; Management should be enabled for all the current pluggable databases in the container database.
+     * 
+     */
+    public Optional<Boolean> canEnableAllCurrentPdbs() {
+        return Optional.ofNullable(this.canEnableAllCurrentPdbs);
+    }
     /**
      * @return The connector details required to connect to an Oracle cloud database.
      * 
@@ -43,6 +61,13 @@ public final class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesMa
      */
     public String feature() {
         return this.feature;
+    }
+    /**
+     * @return Indicates whether Diagnostics &amp; Management should be enabled automatically for all the pluggable databases in the container database.
+     * 
+     */
+    public Optional<Boolean> isAutoEnablePluggableDatabase() {
+        return Optional.ofNullable(this.isAutoEnablePluggableDatabase);
     }
     /**
      * @return The Oracle license model that applies to the external database.
@@ -61,17 +86,27 @@ public final class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesMa
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable Boolean canEnableAllCurrentPdbs;
         private @Nullable ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetails connectorDetails;
         private String feature;
+        private @Nullable Boolean isAutoEnablePluggableDatabase;
         private @Nullable String licenseModel;
         public Builder() {}
         public Builder(ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetails defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.canEnableAllCurrentPdbs = defaults.canEnableAllCurrentPdbs;
     	      this.connectorDetails = defaults.connectorDetails;
     	      this.feature = defaults.feature;
+    	      this.isAutoEnablePluggableDatabase = defaults.isAutoEnablePluggableDatabase;
     	      this.licenseModel = defaults.licenseModel;
         }
 
+        @CustomType.Setter
+        public Builder canEnableAllCurrentPdbs(@Nullable Boolean canEnableAllCurrentPdbs) {
+
+            this.canEnableAllCurrentPdbs = canEnableAllCurrentPdbs;
+            return this;
+        }
         @CustomType.Setter
         public Builder connectorDetails(@Nullable ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetails connectorDetails) {
 
@@ -87,6 +122,12 @@ public final class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesMa
             return this;
         }
         @CustomType.Setter
+        public Builder isAutoEnablePluggableDatabase(@Nullable Boolean isAutoEnablePluggableDatabase) {
+
+            this.isAutoEnablePluggableDatabase = isAutoEnablePluggableDatabase;
+            return this;
+        }
+        @CustomType.Setter
         public Builder licenseModel(@Nullable String licenseModel) {
 
             this.licenseModel = licenseModel;
@@ -94,8 +135,10 @@ public final class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesMa
         }
         public ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetails build() {
             final var _resultValue = new ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetails();
+            _resultValue.canEnableAllCurrentPdbs = canEnableAllCurrentPdbs;
             _resultValue.connectorDetails = connectorDetails;
             _resultValue.feature = feature;
+            _resultValue.isAutoEnablePluggableDatabase = isAutoEnablePluggableDatabase;
             _resultValue.licenseModel = licenseModel;
             return _resultValue;
         }

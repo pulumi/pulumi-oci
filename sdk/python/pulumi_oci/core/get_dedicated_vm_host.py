@@ -14,6 +14,7 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetDedicatedVmHostResult',
@@ -27,7 +28,7 @@ class GetDedicatedVmHostResult:
     """
     A collection of values returned by getDedicatedVmHost.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, dedicated_vm_host_id=None, dedicated_vm_host_shape=None, defined_tags=None, display_name=None, fault_domain=None, freeform_tags=None, id=None, remaining_memory_in_gbs=None, remaining_ocpus=None, state=None, time_created=None, total_memory_in_gbs=None, total_ocpus=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, dedicated_vm_host_id=None, dedicated_vm_host_shape=None, defined_tags=None, display_name=None, fault_domain=None, freeform_tags=None, id=None, placement_constraint_details=None, remaining_memory_in_gbs=None, remaining_ocpus=None, state=None, time_created=None, total_memory_in_gbs=None, total_ocpus=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -55,6 +56,9 @@ class GetDedicatedVmHostResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if placement_constraint_details and not isinstance(placement_constraint_details, list):
+            raise TypeError("Expected argument 'placement_constraint_details' to be a list")
+        pulumi.set(__self__, "placement_constraint_details", placement_constraint_details)
         if remaining_memory_in_gbs and not isinstance(remaining_memory_in_gbs, float):
             raise TypeError("Expected argument 'remaining_memory_in_gbs' to be a float")
         pulumi.set(__self__, "remaining_memory_in_gbs", remaining_memory_in_gbs)
@@ -144,6 +148,14 @@ class GetDedicatedVmHostResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="placementConstraintDetails")
+    def placement_constraint_details(self) -> Sequence['outputs.GetDedicatedVmHostPlacementConstraintDetailResult']:
+        """
+        Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+        """
+        return pulumi.get(self, "placement_constraint_details")
+
+    @property
     @pulumi.getter(name="remainingMemoryInGbs")
     def remaining_memory_in_gbs(self) -> builtins.float:
         """
@@ -207,6 +219,7 @@ class AwaitableGetDedicatedVmHostResult(GetDedicatedVmHostResult):
             fault_domain=self.fault_domain,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            placement_constraint_details=self.placement_constraint_details,
             remaining_memory_in_gbs=self.remaining_memory_in_gbs,
             remaining_ocpus=self.remaining_ocpus,
             state=self.state,
@@ -249,6 +262,7 @@ def get_dedicated_vm_host(dedicated_vm_host_id: Optional[builtins.str] = None,
         fault_domain=pulumi.get(__ret__, 'fault_domain'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        placement_constraint_details=pulumi.get(__ret__, 'placement_constraint_details'),
         remaining_memory_in_gbs=pulumi.get(__ret__, 'remaining_memory_in_gbs'),
         remaining_ocpus=pulumi.get(__ret__, 'remaining_ocpus'),
         state=pulumi.get(__ret__, 'state'),
@@ -288,6 +302,7 @@ def get_dedicated_vm_host_output(dedicated_vm_host_id: Optional[pulumi.Input[bui
         fault_domain=pulumi.get(__response__, 'fault_domain'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
+        placement_constraint_details=pulumi.get(__response__, 'placement_constraint_details'),
         remaining_memory_in_gbs=pulumi.get(__response__, 'remaining_memory_in_gbs'),
         remaining_ocpus=pulumi.get(__response__, 'remaining_ocpus'),
         state=pulumi.get(__response__, 'state'),

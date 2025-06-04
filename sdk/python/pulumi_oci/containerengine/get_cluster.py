@@ -28,7 +28,7 @@ class GetClusterResult:
     """
     A collection of values returned by getCluster.
     """
-    def __init__(__self__, available_kubernetes_upgrades=None, cluster_id=None, cluster_pod_network_options=None, compartment_id=None, defined_tags=None, endpoint_configs=None, endpoints=None, freeform_tags=None, id=None, image_policy_configs=None, kms_key_id=None, kubernetes_version=None, lifecycle_details=None, metadatas=None, name=None, open_id_connect_discovery_endpoint=None, options=None, should_include_oidc_config_file=None, state=None, type=None, vcn_id=None):
+    def __init__(__self__, available_kubernetes_upgrades=None, cluster_id=None, cluster_pod_network_options=None, compartment_id=None, defined_tags=None, endpoint_configs=None, endpoints=None, freeform_tags=None, id=None, image_policy_configs=None, kms_key_id=None, kubernetes_version=None, lifecycle_details=None, metadatas=None, name=None, open_id_connect_discovery_endpoint=None, open_id_connect_discovery_key=None, options=None, should_include_oidc_config_file=None, state=None, type=None, vcn_id=None):
         if available_kubernetes_upgrades and not isinstance(available_kubernetes_upgrades, list):
             raise TypeError("Expected argument 'available_kubernetes_upgrades' to be a list")
         pulumi.set(__self__, "available_kubernetes_upgrades", available_kubernetes_upgrades)
@@ -77,6 +77,9 @@ class GetClusterResult:
         if open_id_connect_discovery_endpoint and not isinstance(open_id_connect_discovery_endpoint, str):
             raise TypeError("Expected argument 'open_id_connect_discovery_endpoint' to be a str")
         pulumi.set(__self__, "open_id_connect_discovery_endpoint", open_id_connect_discovery_endpoint)
+        if open_id_connect_discovery_key and not isinstance(open_id_connect_discovery_key, str):
+            raise TypeError("Expected argument 'open_id_connect_discovery_key' to be a str")
+        pulumi.set(__self__, "open_id_connect_discovery_key", open_id_connect_discovery_key)
         if options and not isinstance(options, list):
             raise TypeError("Expected argument 'options' to be a list")
         pulumi.set(__self__, "options", options)
@@ -213,7 +216,18 @@ class GetClusterResult:
     @property
     @pulumi.getter(name="openIdConnectDiscoveryEndpoint")
     def open_id_connect_discovery_endpoint(self) -> builtins.str:
+        """
+        The cluster-specific OpenID Connect Discovery endpoint
+        """
         return pulumi.get(self, "open_id_connect_discovery_endpoint")
+
+    @property
+    @pulumi.getter(name="openIdConnectDiscoveryKey")
+    def open_id_connect_discovery_key(self) -> builtins.str:
+        """
+        The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
+        """
+        return pulumi.get(self, "open_id_connect_discovery_key")
 
     @property
     @pulumi.getter
@@ -275,6 +289,7 @@ class AwaitableGetClusterResult(GetClusterResult):
             metadatas=self.metadatas,
             name=self.name,
             open_id_connect_discovery_endpoint=self.open_id_connect_discovery_endpoint,
+            open_id_connect_discovery_key=self.open_id_connect_discovery_key,
             options=self.options,
             should_include_oidc_config_file=self.should_include_oidc_config_file,
             state=self.state,
@@ -327,6 +342,7 @@ def get_cluster(cluster_id: Optional[builtins.str] = None,
         metadatas=pulumi.get(__ret__, 'metadatas'),
         name=pulumi.get(__ret__, 'name'),
         open_id_connect_discovery_endpoint=pulumi.get(__ret__, 'open_id_connect_discovery_endpoint'),
+        open_id_connect_discovery_key=pulumi.get(__ret__, 'open_id_connect_discovery_key'),
         options=pulumi.get(__ret__, 'options'),
         should_include_oidc_config_file=pulumi.get(__ret__, 'should_include_oidc_config_file'),
         state=pulumi.get(__ret__, 'state'),
@@ -376,6 +392,7 @@ def get_cluster_output(cluster_id: Optional[pulumi.Input[builtins.str]] = None,
         metadatas=pulumi.get(__response__, 'metadatas'),
         name=pulumi.get(__response__, 'name'),
         open_id_connect_discovery_endpoint=pulumi.get(__response__, 'open_id_connect_discovery_endpoint'),
+        open_id_connect_discovery_key=pulumi.get(__response__, 'open_id_connect_discovery_key'),
         options=pulumi.get(__response__, 'options'),
         should_include_oidc_config_file=pulumi.get(__response__, 'should_include_oidc_config_file'),
         state=pulumi.get(__response__, 'state'),

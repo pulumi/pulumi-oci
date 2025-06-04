@@ -14,7 +14,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// <summary>
         /// This data source provides details about a specific Usage Statement Email Recipients Group resource in Oracle Cloud Infrastructure Metering Computation service.
         /// 
-        /// Return the saved usage statement email recipient group.
+        /// Returns the saved usage statement email recipients group.
         /// 
         /// 
         /// ## Example Usage
@@ -43,7 +43,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// <summary>
         /// This data source provides details about a specific Usage Statement Email Recipients Group resource in Oracle Cloud Infrastructure Metering Computation service.
         /// 
-        /// Return the saved usage statement email recipient group.
+        /// Returns the saved usage statement email recipients group.
         /// 
         /// 
         /// ## Example Usage
@@ -72,7 +72,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// <summary>
         /// This data source provides details about a specific Usage Statement Email Recipients Group resource in Oracle Cloud Infrastructure Metering Computation service.
         /// 
-        /// Return the saved usage statement email recipient group.
+        /// Returns the saved usage statement email recipients group.
         /// 
         /// 
         /// ## Example Usage
@@ -109,13 +109,13 @@ namespace Pulumi.Oci.MeteringComputation
         public string CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// The email recipient group OCID.
+        /// The email recipients group OCID.
         /// </summary>
         [Input("emailRecipientsGroupId", required: true)]
         public string EmailRecipientsGroupId { get; set; } = null!;
 
         /// <summary>
-        /// The UsageStatement Subscription unique OCID.
+        /// The usage statement subscription unique OCID.
         /// </summary>
         [Input("subscriptionId", required: true)]
         public string SubscriptionId { get; set; } = null!;
@@ -135,13 +135,13 @@ namespace Pulumi.Oci.MeteringComputation
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// The email recipient group OCID.
+        /// The email recipients group OCID.
         /// </summary>
         [Input("emailRecipientsGroupId", required: true)]
         public Input<string> EmailRecipientsGroupId { get; set; } = null!;
 
         /// <summary>
-        /// The UsageStatement Subscription unique OCID.
+        /// The usage statement subscription unique OCID.
         /// </summary>
         [Input("subscriptionId", required: true)]
         public Input<string> SubscriptionId { get; set; } = null!;
@@ -166,11 +166,11 @@ namespace Pulumi.Oci.MeteringComputation
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The list of recipient will receive the usage statement email.
+        /// The list of recipients that will receive usage statement emails.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetUsageStatementEmailRecipientsGroupRecipientsListResult> RecipientsLists;
         /// <summary>
-        /// The email recipient group lifecycle state.
+        /// The email recipients group lifecycle state.
         /// </summary>
         public readonly string State;
         public readonly string SubscriptionId;

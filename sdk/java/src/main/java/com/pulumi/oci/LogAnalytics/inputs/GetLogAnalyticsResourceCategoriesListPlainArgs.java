@@ -16,6 +16,21 @@ public final class GetLogAnalyticsResourceCategoriesListPlainArgs extends com.pu
     public static final GetLogAnalyticsResourceCategoriesListPlainArgs Empty = new GetLogAnalyticsResourceCategoriesListPlainArgs();
 
     /**
+     * The compartment id in which to list resources.
+     * 
+     */
+    @Import(name="compartmentId")
+    private @Nullable String compartmentId;
+
+    /**
+     * @return The compartment id in which to list resources.
+     * 
+     */
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
+    }
+
+    /**
      * The Logging Analytics namespace used for the request.
      * 
      */
@@ -78,6 +93,7 @@ public final class GetLogAnalyticsResourceCategoriesListPlainArgs extends com.pu
     private GetLogAnalyticsResourceCategoriesListPlainArgs() {}
 
     private GetLogAnalyticsResourceCategoriesListPlainArgs(GetLogAnalyticsResourceCategoriesListPlainArgs $) {
+        this.compartmentId = $.compartmentId;
         this.namespace = $.namespace;
         this.resourceCategories = $.resourceCategories;
         this.resourceIds = $.resourceIds;
@@ -100,6 +116,17 @@ public final class GetLogAnalyticsResourceCategoriesListPlainArgs extends com.pu
 
         public Builder(GetLogAnalyticsResourceCategoriesListPlainArgs defaults) {
             $ = new GetLogAnalyticsResourceCategoriesListPlainArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param compartmentId The compartment id in which to list resources.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentId(@Nullable String compartmentId) {
+            $.compartmentId = compartmentId;
+            return this;
         }
 
         /**

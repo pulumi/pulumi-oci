@@ -160,6 +160,10 @@ export interface GetInstanceResult {
      */
     readonly metadata: {[key: string]: string};
     /**
+     * Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+     */
+    readonly placementConstraintDetails: outputs.Core.GetInstancePlacementConstraintDetail[];
+    /**
      * The platform configuration for the instance.
      */
     readonly platformConfigs: outputs.Core.GetInstancePlatformConfig[];

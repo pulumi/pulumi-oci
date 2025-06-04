@@ -233,6 +233,12 @@ namespace Pulumi.Oci.ApmSynthetics
         public Output<Outputs.ConfigConfiguration> Configuration { get; private set; } = null!;
 
         /// <summary>
+        /// Content type of the script.
+        /// </summary>
+        [Output("contentType")]
+        public Output<string> ContentType { get; private set; } = null!;
+
+        /// <summary>
         /// Name of the user that created the monitor.
         /// </summary>
         [Output("createdBy")]
@@ -599,6 +605,12 @@ namespace Pulumi.Oci.ApmSynthetics
         /// </summary>
         [Input("configuration")]
         public Input<Inputs.ConfigConfigurationGetArgs>? Configuration { get; set; }
+
+        /// <summary>
+        /// Content type of the script.
+        /// </summary>
+        [Input("contentType")]
+        public Input<string>? ContentType { get; set; }
 
         /// <summary>
         /// Name of the user that created the monitor.

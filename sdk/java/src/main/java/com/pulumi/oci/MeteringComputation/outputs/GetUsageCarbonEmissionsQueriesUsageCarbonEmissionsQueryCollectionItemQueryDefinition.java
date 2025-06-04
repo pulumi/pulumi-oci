@@ -25,7 +25,7 @@ public final class GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollec
      */
     private String displayName;
     /**
-     * @return The request of the generated usage carbon emissions report.
+     * @return The request of the generated carbon emissions usage report.
      * 
      */
     private List<GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery> reportQueries;
@@ -51,7 +51,7 @@ public final class GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollec
         return this.displayName;
     }
     /**
-     * @return The request of the generated usage carbon emissions report.
+     * @return The request of the generated carbon emissions usage report.
      * 
      */
     public List<GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery> reportQueries() {

@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/meteringcomputation"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/meteringcomputation"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -57,7 +57,7 @@ type GetSchedulesArgs struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The filter object for query usage.
 	Filters []GetSchedulesFilter `pulumi:"filters"`
-	// Query parameter for filtering by name
+	// The query parameter for filtering by name.
 	Name *string `pulumi:"name"`
 }
 
@@ -90,7 +90,7 @@ type GetSchedulesOutputArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The filter object for query usage.
 	Filters GetSchedulesFilterArrayInput `pulumi:"filters"`
-	// Query parameter for filtering by name
+	// The query parameter for filtering by name.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 

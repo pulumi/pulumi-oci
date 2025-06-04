@@ -50,6 +50,10 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
+        /// Nat Configuration response.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationResult> NatConfigurations;
+        /// <summary>
         /// A filter to return only resources that match the entire networkFirewallPolicyId given.
         /// </summary>
         public readonly string NetworkFirewallPolicyId;
@@ -98,6 +102,8 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
 
             string lifecycleDetails,
 
+            ImmutableArray<Outputs.GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationResult> natConfigurations,
+
             string networkFirewallPolicyId,
 
             ImmutableArray<string> networkSecurityGroupIds,
@@ -121,6 +127,7 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
             Ipv4address = ipv4address;
             Ipv6address = ipv6address;
             LifecycleDetails = lifecycleDetails;
+            NatConfigurations = natConfigurations;
             NetworkFirewallPolicyId = networkFirewallPolicyId;
             NetworkSecurityGroupIds = networkSecurityGroupIds;
             State = state;

@@ -194,6 +194,10 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         public readonly int DataNodeHostOcpuCount;
         /// <summary>
+        /// The node shape for the cluster's data nodes.
+        /// </summary>
+        public readonly string DataNodeHostShape;
+        /// <summary>
         /// The instance type for the cluster's data nodes.
         /// </summary>
         public readonly string DataNodeHostType;
@@ -250,6 +254,10 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         public readonly int MasterNodeHostOcpuCount;
         /// <summary>
+        /// The node shape for the cluster's master nodes.
+        /// </summary>
+        public readonly string MasterNodeHostShape;
+        /// <summary>
         /// The instance type for the cluster's master nodes.
         /// </summary>
         public readonly string MasterNodeHostType;
@@ -269,6 +277,10 @@ namespace Pulumi.Oci.Opensearch
         /// The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
         /// </summary>
         public readonly int OpendashboardNodeHostOcpuCount;
+        /// <summary>
+        /// The node shape for the cluster's OpenSearch Dashboard nodes.
+        /// </summary>
+        public readonly string OpendashboardNodeHostShape;
         /// <summary>
         /// The private IP address for the cluster's OpenSearch Dashboard.
         /// </summary>
@@ -295,6 +307,30 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         public readonly ImmutableArray<Outputs.GetOpensearchClusterReverseConnectionEndpointResult> ReverseConnectionEndpoints;
         /// <summary>
+        /// The number of search nodes configured for the cluster.
+        /// </summary>
+        public readonly int SearchNodeCount;
+        /// <summary>
+        /// The amount of memory in GB, for the cluster's search nodes.
+        /// </summary>
+        public readonly int SearchNodeHostMemoryGb;
+        /// <summary>
+        /// The number of OCPUs configured for the cluster's search nodes.
+        /// </summary>
+        public readonly int SearchNodeHostOcpuCount;
+        /// <summary>
+        /// The node shape for the cluster's search nodes.
+        /// </summary>
+        public readonly string SearchNodeHostShape;
+        /// <summary>
+        /// The instance type for the cluster's search nodes.
+        /// </summary>
+        public readonly string SearchNodeHostType;
+        /// <summary>
+        /// The amount of storage in GB, to configure per node for the cluster's search nodes.
+        /// </summary>
+        public readonly int SearchNodeStorageGb;
+        /// <summary>
         /// The name of the master user that are used to manage security config
         /// </summary>
         public readonly string SecurityMasterUserName;
@@ -306,6 +342,7 @@ namespace Pulumi.Oci.Opensearch
         /// The security mode of the cluster.
         /// </summary>
         public readonly string SecurityMode;
+        public readonly ImmutableArray<Outputs.GetOpensearchClusterSecuritySamlConfigResult> SecuritySamlConfigs;
         /// <summary>
         /// The software version the cluster is running.
         /// </summary>
@@ -368,6 +405,8 @@ namespace Pulumi.Oci.Opensearch
 
             int dataNodeHostOcpuCount,
 
+            string dataNodeHostShape,
+
             string dataNodeHostType,
 
             int dataNodeStorageGb,
@@ -396,6 +435,8 @@ namespace Pulumi.Oci.Opensearch
 
             int masterNodeHostOcpuCount,
 
+            string masterNodeHostShape,
+
             string masterNodeHostType,
 
             string opendashboardFqdn,
@@ -405,6 +446,8 @@ namespace Pulumi.Oci.Opensearch
             int opendashboardNodeHostMemoryGb,
 
             int opendashboardNodeHostOcpuCount,
+
+            string opendashboardNodeHostShape,
 
             string opendashboardPrivateIp,
 
@@ -420,11 +463,25 @@ namespace Pulumi.Oci.Opensearch
 
             ImmutableArray<Outputs.GetOpensearchClusterReverseConnectionEndpointResult> reverseConnectionEndpoints,
 
+            int searchNodeCount,
+
+            int searchNodeHostMemoryGb,
+
+            int searchNodeHostOcpuCount,
+
+            string searchNodeHostShape,
+
+            string searchNodeHostType,
+
+            int searchNodeStorageGb,
+
             string securityMasterUserName,
 
             string securityMasterUserPasswordHash,
 
             string securityMode,
+
+            ImmutableArray<Outputs.GetOpensearchClusterSecuritySamlConfigResult> securitySamlConfigs,
 
             string softwareVersion,
 
@@ -457,6 +514,7 @@ namespace Pulumi.Oci.Opensearch
             DataNodeHostBareMetalShape = dataNodeHostBareMetalShape;
             DataNodeHostMemoryGb = dataNodeHostMemoryGb;
             DataNodeHostOcpuCount = dataNodeHostOcpuCount;
+            DataNodeHostShape = dataNodeHostShape;
             DataNodeHostType = dataNodeHostType;
             DataNodeStorageGb = dataNodeStorageGb;
             DefinedTags = definedTags;
@@ -471,11 +529,13 @@ namespace Pulumi.Oci.Opensearch
             MasterNodeHostBareMetalShape = masterNodeHostBareMetalShape;
             MasterNodeHostMemoryGb = masterNodeHostMemoryGb;
             MasterNodeHostOcpuCount = masterNodeHostOcpuCount;
+            MasterNodeHostShape = masterNodeHostShape;
             MasterNodeHostType = masterNodeHostType;
             OpendashboardFqdn = opendashboardFqdn;
             OpendashboardNodeCount = opendashboardNodeCount;
             OpendashboardNodeHostMemoryGb = opendashboardNodeHostMemoryGb;
             OpendashboardNodeHostOcpuCount = opendashboardNodeHostOcpuCount;
+            OpendashboardNodeHostShape = opendashboardNodeHostShape;
             OpendashboardPrivateIp = opendashboardPrivateIp;
             OpensearchClusterId = opensearchClusterId;
             OpensearchFqdn = opensearchFqdn;
@@ -483,9 +543,16 @@ namespace Pulumi.Oci.Opensearch
             OutboundClusterConfigs = outboundClusterConfigs;
             ReverseConnectionEndpointCustomerIps = reverseConnectionEndpointCustomerIps;
             ReverseConnectionEndpoints = reverseConnectionEndpoints;
+            SearchNodeCount = searchNodeCount;
+            SearchNodeHostMemoryGb = searchNodeHostMemoryGb;
+            SearchNodeHostOcpuCount = searchNodeHostOcpuCount;
+            SearchNodeHostShape = searchNodeHostShape;
+            SearchNodeHostType = searchNodeHostType;
+            SearchNodeStorageGb = searchNodeStorageGb;
             SecurityMasterUserName = securityMasterUserName;
             SecurityMasterUserPasswordHash = securityMasterUserPasswordHash;
             SecurityMode = securityMode;
+            SecuritySamlConfigs = securitySamlConfigs;
             SoftwareVersion = softwareVersion;
             State = state;
             SubnetCompartmentId = subnetCompartmentId;

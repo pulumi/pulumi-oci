@@ -36,18 +36,63 @@ public final class UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs exten
     }
 
     /**
-     * (Updatable) The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+     * (Updatable) The user interface date range, for example, LAST_THREE_MONTHS. Overrides the timeUsageStarted and timeUsageEnded properties.
      * 
      */
     @Import(name="dateRangeName")
     private @Nullable Output<String> dateRangeName;
 
     /**
-     * @return (Updatable) The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+     * @return (Updatable) The user interface date range, for example, LAST_THREE_MONTHS. Overrides the timeUsageStarted and timeUsageEnded properties.
      * 
      */
     public Optional<Output<String>> dateRangeName() {
         return Optional.ofNullable(this.dateRangeName);
+    }
+
+    /**
+     * (Updatable) Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+     * 
+     */
+    @Import(name="emissionCalculationMethod")
+    private @Nullable Output<String> emissionCalculationMethod;
+
+    /**
+     * @return (Updatable) Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+     * 
+     */
+    public Optional<Output<String>> emissionCalculationMethod() {
+        return Optional.ofNullable(this.emissionCalculationMethod);
+    }
+
+    /**
+     * (Updatable) Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+     * 
+     */
+    @Import(name="emissionType")
+    private @Nullable Output<String> emissionType;
+
+    /**
+     * @return (Updatable) Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+     * 
+     */
+    public Optional<Output<String>> emissionType() {
+        return Optional.ofNullable(this.emissionType);
+    }
+
+    /**
+     * (Updatable) The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+     * 
+     */
+    @Import(name="granularity")
+    private @Nullable Output<String> granularity;
+
+    /**
+     * @return (Updatable) The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+     * 
+     */
+    public Optional<Output<String>> granularity() {
+        return Optional.ofNullable(this.granularity);
     }
 
     /**
@@ -81,14 +126,14 @@ public final class UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs exten
     }
 
     /**
-     * (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+     * (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or costs over the query time period are summed.
      * 
      */
     @Import(name="isAggregateByTime")
     private @Nullable Output<Boolean> isAggregateByTime;
 
     /**
-     * @return (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+     * @return (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or costs over the query time period are summed.
      * 
      */
     public Optional<Output<Boolean>> isAggregateByTime() {
@@ -160,6 +205,9 @@ public final class UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs exten
     private UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs(UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs $) {
         this.compartmentDepth = $.compartmentDepth;
         this.dateRangeName = $.dateRangeName;
+        this.emissionCalculationMethod = $.emissionCalculationMethod;
+        this.emissionType = $.emissionType;
+        this.granularity = $.granularity;
         this.groupBies = $.groupBies;
         this.groupByTags = $.groupByTags;
         this.isAggregateByTime = $.isAggregateByTime;
@@ -209,7 +257,7 @@ public final class UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs exten
         }
 
         /**
-         * @param dateRangeName (Updatable) The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+         * @param dateRangeName (Updatable) The user interface date range, for example, LAST_THREE_MONTHS. Overrides the timeUsageStarted and timeUsageEnded properties.
          * 
          * @return builder
          * 
@@ -220,13 +268,76 @@ public final class UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs exten
         }
 
         /**
-         * @param dateRangeName (Updatable) The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+         * @param dateRangeName (Updatable) The user interface date range, for example, LAST_THREE_MONTHS. Overrides the timeUsageStarted and timeUsageEnded properties.
          * 
          * @return builder
          * 
          */
         public Builder dateRangeName(String dateRangeName) {
             return dateRangeName(Output.of(dateRangeName));
+        }
+
+        /**
+         * @param emissionCalculationMethod (Updatable) Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+         * 
+         * @return builder
+         * 
+         */
+        public Builder emissionCalculationMethod(@Nullable Output<String> emissionCalculationMethod) {
+            $.emissionCalculationMethod = emissionCalculationMethod;
+            return this;
+        }
+
+        /**
+         * @param emissionCalculationMethod (Updatable) Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+         * 
+         * @return builder
+         * 
+         */
+        public Builder emissionCalculationMethod(String emissionCalculationMethod) {
+            return emissionCalculationMethod(Output.of(emissionCalculationMethod));
+        }
+
+        /**
+         * @param emissionType (Updatable) Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder emissionType(@Nullable Output<String> emissionType) {
+            $.emissionType = emissionType;
+            return this;
+        }
+
+        /**
+         * @param emissionType (Updatable) Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder emissionType(String emissionType) {
+            return emissionType(Output.of(emissionType));
+        }
+
+        /**
+         * @param granularity (Updatable) The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder granularity(@Nullable Output<String> granularity) {
+            $.granularity = granularity;
+            return this;
+        }
+
+        /**
+         * @param granularity (Updatable) The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder granularity(String granularity) {
+            return granularity(Output.of(granularity));
         }
 
         /**
@@ -292,7 +403,7 @@ public final class UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs exten
         }
 
         /**
-         * @param isAggregateByTime (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+         * @param isAggregateByTime (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or costs over the query time period are summed.
          * 
          * @return builder
          * 
@@ -303,7 +414,7 @@ public final class UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs exten
         }
 
         /**
-         * @param isAggregateByTime (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+         * @param isAggregateByTime (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or costs over the query time period are summed.
          * 
          * @return builder
          * 

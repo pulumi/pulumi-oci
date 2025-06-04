@@ -8,13 +8,13 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 // This resource provides the Usage Carbon Emissions Query resource in Oracle Cloud Infrastructure Metering Computation service.
 //
-// Returns the created usage carbon emissions query.
+// Returns the created carbon emissions usage query.
 //
 // ## Example Usage
 //
@@ -23,7 +23,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/meteringcomputation"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/meteringcomputation"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -39,10 +39,13 @@ import (
 //					},
 //					DisplayName: pulumi.Any(usageCarbonEmissionsQueryQueryDefinitionDisplayName),
 //					ReportQuery: &meteringcomputation.UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs{
-//						TenantId:         pulumi.Any(testTenant.Id),
-//						CompartmentDepth: pulumi.Any(usageCarbonEmissionsQueryQueryDefinitionReportQueryCompartmentDepth),
-//						DateRangeName:    pulumi.Any(usageCarbonEmissionsQueryQueryDefinitionReportQueryDateRangeName),
-//						GroupBies:        pulumi.Any(usageCarbonEmissionsQueryQueryDefinitionReportQueryGroupBy),
+//						TenantId:                  pulumi.Any(testTenant.Id),
+//						CompartmentDepth:          pulumi.Any(usageCarbonEmissionsQueryQueryDefinitionReportQueryCompartmentDepth),
+//						DateRangeName:             pulumi.Any(usageCarbonEmissionsQueryQueryDefinitionReportQueryDateRangeName),
+//						EmissionCalculationMethod: pulumi.Any(usageCarbonEmissionsQueryQueryDefinitionReportQueryEmissionCalculationMethod),
+//						EmissionType:              pulumi.Any(usageCarbonEmissionsQueryQueryDefinitionReportQueryEmissionType),
+//						Granularity:               pulumi.Any(usageCarbonEmissionsQueryQueryDefinitionReportQueryGranularity),
+//						GroupBies:                 pulumi.Any(usageCarbonEmissionsQueryQueryDefinitionReportQueryGroupBy),
 //						GroupByTags: meteringcomputation.UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArray{
 //							&meteringcomputation.UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgs{
 //								Key:       pulumi.Any(usageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagKey),

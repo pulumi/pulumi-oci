@@ -16,10 +16,16 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'NetworkFirewallNatConfigurationArgs',
+    'NetworkFirewallNatConfigurationArgsDict',
     'NetworkFirewallPolicyDecryptionRuleConditionArgs',
     'NetworkFirewallPolicyDecryptionRuleConditionArgsDict',
     'NetworkFirewallPolicyDecryptionRulePositionArgs',
     'NetworkFirewallPolicyDecryptionRulePositionArgsDict',
+    'NetworkFirewallPolicyNatRuleConditionArgs',
+    'NetworkFirewallPolicyNatRuleConditionArgsDict',
+    'NetworkFirewallPolicyNatRulePositionArgs',
+    'NetworkFirewallPolicyNatRulePositionArgsDict',
     'NetworkFirewallPolicySecurityRuleConditionArgs',
     'NetworkFirewallPolicySecurityRuleConditionArgsDict',
     'NetworkFirewallPolicySecurityRulePositionArgs',
@@ -46,6 +52,8 @@ __all__ = [
     'GetNetworkFirewallPolicyDecryptionProfilesFilterArgsDict',
     'GetNetworkFirewallPolicyDecryptionRulesFilterArgs',
     'GetNetworkFirewallPolicyDecryptionRulesFilterArgsDict',
+    'GetNetworkFirewallPolicyNatRulesFilterArgs',
+    'GetNetworkFirewallPolicyNatRulesFilterArgsDict',
     'GetNetworkFirewallPolicySecurityRulesFilterArgs',
     'GetNetworkFirewallPolicySecurityRulesFilterArgsDict',
     'GetNetworkFirewallPolicyServiceListsFilterArgs',
@@ -61,6 +69,57 @@ __all__ = [
 ]
 
 MYPY = False
+
+if not MYPY:
+    class NetworkFirewallNatConfigurationArgsDict(TypedDict):
+        must_enable_private_nat: pulumi.Input[builtins.bool]
+        """
+        (Updatable) To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall. The value of this field can not be false to release the NAT IPs given that the attached network firewall policy does not contains any NAT rules. The value of this field should be set to true if the network firewall policy being applied contains NAT rules.
+        """
+        nat_ip_address_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+        """
+elif False:
+    NetworkFirewallNatConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class NetworkFirewallNatConfigurationArgs:
+    def __init__(__self__, *,
+                 must_enable_private_nat: pulumi.Input[builtins.bool],
+                 nat_ip_address_lists: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
+        """
+        :param pulumi.Input[builtins.bool] must_enable_private_nat: (Updatable) To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall. The value of this field can not be false to release the NAT IPs given that the attached network firewall policy does not contains any NAT rules. The value of this field should be set to true if the network firewall policy being applied contains NAT rules.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] nat_ip_address_lists: An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+        """
+        pulumi.set(__self__, "must_enable_private_nat", must_enable_private_nat)
+        if nat_ip_address_lists is not None:
+            pulumi.set(__self__, "nat_ip_address_lists", nat_ip_address_lists)
+
+    @property
+    @pulumi.getter(name="mustEnablePrivateNat")
+    def must_enable_private_nat(self) -> pulumi.Input[builtins.bool]:
+        """
+        (Updatable) To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall. The value of this field can not be false to release the NAT IPs given that the attached network firewall policy does not contains any NAT rules. The value of this field should be set to true if the network firewall policy being applied contains NAT rules.
+        """
+        return pulumi.get(self, "must_enable_private_nat")
+
+    @must_enable_private_nat.setter
+    def must_enable_private_nat(self, value: pulumi.Input[builtins.bool]):
+        pulumi.set(self, "must_enable_private_nat", value)
+
+    @property
+    @pulumi.getter(name="natIpAddressLists")
+    def nat_ip_address_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+        """
+        return pulumi.get(self, "nat_ip_address_lists")
+
+    @nat_ip_address_lists.setter
+    def nat_ip_address_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "nat_ip_address_lists", value)
+
 
 if not MYPY:
     class NetworkFirewallPolicyDecryptionRuleConditionArgsDict(TypedDict):
@@ -170,6 +229,130 @@ class NetworkFirewallPolicyDecryptionRulePositionArgs:
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "before_rule")
+
+    @before_rule.setter
+    def before_rule(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "before_rule", value)
+
+
+if not MYPY:
+    class NetworkFirewallPolicyNatRuleConditionArgsDict(TypedDict):
+        destination_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+        """
+        service: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) A Service name to be evaluated against the traffic protocol and protocol-specific parameters.
+        """
+        source_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+        """
+elif False:
+    NetworkFirewallPolicyNatRuleConditionArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class NetworkFirewallPolicyNatRuleConditionArgs:
+    def __init__(__self__, *,
+                 destination_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 service: Optional[pulumi.Input[builtins.str]] = None,
+                 source_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] destination_addresses: (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+        :param pulumi.Input[builtins.str] service: (Updatable) A Service name to be evaluated against the traffic protocol and protocol-specific parameters.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] source_addresses: (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+        """
+        if destination_addresses is not None:
+            pulumi.set(__self__, "destination_addresses", destination_addresses)
+        if service is not None:
+            pulumi.set(__self__, "service", service)
+        if source_addresses is not None:
+            pulumi.set(__self__, "source_addresses", source_addresses)
+
+    @property
+    @pulumi.getter(name="destinationAddresses")
+    def destination_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+        """
+        return pulumi.get(self, "destination_addresses")
+
+    @destination_addresses.setter
+    def destination_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "destination_addresses", value)
+
+    @property
+    @pulumi.getter
+    def service(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) A Service name to be evaluated against the traffic protocol and protocol-specific parameters.
+        """
+        return pulumi.get(self, "service")
+
+    @service.setter
+    def service(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "service", value)
+
+    @property
+    @pulumi.getter(name="sourceAddresses")
+    def source_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+        """
+        return pulumi.get(self, "source_addresses")
+
+    @source_addresses.setter
+    def source_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "source_addresses", value)
+
+
+if not MYPY:
+    class NetworkFirewallPolicyNatRulePositionArgsDict(TypedDict):
+        after_rule: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) Identifier for rule after which this rule lies.
+        """
+        before_rule: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) Identifier for rule before which this rule lies.
+        """
+elif False:
+    NetworkFirewallPolicyNatRulePositionArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class NetworkFirewallPolicyNatRulePositionArgs:
+    def __init__(__self__, *,
+                 after_rule: Optional[pulumi.Input[builtins.str]] = None,
+                 before_rule: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] after_rule: (Updatable) Identifier for rule after which this rule lies.
+        :param pulumi.Input[builtins.str] before_rule: (Updatable) Identifier for rule before which this rule lies.
+        """
+        if after_rule is not None:
+            pulumi.set(__self__, "after_rule", after_rule)
+        if before_rule is not None:
+            pulumi.set(__self__, "before_rule", before_rule)
+
+    @property
+    @pulumi.getter(name="afterRule")
+    def after_rule(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) Identifier for rule after which this rule lies.
+        """
+        return pulumi.get(self, "after_rule")
+
+    @after_rule.setter
+    def after_rule(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "after_rule", value)
+
+    @property
+    @pulumi.getter(name="beforeRule")
+    def before_rule(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) Identifier for rule before which this rule lies.
         """
         return pulumi.get(self, "before_rule")
 
@@ -907,6 +1090,62 @@ class GetNetworkFirewallPolicyDecryptionRulesFilterArgs:
     def name(self) -> builtins.str:
         """
         Name for the decryption rule, must be unique within the policy.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: builtins.str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetNetworkFirewallPolicyNatRulesFilterArgsDict(TypedDict):
+        name: builtins.str
+        """
+        Name for the NAT rule, must be unique within the policy.
+        """
+        values: Sequence[builtins.str]
+        regex: NotRequired[builtins.bool]
+elif False:
+    GetNetworkFirewallPolicyNatRulesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetNetworkFirewallPolicyNatRulesFilterArgs:
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        """
+        :param builtins.str name: Name for the NAT rule, must be unique within the policy.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        Name for the NAT rule, must be unique within the policy.
         """
         return pulumi.get(self, "name")
 

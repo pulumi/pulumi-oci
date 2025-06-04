@@ -29,8 +29,8 @@ class UsageStatementEmailRecipientsGroupArgs:
         """
         The set of arguments for constructing a UsageStatementEmailRecipientsGroup resource.
         :param pulumi.Input[builtins.str] compartment_id: (Updatable) The customer tenancy.
-        :param pulumi.Input[Sequence[pulumi.Input['UsageStatementEmailRecipientsGroupRecipientsListArgs']]] recipients_lists: (Updatable) The list of recipient will receive the usage statement email.
-        :param pulumi.Input[builtins.str] subscription_id: The UsageStatement Subscription unique OCID.
+        :param pulumi.Input[Sequence[pulumi.Input['UsageStatementEmailRecipientsGroupRecipientsListArgs']]] recipients_lists: (Updatable) The list of recipients that will receive usage statement emails.
+        :param pulumi.Input[builtins.str] subscription_id: The usage statement subscription unique OCID.
                
                
                ** IMPORTANT **
@@ -58,7 +58,7 @@ class UsageStatementEmailRecipientsGroupArgs:
     @pulumi.getter(name="recipientsLists")
     def recipients_lists(self) -> pulumi.Input[Sequence[pulumi.Input['UsageStatementEmailRecipientsGroupRecipientsListArgs']]]:
         """
-        (Updatable) The list of recipient will receive the usage statement email.
+        (Updatable) The list of recipients that will receive usage statement emails.
         """
         return pulumi.get(self, "recipients_lists")
 
@@ -70,7 +70,7 @@ class UsageStatementEmailRecipientsGroupArgs:
     @pulumi.getter(name="subscriptionId")
     def subscription_id(self) -> pulumi.Input[builtins.str]:
         """
-        The UsageStatement Subscription unique OCID.
+        The usage statement subscription unique OCID.
 
 
         ** IMPORTANT **
@@ -103,9 +103,9 @@ class _UsageStatementEmailRecipientsGroupState:
         """
         Input properties used for looking up and filtering UsageStatementEmailRecipientsGroup resources.
         :param pulumi.Input[builtins.str] compartment_id: (Updatable) The customer tenancy.
-        :param pulumi.Input[Sequence[pulumi.Input['UsageStatementEmailRecipientsGroupRecipientsListArgs']]] recipients_lists: (Updatable) The list of recipient will receive the usage statement email.
-        :param pulumi.Input[builtins.str] state: The email recipient group lifecycle state.
-        :param pulumi.Input[builtins.str] subscription_id: The UsageStatement Subscription unique OCID.
+        :param pulumi.Input[Sequence[pulumi.Input['UsageStatementEmailRecipientsGroupRecipientsListArgs']]] recipients_lists: (Updatable) The list of recipients that will receive usage statement emails.
+        :param pulumi.Input[builtins.str] state: The email recipients group lifecycle state.
+        :param pulumi.Input[builtins.str] subscription_id: The usage statement subscription unique OCID.
                
                
                ** IMPORTANT **
@@ -147,7 +147,7 @@ class _UsageStatementEmailRecipientsGroupState:
     @pulumi.getter(name="recipientsLists")
     def recipients_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['UsageStatementEmailRecipientsGroupRecipientsListArgs']]]]:
         """
-        (Updatable) The list of recipient will receive the usage statement email.
+        (Updatable) The list of recipients that will receive usage statement emails.
         """
         return pulumi.get(self, "recipients_lists")
 
@@ -159,7 +159,7 @@ class _UsageStatementEmailRecipientsGroupState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        The email recipient group lifecycle state.
+        The email recipients group lifecycle state.
         """
         return pulumi.get(self, "state")
 
@@ -171,7 +171,7 @@ class _UsageStatementEmailRecipientsGroupState:
     @pulumi.getter(name="subscriptionId")
     def subscription_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        The UsageStatement Subscription unique OCID.
+        The usage statement subscription unique OCID.
 
 
         ** IMPORTANT **
@@ -198,7 +198,7 @@ class UsageStatementEmailRecipientsGroup(pulumi.CustomResource):
         """
         This resource provides the Usage Statement Email Recipients Group resource in Oracle Cloud Infrastructure Metering Computation service.
 
-        Add a list of email recipients that can receive usage statements for the subscription.
+        Creates a list of email recipients that can receive usage statements for the subscription.
 
         ## Example Usage
 
@@ -228,8 +228,8 @@ class UsageStatementEmailRecipientsGroup(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[builtins.str] compartment_id: (Updatable) The customer tenancy.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['UsageStatementEmailRecipientsGroupRecipientsListArgs', 'UsageStatementEmailRecipientsGroupRecipientsListArgsDict']]]] recipients_lists: (Updatable) The list of recipient will receive the usage statement email.
-        :param pulumi.Input[builtins.str] subscription_id: The UsageStatement Subscription unique OCID.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['UsageStatementEmailRecipientsGroupRecipientsListArgs', 'UsageStatementEmailRecipientsGroupRecipientsListArgsDict']]]] recipients_lists: (Updatable) The list of recipients that will receive usage statement emails.
+        :param pulumi.Input[builtins.str] subscription_id: The usage statement subscription unique OCID.
                
                
                ** IMPORTANT **
@@ -244,7 +244,7 @@ class UsageStatementEmailRecipientsGroup(pulumi.CustomResource):
         """
         This resource provides the Usage Statement Email Recipients Group resource in Oracle Cloud Infrastructure Metering Computation service.
 
-        Add a list of email recipients that can receive usage statements for the subscription.
+        Creates a list of email recipients that can receive usage statements for the subscription.
 
         ## Example Usage
 
@@ -333,9 +333,9 @@ class UsageStatementEmailRecipientsGroup(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[builtins.str] compartment_id: (Updatable) The customer tenancy.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['UsageStatementEmailRecipientsGroupRecipientsListArgs', 'UsageStatementEmailRecipientsGroupRecipientsListArgsDict']]]] recipients_lists: (Updatable) The list of recipient will receive the usage statement email.
-        :param pulumi.Input[builtins.str] state: The email recipient group lifecycle state.
-        :param pulumi.Input[builtins.str] subscription_id: The UsageStatement Subscription unique OCID.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['UsageStatementEmailRecipientsGroupRecipientsListArgs', 'UsageStatementEmailRecipientsGroupRecipientsListArgsDict']]]] recipients_lists: (Updatable) The list of recipients that will receive usage statement emails.
+        :param pulumi.Input[builtins.str] state: The email recipients group lifecycle state.
+        :param pulumi.Input[builtins.str] subscription_id: The usage statement subscription unique OCID.
                
                
                ** IMPORTANT **
@@ -369,7 +369,7 @@ class UsageStatementEmailRecipientsGroup(pulumi.CustomResource):
     @pulumi.getter(name="recipientsLists")
     def recipients_lists(self) -> pulumi.Output[Sequence['outputs.UsageStatementEmailRecipientsGroupRecipientsList']]:
         """
-        (Updatable) The list of recipient will receive the usage statement email.
+        (Updatable) The list of recipients that will receive usage statement emails.
         """
         return pulumi.get(self, "recipients_lists")
 
@@ -377,7 +377,7 @@ class UsageStatementEmailRecipientsGroup(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[builtins.str]:
         """
-        The email recipient group lifecycle state.
+        The email recipients group lifecycle state.
         """
         return pulumi.get(self, "state")
 
@@ -385,7 +385,7 @@ class UsageStatementEmailRecipientsGroup(pulumi.CustomResource):
     @pulumi.getter(name="subscriptionId")
     def subscription_id(self) -> pulumi.Output[builtins.str]:
         """
-        The UsageStatement Subscription unique OCID.
+        The usage statement subscription unique OCID.
 
 
         ** IMPORTANT **

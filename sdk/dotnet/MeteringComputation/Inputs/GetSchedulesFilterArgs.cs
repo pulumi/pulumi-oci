@@ -13,7 +13,7 @@ namespace Pulumi.Oci.MeteringComputation.Inputs
     public sealed class GetSchedulesFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Query parameter for filtering by name
+        /// The query parameter for filtering by name.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;

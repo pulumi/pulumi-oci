@@ -52,14 +52,14 @@ public final class RemediationRecipeState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
+     * (Updatable) A configuration to define the constraints when detecting vulnerable dependencies and recommending remediations.
      * 
      */
     @Import(name="detectConfiguration")
     private @Nullable Output<RemediationRecipeDetectConfigurationArgs> detectConfiguration;
 
     /**
-     * @return (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
+     * @return (Updatable) A configuration to define the constraints when detecting vulnerable dependencies and recommending remediations.
      * 
      */
     public Optional<Output<RemediationRecipeDetectConfigurationArgs>> detectConfiguration() {
@@ -127,14 +127,14 @@ public final class RemediationRecipeState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+     * (Updatable) A network configuration defines the required network characteristics for the remediation run of the recipe to access the source repository and/or verify build services.
      * 
      */
     @Import(name="networkConfiguration")
     private @Nullable Output<RemediationRecipeNetworkConfigurationArgs> networkConfiguration;
 
     /**
-     * @return (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+     * @return (Updatable) A network configuration defines the required network characteristics for the remediation run of the recipe to access the source repository and/or verify build services.
      * 
      */
     public Optional<Output<RemediationRecipeNetworkConfigurationArgs>> networkConfiguration() {
@@ -317,7 +317,7 @@ public final class RemediationRecipeState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param detectConfiguration (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
+         * @param detectConfiguration (Updatable) A configuration to define the constraints when detecting vulnerable dependencies and recommending remediations.
          * 
          * @return builder
          * 
@@ -328,7 +328,7 @@ public final class RemediationRecipeState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param detectConfiguration (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
+         * @param detectConfiguration (Updatable) A configuration to define the constraints when detecting vulnerable dependencies and recommending remediations.
          * 
          * @return builder
          * 
@@ -422,7 +422,7 @@ public final class RemediationRecipeState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param networkConfiguration (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+         * @param networkConfiguration (Updatable) A network configuration defines the required network characteristics for the remediation run of the recipe to access the source repository and/or verify build services.
          * 
          * @return builder
          * 
@@ -433,7 +433,7 @@ public final class RemediationRecipeState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param networkConfiguration (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+         * @param networkConfiguration (Updatable) A network configuration defines the required network characteristics for the remediation run of the recipe to access the source repository and/or verify build services.
          * 
          * @return builder
          * 

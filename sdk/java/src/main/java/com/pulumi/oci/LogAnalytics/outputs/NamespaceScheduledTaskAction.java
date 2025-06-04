@@ -6,6 +6,7 @@ package com.pulumi.oci.LogAnalytics.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.outputs.NamespaceScheduledTaskActionMetricExtraction;
+import com.pulumi.oci.LogAnalytics.outputs.NamespaceScheduledTaskActionTemplateDetails;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -45,10 +46,15 @@ public final class NamespaceScheduledTaskAction {
      */
     private @Nullable String queryString;
     /**
-     * @return The ManagementSavedSearch id [OCID] utilized in the action.
+     * @return The ManagementSavedSearch id [OCID] utilized in the action.  Should not be provided when a template ID is present.
      * 
      */
     private @Nullable String savedSearchId;
+    /**
+     * @return details for scheduled task using template
+     * 
+     */
+    private @Nullable NamespaceScheduledTaskActionTemplateDetails templateDetails;
     /**
      * @return Action type discriminator.
      * 
@@ -99,11 +105,18 @@ public final class NamespaceScheduledTaskAction {
         return Optional.ofNullable(this.queryString);
     }
     /**
-     * @return The ManagementSavedSearch id [OCID] utilized in the action.
+     * @return The ManagementSavedSearch id [OCID] utilized in the action.  Should not be provided when a template ID is present.
      * 
      */
     public Optional<String> savedSearchId() {
         return Optional.ofNullable(this.savedSearchId);
+    }
+    /**
+     * @return details for scheduled task using template
+     * 
+     */
+    public Optional<NamespaceScheduledTaskActionTemplateDetails> templateDetails() {
+        return Optional.ofNullable(this.templateDetails);
     }
     /**
      * @return Action type discriminator.
@@ -129,6 +142,7 @@ public final class NamespaceScheduledTaskAction {
         private @Nullable String purgeDuration;
         private @Nullable String queryString;
         private @Nullable String savedSearchId;
+        private @Nullable NamespaceScheduledTaskActionTemplateDetails templateDetails;
         private String type;
         public Builder() {}
         public Builder(NamespaceScheduledTaskAction defaults) {
@@ -140,6 +154,7 @@ public final class NamespaceScheduledTaskAction {
     	      this.purgeDuration = defaults.purgeDuration;
     	      this.queryString = defaults.queryString;
     	      this.savedSearchId = defaults.savedSearchId;
+    	      this.templateDetails = defaults.templateDetails;
     	      this.type = defaults.type;
         }
 
@@ -186,6 +201,12 @@ public final class NamespaceScheduledTaskAction {
             return this;
         }
         @CustomType.Setter
+        public Builder templateDetails(@Nullable NamespaceScheduledTaskActionTemplateDetails templateDetails) {
+
+            this.templateDetails = templateDetails;
+            return this;
+        }
+        @CustomType.Setter
         public Builder type(String type) {
             if (type == null) {
               throw new MissingRequiredPropertyException("NamespaceScheduledTaskAction", "type");
@@ -202,6 +223,7 @@ public final class NamespaceScheduledTaskAction {
             _resultValue.purgeDuration = purgeDuration;
             _resultValue.queryString = queryString;
             _resultValue.savedSearchId = savedSearchId;
+            _resultValue.templateDetails = templateDetails;
             _resultValue.type = type;
             return _resultValue;
         }

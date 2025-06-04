@@ -89,7 +89,7 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
      */
     private String ftpRequestType;
     /**
-     * @return If enabled, Active mode will be used for the FTP connection.
+     * @return If enabled, Active mode will be used for the FTP connection. Not supported for SFTP protocol.
      * 
      */
     private Boolean isActiveMode;
@@ -287,7 +287,7 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
         return this.ftpRequestType;
     }
     /**
-     * @return If enabled, Active mode will be used for the FTP connection.
+     * @return If enabled, Active mode will be used for the FTP connection. Not supported for SFTP protocol.
      * 
      */
     public Boolean isActiveMode() {

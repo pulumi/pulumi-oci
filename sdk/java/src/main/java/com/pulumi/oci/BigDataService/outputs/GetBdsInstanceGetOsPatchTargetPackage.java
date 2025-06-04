@@ -17,6 +17,11 @@ public final class GetBdsInstanceGetOsPatchTargetPackage {
      */
     private String packageName;
     /**
+     * @return Package type based on package installation manager.
+     * 
+     */
+    private String packageType;
+    /**
      * @return Related CVEs of the package update.
      * 
      */
@@ -39,6 +44,13 @@ public final class GetBdsInstanceGetOsPatchTargetPackage {
      */
     public String packageName() {
         return this.packageName;
+    }
+    /**
+     * @return Package type based on package installation manager.
+     * 
+     */
+    public String packageType() {
+        return this.packageType;
     }
     /**
      * @return Related CVEs of the package update.
@@ -72,6 +84,7 @@ public final class GetBdsInstanceGetOsPatchTargetPackage {
     @CustomType.Builder
     public static final class Builder {
         private String packageName;
+        private String packageType;
         private List<String> relatedCvEs;
         private String targetVersion;
         private String updateType;
@@ -79,6 +92,7 @@ public final class GetBdsInstanceGetOsPatchTargetPackage {
         public Builder(GetBdsInstanceGetOsPatchTargetPackage defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.packageName = defaults.packageName;
+    	      this.packageType = defaults.packageType;
     	      this.relatedCvEs = defaults.relatedCvEs;
     	      this.targetVersion = defaults.targetVersion;
     	      this.updateType = defaults.updateType;
@@ -90,6 +104,14 @@ public final class GetBdsInstanceGetOsPatchTargetPackage {
               throw new MissingRequiredPropertyException("GetBdsInstanceGetOsPatchTargetPackage", "packageName");
             }
             this.packageName = packageName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder packageType(String packageType) {
+            if (packageType == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceGetOsPatchTargetPackage", "packageType");
+            }
+            this.packageType = packageType;
             return this;
         }
         @CustomType.Setter
@@ -122,6 +144,7 @@ public final class GetBdsInstanceGetOsPatchTargetPackage {
         public GetBdsInstanceGetOsPatchTargetPackage build() {
             final var _resultValue = new GetBdsInstanceGetOsPatchTargetPackage();
             _resultValue.packageName = packageName;
+            _resultValue.packageType = packageType;
             _resultValue.relatedCvEs = relatedCvEs;
             _resultValue.targetVersion = targetVersion;
             _resultValue.updateType = updateType;

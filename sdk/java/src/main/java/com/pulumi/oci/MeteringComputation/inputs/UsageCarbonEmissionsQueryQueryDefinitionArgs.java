@@ -48,14 +48,14 @@ public final class UsageCarbonEmissionsQueryQueryDefinitionArgs extends com.pulu
     }
 
     /**
-     * (Updatable) The request of the generated usage carbon emissions report.
+     * (Updatable) The request of the generated carbon emissions usage report.
      * 
      */
     @Import(name="reportQuery", required=true)
     private Output<UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs> reportQuery;
 
     /**
-     * @return (Updatable) The request of the generated usage carbon emissions report.
+     * @return (Updatable) The request of the generated carbon emissions usage report.
      * 
      */
     public Output<UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs> reportQuery() {
@@ -153,7 +153,7 @@ public final class UsageCarbonEmissionsQueryQueryDefinitionArgs extends com.pulu
         }
 
         /**
-         * @param reportQuery (Updatable) The request of the generated usage carbon emissions report.
+         * @param reportQuery (Updatable) The request of the generated carbon emissions usage report.
          * 
          * @return builder
          * 
@@ -164,7 +164,7 @@ public final class UsageCarbonEmissionsQueryQueryDefinitionArgs extends com.pulu
         }
 
         /**
-         * @param reportQuery (Updatable) The request of the generated usage carbon emissions report.
+         * @param reportQuery (Updatable) The request of the generated carbon emissions usage report.
          * 
          * @return builder
          * 

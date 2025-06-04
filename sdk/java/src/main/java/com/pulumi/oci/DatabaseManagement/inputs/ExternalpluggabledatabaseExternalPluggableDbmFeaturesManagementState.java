@@ -53,6 +53,13 @@ public final class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManageme
         return Optional.ofNullable(this.externalPluggableDatabaseId);
     }
 
+    @Import(name="feature")
+    private @Nullable Output<String> feature;
+
+    public Optional<Output<String>> feature() {
+        return Optional.ofNullable(this.feature);
+    }
+
     /**
      * The details required to enable the specified Database Management feature.
      * 
@@ -73,6 +80,7 @@ public final class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManageme
     private ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementState(ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementState $) {
         this.enableExternalPluggableDbmFeature = $.enableExternalPluggableDbmFeature;
         this.externalPluggableDatabaseId = $.externalPluggableDatabaseId;
+        this.feature = $.feature;
         this.featureDetails = $.featureDetails;
     }
 
@@ -140,6 +148,15 @@ public final class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManageme
          */
         public Builder externalPluggableDatabaseId(String externalPluggableDatabaseId) {
             return externalPluggableDatabaseId(Output.of(externalPluggableDatabaseId));
+        }
+
+        public Builder feature(@Nullable Output<String> feature) {
+            $.feature = feature;
+            return this;
+        }
+
+        public Builder feature(String feature) {
+            return feature(Output.of(feature));
         }
 
         /**

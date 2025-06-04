@@ -85,6 +85,10 @@ export class Cluster extends pulumi.CustomResource {
      */
     public readonly dataNodeHostOcpuCount!: pulumi.Output<number>;
     /**
+     * (Updatable) The node shape for the cluster's data nodes.
+     */
+    public readonly dataNodeHostShape!: pulumi.Output<string>;
+    /**
      * TThe instance type for the cluster's data nodes.
      */
     public readonly dataNodeHostType!: pulumi.Output<string>;
@@ -137,6 +141,10 @@ export class Cluster extends pulumi.CustomResource {
      */
     public readonly masterNodeHostOcpuCount!: pulumi.Output<number>;
     /**
+     * (Updatable) The node shape for the cluster's master nodes.
+     */
+    public readonly masterNodeHostShape!: pulumi.Output<string>;
+    /**
      * The instance type for the cluster's master nodes.
      */
     public readonly masterNodeHostType!: pulumi.Output<string>;
@@ -156,6 +164,10 @@ export class Cluster extends pulumi.CustomResource {
      * (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
      */
     public readonly opendashboardNodeHostOcpuCount!: pulumi.Output<number>;
+    /**
+     * (Updatable) The node shape for the cluster's OpenSearch Dashboard nodes.
+     */
+    public readonly opendashboardNodeHostShape!: pulumi.Output<string>;
     /**
      * The private IP address for the cluster's OpenSearch Dashboard.
      */
@@ -181,6 +193,30 @@ export class Cluster extends pulumi.CustomResource {
      */
     public /*out*/ readonly reverseConnectionEndpoints!: pulumi.Output<outputs.Opensearch.ClusterReverseConnectionEndpoint[]>;
     /**
+     * (Updatable) The number of search nodes configured for the cluster.
+     */
+    public readonly searchNodeCount!: pulumi.Output<number>;
+    /**
+     * (Updatable) The amount of memory in GB, for the cluster's search nodes.
+     */
+    public readonly searchNodeHostMemoryGb!: pulumi.Output<number>;
+    /**
+     * (Updatable) The number of OCPUs configured for the cluster's search nodes.
+     */
+    public readonly searchNodeHostOcpuCount!: pulumi.Output<number>;
+    /**
+     * (Updatable) The node shape for the cluster's search nodes.
+     */
+    public readonly searchNodeHostShape!: pulumi.Output<string>;
+    /**
+     * The instance type for the cluster's search nodes.
+     */
+    public readonly searchNodeHostType!: pulumi.Output<string>;
+    /**
+     * (Updatable) The amount of storage in GB, to configure per node for the cluster's search nodes.
+     */
+    public readonly searchNodeStorageGb!: pulumi.Output<number>;
+    /**
      * (Updatable) The name of the master user that are used to manage security config
      */
     public readonly securityMasterUserName!: pulumi.Output<string>;
@@ -192,6 +228,10 @@ export class Cluster extends pulumi.CustomResource {
      * (Updatable) The security mode of the cluster.
      */
     public readonly securityMode!: pulumi.Output<string>;
+    /**
+     * SAML policy is optionally used for Opensearch cluster to config SAML authentication
+     */
+    public readonly securitySamlConfig!: pulumi.Output<outputs.Opensearch.ClusterSecuritySamlConfig>;
     /**
      * (Updatable) The version of the software the cluster is running.
      */
@@ -265,6 +305,7 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["dataNodeHostBareMetalShape"] = state ? state.dataNodeHostBareMetalShape : undefined;
             resourceInputs["dataNodeHostMemoryGb"] = state ? state.dataNodeHostMemoryGb : undefined;
             resourceInputs["dataNodeHostOcpuCount"] = state ? state.dataNodeHostOcpuCount : undefined;
+            resourceInputs["dataNodeHostShape"] = state ? state.dataNodeHostShape : undefined;
             resourceInputs["dataNodeHostType"] = state ? state.dataNodeHostType : undefined;
             resourceInputs["dataNodeStorageGb"] = state ? state.dataNodeStorageGb : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
@@ -278,20 +319,29 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["masterNodeHostBareMetalShape"] = state ? state.masterNodeHostBareMetalShape : undefined;
             resourceInputs["masterNodeHostMemoryGb"] = state ? state.masterNodeHostMemoryGb : undefined;
             resourceInputs["masterNodeHostOcpuCount"] = state ? state.masterNodeHostOcpuCount : undefined;
+            resourceInputs["masterNodeHostShape"] = state ? state.masterNodeHostShape : undefined;
             resourceInputs["masterNodeHostType"] = state ? state.masterNodeHostType : undefined;
             resourceInputs["opendashboardFqdn"] = state ? state.opendashboardFqdn : undefined;
             resourceInputs["opendashboardNodeCount"] = state ? state.opendashboardNodeCount : undefined;
             resourceInputs["opendashboardNodeHostMemoryGb"] = state ? state.opendashboardNodeHostMemoryGb : undefined;
             resourceInputs["opendashboardNodeHostOcpuCount"] = state ? state.opendashboardNodeHostOcpuCount : undefined;
+            resourceInputs["opendashboardNodeHostShape"] = state ? state.opendashboardNodeHostShape : undefined;
             resourceInputs["opendashboardPrivateIp"] = state ? state.opendashboardPrivateIp : undefined;
             resourceInputs["opensearchFqdn"] = state ? state.opensearchFqdn : undefined;
             resourceInputs["opensearchPrivateIp"] = state ? state.opensearchPrivateIp : undefined;
             resourceInputs["outboundClusterConfig"] = state ? state.outboundClusterConfig : undefined;
             resourceInputs["reverseConnectionEndpointCustomerIps"] = state ? state.reverseConnectionEndpointCustomerIps : undefined;
             resourceInputs["reverseConnectionEndpoints"] = state ? state.reverseConnectionEndpoints : undefined;
+            resourceInputs["searchNodeCount"] = state ? state.searchNodeCount : undefined;
+            resourceInputs["searchNodeHostMemoryGb"] = state ? state.searchNodeHostMemoryGb : undefined;
+            resourceInputs["searchNodeHostOcpuCount"] = state ? state.searchNodeHostOcpuCount : undefined;
+            resourceInputs["searchNodeHostShape"] = state ? state.searchNodeHostShape : undefined;
+            resourceInputs["searchNodeHostType"] = state ? state.searchNodeHostType : undefined;
+            resourceInputs["searchNodeStorageGb"] = state ? state.searchNodeStorageGb : undefined;
             resourceInputs["securityMasterUserName"] = state ? state.securityMasterUserName : undefined;
             resourceInputs["securityMasterUserPasswordHash"] = state ? state.securityMasterUserPasswordHash : undefined;
             resourceInputs["securityMode"] = state ? state.securityMode : undefined;
+            resourceInputs["securitySamlConfig"] = state ? state.securitySamlConfig : undefined;
             resourceInputs["softwareVersion"] = state ? state.softwareVersion : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["subnetCompartmentId"] = state ? state.subnetCompartmentId : undefined;
@@ -369,6 +419,7 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["dataNodeHostBareMetalShape"] = args ? args.dataNodeHostBareMetalShape : undefined;
             resourceInputs["dataNodeHostMemoryGb"] = args ? args.dataNodeHostMemoryGb : undefined;
             resourceInputs["dataNodeHostOcpuCount"] = args ? args.dataNodeHostOcpuCount : undefined;
+            resourceInputs["dataNodeHostShape"] = args ? args.dataNodeHostShape : undefined;
             resourceInputs["dataNodeHostType"] = args ? args.dataNodeHostType : undefined;
             resourceInputs["dataNodeStorageGb"] = args ? args.dataNodeStorageGb : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
@@ -380,15 +431,24 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["masterNodeHostBareMetalShape"] = args ? args.masterNodeHostBareMetalShape : undefined;
             resourceInputs["masterNodeHostMemoryGb"] = args ? args.masterNodeHostMemoryGb : undefined;
             resourceInputs["masterNodeHostOcpuCount"] = args ? args.masterNodeHostOcpuCount : undefined;
+            resourceInputs["masterNodeHostShape"] = args ? args.masterNodeHostShape : undefined;
             resourceInputs["masterNodeHostType"] = args ? args.masterNodeHostType : undefined;
             resourceInputs["opendashboardNodeCount"] = args ? args.opendashboardNodeCount : undefined;
             resourceInputs["opendashboardNodeHostMemoryGb"] = args ? args.opendashboardNodeHostMemoryGb : undefined;
             resourceInputs["opendashboardNodeHostOcpuCount"] = args ? args.opendashboardNodeHostOcpuCount : undefined;
+            resourceInputs["opendashboardNodeHostShape"] = args ? args.opendashboardNodeHostShape : undefined;
             resourceInputs["outboundClusterConfig"] = args ? args.outboundClusterConfig : undefined;
             resourceInputs["reverseConnectionEndpointCustomerIps"] = args ? args.reverseConnectionEndpointCustomerIps : undefined;
+            resourceInputs["searchNodeCount"] = args ? args.searchNodeCount : undefined;
+            resourceInputs["searchNodeHostMemoryGb"] = args ? args.searchNodeHostMemoryGb : undefined;
+            resourceInputs["searchNodeHostOcpuCount"] = args ? args.searchNodeHostOcpuCount : undefined;
+            resourceInputs["searchNodeHostShape"] = args ? args.searchNodeHostShape : undefined;
+            resourceInputs["searchNodeHostType"] = args ? args.searchNodeHostType : undefined;
+            resourceInputs["searchNodeStorageGb"] = args ? args.searchNodeStorageGb : undefined;
             resourceInputs["securityMasterUserName"] = args ? args.securityMasterUserName : undefined;
             resourceInputs["securityMasterUserPasswordHash"] = args?.securityMasterUserPasswordHash ? pulumi.secret(args.securityMasterUserPasswordHash) : undefined;
             resourceInputs["securityMode"] = args ? args.securityMode : undefined;
+            resourceInputs["securitySamlConfig"] = args?.securitySamlConfig ? pulumi.secret(args.securitySamlConfig) : undefined;
             resourceInputs["softwareVersion"] = args ? args.softwareVersion : undefined;
             resourceInputs["subnetCompartmentId"] = args ? args.subnetCompartmentId : undefined;
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
@@ -411,7 +471,7 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["totalStorageGb"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
-        const secretOpts = { additionalSecretOutputs: ["securityMasterUserPasswordHash"] };
+        const secretOpts = { additionalSecretOutputs: ["securityMasterUserPasswordHash", "securitySamlConfig"] };
         opts = pulumi.mergeOptions(opts, secretOpts);
         super(Cluster.__pulumiType, name, resourceInputs, opts);
     }
@@ -449,6 +509,10 @@ export interface ClusterState {
      * (Updatable) The number of OCPUs to configure for the cluster's data nodes.
      */
     dataNodeHostOcpuCount?: pulumi.Input<number>;
+    /**
+     * (Updatable) The node shape for the cluster's data nodes.
+     */
+    dataNodeHostShape?: pulumi.Input<string>;
     /**
      * TThe instance type for the cluster's data nodes.
      */
@@ -502,6 +566,10 @@ export interface ClusterState {
      */
     masterNodeHostOcpuCount?: pulumi.Input<number>;
     /**
+     * (Updatable) The node shape for the cluster's master nodes.
+     */
+    masterNodeHostShape?: pulumi.Input<string>;
+    /**
      * The instance type for the cluster's master nodes.
      */
     masterNodeHostType?: pulumi.Input<string>;
@@ -521,6 +589,10 @@ export interface ClusterState {
      * (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
      */
     opendashboardNodeHostOcpuCount?: pulumi.Input<number>;
+    /**
+     * (Updatable) The node shape for the cluster's OpenSearch Dashboard nodes.
+     */
+    opendashboardNodeHostShape?: pulumi.Input<string>;
     /**
      * The private IP address for the cluster's OpenSearch Dashboard.
      */
@@ -546,6 +618,30 @@ export interface ClusterState {
      */
     reverseConnectionEndpoints?: pulumi.Input<pulumi.Input<inputs.Opensearch.ClusterReverseConnectionEndpoint>[]>;
     /**
+     * (Updatable) The number of search nodes configured for the cluster.
+     */
+    searchNodeCount?: pulumi.Input<number>;
+    /**
+     * (Updatable) The amount of memory in GB, for the cluster's search nodes.
+     */
+    searchNodeHostMemoryGb?: pulumi.Input<number>;
+    /**
+     * (Updatable) The number of OCPUs configured for the cluster's search nodes.
+     */
+    searchNodeHostOcpuCount?: pulumi.Input<number>;
+    /**
+     * (Updatable) The node shape for the cluster's search nodes.
+     */
+    searchNodeHostShape?: pulumi.Input<string>;
+    /**
+     * The instance type for the cluster's search nodes.
+     */
+    searchNodeHostType?: pulumi.Input<string>;
+    /**
+     * (Updatable) The amount of storage in GB, to configure per node for the cluster's search nodes.
+     */
+    searchNodeStorageGb?: pulumi.Input<number>;
+    /**
      * (Updatable) The name of the master user that are used to manage security config
      */
     securityMasterUserName?: pulumi.Input<string>;
@@ -557,6 +653,10 @@ export interface ClusterState {
      * (Updatable) The security mode of the cluster.
      */
     securityMode?: pulumi.Input<string>;
+    /**
+     * SAML policy is optionally used for Opensearch cluster to config SAML authentication
+     */
+    securitySamlConfig?: pulumi.Input<inputs.Opensearch.ClusterSecuritySamlConfig>;
     /**
      * (Updatable) The version of the software the cluster is running.
      */
@@ -640,6 +740,10 @@ export interface ClusterArgs {
      */
     dataNodeHostOcpuCount: pulumi.Input<number>;
     /**
+     * (Updatable) The node shape for the cluster's data nodes.
+     */
+    dataNodeHostShape?: pulumi.Input<string>;
+    /**
      * TThe instance type for the cluster's data nodes.
      */
     dataNodeHostType: pulumi.Input<string>;
@@ -684,6 +788,10 @@ export interface ClusterArgs {
      */
     masterNodeHostOcpuCount: pulumi.Input<number>;
     /**
+     * (Updatable) The node shape for the cluster's master nodes.
+     */
+    masterNodeHostShape?: pulumi.Input<string>;
+    /**
      * The instance type for the cluster's master nodes.
      */
     masterNodeHostType: pulumi.Input<string>;
@@ -700,6 +808,10 @@ export interface ClusterArgs {
      */
     opendashboardNodeHostOcpuCount: pulumi.Input<number>;
     /**
+     * (Updatable) The node shape for the cluster's OpenSearch Dashboard nodes.
+     */
+    opendashboardNodeHostShape?: pulumi.Input<string>;
+    /**
      * (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
      */
     outboundClusterConfig?: pulumi.Input<inputs.Opensearch.ClusterOutboundClusterConfig>;
@@ -707,6 +819,30 @@ export interface ClusterArgs {
      * (Updatable) The customer IP addresses of the endpoint in customer VCN
      */
     reverseConnectionEndpointCustomerIps?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * (Updatable) The number of search nodes configured for the cluster.
+     */
+    searchNodeCount?: pulumi.Input<number>;
+    /**
+     * (Updatable) The amount of memory in GB, for the cluster's search nodes.
+     */
+    searchNodeHostMemoryGb?: pulumi.Input<number>;
+    /**
+     * (Updatable) The number of OCPUs configured for the cluster's search nodes.
+     */
+    searchNodeHostOcpuCount?: pulumi.Input<number>;
+    /**
+     * (Updatable) The node shape for the cluster's search nodes.
+     */
+    searchNodeHostShape?: pulumi.Input<string>;
+    /**
+     * The instance type for the cluster's search nodes.
+     */
+    searchNodeHostType?: pulumi.Input<string>;
+    /**
+     * (Updatable) The amount of storage in GB, to configure per node for the cluster's search nodes.
+     */
+    searchNodeStorageGb?: pulumi.Input<number>;
     /**
      * (Updatable) The name of the master user that are used to manage security config
      */
@@ -719,6 +855,10 @@ export interface ClusterArgs {
      * (Updatable) The security mode of the cluster.
      */
     securityMode?: pulumi.Input<string>;
+    /**
+     * SAML policy is optionally used for Opensearch cluster to config SAML authentication
+     */
+    securitySamlConfig?: pulumi.Input<inputs.Opensearch.ClusterSecuritySamlConfig>;
     /**
      * (Updatable) The version of the software the cluster is running.
      */

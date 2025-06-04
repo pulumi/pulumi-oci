@@ -62,15 +62,15 @@ if not MYPY:
         """
         max_permissible_cvss_v2score: NotRequired[pulumi.Input[builtins.float]]
         """
-        (Updatable) The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+        (Updatable) The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. A vulnerability with a CVSS V2 score below this value is not considered for remediation.
         """
         max_permissible_cvss_v3score: NotRequired[pulumi.Input[builtins.float]]
         """
-        (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+        (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. A vulnerability with a CVSS V3 score below this value is not considered for patching.
         """
         max_permissible_severity: NotRequired[pulumi.Input[builtins.str]]
         """
-        (Updatable) The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered for patching.
+        (Updatable) The maximum ADM Severity. A vulnerability with an severity below this value is not considered for remediation.
         """
         upgrade_policy: NotRequired[pulumi.Input[builtins.str]]
         """
@@ -89,9 +89,9 @@ class RemediationRecipeDetectConfigurationArgs:
                  upgrade_policy: Optional[pulumi.Input[builtins.str]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] exclusions: (Updatable) The list of dependencies to be ignored by the recommendation algorithm. The dependency pattern is matched against the 'group:artifact:version' or the purl of a dependency. An asterisk (*) at the end in the dependency pattern acts as a wildcard and matches zero or more characters.
-        :param pulumi.Input[builtins.float] max_permissible_cvss_v2score: (Updatable) The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
-        :param pulumi.Input[builtins.float] max_permissible_cvss_v3score: (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
-        :param pulumi.Input[builtins.str] max_permissible_severity: (Updatable) The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered for patching.
+        :param pulumi.Input[builtins.float] max_permissible_cvss_v2score: (Updatable) The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. A vulnerability with a CVSS V2 score below this value is not considered for remediation.
+        :param pulumi.Input[builtins.float] max_permissible_cvss_v3score: (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. A vulnerability with a CVSS V3 score below this value is not considered for patching.
+        :param pulumi.Input[builtins.str] max_permissible_severity: (Updatable) The maximum ADM Severity. A vulnerability with an severity below this value is not considered for remediation.
         :param pulumi.Input[builtins.str] upgrade_policy: (Updatable) The upgrade policy for recommendations. The `Nearest` upgrade policy upgrades a dependency to the oldest version that meets both of the following criteria: it is newer than the current version and it is not affected by a vulnerability.
         """
         if exclusions is not None:
@@ -121,7 +121,7 @@ class RemediationRecipeDetectConfigurationArgs:
     @pulumi.getter(name="maxPermissibleCvssV2score")
     def max_permissible_cvss_v2score(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        (Updatable) The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+        (Updatable) The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. A vulnerability with a CVSS V2 score below this value is not considered for remediation.
         """
         return pulumi.get(self, "max_permissible_cvss_v2score")
 
@@ -133,7 +133,7 @@ class RemediationRecipeDetectConfigurationArgs:
     @pulumi.getter(name="maxPermissibleCvssV3score")
     def max_permissible_cvss_v3score(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+        (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. A vulnerability with a CVSS V3 score below this value is not considered for patching.
         """
         return pulumi.get(self, "max_permissible_cvss_v3score")
 
@@ -145,7 +145,7 @@ class RemediationRecipeDetectConfigurationArgs:
     @pulumi.getter(name="maxPermissibleSeverity")
     def max_permissible_severity(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        (Updatable) The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered for patching.
+        (Updatable) The maximum ADM Severity. A vulnerability with an severity below this value is not considered for remediation.
         """
         return pulumi.get(self, "max_permissible_severity")
 
@@ -745,7 +745,7 @@ if not MYPY:
         """
         purl: NotRequired[pulumi.Input[builtins.str]]
         """
-        Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+        Package URL identifier, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
         """
 elif False:
     VulnerabilityAuditApplicationDependencyArgsDict: TypeAlias = Mapping[str, Any]
@@ -761,7 +761,7 @@ class VulnerabilityAuditApplicationDependencyArgs:
         :param pulumi.Input[builtins.str] node_id: Unique identifier of an application dependency, for example nodeId1. The nodeId can be generated by assigning a unique id to each application dependency in the tree of application dependencies. Every node, even those who share the same GAV, should have a different nodeId. The preferred way of constructing a nodeId is to assign incremental integers during a breadth first or depth first search. A nodeId can be reused only it refers to the same subtree of application dependencies. (This is not equivalent to referring to the same GAV, that is, a GAV can have multiple transitive dependencies.)
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] application_dependency_node_ids: List of application dependencies on which this application dependency depends, each identified by its nodeId.
         :param pulumi.Input[builtins.str] gav: Group Artifact Version (GAV) identifier (Group:Artifact:Version). Example: org.graalvm.nativeimage:svm:21.1.0. "N/A" for non-maven artifacts.
-        :param pulumi.Input[builtins.str] purl: Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+        :param pulumi.Input[builtins.str] purl: Package URL identifier, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
         """
         pulumi.set(__self__, "node_id", node_id)
         if application_dependency_node_ids is not None:
@@ -811,7 +811,7 @@ class VulnerabilityAuditApplicationDependencyArgs:
     @pulumi.getter
     def purl(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+        Package URL identifier, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
         """
         return pulumi.get(self, "purl")
 
@@ -1087,11 +1087,11 @@ if not MYPY:
     class VulnerabilityAuditVulnerabilityArgsDict(TypedDict):
         cvss_v2score: NotRequired[pulumi.Input[builtins.float]]
         """
-        Common Vulnerability Scoring System (CVSS) Version 2.
+        Common Vulnerability Scoring System (CVSS) Version 2, calculated from the metrics provided in the CVSS vector provided from the vulnerability source. This field is deprecated and will be removed in the future. The cvssV2Score can be obtained from the metrics field of the listVulnerabilities endpoint.
         """
         cvss_v3score: NotRequired[pulumi.Input[builtins.float]]
         """
-        Common Vulnerability Scoring System (CVSS) Version 3.
+        Common Vulnerability Scoring System (CVSS) Version 3, calculated from the metrics provided in the CVSS vector provided from the vulnerability source. This field is deprecated and will be removed in the future. The cvssV3Score can be obtained from the metrics field of the listVulnerabilities endpoint.
         """
         id: NotRequired[pulumi.Input[builtins.str]]
         """
@@ -1127,8 +1127,8 @@ class VulnerabilityAuditVulnerabilityArgs:
                  severity: Optional[pulumi.Input[builtins.str]] = None,
                  source: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.float] cvss_v2score: Common Vulnerability Scoring System (CVSS) Version 2.
-        :param pulumi.Input[builtins.float] cvss_v3score: Common Vulnerability Scoring System (CVSS) Version 3.
+        :param pulumi.Input[builtins.float] cvss_v2score: Common Vulnerability Scoring System (CVSS) Version 2, calculated from the metrics provided in the CVSS vector provided from the vulnerability source. This field is deprecated and will be removed in the future. The cvssV2Score can be obtained from the metrics field of the listVulnerabilities endpoint.
+        :param pulumi.Input[builtins.float] cvss_v3score: Common Vulnerability Scoring System (CVSS) Version 3, calculated from the metrics provided in the CVSS vector provided from the vulnerability source. This field is deprecated and will be removed in the future. The cvssV3Score can be obtained from the metrics field of the listVulnerabilities endpoint.
         :param pulumi.Input[builtins.str] id: Unique vulnerability identifier, e.g. CVE-1999-0067.
         :param pulumi.Input[builtins.bool] is_false_positive: Indicates if the vulnerability is a false positive according to the usage data. If no usage data was provided or the service cannot infer usage of the vulnerable code then this property is `null`.
         :param pulumi.Input[builtins.bool] is_ignored: Indicates if the vulnerability was ignored according to the audit configuration.
@@ -1154,7 +1154,7 @@ class VulnerabilityAuditVulnerabilityArgs:
     @pulumi.getter(name="cvssV2score")
     def cvss_v2score(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        Common Vulnerability Scoring System (CVSS) Version 2.
+        Common Vulnerability Scoring System (CVSS) Version 2, calculated from the metrics provided in the CVSS vector provided from the vulnerability source. This field is deprecated and will be removed in the future. The cvssV2Score can be obtained from the metrics field of the listVulnerabilities endpoint.
         """
         return pulumi.get(self, "cvss_v2score")
 
@@ -1166,7 +1166,7 @@ class VulnerabilityAuditVulnerabilityArgs:
     @pulumi.getter(name="cvssV3score")
     def cvss_v3score(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        Common Vulnerability Scoring System (CVSS) Version 3.
+        Common Vulnerability Scoring System (CVSS) Version 3, calculated from the metrics provided in the CVSS vector provided from the vulnerability source. This field is deprecated and will be removed in the future. The cvssV3Score can be obtained from the metrics field of the listVulnerabilities endpoint.
         """
         return pulumi.get(self, "cvss_v3score")
 

@@ -314,7 +314,7 @@ class ConfigConfiguration(dict):
         :param 'ConfigConfigurationFtpBasicAuthenticationDetailsArgs' ftp_basic_authentication_details: (Updatable) Details for basic authentication.
         :param builtins.str ftp_protocol: (Updatable) FTP protocol type.
         :param builtins.str ftp_request_type: (Updatable) FTP monitor request type.
-        :param builtins.bool is_active_mode: (Updatable) If enabled, Active mode will be used for the FTP connection.
+        :param builtins.bool is_active_mode: (Updatable) If enabled, Active mode will be used for the FTP connection. Not supported for SFTP protocol.
         :param builtins.bool is_certificate_validation_enabled: (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
         :param builtins.bool is_default_snapshot_enabled: (Updatable) If disabled, auto snapshots are not collected.
         :param builtins.bool is_failure_retried: (Updatable) If isFailureRetried is enabled, then a failed call will be retried.
@@ -513,7 +513,7 @@ class ConfigConfiguration(dict):
     @pulumi.getter(name="isActiveMode")
     def is_active_mode(self) -> Optional[builtins.bool]:
         """
-        (Updatable) If enabled, Active mode will be used for the FTP connection.
+        (Updatable) If enabled, Active mode will be used for the FTP connection. Not supported for SFTP protocol.
         """
         return pulumi.get(self, "is_active_mode")
 
@@ -2931,7 +2931,7 @@ class GetMonitorConfigurationResult(dict):
         :param Sequence['GetMonitorConfigurationFtpBasicAuthenticationDetailArgs'] ftp_basic_authentication_details: Details for basic authentication.
         :param builtins.str ftp_protocol: FTP protocol type.
         :param builtins.str ftp_request_type: FTP monitor request type.
-        :param builtins.bool is_active_mode: If enabled, Active mode will be used for the FTP connection.
+        :param builtins.bool is_active_mode: If enabled, Active mode will be used for the FTP connection. Not supported for SFTP protocol.
         :param builtins.bool is_certificate_validation_enabled: If certificate validation is enabled, then the call will fail in case of certification errors.
         :param builtins.bool is_default_snapshot_enabled: If disabled, auto snapshots are not collected.
         :param builtins.bool is_failure_retried: If isFailureRetried is enabled, then a failed call will be retried.
@@ -3096,7 +3096,7 @@ class GetMonitorConfigurationResult(dict):
     @pulumi.getter(name="isActiveMode")
     def is_active_mode(self) -> builtins.bool:
         """
-        If enabled, Active mode will be used for the FTP connection.
+        If enabled, Active mode will be used for the FTP connection. Not supported for SFTP protocol.
         """
         return pulumi.get(self, "is_active_mode")
 
@@ -4018,6 +4018,7 @@ class GetMonitorsMonitorCollectionItemResult(dict):
                  availability_configurations: Sequence['outputs.GetMonitorsMonitorCollectionItemAvailabilityConfigurationResult'],
                  batch_interval_in_seconds: builtins.int,
                  configurations: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationResult'],
+                 content_type: builtins.str,
                  created_by: builtins.str,
                  defined_tags: Mapping[str, builtins.str],
                  display_name: builtins.str,
@@ -4046,6 +4047,7 @@ class GetMonitorsMonitorCollectionItemResult(dict):
         :param Sequence['GetMonitorsMonitorCollectionItemAvailabilityConfigurationArgs'] availability_configurations: Monitor availability configuration details.
         :param builtins.int batch_interval_in_seconds: Time interval between two runs in round robin batch mode (SchedulingPolicy - BATCHED_ROUND_ROBIN).
         :param Sequence['GetMonitorsMonitorCollectionItemConfigurationArgs'] configurations: Details of monitor configuration.
+        :param builtins.str content_type: Content type of the script.
         :param builtins.str created_by: Name of the user that created the monitor.
         :param Mapping[str, builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param builtins.str display_name: A filter to return only the resources that match the entire display name.
@@ -4074,6 +4076,7 @@ class GetMonitorsMonitorCollectionItemResult(dict):
         pulumi.set(__self__, "availability_configurations", availability_configurations)
         pulumi.set(__self__, "batch_interval_in_seconds", batch_interval_in_seconds)
         pulumi.set(__self__, "configurations", configurations)
+        pulumi.set(__self__, "content_type", content_type)
         pulumi.set(__self__, "created_by", created_by)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
@@ -4129,6 +4132,14 @@ class GetMonitorsMonitorCollectionItemResult(dict):
         Details of monitor configuration.
         """
         return pulumi.get(self, "configurations")
+
+    @property
+    @pulumi.getter(name="contentType")
+    def content_type(self) -> builtins.str:
+        """
+        Content type of the script.
+        """
+        return pulumi.get(self, "content_type")
 
     @property
     @pulumi.getter(name="createdBy")
@@ -4395,7 +4406,7 @@ class GetMonitorsMonitorCollectionItemConfigurationResult(dict):
         :param Sequence['GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArgs'] ftp_basic_authentication_details: Details for basic authentication.
         :param builtins.str ftp_protocol: FTP protocol type.
         :param builtins.str ftp_request_type: FTP monitor request type.
-        :param builtins.bool is_active_mode: If enabled, Active mode will be used for the FTP connection.
+        :param builtins.bool is_active_mode: If enabled, Active mode will be used for the FTP connection. Not supported for SFTP protocol.
         :param builtins.bool is_certificate_validation_enabled: If certificate validation is enabled, then the call will fail in case of certification errors.
         :param builtins.bool is_default_snapshot_enabled: If disabled, auto snapshots are not collected.
         :param builtins.bool is_failure_retried: If isFailureRetried is enabled, then a failed call will be retried.
@@ -4560,7 +4571,7 @@ class GetMonitorsMonitorCollectionItemConfigurationResult(dict):
     @pulumi.getter(name="isActiveMode")
     def is_active_mode(self) -> builtins.bool:
         """
-        If enabled, Active mode will be used for the FTP connection.
+        If enabled, Active mode will be used for the FTP connection. Not supported for SFTP protocol.
         """
         return pulumi.get(self, "is_active_mode")
 
@@ -6654,7 +6665,7 @@ class GetScriptsScriptCollectionItemResult(dict):
                  time_uploaded: builtins.str):
         """
         :param builtins.str apm_domain_id: The APM domain ID the request is intended for.
-        :param builtins.str content: The content of the script. It may contain custom-defined tags that can be used for setting dynamic parameters. The format to set dynamic parameters is: `<ORAP><ON>param name</ON><OV>param value</OV><OS>isParamValueSecret(true/false)</OS></ORAP>`. Param value and isParamValueSecret are optional, the default value for isParamValueSecret is false. Examples: With mandatory param name : `<ORAP><ON>param name</ON></ORAP>` With parameter name and value : `<ORAP><ON>param name</ON><OV>param value</OV></ORAP>` Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format.
+        :param builtins.str content: The content of the script. It may contain custom-defined tags that can be used for setting dynamic parameters. The format to set dynamic parameters is: `<ORAP><ON>param name</ON><OV>param value</OV><OS>isParamValueSecret(true/false)</OS></ORAP>`. Param value and isParamValueSecret are optional, the default value for isParamValueSecret is false. Examples: With mandatory param name : `<ORAP><ON>param name</ON></ORAP>` With parameter name and value : `<ORAP><ON>param name</ON><OV>param value</OV></ORAP>` Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format. If the content type is PLAYWRIGHT_TS, then the content should be in TypeScript format.
         :param builtins.str content_file_name: File name of the uploaded script content.
         :param builtins.int content_size_in_bytes: Size of the script content.
         :param builtins.str content_type: A filter to return only resources that match the content type given.
@@ -6695,7 +6706,7 @@ class GetScriptsScriptCollectionItemResult(dict):
     @pulumi.getter
     def content(self) -> builtins.str:
         """
-        The content of the script. It may contain custom-defined tags that can be used for setting dynamic parameters. The format to set dynamic parameters is: `<ORAP><ON>param name</ON><OV>param value</OV><OS>isParamValueSecret(true/false)</OS></ORAP>`. Param value and isParamValueSecret are optional, the default value for isParamValueSecret is false. Examples: With mandatory param name : `<ORAP><ON>param name</ON></ORAP>` With parameter name and value : `<ORAP><ON>param name</ON><OV>param value</OV></ORAP>` Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format.
+        The content of the script. It may contain custom-defined tags that can be used for setting dynamic parameters. The format to set dynamic parameters is: `<ORAP><ON>param name</ON><OV>param value</OV><OS>isParamValueSecret(true/false)</OS></ORAP>`. Param value and isParamValueSecret are optional, the default value for isParamValueSecret is false. Examples: With mandatory param name : `<ORAP><ON>param name</ON></ORAP>` With parameter name and value : `<ORAP><ON>param name</ON><OV>param value</OV></ORAP>` Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format. If the content type is PLAYWRIGHT_TS, then the content should be in TypeScript format.
         """
         return pulumi.get(self, "content")
 

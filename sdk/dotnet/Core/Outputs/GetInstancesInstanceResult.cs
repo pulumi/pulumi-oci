@@ -122,6 +122,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> Metadata;
         /// <summary>
+        /// Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetInstancesInstancePlacementConstraintDetailResult> PlacementConstraintDetails;
+        /// <summary>
         /// The platform configuration for the instance.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInstancesInstancePlatformConfigResult> PlatformConfigs;
@@ -236,6 +240,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             ImmutableDictionary<string, string> metadata,
 
+            ImmutableArray<Outputs.GetInstancesInstancePlacementConstraintDetailResult> placementConstraintDetails,
+
             ImmutableArray<Outputs.GetInstancesInstancePlatformConfigResult> platformConfigs,
 
             ImmutableArray<Outputs.GetInstancesInstancePreemptibleInstanceConfigResult> preemptibleInstanceConfigs,
@@ -301,6 +307,7 @@ namespace Pulumi.Oci.Core.Outputs
             LaunchVolumeAttachments = launchVolumeAttachments;
             LicensingConfigs = licensingConfigs;
             Metadata = metadata;
+            PlacementConstraintDetails = placementConstraintDetails;
             PlatformConfigs = platformConfigs;
             PreemptibleInstanceConfigs = preemptibleInstanceConfigs;
             PreserveBootVolume = preserveBootVolume;

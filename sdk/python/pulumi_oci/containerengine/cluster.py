@@ -241,6 +241,7 @@ class _ClusterState:
                  metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterMetadataArgs']]]] = None,
                  name: Optional[pulumi.Input[builtins.str]] = None,
                  open_id_connect_discovery_endpoint: Optional[pulumi.Input[builtins.str]] = None,
+                 open_id_connect_discovery_key: Optional[pulumi.Input[builtins.str]] = None,
                  options: Optional[pulumi.Input['ClusterOptionsArgs']] = None,
                  state: Optional[pulumi.Input[builtins.str]] = None,
                  type: Optional[pulumi.Input[builtins.str]] = None,
@@ -261,6 +262,7 @@ class _ClusterState:
         :param pulumi.Input[Sequence[pulumi.Input['ClusterMetadataArgs']]] metadatas: Metadata about the cluster.
         :param pulumi.Input[builtins.str] name: (Updatable) The name of the cluster. Avoid entering confidential information.
         :param pulumi.Input[builtins.str] open_id_connect_discovery_endpoint: The cluster-specific OpenID Connect Discovery endpoint
+        :param pulumi.Input[builtins.str] open_id_connect_discovery_key: The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
         :param pulumi.Input['ClusterOptionsArgs'] options: (Updatable) Optional attributes for the cluster.
         :param pulumi.Input[builtins.str] state: The state of the cluster masters.
         :param pulumi.Input[builtins.str] type: (Updatable) Type of cluster
@@ -298,6 +300,8 @@ class _ClusterState:
             pulumi.set(__self__, "name", name)
         if open_id_connect_discovery_endpoint is not None:
             pulumi.set(__self__, "open_id_connect_discovery_endpoint", open_id_connect_discovery_endpoint)
+        if open_id_connect_discovery_key is not None:
+            pulumi.set(__self__, "open_id_connect_discovery_key", open_id_connect_discovery_key)
         if options is not None:
             pulumi.set(__self__, "options", options)
         if state is not None:
@@ -474,6 +478,18 @@ class _ClusterState:
     @open_id_connect_discovery_endpoint.setter
     def open_id_connect_discovery_endpoint(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "open_id_connect_discovery_endpoint", value)
+
+    @property
+    @pulumi.getter(name="openIdConnectDiscoveryKey")
+    def open_id_connect_discovery_key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
+        """
+        return pulumi.get(self, "open_id_connect_discovery_key")
+
+    @open_id_connect_discovery_key.setter
+    def open_id_connect_discovery_key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "open_id_connect_discovery_key", value)
 
     @property
     @pulumi.getter
@@ -827,6 +843,7 @@ class Cluster(pulumi.CustomResource):
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["metadatas"] = None
             __props__.__dict__["open_id_connect_discovery_endpoint"] = None
+            __props__.__dict__["open_id_connect_discovery_key"] = None
             __props__.__dict__["state"] = None
         super(Cluster, __self__).__init__(
             'oci:ContainerEngine/cluster:Cluster',
@@ -852,6 +869,7 @@ class Cluster(pulumi.CustomResource):
             metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterMetadataArgs', 'ClusterMetadataArgsDict']]]]] = None,
             name: Optional[pulumi.Input[builtins.str]] = None,
             open_id_connect_discovery_endpoint: Optional[pulumi.Input[builtins.str]] = None,
+            open_id_connect_discovery_key: Optional[pulumi.Input[builtins.str]] = None,
             options: Optional[pulumi.Input[Union['ClusterOptionsArgs', 'ClusterOptionsArgsDict']]] = None,
             state: Optional[pulumi.Input[builtins.str]] = None,
             type: Optional[pulumi.Input[builtins.str]] = None,
@@ -877,6 +895,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterMetadataArgs', 'ClusterMetadataArgsDict']]]] metadatas: Metadata about the cluster.
         :param pulumi.Input[builtins.str] name: (Updatable) The name of the cluster. Avoid entering confidential information.
         :param pulumi.Input[builtins.str] open_id_connect_discovery_endpoint: The cluster-specific OpenID Connect Discovery endpoint
+        :param pulumi.Input[builtins.str] open_id_connect_discovery_key: The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
         :param pulumi.Input[Union['ClusterOptionsArgs', 'ClusterOptionsArgsDict']] options: (Updatable) Optional attributes for the cluster.
         :param pulumi.Input[builtins.str] state: The state of the cluster masters.
         :param pulumi.Input[builtins.str] type: (Updatable) Type of cluster
@@ -904,6 +923,7 @@ class Cluster(pulumi.CustomResource):
         __props__.__dict__["metadatas"] = metadatas
         __props__.__dict__["name"] = name
         __props__.__dict__["open_id_connect_discovery_endpoint"] = open_id_connect_discovery_endpoint
+        __props__.__dict__["open_id_connect_discovery_key"] = open_id_connect_discovery_key
         __props__.__dict__["options"] = options
         __props__.__dict__["state"] = state
         __props__.__dict__["type"] = type
@@ -1021,6 +1041,14 @@ class Cluster(pulumi.CustomResource):
         The cluster-specific OpenID Connect Discovery endpoint
         """
         return pulumi.get(self, "open_id_connect_discovery_endpoint")
+
+    @property
+    @pulumi.getter(name="openIdConnectDiscoveryKey")
+    def open_id_connect_discovery_key(self) -> pulumi.Output[builtins.str]:
+        """
+        The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
+        """
+        return pulumi.get(self, "open_id_connect_discovery_key")
 
     @property
     @pulumi.getter

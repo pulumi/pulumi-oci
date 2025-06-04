@@ -20,6 +20,21 @@ public final class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatur
     public static final PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs Empty = new PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs();
 
     /**
+     * Indicates whether Diagnostics &amp; Management should be enabled for all the current pluggable databases in the container database.
+     * 
+     */
+    @Import(name="canEnableAllCurrentPdbs")
+    private @Nullable Output<Boolean> canEnableAllCurrentPdbs;
+
+    /**
+     * @return Indicates whether Diagnostics &amp; Management should be enabled for all the current pluggable databases in the container database.
+     * 
+     */
+    public Optional<Output<Boolean>> canEnableAllCurrentPdbs() {
+        return Optional.ofNullable(this.canEnableAllCurrentPdbs);
+    }
+
+    /**
      * The connector details required to connect to an Oracle cloud database.
      * 
      */
@@ -65,14 +80,14 @@ public final class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatur
     }
 
     /**
-     * Indicates whether the pluggable database can be enabled automatically.
+     * Indicates whether Diagnostics &amp; Management should be enabled automatically for all the pluggable databases in the container database.
      * 
      */
     @Import(name="isAutoEnablePluggableDatabase")
     private @Nullable Output<Boolean> isAutoEnablePluggableDatabase;
 
     /**
-     * @return Indicates whether the pluggable database can be enabled automatically.
+     * @return Indicates whether Diagnostics &amp; Management should be enabled automatically for all the pluggable databases in the container database.
      * 
      */
     public Optional<Output<Boolean>> isAutoEnablePluggableDatabase() {
@@ -97,6 +112,7 @@ public final class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatur
     private PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs() {}
 
     private PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs(PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs $) {
+        this.canEnableAllCurrentPdbs = $.canEnableAllCurrentPdbs;
         this.connectorDetails = $.connectorDetails;
         this.databaseConnectionDetails = $.databaseConnectionDetails;
         this.feature = $.feature;
@@ -120,6 +136,27 @@ public final class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatur
 
         public Builder(PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs defaults) {
             $ = new PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param canEnableAllCurrentPdbs Indicates whether Diagnostics &amp; Management should be enabled for all the current pluggable databases in the container database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder canEnableAllCurrentPdbs(@Nullable Output<Boolean> canEnableAllCurrentPdbs) {
+            $.canEnableAllCurrentPdbs = canEnableAllCurrentPdbs;
+            return this;
+        }
+
+        /**
+         * @param canEnableAllCurrentPdbs Indicates whether Diagnostics &amp; Management should be enabled for all the current pluggable databases in the container database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder canEnableAllCurrentPdbs(Boolean canEnableAllCurrentPdbs) {
+            return canEnableAllCurrentPdbs(Output.of(canEnableAllCurrentPdbs));
         }
 
         /**
@@ -186,7 +223,7 @@ public final class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatur
         }
 
         /**
-         * @param isAutoEnablePluggableDatabase Indicates whether the pluggable database can be enabled automatically.
+         * @param isAutoEnablePluggableDatabase Indicates whether Diagnostics &amp; Management should be enabled automatically for all the pluggable databases in the container database.
          * 
          * @return builder
          * 
@@ -197,7 +234,7 @@ public final class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatur
         }
 
         /**
-         * @param isAutoEnablePluggableDatabase Indicates whether the pluggable database can be enabled automatically.
+         * @param isAutoEnablePluggableDatabase Indicates whether Diagnostics &amp; Management should be enabled automatically for all the pluggable databases in the container database.
          * 
          * @return builder
          * 

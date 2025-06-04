@@ -30,6 +30,7 @@ namespace Pulumi.Oci.LogAnalytics
         ///     var testLogAnalyticsResourceCategoriesList = Oci.LogAnalytics.GetLogAnalyticsResourceCategoriesList.Invoke(new()
         ///     {
         ///         Namespace = logAnalyticsResourceCategoriesListNamespace,
+        ///         CompartmentId = logAnalyticsResourceCategoriesCompartmentId,
         ///         ResourceIds = logAnalyticsResourceCategoriesListResourceIds,
         ///         ResourceTypes = logAnalyticsResourceCategoriesListResourceTypes,
         ///         ResourceCategories = logAnalyticsResourceCategoriesListResourceCategories,
@@ -60,6 +61,7 @@ namespace Pulumi.Oci.LogAnalytics
         ///     var testLogAnalyticsResourceCategoriesList = Oci.LogAnalytics.GetLogAnalyticsResourceCategoriesList.Invoke(new()
         ///     {
         ///         Namespace = logAnalyticsResourceCategoriesListNamespace,
+        ///         CompartmentId = logAnalyticsResourceCategoriesCompartmentId,
         ///         ResourceIds = logAnalyticsResourceCategoriesListResourceIds,
         ///         ResourceTypes = logAnalyticsResourceCategoriesListResourceTypes,
         ///         ResourceCategories = logAnalyticsResourceCategoriesListResourceCategories,
@@ -90,6 +92,7 @@ namespace Pulumi.Oci.LogAnalytics
         ///     var testLogAnalyticsResourceCategoriesList = Oci.LogAnalytics.GetLogAnalyticsResourceCategoriesList.Invoke(new()
         ///     {
         ///         Namespace = logAnalyticsResourceCategoriesListNamespace,
+        ///         CompartmentId = logAnalyticsResourceCategoriesCompartmentId,
         ///         ResourceIds = logAnalyticsResourceCategoriesListResourceIds,
         ///         ResourceTypes = logAnalyticsResourceCategoriesListResourceTypes,
         ///         ResourceCategories = logAnalyticsResourceCategoriesListResourceCategories,
@@ -105,6 +108,12 @@ namespace Pulumi.Oci.LogAnalytics
 
     public sealed class GetLogAnalyticsResourceCategoriesListArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The compartment id in which to list resources.
+        /// </summary>
+        [Input("compartmentId")]
+        public string? CompartmentId { get; set; }
+
         /// <summary>
         /// The Logging Analytics namespace used for the request.
         /// </summary>
@@ -137,6 +146,12 @@ namespace Pulumi.Oci.LogAnalytics
 
     public sealed class GetLogAnalyticsResourceCategoriesListInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The compartment id in which to list resources.
+        /// </summary>
+        [Input("compartmentId")]
+        public Input<string>? CompartmentId { get; set; }
+
         /// <summary>
         /// The Logging Analytics namespace used for the request.
         /// </summary>
@@ -176,6 +191,10 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         public readonly ImmutableArray<Outputs.GetLogAnalyticsResourceCategoriesListCategoryResult> Categories;
         /// <summary>
+        /// The compartment ID of the resource, if applicable.
+        /// </summary>
+        public readonly string? CompartmentId;
+        /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
@@ -192,6 +211,8 @@ namespace Pulumi.Oci.LogAnalytics
         private GetLogAnalyticsResourceCategoriesListResult(
             ImmutableArray<Outputs.GetLogAnalyticsResourceCategoriesListCategoryResult> categories,
 
+            string? compartmentId,
+
             string id,
 
             ImmutableArray<Outputs.GetLogAnalyticsResourceCategoriesListItemResult> items,
@@ -205,6 +226,7 @@ namespace Pulumi.Oci.LogAnalytics
             string? resourceTypes)
         {
             Categories = categories;
+            CompartmentId = compartmentId;
             Id = id;
             Items = items;
             Namespace = @namespace;

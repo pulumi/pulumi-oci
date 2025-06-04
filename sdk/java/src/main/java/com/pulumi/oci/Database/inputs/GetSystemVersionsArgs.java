@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.GetSystemVersionsFilterArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -56,18 +57,48 @@ public final class GetSystemVersionsArgs extends com.pulumi.resources.InvokeArgs
     }
 
     /**
-     * Specifies shape query parameter.
+     * If provided, return highest versions from each major version family.
      * 
      */
-    @Import(name="shape", required=true)
-    private Output<String> shape;
+    @Import(name="isLatest")
+    private @Nullable Output<Boolean> isLatest;
 
     /**
-     * @return Specifies shape query parameter.
+     * @return If provided, return highest versions from each major version family.
      * 
      */
-    public Output<String> shape() {
-        return this.shape;
+    public Optional<Output<Boolean>> isLatest() {
+        return Optional.ofNullable(this.isLatest);
+    }
+
+    /**
+     * If provided, filters the results for the specified resource Id.
+     * 
+     */
+    @Import(name="resourceId")
+    private @Nullable Output<String> resourceId;
+
+    /**
+     * @return If provided, filters the results for the specified resource Id.
+     * 
+     */
+    public Optional<Output<String>> resourceId() {
+        return Optional.ofNullable(this.resourceId);
+    }
+
+    /**
+     * If provided, filters the results for the given shape.
+     * 
+     */
+    @Import(name="shape")
+    private @Nullable Output<String> shape;
+
+    /**
+     * @return If provided, filters the results for the given shape.
+     * 
+     */
+    public Optional<Output<String>> shape() {
+        return Optional.ofNullable(this.shape);
     }
 
     private GetSystemVersionsArgs() {}
@@ -76,6 +107,8 @@ public final class GetSystemVersionsArgs extends com.pulumi.resources.InvokeArgs
         this.compartmentId = $.compartmentId;
         this.filters = $.filters;
         this.giVersion = $.giVersion;
+        this.isLatest = $.isLatest;
+        this.resourceId = $.resourceId;
         this.shape = $.shape;
     }
 
@@ -153,18 +186,60 @@ public final class GetSystemVersionsArgs extends com.pulumi.resources.InvokeArgs
         }
 
         /**
-         * @param shape Specifies shape query parameter.
+         * @param isLatest If provided, return highest versions from each major version family.
          * 
          * @return builder
          * 
          */
-        public Builder shape(Output<String> shape) {
+        public Builder isLatest(@Nullable Output<Boolean> isLatest) {
+            $.isLatest = isLatest;
+            return this;
+        }
+
+        /**
+         * @param isLatest If provided, return highest versions from each major version family.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isLatest(Boolean isLatest) {
+            return isLatest(Output.of(isLatest));
+        }
+
+        /**
+         * @param resourceId If provided, filters the results for the specified resource Id.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceId(@Nullable Output<String> resourceId) {
+            $.resourceId = resourceId;
+            return this;
+        }
+
+        /**
+         * @param resourceId If provided, filters the results for the specified resource Id.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceId(String resourceId) {
+            return resourceId(Output.of(resourceId));
+        }
+
+        /**
+         * @param shape If provided, filters the results for the given shape.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shape(@Nullable Output<String> shape) {
             $.shape = shape;
             return this;
         }
 
         /**
-         * @param shape Specifies shape query parameter.
+         * @param shape If provided, filters the results for the given shape.
          * 
          * @return builder
          * 
@@ -179,9 +254,6 @@ public final class GetSystemVersionsArgs extends com.pulumi.resources.InvokeArgs
             }
             if ($.giVersion == null) {
                 throw new MissingRequiredPropertyException("GetSystemVersionsArgs", "giVersion");
-            }
-            if ($.shape == null) {
-                throw new MissingRequiredPropertyException("GetSystemVersionsArgs", "shape");
             }
             return $;
         }

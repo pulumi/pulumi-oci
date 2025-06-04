@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -32,6 +32,7 @@ import (
 //			_, err := loganalytics.GetLogAnalyticsEntityTopology(ctx, &loganalytics.GetLogAnalyticsEntityTopologyArgs{
 //				LogAnalyticsEntityId: testLogAnalyticsEntity.Id,
 //				Namespace:            logAnalyticsEntityTopologyNamespace,
+//				Context:              pulumi.StringRef(logAnalyticsEntityTopologyContext),
 //				MetadataEquals:       logAnalyticsEntityTopologyMetadataEquals,
 //				State:                pulumi.StringRef(logAnalyticsEntityTopologyState),
 //			}, nil)
@@ -55,6 +56,9 @@ func GetLogAnalyticsEntityTopology(ctx *pulumi.Context, args *GetLogAnalyticsEnt
 
 // A collection of arguments for invoking getLogAnalyticsEntityTopology.
 type GetLogAnalyticsEntityTopologyArgs struct {
+	// A filter to return log analytics entity toplogy whose context matches the specified string.
+	Context *string                               `pulumi:"context"`
+	Filters []GetLogAnalyticsEntityTopologyFilter `pulumi:"filters"`
 	// The log analytics entity OCID.
 	LogAnalyticsEntityId string `pulumi:"logAnalyticsEntityId"`
 	// A filter to return only log analytics entities whose metadata name, value and type matches the specified string. Each item in the array has the format "{name}:{value}:{type}".  All inputs are case-insensitive.
@@ -67,6 +71,8 @@ type GetLogAnalyticsEntityTopologyArgs struct {
 
 // A collection of values returned by getLogAnalyticsEntityTopology.
 type GetLogAnalyticsEntityTopologyResult struct {
+	Context *string                               `pulumi:"context"`
+	Filters []GetLogAnalyticsEntityTopologyFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// An array of entity metadata.
@@ -89,6 +95,9 @@ func GetLogAnalyticsEntityTopologyOutput(ctx *pulumi.Context, args GetLogAnalyti
 
 // A collection of arguments for invoking getLogAnalyticsEntityTopology.
 type GetLogAnalyticsEntityTopologyOutputArgs struct {
+	// A filter to return log analytics entity toplogy whose context matches the specified string.
+	Context pulumi.StringPtrInput                         `pulumi:"context"`
+	Filters GetLogAnalyticsEntityTopologyFilterArrayInput `pulumi:"filters"`
 	// The log analytics entity OCID.
 	LogAnalyticsEntityId pulumi.StringInput `pulumi:"logAnalyticsEntityId"`
 	// A filter to return only log analytics entities whose metadata name, value and type matches the specified string. Each item in the array has the format "{name}:{value}:{type}".  All inputs are case-insensitive.
@@ -116,6 +125,14 @@ func (o GetLogAnalyticsEntityTopologyResultOutput) ToGetLogAnalyticsEntityTopolo
 
 func (o GetLogAnalyticsEntityTopologyResultOutput) ToGetLogAnalyticsEntityTopologyResultOutputWithContext(ctx context.Context) GetLogAnalyticsEntityTopologyResultOutput {
 	return o
+}
+
+func (o GetLogAnalyticsEntityTopologyResultOutput) Context() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyResult) *string { return v.Context }).(pulumi.StringPtrOutput)
+}
+
+func (o GetLogAnalyticsEntityTopologyResultOutput) Filters() GetLogAnalyticsEntityTopologyFilterArrayOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyResult) []GetLogAnalyticsEntityTopologyFilter { return v.Filters }).(GetLogAnalyticsEntityTopologyFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.

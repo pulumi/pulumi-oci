@@ -24,6 +24,7 @@ import * as utilities from "../utilities";
  *     isIncludePatterns: namespaceEffectivePropertyIsIncludePatterns,
  *     name: namespaceEffectivePropertyName,
  *     patternId: testPattern.id,
+ *     patternIdLong: namespaceEffectivePropertyPatternIdLong,
  *     sourceName: namespaceEffectivePropertySourceName,
  * });
  * ```
@@ -38,6 +39,7 @@ export function getNamespaceEffectiveProperties(args: GetNamespaceEffectivePrope
         "name": args.name,
         "namespace": args.namespace,
         "patternId": args.patternId,
+        "patternIdLong": args.patternIdLong,
         "sourceName": args.sourceName,
     }, opts);
 }
@@ -72,6 +74,10 @@ export interface GetNamespaceEffectivePropertiesArgs {
      */
     patternId?: number;
     /**
+     * The pattern id (long).
+     */
+    patternIdLong?: string;
+    /**
      * The source name.
      */
     sourceName?: string;
@@ -99,6 +105,7 @@ export interface GetNamespaceEffectivePropertiesResult {
     readonly name?: string;
     readonly namespace: string;
     readonly patternId?: number;
+    readonly patternIdLong?: string;
     readonly sourceName?: string;
 }
 /**
@@ -119,6 +126,7 @@ export interface GetNamespaceEffectivePropertiesResult {
  *     isIncludePatterns: namespaceEffectivePropertyIsIncludePatterns,
  *     name: namespaceEffectivePropertyName,
  *     patternId: testPattern.id,
+ *     patternIdLong: namespaceEffectivePropertyPatternIdLong,
  *     sourceName: namespaceEffectivePropertySourceName,
  * });
  * ```
@@ -133,6 +141,7 @@ export function getNamespaceEffectivePropertiesOutput(args: GetNamespaceEffectiv
         "name": args.name,
         "namespace": args.namespace,
         "patternId": args.patternId,
+        "patternIdLong": args.patternIdLong,
         "sourceName": args.sourceName,
     }, opts);
 }
@@ -166,6 +175,10 @@ export interface GetNamespaceEffectivePropertiesOutputArgs {
      * The pattern id.
      */
     patternId?: pulumi.Input<number>;
+    /**
+     * The pattern id (long).
+     */
+    patternIdLong?: pulumi.Input<string>;
     /**
      * The source name.
      */

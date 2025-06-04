@@ -28,7 +28,7 @@ class GetInstanceResult:
     """
     A collection of values returned by getInstance.
     """
-    def __init__(__self__, agent_configs=None, async_=None, availability_configs=None, availability_domain=None, boot_volume_id=None, capacity_reservation_id=None, cluster_placement_group_id=None, compartment_id=None, compute_cluster_id=None, create_vnic_details=None, dedicated_vm_host_id=None, defined_tags=None, display_name=None, extended_metadata=None, fault_domain=None, freeform_tags=None, hostname_label=None, id=None, image=None, instance_configuration_id=None, instance_id=None, instance_options=None, ipxe_script=None, is_cross_numa_node=None, is_pv_encryption_in_transit_enabled=None, launch_mode=None, launch_options=None, launch_volume_attachments=None, licensing_configs=None, metadata=None, platform_configs=None, preemptible_instance_configs=None, preserve_boot_volume=None, preserve_data_volumes_created_at_launch=None, private_ip=None, public_ip=None, region=None, security_attributes=None, security_attributes_state=None, shape=None, shape_configs=None, source_details=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_maintenance_reboot_due=None, update_operation_constraint=None):
+    def __init__(__self__, agent_configs=None, async_=None, availability_configs=None, availability_domain=None, boot_volume_id=None, capacity_reservation_id=None, cluster_placement_group_id=None, compartment_id=None, compute_cluster_id=None, create_vnic_details=None, dedicated_vm_host_id=None, defined_tags=None, display_name=None, extended_metadata=None, fault_domain=None, freeform_tags=None, hostname_label=None, id=None, image=None, instance_configuration_id=None, instance_id=None, instance_options=None, ipxe_script=None, is_cross_numa_node=None, is_pv_encryption_in_transit_enabled=None, launch_mode=None, launch_options=None, launch_volume_attachments=None, licensing_configs=None, metadata=None, placement_constraint_details=None, platform_configs=None, preemptible_instance_configs=None, preserve_boot_volume=None, preserve_data_volumes_created_at_launch=None, private_ip=None, public_ip=None, region=None, security_attributes=None, security_attributes_state=None, shape=None, shape_configs=None, source_details=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_maintenance_reboot_due=None, update_operation_constraint=None):
         if agent_configs and not isinstance(agent_configs, list):
             raise TypeError("Expected argument 'agent_configs' to be a list")
         pulumi.set(__self__, "agent_configs", agent_configs)
@@ -119,6 +119,9 @@ class GetInstanceResult:
         if metadata and not isinstance(metadata, dict):
             raise TypeError("Expected argument 'metadata' to be a dict")
         pulumi.set(__self__, "metadata", metadata)
+        if placement_constraint_details and not isinstance(placement_constraint_details, list):
+            raise TypeError("Expected argument 'placement_constraint_details' to be a list")
+        pulumi.set(__self__, "placement_constraint_details", placement_constraint_details)
         if platform_configs and not isinstance(platform_configs, list):
             raise TypeError("Expected argument 'platform_configs' to be a list")
         pulumi.set(__self__, "platform_configs", platform_configs)
@@ -406,6 +409,14 @@ class GetInstanceResult:
         return pulumi.get(self, "metadata")
 
     @property
+    @pulumi.getter(name="placementConstraintDetails")
+    def placement_constraint_details(self) -> Sequence['outputs.GetInstancePlacementConstraintDetailResult']:
+        """
+        Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+        """
+        return pulumi.get(self, "placement_constraint_details")
+
+    @property
     @pulumi.getter(name="platformConfigs")
     def platform_configs(self) -> Sequence['outputs.GetInstancePlatformConfigResult']:
         """
@@ -575,6 +586,7 @@ class AwaitableGetInstanceResult(GetInstanceResult):
             launch_volume_attachments=self.launch_volume_attachments,
             licensing_configs=self.licensing_configs,
             metadata=self.metadata,
+            placement_constraint_details=self.placement_constraint_details,
             platform_configs=self.platform_configs,
             preemptible_instance_configs=self.preemptible_instance_configs,
             preserve_boot_volume=self.preserve_boot_volume,
@@ -653,6 +665,7 @@ def get_instance(instance_id: Optional[builtins.str] = None,
         launch_volume_attachments=pulumi.get(__ret__, 'launch_volume_attachments'),
         licensing_configs=pulumi.get(__ret__, 'licensing_configs'),
         metadata=pulumi.get(__ret__, 'metadata'),
+        placement_constraint_details=pulumi.get(__ret__, 'placement_constraint_details'),
         platform_configs=pulumi.get(__ret__, 'platform_configs'),
         preemptible_instance_configs=pulumi.get(__ret__, 'preemptible_instance_configs'),
         preserve_boot_volume=pulumi.get(__ret__, 'preserve_boot_volume'),
@@ -728,6 +741,7 @@ def get_instance_output(instance_id: Optional[pulumi.Input[builtins.str]] = None
         launch_volume_attachments=pulumi.get(__response__, 'launch_volume_attachments'),
         licensing_configs=pulumi.get(__response__, 'licensing_configs'),
         metadata=pulumi.get(__response__, 'metadata'),
+        placement_constraint_details=pulumi.get(__response__, 'placement_constraint_details'),
         platform_configs=pulumi.get(__response__, 'platform_configs'),
         preemptible_instance_configs=pulumi.get(__response__, 'preemptible_instance_configs'),
         preserve_boot_volume=pulumi.get(__response__, 'preserve_boot_volume'),

@@ -18,6 +18,13 @@ public final class DatabaseDbmFeaturesManagementArgs extends com.pulumi.resource
 
     public static final DatabaseDbmFeaturesManagementArgs Empty = new DatabaseDbmFeaturesManagementArgs();
 
+    @Import(name="canDisableAllPdbs")
+    private @Nullable Output<Boolean> canDisableAllPdbs;
+
+    public Optional<Output<Boolean>> canDisableAllPdbs() {
+        return Optional.ofNullable(this.canDisableAllPdbs);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
      * 
@@ -54,6 +61,13 @@ public final class DatabaseDbmFeaturesManagementArgs extends com.pulumi.resource
         return this.enableDatabaseDbmFeature;
     }
 
+    @Import(name="feature")
+    private @Nullable Output<String> feature;
+
+    public Optional<Output<String>> feature() {
+        return Optional.ofNullable(this.feature);
+    }
+
     /**
      * The details required to enable the specified Database Management feature.
      * 
@@ -79,8 +93,10 @@ public final class DatabaseDbmFeaturesManagementArgs extends com.pulumi.resource
     private DatabaseDbmFeaturesManagementArgs() {}
 
     private DatabaseDbmFeaturesManagementArgs(DatabaseDbmFeaturesManagementArgs $) {
+        this.canDisableAllPdbs = $.canDisableAllPdbs;
         this.databaseId = $.databaseId;
         this.enableDatabaseDbmFeature = $.enableDatabaseDbmFeature;
+        this.feature = $.feature;
         this.featureDetails = $.featureDetails;
         this.modifyDatabaseDbmFeature = $.modifyDatabaseDbmFeature;
     }
@@ -101,6 +117,15 @@ public final class DatabaseDbmFeaturesManagementArgs extends com.pulumi.resource
 
         public Builder(DatabaseDbmFeaturesManagementArgs defaults) {
             $ = new DatabaseDbmFeaturesManagementArgs(Objects.requireNonNull(defaults));
+        }
+
+        public Builder canDisableAllPdbs(@Nullable Output<Boolean> canDisableAllPdbs) {
+            $.canDisableAllPdbs = canDisableAllPdbs;
+            return this;
+        }
+
+        public Builder canDisableAllPdbs(Boolean canDisableAllPdbs) {
+            return canDisableAllPdbs(Output.of(canDisableAllPdbs));
         }
 
         /**
@@ -149,6 +174,15 @@ public final class DatabaseDbmFeaturesManagementArgs extends com.pulumi.resource
          */
         public Builder enableDatabaseDbmFeature(Boolean enableDatabaseDbmFeature) {
             return enableDatabaseDbmFeature(Output.of(enableDatabaseDbmFeature));
+        }
+
+        public Builder feature(@Nullable Output<String> feature) {
+            $.feature = feature;
+            return this;
+        }
+
+        public Builder feature(String feature) {
+            return feature(Output.of(feature));
         }
 
         /**

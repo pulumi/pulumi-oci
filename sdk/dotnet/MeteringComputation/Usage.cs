@@ -87,7 +87,7 @@ namespace Pulumi.Oci.MeteringComputation
         public Output<string> Granularity { get; private set; } = null!;
 
         /// <summary>
-        /// Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+        /// Aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
         /// </summary>
         [Output("groupBies")]
         public Output<ImmutableArray<string>> GroupBies { get; private set; } = null!;
@@ -99,7 +99,7 @@ namespace Pulumi.Oci.MeteringComputation
         public Output<ImmutableArray<Outputs.UsageGroupByTag>> GroupByTags { get; private set; } = null!;
 
         /// <summary>
-        /// Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+        /// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
         /// </summary>
         [Output("isAggregateByTime")]
         public Output<bool> IsAggregateByTime { get; private set; } = null!;
@@ -212,7 +212,7 @@ namespace Pulumi.Oci.MeteringComputation
         private InputList<string>? _groupBies;
 
         /// <summary>
-        /// Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+        /// Aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
         /// </summary>
         public InputList<string> GroupBies
         {
@@ -233,7 +233,7 @@ namespace Pulumi.Oci.MeteringComputation
         }
 
         /// <summary>
-        /// Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+        /// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
         /// </summary>
         [Input("isAggregateByTime")]
         public Input<bool>? IsAggregateByTime { get; set; }
@@ -302,7 +302,7 @@ namespace Pulumi.Oci.MeteringComputation
         private InputList<string>? _groupBies;
 
         /// <summary>
-        /// Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+        /// Aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
         /// </summary>
         public InputList<string> GroupBies
         {
@@ -323,7 +323,7 @@ namespace Pulumi.Oci.MeteringComputation
         }
 
         /// <summary>
-        /// Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+        /// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
         /// </summary>
         [Input("isAggregateByTime")]
         public Input<bool>? IsAggregateByTime { get; set; }

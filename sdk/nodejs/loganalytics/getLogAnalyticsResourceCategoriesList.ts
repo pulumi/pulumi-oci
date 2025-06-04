@@ -19,6 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testLogAnalyticsResourceCategoriesList = oci.LogAnalytics.getLogAnalyticsResourceCategoriesList({
  *     namespace: logAnalyticsResourceCategoriesListNamespace,
+ *     compartmentId: logAnalyticsResourceCategoriesCompartmentId,
  *     resourceIds: logAnalyticsResourceCategoriesListResourceIds,
  *     resourceTypes: logAnalyticsResourceCategoriesListResourceTypes,
  *     resourceCategories: logAnalyticsResourceCategoriesListResourceCategories,
@@ -28,6 +29,7 @@ import * as utilities from "../utilities";
 export function getLogAnalyticsResourceCategoriesList(args: GetLogAnalyticsResourceCategoriesListArgs, opts?: pulumi.InvokeOptions): Promise<GetLogAnalyticsResourceCategoriesListResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getLogAnalyticsResourceCategoriesList:getLogAnalyticsResourceCategoriesList", {
+        "compartmentId": args.compartmentId,
         "namespace": args.namespace,
         "resourceCategories": args.resourceCategories,
         "resourceIds": args.resourceIds,
@@ -39,6 +41,10 @@ export function getLogAnalyticsResourceCategoriesList(args: GetLogAnalyticsResou
  * A collection of arguments for invoking getLogAnalyticsResourceCategoriesList.
  */
 export interface GetLogAnalyticsResourceCategoriesListArgs {
+    /**
+     * The compartment id in which to list resources.
+     */
+    compartmentId?: string;
     /**
      * The Logging Analytics namespace used for the request.
      */
@@ -66,6 +72,10 @@ export interface GetLogAnalyticsResourceCategoriesListResult {
      */
     readonly categories: outputs.LogAnalytics.GetLogAnalyticsResourceCategoriesListCategory[];
     /**
+     * The compartment ID of the resource, if applicable.
+     */
+    readonly compartmentId?: string;
+    /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
@@ -91,6 +101,7 @@ export interface GetLogAnalyticsResourceCategoriesListResult {
  *
  * const testLogAnalyticsResourceCategoriesList = oci.LogAnalytics.getLogAnalyticsResourceCategoriesList({
  *     namespace: logAnalyticsResourceCategoriesListNamespace,
+ *     compartmentId: logAnalyticsResourceCategoriesCompartmentId,
  *     resourceIds: logAnalyticsResourceCategoriesListResourceIds,
  *     resourceTypes: logAnalyticsResourceCategoriesListResourceTypes,
  *     resourceCategories: logAnalyticsResourceCategoriesListResourceCategories,
@@ -100,6 +111,7 @@ export interface GetLogAnalyticsResourceCategoriesListResult {
 export function getLogAnalyticsResourceCategoriesListOutput(args: GetLogAnalyticsResourceCategoriesListOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLogAnalyticsResourceCategoriesListResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LogAnalytics/getLogAnalyticsResourceCategoriesList:getLogAnalyticsResourceCategoriesList", {
+        "compartmentId": args.compartmentId,
         "namespace": args.namespace,
         "resourceCategories": args.resourceCategories,
         "resourceIds": args.resourceIds,
@@ -111,6 +123,10 @@ export function getLogAnalyticsResourceCategoriesListOutput(args: GetLogAnalytic
  * A collection of arguments for invoking getLogAnalyticsResourceCategoriesList.
  */
 export interface GetLogAnalyticsResourceCategoriesListOutputArgs {
+    /**
+     * The compartment id in which to list resources.
+     */
+    compartmentId?: pulumi.Input<string>;
     /**
      * The Logging Analytics namespace used for the request.
      */

@@ -74,6 +74,10 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly string OpenIdConnectDiscoveryEndpoint;
         /// <summary>
+        /// The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
+        /// </summary>
+        public readonly string OpenIdConnectDiscoveryKey;
+        /// <summary>
         /// Optional attributes for the cluster.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetClustersClusterOptionResult> Options;
@@ -122,6 +126,8 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
             string openIdConnectDiscoveryEndpoint,
 
+            string openIdConnectDiscoveryKey,
+
             ImmutableArray<Outputs.GetClustersClusterOptionResult> options,
 
             string state,
@@ -145,6 +151,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
             Metadatas = metadatas;
             Name = name;
             OpenIdConnectDiscoveryEndpoint = openIdConnectDiscoveryEndpoint;
+            OpenIdConnectDiscoveryKey = openIdConnectDiscoveryKey;
             Options = options;
             State = state;
             Type = type;

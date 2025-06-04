@@ -24,6 +24,8 @@ __all__ = [
     'ClusterOutboundClusterConfigOutboundClusterArgsDict',
     'ClusterReverseConnectionEndpointArgs',
     'ClusterReverseConnectionEndpointArgsDict',
+    'ClusterSecuritySamlConfigArgs',
+    'ClusterSecuritySamlConfigArgsDict',
     'OpensearchClusterPipelineReverseConnectionEndpointArgs',
     'OpensearchClusterPipelineReverseConnectionEndpointArgsDict',
     'GetOpensearchClusterPipelinesFilterArgs',
@@ -338,6 +340,155 @@ class ClusterReverseConnectionEndpointArgs:
     @nat_ip.setter
     def nat_ip(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "nat_ip", value)
+
+
+if not MYPY:
+    class ClusterSecuritySamlConfigArgsDict(TypedDict):
+        idp_entity_id: pulumi.Input[builtins.str]
+        """
+        The unique name for a identity provider entity
+        """
+        idp_metadata_content: pulumi.Input[builtins.str]
+        """
+        The content of identity provider metadata
+        """
+        is_enabled: pulumi.Input[builtins.bool]
+        """
+        A flag determine whether SAML is enabled
+        """
+        admin_backend_role: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The backend role of admins who have all permissions like local master user
+        """
+        opendashboard_url: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The endpoint of opendashboard
+        """
+        roles_key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The roles key is sued to get backend roles from SAML assertion
+        """
+        subject_key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The subject key is used to get username from SAML assertion. By default, it is NameID
+        """
+elif False:
+    ClusterSecuritySamlConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ClusterSecuritySamlConfigArgs:
+    def __init__(__self__, *,
+                 idp_entity_id: pulumi.Input[builtins.str],
+                 idp_metadata_content: pulumi.Input[builtins.str],
+                 is_enabled: pulumi.Input[builtins.bool],
+                 admin_backend_role: Optional[pulumi.Input[builtins.str]] = None,
+                 opendashboard_url: Optional[pulumi.Input[builtins.str]] = None,
+                 roles_key: Optional[pulumi.Input[builtins.str]] = None,
+                 subject_key: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] idp_entity_id: The unique name for a identity provider entity
+        :param pulumi.Input[builtins.str] idp_metadata_content: The content of identity provider metadata
+        :param pulumi.Input[builtins.bool] is_enabled: A flag determine whether SAML is enabled
+        :param pulumi.Input[builtins.str] admin_backend_role: The backend role of admins who have all permissions like local master user
+        :param pulumi.Input[builtins.str] opendashboard_url: The endpoint of opendashboard
+        :param pulumi.Input[builtins.str] roles_key: The roles key is sued to get backend roles from SAML assertion
+        :param pulumi.Input[builtins.str] subject_key: The subject key is used to get username from SAML assertion. By default, it is NameID
+        """
+        pulumi.set(__self__, "idp_entity_id", idp_entity_id)
+        pulumi.set(__self__, "idp_metadata_content", idp_metadata_content)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        if admin_backend_role is not None:
+            pulumi.set(__self__, "admin_backend_role", admin_backend_role)
+        if opendashboard_url is not None:
+            pulumi.set(__self__, "opendashboard_url", opendashboard_url)
+        if roles_key is not None:
+            pulumi.set(__self__, "roles_key", roles_key)
+        if subject_key is not None:
+            pulumi.set(__self__, "subject_key", subject_key)
+
+    @property
+    @pulumi.getter(name="idpEntityId")
+    def idp_entity_id(self) -> pulumi.Input[builtins.str]:
+        """
+        The unique name for a identity provider entity
+        """
+        return pulumi.get(self, "idp_entity_id")
+
+    @idp_entity_id.setter
+    def idp_entity_id(self, value: pulumi.Input[builtins.str]):
+        pulumi.set(self, "idp_entity_id", value)
+
+    @property
+    @pulumi.getter(name="idpMetadataContent")
+    def idp_metadata_content(self) -> pulumi.Input[builtins.str]:
+        """
+        The content of identity provider metadata
+        """
+        return pulumi.get(self, "idp_metadata_content")
+
+    @idp_metadata_content.setter
+    def idp_metadata_content(self, value: pulumi.Input[builtins.str]):
+        pulumi.set(self, "idp_metadata_content", value)
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> pulumi.Input[builtins.bool]:
+        """
+        A flag determine whether SAML is enabled
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @is_enabled.setter
+    def is_enabled(self, value: pulumi.Input[builtins.bool]):
+        pulumi.set(self, "is_enabled", value)
+
+    @property
+    @pulumi.getter(name="adminBackendRole")
+    def admin_backend_role(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The backend role of admins who have all permissions like local master user
+        """
+        return pulumi.get(self, "admin_backend_role")
+
+    @admin_backend_role.setter
+    def admin_backend_role(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "admin_backend_role", value)
+
+    @property
+    @pulumi.getter(name="opendashboardUrl")
+    def opendashboard_url(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The endpoint of opendashboard
+        """
+        return pulumi.get(self, "opendashboard_url")
+
+    @opendashboard_url.setter
+    def opendashboard_url(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "opendashboard_url", value)
+
+    @property
+    @pulumi.getter(name="rolesKey")
+    def roles_key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The roles key is sued to get backend roles from SAML assertion
+        """
+        return pulumi.get(self, "roles_key")
+
+    @roles_key.setter
+    def roles_key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "roles_key", value)
+
+    @property
+    @pulumi.getter(name="subjectKey")
+    def subject_key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The subject key is used to get username from SAML assertion. By default, it is NameID
+        """
+        return pulumi.get(self, "subject_key")
+
+    @subject_key.setter
+    def subject_key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "subject_key", value)
 
 
 if not MYPY:

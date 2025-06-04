@@ -43,6 +43,11 @@ public final class GetNamespaceScheduledTasksResult {
      * 
      */
     private String taskType;
+    /**
+     * @return The Config template Id of a particular template.
+     * 
+     */
+    private @Nullable String templateId;
 
     private GetNamespaceScheduledTasksResult() {}
     /**
@@ -89,6 +94,13 @@ public final class GetNamespaceScheduledTasksResult {
     public String taskType() {
         return this.taskType;
     }
+    /**
+     * @return The Config template Id of a particular template.
+     * 
+     */
+    public Optional<String> templateId() {
+        return Optional.ofNullable(this.templateId);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -107,6 +119,7 @@ public final class GetNamespaceScheduledTasksResult {
         private List<GetNamespaceScheduledTasksScheduledTaskCollection> scheduledTaskCollections;
         private @Nullable String targetService;
         private String taskType;
+        private @Nullable String templateId;
         public Builder() {}
         public Builder(GetNamespaceScheduledTasksResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -118,6 +131,7 @@ public final class GetNamespaceScheduledTasksResult {
     	      this.scheduledTaskCollections = defaults.scheduledTaskCollections;
     	      this.targetService = defaults.targetService;
     	      this.taskType = defaults.taskType;
+    	      this.templateId = defaults.templateId;
         }
 
         @CustomType.Setter
@@ -184,6 +198,12 @@ public final class GetNamespaceScheduledTasksResult {
             this.taskType = taskType;
             return this;
         }
+        @CustomType.Setter
+        public Builder templateId(@Nullable String templateId) {
+
+            this.templateId = templateId;
+            return this;
+        }
         public GetNamespaceScheduledTasksResult build() {
             final var _resultValue = new GetNamespaceScheduledTasksResult();
             _resultValue.compartmentId = compartmentId;
@@ -194,6 +214,7 @@ public final class GetNamespaceScheduledTasksResult {
             _resultValue.scheduledTaskCollections = scheduledTaskCollections;
             _resultValue.targetService = targetService;
             _resultValue.taskType = taskType;
+            _resultValue.templateId = templateId;
             return _resultValue;
         }
     }

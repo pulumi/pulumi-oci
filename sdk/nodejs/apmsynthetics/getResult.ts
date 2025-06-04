@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Result resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
  *
- * Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log or Network details.
+ * Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log, Network details, Diagnostics or Script Content.
  *
  * ## Example Usage
  *
@@ -60,7 +60,7 @@ export interface GetResultArgs {
      */
     resultContentType: string;
     /**
-     * The result type: har, screenshot, log, or network.
+     * The result type: har, screenshot, log, network, diagnostics or script.
      */
     resultType: string;
     /**
@@ -95,7 +95,7 @@ export interface GetResultResult {
      */
     readonly resultDataSets: outputs.ApmSynthetics.GetResultResultDataSet[];
     /**
-     * Type of result. Example: HAR, Screenshot, Log or Network.
+     * Type of result. Example: har, screenshot, log, network, diagnostics or script.
      */
     readonly resultType: string;
     /**
@@ -106,7 +106,7 @@ export interface GetResultResult {
 /**
  * This data source provides details about a specific Result resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
  *
- * Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log or Network details.
+ * Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log, Network details, Diagnostics or Script Content.
  *
  * ## Example Usage
  *
@@ -157,7 +157,7 @@ export interface GetResultOutputArgs {
      */
     resultContentType: pulumi.Input<string>;
     /**
-     * The result type: har, screenshot, log, or network.
+     * The result type: har, screenshot, log, network, diagnostics or script.
      */
     resultType: pulumi.Input<string>;
     /**

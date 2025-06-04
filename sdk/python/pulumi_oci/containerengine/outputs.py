@@ -5410,6 +5410,7 @@ class GetClustersClusterResult(dict):
                  metadatas: Sequence['outputs.GetClustersClusterMetadataResult'],
                  name: builtins.str,
                  open_id_connect_discovery_endpoint: builtins.str,
+                 open_id_connect_discovery_key: builtins.str,
                  options: Sequence['outputs.GetClustersClusterOptionResult'],
                  state: builtins.str,
                  type: builtins.str,
@@ -5430,6 +5431,7 @@ class GetClustersClusterResult(dict):
         :param Sequence['GetClustersClusterMetadataArgs'] metadatas: Metadata about the cluster.
         :param builtins.str name: The name to filter on.
         :param builtins.str open_id_connect_discovery_endpoint: The cluster-specific OpenID Connect Discovery endpoint
+        :param builtins.str open_id_connect_discovery_key: The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
         :param Sequence['GetClustersClusterOptionArgs'] options: Optional attributes for the cluster.
         :param builtins.str state: A cluster lifecycle state to filter on. Can have multiple parameters of this name.
         :param builtins.str type: Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information, see [Cluster Types](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm)
@@ -5450,6 +5452,7 @@ class GetClustersClusterResult(dict):
         pulumi.set(__self__, "metadatas", metadatas)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "open_id_connect_discovery_endpoint", open_id_connect_discovery_endpoint)
+        pulumi.set(__self__, "open_id_connect_discovery_key", open_id_connect_discovery_key)
         pulumi.set(__self__, "options", options)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "type", type)
@@ -5574,6 +5577,14 @@ class GetClustersClusterResult(dict):
         The cluster-specific OpenID Connect Discovery endpoint
         """
         return pulumi.get(self, "open_id_connect_discovery_endpoint")
+
+    @property
+    @pulumi.getter(name="openIdConnectDiscoveryKey")
+    def open_id_connect_discovery_key(self) -> builtins.str:
+        """
+        The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
+        """
+        return pulumi.get(self, "open_id_connect_discovery_key")
 
     @property
     @pulumi.getter

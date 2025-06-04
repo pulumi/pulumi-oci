@@ -63,6 +63,10 @@ export interface GetMonitorResult {
      */
     readonly configurations: outputs.ApmSynthetics.GetMonitorConfiguration[];
     /**
+     * Content type of the script.
+     */
+    readonly contentType: string;
+    /**
      * Name of the user that created the monitor.
      */
     readonly createdBy: string;

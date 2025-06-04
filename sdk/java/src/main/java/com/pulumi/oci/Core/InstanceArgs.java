@@ -13,6 +13,7 @@ import com.pulumi.oci.Core.inputs.InstanceInstanceOptionsArgs;
 import com.pulumi.oci.Core.inputs.InstanceLaunchOptionsArgs;
 import com.pulumi.oci.Core.inputs.InstanceLaunchVolumeAttachmentArgs;
 import com.pulumi.oci.Core.inputs.InstanceLicensingConfigsArgs;
+import com.pulumi.oci.Core.inputs.InstancePlacementConstraintDetailsArgs;
 import com.pulumi.oci.Core.inputs.InstancePlatformConfigArgs;
 import com.pulumi.oci.Core.inputs.InstancePreemptibleInstanceConfigArgs;
 import com.pulumi.oci.Core.inputs.InstanceShapeConfigArgs;
@@ -455,8 +456,6 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
      * 
      * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
      * 
-     * **Note:** Both the &#39;user_data&#39; and &#39;ssh_authorized_keys&#39; fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for &#39;user_data&#39; and &#39;ssh_authorized_keys&#39; that already exist on the instance.
-     * 
      */
     @Import(name="metadata")
     private @Nullable Output<Map<String,String>> metadata;
@@ -486,15 +485,28 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
      * 
      * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
      * 
-     * **Note:** Both the &#39;user_data&#39; and &#39;ssh_authorized_keys&#39; fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for &#39;user_data&#39; and &#39;ssh_authorized_keys&#39; that already exist on the instance.
-     * 
      */
     public Optional<Output<Map<String,String>>> metadata() {
         return Optional.ofNullable(this.metadata);
     }
 
     /**
-     * (Updatable only for VM&#39;s) The platform configuration requested for the instance.
+     * Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+     * 
+     */
+    @Import(name="placementConstraintDetails")
+    private @Nullable Output<InstancePlacementConstraintDetailsArgs> placementConstraintDetails;
+
+    /**
+     * @return Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+     * 
+     */
+    public Optional<Output<InstancePlacementConstraintDetailsArgs>> placementConstraintDetails() {
+        return Optional.ofNullable(this.placementConstraintDetails);
+    }
+
+    /**
+     * (Updatable) The platform configuration requested for the instance.
      * 
      * If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don&#39;t provide the parameter, the default values for the `shape` are used.
      * 
@@ -509,7 +521,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<InstancePlatformConfigArgs> platformConfig;
 
     /**
-     * @return (Updatable only for VM&#39;s) The platform configuration requested for the instance.
+     * @return (Updatable) The platform configuration requested for the instance.
      * 
      * If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don&#39;t provide the parameter, the default values for the `shape` are used.
      * 
@@ -712,6 +724,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         this.launchVolumeAttachments = $.launchVolumeAttachments;
         this.licensingConfigs = $.licensingConfigs;
         this.metadata = $.metadata;
+        this.placementConstraintDetails = $.placementConstraintDetails;
         this.platformConfig = $.platformConfig;
         this.preemptibleInstanceConfig = $.preemptibleInstanceConfig;
         this.preserveBootVolume = $.preserveBootVolume;
@@ -1316,8 +1329,6 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
          * 
-         * **Note:** Both the &#39;user_data&#39; and &#39;ssh_authorized_keys&#39; fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for &#39;user_data&#39; and &#39;ssh_authorized_keys&#39; that already exist on the instance.
-         * 
          * @return builder
          * 
          */
@@ -1351,8 +1362,6 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
          * 
-         * **Note:** Both the &#39;user_data&#39; and &#39;ssh_authorized_keys&#39; fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for &#39;user_data&#39; and &#39;ssh_authorized_keys&#39; that already exist on the instance.
-         * 
          * @return builder
          * 
          */
@@ -1361,7 +1370,28 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param platformConfig (Updatable only for VM&#39;s) The platform configuration requested for the instance.
+         * @param placementConstraintDetails Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder placementConstraintDetails(@Nullable Output<InstancePlacementConstraintDetailsArgs> placementConstraintDetails) {
+            $.placementConstraintDetails = placementConstraintDetails;
+            return this;
+        }
+
+        /**
+         * @param placementConstraintDetails Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder placementConstraintDetails(InstancePlacementConstraintDetailsArgs placementConstraintDetails) {
+            return placementConstraintDetails(Output.of(placementConstraintDetails));
+        }
+
+        /**
+         * @param platformConfig (Updatable) The platform configuration requested for the instance.
          * 
          * If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don&#39;t provide the parameter, the default values for the `shape` are used.
          * 
@@ -1380,7 +1410,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param platformConfig (Updatable only for VM&#39;s) The platform configuration requested for the instance.
+         * @param platformConfig (Updatable) The platform configuration requested for the instance.
          * 
          * If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don&#39;t provide the parameter, the default values for the `shape` are used.
          * 

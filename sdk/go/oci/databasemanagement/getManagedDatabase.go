@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/databasemanagement"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/databasemanagement"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -74,7 +74,7 @@ type LookupManagedDatabaseResult struct {
 	DatabaseType string `pulumi:"databaseType"`
 	// The Oracle Database version.
 	DatabaseVersion string `pulumi:"databaseVersion"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system that this Managed Database is part of.
 	DbSystemId string `pulumi:"dbSystemId"`
 	// The list of feature configurations
 	DbmgmtFeatureConfigs []GetManagedDatabaseDbmgmtFeatureConfig `pulumi:"dbmgmtFeatureConfigs"`
@@ -178,7 +178,7 @@ func (o LookupManagedDatabaseResultOutput) DatabaseVersion() pulumi.StringOutput
 	return o.ApplyT(func(v LookupManagedDatabaseResult) string { return v.DatabaseVersion }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system that this Managed Database is part of.
 func (o LookupManagedDatabaseResultOutput) DbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagedDatabaseResult) string { return v.DbSystemId }).(pulumi.StringOutput)
 }

@@ -7,14 +7,14 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 var _ = internal.GetEnvOrDefault
 
 type CustomTableSavedCustomTable struct {
-	// (Updatable) The column groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+	// (Updatable) The column groupBy key list. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	ColumnGroupBies []string `pulumi:"columnGroupBies"`
 	// (Updatable) The compartment depth level.
 	CompartmentDepth *float64 `pulumi:"compartmentDepth"`
@@ -22,7 +22,7 @@ type CustomTableSavedCustomTable struct {
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only one tag in the list is supported. For example: `[{"namespace":"oracle", "key":"createdBy"]`
 	GroupByTags []CustomTableSavedCustomTableGroupByTag `pulumi:"groupByTags"`
-	// (Updatable) The row groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+	// (Updatable) The row groupBy key list. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	RowGroupBies []string `pulumi:"rowGroupBies"`
 	// (Updatable) The version of the custom table.
 	Version *float64 `pulumi:"version"`
@@ -40,7 +40,7 @@ type CustomTableSavedCustomTableInput interface {
 }
 
 type CustomTableSavedCustomTableArgs struct {
-	// (Updatable) The column groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+	// (Updatable) The column groupBy key list. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	ColumnGroupBies pulumi.StringArrayInput `pulumi:"columnGroupBies"`
 	// (Updatable) The compartment depth level.
 	CompartmentDepth pulumi.Float64PtrInput `pulumi:"compartmentDepth"`
@@ -48,7 +48,7 @@ type CustomTableSavedCustomTableArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// (Updatable) GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only one tag in the list is supported. For example: `[{"namespace":"oracle", "key":"createdBy"]`
 	GroupByTags CustomTableSavedCustomTableGroupByTagArrayInput `pulumi:"groupByTags"`
-	// (Updatable) The row groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+	// (Updatable) The row groupBy key list. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	RowGroupBies pulumi.StringArrayInput `pulumi:"rowGroupBies"`
 	// (Updatable) The version of the custom table.
 	Version pulumi.Float64PtrInput `pulumi:"version"`
@@ -131,7 +131,7 @@ func (o CustomTableSavedCustomTableOutput) ToCustomTableSavedCustomTablePtrOutpu
 	}).(CustomTableSavedCustomTablePtrOutput)
 }
 
-// (Updatable) The column groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+// (Updatable) The column groupBy key list. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 func (o CustomTableSavedCustomTableOutput) ColumnGroupBies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v CustomTableSavedCustomTable) []string { return v.ColumnGroupBies }).(pulumi.StringArrayOutput)
 }
@@ -151,7 +151,7 @@ func (o CustomTableSavedCustomTableOutput) GroupByTags() CustomTableSavedCustomT
 	return o.ApplyT(func(v CustomTableSavedCustomTable) []CustomTableSavedCustomTableGroupByTag { return v.GroupByTags }).(CustomTableSavedCustomTableGroupByTagArrayOutput)
 }
 
-// (Updatable) The row groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+// (Updatable) The row groupBy key list. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 func (o CustomTableSavedCustomTableOutput) RowGroupBies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v CustomTableSavedCustomTable) []string { return v.RowGroupBies }).(pulumi.StringArrayOutput)
 }
@@ -185,7 +185,7 @@ func (o CustomTableSavedCustomTablePtrOutput) Elem() CustomTableSavedCustomTable
 	}).(CustomTableSavedCustomTableOutput)
 }
 
-// (Updatable) The column groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+// (Updatable) The column groupBy key list. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 func (o CustomTableSavedCustomTablePtrOutput) ColumnGroupBies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *CustomTableSavedCustomTable) []string {
 		if v == nil {
@@ -225,7 +225,7 @@ func (o CustomTableSavedCustomTablePtrOutput) GroupByTags() CustomTableSavedCust
 	}).(CustomTableSavedCustomTableGroupByTagArrayOutput)
 }
 
-// (Updatable) The row groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+// (Updatable) The row groupBy key list. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 func (o CustomTableSavedCustomTablePtrOutput) RowGroupBies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *CustomTableSavedCustomTable) []string {
 		if v == nil {
@@ -733,13 +733,18 @@ type QueryQueryDefinitionReportQuery struct {
 	Forecast *QueryQueryDefinitionReportQueryForecast `pulumi:"forecast"`
 	// (Updatable) The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
 	Granularity string `pulumi:"granularity"`
-	// (Updatable) Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+	// (Updatable) Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	GroupBies []string `pulumi:"groupBies"`
 	// (Updatable) GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
 	GroupByTags []QueryQueryDefinitionReportQueryGroupByTag `pulumi:"groupByTags"`
-	// (Updatable) Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+	// (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
 	IsAggregateByTime *bool `pulumi:"isAggregateByTime"`
-	// (Updatable) The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
+	// (Updatable) The query usage type. COST by default if it is missing.
+	// * Usage: Query the usage data.
+	// * Cost: Query the cost/billing data.
+	// * Credit: Query the credit adjustments data.
+	// * ExpiredCredit: Query the expired credits data.
+	// * AllCredit: Query the credit adjustments and expired credit.
 	QueryType *string `pulumi:"queryType"`
 	// (Updatable) Tenant ID.
 	TenantId string `pulumi:"tenantId"`
@@ -771,13 +776,18 @@ type QueryQueryDefinitionReportQueryArgs struct {
 	Forecast QueryQueryDefinitionReportQueryForecastPtrInput `pulumi:"forecast"`
 	// (Updatable) The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
 	Granularity pulumi.StringInput `pulumi:"granularity"`
-	// (Updatable) Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+	// (Updatable) Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	GroupBies pulumi.StringArrayInput `pulumi:"groupBies"`
 	// (Updatable) GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
 	GroupByTags QueryQueryDefinitionReportQueryGroupByTagArrayInput `pulumi:"groupByTags"`
-	// (Updatable) Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+	// (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
 	IsAggregateByTime pulumi.BoolPtrInput `pulumi:"isAggregateByTime"`
-	// (Updatable) The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
+	// (Updatable) The query usage type. COST by default if it is missing.
+	// * Usage: Query the usage data.
+	// * Cost: Query the cost/billing data.
+	// * Credit: Query the credit adjustments data.
+	// * ExpiredCredit: Query the expired credits data.
+	// * AllCredit: Query the credit adjustments and expired credit.
 	QueryType pulumi.StringPtrInput `pulumi:"queryType"`
 	// (Updatable) Tenant ID.
 	TenantId pulumi.StringInput `pulumi:"tenantId"`
@@ -889,7 +899,7 @@ func (o QueryQueryDefinitionReportQueryOutput) Granularity() pulumi.StringOutput
 	return o.ApplyT(func(v QueryQueryDefinitionReportQuery) string { return v.Granularity }).(pulumi.StringOutput)
 }
 
-// (Updatable) Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+// (Updatable) Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 func (o QueryQueryDefinitionReportQueryOutput) GroupBies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v QueryQueryDefinitionReportQuery) []string { return v.GroupBies }).(pulumi.StringArrayOutput)
 }
@@ -901,12 +911,17 @@ func (o QueryQueryDefinitionReportQueryOutput) GroupByTags() QueryQueryDefinitio
 	}).(QueryQueryDefinitionReportQueryGroupByTagArrayOutput)
 }
 
-// (Updatable) Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+// (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
 func (o QueryQueryDefinitionReportQueryOutput) IsAggregateByTime() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v QueryQueryDefinitionReportQuery) *bool { return v.IsAggregateByTime }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
+// (Updatable) The query usage type. COST by default if it is missing.
+// * Usage: Query the usage data.
+// * Cost: Query the cost/billing data.
+// * Credit: Query the credit adjustments data.
+// * ExpiredCredit: Query the expired credits data.
+// * AllCredit: Query the credit adjustments and expired credit.
 func (o QueryQueryDefinitionReportQueryOutput) QueryType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v QueryQueryDefinitionReportQuery) *string { return v.QueryType }).(pulumi.StringPtrOutput)
 }
@@ -1000,7 +1015,7 @@ func (o QueryQueryDefinitionReportQueryPtrOutput) Granularity() pulumi.StringPtr
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+// (Updatable) Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 func (o QueryQueryDefinitionReportQueryPtrOutput) GroupBies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *QueryQueryDefinitionReportQuery) []string {
 		if v == nil {
@@ -1020,7 +1035,7 @@ func (o QueryQueryDefinitionReportQueryPtrOutput) GroupByTags() QueryQueryDefini
 	}).(QueryQueryDefinitionReportQueryGroupByTagArrayOutput)
 }
 
-// (Updatable) Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+// (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
 func (o QueryQueryDefinitionReportQueryPtrOutput) IsAggregateByTime() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *QueryQueryDefinitionReportQuery) *bool {
 		if v == nil {
@@ -1030,7 +1045,12 @@ func (o QueryQueryDefinitionReportQueryPtrOutput) IsAggregateByTime() pulumi.Boo
 	}).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
+// (Updatable) The query usage type. COST by default if it is missing.
+// * Usage: Query the usage data.
+// * Cost: Query the cost/billing data.
+// * Credit: Query the credit adjustments data.
+// * ExpiredCredit: Query the expired credits data.
+// * AllCredit: Query the credit adjustments and expired credit.
 func (o QueryQueryDefinitionReportQueryPtrOutput) QueryType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *QueryQueryDefinitionReportQuery) *string {
 		if v == nil {
@@ -2253,10 +2273,12 @@ type UsageCarbonEmissionItem struct {
 	CompartmentName *string `pulumi:"compartmentName"`
 	// The compartment path, starting from root.
 	CompartmentPath *string `pulumi:"compartmentPath"`
-	// The carbon emission in MTCO2 unit.
+	// The carbon emission usage in MTCO2 units.
 	ComputedCarbonEmission *float64 `pulumi:"computedCarbonEmission"`
-	// The method used to calculate carbon emission.
+	// Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
 	EmissionCalculationMethod *string `pulumi:"emissionCalculationMethod"`
+	// Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+	EmissionType *string `pulumi:"emissionType"`
 	// Platform for the cost.
 	Platform *string `pulumi:"platform"`
 	// The region of the usage.
@@ -2305,10 +2327,12 @@ type UsageCarbonEmissionItemArgs struct {
 	CompartmentName pulumi.StringPtrInput `pulumi:"compartmentName"`
 	// The compartment path, starting from root.
 	CompartmentPath pulumi.StringPtrInput `pulumi:"compartmentPath"`
-	// The carbon emission in MTCO2 unit.
+	// The carbon emission usage in MTCO2 units.
 	ComputedCarbonEmission pulumi.Float64PtrInput `pulumi:"computedCarbonEmission"`
-	// The method used to calculate carbon emission.
+	// Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
 	EmissionCalculationMethod pulumi.StringPtrInput `pulumi:"emissionCalculationMethod"`
+	// Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+	EmissionType pulumi.StringPtrInput `pulumi:"emissionType"`
 	// Platform for the cost.
 	Platform pulumi.StringPtrInput `pulumi:"platform"`
 	// The region of the usage.
@@ -2408,14 +2432,19 @@ func (o UsageCarbonEmissionItemOutput) CompartmentPath() pulumi.StringPtrOutput 
 	return o.ApplyT(func(v UsageCarbonEmissionItem) *string { return v.CompartmentPath }).(pulumi.StringPtrOutput)
 }
 
-// The carbon emission in MTCO2 unit.
+// The carbon emission usage in MTCO2 units.
 func (o UsageCarbonEmissionItemOutput) ComputedCarbonEmission() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v UsageCarbonEmissionItem) *float64 { return v.ComputedCarbonEmission }).(pulumi.Float64PtrOutput)
 }
 
-// The method used to calculate carbon emission.
+// Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
 func (o UsageCarbonEmissionItemOutput) EmissionCalculationMethod() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UsageCarbonEmissionItem) *string { return v.EmissionCalculationMethod }).(pulumi.StringPtrOutput)
+}
+
+// Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+func (o UsageCarbonEmissionItemOutput) EmissionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionItem) *string { return v.EmissionType }).(pulumi.StringPtrOutput)
 }
 
 // Platform for the cost.
@@ -2623,7 +2652,7 @@ type UsageCarbonEmissionsQueryQueryDefinition struct {
 	CostAnalysisUi UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi `pulumi:"costAnalysisUi"`
 	// (Updatable) The query display name. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
-	// (Updatable) The request of the generated usage carbon emissions report.
+	// (Updatable) The request of the generated carbon emissions usage report.
 	ReportQuery UsageCarbonEmissionsQueryQueryDefinitionReportQuery `pulumi:"reportQuery"`
 	// (Updatable) The saved query version.
 	//
@@ -2648,7 +2677,7 @@ type UsageCarbonEmissionsQueryQueryDefinitionArgs struct {
 	CostAnalysisUi UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiInput `pulumi:"costAnalysisUi"`
 	// (Updatable) The query display name. Avoid entering confidential information.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// (Updatable) The request of the generated usage carbon emissions report.
+	// (Updatable) The request of the generated carbon emissions usage report.
 	ReportQuery UsageCarbonEmissionsQueryQueryDefinitionReportQueryInput `pulumi:"reportQuery"`
 	// (Updatable) The saved query version.
 	//
@@ -2746,7 +2775,7 @@ func (o UsageCarbonEmissionsQueryQueryDefinitionOutput) DisplayName() pulumi.Str
 	return o.ApplyT(func(v UsageCarbonEmissionsQueryQueryDefinition) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// (Updatable) The request of the generated usage carbon emissions report.
+// (Updatable) The request of the generated carbon emissions usage report.
 func (o UsageCarbonEmissionsQueryQueryDefinitionOutput) ReportQuery() UsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput {
 	return o.ApplyT(func(v UsageCarbonEmissionsQueryQueryDefinition) UsageCarbonEmissionsQueryQueryDefinitionReportQuery {
 		return v.ReportQuery
@@ -2805,7 +2834,7 @@ func (o UsageCarbonEmissionsQueryQueryDefinitionPtrOutput) DisplayName() pulumi.
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The request of the generated usage carbon emissions report.
+// (Updatable) The request of the generated carbon emissions usage report.
 func (o UsageCarbonEmissionsQueryQueryDefinitionPtrOutput) ReportQuery() UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput {
 	return o.ApplyT(func(v *UsageCarbonEmissionsQueryQueryDefinition) *UsageCarbonEmissionsQueryQueryDefinitionReportQuery {
 		if v == nil {
@@ -2987,13 +3016,19 @@ func (o UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrOutput) IsCumul
 type UsageCarbonEmissionsQueryQueryDefinitionReportQuery struct {
 	// (Updatable) The compartment depth level.
 	CompartmentDepth *int `pulumi:"compartmentDepth"`
-	// (Updatable) The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+	// (Updatable) The user interface date range, for example, LAST_THREE_MONTHS. Overrides the timeUsageStarted and timeUsageEnded properties.
 	DateRangeName *string `pulumi:"dateRangeName"`
+	// (Updatable) Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+	EmissionCalculationMethod *string `pulumi:"emissionCalculationMethod"`
+	// (Updatable) Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+	EmissionType *string `pulumi:"emissionType"`
+	// (Updatable) The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+	Granularity *string `pulumi:"granularity"`
 	// (Updatable) Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	GroupBies []string `pulumi:"groupBies"`
 	// (Updatable) GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
 	GroupByTags []UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag `pulumi:"groupByTags"`
-	// (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+	// (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or costs over the query time period are summed.
 	IsAggregateByTime *bool `pulumi:"isAggregateByTime"`
 	// (Updatable) Tenant ID.
 	TenantId string `pulumi:"tenantId"`
@@ -3019,13 +3054,19 @@ type UsageCarbonEmissionsQueryQueryDefinitionReportQueryInput interface {
 type UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs struct {
 	// (Updatable) The compartment depth level.
 	CompartmentDepth pulumi.IntPtrInput `pulumi:"compartmentDepth"`
-	// (Updatable) The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+	// (Updatable) The user interface date range, for example, LAST_THREE_MONTHS. Overrides the timeUsageStarted and timeUsageEnded properties.
 	DateRangeName pulumi.StringPtrInput `pulumi:"dateRangeName"`
+	// (Updatable) Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+	EmissionCalculationMethod pulumi.StringPtrInput `pulumi:"emissionCalculationMethod"`
+	// (Updatable) Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+	EmissionType pulumi.StringPtrInput `pulumi:"emissionType"`
+	// (Updatable) The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+	Granularity pulumi.StringPtrInput `pulumi:"granularity"`
 	// (Updatable) Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	GroupBies pulumi.StringArrayInput `pulumi:"groupBies"`
 	// (Updatable) GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
 	GroupByTags UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayInput `pulumi:"groupByTags"`
-	// (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+	// (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or costs over the query time period are summed.
 	IsAggregateByTime pulumi.BoolPtrInput `pulumi:"isAggregateByTime"`
 	// (Updatable) Tenant ID.
 	TenantId pulumi.StringInput `pulumi:"tenantId"`
@@ -3119,9 +3160,26 @@ func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) CompartmentDe
 	return o.ApplyT(func(v UsageCarbonEmissionsQueryQueryDefinitionReportQuery) *int { return v.CompartmentDepth }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+// (Updatable) The user interface date range, for example, LAST_THREE_MONTHS. Overrides the timeUsageStarted and timeUsageEnded properties.
 func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) DateRangeName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UsageCarbonEmissionsQueryQueryDefinitionReportQuery) *string { return v.DateRangeName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) EmissionCalculationMethod() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionsQueryQueryDefinitionReportQuery) *string {
+		return v.EmissionCalculationMethod
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) EmissionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionsQueryQueryDefinitionReportQuery) *string { return v.EmissionType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) Granularity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionsQueryQueryDefinitionReportQuery) *string { return v.Granularity }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
@@ -3136,7 +3194,7 @@ func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) GroupByTags()
 	}).(UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput)
 }
 
-// (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+// (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or costs over the query time period are summed.
 func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) IsAggregateByTime() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v UsageCarbonEmissionsQueryQueryDefinitionReportQuery) *bool { return v.IsAggregateByTime }).(pulumi.BoolPtrOutput)
 }
@@ -3197,13 +3255,43 @@ func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput) Compartmen
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+// (Updatable) The user interface date range, for example, LAST_THREE_MONTHS. Overrides the timeUsageStarted and timeUsageEnded properties.
 func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput) DateRangeName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UsageCarbonEmissionsQueryQueryDefinitionReportQuery) *string {
 		if v == nil {
 			return nil
 		}
 		return v.DateRangeName
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput) EmissionCalculationMethod() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UsageCarbonEmissionsQueryQueryDefinitionReportQuery) *string {
+		if v == nil {
+			return nil
+		}
+		return v.EmissionCalculationMethod
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput) EmissionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UsageCarbonEmissionsQueryQueryDefinitionReportQuery) *string {
+		if v == nil {
+			return nil
+		}
+		return v.EmissionType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput) Granularity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UsageCarbonEmissionsQueryQueryDefinitionReportQuery) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Granularity
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -3227,7 +3315,7 @@ func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput) GroupByTag
 	}).(UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput)
 }
 
-// (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+// (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or costs over the query time period are summed.
 func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput) IsAggregateByTime() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *UsageCarbonEmissionsQueryQueryDefinitionReportQuery) *bool {
 		if v == nil {
@@ -4174,11 +4262,11 @@ func (o UsageItemTagArrayOutput) Index(i pulumi.IntInput) UsageItemTagOutput {
 }
 
 type UsageStatementEmailRecipientsGroupRecipientsList struct {
-	// (Updatable) the email of the recipient.
+	// (Updatable) The recipient email address.
 	EmailId string `pulumi:"emailId"`
-	// (Updatable) the first name of the recipient.
+	// (Updatable) The recipient first name.
 	FirstName *string `pulumi:"firstName"`
-	// (Updatable) the last name of the recipient.
+	// (Updatable) The recipient last name.
 	LastName *string `pulumi:"lastName"`
 	// (Updatable) The email recipient lifecycle state.
 	State string `pulumi:"state"`
@@ -4196,11 +4284,11 @@ type UsageStatementEmailRecipientsGroupRecipientsListInput interface {
 }
 
 type UsageStatementEmailRecipientsGroupRecipientsListArgs struct {
-	// (Updatable) the email of the recipient.
+	// (Updatable) The recipient email address.
 	EmailId pulumi.StringInput `pulumi:"emailId"`
-	// (Updatable) the first name of the recipient.
+	// (Updatable) The recipient first name.
 	FirstName pulumi.StringPtrInput `pulumi:"firstName"`
-	// (Updatable) the last name of the recipient.
+	// (Updatable) The recipient last name.
 	LastName pulumi.StringPtrInput `pulumi:"lastName"`
 	// (Updatable) The email recipient lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
@@ -4257,17 +4345,17 @@ func (o UsageStatementEmailRecipientsGroupRecipientsListOutput) ToUsageStatement
 	return o
 }
 
-// (Updatable) the email of the recipient.
+// (Updatable) The recipient email address.
 func (o UsageStatementEmailRecipientsGroupRecipientsListOutput) EmailId() pulumi.StringOutput {
 	return o.ApplyT(func(v UsageStatementEmailRecipientsGroupRecipientsList) string { return v.EmailId }).(pulumi.StringOutput)
 }
 
-// (Updatable) the first name of the recipient.
+// (Updatable) The recipient first name.
 func (o UsageStatementEmailRecipientsGroupRecipientsListOutput) FirstName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UsageStatementEmailRecipientsGroupRecipientsList) *string { return v.FirstName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) the last name of the recipient.
+// (Updatable) The recipient last name.
 func (o UsageStatementEmailRecipientsGroupRecipientsListOutput) LastName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UsageStatementEmailRecipientsGroupRecipientsList) *string { return v.LastName }).(pulumi.StringPtrOutput)
 }
@@ -4404,7 +4492,7 @@ func (o GetConfigurationItemArrayOutput) Index(i pulumi.IntInput) GetConfigurati
 }
 
 type GetCustomTableSavedCustomTable struct {
-	// The column groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+	// The column groupBy key list. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	ColumnGroupBies []string `pulumi:"columnGroupBies"`
 	// The compartment depth level.
 	CompartmentDepth float64 `pulumi:"compartmentDepth"`
@@ -4412,7 +4500,7 @@ type GetCustomTableSavedCustomTable struct {
 	DisplayName string `pulumi:"displayName"`
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only one tag in the list is supported. For example: `[{"namespace":"oracle", "key":"createdBy"]`
 	GroupByTags []GetCustomTableSavedCustomTableGroupByTag `pulumi:"groupByTags"`
-	// The row groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+	// The row groupBy key list. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	RowGroupBies []string `pulumi:"rowGroupBies"`
 	// The version of the custom table.
 	Version float64 `pulumi:"version"`
@@ -4430,7 +4518,7 @@ type GetCustomTableSavedCustomTableInput interface {
 }
 
 type GetCustomTableSavedCustomTableArgs struct {
-	// The column groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+	// The column groupBy key list. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	ColumnGroupBies pulumi.StringArrayInput `pulumi:"columnGroupBies"`
 	// The compartment depth level.
 	CompartmentDepth pulumi.Float64Input `pulumi:"compartmentDepth"`
@@ -4438,7 +4526,7 @@ type GetCustomTableSavedCustomTableArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only one tag in the list is supported. For example: `[{"namespace":"oracle", "key":"createdBy"]`
 	GroupByTags GetCustomTableSavedCustomTableGroupByTagArrayInput `pulumi:"groupByTags"`
-	// The row groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+	// The row groupBy key list. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	RowGroupBies pulumi.StringArrayInput `pulumi:"rowGroupBies"`
 	// The version of the custom table.
 	Version pulumi.Float64Input `pulumi:"version"`
@@ -4495,7 +4583,7 @@ func (o GetCustomTableSavedCustomTableOutput) ToGetCustomTableSavedCustomTableOu
 	return o
 }
 
-// The column groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+// The column groupBy key list. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 func (o GetCustomTableSavedCustomTableOutput) ColumnGroupBies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetCustomTableSavedCustomTable) []string { return v.ColumnGroupBies }).(pulumi.StringArrayOutput)
 }
@@ -4517,7 +4605,7 @@ func (o GetCustomTableSavedCustomTableOutput) GroupByTags() GetCustomTableSavedC
 	}).(GetCustomTableSavedCustomTableGroupByTagArrayOutput)
 }
 
-// The row groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+// The row groupBy key list. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 func (o GetCustomTableSavedCustomTableOutput) RowGroupBies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetCustomTableSavedCustomTable) []string { return v.RowGroupBies }).(pulumi.StringArrayOutput)
 }
@@ -4885,7 +4973,7 @@ func (o GetCustomTablesCustomTableCollectionItemArrayOutput) Index(i pulumi.IntI
 }
 
 type GetCustomTablesCustomTableCollectionItemSavedCustomTable struct {
-	// The column groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+	// The column groupBy key list. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	ColumnGroupBies []string `pulumi:"columnGroupBies"`
 	// The compartment depth level.
 	CompartmentDepth float64 `pulumi:"compartmentDepth"`
@@ -4893,7 +4981,7 @@ type GetCustomTablesCustomTableCollectionItemSavedCustomTable struct {
 	DisplayName string `pulumi:"displayName"`
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only one tag in the list is supported. For example: `[{"namespace":"oracle", "key":"createdBy"]`
 	GroupByTags []GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTag `pulumi:"groupByTags"`
-	// The row groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+	// The row groupBy key list. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	RowGroupBies []string `pulumi:"rowGroupBies"`
 	// The version of the custom table.
 	Version float64 `pulumi:"version"`
@@ -4911,7 +4999,7 @@ type GetCustomTablesCustomTableCollectionItemSavedCustomTableInput interface {
 }
 
 type GetCustomTablesCustomTableCollectionItemSavedCustomTableArgs struct {
-	// The column groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+	// The column groupBy key list. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	ColumnGroupBies pulumi.StringArrayInput `pulumi:"columnGroupBies"`
 	// The compartment depth level.
 	CompartmentDepth pulumi.Float64Input `pulumi:"compartmentDepth"`
@@ -4919,7 +5007,7 @@ type GetCustomTablesCustomTableCollectionItemSavedCustomTableArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only one tag in the list is supported. For example: `[{"namespace":"oracle", "key":"createdBy"]`
 	GroupByTags GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagArrayInput `pulumi:"groupByTags"`
-	// The row groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+	// The row groupBy key list. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	RowGroupBies pulumi.StringArrayInput `pulumi:"rowGroupBies"`
 	// The version of the custom table.
 	Version pulumi.Float64Input `pulumi:"version"`
@@ -4976,7 +5064,7 @@ func (o GetCustomTablesCustomTableCollectionItemSavedCustomTableOutput) ToGetCus
 	return o
 }
 
-// The column groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+// The column groupBy key list. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 func (o GetCustomTablesCustomTableCollectionItemSavedCustomTableOutput) ColumnGroupBies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetCustomTablesCustomTableCollectionItemSavedCustomTable) []string { return v.ColumnGroupBies }).(pulumi.StringArrayOutput)
 }
@@ -4998,7 +5086,7 @@ func (o GetCustomTablesCustomTableCollectionItemSavedCustomTableOutput) GroupByT
 	}).(GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagArrayOutput)
 }
 
-// The row groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+// The row groupBy key list. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 func (o GetCustomTablesCustomTableCollectionItemSavedCustomTableOutput) RowGroupBies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetCustomTablesCustomTableCollectionItemSavedCustomTable) []string { return v.RowGroupBies }).(pulumi.StringArrayOutput)
 }
@@ -5811,13 +5899,18 @@ type GetQueriesQueryCollectionItemQueryDefinitionReportQuery struct {
 	Forecasts []GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast `pulumi:"forecasts"`
 	// The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
 	Granularity string `pulumi:"granularity"`
-	// Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+	// Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	GroupBies []string `pulumi:"groupBies"`
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
 	GroupByTags []GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTag `pulumi:"groupByTags"`
 	// Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
 	IsAggregateByTime bool `pulumi:"isAggregateByTime"`
-	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
+	// The query usage type. COST by default if it is missing.
+	// * Usage: Query the usage data.
+	// * Cost: Query the cost/billing data.
+	// * Credit: Query the credit adjustments data.
+	// * ExpiredCredit: Query the expired credits data.
+	// * AllCredit: Query the credit adjustments and expired credit.
 	QueryType string `pulumi:"queryType"`
 	// Tenant ID.
 	TenantId string `pulumi:"tenantId"`
@@ -5849,13 +5942,18 @@ type GetQueriesQueryCollectionItemQueryDefinitionReportQueryArgs struct {
 	Forecasts GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastArrayInput `pulumi:"forecasts"`
 	// The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
 	Granularity pulumi.StringInput `pulumi:"granularity"`
-	// Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+	// Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	GroupBies pulumi.StringArrayInput `pulumi:"groupBies"`
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
 	GroupByTags GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayInput `pulumi:"groupByTags"`
 	// Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
 	IsAggregateByTime pulumi.BoolInput `pulumi:"isAggregateByTime"`
-	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
+	// The query usage type. COST by default if it is missing.
+	// * Usage: Query the usage data.
+	// * Cost: Query the cost/billing data.
+	// * Credit: Query the credit adjustments data.
+	// * ExpiredCredit: Query the expired credits data.
+	// * AllCredit: Query the credit adjustments and expired credit.
 	QueryType pulumi.StringInput `pulumi:"queryType"`
 	// Tenant ID.
 	TenantId pulumi.StringInput `pulumi:"tenantId"`
@@ -5943,7 +6041,7 @@ func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryOutput) Granulari
 	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionReportQuery) string { return v.Granularity }).(pulumi.StringOutput)
 }
 
-// Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+// Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryOutput) GroupBies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionReportQuery) []string { return v.GroupBies }).(pulumi.StringArrayOutput)
 }
@@ -5960,7 +6058,12 @@ func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryOutput) IsAggrega
 	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionReportQuery) bool { return v.IsAggregateByTime }).(pulumi.BoolOutput)
 }
 
-// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
+// The query usage type. COST by default if it is missing.
+// * Usage: Query the usage data.
+// * Cost: Query the cost/billing data.
+// * Credit: Query the credit adjustments data.
+// * ExpiredCredit: Query the expired credits data.
+// * AllCredit: Query the credit adjustments and expired credit.
 func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryOutput) QueryType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionReportQuery) string { return v.QueryType }).(pulumi.StringOutput)
 }
@@ -6475,13 +6578,18 @@ type GetQueryQueryDefinitionReportQuery struct {
 	Forecasts []GetQueryQueryDefinitionReportQueryForecast `pulumi:"forecasts"`
 	// The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
 	Granularity string `pulumi:"granularity"`
-	// Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+	// Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	GroupBies []string `pulumi:"groupBies"`
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
 	GroupByTags []GetQueryQueryDefinitionReportQueryGroupByTag `pulumi:"groupByTags"`
-	// Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
 	IsAggregateByTime bool `pulumi:"isAggregateByTime"`
-	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
+	// The query usage type. COST by default if it is missing.
+	// * Usage: Query the usage data.
+	// * Cost: Query the cost/billing data.
+	// * Credit: Query the credit adjustments data.
+	// * ExpiredCredit: Query the expired credits data.
+	// * AllCredit: Query the credit adjustments and expired credit.
 	QueryType string `pulumi:"queryType"`
 	// Tenant ID.
 	TenantId string `pulumi:"tenantId"`
@@ -6513,13 +6621,18 @@ type GetQueryQueryDefinitionReportQueryArgs struct {
 	Forecasts GetQueryQueryDefinitionReportQueryForecastArrayInput `pulumi:"forecasts"`
 	// The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
 	Granularity pulumi.StringInput `pulumi:"granularity"`
-	// Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+	// Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	GroupBies pulumi.StringArrayInput `pulumi:"groupBies"`
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
 	GroupByTags GetQueryQueryDefinitionReportQueryGroupByTagArrayInput `pulumi:"groupByTags"`
-	// Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
 	IsAggregateByTime pulumi.BoolInput `pulumi:"isAggregateByTime"`
-	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
+	// The query usage type. COST by default if it is missing.
+	// * Usage: Query the usage data.
+	// * Cost: Query the cost/billing data.
+	// * Credit: Query the credit adjustments data.
+	// * ExpiredCredit: Query the expired credits data.
+	// * AllCredit: Query the credit adjustments and expired credit.
 	QueryType pulumi.StringInput `pulumi:"queryType"`
 	// Tenant ID.
 	TenantId pulumi.StringInput `pulumi:"tenantId"`
@@ -6607,7 +6720,7 @@ func (o GetQueryQueryDefinitionReportQueryOutput) Granularity() pulumi.StringOut
 	return o.ApplyT(func(v GetQueryQueryDefinitionReportQuery) string { return v.Granularity }).(pulumi.StringOutput)
 }
 
-// Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+// Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 func (o GetQueryQueryDefinitionReportQueryOutput) GroupBies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetQueryQueryDefinitionReportQuery) []string { return v.GroupBies }).(pulumi.StringArrayOutput)
 }
@@ -6619,12 +6732,17 @@ func (o GetQueryQueryDefinitionReportQueryOutput) GroupByTags() GetQueryQueryDef
 	}).(GetQueryQueryDefinitionReportQueryGroupByTagArrayOutput)
 }
 
-// Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
 func (o GetQueryQueryDefinitionReportQueryOutput) IsAggregateByTime() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetQueryQueryDefinitionReportQuery) bool { return v.IsAggregateByTime }).(pulumi.BoolOutput)
 }
 
-// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
+// The query usage type. COST by default if it is missing.
+// * Usage: Query the usage data.
+// * Cost: Query the cost/billing data.
+// * Credit: Query the credit adjustments data.
+// * ExpiredCredit: Query the expired credits data.
+// * AllCredit: Query the credit adjustments and expired credit.
 func (o GetQueryQueryDefinitionReportQueryOutput) QueryType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetQueryQueryDefinitionReportQuery) string { return v.QueryType }).(pulumi.StringOutput)
 }
@@ -6665,7 +6783,7 @@ func (o GetQueryQueryDefinitionReportQueryArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetQueryQueryDefinitionReportQueryForecast struct {
-	// BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
+	// BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made
 	ForecastType string `pulumi:"forecastType"`
 	// The forecast end time.
 	TimeForecastEnded string `pulumi:"timeForecastEnded"`
@@ -6685,7 +6803,7 @@ type GetQueryQueryDefinitionReportQueryForecastInput interface {
 }
 
 type GetQueryQueryDefinitionReportQueryForecastArgs struct {
-	// BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
+	// BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made
 	ForecastType pulumi.StringInput `pulumi:"forecastType"`
 	// The forecast end time.
 	TimeForecastEnded pulumi.StringInput `pulumi:"timeForecastEnded"`
@@ -6744,7 +6862,7 @@ func (o GetQueryQueryDefinitionReportQueryForecastOutput) ToGetQueryQueryDefinit
 	return o
 }
 
-// BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
+// BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made
 func (o GetQueryQueryDefinitionReportQueryForecastOutput) ForecastType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetQueryQueryDefinitionReportQueryForecast) string { return v.ForecastType }).(pulumi.StringOutput)
 }
@@ -7617,17 +7735,17 @@ func (o GetScheduledRunsScheduledRunCollectionArrayOutput) Index(i pulumi.IntInp
 }
 
 type GetScheduledRunsScheduledRunCollectionItem struct {
-	// The ocid representing unique shedule run
+	// The OCID representing a unique shedule run.
 	Id string `pulumi:"id"`
-	// Additional details about scheduled run failure
+	// Additional details about the scheduled run.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// The unique ID of a schedule.
+	// The schedule unique ID.
 	ScheduleId string `pulumi:"scheduleId"`
-	// Specifies if the schedule job was run successfully or not.
+	// Specifies whether or not the schedule job was successfully run.
 	State string `pulumi:"state"`
-	// The time when schedule started executing
+	// The time the schedule started executing.
 	TimeCreated string `pulumi:"timeCreated"`
-	// The time when schedule finished executing
+	// The time the schedule finished executing.
 	TimeFinished string `pulumi:"timeFinished"`
 }
 
@@ -7643,17 +7761,17 @@ type GetScheduledRunsScheduledRunCollectionItemInput interface {
 }
 
 type GetScheduledRunsScheduledRunCollectionItemArgs struct {
-	// The ocid representing unique shedule run
+	// The OCID representing a unique shedule run.
 	Id pulumi.StringInput `pulumi:"id"`
-	// Additional details about scheduled run failure
+	// Additional details about the scheduled run.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
-	// The unique ID of a schedule.
+	// The schedule unique ID.
 	ScheduleId pulumi.StringInput `pulumi:"scheduleId"`
-	// Specifies if the schedule job was run successfully or not.
+	// Specifies whether or not the schedule job was successfully run.
 	State pulumi.StringInput `pulumi:"state"`
-	// The time when schedule started executing
+	// The time the schedule started executing.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The time when schedule finished executing
+	// The time the schedule finished executing.
 	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
 }
 
@@ -7708,32 +7826,32 @@ func (o GetScheduledRunsScheduledRunCollectionItemOutput) ToGetScheduledRunsSche
 	return o
 }
 
-// The ocid representing unique shedule run
+// The OCID representing a unique shedule run.
 func (o GetScheduledRunsScheduledRunCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScheduledRunsScheduledRunCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Additional details about scheduled run failure
+// Additional details about the scheduled run.
 func (o GetScheduledRunsScheduledRunCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScheduledRunsScheduledRunCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// The unique ID of a schedule.
+// The schedule unique ID.
 func (o GetScheduledRunsScheduledRunCollectionItemOutput) ScheduleId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScheduledRunsScheduledRunCollectionItem) string { return v.ScheduleId }).(pulumi.StringOutput)
 }
 
-// Specifies if the schedule job was run successfully or not.
+// Specifies whether or not the schedule job was successfully run.
 func (o GetScheduledRunsScheduledRunCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScheduledRunsScheduledRunCollectionItem) string { return v.State }).(pulumi.StringOutput)
 }
 
-// The time when schedule started executing
+// The time the schedule started executing.
 func (o GetScheduledRunsScheduledRunCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScheduledRunsScheduledRunCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The time when schedule finished executing
+// The time the schedule finished executing.
 func (o GetScheduledRunsScheduledRunCollectionItemOutput) TimeFinished() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScheduledRunsScheduledRunCollectionItem) string { return v.TimeFinished }).(pulumi.StringOutput)
 }
@@ -7759,7 +7877,7 @@ func (o GetScheduledRunsScheduledRunCollectionItemArrayOutput) Index(i pulumi.In
 }
 
 type GetSchedulesFilter struct {
-	// Query parameter for filtering by name
+	// The query parameter for filtering by name.
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
 	Values []string `pulumi:"values"`
@@ -7777,7 +7895,7 @@ type GetSchedulesFilterInput interface {
 }
 
 type GetSchedulesFilterArgs struct {
-	// Query parameter for filtering by name
+	// The query parameter for filtering by name.
 	Name   pulumi.StringInput      `pulumi:"name"`
 	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
 	Values pulumi.StringArrayInput `pulumi:"values"`
@@ -7834,7 +7952,7 @@ func (o GetSchedulesFilterOutput) ToGetSchedulesFilterOutputWithContext(ctx cont
 	return o
 }
 
-// Query parameter for filtering by name
+// The query parameter for filtering by name.
 func (o GetSchedulesFilterOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSchedulesFilter) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -7972,7 +8090,7 @@ type GetSchedulesScheduleCollectionItem struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID representing a unique shedule.
 	Id string `pulumi:"id"`
-	// Query parameter for filtering by name
+	// The query parameter for filtering by name.
 	Name string `pulumi:"name"`
 	// Specifies the supported output file format.
 	OutputFileFormat string `pulumi:"outputFileFormat"`
@@ -8018,7 +8136,7 @@ type GetSchedulesScheduleCollectionItemArgs struct {
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID representing a unique shedule.
 	Id pulumi.StringInput `pulumi:"id"`
-	// Query parameter for filtering by name
+	// The query parameter for filtering by name.
 	Name pulumi.StringInput `pulumi:"name"`
 	// Specifies the supported output file format.
 	OutputFileFormat pulumi.StringInput `pulumi:"outputFileFormat"`
@@ -8118,7 +8236,7 @@ func (o GetSchedulesScheduleCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Query parameter for filtering by name
+// The query parameter for filtering by name.
 func (o GetSchedulesScheduleCollectionItemOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -9153,7 +9271,7 @@ type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryD
 	CostAnalysisUis []GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUi `pulumi:"costAnalysisUis"`
 	// The query display name. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
-	// The request of the generated usage carbon emissions report.
+	// The request of the generated carbon emissions usage report.
 	ReportQueries []GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery `pulumi:"reportQueries"`
 	// The saved query version.
 	Version int `pulumi:"version"`
@@ -9175,7 +9293,7 @@ type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryD
 	CostAnalysisUis GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArrayInput `pulumi:"costAnalysisUis"`
 	// The query display name. Avoid entering confidential information.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// The request of the generated usage carbon emissions report.
+	// The request of the generated carbon emissions usage report.
 	ReportQueries GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArrayInput `pulumi:"reportQueries"`
 	// The saved query version.
 	Version pulumi.IntInput `pulumi:"version"`
@@ -9246,7 +9364,7 @@ func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQue
 	}).(pulumi.StringOutput)
 }
 
-// The request of the generated usage carbon emissions report.
+// The request of the generated carbon emissions usage report.
 func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionOutput) ReportQueries() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArrayOutput {
 	return o.ApplyT(func(v GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinition) []GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery {
 		return v.ReportQueries
@@ -9393,13 +9511,19 @@ func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQue
 type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery struct {
 	// The compartment depth level.
 	CompartmentDepth int `pulumi:"compartmentDepth"`
-	// The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+	// The user interface date range, for example, LAST_THREE_MONTHS. Overrides the timeUsageStarted and timeUsageEnded properties.
 	DateRangeName string `pulumi:"dateRangeName"`
+	// Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+	EmissionCalculationMethod string `pulumi:"emissionCalculationMethod"`
+	// Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+	EmissionType string `pulumi:"emissionType"`
+	// The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+	Granularity string `pulumi:"granularity"`
 	// Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	GroupBies []string `pulumi:"groupBies"`
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
 	GroupByTags []GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTag `pulumi:"groupByTags"`
-	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or costs over the query time period are summed.
 	IsAggregateByTime bool `pulumi:"isAggregateByTime"`
 	// Tenant ID.
 	TenantId string `pulumi:"tenantId"`
@@ -9425,13 +9549,19 @@ type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryD
 type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArgs struct {
 	// The compartment depth level.
 	CompartmentDepth pulumi.IntInput `pulumi:"compartmentDepth"`
-	// The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+	// The user interface date range, for example, LAST_THREE_MONTHS. Overrides the timeUsageStarted and timeUsageEnded properties.
 	DateRangeName pulumi.StringInput `pulumi:"dateRangeName"`
+	// Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+	EmissionCalculationMethod pulumi.StringInput `pulumi:"emissionCalculationMethod"`
+	// Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+	EmissionType pulumi.StringInput `pulumi:"emissionType"`
+	// The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+	Granularity pulumi.StringInput `pulumi:"granularity"`
 	// Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	GroupBies pulumi.StringArrayInput `pulumi:"groupBies"`
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
 	GroupByTags GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayInput `pulumi:"groupByTags"`
-	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or costs over the query time period are summed.
 	IsAggregateByTime pulumi.BoolInput `pulumi:"isAggregateByTime"`
 	// Tenant ID.
 	TenantId pulumi.StringInput `pulumi:"tenantId"`
@@ -9501,10 +9631,31 @@ func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQue
 	}).(pulumi.IntOutput)
 }
 
-// The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+// The user interface date range, for example, LAST_THREE_MONTHS. Overrides the timeUsageStarted and timeUsageEnded properties.
 func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryOutput) DateRangeName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery) string {
 		return v.DateRangeName
+	}).(pulumi.StringOutput)
+}
+
+// Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryOutput) EmissionCalculationMethod() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery) string {
+		return v.EmissionCalculationMethod
+	}).(pulumi.StringOutput)
+}
+
+// Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryOutput) EmissionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery) string {
+		return v.EmissionType
+	}).(pulumi.StringOutput)
+}
+
+// The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryOutput) Granularity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery) string {
+		return v.Granularity
 	}).(pulumi.StringOutput)
 }
 
@@ -9522,7 +9673,7 @@ func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQue
 	}).(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayOutput)
 }
 
-// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or costs over the query time period are summed.
 func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryOutput) IsAggregateByTime() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery) bool {
 		return v.IsAggregateByTime
@@ -9703,7 +9854,7 @@ type GetUsageCarbonEmissionsQueryQueryDefinition struct {
 	CostAnalysisUis []GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi `pulumi:"costAnalysisUis"`
 	// The query display name. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
-	// The request of the generated usage carbon emissions report.
+	// The request of the generated carbon emissions usage report.
 	ReportQueries []GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery `pulumi:"reportQueries"`
 	// The saved query version.
 	Version int `pulumi:"version"`
@@ -9725,7 +9876,7 @@ type GetUsageCarbonEmissionsQueryQueryDefinitionArgs struct {
 	CostAnalysisUis GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArrayInput `pulumi:"costAnalysisUis"`
 	// The query display name. Avoid entering confidential information.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// The request of the generated usage carbon emissions report.
+	// The request of the generated carbon emissions usage report.
 	ReportQueries GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArrayInput `pulumi:"reportQueries"`
 	// The saved query version.
 	Version pulumi.IntInput `pulumi:"version"`
@@ -9794,7 +9945,7 @@ func (o GetUsageCarbonEmissionsQueryQueryDefinitionOutput) DisplayName() pulumi.
 	return o.ApplyT(func(v GetUsageCarbonEmissionsQueryQueryDefinition) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// The request of the generated usage carbon emissions report.
+// The request of the generated carbon emissions usage report.
 func (o GetUsageCarbonEmissionsQueryQueryDefinitionOutput) ReportQueries() GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArrayOutput {
 	return o.ApplyT(func(v GetUsageCarbonEmissionsQueryQueryDefinition) []GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery {
 		return v.ReportQueries
@@ -9935,13 +10086,19 @@ func (o GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArrayOutput) In
 type GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery struct {
 	// The compartment depth level.
 	CompartmentDepth int `pulumi:"compartmentDepth"`
-	// The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+	// The user interface date range, for example, LAST_THREE_MONTHS. Overrides the timeUsageStarted and timeUsageEnded properties.
 	DateRangeName string `pulumi:"dateRangeName"`
+	// Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+	EmissionCalculationMethod string `pulumi:"emissionCalculationMethod"`
+	// Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+	EmissionType string `pulumi:"emissionType"`
+	// The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+	Granularity string `pulumi:"granularity"`
 	// Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	GroupBies []string `pulumi:"groupBies"`
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
 	GroupByTags []GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag `pulumi:"groupByTags"`
-	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or costs over the query time period are summed.
 	IsAggregateByTime bool `pulumi:"isAggregateByTime"`
 	// Tenant ID.
 	TenantId string `pulumi:"tenantId"`
@@ -9967,13 +10124,19 @@ type GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryInput interface {
 type GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs struct {
 	// The compartment depth level.
 	CompartmentDepth pulumi.IntInput `pulumi:"compartmentDepth"`
-	// The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+	// The user interface date range, for example, LAST_THREE_MONTHS. Overrides the timeUsageStarted and timeUsageEnded properties.
 	DateRangeName pulumi.StringInput `pulumi:"dateRangeName"`
+	// Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+	EmissionCalculationMethod pulumi.StringInput `pulumi:"emissionCalculationMethod"`
+	// Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+	EmissionType pulumi.StringInput `pulumi:"emissionType"`
+	// The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+	Granularity pulumi.StringInput `pulumi:"granularity"`
 	// Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	GroupBies pulumi.StringArrayInput `pulumi:"groupBies"`
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
 	GroupByTags GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayInput `pulumi:"groupByTags"`
-	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or costs over the query time period are summed.
 	IsAggregateByTime pulumi.BoolInput `pulumi:"isAggregateByTime"`
 	// Tenant ID.
 	TenantId pulumi.StringInput `pulumi:"tenantId"`
@@ -10041,9 +10204,26 @@ func (o GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) Compartmen
 	return o.ApplyT(func(v GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery) int { return v.CompartmentDepth }).(pulumi.IntOutput)
 }
 
-// The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+// The user interface date range, for example, LAST_THREE_MONTHS. Overrides the timeUsageStarted and timeUsageEnded properties.
 func (o GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) DateRangeName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery) string { return v.DateRangeName }).(pulumi.StringOutput)
+}
+
+// Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) EmissionCalculationMethod() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery) string {
+		return v.EmissionCalculationMethod
+	}).(pulumi.StringOutput)
+}
+
+// Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) EmissionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery) string { return v.EmissionType }).(pulumi.StringOutput)
+}
+
+// The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) Granularity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery) string { return v.Granularity }).(pulumi.StringOutput)
 }
 
 // Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
@@ -10058,7 +10238,7 @@ func (o GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) GroupByTag
 	}).(GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput)
 }
 
-// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or costs over the query time period are summed.
 func (o GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) IsAggregateByTime() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery) bool { return v.IsAggregateByTime }).(pulumi.BoolOutput)
 }
@@ -10221,13 +10401,13 @@ func (o GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOut
 }
 
 type GetUsageStatementEmailRecipientsGroupRecipientsList struct {
-	// the email of the recipient.
+	// The recipient email address.
 	EmailId string `pulumi:"emailId"`
-	// the first name of the recipient.
+	// The recipient first name.
 	FirstName string `pulumi:"firstName"`
-	// the last name of the recipient.
+	// The recipient last name.
 	LastName string `pulumi:"lastName"`
-	// The email recipient group lifecycle state.
+	// The email recipients group lifecycle state.
 	State string `pulumi:"state"`
 }
 
@@ -10243,13 +10423,13 @@ type GetUsageStatementEmailRecipientsGroupRecipientsListInput interface {
 }
 
 type GetUsageStatementEmailRecipientsGroupRecipientsListArgs struct {
-	// the email of the recipient.
+	// The recipient email address.
 	EmailId pulumi.StringInput `pulumi:"emailId"`
-	// the first name of the recipient.
+	// The recipient first name.
 	FirstName pulumi.StringInput `pulumi:"firstName"`
-	// the last name of the recipient.
+	// The recipient last name.
 	LastName pulumi.StringInput `pulumi:"lastName"`
-	// The email recipient group lifecycle state.
+	// The email recipients group lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
 }
 
@@ -10304,22 +10484,22 @@ func (o GetUsageStatementEmailRecipientsGroupRecipientsListOutput) ToGetUsageSta
 	return o
 }
 
-// the email of the recipient.
+// The recipient email address.
 func (o GetUsageStatementEmailRecipientsGroupRecipientsListOutput) EmailId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUsageStatementEmailRecipientsGroupRecipientsList) string { return v.EmailId }).(pulumi.StringOutput)
 }
 
-// the first name of the recipient.
+// The recipient first name.
 func (o GetUsageStatementEmailRecipientsGroupRecipientsListOutput) FirstName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUsageStatementEmailRecipientsGroupRecipientsList) string { return v.FirstName }).(pulumi.StringOutput)
 }
 
-// the last name of the recipient.
+// The recipient last name.
 func (o GetUsageStatementEmailRecipientsGroupRecipientsListOutput) LastName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUsageStatementEmailRecipientsGroupRecipientsList) string { return v.LastName }).(pulumi.StringOutput)
 }
 
-// The email recipient group lifecycle state.
+// The email recipients group lifecycle state.
 func (o GetUsageStatementEmailRecipientsGroupRecipientsListOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUsageStatementEmailRecipientsGroupRecipientsList) string { return v.State }).(pulumi.StringOutput)
 }
@@ -10446,11 +10626,11 @@ type GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItem st
 	EmailRecipientsGroupId string `pulumi:"emailRecipientsGroupId"`
 	// The usage statement email recipients group OCID.
 	Id string `pulumi:"id"`
-	// The list of recipient will receive the usage statement email.
+	// The list of recipients that will receive usage statement emails.
 	RecipientsLists []GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsList `pulumi:"recipientsLists"`
-	// The email recipient group lifecycle state.
+	// The email recipients group lifecycle state.
 	State string `pulumi:"state"`
-	// The UsageStatement Subscription unique OCID.
+	// The usage statement subscription unique OCID.
 	SubscriptionId string `pulumi:"subscriptionId"`
 }
 
@@ -10471,11 +10651,11 @@ type GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArg
 	EmailRecipientsGroupId pulumi.StringInput `pulumi:"emailRecipientsGroupId"`
 	// The usage statement email recipients group OCID.
 	Id pulumi.StringInput `pulumi:"id"`
-	// The list of recipient will receive the usage statement email.
+	// The list of recipients that will receive usage statement emails.
 	RecipientsLists GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArrayInput `pulumi:"recipientsLists"`
-	// The email recipient group lifecycle state.
+	// The email recipients group lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
-	// The UsageStatement Subscription unique OCID.
+	// The usage statement subscription unique OCID.
 	SubscriptionId pulumi.StringInput `pulumi:"subscriptionId"`
 }
 
@@ -10548,21 +10728,21 @@ func (o GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItem
 	return o.ApplyT(func(v GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The list of recipient will receive the usage statement email.
+// The list of recipients that will receive usage statement emails.
 func (o GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemOutput) RecipientsLists() GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArrayOutput {
 	return o.ApplyT(func(v GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItem) []GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsList {
 		return v.RecipientsLists
 	}).(GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArrayOutput)
 }
 
-// The email recipient group lifecycle state.
+// The email recipients group lifecycle state.
 func (o GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItem) string {
 		return v.State
 	}).(pulumi.StringOutput)
 }
 
-// The UsageStatement Subscription unique OCID.
+// The usage statement subscription unique OCID.
 func (o GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemOutput) SubscriptionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItem) string {
 		return v.SubscriptionId
@@ -10590,13 +10770,13 @@ func (o GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItem
 }
 
 type GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsList struct {
-	// the email of the recipient.
+	// The recipient email address.
 	EmailId string `pulumi:"emailId"`
-	// the first name of the recipient.
+	// The recipient first name.
 	FirstName string `pulumi:"firstName"`
-	// the last name of the recipient.
+	// The recipient last name.
 	LastName string `pulumi:"lastName"`
-	// The email recipient group lifecycle state.
+	// The email recipients group lifecycle state.
 	State string `pulumi:"state"`
 }
 
@@ -10612,13 +10792,13 @@ type GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRec
 }
 
 type GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArgs struct {
-	// the email of the recipient.
+	// The recipient email address.
 	EmailId pulumi.StringInput `pulumi:"emailId"`
-	// the first name of the recipient.
+	// The recipient first name.
 	FirstName pulumi.StringInput `pulumi:"firstName"`
-	// the last name of the recipient.
+	// The recipient last name.
 	LastName pulumi.StringInput `pulumi:"lastName"`
-	// The email recipient group lifecycle state.
+	// The email recipients group lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
 }
 
@@ -10673,28 +10853,28 @@ func (o GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItem
 	return o
 }
 
-// the email of the recipient.
+// The recipient email address.
 func (o GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListOutput) EmailId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsList) string {
 		return v.EmailId
 	}).(pulumi.StringOutput)
 }
 
-// the first name of the recipient.
+// The recipient first name.
 func (o GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListOutput) FirstName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsList) string {
 		return v.FirstName
 	}).(pulumi.StringOutput)
 }
 
-// the last name of the recipient.
+// The recipient last name.
 func (o GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListOutput) LastName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsList) string {
 		return v.LastName
 	}).(pulumi.StringOutput)
 }
 
-// The email recipient group lifecycle state.
+// The email recipients group lifecycle state.
 func (o GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsList) string {
 		return v.State

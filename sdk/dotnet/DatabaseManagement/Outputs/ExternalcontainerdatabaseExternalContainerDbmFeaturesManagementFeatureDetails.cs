@@ -14,6 +14,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
     public sealed class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetails
     {
         /// <summary>
+        /// Indicates whether Diagnostics &amp; Management should be enabled for all the current pluggable databases in the container database.
+        /// </summary>
+        public readonly bool? CanEnableAllCurrentPdbs;
+        /// <summary>
         /// The connector details required to connect to an Oracle cloud database.
         /// </summary>
         public readonly Outputs.ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetails? ConnectorDetails;
@@ -22,20 +26,30 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string Feature;
         /// <summary>
+        /// Indicates whether Diagnostics &amp; Management should be enabled automatically for all the pluggable databases in the container database.
+        /// </summary>
+        public readonly bool? IsAutoEnablePluggableDatabase;
+        /// <summary>
         /// The Oracle license model that applies to the external database.
         /// </summary>
         public readonly string? LicenseModel;
 
         [OutputConstructor]
         private ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetails(
+            bool? canEnableAllCurrentPdbs,
+
             Outputs.ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetails? connectorDetails,
 
             string feature,
 
+            bool? isAutoEnablePluggableDatabase,
+
             string? licenseModel)
         {
+            CanEnableAllCurrentPdbs = canEnableAllCurrentPdbs;
             ConnectorDetails = connectorDetails;
             Feature = feature;
+            IsAutoEnablePluggableDatabase = isAutoEnablePluggableDatabase;
             LicenseModel = licenseModel;
         }
     }

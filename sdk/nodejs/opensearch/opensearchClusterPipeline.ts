@@ -31,6 +31,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
+ *     nodeShape: opensearchClusterPipelineNodeShape,
  *     nsgId: testNsg.id,
  *     opcDryRun: opensearchClusterPipelineOpcDryRun,
  *     reverseConnectionEndpoints: [{
@@ -108,6 +109,10 @@ export class OpensearchClusterPipeline extends pulumi.CustomResource {
      * (Updatable) The number of nodes configured for the pipeline.
      */
     public readonly nodeCount!: pulumi.Output<number>;
+    /**
+     * (Updatable) The pipeline node shape.
+     */
+    public readonly nodeShape!: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the NSG where the pipeline private endpoint vnic will be attached.
      */
@@ -197,6 +202,7 @@ export class OpensearchClusterPipeline extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["memoryGb"] = state ? state.memoryGb : undefined;
             resourceInputs["nodeCount"] = state ? state.nodeCount : undefined;
+            resourceInputs["nodeShape"] = state ? state.nodeShape : undefined;
             resourceInputs["nsgId"] = state ? state.nsgId : undefined;
             resourceInputs["ocpuCount"] = state ? state.ocpuCount : undefined;
             resourceInputs["opcDryRun"] = state ? state.opcDryRun : undefined;
@@ -243,6 +249,7 @@ export class OpensearchClusterPipeline extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["memoryGb"] = args ? args.memoryGb : undefined;
             resourceInputs["nodeCount"] = args ? args.nodeCount : undefined;
+            resourceInputs["nodeShape"] = args ? args.nodeShape : undefined;
             resourceInputs["nsgId"] = args ? args.nsgId : undefined;
             resourceInputs["ocpuCount"] = args ? args.ocpuCount : undefined;
             resourceInputs["opcDryRun"] = args ? args.opcDryRun : undefined;
@@ -297,6 +304,10 @@ export interface OpensearchClusterPipelineState {
      * (Updatable) The number of nodes configured for the pipeline.
      */
     nodeCount?: pulumi.Input<number>;
+    /**
+     * (Updatable) The pipeline node shape.
+     */
+    nodeShape?: pulumi.Input<string>;
     /**
      * (Updatable) The OCID of the NSG where the pipeline private endpoint vnic will be attached.
      */
@@ -399,6 +410,10 @@ export interface OpensearchClusterPipelineArgs {
      * (Updatable) The number of nodes configured for the pipeline.
      */
     nodeCount: pulumi.Input<number>;
+    /**
+     * (Updatable) The pipeline node shape.
+     */
+    nodeShape?: pulumi.Input<string>;
     /**
      * (Updatable) The OCID of the NSG where the pipeline private endpoint vnic will be attached.
      */

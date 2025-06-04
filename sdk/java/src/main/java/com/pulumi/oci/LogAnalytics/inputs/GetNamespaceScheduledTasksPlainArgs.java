@@ -99,6 +99,21 @@ public final class GetNamespaceScheduledTasksPlainArgs extends com.pulumi.resour
         return this.taskType;
     }
 
+    /**
+     * A filter to return only scheduled tasks whose stream action templateId matches the given id  exactly.
+     * 
+     */
+    @Import(name="templateId")
+    private @Nullable String templateId;
+
+    /**
+     * @return A filter to return only scheduled tasks whose stream action templateId matches the given id  exactly.
+     * 
+     */
+    public Optional<String> templateId() {
+        return Optional.ofNullable(this.templateId);
+    }
+
     private GetNamespaceScheduledTasksPlainArgs() {}
 
     private GetNamespaceScheduledTasksPlainArgs(GetNamespaceScheduledTasksPlainArgs $) {
@@ -108,6 +123,7 @@ public final class GetNamespaceScheduledTasksPlainArgs extends com.pulumi.resour
         this.namespace = $.namespace;
         this.targetService = $.targetService;
         this.taskType = $.taskType;
+        this.templateId = $.templateId;
     }
 
     public static Builder builder() {
@@ -189,6 +205,17 @@ public final class GetNamespaceScheduledTasksPlainArgs extends com.pulumi.resour
          */
         public Builder taskType(String taskType) {
             $.taskType = taskType;
+            return this;
+        }
+
+        /**
+         * @param templateId A filter to return only scheduled tasks whose stream action templateId matches the given id  exactly.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder templateId(@Nullable String templateId) {
+            $.templateId = templateId;
             return this;
         }
 

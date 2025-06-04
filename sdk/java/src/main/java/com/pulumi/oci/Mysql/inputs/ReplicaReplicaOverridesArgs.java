@@ -6,6 +6,7 @@ package com.pulumi.oci.Mysql.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -46,6 +47,21 @@ public final class ReplicaReplicaOverridesArgs extends com.pulumi.resources.Reso
     }
 
     /**
+     * (Updatable) Network Security Group OCIDs used for the VNIC attachment.
+     * 
+     */
+    @Import(name="nsgIds")
+    private @Nullable Output<List<String>> nsgIds;
+
+    /**
+     * @return (Updatable) Network Security Group OCIDs used for the VNIC attachment.
+     * 
+     */
+    public Optional<Output<List<String>>> nsgIds() {
+        return Optional.ofNullable(this.nsgIds);
+    }
+
+    /**
      * (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      * 
      * ** IMPORTANT **
@@ -71,6 +87,7 @@ public final class ReplicaReplicaOverridesArgs extends com.pulumi.resources.Reso
     private ReplicaReplicaOverridesArgs(ReplicaReplicaOverridesArgs $) {
         this.configurationId = $.configurationId;
         this.mysqlVersion = $.mysqlVersion;
+        this.nsgIds = $.nsgIds;
         this.shapeName = $.shapeName;
     }
 
@@ -132,6 +149,37 @@ public final class ReplicaReplicaOverridesArgs extends com.pulumi.resources.Reso
          */
         public Builder mysqlVersion(String mysqlVersion) {
             return mysqlVersion(Output.of(mysqlVersion));
+        }
+
+        /**
+         * @param nsgIds (Updatable) Network Security Group OCIDs used for the VNIC attachment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nsgIds(@Nullable Output<List<String>> nsgIds) {
+            $.nsgIds = nsgIds;
+            return this;
+        }
+
+        /**
+         * @param nsgIds (Updatable) Network Security Group OCIDs used for the VNIC attachment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nsgIds(List<String> nsgIds) {
+            return nsgIds(Output.of(nsgIds));
+        }
+
+        /**
+         * @param nsgIds (Updatable) Network Security Group OCIDs used for the VNIC attachment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nsgIds(String... nsgIds) {
+            return nsgIds(List.of(nsgIds));
         }
 
         /**

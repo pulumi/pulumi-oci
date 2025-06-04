@@ -18,9 +18,21 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// </summary>
         public readonly int? CompartmentDepth;
         /// <summary>
-        /// (Updatable) The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+        /// (Updatable) The user interface date range, for example, LAST_THREE_MONTHS. Overrides the timeUsageStarted and timeUsageEnded properties.
         /// </summary>
         public readonly string? DateRangeName;
+        /// <summary>
+        /// (Updatable) Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+        /// </summary>
+        public readonly string? EmissionCalculationMethod;
+        /// <summary>
+        /// (Updatable) Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+        /// </summary>
+        public readonly string? EmissionType;
+        /// <summary>
+        /// (Updatable) The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+        /// </summary>
+        public readonly string? Granularity;
         /// <summary>
         /// (Updatable) Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
         /// </summary>
@@ -30,7 +42,7 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag> GroupByTags;
         /// <summary>
-        /// (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+        /// (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or costs over the query time period are summed.
         /// </summary>
         public readonly bool? IsAggregateByTime;
         /// <summary>
@@ -56,6 +68,12 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
 
             string? dateRangeName,
 
+            string? emissionCalculationMethod,
+
+            string? emissionType,
+
+            string? granularity,
+
             ImmutableArray<string> groupBies,
 
             ImmutableArray<Outputs.UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag> groupByTags,
@@ -72,6 +90,9 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         {
             CompartmentDepth = compartmentDepth;
             DateRangeName = dateRangeName;
+            EmissionCalculationMethod = emissionCalculationMethod;
+            EmissionType = emissionType;
+            Granularity = granularity;
             GroupBies = groupBies;
             GroupByTags = groupByTags;
             IsAggregateByTime = isAggregateByTime;

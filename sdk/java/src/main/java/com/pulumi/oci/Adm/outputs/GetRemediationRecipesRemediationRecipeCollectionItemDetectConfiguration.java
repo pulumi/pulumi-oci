@@ -18,17 +18,17 @@ public final class GetRemediationRecipesRemediationRecipeCollectionItemDetectCon
      */
     private List<String> exclusions;
     /**
-     * @return The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+     * @return The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. A vulnerability with a CVSS V2 score below this value is not considered for remediation.
      * 
      */
     private Double maxPermissibleCvssV2score;
     /**
-     * @return The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+     * @return The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. A vulnerability with a CVSS V3 score below this value is not considered for patching.
      * 
      */
     private Double maxPermissibleCvssV3score;
     /**
-     * @return The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered for patching.
+     * @return The maximum ADM Severity. A vulnerability with an severity below this value is not considered for remediation.
      * 
      */
     private String maxPermissibleSeverity;
@@ -47,21 +47,21 @@ public final class GetRemediationRecipesRemediationRecipeCollectionItemDetectCon
         return this.exclusions;
     }
     /**
-     * @return The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+     * @return The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. A vulnerability with a CVSS V2 score below this value is not considered for remediation.
      * 
      */
     public Double maxPermissibleCvssV2score() {
         return this.maxPermissibleCvssV2score;
     }
     /**
-     * @return The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+     * @return The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. A vulnerability with a CVSS V3 score below this value is not considered for patching.
      * 
      */
     public Double maxPermissibleCvssV3score() {
         return this.maxPermissibleCvssV3score;
     }
     /**
-     * @return The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered for patching.
+     * @return The maximum ADM Severity. A vulnerability with an severity below this value is not considered for remediation.
      * 
      */
     public String maxPermissibleSeverity() {

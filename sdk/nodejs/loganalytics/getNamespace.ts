@@ -50,11 +50,21 @@ export interface GetNamespaceResult {
      */
     readonly id: string;
     /**
+     * This indicates if old data can be archived for a tenancy
+     */
+    readonly isArchivingEnabled: boolean;
+    /**
+     * This indicates if the tenancy is data ever ingested
+     */
+    readonly isDataEverIngested: boolean;
+    readonly isLogsetEnabled: boolean;
+    /**
      * This indicates if the tenancy is onboarded to Logging Analytics
      */
     readonly isOnboarded: boolean;
     /**
      * This is the namespace name of a tenancy
+     * * `is_logSet_enabled` - This indicates if the tenancy is logSet enable
      */
     readonly namespace: string;
 }

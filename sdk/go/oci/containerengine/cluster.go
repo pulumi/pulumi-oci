@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -23,7 +23,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/containerengine"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/containerengine"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -161,6 +161,8 @@ type Cluster struct {
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The cluster-specific OpenID Connect Discovery endpoint
 	OpenIdConnectDiscoveryEndpoint pulumi.StringOutput `pulumi:"openIdConnectDiscoveryEndpoint"`
+	// The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
+	OpenIdConnectDiscoveryKey pulumi.StringOutput `pulumi:"openIdConnectDiscoveryKey"`
 	// (Updatable) Optional attributes for the cluster.
 	Options ClusterOptionsOutput `pulumi:"options"`
 	// The state of the cluster masters.
@@ -241,6 +243,8 @@ type clusterState struct {
 	Name *string `pulumi:"name"`
 	// The cluster-specific OpenID Connect Discovery endpoint
 	OpenIdConnectDiscoveryEndpoint *string `pulumi:"openIdConnectDiscoveryEndpoint"`
+	// The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
+	OpenIdConnectDiscoveryKey *string `pulumi:"openIdConnectDiscoveryKey"`
 	// (Updatable) Optional attributes for the cluster.
 	Options *ClusterOptions `pulumi:"options"`
 	// The state of the cluster masters.
@@ -283,6 +287,8 @@ type ClusterState struct {
 	Name pulumi.StringPtrInput
 	// The cluster-specific OpenID Connect Discovery endpoint
 	OpenIdConnectDiscoveryEndpoint pulumi.StringPtrInput
+	// The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
+	OpenIdConnectDiscoveryKey pulumi.StringPtrInput
 	// (Updatable) Optional attributes for the cluster.
 	Options ClusterOptionsPtrInput
 	// The state of the cluster masters.
@@ -516,6 +522,11 @@ func (o ClusterOutput) Name() pulumi.StringOutput {
 // The cluster-specific OpenID Connect Discovery endpoint
 func (o ClusterOutput) OpenIdConnectDiscoveryEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.OpenIdConnectDiscoveryEndpoint }).(pulumi.StringOutput)
+}
+
+// The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
+func (o ClusterOutput) OpenIdConnectDiscoveryKey() pulumi.StringOutput {
+	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.OpenIdConnectDiscoveryKey }).(pulumi.StringOutput)
 }
 
 // (Updatable) Optional attributes for the cluster.

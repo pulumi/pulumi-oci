@@ -62,7 +62,7 @@ export class UnsetUserAssessmentBaseline extends pulumi.CustomResource {
     /**
      * The list of database target OCIDs for which the user intends to unset the baseline.
      */
-    public readonly targetIds!: pulumi.Output<string[]>;
+    public readonly targetIds!: pulumi.Output<string[] | undefined>;
     /**
      * The OCID of the user assessment.
      *

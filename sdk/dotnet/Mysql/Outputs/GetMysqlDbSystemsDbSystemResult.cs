@@ -136,11 +136,15 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly string MysqlVersion;
         /// <summary>
+        /// Network Security Group OCIDs used for the VNIC attachment.
+        /// </summary>
+        public readonly ImmutableArray<string> NsgIds;
+        /// <summary>
         /// Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailResult> PointInTimeRecoveryDetails;
         /// <summary>
-        /// The port for primary endpoint of the DB System to listen on.
+        /// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
         /// </summary>
         public readonly int Port;
         /// <summary>
@@ -151,6 +155,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// The read endpoint of a DB System.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMysqlDbSystemsDbSystemReadEndpointResult> ReadEndpoints;
+        /// <summary>
+        /// REST configuration details.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMysqlDbSystemsDbSystemRestResult> Rests;
         /// <summary>
         /// Secure connection configuration details.
         /// </summary>
@@ -249,6 +257,8 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             string mysqlVersion,
 
+            ImmutableArray<string> nsgIds,
+
             ImmutableArray<Outputs.GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailResult> pointInTimeRecoveryDetails,
 
             int port,
@@ -256,6 +266,8 @@ namespace Pulumi.Oci.Mysql.Outputs
             int portX,
 
             ImmutableArray<Outputs.GetMysqlDbSystemsDbSystemReadEndpointResult> readEndpoints,
+
+            ImmutableArray<Outputs.GetMysqlDbSystemsDbSystemRestResult> rests,
 
             ImmutableArray<Outputs.GetMysqlDbSystemsDbSystemSecureConnectionResult> secureConnections,
 
@@ -306,10 +318,12 @@ namespace Pulumi.Oci.Mysql.Outputs
             LifecycleDetails = lifecycleDetails;
             Maintenances = maintenances;
             MysqlVersion = mysqlVersion;
+            NsgIds = nsgIds;
             PointInTimeRecoveryDetails = pointInTimeRecoveryDetails;
             Port = port;
             PortX = portX;
             ReadEndpoints = readEndpoints;
+            Rests = rests;
             SecureConnections = secureConnections;
             ShapeName = shapeName;
             ShutdownType = shutdownType;

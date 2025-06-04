@@ -5,6 +5,7 @@ package com.pulumi.oci.NetworkFirewall.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallNatConfiguration;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -57,6 +58,11 @@ public final class GetNetworkFirewallResult {
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return Nat Configuration response.
+     * 
+     */
+    private List<GetNetworkFirewallNatConfiguration> natConfigurations;
     private String networkFirewallId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
@@ -158,6 +164,13 @@ public final class GetNetworkFirewallResult {
     public String lifecycleDetails() {
         return this.lifecycleDetails;
     }
+    /**
+     * @return Nat Configuration response.
+     * 
+     */
+    public List<GetNetworkFirewallNatConfiguration> natConfigurations() {
+        return this.natConfigurations;
+    }
     public String networkFirewallId() {
         return this.networkFirewallId;
     }
@@ -229,6 +242,7 @@ public final class GetNetworkFirewallResult {
         private String ipv4address;
         private String ipv6address;
         private String lifecycleDetails;
+        private List<GetNetworkFirewallNatConfiguration> natConfigurations;
         private String networkFirewallId;
         private String networkFirewallPolicyId;
         private List<String> networkSecurityGroupIds;
@@ -249,6 +263,7 @@ public final class GetNetworkFirewallResult {
     	      this.ipv4address = defaults.ipv4address;
     	      this.ipv6address = defaults.ipv6address;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.natConfigurations = defaults.natConfigurations;
     	      this.networkFirewallId = defaults.networkFirewallId;
     	      this.networkFirewallPolicyId = defaults.networkFirewallPolicyId;
     	      this.networkSecurityGroupIds = defaults.networkSecurityGroupIds;
@@ -332,6 +347,17 @@ public final class GetNetworkFirewallResult {
             return this;
         }
         @CustomType.Setter
+        public Builder natConfigurations(List<GetNetworkFirewallNatConfiguration> natConfigurations) {
+            if (natConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallResult", "natConfigurations");
+            }
+            this.natConfigurations = natConfigurations;
+            return this;
+        }
+        public Builder natConfigurations(GetNetworkFirewallNatConfiguration... natConfigurations) {
+            return natConfigurations(List.of(natConfigurations));
+        }
+        @CustomType.Setter
         public Builder networkFirewallId(String networkFirewallId) {
             if (networkFirewallId == null) {
               throw new MissingRequiredPropertyException("GetNetworkFirewallResult", "networkFirewallId");
@@ -409,6 +435,7 @@ public final class GetNetworkFirewallResult {
             _resultValue.ipv4address = ipv4address;
             _resultValue.ipv6address = ipv6address;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.natConfigurations = natConfigurations;
             _resultValue.networkFirewallId = networkFirewallId;
             _resultValue.networkFirewallPolicyId = networkFirewallPolicyId;
             _resultValue.networkSecurityGroupIds = networkSecurityGroupIds;

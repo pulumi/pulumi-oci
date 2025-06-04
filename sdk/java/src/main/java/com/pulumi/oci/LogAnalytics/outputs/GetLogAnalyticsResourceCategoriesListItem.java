@@ -17,10 +17,20 @@ public final class GetLogAnalyticsResourceCategoriesListItem {
      */
     private String categoryName;
     /**
+     * @return The compartment id in which to list resources.
+     * 
+     */
+    private String compartmentId;
+    /**
      * @return The system flag. A value of false denotes a user-created category assignment. A value of true denotes an Oracle-defined category assignment.
      * 
      */
     private Boolean isSystem;
+    /**
+     * @return The resource display name.
+     * 
+     */
+    private String resourceDisplayName;
     /**
      * @return The unique identifier of the resource, usually a name or ocid.
      * 
@@ -41,11 +51,25 @@ public final class GetLogAnalyticsResourceCategoriesListItem {
         return this.categoryName;
     }
     /**
+     * @return The compartment id in which to list resources.
+     * 
+     */
+    public String compartmentId() {
+        return this.compartmentId;
+    }
+    /**
      * @return The system flag. A value of false denotes a user-created category assignment. A value of true denotes an Oracle-defined category assignment.
      * 
      */
     public Boolean isSystem() {
         return this.isSystem;
+    }
+    /**
+     * @return The resource display name.
+     * 
+     */
+    public String resourceDisplayName() {
+        return this.resourceDisplayName;
     }
     /**
      * @return The unique identifier of the resource, usually a name or ocid.
@@ -72,14 +96,18 @@ public final class GetLogAnalyticsResourceCategoriesListItem {
     @CustomType.Builder
     public static final class Builder {
         private String categoryName;
+        private String compartmentId;
         private Boolean isSystem;
+        private String resourceDisplayName;
         private String resourceId;
         private String resourceType;
         public Builder() {}
         public Builder(GetLogAnalyticsResourceCategoriesListItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.categoryName = defaults.categoryName;
+    	      this.compartmentId = defaults.compartmentId;
     	      this.isSystem = defaults.isSystem;
+    	      this.resourceDisplayName = defaults.resourceDisplayName;
     	      this.resourceId = defaults.resourceId;
     	      this.resourceType = defaults.resourceType;
         }
@@ -93,11 +121,27 @@ public final class GetLogAnalyticsResourceCategoriesListItem {
             return this;
         }
         @CustomType.Setter
+        public Builder compartmentId(String compartmentId) {
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsResourceCategoriesListItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isSystem(Boolean isSystem) {
             if (isSystem == null) {
               throw new MissingRequiredPropertyException("GetLogAnalyticsResourceCategoriesListItem", "isSystem");
             }
             this.isSystem = isSystem;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder resourceDisplayName(String resourceDisplayName) {
+            if (resourceDisplayName == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsResourceCategoriesListItem", "resourceDisplayName");
+            }
+            this.resourceDisplayName = resourceDisplayName;
             return this;
         }
         @CustomType.Setter
@@ -119,7 +163,9 @@ public final class GetLogAnalyticsResourceCategoriesListItem {
         public GetLogAnalyticsResourceCategoriesListItem build() {
             final var _resultValue = new GetLogAnalyticsResourceCategoriesListItem();
             _resultValue.categoryName = categoryName;
+            _resultValue.compartmentId = compartmentId;
             _resultValue.isSystem = isSystem;
+            _resultValue.resourceDisplayName = resourceDisplayName;
             _resultValue.resourceId = resourceId;
             _resultValue.resourceType = resourceType;
             return _resultValue;

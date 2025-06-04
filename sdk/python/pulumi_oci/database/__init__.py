@@ -196,6 +196,7 @@ from .get_scheduling_policy import *
 from .get_scheduling_policy_recommended_scheduled_actions import *
 from .get_scheduling_policy_scheduling_window import *
 from .get_scheduling_policy_scheduling_windows import *
+from .get_system_version_minor_versions import *
 from .get_system_versions import *
 from .get_vm_cluster import *
 from .get_vm_cluster_network import *

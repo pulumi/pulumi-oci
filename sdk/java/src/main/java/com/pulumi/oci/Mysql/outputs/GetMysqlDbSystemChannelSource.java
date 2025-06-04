@@ -25,7 +25,7 @@ public final class GetMysqlDbSystemChannelSource {
      */
     private String hostname;
     /**
-     * @return The port for primary endpoint of the DB System to listen on.
+     * @return The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
      * 
      */
     private Integer port;
@@ -66,7 +66,7 @@ public final class GetMysqlDbSystemChannelSource {
         return this.hostname;
     }
     /**
-     * @return The port for primary endpoint of the DB System to listen on.
+     * @return The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
      * 
      */
     public Integer port() {

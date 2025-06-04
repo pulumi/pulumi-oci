@@ -77,6 +77,12 @@ namespace Pulumi.Oci.Opensearch
         public Output<int> DataNodeHostOcpuCount { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) The node shape for the cluster's data nodes.
+        /// </summary>
+        [Output("dataNodeHostShape")]
+        public Output<string> DataNodeHostShape { get; private set; } = null!;
+
+        /// <summary>
         /// TThe instance type for the cluster's data nodes.
         /// </summary>
         [Output("dataNodeHostType")]
@@ -155,6 +161,12 @@ namespace Pulumi.Oci.Opensearch
         public Output<int> MasterNodeHostOcpuCount { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) The node shape for the cluster's master nodes.
+        /// </summary>
+        [Output("masterNodeHostShape")]
+        public Output<string> MasterNodeHostShape { get; private set; } = null!;
+
+        /// <summary>
         /// The instance type for the cluster's master nodes.
         /// </summary>
         [Output("masterNodeHostType")]
@@ -183,6 +195,12 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         [Output("opendashboardNodeHostOcpuCount")]
         public Output<int> OpendashboardNodeHostOcpuCount { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The node shape for the cluster's OpenSearch Dashboard nodes.
+        /// </summary>
+        [Output("opendashboardNodeHostShape")]
+        public Output<string> OpendashboardNodeHostShape { get; private set; } = null!;
 
         /// <summary>
         /// The private IP address for the cluster's OpenSearch Dashboard.
@@ -221,6 +239,42 @@ namespace Pulumi.Oci.Opensearch
         public Output<ImmutableArray<Outputs.ClusterReverseConnectionEndpoint>> ReverseConnectionEndpoints { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) The number of search nodes configured for the cluster.
+        /// </summary>
+        [Output("searchNodeCount")]
+        public Output<int> SearchNodeCount { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The amount of memory in GB, for the cluster's search nodes.
+        /// </summary>
+        [Output("searchNodeHostMemoryGb")]
+        public Output<int> SearchNodeHostMemoryGb { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The number of OCPUs configured for the cluster's search nodes.
+        /// </summary>
+        [Output("searchNodeHostOcpuCount")]
+        public Output<int> SearchNodeHostOcpuCount { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The node shape for the cluster's search nodes.
+        /// </summary>
+        [Output("searchNodeHostShape")]
+        public Output<string> SearchNodeHostShape { get; private set; } = null!;
+
+        /// <summary>
+        /// The instance type for the cluster's search nodes.
+        /// </summary>
+        [Output("searchNodeHostType")]
+        public Output<string> SearchNodeHostType { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The amount of storage in GB, to configure per node for the cluster's search nodes.
+        /// </summary>
+        [Output("searchNodeStorageGb")]
+        public Output<int> SearchNodeStorageGb { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The name of the master user that are used to manage security config
         /// </summary>
         [Output("securityMasterUserName")]
@@ -237,6 +291,12 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         [Output("securityMode")]
         public Output<string> SecurityMode { get; private set; } = null!;
+
+        /// <summary>
+        /// SAML policy is optionally used for Opensearch cluster to config SAML authentication
+        /// </summary>
+        [Output("securitySamlConfig")]
+        public Output<Outputs.ClusterSecuritySamlConfig> SecuritySamlConfig { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The version of the software the cluster is running.
@@ -340,6 +400,7 @@ namespace Pulumi.Oci.Opensearch
                 AdditionalSecretOutputs =
                 {
                     "securityMasterUserPasswordHash",
+                    "securitySamlConfig",
                 },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
@@ -399,6 +460,12 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         [Input("dataNodeHostOcpuCount", required: true)]
         public Input<int> DataNodeHostOcpuCount { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The node shape for the cluster's data nodes.
+        /// </summary>
+        [Input("dataNodeHostShape")]
+        public Input<string>? DataNodeHostShape { get; set; }
 
         /// <summary>
         /// TThe instance type for the cluster's data nodes.
@@ -485,6 +552,12 @@ namespace Pulumi.Oci.Opensearch
         public Input<int> MasterNodeHostOcpuCount { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) The node shape for the cluster's master nodes.
+        /// </summary>
+        [Input("masterNodeHostShape")]
+        public Input<string>? MasterNodeHostShape { get; set; }
+
+        /// <summary>
         /// The instance type for the cluster's master nodes.
         /// </summary>
         [Input("masterNodeHostType", required: true)]
@@ -509,6 +582,12 @@ namespace Pulumi.Oci.Opensearch
         public Input<int> OpendashboardNodeHostOcpuCount { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) The node shape for the cluster's OpenSearch Dashboard nodes.
+        /// </summary>
+        [Input("opendashboardNodeHostShape")]
+        public Input<string>? OpendashboardNodeHostShape { get; set; }
+
+        /// <summary>
         /// (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
         /// </summary>
         [Input("outboundClusterConfig")]
@@ -525,6 +604,42 @@ namespace Pulumi.Oci.Opensearch
             get => _reverseConnectionEndpointCustomerIps ?? (_reverseConnectionEndpointCustomerIps = new InputList<string>());
             set => _reverseConnectionEndpointCustomerIps = value;
         }
+
+        /// <summary>
+        /// (Updatable) The number of search nodes configured for the cluster.
+        /// </summary>
+        [Input("searchNodeCount")]
+        public Input<int>? SearchNodeCount { get; set; }
+
+        /// <summary>
+        /// (Updatable) The amount of memory in GB, for the cluster's search nodes.
+        /// </summary>
+        [Input("searchNodeHostMemoryGb")]
+        public Input<int>? SearchNodeHostMemoryGb { get; set; }
+
+        /// <summary>
+        /// (Updatable) The number of OCPUs configured for the cluster's search nodes.
+        /// </summary>
+        [Input("searchNodeHostOcpuCount")]
+        public Input<int>? SearchNodeHostOcpuCount { get; set; }
+
+        /// <summary>
+        /// (Updatable) The node shape for the cluster's search nodes.
+        /// </summary>
+        [Input("searchNodeHostShape")]
+        public Input<string>? SearchNodeHostShape { get; set; }
+
+        /// <summary>
+        /// The instance type for the cluster's search nodes.
+        /// </summary>
+        [Input("searchNodeHostType")]
+        public Input<string>? SearchNodeHostType { get; set; }
+
+        /// <summary>
+        /// (Updatable) The amount of storage in GB, to configure per node for the cluster's search nodes.
+        /// </summary>
+        [Input("searchNodeStorageGb")]
+        public Input<int>? SearchNodeStorageGb { get; set; }
 
         /// <summary>
         /// (Updatable) The name of the master user that are used to manage security config
@@ -553,6 +668,22 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         [Input("securityMode")]
         public Input<string>? SecurityMode { get; set; }
+
+        [Input("securitySamlConfig")]
+        private Input<Inputs.ClusterSecuritySamlConfigArgs>? _securitySamlConfig;
+
+        /// <summary>
+        /// SAML policy is optionally used for Opensearch cluster to config SAML authentication
+        /// </summary>
+        public Input<Inputs.ClusterSecuritySamlConfigArgs>? SecuritySamlConfig
+        {
+            get => _securitySamlConfig;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _securitySamlConfig = Output.Tuple<Input<Inputs.ClusterSecuritySamlConfigArgs>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// (Updatable) The version of the software the cluster is running.
@@ -663,6 +794,12 @@ namespace Pulumi.Oci.Opensearch
         public Input<int>? DataNodeHostOcpuCount { get; set; }
 
         /// <summary>
+        /// (Updatable) The node shape for the cluster's data nodes.
+        /// </summary>
+        [Input("dataNodeHostShape")]
+        public Input<string>? DataNodeHostShape { get; set; }
+
+        /// <summary>
         /// TThe instance type for the cluster's data nodes.
         /// </summary>
         [Input("dataNodeHostType")]
@@ -759,6 +896,12 @@ namespace Pulumi.Oci.Opensearch
         public Input<int>? MasterNodeHostOcpuCount { get; set; }
 
         /// <summary>
+        /// (Updatable) The node shape for the cluster's master nodes.
+        /// </summary>
+        [Input("masterNodeHostShape")]
+        public Input<string>? MasterNodeHostShape { get; set; }
+
+        /// <summary>
         /// The instance type for the cluster's master nodes.
         /// </summary>
         [Input("masterNodeHostType")]
@@ -787,6 +930,12 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         [Input("opendashboardNodeHostOcpuCount")]
         public Input<int>? OpendashboardNodeHostOcpuCount { get; set; }
+
+        /// <summary>
+        /// (Updatable) The node shape for the cluster's OpenSearch Dashboard nodes.
+        /// </summary>
+        [Input("opendashboardNodeHostShape")]
+        public Input<string>? OpendashboardNodeHostShape { get; set; }
 
         /// <summary>
         /// The private IP address for the cluster's OpenSearch Dashboard.
@@ -837,6 +986,42 @@ namespace Pulumi.Oci.Opensearch
         }
 
         /// <summary>
+        /// (Updatable) The number of search nodes configured for the cluster.
+        /// </summary>
+        [Input("searchNodeCount")]
+        public Input<int>? SearchNodeCount { get; set; }
+
+        /// <summary>
+        /// (Updatable) The amount of memory in GB, for the cluster's search nodes.
+        /// </summary>
+        [Input("searchNodeHostMemoryGb")]
+        public Input<int>? SearchNodeHostMemoryGb { get; set; }
+
+        /// <summary>
+        /// (Updatable) The number of OCPUs configured for the cluster's search nodes.
+        /// </summary>
+        [Input("searchNodeHostOcpuCount")]
+        public Input<int>? SearchNodeHostOcpuCount { get; set; }
+
+        /// <summary>
+        /// (Updatable) The node shape for the cluster's search nodes.
+        /// </summary>
+        [Input("searchNodeHostShape")]
+        public Input<string>? SearchNodeHostShape { get; set; }
+
+        /// <summary>
+        /// The instance type for the cluster's search nodes.
+        /// </summary>
+        [Input("searchNodeHostType")]
+        public Input<string>? SearchNodeHostType { get; set; }
+
+        /// <summary>
+        /// (Updatable) The amount of storage in GB, to configure per node for the cluster's search nodes.
+        /// </summary>
+        [Input("searchNodeStorageGb")]
+        public Input<int>? SearchNodeStorageGb { get; set; }
+
+        /// <summary>
         /// (Updatable) The name of the master user that are used to manage security config
         /// </summary>
         [Input("securityMasterUserName")]
@@ -863,6 +1048,22 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         [Input("securityMode")]
         public Input<string>? SecurityMode { get; set; }
+
+        [Input("securitySamlConfig")]
+        private Input<Inputs.ClusterSecuritySamlConfigGetArgs>? _securitySamlConfig;
+
+        /// <summary>
+        /// SAML policy is optionally used for Opensearch cluster to config SAML authentication
+        /// </summary>
+        public Input<Inputs.ClusterSecuritySamlConfigGetArgs>? SecuritySamlConfig
+        {
+            get => _securitySamlConfig;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _securitySamlConfig = Output.Tuple<Input<Inputs.ClusterSecuritySamlConfigGetArgs>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// (Updatable) The version of the software the cluster is running.

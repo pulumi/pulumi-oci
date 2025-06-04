@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string GiVersion;
         /// <summary>
-        /// Specifies shape query parameter.
+        /// If provided, filters the results for the given shape.
         /// </summary>
         public readonly string Shape;
         /// <summary>

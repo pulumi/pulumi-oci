@@ -11,6 +11,7 @@ import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotDeletionPolicyArgs
 import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotEndpointArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotMaintenanceArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotReadEndpointArgs;
+import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotRestArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotSecureConnectionArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -357,14 +358,29 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
     }
 
     /**
-     * The port for primary endpoint of the DB System to listen on.
+     * Network Security Group OCIDs used for the VNIC attachment.
+     * 
+     */
+    @Import(name="nsgIds")
+    private @Nullable Output<List<String>> nsgIds;
+
+    /**
+     * @return Network Security Group OCIDs used for the VNIC attachment.
+     * 
+     */
+    public Optional<Output<List<String>>> nsgIds() {
+        return Optional.ofNullable(this.nsgIds);
+    }
+
+    /**
+     * The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
      * 
      */
     @Import(name="port")
     private @Nullable Output<Integer> port;
 
     /**
-     * @return The port for primary endpoint of the DB System to listen on.
+     * @return The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
      * 
      */
     public Optional<Output<Integer>> port() {
@@ -414,6 +430,21 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
      */
     public Optional<Output<String>> region() {
         return Optional.ofNullable(this.region);
+    }
+
+    /**
+     * REST configuration details.
+     * 
+     */
+    @Import(name="rests")
+    private @Nullable Output<List<MysqlBackupDbSystemSnapshotRestArgs>> rests;
+
+    /**
+     * @return REST configuration details.
+     * 
+     */
+    public Optional<Output<List<MysqlBackupDbSystemSnapshotRestArgs>>> rests() {
+        return Optional.ofNullable(this.rests);
     }
 
     /**
@@ -486,10 +517,12 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
         this.isHighlyAvailable = $.isHighlyAvailable;
         this.maintenances = $.maintenances;
         this.mysqlVersion = $.mysqlVersion;
+        this.nsgIds = $.nsgIds;
         this.port = $.port;
         this.portX = $.portX;
         this.readEndpoints = $.readEndpoints;
         this.region = $.region;
+        this.rests = $.rests;
         this.secureConnections = $.secureConnections;
         this.shapeName = $.shapeName;
         this.subnetId = $.subnetId;
@@ -1026,7 +1059,38 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param port The port for primary endpoint of the DB System to listen on.
+         * @param nsgIds Network Security Group OCIDs used for the VNIC attachment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nsgIds(@Nullable Output<List<String>> nsgIds) {
+            $.nsgIds = nsgIds;
+            return this;
+        }
+
+        /**
+         * @param nsgIds Network Security Group OCIDs used for the VNIC attachment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nsgIds(List<String> nsgIds) {
+            return nsgIds(Output.of(nsgIds));
+        }
+
+        /**
+         * @param nsgIds Network Security Group OCIDs used for the VNIC attachment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nsgIds(String... nsgIds) {
+            return nsgIds(List.of(nsgIds));
+        }
+
+        /**
+         * @param port The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
          * 
          * @return builder
          * 
@@ -1037,7 +1101,7 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param port The port for primary endpoint of the DB System to listen on.
+         * @param port The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
          * 
          * @return builder
          * 
@@ -1117,6 +1181,37 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
          */
         public Builder region(String region) {
             return region(Output.of(region));
+        }
+
+        /**
+         * @param rests REST configuration details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder rests(@Nullable Output<List<MysqlBackupDbSystemSnapshotRestArgs>> rests) {
+            $.rests = rests;
+            return this;
+        }
+
+        /**
+         * @param rests REST configuration details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder rests(List<MysqlBackupDbSystemSnapshotRestArgs> rests) {
+            return rests(Output.of(rests));
+        }
+
+        /**
+         * @param rests REST configuration details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder rests(MysqlBackupDbSystemSnapshotRestArgs... rests) {
+            return rests(List.of(rests));
         }
 
         /**

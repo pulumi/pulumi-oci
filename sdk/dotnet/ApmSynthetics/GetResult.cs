@@ -14,7 +14,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// <summary>
         /// This data source provides details about a specific Result resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
         /// 
-        /// Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log or Network details.
+        /// Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log, Network details, Diagnostics or Script Content.
         /// 
         /// 
         /// ## Example Usage
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// <summary>
         /// This data source provides details about a specific Result resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
         /// 
-        /// Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log or Network details.
+        /// Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log, Network details, Diagnostics or Script Content.
         /// 
         /// 
         /// ## Example Usage
@@ -78,7 +78,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// <summary>
         /// This data source provides details about a specific Result resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
         /// 
-        /// Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log or Network details.
+        /// Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log, Network details, Diagnostics or Script Content.
         /// 
         /// 
         /// ## Example Usage
@@ -136,7 +136,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public string ResultContentType { get; set; } = null!;
 
         /// <summary>
-        /// The result type: har, screenshot, log, or network.
+        /// The result type: har, screenshot, log, network, diagnostics or script.
         /// </summary>
         [Input("resultType", required: true)]
         public string ResultType { get; set; } = null!;
@@ -180,7 +180,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Input<string> ResultContentType { get; set; } = null!;
 
         /// <summary>
-        /// The result type: har, screenshot, log, or network.
+        /// The result type: har, screenshot, log, network, diagnostics or script.
         /// </summary>
         [Input("resultType", required: true)]
         public Input<string> ResultType { get; set; } = null!;
@@ -223,7 +223,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// </summary>
         public readonly ImmutableArray<Outputs.GetResultResultDataSetResult> ResultDataSets;
         /// <summary>
-        /// Type of result. Example: HAR, Screenshot, Log or Network.
+        /// Type of result. Example: har, screenshot, log, network, diagnostics or script.
         /// </summary>
         public readonly string ResultType;
         /// <summary>

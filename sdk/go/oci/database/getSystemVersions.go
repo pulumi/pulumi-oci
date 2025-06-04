@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/database"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/database"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -32,7 +32,9 @@ import (
 //			_, err := database.GetSystemVersions(ctx, &database.GetSystemVersionsArgs{
 //				CompartmentId: compartmentId,
 //				GiVersion:     systemVersionGiVersion,
-//				Shape:         systemVersionShape,
+//				IsLatest:      pulumi.BoolRef(systemVersionIsLatest),
+//				ResourceId:    pulumi.StringRef(testResource.Id),
+//				Shape:         pulumi.StringRef(systemVersionShape),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -59,8 +61,12 @@ type GetSystemVersionsArgs struct {
 	Filters       []GetSystemVersionsFilter `pulumi:"filters"`
 	// Specifies gi version query parameter.
 	GiVersion string `pulumi:"giVersion"`
-	// Specifies shape query parameter.
-	Shape string `pulumi:"shape"`
+	// If provided, return highest versions from each major version family.
+	IsLatest *bool `pulumi:"isLatest"`
+	// If provided, filters the results for the specified resource Id.
+	ResourceId *string `pulumi:"resourceId"`
+	// If provided, filters the results for the given shape.
+	Shape *string `pulumi:"shape"`
 }
 
 // A collection of values returned by getSystemVersions.
@@ -70,9 +76,11 @@ type GetSystemVersionsResult struct {
 	// Grid Infrastructure version.
 	GiVersion string `pulumi:"giVersion"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id         string  `pulumi:"id"`
+	IsLatest   *bool   `pulumi:"isLatest"`
+	ResourceId *string `pulumi:"resourceId"`
 	// Exadata shape.
-	Shape string `pulumi:"shape"`
+	Shape *string `pulumi:"shape"`
 	// The list of system_version_collection.
 	SystemVersionCollections []GetSystemVersionsSystemVersionCollection `pulumi:"systemVersionCollections"`
 }
@@ -93,8 +101,12 @@ type GetSystemVersionsOutputArgs struct {
 	Filters       GetSystemVersionsFilterArrayInput `pulumi:"filters"`
 	// Specifies gi version query parameter.
 	GiVersion pulumi.StringInput `pulumi:"giVersion"`
-	// Specifies shape query parameter.
-	Shape pulumi.StringInput `pulumi:"shape"`
+	// If provided, return highest versions from each major version family.
+	IsLatest pulumi.BoolPtrInput `pulumi:"isLatest"`
+	// If provided, filters the results for the specified resource Id.
+	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
+	// If provided, filters the results for the given shape.
+	Shape pulumi.StringPtrInput `pulumi:"shape"`
 }
 
 func (GetSystemVersionsOutputArgs) ElementType() reflect.Type {
@@ -134,9 +146,17 @@ func (o GetSystemVersionsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSystemVersionsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+func (o GetSystemVersionsResultOutput) IsLatest() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSystemVersionsResult) *bool { return v.IsLatest }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSystemVersionsResultOutput) ResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSystemVersionsResult) *string { return v.ResourceId }).(pulumi.StringPtrOutput)
+}
+
 // Exadata shape.
-func (o GetSystemVersionsResultOutput) Shape() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSystemVersionsResult) string { return v.Shape }).(pulumi.StringOutput)
+func (o GetSystemVersionsResultOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSystemVersionsResult) *string { return v.Shape }).(pulumi.StringPtrOutput)
 }
 
 // The list of system_version_collection.

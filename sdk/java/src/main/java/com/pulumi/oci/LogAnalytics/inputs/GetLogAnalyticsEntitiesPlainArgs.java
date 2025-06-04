@@ -6,6 +6,7 @@ package com.pulumi.oci.LogAnalytics.inputs;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntitiesFilter;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -48,6 +49,36 @@ public final class GetLogAnalyticsEntitiesPlainArgs extends com.pulumi.resources
     }
 
     /**
+     * A list of tag filters to apply.  Only entities with a defined tag matching the value will be returned. Each item in the list has the format &#34;{namespace}.{tagName}.{value}&#34;.  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as &#34;OR&#34;. Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as &#34;AND&#34;.
+     * 
+     */
+    @Import(name="definedTagEquals")
+    private @Nullable List<String> definedTagEquals;
+
+    /**
+     * @return A list of tag filters to apply.  Only entities with a defined tag matching the value will be returned. Each item in the list has the format &#34;{namespace}.{tagName}.{value}&#34;.  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as &#34;OR&#34;. Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as &#34;AND&#34;.
+     * 
+     */
+    public Optional<List<String>> definedTagEquals() {
+        return Optional.ofNullable(this.definedTagEquals);
+    }
+
+    /**
+     * A list of tag existence filters to apply.  Only entities for which the specified defined tags exist will be returned. Each item in the list has the format &#34;{namespace}.{tagName}.true&#34; (for checking existence of a defined tag) or &#34;{namespace}.true&#34;.  All inputs are case-insensitive. Currently, only existence (&#34;true&#34; at the end) is supported. Absence (&#34;false&#34; at the end) is not supported. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as &#34;OR&#34;. Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as &#34;AND&#34;.
+     * 
+     */
+    @Import(name="definedTagExists")
+    private @Nullable List<String> definedTagExists;
+
+    /**
+     * @return A list of tag existence filters to apply.  Only entities for which the specified defined tags exist will be returned. Each item in the list has the format &#34;{namespace}.{tagName}.true&#34; (for checking existence of a defined tag) or &#34;{namespace}.true&#34;.  All inputs are case-insensitive. Currently, only existence (&#34;true&#34; at the end) is supported. Absence (&#34;false&#34; at the end) is not supported. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as &#34;OR&#34;. Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as &#34;AND&#34;.
+     * 
+     */
+    public Optional<List<String>> definedTagExists() {
+        return Optional.ofNullable(this.definedTagExists);
+    }
+
+    /**
      * A filter to return only log analytics entities whose entityTypeName matches the entire log analytics entity type name of one of the entityTypeNames given in the list. The match is case-insensitive.
      * 
      */
@@ -67,6 +98,36 @@ public final class GetLogAnalyticsEntitiesPlainArgs extends com.pulumi.resources
 
     public Optional<List<GetLogAnalyticsEntitiesFilter>> filters() {
         return Optional.ofNullable(this.filters);
+    }
+
+    /**
+     * A list of tag filters to apply.  Only entities with a freeform tag matching the value will be returned. The key for each tag is &#34;{tagName}.{value}&#34;.  All inputs are case-insensitive. Multiple values for the same tag name are interpreted as &#34;OR&#34;.  Values for different tag names are interpreted as &#34;AND&#34;.
+     * 
+     */
+    @Import(name="freeformTagEquals")
+    private @Nullable List<String> freeformTagEquals;
+
+    /**
+     * @return A list of tag filters to apply.  Only entities with a freeform tag matching the value will be returned. The key for each tag is &#34;{tagName}.{value}&#34;.  All inputs are case-insensitive. Multiple values for the same tag name are interpreted as &#34;OR&#34;.  Values for different tag names are interpreted as &#34;AND&#34;.
+     * 
+     */
+    public Optional<List<String>> freeformTagEquals() {
+        return Optional.ofNullable(this.freeformTagEquals);
+    }
+
+    /**
+     * A list of tag existence filters to apply.  Only entities for which the specified freeform tags exist the value will be returned. The key for each tag is &#34;{tagName}.true&#34;.  All inputs are case-insensitive. Currently, only existence (&#34;true&#34; at the end) is supported. Absence (&#34;false&#34; at the end) is not supported. Multiple values for different tag names are interpreted as &#34;AND&#34;.
+     * 
+     */
+    @Import(name="freeformTagExists")
+    private @Nullable List<String> freeformTagExists;
+
+    /**
+     * @return A list of tag existence filters to apply.  Only entities for which the specified freeform tags exist the value will be returned. The key for each tag is &#34;{tagName}.true&#34;.  All inputs are case-insensitive. Currently, only existence (&#34;true&#34; at the end) is supported. Absence (&#34;false&#34; at the end) is not supported. Multiple values for different tag names are interpreted as &#34;AND&#34;.
+     * 
+     */
+    public Optional<List<String>> freeformTagExists() {
+        return Optional.ofNullable(this.freeformTagExists);
     }
 
     /**
@@ -112,6 +173,21 @@ public final class GetLogAnalyticsEntitiesPlainArgs extends com.pulumi.resources
      */
     public Optional<String> isManagementAgentIdNull() {
         return Optional.ofNullable(this.isManagementAgentIdNull);
+    }
+
+    /**
+     * Option to return count of associated log sources for log analytics entity(s).
+     * 
+     */
+    @Import(name="isShowAssociatedSourcesCount")
+    private @Nullable Boolean isShowAssociatedSourcesCount;
+
+    /**
+     * @return Option to return count of associated log sources for log analytics entity(s).
+     * 
+     */
+    public Optional<Boolean> isShowAssociatedSourcesCount() {
+        return Optional.ofNullable(this.isShowAssociatedSourcesCount);
     }
 
     /**
@@ -224,11 +300,16 @@ public final class GetLogAnalyticsEntitiesPlainArgs extends com.pulumi.resources
     private GetLogAnalyticsEntitiesPlainArgs(GetLogAnalyticsEntitiesPlainArgs $) {
         this.cloudResourceId = $.cloudResourceId;
         this.compartmentId = $.compartmentId;
+        this.definedTagEquals = $.definedTagEquals;
+        this.definedTagExists = $.definedTagExists;
         this.entityTypeNames = $.entityTypeNames;
         this.filters = $.filters;
+        this.freeformTagEquals = $.freeformTagEquals;
+        this.freeformTagExists = $.freeformTagExists;
         this.hostname = $.hostname;
         this.hostnameContains = $.hostnameContains;
         this.isManagementAgentIdNull = $.isManagementAgentIdNull;
+        this.isShowAssociatedSourcesCount = $.isShowAssociatedSourcesCount;
         this.lifecycleDetailsContains = $.lifecycleDetailsContains;
         this.metadataEquals = $.metadataEquals;
         this.name = $.name;
@@ -279,6 +360,48 @@ public final class GetLogAnalyticsEntitiesPlainArgs extends com.pulumi.resources
         }
 
         /**
+         * @param definedTagEquals A list of tag filters to apply.  Only entities with a defined tag matching the value will be returned. Each item in the list has the format &#34;{namespace}.{tagName}.{value}&#34;.  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as &#34;OR&#34;. Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as &#34;AND&#34;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder definedTagEquals(@Nullable List<String> definedTagEquals) {
+            $.definedTagEquals = definedTagEquals;
+            return this;
+        }
+
+        /**
+         * @param definedTagEquals A list of tag filters to apply.  Only entities with a defined tag matching the value will be returned. Each item in the list has the format &#34;{namespace}.{tagName}.{value}&#34;.  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as &#34;OR&#34;. Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as &#34;AND&#34;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder definedTagEquals(String... definedTagEquals) {
+            return definedTagEquals(List.of(definedTagEquals));
+        }
+
+        /**
+         * @param definedTagExists A list of tag existence filters to apply.  Only entities for which the specified defined tags exist will be returned. Each item in the list has the format &#34;{namespace}.{tagName}.true&#34; (for checking existence of a defined tag) or &#34;{namespace}.true&#34;.  All inputs are case-insensitive. Currently, only existence (&#34;true&#34; at the end) is supported. Absence (&#34;false&#34; at the end) is not supported. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as &#34;OR&#34;. Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as &#34;AND&#34;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder definedTagExists(@Nullable List<String> definedTagExists) {
+            $.definedTagExists = definedTagExists;
+            return this;
+        }
+
+        /**
+         * @param definedTagExists A list of tag existence filters to apply.  Only entities for which the specified defined tags exist will be returned. Each item in the list has the format &#34;{namespace}.{tagName}.true&#34; (for checking existence of a defined tag) or &#34;{namespace}.true&#34;.  All inputs are case-insensitive. Currently, only existence (&#34;true&#34; at the end) is supported. Absence (&#34;false&#34; at the end) is not supported. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as &#34;OR&#34;. Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as &#34;AND&#34;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder definedTagExists(String... definedTagExists) {
+            return definedTagExists(List.of(definedTagExists));
+        }
+
+        /**
          * @param entityTypeNames A filter to return only log analytics entities whose entityTypeName matches the entire log analytics entity type name of one of the entityTypeNames given in the list. The match is case-insensitive.
          * 
          * @return builder
@@ -306,6 +429,48 @@ public final class GetLogAnalyticsEntitiesPlainArgs extends com.pulumi.resources
 
         public Builder filters(GetLogAnalyticsEntitiesFilter... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param freeformTagEquals A list of tag filters to apply.  Only entities with a freeform tag matching the value will be returned. The key for each tag is &#34;{tagName}.{value}&#34;.  All inputs are case-insensitive. Multiple values for the same tag name are interpreted as &#34;OR&#34;.  Values for different tag names are interpreted as &#34;AND&#34;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder freeformTagEquals(@Nullable List<String> freeformTagEquals) {
+            $.freeformTagEquals = freeformTagEquals;
+            return this;
+        }
+
+        /**
+         * @param freeformTagEquals A list of tag filters to apply.  Only entities with a freeform tag matching the value will be returned. The key for each tag is &#34;{tagName}.{value}&#34;.  All inputs are case-insensitive. Multiple values for the same tag name are interpreted as &#34;OR&#34;.  Values for different tag names are interpreted as &#34;AND&#34;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder freeformTagEquals(String... freeformTagEquals) {
+            return freeformTagEquals(List.of(freeformTagEquals));
+        }
+
+        /**
+         * @param freeformTagExists A list of tag existence filters to apply.  Only entities for which the specified freeform tags exist the value will be returned. The key for each tag is &#34;{tagName}.true&#34;.  All inputs are case-insensitive. Currently, only existence (&#34;true&#34; at the end) is supported. Absence (&#34;false&#34; at the end) is not supported. Multiple values for different tag names are interpreted as &#34;AND&#34;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder freeformTagExists(@Nullable List<String> freeformTagExists) {
+            $.freeformTagExists = freeformTagExists;
+            return this;
+        }
+
+        /**
+         * @param freeformTagExists A list of tag existence filters to apply.  Only entities for which the specified freeform tags exist the value will be returned. The key for each tag is &#34;{tagName}.true&#34;.  All inputs are case-insensitive. Currently, only existence (&#34;true&#34; at the end) is supported. Absence (&#34;false&#34; at the end) is not supported. Multiple values for different tag names are interpreted as &#34;AND&#34;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder freeformTagExists(String... freeformTagExists) {
+            return freeformTagExists(List.of(freeformTagExists));
         }
 
         /**
@@ -338,6 +503,17 @@ public final class GetLogAnalyticsEntitiesPlainArgs extends com.pulumi.resources
          */
         public Builder isManagementAgentIdNull(@Nullable String isManagementAgentIdNull) {
             $.isManagementAgentIdNull = isManagementAgentIdNull;
+            return this;
+        }
+
+        /**
+         * @param isShowAssociatedSourcesCount Option to return count of associated log sources for log analytics entity(s).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isShowAssociatedSourcesCount(@Nullable Boolean isShowAssociatedSourcesCount) {
+            $.isShowAssociatedSourcesCount = isShowAssociatedSourcesCount;
             return this;
         }
 

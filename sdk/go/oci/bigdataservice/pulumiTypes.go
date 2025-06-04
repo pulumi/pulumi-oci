@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -3202,6 +3202,550 @@ func (o AutoScalingConfigurationPolicyRuleMetricThresholdOutput) Operator() pulu
 // (Updatable) Integer non-negative value. 0 < value < 100
 func (o AutoScalingConfigurationPolicyRuleMetricThresholdOutput) Value() pulumi.IntOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyRuleMetricThreshold) int { return v.Value }).(pulumi.IntOutput)
+}
+
+type BdsCapacityReportShapeAvailability struct {
+	// Information about the capacity in each domain.
+	DomainLevelCapacityReports []BdsCapacityReportShapeAvailabilityDomainLevelCapacityReport `pulumi:"domainLevelCapacityReports"`
+	// The shape that you want to request a capacity report for.
+	Shape string `pulumi:"shape"`
+	// The shape configuration requested for the node.
+	ShapeConfig *BdsCapacityReportShapeAvailabilityShapeConfig `pulumi:"shapeConfig"`
+}
+
+// BdsCapacityReportShapeAvailabilityInput is an input type that accepts BdsCapacityReportShapeAvailabilityArgs and BdsCapacityReportShapeAvailabilityOutput values.
+// You can construct a concrete instance of `BdsCapacityReportShapeAvailabilityInput` via:
+//
+//	BdsCapacityReportShapeAvailabilityArgs{...}
+type BdsCapacityReportShapeAvailabilityInput interface {
+	pulumi.Input
+
+	ToBdsCapacityReportShapeAvailabilityOutput() BdsCapacityReportShapeAvailabilityOutput
+	ToBdsCapacityReportShapeAvailabilityOutputWithContext(context.Context) BdsCapacityReportShapeAvailabilityOutput
+}
+
+type BdsCapacityReportShapeAvailabilityArgs struct {
+	// Information about the capacity in each domain.
+	DomainLevelCapacityReports BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArrayInput `pulumi:"domainLevelCapacityReports"`
+	// The shape that you want to request a capacity report for.
+	Shape pulumi.StringInput `pulumi:"shape"`
+	// The shape configuration requested for the node.
+	ShapeConfig BdsCapacityReportShapeAvailabilityShapeConfigPtrInput `pulumi:"shapeConfig"`
+}
+
+func (BdsCapacityReportShapeAvailabilityArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsCapacityReportShapeAvailability)(nil)).Elem()
+}
+
+func (i BdsCapacityReportShapeAvailabilityArgs) ToBdsCapacityReportShapeAvailabilityOutput() BdsCapacityReportShapeAvailabilityOutput {
+	return i.ToBdsCapacityReportShapeAvailabilityOutputWithContext(context.Background())
+}
+
+func (i BdsCapacityReportShapeAvailabilityArgs) ToBdsCapacityReportShapeAvailabilityOutputWithContext(ctx context.Context) BdsCapacityReportShapeAvailabilityOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsCapacityReportShapeAvailabilityOutput)
+}
+
+// BdsCapacityReportShapeAvailabilityArrayInput is an input type that accepts BdsCapacityReportShapeAvailabilityArray and BdsCapacityReportShapeAvailabilityArrayOutput values.
+// You can construct a concrete instance of `BdsCapacityReportShapeAvailabilityArrayInput` via:
+//
+//	BdsCapacityReportShapeAvailabilityArray{ BdsCapacityReportShapeAvailabilityArgs{...} }
+type BdsCapacityReportShapeAvailabilityArrayInput interface {
+	pulumi.Input
+
+	ToBdsCapacityReportShapeAvailabilityArrayOutput() BdsCapacityReportShapeAvailabilityArrayOutput
+	ToBdsCapacityReportShapeAvailabilityArrayOutputWithContext(context.Context) BdsCapacityReportShapeAvailabilityArrayOutput
+}
+
+type BdsCapacityReportShapeAvailabilityArray []BdsCapacityReportShapeAvailabilityInput
+
+func (BdsCapacityReportShapeAvailabilityArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BdsCapacityReportShapeAvailability)(nil)).Elem()
+}
+
+func (i BdsCapacityReportShapeAvailabilityArray) ToBdsCapacityReportShapeAvailabilityArrayOutput() BdsCapacityReportShapeAvailabilityArrayOutput {
+	return i.ToBdsCapacityReportShapeAvailabilityArrayOutputWithContext(context.Background())
+}
+
+func (i BdsCapacityReportShapeAvailabilityArray) ToBdsCapacityReportShapeAvailabilityArrayOutputWithContext(ctx context.Context) BdsCapacityReportShapeAvailabilityArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsCapacityReportShapeAvailabilityArrayOutput)
+}
+
+type BdsCapacityReportShapeAvailabilityOutput struct{ *pulumi.OutputState }
+
+func (BdsCapacityReportShapeAvailabilityOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsCapacityReportShapeAvailability)(nil)).Elem()
+}
+
+func (o BdsCapacityReportShapeAvailabilityOutput) ToBdsCapacityReportShapeAvailabilityOutput() BdsCapacityReportShapeAvailabilityOutput {
+	return o
+}
+
+func (o BdsCapacityReportShapeAvailabilityOutput) ToBdsCapacityReportShapeAvailabilityOutputWithContext(ctx context.Context) BdsCapacityReportShapeAvailabilityOutput {
+	return o
+}
+
+// Information about the capacity in each domain.
+func (o BdsCapacityReportShapeAvailabilityOutput) DomainLevelCapacityReports() BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArrayOutput {
+	return o.ApplyT(func(v BdsCapacityReportShapeAvailability) []BdsCapacityReportShapeAvailabilityDomainLevelCapacityReport {
+		return v.DomainLevelCapacityReports
+	}).(BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArrayOutput)
+}
+
+// The shape that you want to request a capacity report for.
+func (o BdsCapacityReportShapeAvailabilityOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v BdsCapacityReportShapeAvailability) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+// The shape configuration requested for the node.
+func (o BdsCapacityReportShapeAvailabilityOutput) ShapeConfig() BdsCapacityReportShapeAvailabilityShapeConfigPtrOutput {
+	return o.ApplyT(func(v BdsCapacityReportShapeAvailability) *BdsCapacityReportShapeAvailabilityShapeConfig {
+		return v.ShapeConfig
+	}).(BdsCapacityReportShapeAvailabilityShapeConfigPtrOutput)
+}
+
+type BdsCapacityReportShapeAvailabilityArrayOutput struct{ *pulumi.OutputState }
+
+func (BdsCapacityReportShapeAvailabilityArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BdsCapacityReportShapeAvailability)(nil)).Elem()
+}
+
+func (o BdsCapacityReportShapeAvailabilityArrayOutput) ToBdsCapacityReportShapeAvailabilityArrayOutput() BdsCapacityReportShapeAvailabilityArrayOutput {
+	return o
+}
+
+func (o BdsCapacityReportShapeAvailabilityArrayOutput) ToBdsCapacityReportShapeAvailabilityArrayOutputWithContext(ctx context.Context) BdsCapacityReportShapeAvailabilityArrayOutput {
+	return o
+}
+
+func (o BdsCapacityReportShapeAvailabilityArrayOutput) Index(i pulumi.IntInput) BdsCapacityReportShapeAvailabilityOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BdsCapacityReportShapeAvailability {
+		return vs[0].([]BdsCapacityReportShapeAvailability)[vs[1].(int)]
+	}).(BdsCapacityReportShapeAvailabilityOutput)
+}
+
+type BdsCapacityReportShapeAvailabilityDomainLevelCapacityReport struct {
+	// The availability domain for the capacity report.
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
+	// Information about the available capacity for a shape.
+	CapacityAvailabilities []BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailability `pulumi:"capacityAvailabilities"`
+	// Type of domain level for the capacity report.
+	DomainType *string `pulumi:"domainType"`
+	// The fault domain for the capacity report.
+	FaultDomain *string `pulumi:"faultDomain"`
+}
+
+// BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportInput is an input type that accepts BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArgs and BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportOutput values.
+// You can construct a concrete instance of `BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportInput` via:
+//
+//	BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArgs{...}
+type BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportInput interface {
+	pulumi.Input
+
+	ToBdsCapacityReportShapeAvailabilityDomainLevelCapacityReportOutput() BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportOutput
+	ToBdsCapacityReportShapeAvailabilityDomainLevelCapacityReportOutputWithContext(context.Context) BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportOutput
+}
+
+type BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArgs struct {
+	// The availability domain for the capacity report.
+	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
+	// Information about the available capacity for a shape.
+	CapacityAvailabilities BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArrayInput `pulumi:"capacityAvailabilities"`
+	// Type of domain level for the capacity report.
+	DomainType pulumi.StringPtrInput `pulumi:"domainType"`
+	// The fault domain for the capacity report.
+	FaultDomain pulumi.StringPtrInput `pulumi:"faultDomain"`
+}
+
+func (BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsCapacityReportShapeAvailabilityDomainLevelCapacityReport)(nil)).Elem()
+}
+
+func (i BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArgs) ToBdsCapacityReportShapeAvailabilityDomainLevelCapacityReportOutput() BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportOutput {
+	return i.ToBdsCapacityReportShapeAvailabilityDomainLevelCapacityReportOutputWithContext(context.Background())
+}
+
+func (i BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArgs) ToBdsCapacityReportShapeAvailabilityDomainLevelCapacityReportOutputWithContext(ctx context.Context) BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportOutput)
+}
+
+// BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArrayInput is an input type that accepts BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArray and BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArrayOutput values.
+// You can construct a concrete instance of `BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArrayInput` via:
+//
+//	BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArray{ BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArgs{...} }
+type BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArrayInput interface {
+	pulumi.Input
+
+	ToBdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArrayOutput() BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArrayOutput
+	ToBdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArrayOutputWithContext(context.Context) BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArrayOutput
+}
+
+type BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArray []BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportInput
+
+func (BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BdsCapacityReportShapeAvailabilityDomainLevelCapacityReport)(nil)).Elem()
+}
+
+func (i BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArray) ToBdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArrayOutput() BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArrayOutput {
+	return i.ToBdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArrayOutputWithContext(context.Background())
+}
+
+func (i BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArray) ToBdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArrayOutputWithContext(ctx context.Context) BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArrayOutput)
+}
+
+type BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportOutput struct{ *pulumi.OutputState }
+
+func (BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsCapacityReportShapeAvailabilityDomainLevelCapacityReport)(nil)).Elem()
+}
+
+func (o BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportOutput) ToBdsCapacityReportShapeAvailabilityDomainLevelCapacityReportOutput() BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportOutput {
+	return o
+}
+
+func (o BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportOutput) ToBdsCapacityReportShapeAvailabilityDomainLevelCapacityReportOutputWithContext(ctx context.Context) BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportOutput {
+	return o
+}
+
+// The availability domain for the capacity report.
+func (o BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsCapacityReportShapeAvailabilityDomainLevelCapacityReport) *string {
+		return v.AvailabilityDomain
+	}).(pulumi.StringPtrOutput)
+}
+
+// Information about the available capacity for a shape.
+func (o BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportOutput) CapacityAvailabilities() BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArrayOutput {
+	return o.ApplyT(func(v BdsCapacityReportShapeAvailabilityDomainLevelCapacityReport) []BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailability {
+		return v.CapacityAvailabilities
+	}).(BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArrayOutput)
+}
+
+// Type of domain level for the capacity report.
+func (o BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportOutput) DomainType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsCapacityReportShapeAvailabilityDomainLevelCapacityReport) *string { return v.DomainType }).(pulumi.StringPtrOutput)
+}
+
+// The fault domain for the capacity report.
+func (o BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportOutput) FaultDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsCapacityReportShapeAvailabilityDomainLevelCapacityReport) *string { return v.FaultDomain }).(pulumi.StringPtrOutput)
+}
+
+type BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArrayOutput struct{ *pulumi.OutputState }
+
+func (BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BdsCapacityReportShapeAvailabilityDomainLevelCapacityReport)(nil)).Elem()
+}
+
+func (o BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArrayOutput) ToBdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArrayOutput() BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArrayOutput {
+	return o
+}
+
+func (o BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArrayOutput) ToBdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArrayOutputWithContext(ctx context.Context) BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArrayOutput {
+	return o
+}
+
+func (o BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArrayOutput) Index(i pulumi.IntInput) BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BdsCapacityReportShapeAvailabilityDomainLevelCapacityReport {
+		return vs[0].([]BdsCapacityReportShapeAvailabilityDomainLevelCapacityReport)[vs[1].(int)]
+	}).(BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportOutput)
+}
+
+type BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailability struct {
+	// A flag denoting whether capacity is available.
+	AvailabilityStatus *string `pulumi:"availabilityStatus"`
+	// The total number of new cluster nodes that can be created with the specified shape configuration.
+	AvailableCount *string `pulumi:"availableCount"`
+}
+
+// BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityInput is an input type that accepts BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArgs and BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityOutput values.
+// You can construct a concrete instance of `BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityInput` via:
+//
+//	BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArgs{...}
+type BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityInput interface {
+	pulumi.Input
+
+	ToBdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityOutput() BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityOutput
+	ToBdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityOutputWithContext(context.Context) BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityOutput
+}
+
+type BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArgs struct {
+	// A flag denoting whether capacity is available.
+	AvailabilityStatus pulumi.StringPtrInput `pulumi:"availabilityStatus"`
+	// The total number of new cluster nodes that can be created with the specified shape configuration.
+	AvailableCount pulumi.StringPtrInput `pulumi:"availableCount"`
+}
+
+func (BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailability)(nil)).Elem()
+}
+
+func (i BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArgs) ToBdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityOutput() BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityOutput {
+	return i.ToBdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityOutputWithContext(context.Background())
+}
+
+func (i BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArgs) ToBdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityOutputWithContext(ctx context.Context) BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityOutput)
+}
+
+// BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArrayInput is an input type that accepts BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArray and BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArrayOutput values.
+// You can construct a concrete instance of `BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArrayInput` via:
+//
+//	BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArray{ BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArgs{...} }
+type BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArrayInput interface {
+	pulumi.Input
+
+	ToBdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArrayOutput() BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArrayOutput
+	ToBdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArrayOutputWithContext(context.Context) BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArrayOutput
+}
+
+type BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArray []BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityInput
+
+func (BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailability)(nil)).Elem()
+}
+
+func (i BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArray) ToBdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArrayOutput() BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArrayOutput {
+	return i.ToBdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArrayOutputWithContext(context.Background())
+}
+
+func (i BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArray) ToBdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArrayOutputWithContext(ctx context.Context) BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArrayOutput)
+}
+
+type BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityOutput struct{ *pulumi.OutputState }
+
+func (BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailability)(nil)).Elem()
+}
+
+func (o BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityOutput) ToBdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityOutput() BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityOutput {
+	return o
+}
+
+func (o BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityOutput) ToBdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityOutputWithContext(ctx context.Context) BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityOutput {
+	return o
+}
+
+// A flag denoting whether capacity is available.
+func (o BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityOutput) AvailabilityStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailability) *string {
+		return v.AvailabilityStatus
+	}).(pulumi.StringPtrOutput)
+}
+
+// The total number of new cluster nodes that can be created with the specified shape configuration.
+func (o BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityOutput) AvailableCount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailability) *string {
+		return v.AvailableCount
+	}).(pulumi.StringPtrOutput)
+}
+
+type BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArrayOutput struct{ *pulumi.OutputState }
+
+func (BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailability)(nil)).Elem()
+}
+
+func (o BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArrayOutput) ToBdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArrayOutput() BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArrayOutput {
+	return o
+}
+
+func (o BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArrayOutput) ToBdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArrayOutputWithContext(ctx context.Context) BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArrayOutput {
+	return o
+}
+
+func (o BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArrayOutput) Index(i pulumi.IntInput) BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailability {
+		return vs[0].([]BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailability)[vs[1].(int)]
+	}).(BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityOutput)
+}
+
+type BdsCapacityReportShapeAvailabilityShapeConfig struct {
+	// The total amount of memory available to the node, in gigabytes.
+	MemoryInGbs *int `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available. This parameter is used only for dense shapes.
+	Nvmes *int `pulumi:"nvmes"`
+	// The total number of OCPUs available to the node.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Ocpus *int `pulumi:"ocpus"`
+}
+
+// BdsCapacityReportShapeAvailabilityShapeConfigInput is an input type that accepts BdsCapacityReportShapeAvailabilityShapeConfigArgs and BdsCapacityReportShapeAvailabilityShapeConfigOutput values.
+// You can construct a concrete instance of `BdsCapacityReportShapeAvailabilityShapeConfigInput` via:
+//
+//	BdsCapacityReportShapeAvailabilityShapeConfigArgs{...}
+type BdsCapacityReportShapeAvailabilityShapeConfigInput interface {
+	pulumi.Input
+
+	ToBdsCapacityReportShapeAvailabilityShapeConfigOutput() BdsCapacityReportShapeAvailabilityShapeConfigOutput
+	ToBdsCapacityReportShapeAvailabilityShapeConfigOutputWithContext(context.Context) BdsCapacityReportShapeAvailabilityShapeConfigOutput
+}
+
+type BdsCapacityReportShapeAvailabilityShapeConfigArgs struct {
+	// The total amount of memory available to the node, in gigabytes.
+	MemoryInGbs pulumi.IntPtrInput `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available. This parameter is used only for dense shapes.
+	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
+	// The total number of OCPUs available to the node.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Ocpus pulumi.IntPtrInput `pulumi:"ocpus"`
+}
+
+func (BdsCapacityReportShapeAvailabilityShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsCapacityReportShapeAvailabilityShapeConfig)(nil)).Elem()
+}
+
+func (i BdsCapacityReportShapeAvailabilityShapeConfigArgs) ToBdsCapacityReportShapeAvailabilityShapeConfigOutput() BdsCapacityReportShapeAvailabilityShapeConfigOutput {
+	return i.ToBdsCapacityReportShapeAvailabilityShapeConfigOutputWithContext(context.Background())
+}
+
+func (i BdsCapacityReportShapeAvailabilityShapeConfigArgs) ToBdsCapacityReportShapeAvailabilityShapeConfigOutputWithContext(ctx context.Context) BdsCapacityReportShapeAvailabilityShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsCapacityReportShapeAvailabilityShapeConfigOutput)
+}
+
+func (i BdsCapacityReportShapeAvailabilityShapeConfigArgs) ToBdsCapacityReportShapeAvailabilityShapeConfigPtrOutput() BdsCapacityReportShapeAvailabilityShapeConfigPtrOutput {
+	return i.ToBdsCapacityReportShapeAvailabilityShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i BdsCapacityReportShapeAvailabilityShapeConfigArgs) ToBdsCapacityReportShapeAvailabilityShapeConfigPtrOutputWithContext(ctx context.Context) BdsCapacityReportShapeAvailabilityShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsCapacityReportShapeAvailabilityShapeConfigOutput).ToBdsCapacityReportShapeAvailabilityShapeConfigPtrOutputWithContext(ctx)
+}
+
+// BdsCapacityReportShapeAvailabilityShapeConfigPtrInput is an input type that accepts BdsCapacityReportShapeAvailabilityShapeConfigArgs, BdsCapacityReportShapeAvailabilityShapeConfigPtr and BdsCapacityReportShapeAvailabilityShapeConfigPtrOutput values.
+// You can construct a concrete instance of `BdsCapacityReportShapeAvailabilityShapeConfigPtrInput` via:
+//
+//	        BdsCapacityReportShapeAvailabilityShapeConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type BdsCapacityReportShapeAvailabilityShapeConfigPtrInput interface {
+	pulumi.Input
+
+	ToBdsCapacityReportShapeAvailabilityShapeConfigPtrOutput() BdsCapacityReportShapeAvailabilityShapeConfigPtrOutput
+	ToBdsCapacityReportShapeAvailabilityShapeConfigPtrOutputWithContext(context.Context) BdsCapacityReportShapeAvailabilityShapeConfigPtrOutput
+}
+
+type bdsCapacityReportShapeAvailabilityShapeConfigPtrType BdsCapacityReportShapeAvailabilityShapeConfigArgs
+
+func BdsCapacityReportShapeAvailabilityShapeConfigPtr(v *BdsCapacityReportShapeAvailabilityShapeConfigArgs) BdsCapacityReportShapeAvailabilityShapeConfigPtrInput {
+	return (*bdsCapacityReportShapeAvailabilityShapeConfigPtrType)(v)
+}
+
+func (*bdsCapacityReportShapeAvailabilityShapeConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**BdsCapacityReportShapeAvailabilityShapeConfig)(nil)).Elem()
+}
+
+func (i *bdsCapacityReportShapeAvailabilityShapeConfigPtrType) ToBdsCapacityReportShapeAvailabilityShapeConfigPtrOutput() BdsCapacityReportShapeAvailabilityShapeConfigPtrOutput {
+	return i.ToBdsCapacityReportShapeAvailabilityShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *bdsCapacityReportShapeAvailabilityShapeConfigPtrType) ToBdsCapacityReportShapeAvailabilityShapeConfigPtrOutputWithContext(ctx context.Context) BdsCapacityReportShapeAvailabilityShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsCapacityReportShapeAvailabilityShapeConfigPtrOutput)
+}
+
+type BdsCapacityReportShapeAvailabilityShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (BdsCapacityReportShapeAvailabilityShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsCapacityReportShapeAvailabilityShapeConfig)(nil)).Elem()
+}
+
+func (o BdsCapacityReportShapeAvailabilityShapeConfigOutput) ToBdsCapacityReportShapeAvailabilityShapeConfigOutput() BdsCapacityReportShapeAvailabilityShapeConfigOutput {
+	return o
+}
+
+func (o BdsCapacityReportShapeAvailabilityShapeConfigOutput) ToBdsCapacityReportShapeAvailabilityShapeConfigOutputWithContext(ctx context.Context) BdsCapacityReportShapeAvailabilityShapeConfigOutput {
+	return o
+}
+
+func (o BdsCapacityReportShapeAvailabilityShapeConfigOutput) ToBdsCapacityReportShapeAvailabilityShapeConfigPtrOutput() BdsCapacityReportShapeAvailabilityShapeConfigPtrOutput {
+	return o.ToBdsCapacityReportShapeAvailabilityShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (o BdsCapacityReportShapeAvailabilityShapeConfigOutput) ToBdsCapacityReportShapeAvailabilityShapeConfigPtrOutputWithContext(ctx context.Context) BdsCapacityReportShapeAvailabilityShapeConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v BdsCapacityReportShapeAvailabilityShapeConfig) *BdsCapacityReportShapeAvailabilityShapeConfig {
+		return &v
+	}).(BdsCapacityReportShapeAvailabilityShapeConfigPtrOutput)
+}
+
+// The total amount of memory available to the node, in gigabytes.
+func (o BdsCapacityReportShapeAvailabilityShapeConfigOutput) MemoryInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsCapacityReportShapeAvailabilityShapeConfig) *int { return v.MemoryInGbs }).(pulumi.IntPtrOutput)
+}
+
+// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available. This parameter is used only for dense shapes.
+func (o BdsCapacityReportShapeAvailabilityShapeConfigOutput) Nvmes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsCapacityReportShapeAvailabilityShapeConfig) *int { return v.Nvmes }).(pulumi.IntPtrOutput)
+}
+
+// The total number of OCPUs available to the node.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o BdsCapacityReportShapeAvailabilityShapeConfigOutput) Ocpus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsCapacityReportShapeAvailabilityShapeConfig) *int { return v.Ocpus }).(pulumi.IntPtrOutput)
+}
+
+type BdsCapacityReportShapeAvailabilityShapeConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (BdsCapacityReportShapeAvailabilityShapeConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**BdsCapacityReportShapeAvailabilityShapeConfig)(nil)).Elem()
+}
+
+func (o BdsCapacityReportShapeAvailabilityShapeConfigPtrOutput) ToBdsCapacityReportShapeAvailabilityShapeConfigPtrOutput() BdsCapacityReportShapeAvailabilityShapeConfigPtrOutput {
+	return o
+}
+
+func (o BdsCapacityReportShapeAvailabilityShapeConfigPtrOutput) ToBdsCapacityReportShapeAvailabilityShapeConfigPtrOutputWithContext(ctx context.Context) BdsCapacityReportShapeAvailabilityShapeConfigPtrOutput {
+	return o
+}
+
+func (o BdsCapacityReportShapeAvailabilityShapeConfigPtrOutput) Elem() BdsCapacityReportShapeAvailabilityShapeConfigOutput {
+	return o.ApplyT(func(v *BdsCapacityReportShapeAvailabilityShapeConfig) BdsCapacityReportShapeAvailabilityShapeConfig {
+		if v != nil {
+			return *v
+		}
+		var ret BdsCapacityReportShapeAvailabilityShapeConfig
+		return ret
+	}).(BdsCapacityReportShapeAvailabilityShapeConfigOutput)
+}
+
+// The total amount of memory available to the node, in gigabytes.
+func (o BdsCapacityReportShapeAvailabilityShapeConfigPtrOutput) MemoryInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BdsCapacityReportShapeAvailabilityShapeConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MemoryInGbs
+	}).(pulumi.IntPtrOutput)
+}
+
+// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available. This parameter is used only for dense shapes.
+func (o BdsCapacityReportShapeAvailabilityShapeConfigPtrOutput) Nvmes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BdsCapacityReportShapeAvailabilityShapeConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Nvmes
+	}).(pulumi.IntPtrOutput)
+}
+
+// The total number of OCPUs available to the node.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o BdsCapacityReportShapeAvailabilityShapeConfigPtrOutput) Ocpus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BdsCapacityReportShapeAvailabilityShapeConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Ocpus
+	}).(pulumi.IntPtrOutput)
 }
 
 type BdsInstanceBdsClusterVersionSummary struct {
@@ -6652,7 +7196,7 @@ func (o BdsInstanceOperationCertificateManagementsManagementHostCertDetailArrayO
 	}).(BdsInstanceOperationCertificateManagementsManagementHostCertDetailOutput)
 }
 
-type BdsInstanceOsPatchActionPatchingConfig struct {
+type BdsInstanceOsPatchActionPatchingConfigs struct {
 	// How many nodes to be patched in each iteration.
 	BatchSize *int `pulumi:"batchSize"`
 	// Type of strategy used for detailed patching configuration
@@ -6667,18 +7211,18 @@ type BdsInstanceOsPatchActionPatchingConfig struct {
 	WaitTimeBetweenDomainInSeconds *int `pulumi:"waitTimeBetweenDomainInSeconds"`
 }
 
-// BdsInstanceOsPatchActionPatchingConfigInput is an input type that accepts BdsInstanceOsPatchActionPatchingConfigArgs and BdsInstanceOsPatchActionPatchingConfigOutput values.
-// You can construct a concrete instance of `BdsInstanceOsPatchActionPatchingConfigInput` via:
+// BdsInstanceOsPatchActionPatchingConfigsInput is an input type that accepts BdsInstanceOsPatchActionPatchingConfigsArgs and BdsInstanceOsPatchActionPatchingConfigsOutput values.
+// You can construct a concrete instance of `BdsInstanceOsPatchActionPatchingConfigsInput` via:
 //
-//	BdsInstanceOsPatchActionPatchingConfigArgs{...}
-type BdsInstanceOsPatchActionPatchingConfigInput interface {
+//	BdsInstanceOsPatchActionPatchingConfigsArgs{...}
+type BdsInstanceOsPatchActionPatchingConfigsInput interface {
 	pulumi.Input
 
-	ToBdsInstanceOsPatchActionPatchingConfigOutput() BdsInstanceOsPatchActionPatchingConfigOutput
-	ToBdsInstanceOsPatchActionPatchingConfigOutputWithContext(context.Context) BdsInstanceOsPatchActionPatchingConfigOutput
+	ToBdsInstanceOsPatchActionPatchingConfigsOutput() BdsInstanceOsPatchActionPatchingConfigsOutput
+	ToBdsInstanceOsPatchActionPatchingConfigsOutputWithContext(context.Context) BdsInstanceOsPatchActionPatchingConfigsOutput
 }
 
-type BdsInstanceOsPatchActionPatchingConfigArgs struct {
+type BdsInstanceOsPatchActionPatchingConfigsArgs struct {
 	// How many nodes to be patched in each iteration.
 	BatchSize pulumi.IntPtrInput `pulumi:"batchSize"`
 	// Type of strategy used for detailed patching configuration
@@ -6693,105 +7237,195 @@ type BdsInstanceOsPatchActionPatchingConfigArgs struct {
 	WaitTimeBetweenDomainInSeconds pulumi.IntPtrInput `pulumi:"waitTimeBetweenDomainInSeconds"`
 }
 
-func (BdsInstanceOsPatchActionPatchingConfigArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*BdsInstanceOsPatchActionPatchingConfig)(nil)).Elem()
+func (BdsInstanceOsPatchActionPatchingConfigsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceOsPatchActionPatchingConfigs)(nil)).Elem()
 }
 
-func (i BdsInstanceOsPatchActionPatchingConfigArgs) ToBdsInstanceOsPatchActionPatchingConfigOutput() BdsInstanceOsPatchActionPatchingConfigOutput {
-	return i.ToBdsInstanceOsPatchActionPatchingConfigOutputWithContext(context.Background())
+func (i BdsInstanceOsPatchActionPatchingConfigsArgs) ToBdsInstanceOsPatchActionPatchingConfigsOutput() BdsInstanceOsPatchActionPatchingConfigsOutput {
+	return i.ToBdsInstanceOsPatchActionPatchingConfigsOutputWithContext(context.Background())
 }
 
-func (i BdsInstanceOsPatchActionPatchingConfigArgs) ToBdsInstanceOsPatchActionPatchingConfigOutputWithContext(ctx context.Context) BdsInstanceOsPatchActionPatchingConfigOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceOsPatchActionPatchingConfigOutput)
+func (i BdsInstanceOsPatchActionPatchingConfigsArgs) ToBdsInstanceOsPatchActionPatchingConfigsOutputWithContext(ctx context.Context) BdsInstanceOsPatchActionPatchingConfigsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceOsPatchActionPatchingConfigsOutput)
 }
 
-// BdsInstanceOsPatchActionPatchingConfigArrayInput is an input type that accepts BdsInstanceOsPatchActionPatchingConfigArray and BdsInstanceOsPatchActionPatchingConfigArrayOutput values.
-// You can construct a concrete instance of `BdsInstanceOsPatchActionPatchingConfigArrayInput` via:
+func (i BdsInstanceOsPatchActionPatchingConfigsArgs) ToBdsInstanceOsPatchActionPatchingConfigsPtrOutput() BdsInstanceOsPatchActionPatchingConfigsPtrOutput {
+	return i.ToBdsInstanceOsPatchActionPatchingConfigsPtrOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceOsPatchActionPatchingConfigsArgs) ToBdsInstanceOsPatchActionPatchingConfigsPtrOutputWithContext(ctx context.Context) BdsInstanceOsPatchActionPatchingConfigsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceOsPatchActionPatchingConfigsOutput).ToBdsInstanceOsPatchActionPatchingConfigsPtrOutputWithContext(ctx)
+}
+
+// BdsInstanceOsPatchActionPatchingConfigsPtrInput is an input type that accepts BdsInstanceOsPatchActionPatchingConfigsArgs, BdsInstanceOsPatchActionPatchingConfigsPtr and BdsInstanceOsPatchActionPatchingConfigsPtrOutput values.
+// You can construct a concrete instance of `BdsInstanceOsPatchActionPatchingConfigsPtrInput` via:
 //
-//	BdsInstanceOsPatchActionPatchingConfigArray{ BdsInstanceOsPatchActionPatchingConfigArgs{...} }
-type BdsInstanceOsPatchActionPatchingConfigArrayInput interface {
+//	        BdsInstanceOsPatchActionPatchingConfigsArgs{...}
+//
+//	or:
+//
+//	        nil
+type BdsInstanceOsPatchActionPatchingConfigsPtrInput interface {
 	pulumi.Input
 
-	ToBdsInstanceOsPatchActionPatchingConfigArrayOutput() BdsInstanceOsPatchActionPatchingConfigArrayOutput
-	ToBdsInstanceOsPatchActionPatchingConfigArrayOutputWithContext(context.Context) BdsInstanceOsPatchActionPatchingConfigArrayOutput
+	ToBdsInstanceOsPatchActionPatchingConfigsPtrOutput() BdsInstanceOsPatchActionPatchingConfigsPtrOutput
+	ToBdsInstanceOsPatchActionPatchingConfigsPtrOutputWithContext(context.Context) BdsInstanceOsPatchActionPatchingConfigsPtrOutput
 }
 
-type BdsInstanceOsPatchActionPatchingConfigArray []BdsInstanceOsPatchActionPatchingConfigInput
+type bdsInstanceOsPatchActionPatchingConfigsPtrType BdsInstanceOsPatchActionPatchingConfigsArgs
 
-func (BdsInstanceOsPatchActionPatchingConfigArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]BdsInstanceOsPatchActionPatchingConfig)(nil)).Elem()
+func BdsInstanceOsPatchActionPatchingConfigsPtr(v *BdsInstanceOsPatchActionPatchingConfigsArgs) BdsInstanceOsPatchActionPatchingConfigsPtrInput {
+	return (*bdsInstanceOsPatchActionPatchingConfigsPtrType)(v)
 }
 
-func (i BdsInstanceOsPatchActionPatchingConfigArray) ToBdsInstanceOsPatchActionPatchingConfigArrayOutput() BdsInstanceOsPatchActionPatchingConfigArrayOutput {
-	return i.ToBdsInstanceOsPatchActionPatchingConfigArrayOutputWithContext(context.Background())
+func (*bdsInstanceOsPatchActionPatchingConfigsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**BdsInstanceOsPatchActionPatchingConfigs)(nil)).Elem()
 }
 
-func (i BdsInstanceOsPatchActionPatchingConfigArray) ToBdsInstanceOsPatchActionPatchingConfigArrayOutputWithContext(ctx context.Context) BdsInstanceOsPatchActionPatchingConfigArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceOsPatchActionPatchingConfigArrayOutput)
+func (i *bdsInstanceOsPatchActionPatchingConfigsPtrType) ToBdsInstanceOsPatchActionPatchingConfigsPtrOutput() BdsInstanceOsPatchActionPatchingConfigsPtrOutput {
+	return i.ToBdsInstanceOsPatchActionPatchingConfigsPtrOutputWithContext(context.Background())
 }
 
-type BdsInstanceOsPatchActionPatchingConfigOutput struct{ *pulumi.OutputState }
-
-func (BdsInstanceOsPatchActionPatchingConfigOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*BdsInstanceOsPatchActionPatchingConfig)(nil)).Elem()
+func (i *bdsInstanceOsPatchActionPatchingConfigsPtrType) ToBdsInstanceOsPatchActionPatchingConfigsPtrOutputWithContext(ctx context.Context) BdsInstanceOsPatchActionPatchingConfigsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceOsPatchActionPatchingConfigsPtrOutput)
 }
 
-func (o BdsInstanceOsPatchActionPatchingConfigOutput) ToBdsInstanceOsPatchActionPatchingConfigOutput() BdsInstanceOsPatchActionPatchingConfigOutput {
+type BdsInstanceOsPatchActionPatchingConfigsOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceOsPatchActionPatchingConfigsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceOsPatchActionPatchingConfigs)(nil)).Elem()
+}
+
+func (o BdsInstanceOsPatchActionPatchingConfigsOutput) ToBdsInstanceOsPatchActionPatchingConfigsOutput() BdsInstanceOsPatchActionPatchingConfigsOutput {
 	return o
 }
 
-func (o BdsInstanceOsPatchActionPatchingConfigOutput) ToBdsInstanceOsPatchActionPatchingConfigOutputWithContext(ctx context.Context) BdsInstanceOsPatchActionPatchingConfigOutput {
+func (o BdsInstanceOsPatchActionPatchingConfigsOutput) ToBdsInstanceOsPatchActionPatchingConfigsOutputWithContext(ctx context.Context) BdsInstanceOsPatchActionPatchingConfigsOutput {
 	return o
+}
+
+func (o BdsInstanceOsPatchActionPatchingConfigsOutput) ToBdsInstanceOsPatchActionPatchingConfigsPtrOutput() BdsInstanceOsPatchActionPatchingConfigsPtrOutput {
+	return o.ToBdsInstanceOsPatchActionPatchingConfigsPtrOutputWithContext(context.Background())
+}
+
+func (o BdsInstanceOsPatchActionPatchingConfigsOutput) ToBdsInstanceOsPatchActionPatchingConfigsPtrOutputWithContext(ctx context.Context) BdsInstanceOsPatchActionPatchingConfigsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v BdsInstanceOsPatchActionPatchingConfigs) *BdsInstanceOsPatchActionPatchingConfigs {
+		return &v
+	}).(BdsInstanceOsPatchActionPatchingConfigsPtrOutput)
 }
 
 // How many nodes to be patched in each iteration.
-func (o BdsInstanceOsPatchActionPatchingConfigOutput) BatchSize() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v BdsInstanceOsPatchActionPatchingConfig) *int { return v.BatchSize }).(pulumi.IntPtrOutput)
+func (o BdsInstanceOsPatchActionPatchingConfigsOutput) BatchSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstanceOsPatchActionPatchingConfigs) *int { return v.BatchSize }).(pulumi.IntPtrOutput)
 }
 
 // Type of strategy used for detailed patching configuration
-func (o BdsInstanceOsPatchActionPatchingConfigOutput) PatchingConfigStrategy() pulumi.StringOutput {
-	return o.ApplyT(func(v BdsInstanceOsPatchActionPatchingConfig) string { return v.PatchingConfigStrategy }).(pulumi.StringOutput)
+func (o BdsInstanceOsPatchActionPatchingConfigsOutput) PatchingConfigStrategy() pulumi.StringOutput {
+	return o.ApplyT(func(v BdsInstanceOsPatchActionPatchingConfigs) string { return v.PatchingConfigStrategy }).(pulumi.StringOutput)
 }
 
 // Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of nodes.
-func (o BdsInstanceOsPatchActionPatchingConfigOutput) ToleranceThresholdPerBatch() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v BdsInstanceOsPatchActionPatchingConfig) *int { return v.ToleranceThresholdPerBatch }).(pulumi.IntPtrOutput)
+func (o BdsInstanceOsPatchActionPatchingConfigsOutput) ToleranceThresholdPerBatch() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstanceOsPatchActionPatchingConfigs) *int { return v.ToleranceThresholdPerBatch }).(pulumi.IntPtrOutput)
 }
 
 // Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of nodes.
-func (o BdsInstanceOsPatchActionPatchingConfigOutput) ToleranceThresholdPerDomain() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v BdsInstanceOsPatchActionPatchingConfig) *int { return v.ToleranceThresholdPerDomain }).(pulumi.IntPtrOutput)
+func (o BdsInstanceOsPatchActionPatchingConfigsOutput) ToleranceThresholdPerDomain() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstanceOsPatchActionPatchingConfigs) *int { return v.ToleranceThresholdPerDomain }).(pulumi.IntPtrOutput)
 }
 
 // The wait time between batches in seconds.
-func (o BdsInstanceOsPatchActionPatchingConfigOutput) WaitTimeBetweenBatchInSeconds() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v BdsInstanceOsPatchActionPatchingConfig) *int { return v.WaitTimeBetweenBatchInSeconds }).(pulumi.IntPtrOutput)
+func (o BdsInstanceOsPatchActionPatchingConfigsOutput) WaitTimeBetweenBatchInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstanceOsPatchActionPatchingConfigs) *int { return v.WaitTimeBetweenBatchInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // The wait time between AD/FD in seconds.
-func (o BdsInstanceOsPatchActionPatchingConfigOutput) WaitTimeBetweenDomainInSeconds() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v BdsInstanceOsPatchActionPatchingConfig) *int { return v.WaitTimeBetweenDomainInSeconds }).(pulumi.IntPtrOutput)
+func (o BdsInstanceOsPatchActionPatchingConfigsOutput) WaitTimeBetweenDomainInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstanceOsPatchActionPatchingConfigs) *int { return v.WaitTimeBetweenDomainInSeconds }).(pulumi.IntPtrOutput)
 }
 
-type BdsInstanceOsPatchActionPatchingConfigArrayOutput struct{ *pulumi.OutputState }
+type BdsInstanceOsPatchActionPatchingConfigsPtrOutput struct{ *pulumi.OutputState }
 
-func (BdsInstanceOsPatchActionPatchingConfigArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]BdsInstanceOsPatchActionPatchingConfig)(nil)).Elem()
+func (BdsInstanceOsPatchActionPatchingConfigsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**BdsInstanceOsPatchActionPatchingConfigs)(nil)).Elem()
 }
 
-func (o BdsInstanceOsPatchActionPatchingConfigArrayOutput) ToBdsInstanceOsPatchActionPatchingConfigArrayOutput() BdsInstanceOsPatchActionPatchingConfigArrayOutput {
+func (o BdsInstanceOsPatchActionPatchingConfigsPtrOutput) ToBdsInstanceOsPatchActionPatchingConfigsPtrOutput() BdsInstanceOsPatchActionPatchingConfigsPtrOutput {
 	return o
 }
 
-func (o BdsInstanceOsPatchActionPatchingConfigArrayOutput) ToBdsInstanceOsPatchActionPatchingConfigArrayOutputWithContext(ctx context.Context) BdsInstanceOsPatchActionPatchingConfigArrayOutput {
+func (o BdsInstanceOsPatchActionPatchingConfigsPtrOutput) ToBdsInstanceOsPatchActionPatchingConfigsPtrOutputWithContext(ctx context.Context) BdsInstanceOsPatchActionPatchingConfigsPtrOutput {
 	return o
 }
 
-func (o BdsInstanceOsPatchActionPatchingConfigArrayOutput) Index(i pulumi.IntInput) BdsInstanceOsPatchActionPatchingConfigOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BdsInstanceOsPatchActionPatchingConfig {
-		return vs[0].([]BdsInstanceOsPatchActionPatchingConfig)[vs[1].(int)]
-	}).(BdsInstanceOsPatchActionPatchingConfigOutput)
+func (o BdsInstanceOsPatchActionPatchingConfigsPtrOutput) Elem() BdsInstanceOsPatchActionPatchingConfigsOutput {
+	return o.ApplyT(func(v *BdsInstanceOsPatchActionPatchingConfigs) BdsInstanceOsPatchActionPatchingConfigs {
+		if v != nil {
+			return *v
+		}
+		var ret BdsInstanceOsPatchActionPatchingConfigs
+		return ret
+	}).(BdsInstanceOsPatchActionPatchingConfigsOutput)
+}
+
+// How many nodes to be patched in each iteration.
+func (o BdsInstanceOsPatchActionPatchingConfigsPtrOutput) BatchSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceOsPatchActionPatchingConfigs) *int {
+		if v == nil {
+			return nil
+		}
+		return v.BatchSize
+	}).(pulumi.IntPtrOutput)
+}
+
+// Type of strategy used for detailed patching configuration
+func (o BdsInstanceOsPatchActionPatchingConfigsPtrOutput) PatchingConfigStrategy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceOsPatchActionPatchingConfigs) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.PatchingConfigStrategy
+	}).(pulumi.StringPtrOutput)
+}
+
+// Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of nodes.
+func (o BdsInstanceOsPatchActionPatchingConfigsPtrOutput) ToleranceThresholdPerBatch() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceOsPatchActionPatchingConfigs) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ToleranceThresholdPerBatch
+	}).(pulumi.IntPtrOutput)
+}
+
+// Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of nodes.
+func (o BdsInstanceOsPatchActionPatchingConfigsPtrOutput) ToleranceThresholdPerDomain() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceOsPatchActionPatchingConfigs) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ToleranceThresholdPerDomain
+	}).(pulumi.IntPtrOutput)
+}
+
+// The wait time between batches in seconds.
+func (o BdsInstanceOsPatchActionPatchingConfigsPtrOutput) WaitTimeBetweenBatchInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceOsPatchActionPatchingConfigs) *int {
+		if v == nil {
+			return nil
+		}
+		return v.WaitTimeBetweenBatchInSeconds
+	}).(pulumi.IntPtrOutput)
+}
+
+// The wait time between AD/FD in seconds.
+func (o BdsInstanceOsPatchActionPatchingConfigsPtrOutput) WaitTimeBetweenDomainInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceOsPatchActionPatchingConfigs) *int {
+		if v == nil {
+			return nil
+		}
+		return v.WaitTimeBetweenDomainInSeconds
+	}).(pulumi.IntPtrOutput)
 }
 
 type BdsInstancePatchActionPatchingConfig struct {
@@ -14608,6 +15242,8 @@ func (o GetBdsInstanceGetOsPatchFilterArrayOutput) Index(i pulumi.IntInput) GetB
 type GetBdsInstanceGetOsPatchTargetPackage struct {
 	// The package's name.
 	PackageName string `pulumi:"packageName"`
+	// Package type based on package installation manager.
+	PackageType string `pulumi:"packageType"`
 	// Related CVEs of the package update.
 	RelatedCvEs []string `pulumi:"relatedCvEs"`
 	// The target version of the package.
@@ -14630,6 +15266,8 @@ type GetBdsInstanceGetOsPatchTargetPackageInput interface {
 type GetBdsInstanceGetOsPatchTargetPackageArgs struct {
 	// The package's name.
 	PackageName pulumi.StringInput `pulumi:"packageName"`
+	// Package type based on package installation manager.
+	PackageType pulumi.StringInput `pulumi:"packageType"`
 	// Related CVEs of the package update.
 	RelatedCvEs pulumi.StringArrayInput `pulumi:"relatedCvEs"`
 	// The target version of the package.
@@ -14692,6 +15330,11 @@ func (o GetBdsInstanceGetOsPatchTargetPackageOutput) ToGetBdsInstanceGetOsPatchT
 // The package's name.
 func (o GetBdsInstanceGetOsPatchTargetPackageOutput) PackageName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstanceGetOsPatchTargetPackage) string { return v.PackageName }).(pulumi.StringOutput)
+}
+
+// Package type based on package installation manager.
+func (o GetBdsInstanceGetOsPatchTargetPackageOutput) PackageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceGetOsPatchTargetPackage) string { return v.PackageType }).(pulumi.StringOutput)
 }
 
 // Related CVEs of the package update.
@@ -18359,6 +19002,355 @@ func (o GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurat
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfiguration {
 		return vs[0].([]GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfiguration)[vs[1].(int)]
 	}).(GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutput)
+}
+
+type GetBdsInstanceSoftwareUpdatesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetBdsInstanceSoftwareUpdatesFilterInput is an input type that accepts GetBdsInstanceSoftwareUpdatesFilterArgs and GetBdsInstanceSoftwareUpdatesFilterOutput values.
+// You can construct a concrete instance of `GetBdsInstanceSoftwareUpdatesFilterInput` via:
+//
+//	GetBdsInstanceSoftwareUpdatesFilterArgs{...}
+type GetBdsInstanceSoftwareUpdatesFilterInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceSoftwareUpdatesFilterOutput() GetBdsInstanceSoftwareUpdatesFilterOutput
+	ToGetBdsInstanceSoftwareUpdatesFilterOutputWithContext(context.Context) GetBdsInstanceSoftwareUpdatesFilterOutput
+}
+
+type GetBdsInstanceSoftwareUpdatesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetBdsInstanceSoftwareUpdatesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceSoftwareUpdatesFilter)(nil)).Elem()
+}
+
+func (i GetBdsInstanceSoftwareUpdatesFilterArgs) ToGetBdsInstanceSoftwareUpdatesFilterOutput() GetBdsInstanceSoftwareUpdatesFilterOutput {
+	return i.ToGetBdsInstanceSoftwareUpdatesFilterOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceSoftwareUpdatesFilterArgs) ToGetBdsInstanceSoftwareUpdatesFilterOutputWithContext(ctx context.Context) GetBdsInstanceSoftwareUpdatesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceSoftwareUpdatesFilterOutput)
+}
+
+// GetBdsInstanceSoftwareUpdatesFilterArrayInput is an input type that accepts GetBdsInstanceSoftwareUpdatesFilterArray and GetBdsInstanceSoftwareUpdatesFilterArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceSoftwareUpdatesFilterArrayInput` via:
+//
+//	GetBdsInstanceSoftwareUpdatesFilterArray{ GetBdsInstanceSoftwareUpdatesFilterArgs{...} }
+type GetBdsInstanceSoftwareUpdatesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceSoftwareUpdatesFilterArrayOutput() GetBdsInstanceSoftwareUpdatesFilterArrayOutput
+	ToGetBdsInstanceSoftwareUpdatesFilterArrayOutputWithContext(context.Context) GetBdsInstanceSoftwareUpdatesFilterArrayOutput
+}
+
+type GetBdsInstanceSoftwareUpdatesFilterArray []GetBdsInstanceSoftwareUpdatesFilterInput
+
+func (GetBdsInstanceSoftwareUpdatesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceSoftwareUpdatesFilter)(nil)).Elem()
+}
+
+func (i GetBdsInstanceSoftwareUpdatesFilterArray) ToGetBdsInstanceSoftwareUpdatesFilterArrayOutput() GetBdsInstanceSoftwareUpdatesFilterArrayOutput {
+	return i.ToGetBdsInstanceSoftwareUpdatesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceSoftwareUpdatesFilterArray) ToGetBdsInstanceSoftwareUpdatesFilterArrayOutputWithContext(ctx context.Context) GetBdsInstanceSoftwareUpdatesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceSoftwareUpdatesFilterArrayOutput)
+}
+
+type GetBdsInstanceSoftwareUpdatesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceSoftwareUpdatesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceSoftwareUpdatesFilter)(nil)).Elem()
+}
+
+func (o GetBdsInstanceSoftwareUpdatesFilterOutput) ToGetBdsInstanceSoftwareUpdatesFilterOutput() GetBdsInstanceSoftwareUpdatesFilterOutput {
+	return o
+}
+
+func (o GetBdsInstanceSoftwareUpdatesFilterOutput) ToGetBdsInstanceSoftwareUpdatesFilterOutputWithContext(ctx context.Context) GetBdsInstanceSoftwareUpdatesFilterOutput {
+	return o
+}
+
+func (o GetBdsInstanceSoftwareUpdatesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceSoftwareUpdatesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetBdsInstanceSoftwareUpdatesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBdsInstanceSoftwareUpdatesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetBdsInstanceSoftwareUpdatesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBdsInstanceSoftwareUpdatesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetBdsInstanceSoftwareUpdatesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceSoftwareUpdatesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceSoftwareUpdatesFilter)(nil)).Elem()
+}
+
+func (o GetBdsInstanceSoftwareUpdatesFilterArrayOutput) ToGetBdsInstanceSoftwareUpdatesFilterArrayOutput() GetBdsInstanceSoftwareUpdatesFilterArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceSoftwareUpdatesFilterArrayOutput) ToGetBdsInstanceSoftwareUpdatesFilterArrayOutputWithContext(ctx context.Context) GetBdsInstanceSoftwareUpdatesFilterArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceSoftwareUpdatesFilterArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceSoftwareUpdatesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceSoftwareUpdatesFilter {
+		return vs[0].([]GetBdsInstanceSoftwareUpdatesFilter)[vs[1].(int)]
+	}).(GetBdsInstanceSoftwareUpdatesFilterOutput)
+}
+
+type GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollection struct {
+	Items []GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItem `pulumi:"items"`
+}
+
+// GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionInput is an input type that accepts GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArgs and GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionOutput values.
+// You can construct a concrete instance of `GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionInput` via:
+//
+//	GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArgs{...}
+type GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionOutput() GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionOutput
+	ToGetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionOutputWithContext(context.Context) GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionOutput
+}
+
+type GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArgs struct {
+	Items GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollection)(nil)).Elem()
+}
+
+func (i GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArgs) ToGetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionOutput() GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionOutput {
+	return i.ToGetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArgs) ToGetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionOutputWithContext(ctx context.Context) GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionOutput)
+}
+
+// GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArrayInput is an input type that accepts GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArray and GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArrayInput` via:
+//
+//	GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArray{ GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArgs{...} }
+type GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArrayOutput() GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArrayOutput
+	ToGetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArrayOutputWithContext(context.Context) GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArrayOutput
+}
+
+type GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArray []GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionInput
+
+func (GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollection)(nil)).Elem()
+}
+
+func (i GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArray) ToGetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArrayOutput() GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArrayOutput {
+	return i.ToGetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArray) ToGetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArrayOutputWithContext(ctx context.Context) GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArrayOutput)
+}
+
+type GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollection)(nil)).Elem()
+}
+
+func (o GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionOutput) ToGetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionOutput() GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionOutput {
+	return o
+}
+
+func (o GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionOutput) ToGetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionOutputWithContext(ctx context.Context) GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionOutput {
+	return o
+}
+
+func (o GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionOutput) Items() GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollection) []GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItem {
+		return v.Items
+	}).(GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArrayOutput)
+}
+
+type GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollection)(nil)).Elem()
+}
+
+func (o GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArrayOutput) ToGetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArrayOutput() GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArrayOutput) ToGetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArrayOutputWithContext(ctx context.Context) GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollection {
+		return vs[0].([]GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollection)[vs[1].(int)]
+	}).(GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionOutput)
+}
+
+type GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItem struct {
+	// Unique identifier of a given software update
+	SoftwareUpdateKey string `pulumi:"softwareUpdateKey"`
+	// type of current software update.
+	// * Big Data Service's micro service. BDS version will be changed after upgrade.
+	SoftwareUpdateType string `pulumi:"softwareUpdateType"`
+	// The version of the software update.
+	SoftwareUpdateVersion string `pulumi:"softwareUpdateVersion"`
+	// The lifecycle state of the software update.
+	State string `pulumi:"state"`
+	// The due date for the software update. Big Data Service will be updated automatically after this date.
+	TimeDue string `pulumi:"timeDue"`
+	// The time when the software update was released.
+	TimeReleased string `pulumi:"timeReleased"`
+}
+
+// GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemInput is an input type that accepts GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArgs and GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemOutput values.
+// You can construct a concrete instance of `GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemInput` via:
+//
+//	GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArgs{...}
+type GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemOutput() GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemOutput
+	ToGetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemOutputWithContext(context.Context) GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemOutput
+}
+
+type GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArgs struct {
+	// Unique identifier of a given software update
+	SoftwareUpdateKey pulumi.StringInput `pulumi:"softwareUpdateKey"`
+	// type of current software update.
+	// * Big Data Service's micro service. BDS version will be changed after upgrade.
+	SoftwareUpdateType pulumi.StringInput `pulumi:"softwareUpdateType"`
+	// The version of the software update.
+	SoftwareUpdateVersion pulumi.StringInput `pulumi:"softwareUpdateVersion"`
+	// The lifecycle state of the software update.
+	State pulumi.StringInput `pulumi:"state"`
+	// The due date for the software update. Big Data Service will be updated automatically after this date.
+	TimeDue pulumi.StringInput `pulumi:"timeDue"`
+	// The time when the software update was released.
+	TimeReleased pulumi.StringInput `pulumi:"timeReleased"`
+}
+
+func (GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItem)(nil)).Elem()
+}
+
+func (i GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArgs) ToGetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemOutput() GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemOutput {
+	return i.ToGetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArgs) ToGetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemOutputWithContext(ctx context.Context) GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemOutput)
+}
+
+// GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArrayInput is an input type that accepts GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArray and GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArrayInput` via:
+//
+//	GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArray{ GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArgs{...} }
+type GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArrayOutput() GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArrayOutput
+	ToGetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArrayOutputWithContext(context.Context) GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArrayOutput
+}
+
+type GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArray []GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemInput
+
+func (GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItem)(nil)).Elem()
+}
+
+func (i GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArray) ToGetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArrayOutput() GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArrayOutput {
+	return i.ToGetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArray) ToGetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArrayOutputWithContext(ctx context.Context) GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArrayOutput)
+}
+
+type GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItem)(nil)).Elem()
+}
+
+func (o GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemOutput) ToGetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemOutput() GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemOutput {
+	return o
+}
+
+func (o GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemOutput) ToGetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemOutputWithContext(ctx context.Context) GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemOutput {
+	return o
+}
+
+// Unique identifier of a given software update
+func (o GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemOutput) SoftwareUpdateKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItem) string { return v.SoftwareUpdateKey }).(pulumi.StringOutput)
+}
+
+// type of current software update.
+// * Big Data Service's micro service. BDS version will be changed after upgrade.
+func (o GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemOutput) SoftwareUpdateType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItem) string { return v.SoftwareUpdateType }).(pulumi.StringOutput)
+}
+
+// The version of the software update.
+func (o GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemOutput) SoftwareUpdateVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItem) string {
+		return v.SoftwareUpdateVersion
+	}).(pulumi.StringOutput)
+}
+
+// The lifecycle state of the software update.
+func (o GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The due date for the software update. Big Data Service will be updated automatically after this date.
+func (o GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemOutput) TimeDue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItem) string { return v.TimeDue }).(pulumi.StringOutput)
+}
+
+// The time when the software update was released.
+func (o GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemOutput) TimeReleased() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItem) string { return v.TimeReleased }).(pulumi.StringOutput)
+}
+
+type GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItem)(nil)).Elem()
+}
+
+func (o GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArrayOutput) ToGetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArrayOutput() GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArrayOutput) ToGetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArrayOutputWithContext(ctx context.Context) GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItem {
+		return vs[0].([]GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItem)[vs[1].(int)]
+	}).(GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemOutput)
 }
 
 type GetBdsInstanceStartClusterShapeConfig struct {
@@ -22380,6 +23372,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyRuleArrayInput)(nil)).Elem(), AutoScalingConfigurationPolicyRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyRuleMetricInput)(nil)).Elem(), AutoScalingConfigurationPolicyRuleMetricArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyRuleMetricThresholdInput)(nil)).Elem(), AutoScalingConfigurationPolicyRuleMetricThresholdArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsCapacityReportShapeAvailabilityInput)(nil)).Elem(), BdsCapacityReportShapeAvailabilityArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsCapacityReportShapeAvailabilityArrayInput)(nil)).Elem(), BdsCapacityReportShapeAvailabilityArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportInput)(nil)).Elem(), BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArrayInput)(nil)).Elem(), BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityInput)(nil)).Elem(), BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArrayInput)(nil)).Elem(), BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsCapacityReportShapeAvailabilityShapeConfigInput)(nil)).Elem(), BdsCapacityReportShapeAvailabilityShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsCapacityReportShapeAvailabilityShapeConfigPtrInput)(nil)).Elem(), BdsCapacityReportShapeAvailabilityShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceBdsClusterVersionSummaryInput)(nil)).Elem(), BdsInstanceBdsClusterVersionSummaryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceBdsClusterVersionSummaryPtrInput)(nil)).Elem(), BdsInstanceBdsClusterVersionSummaryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceCloudSqlDetailInput)(nil)).Elem(), BdsInstanceCloudSqlDetailArgs{})
@@ -22420,8 +23420,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceNodeAttachedBlockVolumeArrayInput)(nil)).Elem(), BdsInstanceNodeAttachedBlockVolumeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceOperationCertificateManagementsManagementHostCertDetailInput)(nil)).Elem(), BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceOperationCertificateManagementsManagementHostCertDetailArrayInput)(nil)).Elem(), BdsInstanceOperationCertificateManagementsManagementHostCertDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceOsPatchActionPatchingConfigInput)(nil)).Elem(), BdsInstanceOsPatchActionPatchingConfigArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceOsPatchActionPatchingConfigArrayInput)(nil)).Elem(), BdsInstanceOsPatchActionPatchingConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceOsPatchActionPatchingConfigsInput)(nil)).Elem(), BdsInstanceOsPatchActionPatchingConfigsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceOsPatchActionPatchingConfigsPtrInput)(nil)).Elem(), BdsInstanceOsPatchActionPatchingConfigsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstancePatchActionPatchingConfigInput)(nil)).Elem(), BdsInstancePatchActionPatchingConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstancePatchActionPatchingConfigPtrInput)(nil)).Elem(), BdsInstancePatchActionPatchingConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceStartClusterShapeConfigInput)(nil)).Elem(), BdsInstanceStartClusterShapeConfigArgs{})
@@ -22602,6 +23602,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceResourcePrincipalConfigurationsFilterArrayInput)(nil)).Elem(), GetBdsInstanceResourcePrincipalConfigurationsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationInput)(nil)).Elem(), GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArrayInput)(nil)).Elem(), GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceSoftwareUpdatesFilterInput)(nil)).Elem(), GetBdsInstanceSoftwareUpdatesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceSoftwareUpdatesFilterArrayInput)(nil)).Elem(), GetBdsInstanceSoftwareUpdatesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionInput)(nil)).Elem(), GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArrayInput)(nil)).Elem(), GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemInput)(nil)).Elem(), GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArrayInput)(nil)).Elem(), GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceStartClusterShapeConfigInput)(nil)).Elem(), GetBdsInstanceStartClusterShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceStartClusterShapeConfigArrayInput)(nil)).Elem(), GetBdsInstanceStartClusterShapeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigInput)(nil)).Elem(), GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs{})
@@ -22698,6 +23704,14 @@ func init() {
 	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyRuleArrayOutput{})
 	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyRuleMetricOutput{})
 	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyRuleMetricThresholdOutput{})
+	pulumi.RegisterOutputType(BdsCapacityReportShapeAvailabilityOutput{})
+	pulumi.RegisterOutputType(BdsCapacityReportShapeAvailabilityArrayOutput{})
+	pulumi.RegisterOutputType(BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportOutput{})
+	pulumi.RegisterOutputType(BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArrayOutput{})
+	pulumi.RegisterOutputType(BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityOutput{})
+	pulumi.RegisterOutputType(BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArrayOutput{})
+	pulumi.RegisterOutputType(BdsCapacityReportShapeAvailabilityShapeConfigOutput{})
+	pulumi.RegisterOutputType(BdsCapacityReportShapeAvailabilityShapeConfigPtrOutput{})
 	pulumi.RegisterOutputType(BdsInstanceBdsClusterVersionSummaryOutput{})
 	pulumi.RegisterOutputType(BdsInstanceBdsClusterVersionSummaryPtrOutput{})
 	pulumi.RegisterOutputType(BdsInstanceCloudSqlDetailOutput{})
@@ -22738,8 +23752,8 @@ func init() {
 	pulumi.RegisterOutputType(BdsInstanceNodeAttachedBlockVolumeArrayOutput{})
 	pulumi.RegisterOutputType(BdsInstanceOperationCertificateManagementsManagementHostCertDetailOutput{})
 	pulumi.RegisterOutputType(BdsInstanceOperationCertificateManagementsManagementHostCertDetailArrayOutput{})
-	pulumi.RegisterOutputType(BdsInstanceOsPatchActionPatchingConfigOutput{})
-	pulumi.RegisterOutputType(BdsInstanceOsPatchActionPatchingConfigArrayOutput{})
+	pulumi.RegisterOutputType(BdsInstanceOsPatchActionPatchingConfigsOutput{})
+	pulumi.RegisterOutputType(BdsInstanceOsPatchActionPatchingConfigsPtrOutput{})
 	pulumi.RegisterOutputType(BdsInstancePatchActionPatchingConfigOutput{})
 	pulumi.RegisterOutputType(BdsInstancePatchActionPatchingConfigPtrOutput{})
 	pulumi.RegisterOutputType(BdsInstanceStartClusterShapeConfigOutput{})
@@ -22920,6 +23934,12 @@ func init() {
 	pulumi.RegisterOutputType(GetBdsInstanceResourcePrincipalConfigurationsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceSoftwareUpdatesFilterOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceSoftwareUpdatesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceSoftwareUpdatesSoftwareUpdateCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceStartClusterShapeConfigOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceStartClusterShapeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceStartClusterShapeConfigNodeTypeShapeConfigOutput{})

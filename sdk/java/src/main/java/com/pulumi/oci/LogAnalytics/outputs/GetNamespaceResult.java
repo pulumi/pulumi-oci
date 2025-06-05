@@ -22,12 +22,24 @@ public final class GetNamespaceResult {
      */
     private String id;
     /**
+     * @return This indicates if old data can be archived for a tenancy
+     * 
+     */
+    private Boolean isArchivingEnabled;
+    /**
+     * @return This indicates if the tenancy is data ever ingested
+     * 
+     */
+    private Boolean isDataEverIngested;
+    private Boolean isLogsetEnabled;
+    /**
      * @return This indicates if the tenancy is onboarded to Logging Analytics
      * 
      */
     private Boolean isOnboarded;
     /**
      * @return This is the namespace name of a tenancy
+     * * `is_logSet_enabled` - This indicates if the tenancy is logSet enable
      * 
      */
     private String namespace;
@@ -48,6 +60,23 @@ public final class GetNamespaceResult {
         return this.id;
     }
     /**
+     * @return This indicates if old data can be archived for a tenancy
+     * 
+     */
+    public Boolean isArchivingEnabled() {
+        return this.isArchivingEnabled;
+    }
+    /**
+     * @return This indicates if the tenancy is data ever ingested
+     * 
+     */
+    public Boolean isDataEverIngested() {
+        return this.isDataEverIngested;
+    }
+    public Boolean isLogsetEnabled() {
+        return this.isLogsetEnabled;
+    }
+    /**
      * @return This indicates if the tenancy is onboarded to Logging Analytics
      * 
      */
@@ -56,6 +85,7 @@ public final class GetNamespaceResult {
     }
     /**
      * @return This is the namespace name of a tenancy
+     * * `is_logSet_enabled` - This indicates if the tenancy is logSet enable
      * 
      */
     public String namespace() {
@@ -73,6 +103,9 @@ public final class GetNamespaceResult {
     public static final class Builder {
         private String compartmentId;
         private String id;
+        private Boolean isArchivingEnabled;
+        private Boolean isDataEverIngested;
+        private Boolean isLogsetEnabled;
         private Boolean isOnboarded;
         private String namespace;
         public Builder() {}
@@ -80,6 +113,9 @@ public final class GetNamespaceResult {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
     	      this.id = defaults.id;
+    	      this.isArchivingEnabled = defaults.isArchivingEnabled;
+    	      this.isDataEverIngested = defaults.isDataEverIngested;
+    	      this.isLogsetEnabled = defaults.isLogsetEnabled;
     	      this.isOnboarded = defaults.isOnboarded;
     	      this.namespace = defaults.namespace;
         }
@@ -98,6 +134,30 @@ public final class GetNamespaceResult {
               throw new MissingRequiredPropertyException("GetNamespaceResult", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isArchivingEnabled(Boolean isArchivingEnabled) {
+            if (isArchivingEnabled == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceResult", "isArchivingEnabled");
+            }
+            this.isArchivingEnabled = isArchivingEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isDataEverIngested(Boolean isDataEverIngested) {
+            if (isDataEverIngested == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceResult", "isDataEverIngested");
+            }
+            this.isDataEverIngested = isDataEverIngested;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isLogsetEnabled(Boolean isLogsetEnabled) {
+            if (isLogsetEnabled == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceResult", "isLogsetEnabled");
+            }
+            this.isLogsetEnabled = isLogsetEnabled;
             return this;
         }
         @CustomType.Setter
@@ -120,6 +180,9 @@ public final class GetNamespaceResult {
             final var _resultValue = new GetNamespaceResult();
             _resultValue.compartmentId = compartmentId;
             _resultValue.id = id;
+            _resultValue.isArchivingEnabled = isArchivingEnabled;
+            _resultValue.isDataEverIngested = isDataEverIngested;
+            _resultValue.isLogsetEnabled = isLogsetEnabled;
             _resultValue.isOnboarded = isOnboarded;
             _resultValue.namespace = namespace;
             return _resultValue;

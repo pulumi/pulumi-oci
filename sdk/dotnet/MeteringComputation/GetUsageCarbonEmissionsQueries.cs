@@ -14,7 +14,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// <summary>
         /// This data source provides the list of Usage Carbon Emissions Queries in Oracle Cloud Infrastructure Metering Computation service.
         /// 
-        /// Returns the usage carbon emissions saved query list.
+        /// Returns the carbon emissions usage saved query list.
         /// 
         /// 
         /// ## Example Usage
@@ -41,7 +41,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// <summary>
         /// This data source provides the list of Usage Carbon Emissions Queries in Oracle Cloud Infrastructure Metering Computation service.
         /// 
-        /// Returns the usage carbon emissions saved query list.
+        /// Returns the carbon emissions usage saved query list.
         /// 
         /// 
         /// ## Example Usage
@@ -68,7 +68,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// <summary>
         /// This data source provides the list of Usage Carbon Emissions Queries in Oracle Cloud Infrastructure Metering Computation service.
         /// 
-        /// Returns the usage carbon emissions saved query list.
+        /// Returns the carbon emissions usage saved query list.
         /// 
         /// 
         /// ## Example Usage

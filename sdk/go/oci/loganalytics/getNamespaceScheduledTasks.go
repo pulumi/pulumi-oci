@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -35,6 +35,7 @@ import (
 //				DisplayName:   pulumi.StringRef(namespaceScheduledTaskDisplayName),
 //				TargetService: pulumi.StringRef(namespaceScheduledTaskTargetService),
 //				TaskType:      namespaceScheduledTaskTaskType,
+//				TemplateId:    pulumi.StringRef(testTemplate.Id),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -67,6 +68,8 @@ type GetNamespaceScheduledTasksArgs struct {
 	TargetService *string `pulumi:"targetService"`
 	// Required parameter to specify schedule task type.
 	TaskType string `pulumi:"taskType"`
+	// A filter to return only scheduled tasks whose stream action templateId matches the given id  exactly.
+	TemplateId *string `pulumi:"templateId"`
 }
 
 // A collection of values returned by getNamespaceScheduledTasks.
@@ -84,6 +87,8 @@ type GetNamespaceScheduledTasksResult struct {
 	TargetService            *string                                             `pulumi:"targetService"`
 	// Task type.
 	TaskType string `pulumi:"taskType"`
+	// The Config template Id of a particular template.
+	TemplateId *string `pulumi:"templateId"`
 }
 
 func GetNamespaceScheduledTasksOutput(ctx *pulumi.Context, args GetNamespaceScheduledTasksOutputArgs, opts ...pulumi.InvokeOption) GetNamespaceScheduledTasksResultOutput {
@@ -108,6 +113,8 @@ type GetNamespaceScheduledTasksOutputArgs struct {
 	TargetService pulumi.StringPtrInput `pulumi:"targetService"`
 	// Required parameter to specify schedule task type.
 	TaskType pulumi.StringInput `pulumi:"taskType"`
+	// A filter to return only scheduled tasks whose stream action templateId matches the given id  exactly.
+	TemplateId pulumi.StringPtrInput `pulumi:"templateId"`
 }
 
 func (GetNamespaceScheduledTasksOutputArgs) ElementType() reflect.Type {
@@ -166,6 +173,11 @@ func (o GetNamespaceScheduledTasksResultOutput) TargetService() pulumi.StringPtr
 // Task type.
 func (o GetNamespaceScheduledTasksResultOutput) TaskType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNamespaceScheduledTasksResult) string { return v.TaskType }).(pulumi.StringOutput)
+}
+
+// The Config template Id of a particular template.
+func (o GetNamespaceScheduledTasksResultOutput) TemplateId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksResult) *string { return v.TemplateId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

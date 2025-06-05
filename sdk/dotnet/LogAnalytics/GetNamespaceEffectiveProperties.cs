@@ -35,6 +35,7 @@ namespace Pulumi.Oci.LogAnalytics
         ///         IsIncludePatterns = namespaceEffectivePropertyIsIncludePatterns,
         ///         Name = namespaceEffectivePropertyName,
         ///         PatternId = testPattern.Id,
+        ///         PatternIdLong = namespaceEffectivePropertyPatternIdLong,
         ///         SourceName = namespaceEffectivePropertySourceName,
         ///     });
         /// 
@@ -68,6 +69,7 @@ namespace Pulumi.Oci.LogAnalytics
         ///         IsIncludePatterns = namespaceEffectivePropertyIsIncludePatterns,
         ///         Name = namespaceEffectivePropertyName,
         ///         PatternId = testPattern.Id,
+        ///         PatternIdLong = namespaceEffectivePropertyPatternIdLong,
         ///         SourceName = namespaceEffectivePropertySourceName,
         ///     });
         /// 
@@ -101,6 +103,7 @@ namespace Pulumi.Oci.LogAnalytics
         ///         IsIncludePatterns = namespaceEffectivePropertyIsIncludePatterns,
         ///         Name = namespaceEffectivePropertyName,
         ///         PatternId = testPattern.Id,
+        ///         PatternIdLong = namespaceEffectivePropertyPatternIdLong,
         ///         SourceName = namespaceEffectivePropertySourceName,
         ///     });
         /// 
@@ -157,6 +160,12 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         [Input("patternId")]
         public int? PatternId { get; set; }
+
+        /// <summary>
+        /// The pattern id (long).
+        /// </summary>
+        [Input("patternIdLong")]
+        public string? PatternIdLong { get; set; }
 
         /// <summary>
         /// The source name.
@@ -217,6 +226,12 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<int>? PatternId { get; set; }
 
         /// <summary>
+        /// The pattern id (long).
+        /// </summary>
+        [Input("patternIdLong")]
+        public Input<string>? PatternIdLong { get; set; }
+
+        /// <summary>
         /// The source name.
         /// </summary>
         [Input("sourceName")]
@@ -250,6 +265,7 @@ namespace Pulumi.Oci.LogAnalytics
         public readonly string? Name;
         public readonly string Namespace;
         public readonly int? PatternId;
+        public readonly string? PatternIdLong;
         public readonly string? SourceName;
 
         [OutputConstructor]
@@ -272,6 +288,8 @@ namespace Pulumi.Oci.LogAnalytics
 
             int? patternId,
 
+            string? patternIdLong,
+
             string? sourceName)
         {
             AgentId = agentId;
@@ -283,6 +301,7 @@ namespace Pulumi.Oci.LogAnalytics
             Name = name;
             Namespace = @namespace;
             PatternId = patternId;
+            PatternIdLong = patternIdLong;
             SourceName = sourceName;
         }
     }

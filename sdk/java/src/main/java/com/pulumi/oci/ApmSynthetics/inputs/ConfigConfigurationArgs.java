@@ -224,14 +224,14 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) If enabled, Active mode will be used for the FTP connection.
+     * (Updatable) If enabled, Active mode will be used for the FTP connection. Not supported for SFTP protocol.
      * 
      */
     @Import(name="isActiveMode")
     private @Nullable Output<Boolean> isActiveMode;
 
     /**
-     * @return (Updatable) If enabled, Active mode will be used for the FTP connection.
+     * @return (Updatable) If enabled, Active mode will be used for the FTP connection. Not supported for SFTP protocol.
      * 
      */
     public Optional<Output<Boolean>> isActiveMode() {
@@ -869,7 +869,7 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param isActiveMode (Updatable) If enabled, Active mode will be used for the FTP connection.
+         * @param isActiveMode (Updatable) If enabled, Active mode will be used for the FTP connection. Not supported for SFTP protocol.
          * 
          * @return builder
          * 
@@ -880,7 +880,7 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param isActiveMode (Updatable) If enabled, Active mode will be used for the FTP connection.
+         * @param isActiveMode (Updatable) If enabled, Active mode will be used for the FTP connection. Not supported for SFTP protocol.
          * 
          * @return builder
          * 

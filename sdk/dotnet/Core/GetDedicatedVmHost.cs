@@ -157,6 +157,10 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDedicatedVmHostPlacementConstraintDetailResult> PlacementConstraintDetails;
+        /// <summary>
         /// The current available memory of the dedicated VM host, in GBs.
         /// </summary>
         public readonly double RemainingMemoryInGbs;
@@ -201,6 +205,8 @@ namespace Pulumi.Oci.Core
 
             string id,
 
+            ImmutableArray<Outputs.GetDedicatedVmHostPlacementConstraintDetailResult> placementConstraintDetails,
+
             double remainingMemoryInGbs,
 
             double remainingOcpus,
@@ -222,6 +228,7 @@ namespace Pulumi.Oci.Core
             FaultDomain = faultDomain;
             FreeformTags = freeformTags;
             Id = id;
+            PlacementConstraintDetails = placementConstraintDetails;
             RemainingMemoryInGbs = remainingMemoryInGbs;
             RemainingOcpus = remainingOcpus;
             State = state;

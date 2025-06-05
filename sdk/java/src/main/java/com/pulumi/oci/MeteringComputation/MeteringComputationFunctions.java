@@ -1898,7 +1898,7 @@ public final class MeteringComputationFunctions {
     /**
      * This data source provides the list of Scheduled Runs in Oracle Cloud Infrastructure Metering Computation service.
      * 
-     * Returns schedule history list.
+     * Returns the schedule history list.
      * 
      * ## Example Usage
      * 
@@ -1942,7 +1942,7 @@ public final class MeteringComputationFunctions {
     /**
      * This data source provides the list of Scheduled Runs in Oracle Cloud Infrastructure Metering Computation service.
      * 
-     * Returns schedule history list.
+     * Returns the schedule history list.
      * 
      * ## Example Usage
      * 
@@ -1986,7 +1986,7 @@ public final class MeteringComputationFunctions {
     /**
      * This data source provides the list of Scheduled Runs in Oracle Cloud Infrastructure Metering Computation service.
      * 
-     * Returns schedule history list.
+     * Returns the schedule history list.
      * 
      * ## Example Usage
      * 
@@ -2030,7 +2030,7 @@ public final class MeteringComputationFunctions {
     /**
      * This data source provides the list of Scheduled Runs in Oracle Cloud Infrastructure Metering Computation service.
      * 
-     * Returns schedule history list.
+     * Returns the schedule history list.
      * 
      * ## Example Usage
      * 
@@ -2074,7 +2074,7 @@ public final class MeteringComputationFunctions {
     /**
      * This data source provides the list of Scheduled Runs in Oracle Cloud Infrastructure Metering Computation service.
      * 
-     * Returns schedule history list.
+     * Returns the schedule history list.
      * 
      * ## Example Usage
      * 
@@ -2343,7 +2343,7 @@ public final class MeteringComputationFunctions {
     /**
      * This data source provides details about a specific Usage Carbon Emissions Config resource in Oracle Cloud Infrastructure Metering Computation service.
      * 
-     * Returns the configuration list for the UI drop-down list of carbon emission console.
+     * Returns the configuration list for the Console&#39;s carbon emission user interface drop-down list.
      * 
      * ## Example Usage
      * 
@@ -2387,7 +2387,7 @@ public final class MeteringComputationFunctions {
     /**
      * This data source provides details about a specific Usage Carbon Emissions Config resource in Oracle Cloud Infrastructure Metering Computation service.
      * 
-     * Returns the configuration list for the UI drop-down list of carbon emission console.
+     * Returns the configuration list for the Console&#39;s carbon emission user interface drop-down list.
      * 
      * ## Example Usage
      * 
@@ -2431,7 +2431,7 @@ public final class MeteringComputationFunctions {
     /**
      * This data source provides details about a specific Usage Carbon Emissions Config resource in Oracle Cloud Infrastructure Metering Computation service.
      * 
-     * Returns the configuration list for the UI drop-down list of carbon emission console.
+     * Returns the configuration list for the Console&#39;s carbon emission user interface drop-down list.
      * 
      * ## Example Usage
      * 
@@ -2475,7 +2475,7 @@ public final class MeteringComputationFunctions {
     /**
      * This data source provides details about a specific Usage Carbon Emissions Config resource in Oracle Cloud Infrastructure Metering Computation service.
      * 
-     * Returns the configuration list for the UI drop-down list of carbon emission console.
+     * Returns the configuration list for the Console&#39;s carbon emission user interface drop-down list.
      * 
      * ## Example Usage
      * 
@@ -2519,7 +2519,7 @@ public final class MeteringComputationFunctions {
     /**
      * This data source provides details about a specific Usage Carbon Emissions Config resource in Oracle Cloud Infrastructure Metering Computation service.
      * 
-     * Returns the configuration list for the UI drop-down list of carbon emission console.
+     * Returns the configuration list for the Console&#39;s carbon emission user interface drop-down list.
      * 
      * ## Example Usage
      * 
@@ -2563,7 +2563,7 @@ public final class MeteringComputationFunctions {
     /**
      * This data source provides the list of Usage Carbon Emissions Queries in Oracle Cloud Infrastructure Metering Computation service.
      * 
-     * Returns the usage carbon emissions saved query list.
+     * Returns the carbon emissions usage saved query list.
      * 
      * ## Example Usage
      * 
@@ -2607,7 +2607,7 @@ public final class MeteringComputationFunctions {
     /**
      * This data source provides the list of Usage Carbon Emissions Queries in Oracle Cloud Infrastructure Metering Computation service.
      * 
-     * Returns the usage carbon emissions saved query list.
+     * Returns the carbon emissions usage saved query list.
      * 
      * ## Example Usage
      * 
@@ -2651,7 +2651,7 @@ public final class MeteringComputationFunctions {
     /**
      * This data source provides the list of Usage Carbon Emissions Queries in Oracle Cloud Infrastructure Metering Computation service.
      * 
-     * Returns the usage carbon emissions saved query list.
+     * Returns the carbon emissions usage saved query list.
      * 
      * ## Example Usage
      * 
@@ -2695,7 +2695,7 @@ public final class MeteringComputationFunctions {
     /**
      * This data source provides the list of Usage Carbon Emissions Queries in Oracle Cloud Infrastructure Metering Computation service.
      * 
-     * Returns the usage carbon emissions saved query list.
+     * Returns the carbon emissions usage saved query list.
      * 
      * ## Example Usage
      * 
@@ -2739,7 +2739,7 @@ public final class MeteringComputationFunctions {
     /**
      * This data source provides the list of Usage Carbon Emissions Queries in Oracle Cloud Infrastructure Metering Computation service.
      * 
-     * Returns the usage carbon emissions saved query list.
+     * Returns the carbon emissions usage saved query list.
      * 
      * ## Example Usage
      * 
@@ -2783,7 +2783,7 @@ public final class MeteringComputationFunctions {
     /**
      * This data source provides details about a specific Usage Carbon Emissions Query resource in Oracle Cloud Infrastructure Metering Computation service.
      * 
-     * Returns the usage carbon emissions saved query.
+     * Returns the carbon emissions usage saved query.
      * 
      * ## Example Usage
      * 
@@ -2827,7 +2827,7 @@ public final class MeteringComputationFunctions {
     /**
      * This data source provides details about a specific Usage Carbon Emissions Query resource in Oracle Cloud Infrastructure Metering Computation service.
      * 
-     * Returns the usage carbon emissions saved query.
+     * Returns the carbon emissions usage saved query.
      * 
      * ## Example Usage
      * 
@@ -2871,7 +2871,7 @@ public final class MeteringComputationFunctions {
     /**
      * This data source provides details about a specific Usage Carbon Emissions Query resource in Oracle Cloud Infrastructure Metering Computation service.
      * 
-     * Returns the usage carbon emissions saved query.
+     * Returns the carbon emissions usage saved query.
      * 
      * ## Example Usage
      * 
@@ -2915,7 +2915,7 @@ public final class MeteringComputationFunctions {
     /**
      * This data source provides details about a specific Usage Carbon Emissions Query resource in Oracle Cloud Infrastructure Metering Computation service.
      * 
-     * Returns the usage carbon emissions saved query.
+     * Returns the carbon emissions usage saved query.
      * 
      * ## Example Usage
      * 
@@ -2959,7 +2959,7 @@ public final class MeteringComputationFunctions {
     /**
      * This data source provides details about a specific Usage Carbon Emissions Query resource in Oracle Cloud Infrastructure Metering Computation service.
      * 
-     * Returns the usage carbon emissions saved query.
+     * Returns the carbon emissions usage saved query.
      * 
      * ## Example Usage
      * 
@@ -3003,7 +3003,7 @@ public final class MeteringComputationFunctions {
     /**
      * This data source provides details about a specific Usage Statement Email Recipients Group resource in Oracle Cloud Infrastructure Metering Computation service.
      * 
-     * Return the saved usage statement email recipient group.
+     * Returns the saved usage statement email recipients group.
      * 
      * ## Example Usage
      * 
@@ -3049,7 +3049,7 @@ public final class MeteringComputationFunctions {
     /**
      * This data source provides details about a specific Usage Statement Email Recipients Group resource in Oracle Cloud Infrastructure Metering Computation service.
      * 
-     * Return the saved usage statement email recipient group.
+     * Returns the saved usage statement email recipients group.
      * 
      * ## Example Usage
      * 
@@ -3095,7 +3095,7 @@ public final class MeteringComputationFunctions {
     /**
      * This data source provides details about a specific Usage Statement Email Recipients Group resource in Oracle Cloud Infrastructure Metering Computation service.
      * 
-     * Return the saved usage statement email recipient group.
+     * Returns the saved usage statement email recipients group.
      * 
      * ## Example Usage
      * 
@@ -3141,7 +3141,7 @@ public final class MeteringComputationFunctions {
     /**
      * This data source provides details about a specific Usage Statement Email Recipients Group resource in Oracle Cloud Infrastructure Metering Computation service.
      * 
-     * Return the saved usage statement email recipient group.
+     * Returns the saved usage statement email recipients group.
      * 
      * ## Example Usage
      * 
@@ -3187,7 +3187,7 @@ public final class MeteringComputationFunctions {
     /**
      * This data source provides details about a specific Usage Statement Email Recipients Group resource in Oracle Cloud Infrastructure Metering Computation service.
      * 
-     * Return the saved usage statement email recipient group.
+     * Returns the saved usage statement email recipients group.
      * 
      * ## Example Usage
      * 
@@ -3233,7 +3233,7 @@ public final class MeteringComputationFunctions {
     /**
      * This data source provides the list of Usage Statement Email Recipients Groups in Oracle Cloud Infrastructure Metering Computation service.
      * 
-     * Return the saved usage statement email recipient group.
+     * Returns the saved usage statement email recipients group.
      * 
      * ## Example Usage
      * 
@@ -3278,7 +3278,7 @@ public final class MeteringComputationFunctions {
     /**
      * This data source provides the list of Usage Statement Email Recipients Groups in Oracle Cloud Infrastructure Metering Computation service.
      * 
-     * Return the saved usage statement email recipient group.
+     * Returns the saved usage statement email recipients group.
      * 
      * ## Example Usage
      * 
@@ -3323,7 +3323,7 @@ public final class MeteringComputationFunctions {
     /**
      * This data source provides the list of Usage Statement Email Recipients Groups in Oracle Cloud Infrastructure Metering Computation service.
      * 
-     * Return the saved usage statement email recipient group.
+     * Returns the saved usage statement email recipients group.
      * 
      * ## Example Usage
      * 
@@ -3368,7 +3368,7 @@ public final class MeteringComputationFunctions {
     /**
      * This data source provides the list of Usage Statement Email Recipients Groups in Oracle Cloud Infrastructure Metering Computation service.
      * 
-     * Return the saved usage statement email recipient group.
+     * Returns the saved usage statement email recipients group.
      * 
      * ## Example Usage
      * 
@@ -3413,7 +3413,7 @@ public final class MeteringComputationFunctions {
     /**
      * This data source provides the list of Usage Statement Email Recipients Groups in Oracle Cloud Infrastructure Metering Computation service.
      * 
-     * Return the saved usage statement email recipient group.
+     * Returns the saved usage statement email recipients group.
      * 
      * ## Example Usage
      * 

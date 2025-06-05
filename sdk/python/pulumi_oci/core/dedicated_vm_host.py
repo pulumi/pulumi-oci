@@ -14,6 +14,8 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['DedicatedVmHostArgs', 'DedicatedVmHost']
 
@@ -26,7 +28,8 @@ class DedicatedVmHostArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
                  fault_domain: Optional[pulumi.Input[builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None):
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
+                 placement_constraint_details: Optional[pulumi.Input['DedicatedVmHostPlacementConstraintDetailsArgs']] = None):
         """
         The set of arguments for constructing a DedicatedVmHost resource.
         :param pulumi.Input[builtins.str] availability_domain: The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
@@ -39,11 +42,8 @@ class DedicatedVmHostArgs:
                To get a list of fault domains, use the `ListFaultDomains` operation in the [Identity and Access Management Service API](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/).
                
                Example: `FAULT-DOMAIN-1`
-        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input['DedicatedVmHostPlacementConstraintDetailsArgs'] placement_constraint_details: Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -56,6 +56,8 @@ class DedicatedVmHostArgs:
             pulumi.set(__self__, "fault_domain", fault_domain)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if placement_constraint_details is not None:
+            pulumi.set(__self__, "placement_constraint_details", placement_constraint_details)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -137,17 +139,25 @@ class DedicatedVmHostArgs:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]:
         """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="placementConstraintDetails")
+    def placement_constraint_details(self) -> Optional[pulumi.Input['DedicatedVmHostPlacementConstraintDetailsArgs']]:
+        """
+        Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+        """
+        return pulumi.get(self, "placement_constraint_details")
+
+    @placement_constraint_details.setter
+    def placement_constraint_details(self, value: Optional[pulumi.Input['DedicatedVmHostPlacementConstraintDetailsArgs']]):
+        pulumi.set(self, "placement_constraint_details", value)
 
 
 @pulumi.input_type
@@ -160,6 +170,7 @@ class _DedicatedVmHostState:
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
                  fault_domain: Optional[pulumi.Input[builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
+                 placement_constraint_details: Optional[pulumi.Input['DedicatedVmHostPlacementConstraintDetailsArgs']] = None,
                  remaining_memory_in_gbs: Optional[pulumi.Input[builtins.float]] = None,
                  remaining_ocpus: Optional[pulumi.Input[builtins.float]] = None,
                  state: Optional[pulumi.Input[builtins.str]] = None,
@@ -178,11 +189,8 @@ class _DedicatedVmHostState:
                To get a list of fault domains, use the `ListFaultDomains` operation in the [Identity and Access Management Service API](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/).
                
                Example: `FAULT-DOMAIN-1`
-        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input['DedicatedVmHostPlacementConstraintDetailsArgs'] placement_constraint_details: Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
         :param pulumi.Input[builtins.float] remaining_memory_in_gbs: The current available memory of the dedicated VM host, in GBs.
         :param pulumi.Input[builtins.float] remaining_ocpus: The current available OCPUs of the dedicated VM host.
         :param pulumi.Input[builtins.str] state: The current state of the dedicated VM host.
@@ -204,6 +212,8 @@ class _DedicatedVmHostState:
             pulumi.set(__self__, "fault_domain", fault_domain)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if placement_constraint_details is not None:
+            pulumi.set(__self__, "placement_constraint_details", placement_constraint_details)
         if remaining_memory_in_gbs is not None:
             pulumi.set(__self__, "remaining_memory_in_gbs", remaining_memory_in_gbs)
         if remaining_ocpus is not None:
@@ -297,17 +307,25 @@ class _DedicatedVmHostState:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]:
         """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="placementConstraintDetails")
+    def placement_constraint_details(self) -> Optional[pulumi.Input['DedicatedVmHostPlacementConstraintDetailsArgs']]:
+        """
+        Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+        """
+        return pulumi.get(self, "placement_constraint_details")
+
+    @placement_constraint_details.setter
+    def placement_constraint_details(self, value: Optional[pulumi.Input['DedicatedVmHostPlacementConstraintDetailsArgs']]):
+        pulumi.set(self, "placement_constraint_details", value)
 
     @property
     @pulumi.getter(name="remainingMemoryInGbs")
@@ -395,6 +413,7 @@ class DedicatedVmHost(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
                  fault_domain: Optional[pulumi.Input[builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
+                 placement_constraint_details: Optional[pulumi.Input[Union['DedicatedVmHostPlacementConstraintDetailsArgs', 'DedicatedVmHostPlacementConstraintDetailsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Dedicated Vm Host resource in Oracle Cloud Infrastructure Core service.
@@ -421,6 +440,10 @@ class DedicatedVmHost(pulumi.CustomResource):
             fault_domain=dedicated_vm_host_fault_domain,
             freeform_tags={
                 "Department": "Finance",
+            },
+            placement_constraint_details={
+                "type": dedicated_vm_host_placement_constraint_details_type,
+                "compute_bare_metal_host_id": test_compute_bare_metal_host["id"],
             })
         ```
 
@@ -444,11 +467,8 @@ class DedicatedVmHost(pulumi.CustomResource):
                To get a list of fault domains, use the `ListFaultDomains` operation in the [Identity and Access Management Service API](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/).
                
                Example: `FAULT-DOMAIN-1`
-        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Union['DedicatedVmHostPlacementConstraintDetailsArgs', 'DedicatedVmHostPlacementConstraintDetailsArgsDict']] placement_constraint_details: Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
         """
         ...
     @overload
@@ -481,6 +501,10 @@ class DedicatedVmHost(pulumi.CustomResource):
             fault_domain=dedicated_vm_host_fault_domain,
             freeform_tags={
                 "Department": "Finance",
+            },
+            placement_constraint_details={
+                "type": dedicated_vm_host_placement_constraint_details_type,
+                "compute_bare_metal_host_id": test_compute_bare_metal_host["id"],
             })
         ```
 
@@ -514,6 +538,7 @@ class DedicatedVmHost(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
                  fault_domain: Optional[pulumi.Input[builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
+                 placement_constraint_details: Optional[pulumi.Input[Union['DedicatedVmHostPlacementConstraintDetailsArgs', 'DedicatedVmHostPlacementConstraintDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -536,6 +561,7 @@ class DedicatedVmHost(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["fault_domain"] = fault_domain
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["placement_constraint_details"] = placement_constraint_details
             __props__.__dict__["remaining_memory_in_gbs"] = None
             __props__.__dict__["remaining_ocpus"] = None
             __props__.__dict__["state"] = None
@@ -559,6 +585,7 @@ class DedicatedVmHost(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[builtins.str]] = None,
             fault_domain: Optional[pulumi.Input[builtins.str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
+            placement_constraint_details: Optional[pulumi.Input[Union['DedicatedVmHostPlacementConstraintDetailsArgs', 'DedicatedVmHostPlacementConstraintDetailsArgsDict']]] = None,
             remaining_memory_in_gbs: Optional[pulumi.Input[builtins.float]] = None,
             remaining_ocpus: Optional[pulumi.Input[builtins.float]] = None,
             state: Optional[pulumi.Input[builtins.str]] = None,
@@ -582,11 +609,8 @@ class DedicatedVmHost(pulumi.CustomResource):
                To get a list of fault domains, use the `ListFaultDomains` operation in the [Identity and Access Management Service API](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/).
                
                Example: `FAULT-DOMAIN-1`
-        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Union['DedicatedVmHostPlacementConstraintDetailsArgs', 'DedicatedVmHostPlacementConstraintDetailsArgsDict']] placement_constraint_details: Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
         :param pulumi.Input[builtins.float] remaining_memory_in_gbs: The current available memory of the dedicated VM host, in GBs.
         :param pulumi.Input[builtins.float] remaining_ocpus: The current available OCPUs of the dedicated VM host.
         :param pulumi.Input[builtins.str] state: The current state of the dedicated VM host.
@@ -605,6 +629,7 @@ class DedicatedVmHost(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["fault_domain"] = fault_domain
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["placement_constraint_details"] = placement_constraint_details
         __props__.__dict__["remaining_memory_in_gbs"] = remaining_memory_in_gbs
         __props__.__dict__["remaining_ocpus"] = remaining_ocpus
         __props__.__dict__["state"] = state
@@ -669,13 +694,17 @@ class DedicatedVmHost(pulumi.CustomResource):
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> pulumi.Output[Mapping[str, builtins.str]]:
         """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="placementConstraintDetails")
+    def placement_constraint_details(self) -> pulumi.Output['outputs.DedicatedVmHostPlacementConstraintDetails']:
+        """
+        Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+        """
+        return pulumi.get(self, "placement_constraint_details")
 
     @property
     @pulumi.getter(name="remainingMemoryInGbs")

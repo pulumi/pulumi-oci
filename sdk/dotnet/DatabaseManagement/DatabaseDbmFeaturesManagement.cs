@@ -17,6 +17,9 @@ namespace Pulumi.Oci.DatabaseManagement
     [OciResourceType("oci:DatabaseManagement/databaseDbmFeaturesManagement:DatabaseDbmFeaturesManagement")]
     public partial class DatabaseDbmFeaturesManagement : global::Pulumi.CustomResource
     {
+        [Output("canDisableAllPdbs")]
+        public Output<bool?> CanDisableAllPdbs { get; private set; } = null!;
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
         /// </summary>
@@ -32,6 +35,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         [Output("enableDatabaseDbmFeature")]
         public Output<bool> EnableDatabaseDbmFeature { get; private set; } = null!;
+
+        [Output("feature")]
+        public Output<string?> Feature { get; private set; } = null!;
 
         /// <summary>
         /// The details required to enable the specified Database Management feature.
@@ -88,6 +94,9 @@ namespace Pulumi.Oci.DatabaseManagement
 
     public sealed class DatabaseDbmFeaturesManagementArgs : global::Pulumi.ResourceArgs
     {
+        [Input("canDisableAllPdbs")]
+        public Input<bool>? CanDisableAllPdbs { get; set; }
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
         /// </summary>
@@ -103,6 +112,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         [Input("enableDatabaseDbmFeature", required: true)]
         public Input<bool> EnableDatabaseDbmFeature { get; set; } = null!;
+
+        [Input("feature")]
+        public Input<string>? Feature { get; set; }
 
         /// <summary>
         /// The details required to enable the specified Database Management feature.
@@ -121,6 +133,9 @@ namespace Pulumi.Oci.DatabaseManagement
 
     public sealed class DatabaseDbmFeaturesManagementState : global::Pulumi.ResourceArgs
     {
+        [Input("canDisableAllPdbs")]
+        public Input<bool>? CanDisableAllPdbs { get; set; }
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
         /// </summary>
@@ -136,6 +151,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         [Input("enableDatabaseDbmFeature")]
         public Input<bool>? EnableDatabaseDbmFeature { get; set; }
+
+        [Input("feature")]
+        public Input<string>? Feature { get; set; }
 
         /// <summary>
         /// The details required to enable the specified Database Management feature.

@@ -41,6 +41,7 @@ namespace Pulumi.Oci.Opensearch
     ///         {
     ///             { "bar-key", "value" },
     ///         },
+    ///         NodeShape = opensearchClusterPipelineNodeShape,
     ///         NsgId = testNsg.Id,
     ///         OpcDryRun = opensearchClusterPipelineOpcDryRun,
     ///         ReverseConnectionEndpoints = new[]
@@ -112,6 +113,12 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         [Output("nodeCount")]
         public Output<int> NodeCount { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The pipeline node shape.
+        /// </summary>
+        [Output("nodeShape")]
+        public Output<string> NodeShape { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of the NSG where the pipeline private endpoint vnic will be attached.
@@ -314,6 +321,12 @@ namespace Pulumi.Oci.Opensearch
         public Input<int> NodeCount { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) The pipeline node shape.
+        /// </summary>
+        [Input("nodeShape")]
+        public Input<string>? NodeShape { get; set; }
+
+        /// <summary>
         /// (Updatable) The OCID of the NSG where the pipeline private endpoint vnic will be attached.
         /// </summary>
         [Input("nsgId")]
@@ -438,6 +451,12 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         [Input("nodeCount")]
         public Input<int>? NodeCount { get; set; }
+
+        /// <summary>
+        /// (Updatable) The pipeline node shape.
+        /// </summary>
+        [Input("nodeShape")]
+        public Input<string>? NodeShape { get; set; }
 
         /// <summary>
         /// (Updatable) The OCID of the NSG where the pipeline private endpoint vnic will be attached.

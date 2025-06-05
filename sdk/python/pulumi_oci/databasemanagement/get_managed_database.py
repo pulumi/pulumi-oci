@@ -159,7 +159,7 @@ class GetManagedDatabaseResult:
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system that this Managed Database is part of.
         """
         return pulumi.get(self, "db_system_id")
 

@@ -82,14 +82,14 @@ public final class UsageState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Aggregate the result by. example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;]`
+     * Aggregate the result by. For example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;]`
      * 
      */
     @Import(name="groupBies")
     private @Nullable Output<List<String>> groupBies;
 
     /**
-     * @return Aggregate the result by. example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;]`
+     * @return Aggregate the result by. For example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;]`
      * 
      */
     public Optional<Output<List<String>>> groupBies() {
@@ -112,14 +112,14 @@ public final class UsageState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+     * Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
      * 
      */
     @Import(name="isAggregateByTime")
     private @Nullable Output<Boolean> isAggregateByTime;
 
     /**
-     * @return Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+     * @return Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
      * 
      */
     public Optional<Output<Boolean>> isAggregateByTime() {
@@ -327,7 +327,7 @@ public final class UsageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupBies Aggregate the result by. example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;]`
+         * @param groupBies Aggregate the result by. For example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;]`
          * 
          * @return builder
          * 
@@ -338,7 +338,7 @@ public final class UsageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupBies Aggregate the result by. example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;]`
+         * @param groupBies Aggregate the result by. For example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;]`
          * 
          * @return builder
          * 
@@ -348,7 +348,7 @@ public final class UsageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupBies Aggregate the result by. example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;]`
+         * @param groupBies Aggregate the result by. For example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;]`
          * 
          * @return builder
          * 
@@ -389,7 +389,7 @@ public final class UsageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isAggregateByTime Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+         * @param isAggregateByTime Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
          * 
          * @return builder
          * 
@@ -400,7 +400,7 @@ public final class UsageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isAggregateByTime Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+         * @param isAggregateByTime Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
          * 
          * @return builder
          * 

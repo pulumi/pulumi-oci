@@ -82,7 +82,7 @@ class GetBdsInstancePatchHistoriesResult:
     @pulumi.getter(name="patchType")
     def patch_type(self) -> Optional[builtins.str]:
         """
-        The type of current patch history. DP - Data Plane patch(This history type is internal available only) ODH - Oracle Distribution of Hadoop patch OS - Operating System patch
+        The type of current patch history. DP - Data Plane patch(This history type is internal available only) ODH - Oracle Distribution of Hadoop update OS - Operating System update BDS - Big Data Service update
         """
         return pulumi.get(self, "patch_type")
 

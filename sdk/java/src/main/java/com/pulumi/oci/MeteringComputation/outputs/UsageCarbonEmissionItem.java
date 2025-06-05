@@ -35,15 +35,20 @@ public final class UsageCarbonEmissionItem {
      */
     private @Nullable String compartmentPath;
     /**
-     * @return The carbon emission in MTCO2 unit.
+     * @return The carbon emission usage in MTCO2 units.
      * 
      */
     private @Nullable Double computedCarbonEmission;
     /**
-     * @return The method used to calculate carbon emission.
+     * @return Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
      * 
      */
     private @Nullable String emissionCalculationMethod;
+    /**
+     * @return Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+     * 
+     */
+    private @Nullable String emissionType;
     /**
      * @return Platform for the cost.
      * 
@@ -140,18 +145,25 @@ public final class UsageCarbonEmissionItem {
         return Optional.ofNullable(this.compartmentPath);
     }
     /**
-     * @return The carbon emission in MTCO2 unit.
+     * @return The carbon emission usage in MTCO2 units.
      * 
      */
     public Optional<Double> computedCarbonEmission() {
         return Optional.ofNullable(this.computedCarbonEmission);
     }
     /**
-     * @return The method used to calculate carbon emission.
+     * @return Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
      * 
      */
     public Optional<String> emissionCalculationMethod() {
         return Optional.ofNullable(this.emissionCalculationMethod);
+    }
+    /**
+     * @return Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+     * 
+     */
+    public Optional<String> emissionType() {
+        return Optional.ofNullable(this.emissionType);
     }
     /**
      * @return Platform for the cost.
@@ -260,6 +272,7 @@ public final class UsageCarbonEmissionItem {
         private @Nullable String compartmentPath;
         private @Nullable Double computedCarbonEmission;
         private @Nullable String emissionCalculationMethod;
+        private @Nullable String emissionType;
         private @Nullable String platform;
         private @Nullable String region;
         private @Nullable String resourceId;
@@ -282,6 +295,7 @@ public final class UsageCarbonEmissionItem {
     	      this.compartmentPath = defaults.compartmentPath;
     	      this.computedCarbonEmission = defaults.computedCarbonEmission;
     	      this.emissionCalculationMethod = defaults.emissionCalculationMethod;
+    	      this.emissionType = defaults.emissionType;
     	      this.platform = defaults.platform;
     	      this.region = defaults.region;
     	      this.resourceId = defaults.resourceId;
@@ -331,6 +345,12 @@ public final class UsageCarbonEmissionItem {
         public Builder emissionCalculationMethod(@Nullable String emissionCalculationMethod) {
 
             this.emissionCalculationMethod = emissionCalculationMethod;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder emissionType(@Nullable String emissionType) {
+
+            this.emissionType = emissionType;
             return this;
         }
         @CustomType.Setter
@@ -422,6 +442,7 @@ public final class UsageCarbonEmissionItem {
             _resultValue.compartmentPath = compartmentPath;
             _resultValue.computedCarbonEmission = computedCarbonEmission;
             _resultValue.emissionCalculationMethod = emissionCalculationMethod;
+            _resultValue.emissionType = emissionType;
             _resultValue.platform = platform;
             _resultValue.region = region;
             _resultValue.resourceId = resourceId;

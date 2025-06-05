@@ -30,7 +30,7 @@ import (
 	shimv2 "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim/sdk-v2"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/util/contract"
 
-	"github.com/pulumi/pulumi-oci/provider/v2/pkg/version"
+	"github.com/pulumi/pulumi-oci/provider/v3/pkg/version"
 )
 
 // all of the token components used below.
@@ -326,6 +326,9 @@ func Provider() tfbridge.ProviderInfo {
 		Config:      map[string]*tfbridge.SchemaInfo{},
 		GitHubOrg:   "oracle",
 		Version:     version.Version,
+
+		UpstreamRepoPath: "./upstream",
+
 		DocRules: &tfbridge.DocRuleInfo{
 			AlternativeNames: func(info tfbridge.DocsPathInfo) []string {
 				if rest, ok := strings.CutPrefix(info.TfToken, "oci_datascience"); ok {

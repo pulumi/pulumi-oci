@@ -12,6 +12,7 @@ import com.pulumi.oci.DataSafe.inputs.UnsetUserAssessmentBaselineState;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -73,14 +74,14 @@ public class UnsetUserAssessmentBaseline extends com.pulumi.resources.CustomReso
      * 
      */
     @Export(name="targetIds", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> targetIds;
+    private Output</* @Nullable */ List<String>> targetIds;
 
     /**
      * @return The list of database target OCIDs for which the user intends to unset the baseline.
      * 
      */
-    public Output<List<String>> targetIds() {
-        return this.targetIds;
+    public Output<Optional<List<String>>> targetIds() {
+        return Codegen.optional(this.targetIds);
     }
     /**
      * The OCID of the user assessment.

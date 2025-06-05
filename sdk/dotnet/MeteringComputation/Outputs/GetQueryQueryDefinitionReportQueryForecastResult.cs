@@ -14,7 +14,7 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
     public sealed class GetQueryQueryDefinitionReportQueryForecastResult
     {
         /// <summary>
-        /// BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
+        /// BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made
         /// </summary>
         public readonly string ForecastType;
         /// <summary>

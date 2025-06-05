@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -196,7 +196,7 @@ type ConfigConfiguration struct {
 	FtpProtocol *string `pulumi:"ftpProtocol"`
 	// (Updatable) FTP monitor request type.
 	FtpRequestType *string `pulumi:"ftpRequestType"`
-	// (Updatable) If enabled, Active mode will be used for the FTP connection.
+	// (Updatable) If enabled, Active mode will be used for the FTP connection. Not supported for SFTP protocol.
 	IsActiveMode *bool `pulumi:"isActiveMode"`
 	// (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
 	IsCertificateValidationEnabled *bool `pulumi:"isCertificateValidationEnabled"`
@@ -278,7 +278,7 @@ type ConfigConfigurationArgs struct {
 	FtpProtocol pulumi.StringPtrInput `pulumi:"ftpProtocol"`
 	// (Updatable) FTP monitor request type.
 	FtpRequestType pulumi.StringPtrInput `pulumi:"ftpRequestType"`
-	// (Updatable) If enabled, Active mode will be used for the FTP connection.
+	// (Updatable) If enabled, Active mode will be used for the FTP connection. Not supported for SFTP protocol.
 	IsActiveMode pulumi.BoolPtrInput `pulumi:"isActiveMode"`
 	// (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
 	IsCertificateValidationEnabled pulumi.BoolPtrInput `pulumi:"isCertificateValidationEnabled"`
@@ -470,7 +470,7 @@ func (o ConfigConfigurationOutput) FtpRequestType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigConfiguration) *string { return v.FtpRequestType }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) If enabled, Active mode will be used for the FTP connection.
+// (Updatable) If enabled, Active mode will be used for the FTP connection. Not supported for SFTP protocol.
 func (o ConfigConfigurationOutput) IsActiveMode() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ConfigConfiguration) *bool { return v.IsActiveMode }).(pulumi.BoolPtrOutput)
 }
@@ -731,7 +731,7 @@ func (o ConfigConfigurationPtrOutput) FtpRequestType() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) If enabled, Active mode will be used for the FTP connection.
+// (Updatable) If enabled, Active mode will be used for the FTP connection. Not supported for SFTP protocol.
 func (o ConfigConfigurationPtrOutput) IsActiveMode() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ConfigConfiguration) *bool {
 		if v == nil {
@@ -6171,7 +6171,7 @@ type GetMonitorConfiguration struct {
 	FtpProtocol string `pulumi:"ftpProtocol"`
 	// FTP monitor request type.
 	FtpRequestType string `pulumi:"ftpRequestType"`
-	// If enabled, Active mode will be used for the FTP connection.
+	// If enabled, Active mode will be used for the FTP connection. Not supported for SFTP protocol.
 	IsActiveMode bool `pulumi:"isActiveMode"`
 	// If certificate validation is enabled, then the call will fail in case of certification errors.
 	IsCertificateValidationEnabled bool `pulumi:"isCertificateValidationEnabled"`
@@ -6253,7 +6253,7 @@ type GetMonitorConfigurationArgs struct {
 	FtpProtocol pulumi.StringInput `pulumi:"ftpProtocol"`
 	// FTP monitor request type.
 	FtpRequestType pulumi.StringInput `pulumi:"ftpRequestType"`
-	// If enabled, Active mode will be used for the FTP connection.
+	// If enabled, Active mode will be used for the FTP connection. Not supported for SFTP protocol.
 	IsActiveMode pulumi.BoolInput `pulumi:"isActiveMode"`
 	// If certificate validation is enabled, then the call will fail in case of certification errors.
 	IsCertificateValidationEnabled pulumi.BoolInput `pulumi:"isCertificateValidationEnabled"`
@@ -6421,7 +6421,7 @@ func (o GetMonitorConfigurationOutput) FtpRequestType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorConfiguration) string { return v.FtpRequestType }).(pulumi.StringOutput)
 }
 
-// If enabled, Active mode will be used for the FTP connection.
+// If enabled, Active mode will be used for the FTP connection. Not supported for SFTP protocol.
 func (o GetMonitorConfigurationOutput) IsActiveMode() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMonitorConfiguration) bool { return v.IsActiveMode }).(pulumi.BoolOutput)
 }
@@ -8916,6 +8916,8 @@ type GetMonitorsMonitorCollectionItem struct {
 	BatchIntervalInSeconds int `pulumi:"batchIntervalInSeconds"`
 	// Details of monitor configuration.
 	Configurations []GetMonitorsMonitorCollectionItemConfiguration `pulumi:"configurations"`
+	// Content type of the script.
+	ContentType string `pulumi:"contentType"`
 	// Name of the user that created the monitor.
 	CreatedBy string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -8984,6 +8986,8 @@ type GetMonitorsMonitorCollectionItemArgs struct {
 	BatchIntervalInSeconds pulumi.IntInput `pulumi:"batchIntervalInSeconds"`
 	// Details of monitor configuration.
 	Configurations GetMonitorsMonitorCollectionItemConfigurationArrayInput `pulumi:"configurations"`
+	// Content type of the script.
+	ContentType pulumi.StringInput `pulumi:"contentType"`
 	// Name of the user that created the monitor.
 	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -9105,6 +9109,11 @@ func (o GetMonitorsMonitorCollectionItemOutput) Configurations() GetMonitorsMoni
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) []GetMonitorsMonitorCollectionItemConfiguration {
 		return v.Configurations
 	}).(GetMonitorsMonitorCollectionItemConfigurationArrayOutput)
+}
+
+// Content type of the script.
+func (o GetMonitorsMonitorCollectionItemOutput) ContentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) string { return v.ContentType }).(pulumi.StringOutput)
 }
 
 // Name of the user that created the monitor.
@@ -9385,7 +9394,7 @@ type GetMonitorsMonitorCollectionItemConfiguration struct {
 	FtpProtocol string `pulumi:"ftpProtocol"`
 	// FTP monitor request type.
 	FtpRequestType string `pulumi:"ftpRequestType"`
-	// If enabled, Active mode will be used for the FTP connection.
+	// If enabled, Active mode will be used for the FTP connection. Not supported for SFTP protocol.
 	IsActiveMode bool `pulumi:"isActiveMode"`
 	// If certificate validation is enabled, then the call will fail in case of certification errors.
 	IsCertificateValidationEnabled bool `pulumi:"isCertificateValidationEnabled"`
@@ -9467,7 +9476,7 @@ type GetMonitorsMonitorCollectionItemConfigurationArgs struct {
 	FtpProtocol pulumi.StringInput `pulumi:"ftpProtocol"`
 	// FTP monitor request type.
 	FtpRequestType pulumi.StringInput `pulumi:"ftpRequestType"`
-	// If enabled, Active mode will be used for the FTP connection.
+	// If enabled, Active mode will be used for the FTP connection. Not supported for SFTP protocol.
 	IsActiveMode pulumi.BoolInput `pulumi:"isActiveMode"`
 	// If certificate validation is enabled, then the call will fail in case of certification errors.
 	IsCertificateValidationEnabled pulumi.BoolInput `pulumi:"isCertificateValidationEnabled"`
@@ -9637,7 +9646,7 @@ func (o GetMonitorsMonitorCollectionItemConfigurationOutput) FtpRequestType() pu
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) string { return v.FtpRequestType }).(pulumi.StringOutput)
 }
 
-// If enabled, Active mode will be used for the FTP connection.
+// If enabled, Active mode will be used for the FTP connection. Not supported for SFTP protocol.
 func (o GetMonitorsMonitorCollectionItemConfigurationOutput) IsActiveMode() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) bool { return v.IsActiveMode }).(pulumi.BoolOutput)
 }
@@ -14818,7 +14827,7 @@ func (o GetScriptsScriptCollectionArrayOutput) Index(i pulumi.IntInput) GetScrip
 type GetScriptsScriptCollectionItem struct {
 	// The APM domain ID the request is intended for.
 	ApmDomainId string `pulumi:"apmDomainId"`
-	// The content of the script. It may contain custom-defined tags that can be used for setting dynamic parameters. The format to set dynamic parameters is: `<ORAP><ON>param name</ON><OV>param value</OV><OS>isParamValueSecret(true/false)</OS></ORAP>`. Param value and isParamValueSecret are optional, the default value for isParamValueSecret is false. Examples: With mandatory param name : `<ORAP><ON>param name</ON></ORAP>` With parameter name and value : `<ORAP><ON>param name</ON><OV>param value</OV></ORAP>` Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format.
+	// The content of the script. It may contain custom-defined tags that can be used for setting dynamic parameters. The format to set dynamic parameters is: `<ORAP><ON>param name</ON><OV>param value</OV><OS>isParamValueSecret(true/false)</OS></ORAP>`. Param value and isParamValueSecret are optional, the default value for isParamValueSecret is false. Examples: With mandatory param name : `<ORAP><ON>param name</ON></ORAP>` With parameter name and value : `<ORAP><ON>param name</ON><OV>param value</OV></ORAP>` Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format. If the content type is PLAYWRIGHT_TS, then the content should be in TypeScript format.
 	Content string `pulumi:"content"`
 	// File name of the uploaded script content.
 	ContentFileName string `pulumi:"contentFileName"`
@@ -14860,7 +14869,7 @@ type GetScriptsScriptCollectionItemInput interface {
 type GetScriptsScriptCollectionItemArgs struct {
 	// The APM domain ID the request is intended for.
 	ApmDomainId pulumi.StringInput `pulumi:"apmDomainId"`
-	// The content of the script. It may contain custom-defined tags that can be used for setting dynamic parameters. The format to set dynamic parameters is: `<ORAP><ON>param name</ON><OV>param value</OV><OS>isParamValueSecret(true/false)</OS></ORAP>`. Param value and isParamValueSecret are optional, the default value for isParamValueSecret is false. Examples: With mandatory param name : `<ORAP><ON>param name</ON></ORAP>` With parameter name and value : `<ORAP><ON>param name</ON><OV>param value</OV></ORAP>` Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format.
+	// The content of the script. It may contain custom-defined tags that can be used for setting dynamic parameters. The format to set dynamic parameters is: `<ORAP><ON>param name</ON><OV>param value</OV><OS>isParamValueSecret(true/false)</OS></ORAP>`. Param value and isParamValueSecret are optional, the default value for isParamValueSecret is false. Examples: With mandatory param name : `<ORAP><ON>param name</ON></ORAP>` With parameter name and value : `<ORAP><ON>param name</ON><OV>param value</OV></ORAP>` Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format. If the content type is PLAYWRIGHT_TS, then the content should be in TypeScript format.
 	Content pulumi.StringInput `pulumi:"content"`
 	// File name of the uploaded script content.
 	ContentFileName pulumi.StringInput `pulumi:"contentFileName"`
@@ -14944,7 +14953,7 @@ func (o GetScriptsScriptCollectionItemOutput) ApmDomainId() pulumi.StringOutput 
 	return o.ApplyT(func(v GetScriptsScriptCollectionItem) string { return v.ApmDomainId }).(pulumi.StringOutput)
 }
 
-// The content of the script. It may contain custom-defined tags that can be used for setting dynamic parameters. The format to set dynamic parameters is: `<ORAP><ON>param name</ON><OV>param value</OV><OS>isParamValueSecret(true/false)</OS></ORAP>`. Param value and isParamValueSecret are optional, the default value for isParamValueSecret is false. Examples: With mandatory param name : `<ORAP><ON>param name</ON></ORAP>` With parameter name and value : `<ORAP><ON>param name</ON><OV>param value</OV></ORAP>` Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format.
+// The content of the script. It may contain custom-defined tags that can be used for setting dynamic parameters. The format to set dynamic parameters is: `<ORAP><ON>param name</ON><OV>param value</OV><OS>isParamValueSecret(true/false)</OS></ORAP>`. Param value and isParamValueSecret are optional, the default value for isParamValueSecret is false. Examples: With mandatory param name : `<ORAP><ON>param name</ON></ORAP>` With parameter name and value : `<ORAP><ON>param name</ON><OV>param value</OV></ORAP>` Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format. If the content type is PLAYWRIGHT_TS, then the content should be in TypeScript format.
 func (o GetScriptsScriptCollectionItemOutput) Content() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScriptsScriptCollectionItem) string { return v.Content }).(pulumi.StringOutput)
 }

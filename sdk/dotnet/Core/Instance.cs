@@ -287,14 +287,19 @@ namespace Pulumi.Oci.Core
         /// You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
         /// 
         /// The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-        /// 
-        /// **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
         /// </summary>
         [Output("metadata")]
         public Output<ImmutableDictionary<string, string>> Metadata { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable only for VM's) The platform configuration requested for the instance.
+        /// Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+        /// </summary>
+        [Output("placementConstraintDetails")]
+        public Output<Outputs.InstancePlacementConstraintDetails> PlacementConstraintDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The platform configuration requested for the instance.
+        /// 
         /// 
         /// If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
         /// 
@@ -676,8 +681,6 @@ namespace Pulumi.Oci.Core
         /// You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
         /// 
         /// The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-        /// 
-        /// **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
         /// </summary>
         public InputMap<string> Metadata
         {
@@ -686,7 +689,14 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// (Updatable only for VM's) The platform configuration requested for the instance.
+        /// Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+        /// </summary>
+        [Input("placementConstraintDetails")]
+        public Input<Inputs.InstancePlacementConstraintDetailsArgs>? PlacementConstraintDetails { get; set; }
+
+        /// <summary>
+        /// (Updatable) The platform configuration requested for the instance.
+        /// 
         /// 
         /// If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
         /// 
@@ -1016,8 +1026,6 @@ namespace Pulumi.Oci.Core
         /// You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
         /// 
         /// The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-        /// 
-        /// **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
         /// </summary>
         public InputMap<string> Metadata
         {
@@ -1026,7 +1034,14 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// (Updatable only for VM's) The platform configuration requested for the instance.
+        /// Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+        /// </summary>
+        [Input("placementConstraintDetails")]
+        public Input<Inputs.InstancePlacementConstraintDetailsGetArgs>? PlacementConstraintDetails { get; set; }
+
+        /// <summary>
+        /// (Updatable) The platform configuration requested for the instance.
+        /// 
         /// 
         /// If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
         /// 

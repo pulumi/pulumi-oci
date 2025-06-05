@@ -59,6 +59,7 @@ import javax.annotation.Nullable;
  *             .pipelineConfigurationBody(opensearchClusterPipelinePipelineConfigurationBody)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .freeformTags(Map.of("bar-key", "value"))
+ *             .nodeShape(opensearchClusterPipelineNodeShape)
  *             .nsgId(testNsg.id())
  *             .opcDryRun(opensearchClusterPipelineOpcDryRun)
  *             .reverseConnectionEndpoints(OpensearchClusterPipelineReverseConnectionEndpointArgs.builder()
@@ -185,6 +186,20 @@ public class OpensearchClusterPipeline extends com.pulumi.resources.CustomResour
      */
     public Output<Integer> nodeCount() {
         return this.nodeCount;
+    }
+    /**
+     * (Updatable) The pipeline node shape.
+     * 
+     */
+    @Export(name="nodeShape", refs={String.class}, tree="[0]")
+    private Output<String> nodeShape;
+
+    /**
+     * @return (Updatable) The pipeline node shape.
+     * 
+     */
+    public Output<String> nodeShape() {
+        return this.nodeShape;
     }
     /**
      * (Updatable) The OCID of the NSG where the pipeline private endpoint vnic will be attached.

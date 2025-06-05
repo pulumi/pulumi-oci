@@ -17,6 +17,31 @@ public final class GetDbSystemStoragePerformancesPlainArgs extends com.pulumi.re
 
     public static final GetDbSystemStoragePerformancesPlainArgs Empty = new GetDbSystemStoragePerformancesPlainArgs();
 
+    /**
+     * Optional. Filters the performance results by database edition. Valid values are:
+     * * STANDARD_EDITION
+     * * ENTERPRISE_EDITION
+     * * ENTERPRISE_EDITION_HIGH_PERFORMANCE
+     * * ENTERPRISE_EDITION_EXTREME
+     * * ENTERPRISE_EDITION_DEVELOPER
+     * 
+     */
+    @Import(name="databaseEdition")
+    private @Nullable String databaseEdition;
+
+    /**
+     * @return Optional. Filters the performance results by database edition. Valid values are:
+     * * STANDARD_EDITION
+     * * ENTERPRISE_EDITION
+     * * ENTERPRISE_EDITION_HIGH_PERFORMANCE
+     * * ENTERPRISE_EDITION_EXTREME
+     * * ENTERPRISE_EDITION_DEVELOPER
+     * 
+     */
+    public Optional<String> databaseEdition() {
+        return Optional.ofNullable(this.databaseEdition);
+    }
+
     @Import(name="filters")
     private @Nullable List<GetDbSystemStoragePerformancesFilter> filters;
 
@@ -61,6 +86,7 @@ public final class GetDbSystemStoragePerformancesPlainArgs extends com.pulumi.re
     private GetDbSystemStoragePerformancesPlainArgs() {}
 
     private GetDbSystemStoragePerformancesPlainArgs(GetDbSystemStoragePerformancesPlainArgs $) {
+        this.databaseEdition = $.databaseEdition;
         this.filters = $.filters;
         this.shapeType = $.shapeType;
         this.storageManagement = $.storageManagement;
@@ -82,6 +108,22 @@ public final class GetDbSystemStoragePerformancesPlainArgs extends com.pulumi.re
 
         public Builder(GetDbSystemStoragePerformancesPlainArgs defaults) {
             $ = new GetDbSystemStoragePerformancesPlainArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param databaseEdition Optional. Filters the performance results by database edition. Valid values are:
+         * * STANDARD_EDITION
+         * * ENTERPRISE_EDITION
+         * * ENTERPRISE_EDITION_HIGH_PERFORMANCE
+         * * ENTERPRISE_EDITION_EXTREME
+         * * ENTERPRISE_EDITION_DEVELOPER
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseEdition(@Nullable String databaseEdition) {
+            $.databaseEdition = databaseEdition;
+            return this;
         }
 
         public Builder filters(@Nullable List<GetDbSystemStoragePerformancesFilter> filters) {

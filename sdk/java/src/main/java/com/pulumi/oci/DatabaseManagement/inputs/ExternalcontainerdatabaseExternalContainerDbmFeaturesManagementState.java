@@ -17,6 +17,13 @@ public final class ExternalcontainerdatabaseExternalContainerDbmFeaturesManageme
 
     public static final ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementState Empty = new ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementState();
 
+    @Import(name="canDisableAllPdbs")
+    private @Nullable Output<Boolean> canDisableAllPdbs;
+
+    public Optional<Output<Boolean>> canDisableAllPdbs() {
+        return Optional.ofNullable(this.canDisableAllPdbs);
+    }
+
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
      * 
@@ -53,6 +60,13 @@ public final class ExternalcontainerdatabaseExternalContainerDbmFeaturesManageme
         return Optional.ofNullable(this.externalContainerDatabaseId);
     }
 
+    @Import(name="feature")
+    private @Nullable Output<String> feature;
+
+    public Optional<Output<String>> feature() {
+        return Optional.ofNullable(this.feature);
+    }
+
     /**
      * The details required to enable the specified Database Management feature.
      * 
@@ -71,8 +85,10 @@ public final class ExternalcontainerdatabaseExternalContainerDbmFeaturesManageme
     private ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementState() {}
 
     private ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementState(ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementState $) {
+        this.canDisableAllPdbs = $.canDisableAllPdbs;
         this.enableExternalContainerDbmFeature = $.enableExternalContainerDbmFeature;
         this.externalContainerDatabaseId = $.externalContainerDatabaseId;
+        this.feature = $.feature;
         this.featureDetails = $.featureDetails;
     }
 
@@ -92,6 +108,15 @@ public final class ExternalcontainerdatabaseExternalContainerDbmFeaturesManageme
 
         public Builder(ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementState defaults) {
             $ = new ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementState(Objects.requireNonNull(defaults));
+        }
+
+        public Builder canDisableAllPdbs(@Nullable Output<Boolean> canDisableAllPdbs) {
+            $.canDisableAllPdbs = canDisableAllPdbs;
+            return this;
+        }
+
+        public Builder canDisableAllPdbs(Boolean canDisableAllPdbs) {
+            return canDisableAllPdbs(Output.of(canDisableAllPdbs));
         }
 
         /**
@@ -140,6 +165,15 @@ public final class ExternalcontainerdatabaseExternalContainerDbmFeaturesManageme
          */
         public Builder externalContainerDatabaseId(String externalContainerDatabaseId) {
             return externalContainerDatabaseId(Output.of(externalContainerDatabaseId));
+        }
+
+        public Builder feature(@Nullable Output<String> feature) {
+            $.feature = feature;
+            return this;
+        }
+
+        public Builder feature(String feature) {
+            return feature(Output.of(feature));
         }
 
         /**

@@ -44,7 +44,7 @@ export interface GetRemediationRunApplicationDependencyRecommendationsArgs {
      */
     gav?: string;
     /**
-     * A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+     * A filter to return only resources that match the entire purl given.
      */
     purl?: string;
     /**
@@ -71,7 +71,7 @@ export interface GetRemediationRunApplicationDependencyRecommendationsResult {
      */
     readonly id: string;
     /**
-     * Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+     * Package URL identifier, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
      */
     readonly purl?: string;
     readonly remediationRunId: string;
@@ -114,7 +114,7 @@ export interface GetRemediationRunApplicationDependencyRecommendationsOutputArgs
      */
     gav?: pulumi.Input<string>;
     /**
-     * A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+     * A filter to return only resources that match the entire purl given.
      */
     purl?: pulumi.Input<string>;
     /**

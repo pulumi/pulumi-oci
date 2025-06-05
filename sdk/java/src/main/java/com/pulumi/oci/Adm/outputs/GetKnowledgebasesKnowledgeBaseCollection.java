@@ -11,9 +11,17 @@ import java.util.Objects;
 
 @CustomType
 public final class GetKnowledgebasesKnowledgeBaseCollection {
+    /**
+     * @return List of knowledge base summaries.
+     * 
+     */
     private List<GetKnowledgebasesKnowledgeBaseCollectionItem> items;
 
     private GetKnowledgebasesKnowledgeBaseCollection() {}
+    /**
+     * @return List of knowledge base summaries.
+     * 
+     */
     public List<GetKnowledgebasesKnowledgeBaseCollectionItem> items() {
         return this.items;
     }

@@ -41,7 +41,7 @@ public final class GetQueryQueryDefinitionReportQuery {
      */
     private String granularity;
     /**
-     * @return Aggregate the result by. example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;]`
+     * @return Specifies what to aggregate the result by. For example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;]`
      * 
      */
     private List<String> groupBies;
@@ -51,12 +51,17 @@ public final class GetQueryQueryDefinitionReportQuery {
      */
     private List<GetQueryQueryDefinitionReportQueryGroupByTag> groupByTags;
     /**
-     * @return Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+     * @return Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
      * 
      */
     private Boolean isAggregateByTime;
     /**
-     * @return The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
+     * @return The query usage type. COST by default if it is missing.
+     * * Usage: Query the usage data.
+     * * Cost: Query the cost/billing data.
+     * * Credit: Query the credit adjustments data.
+     * * ExpiredCredit: Query the expired credits data.
+     * * AllCredit: Query the credit adjustments and expired credit.
      * 
      */
     private String queryType;
@@ -113,7 +118,7 @@ public final class GetQueryQueryDefinitionReportQuery {
         return this.granularity;
     }
     /**
-     * @return Aggregate the result by. example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;]`
+     * @return Specifies what to aggregate the result by. For example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;]`
      * 
      */
     public List<String> groupBies() {
@@ -127,14 +132,19 @@ public final class GetQueryQueryDefinitionReportQuery {
         return this.groupByTags;
     }
     /**
-     * @return Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+     * @return Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
      * 
      */
     public Boolean isAggregateByTime() {
         return this.isAggregateByTime;
     }
     /**
-     * @return The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
+     * @return The query usage type. COST by default if it is missing.
+     * * Usage: Query the usage data.
+     * * Cost: Query the cost/billing data.
+     * * Credit: Query the credit adjustments data.
+     * * ExpiredCredit: Query the expired credits data.
+     * * AllCredit: Query the credit adjustments and expired credit.
      * 
      */
     public String queryType() {

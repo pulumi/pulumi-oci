@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Usage Carbon Emissions Query resource in Oracle Cloud Infrastructure Metering Computation service.
  *
- * Returns the created usage carbon emissions query.
+ * Returns the created carbon emissions usage query.
  *
  * ## Example Usage
  *
@@ -29,6 +29,9 @@ import * as utilities from "../utilities";
  *             tenantId: testTenant.id,
  *             compartmentDepth: usageCarbonEmissionsQueryQueryDefinitionReportQueryCompartmentDepth,
  *             dateRangeName: usageCarbonEmissionsQueryQueryDefinitionReportQueryDateRangeName,
+ *             emissionCalculationMethod: usageCarbonEmissionsQueryQueryDefinitionReportQueryEmissionCalculationMethod,
+ *             emissionType: usageCarbonEmissionsQueryQueryDefinitionReportQueryEmissionType,
+ *             granularity: usageCarbonEmissionsQueryQueryDefinitionReportQueryGranularity,
  *             groupBies: usageCarbonEmissionsQueryQueryDefinitionReportQueryGroupBy,
  *             groupByTags: [{
  *                 key: usageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagKey,

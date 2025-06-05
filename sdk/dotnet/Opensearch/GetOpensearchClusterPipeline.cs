@@ -156,6 +156,10 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         public readonly int NodeCount;
         /// <summary>
+        /// The pipeline node shape.
+        /// </summary>
+        public readonly string NodeShape;
+        /// <summary>
         /// The OCID of the NSG where the pipeline private endpoint vnic will be attached.
         /// </summary>
         public readonly string NsgId;
@@ -236,6 +240,8 @@ namespace Pulumi.Oci.Opensearch
 
             int nodeCount,
 
+            string nodeShape,
+
             string nsgId,
 
             int ocpuCount,
@@ -278,6 +284,7 @@ namespace Pulumi.Oci.Opensearch
             Id = id;
             MemoryGb = memoryGb;
             NodeCount = nodeCount;
+            NodeShape = nodeShape;
             NsgId = nsgId;
             OcpuCount = ocpuCount;
             OpcDryRun = opcDryRun;

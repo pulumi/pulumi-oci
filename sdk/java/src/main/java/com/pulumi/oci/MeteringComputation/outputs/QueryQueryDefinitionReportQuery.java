@@ -43,7 +43,7 @@ public final class QueryQueryDefinitionReportQuery {
      */
     private String granularity;
     /**
-     * @return (Updatable) Aggregate the result by. example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;]`
+     * @return (Updatable) Specifies what to aggregate the result by. For example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;]`
      * 
      */
     private @Nullable List<String> groupBies;
@@ -53,12 +53,17 @@ public final class QueryQueryDefinitionReportQuery {
      */
     private @Nullable List<QueryQueryDefinitionReportQueryGroupByTag> groupByTags;
     /**
-     * @return (Updatable) Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+     * @return (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
      * 
      */
     private @Nullable Boolean isAggregateByTime;
     /**
-     * @return (Updatable) The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
+     * @return (Updatable) The query usage type. COST by default if it is missing.
+     * * Usage: Query the usage data.
+     * * Cost: Query the cost/billing data.
+     * * Credit: Query the credit adjustments data.
+     * * ExpiredCredit: Query the expired credits data.
+     * * AllCredit: Query the credit adjustments and expired credit.
      * 
      */
     private @Nullable String queryType;
@@ -115,7 +120,7 @@ public final class QueryQueryDefinitionReportQuery {
         return this.granularity;
     }
     /**
-     * @return (Updatable) Aggregate the result by. example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;]`
+     * @return (Updatable) Specifies what to aggregate the result by. For example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;]`
      * 
      */
     public List<String> groupBies() {
@@ -129,14 +134,19 @@ public final class QueryQueryDefinitionReportQuery {
         return this.groupByTags == null ? List.of() : this.groupByTags;
     }
     /**
-     * @return (Updatable) Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+     * @return (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
      * 
      */
     public Optional<Boolean> isAggregateByTime() {
         return Optional.ofNullable(this.isAggregateByTime);
     }
     /**
-     * @return (Updatable) The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
+     * @return (Updatable) The query usage type. COST by default if it is missing.
+     * * Usage: Query the usage data.
+     * * Cost: Query the cost/billing data.
+     * * Credit: Query the credit adjustments data.
+     * * ExpiredCredit: Query the expired credits data.
+     * * AllCredit: Query the credit adjustments and expired credit.
      * 
      */
     public Optional<String> queryType() {

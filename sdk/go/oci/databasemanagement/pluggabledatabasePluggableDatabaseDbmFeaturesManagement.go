@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,8 @@ type PluggabledatabasePluggableDatabaseDbmFeaturesManagement struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	EnablePluggableDatabaseDbmFeature pulumi.BoolOutput `pulumi:"enablePluggableDatabaseDbmFeature"`
+	EnablePluggableDatabaseDbmFeature pulumi.BoolOutput      `pulumi:"enablePluggableDatabaseDbmFeature"`
+	Feature                           pulumi.StringPtrOutput `pulumi:"feature"`
 	// The details required to enable the specified Database Management feature.
 	FeatureDetails                    PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsPtrOutput `pulumi:"featureDetails"`
 	ModifyPluggableDatabaseDbmFeature pulumi.BoolPtrOutput                                                           `pulumi:"modifyPluggableDatabaseDbmFeature"`
@@ -70,7 +71,8 @@ type pluggabledatabasePluggableDatabaseDbmFeaturesManagementState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	EnablePluggableDatabaseDbmFeature *bool `pulumi:"enablePluggableDatabaseDbmFeature"`
+	EnablePluggableDatabaseDbmFeature *bool   `pulumi:"enablePluggableDatabaseDbmFeature"`
+	Feature                           *string `pulumi:"feature"`
 	// The details required to enable the specified Database Management feature.
 	FeatureDetails                    *PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetails `pulumi:"featureDetails"`
 	ModifyPluggableDatabaseDbmFeature *bool                                                                  `pulumi:"modifyPluggableDatabaseDbmFeature"`
@@ -84,6 +86,7 @@ type PluggabledatabasePluggableDatabaseDbmFeaturesManagementState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnablePluggableDatabaseDbmFeature pulumi.BoolPtrInput
+	Feature                           pulumi.StringPtrInput
 	// The details required to enable the specified Database Management feature.
 	FeatureDetails                    PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsPtrInput
 	ModifyPluggableDatabaseDbmFeature pulumi.BoolPtrInput
@@ -100,7 +103,8 @@ type pluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	EnablePluggableDatabaseDbmFeature bool `pulumi:"enablePluggableDatabaseDbmFeature"`
+	EnablePluggableDatabaseDbmFeature bool    `pulumi:"enablePluggableDatabaseDbmFeature"`
+	Feature                           *string `pulumi:"feature"`
 	// The details required to enable the specified Database Management feature.
 	FeatureDetails                    *PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetails `pulumi:"featureDetails"`
 	ModifyPluggableDatabaseDbmFeature *bool                                                                  `pulumi:"modifyPluggableDatabaseDbmFeature"`
@@ -115,6 +119,7 @@ type PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnablePluggableDatabaseDbmFeature pulumi.BoolInput
+	Feature                           pulumi.StringPtrInput
 	// The details required to enable the specified Database Management feature.
 	FeatureDetails                    PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsPtrInput
 	ModifyPluggableDatabaseDbmFeature pulumi.BoolPtrInput
@@ -217,6 +222,12 @@ func (o PluggabledatabasePluggableDatabaseDbmFeaturesManagementOutput) EnablePlu
 	return o.ApplyT(func(v *PluggabledatabasePluggableDatabaseDbmFeaturesManagement) pulumi.BoolOutput {
 		return v.EnablePluggableDatabaseDbmFeature
 	}).(pulumi.BoolOutput)
+}
+
+func (o PluggabledatabasePluggableDatabaseDbmFeaturesManagementOutput) Feature() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PluggabledatabasePluggableDatabaseDbmFeaturesManagement) pulumi.StringPtrOutput {
+		return v.Feature
+	}).(pulumi.StringPtrOutput)
 }
 
 // The details required to enable the specified Database Management feature.

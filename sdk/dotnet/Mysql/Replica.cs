@@ -42,6 +42,7 @@ namespace Pulumi.Oci.Mysql
     ///         {
     ///             ConfigurationId = testMysqlConfiguration.Id,
     ///             MysqlVersion = replicaReplicaOverridesMysqlVersion,
+    ///             NsgIds = replicaReplicaOverridesNsgIds,
     ///             ShapeName = testShape.Name,
     ///         },
     ///     });
@@ -137,6 +138,12 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Output("mysqlVersion")]
         public Output<string> MysqlVersion { get; private set; } = null!;
+
+        /// <summary>
+        /// Network Security Group OCIDs used for the VNIC attachment.
+        /// </summary>
+        [Output("nsgIds")]
+        public Output<ImmutableArray<string>> NsgIds { get; private set; } = null!;
 
         /// <summary>
         /// The port the read replica is configured to listen on.
@@ -383,6 +390,18 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Input("mysqlVersion")]
         public Input<string>? MysqlVersion { get; set; }
+
+        [Input("nsgIds")]
+        private InputList<string>? _nsgIds;
+
+        /// <summary>
+        /// Network Security Group OCIDs used for the VNIC attachment.
+        /// </summary>
+        public InputList<string> NsgIds
+        {
+            get => _nsgIds ?? (_nsgIds = new InputList<string>());
+            set => _nsgIds = value;
+        }
 
         /// <summary>
         /// The port the read replica is configured to listen on.

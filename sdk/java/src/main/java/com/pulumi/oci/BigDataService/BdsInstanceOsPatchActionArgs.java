@@ -6,9 +6,9 @@ package com.pulumi.oci.BigDataService;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import com.pulumi.oci.BigDataService.inputs.BdsInstanceOsPatchActionPatchingConfigArgs;
+import com.pulumi.oci.BigDataService.inputs.BdsInstanceOsPatchActionPatchingConfigsArgs;
+import java.lang.Boolean;
 import java.lang.String;
-import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -35,6 +35,7 @@ public final class BdsInstanceOsPatchActionArgs extends com.pulumi.resources.Res
 
     /**
      * Base-64 encoded password for the cluster admin user.
+     * * `isDryRun` - (Optional) Perform dry run for the patch and stop without actually patching the cluster.
      * 
      */
     @Import(name="clusterAdminPassword", required=true)
@@ -42,10 +43,18 @@ public final class BdsInstanceOsPatchActionArgs extends com.pulumi.resources.Res
 
     /**
      * @return Base-64 encoded password for the cluster admin user.
+     * * `isDryRun` - (Optional) Perform dry run for the patch and stop without actually patching the cluster.
      * 
      */
     public Output<String> clusterAdminPassword() {
         return this.clusterAdminPassword;
+    }
+
+    @Import(name="isDryRun")
+    private @Nullable Output<Boolean> isDryRun;
+
+    public Optional<Output<Boolean>> isDryRun() {
+        return Optional.ofNullable(this.isDryRun);
     }
 
     /**
@@ -74,13 +83,13 @@ public final class BdsInstanceOsPatchActionArgs extends com.pulumi.resources.Res
      * 
      */
     @Import(name="patchingConfigs")
-    private @Nullable Output<List<BdsInstanceOsPatchActionPatchingConfigArgs>> patchingConfigs;
+    private @Nullable Output<BdsInstanceOsPatchActionPatchingConfigsArgs> patchingConfigs;
 
     /**
      * @return Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
      * 
      */
-    public Optional<Output<List<BdsInstanceOsPatchActionPatchingConfigArgs>>> patchingConfigs() {
+    public Optional<Output<BdsInstanceOsPatchActionPatchingConfigsArgs>> patchingConfigs() {
         return Optional.ofNullable(this.patchingConfigs);
     }
 
@@ -89,6 +98,7 @@ public final class BdsInstanceOsPatchActionArgs extends com.pulumi.resources.Res
     private BdsInstanceOsPatchActionArgs(BdsInstanceOsPatchActionArgs $) {
         this.bdsInstanceId = $.bdsInstanceId;
         this.clusterAdminPassword = $.clusterAdminPassword;
+        this.isDryRun = $.isDryRun;
         this.osPatchVersion = $.osPatchVersion;
         this.patchingConfigs = $.patchingConfigs;
     }
@@ -134,6 +144,7 @@ public final class BdsInstanceOsPatchActionArgs extends com.pulumi.resources.Res
 
         /**
          * @param clusterAdminPassword Base-64 encoded password for the cluster admin user.
+         * * `isDryRun` - (Optional) Perform dry run for the patch and stop without actually patching the cluster.
          * 
          * @return builder
          * 
@@ -145,12 +156,22 @@ public final class BdsInstanceOsPatchActionArgs extends com.pulumi.resources.Res
 
         /**
          * @param clusterAdminPassword Base-64 encoded password for the cluster admin user.
+         * * `isDryRun` - (Optional) Perform dry run for the patch and stop without actually patching the cluster.
          * 
          * @return builder
          * 
          */
         public Builder clusterAdminPassword(String clusterAdminPassword) {
             return clusterAdminPassword(Output.of(clusterAdminPassword));
+        }
+
+        public Builder isDryRun(@Nullable Output<Boolean> isDryRun) {
+            $.isDryRun = isDryRun;
+            return this;
+        }
+
+        public Builder isDryRun(Boolean isDryRun) {
+            return isDryRun(Output.of(isDryRun));
         }
 
         /**
@@ -186,7 +207,7 @@ public final class BdsInstanceOsPatchActionArgs extends com.pulumi.resources.Res
          * @return builder
          * 
          */
-        public Builder patchingConfigs(@Nullable Output<List<BdsInstanceOsPatchActionPatchingConfigArgs>> patchingConfigs) {
+        public Builder patchingConfigs(@Nullable Output<BdsInstanceOsPatchActionPatchingConfigsArgs> patchingConfigs) {
             $.patchingConfigs = patchingConfigs;
             return this;
         }
@@ -197,18 +218,8 @@ public final class BdsInstanceOsPatchActionArgs extends com.pulumi.resources.Res
          * @return builder
          * 
          */
-        public Builder patchingConfigs(List<BdsInstanceOsPatchActionPatchingConfigArgs> patchingConfigs) {
+        public Builder patchingConfigs(BdsInstanceOsPatchActionPatchingConfigsArgs patchingConfigs) {
             return patchingConfigs(Output.of(patchingConfigs));
-        }
-
-        /**
-         * @param patchingConfigs Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder patchingConfigs(BdsInstanceOsPatchActionPatchingConfigArgs... patchingConfigs) {
-            return patchingConfigs(List.of(patchingConfigs));
         }
 
         public BdsInstanceOsPatchActionArgs build() {

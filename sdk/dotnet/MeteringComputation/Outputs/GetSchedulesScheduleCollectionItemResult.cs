@@ -34,7 +34,7 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Query parameter for filtering by name
+        /// The query parameter for filtering by name.
         /// </summary>
         public readonly string Name;
         /// <summary>

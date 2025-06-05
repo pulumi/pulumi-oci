@@ -8,11 +8,28 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class GetLogAnalyticsEntityArgs extends com.pulumi.resources.InvokeArgs {
 
     public static final GetLogAnalyticsEntityArgs Empty = new GetLogAnalyticsEntityArgs();
+
+    /**
+     * Option to return count of associated log sources for log analytics entity(s).
+     * 
+     */
+    @Import(name="isShowAssociatedSourcesCount")
+    private @Nullable Output<String> isShowAssociatedSourcesCount;
+
+    /**
+     * @return Option to return count of associated log sources for log analytics entity(s).
+     * 
+     */
+    public Optional<Output<String>> isShowAssociatedSourcesCount() {
+        return Optional.ofNullable(this.isShowAssociatedSourcesCount);
+    }
 
     /**
      * The log analytics entity OCID.
@@ -47,6 +64,7 @@ public final class GetLogAnalyticsEntityArgs extends com.pulumi.resources.Invoke
     private GetLogAnalyticsEntityArgs() {}
 
     private GetLogAnalyticsEntityArgs(GetLogAnalyticsEntityArgs $) {
+        this.isShowAssociatedSourcesCount = $.isShowAssociatedSourcesCount;
         this.logAnalyticsEntityId = $.logAnalyticsEntityId;
         this.namespace = $.namespace;
     }
@@ -67,6 +85,27 @@ public final class GetLogAnalyticsEntityArgs extends com.pulumi.resources.Invoke
 
         public Builder(GetLogAnalyticsEntityArgs defaults) {
             $ = new GetLogAnalyticsEntityArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param isShowAssociatedSourcesCount Option to return count of associated log sources for log analytics entity(s).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isShowAssociatedSourcesCount(@Nullable Output<String> isShowAssociatedSourcesCount) {
+            $.isShowAssociatedSourcesCount = isShowAssociatedSourcesCount;
+            return this;
+        }
+
+        /**
+         * @param isShowAssociatedSourcesCount Option to return count of associated log sources for log analytics entity(s).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isShowAssociatedSourcesCount(String isShowAssociatedSourcesCount) {
+            return isShowAssociatedSourcesCount(Output.of(isShowAssociatedSourcesCount));
         }
 
         /**

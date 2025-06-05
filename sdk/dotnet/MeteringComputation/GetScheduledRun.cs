@@ -97,7 +97,7 @@ namespace Pulumi.Oci.MeteringComputation
     public sealed class GetScheduledRunArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The scheduledRun unique OCID
+        /// The scheduled run unique OCID.
         /// </summary>
         [Input("scheduledRunId", required: true)]
         public string ScheduledRunId { get; set; } = null!;
@@ -111,7 +111,7 @@ namespace Pulumi.Oci.MeteringComputation
     public sealed class GetScheduledRunInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The scheduledRun unique OCID
+        /// The scheduled run unique OCID.
         /// </summary>
         [Input("scheduledRunId", required: true)]
         public Input<string> ScheduledRunId { get; set; } = null!;
@@ -131,24 +131,24 @@ namespace Pulumi.Oci.MeteringComputation
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Additional details about scheduled run failure
+        /// Additional details about the scheduled run.
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// The ocid representing unique shedule
+        /// The OCID representing a unique shedule.
         /// </summary>
         public readonly string ScheduleId;
         public readonly string ScheduledRunId;
         /// <summary>
-        /// Specifies if the schedule job was run successfully or not.
+        /// Specifies whether or not the schedule job was successfully run.
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// The time when schedule started executing
+        /// The time the schedule started executing.
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The time when schedule finished executing
+        /// The time the schedule finished executing.
         /// </summary>
         public readonly string TimeFinished;
 

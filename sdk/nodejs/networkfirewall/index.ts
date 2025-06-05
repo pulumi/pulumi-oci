@@ -80,6 +80,16 @@ export const getNetworkFirewallPolicyMappedSecrets: typeof import("./getNetworkF
 export const getNetworkFirewallPolicyMappedSecretsOutput: typeof import("./getNetworkFirewallPolicyMappedSecrets").getNetworkFirewallPolicyMappedSecretsOutput = null as any;
 utilities.lazyLoad(exports, ["getNetworkFirewallPolicyMappedSecrets","getNetworkFirewallPolicyMappedSecretsOutput"], () => require("./getNetworkFirewallPolicyMappedSecrets"));
 
+export { GetNetworkFirewallPolicyNatRuleArgs, GetNetworkFirewallPolicyNatRuleResult, GetNetworkFirewallPolicyNatRuleOutputArgs } from "./getNetworkFirewallPolicyNatRule";
+export const getNetworkFirewallPolicyNatRule: typeof import("./getNetworkFirewallPolicyNatRule").getNetworkFirewallPolicyNatRule = null as any;
+export const getNetworkFirewallPolicyNatRuleOutput: typeof import("./getNetworkFirewallPolicyNatRule").getNetworkFirewallPolicyNatRuleOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkFirewallPolicyNatRule","getNetworkFirewallPolicyNatRuleOutput"], () => require("./getNetworkFirewallPolicyNatRule"));
+
+export { GetNetworkFirewallPolicyNatRulesArgs, GetNetworkFirewallPolicyNatRulesResult, GetNetworkFirewallPolicyNatRulesOutputArgs } from "./getNetworkFirewallPolicyNatRules";
+export const getNetworkFirewallPolicyNatRules: typeof import("./getNetworkFirewallPolicyNatRules").getNetworkFirewallPolicyNatRules = null as any;
+export const getNetworkFirewallPolicyNatRulesOutput: typeof import("./getNetworkFirewallPolicyNatRules").getNetworkFirewallPolicyNatRulesOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkFirewallPolicyNatRules","getNetworkFirewallPolicyNatRulesOutput"], () => require("./getNetworkFirewallPolicyNatRules"));
+
 export { GetNetworkFirewallPolicySecurityRuleArgs, GetNetworkFirewallPolicySecurityRuleResult, GetNetworkFirewallPolicySecurityRuleOutputArgs } from "./getNetworkFirewallPolicySecurityRule";
 export const getNetworkFirewallPolicySecurityRule: typeof import("./getNetworkFirewallPolicySecurityRule").getNetworkFirewallPolicySecurityRule = null as any;
 export const getNetworkFirewallPolicySecurityRuleOutput: typeof import("./getNetworkFirewallPolicySecurityRule").getNetworkFirewallPolicySecurityRuleOutput = null as any;
@@ -175,6 +185,11 @@ export type NetworkFirewallPolicyMappedSecret = import("./networkFirewallPolicyM
 export const NetworkFirewallPolicyMappedSecret: typeof import("./networkFirewallPolicyMappedSecret").NetworkFirewallPolicyMappedSecret = null as any;
 utilities.lazyLoad(exports, ["NetworkFirewallPolicyMappedSecret"], () => require("./networkFirewallPolicyMappedSecret"));
 
+export { NetworkFirewallPolicyNatRuleArgs, NetworkFirewallPolicyNatRuleState } from "./networkFirewallPolicyNatRule";
+export type NetworkFirewallPolicyNatRule = import("./networkFirewallPolicyNatRule").NetworkFirewallPolicyNatRule;
+export const NetworkFirewallPolicyNatRule: typeof import("./networkFirewallPolicyNatRule").NetworkFirewallPolicyNatRule = null as any;
+utilities.lazyLoad(exports, ["NetworkFirewallPolicyNatRule"], () => require("./networkFirewallPolicyNatRule"));
+
 export { NetworkFirewallPolicySecurityRuleArgs, NetworkFirewallPolicySecurityRuleState } from "./networkFirewallPolicySecurityRule";
 export type NetworkFirewallPolicySecurityRule = import("./networkFirewallPolicySecurityRule").NetworkFirewallPolicySecurityRule;
 export const NetworkFirewallPolicySecurityRule: typeof import("./networkFirewallPolicySecurityRule").NetworkFirewallPolicySecurityRule = null as any;
@@ -221,6 +236,8 @@ const _module = {
                 return new NetworkFirewallPolicyDecryptionRule(name, <any>undefined, { urn })
             case "oci:NetworkFirewall/networkFirewallPolicyMappedSecret:NetworkFirewallPolicyMappedSecret":
                 return new NetworkFirewallPolicyMappedSecret(name, <any>undefined, { urn })
+            case "oci:NetworkFirewall/networkFirewallPolicyNatRule:NetworkFirewallPolicyNatRule":
+                return new NetworkFirewallPolicyNatRule(name, <any>undefined, { urn })
             case "oci:NetworkFirewall/networkFirewallPolicySecurityRule:NetworkFirewallPolicySecurityRule":
                 return new NetworkFirewallPolicySecurityRule(name, <any>undefined, { urn })
             case "oci:NetworkFirewall/networkFirewallPolicyService:NetworkFirewallPolicyService":
@@ -244,6 +261,7 @@ pulumi.runtime.registerResourceModule("oci", "NetworkFirewall/networkFirewallPol
 pulumi.runtime.registerResourceModule("oci", "NetworkFirewall/networkFirewallPolicyDecryptionProfile", _module)
 pulumi.runtime.registerResourceModule("oci", "NetworkFirewall/networkFirewallPolicyDecryptionRule", _module)
 pulumi.runtime.registerResourceModule("oci", "NetworkFirewall/networkFirewallPolicyMappedSecret", _module)
+pulumi.runtime.registerResourceModule("oci", "NetworkFirewall/networkFirewallPolicyNatRule", _module)
 pulumi.runtime.registerResourceModule("oci", "NetworkFirewall/networkFirewallPolicySecurityRule", _module)
 pulumi.runtime.registerResourceModule("oci", "NetworkFirewall/networkFirewallPolicyService", _module)
 pulumi.runtime.registerResourceModule("oci", "NetworkFirewall/networkFirewallPolicyServiceList", _module)

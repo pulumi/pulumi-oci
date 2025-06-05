@@ -259,12 +259,15 @@ export class Instance extends pulumi.CustomResource {
      * You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
      *
      * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-     *
-     * **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
      */
     public readonly metadata!: pulumi.Output<{[key: string]: string}>;
     /**
-     * (Updatable only for VM's) The platform configuration requested for the instance.
+     * Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+     */
+    public readonly placementConstraintDetails!: pulumi.Output<outputs.Core.InstancePlacementConstraintDetails>;
+    /**
+     * (Updatable) The platform configuration requested for the instance.
+     *
      *
      * If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
      *
@@ -390,6 +393,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["launchVolumeAttachments"] = state ? state.launchVolumeAttachments : undefined;
             resourceInputs["licensingConfigs"] = state ? state.licensingConfigs : undefined;
             resourceInputs["metadata"] = state ? state.metadata : undefined;
+            resourceInputs["placementConstraintDetails"] = state ? state.placementConstraintDetails : undefined;
             resourceInputs["platformConfig"] = state ? state.platformConfig : undefined;
             resourceInputs["preemptibleInstanceConfig"] = state ? state.preemptibleInstanceConfig : undefined;
             resourceInputs["preserveBootVolume"] = state ? state.preserveBootVolume : undefined;
@@ -441,6 +445,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["launchVolumeAttachments"] = args ? args.launchVolumeAttachments : undefined;
             resourceInputs["licensingConfigs"] = args ? args.licensingConfigs : undefined;
             resourceInputs["metadata"] = args ? args.metadata : undefined;
+            resourceInputs["placementConstraintDetails"] = args ? args.placementConstraintDetails : undefined;
             resourceInputs["platformConfig"] = args ? args.platformConfig : undefined;
             resourceInputs["preemptibleInstanceConfig"] = args ? args.preemptibleInstanceConfig : undefined;
             resourceInputs["preserveBootVolume"] = args ? args.preserveBootVolume : undefined;
@@ -636,12 +641,15 @@ export interface InstanceState {
      * You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
      *
      * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-     *
-     * **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
      */
     metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable only for VM's) The platform configuration requested for the instance.
+     * Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+     */
+    placementConstraintDetails?: pulumi.Input<inputs.Core.InstancePlacementConstraintDetails>;
+    /**
+     * (Updatable) The platform configuration requested for the instance.
+     *
      *
      * If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
      *
@@ -879,12 +887,15 @@ export interface InstanceArgs {
      * You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
      *
      * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-     *
-     * **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
      */
     metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable only for VM's) The platform configuration requested for the instance.
+     * Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+     */
+    placementConstraintDetails?: pulumi.Input<inputs.Core.InstancePlacementConstraintDetails>;
+    /**
+     * (Updatable) The platform configuration requested for the instance.
+     *
      *
      * If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
      *

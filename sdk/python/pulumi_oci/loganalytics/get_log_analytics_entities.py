@@ -29,19 +29,31 @@ class GetLogAnalyticsEntitiesResult:
     """
     A collection of values returned by getLogAnalyticsEntities.
     """
-    def __init__(__self__, cloud_resource_id=None, compartment_id=None, entity_type_names=None, filters=None, hostname=None, hostname_contains=None, id=None, is_management_agent_id_null=None, lifecycle_details_contains=None, log_analytics_entity_collections=None, metadata_equals=None, name=None, name_contains=None, namespace=None, source_id=None, state=None):
+    def __init__(__self__, cloud_resource_id=None, compartment_id=None, defined_tag_equals=None, defined_tag_exists=None, entity_type_names=None, filters=None, freeform_tag_equals=None, freeform_tag_exists=None, hostname=None, hostname_contains=None, id=None, is_management_agent_id_null=None, is_show_associated_sources_count=None, lifecycle_details_contains=None, log_analytics_entity_collections=None, metadata_equals=None, name=None, name_contains=None, namespace=None, source_id=None, state=None):
         if cloud_resource_id and not isinstance(cloud_resource_id, str):
             raise TypeError("Expected argument 'cloud_resource_id' to be a str")
         pulumi.set(__self__, "cloud_resource_id", cloud_resource_id)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tag_equals and not isinstance(defined_tag_equals, list):
+            raise TypeError("Expected argument 'defined_tag_equals' to be a list")
+        pulumi.set(__self__, "defined_tag_equals", defined_tag_equals)
+        if defined_tag_exists and not isinstance(defined_tag_exists, list):
+            raise TypeError("Expected argument 'defined_tag_exists' to be a list")
+        pulumi.set(__self__, "defined_tag_exists", defined_tag_exists)
         if entity_type_names and not isinstance(entity_type_names, list):
             raise TypeError("Expected argument 'entity_type_names' to be a list")
         pulumi.set(__self__, "entity_type_names", entity_type_names)
         if filters and not isinstance(filters, list):
             raise TypeError("Expected argument 'filters' to be a list")
         pulumi.set(__self__, "filters", filters)
+        if freeform_tag_equals and not isinstance(freeform_tag_equals, list):
+            raise TypeError("Expected argument 'freeform_tag_equals' to be a list")
+        pulumi.set(__self__, "freeform_tag_equals", freeform_tag_equals)
+        if freeform_tag_exists and not isinstance(freeform_tag_exists, list):
+            raise TypeError("Expected argument 'freeform_tag_exists' to be a list")
+        pulumi.set(__self__, "freeform_tag_exists", freeform_tag_exists)
         if hostname and not isinstance(hostname, str):
             raise TypeError("Expected argument 'hostname' to be a str")
         pulumi.set(__self__, "hostname", hostname)
@@ -54,6 +66,9 @@ class GetLogAnalyticsEntitiesResult:
         if is_management_agent_id_null and not isinstance(is_management_agent_id_null, str):
             raise TypeError("Expected argument 'is_management_agent_id_null' to be a str")
         pulumi.set(__self__, "is_management_agent_id_null", is_management_agent_id_null)
+        if is_show_associated_sources_count and not isinstance(is_show_associated_sources_count, bool):
+            raise TypeError("Expected argument 'is_show_associated_sources_count' to be a bool")
+        pulumi.set(__self__, "is_show_associated_sources_count", is_show_associated_sources_count)
         if lifecycle_details_contains and not isinstance(lifecycle_details_contains, str):
             raise TypeError("Expected argument 'lifecycle_details_contains' to be a str")
         pulumi.set(__self__, "lifecycle_details_contains", lifecycle_details_contains)
@@ -96,6 +111,16 @@ class GetLogAnalyticsEntitiesResult:
         return pulumi.get(self, "compartment_id")
 
     @property
+    @pulumi.getter(name="definedTagEquals")
+    def defined_tag_equals(self) -> Optional[Sequence[builtins.str]]:
+        return pulumi.get(self, "defined_tag_equals")
+
+    @property
+    @pulumi.getter(name="definedTagExists")
+    def defined_tag_exists(self) -> Optional[Sequence[builtins.str]]:
+        return pulumi.get(self, "defined_tag_exists")
+
+    @property
     @pulumi.getter(name="entityTypeNames")
     def entity_type_names(self) -> Optional[Sequence[builtins.str]]:
         """
@@ -107,6 +132,16 @@ class GetLogAnalyticsEntitiesResult:
     @pulumi.getter
     def filters(self) -> Optional[Sequence['outputs.GetLogAnalyticsEntitiesFilterResult']]:
         return pulumi.get(self, "filters")
+
+    @property
+    @pulumi.getter(name="freeformTagEquals")
+    def freeform_tag_equals(self) -> Optional[Sequence[builtins.str]]:
+        return pulumi.get(self, "freeform_tag_equals")
+
+    @property
+    @pulumi.getter(name="freeformTagExists")
+    def freeform_tag_exists(self) -> Optional[Sequence[builtins.str]]:
+        return pulumi.get(self, "freeform_tag_exists")
 
     @property
     @pulumi.getter
@@ -133,6 +168,11 @@ class GetLogAnalyticsEntitiesResult:
     @pulumi.getter(name="isManagementAgentIdNull")
     def is_management_agent_id_null(self) -> Optional[builtins.str]:
         return pulumi.get(self, "is_management_agent_id_null")
+
+    @property
+    @pulumi.getter(name="isShowAssociatedSourcesCount")
+    def is_show_associated_sources_count(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "is_show_associated_sources_count")
 
     @property
     @pulumi.getter(name="lifecycleDetailsContains")
@@ -195,12 +235,17 @@ class AwaitableGetLogAnalyticsEntitiesResult(GetLogAnalyticsEntitiesResult):
         return GetLogAnalyticsEntitiesResult(
             cloud_resource_id=self.cloud_resource_id,
             compartment_id=self.compartment_id,
+            defined_tag_equals=self.defined_tag_equals,
+            defined_tag_exists=self.defined_tag_exists,
             entity_type_names=self.entity_type_names,
             filters=self.filters,
+            freeform_tag_equals=self.freeform_tag_equals,
+            freeform_tag_exists=self.freeform_tag_exists,
             hostname=self.hostname,
             hostname_contains=self.hostname_contains,
             id=self.id,
             is_management_agent_id_null=self.is_management_agent_id_null,
+            is_show_associated_sources_count=self.is_show_associated_sources_count,
             lifecycle_details_contains=self.lifecycle_details_contains,
             log_analytics_entity_collections=self.log_analytics_entity_collections,
             metadata_equals=self.metadata_equals,
@@ -213,11 +258,16 @@ class AwaitableGetLogAnalyticsEntitiesResult(GetLogAnalyticsEntitiesResult):
 
 def get_log_analytics_entities(cloud_resource_id: Optional[builtins.str] = None,
                                compartment_id: Optional[builtins.str] = None,
+                               defined_tag_equals: Optional[Sequence[builtins.str]] = None,
+                               defined_tag_exists: Optional[Sequence[builtins.str]] = None,
                                entity_type_names: Optional[Sequence[builtins.str]] = None,
                                filters: Optional[Sequence[Union['GetLogAnalyticsEntitiesFilterArgs', 'GetLogAnalyticsEntitiesFilterArgsDict']]] = None,
+                               freeform_tag_equals: Optional[Sequence[builtins.str]] = None,
+                               freeform_tag_exists: Optional[Sequence[builtins.str]] = None,
                                hostname: Optional[builtins.str] = None,
                                hostname_contains: Optional[builtins.str] = None,
                                is_management_agent_id_null: Optional[builtins.str] = None,
+                               is_show_associated_sources_count: Optional[builtins.bool] = None,
                                lifecycle_details_contains: Optional[builtins.str] = None,
                                metadata_equals: Optional[Sequence[builtins.str]] = None,
                                name: Optional[builtins.str] = None,
@@ -231,34 +281,18 @@ def get_log_analytics_entities(cloud_resource_id: Optional[builtins.str] = None,
 
     Return a list of log analytics entities.
 
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_log_analytics_entities = oci.LogAnalytics.get_log_analytics_entities(compartment_id=compartment_id,
-        namespace=log_analytics_entity_namespace,
-        cloud_resource_id=test_cloud_resource["id"],
-        entity_type_names=log_analytics_entity_entity_type_name,
-        hostname=log_analytics_entity_hostname,
-        hostname_contains=log_analytics_entity_hostname_contains,
-        is_management_agent_id_null=log_analytics_entity_is_management_agent_id_null,
-        lifecycle_details_contains=log_analytics_entity_lifecycle_details_contains,
-        metadata_equals=log_analytics_entity_metadata_equals,
-        name=log_analytics_entity_name,
-        name_contains=log_analytics_entity_name_contains,
-        source_id=test_source["id"],
-        state=log_analytics_entity_state)
-    ```
-
 
     :param builtins.str cloud_resource_id: A filter to return only log analytics entities whose cloudResourceId matches the cloudResourceId given.
     :param builtins.str compartment_id: The ID of the compartment in which to list resources.
+    :param Sequence[builtins.str] defined_tag_equals: A list of tag filters to apply.  Only entities with a defined tag matching the value will be returned. Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+    :param Sequence[builtins.str] defined_tag_exists: A list of tag existence filters to apply.  Only entities for which the specified defined tags exist will be returned. Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag) or "{namespace}.true".  All inputs are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
     :param Sequence[builtins.str] entity_type_names: A filter to return only log analytics entities whose entityTypeName matches the entire log analytics entity type name of one of the entityTypeNames given in the list. The match is case-insensitive.
+    :param Sequence[builtins.str] freeform_tag_equals: A list of tag filters to apply.  Only entities with a freeform tag matching the value will be returned. The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive. Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+    :param Sequence[builtins.str] freeform_tag_exists: A list of tag existence filters to apply.  Only entities for which the specified freeform tags exist the value will be returned. The key for each tag is "{tagName}.true".  All inputs are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported. Multiple values for different tag names are interpreted as "AND".
     :param builtins.str hostname: A filter to return only log analytics entities whose hostname matches the entire hostname given.
     :param builtins.str hostname_contains: A filter to return only log analytics entities whose hostname contains the substring given. The match is case-insensitive.
     :param builtins.str is_management_agent_id_null: A filter to return only those log analytics entities whose managementAgentId is null or is not null.
+    :param builtins.bool is_show_associated_sources_count: Option to return count of associated log sources for log analytics entity(s).
     :param builtins.str lifecycle_details_contains: A filter to return only log analytics entities whose lifecycleDetails contains the specified string.
     :param Sequence[builtins.str] metadata_equals: A filter to return only log analytics entities whose metadata name, value and type matches the specified string. Each item in the array has the format "{name}:{value}:{type}".  All inputs are case-insensitive.
     :param builtins.str name: A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
@@ -270,11 +304,16 @@ def get_log_analytics_entities(cloud_resource_id: Optional[builtins.str] = None,
     __args__ = dict()
     __args__['cloudResourceId'] = cloud_resource_id
     __args__['compartmentId'] = compartment_id
+    __args__['definedTagEquals'] = defined_tag_equals
+    __args__['definedTagExists'] = defined_tag_exists
     __args__['entityTypeNames'] = entity_type_names
     __args__['filters'] = filters
+    __args__['freeformTagEquals'] = freeform_tag_equals
+    __args__['freeformTagExists'] = freeform_tag_exists
     __args__['hostname'] = hostname
     __args__['hostnameContains'] = hostname_contains
     __args__['isManagementAgentIdNull'] = is_management_agent_id_null
+    __args__['isShowAssociatedSourcesCount'] = is_show_associated_sources_count
     __args__['lifecycleDetailsContains'] = lifecycle_details_contains
     __args__['metadataEquals'] = metadata_equals
     __args__['name'] = name
@@ -288,12 +327,17 @@ def get_log_analytics_entities(cloud_resource_id: Optional[builtins.str] = None,
     return AwaitableGetLogAnalyticsEntitiesResult(
         cloud_resource_id=pulumi.get(__ret__, 'cloud_resource_id'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tag_equals=pulumi.get(__ret__, 'defined_tag_equals'),
+        defined_tag_exists=pulumi.get(__ret__, 'defined_tag_exists'),
         entity_type_names=pulumi.get(__ret__, 'entity_type_names'),
         filters=pulumi.get(__ret__, 'filters'),
+        freeform_tag_equals=pulumi.get(__ret__, 'freeform_tag_equals'),
+        freeform_tag_exists=pulumi.get(__ret__, 'freeform_tag_exists'),
         hostname=pulumi.get(__ret__, 'hostname'),
         hostname_contains=pulumi.get(__ret__, 'hostname_contains'),
         id=pulumi.get(__ret__, 'id'),
         is_management_agent_id_null=pulumi.get(__ret__, 'is_management_agent_id_null'),
+        is_show_associated_sources_count=pulumi.get(__ret__, 'is_show_associated_sources_count'),
         lifecycle_details_contains=pulumi.get(__ret__, 'lifecycle_details_contains'),
         log_analytics_entity_collections=pulumi.get(__ret__, 'log_analytics_entity_collections'),
         metadata_equals=pulumi.get(__ret__, 'metadata_equals'),
@@ -304,11 +348,16 @@ def get_log_analytics_entities(cloud_resource_id: Optional[builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_log_analytics_entities_output(cloud_resource_id: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                                       compartment_id: Optional[pulumi.Input[builtins.str]] = None,
+                                      defined_tag_equals: Optional[pulumi.Input[Optional[Sequence[builtins.str]]]] = None,
+                                      defined_tag_exists: Optional[pulumi.Input[Optional[Sequence[builtins.str]]]] = None,
                                       entity_type_names: Optional[pulumi.Input[Optional[Sequence[builtins.str]]]] = None,
                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetLogAnalyticsEntitiesFilterArgs', 'GetLogAnalyticsEntitiesFilterArgsDict']]]]] = None,
+                                      freeform_tag_equals: Optional[pulumi.Input[Optional[Sequence[builtins.str]]]] = None,
+                                      freeform_tag_exists: Optional[pulumi.Input[Optional[Sequence[builtins.str]]]] = None,
                                       hostname: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                                       hostname_contains: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                                       is_management_agent_id_null: Optional[pulumi.Input[Optional[builtins.str]]] = None,
+                                      is_show_associated_sources_count: Optional[pulumi.Input[Optional[builtins.bool]]] = None,
                                       lifecycle_details_contains: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                                       metadata_equals: Optional[pulumi.Input[Optional[Sequence[builtins.str]]]] = None,
                                       name: Optional[pulumi.Input[Optional[builtins.str]]] = None,
@@ -322,34 +371,18 @@ def get_log_analytics_entities_output(cloud_resource_id: Optional[pulumi.Input[O
 
     Return a list of log analytics entities.
 
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_log_analytics_entities = oci.LogAnalytics.get_log_analytics_entities(compartment_id=compartment_id,
-        namespace=log_analytics_entity_namespace,
-        cloud_resource_id=test_cloud_resource["id"],
-        entity_type_names=log_analytics_entity_entity_type_name,
-        hostname=log_analytics_entity_hostname,
-        hostname_contains=log_analytics_entity_hostname_contains,
-        is_management_agent_id_null=log_analytics_entity_is_management_agent_id_null,
-        lifecycle_details_contains=log_analytics_entity_lifecycle_details_contains,
-        metadata_equals=log_analytics_entity_metadata_equals,
-        name=log_analytics_entity_name,
-        name_contains=log_analytics_entity_name_contains,
-        source_id=test_source["id"],
-        state=log_analytics_entity_state)
-    ```
-
 
     :param builtins.str cloud_resource_id: A filter to return only log analytics entities whose cloudResourceId matches the cloudResourceId given.
     :param builtins.str compartment_id: The ID of the compartment in which to list resources.
+    :param Sequence[builtins.str] defined_tag_equals: A list of tag filters to apply.  Only entities with a defined tag matching the value will be returned. Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+    :param Sequence[builtins.str] defined_tag_exists: A list of tag existence filters to apply.  Only entities for which the specified defined tags exist will be returned. Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag) or "{namespace}.true".  All inputs are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
     :param Sequence[builtins.str] entity_type_names: A filter to return only log analytics entities whose entityTypeName matches the entire log analytics entity type name of one of the entityTypeNames given in the list. The match is case-insensitive.
+    :param Sequence[builtins.str] freeform_tag_equals: A list of tag filters to apply.  Only entities with a freeform tag matching the value will be returned. The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive. Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+    :param Sequence[builtins.str] freeform_tag_exists: A list of tag existence filters to apply.  Only entities for which the specified freeform tags exist the value will be returned. The key for each tag is "{tagName}.true".  All inputs are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported. Multiple values for different tag names are interpreted as "AND".
     :param builtins.str hostname: A filter to return only log analytics entities whose hostname matches the entire hostname given.
     :param builtins.str hostname_contains: A filter to return only log analytics entities whose hostname contains the substring given. The match is case-insensitive.
     :param builtins.str is_management_agent_id_null: A filter to return only those log analytics entities whose managementAgentId is null or is not null.
+    :param builtins.bool is_show_associated_sources_count: Option to return count of associated log sources for log analytics entity(s).
     :param builtins.str lifecycle_details_contains: A filter to return only log analytics entities whose lifecycleDetails contains the specified string.
     :param Sequence[builtins.str] metadata_equals: A filter to return only log analytics entities whose metadata name, value and type matches the specified string. Each item in the array has the format "{name}:{value}:{type}".  All inputs are case-insensitive.
     :param builtins.str name: A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
@@ -361,11 +394,16 @@ def get_log_analytics_entities_output(cloud_resource_id: Optional[pulumi.Input[O
     __args__ = dict()
     __args__['cloudResourceId'] = cloud_resource_id
     __args__['compartmentId'] = compartment_id
+    __args__['definedTagEquals'] = defined_tag_equals
+    __args__['definedTagExists'] = defined_tag_exists
     __args__['entityTypeNames'] = entity_type_names
     __args__['filters'] = filters
+    __args__['freeformTagEquals'] = freeform_tag_equals
+    __args__['freeformTagExists'] = freeform_tag_exists
     __args__['hostname'] = hostname
     __args__['hostnameContains'] = hostname_contains
     __args__['isManagementAgentIdNull'] = is_management_agent_id_null
+    __args__['isShowAssociatedSourcesCount'] = is_show_associated_sources_count
     __args__['lifecycleDetailsContains'] = lifecycle_details_contains
     __args__['metadataEquals'] = metadata_equals
     __args__['name'] = name
@@ -378,12 +416,17 @@ def get_log_analytics_entities_output(cloud_resource_id: Optional[pulumi.Input[O
     return __ret__.apply(lambda __response__: GetLogAnalyticsEntitiesResult(
         cloud_resource_id=pulumi.get(__response__, 'cloud_resource_id'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tag_equals=pulumi.get(__response__, 'defined_tag_equals'),
+        defined_tag_exists=pulumi.get(__response__, 'defined_tag_exists'),
         entity_type_names=pulumi.get(__response__, 'entity_type_names'),
         filters=pulumi.get(__response__, 'filters'),
+        freeform_tag_equals=pulumi.get(__response__, 'freeform_tag_equals'),
+        freeform_tag_exists=pulumi.get(__response__, 'freeform_tag_exists'),
         hostname=pulumi.get(__response__, 'hostname'),
         hostname_contains=pulumi.get(__response__, 'hostname_contains'),
         id=pulumi.get(__response__, 'id'),
         is_management_agent_id_null=pulumi.get(__response__, 'is_management_agent_id_null'),
+        is_show_associated_sources_count=pulumi.get(__response__, 'is_show_associated_sources_count'),
         lifecycle_details_contains=pulumi.get(__response__, 'lifecycle_details_contains'),
         log_analytics_entity_collections=pulumi.get(__response__, 'log_analytics_entity_collections'),
         metadata_equals=pulumi.get(__response__, 'metadata_equals'),

@@ -200,6 +200,10 @@ export class Config extends pulumi.CustomResource {
      */
     public readonly configuration!: pulumi.Output<outputs.ApmSynthetics.ConfigConfiguration>;
     /**
+     * Content type of the script.
+     */
+    public /*out*/ readonly contentType!: pulumi.Output<string>;
+    /**
      * Name of the user that created the monitor.
      */
     public /*out*/ readonly createdBy!: pulumi.Output<string>;
@@ -309,6 +313,7 @@ export class Config extends pulumi.CustomResource {
             resourceInputs["availabilityConfiguration"] = state ? state.availabilityConfiguration : undefined;
             resourceInputs["batchIntervalInSeconds"] = state ? state.batchIntervalInSeconds : undefined;
             resourceInputs["configuration"] = state ? state.configuration : undefined;
+            resourceInputs["contentType"] = state ? state.contentType : undefined;
             resourceInputs["createdBy"] = state ? state.createdBy : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
@@ -369,6 +374,7 @@ export class Config extends pulumi.CustomResource {
             resourceInputs["target"] = args ? args.target : undefined;
             resourceInputs["timeoutInSeconds"] = args ? args.timeoutInSeconds : undefined;
             resourceInputs["vantagePoints"] = args ? args.vantagePoints : undefined;
+            resourceInputs["contentType"] = undefined /*out*/;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["lastUpdatedBy"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -400,6 +406,10 @@ export interface ConfigState {
      * (Updatable) Details of monitor configuration.
      */
     configuration?: pulumi.Input<inputs.ApmSynthetics.ConfigConfiguration>;
+    /**
+     * Content type of the script.
+     */
+    contentType?: pulumi.Input<string>;
     /**
      * Name of the user that created the monitor.
      */

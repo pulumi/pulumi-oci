@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/mysql"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/mysql"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -86,6 +86,8 @@ type LookupReplicaResult struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The MySQL version to be used by the read replica.
 	MysqlVersion string `pulumi:"mysqlVersion"`
+	// Network Security Group OCIDs used for the VNIC attachment.
+	NsgIds []string `pulumi:"nsgIds"`
 	// The port the read replica is configured to listen on.
 	Port int `pulumi:"port"`
 	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
@@ -207,6 +209,11 @@ func (o LookupReplicaResultOutput) LifecycleDetails() pulumi.StringOutput {
 // The MySQL version to be used by the read replica.
 func (o LookupReplicaResultOutput) MysqlVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReplicaResult) string { return v.MysqlVersion }).(pulumi.StringOutput)
+}
+
+// Network Security Group OCIDs used for the VNIC attachment.
+func (o LookupReplicaResultOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupReplicaResult) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
 
 // The port the read replica is configured to listen on.

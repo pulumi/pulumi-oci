@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -30,8 +30,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := loganalytics.GetLogAnalyticsEntity(ctx, &loganalytics.GetLogAnalyticsEntityArgs{
-//				LogAnalyticsEntityId: testLogAnalyticsEntityOciLogAnalyticsLogAnalyticsEntity.Id,
-//				Namespace:            logAnalyticsEntityNamespace,
+//				LogAnalyticsEntityId:         testLogAnalyticsEntityOciLogAnalyticsLogAnalyticsEntity.Id,
+//				Namespace:                    logAnalyticsEntityNamespace,
+//				IsShowAssociatedSourcesCount: pulumi.StringRef(logAnalyticsEntityIsShowAssociatedSourcesCount),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -53,6 +54,8 @@ func LookupLogAnalyticsEntity(ctx *pulumi.Context, args *LookupLogAnalyticsEntit
 
 // A collection of arguments for invoking getLogAnalyticsEntity.
 type LookupLogAnalyticsEntityArgs struct {
+	// Option to return count of associated log sources for log analytics entity(s).
+	IsShowAssociatedSourcesCount *string `pulumi:"isShowAssociatedSourcesCount"`
 	// The log analytics entity OCID.
 	LogAnalyticsEntityId string `pulumi:"logAnalyticsEntityId"`
 	// The Logging Analytics namespace used for the request.
@@ -63,6 +66,8 @@ type LookupLogAnalyticsEntityArgs struct {
 type LookupLogAnalyticsEntityResult struct {
 	// The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
 	AreLogsCollected bool `pulumi:"areLogsCollected"`
+	// The count of associated log sources for a given log analytics entity.
+	AssociatedSourcesCount int `pulumi:"associatedSourcesCount"`
 	// The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
 	CloudResourceId string `pulumi:"cloudResourceId"`
 	// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -78,7 +83,8 @@ type LookupLogAnalyticsEntityResult struct {
 	// The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
 	Hostname string `pulumi:"hostname"`
 	// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-	Id string `pulumi:"id"`
+	Id                           string  `pulumi:"id"`
+	IsShowAssociatedSourcesCount *string `pulumi:"isShowAssociatedSourcesCount"`
 	// lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
 	LifecycleDetails     string `pulumi:"lifecycleDetails"`
 	LogAnalyticsEntityId string `pulumi:"logAnalyticsEntityId"`
@@ -120,6 +126,8 @@ func LookupLogAnalyticsEntityOutput(ctx *pulumi.Context, args LookupLogAnalytics
 
 // A collection of arguments for invoking getLogAnalyticsEntity.
 type LookupLogAnalyticsEntityOutputArgs struct {
+	// Option to return count of associated log sources for log analytics entity(s).
+	IsShowAssociatedSourcesCount pulumi.StringPtrInput `pulumi:"isShowAssociatedSourcesCount"`
 	// The log analytics entity OCID.
 	LogAnalyticsEntityId pulumi.StringInput `pulumi:"logAnalyticsEntityId"`
 	// The Logging Analytics namespace used for the request.
@@ -148,6 +156,11 @@ func (o LookupLogAnalyticsEntityResultOutput) ToLookupLogAnalyticsEntityResultOu
 // The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
 func (o LookupLogAnalyticsEntityResultOutput) AreLogsCollected() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) bool { return v.AreLogsCollected }).(pulumi.BoolOutput)
+}
+
+// The count of associated log sources for a given log analytics entity.
+func (o LookupLogAnalyticsEntityResultOutput) AssociatedSourcesCount() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) int { return v.AssociatedSourcesCount }).(pulumi.IntOutput)
 }
 
 // The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
@@ -188,6 +201,10 @@ func (o LookupLogAnalyticsEntityResultOutput) Hostname() pulumi.StringOutput {
 // The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
 func (o LookupLogAnalyticsEntityResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o LookupLogAnalyticsEntityResultOutput) IsShowAssociatedSourcesCount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) *string { return v.IsShowAssociatedSourcesCount }).(pulumi.StringPtrOutput)
 }
 
 // lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.

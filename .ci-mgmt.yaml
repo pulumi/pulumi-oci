@@ -1,5 +1,5 @@
 provider: oci
-major-version: 2
+major-version: 3
 providerDefaultBranch: main
 parallel: 1
 timeout: 90
@@ -12,11 +12,9 @@ makeTemplate: bridged
 plugins:
   - name: std
     version: "1.6.2"
-
   - name: terraform
     version: "1.0.16"
     kind: converter
-
   - name: tls
     version: "4.1.0"
   - name: github

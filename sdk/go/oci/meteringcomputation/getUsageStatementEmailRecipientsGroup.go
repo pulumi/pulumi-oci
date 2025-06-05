@@ -7,13 +7,13 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 // This data source provides details about a specific Usage Statement Email Recipients Group resource in Oracle Cloud Infrastructure Metering Computation service.
 //
-// Return the saved usage statement email recipient group.
+// Returns the saved usage statement email recipients group.
 //
 // ## Example Usage
 //
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/meteringcomputation"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/meteringcomputation"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -56,9 +56,9 @@ func LookupUsageStatementEmailRecipientsGroup(ctx *pulumi.Context, args *LookupU
 type LookupUsageStatementEmailRecipientsGroupArgs struct {
 	// The compartment ID in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
-	// The email recipient group OCID.
+	// The email recipients group OCID.
 	EmailRecipientsGroupId string `pulumi:"emailRecipientsGroupId"`
-	// The UsageStatement Subscription unique OCID.
+	// The usage statement subscription unique OCID.
 	SubscriptionId string `pulumi:"subscriptionId"`
 }
 
@@ -69,9 +69,9 @@ type LookupUsageStatementEmailRecipientsGroupResult struct {
 	EmailRecipientsGroupId string `pulumi:"emailRecipientsGroupId"`
 	// The usage statement email recipients group OCID.
 	Id string `pulumi:"id"`
-	// The list of recipient will receive the usage statement email.
+	// The list of recipients that will receive usage statement emails.
 	RecipientsLists []GetUsageStatementEmailRecipientsGroupRecipientsList `pulumi:"recipientsLists"`
-	// The email recipient group lifecycle state.
+	// The email recipients group lifecycle state.
 	State          string `pulumi:"state"`
 	SubscriptionId string `pulumi:"subscriptionId"`
 }
@@ -89,9 +89,9 @@ func LookupUsageStatementEmailRecipientsGroupOutput(ctx *pulumi.Context, args Lo
 type LookupUsageStatementEmailRecipientsGroupOutputArgs struct {
 	// The compartment ID in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// The email recipient group OCID.
+	// The email recipients group OCID.
 	EmailRecipientsGroupId pulumi.StringInput `pulumi:"emailRecipientsGroupId"`
-	// The UsageStatement Subscription unique OCID.
+	// The usage statement subscription unique OCID.
 	SubscriptionId pulumi.StringInput `pulumi:"subscriptionId"`
 }
 
@@ -128,14 +128,14 @@ func (o LookupUsageStatementEmailRecipientsGroupResultOutput) Id() pulumi.String
 	return o.ApplyT(func(v LookupUsageStatementEmailRecipientsGroupResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The list of recipient will receive the usage statement email.
+// The list of recipients that will receive usage statement emails.
 func (o LookupUsageStatementEmailRecipientsGroupResultOutput) RecipientsLists() GetUsageStatementEmailRecipientsGroupRecipientsListArrayOutput {
 	return o.ApplyT(func(v LookupUsageStatementEmailRecipientsGroupResult) []GetUsageStatementEmailRecipientsGroupRecipientsList {
 		return v.RecipientsLists
 	}).(GetUsageStatementEmailRecipientsGroupRecipientsListArrayOutput)
 }
 
-// The email recipient group lifecycle state.
+// The email recipients group lifecycle state.
 func (o LookupUsageStatementEmailRecipientsGroupResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUsageStatementEmailRecipientsGroupResult) string { return v.State }).(pulumi.StringOutput)
 }

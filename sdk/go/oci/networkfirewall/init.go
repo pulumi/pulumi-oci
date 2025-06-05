@@ -7,7 +7,7 @@ import (
 	"fmt"
 
 	"github.com/blang/semver"
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -37,6 +37,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &NetworkFirewallPolicyDecryptionRule{}
 	case "oci:NetworkFirewall/networkFirewallPolicyMappedSecret:NetworkFirewallPolicyMappedSecret":
 		r = &NetworkFirewallPolicyMappedSecret{}
+	case "oci:NetworkFirewall/networkFirewallPolicyNatRule:NetworkFirewallPolicyNatRule":
+		r = &NetworkFirewallPolicyNatRule{}
 	case "oci:NetworkFirewall/networkFirewallPolicySecurityRule:NetworkFirewallPolicySecurityRule":
 		r = &NetworkFirewallPolicySecurityRule{}
 	case "oci:NetworkFirewall/networkFirewallPolicyService:NetworkFirewallPolicyService":
@@ -98,6 +100,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"NetworkFirewall/networkFirewallPolicyMappedSecret",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"NetworkFirewall/networkFirewallPolicyNatRule",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

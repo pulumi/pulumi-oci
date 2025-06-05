@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -23,7 +23,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/networkfirewall"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/networkfirewall"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -42,8 +42,11 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
-//				Ipv4address:             pulumi.Any(networkFirewallIpv4address),
-//				Ipv6address:             pulumi.Any(networkFirewallIpv6address),
+//				Ipv4address: pulumi.Any(networkFirewallIpv4address),
+//				Ipv6address: pulumi.Any(networkFirewallIpv6address),
+//				NatConfiguration: &networkfirewall.NetworkFirewallNatConfigurationArgs{
+//					MustEnablePrivateNat: pulumi.Any(networkFirewallNatConfigurationMustEnablePrivateNat),
+//				},
 //				NetworkSecurityGroupIds: pulumi.Any(networkFirewallNetworkSecurityGroupIds),
 //			})
 //			if err != nil {
@@ -81,6 +84,8 @@ type NetworkFirewall struct {
 	Ipv6address pulumi.StringOutput `pulumi:"ipv6address"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'FAILED' state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// (Updatable) Nat Configuration request to use Nat feature on firewall.
+	NatConfiguration NetworkFirewallNatConfigurationOutput `pulumi:"natConfiguration"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
 	NetworkFirewallPolicyId pulumi.StringOutput `pulumi:"networkFirewallPolicyId"`
 	// (Updatable) An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
@@ -155,6 +160,8 @@ type networkFirewallState struct {
 	Ipv6address *string `pulumi:"ipv6address"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'FAILED' state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// (Updatable) Nat Configuration request to use Nat feature on firewall.
+	NatConfiguration *NetworkFirewallNatConfiguration `pulumi:"natConfiguration"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
 	NetworkFirewallPolicyId *string `pulumi:"networkFirewallPolicyId"`
 	// (Updatable) An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
@@ -191,6 +198,8 @@ type NetworkFirewallState struct {
 	Ipv6address pulumi.StringPtrInput
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'FAILED' state.
 	LifecycleDetails pulumi.StringPtrInput
+	// (Updatable) Nat Configuration request to use Nat feature on firewall.
+	NatConfiguration NetworkFirewallNatConfigurationPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
 	NetworkFirewallPolicyId pulumi.StringPtrInput
 	// (Updatable) An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
@@ -229,6 +238,8 @@ type networkFirewallArgs struct {
 	Ipv4address *string `pulumi:"ipv4address"`
 	// IPv6 address for the Network Firewall.
 	Ipv6address *string `pulumi:"ipv6address"`
+	// (Updatable) Nat Configuration request to use Nat feature on firewall.
+	NatConfiguration *NetworkFirewallNatConfiguration `pulumi:"natConfiguration"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
 	NetworkFirewallPolicyId string `pulumi:"networkFirewallPolicyId"`
 	// (Updatable) An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
@@ -256,6 +267,8 @@ type NetworkFirewallArgs struct {
 	Ipv4address pulumi.StringPtrInput
 	// IPv6 address for the Network Firewall.
 	Ipv6address pulumi.StringPtrInput
+	// (Updatable) Nat Configuration request to use Nat feature on firewall.
+	NatConfiguration NetworkFirewallNatConfigurationPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
 	NetworkFirewallPolicyId pulumi.StringInput
 	// (Updatable) An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
@@ -392,6 +405,11 @@ func (o NetworkFirewallOutput) Ipv6address() pulumi.StringOutput {
 // A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'FAILED' state.
 func (o NetworkFirewallOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkFirewall) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// (Updatable) Nat Configuration request to use Nat feature on firewall.
+func (o NetworkFirewallOutput) NatConfiguration() NetworkFirewallNatConfigurationOutput {
+	return o.ApplyT(func(v *NetworkFirewall) NetworkFirewallNatConfigurationOutput { return v.NatConfiguration }).(NetworkFirewallNatConfigurationOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.

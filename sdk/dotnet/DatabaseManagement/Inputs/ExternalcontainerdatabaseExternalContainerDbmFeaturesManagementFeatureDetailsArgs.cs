@@ -13,6 +13,12 @@ namespace Pulumi.Oci.DatabaseManagement.Inputs
     public sealed class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// Indicates whether Diagnostics &amp; Management should be enabled for all the current pluggable databases in the container database.
+        /// </summary>
+        [Input("canEnableAllCurrentPdbs")]
+        public Input<bool>? CanEnableAllCurrentPdbs { get; set; }
+
+        /// <summary>
         /// The connector details required to connect to an Oracle cloud database.
         /// </summary>
         [Input("connectorDetails")]
@@ -23,6 +29,12 @@ namespace Pulumi.Oci.DatabaseManagement.Inputs
         /// </summary>
         [Input("feature", required: true)]
         public Input<string> Feature { get; set; } = null!;
+
+        /// <summary>
+        /// Indicates whether Diagnostics &amp; Management should be enabled automatically for all the pluggable databases in the container database.
+        /// </summary>
+        [Input("isAutoEnablePluggableDatabase")]
+        public Input<bool>? IsAutoEnablePluggableDatabase { get; set; }
 
         /// <summary>
         /// The Oracle license model that applies to the external database.

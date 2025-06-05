@@ -36,10 +36,10 @@ class RemediationRecipeArgs:
         """
         The set of arguments for constructing a RemediationRecipe resource.
         :param pulumi.Input[builtins.str] compartment_id: (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
-        :param pulumi.Input['RemediationRecipeDetectConfigurationArgs'] detect_configuration: (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
+        :param pulumi.Input['RemediationRecipeDetectConfigurationArgs'] detect_configuration: (Updatable) A configuration to define the constraints when detecting vulnerable dependencies and recommending remediations.
         :param pulumi.Input[builtins.bool] is_run_triggered_on_kb_change: (Updatable) Boolean indicating if a run should be automatically triggered once the knowledge base is updated.
         :param pulumi.Input[builtins.str] knowledge_base_id: (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
-        :param pulumi.Input['RemediationRecipeNetworkConfigurationArgs'] network_configuration: (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+        :param pulumi.Input['RemediationRecipeNetworkConfigurationArgs'] network_configuration: (Updatable) A network configuration defines the required network characteristics for the remediation run of the recipe to access the source repository and/or verify build services.
         :param pulumi.Input['RemediationRecipeScmConfigurationArgs'] scm_configuration: (Updatable) A configuration for the Source Code Management tool/platform used by a remediation recipe.
         :param pulumi.Input['RemediationRecipeVerifyConfigurationArgs'] verify_configuration: (Updatable) The Verify stage configuration specifies a build service to run a pipeline for the recommended code changes. The build pipeline will be initiated to ensure that there is no breaking change after the dependency versions have been updated in source to avoid vulnerabilities.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -83,7 +83,7 @@ class RemediationRecipeArgs:
     @pulumi.getter(name="detectConfiguration")
     def detect_configuration(self) -> pulumi.Input['RemediationRecipeDetectConfigurationArgs']:
         """
-        (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
+        (Updatable) A configuration to define the constraints when detecting vulnerable dependencies and recommending remediations.
         """
         return pulumi.get(self, "detect_configuration")
 
@@ -119,7 +119,7 @@ class RemediationRecipeArgs:
     @pulumi.getter(name="networkConfiguration")
     def network_configuration(self) -> pulumi.Input['RemediationRecipeNetworkConfigurationArgs']:
         """
-        (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+        (Updatable) A network configuration defines the required network characteristics for the remediation run of the recipe to access the source repository and/or verify build services.
         """
         return pulumi.get(self, "network_configuration")
 
@@ -225,12 +225,12 @@ class _RemediationRecipeState:
         Input properties used for looking up and filtering RemediationRecipe resources.
         :param pulumi.Input[builtins.str] compartment_id: (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input['RemediationRecipeDetectConfigurationArgs'] detect_configuration: (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
+        :param pulumi.Input['RemediationRecipeDetectConfigurationArgs'] detect_configuration: (Updatable) A configuration to define the constraints when detecting vulnerable dependencies and recommending remediations.
         :param pulumi.Input[builtins.str] display_name: (Updatable) The name of the remediation recipe.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[builtins.bool] is_run_triggered_on_kb_change: (Updatable) Boolean indicating if a run should be automatically triggered once the knowledge base is updated.
         :param pulumi.Input[builtins.str] knowledge_base_id: (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
-        :param pulumi.Input['RemediationRecipeNetworkConfigurationArgs'] network_configuration: (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+        :param pulumi.Input['RemediationRecipeNetworkConfigurationArgs'] network_configuration: (Updatable) A network configuration defines the required network characteristics for the remediation run of the recipe to access the source repository and/or verify build services.
         :param pulumi.Input['RemediationRecipeScmConfigurationArgs'] scm_configuration: (Updatable) A configuration for the Source Code Management tool/platform used by a remediation recipe.
         :param pulumi.Input[builtins.str] state: (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`. 
                
@@ -299,7 +299,7 @@ class _RemediationRecipeState:
     @pulumi.getter(name="detectConfiguration")
     def detect_configuration(self) -> Optional[pulumi.Input['RemediationRecipeDetectConfigurationArgs']]:
         """
-        (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
+        (Updatable) A configuration to define the constraints when detecting vulnerable dependencies and recommending remediations.
         """
         return pulumi.get(self, "detect_configuration")
 
@@ -359,7 +359,7 @@ class _RemediationRecipeState:
     @pulumi.getter(name="networkConfiguration")
     def network_configuration(self) -> Optional[pulumi.Input['RemediationRecipeNetworkConfigurationArgs']]:
         """
-        (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+        (Updatable) A network configuration defines the required network characteristics for the remediation run of the recipe to access the source repository and/or verify build services.
         """
         return pulumi.get(self, "network_configuration")
 
@@ -532,12 +532,12 @@ class RemediationRecipe(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[builtins.str] compartment_id: (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Union['RemediationRecipeDetectConfigurationArgs', 'RemediationRecipeDetectConfigurationArgsDict']] detect_configuration: (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
+        :param pulumi.Input[Union['RemediationRecipeDetectConfigurationArgs', 'RemediationRecipeDetectConfigurationArgsDict']] detect_configuration: (Updatable) A configuration to define the constraints when detecting vulnerable dependencies and recommending remediations.
         :param pulumi.Input[builtins.str] display_name: (Updatable) The name of the remediation recipe.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[builtins.bool] is_run_triggered_on_kb_change: (Updatable) Boolean indicating if a run should be automatically triggered once the knowledge base is updated.
         :param pulumi.Input[builtins.str] knowledge_base_id: (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
-        :param pulumi.Input[Union['RemediationRecipeNetworkConfigurationArgs', 'RemediationRecipeNetworkConfigurationArgsDict']] network_configuration: (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+        :param pulumi.Input[Union['RemediationRecipeNetworkConfigurationArgs', 'RemediationRecipeNetworkConfigurationArgsDict']] network_configuration: (Updatable) A network configuration defines the required network characteristics for the remediation run of the recipe to access the source repository and/or verify build services.
         :param pulumi.Input[Union['RemediationRecipeScmConfigurationArgs', 'RemediationRecipeScmConfigurationArgsDict']] scm_configuration: (Updatable) A configuration for the Source Code Management tool/platform used by a remediation recipe.
         :param pulumi.Input[builtins.str] state: (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`. 
                
@@ -714,12 +714,12 @@ class RemediationRecipe(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[builtins.str] compartment_id: (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Union['RemediationRecipeDetectConfigurationArgs', 'RemediationRecipeDetectConfigurationArgsDict']] detect_configuration: (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
+        :param pulumi.Input[Union['RemediationRecipeDetectConfigurationArgs', 'RemediationRecipeDetectConfigurationArgsDict']] detect_configuration: (Updatable) A configuration to define the constraints when detecting vulnerable dependencies and recommending remediations.
         :param pulumi.Input[builtins.str] display_name: (Updatable) The name of the remediation recipe.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[builtins.bool] is_run_triggered_on_kb_change: (Updatable) Boolean indicating if a run should be automatically triggered once the knowledge base is updated.
         :param pulumi.Input[builtins.str] knowledge_base_id: (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
-        :param pulumi.Input[Union['RemediationRecipeNetworkConfigurationArgs', 'RemediationRecipeNetworkConfigurationArgsDict']] network_configuration: (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+        :param pulumi.Input[Union['RemediationRecipeNetworkConfigurationArgs', 'RemediationRecipeNetworkConfigurationArgsDict']] network_configuration: (Updatable) A network configuration defines the required network characteristics for the remediation run of the recipe to access the source repository and/or verify build services.
         :param pulumi.Input[Union['RemediationRecipeScmConfigurationArgs', 'RemediationRecipeScmConfigurationArgsDict']] scm_configuration: (Updatable) A configuration for the Source Code Management tool/platform used by a remediation recipe.
         :param pulumi.Input[builtins.str] state: (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`. 
                
@@ -771,7 +771,7 @@ class RemediationRecipe(pulumi.CustomResource):
     @pulumi.getter(name="detectConfiguration")
     def detect_configuration(self) -> pulumi.Output['outputs.RemediationRecipeDetectConfiguration']:
         """
-        (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
+        (Updatable) A configuration to define the constraints when detecting vulnerable dependencies and recommending remediations.
         """
         return pulumi.get(self, "detect_configuration")
 
@@ -811,7 +811,7 @@ class RemediationRecipe(pulumi.CustomResource):
     @pulumi.getter(name="networkConfiguration")
     def network_configuration(self) -> pulumi.Output['outputs.RemediationRecipeNetworkConfiguration']:
         """
-        (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+        (Updatable) A network configuration defines the required network characteristics for the remediation run of the recipe to access the source repository and/or verify build services.
         """
         return pulumi.get(self, "network_configuration")
 

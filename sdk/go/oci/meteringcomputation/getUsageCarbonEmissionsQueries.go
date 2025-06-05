@@ -7,13 +7,13 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 // This data source provides the list of Usage Carbon Emissions Queries in Oracle Cloud Infrastructure Metering Computation service.
 //
-// Returns the usage carbon emissions saved query list.
+// Returns the carbon emissions usage saved query list.
 //
 // ## Example Usage
 //
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/meteringcomputation"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/meteringcomputation"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )

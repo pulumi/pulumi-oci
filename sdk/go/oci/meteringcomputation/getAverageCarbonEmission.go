@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/meteringcomputation"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/meteringcomputation"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -62,7 +62,7 @@ type GetAverageCarbonEmissionResult struct {
 	AverageCarbonEmission float64 `pulumi:"averageCarbonEmission"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// The sku part number.
+	// The SKU part number.
 	SkuPartNumber string `pulumi:"skuPartNumber"`
 }
 
@@ -110,7 +110,7 @@ func (o GetAverageCarbonEmissionResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAverageCarbonEmissionResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The sku part number.
+// The SKU part number.
 func (o GetAverageCarbonEmissionResultOutput) SkuPartNumber() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAverageCarbonEmissionResult) string { return v.SkuPartNumber }).(pulumi.StringOutput)
 }

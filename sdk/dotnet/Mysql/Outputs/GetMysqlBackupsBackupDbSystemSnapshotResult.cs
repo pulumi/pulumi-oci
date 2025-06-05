@@ -102,7 +102,11 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly string MysqlVersion;
         /// <summary>
-        /// The port for primary endpoint of the DB System to listen on.
+        /// Network Security Group OCIDs used for the VNIC attachment.
+        /// </summary>
+        public readonly ImmutableArray<string> NsgIds;
+        /// <summary>
+        /// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
         /// </summary>
         public readonly int Port;
         /// <summary>
@@ -117,6 +121,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
         /// </summary>
         public readonly string Region;
+        /// <summary>
+        /// REST configuration details.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMysqlBackupsBackupDbSystemSnapshotRestResult> Rests;
         /// <summary>
         /// Secure connection configuration details.
         /// </summary>
@@ -176,6 +184,8 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             string mysqlVersion,
 
+            ImmutableArray<string> nsgIds,
+
             int port,
 
             int portX,
@@ -183,6 +193,8 @@ namespace Pulumi.Oci.Mysql.Outputs
             ImmutableArray<Outputs.GetMysqlBackupsBackupDbSystemSnapshotReadEndpointResult> readEndpoints,
 
             string region,
+
+            ImmutableArray<Outputs.GetMysqlBackupsBackupDbSystemSnapshotRestResult> rests,
 
             ImmutableArray<Outputs.GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionResult> secureConnections,
 
@@ -212,10 +224,12 @@ namespace Pulumi.Oci.Mysql.Outputs
             IsHighlyAvailable = isHighlyAvailable;
             Maintenances = maintenances;
             MysqlVersion = mysqlVersion;
+            NsgIds = nsgIds;
             Port = port;
             PortX = portX;
             ReadEndpoints = readEndpoints;
             Region = region;
+            Rests = rests;
             SecureConnections = secureConnections;
             ShapeName = shapeName;
             SubnetId = subnetId;

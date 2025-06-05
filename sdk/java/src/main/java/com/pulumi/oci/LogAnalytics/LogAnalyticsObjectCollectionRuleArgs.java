@@ -219,15 +219,15 @@ public final class LogAnalyticsObjectCollectionRuleArgs extends com.pulumi.resou
      * (Updatable) Name of the Logging Analytics Source to use for the processing.
      * 
      */
-    @Import(name="logSourceName", required=true)
-    private Output<String> logSourceName;
+    @Import(name="logSourceName")
+    private @Nullable Output<String> logSourceName;
 
     /**
      * @return (Updatable) Name of the Logging Analytics Source to use for the processing.
      * 
      */
-    public Output<String> logSourceName() {
-        return this.logSourceName;
+    public Optional<Output<String>> logSourceName() {
+        return Optional.ofNullable(this.logSourceName);
     }
 
     /**
@@ -366,6 +366,51 @@ public final class LogAnalyticsObjectCollectionRuleArgs extends com.pulumi.resou
     }
 
     /**
+     * (Updatable) The time from which to consume the objects, if streamCursorType is AT_TIME.
+     * 
+     */
+    @Import(name="streamCursorTime")
+    private @Nullable Output<String> streamCursorTime;
+
+    /**
+     * @return (Updatable) The time from which to consume the objects, if streamCursorType is AT_TIME.
+     * 
+     */
+    public Optional<Output<String>> streamCursorTime() {
+        return Optional.ofNullable(this.streamCursorTime);
+    }
+
+    /**
+     * (Updatable) Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
+     * 
+     */
+    @Import(name="streamCursorType")
+    private @Nullable Output<String> streamCursorType;
+
+    /**
+     * @return (Updatable) Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
+     * 
+     */
+    public Optional<Output<String>> streamCursorType() {
+        return Optional.ofNullable(this.streamCursorType);
+    }
+
+    /**
+     * (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+     * 
+     */
+    @Import(name="streamId")
+    private @Nullable Output<String> streamId;
+
+    /**
+     * @return (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+     * 
+     */
+    public Optional<Output<String>> streamId() {
+        return Optional.ofNullable(this.streamId);
+    }
+
+    /**
      * (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
      * 
      * ** IMPORTANT **
@@ -412,6 +457,9 @@ public final class LogAnalyticsObjectCollectionRuleArgs extends com.pulumi.resou
         this.overrides = $.overrides;
         this.pollSince = $.pollSince;
         this.pollTill = $.pollTill;
+        this.streamCursorTime = $.streamCursorTime;
+        this.streamCursorType = $.streamCursorType;
+        this.streamId = $.streamId;
         this.timezone = $.timezone;
     }
 
@@ -712,7 +760,7 @@ public final class LogAnalyticsObjectCollectionRuleArgs extends com.pulumi.resou
          * @return builder
          * 
          */
-        public Builder logSourceName(Output<String> logSourceName) {
+        public Builder logSourceName(@Nullable Output<String> logSourceName) {
             $.logSourceName = logSourceName;
             return this;
         }
@@ -937,6 +985,69 @@ public final class LogAnalyticsObjectCollectionRuleArgs extends com.pulumi.resou
         }
 
         /**
+         * @param streamCursorTime (Updatable) The time from which to consume the objects, if streamCursorType is AT_TIME.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder streamCursorTime(@Nullable Output<String> streamCursorTime) {
+            $.streamCursorTime = streamCursorTime;
+            return this;
+        }
+
+        /**
+         * @param streamCursorTime (Updatable) The time from which to consume the objects, if streamCursorType is AT_TIME.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder streamCursorTime(String streamCursorTime) {
+            return streamCursorTime(Output.of(streamCursorTime));
+        }
+
+        /**
+         * @param streamCursorType (Updatable) Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder streamCursorType(@Nullable Output<String> streamCursorType) {
+            $.streamCursorType = streamCursorType;
+            return this;
+        }
+
+        /**
+         * @param streamCursorType (Updatable) Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder streamCursorType(String streamCursorType) {
+            return streamCursorType(Output.of(streamCursorType));
+        }
+
+        /**
+         * @param streamId (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder streamId(@Nullable Output<String> streamId) {
+            $.streamId = streamId;
+            return this;
+        }
+
+        /**
+         * @param streamId (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder streamId(String streamId) {
+            return streamId(Output.of(streamId));
+        }
+
+        /**
          * @param timezone (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
          * 
          * ** IMPORTANT **
@@ -969,9 +1080,6 @@ public final class LogAnalyticsObjectCollectionRuleArgs extends com.pulumi.resou
             }
             if ($.logGroupId == null) {
                 throw new MissingRequiredPropertyException("LogAnalyticsObjectCollectionRuleArgs", "logGroupId");
-            }
-            if ($.logSourceName == null) {
-                throw new MissingRequiredPropertyException("LogAnalyticsObjectCollectionRuleArgs", "logSourceName");
             }
             if ($.namespace == null) {
                 throw new MissingRequiredPropertyException("LogAnalyticsObjectCollectionRuleArgs", "namespace");

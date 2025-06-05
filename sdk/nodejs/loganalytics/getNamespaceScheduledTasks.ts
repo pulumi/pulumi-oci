@@ -23,6 +23,7 @@ import * as utilities from "../utilities";
  *     displayName: namespaceScheduledTaskDisplayName,
  *     targetService: namespaceScheduledTaskTargetService,
  *     taskType: namespaceScheduledTaskTaskType,
+ *     templateId: testTemplate.id,
  * });
  * ```
  */
@@ -35,6 +36,7 @@ export function getNamespaceScheduledTasks(args: GetNamespaceScheduledTasksArgs,
         "namespace": args.namespace,
         "targetService": args.targetService,
         "taskType": args.taskType,
+        "templateId": args.templateId,
     }, opts);
 }
 
@@ -63,6 +65,10 @@ export interface GetNamespaceScheduledTasksArgs {
      * Required parameter to specify schedule task type.
      */
     taskType: string;
+    /**
+     * A filter to return only scheduled tasks whose stream action templateId matches the given id  exactly.
+     */
+    templateId?: string;
 }
 
 /**
@@ -92,6 +98,10 @@ export interface GetNamespaceScheduledTasksResult {
      * Task type.
      */
     readonly taskType: string;
+    /**
+     * The Config template Id of a particular template.
+     */
+    readonly templateId?: string;
 }
 /**
  * This data source provides the list of Namespace Scheduled Tasks in Oracle Cloud Infrastructure Log Analytics service.
@@ -110,6 +120,7 @@ export interface GetNamespaceScheduledTasksResult {
  *     displayName: namespaceScheduledTaskDisplayName,
  *     targetService: namespaceScheduledTaskTargetService,
  *     taskType: namespaceScheduledTaskTaskType,
+ *     templateId: testTemplate.id,
  * });
  * ```
  */
@@ -122,6 +133,7 @@ export function getNamespaceScheduledTasksOutput(args: GetNamespaceScheduledTask
         "namespace": args.namespace,
         "targetService": args.targetService,
         "taskType": args.taskType,
+        "templateId": args.templateId,
     }, opts);
 }
 
@@ -150,4 +162,8 @@ export interface GetNamespaceScheduledTasksOutputArgs {
      * Required parameter to specify schedule task type.
      */
     taskType: pulumi.Input<string>;
+    /**
+     * A filter to return only scheduled tasks whose stream action templateId matches the given id  exactly.
+     */
+    templateId?: pulumi.Input<string>;
 }

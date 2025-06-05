@@ -43,16 +43,26 @@ class ClusterArgs:
                  vcn_id: pulumi.Input[builtins.str],
                  configure_outbound_cluster_trigger: Optional[pulumi.Input[builtins.int]] = None,
                  data_node_host_bare_metal_shape: Optional[pulumi.Input[builtins.str]] = None,
+                 data_node_host_shape: Optional[pulumi.Input[builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  inbound_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  maintenance_details: Optional[pulumi.Input['ClusterMaintenanceDetailsArgs']] = None,
                  master_node_host_bare_metal_shape: Optional[pulumi.Input[builtins.str]] = None,
+                 master_node_host_shape: Optional[pulumi.Input[builtins.str]] = None,
+                 opendashboard_node_host_shape: Optional[pulumi.Input[builtins.str]] = None,
                  outbound_cluster_config: Optional[pulumi.Input['ClusterOutboundClusterConfigArgs']] = None,
                  reverse_connection_endpoint_customer_ips: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 search_node_count: Optional[pulumi.Input[builtins.int]] = None,
+                 search_node_host_memory_gb: Optional[pulumi.Input[builtins.int]] = None,
+                 search_node_host_ocpu_count: Optional[pulumi.Input[builtins.int]] = None,
+                 search_node_host_shape: Optional[pulumi.Input[builtins.str]] = None,
+                 search_node_host_type: Optional[pulumi.Input[builtins.str]] = None,
+                 search_node_storage_gb: Optional[pulumi.Input[builtins.int]] = None,
                  security_master_user_name: Optional[pulumi.Input[builtins.str]] = None,
                  security_master_user_password_hash: Optional[pulumi.Input[builtins.str]] = None,
                  security_mode: Optional[pulumi.Input[builtins.str]] = None,
+                 security_saml_config: Optional[pulumi.Input['ClusterSecuritySamlConfigArgs']] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  upgrade_major_version_trigger: Optional[pulumi.Input[builtins.int]] = None):
         """
@@ -78,16 +88,26 @@ class ClusterArgs:
         :param pulumi.Input[builtins.str] vcn_id: The OCID of the cluster's VCN.
         :param pulumi.Input[builtins.int] configure_outbound_cluster_trigger: (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
         :param pulumi.Input[builtins.str] data_node_host_bare_metal_shape: The bare metal shape for the cluster's data nodes.
+        :param pulumi.Input[builtins.str] data_node_host_shape: (Updatable) The node shape for the cluster's data nodes.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] inbound_cluster_ids: List of inbound clusters that will be queried using cross cluster search
         :param pulumi.Input['ClusterMaintenanceDetailsArgs'] maintenance_details: (Updatable) Details for creation of maintenance details
         :param pulumi.Input[builtins.str] master_node_host_bare_metal_shape: The bare metal shape for the cluster's master nodes.
+        :param pulumi.Input[builtins.str] master_node_host_shape: (Updatable) The node shape for the cluster's master nodes.
+        :param pulumi.Input[builtins.str] opendashboard_node_host_shape: (Updatable) The node shape for the cluster's OpenSearch Dashboard nodes.
         :param pulumi.Input['ClusterOutboundClusterConfigArgs'] outbound_cluster_config: (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] reverse_connection_endpoint_customer_ips: (Updatable) The customer IP addresses of the endpoint in customer VCN
+        :param pulumi.Input[builtins.int] search_node_count: (Updatable) The number of search nodes configured for the cluster.
+        :param pulumi.Input[builtins.int] search_node_host_memory_gb: (Updatable) The amount of memory in GB, for the cluster's search nodes.
+        :param pulumi.Input[builtins.int] search_node_host_ocpu_count: (Updatable) The number of OCPUs configured for the cluster's search nodes.
+        :param pulumi.Input[builtins.str] search_node_host_shape: (Updatable) The node shape for the cluster's search nodes.
+        :param pulumi.Input[builtins.str] search_node_host_type: The instance type for the cluster's search nodes.
+        :param pulumi.Input[builtins.int] search_node_storage_gb: (Updatable) The amount of storage in GB, to configure per node for the cluster's search nodes.
         :param pulumi.Input[builtins.str] security_master_user_name: (Updatable) The name of the master user that are used to manage security config
         :param pulumi.Input[builtins.str] security_master_user_password_hash: (Updatable) The password hash of the master user that are used to manage security config
         :param pulumi.Input[builtins.str] security_mode: (Updatable) The security mode of the cluster.
+        :param pulumi.Input['ClusterSecuritySamlConfigArgs'] security_saml_config: SAML policy is optionally used for Opensearch cluster to config SAML authentication
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[builtins.int] upgrade_major_version_trigger: An optional property to upgrade the major version of the cluster. This workflow upgrades the cluster without creating a clone. If you want to create a clone and upgrade the clone for testing please use SDK or CLI.
                
@@ -118,6 +138,8 @@ class ClusterArgs:
             pulumi.set(__self__, "configure_outbound_cluster_trigger", configure_outbound_cluster_trigger)
         if data_node_host_bare_metal_shape is not None:
             pulumi.set(__self__, "data_node_host_bare_metal_shape", data_node_host_bare_metal_shape)
+        if data_node_host_shape is not None:
+            pulumi.set(__self__, "data_node_host_shape", data_node_host_shape)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
@@ -128,16 +150,34 @@ class ClusterArgs:
             pulumi.set(__self__, "maintenance_details", maintenance_details)
         if master_node_host_bare_metal_shape is not None:
             pulumi.set(__self__, "master_node_host_bare_metal_shape", master_node_host_bare_metal_shape)
+        if master_node_host_shape is not None:
+            pulumi.set(__self__, "master_node_host_shape", master_node_host_shape)
+        if opendashboard_node_host_shape is not None:
+            pulumi.set(__self__, "opendashboard_node_host_shape", opendashboard_node_host_shape)
         if outbound_cluster_config is not None:
             pulumi.set(__self__, "outbound_cluster_config", outbound_cluster_config)
         if reverse_connection_endpoint_customer_ips is not None:
             pulumi.set(__self__, "reverse_connection_endpoint_customer_ips", reverse_connection_endpoint_customer_ips)
+        if search_node_count is not None:
+            pulumi.set(__self__, "search_node_count", search_node_count)
+        if search_node_host_memory_gb is not None:
+            pulumi.set(__self__, "search_node_host_memory_gb", search_node_host_memory_gb)
+        if search_node_host_ocpu_count is not None:
+            pulumi.set(__self__, "search_node_host_ocpu_count", search_node_host_ocpu_count)
+        if search_node_host_shape is not None:
+            pulumi.set(__self__, "search_node_host_shape", search_node_host_shape)
+        if search_node_host_type is not None:
+            pulumi.set(__self__, "search_node_host_type", search_node_host_type)
+        if search_node_storage_gb is not None:
+            pulumi.set(__self__, "search_node_storage_gb", search_node_storage_gb)
         if security_master_user_name is not None:
             pulumi.set(__self__, "security_master_user_name", security_master_user_name)
         if security_master_user_password_hash is not None:
             pulumi.set(__self__, "security_master_user_password_hash", security_master_user_password_hash)
         if security_mode is not None:
             pulumi.set(__self__, "security_mode", security_mode)
+        if security_saml_config is not None:
+            pulumi.set(__self__, "security_saml_config", security_saml_config)
         if system_tags is not None:
             pulumi.set(__self__, "system_tags", system_tags)
         if upgrade_major_version_trigger is not None:
@@ -396,6 +436,18 @@ class ClusterArgs:
         pulumi.set(self, "data_node_host_bare_metal_shape", value)
 
     @property
+    @pulumi.getter(name="dataNodeHostShape")
+    def data_node_host_shape(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The node shape for the cluster's data nodes.
+        """
+        return pulumi.get(self, "data_node_host_shape")
+
+    @data_node_host_shape.setter
+    def data_node_host_shape(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "data_node_host_shape", value)
+
+    @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]:
         """
@@ -456,6 +508,30 @@ class ClusterArgs:
         pulumi.set(self, "master_node_host_bare_metal_shape", value)
 
     @property
+    @pulumi.getter(name="masterNodeHostShape")
+    def master_node_host_shape(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The node shape for the cluster's master nodes.
+        """
+        return pulumi.get(self, "master_node_host_shape")
+
+    @master_node_host_shape.setter
+    def master_node_host_shape(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "master_node_host_shape", value)
+
+    @property
+    @pulumi.getter(name="opendashboardNodeHostShape")
+    def opendashboard_node_host_shape(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The node shape for the cluster's OpenSearch Dashboard nodes.
+        """
+        return pulumi.get(self, "opendashboard_node_host_shape")
+
+    @opendashboard_node_host_shape.setter
+    def opendashboard_node_host_shape(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "opendashboard_node_host_shape", value)
+
+    @property
     @pulumi.getter(name="outboundClusterConfig")
     def outbound_cluster_config(self) -> Optional[pulumi.Input['ClusterOutboundClusterConfigArgs']]:
         """
@@ -478,6 +554,78 @@ class ClusterArgs:
     @reverse_connection_endpoint_customer_ips.setter
     def reverse_connection_endpoint_customer_ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
         pulumi.set(self, "reverse_connection_endpoint_customer_ips", value)
+
+    @property
+    @pulumi.getter(name="searchNodeCount")
+    def search_node_count(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        (Updatable) The number of search nodes configured for the cluster.
+        """
+        return pulumi.get(self, "search_node_count")
+
+    @search_node_count.setter
+    def search_node_count(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "search_node_count", value)
+
+    @property
+    @pulumi.getter(name="searchNodeHostMemoryGb")
+    def search_node_host_memory_gb(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        (Updatable) The amount of memory in GB, for the cluster's search nodes.
+        """
+        return pulumi.get(self, "search_node_host_memory_gb")
+
+    @search_node_host_memory_gb.setter
+    def search_node_host_memory_gb(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "search_node_host_memory_gb", value)
+
+    @property
+    @pulumi.getter(name="searchNodeHostOcpuCount")
+    def search_node_host_ocpu_count(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        (Updatable) The number of OCPUs configured for the cluster's search nodes.
+        """
+        return pulumi.get(self, "search_node_host_ocpu_count")
+
+    @search_node_host_ocpu_count.setter
+    def search_node_host_ocpu_count(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "search_node_host_ocpu_count", value)
+
+    @property
+    @pulumi.getter(name="searchNodeHostShape")
+    def search_node_host_shape(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The node shape for the cluster's search nodes.
+        """
+        return pulumi.get(self, "search_node_host_shape")
+
+    @search_node_host_shape.setter
+    def search_node_host_shape(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "search_node_host_shape", value)
+
+    @property
+    @pulumi.getter(name="searchNodeHostType")
+    def search_node_host_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The instance type for the cluster's search nodes.
+        """
+        return pulumi.get(self, "search_node_host_type")
+
+    @search_node_host_type.setter
+    def search_node_host_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "search_node_host_type", value)
+
+    @property
+    @pulumi.getter(name="searchNodeStorageGb")
+    def search_node_storage_gb(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        (Updatable) The amount of storage in GB, to configure per node for the cluster's search nodes.
+        """
+        return pulumi.get(self, "search_node_storage_gb")
+
+    @search_node_storage_gb.setter
+    def search_node_storage_gb(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "search_node_storage_gb", value)
 
     @property
     @pulumi.getter(name="securityMasterUserName")
@@ -514,6 +662,18 @@ class ClusterArgs:
     @security_mode.setter
     def security_mode(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "security_mode", value)
+
+    @property
+    @pulumi.getter(name="securitySamlConfig")
+    def security_saml_config(self) -> Optional[pulumi.Input['ClusterSecuritySamlConfigArgs']]:
+        """
+        SAML policy is optionally used for Opensearch cluster to config SAML authentication
+        """
+        return pulumi.get(self, "security_saml_config")
+
+    @security_saml_config.setter
+    def security_saml_config(self, value: Optional[pulumi.Input['ClusterSecuritySamlConfigArgs']]):
+        pulumi.set(self, "security_saml_config", value)
 
     @property
     @pulumi.getter(name="systemTags")
@@ -554,6 +714,7 @@ class _ClusterState:
                  data_node_host_bare_metal_shape: Optional[pulumi.Input[builtins.str]] = None,
                  data_node_host_memory_gb: Optional[pulumi.Input[builtins.int]] = None,
                  data_node_host_ocpu_count: Optional[pulumi.Input[builtins.int]] = None,
+                 data_node_host_shape: Optional[pulumi.Input[builtins.str]] = None,
                  data_node_host_type: Optional[pulumi.Input[builtins.str]] = None,
                  data_node_storage_gb: Optional[pulumi.Input[builtins.int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
@@ -567,20 +728,29 @@ class _ClusterState:
                  master_node_host_bare_metal_shape: Optional[pulumi.Input[builtins.str]] = None,
                  master_node_host_memory_gb: Optional[pulumi.Input[builtins.int]] = None,
                  master_node_host_ocpu_count: Optional[pulumi.Input[builtins.int]] = None,
+                 master_node_host_shape: Optional[pulumi.Input[builtins.str]] = None,
                  master_node_host_type: Optional[pulumi.Input[builtins.str]] = None,
                  opendashboard_fqdn: Optional[pulumi.Input[builtins.str]] = None,
                  opendashboard_node_count: Optional[pulumi.Input[builtins.int]] = None,
                  opendashboard_node_host_memory_gb: Optional[pulumi.Input[builtins.int]] = None,
                  opendashboard_node_host_ocpu_count: Optional[pulumi.Input[builtins.int]] = None,
+                 opendashboard_node_host_shape: Optional[pulumi.Input[builtins.str]] = None,
                  opendashboard_private_ip: Optional[pulumi.Input[builtins.str]] = None,
                  opensearch_fqdn: Optional[pulumi.Input[builtins.str]] = None,
                  opensearch_private_ip: Optional[pulumi.Input[builtins.str]] = None,
                  outbound_cluster_config: Optional[pulumi.Input['ClusterOutboundClusterConfigArgs']] = None,
                  reverse_connection_endpoint_customer_ips: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  reverse_connection_endpoints: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterReverseConnectionEndpointArgs']]]] = None,
+                 search_node_count: Optional[pulumi.Input[builtins.int]] = None,
+                 search_node_host_memory_gb: Optional[pulumi.Input[builtins.int]] = None,
+                 search_node_host_ocpu_count: Optional[pulumi.Input[builtins.int]] = None,
+                 search_node_host_shape: Optional[pulumi.Input[builtins.str]] = None,
+                 search_node_host_type: Optional[pulumi.Input[builtins.str]] = None,
+                 search_node_storage_gb: Optional[pulumi.Input[builtins.int]] = None,
                  security_master_user_name: Optional[pulumi.Input[builtins.str]] = None,
                  security_master_user_password_hash: Optional[pulumi.Input[builtins.str]] = None,
                  security_mode: Optional[pulumi.Input[builtins.str]] = None,
+                 security_saml_config: Optional[pulumi.Input['ClusterSecuritySamlConfigArgs']] = None,
                  software_version: Optional[pulumi.Input[builtins.str]] = None,
                  state: Optional[pulumi.Input[builtins.str]] = None,
                  subnet_compartment_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -602,6 +772,7 @@ class _ClusterState:
         :param pulumi.Input[builtins.str] data_node_host_bare_metal_shape: The bare metal shape for the cluster's data nodes.
         :param pulumi.Input[builtins.int] data_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
         :param pulumi.Input[builtins.int] data_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluster's data nodes.
+        :param pulumi.Input[builtins.str] data_node_host_shape: (Updatable) The node shape for the cluster's data nodes.
         :param pulumi.Input[builtins.str] data_node_host_type: TThe instance type for the cluster's data nodes.
         :param pulumi.Input[builtins.int] data_node_storage_gb: (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -615,20 +786,29 @@ class _ClusterState:
         :param pulumi.Input[builtins.str] master_node_host_bare_metal_shape: The bare metal shape for the cluster's master nodes.
         :param pulumi.Input[builtins.int] master_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
         :param pulumi.Input[builtins.int] master_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluser's master nodes.
+        :param pulumi.Input[builtins.str] master_node_host_shape: (Updatable) The node shape for the cluster's master nodes.
         :param pulumi.Input[builtins.str] master_node_host_type: The instance type for the cluster's master nodes.
         :param pulumi.Input[builtins.str] opendashboard_fqdn: The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
         :param pulumi.Input[builtins.int] opendashboard_node_count: (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
         :param pulumi.Input[builtins.int] opendashboard_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
         :param pulumi.Input[builtins.int] opendashboard_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
+        :param pulumi.Input[builtins.str] opendashboard_node_host_shape: (Updatable) The node shape for the cluster's OpenSearch Dashboard nodes.
         :param pulumi.Input[builtins.str] opendashboard_private_ip: The private IP address for the cluster's OpenSearch Dashboard.
         :param pulumi.Input[builtins.str] opensearch_fqdn: The fully qualified domain name (FQDN) for the cluster's API endpoint.
         :param pulumi.Input[builtins.str] opensearch_private_ip: The cluster's private IP address.
         :param pulumi.Input['ClusterOutboundClusterConfigArgs'] outbound_cluster_config: (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] reverse_connection_endpoint_customer_ips: (Updatable) The customer IP addresses of the endpoint in customer VCN
         :param pulumi.Input[Sequence[pulumi.Input['ClusterReverseConnectionEndpointArgs']]] reverse_connection_endpoints: The list of reverse connection endpoints.
+        :param pulumi.Input[builtins.int] search_node_count: (Updatable) The number of search nodes configured for the cluster.
+        :param pulumi.Input[builtins.int] search_node_host_memory_gb: (Updatable) The amount of memory in GB, for the cluster's search nodes.
+        :param pulumi.Input[builtins.int] search_node_host_ocpu_count: (Updatable) The number of OCPUs configured for the cluster's search nodes.
+        :param pulumi.Input[builtins.str] search_node_host_shape: (Updatable) The node shape for the cluster's search nodes.
+        :param pulumi.Input[builtins.str] search_node_host_type: The instance type for the cluster's search nodes.
+        :param pulumi.Input[builtins.int] search_node_storage_gb: (Updatable) The amount of storage in GB, to configure per node for the cluster's search nodes.
         :param pulumi.Input[builtins.str] security_master_user_name: (Updatable) The name of the master user that are used to manage security config
         :param pulumi.Input[builtins.str] security_master_user_password_hash: (Updatable) The password hash of the master user that are used to manage security config
         :param pulumi.Input[builtins.str] security_mode: (Updatable) The security mode of the cluster.
+        :param pulumi.Input['ClusterSecuritySamlConfigArgs'] security_saml_config: SAML policy is optionally used for Opensearch cluster to config SAML authentication
         :param pulumi.Input[builtins.str] software_version: (Updatable) The version of the software the cluster is running.
         :param pulumi.Input[builtins.str] state: The current state of the cluster.
         :param pulumi.Input[builtins.str] subnet_compartment_id: The OCID for the compartment where the cluster's subnet is located.
@@ -660,6 +840,8 @@ class _ClusterState:
             pulumi.set(__self__, "data_node_host_memory_gb", data_node_host_memory_gb)
         if data_node_host_ocpu_count is not None:
             pulumi.set(__self__, "data_node_host_ocpu_count", data_node_host_ocpu_count)
+        if data_node_host_shape is not None:
+            pulumi.set(__self__, "data_node_host_shape", data_node_host_shape)
         if data_node_host_type is not None:
             pulumi.set(__self__, "data_node_host_type", data_node_host_type)
         if data_node_storage_gb is not None:
@@ -686,6 +868,8 @@ class _ClusterState:
             pulumi.set(__self__, "master_node_host_memory_gb", master_node_host_memory_gb)
         if master_node_host_ocpu_count is not None:
             pulumi.set(__self__, "master_node_host_ocpu_count", master_node_host_ocpu_count)
+        if master_node_host_shape is not None:
+            pulumi.set(__self__, "master_node_host_shape", master_node_host_shape)
         if master_node_host_type is not None:
             pulumi.set(__self__, "master_node_host_type", master_node_host_type)
         if opendashboard_fqdn is not None:
@@ -696,6 +880,8 @@ class _ClusterState:
             pulumi.set(__self__, "opendashboard_node_host_memory_gb", opendashboard_node_host_memory_gb)
         if opendashboard_node_host_ocpu_count is not None:
             pulumi.set(__self__, "opendashboard_node_host_ocpu_count", opendashboard_node_host_ocpu_count)
+        if opendashboard_node_host_shape is not None:
+            pulumi.set(__self__, "opendashboard_node_host_shape", opendashboard_node_host_shape)
         if opendashboard_private_ip is not None:
             pulumi.set(__self__, "opendashboard_private_ip", opendashboard_private_ip)
         if opensearch_fqdn is not None:
@@ -708,12 +894,26 @@ class _ClusterState:
             pulumi.set(__self__, "reverse_connection_endpoint_customer_ips", reverse_connection_endpoint_customer_ips)
         if reverse_connection_endpoints is not None:
             pulumi.set(__self__, "reverse_connection_endpoints", reverse_connection_endpoints)
+        if search_node_count is not None:
+            pulumi.set(__self__, "search_node_count", search_node_count)
+        if search_node_host_memory_gb is not None:
+            pulumi.set(__self__, "search_node_host_memory_gb", search_node_host_memory_gb)
+        if search_node_host_ocpu_count is not None:
+            pulumi.set(__self__, "search_node_host_ocpu_count", search_node_host_ocpu_count)
+        if search_node_host_shape is not None:
+            pulumi.set(__self__, "search_node_host_shape", search_node_host_shape)
+        if search_node_host_type is not None:
+            pulumi.set(__self__, "search_node_host_type", search_node_host_type)
+        if search_node_storage_gb is not None:
+            pulumi.set(__self__, "search_node_storage_gb", search_node_storage_gb)
         if security_master_user_name is not None:
             pulumi.set(__self__, "security_master_user_name", security_master_user_name)
         if security_master_user_password_hash is not None:
             pulumi.set(__self__, "security_master_user_password_hash", security_master_user_password_hash)
         if security_mode is not None:
             pulumi.set(__self__, "security_mode", security_mode)
+        if security_saml_config is not None:
+            pulumi.set(__self__, "security_saml_config", security_saml_config)
         if software_version is not None:
             pulumi.set(__self__, "software_version", software_version)
         if state is not None:
@@ -822,6 +1022,18 @@ class _ClusterState:
     @data_node_host_ocpu_count.setter
     def data_node_host_ocpu_count(self, value: Optional[pulumi.Input[builtins.int]]):
         pulumi.set(self, "data_node_host_ocpu_count", value)
+
+    @property
+    @pulumi.getter(name="dataNodeHostShape")
+    def data_node_host_shape(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The node shape for the cluster's data nodes.
+        """
+        return pulumi.get(self, "data_node_host_shape")
+
+    @data_node_host_shape.setter
+    def data_node_host_shape(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "data_node_host_shape", value)
 
     @property
     @pulumi.getter(name="dataNodeHostType")
@@ -980,6 +1192,18 @@ class _ClusterState:
         pulumi.set(self, "master_node_host_ocpu_count", value)
 
     @property
+    @pulumi.getter(name="masterNodeHostShape")
+    def master_node_host_shape(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The node shape for the cluster's master nodes.
+        """
+        return pulumi.get(self, "master_node_host_shape")
+
+    @master_node_host_shape.setter
+    def master_node_host_shape(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "master_node_host_shape", value)
+
+    @property
     @pulumi.getter(name="masterNodeHostType")
     def master_node_host_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -1038,6 +1262,18 @@ class _ClusterState:
     @opendashboard_node_host_ocpu_count.setter
     def opendashboard_node_host_ocpu_count(self, value: Optional[pulumi.Input[builtins.int]]):
         pulumi.set(self, "opendashboard_node_host_ocpu_count", value)
+
+    @property
+    @pulumi.getter(name="opendashboardNodeHostShape")
+    def opendashboard_node_host_shape(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The node shape for the cluster's OpenSearch Dashboard nodes.
+        """
+        return pulumi.get(self, "opendashboard_node_host_shape")
+
+    @opendashboard_node_host_shape.setter
+    def opendashboard_node_host_shape(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "opendashboard_node_host_shape", value)
 
     @property
     @pulumi.getter(name="opendashboardPrivateIp")
@@ -1112,6 +1348,78 @@ class _ClusterState:
         pulumi.set(self, "reverse_connection_endpoints", value)
 
     @property
+    @pulumi.getter(name="searchNodeCount")
+    def search_node_count(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        (Updatable) The number of search nodes configured for the cluster.
+        """
+        return pulumi.get(self, "search_node_count")
+
+    @search_node_count.setter
+    def search_node_count(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "search_node_count", value)
+
+    @property
+    @pulumi.getter(name="searchNodeHostMemoryGb")
+    def search_node_host_memory_gb(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        (Updatable) The amount of memory in GB, for the cluster's search nodes.
+        """
+        return pulumi.get(self, "search_node_host_memory_gb")
+
+    @search_node_host_memory_gb.setter
+    def search_node_host_memory_gb(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "search_node_host_memory_gb", value)
+
+    @property
+    @pulumi.getter(name="searchNodeHostOcpuCount")
+    def search_node_host_ocpu_count(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        (Updatable) The number of OCPUs configured for the cluster's search nodes.
+        """
+        return pulumi.get(self, "search_node_host_ocpu_count")
+
+    @search_node_host_ocpu_count.setter
+    def search_node_host_ocpu_count(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "search_node_host_ocpu_count", value)
+
+    @property
+    @pulumi.getter(name="searchNodeHostShape")
+    def search_node_host_shape(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The node shape for the cluster's search nodes.
+        """
+        return pulumi.get(self, "search_node_host_shape")
+
+    @search_node_host_shape.setter
+    def search_node_host_shape(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "search_node_host_shape", value)
+
+    @property
+    @pulumi.getter(name="searchNodeHostType")
+    def search_node_host_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The instance type for the cluster's search nodes.
+        """
+        return pulumi.get(self, "search_node_host_type")
+
+    @search_node_host_type.setter
+    def search_node_host_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "search_node_host_type", value)
+
+    @property
+    @pulumi.getter(name="searchNodeStorageGb")
+    def search_node_storage_gb(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        (Updatable) The amount of storage in GB, to configure per node for the cluster's search nodes.
+        """
+        return pulumi.get(self, "search_node_storage_gb")
+
+    @search_node_storage_gb.setter
+    def search_node_storage_gb(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "search_node_storage_gb", value)
+
+    @property
     @pulumi.getter(name="securityMasterUserName")
     def security_master_user_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -1146,6 +1454,18 @@ class _ClusterState:
     @security_mode.setter
     def security_mode(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "security_mode", value)
+
+    @property
+    @pulumi.getter(name="securitySamlConfig")
+    def security_saml_config(self) -> Optional[pulumi.Input['ClusterSecuritySamlConfigArgs']]:
+        """
+        SAML policy is optionally used for Opensearch cluster to config SAML authentication
+        """
+        return pulumi.get(self, "security_saml_config")
+
+    @security_saml_config.setter
+    def security_saml_config(self, value: Optional[pulumi.Input['ClusterSecuritySamlConfigArgs']]):
+        pulumi.set(self, "security_saml_config", value)
 
     @property
     @pulumi.getter(name="softwareVersion")
@@ -1308,6 +1628,7 @@ class Cluster(pulumi.CustomResource):
                  data_node_host_bare_metal_shape: Optional[pulumi.Input[builtins.str]] = None,
                  data_node_host_memory_gb: Optional[pulumi.Input[builtins.int]] = None,
                  data_node_host_ocpu_count: Optional[pulumi.Input[builtins.int]] = None,
+                 data_node_host_shape: Optional[pulumi.Input[builtins.str]] = None,
                  data_node_host_type: Optional[pulumi.Input[builtins.str]] = None,
                  data_node_storage_gb: Optional[pulumi.Input[builtins.int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
@@ -1319,15 +1640,24 @@ class Cluster(pulumi.CustomResource):
                  master_node_host_bare_metal_shape: Optional[pulumi.Input[builtins.str]] = None,
                  master_node_host_memory_gb: Optional[pulumi.Input[builtins.int]] = None,
                  master_node_host_ocpu_count: Optional[pulumi.Input[builtins.int]] = None,
+                 master_node_host_shape: Optional[pulumi.Input[builtins.str]] = None,
                  master_node_host_type: Optional[pulumi.Input[builtins.str]] = None,
                  opendashboard_node_count: Optional[pulumi.Input[builtins.int]] = None,
                  opendashboard_node_host_memory_gb: Optional[pulumi.Input[builtins.int]] = None,
                  opendashboard_node_host_ocpu_count: Optional[pulumi.Input[builtins.int]] = None,
+                 opendashboard_node_host_shape: Optional[pulumi.Input[builtins.str]] = None,
                  outbound_cluster_config: Optional[pulumi.Input[Union['ClusterOutboundClusterConfigArgs', 'ClusterOutboundClusterConfigArgsDict']]] = None,
                  reverse_connection_endpoint_customer_ips: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 search_node_count: Optional[pulumi.Input[builtins.int]] = None,
+                 search_node_host_memory_gb: Optional[pulumi.Input[builtins.int]] = None,
+                 search_node_host_ocpu_count: Optional[pulumi.Input[builtins.int]] = None,
+                 search_node_host_shape: Optional[pulumi.Input[builtins.str]] = None,
+                 search_node_host_type: Optional[pulumi.Input[builtins.str]] = None,
+                 search_node_storage_gb: Optional[pulumi.Input[builtins.int]] = None,
                  security_master_user_name: Optional[pulumi.Input[builtins.str]] = None,
                  security_master_user_password_hash: Optional[pulumi.Input[builtins.str]] = None,
                  security_mode: Optional[pulumi.Input[builtins.str]] = None,
+                 security_saml_config: Optional[pulumi.Input[Union['ClusterSecuritySamlConfigArgs', 'ClusterSecuritySamlConfigArgsDict']]] = None,
                  software_version: Optional[pulumi.Input[builtins.str]] = None,
                  subnet_compartment_id: Optional[pulumi.Input[builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -1366,6 +1696,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] data_node_host_bare_metal_shape: The bare metal shape for the cluster's data nodes.
         :param pulumi.Input[builtins.int] data_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
         :param pulumi.Input[builtins.int] data_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluster's data nodes.
+        :param pulumi.Input[builtins.str] data_node_host_shape: (Updatable) The node shape for the cluster's data nodes.
         :param pulumi.Input[builtins.str] data_node_host_type: TThe instance type for the cluster's data nodes.
         :param pulumi.Input[builtins.int] data_node_storage_gb: (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -1377,15 +1708,24 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] master_node_host_bare_metal_shape: The bare metal shape for the cluster's master nodes.
         :param pulumi.Input[builtins.int] master_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
         :param pulumi.Input[builtins.int] master_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluser's master nodes.
+        :param pulumi.Input[builtins.str] master_node_host_shape: (Updatable) The node shape for the cluster's master nodes.
         :param pulumi.Input[builtins.str] master_node_host_type: The instance type for the cluster's master nodes.
         :param pulumi.Input[builtins.int] opendashboard_node_count: (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
         :param pulumi.Input[builtins.int] opendashboard_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
         :param pulumi.Input[builtins.int] opendashboard_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
+        :param pulumi.Input[builtins.str] opendashboard_node_host_shape: (Updatable) The node shape for the cluster's OpenSearch Dashboard nodes.
         :param pulumi.Input[Union['ClusterOutboundClusterConfigArgs', 'ClusterOutboundClusterConfigArgsDict']] outbound_cluster_config: (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] reverse_connection_endpoint_customer_ips: (Updatable) The customer IP addresses of the endpoint in customer VCN
+        :param pulumi.Input[builtins.int] search_node_count: (Updatable) The number of search nodes configured for the cluster.
+        :param pulumi.Input[builtins.int] search_node_host_memory_gb: (Updatable) The amount of memory in GB, for the cluster's search nodes.
+        :param pulumi.Input[builtins.int] search_node_host_ocpu_count: (Updatable) The number of OCPUs configured for the cluster's search nodes.
+        :param pulumi.Input[builtins.str] search_node_host_shape: (Updatable) The node shape for the cluster's search nodes.
+        :param pulumi.Input[builtins.str] search_node_host_type: The instance type for the cluster's search nodes.
+        :param pulumi.Input[builtins.int] search_node_storage_gb: (Updatable) The amount of storage in GB, to configure per node for the cluster's search nodes.
         :param pulumi.Input[builtins.str] security_master_user_name: (Updatable) The name of the master user that are used to manage security config
         :param pulumi.Input[builtins.str] security_master_user_password_hash: (Updatable) The password hash of the master user that are used to manage security config
         :param pulumi.Input[builtins.str] security_mode: (Updatable) The security mode of the cluster.
+        :param pulumi.Input[Union['ClusterSecuritySamlConfigArgs', 'ClusterSecuritySamlConfigArgsDict']] security_saml_config: SAML policy is optionally used for Opensearch cluster to config SAML authentication
         :param pulumi.Input[builtins.str] software_version: (Updatable) The version of the software the cluster is running.
         :param pulumi.Input[builtins.str] subnet_compartment_id: The OCID for the compartment where the cluster's subnet is located.
         :param pulumi.Input[builtins.str] subnet_id: The OCID of the cluster's subnet.
@@ -1447,6 +1787,7 @@ class Cluster(pulumi.CustomResource):
                  data_node_host_bare_metal_shape: Optional[pulumi.Input[builtins.str]] = None,
                  data_node_host_memory_gb: Optional[pulumi.Input[builtins.int]] = None,
                  data_node_host_ocpu_count: Optional[pulumi.Input[builtins.int]] = None,
+                 data_node_host_shape: Optional[pulumi.Input[builtins.str]] = None,
                  data_node_host_type: Optional[pulumi.Input[builtins.str]] = None,
                  data_node_storage_gb: Optional[pulumi.Input[builtins.int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
@@ -1458,15 +1799,24 @@ class Cluster(pulumi.CustomResource):
                  master_node_host_bare_metal_shape: Optional[pulumi.Input[builtins.str]] = None,
                  master_node_host_memory_gb: Optional[pulumi.Input[builtins.int]] = None,
                  master_node_host_ocpu_count: Optional[pulumi.Input[builtins.int]] = None,
+                 master_node_host_shape: Optional[pulumi.Input[builtins.str]] = None,
                  master_node_host_type: Optional[pulumi.Input[builtins.str]] = None,
                  opendashboard_node_count: Optional[pulumi.Input[builtins.int]] = None,
                  opendashboard_node_host_memory_gb: Optional[pulumi.Input[builtins.int]] = None,
                  opendashboard_node_host_ocpu_count: Optional[pulumi.Input[builtins.int]] = None,
+                 opendashboard_node_host_shape: Optional[pulumi.Input[builtins.str]] = None,
                  outbound_cluster_config: Optional[pulumi.Input[Union['ClusterOutboundClusterConfigArgs', 'ClusterOutboundClusterConfigArgsDict']]] = None,
                  reverse_connection_endpoint_customer_ips: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 search_node_count: Optional[pulumi.Input[builtins.int]] = None,
+                 search_node_host_memory_gb: Optional[pulumi.Input[builtins.int]] = None,
+                 search_node_host_ocpu_count: Optional[pulumi.Input[builtins.int]] = None,
+                 search_node_host_shape: Optional[pulumi.Input[builtins.str]] = None,
+                 search_node_host_type: Optional[pulumi.Input[builtins.str]] = None,
+                 search_node_storage_gb: Optional[pulumi.Input[builtins.int]] = None,
                  security_master_user_name: Optional[pulumi.Input[builtins.str]] = None,
                  security_master_user_password_hash: Optional[pulumi.Input[builtins.str]] = None,
                  security_mode: Optional[pulumi.Input[builtins.str]] = None,
+                 security_saml_config: Optional[pulumi.Input[Union['ClusterSecuritySamlConfigArgs', 'ClusterSecuritySamlConfigArgsDict']]] = None,
                  software_version: Optional[pulumi.Input[builtins.str]] = None,
                  subnet_compartment_id: Optional[pulumi.Input[builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -1497,6 +1847,7 @@ class Cluster(pulumi.CustomResource):
             if data_node_host_ocpu_count is None and not opts.urn:
                 raise TypeError("Missing required property 'data_node_host_ocpu_count'")
             __props__.__dict__["data_node_host_ocpu_count"] = data_node_host_ocpu_count
+            __props__.__dict__["data_node_host_shape"] = data_node_host_shape
             if data_node_host_type is None and not opts.urn:
                 raise TypeError("Missing required property 'data_node_host_type'")
             __props__.__dict__["data_node_host_type"] = data_node_host_type
@@ -1520,6 +1871,7 @@ class Cluster(pulumi.CustomResource):
             if master_node_host_ocpu_count is None and not opts.urn:
                 raise TypeError("Missing required property 'master_node_host_ocpu_count'")
             __props__.__dict__["master_node_host_ocpu_count"] = master_node_host_ocpu_count
+            __props__.__dict__["master_node_host_shape"] = master_node_host_shape
             if master_node_host_type is None and not opts.urn:
                 raise TypeError("Missing required property 'master_node_host_type'")
             __props__.__dict__["master_node_host_type"] = master_node_host_type
@@ -1532,11 +1884,19 @@ class Cluster(pulumi.CustomResource):
             if opendashboard_node_host_ocpu_count is None and not opts.urn:
                 raise TypeError("Missing required property 'opendashboard_node_host_ocpu_count'")
             __props__.__dict__["opendashboard_node_host_ocpu_count"] = opendashboard_node_host_ocpu_count
+            __props__.__dict__["opendashboard_node_host_shape"] = opendashboard_node_host_shape
             __props__.__dict__["outbound_cluster_config"] = outbound_cluster_config
             __props__.__dict__["reverse_connection_endpoint_customer_ips"] = reverse_connection_endpoint_customer_ips
+            __props__.__dict__["search_node_count"] = search_node_count
+            __props__.__dict__["search_node_host_memory_gb"] = search_node_host_memory_gb
+            __props__.__dict__["search_node_host_ocpu_count"] = search_node_host_ocpu_count
+            __props__.__dict__["search_node_host_shape"] = search_node_host_shape
+            __props__.__dict__["search_node_host_type"] = search_node_host_type
+            __props__.__dict__["search_node_storage_gb"] = search_node_storage_gb
             __props__.__dict__["security_master_user_name"] = security_master_user_name
             __props__.__dict__["security_master_user_password_hash"] = None if security_master_user_password_hash is None else pulumi.Output.secret(security_master_user_password_hash)
             __props__.__dict__["security_mode"] = security_mode
+            __props__.__dict__["security_saml_config"] = None if security_saml_config is None else pulumi.Output.secret(security_saml_config)
             if software_version is None and not opts.urn:
                 raise TypeError("Missing required property 'software_version'")
             __props__.__dict__["software_version"] = software_version
@@ -1567,7 +1927,7 @@ class Cluster(pulumi.CustomResource):
             __props__.__dict__["time_deleted"] = None
             __props__.__dict__["time_updated"] = None
             __props__.__dict__["total_storage_gb"] = None
-        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["securityMasterUserPasswordHash"])
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["securityMasterUserPasswordHash", "securitySamlConfig"])
         opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(Cluster, __self__).__init__(
             'oci:Opensearch/cluster:Cluster',
@@ -1586,6 +1946,7 @@ class Cluster(pulumi.CustomResource):
             data_node_host_bare_metal_shape: Optional[pulumi.Input[builtins.str]] = None,
             data_node_host_memory_gb: Optional[pulumi.Input[builtins.int]] = None,
             data_node_host_ocpu_count: Optional[pulumi.Input[builtins.int]] = None,
+            data_node_host_shape: Optional[pulumi.Input[builtins.str]] = None,
             data_node_host_type: Optional[pulumi.Input[builtins.str]] = None,
             data_node_storage_gb: Optional[pulumi.Input[builtins.int]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
@@ -1599,20 +1960,29 @@ class Cluster(pulumi.CustomResource):
             master_node_host_bare_metal_shape: Optional[pulumi.Input[builtins.str]] = None,
             master_node_host_memory_gb: Optional[pulumi.Input[builtins.int]] = None,
             master_node_host_ocpu_count: Optional[pulumi.Input[builtins.int]] = None,
+            master_node_host_shape: Optional[pulumi.Input[builtins.str]] = None,
             master_node_host_type: Optional[pulumi.Input[builtins.str]] = None,
             opendashboard_fqdn: Optional[pulumi.Input[builtins.str]] = None,
             opendashboard_node_count: Optional[pulumi.Input[builtins.int]] = None,
             opendashboard_node_host_memory_gb: Optional[pulumi.Input[builtins.int]] = None,
             opendashboard_node_host_ocpu_count: Optional[pulumi.Input[builtins.int]] = None,
+            opendashboard_node_host_shape: Optional[pulumi.Input[builtins.str]] = None,
             opendashboard_private_ip: Optional[pulumi.Input[builtins.str]] = None,
             opensearch_fqdn: Optional[pulumi.Input[builtins.str]] = None,
             opensearch_private_ip: Optional[pulumi.Input[builtins.str]] = None,
             outbound_cluster_config: Optional[pulumi.Input[Union['ClusterOutboundClusterConfigArgs', 'ClusterOutboundClusterConfigArgsDict']]] = None,
             reverse_connection_endpoint_customer_ips: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
             reverse_connection_endpoints: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterReverseConnectionEndpointArgs', 'ClusterReverseConnectionEndpointArgsDict']]]]] = None,
+            search_node_count: Optional[pulumi.Input[builtins.int]] = None,
+            search_node_host_memory_gb: Optional[pulumi.Input[builtins.int]] = None,
+            search_node_host_ocpu_count: Optional[pulumi.Input[builtins.int]] = None,
+            search_node_host_shape: Optional[pulumi.Input[builtins.str]] = None,
+            search_node_host_type: Optional[pulumi.Input[builtins.str]] = None,
+            search_node_storage_gb: Optional[pulumi.Input[builtins.int]] = None,
             security_master_user_name: Optional[pulumi.Input[builtins.str]] = None,
             security_master_user_password_hash: Optional[pulumi.Input[builtins.str]] = None,
             security_mode: Optional[pulumi.Input[builtins.str]] = None,
+            security_saml_config: Optional[pulumi.Input[Union['ClusterSecuritySamlConfigArgs', 'ClusterSecuritySamlConfigArgsDict']]] = None,
             software_version: Optional[pulumi.Input[builtins.str]] = None,
             state: Optional[pulumi.Input[builtins.str]] = None,
             subnet_compartment_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -1639,6 +2009,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] data_node_host_bare_metal_shape: The bare metal shape for the cluster's data nodes.
         :param pulumi.Input[builtins.int] data_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
         :param pulumi.Input[builtins.int] data_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluster's data nodes.
+        :param pulumi.Input[builtins.str] data_node_host_shape: (Updatable) The node shape for the cluster's data nodes.
         :param pulumi.Input[builtins.str] data_node_host_type: TThe instance type for the cluster's data nodes.
         :param pulumi.Input[builtins.int] data_node_storage_gb: (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -1652,20 +2023,29 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] master_node_host_bare_metal_shape: The bare metal shape for the cluster's master nodes.
         :param pulumi.Input[builtins.int] master_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
         :param pulumi.Input[builtins.int] master_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluser's master nodes.
+        :param pulumi.Input[builtins.str] master_node_host_shape: (Updatable) The node shape for the cluster's master nodes.
         :param pulumi.Input[builtins.str] master_node_host_type: The instance type for the cluster's master nodes.
         :param pulumi.Input[builtins.str] opendashboard_fqdn: The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
         :param pulumi.Input[builtins.int] opendashboard_node_count: (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
         :param pulumi.Input[builtins.int] opendashboard_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
         :param pulumi.Input[builtins.int] opendashboard_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
+        :param pulumi.Input[builtins.str] opendashboard_node_host_shape: (Updatable) The node shape for the cluster's OpenSearch Dashboard nodes.
         :param pulumi.Input[builtins.str] opendashboard_private_ip: The private IP address for the cluster's OpenSearch Dashboard.
         :param pulumi.Input[builtins.str] opensearch_fqdn: The fully qualified domain name (FQDN) for the cluster's API endpoint.
         :param pulumi.Input[builtins.str] opensearch_private_ip: The cluster's private IP address.
         :param pulumi.Input[Union['ClusterOutboundClusterConfigArgs', 'ClusterOutboundClusterConfigArgsDict']] outbound_cluster_config: (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] reverse_connection_endpoint_customer_ips: (Updatable) The customer IP addresses of the endpoint in customer VCN
         :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterReverseConnectionEndpointArgs', 'ClusterReverseConnectionEndpointArgsDict']]]] reverse_connection_endpoints: The list of reverse connection endpoints.
+        :param pulumi.Input[builtins.int] search_node_count: (Updatable) The number of search nodes configured for the cluster.
+        :param pulumi.Input[builtins.int] search_node_host_memory_gb: (Updatable) The amount of memory in GB, for the cluster's search nodes.
+        :param pulumi.Input[builtins.int] search_node_host_ocpu_count: (Updatable) The number of OCPUs configured for the cluster's search nodes.
+        :param pulumi.Input[builtins.str] search_node_host_shape: (Updatable) The node shape for the cluster's search nodes.
+        :param pulumi.Input[builtins.str] search_node_host_type: The instance type for the cluster's search nodes.
+        :param pulumi.Input[builtins.int] search_node_storage_gb: (Updatable) The amount of storage in GB, to configure per node for the cluster's search nodes.
         :param pulumi.Input[builtins.str] security_master_user_name: (Updatable) The name of the master user that are used to manage security config
         :param pulumi.Input[builtins.str] security_master_user_password_hash: (Updatable) The password hash of the master user that are used to manage security config
         :param pulumi.Input[builtins.str] security_mode: (Updatable) The security mode of the cluster.
+        :param pulumi.Input[Union['ClusterSecuritySamlConfigArgs', 'ClusterSecuritySamlConfigArgsDict']] security_saml_config: SAML policy is optionally used for Opensearch cluster to config SAML authentication
         :param pulumi.Input[builtins.str] software_version: (Updatable) The version of the software the cluster is running.
         :param pulumi.Input[builtins.str] state: The current state of the cluster.
         :param pulumi.Input[builtins.str] subnet_compartment_id: The OCID for the compartment where the cluster's subnet is located.
@@ -1694,6 +2074,7 @@ class Cluster(pulumi.CustomResource):
         __props__.__dict__["data_node_host_bare_metal_shape"] = data_node_host_bare_metal_shape
         __props__.__dict__["data_node_host_memory_gb"] = data_node_host_memory_gb
         __props__.__dict__["data_node_host_ocpu_count"] = data_node_host_ocpu_count
+        __props__.__dict__["data_node_host_shape"] = data_node_host_shape
         __props__.__dict__["data_node_host_type"] = data_node_host_type
         __props__.__dict__["data_node_storage_gb"] = data_node_storage_gb
         __props__.__dict__["defined_tags"] = defined_tags
@@ -1707,20 +2088,29 @@ class Cluster(pulumi.CustomResource):
         __props__.__dict__["master_node_host_bare_metal_shape"] = master_node_host_bare_metal_shape
         __props__.__dict__["master_node_host_memory_gb"] = master_node_host_memory_gb
         __props__.__dict__["master_node_host_ocpu_count"] = master_node_host_ocpu_count
+        __props__.__dict__["master_node_host_shape"] = master_node_host_shape
         __props__.__dict__["master_node_host_type"] = master_node_host_type
         __props__.__dict__["opendashboard_fqdn"] = opendashboard_fqdn
         __props__.__dict__["opendashboard_node_count"] = opendashboard_node_count
         __props__.__dict__["opendashboard_node_host_memory_gb"] = opendashboard_node_host_memory_gb
         __props__.__dict__["opendashboard_node_host_ocpu_count"] = opendashboard_node_host_ocpu_count
+        __props__.__dict__["opendashboard_node_host_shape"] = opendashboard_node_host_shape
         __props__.__dict__["opendashboard_private_ip"] = opendashboard_private_ip
         __props__.__dict__["opensearch_fqdn"] = opensearch_fqdn
         __props__.__dict__["opensearch_private_ip"] = opensearch_private_ip
         __props__.__dict__["outbound_cluster_config"] = outbound_cluster_config
         __props__.__dict__["reverse_connection_endpoint_customer_ips"] = reverse_connection_endpoint_customer_ips
         __props__.__dict__["reverse_connection_endpoints"] = reverse_connection_endpoints
+        __props__.__dict__["search_node_count"] = search_node_count
+        __props__.__dict__["search_node_host_memory_gb"] = search_node_host_memory_gb
+        __props__.__dict__["search_node_host_ocpu_count"] = search_node_host_ocpu_count
+        __props__.__dict__["search_node_host_shape"] = search_node_host_shape
+        __props__.__dict__["search_node_host_type"] = search_node_host_type
+        __props__.__dict__["search_node_storage_gb"] = search_node_storage_gb
         __props__.__dict__["security_master_user_name"] = security_master_user_name
         __props__.__dict__["security_master_user_password_hash"] = security_master_user_password_hash
         __props__.__dict__["security_mode"] = security_mode
+        __props__.__dict__["security_saml_config"] = security_saml_config
         __props__.__dict__["software_version"] = software_version
         __props__.__dict__["state"] = state
         __props__.__dict__["subnet_compartment_id"] = subnet_compartment_id
@@ -1790,6 +2180,14 @@ class Cluster(pulumi.CustomResource):
         (Updatable) The number of OCPUs to configure for the cluster's data nodes.
         """
         return pulumi.get(self, "data_node_host_ocpu_count")
+
+    @property
+    @pulumi.getter(name="dataNodeHostShape")
+    def data_node_host_shape(self) -> pulumi.Output[builtins.str]:
+        """
+        (Updatable) The node shape for the cluster's data nodes.
+        """
+        return pulumi.get(self, "data_node_host_shape")
 
     @property
     @pulumi.getter(name="dataNodeHostType")
@@ -1896,6 +2294,14 @@ class Cluster(pulumi.CustomResource):
         return pulumi.get(self, "master_node_host_ocpu_count")
 
     @property
+    @pulumi.getter(name="masterNodeHostShape")
+    def master_node_host_shape(self) -> pulumi.Output[builtins.str]:
+        """
+        (Updatable) The node shape for the cluster's master nodes.
+        """
+        return pulumi.get(self, "master_node_host_shape")
+
+    @property
     @pulumi.getter(name="masterNodeHostType")
     def master_node_host_type(self) -> pulumi.Output[builtins.str]:
         """
@@ -1934,6 +2340,14 @@ class Cluster(pulumi.CustomResource):
         (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
         """
         return pulumi.get(self, "opendashboard_node_host_ocpu_count")
+
+    @property
+    @pulumi.getter(name="opendashboardNodeHostShape")
+    def opendashboard_node_host_shape(self) -> pulumi.Output[builtins.str]:
+        """
+        (Updatable) The node shape for the cluster's OpenSearch Dashboard nodes.
+        """
+        return pulumi.get(self, "opendashboard_node_host_shape")
 
     @property
     @pulumi.getter(name="opendashboardPrivateIp")
@@ -1984,6 +2398,54 @@ class Cluster(pulumi.CustomResource):
         return pulumi.get(self, "reverse_connection_endpoints")
 
     @property
+    @pulumi.getter(name="searchNodeCount")
+    def search_node_count(self) -> pulumi.Output[builtins.int]:
+        """
+        (Updatable) The number of search nodes configured for the cluster.
+        """
+        return pulumi.get(self, "search_node_count")
+
+    @property
+    @pulumi.getter(name="searchNodeHostMemoryGb")
+    def search_node_host_memory_gb(self) -> pulumi.Output[builtins.int]:
+        """
+        (Updatable) The amount of memory in GB, for the cluster's search nodes.
+        """
+        return pulumi.get(self, "search_node_host_memory_gb")
+
+    @property
+    @pulumi.getter(name="searchNodeHostOcpuCount")
+    def search_node_host_ocpu_count(self) -> pulumi.Output[builtins.int]:
+        """
+        (Updatable) The number of OCPUs configured for the cluster's search nodes.
+        """
+        return pulumi.get(self, "search_node_host_ocpu_count")
+
+    @property
+    @pulumi.getter(name="searchNodeHostShape")
+    def search_node_host_shape(self) -> pulumi.Output[builtins.str]:
+        """
+        (Updatable) The node shape for the cluster's search nodes.
+        """
+        return pulumi.get(self, "search_node_host_shape")
+
+    @property
+    @pulumi.getter(name="searchNodeHostType")
+    def search_node_host_type(self) -> pulumi.Output[builtins.str]:
+        """
+        The instance type for the cluster's search nodes.
+        """
+        return pulumi.get(self, "search_node_host_type")
+
+    @property
+    @pulumi.getter(name="searchNodeStorageGb")
+    def search_node_storage_gb(self) -> pulumi.Output[builtins.int]:
+        """
+        (Updatable) The amount of storage in GB, to configure per node for the cluster's search nodes.
+        """
+        return pulumi.get(self, "search_node_storage_gb")
+
+    @property
     @pulumi.getter(name="securityMasterUserName")
     def security_master_user_name(self) -> pulumi.Output[builtins.str]:
         """
@@ -2006,6 +2468,14 @@ class Cluster(pulumi.CustomResource):
         (Updatable) The security mode of the cluster.
         """
         return pulumi.get(self, "security_mode")
+
+    @property
+    @pulumi.getter(name="securitySamlConfig")
+    def security_saml_config(self) -> pulumi.Output['outputs.ClusterSecuritySamlConfig']:
+        """
+        SAML policy is optionally used for Opensearch cluster to config SAML authentication
+        """
+        return pulumi.get(self, "security_saml_config")
 
     @property
     @pulumi.getter(name="softwareVersion")

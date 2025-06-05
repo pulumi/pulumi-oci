@@ -152,6 +152,10 @@ namespace Pulumi.Oci.ApmSynthetics
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMonitorConfigurationResult> Configurations;
         /// <summary>
+        /// Content type of the script.
+        /// </summary>
+        public readonly string ContentType;
+        /// <summary>
         /// Name of the user that created the monitor.
         /// </summary>
         public readonly string CreatedBy;
@@ -255,6 +259,8 @@ namespace Pulumi.Oci.ApmSynthetics
 
             ImmutableArray<Outputs.GetMonitorConfigurationResult> configurations,
 
+            string contentType,
+
             string createdBy,
 
             ImmutableDictionary<string, string> definedTags,
@@ -307,6 +313,7 @@ namespace Pulumi.Oci.ApmSynthetics
             AvailabilityConfigurations = availabilityConfigurations;
             BatchIntervalInSeconds = batchIntervalInSeconds;
             Configurations = configurations;
+            ContentType = contentType;
             CreatedBy = createdBy;
             DefinedTags = definedTags;
             DisplayName = displayName;

@@ -97,14 +97,14 @@ public final class QueryQueryDefinitionReportQueryArgs extends com.pulumi.resour
     }
 
     /**
-     * (Updatable) Aggregate the result by. example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;]`
+     * (Updatable) Specifies what to aggregate the result by. For example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;]`
      * 
      */
     @Import(name="groupBies")
     private @Nullable Output<List<String>> groupBies;
 
     /**
-     * @return (Updatable) Aggregate the result by. example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;]`
+     * @return (Updatable) Specifies what to aggregate the result by. For example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;]`
      * 
      */
     public Optional<Output<List<String>>> groupBies() {
@@ -127,14 +127,14 @@ public final class QueryQueryDefinitionReportQueryArgs extends com.pulumi.resour
     }
 
     /**
-     * (Updatable) Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+     * (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
      * 
      */
     @Import(name="isAggregateByTime")
     private @Nullable Output<Boolean> isAggregateByTime;
 
     /**
-     * @return (Updatable) Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+     * @return (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
      * 
      */
     public Optional<Output<Boolean>> isAggregateByTime() {
@@ -142,14 +142,24 @@ public final class QueryQueryDefinitionReportQueryArgs extends com.pulumi.resour
     }
 
     /**
-     * (Updatable) The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
+     * (Updatable) The query usage type. COST by default if it is missing.
+     * * Usage: Query the usage data.
+     * * Cost: Query the cost/billing data.
+     * * Credit: Query the credit adjustments data.
+     * * ExpiredCredit: Query the expired credits data.
+     * * AllCredit: Query the credit adjustments and expired credit.
      * 
      */
     @Import(name="queryType")
     private @Nullable Output<String> queryType;
 
     /**
-     * @return (Updatable) The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
+     * @return (Updatable) The query usage type. COST by default if it is missing.
+     * * Usage: Query the usage data.
+     * * Cost: Query the cost/billing data.
+     * * Credit: Query the credit adjustments data.
+     * * ExpiredCredit: Query the expired credits data.
+     * * AllCredit: Query the credit adjustments and expired credit.
      * 
      */
     public Optional<Output<String>> queryType() {
@@ -342,7 +352,7 @@ public final class QueryQueryDefinitionReportQueryArgs extends com.pulumi.resour
         }
 
         /**
-         * @param groupBies (Updatable) Aggregate the result by. example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;]`
+         * @param groupBies (Updatable) Specifies what to aggregate the result by. For example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;]`
          * 
          * @return builder
          * 
@@ -353,7 +363,7 @@ public final class QueryQueryDefinitionReportQueryArgs extends com.pulumi.resour
         }
 
         /**
-         * @param groupBies (Updatable) Aggregate the result by. example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;]`
+         * @param groupBies (Updatable) Specifies what to aggregate the result by. For example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;]`
          * 
          * @return builder
          * 
@@ -363,7 +373,7 @@ public final class QueryQueryDefinitionReportQueryArgs extends com.pulumi.resour
         }
 
         /**
-         * @param groupBies (Updatable) Aggregate the result by. example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;]`
+         * @param groupBies (Updatable) Specifies what to aggregate the result by. For example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;]`
          * 
          * @return builder
          * 
@@ -404,7 +414,7 @@ public final class QueryQueryDefinitionReportQueryArgs extends com.pulumi.resour
         }
 
         /**
-         * @param isAggregateByTime (Updatable) Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+         * @param isAggregateByTime (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
          * 
          * @return builder
          * 
@@ -415,7 +425,7 @@ public final class QueryQueryDefinitionReportQueryArgs extends com.pulumi.resour
         }
 
         /**
-         * @param isAggregateByTime (Updatable) Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+         * @param isAggregateByTime (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
          * 
          * @return builder
          * 
@@ -425,7 +435,12 @@ public final class QueryQueryDefinitionReportQueryArgs extends com.pulumi.resour
         }
 
         /**
-         * @param queryType (Updatable) The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
+         * @param queryType (Updatable) The query usage type. COST by default if it is missing.
+         * * Usage: Query the usage data.
+         * * Cost: Query the cost/billing data.
+         * * Credit: Query the credit adjustments data.
+         * * ExpiredCredit: Query the expired credits data.
+         * * AllCredit: Query the credit adjustments and expired credit.
          * 
          * @return builder
          * 
@@ -436,7 +451,12 @@ public final class QueryQueryDefinitionReportQueryArgs extends com.pulumi.resour
         }
 
         /**
-         * @param queryType (Updatable) The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
+         * @param queryType (Updatable) The query usage type. COST by default if it is missing.
+         * * Usage: Query the usage data.
+         * * Cost: Query the cost/billing data.
+         * * Credit: Query the credit adjustments data.
+         * * ExpiredCredit: Query the expired credits data.
+         * * AllCredit: Query the credit adjustments and expired credit.
          * 
          * @return builder
          * 

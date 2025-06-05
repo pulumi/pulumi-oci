@@ -103,7 +103,7 @@ class GetResultResult:
     @pulumi.getter(name="resultType")
     def result_type(self) -> builtins.str:
         """
-        Type of result. Example: HAR, Screenshot, Log or Network.
+        Type of result. Example: har, screenshot, log, network, diagnostics or script.
         """
         return pulumi.get(self, "result_type")
 
@@ -142,7 +142,7 @@ def get_result(apm_domain_id: Optional[builtins.str] = None,
     """
     This data source provides details about a specific Result resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
 
-    Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log or Network details.
+    Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log, Network details, Diagnostics or Script Content.
 
     ## Example Usage
 
@@ -163,7 +163,7 @@ def get_result(apm_domain_id: Optional[builtins.str] = None,
     :param builtins.str execution_time: The time the object was posted.
     :param builtins.str monitor_id: The OCID of the monitor.
     :param builtins.str result_content_type: The result content type: zip or raw.
-    :param builtins.str result_type: The result type: har, screenshot, log, or network.
+    :param builtins.str result_type: The result type: har, screenshot, log, network, diagnostics or script.
     :param builtins.str vantage_point: The vantagePoint name.
     """
     __args__ = dict()
@@ -195,7 +195,7 @@ def get_result_output(apm_domain_id: Optional[pulumi.Input[builtins.str]] = None
     """
     This data source provides details about a specific Result resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
 
-    Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log or Network details.
+    Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log, Network details, Diagnostics or Script Content.
 
     ## Example Usage
 
@@ -216,7 +216,7 @@ def get_result_output(apm_domain_id: Optional[pulumi.Input[builtins.str]] = None
     :param builtins.str execution_time: The time the object was posted.
     :param builtins.str monitor_id: The OCID of the monitor.
     :param builtins.str result_content_type: The result content type: zip or raw.
-    :param builtins.str result_type: The result type: har, screenshot, log, or network.
+    :param builtins.str result_type: The result type: har, screenshot, log, network, diagnostics or script.
     :param builtins.str vantage_point: The vantagePoint name.
     """
     __args__ = dict()

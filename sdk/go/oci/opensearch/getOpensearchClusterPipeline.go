@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/opensearch"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/opensearch"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -74,6 +74,8 @@ type LookupOpensearchClusterPipelineResult struct {
 	MemoryGb int `pulumi:"memoryGb"`
 	// The number of nodes configured for the pipeline.
 	NodeCount int `pulumi:"nodeCount"`
+	// The pipeline node shape.
+	NodeShape string `pulumi:"nodeShape"`
 	// The OCID of the NSG where the pipeline private endpoint vnic will be attached.
 	NsgId string `pulumi:"nsgId"`
 	// The number of OCPUs configured for each pipeline node.
@@ -180,6 +182,11 @@ func (o LookupOpensearchClusterPipelineResultOutput) MemoryGb() pulumi.IntOutput
 // The number of nodes configured for the pipeline.
 func (o LookupOpensearchClusterPipelineResultOutput) NodeCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupOpensearchClusterPipelineResult) int { return v.NodeCount }).(pulumi.IntOutput)
+}
+
+// The pipeline node shape.
+func (o LookupOpensearchClusterPipelineResultOutput) NodeShape() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupOpensearchClusterPipelineResult) string { return v.NodeShape }).(pulumi.StringOutput)
 }
 
 // The OCID of the NSG where the pipeline private endpoint vnic will be attached.

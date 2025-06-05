@@ -51,6 +51,7 @@ export class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement ext
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external pluggable database.
      */
     public readonly externalPluggableDatabaseId!: pulumi.Output<string>;
+    public readonly feature!: pulumi.Output<string | undefined>;
     /**
      * The details required to enable the specified Database Management feature.
      */
@@ -71,6 +72,7 @@ export class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement ext
             const state = argsOrState as ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementState | undefined;
             resourceInputs["enableExternalPluggableDbmFeature"] = state ? state.enableExternalPluggableDbmFeature : undefined;
             resourceInputs["externalPluggableDatabaseId"] = state ? state.externalPluggableDatabaseId : undefined;
+            resourceInputs["feature"] = state ? state.feature : undefined;
             resourceInputs["featureDetails"] = state ? state.featureDetails : undefined;
         } else {
             const args = argsOrState as ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementArgs | undefined;
@@ -82,6 +84,7 @@ export class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement ext
             }
             resourceInputs["enableExternalPluggableDbmFeature"] = args ? args.enableExternalPluggableDbmFeature : undefined;
             resourceInputs["externalPluggableDatabaseId"] = args ? args.externalPluggableDatabaseId : undefined;
+            resourceInputs["feature"] = args ? args.feature : undefined;
             resourceInputs["featureDetails"] = args ? args.featureDetails : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -105,6 +108,7 @@ export interface ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external pluggable database.
      */
     externalPluggableDatabaseId?: pulumi.Input<string>;
+    feature?: pulumi.Input<string>;
     /**
      * The details required to enable the specified Database Management feature.
      */
@@ -127,6 +131,7 @@ export interface ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external pluggable database.
      */
     externalPluggableDatabaseId: pulumi.Input<string>;
+    feature?: pulumi.Input<string>;
     /**
      * The details required to enable the specified Database Management feature.
      */

@@ -5,6 +5,7 @@ package com.pulumi.oci.LogAnalytics.inputs;
 
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTopologyFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -15,6 +16,28 @@ import javax.annotation.Nullable;
 public final class GetLogAnalyticsEntityTopologyPlainArgs extends com.pulumi.resources.InvokeArgs {
 
     public static final GetLogAnalyticsEntityTopologyPlainArgs Empty = new GetLogAnalyticsEntityTopologyPlainArgs();
+
+    /**
+     * A filter to return log analytics entity toplogy whose context matches the specified string.
+     * 
+     */
+    @Import(name="context")
+    private @Nullable String context;
+
+    /**
+     * @return A filter to return log analytics entity toplogy whose context matches the specified string.
+     * 
+     */
+    public Optional<String> context() {
+        return Optional.ofNullable(this.context);
+    }
+
+    @Import(name="filters")
+    private @Nullable List<GetLogAnalyticsEntityTopologyFilter> filters;
+
+    public Optional<List<GetLogAnalyticsEntityTopologyFilter>> filters() {
+        return Optional.ofNullable(this.filters);
+    }
 
     /**
      * The log analytics entity OCID.
@@ -79,6 +102,8 @@ public final class GetLogAnalyticsEntityTopologyPlainArgs extends com.pulumi.res
     private GetLogAnalyticsEntityTopologyPlainArgs() {}
 
     private GetLogAnalyticsEntityTopologyPlainArgs(GetLogAnalyticsEntityTopologyPlainArgs $) {
+        this.context = $.context;
+        this.filters = $.filters;
         this.logAnalyticsEntityId = $.logAnalyticsEntityId;
         this.metadataEquals = $.metadataEquals;
         this.namespace = $.namespace;
@@ -101,6 +126,26 @@ public final class GetLogAnalyticsEntityTopologyPlainArgs extends com.pulumi.res
 
         public Builder(GetLogAnalyticsEntityTopologyPlainArgs defaults) {
             $ = new GetLogAnalyticsEntityTopologyPlainArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param context A filter to return log analytics entity toplogy whose context matches the specified string.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder context(@Nullable String context) {
+            $.context = context;
+            return this;
+        }
+
+        public Builder filters(@Nullable List<GetLogAnalyticsEntityTopologyFilter> filters) {
+            $.filters = filters;
+            return this;
+        }
+
+        public Builder filters(GetLogAnalyticsEntityTopologyFilter... filters) {
+            return filters(List.of(filters));
         }
 
         /**

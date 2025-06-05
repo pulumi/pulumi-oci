@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -40,7 +40,7 @@ type ManagedDatabase struct {
 	DatabaseType pulumi.StringOutput `pulumi:"databaseType"`
 	// The Oracle Database version.
 	DatabaseVersion pulumi.StringOutput `pulumi:"databaseVersion"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system that this Managed Database is part of.
 	DbSystemId pulumi.StringOutput `pulumi:"dbSystemId"`
 	// The list of feature configurations
 	DbmgmtFeatureConfigs ManagedDatabaseDbmgmtFeatureConfigArrayOutput `pulumi:"dbmgmtFeatureConfigs"`
@@ -122,7 +122,7 @@ type managedDatabaseState struct {
 	DatabaseType *string `pulumi:"databaseType"`
 	// The Oracle Database version.
 	DatabaseVersion *string `pulumi:"databaseVersion"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system that this Managed Database is part of.
 	DbSystemId *string `pulumi:"dbSystemId"`
 	// The list of feature configurations
 	DbmgmtFeatureConfigs []ManagedDatabaseDbmgmtFeatureConfig `pulumi:"dbmgmtFeatureConfigs"`
@@ -172,7 +172,7 @@ type ManagedDatabaseState struct {
 	DatabaseType pulumi.StringPtrInput
 	// The Oracle Database version.
 	DatabaseVersion pulumi.StringPtrInput
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system that this Managed Database is part of.
 	DbSystemId pulumi.StringPtrInput
 	// The list of feature configurations
 	DbmgmtFeatureConfigs ManagedDatabaseDbmgmtFeatureConfigArrayInput
@@ -358,7 +358,7 @@ func (o ManagedDatabaseOutput) DatabaseVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagedDatabase) pulumi.StringOutput { return v.DatabaseVersion }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system that this Managed Database is part of.
 func (o ManagedDatabaseOutput) DbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagedDatabase) pulumi.StringOutput { return v.DbSystemId }).(pulumi.StringOutput)
 }

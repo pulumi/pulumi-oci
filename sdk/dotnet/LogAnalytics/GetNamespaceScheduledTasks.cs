@@ -33,6 +33,7 @@ namespace Pulumi.Oci.LogAnalytics
         ///         DisplayName = namespaceScheduledTaskDisplayName,
         ///         TargetService = namespaceScheduledTaskTargetService,
         ///         TaskType = namespaceScheduledTaskTaskType,
+        ///         TemplateId = testTemplate.Id,
         ///     });
         /// 
         /// });
@@ -63,6 +64,7 @@ namespace Pulumi.Oci.LogAnalytics
         ///         DisplayName = namespaceScheduledTaskDisplayName,
         ///         TargetService = namespaceScheduledTaskTargetService,
         ///         TaskType = namespaceScheduledTaskTaskType,
+        ///         TemplateId = testTemplate.Id,
         ///     });
         /// 
         /// });
@@ -93,6 +95,7 @@ namespace Pulumi.Oci.LogAnalytics
         ///         DisplayName = namespaceScheduledTaskDisplayName,
         ///         TargetService = namespaceScheduledTaskTargetService,
         ///         TaskType = namespaceScheduledTaskTaskType,
+        ///         TemplateId = testTemplate.Id,
         ///     });
         /// 
         /// });
@@ -143,6 +146,12 @@ namespace Pulumi.Oci.LogAnalytics
         [Input("taskType", required: true)]
         public string TaskType { get; set; } = null!;
 
+        /// <summary>
+        /// A filter to return only scheduled tasks whose stream action templateId matches the given id  exactly.
+        /// </summary>
+        [Input("templateId")]
+        public string? TemplateId { get; set; }
+
         public GetNamespaceScheduledTasksArgs()
         {
         }
@@ -189,6 +198,12 @@ namespace Pulumi.Oci.LogAnalytics
         [Input("taskType", required: true)]
         public Input<string> TaskType { get; set; } = null!;
 
+        /// <summary>
+        /// A filter to return only scheduled tasks whose stream action templateId matches the given id  exactly.
+        /// </summary>
+        [Input("templateId")]
+        public Input<string>? TemplateId { get; set; }
+
         public GetNamespaceScheduledTasksInvokeArgs()
         {
         }
@@ -222,6 +237,10 @@ namespace Pulumi.Oci.LogAnalytics
         /// Task type.
         /// </summary>
         public readonly string TaskType;
+        /// <summary>
+        /// The Config template Id of a particular template.
+        /// </summary>
+        public readonly string? TemplateId;
 
         [OutputConstructor]
         private GetNamespaceScheduledTasksResult(
@@ -239,7 +258,9 @@ namespace Pulumi.Oci.LogAnalytics
 
             string? targetService,
 
-            string taskType)
+            string taskType,
+
+            string? templateId)
         {
             CompartmentId = compartmentId;
             DisplayName = displayName;
@@ -249,6 +270,7 @@ namespace Pulumi.Oci.LogAnalytics
             ScheduledTaskCollections = scheduledTaskCollections;
             TargetService = targetService;
             TaskType = taskType;
+            TemplateId = templateId;
         }
     }
 }

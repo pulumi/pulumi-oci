@@ -29,6 +29,12 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:DatabaseManagement/databaseDbmFeaturesManagement:DatabaseDbmFeaturesManagement")
 public class DatabaseDbmFeaturesManagement extends com.pulumi.resources.CustomResource {
+    @Export(name="canDisableAllPdbs", refs={Boolean.class}, tree="[0]")
+    private Output</* @Nullable */ Boolean> canDisableAllPdbs;
+
+    public Output<Optional<Boolean>> canDisableAllPdbs() {
+        return Codegen.optional(this.canDisableAllPdbs);
+    }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
      * 
@@ -62,6 +68,12 @@ public class DatabaseDbmFeaturesManagement extends com.pulumi.resources.CustomRe
      */
     public Output<Boolean> enableDatabaseDbmFeature() {
         return this.enableDatabaseDbmFeature;
+    }
+    @Export(name="feature", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> feature;
+
+    public Output<Optional<String>> feature() {
+        return Codegen.optional(this.feature);
     }
     /**
      * The details required to enable the specified Database Management feature.

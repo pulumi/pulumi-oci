@@ -91,7 +91,7 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
         public Input<string>? FtpRequestType { get; set; }
 
         /// <summary>
-        /// (Updatable) If enabled, Active mode will be used for the FTP connection.
+        /// (Updatable) If enabled, Active mode will be used for the FTP connection. Not supported for SFTP protocol.
         /// </summary>
         [Input("isActiveMode")]
         public Input<bool>? IsActiveMode { get; set; }

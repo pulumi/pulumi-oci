@@ -708,6 +708,9 @@ __all__ = [
     'GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceResult',
     'GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekResult',
     'GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthResult',
+    'GetSystemVersionMinorVersionsFilterResult',
+    'GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionResult',
+    'GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemResult',
     'GetSystemVersionsFilterResult',
     'GetSystemVersionsSystemVersionCollectionResult',
     'GetSystemVersionsSystemVersionCollectionItemResult',
@@ -56325,6 +56328,69 @@ class GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthR
 
 
 @pulumi.output_type
+class GetSystemVersionMinorVersionsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemResult']):
+        """
+        :param Sequence['GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArgs'] items: List of System minor versions.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemResult']:
+        """
+        List of System minor versions.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 version: builtins.str):
+        """
+        :param builtins.str version: A valid system minor version.
+        """
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def version(self) -> builtins.str:
+        """
+        A valid system minor version.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
 class GetSystemVersionsFilterResult(dict):
     def __init__(__self__, *,
                  name: builtins.str,
@@ -56377,7 +56443,7 @@ class GetSystemVersionsSystemVersionCollectionItemResult(dict):
                  system_versions: Sequence[builtins.str]):
         """
         :param builtins.str gi_version: Specifies gi version query parameter.
-        :param builtins.str shape: Specifies shape query parameter.
+        :param builtins.str shape: If provided, filters the results for the given shape.
         :param Sequence[builtins.str] system_versions: Compatible Exadata system versions for a given shape and GI version.
         """
         pulumi.set(__self__, "gi_version", gi_version)
@@ -56396,7 +56462,7 @@ class GetSystemVersionsSystemVersionCollectionItemResult(dict):
     @pulumi.getter
     def shape(self) -> builtins.str:
         """
-        Specifies shape query parameter.
+        If provided, filters the results for the given shape.
         """
         return pulumi.get(self, "shape")
 

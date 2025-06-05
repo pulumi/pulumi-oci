@@ -36,6 +36,51 @@ public final class UsageCarbonEmissionState extends com.pulumi.resources.Resourc
     }
 
     /**
+     * Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+     * 
+     */
+    @Import(name="emissionCalculationMethod")
+    private @Nullable Output<String> emissionCalculationMethod;
+
+    /**
+     * @return Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+     * 
+     */
+    public Optional<Output<String>> emissionCalculationMethod() {
+        return Optional.ofNullable(this.emissionCalculationMethod);
+    }
+
+    /**
+     * Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+     * 
+     */
+    @Import(name="emissionType")
+    private @Nullable Output<String> emissionType;
+
+    /**
+     * @return Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+     * 
+     */
+    public Optional<Output<String>> emissionType() {
+        return Optional.ofNullable(this.emissionType);
+    }
+
+    /**
+     * The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+     * 
+     */
+    @Import(name="granularity")
+    private @Nullable Output<String> granularity;
+
+    /**
+     * @return The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+     * 
+     */
+    public Optional<Output<String>> granularity() {
+        return Optional.ofNullable(this.granularity);
+    }
+
+    /**
      * Aggregate the result by. For example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;resourceName&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;, &#34;subscriptionId&#34;]`
      * 
      */
@@ -66,14 +111,14 @@ public final class UsageCarbonEmissionState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * Specifies whether aggregated by time. If isAggregateByTime is true, all usage carbon emissions over the query time period will be added up.
+     * Specifies whether aggregated by time. If isAggregateByTime is true, all carbon emissions usage over the query time period are summed.
      * 
      */
     @Import(name="isAggregateByTime")
     private @Nullable Output<Boolean> isAggregateByTime;
 
     /**
-     * @return Specifies whether aggregated by time. If isAggregateByTime is true, all usage carbon emissions over the query time period will be added up.
+     * @return Specifies whether aggregated by time. If isAggregateByTime is true, all carbon emissions usage over the query time period are summed.
      * 
      */
     public Optional<Output<Boolean>> isAggregateByTime() {
@@ -81,14 +126,14 @@ public final class UsageCarbonEmissionState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * A list of usage carbon emission items.
+     * A list of carbon emission usage items.
      * 
      */
     @Import(name="items")
     private @Nullable Output<List<UsageCarbonEmissionItemArgs>> items;
 
     /**
-     * @return A list of usage carbon emission items.
+     * @return A list of carbon emission usage items.
      * 
      */
     public Optional<Output<List<UsageCarbonEmissionItemArgs>>> items() {
@@ -165,6 +210,9 @@ public final class UsageCarbonEmissionState extends com.pulumi.resources.Resourc
 
     private UsageCarbonEmissionState(UsageCarbonEmissionState $) {
         this.compartmentDepth = $.compartmentDepth;
+        this.emissionCalculationMethod = $.emissionCalculationMethod;
+        this.emissionType = $.emissionType;
+        this.granularity = $.granularity;
         this.groupBies = $.groupBies;
         this.groupByTags = $.groupByTags;
         this.isAggregateByTime = $.isAggregateByTime;
@@ -212,6 +260,69 @@ public final class UsageCarbonEmissionState extends com.pulumi.resources.Resourc
          */
         public Builder compartmentDepth(Integer compartmentDepth) {
             return compartmentDepth(Output.of(compartmentDepth));
+        }
+
+        /**
+         * @param emissionCalculationMethod Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+         * 
+         * @return builder
+         * 
+         */
+        public Builder emissionCalculationMethod(@Nullable Output<String> emissionCalculationMethod) {
+            $.emissionCalculationMethod = emissionCalculationMethod;
+            return this;
+        }
+
+        /**
+         * @param emissionCalculationMethod Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+         * 
+         * @return builder
+         * 
+         */
+        public Builder emissionCalculationMethod(String emissionCalculationMethod) {
+            return emissionCalculationMethod(Output.of(emissionCalculationMethod));
+        }
+
+        /**
+         * @param emissionType Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder emissionType(@Nullable Output<String> emissionType) {
+            $.emissionType = emissionType;
+            return this;
+        }
+
+        /**
+         * @param emissionType Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder emissionType(String emissionType) {
+            return emissionType(Output.of(emissionType));
+        }
+
+        /**
+         * @param granularity The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder granularity(@Nullable Output<String> granularity) {
+            $.granularity = granularity;
+            return this;
+        }
+
+        /**
+         * @param granularity The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder granularity(String granularity) {
+            return granularity(Output.of(granularity));
         }
 
         /**
@@ -277,7 +388,7 @@ public final class UsageCarbonEmissionState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param isAggregateByTime Specifies whether aggregated by time. If isAggregateByTime is true, all usage carbon emissions over the query time period will be added up.
+         * @param isAggregateByTime Specifies whether aggregated by time. If isAggregateByTime is true, all carbon emissions usage over the query time period are summed.
          * 
          * @return builder
          * 
@@ -288,7 +399,7 @@ public final class UsageCarbonEmissionState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param isAggregateByTime Specifies whether aggregated by time. If isAggregateByTime is true, all usage carbon emissions over the query time period will be added up.
+         * @param isAggregateByTime Specifies whether aggregated by time. If isAggregateByTime is true, all carbon emissions usage over the query time period are summed.
          * 
          * @return builder
          * 
@@ -298,7 +409,7 @@ public final class UsageCarbonEmissionState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param items A list of usage carbon emission items.
+         * @param items A list of carbon emission usage items.
          * 
          * @return builder
          * 
@@ -309,7 +420,7 @@ public final class UsageCarbonEmissionState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param items A list of usage carbon emission items.
+         * @param items A list of carbon emission usage items.
          * 
          * @return builder
          * 
@@ -319,7 +430,7 @@ public final class UsageCarbonEmissionState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param items A list of usage carbon emission items.
+         * @param items A list of carbon emission usage items.
          * 
          * @return builder
          * 

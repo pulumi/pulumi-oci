@@ -42,6 +42,11 @@ namespace Pulumi.Oci.Core
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         PlacementConstraintDetails = new Oci.Core.Inputs.DedicatedVmHostPlacementConstraintDetailsArgs
+    ///         {
+    ///             Type = dedicatedVmHostPlacementConstraintDetailsType,
+    ///             ComputeBareMetalHostId = testComputeBareMetalHost.Id,
+    ///         },
     ///     });
     /// 
     /// });
@@ -99,14 +104,16 @@ namespace Pulumi.Oci.Core
         public Output<string> FaultDomain { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
+
+        /// <summary>
+        /// Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+        /// </summary>
+        [Output("placementConstraintDetails")]
+        public Output<Outputs.DedicatedVmHostPlacementConstraintDetails> PlacementConstraintDetails { get; private set; } = null!;
 
         /// <summary>
         /// The current available memory of the dedicated VM host, in GBs.
@@ -240,17 +247,19 @@ namespace Pulumi.Oci.Core
         private InputMap<string>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         public InputMap<string> FreeformTags
         {
             get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+        /// </summary>
+        [Input("placementConstraintDetails")]
+        public Input<Inputs.DedicatedVmHostPlacementConstraintDetailsArgs>? PlacementConstraintDetails { get; set; }
 
         public DedicatedVmHostArgs()
         {
@@ -310,17 +319,19 @@ namespace Pulumi.Oci.Core
         private InputMap<string>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         public InputMap<string> FreeformTags
         {
             get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+        /// </summary>
+        [Input("placementConstraintDetails")]
+        public Input<Inputs.DedicatedVmHostPlacementConstraintDetailsGetArgs>? PlacementConstraintDetails { get; set; }
 
         /// <summary>
         /// The current available memory of the dedicated VM host, in GBs.

@@ -105,7 +105,7 @@ namespace Pulumi.Oci.Adm
         public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
+        /// (Updatable) A configuration to define the constraints when detecting vulnerable dependencies and recommending remediations.
         /// </summary>
         [Output("detectConfiguration")]
         public Output<Outputs.RemediationRecipeDetectConfiguration> DetectConfiguration { get; private set; } = null!;
@@ -135,7 +135,7 @@ namespace Pulumi.Oci.Adm
         public Output<string> KnowledgeBaseId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+        /// (Updatable) A network configuration defines the required network characteristics for the remediation run of the recipe to access the source repository and/or verify build services.
         /// </summary>
         [Output("networkConfiguration")]
         public Output<Outputs.RemediationRecipeNetworkConfiguration> NetworkConfiguration { get; private set; } = null!;
@@ -245,7 +245,7 @@ namespace Pulumi.Oci.Adm
         }
 
         /// <summary>
-        /// (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
+        /// (Updatable) A configuration to define the constraints when detecting vulnerable dependencies and recommending remediations.
         /// </summary>
         [Input("detectConfiguration", required: true)]
         public Input<Inputs.RemediationRecipeDetectConfigurationArgs> DetectConfiguration { get; set; } = null!;
@@ -281,7 +281,7 @@ namespace Pulumi.Oci.Adm
         public Input<string> KnowledgeBaseId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+        /// (Updatable) A network configuration defines the required network characteristics for the remediation run of the recipe to access the source repository and/or verify build services.
         /// </summary>
         [Input("networkConfiguration", required: true)]
         public Input<Inputs.RemediationRecipeNetworkConfigurationArgs> NetworkConfiguration { get; set; } = null!;
@@ -335,7 +335,7 @@ namespace Pulumi.Oci.Adm
         }
 
         /// <summary>
-        /// (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
+        /// (Updatable) A configuration to define the constraints when detecting vulnerable dependencies and recommending remediations.
         /// </summary>
         [Input("detectConfiguration")]
         public Input<Inputs.RemediationRecipeDetectConfigurationGetArgs>? DetectConfiguration { get; set; }
@@ -371,7 +371,7 @@ namespace Pulumi.Oci.Adm
         public Input<string>? KnowledgeBaseId { get; set; }
 
         /// <summary>
-        /// (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+        /// (Updatable) A network configuration defines the required network characteristics for the remediation run of the recipe to access the source repository and/or verify build services.
         /// </summary>
         [Input("networkConfiguration")]
         public Input<Inputs.RemediationRecipeNetworkConfigurationGetArgs>? NetworkConfiguration { get; set; }

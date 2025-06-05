@@ -45,7 +45,7 @@ export interface GetSchedulesArgs {
      */
     filters?: inputs.MeteringComputation.GetSchedulesFilter[];
     /**
-     * Query parameter for filtering by name
+     * The query parameter for filtering by name.
      */
     name?: string;
 }
@@ -114,7 +114,7 @@ export interface GetSchedulesOutputArgs {
      */
     filters?: pulumi.Input<pulumi.Input<inputs.MeteringComputation.GetSchedulesFilterArgs>[]>;
     /**
-     * Query parameter for filtering by name
+     * The query parameter for filtering by name.
      */
     name?: pulumi.Input<string>;
 }

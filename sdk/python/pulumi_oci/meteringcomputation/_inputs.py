@@ -86,7 +86,7 @@ if not MYPY:
         """
         column_group_bies: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        (Updatable) The column groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+        (Updatable) The column groupBy key list. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
         """
         compartment_depth: NotRequired[pulumi.Input[builtins.float]]
         """
@@ -98,7 +98,7 @@ if not MYPY:
         """
         row_group_bies: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        (Updatable) The row groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+        (Updatable) The row groupBy key list. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
         """
         version: NotRequired[pulumi.Input[builtins.float]]
         """
@@ -118,10 +118,10 @@ class CustomTableSavedCustomTableArgs:
                  version: Optional[pulumi.Input[builtins.float]] = None):
         """
         :param pulumi.Input[builtins.str] display_name: (Updatable) The name of the custom table.
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] column_group_bies: (Updatable) The column groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] column_group_bies: (Updatable) The column groupBy key list. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
         :param pulumi.Input[builtins.float] compartment_depth: (Updatable) The compartment depth level.
         :param pulumi.Input[Sequence[pulumi.Input['CustomTableSavedCustomTableGroupByTagArgs']]] group_by_tags: (Updatable) GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only one tag in the list is supported. For example: `[{"namespace":"oracle", "key":"createdBy"]`
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] row_group_bies: (Updatable) The row groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] row_group_bies: (Updatable) The row groupBy key list. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
         :param pulumi.Input[builtins.float] version: (Updatable) The version of the custom table.
         """
         pulumi.set(__self__, "display_name", display_name)
@@ -152,7 +152,7 @@ class CustomTableSavedCustomTableArgs:
     @pulumi.getter(name="columnGroupBies")
     def column_group_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        (Updatable) The column groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+        (Updatable) The column groupBy key list. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
         """
         return pulumi.get(self, "column_group_bies")
 
@@ -188,7 +188,7 @@ class CustomTableSavedCustomTableArgs:
     @pulumi.getter(name="rowGroupBies")
     def row_group_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        (Updatable) The row groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+        (Updatable) The row groupBy key list. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
         """
         return pulumi.get(self, "row_group_bies")
 
@@ -461,7 +461,7 @@ if not MYPY:
         """
         group_bies: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        (Updatable) Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+        (Updatable) Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
         """
         group_by_tags: NotRequired[pulumi.Input[Sequence[pulumi.Input['QueryQueryDefinitionReportQueryGroupByTagArgsDict']]]]
         """
@@ -469,11 +469,16 @@ if not MYPY:
         """
         is_aggregate_by_time: NotRequired[pulumi.Input[builtins.bool]]
         """
-        (Updatable) Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+        (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
         """
         query_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        (Updatable) The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
+        (Updatable) The query usage type. COST by default if it is missing.
+        * Usage: Query the usage data.
+        * Cost: Query the cost/billing data.
+        * Credit: Query the credit adjustments data.
+        * ExpiredCredit: Query the expired credits data.
+        * AllCredit: Query the credit adjustments and expired credit.
         """
         time_usage_ended: NotRequired[pulumi.Input[builtins.str]]
         """
@@ -508,10 +513,15 @@ class QueryQueryDefinitionReportQueryArgs:
         :param pulumi.Input[builtins.str] date_range_name: (Updatable) The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
         :param pulumi.Input[builtins.str] filter: (Updatable) The filter object for query usage.
         :param pulumi.Input['QueryQueryDefinitionReportQueryForecastArgs'] forecast: (Updatable) Forecast configuration of usage/cost.
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] group_bies: (Updatable) Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] group_bies: (Updatable) Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
         :param pulumi.Input[Sequence[pulumi.Input['QueryQueryDefinitionReportQueryGroupByTagArgs']]] group_by_tags: (Updatable) GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
-        :param pulumi.Input[builtins.bool] is_aggregate_by_time: (Updatable) Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
-        :param pulumi.Input[builtins.str] query_type: (Updatable) The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
+        :param pulumi.Input[builtins.bool] is_aggregate_by_time: (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+        :param pulumi.Input[builtins.str] query_type: (Updatable) The query usage type. COST by default if it is missing.
+               * Usage: Query the usage data.
+               * Cost: Query the cost/billing data.
+               * Credit: Query the credit adjustments data.
+               * ExpiredCredit: Query the expired credits data.
+               * AllCredit: Query the credit adjustments and expired credit.
         :param pulumi.Input[builtins.str] time_usage_ended: (Updatable) The usage end time.
         :param pulumi.Input[builtins.str] time_usage_started: (Updatable) The usage start time.
         """
@@ -614,7 +624,7 @@ class QueryQueryDefinitionReportQueryArgs:
     @pulumi.getter(name="groupBies")
     def group_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        (Updatable) Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+        (Updatable) Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
         """
         return pulumi.get(self, "group_bies")
 
@@ -638,7 +648,7 @@ class QueryQueryDefinitionReportQueryArgs:
     @pulumi.getter(name="isAggregateByTime")
     def is_aggregate_by_time(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        (Updatable) Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+        (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
         """
         return pulumi.get(self, "is_aggregate_by_time")
 
@@ -650,7 +660,12 @@ class QueryQueryDefinitionReportQueryArgs:
     @pulumi.getter(name="queryType")
     def query_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        (Updatable) The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
+        (Updatable) The query usage type. COST by default if it is missing.
+        * Usage: Query the usage data.
+        * Cost: Query the cost/billing data.
+        * Credit: Query the credit adjustments data.
+        * ExpiredCredit: Query the expired credits data.
+        * AllCredit: Query the credit adjustments and expired credit.
         """
         return pulumi.get(self, "query_type")
 
@@ -1332,11 +1347,15 @@ if not MYPY:
         """
         computed_carbon_emission: NotRequired[pulumi.Input[builtins.float]]
         """
-        The carbon emission in MTCO2 unit.
+        The carbon emission usage in MTCO2 units.
         """
         emission_calculation_method: NotRequired[pulumi.Input[builtins.str]]
         """
-        The method used to calculate carbon emission.
+        Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+        """
+        emission_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
         """
         platform: NotRequired[pulumi.Input[builtins.str]]
         """
@@ -1402,6 +1421,7 @@ class UsageCarbonEmissionItemArgs:
                  compartment_path: Optional[pulumi.Input[builtins.str]] = None,
                  computed_carbon_emission: Optional[pulumi.Input[builtins.float]] = None,
                  emission_calculation_method: Optional[pulumi.Input[builtins.str]] = None,
+                 emission_type: Optional[pulumi.Input[builtins.str]] = None,
                  platform: Optional[pulumi.Input[builtins.str]] = None,
                  region: Optional[pulumi.Input[builtins.str]] = None,
                  resource_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -1420,8 +1440,9 @@ class UsageCarbonEmissionItemArgs:
         :param pulumi.Input[builtins.str] compartment_id: The compartment OCID.
         :param pulumi.Input[builtins.str] compartment_name: The compartment name.
         :param pulumi.Input[builtins.str] compartment_path: The compartment path, starting from root.
-        :param pulumi.Input[builtins.float] computed_carbon_emission: The carbon emission in MTCO2 unit.
-        :param pulumi.Input[builtins.str] emission_calculation_method: The method used to calculate carbon emission.
+        :param pulumi.Input[builtins.float] computed_carbon_emission: The carbon emission usage in MTCO2 units.
+        :param pulumi.Input[builtins.str] emission_calculation_method: Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+        :param pulumi.Input[builtins.str] emission_type: Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
         :param pulumi.Input[builtins.str] platform: Platform for the cost.
         :param pulumi.Input[builtins.str] region: The region of the usage.
         :param pulumi.Input[builtins.str] resource_id: The resource OCID that is incurring the cost.
@@ -1448,6 +1469,8 @@ class UsageCarbonEmissionItemArgs:
             pulumi.set(__self__, "computed_carbon_emission", computed_carbon_emission)
         if emission_calculation_method is not None:
             pulumi.set(__self__, "emission_calculation_method", emission_calculation_method)
+        if emission_type is not None:
+            pulumi.set(__self__, "emission_type", emission_type)
         if platform is not None:
             pulumi.set(__self__, "platform", platform)
         if region is not None:
@@ -1527,7 +1550,7 @@ class UsageCarbonEmissionItemArgs:
     @pulumi.getter(name="computedCarbonEmission")
     def computed_carbon_emission(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        The carbon emission in MTCO2 unit.
+        The carbon emission usage in MTCO2 units.
         """
         return pulumi.get(self, "computed_carbon_emission")
 
@@ -1539,13 +1562,25 @@ class UsageCarbonEmissionItemArgs:
     @pulumi.getter(name="emissionCalculationMethod")
     def emission_calculation_method(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        The method used to calculate carbon emission.
+        Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
         """
         return pulumi.get(self, "emission_calculation_method")
 
     @emission_calculation_method.setter
     def emission_calculation_method(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "emission_calculation_method", value)
+
+    @property
+    @pulumi.getter(name="emissionType")
+    def emission_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+        """
+        return pulumi.get(self, "emission_type")
+
+    @emission_type.setter
+    def emission_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "emission_type", value)
 
     @property
     @pulumi.getter
@@ -1788,7 +1823,7 @@ if not MYPY:
         """
         report_query: pulumi.Input['UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgsDict']
         """
-        (Updatable) The request of the generated usage carbon emissions report.
+        (Updatable) The request of the generated carbon emissions usage report.
         """
         version: pulumi.Input[builtins.int]
         """
@@ -1811,7 +1846,7 @@ class UsageCarbonEmissionsQueryQueryDefinitionArgs:
         """
         :param pulumi.Input['UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgs'] cost_analysis_ui: (Updatable) The common fields for Cost Analysis UI rendering.
         :param pulumi.Input[builtins.str] display_name: (Updatable) The query display name. Avoid entering confidential information.
-        :param pulumi.Input['UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs'] report_query: (Updatable) The request of the generated usage carbon emissions report.
+        :param pulumi.Input['UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs'] report_query: (Updatable) The request of the generated carbon emissions usage report.
         :param pulumi.Input[builtins.int] version: (Updatable) The saved query version.
                
                
@@ -1851,7 +1886,7 @@ class UsageCarbonEmissionsQueryQueryDefinitionArgs:
     @pulumi.getter(name="reportQuery")
     def report_query(self) -> pulumi.Input['UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs']:
         """
-        (Updatable) The request of the generated usage carbon emissions report.
+        (Updatable) The request of the generated carbon emissions usage report.
         """
         return pulumi.get(self, "report_query")
 
@@ -1940,7 +1975,19 @@ if not MYPY:
         """
         date_range_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        (Updatable) The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+        (Updatable) The user interface date range, for example, LAST_THREE_MONTHS. Overrides the timeUsageStarted and timeUsageEnded properties.
+        """
+        emission_calculation_method: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+        """
+        emission_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+        """
+        granularity: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
         """
         group_bies: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
@@ -1952,7 +1999,7 @@ if not MYPY:
         """
         is_aggregate_by_time: NotRequired[pulumi.Input[builtins.bool]]
         """
-        (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+        (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or costs over the query time period are summed.
         """
         time_usage_ended: NotRequired[pulumi.Input[builtins.str]]
         """
@@ -1975,6 +2022,9 @@ class UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs:
                  tenant_id: pulumi.Input[builtins.str],
                  compartment_depth: Optional[pulumi.Input[builtins.int]] = None,
                  date_range_name: Optional[pulumi.Input[builtins.str]] = None,
+                 emission_calculation_method: Optional[pulumi.Input[builtins.str]] = None,
+                 emission_type: Optional[pulumi.Input[builtins.str]] = None,
+                 granularity: Optional[pulumi.Input[builtins.str]] = None,
                  group_bies: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  group_by_tags: Optional[pulumi.Input[Sequence[pulumi.Input['UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgs']]]] = None,
                  is_aggregate_by_time: Optional[pulumi.Input[builtins.bool]] = None,
@@ -1984,10 +2034,13 @@ class UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs:
         """
         :param pulumi.Input[builtins.str] tenant_id: (Updatable) Tenant ID.
         :param pulumi.Input[builtins.int] compartment_depth: (Updatable) The compartment depth level.
-        :param pulumi.Input[builtins.str] date_range_name: (Updatable) The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+        :param pulumi.Input[builtins.str] date_range_name: (Updatable) The user interface date range, for example, LAST_THREE_MONTHS. Overrides the timeUsageStarted and timeUsageEnded properties.
+        :param pulumi.Input[builtins.str] emission_calculation_method: (Updatable) Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+        :param pulumi.Input[builtins.str] emission_type: (Updatable) Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+        :param pulumi.Input[builtins.str] granularity: (Updatable) The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] group_bies: (Updatable) Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
         :param pulumi.Input[Sequence[pulumi.Input['UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgs']]] group_by_tags: (Updatable) GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
-        :param pulumi.Input[builtins.bool] is_aggregate_by_time: (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+        :param pulumi.Input[builtins.bool] is_aggregate_by_time: (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or costs over the query time period are summed.
         :param pulumi.Input[builtins.str] time_usage_ended: (Updatable) The usage end time.
         :param pulumi.Input[builtins.str] time_usage_started: (Updatable) The usage start time.
         :param pulumi.Input[builtins.str] usage_carbon_emissions_query_filter: (Updatable) The filter object for query usage.
@@ -1997,6 +2050,12 @@ class UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs:
             pulumi.set(__self__, "compartment_depth", compartment_depth)
         if date_range_name is not None:
             pulumi.set(__self__, "date_range_name", date_range_name)
+        if emission_calculation_method is not None:
+            pulumi.set(__self__, "emission_calculation_method", emission_calculation_method)
+        if emission_type is not None:
+            pulumi.set(__self__, "emission_type", emission_type)
+        if granularity is not None:
+            pulumi.set(__self__, "granularity", granularity)
         if group_bies is not None:
             pulumi.set(__self__, "group_bies", group_bies)
         if group_by_tags is not None:
@@ -2038,13 +2097,49 @@ class UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs:
     @pulumi.getter(name="dateRangeName")
     def date_range_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        (Updatable) The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+        (Updatable) The user interface date range, for example, LAST_THREE_MONTHS. Overrides the timeUsageStarted and timeUsageEnded properties.
         """
         return pulumi.get(self, "date_range_name")
 
     @date_range_name.setter
     def date_range_name(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "date_range_name", value)
+
+    @property
+    @pulumi.getter(name="emissionCalculationMethod")
+    def emission_calculation_method(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+        """
+        return pulumi.get(self, "emission_calculation_method")
+
+    @emission_calculation_method.setter
+    def emission_calculation_method(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "emission_calculation_method", value)
+
+    @property
+    @pulumi.getter(name="emissionType")
+    def emission_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+        """
+        return pulumi.get(self, "emission_type")
+
+    @emission_type.setter
+    def emission_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "emission_type", value)
+
+    @property
+    @pulumi.getter
+    def granularity(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+        """
+        return pulumi.get(self, "granularity")
+
+    @granularity.setter
+    def granularity(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "granularity", value)
 
     @property
     @pulumi.getter(name="groupBies")
@@ -2074,7 +2169,7 @@ class UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs:
     @pulumi.getter(name="isAggregateByTime")
     def is_aggregate_by_time(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+        (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or costs over the query time period are summed.
         """
         return pulumi.get(self, "is_aggregate_by_time")
 
@@ -3054,7 +3149,7 @@ if not MYPY:
     class UsageStatementEmailRecipientsGroupRecipientsListArgsDict(TypedDict):
         email_id: pulumi.Input[builtins.str]
         """
-        (Updatable) the email of the recipient.
+        (Updatable) The recipient email address.
         """
         state: pulumi.Input[builtins.str]
         """
@@ -3062,11 +3157,11 @@ if not MYPY:
         """
         first_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        (Updatable) the first name of the recipient.
+        (Updatable) The recipient first name.
         """
         last_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        (Updatable) the last name of the recipient.
+        (Updatable) The recipient last name.
         """
 elif False:
     UsageStatementEmailRecipientsGroupRecipientsListArgsDict: TypeAlias = Mapping[str, Any]
@@ -3079,10 +3174,10 @@ class UsageStatementEmailRecipientsGroupRecipientsListArgs:
                  first_name: Optional[pulumi.Input[builtins.str]] = None,
                  last_name: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] email_id: (Updatable) the email of the recipient.
+        :param pulumi.Input[builtins.str] email_id: (Updatable) The recipient email address.
         :param pulumi.Input[builtins.str] state: (Updatable) The email recipient lifecycle state.
-        :param pulumi.Input[builtins.str] first_name: (Updatable) the first name of the recipient.
-        :param pulumi.Input[builtins.str] last_name: (Updatable) the last name of the recipient.
+        :param pulumi.Input[builtins.str] first_name: (Updatable) The recipient first name.
+        :param pulumi.Input[builtins.str] last_name: (Updatable) The recipient last name.
         """
         pulumi.set(__self__, "email_id", email_id)
         pulumi.set(__self__, "state", state)
@@ -3095,7 +3190,7 @@ class UsageStatementEmailRecipientsGroupRecipientsListArgs:
     @pulumi.getter(name="emailId")
     def email_id(self) -> pulumi.Input[builtins.str]:
         """
-        (Updatable) the email of the recipient.
+        (Updatable) The recipient email address.
         """
         return pulumi.get(self, "email_id")
 
@@ -3119,7 +3214,7 @@ class UsageStatementEmailRecipientsGroupRecipientsListArgs:
     @pulumi.getter(name="firstName")
     def first_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        (Updatable) the first name of the recipient.
+        (Updatable) The recipient first name.
         """
         return pulumi.get(self, "first_name")
 
@@ -3131,7 +3226,7 @@ class UsageStatementEmailRecipientsGroupRecipientsListArgs:
     @pulumi.getter(name="lastName")
     def last_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        (Updatable) the last name of the recipient.
+        (Updatable) The recipient last name.
         """
         return pulumi.get(self, "last_name")
 
@@ -3285,7 +3380,7 @@ if not MYPY:
     class GetSchedulesFilterArgsDict(TypedDict):
         name: builtins.str
         """
-        Query parameter for filtering by name
+        The query parameter for filtering by name.
         """
         values: Sequence[builtins.str]
         regex: NotRequired[builtins.bool]
@@ -3299,7 +3394,7 @@ class GetSchedulesFilterArgs:
                  values: Sequence[builtins.str],
                  regex: Optional[builtins.bool] = None):
         """
-        :param builtins.str name: Query parameter for filtering by name
+        :param builtins.str name: The query parameter for filtering by name.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
@@ -3310,7 +3405,7 @@ class GetSchedulesFilterArgs:
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        Query parameter for filtering by name
+        The query parameter for filtering by name.
         """
         return pulumi.get(self, "name")
 

@@ -33,6 +33,9 @@ namespace Pulumi.Oci.DatabaseManagement
         [Output("externalPluggableDatabaseId")]
         public Output<string> ExternalPluggableDatabaseId { get; private set; } = null!;
 
+        [Output("feature")]
+        public Output<string?> Feature { get; private set; } = null!;
+
         /// <summary>
         /// The details required to enable the specified Database Management feature.
         /// </summary>
@@ -101,6 +104,9 @@ namespace Pulumi.Oci.DatabaseManagement
         [Input("externalPluggableDatabaseId", required: true)]
         public Input<string> ExternalPluggableDatabaseId { get; set; } = null!;
 
+        [Input("feature")]
+        public Input<string>? Feature { get; set; }
+
         /// <summary>
         /// The details required to enable the specified Database Management feature.
         /// </summary>
@@ -130,6 +136,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         [Input("externalPluggableDatabaseId")]
         public Input<string>? ExternalPluggableDatabaseId { get; set; }
+
+        [Input("feature")]
+        public Input<string>? Feature { get; set; }
 
         /// <summary>
         /// The details required to enable the specified Database Management feature.

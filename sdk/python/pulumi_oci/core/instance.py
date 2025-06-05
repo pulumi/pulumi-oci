@@ -47,6 +47,7 @@ class InstanceArgs:
                  launch_volume_attachments: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceLaunchVolumeAttachmentArgs']]]] = None,
                  licensing_configs: Optional[pulumi.Input['InstanceLicensingConfigsArgs']] = None,
                  metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
+                 placement_constraint_details: Optional[pulumi.Input['InstancePlacementConstraintDetailsArgs']] = None,
                  platform_config: Optional[pulumi.Input['InstancePlatformConfigArgs']] = None,
                  preemptible_instance_config: Optional[pulumi.Input['InstancePreemptibleInstanceConfigArgs']] = None,
                  preserve_boot_volume: Optional[pulumi.Input[builtins.bool]] = None,
@@ -135,9 +136,9 @@ class InstanceArgs:
                You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
                
                The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+        :param pulumi.Input['InstancePlacementConstraintDetailsArgs'] placement_constraint_details: Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+        :param pulumi.Input['InstancePlatformConfigArgs'] platform_config: (Updatable) The platform configuration requested for the instance.
                
-               **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
-        :param pulumi.Input['InstancePlatformConfigArgs'] platform_config: (Updatable only for VM's) The platform configuration requested for the instance.
                
                If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
                
@@ -218,6 +219,8 @@ class InstanceArgs:
             pulumi.set(__self__, "licensing_configs", licensing_configs)
         if metadata is not None:
             pulumi.set(__self__, "metadata", metadata)
+        if placement_constraint_details is not None:
+            pulumi.set(__self__, "placement_constraint_details", placement_constraint_details)
         if platform_config is not None:
             pulumi.set(__self__, "platform_config", platform_config)
         if preemptible_instance_config is not None:
@@ -585,8 +588,6 @@ class InstanceArgs:
         You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
 
         The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-
-        **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
         """
         return pulumi.get(self, "metadata")
 
@@ -595,10 +596,23 @@ class InstanceArgs:
         pulumi.set(self, "metadata", value)
 
     @property
+    @pulumi.getter(name="placementConstraintDetails")
+    def placement_constraint_details(self) -> Optional[pulumi.Input['InstancePlacementConstraintDetailsArgs']]:
+        """
+        Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+        """
+        return pulumi.get(self, "placement_constraint_details")
+
+    @placement_constraint_details.setter
+    def placement_constraint_details(self, value: Optional[pulumi.Input['InstancePlacementConstraintDetailsArgs']]):
+        pulumi.set(self, "placement_constraint_details", value)
+
+    @property
     @pulumi.getter(name="platformConfig")
     def platform_config(self) -> Optional[pulumi.Input['InstancePlatformConfigArgs']]:
         """
-        (Updatable only for VM's) The platform configuration requested for the instance.
+        (Updatable) The platform configuration requested for the instance.
+
 
         If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
 
@@ -770,6 +784,7 @@ class _InstanceState:
                  launch_volume_attachments: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceLaunchVolumeAttachmentArgs']]]] = None,
                  licensing_configs: Optional[pulumi.Input['InstanceLicensingConfigsArgs']] = None,
                  metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
+                 placement_constraint_details: Optional[pulumi.Input['InstancePlacementConstraintDetailsArgs']] = None,
                  platform_config: Optional[pulumi.Input['InstancePlatformConfigArgs']] = None,
                  preemptible_instance_config: Optional[pulumi.Input['InstancePreemptibleInstanceConfigArgs']] = None,
                  preserve_boot_volume: Optional[pulumi.Input[builtins.bool]] = None,
@@ -872,9 +887,9 @@ class _InstanceState:
                You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
                
                The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+        :param pulumi.Input['InstancePlacementConstraintDetailsArgs'] placement_constraint_details: Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+        :param pulumi.Input['InstancePlatformConfigArgs'] platform_config: (Updatable) The platform configuration requested for the instance.
                
-               **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
-        :param pulumi.Input['InstancePlatformConfigArgs'] platform_config: (Updatable only for VM's) The platform configuration requested for the instance.
                
                If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
                
@@ -970,6 +985,8 @@ class _InstanceState:
             pulumi.set(__self__, "licensing_configs", licensing_configs)
         if metadata is not None:
             pulumi.set(__self__, "metadata", metadata)
+        if placement_constraint_details is not None:
+            pulumi.set(__self__, "placement_constraint_details", placement_constraint_details)
         if platform_config is not None:
             pulumi.set(__self__, "platform_config", platform_config)
         if preemptible_instance_config is not None:
@@ -1391,8 +1408,6 @@ class _InstanceState:
         You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
 
         The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-
-        **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
         """
         return pulumi.get(self, "metadata")
 
@@ -1401,10 +1416,23 @@ class _InstanceState:
         pulumi.set(self, "metadata", value)
 
     @property
+    @pulumi.getter(name="placementConstraintDetails")
+    def placement_constraint_details(self) -> Optional[pulumi.Input['InstancePlacementConstraintDetailsArgs']]:
+        """
+        Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+        """
+        return pulumi.get(self, "placement_constraint_details")
+
+    @placement_constraint_details.setter
+    def placement_constraint_details(self, value: Optional[pulumi.Input['InstancePlacementConstraintDetailsArgs']]):
+        pulumi.set(self, "placement_constraint_details", value)
+
+    @property
     @pulumi.getter(name="platformConfig")
     def platform_config(self) -> Optional[pulumi.Input['InstancePlatformConfigArgs']]:
         """
-        (Updatable only for VM's) The platform configuration requested for the instance.
+        (Updatable) The platform configuration requested for the instance.
+
 
         If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
 
@@ -1660,6 +1688,7 @@ class Instance(pulumi.CustomResource):
                  launch_volume_attachments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceLaunchVolumeAttachmentArgs', 'InstanceLaunchVolumeAttachmentArgsDict']]]]] = None,
                  licensing_configs: Optional[pulumi.Input[Union['InstanceLicensingConfigsArgs', 'InstanceLicensingConfigsArgsDict']]] = None,
                  metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
+                 placement_constraint_details: Optional[pulumi.Input[Union['InstancePlacementConstraintDetailsArgs', 'InstancePlacementConstraintDetailsArgsDict']]] = None,
                  platform_config: Optional[pulumi.Input[Union['InstancePlatformConfigArgs', 'InstancePlatformConfigArgsDict']]] = None,
                  preemptible_instance_config: Optional[pulumi.Input[Union['InstancePreemptibleInstanceConfigArgs', 'InstancePreemptibleInstanceConfigArgsDict']]] = None,
                  preserve_boot_volume: Optional[pulumi.Input[builtins.bool]] = None,
@@ -1810,9 +1839,9 @@ class Instance(pulumi.CustomResource):
                You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
                
                The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+        :param pulumi.Input[Union['InstancePlacementConstraintDetailsArgs', 'InstancePlacementConstraintDetailsArgsDict']] placement_constraint_details: Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+        :param pulumi.Input[Union['InstancePlatformConfigArgs', 'InstancePlatformConfigArgsDict']] platform_config: (Updatable) The platform configuration requested for the instance.
                
-               **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
-        :param pulumi.Input[Union['InstancePlatformConfigArgs', 'InstancePlatformConfigArgsDict']] platform_config: (Updatable only for VM's) The platform configuration requested for the instance.
                
                If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
                
@@ -1946,6 +1975,7 @@ class Instance(pulumi.CustomResource):
                  launch_volume_attachments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceLaunchVolumeAttachmentArgs', 'InstanceLaunchVolumeAttachmentArgsDict']]]]] = None,
                  licensing_configs: Optional[pulumi.Input[Union['InstanceLicensingConfigsArgs', 'InstanceLicensingConfigsArgsDict']]] = None,
                  metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
+                 placement_constraint_details: Optional[pulumi.Input[Union['InstancePlacementConstraintDetailsArgs', 'InstancePlacementConstraintDetailsArgsDict']]] = None,
                  platform_config: Optional[pulumi.Input[Union['InstancePlatformConfigArgs', 'InstancePlatformConfigArgsDict']]] = None,
                  preemptible_instance_config: Optional[pulumi.Input[Union['InstancePreemptibleInstanceConfigArgs', 'InstancePreemptibleInstanceConfigArgsDict']]] = None,
                  preserve_boot_volume: Optional[pulumi.Input[builtins.bool]] = None,
@@ -1995,6 +2025,7 @@ class Instance(pulumi.CustomResource):
             __props__.__dict__["launch_volume_attachments"] = launch_volume_attachments
             __props__.__dict__["licensing_configs"] = licensing_configs
             __props__.__dict__["metadata"] = metadata
+            __props__.__dict__["placement_constraint_details"] = placement_constraint_details
             __props__.__dict__["platform_config"] = platform_config
             __props__.__dict__["preemptible_instance_config"] = preemptible_instance_config
             __props__.__dict__["preserve_boot_volume"] = preserve_boot_volume
@@ -2054,6 +2085,7 @@ class Instance(pulumi.CustomResource):
             launch_volume_attachments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceLaunchVolumeAttachmentArgs', 'InstanceLaunchVolumeAttachmentArgsDict']]]]] = None,
             licensing_configs: Optional[pulumi.Input[Union['InstanceLicensingConfigsArgs', 'InstanceLicensingConfigsArgsDict']]] = None,
             metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
+            placement_constraint_details: Optional[pulumi.Input[Union['InstancePlacementConstraintDetailsArgs', 'InstancePlacementConstraintDetailsArgsDict']]] = None,
             platform_config: Optional[pulumi.Input[Union['InstancePlatformConfigArgs', 'InstancePlatformConfigArgsDict']]] = None,
             preemptible_instance_config: Optional[pulumi.Input[Union['InstancePreemptibleInstanceConfigArgs', 'InstancePreemptibleInstanceConfigArgsDict']]] = None,
             preserve_boot_volume: Optional[pulumi.Input[builtins.bool]] = None,
@@ -2161,9 +2193,9 @@ class Instance(pulumi.CustomResource):
                You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
                
                The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+        :param pulumi.Input[Union['InstancePlacementConstraintDetailsArgs', 'InstancePlacementConstraintDetailsArgsDict']] placement_constraint_details: Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+        :param pulumi.Input[Union['InstancePlatformConfigArgs', 'InstancePlatformConfigArgsDict']] platform_config: (Updatable) The platform configuration requested for the instance.
                
-               **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
-        :param pulumi.Input[Union['InstancePlatformConfigArgs', 'InstancePlatformConfigArgsDict']] platform_config: (Updatable only for VM's) The platform configuration requested for the instance.
                
                If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
                
@@ -2229,6 +2261,7 @@ class Instance(pulumi.CustomResource):
         __props__.__dict__["launch_volume_attachments"] = launch_volume_attachments
         __props__.__dict__["licensing_configs"] = licensing_configs
         __props__.__dict__["metadata"] = metadata
+        __props__.__dict__["placement_constraint_details"] = placement_constraint_details
         __props__.__dict__["platform_config"] = platform_config
         __props__.__dict__["preemptible_instance_config"] = preemptible_instance_config
         __props__.__dict__["preserve_boot_volume"] = preserve_boot_volume
@@ -2522,16 +2555,23 @@ class Instance(pulumi.CustomResource):
         You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
 
         The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-
-        **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
         """
         return pulumi.get(self, "metadata")
+
+    @property
+    @pulumi.getter(name="placementConstraintDetails")
+    def placement_constraint_details(self) -> pulumi.Output['outputs.InstancePlacementConstraintDetails']:
+        """
+        Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+        """
+        return pulumi.get(self, "placement_constraint_details")
 
     @property
     @pulumi.getter(name="platformConfig")
     def platform_config(self) -> pulumi.Output['outputs.InstancePlatformConfig']:
         """
-        (Updatable only for VM's) The platform configuration requested for the instance.
+        (Updatable) The platform configuration requested for the instance.
+
 
         If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
 

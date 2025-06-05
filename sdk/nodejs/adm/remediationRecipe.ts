@@ -110,7 +110,7 @@ export class RemediationRecipe extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
     /**
-     * (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
+     * (Updatable) A configuration to define the constraints when detecting vulnerable dependencies and recommending remediations.
      */
     public readonly detectConfiguration!: pulumi.Output<outputs.Adm.RemediationRecipeDetectConfiguration>;
     /**
@@ -130,7 +130,7 @@ export class RemediationRecipe extends pulumi.CustomResource {
      */
     public readonly knowledgeBaseId!: pulumi.Output<string>;
     /**
-     * (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+     * (Updatable) A network configuration defines the required network characteristics for the remediation run of the recipe to access the source repository and/or verify build services.
      */
     public readonly networkConfiguration!: pulumi.Output<outputs.Adm.RemediationRecipeNetworkConfiguration>;
     /**
@@ -245,7 +245,7 @@ export interface RemediationRecipeState {
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
+     * (Updatable) A configuration to define the constraints when detecting vulnerable dependencies and recommending remediations.
      */
     detectConfiguration?: pulumi.Input<inputs.Adm.RemediationRecipeDetectConfiguration>;
     /**
@@ -265,7 +265,7 @@ export interface RemediationRecipeState {
      */
     knowledgeBaseId?: pulumi.Input<string>;
     /**
-     * (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+     * (Updatable) A network configuration defines the required network characteristics for the remediation run of the recipe to access the source repository and/or verify build services.
      */
     networkConfiguration?: pulumi.Input<inputs.Adm.RemediationRecipeNetworkConfiguration>;
     /**
@@ -311,7 +311,7 @@ export interface RemediationRecipeArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
+     * (Updatable) A configuration to define the constraints when detecting vulnerable dependencies and recommending remediations.
      */
     detectConfiguration: pulumi.Input<inputs.Adm.RemediationRecipeDetectConfiguration>;
     /**
@@ -331,7 +331,7 @@ export interface RemediationRecipeArgs {
      */
     knowledgeBaseId: pulumi.Input<string>;
     /**
-     * (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+     * (Updatable) A network configuration defines the required network characteristics for the remediation run of the recipe to access the source repository and/or verify build services.
      */
     networkConfiguration: pulumi.Input<inputs.Adm.RemediationRecipeNetworkConfiguration>;
     /**

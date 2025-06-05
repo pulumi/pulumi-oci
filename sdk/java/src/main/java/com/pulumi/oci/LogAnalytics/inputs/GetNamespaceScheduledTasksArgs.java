@@ -100,6 +100,21 @@ public final class GetNamespaceScheduledTasksArgs extends com.pulumi.resources.I
         return this.taskType;
     }
 
+    /**
+     * A filter to return only scheduled tasks whose stream action templateId matches the given id  exactly.
+     * 
+     */
+    @Import(name="templateId")
+    private @Nullable Output<String> templateId;
+
+    /**
+     * @return A filter to return only scheduled tasks whose stream action templateId matches the given id  exactly.
+     * 
+     */
+    public Optional<Output<String>> templateId() {
+        return Optional.ofNullable(this.templateId);
+    }
+
     private GetNamespaceScheduledTasksArgs() {}
 
     private GetNamespaceScheduledTasksArgs(GetNamespaceScheduledTasksArgs $) {
@@ -109,6 +124,7 @@ public final class GetNamespaceScheduledTasksArgs extends com.pulumi.resources.I
         this.namespace = $.namespace;
         this.targetService = $.targetService;
         this.taskType = $.taskType;
+        this.templateId = $.templateId;
     }
 
     public static Builder builder() {
@@ -245,6 +261,27 @@ public final class GetNamespaceScheduledTasksArgs extends com.pulumi.resources.I
          */
         public Builder taskType(String taskType) {
             return taskType(Output.of(taskType));
+        }
+
+        /**
+         * @param templateId A filter to return only scheduled tasks whose stream action templateId matches the given id  exactly.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder templateId(@Nullable Output<String> templateId) {
+            $.templateId = templateId;
+            return this;
+        }
+
+        /**
+         * @param templateId A filter to return only scheduled tasks whose stream action templateId matches the given id  exactly.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder templateId(String templateId) {
+            return templateId(Output.of(templateId));
         }
 
         public GetNamespaceScheduledTasksArgs build() {

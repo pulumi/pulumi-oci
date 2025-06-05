@@ -16,6 +16,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DatabaseDbmFeaturesManagementFeatureDetails {
     /**
+     * @return Indicates whether Diagnostics &amp; Management should be enabled for all the current pluggable databases in the container database.
+     * 
+     */
+    private @Nullable Boolean canEnableAllCurrentPdbs;
+    /**
      * @return The connector details required to connect to an Oracle cloud database.
      * 
      */
@@ -31,7 +36,7 @@ public final class DatabaseDbmFeaturesManagementFeatureDetails {
      */
     private String feature;
     /**
-     * @return Indicates whether the pluggable database can be enabled automatically.
+     * @return Indicates whether Diagnostics &amp; Management should be enabled automatically for all the pluggable databases in the container database.
      * 
      */
     private @Nullable Boolean isAutoEnablePluggableDatabase;
@@ -42,6 +47,13 @@ public final class DatabaseDbmFeaturesManagementFeatureDetails {
     private @Nullable String managementType;
 
     private DatabaseDbmFeaturesManagementFeatureDetails() {}
+    /**
+     * @return Indicates whether Diagnostics &amp; Management should be enabled for all the current pluggable databases in the container database.
+     * 
+     */
+    public Optional<Boolean> canEnableAllCurrentPdbs() {
+        return Optional.ofNullable(this.canEnableAllCurrentPdbs);
+    }
     /**
      * @return The connector details required to connect to an Oracle cloud database.
      * 
@@ -64,7 +76,7 @@ public final class DatabaseDbmFeaturesManagementFeatureDetails {
         return this.feature;
     }
     /**
-     * @return Indicates whether the pluggable database can be enabled automatically.
+     * @return Indicates whether Diagnostics &amp; Management should be enabled automatically for all the pluggable databases in the container database.
      * 
      */
     public Optional<Boolean> isAutoEnablePluggableDatabase() {
@@ -87,6 +99,7 @@ public final class DatabaseDbmFeaturesManagementFeatureDetails {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable Boolean canEnableAllCurrentPdbs;
         private @Nullable DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetails connectorDetails;
         private @Nullable DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetails databaseConnectionDetails;
         private String feature;
@@ -95,6 +108,7 @@ public final class DatabaseDbmFeaturesManagementFeatureDetails {
         public Builder() {}
         public Builder(DatabaseDbmFeaturesManagementFeatureDetails defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.canEnableAllCurrentPdbs = defaults.canEnableAllCurrentPdbs;
     	      this.connectorDetails = defaults.connectorDetails;
     	      this.databaseConnectionDetails = defaults.databaseConnectionDetails;
     	      this.feature = defaults.feature;
@@ -102,6 +116,12 @@ public final class DatabaseDbmFeaturesManagementFeatureDetails {
     	      this.managementType = defaults.managementType;
         }
 
+        @CustomType.Setter
+        public Builder canEnableAllCurrentPdbs(@Nullable Boolean canEnableAllCurrentPdbs) {
+
+            this.canEnableAllCurrentPdbs = canEnableAllCurrentPdbs;
+            return this;
+        }
         @CustomType.Setter
         public Builder connectorDetails(@Nullable DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetails connectorDetails) {
 
@@ -136,6 +156,7 @@ public final class DatabaseDbmFeaturesManagementFeatureDetails {
         }
         public DatabaseDbmFeaturesManagementFeatureDetails build() {
             final var _resultValue = new DatabaseDbmFeaturesManagementFeatureDetails();
+            _resultValue.canEnableAllCurrentPdbs = canEnableAllCurrentPdbs;
             _resultValue.connectorDetails = connectorDetails;
             _resultValue.databaseConnectionDetails = databaseConnectionDetails;
             _resultValue.feature = feature;

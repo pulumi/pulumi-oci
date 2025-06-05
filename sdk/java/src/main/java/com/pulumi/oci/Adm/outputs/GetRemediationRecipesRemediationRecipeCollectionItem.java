@@ -28,7 +28,7 @@ public final class GetRemediationRecipesRemediationRecipeCollectionItem {
      */
     private Map<String,String> definedTags;
     /**
-     * @return A configuration to define the constraints when detecting vulnerable dependencies.
+     * @return A configuration to define the constraints when detecting vulnerable dependencies and recommending remediations.
      * 
      */
     private List<GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration> detectConfigurations;
@@ -58,7 +58,7 @@ public final class GetRemediationRecipesRemediationRecipeCollectionItem {
      */
     private String knowledgeBaseId;
     /**
-     * @return A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+     * @return A network configuration defines the required network characteristics for the remediation run of the recipe to access the source repository and/or verify build services.
      * 
      */
     private List<GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration> networkConfigurations;
@@ -109,7 +109,7 @@ public final class GetRemediationRecipesRemediationRecipeCollectionItem {
         return this.definedTags;
     }
     /**
-     * @return A configuration to define the constraints when detecting vulnerable dependencies.
+     * @return A configuration to define the constraints when detecting vulnerable dependencies and recommending remediations.
      * 
      */
     public List<GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration> detectConfigurations() {
@@ -151,7 +151,7 @@ public final class GetRemediationRecipesRemediationRecipeCollectionItem {
         return this.knowledgeBaseId;
     }
     /**
-     * @return A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+     * @return A network configuration defines the required network characteristics for the remediation run of the recipe to access the source repository and/or verify build services.
      * 
      */
     public List<GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration> networkConfigurations() {

@@ -1924,7 +1924,7 @@ public final class ApmSyntheticsFunctions {
     /**
      * This data source provides details about a specific Result resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
-     * Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log or Network details.
+     * Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log, Network details, Diagnostics or Script Content.
      * 
      * ## Example Usage
      * 
@@ -1973,7 +1973,7 @@ public final class ApmSyntheticsFunctions {
     /**
      * This data source provides details about a specific Result resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
-     * Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log or Network details.
+     * Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log, Network details, Diagnostics or Script Content.
      * 
      * ## Example Usage
      * 
@@ -2022,7 +2022,7 @@ public final class ApmSyntheticsFunctions {
     /**
      * This data source provides details about a specific Result resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
-     * Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log or Network details.
+     * Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log, Network details, Diagnostics or Script Content.
      * 
      * ## Example Usage
      * 
@@ -2071,7 +2071,7 @@ public final class ApmSyntheticsFunctions {
     /**
      * This data source provides details about a specific Result resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
-     * Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log or Network details.
+     * Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log, Network details, Diagnostics or Script Content.
      * 
      * ## Example Usage
      * 
@@ -2120,7 +2120,7 @@ public final class ApmSyntheticsFunctions {
     /**
      * This data source provides details about a specific Result resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
      * 
-     * Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log or Network details.
+     * Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log, Network details, Diagnostics or Script Content.
      * 
      * ## Example Usage
      * 

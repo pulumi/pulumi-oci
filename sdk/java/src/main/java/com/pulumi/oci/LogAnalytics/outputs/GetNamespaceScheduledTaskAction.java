@@ -6,6 +6,7 @@ package com.pulumi.oci.LogAnalytics.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceScheduledTaskActionMetricExtraction;
+import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceScheduledTaskActionTemplateDetail;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -48,6 +49,11 @@ public final class GetNamespaceScheduledTaskAction {
      * 
      */
     private String savedSearchId;
+    /**
+     * @return details for scheduled task using template
+     * 
+     */
+    private List<GetNamespaceScheduledTaskActionTemplateDetail> templateDetails;
     /**
      * @return Schedule type discriminator.
      * 
@@ -105,6 +111,13 @@ public final class GetNamespaceScheduledTaskAction {
         return this.savedSearchId;
     }
     /**
+     * @return details for scheduled task using template
+     * 
+     */
+    public List<GetNamespaceScheduledTaskActionTemplateDetail> templateDetails() {
+        return this.templateDetails;
+    }
+    /**
      * @return Schedule type discriminator.
      * 
      */
@@ -128,6 +141,7 @@ public final class GetNamespaceScheduledTaskAction {
         private String purgeDuration;
         private String queryString;
         private String savedSearchId;
+        private List<GetNamespaceScheduledTaskActionTemplateDetail> templateDetails;
         private String type;
         public Builder() {}
         public Builder(GetNamespaceScheduledTaskAction defaults) {
@@ -139,6 +153,7 @@ public final class GetNamespaceScheduledTaskAction {
     	      this.purgeDuration = defaults.purgeDuration;
     	      this.queryString = defaults.queryString;
     	      this.savedSearchId = defaults.savedSearchId;
+    	      this.templateDetails = defaults.templateDetails;
     	      this.type = defaults.type;
         }
 
@@ -202,6 +217,17 @@ public final class GetNamespaceScheduledTaskAction {
             return this;
         }
         @CustomType.Setter
+        public Builder templateDetails(List<GetNamespaceScheduledTaskActionTemplateDetail> templateDetails) {
+            if (templateDetails == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceScheduledTaskAction", "templateDetails");
+            }
+            this.templateDetails = templateDetails;
+            return this;
+        }
+        public Builder templateDetails(GetNamespaceScheduledTaskActionTemplateDetail... templateDetails) {
+            return templateDetails(List.of(templateDetails));
+        }
+        @CustomType.Setter
         public Builder type(String type) {
             if (type == null) {
               throw new MissingRequiredPropertyException("GetNamespaceScheduledTaskAction", "type");
@@ -218,6 +244,7 @@ public final class GetNamespaceScheduledTaskAction {
             _resultValue.purgeDuration = purgeDuration;
             _resultValue.queryString = queryString;
             _resultValue.savedSearchId = savedSearchId;
+            _resultValue.templateDetails = templateDetails;
             _resultValue.type = type;
             return _resultValue;
         }

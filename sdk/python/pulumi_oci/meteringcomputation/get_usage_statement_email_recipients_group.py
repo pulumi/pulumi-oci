@@ -73,7 +73,7 @@ class GetUsageStatementEmailRecipientsGroupResult:
     @pulumi.getter(name="recipientsLists")
     def recipients_lists(self) -> Sequence['outputs.GetUsageStatementEmailRecipientsGroupRecipientsListResult']:
         """
-        The list of recipient will receive the usage statement email.
+        The list of recipients that will receive usage statement emails.
         """
         return pulumi.get(self, "recipients_lists")
 
@@ -81,7 +81,7 @@ class GetUsageStatementEmailRecipientsGroupResult:
     @pulumi.getter
     def state(self) -> builtins.str:
         """
-        The email recipient group lifecycle state.
+        The email recipients group lifecycle state.
         """
         return pulumi.get(self, "state")
 
@@ -112,7 +112,7 @@ def get_usage_statement_email_recipients_group(compartment_id: Optional[builtins
     """
     This data source provides details about a specific Usage Statement Email Recipients Group resource in Oracle Cloud Infrastructure Metering Computation service.
 
-    Return the saved usage statement email recipient group.
+    Returns the saved usage statement email recipients group.
 
     ## Example Usage
 
@@ -127,8 +127,8 @@ def get_usage_statement_email_recipients_group(compartment_id: Optional[builtins
 
 
     :param builtins.str compartment_id: The compartment ID in which to list resources.
-    :param builtins.str email_recipients_group_id: The email recipient group OCID.
-    :param builtins.str subscription_id: The UsageStatement Subscription unique OCID.
+    :param builtins.str email_recipients_group_id: The email recipients group OCID.
+    :param builtins.str subscription_id: The usage statement subscription unique OCID.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -151,7 +151,7 @@ def get_usage_statement_email_recipients_group_output(compartment_id: Optional[p
     """
     This data source provides details about a specific Usage Statement Email Recipients Group resource in Oracle Cloud Infrastructure Metering Computation service.
 
-    Return the saved usage statement email recipient group.
+    Returns the saved usage statement email recipients group.
 
     ## Example Usage
 
@@ -166,8 +166,8 @@ def get_usage_statement_email_recipients_group_output(compartment_id: Optional[p
 
 
     :param builtins.str compartment_id: The compartment ID in which to list resources.
-    :param builtins.str email_recipients_group_id: The email recipient group OCID.
-    :param builtins.str subscription_id: The UsageStatement Subscription unique OCID.
+    :param builtins.str email_recipients_group_id: The email recipients group OCID.
+    :param builtins.str subscription_id: The usage statement subscription unique OCID.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id

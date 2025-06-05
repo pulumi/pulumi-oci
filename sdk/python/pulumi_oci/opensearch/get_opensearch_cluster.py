@@ -28,7 +28,7 @@ class GetOpensearchClusterResult:
     """
     A collection of values returned by getOpensearchCluster.
     """
-    def __init__(__self__, availability_domains=None, compartment_id=None, configure_outbound_cluster_trigger=None, data_node_count=None, data_node_host_bare_metal_shape=None, data_node_host_memory_gb=None, data_node_host_ocpu_count=None, data_node_host_type=None, data_node_storage_gb=None, defined_tags=None, display_name=None, fqdn=None, freeform_tags=None, id=None, inbound_cluster_ids=None, lifecycle_details=None, maintenance_details=None, master_node_count=None, master_node_host_bare_metal_shape=None, master_node_host_memory_gb=None, master_node_host_ocpu_count=None, master_node_host_type=None, opendashboard_fqdn=None, opendashboard_node_count=None, opendashboard_node_host_memory_gb=None, opendashboard_node_host_ocpu_count=None, opendashboard_private_ip=None, opensearch_cluster_id=None, opensearch_fqdn=None, opensearch_private_ip=None, outbound_cluster_configs=None, reverse_connection_endpoint_customer_ips=None, reverse_connection_endpoints=None, security_master_user_name=None, security_master_user_password_hash=None, security_mode=None, software_version=None, state=None, subnet_compartment_id=None, subnet_id=None, system_tags=None, time_created=None, time_deleted=None, time_updated=None, total_storage_gb=None, upgrade_major_version_trigger=None, vcn_compartment_id=None, vcn_id=None):
+    def __init__(__self__, availability_domains=None, compartment_id=None, configure_outbound_cluster_trigger=None, data_node_count=None, data_node_host_bare_metal_shape=None, data_node_host_memory_gb=None, data_node_host_ocpu_count=None, data_node_host_shape=None, data_node_host_type=None, data_node_storage_gb=None, defined_tags=None, display_name=None, fqdn=None, freeform_tags=None, id=None, inbound_cluster_ids=None, lifecycle_details=None, maintenance_details=None, master_node_count=None, master_node_host_bare_metal_shape=None, master_node_host_memory_gb=None, master_node_host_ocpu_count=None, master_node_host_shape=None, master_node_host_type=None, opendashboard_fqdn=None, opendashboard_node_count=None, opendashboard_node_host_memory_gb=None, opendashboard_node_host_ocpu_count=None, opendashboard_node_host_shape=None, opendashboard_private_ip=None, opensearch_cluster_id=None, opensearch_fqdn=None, opensearch_private_ip=None, outbound_cluster_configs=None, reverse_connection_endpoint_customer_ips=None, reverse_connection_endpoints=None, search_node_count=None, search_node_host_memory_gb=None, search_node_host_ocpu_count=None, search_node_host_shape=None, search_node_host_type=None, search_node_storage_gb=None, security_master_user_name=None, security_master_user_password_hash=None, security_mode=None, security_saml_configs=None, software_version=None, state=None, subnet_compartment_id=None, subnet_id=None, system_tags=None, time_created=None, time_deleted=None, time_updated=None, total_storage_gb=None, upgrade_major_version_trigger=None, vcn_compartment_id=None, vcn_id=None):
         if availability_domains and not isinstance(availability_domains, list):
             raise TypeError("Expected argument 'availability_domains' to be a list")
         pulumi.set(__self__, "availability_domains", availability_domains)
@@ -50,6 +50,9 @@ class GetOpensearchClusterResult:
         if data_node_host_ocpu_count and not isinstance(data_node_host_ocpu_count, int):
             raise TypeError("Expected argument 'data_node_host_ocpu_count' to be a int")
         pulumi.set(__self__, "data_node_host_ocpu_count", data_node_host_ocpu_count)
+        if data_node_host_shape and not isinstance(data_node_host_shape, str):
+            raise TypeError("Expected argument 'data_node_host_shape' to be a str")
+        pulumi.set(__self__, "data_node_host_shape", data_node_host_shape)
         if data_node_host_type and not isinstance(data_node_host_type, str):
             raise TypeError("Expected argument 'data_node_host_type' to be a str")
         pulumi.set(__self__, "data_node_host_type", data_node_host_type)
@@ -92,6 +95,9 @@ class GetOpensearchClusterResult:
         if master_node_host_ocpu_count and not isinstance(master_node_host_ocpu_count, int):
             raise TypeError("Expected argument 'master_node_host_ocpu_count' to be a int")
         pulumi.set(__self__, "master_node_host_ocpu_count", master_node_host_ocpu_count)
+        if master_node_host_shape and not isinstance(master_node_host_shape, str):
+            raise TypeError("Expected argument 'master_node_host_shape' to be a str")
+        pulumi.set(__self__, "master_node_host_shape", master_node_host_shape)
         if master_node_host_type and not isinstance(master_node_host_type, str):
             raise TypeError("Expected argument 'master_node_host_type' to be a str")
         pulumi.set(__self__, "master_node_host_type", master_node_host_type)
@@ -107,6 +113,9 @@ class GetOpensearchClusterResult:
         if opendashboard_node_host_ocpu_count and not isinstance(opendashboard_node_host_ocpu_count, int):
             raise TypeError("Expected argument 'opendashboard_node_host_ocpu_count' to be a int")
         pulumi.set(__self__, "opendashboard_node_host_ocpu_count", opendashboard_node_host_ocpu_count)
+        if opendashboard_node_host_shape and not isinstance(opendashboard_node_host_shape, str):
+            raise TypeError("Expected argument 'opendashboard_node_host_shape' to be a str")
+        pulumi.set(__self__, "opendashboard_node_host_shape", opendashboard_node_host_shape)
         if opendashboard_private_ip and not isinstance(opendashboard_private_ip, str):
             raise TypeError("Expected argument 'opendashboard_private_ip' to be a str")
         pulumi.set(__self__, "opendashboard_private_ip", opendashboard_private_ip)
@@ -128,6 +137,24 @@ class GetOpensearchClusterResult:
         if reverse_connection_endpoints and not isinstance(reverse_connection_endpoints, list):
             raise TypeError("Expected argument 'reverse_connection_endpoints' to be a list")
         pulumi.set(__self__, "reverse_connection_endpoints", reverse_connection_endpoints)
+        if search_node_count and not isinstance(search_node_count, int):
+            raise TypeError("Expected argument 'search_node_count' to be a int")
+        pulumi.set(__self__, "search_node_count", search_node_count)
+        if search_node_host_memory_gb and not isinstance(search_node_host_memory_gb, int):
+            raise TypeError("Expected argument 'search_node_host_memory_gb' to be a int")
+        pulumi.set(__self__, "search_node_host_memory_gb", search_node_host_memory_gb)
+        if search_node_host_ocpu_count and not isinstance(search_node_host_ocpu_count, int):
+            raise TypeError("Expected argument 'search_node_host_ocpu_count' to be a int")
+        pulumi.set(__self__, "search_node_host_ocpu_count", search_node_host_ocpu_count)
+        if search_node_host_shape and not isinstance(search_node_host_shape, str):
+            raise TypeError("Expected argument 'search_node_host_shape' to be a str")
+        pulumi.set(__self__, "search_node_host_shape", search_node_host_shape)
+        if search_node_host_type and not isinstance(search_node_host_type, str):
+            raise TypeError("Expected argument 'search_node_host_type' to be a str")
+        pulumi.set(__self__, "search_node_host_type", search_node_host_type)
+        if search_node_storage_gb and not isinstance(search_node_storage_gb, int):
+            raise TypeError("Expected argument 'search_node_storage_gb' to be a int")
+        pulumi.set(__self__, "search_node_storage_gb", search_node_storage_gb)
         if security_master_user_name and not isinstance(security_master_user_name, str):
             raise TypeError("Expected argument 'security_master_user_name' to be a str")
         pulumi.set(__self__, "security_master_user_name", security_master_user_name)
@@ -137,6 +164,9 @@ class GetOpensearchClusterResult:
         if security_mode and not isinstance(security_mode, str):
             raise TypeError("Expected argument 'security_mode' to be a str")
         pulumi.set(__self__, "security_mode", security_mode)
+        if security_saml_configs and not isinstance(security_saml_configs, list):
+            raise TypeError("Expected argument 'security_saml_configs' to be a list")
+        pulumi.set(__self__, "security_saml_configs", security_saml_configs)
         if software_version and not isinstance(software_version, str):
             raise TypeError("Expected argument 'software_version' to be a str")
         pulumi.set(__self__, "software_version", software_version)
@@ -226,6 +256,14 @@ class GetOpensearchClusterResult:
         The number of OCPUs configured for the cluster's data nodes.
         """
         return pulumi.get(self, "data_node_host_ocpu_count")
+
+    @property
+    @pulumi.getter(name="dataNodeHostShape")
+    def data_node_host_shape(self) -> builtins.str:
+        """
+        The node shape for the cluster's data nodes.
+        """
+        return pulumi.get(self, "data_node_host_shape")
 
     @property
     @pulumi.getter(name="dataNodeHostType")
@@ -340,6 +378,14 @@ class GetOpensearchClusterResult:
         return pulumi.get(self, "master_node_host_ocpu_count")
 
     @property
+    @pulumi.getter(name="masterNodeHostShape")
+    def master_node_host_shape(self) -> builtins.str:
+        """
+        The node shape for the cluster's master nodes.
+        """
+        return pulumi.get(self, "master_node_host_shape")
+
+    @property
     @pulumi.getter(name="masterNodeHostType")
     def master_node_host_type(self) -> builtins.str:
         """
@@ -378,6 +424,14 @@ class GetOpensearchClusterResult:
         The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
         """
         return pulumi.get(self, "opendashboard_node_host_ocpu_count")
+
+    @property
+    @pulumi.getter(name="opendashboardNodeHostShape")
+    def opendashboard_node_host_shape(self) -> builtins.str:
+        """
+        The node shape for the cluster's OpenSearch Dashboard nodes.
+        """
+        return pulumi.get(self, "opendashboard_node_host_shape")
 
     @property
     @pulumi.getter(name="opendashboardPrivateIp")
@@ -433,6 +487,54 @@ class GetOpensearchClusterResult:
         return pulumi.get(self, "reverse_connection_endpoints")
 
     @property
+    @pulumi.getter(name="searchNodeCount")
+    def search_node_count(self) -> builtins.int:
+        """
+        The number of search nodes configured for the cluster.
+        """
+        return pulumi.get(self, "search_node_count")
+
+    @property
+    @pulumi.getter(name="searchNodeHostMemoryGb")
+    def search_node_host_memory_gb(self) -> builtins.int:
+        """
+        The amount of memory in GB, for the cluster's search nodes.
+        """
+        return pulumi.get(self, "search_node_host_memory_gb")
+
+    @property
+    @pulumi.getter(name="searchNodeHostOcpuCount")
+    def search_node_host_ocpu_count(self) -> builtins.int:
+        """
+        The number of OCPUs configured for the cluster's search nodes.
+        """
+        return pulumi.get(self, "search_node_host_ocpu_count")
+
+    @property
+    @pulumi.getter(name="searchNodeHostShape")
+    def search_node_host_shape(self) -> builtins.str:
+        """
+        The node shape for the cluster's search nodes.
+        """
+        return pulumi.get(self, "search_node_host_shape")
+
+    @property
+    @pulumi.getter(name="searchNodeHostType")
+    def search_node_host_type(self) -> builtins.str:
+        """
+        The instance type for the cluster's search nodes.
+        """
+        return pulumi.get(self, "search_node_host_type")
+
+    @property
+    @pulumi.getter(name="searchNodeStorageGb")
+    def search_node_storage_gb(self) -> builtins.int:
+        """
+        The amount of storage in GB, to configure per node for the cluster's search nodes.
+        """
+        return pulumi.get(self, "search_node_storage_gb")
+
+    @property
     @pulumi.getter(name="securityMasterUserName")
     def security_master_user_name(self) -> builtins.str:
         """
@@ -455,6 +557,11 @@ class GetOpensearchClusterResult:
         The security mode of the cluster.
         """
         return pulumi.get(self, "security_mode")
+
+    @property
+    @pulumi.getter(name="securitySamlConfigs")
+    def security_saml_configs(self) -> Sequence['outputs.GetOpensearchClusterSecuritySamlConfigResult']:
+        return pulumi.get(self, "security_saml_configs")
 
     @property
     @pulumi.getter(name="softwareVersion")
@@ -563,6 +670,7 @@ class AwaitableGetOpensearchClusterResult(GetOpensearchClusterResult):
             data_node_host_bare_metal_shape=self.data_node_host_bare_metal_shape,
             data_node_host_memory_gb=self.data_node_host_memory_gb,
             data_node_host_ocpu_count=self.data_node_host_ocpu_count,
+            data_node_host_shape=self.data_node_host_shape,
             data_node_host_type=self.data_node_host_type,
             data_node_storage_gb=self.data_node_storage_gb,
             defined_tags=self.defined_tags,
@@ -577,11 +685,13 @@ class AwaitableGetOpensearchClusterResult(GetOpensearchClusterResult):
             master_node_host_bare_metal_shape=self.master_node_host_bare_metal_shape,
             master_node_host_memory_gb=self.master_node_host_memory_gb,
             master_node_host_ocpu_count=self.master_node_host_ocpu_count,
+            master_node_host_shape=self.master_node_host_shape,
             master_node_host_type=self.master_node_host_type,
             opendashboard_fqdn=self.opendashboard_fqdn,
             opendashboard_node_count=self.opendashboard_node_count,
             opendashboard_node_host_memory_gb=self.opendashboard_node_host_memory_gb,
             opendashboard_node_host_ocpu_count=self.opendashboard_node_host_ocpu_count,
+            opendashboard_node_host_shape=self.opendashboard_node_host_shape,
             opendashboard_private_ip=self.opendashboard_private_ip,
             opensearch_cluster_id=self.opensearch_cluster_id,
             opensearch_fqdn=self.opensearch_fqdn,
@@ -589,9 +699,16 @@ class AwaitableGetOpensearchClusterResult(GetOpensearchClusterResult):
             outbound_cluster_configs=self.outbound_cluster_configs,
             reverse_connection_endpoint_customer_ips=self.reverse_connection_endpoint_customer_ips,
             reverse_connection_endpoints=self.reverse_connection_endpoints,
+            search_node_count=self.search_node_count,
+            search_node_host_memory_gb=self.search_node_host_memory_gb,
+            search_node_host_ocpu_count=self.search_node_host_ocpu_count,
+            search_node_host_shape=self.search_node_host_shape,
+            search_node_host_type=self.search_node_host_type,
+            search_node_storage_gb=self.search_node_storage_gb,
             security_master_user_name=self.security_master_user_name,
             security_master_user_password_hash=self.security_master_user_password_hash,
             security_mode=self.security_mode,
+            security_saml_configs=self.security_saml_configs,
             software_version=self.software_version,
             state=self.state,
             subnet_compartment_id=self.subnet_compartment_id,
@@ -647,6 +764,7 @@ def get_opensearch_cluster(opensearch_cluster_id: Optional[builtins.str] = None,
         data_node_host_bare_metal_shape=pulumi.get(__ret__, 'data_node_host_bare_metal_shape'),
         data_node_host_memory_gb=pulumi.get(__ret__, 'data_node_host_memory_gb'),
         data_node_host_ocpu_count=pulumi.get(__ret__, 'data_node_host_ocpu_count'),
+        data_node_host_shape=pulumi.get(__ret__, 'data_node_host_shape'),
         data_node_host_type=pulumi.get(__ret__, 'data_node_host_type'),
         data_node_storage_gb=pulumi.get(__ret__, 'data_node_storage_gb'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
@@ -661,11 +779,13 @@ def get_opensearch_cluster(opensearch_cluster_id: Optional[builtins.str] = None,
         master_node_host_bare_metal_shape=pulumi.get(__ret__, 'master_node_host_bare_metal_shape'),
         master_node_host_memory_gb=pulumi.get(__ret__, 'master_node_host_memory_gb'),
         master_node_host_ocpu_count=pulumi.get(__ret__, 'master_node_host_ocpu_count'),
+        master_node_host_shape=pulumi.get(__ret__, 'master_node_host_shape'),
         master_node_host_type=pulumi.get(__ret__, 'master_node_host_type'),
         opendashboard_fqdn=pulumi.get(__ret__, 'opendashboard_fqdn'),
         opendashboard_node_count=pulumi.get(__ret__, 'opendashboard_node_count'),
         opendashboard_node_host_memory_gb=pulumi.get(__ret__, 'opendashboard_node_host_memory_gb'),
         opendashboard_node_host_ocpu_count=pulumi.get(__ret__, 'opendashboard_node_host_ocpu_count'),
+        opendashboard_node_host_shape=pulumi.get(__ret__, 'opendashboard_node_host_shape'),
         opendashboard_private_ip=pulumi.get(__ret__, 'opendashboard_private_ip'),
         opensearch_cluster_id=pulumi.get(__ret__, 'opensearch_cluster_id'),
         opensearch_fqdn=pulumi.get(__ret__, 'opensearch_fqdn'),
@@ -673,9 +793,16 @@ def get_opensearch_cluster(opensearch_cluster_id: Optional[builtins.str] = None,
         outbound_cluster_configs=pulumi.get(__ret__, 'outbound_cluster_configs'),
         reverse_connection_endpoint_customer_ips=pulumi.get(__ret__, 'reverse_connection_endpoint_customer_ips'),
         reverse_connection_endpoints=pulumi.get(__ret__, 'reverse_connection_endpoints'),
+        search_node_count=pulumi.get(__ret__, 'search_node_count'),
+        search_node_host_memory_gb=pulumi.get(__ret__, 'search_node_host_memory_gb'),
+        search_node_host_ocpu_count=pulumi.get(__ret__, 'search_node_host_ocpu_count'),
+        search_node_host_shape=pulumi.get(__ret__, 'search_node_host_shape'),
+        search_node_host_type=pulumi.get(__ret__, 'search_node_host_type'),
+        search_node_storage_gb=pulumi.get(__ret__, 'search_node_storage_gb'),
         security_master_user_name=pulumi.get(__ret__, 'security_master_user_name'),
         security_master_user_password_hash=pulumi.get(__ret__, 'security_master_user_password_hash'),
         security_mode=pulumi.get(__ret__, 'security_mode'),
+        security_saml_configs=pulumi.get(__ret__, 'security_saml_configs'),
         software_version=pulumi.get(__ret__, 'software_version'),
         state=pulumi.get(__ret__, 'state'),
         subnet_compartment_id=pulumi.get(__ret__, 'subnet_compartment_id'),
@@ -728,6 +855,7 @@ def get_opensearch_cluster_output(opensearch_cluster_id: Optional[pulumi.Input[b
         data_node_host_bare_metal_shape=pulumi.get(__response__, 'data_node_host_bare_metal_shape'),
         data_node_host_memory_gb=pulumi.get(__response__, 'data_node_host_memory_gb'),
         data_node_host_ocpu_count=pulumi.get(__response__, 'data_node_host_ocpu_count'),
+        data_node_host_shape=pulumi.get(__response__, 'data_node_host_shape'),
         data_node_host_type=pulumi.get(__response__, 'data_node_host_type'),
         data_node_storage_gb=pulumi.get(__response__, 'data_node_storage_gb'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
@@ -742,11 +870,13 @@ def get_opensearch_cluster_output(opensearch_cluster_id: Optional[pulumi.Input[b
         master_node_host_bare_metal_shape=pulumi.get(__response__, 'master_node_host_bare_metal_shape'),
         master_node_host_memory_gb=pulumi.get(__response__, 'master_node_host_memory_gb'),
         master_node_host_ocpu_count=pulumi.get(__response__, 'master_node_host_ocpu_count'),
+        master_node_host_shape=pulumi.get(__response__, 'master_node_host_shape'),
         master_node_host_type=pulumi.get(__response__, 'master_node_host_type'),
         opendashboard_fqdn=pulumi.get(__response__, 'opendashboard_fqdn'),
         opendashboard_node_count=pulumi.get(__response__, 'opendashboard_node_count'),
         opendashboard_node_host_memory_gb=pulumi.get(__response__, 'opendashboard_node_host_memory_gb'),
         opendashboard_node_host_ocpu_count=pulumi.get(__response__, 'opendashboard_node_host_ocpu_count'),
+        opendashboard_node_host_shape=pulumi.get(__response__, 'opendashboard_node_host_shape'),
         opendashboard_private_ip=pulumi.get(__response__, 'opendashboard_private_ip'),
         opensearch_cluster_id=pulumi.get(__response__, 'opensearch_cluster_id'),
         opensearch_fqdn=pulumi.get(__response__, 'opensearch_fqdn'),
@@ -754,9 +884,16 @@ def get_opensearch_cluster_output(opensearch_cluster_id: Optional[pulumi.Input[b
         outbound_cluster_configs=pulumi.get(__response__, 'outbound_cluster_configs'),
         reverse_connection_endpoint_customer_ips=pulumi.get(__response__, 'reverse_connection_endpoint_customer_ips'),
         reverse_connection_endpoints=pulumi.get(__response__, 'reverse_connection_endpoints'),
+        search_node_count=pulumi.get(__response__, 'search_node_count'),
+        search_node_host_memory_gb=pulumi.get(__response__, 'search_node_host_memory_gb'),
+        search_node_host_ocpu_count=pulumi.get(__response__, 'search_node_host_ocpu_count'),
+        search_node_host_shape=pulumi.get(__response__, 'search_node_host_shape'),
+        search_node_host_type=pulumi.get(__response__, 'search_node_host_type'),
+        search_node_storage_gb=pulumi.get(__response__, 'search_node_storage_gb'),
         security_master_user_name=pulumi.get(__response__, 'security_master_user_name'),
         security_master_user_password_hash=pulumi.get(__response__, 'security_master_user_password_hash'),
         security_mode=pulumi.get(__response__, 'security_mode'),
+        security_saml_configs=pulumi.get(__response__, 'security_saml_configs'),
         software_version=pulumi.get(__response__, 'software_version'),
         state=pulumi.get(__response__, 'state'),
         subnet_compartment_id=pulumi.get(__response__, 'subnet_compartment_id'),

@@ -12,6 +12,7 @@ import com.pulumi.oci.Core.outputs.GetInstancesInstanceInstanceOption;
 import com.pulumi.oci.Core.outputs.GetInstancesInstanceLaunchOption;
 import com.pulumi.oci.Core.outputs.GetInstancesInstanceLaunchVolumeAttachment;
 import com.pulumi.oci.Core.outputs.GetInstancesInstanceLicensingConfig;
+import com.pulumi.oci.Core.outputs.GetInstancesInstancePlacementConstraintDetail;
 import com.pulumi.oci.Core.outputs.GetInstancesInstancePlatformConfig;
 import com.pulumi.oci.Core.outputs.GetInstancesInstancePreemptibleInstanceConfig;
 import com.pulumi.oci.Core.outputs.GetInstancesInstanceShapeConfig;
@@ -167,6 +168,11 @@ public final class GetInstancesInstance {
      * 
      */
     private Map<String,String> metadata;
+    /**
+     * @return Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+     * 
+     */
+    private List<GetInstancesInstancePlacementConstraintDetail> placementConstraintDetails;
     /**
      * @return The platform configuration for the instance.
      * 
@@ -443,6 +449,13 @@ public final class GetInstancesInstance {
         return this.metadata;
     }
     /**
+     * @return Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+     * 
+     */
+    public List<GetInstancesInstancePlacementConstraintDetail> placementConstraintDetails() {
+        return this.placementConstraintDetails;
+    }
+    /**
      * @return The platform configuration for the instance.
      * 
      */
@@ -589,6 +602,7 @@ public final class GetInstancesInstance {
         private List<GetInstancesInstanceLaunchVolumeAttachment> launchVolumeAttachments;
         private List<GetInstancesInstanceLicensingConfig> licensingConfigs;
         private Map<String,String> metadata;
+        private List<GetInstancesInstancePlacementConstraintDetail> placementConstraintDetails;
         private List<GetInstancesInstancePlatformConfig> platformConfigs;
         private List<GetInstancesInstancePreemptibleInstanceConfig> preemptibleInstanceConfigs;
         private Boolean preserveBootVolume;
@@ -639,6 +653,7 @@ public final class GetInstancesInstance {
     	      this.launchVolumeAttachments = defaults.launchVolumeAttachments;
     	      this.licensingConfigs = defaults.licensingConfigs;
     	      this.metadata = defaults.metadata;
+    	      this.placementConstraintDetails = defaults.placementConstraintDetails;
     	      this.platformConfigs = defaults.platformConfigs;
     	      this.preemptibleInstanceConfigs = defaults.preemptibleInstanceConfigs;
     	      this.preserveBootVolume = defaults.preserveBootVolume;
@@ -913,6 +928,17 @@ public final class GetInstancesInstance {
             return this;
         }
         @CustomType.Setter
+        public Builder placementConstraintDetails(List<GetInstancesInstancePlacementConstraintDetail> placementConstraintDetails) {
+            if (placementConstraintDetails == null) {
+              throw new MissingRequiredPropertyException("GetInstancesInstance", "placementConstraintDetails");
+            }
+            this.placementConstraintDetails = placementConstraintDetails;
+            return this;
+        }
+        public Builder placementConstraintDetails(GetInstancesInstancePlacementConstraintDetail... placementConstraintDetails) {
+            return placementConstraintDetails(List.of(placementConstraintDetails));
+        }
+        @CustomType.Setter
         public Builder platformConfigs(List<GetInstancesInstancePlatformConfig> platformConfigs) {
             if (platformConfigs == null) {
               throw new MissingRequiredPropertyException("GetInstancesInstance", "platformConfigs");
@@ -1099,6 +1125,7 @@ public final class GetInstancesInstance {
             _resultValue.launchVolumeAttachments = launchVolumeAttachments;
             _resultValue.licensingConfigs = licensingConfigs;
             _resultValue.metadata = metadata;
+            _resultValue.placementConstraintDetails = placementConstraintDetails;
             _resultValue.platformConfigs = platformConfigs;
             _resultValue.preemptibleInstanceConfigs = preemptibleInstanceConfigs;
             _resultValue.preserveBootVolume = preserveBootVolume;

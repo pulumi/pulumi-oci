@@ -14,19 +14,19 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
     public sealed class GetUsageStatementEmailRecipientsGroupRecipientsListResult
     {
         /// <summary>
-        /// the email of the recipient.
+        /// The recipient email address.
         /// </summary>
         public readonly string EmailId;
         /// <summary>
-        /// the first name of the recipient.
+        /// The recipient first name.
         /// </summary>
         public readonly string FirstName;
         /// <summary>
-        /// the last name of the recipient.
+        /// The recipient last name.
         /// </summary>
         public readonly string LastName;
         /// <summary>
-        /// The email recipient group lifecycle state.
+        /// The email recipients group lifecycle state.
         /// </summary>
         public readonly string State;
 

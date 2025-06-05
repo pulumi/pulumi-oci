@@ -50,7 +50,7 @@ export interface GetAverageCarbonEmissionResult {
      */
     readonly id: string;
     /**
-     * The sku part number.
+     * The SKU part number.
      */
     readonly skuPartNumber: string;
 }

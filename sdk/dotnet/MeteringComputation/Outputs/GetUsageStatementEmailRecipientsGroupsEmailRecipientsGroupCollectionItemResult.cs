@@ -23,15 +23,15 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The list of recipient will receive the usage statement email.
+        /// The list of recipients that will receive usage statement emails.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListResult> RecipientsLists;
         /// <summary>
-        /// The email recipient group lifecycle state.
+        /// The email recipients group lifecycle state.
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// The UsageStatement Subscription unique OCID.
+        /// The usage statement subscription unique OCID.
         /// </summary>
         public readonly string SubscriptionId;
 

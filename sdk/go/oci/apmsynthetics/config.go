@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -23,7 +23,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/apmsynthetics"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/apmsynthetics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -197,6 +197,8 @@ type Config struct {
 	BatchIntervalInSeconds pulumi.IntOutput `pulumi:"batchIntervalInSeconds"`
 	// (Updatable) Details of monitor configuration.
 	Configuration ConfigConfigurationOutput `pulumi:"configuration"`
+	// Content type of the script.
+	ContentType pulumi.StringOutput `pulumi:"contentType"`
 	// Name of the user that created the monitor.
 	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -299,6 +301,8 @@ type configState struct {
 	BatchIntervalInSeconds *int `pulumi:"batchIntervalInSeconds"`
 	// (Updatable) Details of monitor configuration.
 	Configuration *ConfigConfiguration `pulumi:"configuration"`
+	// Content type of the script.
+	ContentType *string `pulumi:"contentType"`
 	// Name of the user that created the monitor.
 	CreatedBy *string `pulumi:"createdBy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -357,6 +361,8 @@ type ConfigState struct {
 	BatchIntervalInSeconds pulumi.IntPtrInput
 	// (Updatable) Details of monitor configuration.
 	Configuration ConfigConfigurationPtrInput
+	// Content type of the script.
+	ContentType pulumi.StringPtrInput
 	// Name of the user that created the monitor.
 	CreatedBy pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -612,6 +618,11 @@ func (o ConfigOutput) BatchIntervalInSeconds() pulumi.IntOutput {
 // (Updatable) Details of monitor configuration.
 func (o ConfigOutput) Configuration() ConfigConfigurationOutput {
 	return o.ApplyT(func(v *Config) ConfigConfigurationOutput { return v.Configuration }).(ConfigConfigurationOutput)
+}
+
+// Content type of the script.
+func (o ConfigOutput) ContentType() pulumi.StringOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.ContentType }).(pulumi.StringOutput)
 }
 
 // Name of the user that created the monitor.

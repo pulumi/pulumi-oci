@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -11441,6 +11441,8 @@ type GetClustersCluster struct {
 	Name string `pulumi:"name"`
 	// The cluster-specific OpenID Connect Discovery endpoint
 	OpenIdConnectDiscoveryEndpoint string `pulumi:"openIdConnectDiscoveryEndpoint"`
+	// The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
+	OpenIdConnectDiscoveryKey string `pulumi:"openIdConnectDiscoveryKey"`
 	// Optional attributes for the cluster.
 	Options []GetClustersClusterOption `pulumi:"options"`
 	// A cluster lifecycle state to filter on. Can have multiple parameters of this name.
@@ -11493,6 +11495,8 @@ type GetClustersClusterArgs struct {
 	Name pulumi.StringInput `pulumi:"name"`
 	// The cluster-specific OpenID Connect Discovery endpoint
 	OpenIdConnectDiscoveryEndpoint pulumi.StringInput `pulumi:"openIdConnectDiscoveryEndpoint"`
+	// The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
+	OpenIdConnectDiscoveryKey pulumi.StringInput `pulumi:"openIdConnectDiscoveryKey"`
 	// Optional attributes for the cluster.
 	Options GetClustersClusterOptionArrayInput `pulumi:"options"`
 	// A cluster lifecycle state to filter on. Can have multiple parameters of this name.
@@ -11629,6 +11633,11 @@ func (o GetClustersClusterOutput) Name() pulumi.StringOutput {
 // The cluster-specific OpenID Connect Discovery endpoint
 func (o GetClustersClusterOutput) OpenIdConnectDiscoveryEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClustersCluster) string { return v.OpenIdConnectDiscoveryEndpoint }).(pulumi.StringOutput)
+}
+
+// The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
+func (o GetClustersClusterOutput) OpenIdConnectDiscoveryKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersCluster) string { return v.OpenIdConnectDiscoveryKey }).(pulumi.StringOutput)
 }
 
 // Optional attributes for the cluster.

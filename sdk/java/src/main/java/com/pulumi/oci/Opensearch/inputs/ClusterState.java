@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Opensearch.inputs.ClusterMaintenanceDetailsArgs;
 import com.pulumi.oci.Opensearch.inputs.ClusterOutboundClusterConfigArgs;
 import com.pulumi.oci.Opensearch.inputs.ClusterReverseConnectionEndpointArgs;
+import com.pulumi.oci.Opensearch.inputs.ClusterSecuritySamlConfigArgs;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -124,6 +125,21 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Integer>> dataNodeHostOcpuCount() {
         return Optional.ofNullable(this.dataNodeHostOcpuCount);
+    }
+
+    /**
+     * (Updatable) The node shape for the cluster&#39;s data nodes.
+     * 
+     */
+    @Import(name="dataNodeHostShape")
+    private @Nullable Output<String> dataNodeHostShape;
+
+    /**
+     * @return (Updatable) The node shape for the cluster&#39;s data nodes.
+     * 
+     */
+    public Optional<Output<String>> dataNodeHostShape() {
+        return Optional.ofNullable(this.dataNodeHostShape);
     }
 
     /**
@@ -322,6 +338,21 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The node shape for the cluster&#39;s master nodes.
+     * 
+     */
+    @Import(name="masterNodeHostShape")
+    private @Nullable Output<String> masterNodeHostShape;
+
+    /**
+     * @return (Updatable) The node shape for the cluster&#39;s master nodes.
+     * 
+     */
+    public Optional<Output<String>> masterNodeHostShape() {
+        return Optional.ofNullable(this.masterNodeHostShape);
+    }
+
+    /**
      * The instance type for the cluster&#39;s master nodes.
      * 
      */
@@ -394,6 +425,21 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Integer>> opendashboardNodeHostOcpuCount() {
         return Optional.ofNullable(this.opendashboardNodeHostOcpuCount);
+    }
+
+    /**
+     * (Updatable) The node shape for the cluster&#39;s OpenSearch Dashboard nodes.
+     * 
+     */
+    @Import(name="opendashboardNodeHostShape")
+    private @Nullable Output<String> opendashboardNodeHostShape;
+
+    /**
+     * @return (Updatable) The node shape for the cluster&#39;s OpenSearch Dashboard nodes.
+     * 
+     */
+    public Optional<Output<String>> opendashboardNodeHostShape() {
+        return Optional.ofNullable(this.opendashboardNodeHostShape);
     }
 
     /**
@@ -487,6 +533,96 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The number of search nodes configured for the cluster.
+     * 
+     */
+    @Import(name="searchNodeCount")
+    private @Nullable Output<Integer> searchNodeCount;
+
+    /**
+     * @return (Updatable) The number of search nodes configured for the cluster.
+     * 
+     */
+    public Optional<Output<Integer>> searchNodeCount() {
+        return Optional.ofNullable(this.searchNodeCount);
+    }
+
+    /**
+     * (Updatable) The amount of memory in GB, for the cluster&#39;s search nodes.
+     * 
+     */
+    @Import(name="searchNodeHostMemoryGb")
+    private @Nullable Output<Integer> searchNodeHostMemoryGb;
+
+    /**
+     * @return (Updatable) The amount of memory in GB, for the cluster&#39;s search nodes.
+     * 
+     */
+    public Optional<Output<Integer>> searchNodeHostMemoryGb() {
+        return Optional.ofNullable(this.searchNodeHostMemoryGb);
+    }
+
+    /**
+     * (Updatable) The number of OCPUs configured for the cluster&#39;s search nodes.
+     * 
+     */
+    @Import(name="searchNodeHostOcpuCount")
+    private @Nullable Output<Integer> searchNodeHostOcpuCount;
+
+    /**
+     * @return (Updatable) The number of OCPUs configured for the cluster&#39;s search nodes.
+     * 
+     */
+    public Optional<Output<Integer>> searchNodeHostOcpuCount() {
+        return Optional.ofNullable(this.searchNodeHostOcpuCount);
+    }
+
+    /**
+     * (Updatable) The node shape for the cluster&#39;s search nodes.
+     * 
+     */
+    @Import(name="searchNodeHostShape")
+    private @Nullable Output<String> searchNodeHostShape;
+
+    /**
+     * @return (Updatable) The node shape for the cluster&#39;s search nodes.
+     * 
+     */
+    public Optional<Output<String>> searchNodeHostShape() {
+        return Optional.ofNullable(this.searchNodeHostShape);
+    }
+
+    /**
+     * The instance type for the cluster&#39;s search nodes.
+     * 
+     */
+    @Import(name="searchNodeHostType")
+    private @Nullable Output<String> searchNodeHostType;
+
+    /**
+     * @return The instance type for the cluster&#39;s search nodes.
+     * 
+     */
+    public Optional<Output<String>> searchNodeHostType() {
+        return Optional.ofNullable(this.searchNodeHostType);
+    }
+
+    /**
+     * (Updatable) The amount of storage in GB, to configure per node for the cluster&#39;s search nodes.
+     * 
+     */
+    @Import(name="searchNodeStorageGb")
+    private @Nullable Output<Integer> searchNodeStorageGb;
+
+    /**
+     * @return (Updatable) The amount of storage in GB, to configure per node for the cluster&#39;s search nodes.
+     * 
+     */
+    public Optional<Output<Integer>> searchNodeStorageGb() {
+        return Optional.ofNullable(this.searchNodeStorageGb);
+    }
+
+    /**
      * (Updatable) The name of the master user that are used to manage security config
      * 
      */
@@ -529,6 +665,21 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> securityMode() {
         return Optional.ofNullable(this.securityMode);
+    }
+
+    /**
+     * SAML policy is optionally used for Opensearch cluster to config SAML authentication
+     * 
+     */
+    @Import(name="securitySamlConfig")
+    private @Nullable Output<ClusterSecuritySamlConfigArgs> securitySamlConfig;
+
+    /**
+     * @return SAML policy is optionally used for Opensearch cluster to config SAML authentication
+     * 
+     */
+    public Optional<Output<ClusterSecuritySamlConfigArgs>> securitySamlConfig() {
+        return Optional.ofNullable(this.securitySamlConfig);
     }
 
     /**
@@ -727,6 +878,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         this.dataNodeHostBareMetalShape = $.dataNodeHostBareMetalShape;
         this.dataNodeHostMemoryGb = $.dataNodeHostMemoryGb;
         this.dataNodeHostOcpuCount = $.dataNodeHostOcpuCount;
+        this.dataNodeHostShape = $.dataNodeHostShape;
         this.dataNodeHostType = $.dataNodeHostType;
         this.dataNodeStorageGb = $.dataNodeStorageGb;
         this.definedTags = $.definedTags;
@@ -740,20 +892,29 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         this.masterNodeHostBareMetalShape = $.masterNodeHostBareMetalShape;
         this.masterNodeHostMemoryGb = $.masterNodeHostMemoryGb;
         this.masterNodeHostOcpuCount = $.masterNodeHostOcpuCount;
+        this.masterNodeHostShape = $.masterNodeHostShape;
         this.masterNodeHostType = $.masterNodeHostType;
         this.opendashboardFqdn = $.opendashboardFqdn;
         this.opendashboardNodeCount = $.opendashboardNodeCount;
         this.opendashboardNodeHostMemoryGb = $.opendashboardNodeHostMemoryGb;
         this.opendashboardNodeHostOcpuCount = $.opendashboardNodeHostOcpuCount;
+        this.opendashboardNodeHostShape = $.opendashboardNodeHostShape;
         this.opendashboardPrivateIp = $.opendashboardPrivateIp;
         this.opensearchFqdn = $.opensearchFqdn;
         this.opensearchPrivateIp = $.opensearchPrivateIp;
         this.outboundClusterConfig = $.outboundClusterConfig;
         this.reverseConnectionEndpointCustomerIps = $.reverseConnectionEndpointCustomerIps;
         this.reverseConnectionEndpoints = $.reverseConnectionEndpoints;
+        this.searchNodeCount = $.searchNodeCount;
+        this.searchNodeHostMemoryGb = $.searchNodeHostMemoryGb;
+        this.searchNodeHostOcpuCount = $.searchNodeHostOcpuCount;
+        this.searchNodeHostShape = $.searchNodeHostShape;
+        this.searchNodeHostType = $.searchNodeHostType;
+        this.searchNodeStorageGb = $.searchNodeStorageGb;
         this.securityMasterUserName = $.securityMasterUserName;
         this.securityMasterUserPasswordHash = $.securityMasterUserPasswordHash;
         this.securityMode = $.securityMode;
+        this.securitySamlConfig = $.securitySamlConfig;
         this.softwareVersion = $.softwareVersion;
         this.state = $.state;
         this.subnetCompartmentId = $.subnetCompartmentId;
@@ -941,6 +1102,27 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder dataNodeHostOcpuCount(Integer dataNodeHostOcpuCount) {
             return dataNodeHostOcpuCount(Output.of(dataNodeHostOcpuCount));
+        }
+
+        /**
+         * @param dataNodeHostShape (Updatable) The node shape for the cluster&#39;s data nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataNodeHostShape(@Nullable Output<String> dataNodeHostShape) {
+            $.dataNodeHostShape = dataNodeHostShape;
+            return this;
+        }
+
+        /**
+         * @param dataNodeHostShape (Updatable) The node shape for the cluster&#39;s data nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataNodeHostShape(String dataNodeHostShape) {
+            return dataNodeHostShape(Output.of(dataNodeHostShape));
         }
 
         /**
@@ -1227,6 +1409,27 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param masterNodeHostShape (Updatable) The node shape for the cluster&#39;s master nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder masterNodeHostShape(@Nullable Output<String> masterNodeHostShape) {
+            $.masterNodeHostShape = masterNodeHostShape;
+            return this;
+        }
+
+        /**
+         * @param masterNodeHostShape (Updatable) The node shape for the cluster&#39;s master nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder masterNodeHostShape(String masterNodeHostShape) {
+            return masterNodeHostShape(Output.of(masterNodeHostShape));
+        }
+
+        /**
          * @param masterNodeHostType The instance type for the cluster&#39;s master nodes.
          * 
          * @return builder
@@ -1329,6 +1532,27 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder opendashboardNodeHostOcpuCount(Integer opendashboardNodeHostOcpuCount) {
             return opendashboardNodeHostOcpuCount(Output.of(opendashboardNodeHostOcpuCount));
+        }
+
+        /**
+         * @param opendashboardNodeHostShape (Updatable) The node shape for the cluster&#39;s OpenSearch Dashboard nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opendashboardNodeHostShape(@Nullable Output<String> opendashboardNodeHostShape) {
+            $.opendashboardNodeHostShape = opendashboardNodeHostShape;
+            return this;
+        }
+
+        /**
+         * @param opendashboardNodeHostShape (Updatable) The node shape for the cluster&#39;s OpenSearch Dashboard nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opendashboardNodeHostShape(String opendashboardNodeHostShape) {
+            return opendashboardNodeHostShape(Output.of(opendashboardNodeHostShape));
         }
 
         /**
@@ -1478,6 +1702,132 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param searchNodeCount (Updatable) The number of search nodes configured for the cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder searchNodeCount(@Nullable Output<Integer> searchNodeCount) {
+            $.searchNodeCount = searchNodeCount;
+            return this;
+        }
+
+        /**
+         * @param searchNodeCount (Updatable) The number of search nodes configured for the cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder searchNodeCount(Integer searchNodeCount) {
+            return searchNodeCount(Output.of(searchNodeCount));
+        }
+
+        /**
+         * @param searchNodeHostMemoryGb (Updatable) The amount of memory in GB, for the cluster&#39;s search nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder searchNodeHostMemoryGb(@Nullable Output<Integer> searchNodeHostMemoryGb) {
+            $.searchNodeHostMemoryGb = searchNodeHostMemoryGb;
+            return this;
+        }
+
+        /**
+         * @param searchNodeHostMemoryGb (Updatable) The amount of memory in GB, for the cluster&#39;s search nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder searchNodeHostMemoryGb(Integer searchNodeHostMemoryGb) {
+            return searchNodeHostMemoryGb(Output.of(searchNodeHostMemoryGb));
+        }
+
+        /**
+         * @param searchNodeHostOcpuCount (Updatable) The number of OCPUs configured for the cluster&#39;s search nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder searchNodeHostOcpuCount(@Nullable Output<Integer> searchNodeHostOcpuCount) {
+            $.searchNodeHostOcpuCount = searchNodeHostOcpuCount;
+            return this;
+        }
+
+        /**
+         * @param searchNodeHostOcpuCount (Updatable) The number of OCPUs configured for the cluster&#39;s search nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder searchNodeHostOcpuCount(Integer searchNodeHostOcpuCount) {
+            return searchNodeHostOcpuCount(Output.of(searchNodeHostOcpuCount));
+        }
+
+        /**
+         * @param searchNodeHostShape (Updatable) The node shape for the cluster&#39;s search nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder searchNodeHostShape(@Nullable Output<String> searchNodeHostShape) {
+            $.searchNodeHostShape = searchNodeHostShape;
+            return this;
+        }
+
+        /**
+         * @param searchNodeHostShape (Updatable) The node shape for the cluster&#39;s search nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder searchNodeHostShape(String searchNodeHostShape) {
+            return searchNodeHostShape(Output.of(searchNodeHostShape));
+        }
+
+        /**
+         * @param searchNodeHostType The instance type for the cluster&#39;s search nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder searchNodeHostType(@Nullable Output<String> searchNodeHostType) {
+            $.searchNodeHostType = searchNodeHostType;
+            return this;
+        }
+
+        /**
+         * @param searchNodeHostType The instance type for the cluster&#39;s search nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder searchNodeHostType(String searchNodeHostType) {
+            return searchNodeHostType(Output.of(searchNodeHostType));
+        }
+
+        /**
+         * @param searchNodeStorageGb (Updatable) The amount of storage in GB, to configure per node for the cluster&#39;s search nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder searchNodeStorageGb(@Nullable Output<Integer> searchNodeStorageGb) {
+            $.searchNodeStorageGb = searchNodeStorageGb;
+            return this;
+        }
+
+        /**
+         * @param searchNodeStorageGb (Updatable) The amount of storage in GB, to configure per node for the cluster&#39;s search nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder searchNodeStorageGb(Integer searchNodeStorageGb) {
+            return searchNodeStorageGb(Output.of(searchNodeStorageGb));
+        }
+
+        /**
          * @param securityMasterUserName (Updatable) The name of the master user that are used to manage security config
          * 
          * @return builder
@@ -1538,6 +1888,27 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder securityMode(String securityMode) {
             return securityMode(Output.of(securityMode));
+        }
+
+        /**
+         * @param securitySamlConfig SAML policy is optionally used for Opensearch cluster to config SAML authentication
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securitySamlConfig(@Nullable Output<ClusterSecuritySamlConfigArgs> securitySamlConfig) {
+            $.securitySamlConfig = securitySamlConfig;
+            return this;
+        }
+
+        /**
+         * @param securitySamlConfig SAML policy is optionally used for Opensearch cluster to config SAML authentication
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securitySamlConfig(ClusterSecuritySamlConfigArgs securitySamlConfig) {
+            return securitySamlConfig(Output.of(securitySamlConfig));
         }
 
         /**

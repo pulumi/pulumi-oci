@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -23,7 +23,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/mysql"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/mysql"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -94,13 +94,18 @@ import (
 //				Maintenance: &mysql.MysqlDbSystemMaintenanceArgs{
 //					WindowStartTime: pulumi.Any(mysqlDbSystemMaintenanceWindowStartTime),
 //				},
-//				Port:  pulumi.Any(mysqlDbSystemPort),
-//				PortX: pulumi.Any(mysqlDbSystemPortX),
+//				NsgIds: pulumi.Any(mysqlDbSystemNsgIds),
+//				Port:   pulumi.Any(mysqlDbSystemPort),
+//				PortX:  pulumi.Any(mysqlDbSystemPortX),
 //				ReadEndpoint: &mysql.MysqlDbSystemReadEndpointArgs{
 //					ExcludeIps:                pulumi.Any(mysqlDbSystemReadEndpointExcludeIps),
 //					IsEnabled:                 pulumi.Any(mysqlDbSystemReadEndpointIsEnabled),
 //					ReadEndpointHostnameLabel: pulumi.Any(mysqlDbSystemReadEndpointReadEndpointHostnameLabel),
 //					ReadEndpointIpAddress:     pulumi.Any(mysqlDbSystemReadEndpointReadEndpointIpAddress),
+//				},
+//				Rest: &mysql.MysqlDbSystemRestArgs{
+//					Configuration: pulumi.Any(mysqlDbSystemRestConfiguration),
+//					Port:          pulumi.Any(mysqlDbSystemRestPort),
 //				},
 //				SecureConnections: &mysql.MysqlDbSystemSecureConnectionsArgs{
 //					CertificateGenerationType: pulumi.Any(mysqlDbSystemSecureConnectionsCertificateGenerationType),
@@ -208,6 +213,8 @@ type MysqlDbSystem struct {
 	Maintenance MysqlDbSystemMaintenanceOutput `pulumi:"maintenance"`
 	// The specific MySQL version identifier.
 	MysqlVersion pulumi.StringOutput `pulumi:"mysqlVersion"`
+	// (Updatable) Network Security Group OCIDs used for the VNIC attachment.
+	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
 	// Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
 	PointInTimeRecoveryDetails MysqlDbSystemPointInTimeRecoveryDetailArrayOutput `pulumi:"pointInTimeRecoveryDetails"`
 	// The port for primary endpoint of the DB System to listen on.
@@ -216,6 +223,8 @@ type MysqlDbSystem struct {
 	PortX pulumi.IntOutput `pulumi:"portX"`
 	// (Updatable) Details required to create a Read Endpoint.
 	ReadEndpoint MysqlDbSystemReadEndpointOutput `pulumi:"readEndpoint"`
+	// (Updatable) Details required to configure REST while creating a DB System.
+	Rest MysqlDbSystemRestOutput `pulumi:"rest"`
 	// (Updatable) Secure connection configuration details.
 	SecureConnections MysqlDbSystemSecureConnectionsOutput `pulumi:"secureConnections"`
 	// (Updatable) The name of the shape. The shape determines the resources allocated
@@ -367,6 +376,8 @@ type mysqlDbSystemState struct {
 	Maintenance *MysqlDbSystemMaintenance `pulumi:"maintenance"`
 	// The specific MySQL version identifier.
 	MysqlVersion *string `pulumi:"mysqlVersion"`
+	// (Updatable) Network Security Group OCIDs used for the VNIC attachment.
+	NsgIds []string `pulumi:"nsgIds"`
 	// Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
 	PointInTimeRecoveryDetails []MysqlDbSystemPointInTimeRecoveryDetail `pulumi:"pointInTimeRecoveryDetails"`
 	// The port for primary endpoint of the DB System to listen on.
@@ -375,6 +386,8 @@ type mysqlDbSystemState struct {
 	PortX *int `pulumi:"portX"`
 	// (Updatable) Details required to create a Read Endpoint.
 	ReadEndpoint *MysqlDbSystemReadEndpoint `pulumi:"readEndpoint"`
+	// (Updatable) Details required to configure REST while creating a DB System.
+	Rest *MysqlDbSystemRest `pulumi:"rest"`
 	// (Updatable) Secure connection configuration details.
 	SecureConnections *MysqlDbSystemSecureConnections `pulumi:"secureConnections"`
 	// (Updatable) The name of the shape. The shape determines the resources allocated
@@ -478,6 +491,8 @@ type MysqlDbSystemState struct {
 	Maintenance MysqlDbSystemMaintenancePtrInput
 	// The specific MySQL version identifier.
 	MysqlVersion pulumi.StringPtrInput
+	// (Updatable) Network Security Group OCIDs used for the VNIC attachment.
+	NsgIds pulumi.StringArrayInput
 	// Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
 	PointInTimeRecoveryDetails MysqlDbSystemPointInTimeRecoveryDetailArrayInput
 	// The port for primary endpoint of the DB System to listen on.
@@ -486,6 +501,8 @@ type MysqlDbSystemState struct {
 	PortX pulumi.IntPtrInput
 	// (Updatable) Details required to create a Read Endpoint.
 	ReadEndpoint MysqlDbSystemReadEndpointPtrInput
+	// (Updatable) Details required to configure REST while creating a DB System.
+	Rest MysqlDbSystemRestPtrInput
 	// (Updatable) Secure connection configuration details.
 	SecureConnections MysqlDbSystemSecureConnectionsPtrInput
 	// (Updatable) The name of the shape. The shape determines the resources allocated
@@ -581,12 +598,16 @@ type mysqlDbSystemArgs struct {
 	Maintenance *MysqlDbSystemMaintenance `pulumi:"maintenance"`
 	// The specific MySQL version identifier.
 	MysqlVersion *string `pulumi:"mysqlVersion"`
+	// (Updatable) Network Security Group OCIDs used for the VNIC attachment.
+	NsgIds []string `pulumi:"nsgIds"`
 	// The port for primary endpoint of the DB System to listen on.
 	Port *int `pulumi:"port"`
 	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
 	PortX *int `pulumi:"portX"`
 	// (Updatable) Details required to create a Read Endpoint.
 	ReadEndpoint *MysqlDbSystemReadEndpoint `pulumi:"readEndpoint"`
+	// (Updatable) Details required to configure REST while creating a DB System.
+	Rest *MysqlDbSystemRest `pulumi:"rest"`
 	// (Updatable) Secure connection configuration details.
 	SecureConnections *MysqlDbSystemSecureConnections `pulumi:"secureConnections"`
 	// (Updatable) The name of the shape. The shape determines the resources allocated
@@ -673,12 +694,16 @@ type MysqlDbSystemArgs struct {
 	Maintenance MysqlDbSystemMaintenancePtrInput
 	// The specific MySQL version identifier.
 	MysqlVersion pulumi.StringPtrInput
+	// (Updatable) Network Security Group OCIDs used for the VNIC attachment.
+	NsgIds pulumi.StringArrayInput
 	// The port for primary endpoint of the DB System to listen on.
 	Port pulumi.IntPtrInput
 	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
 	PortX pulumi.IntPtrInput
 	// (Updatable) Details required to create a Read Endpoint.
 	ReadEndpoint MysqlDbSystemReadEndpointPtrInput
+	// (Updatable) Details required to configure REST while creating a DB System.
+	Rest MysqlDbSystemRestPtrInput
 	// (Updatable) Secure connection configuration details.
 	SecureConnections MysqlDbSystemSecureConnectionsPtrInput
 	// (Updatable) The name of the shape. The shape determines the resources allocated
@@ -952,6 +977,11 @@ func (o MysqlDbSystemOutput) MysqlVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringOutput { return v.MysqlVersion }).(pulumi.StringOutput)
 }
 
+// (Updatable) Network Security Group OCIDs used for the VNIC attachment.
+func (o MysqlDbSystemOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringArrayOutput { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
 // Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
 func (o MysqlDbSystemOutput) PointInTimeRecoveryDetails() MysqlDbSystemPointInTimeRecoveryDetailArrayOutput {
 	return o.ApplyT(func(v *MysqlDbSystem) MysqlDbSystemPointInTimeRecoveryDetailArrayOutput {
@@ -972,6 +1002,11 @@ func (o MysqlDbSystemOutput) PortX() pulumi.IntOutput {
 // (Updatable) Details required to create a Read Endpoint.
 func (o MysqlDbSystemOutput) ReadEndpoint() MysqlDbSystemReadEndpointOutput {
 	return o.ApplyT(func(v *MysqlDbSystem) MysqlDbSystemReadEndpointOutput { return v.ReadEndpoint }).(MysqlDbSystemReadEndpointOutput)
+}
+
+// (Updatable) Details required to configure REST while creating a DB System.
+func (o MysqlDbSystemOutput) Rest() MysqlDbSystemRestOutput {
+	return o.ApplyT(func(v *MysqlDbSystem) MysqlDbSystemRestOutput { return v.Rest }).(MysqlDbSystemRestOutput)
 }
 
 // (Updatable) Secure connection configuration details.

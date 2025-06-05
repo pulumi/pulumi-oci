@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/mysql"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/mysql"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -124,14 +124,18 @@ type LookupMysqlDbSystemResult struct {
 	Maintenances []GetMysqlDbSystemMaintenance `pulumi:"maintenances"`
 	// Name of the MySQL Version in use for the DB System.
 	MysqlVersion string `pulumi:"mysqlVersion"`
+	// Network Security Group OCIDs used for the VNIC attachment.
+	NsgIds []string `pulumi:"nsgIds"`
 	// Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
 	PointInTimeRecoveryDetails []GetMysqlDbSystemPointInTimeRecoveryDetail `pulumi:"pointInTimeRecoveryDetails"`
-	// The port for primary endpoint of the DB System to listen on.
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 	Port int `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX int `pulumi:"portX"`
 	// The read endpoint of a DB System.
 	ReadEndpoints []GetMysqlDbSystemReadEndpoint `pulumi:"readEndpoints"`
+	// REST configuration details.
+	Rests []GetMysqlDbSystemRest `pulumi:"rests"`
 	// Secure connection configuration details.
 	SecureConnections []GetMysqlDbSystemSecureConnection `pulumi:"secureConnections"`
 	// The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
@@ -347,6 +351,11 @@ func (o LookupMysqlDbSystemResultOutput) MysqlVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMysqlDbSystemResult) string { return v.MysqlVersion }).(pulumi.StringOutput)
 }
 
+// Network Security Group OCIDs used for the VNIC attachment.
+func (o LookupMysqlDbSystemResultOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupMysqlDbSystemResult) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
 // Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
 func (o LookupMysqlDbSystemResultOutput) PointInTimeRecoveryDetails() GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput {
 	return o.ApplyT(func(v LookupMysqlDbSystemResult) []GetMysqlDbSystemPointInTimeRecoveryDetail {
@@ -354,7 +363,7 @@ func (o LookupMysqlDbSystemResultOutput) PointInTimeRecoveryDetails() GetMysqlDb
 	}).(GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput)
 }
 
-// The port for primary endpoint of the DB System to listen on.
+// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 func (o LookupMysqlDbSystemResultOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupMysqlDbSystemResult) int { return v.Port }).(pulumi.IntOutput)
 }
@@ -367,6 +376,11 @@ func (o LookupMysqlDbSystemResultOutput) PortX() pulumi.IntOutput {
 // The read endpoint of a DB System.
 func (o LookupMysqlDbSystemResultOutput) ReadEndpoints() GetMysqlDbSystemReadEndpointArrayOutput {
 	return o.ApplyT(func(v LookupMysqlDbSystemResult) []GetMysqlDbSystemReadEndpoint { return v.ReadEndpoints }).(GetMysqlDbSystemReadEndpointArrayOutput)
+}
+
+// REST configuration details.
+func (o LookupMysqlDbSystemResultOutput) Rests() GetMysqlDbSystemRestArrayOutput {
+	return o.ApplyT(func(v LookupMysqlDbSystemResult) []GetMysqlDbSystemRest { return v.Rests }).(GetMysqlDbSystemRestArrayOutput)
 }
 
 // Secure connection configuration details.

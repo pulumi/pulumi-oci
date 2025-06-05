@@ -47,6 +47,7 @@ export class PluggabledatabasePluggableDatabaseDbmFeaturesManagement extends pul
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly enablePluggableDatabaseDbmFeature!: pulumi.Output<boolean>;
+    public readonly feature!: pulumi.Output<string | undefined>;
     /**
      * The details required to enable the specified Database Management feature.
      */
@@ -71,6 +72,7 @@ export class PluggabledatabasePluggableDatabaseDbmFeaturesManagement extends pul
         if (opts.id) {
             const state = argsOrState as PluggabledatabasePluggableDatabaseDbmFeaturesManagementState | undefined;
             resourceInputs["enablePluggableDatabaseDbmFeature"] = state ? state.enablePluggableDatabaseDbmFeature : undefined;
+            resourceInputs["feature"] = state ? state.feature : undefined;
             resourceInputs["featureDetails"] = state ? state.featureDetails : undefined;
             resourceInputs["modifyPluggableDatabaseDbmFeature"] = state ? state.modifyPluggableDatabaseDbmFeature : undefined;
             resourceInputs["pluggableDatabaseId"] = state ? state.pluggableDatabaseId : undefined;
@@ -83,6 +85,7 @@ export class PluggabledatabasePluggableDatabaseDbmFeaturesManagement extends pul
                 throw new Error("Missing required property 'pluggableDatabaseId'");
             }
             resourceInputs["enablePluggableDatabaseDbmFeature"] = args ? args.enablePluggableDatabaseDbmFeature : undefined;
+            resourceInputs["feature"] = args ? args.feature : undefined;
             resourceInputs["featureDetails"] = args ? args.featureDetails : undefined;
             resourceInputs["modifyPluggableDatabaseDbmFeature"] = args ? args.modifyPluggableDatabaseDbmFeature : undefined;
             resourceInputs["pluggableDatabaseId"] = args ? args.pluggableDatabaseId : undefined;
@@ -104,6 +107,7 @@ export interface PluggabledatabasePluggableDatabaseDbmFeaturesManagementState {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     enablePluggableDatabaseDbmFeature?: pulumi.Input<boolean>;
+    feature?: pulumi.Input<string>;
     /**
      * The details required to enable the specified Database Management feature.
      */
@@ -127,6 +131,7 @@ export interface PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     enablePluggableDatabaseDbmFeature: pulumi.Input<boolean>;
+    feature?: pulumi.Input<string>;
     /**
      * The details required to enable the specified Database Management feature.
      */

@@ -94,6 +94,11 @@ public final class GetClustersCluster {
      */
     private String openIdConnectDiscoveryEndpoint;
     /**
+     * @return The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
+     * 
+     */
+    private String openIdConnectDiscoveryKey;
+    /**
      * @return Optional attributes for the cluster.
      * 
      */
@@ -221,6 +226,13 @@ public final class GetClustersCluster {
         return this.openIdConnectDiscoveryEndpoint;
     }
     /**
+     * @return The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
+     * 
+     */
+    public String openIdConnectDiscoveryKey() {
+        return this.openIdConnectDiscoveryKey;
+    }
+    /**
      * @return Optional attributes for the cluster.
      * 
      */
@@ -273,6 +285,7 @@ public final class GetClustersCluster {
         private List<GetClustersClusterMetadata> metadatas;
         private String name;
         private String openIdConnectDiscoveryEndpoint;
+        private String openIdConnectDiscoveryKey;
         private List<GetClustersClusterOption> options;
         private String state;
         private String type;
@@ -295,6 +308,7 @@ public final class GetClustersCluster {
     	      this.metadatas = defaults.metadatas;
     	      this.name = defaults.name;
     	      this.openIdConnectDiscoveryEndpoint = defaults.openIdConnectDiscoveryEndpoint;
+    	      this.openIdConnectDiscoveryKey = defaults.openIdConnectDiscoveryKey;
     	      this.options = defaults.options;
     	      this.state = defaults.state;
     	      this.type = defaults.type;
@@ -440,6 +454,14 @@ public final class GetClustersCluster {
             return this;
         }
         @CustomType.Setter
+        public Builder openIdConnectDiscoveryKey(String openIdConnectDiscoveryKey) {
+            if (openIdConnectDiscoveryKey == null) {
+              throw new MissingRequiredPropertyException("GetClustersCluster", "openIdConnectDiscoveryKey");
+            }
+            this.openIdConnectDiscoveryKey = openIdConnectDiscoveryKey;
+            return this;
+        }
+        @CustomType.Setter
         public Builder options(List<GetClustersClusterOption> options) {
             if (options == null) {
               throw new MissingRequiredPropertyException("GetClustersCluster", "options");
@@ -491,6 +513,7 @@ public final class GetClustersCluster {
             _resultValue.metadatas = metadatas;
             _resultValue.name = name;
             _resultValue.openIdConnectDiscoveryEndpoint = openIdConnectDiscoveryEndpoint;
+            _resultValue.openIdConnectDiscoveryKey = openIdConnectDiscoveryKey;
             _resultValue.options = options;
             _resultValue.state = state;
             _resultValue.type = type;

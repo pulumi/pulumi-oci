@@ -16,6 +16,7 @@ import com.pulumi.oci.Mysql.inputs.MysqlDbSystemHeatWaveClusterArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemMaintenanceArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemPointInTimeRecoveryDetailArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemReadEndpointArgs;
+import com.pulumi.oci.Mysql.inputs.MysqlDbSystemRestArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemSecureConnectionsArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemSourceArgs;
 import java.lang.Boolean;
@@ -519,6 +520,21 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * (Updatable) Network Security Group OCIDs used for the VNIC attachment.
+     * 
+     */
+    @Import(name="nsgIds")
+    private @Nullable Output<List<String>> nsgIds;
+
+    /**
+     * @return (Updatable) Network Security Group OCIDs used for the VNIC attachment.
+     * 
+     */
+    public Optional<Output<List<String>>> nsgIds() {
+        return Optional.ofNullable(this.nsgIds);
+    }
+
+    /**
      * Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
      * 
      */
@@ -576,6 +592,21 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
      */
     public Optional<Output<MysqlDbSystemReadEndpointArgs>> readEndpoint() {
         return Optional.ofNullable(this.readEndpoint);
+    }
+
+    /**
+     * (Updatable) Details required to configure REST while creating a DB System.
+     * 
+     */
+    @Import(name="rest")
+    private @Nullable Output<MysqlDbSystemRestArgs> rest;
+
+    /**
+     * @return (Updatable) Details required to configure REST while creating a DB System.
+     * 
+     */
+    public Optional<Output<MysqlDbSystemRestArgs>> rest() {
+        return Optional.ofNullable(this.rest);
     }
 
     /**
@@ -754,10 +785,12 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
         this.lifecycleDetails = $.lifecycleDetails;
         this.maintenance = $.maintenance;
         this.mysqlVersion = $.mysqlVersion;
+        this.nsgIds = $.nsgIds;
         this.pointInTimeRecoveryDetails = $.pointInTimeRecoveryDetails;
         this.port = $.port;
         this.portX = $.portX;
         this.readEndpoint = $.readEndpoint;
+        this.rest = $.rest;
         this.secureConnections = $.secureConnections;
         this.shapeName = $.shapeName;
         this.shutdownType = $.shutdownType;
@@ -1514,6 +1547,37 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
+         * @param nsgIds (Updatable) Network Security Group OCIDs used for the VNIC attachment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nsgIds(@Nullable Output<List<String>> nsgIds) {
+            $.nsgIds = nsgIds;
+            return this;
+        }
+
+        /**
+         * @param nsgIds (Updatable) Network Security Group OCIDs used for the VNIC attachment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nsgIds(List<String> nsgIds) {
+            return nsgIds(Output.of(nsgIds));
+        }
+
+        /**
+         * @param nsgIds (Updatable) Network Security Group OCIDs used for the VNIC attachment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nsgIds(String... nsgIds) {
+            return nsgIds(List.of(nsgIds));
+        }
+
+        /**
          * @param pointInTimeRecoveryDetails Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
          * 
          * @return builder
@@ -1605,6 +1669,27 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
          */
         public Builder readEndpoint(MysqlDbSystemReadEndpointArgs readEndpoint) {
             return readEndpoint(Output.of(readEndpoint));
+        }
+
+        /**
+         * @param rest (Updatable) Details required to configure REST while creating a DB System.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder rest(@Nullable Output<MysqlDbSystemRestArgs> rest) {
+            $.rest = rest;
+            return this;
+        }
+
+        /**
+         * @param rest (Updatable) Details required to configure REST while creating a DB System.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder rest(MysqlDbSystemRestArgs rest) {
+            return rest(Output.of(rest));
         }
 
         /**

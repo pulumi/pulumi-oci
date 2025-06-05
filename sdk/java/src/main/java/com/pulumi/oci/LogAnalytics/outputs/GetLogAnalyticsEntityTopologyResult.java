@@ -5,6 +5,7 @@ package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsEntityTopologyFilter;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsEntityTopologyItem;
 import java.lang.String;
 import java.util.List;
@@ -14,6 +15,8 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLogAnalyticsEntityTopologyResult {
+    private @Nullable String context;
+    private @Nullable List<GetLogAnalyticsEntityTopologyFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -34,6 +37,12 @@ public final class GetLogAnalyticsEntityTopologyResult {
     private @Nullable String state;
 
     private GetLogAnalyticsEntityTopologyResult() {}
+    public Optional<String> context() {
+        return Optional.ofNullable(this.context);
+    }
+    public List<GetLogAnalyticsEntityTopologyFilter> filters() {
+        return this.filters == null ? List.of() : this.filters;
+    }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -74,6 +83,8 @@ public final class GetLogAnalyticsEntityTopologyResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String context;
+        private @Nullable List<GetLogAnalyticsEntityTopologyFilter> filters;
         private String id;
         private List<GetLogAnalyticsEntityTopologyItem> items;
         private String logAnalyticsEntityId;
@@ -83,6 +94,8 @@ public final class GetLogAnalyticsEntityTopologyResult {
         public Builder() {}
         public Builder(GetLogAnalyticsEntityTopologyResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.context = defaults.context;
+    	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.items = defaults.items;
     	      this.logAnalyticsEntityId = defaults.logAnalyticsEntityId;
@@ -91,6 +104,21 @@ public final class GetLogAnalyticsEntityTopologyResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
+        public Builder context(@Nullable String context) {
+
+            this.context = context;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder filters(@Nullable List<GetLogAnalyticsEntityTopologyFilter> filters) {
+
+            this.filters = filters;
+            return this;
+        }
+        public Builder filters(GetLogAnalyticsEntityTopologyFilter... filters) {
+            return filters(List.of(filters));
+        }
         @CustomType.Setter
         public Builder id(String id) {
             if (id == null) {
@@ -143,6 +171,8 @@ public final class GetLogAnalyticsEntityTopologyResult {
         }
         public GetLogAnalyticsEntityTopologyResult build() {
             final var _resultValue = new GetLogAnalyticsEntityTopologyResult();
+            _resultValue.context = context;
+            _resultValue.filters = filters;
             _resultValue.id = id;
             _resultValue.items = items;
             _resultValue.logAnalyticsEntityId = logAnalyticsEntityId;

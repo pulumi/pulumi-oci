@@ -17,8 +17,11 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'NetworkFirewallNatConfiguration',
     'NetworkFirewallPolicyDecryptionRuleCondition',
     'NetworkFirewallPolicyDecryptionRulePosition',
+    'NetworkFirewallPolicyNatRuleCondition',
+    'NetworkFirewallPolicyNatRulePosition',
     'NetworkFirewallPolicySecurityRuleCondition',
     'NetworkFirewallPolicySecurityRulePosition',
     'NetworkFirewallPolicyServicePortRange',
@@ -26,6 +29,7 @@ __all__ = [
     'NetworkFirewallPolicyTunnelInspectionRulePosition',
     'NetworkFirewallPolicyTunnelInspectionRuleProfile',
     'NetworkFirewallPolicyUrlListUrl',
+    'GetNetworkFirewallNatConfigurationResult',
     'GetNetworkFirewallPoliciesFilterResult',
     'GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionResult',
     'GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemResult',
@@ -50,6 +54,13 @@ __all__ = [
     'GetNetworkFirewallPolicyDecryptionRulesFilterResult',
     'GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionResult',
     'GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItemResult',
+    'GetNetworkFirewallPolicyNatRuleConditionResult',
+    'GetNetworkFirewallPolicyNatRulePositionResult',
+    'GetNetworkFirewallPolicyNatRulesFilterResult',
+    'GetNetworkFirewallPolicyNatRulesNatRuleCollectionResult',
+    'GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemResult',
+    'GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionResult',
+    'GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionResult',
     'GetNetworkFirewallPolicySecurityRuleConditionResult',
     'GetNetworkFirewallPolicySecurityRulePositionResult',
     'GetNetworkFirewallPolicySecurityRulesFilterResult',
@@ -82,7 +93,57 @@ __all__ = [
     'GetNetworkFirewallsFilterResult',
     'GetNetworkFirewallsNetworkFirewallCollectionResult',
     'GetNetworkFirewallsNetworkFirewallCollectionItemResult',
+    'GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationResult',
 ]
+
+@pulumi.output_type
+class NetworkFirewallNatConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "mustEnablePrivateNat":
+            suggest = "must_enable_private_nat"
+        elif key == "natIpAddressLists":
+            suggest = "nat_ip_address_lists"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NetworkFirewallNatConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NetworkFirewallNatConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NetworkFirewallNatConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 must_enable_private_nat: builtins.bool,
+                 nat_ip_address_lists: Optional[Sequence[builtins.str]] = None):
+        """
+        :param builtins.bool must_enable_private_nat: (Updatable) To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall. The value of this field can not be false to release the NAT IPs given that the attached network firewall policy does not contains any NAT rules. The value of this field should be set to true if the network firewall policy being applied contains NAT rules.
+        :param Sequence[builtins.str] nat_ip_address_lists: An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+        """
+        pulumi.set(__self__, "must_enable_private_nat", must_enable_private_nat)
+        if nat_ip_address_lists is not None:
+            pulumi.set(__self__, "nat_ip_address_lists", nat_ip_address_lists)
+
+    @property
+    @pulumi.getter(name="mustEnablePrivateNat")
+    def must_enable_private_nat(self) -> builtins.bool:
+        """
+        (Updatable) To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall. The value of this field can not be false to release the NAT IPs given that the attached network firewall policy does not contains any NAT rules. The value of this field should be set to true if the network firewall policy being applied contains NAT rules.
+        """
+        return pulumi.get(self, "must_enable_private_nat")
+
+    @property
+    @pulumi.getter(name="natIpAddressLists")
+    def nat_ip_address_lists(self) -> Optional[Sequence[builtins.str]]:
+        """
+        An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+        """
+        return pulumi.get(self, "nat_ip_address_lists")
+
 
 @pulumi.output_type
 class NetworkFirewallPolicyDecryptionRuleCondition(dict):
@@ -188,6 +249,118 @@ class NetworkFirewallPolicyDecryptionRulePosition(dict):
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "before_rule")
+
+
+@pulumi.output_type
+class NetworkFirewallPolicyNatRuleCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "destinationAddresses":
+            suggest = "destination_addresses"
+        elif key == "sourceAddresses":
+            suggest = "source_addresses"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NetworkFirewallPolicyNatRuleCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NetworkFirewallPolicyNatRuleCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NetworkFirewallPolicyNatRuleCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 destination_addresses: Optional[Sequence[builtins.str]] = None,
+                 service: Optional[builtins.str] = None,
+                 source_addresses: Optional[Sequence[builtins.str]] = None):
+        """
+        :param Sequence[builtins.str] destination_addresses: (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+        :param builtins.str service: (Updatable) A Service name to be evaluated against the traffic protocol and protocol-specific parameters.
+        :param Sequence[builtins.str] source_addresses: (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+        """
+        if destination_addresses is not None:
+            pulumi.set(__self__, "destination_addresses", destination_addresses)
+        if service is not None:
+            pulumi.set(__self__, "service", service)
+        if source_addresses is not None:
+            pulumi.set(__self__, "source_addresses", source_addresses)
+
+    @property
+    @pulumi.getter(name="destinationAddresses")
+    def destination_addresses(self) -> Optional[Sequence[builtins.str]]:
+        """
+        (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+        """
+        return pulumi.get(self, "destination_addresses")
+
+    @property
+    @pulumi.getter
+    def service(self) -> Optional[builtins.str]:
+        """
+        (Updatable) A Service name to be evaluated against the traffic protocol and protocol-specific parameters.
+        """
+        return pulumi.get(self, "service")
+
+    @property
+    @pulumi.getter(name="sourceAddresses")
+    def source_addresses(self) -> Optional[Sequence[builtins.str]]:
+        """
+        (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+        """
+        return pulumi.get(self, "source_addresses")
+
+
+@pulumi.output_type
+class NetworkFirewallPolicyNatRulePosition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "afterRule":
+            suggest = "after_rule"
+        elif key == "beforeRule":
+            suggest = "before_rule"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NetworkFirewallPolicyNatRulePosition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NetworkFirewallPolicyNatRulePosition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NetworkFirewallPolicyNatRulePosition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 after_rule: Optional[builtins.str] = None,
+                 before_rule: Optional[builtins.str] = None):
+        """
+        :param builtins.str after_rule: (Updatable) Identifier for rule after which this rule lies.
+        :param builtins.str before_rule: (Updatable) Identifier for rule before which this rule lies.
+        """
+        if after_rule is not None:
+            pulumi.set(__self__, "after_rule", after_rule)
+        if before_rule is not None:
+            pulumi.set(__self__, "before_rule", before_rule)
+
+    @property
+    @pulumi.getter(name="afterRule")
+    def after_rule(self) -> Optional[builtins.str]:
+        """
+        (Updatable) Identifier for rule after which this rule lies.
+        """
+        return pulumi.get(self, "after_rule")
+
+    @property
+    @pulumi.getter(name="beforeRule")
+    def before_rule(self) -> Optional[builtins.str]:
+        """
+        (Updatable) Identifier for rule before which this rule lies.
         """
         return pulumi.get(self, "before_rule")
 
@@ -558,6 +731,35 @@ class NetworkFirewallPolicyUrlListUrl(dict):
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetNetworkFirewallNatConfigurationResult(dict):
+    def __init__(__self__, *,
+                 must_enable_private_nat: builtins.bool,
+                 nat_ip_address_lists: Sequence[builtins.str]):
+        """
+        :param builtins.bool must_enable_private_nat: To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall.
+        :param Sequence[builtins.str] nat_ip_address_lists: An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+        """
+        pulumi.set(__self__, "must_enable_private_nat", must_enable_private_nat)
+        pulumi.set(__self__, "nat_ip_address_lists", nat_ip_address_lists)
+
+    @property
+    @pulumi.getter(name="mustEnablePrivateNat")
+    def must_enable_private_nat(self) -> builtins.bool:
+        """
+        To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall.
+        """
+        return pulumi.get(self, "must_enable_private_nat")
+
+    @property
+    @pulumi.getter(name="natIpAddressLists")
+    def nat_ip_address_lists(self) -> Sequence[builtins.str]:
+        """
+        An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+        """
+        return pulumi.get(self, "nat_ip_address_lists")
 
 
 @pulumi.output_type
@@ -1635,6 +1837,303 @@ class GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItemResu
         Version number of the secret to be used.
         """
         return pulumi.get(self, "version_number")
+
+
+@pulumi.output_type
+class GetNetworkFirewallPolicyNatRuleConditionResult(dict):
+    def __init__(__self__, *,
+                 destination_addresses: Sequence[builtins.str],
+                 service: builtins.str,
+                 source_addresses: Sequence[builtins.str]):
+        """
+        :param Sequence[builtins.str] destination_addresses: An array of IP address list names to be evaluated against the traffic destination address.
+        :param builtins.str service: A Service name to be evaluated against the traffic protocol and protocol-specific parameters.
+        :param Sequence[builtins.str] source_addresses: An array of IP address list names to be evaluated against the traffic source address.
+        """
+        pulumi.set(__self__, "destination_addresses", destination_addresses)
+        pulumi.set(__self__, "service", service)
+        pulumi.set(__self__, "source_addresses", source_addresses)
+
+    @property
+    @pulumi.getter(name="destinationAddresses")
+    def destination_addresses(self) -> Sequence[builtins.str]:
+        """
+        An array of IP address list names to be evaluated against the traffic destination address.
+        """
+        return pulumi.get(self, "destination_addresses")
+
+    @property
+    @pulumi.getter
+    def service(self) -> builtins.str:
+        """
+        A Service name to be evaluated against the traffic protocol and protocol-specific parameters.
+        """
+        return pulumi.get(self, "service")
+
+    @property
+    @pulumi.getter(name="sourceAddresses")
+    def source_addresses(self) -> Sequence[builtins.str]:
+        """
+        An array of IP address list names to be evaluated against the traffic source address.
+        """
+        return pulumi.get(self, "source_addresses")
+
+
+@pulumi.output_type
+class GetNetworkFirewallPolicyNatRulePositionResult(dict):
+    def __init__(__self__, *,
+                 after_rule: builtins.str,
+                 before_rule: builtins.str):
+        """
+        :param builtins.str after_rule: Identifier for rule after which this rule lies.
+        :param builtins.str before_rule: Identifier for rule before which this rule lies.
+        """
+        pulumi.set(__self__, "after_rule", after_rule)
+        pulumi.set(__self__, "before_rule", before_rule)
+
+    @property
+    @pulumi.getter(name="afterRule")
+    def after_rule(self) -> builtins.str:
+        """
+        Identifier for rule after which this rule lies.
+        """
+        return pulumi.get(self, "after_rule")
+
+    @property
+    @pulumi.getter(name="beforeRule")
+    def before_rule(self) -> builtins.str:
+        """
+        Identifier for rule before which this rule lies.
+        """
+        return pulumi.get(self, "before_rule")
+
+
+@pulumi.output_type
+class GetNetworkFirewallPolicyNatRulesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        """
+        :param builtins.str name: Name for the NAT rule, must be unique within the policy.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        Name for the NAT rule, must be unique within the policy.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetNetworkFirewallPolicyNatRulesNatRuleCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 action: builtins.str,
+                 condition: 'outputs.GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionResult',
+                 name: builtins.str,
+                 network_firewall_policy_id: builtins.str,
+                 parent_resource_id: builtins.str,
+                 position: 'outputs.GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionResult',
+                 priority_order: builtins.str,
+                 type: builtins.str,
+                 description: Optional[builtins.str] = None):
+        """
+        :param builtins.str action: action:
+               * DIPP_SRC_NAT - Dynamic-ip-port source NAT.
+        :param 'GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionArgs' condition: Match criteria used in NAT Rule used on the firewall policy.
+        :param builtins.str name: Name for the NAT rule, must be unique within the policy.
+        :param builtins.str network_firewall_policy_id: Unique Network Firewall Policy identifier
+        :param builtins.str parent_resource_id: OCID of the Network Firewall Policy this decryption profile belongs to.
+        :param 'GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionArgs' position: An object which defines the position of the rule.
+        :param builtins.str priority_order: The priority order in which this rule should be evaluated
+        :param builtins.str type: NAT type:
+               * NATV4 - NATV4 type NAT.
+        :param builtins.str description: Description of a NAT rule. This field can be used to add additional info.
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
+        pulumi.set(__self__, "parent_resource_id", parent_resource_id)
+        pulumi.set(__self__, "position", position)
+        pulumi.set(__self__, "priority_order", priority_order)
+        pulumi.set(__self__, "type", type)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+
+    @property
+    @pulumi.getter
+    def action(self) -> builtins.str:
+        """
+        action:
+        * DIPP_SRC_NAT - Dynamic-ip-port source NAT.
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter
+    def condition(self) -> 'outputs.GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionResult':
+        """
+        Match criteria used in NAT Rule used on the firewall policy.
+        """
+        return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        Name for the NAT rule, must be unique within the policy.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="networkFirewallPolicyId")
+    def network_firewall_policy_id(self) -> builtins.str:
+        """
+        Unique Network Firewall Policy identifier
+        """
+        return pulumi.get(self, "network_firewall_policy_id")
+
+    @property
+    @pulumi.getter(name="parentResourceId")
+    def parent_resource_id(self) -> builtins.str:
+        """
+        OCID of the Network Firewall Policy this decryption profile belongs to.
+        """
+        return pulumi.get(self, "parent_resource_id")
+
+    @property
+    @pulumi.getter
+    def position(self) -> 'outputs.GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionResult':
+        """
+        An object which defines the position of the rule.
+        """
+        return pulumi.get(self, "position")
+
+    @property
+    @pulumi.getter(name="priorityOrder")
+    def priority_order(self) -> builtins.str:
+        """
+        The priority order in which this rule should be evaluated
+        """
+        return pulumi.get(self, "priority_order")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        NAT type:
+        * NATV4 - NATV4 type NAT.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[builtins.str]:
+        """
+        Description of a NAT rule. This field can be used to add additional info.
+        """
+        return pulumi.get(self, "description")
+
+
+@pulumi.output_type
+class GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionResult(dict):
+    def __init__(__self__, *,
+                 destination_addresses: Optional[Sequence[builtins.str]] = None,
+                 service: Optional[builtins.str] = None,
+                 source_addresses: Optional[Sequence[builtins.str]] = None):
+        """
+        :param Sequence[builtins.str] destination_addresses: An array of IP address list names to be evaluated against the traffic destination address.
+        :param builtins.str service: A Service name to be evaluated against the traffic protocol and protocol-specific parameters.
+        :param Sequence[builtins.str] source_addresses: An array of IP address list names to be evaluated against the traffic source address.
+        """
+        if destination_addresses is not None:
+            pulumi.set(__self__, "destination_addresses", destination_addresses)
+        if service is not None:
+            pulumi.set(__self__, "service", service)
+        if source_addresses is not None:
+            pulumi.set(__self__, "source_addresses", source_addresses)
+
+    @property
+    @pulumi.getter(name="destinationAddresses")
+    def destination_addresses(self) -> Optional[Sequence[builtins.str]]:
+        """
+        An array of IP address list names to be evaluated against the traffic destination address.
+        """
+        return pulumi.get(self, "destination_addresses")
+
+    @property
+    @pulumi.getter
+    def service(self) -> Optional[builtins.str]:
+        """
+        A Service name to be evaluated against the traffic protocol and protocol-specific parameters.
+        """
+        return pulumi.get(self, "service")
+
+    @property
+    @pulumi.getter(name="sourceAddresses")
+    def source_addresses(self) -> Optional[Sequence[builtins.str]]:
+        """
+        An array of IP address list names to be evaluated against the traffic source address.
+        """
+        return pulumi.get(self, "source_addresses")
+
+
+@pulumi.output_type
+class GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionResult(dict):
+    def __init__(__self__, *,
+                 after_rule: builtins.str,
+                 before_rule: builtins.str):
+        """
+        :param builtins.str after_rule: Identifier for rule after which this rule lies.
+        :param builtins.str before_rule: Identifier for rule before which this rule lies.
+        """
+        pulumi.set(__self__, "after_rule", after_rule)
+        pulumi.set(__self__, "before_rule", before_rule)
+
+    @property
+    @pulumi.getter(name="afterRule")
+    def after_rule(self) -> builtins.str:
+        """
+        Identifier for rule after which this rule lies.
+        """
+        return pulumi.get(self, "after_rule")
+
+    @property
+    @pulumi.getter(name="beforeRule")
+    def before_rule(self) -> builtins.str:
+        """
+        Identifier for rule before which this rule lies.
+        """
+        return pulumi.get(self, "before_rule")
 
 
 @pulumi.output_type
@@ -2775,6 +3274,7 @@ class GetNetworkFirewallsNetworkFirewallCollectionItemResult(dict):
                  ipv4address: builtins.str,
                  ipv6address: builtins.str,
                  lifecycle_details: builtins.str,
+                 nat_configurations: Sequence['outputs.GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationResult'],
                  network_firewall_policy_id: builtins.str,
                  network_security_group_ids: Sequence[builtins.str],
                  state: builtins.str,
@@ -2792,6 +3292,7 @@ class GetNetworkFirewallsNetworkFirewallCollectionItemResult(dict):
         :param builtins.str ipv4address: IPv4 address for the Network Firewall.
         :param builtins.str ipv6address: IPv6 address for the Network Firewall.
         :param builtins.str lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'FAILED' state.
+        :param Sequence['GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArgs'] nat_configurations: Nat Configuration response.
         :param builtins.str network_firewall_policy_id: A filter to return only resources that match the entire networkFirewallPolicyId given.
         :param Sequence[builtins.str] network_security_group_ids: An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
         :param builtins.str state: A filter to return only resources with a lifecycleState matching the given value.
@@ -2809,6 +3310,7 @@ class GetNetworkFirewallsNetworkFirewallCollectionItemResult(dict):
         pulumi.set(__self__, "ipv4address", ipv4address)
         pulumi.set(__self__, "ipv6address", ipv6address)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "nat_configurations", nat_configurations)
         pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
         pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
         pulumi.set(__self__, "state", state)
@@ -2890,6 +3392,14 @@ class GetNetworkFirewallsNetworkFirewallCollectionItemResult(dict):
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="natConfigurations")
+    def nat_configurations(self) -> Sequence['outputs.GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationResult']:
+        """
+        Nat Configuration response.
+        """
+        return pulumi.get(self, "nat_configurations")
+
+    @property
     @pulumi.getter(name="networkFirewallPolicyId")
     def network_firewall_policy_id(self) -> builtins.str:
         """
@@ -2944,5 +3454,34 @@ class GetNetworkFirewallsNetworkFirewallCollectionItemResult(dict):
         The time at which the Network Firewall was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationResult(dict):
+    def __init__(__self__, *,
+                 must_enable_private_nat: builtins.bool,
+                 nat_ip_address_lists: Sequence[builtins.str]):
+        """
+        :param builtins.bool must_enable_private_nat: To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall.
+        :param Sequence[builtins.str] nat_ip_address_lists: An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+        """
+        pulumi.set(__self__, "must_enable_private_nat", must_enable_private_nat)
+        pulumi.set(__self__, "nat_ip_address_lists", nat_ip_address_lists)
+
+    @property
+    @pulumi.getter(name="mustEnablePrivateNat")
+    def must_enable_private_nat(self) -> builtins.bool:
+        """
+        To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall.
+        """
+        return pulumi.get(self, "must_enable_private_nat")
+
+    @property
+    @pulumi.getter(name="natIpAddressLists")
+    def nat_ip_address_lists(self) -> Sequence[builtins.str]:
+        """
+        An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+        """
+        return pulumi.get(self, "nat_ip_address_lists")
 
 

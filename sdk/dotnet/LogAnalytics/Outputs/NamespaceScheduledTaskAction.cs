@@ -38,9 +38,13 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// </summary>
         public readonly string? QueryString;
         /// <summary>
-        /// The ManagementSavedSearch id [OCID] utilized in the action.
+        /// The ManagementSavedSearch id [OCID] utilized in the action.  Should not be provided when a template ID is present.
         /// </summary>
         public readonly string? SavedSearchId;
+        /// <summary>
+        /// details for scheduled task using template
+        /// </summary>
+        public readonly Outputs.NamespaceScheduledTaskActionTemplateDetails? TemplateDetails;
         /// <summary>
         /// Action type discriminator.
         /// </summary>
@@ -62,6 +66,8 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
 
             string? savedSearchId,
 
+            Outputs.NamespaceScheduledTaskActionTemplateDetails? templateDetails,
+
             string type)
         {
             CompartmentIdInSubtree = compartmentIdInSubtree;
@@ -71,6 +77,7 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
             PurgeDuration = purgeDuration;
             QueryString = queryString;
             SavedSearchId = savedSearchId;
+            TemplateDetails = templateDetails;
             Type = type;
         }
     }

@@ -179,6 +179,10 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         public readonly bool IsForceHistoricCollection;
         /// <summary>
+        /// Last Collected Object for the rule
+        /// </summary>
+        public readonly string LastCollectedObject;
+        /// <summary>
         /// A detailed status of the life cycle state.
         /// </summary>
         public readonly string LifecycleDetails;
@@ -241,6 +245,18 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         public readonly string State;
         /// <summary>
+        /// The time from which to consume the objects, if streamCursorType is AT_TIME.
+        /// </summary>
+        public readonly string StreamCursorTime;
+        /// <summary>
+        /// Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
+        /// </summary>
+        public readonly string StreamCursorType;
+        /// <summary>
+        /// A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+        /// </summary>
+        public readonly string StreamId;
+        /// <summary>
         /// The time when this rule was created. An RFC3339 formatted datetime string.
         /// </summary>
         public readonly string TimeCreated;
@@ -274,6 +290,8 @@ namespace Pulumi.Oci.LogAnalytics
             bool isEnabled,
 
             bool isForceHistoricCollection,
+
+            string lastCollectedObject,
 
             string lifecycleDetails,
 
@@ -309,6 +327,12 @@ namespace Pulumi.Oci.LogAnalytics
 
             string state,
 
+            string streamCursorTime,
+
+            string streamCursorType,
+
+            string streamId,
+
             string timeCreated,
 
             string timeUpdated,
@@ -325,6 +349,7 @@ namespace Pulumi.Oci.LogAnalytics
             Id = id;
             IsEnabled = isEnabled;
             IsForceHistoricCollection = isForceHistoricCollection;
+            LastCollectedObject = lastCollectedObject;
             LifecycleDetails = lifecycleDetails;
             LogAnalyticsObjectCollectionRuleId = logAnalyticsObjectCollectionRuleId;
             LogGroupId = logGroupId;
@@ -342,6 +367,9 @@ namespace Pulumi.Oci.LogAnalytics
             PollSince = pollSince;
             PollTill = pollTill;
             State = state;
+            StreamCursorTime = streamCursorTime;
+            StreamCursorType = streamCursorType;
+            StreamId = streamId;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
             Timezone = timezone;

@@ -109,7 +109,7 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
         """
         This resource provides the Usage Carbon Emissions Query resource in Oracle Cloud Infrastructure Metering Computation service.
 
-        Returns the created usage carbon emissions query.
+        Returns the created carbon emissions usage query.
 
         ## Example Usage
 
@@ -129,6 +129,9 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
                     "tenant_id": test_tenant["id"],
                     "compartment_depth": usage_carbon_emissions_query_query_definition_report_query_compartment_depth,
                     "date_range_name": usage_carbon_emissions_query_query_definition_report_query_date_range_name,
+                    "emission_calculation_method": usage_carbon_emissions_query_query_definition_report_query_emission_calculation_method,
+                    "emission_type": usage_carbon_emissions_query_query_definition_report_query_emission_type,
+                    "granularity": usage_carbon_emissions_query_query_definition_report_query_granularity,
                     "group_bies": usage_carbon_emissions_query_query_definition_report_query_group_by,
                     "group_by_tags": [{
                         "key": usage_carbon_emissions_query_query_definition_report_query_group_by_tag_key,
@@ -166,7 +169,7 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
         """
         This resource provides the Usage Carbon Emissions Query resource in Oracle Cloud Infrastructure Metering Computation service.
 
-        Returns the created usage carbon emissions query.
+        Returns the created carbon emissions usage query.
 
         ## Example Usage
 
@@ -186,6 +189,9 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
                     "tenant_id": test_tenant["id"],
                     "compartment_depth": usage_carbon_emissions_query_query_definition_report_query_compartment_depth,
                     "date_range_name": usage_carbon_emissions_query_query_definition_report_query_date_range_name,
+                    "emission_calculation_method": usage_carbon_emissions_query_query_definition_report_query_emission_calculation_method,
+                    "emission_type": usage_carbon_emissions_query_query_definition_report_query_emission_type,
+                    "granularity": usage_carbon_emissions_query_query_definition_report_query_granularity,
                     "group_bies": usage_carbon_emissions_query_query_definition_report_query_group_by,
                     "group_by_tags": [{
                         "key": usage_carbon_emissions_query_query_definition_report_query_group_by_tag_key,

@@ -118,7 +118,7 @@ namespace Pulumi.Oci.MeteringComputation
         }
 
         /// <summary>
-        /// Query parameter for filtering by name
+        /// The query parameter for filtering by name.
         /// </summary>
         [Input("name")]
         public string? Name { get; set; }
@@ -150,7 +150,7 @@ namespace Pulumi.Oci.MeteringComputation
         }
 
         /// <summary>
-        /// Query parameter for filtering by name
+        /// The query parameter for filtering by name.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

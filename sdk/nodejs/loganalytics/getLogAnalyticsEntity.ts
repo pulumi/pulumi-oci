@@ -20,12 +20,14 @@ import * as utilities from "../utilities";
  * const testLogAnalyticsEntity = oci.LogAnalytics.getLogAnalyticsEntity({
  *     logAnalyticsEntityId: testLogAnalyticsEntityOciLogAnalyticsLogAnalyticsEntity.id,
  *     namespace: logAnalyticsEntityNamespace,
+ *     isShowAssociatedSourcesCount: logAnalyticsEntityIsShowAssociatedSourcesCount,
  * });
  * ```
  */
 export function getLogAnalyticsEntity(args: GetLogAnalyticsEntityArgs, opts?: pulumi.InvokeOptions): Promise<GetLogAnalyticsEntityResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getLogAnalyticsEntity:getLogAnalyticsEntity", {
+        "isShowAssociatedSourcesCount": args.isShowAssociatedSourcesCount,
         "logAnalyticsEntityId": args.logAnalyticsEntityId,
         "namespace": args.namespace,
     }, opts);
@@ -35,6 +37,10 @@ export function getLogAnalyticsEntity(args: GetLogAnalyticsEntityArgs, opts?: pu
  * A collection of arguments for invoking getLogAnalyticsEntity.
  */
 export interface GetLogAnalyticsEntityArgs {
+    /**
+     * Option to return count of associated log sources for log analytics entity(s).
+     */
+    isShowAssociatedSourcesCount?: string;
     /**
      * The log analytics entity OCID.
      */
@@ -53,6 +59,10 @@ export interface GetLogAnalyticsEntityResult {
      * The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
      */
     readonly areLogsCollected: boolean;
+    /**
+     * The count of associated log sources for a given log analytics entity.
+     */
+    readonly associatedSourcesCount: number;
     /**
      * The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
      */
@@ -85,6 +95,7 @@ export interface GetLogAnalyticsEntityResult {
      * The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
      */
     readonly id: string;
+    readonly isShowAssociatedSourcesCount?: string;
     /**
      * lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
      */
@@ -154,12 +165,14 @@ export interface GetLogAnalyticsEntityResult {
  * const testLogAnalyticsEntity = oci.LogAnalytics.getLogAnalyticsEntity({
  *     logAnalyticsEntityId: testLogAnalyticsEntityOciLogAnalyticsLogAnalyticsEntity.id,
  *     namespace: logAnalyticsEntityNamespace,
+ *     isShowAssociatedSourcesCount: logAnalyticsEntityIsShowAssociatedSourcesCount,
  * });
  * ```
  */
 export function getLogAnalyticsEntityOutput(args: GetLogAnalyticsEntityOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLogAnalyticsEntityResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LogAnalytics/getLogAnalyticsEntity:getLogAnalyticsEntity", {
+        "isShowAssociatedSourcesCount": args.isShowAssociatedSourcesCount,
         "logAnalyticsEntityId": args.logAnalyticsEntityId,
         "namespace": args.namespace,
     }, opts);
@@ -169,6 +182,10 @@ export function getLogAnalyticsEntityOutput(args: GetLogAnalyticsEntityOutputArg
  * A collection of arguments for invoking getLogAnalyticsEntity.
  */
 export interface GetLogAnalyticsEntityOutputArgs {
+    /**
+     * Option to return count of associated log sources for log analytics entity(s).
+     */
+    isShowAssociatedSourcesCount?: pulumi.Input<string>;
     /**
      * The log analytics entity OCID.
      */

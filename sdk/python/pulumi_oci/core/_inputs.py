@@ -104,6 +104,8 @@ __all__ = [
     'CrossConnectMacsecPropertiesArgsDict',
     'CrossConnectMacsecPropertiesPrimaryKeyArgs',
     'CrossConnectMacsecPropertiesPrimaryKeyArgsDict',
+    'DedicatedVmHostPlacementConstraintDetailsArgs',
+    'DedicatedVmHostPlacementConstraintDetailsArgsDict',
     'DefaultDhcpOptionsOptionArgs',
     'DefaultDhcpOptionsOptionArgsDict',
     'DefaultRouteTableRouteRuleArgs',
@@ -270,6 +272,8 @@ __all__ = [
     'InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailsArgsDict',
     'InstanceLicensingConfigsArgs',
     'InstanceLicensingConfigsArgsDict',
+    'InstancePlacementConstraintDetailsArgs',
+    'InstancePlacementConstraintDetailsArgsDict',
     'InstancePlatformConfigArgs',
     'InstancePlatformConfigArgsDict',
     'InstancePoolInstanceLoadBalancerBackendArgs',
@@ -4240,6 +4244,69 @@ class CrossConnectMacsecPropertiesPrimaryKeyArgs:
     @connectivity_association_name_secret_version.setter
     def connectivity_association_name_secret_version(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "connectivity_association_name_secret_version", value)
+
+
+if not MYPY:
+    class DedicatedVmHostPlacementConstraintDetailsArgsDict(TypedDict):
+        type: pulumi.Input[builtins.str]
+        """
+        Determines the type of targeted launch.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        compute_bare_metal_host_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The OCID of the compute bare metal host.
+        """
+elif False:
+    DedicatedVmHostPlacementConstraintDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DedicatedVmHostPlacementConstraintDetailsArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[builtins.str],
+                 compute_bare_metal_host_id: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] type: Determines the type of targeted launch.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[builtins.str] compute_bare_metal_host_id: The OCID of the compute bare metal host.
+        """
+        pulumi.set(__self__, "type", type)
+        if compute_bare_metal_host_id is not None:
+            pulumi.set(__self__, "compute_bare_metal_host_id", compute_bare_metal_host_id)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[builtins.str]:
+        """
+        Determines the type of targeted launch.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[builtins.str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter(name="computeBareMetalHostId")
+    def compute_bare_metal_host_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The OCID of the compute bare metal host.
+        """
+        return pulumi.get(self, "compute_bare_metal_host_id")
+
+    @compute_bare_metal_host_id.setter
+    def compute_bare_metal_host_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "compute_bare_metal_host_id", value)
 
 
 if not MYPY:
@@ -13951,6 +14018,77 @@ class InstanceLicensingConfigsArgs:
     @os_version.setter
     def os_version(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "os_version", value)
+
+
+if not MYPY:
+    class InstancePlacementConstraintDetailsArgsDict(TypedDict):
+        type: pulumi.Input[builtins.str]
+        """
+        Determines the type of targeted launch.
+        """
+        compute_bare_metal_host_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The OCID of the compute bare metal host.
+        """
+        compute_host_group_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The OCID of the compute host group.
+        """
+elif False:
+    InstancePlacementConstraintDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class InstancePlacementConstraintDetailsArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[builtins.str],
+                 compute_bare_metal_host_id: Optional[pulumi.Input[builtins.str]] = None,
+                 compute_host_group_id: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] type: Determines the type of targeted launch.
+        :param pulumi.Input[builtins.str] compute_bare_metal_host_id: The OCID of the compute bare metal host.
+        :param pulumi.Input[builtins.str] compute_host_group_id: The OCID of the compute host group.
+        """
+        pulumi.set(__self__, "type", type)
+        if compute_bare_metal_host_id is not None:
+            pulumi.set(__self__, "compute_bare_metal_host_id", compute_bare_metal_host_id)
+        if compute_host_group_id is not None:
+            pulumi.set(__self__, "compute_host_group_id", compute_host_group_id)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[builtins.str]:
+        """
+        Determines the type of targeted launch.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[builtins.str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter(name="computeBareMetalHostId")
+    def compute_bare_metal_host_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The OCID of the compute bare metal host.
+        """
+        return pulumi.get(self, "compute_bare_metal_host_id")
+
+    @compute_bare_metal_host_id.setter
+    def compute_bare_metal_host_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "compute_bare_metal_host_id", value)
+
+    @property
+    @pulumi.getter(name="computeHostGroupId")
+    def compute_host_group_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The OCID of the compute host group.
+        """
+        return pulumi.get(self, "compute_host_group_id")
+
+    @compute_host_group_id.setter
+    def compute_host_group_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "compute_host_group_id", value)
 
 
 if not MYPY:

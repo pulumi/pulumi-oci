@@ -106,7 +106,14 @@ export interface GetClusterResult {
      * The name of the cluster.
      */
     readonly name: string;
+    /**
+     * The cluster-specific OpenID Connect Discovery endpoint
+     */
     readonly openIdConnectDiscoveryEndpoint: string;
+    /**
+     * The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
+     */
+    readonly openIdConnectDiscoveryKey: string;
     /**
      * Optional attributes for the cluster.
      */

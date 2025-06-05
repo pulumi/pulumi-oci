@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.inputs.NamespaceScheduledTaskActionMetricExtractionArgs;
+import com.pulumi.oci.LogAnalytics.inputs.NamespaceScheduledTaskActionTemplateDetailsArgs;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -109,18 +110,33 @@ public final class NamespaceScheduledTaskActionArgs extends com.pulumi.resources
     }
 
     /**
-     * The ManagementSavedSearch id [OCID] utilized in the action.
+     * The ManagementSavedSearch id [OCID] utilized in the action.  Should not be provided when a template ID is present.
      * 
      */
     @Import(name="savedSearchId")
     private @Nullable Output<String> savedSearchId;
 
     /**
-     * @return The ManagementSavedSearch id [OCID] utilized in the action.
+     * @return The ManagementSavedSearch id [OCID] utilized in the action.  Should not be provided when a template ID is present.
      * 
      */
     public Optional<Output<String>> savedSearchId() {
         return Optional.ofNullable(this.savedSearchId);
+    }
+
+    /**
+     * details for scheduled task using template
+     * 
+     */
+    @Import(name="templateDetails")
+    private @Nullable Output<NamespaceScheduledTaskActionTemplateDetailsArgs> templateDetails;
+
+    /**
+     * @return details for scheduled task using template
+     * 
+     */
+    public Optional<Output<NamespaceScheduledTaskActionTemplateDetailsArgs>> templateDetails() {
+        return Optional.ofNullable(this.templateDetails);
     }
 
     /**
@@ -148,6 +164,7 @@ public final class NamespaceScheduledTaskActionArgs extends com.pulumi.resources
         this.purgeDuration = $.purgeDuration;
         this.queryString = $.queryString;
         this.savedSearchId = $.savedSearchId;
+        this.templateDetails = $.templateDetails;
         this.type = $.type;
     }
 
@@ -296,7 +313,7 @@ public final class NamespaceScheduledTaskActionArgs extends com.pulumi.resources
         }
 
         /**
-         * @param savedSearchId The ManagementSavedSearch id [OCID] utilized in the action.
+         * @param savedSearchId The ManagementSavedSearch id [OCID] utilized in the action.  Should not be provided when a template ID is present.
          * 
          * @return builder
          * 
@@ -307,13 +324,34 @@ public final class NamespaceScheduledTaskActionArgs extends com.pulumi.resources
         }
 
         /**
-         * @param savedSearchId The ManagementSavedSearch id [OCID] utilized in the action.
+         * @param savedSearchId The ManagementSavedSearch id [OCID] utilized in the action.  Should not be provided when a template ID is present.
          * 
          * @return builder
          * 
          */
         public Builder savedSearchId(String savedSearchId) {
             return savedSearchId(Output.of(savedSearchId));
+        }
+
+        /**
+         * @param templateDetails details for scheduled task using template
+         * 
+         * @return builder
+         * 
+         */
+        public Builder templateDetails(@Nullable Output<NamespaceScheduledTaskActionTemplateDetailsArgs> templateDetails) {
+            $.templateDetails = templateDetails;
+            return this;
+        }
+
+        /**
+         * @param templateDetails details for scheduled task using template
+         * 
+         * @return builder
+         * 
+         */
+        public Builder templateDetails(NamespaceScheduledTaskActionTemplateDetailsArgs templateDetails) {
+            return templateDetails(Output.of(templateDetails));
         }
 
         /**

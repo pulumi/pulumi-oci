@@ -19,14 +19,14 @@ public final class GetSchedulesFilterArgs extends com.pulumi.resources.ResourceA
     public static final GetSchedulesFilterArgs Empty = new GetSchedulesFilterArgs();
 
     /**
-     * Query parameter for filtering by name
+     * The query parameter for filtering by name.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return Query parameter for filtering by name
+     * @return The query parameter for filtering by name.
      * 
      */
     public Output<String> name() {
@@ -74,7 +74,7 @@ public final class GetSchedulesFilterArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param name Query parameter for filtering by name
+         * @param name The query parameter for filtering by name.
          * 
          * @return builder
          * 
@@ -85,7 +85,7 @@ public final class GetSchedulesFilterArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param name Query parameter for filtering by name
+         * @param name The query parameter for filtering by name.
          * 
          * @return builder
          * 

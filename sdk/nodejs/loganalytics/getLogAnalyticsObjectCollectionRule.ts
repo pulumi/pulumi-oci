@@ -90,6 +90,10 @@ export interface GetLogAnalyticsObjectCollectionRuleResult {
      */
     readonly isForceHistoricCollection: boolean;
     /**
+     * Last Collected Object for the rule
+     */
+    readonly lastCollectedObject: string;
+    /**
      * A detailed status of the life cycle state.
      */
     readonly lifecycleDetails: string;
@@ -151,6 +155,18 @@ export interface GetLogAnalyticsObjectCollectionRuleResult {
      * The current state of the rule.
      */
     readonly state: string;
+    /**
+     * The time from which to consume the objects, if streamCursorType is AT_TIME.
+     */
+    readonly streamCursorTime: string;
+    /**
+     * Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
+     */
+    readonly streamCursorType: string;
+    /**
+     * A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+     */
+    readonly streamId: string;
     /**
      * The time when this rule was created. An RFC3339 formatted datetime string.
      */

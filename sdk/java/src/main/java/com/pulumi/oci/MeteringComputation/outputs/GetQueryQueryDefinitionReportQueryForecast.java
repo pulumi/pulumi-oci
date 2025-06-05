@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetQueryQueryDefinitionReportQueryForecast {
     /**
-     * @return BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
+     * @return BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made
      * 
      */
     private String forecastType;
@@ -28,7 +28,7 @@ public final class GetQueryQueryDefinitionReportQueryForecast {
 
     private GetQueryQueryDefinitionReportQueryForecast() {}
     /**
-     * @return BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
+     * @return BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made
      * 
      */
     public String forecastType() {

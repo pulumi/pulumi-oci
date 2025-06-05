@@ -29,17 +29,15 @@ namespace Pulumi.Oci.BigDataService
     ///         BdsInstanceId = testBdsInstance.Id,
     ///         ClusterAdminPassword = bdsInstanceOsPatchActionClusterAdminPassword,
     ///         OsPatchVersion = bdsInstanceOsPatchActionOsPatchVersion,
-    ///         PatchingConfigs = new[]
+    ///         IsDryRun = isDryRun,
+    ///         PatchingConfigs = new Oci.BigDataService.Inputs.BdsInstanceOsPatchActionPatchingConfigsArgs
     ///         {
-    ///             new Oci.BigDataService.Inputs.BdsInstanceOsPatchActionPatchingConfigArgs
-    ///             {
-    ///                 PatchingConfigStrategy = bdsInstanceOsPatchActionPatchingConfigStrategy,
-    ///                 BatchSize = bdsInstanceOsPatchActionBatchSize,
-    ///                 WaitTimeBetweenBatchInSeconds = bdsInstanceOsPatchActionWaitTimeBetweenBatchInSeconds,
-    ///                 ToleranceThresholdPerBatch = bdsInstanceOsPatchActionToleranceThresholdPerBatch,
-    ///                 WaitTimeBetweenDomainInSeconds = bdsInstanceOsPatchActionWaitTimeBetweenDomainInSeconds,
-    ///                 ToleranceThresholdPerDomain = bdsInstanceOsPatchActionToleranceThresholdPerDomain,
-    ///             },
+    ///             PatchingConfigStrategy = bdsInstanceOsPatchActionPatchingConfigStrategy,
+    ///             BatchSize = bdsInstanceOsPatchActionBatchSize,
+    ///             WaitTimeBetweenBatchInSeconds = bdsInstanceOsPatchActionWaitTimeBetweenBatchInSeconds,
+    ///             ToleranceThresholdPerBatch = bdsInstanceOsPatchActionToleranceThresholdPerBatch,
+    ///             WaitTimeBetweenDomainInSeconds = bdsInstanceOsPatchActionWaitTimeBetweenDomainInSeconds,
+    ///             ToleranceThresholdPerDomain = bdsInstanceOsPatchActionToleranceThresholdPerDomain,
     ///         },
     ///     });
     /// 
@@ -61,9 +59,13 @@ namespace Pulumi.Oci.BigDataService
 
         /// <summary>
         /// Base-64 encoded password for the cluster admin user.
+        /// * `isDryRun` - (Optional) Perform dry run for the patch and stop without actually patching the cluster.
         /// </summary>
         [Output("clusterAdminPassword")]
         public Output<string> ClusterAdminPassword { get; private set; } = null!;
+
+        [Output("isDryRun")]
+        public Output<bool?> IsDryRun { get; private set; } = null!;
 
         /// <summary>
         /// The version of the OS patch to be installed.
@@ -79,7 +81,7 @@ namespace Pulumi.Oci.BigDataService
         /// Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
         /// </summary>
         [Output("patchingConfigs")]
-        public Output<ImmutableArray<Outputs.BdsInstanceOsPatchActionPatchingConfig>> PatchingConfigs { get; private set; } = null!;
+        public Output<Outputs.BdsInstanceOsPatchActionPatchingConfigs> PatchingConfigs { get; private set; } = null!;
 
 
         /// <summary>
@@ -142,6 +144,7 @@ namespace Pulumi.Oci.BigDataService
 
         /// <summary>
         /// Base-64 encoded password for the cluster admin user.
+        /// * `isDryRun` - (Optional) Perform dry run for the patch and stop without actually patching the cluster.
         /// </summary>
         public Input<string>? ClusterAdminPassword
         {
@@ -153,6 +156,9 @@ namespace Pulumi.Oci.BigDataService
             }
         }
 
+        [Input("isDryRun")]
+        public Input<bool>? IsDryRun { get; set; }
+
         /// <summary>
         /// The version of the OS patch to be installed.
         /// 
@@ -163,17 +169,11 @@ namespace Pulumi.Oci.BigDataService
         [Input("osPatchVersion", required: true)]
         public Input<string> OsPatchVersion { get; set; } = null!;
 
-        [Input("patchingConfigs")]
-        private InputList<Inputs.BdsInstanceOsPatchActionPatchingConfigArgs>? _patchingConfigs;
-
         /// <summary>
         /// Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
         /// </summary>
-        public InputList<Inputs.BdsInstanceOsPatchActionPatchingConfigArgs> PatchingConfigs
-        {
-            get => _patchingConfigs ?? (_patchingConfigs = new InputList<Inputs.BdsInstanceOsPatchActionPatchingConfigArgs>());
-            set => _patchingConfigs = value;
-        }
+        [Input("patchingConfigs")]
+        public Input<Inputs.BdsInstanceOsPatchActionPatchingConfigsArgs>? PatchingConfigs { get; set; }
 
         public BdsInstanceOsPatchActionArgs()
         {
@@ -194,6 +194,7 @@ namespace Pulumi.Oci.BigDataService
 
         /// <summary>
         /// Base-64 encoded password for the cluster admin user.
+        /// * `isDryRun` - (Optional) Perform dry run for the patch and stop without actually patching the cluster.
         /// </summary>
         public Input<string>? ClusterAdminPassword
         {
@@ -205,6 +206,9 @@ namespace Pulumi.Oci.BigDataService
             }
         }
 
+        [Input("isDryRun")]
+        public Input<bool>? IsDryRun { get; set; }
+
         /// <summary>
         /// The version of the OS patch to be installed.
         /// 
@@ -215,17 +219,11 @@ namespace Pulumi.Oci.BigDataService
         [Input("osPatchVersion")]
         public Input<string>? OsPatchVersion { get; set; }
 
-        [Input("patchingConfigs")]
-        private InputList<Inputs.BdsInstanceOsPatchActionPatchingConfigGetArgs>? _patchingConfigs;
-
         /// <summary>
         /// Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
         /// </summary>
-        public InputList<Inputs.BdsInstanceOsPatchActionPatchingConfigGetArgs> PatchingConfigs
-        {
-            get => _patchingConfigs ?? (_patchingConfigs = new InputList<Inputs.BdsInstanceOsPatchActionPatchingConfigGetArgs>());
-            set => _patchingConfigs = value;
-        }
+        [Input("patchingConfigs")]
+        public Input<Inputs.BdsInstanceOsPatchActionPatchingConfigsGetArgs>? PatchingConfigs { get; set; }
 
         public BdsInstanceOsPatchActionState()
         {

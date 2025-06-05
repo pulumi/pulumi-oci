@@ -7,13 +7,13 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 // This data source provides details about a specific Result resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
 //
-// Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log or Network details.
+// Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log, Network details, Diagnostics or Script Content.
 //
 // ## Example Usage
 //
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/apmsynthetics"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/apmsynthetics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -65,7 +65,7 @@ type GetResultArgs struct {
 	MonitorId string `pulumi:"monitorId"`
 	// The result content type: zip or raw.
 	ResultContentType string `pulumi:"resultContentType"`
-	// The result type: har, screenshot, log, or network.
+	// The result type: har, screenshot, log, network, diagnostics or script.
 	ResultType string `pulumi:"resultType"`
 	// The vantagePoint name.
 	VantagePoint string `pulumi:"vantagePoint"`
@@ -84,7 +84,7 @@ type GetResultResult struct {
 	ResultContentType string `pulumi:"resultContentType"`
 	// Monitor result data set.
 	ResultDataSets []GetResultResultDataSet `pulumi:"resultDataSets"`
-	// Type of result. Example: HAR, Screenshot, Log or Network.
+	// Type of result. Example: har, screenshot, log, network, diagnostics or script.
 	ResultType string `pulumi:"resultType"`
 	// The name of the public or dedicated vantage point.
 	VantagePoint string `pulumi:"vantagePoint"`
@@ -109,7 +109,7 @@ type GetResultOutputArgs struct {
 	MonitorId pulumi.StringInput `pulumi:"monitorId"`
 	// The result content type: zip or raw.
 	ResultContentType pulumi.StringInput `pulumi:"resultContentType"`
-	// The result type: har, screenshot, log, or network.
+	// The result type: har, screenshot, log, network, diagnostics or script.
 	ResultType pulumi.StringInput `pulumi:"resultType"`
 	// The vantagePoint name.
 	VantagePoint pulumi.StringInput `pulumi:"vantagePoint"`
@@ -163,7 +163,7 @@ func (o GetResultResultOutput) ResultDataSets() GetResultResultDataSetArrayOutpu
 	return o.ApplyT(func(v GetResultResult) []GetResultResultDataSet { return v.ResultDataSets }).(GetResultResultDataSetArrayOutput)
 }
 
-// Type of result. Example: HAR, Screenshot, Log or Network.
+// Type of result. Example: har, screenshot, log, network, diagnostics or script.
 func (o GetResultResultOutput) ResultType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResultResult) string { return v.ResultType }).(pulumi.StringOutput)
 }

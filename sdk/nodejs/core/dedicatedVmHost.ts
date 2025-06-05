@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -29,6 +31,10 @@ import * as utilities from "../utilities";
  *     faultDomain: dedicatedVmHostFaultDomain,
  *     freeformTags: {
  *         Department: "Finance",
+ *     },
+ *     placementConstraintDetails: {
+ *         type: dedicatedVmHostPlacementConstraintDetailsType,
+ *         computeBareMetalHostId: testComputeBareMetalHost.id,
  *     },
  * });
  * ```
@@ -98,13 +104,13 @@ export class DedicatedVmHost extends pulumi.CustomResource {
      */
     public readonly faultDomain!: pulumi.Output<string>;
     /**
-     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    /**
+     * Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+     */
+    public readonly placementConstraintDetails!: pulumi.Output<outputs.Core.DedicatedVmHostPlacementConstraintDetails>;
     /**
      * The current available memory of the dedicated VM host, in GBs.
      */
@@ -150,6 +156,7 @@ export class DedicatedVmHost extends pulumi.CustomResource {
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["faultDomain"] = state ? state.faultDomain : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["placementConstraintDetails"] = state ? state.placementConstraintDetails : undefined;
             resourceInputs["remainingMemoryInGbs"] = state ? state.remainingMemoryInGbs : undefined;
             resourceInputs["remainingOcpus"] = state ? state.remainingOcpus : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
@@ -174,6 +181,7 @@ export class DedicatedVmHost extends pulumi.CustomResource {
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["faultDomain"] = args ? args.faultDomain : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["placementConstraintDetails"] = args ? args.placementConstraintDetails : undefined;
             resourceInputs["remainingMemoryInGbs"] = undefined /*out*/;
             resourceInputs["remainingOcpus"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
@@ -219,13 +227,13 @@ export interface DedicatedVmHostState {
      */
     faultDomain?: pulumi.Input<string>;
     /**
-     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+     */
+    placementConstraintDetails?: pulumi.Input<inputs.Core.DedicatedVmHostPlacementConstraintDetails>;
     /**
      * The current available memory of the dedicated VM host, in GBs.
      */
@@ -285,11 +293,11 @@ export interface DedicatedVmHostArgs {
      */
     faultDomain?: pulumi.Input<string>;
     /**
-     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+     */
+    placementConstraintDetails?: pulumi.Input<inputs.Core.DedicatedVmHostPlacementConstraintDetails>;
 }

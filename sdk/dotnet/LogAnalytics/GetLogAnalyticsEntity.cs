@@ -30,6 +30,7 @@ namespace Pulumi.Oci.LogAnalytics
         ///     {
         ///         LogAnalyticsEntityId = testLogAnalyticsEntityOciLogAnalyticsLogAnalyticsEntity.Id,
         ///         Namespace = logAnalyticsEntityNamespace,
+        ///         IsShowAssociatedSourcesCount = logAnalyticsEntityIsShowAssociatedSourcesCount,
         ///     });
         /// 
         /// });
@@ -57,6 +58,7 @@ namespace Pulumi.Oci.LogAnalytics
         ///     {
         ///         LogAnalyticsEntityId = testLogAnalyticsEntityOciLogAnalyticsLogAnalyticsEntity.Id,
         ///         Namespace = logAnalyticsEntityNamespace,
+        ///         IsShowAssociatedSourcesCount = logAnalyticsEntityIsShowAssociatedSourcesCount,
         ///     });
         /// 
         /// });
@@ -84,6 +86,7 @@ namespace Pulumi.Oci.LogAnalytics
         ///     {
         ///         LogAnalyticsEntityId = testLogAnalyticsEntityOciLogAnalyticsLogAnalyticsEntity.Id,
         ///         Namespace = logAnalyticsEntityNamespace,
+        ///         IsShowAssociatedSourcesCount = logAnalyticsEntityIsShowAssociatedSourcesCount,
         ///     });
         /// 
         /// });
@@ -96,6 +99,12 @@ namespace Pulumi.Oci.LogAnalytics
 
     public sealed class GetLogAnalyticsEntityArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Option to return count of associated log sources for log analytics entity(s).
+        /// </summary>
+        [Input("isShowAssociatedSourcesCount")]
+        public string? IsShowAssociatedSourcesCount { get; set; }
+
         /// <summary>
         /// The log analytics entity OCID.
         /// </summary>
@@ -116,6 +125,12 @@ namespace Pulumi.Oci.LogAnalytics
 
     public sealed class GetLogAnalyticsEntityInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Option to return count of associated log sources for log analytics entity(s).
+        /// </summary>
+        [Input("isShowAssociatedSourcesCount")]
+        public Input<string>? IsShowAssociatedSourcesCount { get; set; }
+
         /// <summary>
         /// The log analytics entity OCID.
         /// </summary>
@@ -142,6 +157,10 @@ namespace Pulumi.Oci.LogAnalytics
         /// The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
         /// </summary>
         public readonly bool AreLogsCollected;
+        /// <summary>
+        /// The count of associated log sources for a given log analytics entity.
+        /// </summary>
+        public readonly int AssociatedSourcesCount;
         /// <summary>
         /// The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
         /// </summary>
@@ -174,6 +193,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
         /// </summary>
         public readonly string Id;
+        public readonly string? IsShowAssociatedSourcesCount;
         /// <summary>
         /// lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
         /// </summary>
@@ -233,6 +253,8 @@ namespace Pulumi.Oci.LogAnalytics
         private GetLogAnalyticsEntityResult(
             bool areLogsCollected,
 
+            int associatedSourcesCount,
+
             string cloudResourceId,
 
             string compartmentId,
@@ -248,6 +270,8 @@ namespace Pulumi.Oci.LogAnalytics
             string hostname,
 
             string id,
+
+            string? isShowAssociatedSourcesCount,
 
             string lifecycleDetails,
 
@@ -280,6 +304,7 @@ namespace Pulumi.Oci.LogAnalytics
             string timezoneRegion)
         {
             AreLogsCollected = areLogsCollected;
+            AssociatedSourcesCount = associatedSourcesCount;
             CloudResourceId = cloudResourceId;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
@@ -288,6 +313,7 @@ namespace Pulumi.Oci.LogAnalytics
             FreeformTags = freeformTags;
             Hostname = hostname;
             Id = id;
+            IsShowAssociatedSourcesCount = isShowAssociatedSourcesCount;
             LifecycleDetails = lifecycleDetails;
             LogAnalyticsEntityId = logAnalyticsEntityId;
             ManagementAgentCompartmentId = managementAgentCompartmentId;

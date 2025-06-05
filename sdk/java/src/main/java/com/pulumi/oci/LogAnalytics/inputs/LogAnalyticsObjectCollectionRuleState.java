@@ -155,6 +155,21 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
     }
 
     /**
+     * Last Collected Object for the rule
+     * 
+     */
+    @Import(name="lastCollectedObject")
+    private @Nullable Output<String> lastCollectedObject;
+
+    /**
+     * @return Last Collected Object for the rule
+     * 
+     */
+    public Optional<Output<String>> lastCollectedObject() {
+        return Optional.ofNullable(this.lastCollectedObject);
+    }
+
+    /**
      * A detailed status of the life cycle state.
      * 
      */
@@ -395,6 +410,51 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
     }
 
     /**
+     * (Updatable) The time from which to consume the objects, if streamCursorType is AT_TIME.
+     * 
+     */
+    @Import(name="streamCursorTime")
+    private @Nullable Output<String> streamCursorTime;
+
+    /**
+     * @return (Updatable) The time from which to consume the objects, if streamCursorType is AT_TIME.
+     * 
+     */
+    public Optional<Output<String>> streamCursorTime() {
+        return Optional.ofNullable(this.streamCursorTime);
+    }
+
+    /**
+     * (Updatable) Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
+     * 
+     */
+    @Import(name="streamCursorType")
+    private @Nullable Output<String> streamCursorType;
+
+    /**
+     * @return (Updatable) Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
+     * 
+     */
+    public Optional<Output<String>> streamCursorType() {
+        return Optional.ofNullable(this.streamCursorType);
+    }
+
+    /**
+     * (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+     * 
+     */
+    @Import(name="streamId")
+    private @Nullable Output<String> streamId;
+
+    /**
+     * @return (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+     * 
+     */
+    public Optional<Output<String>> streamId() {
+        return Optional.ofNullable(this.streamId);
+    }
+
+    /**
      * The time when this rule was created. An RFC3339 formatted datetime string.
      * 
      */
@@ -457,6 +517,7 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
         this.freeformTags = $.freeformTags;
         this.isEnabled = $.isEnabled;
         this.isForceHistoricCollection = $.isForceHistoricCollection;
+        this.lastCollectedObject = $.lastCollectedObject;
         this.lifecycleDetails = $.lifecycleDetails;
         this.logGroupId = $.logGroupId;
         this.logSet = $.logSet;
@@ -473,6 +534,9 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
         this.pollSince = $.pollSince;
         this.pollTill = $.pollTill;
         this.state = $.state;
+        this.streamCursorTime = $.streamCursorTime;
+        this.streamCursorType = $.streamCursorType;
+        this.streamId = $.streamId;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
         this.timezone = $.timezone;
@@ -683,6 +747,27 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
          */
         public Builder isForceHistoricCollection(Boolean isForceHistoricCollection) {
             return isForceHistoricCollection(Output.of(isForceHistoricCollection));
+        }
+
+        /**
+         * @param lastCollectedObject Last Collected Object for the rule
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lastCollectedObject(@Nullable Output<String> lastCollectedObject) {
+            $.lastCollectedObject = lastCollectedObject;
+            return this;
+        }
+
+        /**
+         * @param lastCollectedObject Last Collected Object for the rule
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lastCollectedObject(String lastCollectedObject) {
+            return lastCollectedObject(Output.of(lastCollectedObject));
         }
 
         /**
@@ -1039,6 +1124,69 @@ public final class LogAnalyticsObjectCollectionRuleState extends com.pulumi.reso
          */
         public Builder state(String state) {
             return state(Output.of(state));
+        }
+
+        /**
+         * @param streamCursorTime (Updatable) The time from which to consume the objects, if streamCursorType is AT_TIME.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder streamCursorTime(@Nullable Output<String> streamCursorTime) {
+            $.streamCursorTime = streamCursorTime;
+            return this;
+        }
+
+        /**
+         * @param streamCursorTime (Updatable) The time from which to consume the objects, if streamCursorType is AT_TIME.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder streamCursorTime(String streamCursorTime) {
+            return streamCursorTime(Output.of(streamCursorTime));
+        }
+
+        /**
+         * @param streamCursorType (Updatable) Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder streamCursorType(@Nullable Output<String> streamCursorType) {
+            $.streamCursorType = streamCursorType;
+            return this;
+        }
+
+        /**
+         * @param streamCursorType (Updatable) Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder streamCursorType(String streamCursorType) {
+            return streamCursorType(Output.of(streamCursorType));
+        }
+
+        /**
+         * @param streamId (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder streamId(@Nullable Output<String> streamId) {
+            $.streamId = streamId;
+            return this;
+        }
+
+        /**
+         * @param streamId (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder streamId(String streamId) {
+            return streamId(Output.of(streamId));
         }
 
         /**

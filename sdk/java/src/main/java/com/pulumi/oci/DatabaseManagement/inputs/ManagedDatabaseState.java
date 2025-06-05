@@ -126,14 +126,14 @@ public final class ManagedDatabaseState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system that this Managed Database is part of.
      * 
      */
     @Import(name="dbSystemId")
     private @Nullable Output<String> dbSystemId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system that this Managed Database is part of.
      * 
      */
     public Optional<Output<String>> dbSystemId() {
@@ -549,7 +549,7 @@ public final class ManagedDatabaseState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param dbSystemId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
+         * @param dbSystemId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system that this Managed Database is part of.
          * 
          * @return builder
          * 
@@ -560,7 +560,7 @@ public final class ManagedDatabaseState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param dbSystemId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
+         * @param dbSystemId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system that this Managed Database is part of.
          * 
          * @return builder
          * 

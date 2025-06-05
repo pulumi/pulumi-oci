@@ -26,14 +26,14 @@ public final class GetScheduledRunsArgs extends com.pulumi.resources.InvokeArgs 
     }
 
     /**
-     * The unique ID of a schedule.
+     * The schedule unique ID.
      * 
      */
     @Import(name="scheduleId", required=true)
     private Output<String> scheduleId;
 
     /**
-     * @return The unique ID of a schedule.
+     * @return The schedule unique ID.
      * 
      */
     public Output<String> scheduleId() {
@@ -79,7 +79,7 @@ public final class GetScheduledRunsArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param scheduleId The unique ID of a schedule.
+         * @param scheduleId The schedule unique ID.
          * 
          * @return builder
          * 
@@ -90,7 +90,7 @@ public final class GetScheduledRunsArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param scheduleId The unique ID of a schedule.
+         * @param scheduleId The schedule unique ID.
          * 
          * @return builder
          * 

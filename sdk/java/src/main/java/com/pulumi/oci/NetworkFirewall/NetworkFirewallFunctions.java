@@ -37,6 +37,10 @@ import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyMappedSecre
 import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyMappedSecretPlainArgs;
 import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyMappedSecretsArgs;
 import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyMappedSecretsPlainArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyNatRuleArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyNatRulePlainArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyNatRulesArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyNatRulesPlainArgs;
 import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyPlainArgs;
 import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicySecurityRuleArgs;
 import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicySecurityRulePlainArgs;
@@ -73,6 +77,8 @@ import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyDecryption
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyDecryptionRulesResult;
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyMappedSecretResult;
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyMappedSecretsResult;
+import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyNatRuleResult;
+import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyNatRulesResult;
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyResult;
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicySecurityRuleResult;
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicySecurityRulesResult;
@@ -2539,6 +2545,461 @@ public final class NetworkFirewallFunctions {
      */
     public static CompletableFuture<GetNetworkFirewallPolicyMappedSecretsResult> getNetworkFirewallPolicyMappedSecretsPlain(GetNetworkFirewallPolicyMappedSecretsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:NetworkFirewall/getNetworkFirewallPolicyMappedSecrets:getNetworkFirewallPolicyMappedSecrets", TypeShape.of(GetNetworkFirewallPolicyMappedSecretsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Nat Rule resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get NAT Rule by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyNatRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyNatRule = NetworkFirewallFunctions.getNetworkFirewallPolicyNatRule(GetNetworkFirewallPolicyNatRuleArgs.builder()
+     *             .natRuleName(testRule.name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyNatRuleResult> getNetworkFirewallPolicyNatRule(GetNetworkFirewallPolicyNatRuleArgs args) {
+        return getNetworkFirewallPolicyNatRule(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Nat Rule resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get NAT Rule by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyNatRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyNatRule = NetworkFirewallFunctions.getNetworkFirewallPolicyNatRule(GetNetworkFirewallPolicyNatRuleArgs.builder()
+     *             .natRuleName(testRule.name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyNatRuleResult> getNetworkFirewallPolicyNatRulePlain(GetNetworkFirewallPolicyNatRulePlainArgs args) {
+        return getNetworkFirewallPolicyNatRulePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Nat Rule resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get NAT Rule by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyNatRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyNatRule = NetworkFirewallFunctions.getNetworkFirewallPolicyNatRule(GetNetworkFirewallPolicyNatRuleArgs.builder()
+     *             .natRuleName(testRule.name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyNatRuleResult> getNetworkFirewallPolicyNatRule(GetNetworkFirewallPolicyNatRuleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyNatRule:getNetworkFirewallPolicyNatRule", TypeShape.of(GetNetworkFirewallPolicyNatRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Nat Rule resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get NAT Rule by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyNatRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyNatRule = NetworkFirewallFunctions.getNetworkFirewallPolicyNatRule(GetNetworkFirewallPolicyNatRuleArgs.builder()
+     *             .natRuleName(testRule.name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyNatRuleResult> getNetworkFirewallPolicyNatRule(GetNetworkFirewallPolicyNatRuleArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyNatRule:getNetworkFirewallPolicyNatRule", TypeShape.of(GetNetworkFirewallPolicyNatRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Nat Rule resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get NAT Rule by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyNatRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyNatRule = NetworkFirewallFunctions.getNetworkFirewallPolicyNatRule(GetNetworkFirewallPolicyNatRuleArgs.builder()
+     *             .natRuleName(testRule.name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyNatRuleResult> getNetworkFirewallPolicyNatRulePlain(GetNetworkFirewallPolicyNatRulePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:NetworkFirewall/getNetworkFirewallPolicyNatRule:getNetworkFirewallPolicyNatRule", TypeShape.of(GetNetworkFirewallPolicyNatRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Nat Rules in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of NAT Rules for the Network Firewall Policy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyNatRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyNatRules = NetworkFirewallFunctions.getNetworkFirewallPolicyNatRules(GetNetworkFirewallPolicyNatRulesArgs.builder()
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyNatRuleDisplayName)
+     *             .natRulePriorityOrder(networkFirewallPolicyNatRuleNatRulePriorityOrder)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyNatRulesResult> getNetworkFirewallPolicyNatRules(GetNetworkFirewallPolicyNatRulesArgs args) {
+        return getNetworkFirewallPolicyNatRules(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Nat Rules in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of NAT Rules for the Network Firewall Policy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyNatRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyNatRules = NetworkFirewallFunctions.getNetworkFirewallPolicyNatRules(GetNetworkFirewallPolicyNatRulesArgs.builder()
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyNatRuleDisplayName)
+     *             .natRulePriorityOrder(networkFirewallPolicyNatRuleNatRulePriorityOrder)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyNatRulesResult> getNetworkFirewallPolicyNatRulesPlain(GetNetworkFirewallPolicyNatRulesPlainArgs args) {
+        return getNetworkFirewallPolicyNatRulesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Nat Rules in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of NAT Rules for the Network Firewall Policy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyNatRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyNatRules = NetworkFirewallFunctions.getNetworkFirewallPolicyNatRules(GetNetworkFirewallPolicyNatRulesArgs.builder()
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyNatRuleDisplayName)
+     *             .natRulePriorityOrder(networkFirewallPolicyNatRuleNatRulePriorityOrder)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyNatRulesResult> getNetworkFirewallPolicyNatRules(GetNetworkFirewallPolicyNatRulesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyNatRules:getNetworkFirewallPolicyNatRules", TypeShape.of(GetNetworkFirewallPolicyNatRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Nat Rules in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of NAT Rules for the Network Firewall Policy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyNatRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyNatRules = NetworkFirewallFunctions.getNetworkFirewallPolicyNatRules(GetNetworkFirewallPolicyNatRulesArgs.builder()
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyNatRuleDisplayName)
+     *             .natRulePriorityOrder(networkFirewallPolicyNatRuleNatRulePriorityOrder)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyNatRulesResult> getNetworkFirewallPolicyNatRules(GetNetworkFirewallPolicyNatRulesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyNatRules:getNetworkFirewallPolicyNatRules", TypeShape.of(GetNetworkFirewallPolicyNatRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Nat Rules in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of NAT Rules for the Network Firewall Policy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyNatRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyNatRules = NetworkFirewallFunctions.getNetworkFirewallPolicyNatRules(GetNetworkFirewallPolicyNatRulesArgs.builder()
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyNatRuleDisplayName)
+     *             .natRulePriorityOrder(networkFirewallPolicyNatRuleNatRulePriorityOrder)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyNatRulesResult> getNetworkFirewallPolicyNatRulesPlain(GetNetworkFirewallPolicyNatRulesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:NetworkFirewall/getNetworkFirewallPolicyNatRules:getNetworkFirewallPolicyNatRules", TypeShape.of(GetNetworkFirewallPolicyNatRulesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Network Firewall Policy Security Rule resource in Oracle Cloud Infrastructure Network Firewall service.

@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Core.DedicatedVmHostArgs;
 import com.pulumi.oci.Core.inputs.DedicatedVmHostState;
+import com.pulumi.oci.Core.outputs.DedicatedVmHostPlacementConstraintDetails;
 import com.pulumi.oci.Utilities;
 import java.lang.Double;
 import java.lang.String;
@@ -35,6 +36,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.Core.DedicatedVmHost;
  * import com.pulumi.oci.Core.DedicatedVmHostArgs;
+ * import com.pulumi.oci.Core.inputs.DedicatedVmHostPlacementConstraintDetailsArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -56,6 +58,10 @@ import javax.annotation.Nullable;
  *             .displayName(dedicatedVmHostDisplayName)
  *             .faultDomain(dedicatedVmHostFaultDomain)
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .placementConstraintDetails(DedicatedVmHostPlacementConstraintDetailsArgs.builder()
+ *                 .type(dedicatedVmHostPlacementConstraintDetailsType)
+ *                 .computeBareMetalHostId(testComputeBareMetalHost.id())
+ *                 .build())
  *             .build());
  * 
  *     }
@@ -170,9 +176,6 @@ public class DedicatedVmHost extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output<Map<String,String>> freeformTags;
@@ -180,12 +183,23 @@ public class DedicatedVmHost extends com.pulumi.resources.CustomResource {
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     public Output<Map<String,String>> freeformTags() {
         return this.freeformTags;
+    }
+    /**
+     * Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+     * 
+     */
+    @Export(name="placementConstraintDetails", refs={DedicatedVmHostPlacementConstraintDetails.class}, tree="[0]")
+    private Output<DedicatedVmHostPlacementConstraintDetails> placementConstraintDetails;
+
+    /**
+     * @return Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+     * 
+     */
+    public Output<DedicatedVmHostPlacementConstraintDetails> placementConstraintDetails() {
+        return this.placementConstraintDetails;
     }
     /**
      * The current available memory of the dedicated VM host, in GBs.

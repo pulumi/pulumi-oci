@@ -29,7 +29,7 @@ class GetNamespaceEffectivePropertiesResult:
     """
     A collection of values returned by getNamespaceEffectiveProperties.
     """
-    def __init__(__self__, agent_id=None, effective_property_collections=None, entity_id=None, filters=None, id=None, is_include_patterns=None, name=None, namespace=None, pattern_id=None, source_name=None):
+    def __init__(__self__, agent_id=None, effective_property_collections=None, entity_id=None, filters=None, id=None, is_include_patterns=None, name=None, namespace=None, pattern_id=None, pattern_id_long=None, source_name=None):
         if agent_id and not isinstance(agent_id, str):
             raise TypeError("Expected argument 'agent_id' to be a str")
         pulumi.set(__self__, "agent_id", agent_id)
@@ -57,6 +57,9 @@ class GetNamespaceEffectivePropertiesResult:
         if pattern_id and not isinstance(pattern_id, int):
             raise TypeError("Expected argument 'pattern_id' to be a int")
         pulumi.set(__self__, "pattern_id", pattern_id)
+        if pattern_id_long and not isinstance(pattern_id_long, str):
+            raise TypeError("Expected argument 'pattern_id_long' to be a str")
+        pulumi.set(__self__, "pattern_id_long", pattern_id_long)
         if source_name and not isinstance(source_name, str):
             raise TypeError("Expected argument 'source_name' to be a str")
         pulumi.set(__self__, "source_name", source_name)
@@ -116,6 +119,11 @@ class GetNamespaceEffectivePropertiesResult:
         return pulumi.get(self, "pattern_id")
 
     @property
+    @pulumi.getter(name="patternIdLong")
+    def pattern_id_long(self) -> Optional[builtins.str]:
+        return pulumi.get(self, "pattern_id_long")
+
+    @property
     @pulumi.getter(name="sourceName")
     def source_name(self) -> Optional[builtins.str]:
         return pulumi.get(self, "source_name")
@@ -136,6 +144,7 @@ class AwaitableGetNamespaceEffectivePropertiesResult(GetNamespaceEffectiveProper
             name=self.name,
             namespace=self.namespace,
             pattern_id=self.pattern_id,
+            pattern_id_long=self.pattern_id_long,
             source_name=self.source_name)
 
 
@@ -146,6 +155,7 @@ def get_namespace_effective_properties(agent_id: Optional[builtins.str] = None,
                                        name: Optional[builtins.str] = None,
                                        namespace: Optional[builtins.str] = None,
                                        pattern_id: Optional[builtins.int] = None,
+                                       pattern_id_long: Optional[builtins.str] = None,
                                        source_name: Optional[builtins.str] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNamespaceEffectivePropertiesResult:
     """
@@ -165,6 +175,7 @@ def get_namespace_effective_properties(agent_id: Optional[builtins.str] = None,
         is_include_patterns=namespace_effective_property_is_include_patterns,
         name=namespace_effective_property_name,
         pattern_id=test_pattern["id"],
+        pattern_id_long=namespace_effective_property_pattern_id_long,
         source_name=namespace_effective_property_source_name)
     ```
 
@@ -175,6 +186,7 @@ def get_namespace_effective_properties(agent_id: Optional[builtins.str] = None,
     :param builtins.str name: The property name used for filtering.
     :param builtins.str namespace: The Logging Analytics namespace used for the request.
     :param builtins.int pattern_id: The pattern id.
+    :param builtins.str pattern_id_long: The pattern id (long).
     :param builtins.str source_name: The source name.
     """
     __args__ = dict()
@@ -185,6 +197,7 @@ def get_namespace_effective_properties(agent_id: Optional[builtins.str] = None,
     __args__['name'] = name
     __args__['namespace'] = namespace
     __args__['patternId'] = pattern_id
+    __args__['patternIdLong'] = pattern_id_long
     __args__['sourceName'] = source_name
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:LogAnalytics/getNamespaceEffectiveProperties:getNamespaceEffectiveProperties', __args__, opts=opts, typ=GetNamespaceEffectivePropertiesResult).value
@@ -199,6 +212,7 @@ def get_namespace_effective_properties(agent_id: Optional[builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         namespace=pulumi.get(__ret__, 'namespace'),
         pattern_id=pulumi.get(__ret__, 'pattern_id'),
+        pattern_id_long=pulumi.get(__ret__, 'pattern_id_long'),
         source_name=pulumi.get(__ret__, 'source_name'))
 def get_namespace_effective_properties_output(agent_id: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                                               entity_id: Optional[pulumi.Input[Optional[builtins.str]]] = None,
@@ -207,6 +221,7 @@ def get_namespace_effective_properties_output(agent_id: Optional[pulumi.Input[Op
                                               name: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                                               namespace: Optional[pulumi.Input[builtins.str]] = None,
                                               pattern_id: Optional[pulumi.Input[Optional[builtins.int]]] = None,
+                                              pattern_id_long: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                                               source_name: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespaceEffectivePropertiesResult]:
     """
@@ -226,6 +241,7 @@ def get_namespace_effective_properties_output(agent_id: Optional[pulumi.Input[Op
         is_include_patterns=namespace_effective_property_is_include_patterns,
         name=namespace_effective_property_name,
         pattern_id=test_pattern["id"],
+        pattern_id_long=namespace_effective_property_pattern_id_long,
         source_name=namespace_effective_property_source_name)
     ```
 
@@ -236,6 +252,7 @@ def get_namespace_effective_properties_output(agent_id: Optional[pulumi.Input[Op
     :param builtins.str name: The property name used for filtering.
     :param builtins.str namespace: The Logging Analytics namespace used for the request.
     :param builtins.int pattern_id: The pattern id.
+    :param builtins.str pattern_id_long: The pattern id (long).
     :param builtins.str source_name: The source name.
     """
     __args__ = dict()
@@ -246,6 +263,7 @@ def get_namespace_effective_properties_output(agent_id: Optional[pulumi.Input[Op
     __args__['name'] = name
     __args__['namespace'] = namespace
     __args__['patternId'] = pattern_id
+    __args__['patternIdLong'] = pattern_id_long
     __args__['sourceName'] = source_name
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getNamespaceEffectiveProperties:getNamespaceEffectiveProperties', __args__, opts=opts, typ=GetNamespaceEffectivePropertiesResult)
@@ -259,4 +277,5 @@ def get_namespace_effective_properties_output(agent_id: Optional[pulumi.Input[Op
         name=pulumi.get(__response__, 'name'),
         namespace=pulumi.get(__response__, 'namespace'),
         pattern_id=pulumi.get(__response__, 'pattern_id'),
+        pattern_id_long=pulumi.get(__response__, 'pattern_id_long'),
         source_name=pulumi.get(__response__, 'source_name')))

@@ -32,16 +32,32 @@ __all__ = [
     'NamespaceIngestTimeRuleConditionsArgsDict',
     'NamespaceIngestTimeRuleConditionsAdditionalConditionArgs',
     'NamespaceIngestTimeRuleConditionsAdditionalConditionArgsDict',
+    'NamespaceLookupCategoryArgs',
+    'NamespaceLookupCategoryArgsDict',
+    'NamespaceLookupFieldArgs',
+    'NamespaceLookupFieldArgsDict',
+    'NamespaceLookupReferringSourceArgs',
+    'NamespaceLookupReferringSourceArgsDict',
+    'NamespaceLookupStatusSummaryArgs',
+    'NamespaceLookupStatusSummaryArgsDict',
     'NamespaceScheduledTaskActionArgs',
     'NamespaceScheduledTaskActionArgsDict',
     'NamespaceScheduledTaskActionMetricExtractionArgs',
     'NamespaceScheduledTaskActionMetricExtractionArgsDict',
+    'NamespaceScheduledTaskActionTemplateDetailsArgs',
+    'NamespaceScheduledTaskActionTemplateDetailsArgsDict',
+    'NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgs',
+    'NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgsDict',
     'NamespaceScheduledTaskSchedulesArgs',
     'NamespaceScheduledTaskSchedulesArgsDict',
     'NamespaceScheduledTaskSchedulesScheduleArgs',
     'NamespaceScheduledTaskSchedulesScheduleArgsDict',
+    'NamespaceStorageArchivalConfigArchivingConfigurationArgs',
+    'NamespaceStorageArchivalConfigArchivingConfigurationArgsDict',
     'GetLogAnalyticsEntitiesFilterArgs',
     'GetLogAnalyticsEntitiesFilterArgsDict',
+    'GetLogAnalyticsEntityTopologyFilterArgs',
+    'GetLogAnalyticsEntityTopologyFilterArgsDict',
     'GetLogAnalyticsLogGroupsFilterArgs',
     'GetLogAnalyticsLogGroupsFilterArgsDict',
     'GetLogAnalyticsObjectCollectionRulesFilterArgs',
@@ -50,6 +66,8 @@ __all__ = [
     'GetNamespaceEffectivePropertiesFilterArgsDict',
     'GetNamespaceIngestTimeRulesFilterArgs',
     'GetNamespaceIngestTimeRulesFilterArgsDict',
+    'GetNamespaceParserActionsFilterArgs',
+    'GetNamespaceParserActionsFilterArgsDict',
     'GetNamespacePropertiesMetadataFilterArgs',
     'GetNamespacePropertiesMetadataFilterArgsDict',
     'GetNamespaceRulesFilterArgs',
@@ -58,6 +76,8 @@ __all__ = [
     'GetNamespaceScheduledTasksFilterArgsDict',
     'GetNamespaceStorageOverlappingRecallsFilterArgs',
     'GetNamespaceStorageOverlappingRecallsFilterArgsDict',
+    'GetNamespaceTemplatesFilterArgs',
+    'GetNamespaceTemplatesFilterArgsDict',
     'GetNamespacesFilterArgs',
     'GetNamespacesFilterArgsDict',
 ]
@@ -780,6 +800,434 @@ class NamespaceIngestTimeRuleConditionsAdditionalConditionArgs:
 
 
 if not MYPY:
+    class NamespaceLookupCategoryArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) The category description.
+        """
+        display_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) The category display name.
+        """
+        is_system: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        (Updatable) The system flag. A value of false denotes a user-created category. A value of true denotes an Oracle-defined category.
+        """
+        name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) The unique name that identifies the category.
+        """
+        type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) The category type. Values include "PRODUCT", "TIER", "VENDOR" and "GENERIC".
+        """
+elif False:
+    NamespaceLookupCategoryArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class NamespaceLookupCategoryArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[builtins.str]] = None,
+                 display_name: Optional[pulumi.Input[builtins.str]] = None,
+                 is_system: Optional[pulumi.Input[builtins.bool]] = None,
+                 name: Optional[pulumi.Input[builtins.str]] = None,
+                 type: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] description: (Updatable) The category description.
+        :param pulumi.Input[builtins.str] display_name: (Updatable) The category display name.
+        :param pulumi.Input[builtins.bool] is_system: (Updatable) The system flag. A value of false denotes a user-created category. A value of true denotes an Oracle-defined category.
+        :param pulumi.Input[builtins.str] name: (Updatable) The unique name that identifies the category.
+        :param pulumi.Input[builtins.str] type: (Updatable) The category type. Values include "PRODUCT", "TIER", "VENDOR" and "GENERIC".
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if is_system is not None:
+            pulumi.set(__self__, "is_system", is_system)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The category description.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The category display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="isSystem")
+    def is_system(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        (Updatable) The system flag. A value of false denotes a user-created category. A value of true denotes an Oracle-defined category.
+        """
+        return pulumi.get(self, "is_system")
+
+    @is_system.setter
+    def is_system(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_system", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The unique name that identifies the category.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The category type. Values include "PRODUCT", "TIER", "VENDOR" and "GENERIC".
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "type", value)
+
+
+if not MYPY:
+    class NamespaceLookupFieldArgsDict(TypedDict):
+        common_field_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) The common field name.
+        """
+        default_match_value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) The default match value.
+        """
+        display_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) The display name.
+        """
+        is_common_field: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        (Updatable) A flag indicating whether or not the field is a common field.
+        """
+        match_operator: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) The match operator.
+        """
+        name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) The field name.
+        """
+        position: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) The position.
+        """
+elif False:
+    NamespaceLookupFieldArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class NamespaceLookupFieldArgs:
+    def __init__(__self__, *,
+                 common_field_name: Optional[pulumi.Input[builtins.str]] = None,
+                 default_match_value: Optional[pulumi.Input[builtins.str]] = None,
+                 display_name: Optional[pulumi.Input[builtins.str]] = None,
+                 is_common_field: Optional[pulumi.Input[builtins.bool]] = None,
+                 match_operator: Optional[pulumi.Input[builtins.str]] = None,
+                 name: Optional[pulumi.Input[builtins.str]] = None,
+                 position: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] common_field_name: (Updatable) The common field name.
+        :param pulumi.Input[builtins.str] default_match_value: (Updatable) The default match value.
+        :param pulumi.Input[builtins.str] display_name: (Updatable) The display name.
+        :param pulumi.Input[builtins.bool] is_common_field: (Updatable) A flag indicating whether or not the field is a common field.
+        :param pulumi.Input[builtins.str] match_operator: (Updatable) The match operator.
+        :param pulumi.Input[builtins.str] name: (Updatable) The field name.
+        :param pulumi.Input[builtins.str] position: (Updatable) The position.
+        """
+        if common_field_name is not None:
+            pulumi.set(__self__, "common_field_name", common_field_name)
+        if default_match_value is not None:
+            pulumi.set(__self__, "default_match_value", default_match_value)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if is_common_field is not None:
+            pulumi.set(__self__, "is_common_field", is_common_field)
+        if match_operator is not None:
+            pulumi.set(__self__, "match_operator", match_operator)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if position is not None:
+            pulumi.set(__self__, "position", position)
+
+    @property
+    @pulumi.getter(name="commonFieldName")
+    def common_field_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The common field name.
+        """
+        return pulumi.get(self, "common_field_name")
+
+    @common_field_name.setter
+    def common_field_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "common_field_name", value)
+
+    @property
+    @pulumi.getter(name="defaultMatchValue")
+    def default_match_value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The default match value.
+        """
+        return pulumi.get(self, "default_match_value")
+
+    @default_match_value.setter
+    def default_match_value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "default_match_value", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="isCommonField")
+    def is_common_field(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        (Updatable) A flag indicating whether or not the field is a common field.
+        """
+        return pulumi.get(self, "is_common_field")
+
+    @is_common_field.setter
+    def is_common_field(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_common_field", value)
+
+    @property
+    @pulumi.getter(name="matchOperator")
+    def match_operator(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The match operator.
+        """
+        return pulumi.get(self, "match_operator")
+
+    @match_operator.setter
+    def match_operator(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "match_operator", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The field name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def position(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The position.
+        """
+        return pulumi.get(self, "position")
+
+    @position.setter
+    def position(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "position", value)
+
+
+if not MYPY:
+    class NamespaceLookupReferringSourceArgsDict(TypedDict):
+        canonical_link: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The canonical link.
+        """
+        total_count: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The total count.
+        """
+elif False:
+    NamespaceLookupReferringSourceArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class NamespaceLookupReferringSourceArgs:
+    def __init__(__self__, *,
+                 canonical_link: Optional[pulumi.Input[builtins.str]] = None,
+                 total_count: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] canonical_link: The canonical link.
+        :param pulumi.Input[builtins.str] total_count: The total count.
+        """
+        if canonical_link is not None:
+            pulumi.set(__self__, "canonical_link", canonical_link)
+        if total_count is not None:
+            pulumi.set(__self__, "total_count", total_count)
+
+    @property
+    @pulumi.getter(name="canonicalLink")
+    def canonical_link(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The canonical link.
+        """
+        return pulumi.get(self, "canonical_link")
+
+    @canonical_link.setter
+    def canonical_link(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "canonical_link", value)
+
+    @property
+    @pulumi.getter(name="totalCount")
+    def total_count(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The total count.
+        """
+        return pulumi.get(self, "total_count")
+
+    @total_count.setter
+    def total_count(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "total_count", value)
+
+
+if not MYPY:
+    class NamespaceLookupStatusSummaryArgsDict(TypedDict):
+        chunks_processed: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The number of chunks processed.
+        """
+        failure_details: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The failure details, if any.
+        """
+        filename: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The filename.
+        """
+        status: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The status.
+        """
+        total_chunks: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The total number of chunks.
+        """
+elif False:
+    NamespaceLookupStatusSummaryArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class NamespaceLookupStatusSummaryArgs:
+    def __init__(__self__, *,
+                 chunks_processed: Optional[pulumi.Input[builtins.str]] = None,
+                 failure_details: Optional[pulumi.Input[builtins.str]] = None,
+                 filename: Optional[pulumi.Input[builtins.str]] = None,
+                 status: Optional[pulumi.Input[builtins.str]] = None,
+                 total_chunks: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] chunks_processed: The number of chunks processed.
+        :param pulumi.Input[builtins.str] failure_details: The failure details, if any.
+        :param pulumi.Input[builtins.str] filename: The filename.
+        :param pulumi.Input[builtins.str] status: The status.
+        :param pulumi.Input[builtins.str] total_chunks: The total number of chunks.
+        """
+        if chunks_processed is not None:
+            pulumi.set(__self__, "chunks_processed", chunks_processed)
+        if failure_details is not None:
+            pulumi.set(__self__, "failure_details", failure_details)
+        if filename is not None:
+            pulumi.set(__self__, "filename", filename)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if total_chunks is not None:
+            pulumi.set(__self__, "total_chunks", total_chunks)
+
+    @property
+    @pulumi.getter(name="chunksProcessed")
+    def chunks_processed(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The number of chunks processed.
+        """
+        return pulumi.get(self, "chunks_processed")
+
+    @chunks_processed.setter
+    def chunks_processed(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "chunks_processed", value)
+
+    @property
+    @pulumi.getter(name="failureDetails")
+    def failure_details(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The failure details, if any.
+        """
+        return pulumi.get(self, "failure_details")
+
+    @failure_details.setter
+    def failure_details(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "failure_details", value)
+
+    @property
+    @pulumi.getter
+    def filename(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The filename.
+        """
+        return pulumi.get(self, "filename")
+
+    @filename.setter
+    def filename(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "filename", value)
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The status.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "status", value)
+
+    @property
+    @pulumi.getter(name="totalChunks")
+    def total_chunks(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The total number of chunks.
+        """
+        return pulumi.get(self, "total_chunks")
+
+    @total_chunks.setter
+    def total_chunks(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "total_chunks", value)
+
+
+if not MYPY:
     class NamespaceScheduledTaskActionArgsDict(TypedDict):
         type: pulumi.Input[builtins.str]
         """
@@ -811,7 +1259,11 @@ if not MYPY:
         """
         saved_search_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        The ManagementSavedSearch id [OCID] utilized in the action.
+        The ManagementSavedSearch id [OCID] utilized in the action.  Should not be provided when a template ID is present.
+        """
+        template_details: NotRequired[pulumi.Input['NamespaceScheduledTaskActionTemplateDetailsArgsDict']]
+        """
+        details for scheduled task using template
         """
 elif False:
     NamespaceScheduledTaskActionArgsDict: TypeAlias = Mapping[str, Any]
@@ -826,7 +1278,8 @@ class NamespaceScheduledTaskActionArgs:
                  purge_compartment_id: Optional[pulumi.Input[builtins.str]] = None,
                  purge_duration: Optional[pulumi.Input[builtins.str]] = None,
                  query_string: Optional[pulumi.Input[builtins.str]] = None,
-                 saved_search_id: Optional[pulumi.Input[builtins.str]] = None):
+                 saved_search_id: Optional[pulumi.Input[builtins.str]] = None,
+                 template_details: Optional[pulumi.Input['NamespaceScheduledTaskActionTemplateDetailsArgs']] = None):
         """
         :param pulumi.Input[builtins.str] type: Action type discriminator.
         :param pulumi.Input[builtins.bool] compartment_id_in_subtree: if true, purge child compartments data
@@ -835,7 +1288,8 @@ class NamespaceScheduledTaskActionArgs:
         :param pulumi.Input[builtins.str] purge_compartment_id: the compartment OCID under which the data will be purged
         :param pulumi.Input[builtins.str] purge_duration: The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
         :param pulumi.Input[builtins.str] query_string: Purge query string.
-        :param pulumi.Input[builtins.str] saved_search_id: The ManagementSavedSearch id [OCID] utilized in the action.
+        :param pulumi.Input[builtins.str] saved_search_id: The ManagementSavedSearch id [OCID] utilized in the action.  Should not be provided when a template ID is present.
+        :param pulumi.Input['NamespaceScheduledTaskActionTemplateDetailsArgs'] template_details: details for scheduled task using template
         """
         pulumi.set(__self__, "type", type)
         if compartment_id_in_subtree is not None:
@@ -852,6 +1306,8 @@ class NamespaceScheduledTaskActionArgs:
             pulumi.set(__self__, "query_string", query_string)
         if saved_search_id is not None:
             pulumi.set(__self__, "saved_search_id", saved_search_id)
+        if template_details is not None:
+            pulumi.set(__self__, "template_details", template_details)
 
     @property
     @pulumi.getter
@@ -941,13 +1397,25 @@ class NamespaceScheduledTaskActionArgs:
     @pulumi.getter(name="savedSearchId")
     def saved_search_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        The ManagementSavedSearch id [OCID] utilized in the action.
+        The ManagementSavedSearch id [OCID] utilized in the action.  Should not be provided when a template ID is present.
         """
         return pulumi.get(self, "saved_search_id")
 
     @saved_search_id.setter
     def saved_search_id(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "saved_search_id", value)
+
+    @property
+    @pulumi.getter(name="templateDetails")
+    def template_details(self) -> Optional[pulumi.Input['NamespaceScheduledTaskActionTemplateDetailsArgs']]:
+        """
+        details for scheduled task using template
+        """
+        return pulumi.get(self, "template_details")
+
+    @template_details.setter
+    def template_details(self, value: Optional[pulumi.Input['NamespaceScheduledTaskActionTemplateDetailsArgs']]):
+        pulumi.set(self, "template_details", value)
 
 
 if not MYPY:
@@ -1040,6 +1508,110 @@ class NamespaceScheduledTaskActionMetricExtractionArgs:
     @resource_group.setter
     def resource_group(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "resource_group", value)
+
+
+if not MYPY:
+    class NamespaceScheduledTaskActionTemplateDetailsArgsDict(TypedDict):
+        template_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The template Id of a particular template.  Should not be provided when a saved search ID is present.
+        """
+        template_params: NotRequired[pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgsDict']]]]
+        """
+        To store macro params.
+        """
+elif False:
+    NamespaceScheduledTaskActionTemplateDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class NamespaceScheduledTaskActionTemplateDetailsArgs:
+    def __init__(__self__, *,
+                 template_id: Optional[pulumi.Input[builtins.str]] = None,
+                 template_params: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgs']]]] = None):
+        """
+        :param pulumi.Input[builtins.str] template_id: The template Id of a particular template.  Should not be provided when a saved search ID is present.
+        :param pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgs']]] template_params: To store macro params.
+        """
+        if template_id is not None:
+            pulumi.set(__self__, "template_id", template_id)
+        if template_params is not None:
+            pulumi.set(__self__, "template_params", template_params)
+
+    @property
+    @pulumi.getter(name="templateId")
+    def template_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The template Id of a particular template.  Should not be provided when a saved search ID is present.
+        """
+        return pulumi.get(self, "template_id")
+
+    @template_id.setter
+    def template_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "template_id", value)
+
+    @property
+    @pulumi.getter(name="templateParams")
+    def template_params(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgs']]]]:
+        """
+        To store macro params.
+        """
+        return pulumi.get(self, "template_params")
+
+    @template_params.setter
+    def template_params(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgs']]]]):
+        pulumi.set(self, "template_params", value)
+
+
+if not MYPY:
+    class NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgsDict(TypedDict):
+        key_field: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Contains a template parameter's name.
+        """
+        value_field: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Contains the desired value for a given parameter.
+        """
+elif False:
+    NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgs:
+    def __init__(__self__, *,
+                 key_field: Optional[pulumi.Input[builtins.str]] = None,
+                 value_field: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key_field: Contains a template parameter's name.
+        :param pulumi.Input[builtins.str] value_field: Contains the desired value for a given parameter.
+        """
+        if key_field is not None:
+            pulumi.set(__self__, "key_field", key_field)
+        if value_field is not None:
+            pulumi.set(__self__, "value_field", value_field)
+
+    @property
+    @pulumi.getter(name="keyField")
+    def key_field(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Contains a template parameter's name.
+        """
+        return pulumi.get(self, "key_field")
+
+    @key_field.setter
+    def key_field(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key_field", value)
+
+    @property
+    @pulumi.getter(name="valueField")
+    def value_field(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Contains the desired value for a given parameter.
+        """
+        return pulumi.get(self, "value_field")
+
+    @value_field.setter
+    def value_field(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value_field", value)
 
 
 if not MYPY:
@@ -1196,6 +1768,58 @@ class NamespaceScheduledTaskSchedulesScheduleArgs:
 
 
 if not MYPY:
+    class NamespaceStorageArchivalConfigArchivingConfigurationArgsDict(TypedDict):
+        active_storage_duration: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) This is the duration data in active storage before data is archived, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+        """
+        archival_storage_duration: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) This is the duration before archived data is deleted from object storage, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+        """
+elif False:
+    NamespaceStorageArchivalConfigArchivingConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class NamespaceStorageArchivalConfigArchivingConfigurationArgs:
+    def __init__(__self__, *,
+                 active_storage_duration: Optional[pulumi.Input[builtins.str]] = None,
+                 archival_storage_duration: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] active_storage_duration: (Updatable) This is the duration data in active storage before data is archived, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+        :param pulumi.Input[builtins.str] archival_storage_duration: (Updatable) This is the duration before archived data is deleted from object storage, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+        """
+        if active_storage_duration is not None:
+            pulumi.set(__self__, "active_storage_duration", active_storage_duration)
+        if archival_storage_duration is not None:
+            pulumi.set(__self__, "archival_storage_duration", archival_storage_duration)
+
+    @property
+    @pulumi.getter(name="activeStorageDuration")
+    def active_storage_duration(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) This is the duration data in active storage before data is archived, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+        """
+        return pulumi.get(self, "active_storage_duration")
+
+    @active_storage_duration.setter
+    def active_storage_duration(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "active_storage_duration", value)
+
+    @property
+    @pulumi.getter(name="archivalStorageDuration")
+    def archival_storage_duration(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) This is the duration before archived data is deleted from object storage, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+        """
+        return pulumi.get(self, "archival_storage_duration")
+
+    @archival_storage_duration.setter
+    def archival_storage_duration(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "archival_storage_duration", value)
+
+
+if not MYPY:
     class GetLogAnalyticsEntitiesFilterArgsDict(TypedDict):
         name: builtins.str
         """
@@ -1225,6 +1849,62 @@ class GetLogAnalyticsEntitiesFilterArgs:
     def name(self) -> builtins.str:
         """
         A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: builtins.str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetLogAnalyticsEntityTopologyFilterArgsDict(TypedDict):
+        name: builtins.str
+        """
+        Log analytics entity name.
+        """
+        values: Sequence[builtins.str]
+        regex: NotRequired[builtins.bool]
+elif False:
+    GetLogAnalyticsEntityTopologyFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetLogAnalyticsEntityTopologyFilterArgs:
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        """
+        :param builtins.str name: Log analytics entity name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        Log analytics entity name.
         """
         return pulumi.get(self, "name")
 
@@ -1458,6 +2138,62 @@ class GetNamespaceIngestTimeRulesFilterArgs:
 
 
 if not MYPY:
+    class GetNamespaceParserActionsFilterArgsDict(TypedDict):
+        name: builtins.str
+        """
+        The parser action name used for filtering.
+        """
+        values: Sequence[builtins.str]
+        regex: NotRequired[builtins.bool]
+elif False:
+    GetNamespaceParserActionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetNamespaceParserActionsFilterArgs:
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        """
+        :param builtins.str name: The parser action name used for filtering.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        The parser action name used for filtering.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: builtins.str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
     class GetNamespacePropertiesMetadataFilterArgsDict(TypedDict):
         name: builtins.str
         """
@@ -1629,6 +2365,62 @@ class GetNamespaceStorageOverlappingRecallsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: builtins.str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetNamespaceTemplatesFilterArgsDict(TypedDict):
+        name: builtins.str
+        """
+        The template name used for filtering.
+        """
+        values: Sequence[builtins.str]
+        regex: NotRequired[builtins.bool]
+elif False:
+    GetNamespaceTemplatesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetNamespaceTemplatesFilterArgs:
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        """
+        :param builtins.str name: The template name used for filtering.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        The template name used for filtering.
+        """
         return pulumi.get(self, "name")
 
     @name.setter

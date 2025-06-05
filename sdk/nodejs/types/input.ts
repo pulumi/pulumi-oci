@@ -96,15 +96,15 @@ export namespace Adm {
          */
         exclusions?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * (Updatable) The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+         * (Updatable) The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. A vulnerability with a CVSS V2 score below this value is not considered for remediation.
          */
         maxPermissibleCvssV2score?: pulumi.Input<number>;
         /**
-         * (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+         * (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. A vulnerability with a CVSS V3 score below this value is not considered for patching.
          */
         maxPermissibleCvssV3score?: pulumi.Input<number>;
         /**
-         * (Updatable) The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered for patching.
+         * (Updatable) The maximum ADM Severity. A vulnerability with an severity below this value is not considered for remediation.
          */
         maxPermissibleSeverity?: pulumi.Input<string>;
         /**
@@ -243,7 +243,7 @@ export namespace Adm {
          */
         nodeId: pulumi.Input<string>;
         /**
-         * Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+         * Package URL identifier, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
          */
         purl?: pulumi.Input<string>;
     }
@@ -307,11 +307,11 @@ export namespace Adm {
 
     export interface VulnerabilityAuditVulnerability {
         /**
-         * Common Vulnerability Scoring System (CVSS) Version 2.
+         * Common Vulnerability Scoring System (CVSS) Version 2, calculated from the metrics provided in the CVSS vector provided from the vulnerability source. This field is deprecated and will be removed in the future. The cvssV2Score can be obtained from the metrics field of the listVulnerabilities endpoint.
          */
         cvssV2score?: pulumi.Input<number>;
         /**
-         * Common Vulnerability Scoring System (CVSS) Version 3.
+         * Common Vulnerability Scoring System (CVSS) Version 3, calculated from the metrics provided in the CVSS vector provided from the vulnerability source. This field is deprecated and will be removed in the future. The cvssV3Score can be obtained from the metrics field of the listVulnerabilities endpoint.
          */
         cvssV3score?: pulumi.Input<number>;
         /**
@@ -3780,7 +3780,7 @@ export namespace ApmSynthetics {
          */
         ftpRequestType?: pulumi.Input<string>;
         /**
-         * (Updatable) If enabled, Active mode will be used for the FTP connection.
+         * (Updatable) If enabled, Active mode will be used for the FTP connection. Not supported for SFTP protocol.
          */
         isActiveMode?: pulumi.Input<boolean>;
         /**
@@ -5093,6 +5093,70 @@ export namespace BigDataService {
         value: pulumi.Input<number>;
     }
 
+    export interface BdsCapacityReportShapeAvailability {
+        /**
+         * Information about the capacity in each domain.
+         */
+        domainLevelCapacityReports?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsCapacityReportShapeAvailabilityDomainLevelCapacityReport>[]>;
+        /**
+         * The shape that you want to request a capacity report for.
+         */
+        shape: pulumi.Input<string>;
+        /**
+         * The shape configuration requested for the node.
+         */
+        shapeConfig?: pulumi.Input<inputs.BigDataService.BdsCapacityReportShapeAvailabilityShapeConfig>;
+    }
+
+    export interface BdsCapacityReportShapeAvailabilityDomainLevelCapacityReport {
+        /**
+         * The availability domain for the capacity report.
+         */
+        availabilityDomain?: pulumi.Input<string>;
+        /**
+         * Information about the available capacity for a shape.
+         */
+        capacityAvailabilities?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailability>[]>;
+        /**
+         * Type of domain level for the capacity report.
+         */
+        domainType?: pulumi.Input<string>;
+        /**
+         * The fault domain for the capacity report.
+         */
+        faultDomain?: pulumi.Input<string>;
+    }
+
+    export interface BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailability {
+        /**
+         * A flag denoting whether capacity is available.
+         */
+        availabilityStatus?: pulumi.Input<string>;
+        /**
+         * The total number of new cluster nodes that can be created with the specified shape configuration.
+         */
+        availableCount?: pulumi.Input<string>;
+    }
+
+    export interface BdsCapacityReportShapeAvailabilityShapeConfig {
+        /**
+         * The total amount of memory available to the node, in gigabytes.
+         */
+        memoryInGbs?: pulumi.Input<number>;
+        /**
+         * The number of NVMe drives to be used for storage. A single drive has 6.8 TB available. This parameter is used only for dense shapes.
+         */
+        nvmes?: pulumi.Input<number>;
+        /**
+         * The total number of OCPUs available to the node.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        ocpus?: pulumi.Input<number>;
+    }
+
     export interface BdsInstanceBdsClusterVersionSummary {
         /**
          * BDS version to be used for cluster creation
@@ -5560,7 +5624,7 @@ export namespace BigDataService {
         privateKey?: pulumi.Input<string>;
     }
 
-    export interface BdsInstanceOsPatchActionPatchingConfig {
+    export interface BdsInstanceOsPatchActionPatchingConfigs {
         /**
          * How many nodes to be patched in each iteration.
          */
@@ -5817,6 +5881,18 @@ export namespace BigDataService {
     }
 
     export interface GetBdsInstanceResourcePrincipalConfigurationsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetBdsInstanceSoftwareUpdatesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetBdsInstanceSoftwareUpdatesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -12734,6 +12810,21 @@ export namespace Core {
         connectivityAssociationNameSecretVersion?: pulumi.Input<string>;
     }
 
+    export interface DedicatedVmHostPlacementConstraintDetails {
+        /**
+         * The OCID of the compute bare metal host.
+         */
+        computeBareMetalHostId?: pulumi.Input<string>;
+        /**
+         * Determines the type of targeted launch.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        type: pulumi.Input<string>;
+    }
+
     export interface DefaultDhcpOptionsOption {
         customDnsServers?: pulumi.Input<pulumi.Input<string>[]>;
         searchDomainNames?: pulumi.Input<pulumi.Input<string>[]>;
@@ -16017,6 +16108,21 @@ export namespace Core {
         osVersion?: pulumi.Input<string>;
         /**
          * (Updatable) Operating System type of the Configuration.
+         */
+        type: pulumi.Input<string>;
+    }
+
+    export interface InstancePlacementConstraintDetails {
+        /**
+         * The OCID of the compute bare metal host.
+         */
+        computeBareMetalHostId?: pulumi.Input<string>;
+        /**
+         * The OCID of the compute host group.
+         */
+        computeHostGroupId?: pulumi.Input<string>;
+        /**
+         * Determines the type of targeted launch.
          */
         type: pulumi.Input<string>;
     }
@@ -29978,6 +30084,18 @@ export namespace Database {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetSystemVersionMinorVersionsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSystemVersionMinorVersionsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetSystemVersionsFilter {
         name: string;
         regex?: boolean;
@@ -30868,6 +30986,10 @@ export namespace DatabaseManagement {
 
     export interface DatabaseDbmFeaturesManagementFeatureDetails {
         /**
+         * Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+         */
+        canEnableAllCurrentPdbs?: pulumi.Input<boolean>;
+        /**
          * The connector details required to connect to an Oracle cloud database.
          */
         connectorDetails?: pulumi.Input<inputs.DatabaseManagement.DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetails>;
@@ -30880,7 +31002,7 @@ export namespace DatabaseManagement {
          */
         feature: pulumi.Input<string>;
         /**
-         * Indicates whether the pluggable database can be enabled automatically.
+         * Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
          */
         isAutoEnablePluggableDatabase?: pulumi.Input<boolean>;
         /**
@@ -31178,6 +31300,10 @@ export namespace DatabaseManagement {
          */
         associatedComponents?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponent>[]>;
         /**
+         * Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+         */
+        canEnableAllCurrentPdbs?: pulumi.Input<boolean>;
+        /**
          * The unique identifier of the Oracle cluster.
          */
         clusterId?: pulumi.Input<string>;
@@ -31274,6 +31400,10 @@ export namespace DatabaseManagement {
          * The name of the ASM instance.
          */
         instanceName?: pulumi.Input<string>;
+        /**
+         * Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
+         */
+        isAutoEnablePluggableDatabase?: pulumi.Input<boolean>;
         /**
          * Indicates whether the Oracle Database is part of a cluster.
          */
@@ -32431,6 +32561,10 @@ export namespace DatabaseManagement {
 
     export interface ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetails {
         /**
+         * Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+         */
+        canEnableAllCurrentPdbs?: pulumi.Input<boolean>;
+        /**
          * The connector details required to connect to an Oracle cloud database.
          */
         connectorDetails?: pulumi.Input<inputs.DatabaseManagement.ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetails>;
@@ -32438,6 +32572,10 @@ export namespace DatabaseManagement {
          * The name of the Database Management feature.
          */
         feature: pulumi.Input<string>;
+        /**
+         * Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
+         */
+        isAutoEnablePluggableDatabase?: pulumi.Input<boolean>;
         /**
          * The Oracle license model that applies to the external database.
          */
@@ -32469,6 +32607,10 @@ export namespace DatabaseManagement {
 
     export interface ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetails {
         /**
+         * Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+         */
+        canEnableAllCurrentPdbs?: pulumi.Input<boolean>;
+        /**
          * The connector details required to connect to an Oracle cloud database.
          */
         connectorDetails?: pulumi.Input<inputs.DatabaseManagement.ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetails>;
@@ -32476,6 +32618,10 @@ export namespace DatabaseManagement {
          * The name of the Database Management feature.
          */
         feature: pulumi.Input<string>;
+        /**
+         * Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
+         */
+        isAutoEnablePluggableDatabase?: pulumi.Input<boolean>;
         /**
          * The Oracle license model that applies to the external database.
          */
@@ -33636,6 +33782,10 @@ export namespace DatabaseManagement {
 
     export interface PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetails {
         /**
+         * Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+         */
+        canEnableAllCurrentPdbs?: pulumi.Input<boolean>;
+        /**
          * The connector details required to connect to an Oracle cloud database.
          */
         connectorDetails?: pulumi.Input<inputs.DatabaseManagement.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetails>;
@@ -33648,7 +33798,7 @@ export namespace DatabaseManagement {
          */
         feature: pulumi.Input<string>;
         /**
-         * Indicates whether the pluggable database can be enabled automatically.
+         * Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
          */
         isAutoEnablePluggableDatabase?: pulumi.Input<boolean>;
         /**
@@ -38604,234 +38754,6 @@ export namespace FileStorage {
 }
 
 export namespace FleetAppsManagement {
-    export interface CompliancePolicyRulePatchSelection {
-        /**
-         * (Updatable) Days passed since patch release.
-         */
-        daysSinceRelease?: pulumi.Input<number>;
-        /**
-         * (Updatable) Patch Name.
-         */
-        patchLevel?: pulumi.Input<string>;
-        /**
-         * (Updatable) Patch Name.
-         */
-        patchName?: pulumi.Input<string>;
-        /**
-         * (Updatable) Selection type for the Patch.
-         */
-        selectionType: pulumi.Input<string>;
-    }
-
-    export interface CompliancePolicyRuleProductVersion {
-        /**
-         * (Updatable) Is rule applicable to all higher versions also
-         */
-        isApplicableForAllHigherVersions?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) Product version the rule is applicable.
-         */
-        version: pulumi.Input<string>;
-    }
-
-    export interface FleetCredential {
-        /**
-         * Tenancy OCID
-         */
-        compartmentId: pulumi.Input<string>;
-        /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-         */
-        displayName: pulumi.Input<string>;
-        /**
-         * Credential specific Details.
-         */
-        entitySpecifics: pulumi.Input<inputs.FleetAppsManagement.FleetCredentialEntitySpecifics>;
-        /**
-         * Credential Details.
-         */
-        password: pulumi.Input<inputs.FleetAppsManagement.FleetCredentialPassword>;
-        /**
-         * Credential Details.
-         */
-        user: pulumi.Input<inputs.FleetAppsManagement.FleetCredentialUser>;
-    }
-
-    export interface FleetCredentialEntitySpecifics {
-        /**
-         * (Updatable) At what level the credential is provided?
-         */
-        credentialLevel: pulumi.Input<string>;
-        /**
-         * (Updatable) OCID of the resource associated with the target for which the credential is created.
-         */
-        resourceId?: pulumi.Input<string>;
-        /**
-         * (Updatable) Target name for which the credential is provided.
-         */
-        target?: pulumi.Input<string>;
-        /**
-         * (Updatable) List of fleet credential variables.
-         */
-        variables?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.FleetCredentialEntitySpecificsVariable>[]>;
-    }
-
-    export interface FleetCredentialEntitySpecificsVariable {
-        /**
-         * (Updatable) Name of the variable.
-         */
-        name?: pulumi.Input<string>;
-        /**
-         * (Updatable) The value corresponding to the variable name.
-         */
-        value?: pulumi.Input<string>;
-    }
-
-    export interface FleetCredentialPassword {
-        /**
-         * (Updatable) Credential Type.
-         */
-        credentialType: pulumi.Input<string>;
-        /**
-         * (Updatable) OCID for the Vault Key that will be used to encrypt/decrypt the value given.
-         */
-        keyId?: pulumi.Input<string>;
-        /**
-         * (Updatable) The Vault Key version.
-         */
-        keyVersion?: pulumi.Input<string>;
-        /**
-         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret.
-         */
-        secretId?: pulumi.Input<string>;
-        /**
-         * (Updatable) The secret version.
-         */
-        secretVersion?: pulumi.Input<string>;
-        /**
-         * (Updatable) The value corresponding to the credential.
-         */
-        value?: pulumi.Input<string>;
-        /**
-         * (Updatable) OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
-         */
-        vaultId?: pulumi.Input<string>;
-    }
-
-    export interface FleetCredentialUser {
-        /**
-         * (Updatable) Credential Type.
-         */
-        credentialType: pulumi.Input<string>;
-        /**
-         * (Updatable) OCID for the Vault Key that will be used to encrypt/decrypt the value given.
-         */
-        keyId?: pulumi.Input<string>;
-        /**
-         * (Updatable) The Vault Key version.
-         */
-        keyVersion?: pulumi.Input<string>;
-        /**
-         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret.
-         */
-        secretId?: pulumi.Input<string>;
-        /**
-         * (Updatable) The secret version.
-         */
-        secretVersion?: pulumi.Input<string>;
-        /**
-         * (Updatable) The value corresponding to the credential.
-         */
-        value?: pulumi.Input<string>;
-        /**
-         * (Updatable) OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
-         *
-         *
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         */
-        vaultId?: pulumi.Input<string>;
-    }
-
-    export interface FleetNotificationPreferences {
-        /**
-         * (Updatable) Compartment ID the topic belongs to.
-         */
-        compartmentId: pulumi.Input<string>;
-        /**
-         * (Updatable) Preferences to send notifications on the fleet activities.
-         */
-        preferences?: pulumi.Input<inputs.FleetAppsManagement.FleetNotificationPreferencesPreferences>;
-        /**
-         * (Updatable) Topic Id where the notifications will be directed. A topic is a communication channel for sending messages on chosen events to subscriptions.
-         */
-        topicId: pulumi.Input<string>;
-    }
-
-    export interface FleetNotificationPreferencesPreferences {
-        /**
-         * (Updatable) Enables or disables notification on Job Failures.
-         */
-        onJobFailure?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) Enables or disables notification on Environment Fleet Topology Modification.
-         */
-        onTopologyModification?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) Enables notification on upcoming schedule.
-         */
-        onUpcomingSchedule?: pulumi.Input<boolean>;
-    }
-
-    export interface FleetRuleSelectionCriteria {
-        /**
-         * (Updatable) Match condition for the rule selection. Include resources that match all rules or any of the rules.
-         */
-        matchCondition: pulumi.Input<string>;
-        /**
-         * (Updatable) Rules.
-         */
-        rules: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.FleetRuleSelectionCriteriaRule>[]>;
-    }
-
-    export interface FleetRuleSelectionCriteriaRule {
-        /**
-         * (Updatable) Based on what the rule is created. It can be based on a resourceProperty or a tag.   If based on a tag, basis will be 'definedTagEquals' If based on a resource property, basis will be 'inventoryProperties'
-         */
-        basis?: pulumi.Input<string>;
-        /**
-         * (Updatable) Tenancy Id (Root Compartment Id)for which the rule is created.
-         */
-        compartmentId: pulumi.Input<string>;
-        /**
-         * (Updatable) Rule Conditions
-         */
-        conditions: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.FleetRuleSelectionCriteriaRuleCondition>[]>;
-        /**
-         * (Updatable) The Compartment ID to dynamically search resources. Provide the compartment ID to which the rule is applicable. 
-         *
-         *
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         */
-        resourceCompartmentId: pulumi.Input<string>;
-    }
-
-    export interface FleetRuleSelectionCriteriaRuleCondition {
-        /**
-         * (Updatable) Attribute Group. Provide a Tag namespace if the rule is based on a tag. Provide resource type if the rule is based on a resource property.
-         */
-        attrGroup: pulumi.Input<string>;
-        /**
-         * (Updatable) Attribute Key.Provide Tag key if the rule is based on a tag. Provide resource property name if the rule is based on a resource property.
-         */
-        attrKey: pulumi.Input<string>;
-        /**
-         * (Updatable) Attribute Value.Provide Tag value if the rule is based on a tag. Provide resource property value if the rule is based on a resource property.
-         */
-        attrValue: pulumi.Input<string>;
-    }
-
     export interface GetAnnouncementsFilter {
         name: string;
         regex?: boolean;
@@ -38856,18 +38778,6 @@ export namespace FleetAppsManagement {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetCompliancePolicyRulesFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetCompliancePolicyRulesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetComplianceRecordCountsFilter {
         name: string;
         regex?: boolean;
@@ -38875,36 +38785,6 @@ export namespace FleetAppsManagement {
     }
 
     export interface GetComplianceRecordCountsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetComplianceRecordsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetComplianceRecordsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetFleetCredentialsFilter {
-        /**
-         * Name of the variable.
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetFleetCredentialsFilterArgs {
-        /**
-         * Name of the variable.
-         */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -38922,30 +38802,6 @@ export namespace FleetAppsManagement {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetFleetPropertiesFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetFleetPropertiesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetFleetResourcesFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetFleetResourcesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetFleetTargetsFilter {
         name: string;
         regex?: boolean;
@@ -38958,24 +38814,6 @@ export namespace FleetAppsManagement {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetFleetsFilter {
-        /**
-         * Name of the variable.
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetFleetsFilterArgs {
-        /**
-         * Name of the variable.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetInventoryResourcesFilter {
         name: string;
         regex?: boolean;
@@ -38983,18 +38821,6 @@ export namespace FleetAppsManagement {
     }
 
     export interface GetInventoryResourcesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetMaintenanceWindowsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetMaintenanceWindowsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -39024,48 +38850,6 @@ export namespace FleetAppsManagement {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetOnboardingsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetOnboardingsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetPatchesFilter {
-        /**
-         * A filter to return only resources that match the entire name given.
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetPatchesFilterArgs {
-        /**
-         * A filter to return only resources that match the entire name given.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetPlatformConfigurationsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetPlatformConfigurationsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetPropertiesFilter {
         name: string;
         regex?: boolean;
@@ -39081,54 +38865,6 @@ export namespace FleetAppsManagement {
         /**
          * Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
          */
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetRunbooksFilter {
-        /**
-         * The name of the task
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetRunbooksFilterArgs {
-        /**
-         * The name of the task
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetSchedulerDefinitionScheduledFleetsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetSchedulerDefinitionScheduledFleetsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetSchedulerDefinitionsFilter {
-        /**
-         * Name of the output variable
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetSchedulerDefinitionsFilterArgs {
-        /**
-         * Name of the output variable
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
@@ -39168,962 +38904,6 @@ export namespace FleetAppsManagement {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetTaskRecordsFilter {
-        /**
-         * The name of the argument.
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetTaskRecordsFilterArgs {
-        /**
-         * The name of the argument.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface OnboardingAppliedPolicy {
-        /**
-         * The unique id of the resource.
-         */
-        id?: pulumi.Input<string>;
-        /**
-         * Policy statements.
-         */
-        statements?: pulumi.Input<pulumi.Input<string>[]>;
-        /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-         */
-        systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-        /**
-         * The time this resource was created. An RFC3339 formatted datetime string.
-         */
-        timeCreated?: pulumi.Input<string>;
-        /**
-         * The time this resource was last updated. An RFC3339 formatted datetime string.
-         */
-        timeUpdated?: pulumi.Input<string>;
-    }
-
-    export interface OnboardingItem {
-        /**
-         * Summary of the Fleet Application Management Onboard Policy.
-         */
-        appliedPolicies?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.OnboardingItemAppliedPolicy>[]>;
-        /**
-         * Tenancy OCID
-         */
-        compartmentId?: pulumi.Input<string>;
-        /**
-         * Provide discovery frequency.
-         */
-        discoveryFrequency?: pulumi.Input<string>;
-        /**
-         * The unique id of the resource.
-         */
-        id?: pulumi.Input<string>;
-        /**
-         * A value determining if the cost tracking tag is enabled or not. Allow Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
-         */
-        isCostTrackingTagEnabled?: pulumi.Input<boolean>;
-        /**
-         * A value determining if the Fleet Application Management tagging is enabled or not. Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag. 
-         *
-         *
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         */
-        isFamsTagEnabled?: pulumi.Input<boolean>;
-        /**
-         * Associated region
-         */
-        resourceRegion?: pulumi.Input<string>;
-        /**
-         * The current state of the Onboarding.
-         */
-        state?: pulumi.Input<string>;
-        /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-         */
-        systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-        /**
-         * The time this resource was created. An RFC3339 formatted datetime string.
-         */
-        timeCreated?: pulumi.Input<string>;
-        /**
-         * The time this resource was last updated. An RFC3339 formatted datetime string.
-         */
-        timeUpdated?: pulumi.Input<string>;
-        /**
-         * The version of Fleet Application Management that the tenant is onboarded to.
-         */
-        version?: pulumi.Input<string>;
-    }
-
-    export interface OnboardingItemAppliedPolicy {
-        /**
-         * The unique id of the resource.
-         */
-        id?: pulumi.Input<string>;
-        /**
-         * Policy statements.
-         */
-        statements?: pulumi.Input<pulumi.Input<string>[]>;
-        /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-         */
-        systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-        /**
-         * The time this resource was created. An RFC3339 formatted datetime string.
-         */
-        timeCreated?: pulumi.Input<string>;
-        /**
-         * The time this resource was last updated. An RFC3339 formatted datetime string.
-         */
-        timeUpdated?: pulumi.Input<string>;
-    }
-
-    export interface PatchArtifactDetails {
-        /**
-         * (Updatable) Patch artifact metadata Details which is common for all platforms.
-         */
-        artifact?: pulumi.Input<inputs.FleetAppsManagement.PatchArtifactDetailsArtifact>;
-        /**
-         * (Updatable) Artifacts.
-         */
-        artifacts?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.PatchArtifactDetailsArtifact>[]>;
-        /**
-         * (Updatable) Artifact category details.
-         */
-        category: pulumi.Input<string>;
-    }
-
-    export interface PatchArtifactDetailsArtifact {
-        /**
-         * (Updatable) System architecture.
-         */
-        architecture?: pulumi.Input<string>;
-        /**
-         * (Updatable) Content Source details.
-         */
-        content?: pulumi.Input<inputs.FleetAppsManagement.PatchArtifactDetailsArtifactContent>;
-        /**
-         * (Updatable) The OS type the patch is applicable for.
-         */
-        osType?: pulumi.Input<string>;
-    }
-
-    export interface PatchArtifactDetailsArtifactContent {
-        /**
-         * (Updatable) Bucket Name.
-         */
-        bucket: pulumi.Input<string>;
-        /**
-         * (Updatable) md5 checksum of the artifact.
-         */
-        checksum: pulumi.Input<string>;
-        /**
-         * (Updatable) Namespace.
-         */
-        namespace: pulumi.Input<string>;
-        /**
-         * (Updatable) Object Name.
-         */
-        object: pulumi.Input<string>;
-        /**
-         * (Updatable) Content Source type details.
-         */
-        sourceType: pulumi.Input<string>;
-    }
-
-    export interface PatchDependentPatch {
-        /**
-         * (Updatable) The OCID of the resource.
-         */
-        id: pulumi.Input<string>;
-    }
-
-    export interface PatchPatchType {
-        /**
-         * (Updatable) PlatformConfiguration Id corresponding to the Patch Type
-         */
-        platformConfigurationId: pulumi.Input<string>;
-    }
-
-    export interface PatchProduct {
-        /**
-         * (Updatable) PlatformConfiguration Id corresponding to the Product
-         */
-        platformConfigurationId: pulumi.Input<string>;
-        /**
-         * (Updatable) product version.
-         */
-        version?: pulumi.Input<string>;
-    }
-
-    export interface PlatformConfigurationConfigCategoryDetails {
-        /**
-         * (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one
-         */
-        compatibleProducts?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.PlatformConfigurationConfigCategoryDetailsCompatibleProduct>[]>;
-        /**
-         * (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
-         */
-        components?: pulumi.Input<pulumi.Input<string>[]>;
-        /**
-         * (Updatable) Category of configuration
-         */
-        configCategory: pulumi.Input<string>;
-        /**
-         * (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
-         */
-        credentials?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.PlatformConfigurationConfigCategoryDetailsCredential>[]>;
-        /**
-         * (Updatable) Patch Types associated with this Product.
-         */
-        patchTypes?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.PlatformConfigurationConfigCategoryDetailsPatchType>[]>;
-        /**
-         * (Updatable) Products that belong to the stack. For example, Oracle WebLogic and Java for the Oracle Fusion Middleware product stack.
-         */
-        products?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.PlatformConfigurationConfigCategoryDetailsProduct>[]>;
-        /**
-         * (Updatable) ProductStack Config Category Details.
-         */
-        subCategoryDetails?: pulumi.Input<inputs.FleetAppsManagement.PlatformConfigurationConfigCategoryDetailsSubCategoryDetails>;
-        /**
-         * (Updatable) Versions associated with the PRODUCT .
-         */
-        versions?: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface PlatformConfigurationConfigCategoryDetailsCompatibleProduct {
-        /**
-         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-         */
-        displayName?: pulumi.Input<string>;
-        /**
-         * (Updatable) The OCID of the resource.
-         */
-        id?: pulumi.Input<string>;
-    }
-
-    export interface PlatformConfigurationConfigCategoryDetailsCredential {
-        /**
-         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-         */
-        displayName?: pulumi.Input<string>;
-        /**
-         * (Updatable) The OCID of the resource.
-         */
-        id?: pulumi.Input<string>;
-    }
-
-    export interface PlatformConfigurationConfigCategoryDetailsPatchType {
-        /**
-         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-         */
-        displayName?: pulumi.Input<string>;
-        /**
-         * (Updatable) The OCID of the resource.
-         */
-        id?: pulumi.Input<string>;
-    }
-
-    export interface PlatformConfigurationConfigCategoryDetailsProduct {
-        /**
-         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-         */
-        displayName?: pulumi.Input<string>;
-        /**
-         * (Updatable) The OCID of the resource.
-         */
-        id?: pulumi.Input<string>;
-    }
-
-    export interface PlatformConfigurationConfigCategoryDetailsSubCategoryDetails {
-        /**
-         * (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
-         */
-        components?: pulumi.Input<pulumi.Input<string>[]>;
-        /**
-         * (Updatable) OCID for the Credential name to be associated with the Product Stack. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
-         */
-        credentials?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsCredential>[]>;
-        /**
-         * (Updatable) Patch Types associated with this Product Stack which will be considered as Product.
-         */
-        patchTypes?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsPatchType>[]>;
-        /**
-         * (Updatable) SubCategory of Product Stack.
-         */
-        subCategory: pulumi.Input<string>;
-        /**
-         * (Updatable) Versions associated with the PRODUCT .
-         */
-        versions?: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsCredential {
-        /**
-         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-         */
-        displayName?: pulumi.Input<string>;
-        /**
-         * (Updatable) The OCID of the resource.
-         */
-        id?: pulumi.Input<string>;
-    }
-
-    export interface PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsPatchType {
-        /**
-         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-         */
-        displayName?: pulumi.Input<string>;
-        /**
-         * (Updatable) The OCID of the resource.
-         */
-        id?: pulumi.Input<string>;
-    }
-
-    export interface RunbookAssociations {
-        /**
-         * (Updatable) Execution Workflow details.
-         */
-        executionWorkflowDetails: pulumi.Input<inputs.FleetAppsManagement.RunbookAssociationsExecutionWorkflowDetails>;
-        /**
-         * (Updatable) The groups of the runbook.
-         */
-        groups: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.RunbookAssociationsGroup>[]>;
-        /**
-         * (Updatable) Rollback Workflow details.
-         */
-        rollbackWorkflowDetails?: pulumi.Input<inputs.FleetAppsManagement.RunbookAssociationsRollbackWorkflowDetails>;
-        /**
-         * (Updatable) A set of tasks to execute in the runbook.
-         */
-        tasks: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.RunbookAssociationsTask>[]>;
-        /**
-         * (Updatable) The version of the runbook.
-         */
-        version?: pulumi.Input<string>;
-    }
-
-    export interface RunbookAssociationsExecutionWorkflowDetails {
-        /**
-         * (Updatable) Execution Workflow for the runbook.
-         */
-        workflows: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.RunbookAssociationsExecutionWorkflowDetailsWorkflow>[]>;
-    }
-
-    export interface RunbookAssociationsExecutionWorkflowDetailsWorkflow {
-        /**
-         * (Updatable) Name of the group.
-         */
-        groupName: pulumi.Input<string>;
-        /**
-         * (Updatable) Steps within the Group.
-         */
-        steps: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.RunbookAssociationsExecutionWorkflowDetailsWorkflowStep>[]>;
-        /**
-         * (Updatable) Workflow Group  Details.
-         */
-        type: pulumi.Input<string>;
-    }
-
-    export interface RunbookAssociationsExecutionWorkflowDetailsWorkflowStep {
-        /**
-         * (Updatable) Name of the group.
-         */
-        groupName?: pulumi.Input<string>;
-        /**
-         * (Updatable) Provide StepName for the Task.
-         */
-        stepName?: pulumi.Input<string>;
-        /**
-         * (Updatable) Tasks within the Group. Provide the stepName for all applicable tasks.
-         */
-        steps?: pulumi.Input<pulumi.Input<string>[]>;
-        /**
-         * (Updatable) Content Source Details.
-         */
-        type: pulumi.Input<string>;
-    }
-
-    export interface RunbookAssociationsGroup {
-        /**
-         * (Updatable) The name of the group.
-         */
-        name: pulumi.Input<string>;
-        /**
-         * (Updatable) The properties of the component.
-         */
-        properties?: pulumi.Input<inputs.FleetAppsManagement.RunbookAssociationsGroupProperties>;
-        /**
-         * (Updatable) The type of the group. PARALLEL_TASK_GROUP : Helps to execute tasks parallelly inside a resource. PARALLEL_RESOURCE_GROUP : Executes tasks across resources parallelly. ROLLING_RESOURCE_GROUP : Executes tasks across resources in a rolling order.
-         */
-        type: pulumi.Input<string>;
-    }
-
-    export interface RunbookAssociationsGroupProperties {
-        /**
-         * (Updatable) The action to be taken in case of a failure.
-         */
-        actionOnFailure: pulumi.Input<string>;
-        /**
-         * (Updatable) Build control flow conditions that determine the relevance of the task execution.
-         */
-        condition?: pulumi.Input<string>;
-        /**
-         * (Updatable) Preferences to send notifications on the task activities.
-         */
-        notificationPreferences?: pulumi.Input<inputs.FleetAppsManagement.RunbookAssociationsGroupPropertiesNotificationPreferences>;
-        /**
-         * (Updatable) Pause Details
-         */
-        pauseDetails?: pulumi.Input<inputs.FleetAppsManagement.RunbookAssociationsGroupPropertiesPauseDetails>;
-        /**
-         * (Updatable) The runOn condition for the task/group/container. Build task execution conditions if applicable to product and product-specific components. This condition is relevant when handling product stack workflows. Example: target.product.name = Oracle WebLogic Server OR target.product.name = Oracle HTTP Server
-         */
-        runOn?: pulumi.Input<string>;
-    }
-
-    export interface RunbookAssociationsGroupPropertiesNotificationPreferences {
-        /**
-         * (Updatable) Enables notification on pause.
-         */
-        shouldNotifyOnPause?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) Enables or disables notification on Task Failures.
-         */
-        shouldNotifyOnTaskFailure?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) Enables or disables notification on Task Success.
-         */
-        shouldNotifyOnTaskSuccess?: pulumi.Input<boolean>;
-    }
-
-    export interface RunbookAssociationsGroupPropertiesPauseDetails {
-        /**
-         * (Updatable) Time in minutes to apply Pause.
-         */
-        durationInMinutes?: pulumi.Input<number>;
-        /**
-         * (Updatable) Pause based On.
-         */
-        kind: pulumi.Input<string>;
-    }
-
-    export interface RunbookAssociationsRollbackWorkflowDetails {
-        /**
-         * (Updatable) rollback Scope
-         */
-        scope: pulumi.Input<string>;
-        /**
-         * (Updatable) Rollback Workflow for the runbook.
-         */
-        workflows: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.RunbookAssociationsRollbackWorkflowDetailsWorkflow>[]>;
-    }
-
-    export interface RunbookAssociationsRollbackWorkflowDetailsWorkflow {
-        /**
-         * (Updatable) Name of the group.
-         */
-        groupName: pulumi.Input<string>;
-        /**
-         * (Updatable) Steps within the Group.
-         */
-        steps: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.RunbookAssociationsRollbackWorkflowDetailsWorkflowStep>[]>;
-        /**
-         * (Updatable) Workflow Group  Details.
-         */
-        type: pulumi.Input<string>;
-    }
-
-    export interface RunbookAssociationsRollbackWorkflowDetailsWorkflowStep {
-        /**
-         * (Updatable) Name of the group.
-         */
-        groupName?: pulumi.Input<string>;
-        /**
-         * (Updatable) Provide StepName for the Task.
-         */
-        stepName?: pulumi.Input<string>;
-        /**
-         * (Updatable) Tasks within the Group. Provide the stepName for all applicable tasks.
-         */
-        steps?: pulumi.Input<pulumi.Input<string>[]>;
-        /**
-         * (Updatable) Content Source Details.
-         */
-        type: pulumi.Input<string>;
-    }
-
-    export interface RunbookAssociationsTask {
-        /**
-         * (Updatable) The association type of the task
-         */
-        associationType: pulumi.Input<string>;
-        /**
-         * (Updatable) Mapping output variables of previous tasks to the input variables of the current task.
-         */
-        outputVariableMappings?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.RunbookAssociationsTaskOutputVariableMapping>[]>;
-        /**
-         * (Updatable) The name of the task step.
-         */
-        stepName: pulumi.Input<string>;
-        /**
-         * (Updatable) The properties of the component.
-         */
-        stepProperties?: pulumi.Input<inputs.FleetAppsManagement.RunbookAssociationsTaskStepProperties>;
-        /**
-         * (Updatable) The details of the task.
-         */
-        taskRecordDetails: pulumi.Input<inputs.FleetAppsManagement.RunbookAssociationsTaskTaskRecordDetails>;
-    }
-
-    export interface RunbookAssociationsTaskOutputVariableMapping {
-        /**
-         * (Updatable) The name of the input variable.
-         */
-        name: pulumi.Input<string>;
-        /**
-         * (Updatable) The details of the output variable that will be used for mapping.
-         */
-        outputVariableDetails: pulumi.Input<inputs.FleetAppsManagement.RunbookAssociationsTaskOutputVariableMappingOutputVariableDetails>;
-    }
-
-    export interface RunbookAssociationsTaskOutputVariableMappingOutputVariableDetails {
-        /**
-         * (Updatable) The name of the output variable whose value has to be mapped.
-         */
-        outputVariableName: pulumi.Input<string>;
-        /**
-         * (Updatable) The name of the task step the output variable belongs to.
-         */
-        stepName: pulumi.Input<string>;
-    }
-
-    export interface RunbookAssociationsTaskStepProperties {
-        /**
-         * (Updatable) The action to be taken in case of a failure.
-         */
-        actionOnFailure: pulumi.Input<string>;
-        /**
-         * (Updatable) Build control flow conditions that determine the relevance of the task execution.
-         */
-        condition?: pulumi.Input<string>;
-        /**
-         * (Updatable) Preferences to send notifications on the task activities.
-         */
-        notificationPreferences?: pulumi.Input<inputs.FleetAppsManagement.RunbookAssociationsTaskStepPropertiesNotificationPreferences>;
-        /**
-         * (Updatable) Pause Details
-         */
-        pauseDetails?: pulumi.Input<inputs.FleetAppsManagement.RunbookAssociationsTaskStepPropertiesPauseDetails>;
-        /**
-         * (Updatable) The runOn condition for the task/group/container. Build task execution conditions if applicable to product and product-specific components. This condition is relevant when handling product stack workflows. Example: target.product.name = Oracle WebLogic Server OR target.product.name = Oracle HTTP Server
-         */
-        runOn?: pulumi.Input<string>;
-    }
-
-    export interface RunbookAssociationsTaskStepPropertiesNotificationPreferences {
-        /**
-         * (Updatable) Enables notification on pause.
-         */
-        shouldNotifyOnPause?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) Enables or disables notification on Task Failures.
-         */
-        shouldNotifyOnTaskFailure?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) Enables or disables notification on Task Success.
-         */
-        shouldNotifyOnTaskSuccess?: pulumi.Input<boolean>;
-    }
-
-    export interface RunbookAssociationsTaskStepPropertiesPauseDetails {
-        /**
-         * (Updatable) Time in minutes to apply Pause.
-         */
-        durationInMinutes?: pulumi.Input<number>;
-        /**
-         * (Updatable) Pause based On.
-         */
-        kind: pulumi.Input<string>;
-    }
-
-    export interface RunbookAssociationsTaskTaskRecordDetails {
-        /**
-         * (Updatable) The description of the task.
-         */
-        description?: pulumi.Input<string>;
-        /**
-         * (Updatable) Execution details.
-         */
-        executionDetails?: pulumi.Input<inputs.FleetAppsManagement.RunbookAssociationsTaskTaskRecordDetailsExecutionDetails>;
-        /**
-         * (Updatable) Is this an Apply Subject Task? Ex. Patch Execution Task
-         */
-        isApplySubjectTask?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) Make a copy of this task in Library
-         */
-        isCopyToLibraryEnabled?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) Is this a discovery output task?
-         */
-        isDiscoveryOutputTask?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) The name of the task
-         */
-        name?: pulumi.Input<string>;
-        /**
-         * (Updatable) The OS for the task.
-         */
-        osType?: pulumi.Input<string>;
-        /**
-         * (Updatable) The platform of the runbook.
-         */
-        platform?: pulumi.Input<string>;
-        /**
-         * (Updatable) The properties of the task.
-         */
-        properties?: pulumi.Input<inputs.FleetAppsManagement.RunbookAssociationsTaskTaskRecordDetailsProperties>;
-        /**
-         * (Updatable) The scope of the task.
-         */
-        scope: pulumi.Input<string>;
-        /**
-         * (Updatable) The ID of taskRecord.
-         */
-        taskRecordId?: pulumi.Input<string>;
-    }
-
-    export interface RunbookAssociationsTaskTaskRecordDetailsExecutionDetails {
-        /**
-         * (Updatable) Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
-         */
-        command?: pulumi.Input<string>;
-        /**
-         * (Updatable) Content Source details.
-         */
-        content?: pulumi.Input<inputs.FleetAppsManagement.RunbookAssociationsTaskTaskRecordDetailsExecutionDetailsContent>;
-        /**
-         * (Updatable) Credentials required for executing the task.
-         */
-        credentials?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.RunbookAssociationsTaskTaskRecordDetailsExecutionDetailsCredential>[]>;
-        /**
-         * (Updatable) Endpoint to be invoked.
-         */
-        endpoint?: pulumi.Input<string>;
-        /**
-         * (Updatable) The action type of the task
-         */
-        executionType: pulumi.Input<string>;
-        /**
-         * (Updatable) The variable of the task. At least one of the dynamicArguments or output needs to be provided.
-         */
-        variables?: pulumi.Input<inputs.FleetAppsManagement.RunbookAssociationsTaskTaskRecordDetailsExecutionDetailsVariables>;
-    }
-
-    export interface RunbookAssociationsTaskTaskRecordDetailsExecutionDetailsContent {
-        /**
-         * (Updatable) Bucket Name.
-         */
-        bucket: pulumi.Input<string>;
-        /**
-         * (Updatable) md5 checksum of the artifact.
-         */
-        checksum: pulumi.Input<string>;
-        /**
-         * (Updatable) Namespace.
-         */
-        namespace: pulumi.Input<string>;
-        /**
-         * (Updatable) Object Name.
-         */
-        object: pulumi.Input<string>;
-        /**
-         * (Updatable) Content Source type details.
-         */
-        sourceType: pulumi.Input<string>;
-    }
-
-    export interface RunbookAssociationsTaskTaskRecordDetailsExecutionDetailsCredential {
-        /**
-         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-         */
-        displayName?: pulumi.Input<string>;
-        /**
-         * (Updatable) The OCID of the resource.
-         */
-        id?: pulumi.Input<string>;
-    }
-
-    export interface RunbookAssociationsTaskTaskRecordDetailsExecutionDetailsVariables {
-        /**
-         * (Updatable) The input variables for the task.
-         */
-        inputVariables?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.RunbookAssociationsTaskTaskRecordDetailsExecutionDetailsVariablesInputVariable>[]>;
-        /**
-         * (Updatable) The list of output variables.
-         */
-        outputVariables?: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface RunbookAssociationsTaskTaskRecordDetailsExecutionDetailsVariablesInputVariable {
-        /**
-         * (Updatable) The description of the argument.
-         */
-        description?: pulumi.Input<string>;
-        /**
-         * (Updatable) The name of the argument.
-         */
-        name?: pulumi.Input<string>;
-        /**
-         * (Updatable) Input argument Type.
-         */
-        type?: pulumi.Input<string>;
-    }
-
-    export interface RunbookAssociationsTaskTaskRecordDetailsProperties {
-        /**
-         * (Updatable) The number of retries allowed.
-         */
-        numRetries?: pulumi.Input<number>;
-        /**
-         * (Updatable) The timeout in seconds for the task.
-         */
-        timeoutInSeconds?: pulumi.Input<number>;
-    }
-
-    export interface SchedulerDefinitionActionGroup {
-        /**
-         * (Updatable) Application Type associated. Only applicable if type is ENVIRONMENT.
-         */
-        applicationType?: pulumi.Input<string>;
-        /**
-         * (Updatable) LifeCycle Operation
-         */
-        lifecycleOperation?: pulumi.Input<string>;
-        /**
-         * (Updatable) Product associated. Only applicable if type is PRODUCT.
-         */
-        product?: pulumi.Input<string>;
-        /**
-         * (Updatable) Provide the ID of the resource. Example fleet ID.
-         */
-        resourceId: pulumi.Input<string>;
-        /**
-         * (Updatable) ID of the runbook
-         */
-        runbookId: pulumi.Input<string>;
-        /**
-         * (Updatable) Provide subjects that need to be considered for the schedule.
-         */
-        subjects?: pulumi.Input<pulumi.Input<string>[]>;
-        /**
-         * (Updatable) Provide the target if schedule is created against the target
-         */
-        targetId?: pulumi.Input<string>;
-        /**
-         * (Updatable) ActionGroup Type associated.
-         */
-        type?: pulumi.Input<string>;
-    }
-
-    export interface SchedulerDefinitionRunBook {
-        /**
-         * (Updatable) The ID of the Runbook
-         */
-        id: pulumi.Input<string>;
-        /**
-         * (Updatable) Input Parameters for the Task
-         */
-        inputParameters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.SchedulerDefinitionRunBookInputParameter>[]>;
-    }
-
-    export interface SchedulerDefinitionRunBookInputParameter {
-        /**
-         * (Updatable) Arguments for the Task
-         */
-        arguments?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.SchedulerDefinitionRunBookInputParameterArgument>[]>;
-        /**
-         * (Updatable) stepName for which the input parameters are provided
-         */
-        stepName: pulumi.Input<string>;
-    }
-
-    export interface SchedulerDefinitionRunBookInputParameterArgument {
-        /**
-         * (Updatable) Name of the output variable
-         */
-        name: pulumi.Input<string>;
-        /**
-         * (Updatable) The task output
-         */
-        value?: pulumi.Input<string>;
-    }
-
-    export interface SchedulerDefinitionSchedule {
-        /**
-         * (Updatable) Duration if schedule type is Custom
-         */
-        duration?: pulumi.Input<string>;
-        /**
-         * (Updatable) Start Date for the schedule. An RFC3339 formatted datetime string
-         */
-        executionStartdate: pulumi.Input<string>;
-        /**
-         * (Updatable) Provide MaintenanceWindowId if Schedule Type is Maintenance Window
-         */
-        maintenanceWindowId?: pulumi.Input<string>;
-        /**
-         * (Updatable) Recurrence rule specification if Schedule Type is Custom and Recurring
-         */
-        recurrences?: pulumi.Input<string>;
-        /**
-         * (Updatable) Schedule Type
-         *
-         *
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         */
-        type: pulumi.Input<string>;
-    }
-
-    export interface TaskRecordDetails {
-        /**
-         * (Updatable) Execution details.
-         */
-        executionDetails: pulumi.Input<inputs.FleetAppsManagement.TaskRecordDetailsExecutionDetails>;
-        /**
-         * (Updatable) Is this an Apply Subject Task?  Set this to true for a Patch Execution Task which applies patches(subjects) on a target.
-         */
-        isApplySubjectTask?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) Is this a discovery output task?
-         */
-        isDiscoveryOutputTask?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) The OS for the task
-         */
-        osType: pulumi.Input<string>;
-        /**
-         * (Updatable) The platform of the runbook.
-         */
-        platform?: pulumi.Input<string>;
-        /**
-         * (Updatable) The properties of the task.
-         */
-        properties?: pulumi.Input<inputs.FleetAppsManagement.TaskRecordDetailsProperties>;
-        /**
-         * (Updatable) The scope of the task
-         */
-        scope: pulumi.Input<string>;
-    }
-
-    export interface TaskRecordDetailsExecutionDetails {
-        /**
-         * (Updatable) Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
-         */
-        command?: pulumi.Input<string>;
-        /**
-         * (Updatable) Content Source details.
-         */
-        content?: pulumi.Input<inputs.FleetAppsManagement.TaskRecordDetailsExecutionDetailsContent>;
-        /**
-         * (Updatable) Credentials required for executing the task.
-         */
-        credentials?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.TaskRecordDetailsExecutionDetailsCredential>[]>;
-        /**
-         * (Updatable) Endpoint to be invoked.
-         */
-        endpoint?: pulumi.Input<string>;
-        /**
-         * (Updatable) The action type of the task
-         */
-        executionType: pulumi.Input<string>;
-        /**
-         * (Updatable) The variable of the task. At least one of the dynamicArguments or output needs to be provided.
-         */
-        variables?: pulumi.Input<inputs.FleetAppsManagement.TaskRecordDetailsExecutionDetailsVariables>;
-    }
-
-    export interface TaskRecordDetailsExecutionDetailsContent {
-        /**
-         * (Updatable) Bucket Name.
-         */
-        bucket: pulumi.Input<string>;
-        /**
-         * (Updatable) md5 checksum of the artifact.
-         */
-        checksum: pulumi.Input<string>;
-        /**
-         * (Updatable) Namespace.
-         */
-        namespace: pulumi.Input<string>;
-        /**
-         * (Updatable) Object Name.
-         */
-        object: pulumi.Input<string>;
-        /**
-         * (Updatable) Content Source type details.
-         */
-        sourceType: pulumi.Input<string>;
-    }
-
-    export interface TaskRecordDetailsExecutionDetailsCredential {
-        /**
-         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-         */
-        displayName?: pulumi.Input<string>;
-        /**
-         * (Updatable) The OCID of the resource.
-         */
-        id?: pulumi.Input<string>;
-    }
-
-    export interface TaskRecordDetailsExecutionDetailsVariables {
-        /**
-         * (Updatable) The input variables for the task.
-         */
-        inputVariables?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.TaskRecordDetailsExecutionDetailsVariablesInputVariable>[]>;
-        /**
-         * (Updatable) The list of output variables.
-         */
-        outputVariables?: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface TaskRecordDetailsExecutionDetailsVariablesInputVariable {
-        /**
-         * (Updatable) The description of the argument.
-         */
-        description?: pulumi.Input<string>;
-        /**
-         * (Updatable) The name of the argument.
-         */
-        name?: pulumi.Input<string>;
-        /**
-         * (Updatable) Input argument Type.
-         */
-        type?: pulumi.Input<string>;
-    }
-
-    export interface TaskRecordDetailsProperties {
-        /**
-         * (Updatable) The number of retries allowed.
-         */
-        numRetries: pulumi.Input<number>;
-        /**
-         * (Updatable) The timeout in seconds for the task.
-         */
-        timeoutInSeconds: pulumi.Input<number>;
-    }
 }
 
 export namespace FleetSoftwareUpdate {
@@ -71942,6 +70722,24 @@ export namespace LogAnalytics {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetLogAnalyticsEntityTopologyFilter {
+        /**
+         * Log analytics entity name.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetLogAnalyticsEntityTopologyFilterArgs {
+        /**
+         * Log analytics entity name.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetLogAnalyticsLogGroupsFilter {
         name: string;
         regex?: boolean;
@@ -72002,6 +70800,24 @@ export namespace LogAnalytics {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetNamespaceParserActionsFilter {
+        /**
+         * The parser action name used for filtering.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetNamespaceParserActionsFilterArgs {
+        /**
+         * The parser action name used for filtering.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetNamespacePropertiesMetadataFilter {
         /**
          * The property name used for filtering.
@@ -72051,6 +70867,24 @@ export namespace LogAnalytics {
     }
 
     export interface GetNamespaceStorageOverlappingRecallsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetNamespaceTemplatesFilter {
+        /**
+         * The template name used for filtering.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetNamespaceTemplatesFilterArgs {
+        /**
+         * The template name used for filtering.
+         */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -72212,6 +71046,94 @@ export namespace LogAnalytics {
         conditionValue: pulumi.Input<string>;
     }
 
+    export interface NamespaceLookupCategory {
+        /**
+         * (Updatable) The category description.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * (Updatable) The category display name.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * (Updatable) The system flag. A value of false denotes a user-created category. A value of true denotes an Oracle-defined category.
+         */
+        isSystem?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The unique name that identifies the category.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * (Updatable) The category type. Values include "PRODUCT", "TIER", "VENDOR" and "GENERIC".
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface NamespaceLookupField {
+        /**
+         * (Updatable) The common field name.
+         */
+        commonFieldName?: pulumi.Input<string>;
+        /**
+         * (Updatable) The default match value.
+         */
+        defaultMatchValue?: pulumi.Input<string>;
+        /**
+         * (Updatable) The display name.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * (Updatable) A flag indicating whether or not the field is a common field.
+         */
+        isCommonField?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The match operator.
+         */
+        matchOperator?: pulumi.Input<string>;
+        /**
+         * (Updatable) The field name.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * (Updatable) The position.
+         */
+        position?: pulumi.Input<string>;
+    }
+
+    export interface NamespaceLookupReferringSource {
+        /**
+         * The canonical link.
+         */
+        canonicalLink?: pulumi.Input<string>;
+        /**
+         * The total count.
+         */
+        totalCount?: pulumi.Input<string>;
+    }
+
+    export interface NamespaceLookupStatusSummary {
+        /**
+         * The number of chunks processed.
+         */
+        chunksProcessed?: pulumi.Input<string>;
+        /**
+         * The failure details, if any.
+         */
+        failureDetails?: pulumi.Input<string>;
+        /**
+         * The filename.
+         */
+        filename?: pulumi.Input<string>;
+        /**
+         * The status.
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * The total number of chunks.
+         */
+        totalChunks?: pulumi.Input<string>;
+    }
+
     export interface NamespaceScheduledTaskAction {
         /**
          * if true, purge child compartments data
@@ -72238,9 +71160,13 @@ export namespace LogAnalytics {
          */
         queryString?: pulumi.Input<string>;
         /**
-         * The ManagementSavedSearch id [OCID] utilized in the action.
+         * The ManagementSavedSearch id [OCID] utilized in the action.  Should not be provided when a template ID is present.
          */
         savedSearchId?: pulumi.Input<string>;
+        /**
+         * details for scheduled task using template
+         */
+        templateDetails?: pulumi.Input<inputs.LogAnalytics.NamespaceScheduledTaskActionTemplateDetails>;
         /**
          * Action type discriminator.
          */
@@ -72264,6 +71190,28 @@ export namespace LogAnalytics {
          * The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
          */
         resourceGroup?: pulumi.Input<string>;
+    }
+
+    export interface NamespaceScheduledTaskActionTemplateDetails {
+        /**
+         * The template Id of a particular template.  Should not be provided when a saved search ID is present.
+         */
+        templateId?: pulumi.Input<string>;
+        /**
+         * To store macro params.
+         */
+        templateParams?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.NamespaceScheduledTaskActionTemplateDetailsTemplateParam>[]>;
+    }
+
+    export interface NamespaceScheduledTaskActionTemplateDetailsTemplateParam {
+        /**
+         * Contains a template parameter's name.
+         */
+        keyField?: pulumi.Input<string>;
+        /**
+         * Contains the desired value for a given parameter.
+         */
+        valueField?: pulumi.Input<string>;
     }
 
     export interface NamespaceScheduledTaskSchedules {
@@ -72295,6 +71243,17 @@ export namespace LogAnalytics {
          * Schedule type discriminator.
          */
         type: pulumi.Input<string>;
+    }
+
+    export interface NamespaceStorageArchivalConfigArchivingConfiguration {
+        /**
+         * (Updatable) This is the duration data in active storage before data is archived, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+         */
+        activeStorageDuration?: pulumi.Input<string>;
+        /**
+         * (Updatable) This is the duration before archived data is deleted from object storage, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+         */
+        archivalStorageDuration?: pulumi.Input<string>;
     }
 }
 
@@ -74354,7 +73313,7 @@ export namespace MediaServices {
 export namespace MeteringComputation {
     export interface CustomTableSavedCustomTable {
         /**
-         * (Updatable) The column groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+         * (Updatable) The column groupBy key list. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
          */
         columnGroupBies?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -74370,7 +73329,7 @@ export namespace MeteringComputation {
          */
         groupByTags?: pulumi.Input<pulumi.Input<inputs.MeteringComputation.CustomTableSavedCustomTableGroupByTag>[]>;
         /**
-         * (Updatable) The row groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+         * (Updatable) The row groupBy key list. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
          */
         rowGroupBies?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -74432,7 +73391,7 @@ export namespace MeteringComputation {
 
     export interface GetSchedulesFilter {
         /**
-         * Query parameter for filtering by name
+         * The query parameter for filtering by name.
          */
         name: string;
         regex?: boolean;
@@ -74441,7 +73400,7 @@ export namespace MeteringComputation {
 
     export interface GetSchedulesFilterArgs {
         /**
-         * Query parameter for filtering by name
+         * The query parameter for filtering by name.
          */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
@@ -74528,7 +73487,7 @@ export namespace MeteringComputation {
          */
         granularity: pulumi.Input<string>;
         /**
-         * (Updatable) Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+         * (Updatable) Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
          */
         groupBies?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -74536,11 +73495,16 @@ export namespace MeteringComputation {
          */
         groupByTags?: pulumi.Input<pulumi.Input<inputs.MeteringComputation.QueryQueryDefinitionReportQueryGroupByTag>[]>;
         /**
-         * (Updatable) Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+         * (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
          */
         isAggregateByTime?: pulumi.Input<boolean>;
         /**
-         * (Updatable) The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
+         * (Updatable) The query usage type. COST by default if it is missing.
+         * * Usage: Query the usage data.
+         * * Cost: Query the cost/billing data.
+         * * Credit: Query the credit adjustments data.
+         * * ExpiredCredit: Query the expired credits data.
+         * * AllCredit: Query the credit adjustments and expired credit.
          */
         queryType?: pulumi.Input<string>;
         /**
@@ -74705,13 +73669,17 @@ export namespace MeteringComputation {
          */
         compartmentPath?: pulumi.Input<string>;
         /**
-         * The carbon emission in MTCO2 unit.
+         * The carbon emission usage in MTCO2 units.
          */
         computedCarbonEmission?: pulumi.Input<number>;
         /**
-         * The method used to calculate carbon emission.
+         * Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
          */
         emissionCalculationMethod?: pulumi.Input<string>;
+        /**
+         * Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+         */
+        emissionType?: pulumi.Input<string>;
         /**
          * Platform for the cost.
          */
@@ -74791,7 +73759,7 @@ export namespace MeteringComputation {
          */
         displayName: pulumi.Input<string>;
         /**
-         * (Updatable) The request of the generated usage carbon emissions report.
+         * (Updatable) The request of the generated carbon emissions usage report.
          */
         reportQuery: pulumi.Input<inputs.MeteringComputation.UsageCarbonEmissionsQueryQueryDefinitionReportQuery>;
         /**
@@ -74821,9 +73789,21 @@ export namespace MeteringComputation {
          */
         compartmentDepth?: pulumi.Input<number>;
         /**
-         * (Updatable) The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+         * (Updatable) The user interface date range, for example, LAST_THREE_MONTHS. Overrides the timeUsageStarted and timeUsageEnded properties.
          */
         dateRangeName?: pulumi.Input<string>;
+        /**
+         * (Updatable) Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+         */
+        emissionCalculationMethod?: pulumi.Input<string>;
+        /**
+         * (Updatable) Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+         */
+        emissionType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+         */
+        granularity?: pulumi.Input<string>;
         /**
          * (Updatable) Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
          */
@@ -74833,7 +73813,7 @@ export namespace MeteringComputation {
          */
         groupByTags?: pulumi.Input<pulumi.Input<inputs.MeteringComputation.UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag>[]>;
         /**
-         * (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+         * (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or costs over the query time period are summed.
          */
         isAggregateByTime?: pulumi.Input<boolean>;
         /**
@@ -75047,15 +74027,15 @@ export namespace MeteringComputation {
 
     export interface UsageStatementEmailRecipientsGroupRecipientsList {
         /**
-         * (Updatable) the email of the recipient.
+         * (Updatable) The recipient email address.
          */
         emailId: pulumi.Input<string>;
         /**
-         * (Updatable) the first name of the recipient.
+         * (Updatable) The recipient first name.
          */
         firstName?: pulumi.Input<string>;
         /**
-         * (Updatable) the last name of the recipient.
+         * (Updatable) The recipient last name.
          */
         lastName?: pulumi.Input<string>;
         /**
@@ -75565,7 +74545,11 @@ export namespace Mysql {
          */
         mysqlVersion?: pulumi.Input<string>;
         /**
-         * The port for primary endpoint of the DB System to listen on.
+         * Network Security Group OCIDs used for the VNIC attachment.
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
          */
         port?: pulumi.Input<number>;
         /**
@@ -75580,6 +74564,10 @@ export namespace Mysql {
          * The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
          */
         region?: pulumi.Input<string>;
+        /**
+         * REST configuration details.
+         */
+        rests?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlBackupDbSystemSnapshotRest>[]>;
         /**
          * Secure connection configuration details.
          */
@@ -75695,7 +74683,7 @@ export namespace Mysql {
          */
         modes?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * The port for primary endpoint of the DB System to listen on.
+         * The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
          */
         port?: pulumi.Input<number>;
         /**
@@ -75744,6 +74732,17 @@ export namespace Mysql {
          * The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
          */
         readEndpointIpAddress?: pulumi.Input<string>;
+    }
+
+    export interface MysqlBackupDbSystemSnapshotRest {
+        /**
+         * Select how REST is configured across the DB System instances.
+         */
+        configuration?: pulumi.Input<string>;
+        /**
+         * The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+         */
+        port?: pulumi.Input<number>;
     }
 
     export interface MysqlBackupDbSystemSnapshotSecureConnection {
@@ -76878,6 +75877,17 @@ export namespace Mysql {
         readEndpointIpAddress?: pulumi.Input<string>;
     }
 
+    export interface MysqlDbSystemRest {
+        /**
+         * (Updatable) Select how REST is configured across the DB System instances.
+         */
+        configuration: pulumi.Input<string>;
+        /**
+         * (Updatable) The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+         */
+        port?: pulumi.Input<number>;
+    }
+
     export interface MysqlDbSystemSecureConnections {
         /**
          * (Updatable) Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
@@ -76921,6 +75931,10 @@ export namespace Mysql {
          * (Updatable) The MySQL version to be used by the read replica.
          */
         mysqlVersion?: pulumi.Input<string>;
+        /**
+         * (Updatable) Network Security Group OCIDs used for the VNIC attachment.
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation. 
          *
@@ -77046,6 +76060,24 @@ export namespace NetworkFirewall {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetNetworkFirewallPolicyNatRulesFilter {
+        /**
+         * Name for the NAT rule, must be unique within the policy.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetNetworkFirewallPolicyNatRulesFilterArgs {
+        /**
+         * Name for the NAT rule, must be unique within the policy.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetNetworkFirewallPolicySecurityRulesFilter {
         /**
          * Name for the Security rule, must be unique within the policy.
@@ -77148,6 +76180,17 @@ export namespace NetworkFirewall {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface NetworkFirewallNatConfiguration {
+        /**
+         * (Updatable) To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall. The value of this field can not be false to release the NAT IPs given that the attached network firewall policy does not contains any NAT rules. The value of this field should be set to true if the network firewall policy being applied contains NAT rules.
+         */
+        mustEnablePrivateNat: pulumi.Input<boolean>;
+        /**
+         * An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+         */
+        natIpAddressLists?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface NetworkFirewallPolicyDecryptionRuleCondition {
         /**
          * (Updatable) An array of address list names to be evaluated against the traffic destination address.
@@ -77170,6 +76213,32 @@ export namespace NetworkFirewall {
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        beforeRule?: pulumi.Input<string>;
+    }
+
+    export interface NetworkFirewallPolicyNatRuleCondition {
+        /**
+         * (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+         */
+        destinationAddresses?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) A Service name to be evaluated against the traffic protocol and protocol-specific parameters.
+         */
+        service?: pulumi.Input<string>;
+        /**
+         * (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+         */
+        sourceAddresses?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface NetworkFirewallPolicyNatRulePosition {
+        /**
+         * (Updatable) Identifier for rule after which this rule lies.
+         */
+        afterRule?: pulumi.Input<string>;
+        /**
+         * (Updatable) Identifier for rule before which this rule lies.
          */
         beforeRule?: pulumi.Input<string>;
     }
@@ -78889,6 +77958,37 @@ export namespace Opensearch {
         natIp?: pulumi.Input<string>;
     }
 
+    export interface ClusterSecuritySamlConfig {
+        /**
+         * The backend role of admins who have all permissions like local master user
+         */
+        adminBackendRole?: pulumi.Input<string>;
+        /**
+         * The unique name for a identity provider entity
+         */
+        idpEntityId: pulumi.Input<string>;
+        /**
+         * The content of identity provider metadata
+         */
+        idpMetadataContent: pulumi.Input<string>;
+        /**
+         * A flag determine whether SAML is enabled
+         */
+        isEnabled: pulumi.Input<boolean>;
+        /**
+         * The endpoint of opendashboard
+         */
+        opendashboardUrl?: pulumi.Input<string>;
+        /**
+         * The roles key is sued to get backend roles from SAML assertion
+         */
+        rolesKey?: pulumi.Input<string>;
+        /**
+         * The subject key is used to get username from SAML assertion. By default, it is NameID
+         */
+        subjectKey?: pulumi.Input<string>;
+    }
+
     export interface GetOpensearchClusterPipelinesFilter {
         name: string;
         regex?: boolean;
@@ -79757,185 +78857,6 @@ export namespace Optimizer {
          * The URL path to documentation that explains how to perform the action.
          */
         url?: pulumi.Input<string>;
-    }
-}
-
-export namespace OsManagement {
-    export interface GetManagedInstanceGroupsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetManagedInstanceGroupsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetManagedInstanceModuleStreamsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetManagedInstanceModuleStreamsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetManagedInstanceStreamProfileFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetManagedInstanceStreamProfileFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetManagedInstancesFilter {
-        /**
-         * software source name
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetManagedInstancesFilterArgs {
-        /**
-         * software source name
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetSoftwareSourceStreamProfileFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetSoftwareSourceStreamProfileFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetSoftwareSourcesFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetSoftwareSourcesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface ManagedInstanceAutonomouse {
-        /**
-         * True if daily updates are enabled
-         */
-        isAutoUpdateEnabled?: pulumi.Input<boolean>;
-    }
-
-    export interface ManagedInstanceChildSoftwareSource {
-        /**
-         * software source identifier
-         */
-        id?: pulumi.Input<string>;
-        /**
-         * software source name
-         */
-        name?: pulumi.Input<string>;
-    }
-
-    export interface ManagedInstanceGroupManagedInstance {
-        /**
-         * (Updatable) Managed Instance Group identifier
-         */
-        displayName?: pulumi.Input<string>;
-        /**
-         * unique identifier that is immutable on creation
-         */
-        id?: pulumi.Input<string>;
-    }
-
-    export interface ManagedInstanceManagedInstanceGroup {
-        /**
-         * User friendly name
-         */
-        displayName?: pulumi.Input<string>;
-        /**
-         * software source identifier
-         */
-        id?: pulumi.Input<string>;
-    }
-
-    export interface ManagedInstanceManagementChildSoftwareSource {
-        /**
-         * software source identifier
-         */
-        id?: pulumi.Input<string>;
-        /**
-         * software source name
-         */
-        name?: pulumi.Input<string>;
-    }
-
-    export interface ManagedInstanceManagementManagedInstanceGroup {
-        /**
-         * User friendly name
-         */
-        displayName?: pulumi.Input<string>;
-        /**
-         * unique identifier that is immutable on creation
-         */
-        id?: pulumi.Input<string>;
-    }
-
-    export interface ManagedInstanceManagementParentSoftwareSource {
-        /**
-         * software source identifier
-         */
-        id?: pulumi.Input<string>;
-        /**
-         * software source name
-         *
-         *
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         */
-        name?: pulumi.Input<string>;
-    }
-
-    export interface ManagedInstanceParentSoftwareSource {
-        /**
-         * software source identifier
-         */
-        id?: pulumi.Input<string>;
-        /**
-         * software source name
-         */
-        name?: pulumi.Input<string>;
-    }
-
-    export interface SoftwareSourceAssociatedManagedInstance {
-        /**
-         * (Updatable) User friendly name for the software source
-         */
-        displayName?: pulumi.Input<string>;
-        /**
-         * OCID for the Software Source
-         */
-        id?: pulumi.Input<string>;
     }
 }
 
@@ -83469,501 +82390,6 @@ export namespace ServiceManagerProxy {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-}
-
-export namespace ServiceMesh {
-    export interface AccessPolicyRule {
-        /**
-         * (Updatable) Action for the traffic between the source and the destination.
-         */
-        action: pulumi.Input<string>;
-        /**
-         * (Updatable) Target of the access policy. This can either be the source or the destination of the traffic.
-         */
-        destination: pulumi.Input<inputs.ServiceMesh.AccessPolicyRuleDestination>;
-        /**
-         * (Updatable) Target of the access policy. This can either be the source or the destination of the traffic.
-         */
-        source: pulumi.Input<inputs.ServiceMesh.AccessPolicyRuleSource>;
-    }
-
-    export interface AccessPolicyRuleDestination {
-        /**
-         * (Updatable) The hostnames of the external service. Only applicable for HTTP and HTTPS protocols. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com", "*". Hostname "*" can be used to allow all hosts.
-         */
-        hostnames?: pulumi.Input<pulumi.Input<string>[]>;
-        /**
-         * (Updatable) The OCID of the ingress gateway resource.
-         */
-        ingressGatewayId?: pulumi.Input<string>;
-        /**
-         * (Updatable) The ipAddresses of the external service in CIDR notation. Only applicable for TCP protocol. All requests matching the given CIDR notation will pass through. In case a wildcard CIDR "0.0.0.0/0" is provided, the same port cannot be used for a virtual service communication.
-         */
-        ipAddresses?: pulumi.Input<pulumi.Input<string>[]>;
-        /**
-         * (Updatable) Ports exposed by an external service. If left empty all ports will be allowed.
-         */
-        ports?: pulumi.Input<pulumi.Input<number>[]>;
-        /**
-         * (Updatable) Protocol of the external service
-         */
-        protocol?: pulumi.Input<string>;
-        /**
-         * (Updatable) Traffic type of the target.
-         */
-        type: pulumi.Input<string>;
-        /**
-         * (Updatable) The OCID of the virtual service resource.
-         */
-        virtualServiceId?: pulumi.Input<string>;
-    }
-
-    export interface AccessPolicyRuleSource {
-        /**
-         * (Updatable) The hostnames of the external service. Only applicable for HTTP and HTTPS protocols. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com", "*". Hostname "*" can be used to allow all hosts.
-         */
-        hostnames?: pulumi.Input<pulumi.Input<string>[]>;
-        /**
-         * (Updatable) The OCID of the ingress gateway resource.
-         */
-        ingressGatewayId?: pulumi.Input<string>;
-        /**
-         * (Updatable) The ipAddresses of the external service in CIDR notation. Only applicable for TCP protocol. All requests matching the given CIDR notation will pass through. In case a wildcard CIDR "0.0.0.0/0" is provided, the same port cannot be used for a virtual service communication.
-         */
-        ipAddresses?: pulumi.Input<pulumi.Input<string>[]>;
-        /**
-         * (Updatable) Ports exposed by an external service. If left empty all ports will be allowed.
-         */
-        ports?: pulumi.Input<pulumi.Input<number>[]>;
-        /**
-         * (Updatable) Protocol of the external service
-         */
-        protocol?: pulumi.Input<string>;
-        /**
-         * (Updatable) Traffic type of the target.
-         */
-        type: pulumi.Input<string>;
-        /**
-         * (Updatable) The OCID of the virtual service resource.
-         *
-         *
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         */
-        virtualServiceId?: pulumi.Input<string>;
-    }
-
-    export interface GetAccessPoliciesFilter {
-        /**
-         * A filter to return only resources that match the entire name given.
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetAccessPoliciesFilterArgs {
-        /**
-         * A filter to return only resources that match the entire name given.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetIngressGatewayRouteTablesFilter {
-        /**
-         * A filter to return only resources that match the entire name given.
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetIngressGatewayRouteTablesFilterArgs {
-        /**
-         * A filter to return only resources that match the entire name given.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetIngressGatewaysFilter {
-        /**
-         * A filter to return only resources that match the entire name given.
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetIngressGatewaysFilterArgs {
-        /**
-         * A filter to return only resources that match the entire name given.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetMeshesFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetMeshesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetVirtualDeploymentsFilter {
-        /**
-         * A filter to return only resources that match the entire name given.
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetVirtualDeploymentsFilterArgs {
-        /**
-         * A filter to return only resources that match the entire name given.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetVirtualServiceRouteTablesFilter {
-        /**
-         * A filter to return only resources that match the entire name given.
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetVirtualServiceRouteTablesFilterArgs {
-        /**
-         * A filter to return only resources that match the entire name given.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetVirtualServicesFilter {
-        /**
-         * A filter to return only resources that match the entire name given.
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetVirtualServicesFilterArgs {
-        /**
-         * A filter to return only resources that match the entire name given.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface IngressGatewayAccessLogging {
-        /**
-         * (Updatable) Determines if the logging configuration is enabled.
-         */
-        isEnabled?: pulumi.Input<boolean>;
-    }
-
-    export interface IngressGatewayHost {
-        /**
-         * (Updatable) Hostnames of the host. Applicable only for HTTP and TLS_PASSTHROUGH listeners. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com".
-         */
-        hostnames?: pulumi.Input<pulumi.Input<string>[]>;
-        /**
-         * (Updatable) The listeners for the ingress gateway.
-         */
-        listeners: pulumi.Input<pulumi.Input<inputs.ServiceMesh.IngressGatewayHostListener>[]>;
-        /**
-         * (Updatable) A user-friendly name for the host. The name must be unique within the same ingress gateway. This name can be used in the ingress gateway route table resource to attach a route to this host.  Example: `MyExampleHost`
-         */
-        name: pulumi.Input<string>;
-    }
-
-    export interface IngressGatewayHostListener {
-        /**
-         * (Updatable) Port on which ingress gateway is listening.
-         */
-        port: pulumi.Input<number>;
-        /**
-         * (Updatable) Type of protocol used.
-         */
-        protocol: pulumi.Input<string>;
-        /**
-         * (Updatable) TLS enforcement config for the ingress listener.
-         */
-        tls?: pulumi.Input<inputs.ServiceMesh.IngressGatewayHostListenerTls>;
-    }
-
-    export interface IngressGatewayHostListenerTls {
-        /**
-         * (Updatable) Resource representing the TLS configuration used for validating client certificates.
-         */
-        clientValidation?: pulumi.Input<inputs.ServiceMesh.IngressGatewayHostListenerTlsClientValidation>;
-        /**
-         * (Updatable) DISABLED: Connection can only be plaintext. PERMISSIVE: Connection can be either plaintext or TLS/mTLS. If the clientValidation.trustedCaBundle property is configured for the listener, mTLS is performed and the client's certificates are validated by the gateway. TLS: Connection can only be TLS.  MUTUAL_TLS: Connection can only be MTLS.
-         */
-        mode: pulumi.Input<string>;
-        /**
-         * (Updatable) Resource representing the location of the TLS certificate.
-         */
-        serverCertificate?: pulumi.Input<inputs.ServiceMesh.IngressGatewayHostListenerTlsServerCertificate>;
-    }
-
-    export interface IngressGatewayHostListenerTlsClientValidation {
-        /**
-         * (Updatable) A list of alternate names to verify the subject identity in the certificate presented by the client.
-         */
-        subjectAlternateNames?: pulumi.Input<pulumi.Input<string>[]>;
-        /**
-         * (Updatable) Resource representing the CA bundle.
-         */
-        trustedCaBundle?: pulumi.Input<inputs.ServiceMesh.IngressGatewayHostListenerTlsClientValidationTrustedCaBundle>;
-    }
-
-    export interface IngressGatewayHostListenerTlsClientValidationTrustedCaBundle {
-        /**
-         * (Updatable) The OCID of the CA Bundle resource.
-         */
-        caBundleId?: pulumi.Input<string>;
-        /**
-         * (Updatable) Name of the secret. For Kubernetes this will be the name of an opaque Kubernetes secret with key ca.crt. For other platforms the secret must be mounted at: /etc/oci/secrets/${secretName}/ca.crt
-         */
-        secretName?: pulumi.Input<string>;
-        /**
-         * (Updatable) Type of certificate.
-         */
-        type: pulumi.Input<string>;
-    }
-
-    export interface IngressGatewayHostListenerTlsServerCertificate {
-        /**
-         * (Updatable) The OCID of the leaf certificate resource.
-         */
-        certificateId?: pulumi.Input<string>;
-        /**
-         * (Updatable) Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
-         */
-        secretName?: pulumi.Input<string>;
-        /**
-         * (Updatable) Type of certificate.
-         */
-        type: pulumi.Input<string>;
-    }
-
-    export interface IngressGatewayMtls {
-        /**
-         * The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
-         */
-        certificateId?: pulumi.Input<string>;
-        /**
-         * (Updatable) The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
-         */
-        maximumValidity?: pulumi.Input<number>;
-    }
-
-    export interface IngressGatewayRouteTableRouteRule {
-        /**
-         * (Updatable) The destination of the request.
-         */
-        destinations: pulumi.Input<pulumi.Input<inputs.ServiceMesh.IngressGatewayRouteTableRouteRuleDestination>[]>;
-        /**
-         * (Updatable) The ingress gateway host to which the route rule attaches. If not specified, the route rule gets attached to all hosts on the ingress gateway.
-         */
-        ingressGatewayHost?: pulumi.Input<inputs.ServiceMesh.IngressGatewayRouteTableRouteRuleIngressGatewayHost>;
-        /**
-         * (Updatable) If true, the rule will check that the content-type header has a application/grpc or one of the various application/grpc+ values.
-         */
-        isGrpc?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) If true, the hostname will be rewritten to the target virtual deployment's DNS hostname.
-         */
-        isHostRewriteEnabled?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) If true, the matched path prefix will be rewritten to '/' before being directed to the target virtual deployment.
-         */
-        isPathRewriteEnabled?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) Route to match
-         */
-        path?: pulumi.Input<string>;
-        /**
-         * (Updatable) Match type for the route
-         */
-        pathType?: pulumi.Input<string>;
-        /**
-         * (Updatable) The maximum duration in milliseconds for the upstream service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the upstream service, consider either keeping the timeout disabled or set a sufficiently high value.
-         */
-        requestTimeoutInMs?: pulumi.Input<string>;
-        /**
-         * (Updatable) Type of protocol.
-         *
-         *
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         */
-        type: pulumi.Input<string>;
-    }
-
-    export interface IngressGatewayRouteTableRouteRuleDestination {
-        /**
-         * (Updatable) The port on the virtual service to target. Mandatory if the virtual deployments are listening on multiple ports.
-         */
-        port?: pulumi.Input<number>;
-        /**
-         * (Updatable) The OCID of the virtual service where the request will be routed.
-         */
-        virtualServiceId: pulumi.Input<string>;
-        /**
-         * (Updatable) Weight of traffic target.
-         */
-        weight?: pulumi.Input<number>;
-    }
-
-    export interface IngressGatewayRouteTableRouteRuleIngressGatewayHost {
-        /**
-         * (Updatable) Name of the ingress gateway host that this route should apply to.
-         */
-        name: pulumi.Input<string>;
-        /**
-         * (Updatable) The port of the ingress gateway host listener. Leave empty to match all ports for the host.
-         */
-        port?: pulumi.Input<number>;
-    }
-
-    export interface MeshCertificateAuthority {
-        /**
-         * The OCID of the certificate authority resource.
-         */
-        id: pulumi.Input<string>;
-    }
-
-    export interface MeshMtls {
-        /**
-         * (Updatable) DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode. 
-         *
-         *
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         */
-        minimum: pulumi.Input<string>;
-    }
-
-    export interface VirtualDeploymentAccessLogging {
-        /**
-         * (Updatable) Determines if the logging configuration is enabled.
-         */
-        isEnabled?: pulumi.Input<boolean>;
-    }
-
-    export interface VirtualDeploymentListener {
-        /**
-         * (Updatable) The maximum duration in milliseconds for which the request's stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
-         */
-        idleTimeoutInMs?: pulumi.Input<string>;
-        /**
-         * (Updatable) Port in which virtual deployment is running.
-         */
-        port: pulumi.Input<number>;
-        /**
-         * (Updatable) Type of protocol used in virtual deployment.
-         */
-        protocol: pulumi.Input<string>;
-        /**
-         * (Updatable) The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.  The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.  For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
-         */
-        requestTimeoutInMs?: pulumi.Input<string>;
-    }
-
-    export interface VirtualDeploymentServiceDiscovery {
-        /**
-         * (Updatable) The hostname of the virtual deployments.
-         */
-        hostname?: pulumi.Input<string>;
-        /**
-         * (Updatable) Type of service discovery.
-         */
-        type: pulumi.Input<string>;
-    }
-
-    export interface VirtualServiceDefaultRoutingPolicy {
-        /**
-         * (Updatable) Type of the virtual service routing policy.
-         */
-        type: pulumi.Input<string>;
-    }
-
-    export interface VirtualServiceMtls {
-        /**
-         * The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
-         */
-        certificateId?: pulumi.Input<string>;
-        /**
-         * (Updatable) The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
-         */
-        maximumValidity?: pulumi.Input<number>;
-        /**
-         * (Updatable) DISABLED: Connection is not tunneled. PERMISSIVE: Connection can be either plaintext or an mTLS tunnel. STRICT: Connection is an mTLS tunnel.  Clients without a valid certificate will be rejected.
-         */
-        mode: pulumi.Input<string>;
-    }
-
-    export interface VirtualServiceRouteTableRouteRule {
-        /**
-         * (Updatable) The destination of the request.
-         */
-        destinations: pulumi.Input<pulumi.Input<inputs.ServiceMesh.VirtualServiceRouteTableRouteRuleDestination>[]>;
-        /**
-         * (Updatable) If true, the rule will check that the content-type header has a application/grpc or one of the various application/grpc+ values.
-         */
-        isGrpc?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) Route to match
-         */
-        path?: pulumi.Input<string>;
-        /**
-         * (Updatable) Match type for the route
-         */
-        pathType?: pulumi.Input<string>;
-        /**
-         * (Updatable) The maximum duration in milliseconds for the target service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
-         */
-        requestTimeoutInMs?: pulumi.Input<string>;
-        /**
-         * (Updatable) Type of protocol.
-         */
-        type: pulumi.Input<string>;
-    }
-
-    export interface VirtualServiceRouteTableRouteRuleDestination {
-        /**
-         * (Updatable) Port on virtual deployment to target. If port is missing, the rule will target all ports on the virtual deployment.
-         */
-        port?: pulumi.Input<number>;
-        /**
-         * (Updatable) The OCID of the virtual deployment where the request will be routed.
-         */
-        virtualDeploymentId: pulumi.Input<string>;
-        /**
-         * (Updatable) Weight of traffic target.
-         */
-        weight: pulumi.Input<number>;
-    }
 }
 
 export namespace StackMonitoring {
@@ -88336,48 +86762,4 @@ export namespace Zpr {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-}
-
-export namespace oci {
-    export interface GetLustreFileStorageLustreFileSystemsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetLustreFileStorageLustreFileSystemsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface LustreFileStorageLustreFileSystemMaintenanceWindow {
-        /**
-         * Day of the week when the maintainence window starts.
-         */
-        dayOfWeek?: pulumi.Input<string>;
-        /**
-         * The time to start the maintenance window. The format is 'HH:MM', 'HH:MM' represents the time in UTC.   Example: `22:00`
-         */
-        timeStart?: pulumi.Input<string>;
-    }
-
-    export interface LustreFileStorageLustreFileSystemRootSquashConfiguration {
-        /**
-         * (Updatable) A list of NIDs allowed with this lustre file system not to be squashed. A maximum of 10 is allowed.
-         */
-        clientExceptions?: pulumi.Input<pulumi.Input<string>[]>;
-        /**
-         * (Updatable) Used when clients accessing the Lustre file system have their UID and GID remapped to `squashUid` and `squashGid`. If `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `NONE`.
-         */
-        identitySquash?: pulumi.Input<string>;
-        /**
-         * (Updatable) The GID value to remap to when squashing a client GID. See `identitySquash` for more details. If unspecified, defaults to `65534`.
-         */
-        squashGid?: pulumi.Input<string>;
-        /**
-         * (Updatable) The UID value to remap to when squashing a client UID. See `identitySquash` for more details. If unspecified, defaults to `65534`.
-         */
-        squashUid?: pulumi.Input<string>;
-    }
 }

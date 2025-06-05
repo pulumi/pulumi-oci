@@ -18,7 +18,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Usage Statement Email Recipients Group resource in Oracle Cloud Infrastructure Metering Computation service.
  * 
- * Add a list of email recipients that can receive usage statements for the subscription.
+ * Creates a list of email recipients that can receive usage statements for the subscription.
  * 
  * ## Example Usage
  * 
@@ -95,35 +95,35 @@ public class UsageStatementEmailRecipientsGroup extends com.pulumi.resources.Cus
         return this.emailRecipientsGroupId;
     }
     /**
-     * (Updatable) The list of recipient will receive the usage statement email.
+     * (Updatable) The list of recipients that will receive usage statement emails.
      * 
      */
     @Export(name="recipientsLists", refs={List.class,UsageStatementEmailRecipientsGroupRecipientsList.class}, tree="[0,1]")
     private Output<List<UsageStatementEmailRecipientsGroupRecipientsList>> recipientsLists;
 
     /**
-     * @return (Updatable) The list of recipient will receive the usage statement email.
+     * @return (Updatable) The list of recipients that will receive usage statement emails.
      * 
      */
     public Output<List<UsageStatementEmailRecipientsGroupRecipientsList>> recipientsLists() {
         return this.recipientsLists;
     }
     /**
-     * The email recipient group lifecycle state.
+     * The email recipients group lifecycle state.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return The email recipient group lifecycle state.
+     * @return The email recipients group lifecycle state.
      * 
      */
     public Output<String> state() {
         return this.state;
     }
     /**
-     * The UsageStatement Subscription unique OCID.
+     * The usage statement subscription unique OCID.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -133,7 +133,7 @@ public class UsageStatementEmailRecipientsGroup extends com.pulumi.resources.Cus
     private Output<String> subscriptionId;
 
     /**
-     * @return The UsageStatement Subscription unique OCID.
+     * @return The usage statement subscription unique OCID.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

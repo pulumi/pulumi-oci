@@ -8,13 +8,13 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 // This resource provides the Usage Carbon Emission resource in Oracle Cloud Infrastructure Metering Computation service.
 //
-// Returns usage carbon emission for the given account.
+// Returns carbon emission usage for the given account.
 //
 // ## Example Usage
 //
@@ -23,7 +23,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/meteringcomputation"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/meteringcomputation"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -31,11 +31,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := meteringcomputation.NewUsageCarbonEmission(ctx, "test_usage_carbon_emission", &meteringcomputation.UsageCarbonEmissionArgs{
-//				TenantId:         pulumi.Any(testTenant.Id),
-//				TimeUsageEnded:   pulumi.Any(usageCarbonEmissionTimeUsageEnded),
-//				TimeUsageStarted: pulumi.Any(usageCarbonEmissionTimeUsageStarted),
-//				CompartmentDepth: pulumi.Any(usageCarbonEmissionCompartmentDepth),
-//				GroupBies:        pulumi.Any(usageCarbonEmissionGroupBy),
+//				TenantId:                  pulumi.Any(testTenant.Id),
+//				TimeUsageEnded:            pulumi.Any(usageCarbonEmissionTimeUsageEnded),
+//				TimeUsageStarted:          pulumi.Any(usageCarbonEmissionTimeUsageStarted),
+//				CompartmentDepth:          pulumi.Any(usageCarbonEmissionCompartmentDepth),
+//				EmissionCalculationMethod: pulumi.Any(usageCarbonEmissionEmissionCalculationMethod),
+//				EmissionType:              pulumi.Any(usageCarbonEmissionEmissionType),
+//				Granularity:               pulumi.Any(usageCarbonEmissionGranularity),
+//				GroupBies:                 pulumi.Any(usageCarbonEmissionGroupBy),
 //				GroupByTags: meteringcomputation.UsageCarbonEmissionGroupByTagArray{
 //					&meteringcomputation.UsageCarbonEmissionGroupByTagArgs{
 //						Key:       pulumi.Any(usageCarbonEmissionGroupByTagKey),
@@ -67,13 +70,19 @@ type UsageCarbonEmission struct {
 
 	// The compartment depth level.
 	CompartmentDepth pulumi.IntOutput `pulumi:"compartmentDepth"`
+	// Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+	EmissionCalculationMethod pulumi.StringOutput `pulumi:"emissionCalculationMethod"`
+	// Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+	EmissionType pulumi.StringOutput `pulumi:"emissionType"`
+	// The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+	Granularity pulumi.StringOutput `pulumi:"granularity"`
 	// Aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "resourceName", "tenantId", "tenantName", "subscriptionId"]`
 	GroupBies pulumi.StringArrayOutput `pulumi:"groupBies"`
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
 	GroupByTags UsageCarbonEmissionGroupByTagArrayOutput `pulumi:"groupByTags"`
-	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage carbon emissions over the query time period will be added up.
+	// Specifies whether aggregated by time. If isAggregateByTime is true, all carbon emissions usage over the query time period are summed.
 	IsAggregateByTime pulumi.BoolOutput `pulumi:"isAggregateByTime"`
-	// A list of usage carbon emission items.
+	// A list of carbon emission usage items.
 	Items UsageCarbonEmissionItemArrayOutput `pulumi:"items"`
 	// Tenant ID.
 	TenantId pulumi.StringOutput `pulumi:"tenantId"`
@@ -129,13 +138,19 @@ func GetUsageCarbonEmission(ctx *pulumi.Context,
 type usageCarbonEmissionState struct {
 	// The compartment depth level.
 	CompartmentDepth *int `pulumi:"compartmentDepth"`
+	// Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+	EmissionCalculationMethod *string `pulumi:"emissionCalculationMethod"`
+	// Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+	EmissionType *string `pulumi:"emissionType"`
+	// The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+	Granularity *string `pulumi:"granularity"`
 	// Aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "resourceName", "tenantId", "tenantName", "subscriptionId"]`
 	GroupBies []string `pulumi:"groupBies"`
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
 	GroupByTags []UsageCarbonEmissionGroupByTag `pulumi:"groupByTags"`
-	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage carbon emissions over the query time period will be added up.
+	// Specifies whether aggregated by time. If isAggregateByTime is true, all carbon emissions usage over the query time period are summed.
 	IsAggregateByTime *bool `pulumi:"isAggregateByTime"`
-	// A list of usage carbon emission items.
+	// A list of carbon emission usage items.
 	Items []UsageCarbonEmissionItem `pulumi:"items"`
 	// Tenant ID.
 	TenantId *string `pulumi:"tenantId"`
@@ -153,13 +168,19 @@ type usageCarbonEmissionState struct {
 type UsageCarbonEmissionState struct {
 	// The compartment depth level.
 	CompartmentDepth pulumi.IntPtrInput
+	// Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+	EmissionCalculationMethod pulumi.StringPtrInput
+	// Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+	EmissionType pulumi.StringPtrInput
+	// The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+	Granularity pulumi.StringPtrInput
 	// Aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "resourceName", "tenantId", "tenantName", "subscriptionId"]`
 	GroupBies pulumi.StringArrayInput
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
 	GroupByTags UsageCarbonEmissionGroupByTagArrayInput
-	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage carbon emissions over the query time period will be added up.
+	// Specifies whether aggregated by time. If isAggregateByTime is true, all carbon emissions usage over the query time period are summed.
 	IsAggregateByTime pulumi.BoolPtrInput
-	// A list of usage carbon emission items.
+	// A list of carbon emission usage items.
 	Items UsageCarbonEmissionItemArrayInput
 	// Tenant ID.
 	TenantId pulumi.StringPtrInput
@@ -181,11 +202,17 @@ func (UsageCarbonEmissionState) ElementType() reflect.Type {
 type usageCarbonEmissionArgs struct {
 	// The compartment depth level.
 	CompartmentDepth *int `pulumi:"compartmentDepth"`
+	// Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+	EmissionCalculationMethod *string `pulumi:"emissionCalculationMethod"`
+	// Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+	EmissionType *string `pulumi:"emissionType"`
+	// The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+	Granularity *string `pulumi:"granularity"`
 	// Aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "resourceName", "tenantId", "tenantName", "subscriptionId"]`
 	GroupBies []string `pulumi:"groupBies"`
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
 	GroupByTags []UsageCarbonEmissionGroupByTag `pulumi:"groupByTags"`
-	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage carbon emissions over the query time period will be added up.
+	// Specifies whether aggregated by time. If isAggregateByTime is true, all carbon emissions usage over the query time period are summed.
 	IsAggregateByTime *bool `pulumi:"isAggregateByTime"`
 	// Tenant ID.
 	TenantId string `pulumi:"tenantId"`
@@ -204,11 +231,17 @@ type usageCarbonEmissionArgs struct {
 type UsageCarbonEmissionArgs struct {
 	// The compartment depth level.
 	CompartmentDepth pulumi.IntPtrInput
+	// Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+	EmissionCalculationMethod pulumi.StringPtrInput
+	// Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+	EmissionType pulumi.StringPtrInput
+	// The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+	Granularity pulumi.StringPtrInput
 	// Aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "resourceName", "tenantId", "tenantName", "subscriptionId"]`
 	GroupBies pulumi.StringArrayInput
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
 	GroupByTags UsageCarbonEmissionGroupByTagArrayInput
-	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage carbon emissions over the query time period will be added up.
+	// Specifies whether aggregated by time. If isAggregateByTime is true, all carbon emissions usage over the query time period are summed.
 	IsAggregateByTime pulumi.BoolPtrInput
 	// Tenant ID.
 	TenantId pulumi.StringInput
@@ -315,6 +348,21 @@ func (o UsageCarbonEmissionOutput) CompartmentDepth() pulumi.IntOutput {
 	return o.ApplyT(func(v *UsageCarbonEmission) pulumi.IntOutput { return v.CompartmentDepth }).(pulumi.IntOutput)
 }
 
+// Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+func (o UsageCarbonEmissionOutput) EmissionCalculationMethod() pulumi.StringOutput {
+	return o.ApplyT(func(v *UsageCarbonEmission) pulumi.StringOutput { return v.EmissionCalculationMethod }).(pulumi.StringOutput)
+}
+
+// Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+func (o UsageCarbonEmissionOutput) EmissionType() pulumi.StringOutput {
+	return o.ApplyT(func(v *UsageCarbonEmission) pulumi.StringOutput { return v.EmissionType }).(pulumi.StringOutput)
+}
+
+// The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+func (o UsageCarbonEmissionOutput) Granularity() pulumi.StringOutput {
+	return o.ApplyT(func(v *UsageCarbonEmission) pulumi.StringOutput { return v.Granularity }).(pulumi.StringOutput)
+}
+
 // Aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "resourceName", "tenantId", "tenantName", "subscriptionId"]`
 func (o UsageCarbonEmissionOutput) GroupBies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *UsageCarbonEmission) pulumi.StringArrayOutput { return v.GroupBies }).(pulumi.StringArrayOutput)
@@ -325,12 +373,12 @@ func (o UsageCarbonEmissionOutput) GroupByTags() UsageCarbonEmissionGroupByTagAr
 	return o.ApplyT(func(v *UsageCarbonEmission) UsageCarbonEmissionGroupByTagArrayOutput { return v.GroupByTags }).(UsageCarbonEmissionGroupByTagArrayOutput)
 }
 
-// Specifies whether aggregated by time. If isAggregateByTime is true, all usage carbon emissions over the query time period will be added up.
+// Specifies whether aggregated by time. If isAggregateByTime is true, all carbon emissions usage over the query time period are summed.
 func (o UsageCarbonEmissionOutput) IsAggregateByTime() pulumi.BoolOutput {
 	return o.ApplyT(func(v *UsageCarbonEmission) pulumi.BoolOutput { return v.IsAggregateByTime }).(pulumi.BoolOutput)
 }
 
-// A list of usage carbon emission items.
+// A list of carbon emission usage items.
 func (o UsageCarbonEmissionOutput) Items() UsageCarbonEmissionItemArrayOutput {
 	return o.ApplyT(func(v *UsageCarbonEmission) UsageCarbonEmissionItemArrayOutput { return v.Items }).(UsageCarbonEmissionItemArrayOutput)
 }

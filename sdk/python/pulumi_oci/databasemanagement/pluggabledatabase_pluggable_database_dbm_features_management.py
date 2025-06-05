@@ -24,6 +24,7 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs:
     def __init__(__self__, *,
                  enable_pluggable_database_dbm_feature: pulumi.Input[builtins.bool],
                  pluggable_database_id: pulumi.Input[builtins.str],
+                 feature: Optional[pulumi.Input[builtins.str]] = None,
                  feature_details: Optional[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs']] = None,
                  modify_pluggable_database_dbm_feature: Optional[pulumi.Input[builtins.bool]] = None):
         """
@@ -38,6 +39,8 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs:
         """
         pulumi.set(__self__, "enable_pluggable_database_dbm_feature", enable_pluggable_database_dbm_feature)
         pulumi.set(__self__, "pluggable_database_id", pluggable_database_id)
+        if feature is not None:
+            pulumi.set(__self__, "feature", feature)
         if feature_details is not None:
             pulumi.set(__self__, "feature_details", feature_details)
         if modify_pluggable_database_dbm_feature is not None:
@@ -72,6 +75,15 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs:
         pulumi.set(self, "pluggable_database_id", value)
 
     @property
+    @pulumi.getter
+    def feature(self) -> Optional[pulumi.Input[builtins.str]]:
+        return pulumi.get(self, "feature")
+
+    @feature.setter
+    def feature(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "feature", value)
+
+    @property
     @pulumi.getter(name="featureDetails")
     def feature_details(self) -> Optional[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs']]:
         """
@@ -97,6 +109,7 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs:
 class _PluggabledatabasePluggableDatabaseDbmFeaturesManagementState:
     def __init__(__self__, *,
                  enable_pluggable_database_dbm_feature: Optional[pulumi.Input[builtins.bool]] = None,
+                 feature: Optional[pulumi.Input[builtins.str]] = None,
                  feature_details: Optional[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs']] = None,
                  modify_pluggable_database_dbm_feature: Optional[pulumi.Input[builtins.bool]] = None,
                  pluggable_database_id: Optional[pulumi.Input[builtins.str]] = None):
@@ -112,6 +125,8 @@ class _PluggabledatabasePluggableDatabaseDbmFeaturesManagementState:
         """
         if enable_pluggable_database_dbm_feature is not None:
             pulumi.set(__self__, "enable_pluggable_database_dbm_feature", enable_pluggable_database_dbm_feature)
+        if feature is not None:
+            pulumi.set(__self__, "feature", feature)
         if feature_details is not None:
             pulumi.set(__self__, "feature_details", feature_details)
         if modify_pluggable_database_dbm_feature is not None:
@@ -134,6 +149,15 @@ class _PluggabledatabasePluggableDatabaseDbmFeaturesManagementState:
     @enable_pluggable_database_dbm_feature.setter
     def enable_pluggable_database_dbm_feature(self, value: Optional[pulumi.Input[builtins.bool]]):
         pulumi.set(self, "enable_pluggable_database_dbm_feature", value)
+
+    @property
+    @pulumi.getter
+    def feature(self) -> Optional[pulumi.Input[builtins.str]]:
+        return pulumi.get(self, "feature")
+
+    @feature.setter
+    def feature(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "feature", value)
 
     @property
     @pulumi.getter(name="featureDetails")
@@ -176,6 +200,7 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagement(pulumi.CustomResou
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enable_pluggable_database_dbm_feature: Optional[pulumi.Input[builtins.bool]] = None,
+                 feature: Optional[pulumi.Input[builtins.str]] = None,
                  feature_details: Optional[pulumi.Input[Union['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs', 'PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
                  modify_pluggable_database_dbm_feature: Optional[pulumi.Input[builtins.bool]] = None,
                  pluggable_database_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -222,6 +247,7 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagement(pulumi.CustomResou
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enable_pluggable_database_dbm_feature: Optional[pulumi.Input[builtins.bool]] = None,
+                 feature: Optional[pulumi.Input[builtins.str]] = None,
                  feature_details: Optional[pulumi.Input[Union['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs', 'PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
                  modify_pluggable_database_dbm_feature: Optional[pulumi.Input[builtins.bool]] = None,
                  pluggable_database_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -237,6 +263,7 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagement(pulumi.CustomResou
             if enable_pluggable_database_dbm_feature is None and not opts.urn:
                 raise TypeError("Missing required property 'enable_pluggable_database_dbm_feature'")
             __props__.__dict__["enable_pluggable_database_dbm_feature"] = enable_pluggable_database_dbm_feature
+            __props__.__dict__["feature"] = feature
             __props__.__dict__["feature_details"] = feature_details
             __props__.__dict__["modify_pluggable_database_dbm_feature"] = modify_pluggable_database_dbm_feature
             if pluggable_database_id is None and not opts.urn:
@@ -253,6 +280,7 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagement(pulumi.CustomResou
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             enable_pluggable_database_dbm_feature: Optional[pulumi.Input[builtins.bool]] = None,
+            feature: Optional[pulumi.Input[builtins.str]] = None,
             feature_details: Optional[pulumi.Input[Union['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs', 'PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
             modify_pluggable_database_dbm_feature: Optional[pulumi.Input[builtins.bool]] = None,
             pluggable_database_id: Optional[pulumi.Input[builtins.str]] = None) -> 'PluggabledatabasePluggableDatabaseDbmFeaturesManagement':
@@ -276,6 +304,7 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagement(pulumi.CustomResou
         __props__ = _PluggabledatabasePluggableDatabaseDbmFeaturesManagementState.__new__(_PluggabledatabasePluggableDatabaseDbmFeaturesManagementState)
 
         __props__.__dict__["enable_pluggable_database_dbm_feature"] = enable_pluggable_database_dbm_feature
+        __props__.__dict__["feature"] = feature
         __props__.__dict__["feature_details"] = feature_details
         __props__.__dict__["modify_pluggable_database_dbm_feature"] = modify_pluggable_database_dbm_feature
         __props__.__dict__["pluggable_database_id"] = pluggable_database_id
@@ -292,6 +321,11 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagement(pulumi.CustomResou
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "enable_pluggable_database_dbm_feature")
+
+    @property
+    @pulumi.getter
+    def feature(self) -> pulumi.Output[Optional[builtins.str]]:
+        return pulumi.get(self, "feature")
 
     @property
     @pulumi.getter(name="featureDetails")

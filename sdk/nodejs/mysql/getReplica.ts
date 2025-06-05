@@ -100,6 +100,10 @@ export interface GetReplicaResult {
      */
     readonly mysqlVersion: string;
     /**
+     * Network Security Group OCIDs used for the VNIC attachment.
+     */
+    readonly nsgIds: string[];
+    /**
      * The port the read replica is configured to listen on.
      */
     readonly port: number;

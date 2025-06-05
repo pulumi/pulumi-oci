@@ -39,7 +39,7 @@ public final class GetResultResult {
      */
     private List<GetResultResultDataSet> resultDataSets;
     /**
-     * @return Type of result. Example: HAR, Screenshot, Log or Network.
+     * @return Type of result. Example: har, screenshot, log, network, diagnostics or script.
      * 
      */
     private String resultType;
@@ -89,7 +89,7 @@ public final class GetResultResult {
         return this.resultDataSets;
     }
     /**
-     * @return Type of result. Example: HAR, Screenshot, Log or Network.
+     * @return Type of result. Example: har, screenshot, log, network, diagnostics or script.
      * 
      */
     public String resultType() {

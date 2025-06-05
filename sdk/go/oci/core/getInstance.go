@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -25,7 +25,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -124,6 +124,8 @@ type LookupInstanceResult struct {
 	LicensingConfigs []GetInstanceLicensingConfig `pulumi:"licensingConfigs"`
 	// Custom metadata that you provide.
 	Metadata map[string]string `pulumi:"metadata"`
+	// Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+	PlacementConstraintDetails []GetInstancePlacementConstraintDetail `pulumi:"placementConstraintDetails"`
 	// The platform configuration for the instance.
 	PlatformConfigs []GetInstancePlatformConfig `pulumi:"platformConfigs"`
 	// (Optional) Configuration options for preemptible instances.
@@ -344,6 +346,13 @@ func (o LookupInstanceResultOutput) LicensingConfigs() GetInstanceLicensingConfi
 // Custom metadata that you provide.
 func (o LookupInstanceResultOutput) Metadata() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupInstanceResult) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
+}
+
+// Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+func (o LookupInstanceResultOutput) PlacementConstraintDetails() GetInstancePlacementConstraintDetailArrayOutput {
+	return o.ApplyT(func(v LookupInstanceResult) []GetInstancePlacementConstraintDetail {
+		return v.PlacementConstraintDetails
+	}).(GetInstancePlacementConstraintDetailArrayOutput)
 }
 
 // The platform configuration for the instance.

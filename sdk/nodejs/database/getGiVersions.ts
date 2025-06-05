@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  * const testGiVersions = oci.Database.getGiVersions({
  *     compartmentId: compartmentId,
  *     availabilityDomain: giVersionAvailabilityDomain,
+ *     resourceId: testResource.id,
  *     shape: giVersionShape,
  * });
  * ```
@@ -30,6 +31,7 @@ export function getGiVersions(args: GetGiVersionsArgs, opts?: pulumi.InvokeOptio
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
         "filters": args.filters,
+        "resourceId": args.resourceId,
         "shape": args.shape,
     }, opts);
 }
@@ -47,6 +49,10 @@ export interface GetGiVersionsArgs {
      */
     compartmentId: string;
     filters?: inputs.Database.GetGiVersionsFilter[];
+    /**
+     * If provided, filters the results for the specified resource Id.
+     */
+    resourceId?: string;
     /**
      * If provided, filters the results for the given shape.
      */
@@ -68,6 +74,7 @@ export interface GetGiVersionsResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly resourceId?: string;
     readonly shape?: string;
 }
 /**
@@ -84,6 +91,7 @@ export interface GetGiVersionsResult {
  * const testGiVersions = oci.Database.getGiVersions({
  *     compartmentId: compartmentId,
  *     availabilityDomain: giVersionAvailabilityDomain,
+ *     resourceId: testResource.id,
  *     shape: giVersionShape,
  * });
  * ```
@@ -94,6 +102,7 @@ export function getGiVersionsOutput(args: GetGiVersionsOutputArgs, opts?: pulumi
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
         "filters": args.filters,
+        "resourceId": args.resourceId,
         "shape": args.shape,
     }, opts);
 }
@@ -111,6 +120,10 @@ export interface GetGiVersionsOutputArgs {
      */
     compartmentId: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Database.GetGiVersionsFilterArgs>[]>;
+    /**
+     * If provided, filters the results for the specified resource Id.
+     */
+    resourceId?: pulumi.Input<string>;
     /**
      * If provided, filters the results for the given shape.
      */

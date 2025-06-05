@@ -12,6 +12,7 @@ import com.pulumi.oci.DataSafe.inputs.UnsetSecurityAssessmentBaselineState;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -90,7 +91,7 @@ public class UnsetSecurityAssessmentBaseline extends com.pulumi.resources.Custom
      * 
      */
     @Export(name="targetIds", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> targetIds;
+    private Output</* @Nullable */ List<String>> targetIds;
 
     /**
      * @return The list of database target OCIDs for which the user intends to unset the baseline.
@@ -99,8 +100,8 @@ public class UnsetSecurityAssessmentBaseline extends com.pulumi.resources.Custom
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<List<String>> targetIds() {
-        return this.targetIds;
+    public Output<Optional<List<String>>> targetIds() {
+        return Codegen.optional(this.targetIds);
     }
 
     /**

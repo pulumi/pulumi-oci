@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/apmsynthetics"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/apmsynthetics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -68,6 +68,8 @@ type GetMonitorResult struct {
 	BatchIntervalInSeconds int `pulumi:"batchIntervalInSeconds"`
 	// Details of monitor configuration.
 	Configurations []GetMonitorConfiguration `pulumi:"configurations"`
+	// Content type of the script.
+	ContentType string `pulumi:"contentType"`
 	// Name of the user that created the monitor.
 	CreatedBy string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -170,6 +172,11 @@ func (o GetMonitorResultOutput) BatchIntervalInSeconds() pulumi.IntOutput {
 // Details of monitor configuration.
 func (o GetMonitorResultOutput) Configurations() GetMonitorConfigurationArrayOutput {
 	return o.ApplyT(func(v GetMonitorResult) []GetMonitorConfiguration { return v.Configurations }).(GetMonitorConfigurationArrayOutput)
+}
+
+// Content type of the script.
+func (o GetMonitorResultOutput) ContentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorResult) string { return v.ContentType }).(pulumi.StringOutput)
 }
 
 // Name of the user that created the monitor.

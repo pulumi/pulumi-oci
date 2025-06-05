@@ -40,6 +40,10 @@ import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceResourcePrincipalConfi
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceResourcePrincipalConfigurationPlainArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceResourcePrincipalConfigurationsArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceResourcePrincipalConfigurationsPlainArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceSoftwareUpdateArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceSoftwareUpdatePlainArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceSoftwareUpdatesArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceSoftwareUpdatesPlainArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstancesArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstancesPlainArgs;
 import com.pulumi.oci.BigDataService.outputs.GetAutoScalingConfigurationResult;
@@ -58,6 +62,8 @@ import com.pulumi.oci.BigDataService.outputs.GetBdsInstancePatchesResult;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceResourcePrincipalConfigurationResult;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceResourcePrincipalConfigurationsResult;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceResult;
+import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceSoftwareUpdateResult;
+import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceSoftwareUpdatesResult;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstancesResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
@@ -3558,6 +3564,451 @@ public final class BigDataServiceFunctions {
      */
     public static CompletableFuture<GetBdsInstanceResourcePrincipalConfigurationsResult> getBdsInstanceResourcePrincipalConfigurationsPlain(GetBdsInstanceResourcePrincipalConfigurationsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:BigDataService/getBdsInstanceResourcePrincipalConfigurations:getBdsInstanceResourcePrincipalConfigurations", TypeShape.of(GetBdsInstanceResourcePrincipalConfigurationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Bds Instance Software Update resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Get the details of the software update of the given SoftwareUpdateId
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceSoftwareUpdateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceSoftwareUpdate = BigDataServiceFunctions.getBdsInstanceSoftwareUpdate(GetBdsInstanceSoftwareUpdateArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .softwareUpdateKey(bdsInstanceSoftwareUpdateSoftwareUpdateKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBdsInstanceSoftwareUpdateResult> getBdsInstanceSoftwareUpdate(GetBdsInstanceSoftwareUpdateArgs args) {
+        return getBdsInstanceSoftwareUpdate(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Bds Instance Software Update resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Get the details of the software update of the given SoftwareUpdateId
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceSoftwareUpdateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceSoftwareUpdate = BigDataServiceFunctions.getBdsInstanceSoftwareUpdate(GetBdsInstanceSoftwareUpdateArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .softwareUpdateKey(bdsInstanceSoftwareUpdateSoftwareUpdateKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetBdsInstanceSoftwareUpdateResult> getBdsInstanceSoftwareUpdatePlain(GetBdsInstanceSoftwareUpdatePlainArgs args) {
+        return getBdsInstanceSoftwareUpdatePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Bds Instance Software Update resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Get the details of the software update of the given SoftwareUpdateId
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceSoftwareUpdateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceSoftwareUpdate = BigDataServiceFunctions.getBdsInstanceSoftwareUpdate(GetBdsInstanceSoftwareUpdateArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .softwareUpdateKey(bdsInstanceSoftwareUpdateSoftwareUpdateKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBdsInstanceSoftwareUpdateResult> getBdsInstanceSoftwareUpdate(GetBdsInstanceSoftwareUpdateArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceSoftwareUpdate:getBdsInstanceSoftwareUpdate", TypeShape.of(GetBdsInstanceSoftwareUpdateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Bds Instance Software Update resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Get the details of the software update of the given SoftwareUpdateId
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceSoftwareUpdateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceSoftwareUpdate = BigDataServiceFunctions.getBdsInstanceSoftwareUpdate(GetBdsInstanceSoftwareUpdateArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .softwareUpdateKey(bdsInstanceSoftwareUpdateSoftwareUpdateKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBdsInstanceSoftwareUpdateResult> getBdsInstanceSoftwareUpdate(GetBdsInstanceSoftwareUpdateArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceSoftwareUpdate:getBdsInstanceSoftwareUpdate", TypeShape.of(GetBdsInstanceSoftwareUpdateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Bds Instance Software Update resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Get the details of the software update of the given SoftwareUpdateId
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceSoftwareUpdateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceSoftwareUpdate = BigDataServiceFunctions.getBdsInstanceSoftwareUpdate(GetBdsInstanceSoftwareUpdateArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .softwareUpdateKey(bdsInstanceSoftwareUpdateSoftwareUpdateKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetBdsInstanceSoftwareUpdateResult> getBdsInstanceSoftwareUpdatePlain(GetBdsInstanceSoftwareUpdatePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:BigDataService/getBdsInstanceSoftwareUpdate:getBdsInstanceSoftwareUpdate", TypeShape.of(GetBdsInstanceSoftwareUpdateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Instance Software Updates in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * List all the available software updates for current cluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceSoftwareUpdatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceSoftwareUpdates = BigDataServiceFunctions.getBdsInstanceSoftwareUpdates(GetBdsInstanceSoftwareUpdatesArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBdsInstanceSoftwareUpdatesResult> getBdsInstanceSoftwareUpdates(GetBdsInstanceSoftwareUpdatesArgs args) {
+        return getBdsInstanceSoftwareUpdates(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Bds Instance Software Updates in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * List all the available software updates for current cluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceSoftwareUpdatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceSoftwareUpdates = BigDataServiceFunctions.getBdsInstanceSoftwareUpdates(GetBdsInstanceSoftwareUpdatesArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetBdsInstanceSoftwareUpdatesResult> getBdsInstanceSoftwareUpdatesPlain(GetBdsInstanceSoftwareUpdatesPlainArgs args) {
+        return getBdsInstanceSoftwareUpdatesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Bds Instance Software Updates in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * List all the available software updates for current cluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceSoftwareUpdatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceSoftwareUpdates = BigDataServiceFunctions.getBdsInstanceSoftwareUpdates(GetBdsInstanceSoftwareUpdatesArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBdsInstanceSoftwareUpdatesResult> getBdsInstanceSoftwareUpdates(GetBdsInstanceSoftwareUpdatesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceSoftwareUpdates:getBdsInstanceSoftwareUpdates", TypeShape.of(GetBdsInstanceSoftwareUpdatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Instance Software Updates in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * List all the available software updates for current cluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceSoftwareUpdatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceSoftwareUpdates = BigDataServiceFunctions.getBdsInstanceSoftwareUpdates(GetBdsInstanceSoftwareUpdatesArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBdsInstanceSoftwareUpdatesResult> getBdsInstanceSoftwareUpdates(GetBdsInstanceSoftwareUpdatesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceSoftwareUpdates:getBdsInstanceSoftwareUpdates", TypeShape.of(GetBdsInstanceSoftwareUpdatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Instance Software Updates in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * List all the available software updates for current cluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceSoftwareUpdatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceSoftwareUpdates = BigDataServiceFunctions.getBdsInstanceSoftwareUpdates(GetBdsInstanceSoftwareUpdatesArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetBdsInstanceSoftwareUpdatesResult> getBdsInstanceSoftwareUpdatesPlain(GetBdsInstanceSoftwareUpdatesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:BigDataService/getBdsInstanceSoftwareUpdates:getBdsInstanceSoftwareUpdates", TypeShape.of(GetBdsInstanceSoftwareUpdatesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Bds Instances in Oracle Cloud Infrastructure Big Data Service service.

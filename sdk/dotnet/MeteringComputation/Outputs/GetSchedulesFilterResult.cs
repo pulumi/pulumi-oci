@@ -14,7 +14,7 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
     public sealed class GetSchedulesFilterResult
     {
         /// <summary>
-        /// Query parameter for filtering by name
+        /// The query parameter for filtering by name.
         /// </summary>
         public readonly string Name;
         public readonly bool? Regex;

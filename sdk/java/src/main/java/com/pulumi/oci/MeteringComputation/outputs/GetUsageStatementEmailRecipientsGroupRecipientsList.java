@@ -11,50 +11,50 @@ import java.util.Objects;
 @CustomType
 public final class GetUsageStatementEmailRecipientsGroupRecipientsList {
     /**
-     * @return the email of the recipient.
+     * @return The recipient email address.
      * 
      */
     private String emailId;
     /**
-     * @return the first name of the recipient.
+     * @return The recipient first name.
      * 
      */
     private String firstName;
     /**
-     * @return the last name of the recipient.
+     * @return The recipient last name.
      * 
      */
     private String lastName;
     /**
-     * @return The email recipient group lifecycle state.
+     * @return The email recipients group lifecycle state.
      * 
      */
     private String state;
 
     private GetUsageStatementEmailRecipientsGroupRecipientsList() {}
     /**
-     * @return the email of the recipient.
+     * @return The recipient email address.
      * 
      */
     public String emailId() {
         return this.emailId;
     }
     /**
-     * @return the first name of the recipient.
+     * @return The recipient first name.
      * 
      */
     public String firstName() {
         return this.firstName;
     }
     /**
-     * @return the last name of the recipient.
+     * @return The recipient last name.
      * 
      */
     public String lastName() {
         return this.lastName;
     }
     /**
-     * @return The email recipient group lifecycle state.
+     * @return The email recipients group lifecycle state.
      * 
      */
     public String state() {

@@ -28,7 +28,7 @@ class GetLogAnalyticsObjectCollectionRuleResult:
     """
     A collection of values returned by getLogAnalyticsObjectCollectionRule.
     """
-    def __init__(__self__, char_encoding=None, collection_type=None, compartment_id=None, defined_tags=None, description=None, entity_id=None, freeform_tags=None, id=None, is_enabled=None, is_force_historic_collection=None, lifecycle_details=None, log_analytics_object_collection_rule_id=None, log_group_id=None, log_set=None, log_set_ext_regex=None, log_set_key=None, log_source_name=None, log_type=None, name=None, namespace=None, object_name_filters=None, os_bucket_name=None, os_namespace=None, overrides=None, poll_since=None, poll_till=None, state=None, time_created=None, time_updated=None, timezone=None):
+    def __init__(__self__, char_encoding=None, collection_type=None, compartment_id=None, defined_tags=None, description=None, entity_id=None, freeform_tags=None, id=None, is_enabled=None, is_force_historic_collection=None, last_collected_object=None, lifecycle_details=None, log_analytics_object_collection_rule_id=None, log_group_id=None, log_set=None, log_set_ext_regex=None, log_set_key=None, log_source_name=None, log_type=None, name=None, namespace=None, object_name_filters=None, os_bucket_name=None, os_namespace=None, overrides=None, poll_since=None, poll_till=None, state=None, stream_cursor_time=None, stream_cursor_type=None, stream_id=None, time_created=None, time_updated=None, timezone=None):
         if char_encoding and not isinstance(char_encoding, str):
             raise TypeError("Expected argument 'char_encoding' to be a str")
         pulumi.set(__self__, "char_encoding", char_encoding)
@@ -59,6 +59,9 @@ class GetLogAnalyticsObjectCollectionRuleResult:
         if is_force_historic_collection and not isinstance(is_force_historic_collection, bool):
             raise TypeError("Expected argument 'is_force_historic_collection' to be a bool")
         pulumi.set(__self__, "is_force_historic_collection", is_force_historic_collection)
+        if last_collected_object and not isinstance(last_collected_object, str):
+            raise TypeError("Expected argument 'last_collected_object' to be a str")
+        pulumi.set(__self__, "last_collected_object", last_collected_object)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -110,6 +113,15 @@ class GetLogAnalyticsObjectCollectionRuleResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if stream_cursor_time and not isinstance(stream_cursor_time, str):
+            raise TypeError("Expected argument 'stream_cursor_time' to be a str")
+        pulumi.set(__self__, "stream_cursor_time", stream_cursor_time)
+        if stream_cursor_type and not isinstance(stream_cursor_type, str):
+            raise TypeError("Expected argument 'stream_cursor_type' to be a str")
+        pulumi.set(__self__, "stream_cursor_type", stream_cursor_type)
+        if stream_id and not isinstance(stream_id, str):
+            raise TypeError("Expected argument 'stream_id' to be a str")
+        pulumi.set(__self__, "stream_id", stream_id)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -199,6 +211,14 @@ class GetLogAnalyticsObjectCollectionRuleResult:
         Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
         """
         return pulumi.get(self, "is_force_historic_collection")
+
+    @property
+    @pulumi.getter(name="lastCollectedObject")
+    def last_collected_object(self) -> builtins.str:
+        """
+        Last Collected Object for the rule
+        """
+        return pulumi.get(self, "last_collected_object")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -331,6 +351,30 @@ class GetLogAnalyticsObjectCollectionRuleResult:
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="streamCursorTime")
+    def stream_cursor_time(self) -> builtins.str:
+        """
+        The time from which to consume the objects, if streamCursorType is AT_TIME.
+        """
+        return pulumi.get(self, "stream_cursor_time")
+
+    @property
+    @pulumi.getter(name="streamCursorType")
+    def stream_cursor_type(self) -> builtins.str:
+        """
+        Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
+        """
+        return pulumi.get(self, "stream_cursor_type")
+
+    @property
+    @pulumi.getter(name="streamId")
+    def stream_id(self) -> builtins.str:
+        """
+        A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+        """
+        return pulumi.get(self, "stream_id")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> builtins.str:
         """
@@ -371,6 +415,7 @@ class AwaitableGetLogAnalyticsObjectCollectionRuleResult(GetLogAnalyticsObjectCo
             id=self.id,
             is_enabled=self.is_enabled,
             is_force_historic_collection=self.is_force_historic_collection,
+            last_collected_object=self.last_collected_object,
             lifecycle_details=self.lifecycle_details,
             log_analytics_object_collection_rule_id=self.log_analytics_object_collection_rule_id,
             log_group_id=self.log_group_id,
@@ -388,6 +433,9 @@ class AwaitableGetLogAnalyticsObjectCollectionRuleResult(GetLogAnalyticsObjectCo
             poll_since=self.poll_since,
             poll_till=self.poll_till,
             state=self.state,
+            stream_cursor_time=self.stream_cursor_time,
+            stream_cursor_type=self.stream_cursor_type,
+            stream_id=self.stream_id,
             time_created=self.time_created,
             time_updated=self.time_updated,
             timezone=self.timezone)
@@ -432,6 +480,7 @@ def get_log_analytics_object_collection_rule(log_analytics_object_collection_rul
         id=pulumi.get(__ret__, 'id'),
         is_enabled=pulumi.get(__ret__, 'is_enabled'),
         is_force_historic_collection=pulumi.get(__ret__, 'is_force_historic_collection'),
+        last_collected_object=pulumi.get(__ret__, 'last_collected_object'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         log_analytics_object_collection_rule_id=pulumi.get(__ret__, 'log_analytics_object_collection_rule_id'),
         log_group_id=pulumi.get(__ret__, 'log_group_id'),
@@ -449,6 +498,9 @@ def get_log_analytics_object_collection_rule(log_analytics_object_collection_rul
         poll_since=pulumi.get(__ret__, 'poll_since'),
         poll_till=pulumi.get(__ret__, 'poll_till'),
         state=pulumi.get(__ret__, 'state'),
+        stream_cursor_time=pulumi.get(__ret__, 'stream_cursor_time'),
+        stream_cursor_type=pulumi.get(__ret__, 'stream_cursor_type'),
+        stream_id=pulumi.get(__ret__, 'stream_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         timezone=pulumi.get(__ret__, 'timezone'))
@@ -490,6 +542,7 @@ def get_log_analytics_object_collection_rule_output(log_analytics_object_collect
         id=pulumi.get(__response__, 'id'),
         is_enabled=pulumi.get(__response__, 'is_enabled'),
         is_force_historic_collection=pulumi.get(__response__, 'is_force_historic_collection'),
+        last_collected_object=pulumi.get(__response__, 'last_collected_object'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         log_analytics_object_collection_rule_id=pulumi.get(__response__, 'log_analytics_object_collection_rule_id'),
         log_group_id=pulumi.get(__response__, 'log_group_id'),
@@ -507,6 +560,9 @@ def get_log_analytics_object_collection_rule_output(log_analytics_object_collect
         poll_since=pulumi.get(__response__, 'poll_since'),
         poll_till=pulumi.get(__response__, 'poll_till'),
         state=pulumi.get(__response__, 'state'),
+        stream_cursor_time=pulumi.get(__response__, 'stream_cursor_time'),
+        stream_cursor_type=pulumi.get(__response__, 'stream_cursor_type'),
+        stream_id=pulumi.get(__response__, 'stream_id'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated'),
         timezone=pulumi.get(__response__, 'timezone')))

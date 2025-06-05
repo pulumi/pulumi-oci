@@ -272,6 +272,8 @@ import com.pulumi.oci.Database.inputs.GetSchedulingPolicySchedulingWindowArgs;
 import com.pulumi.oci.Database.inputs.GetSchedulingPolicySchedulingWindowPlainArgs;
 import com.pulumi.oci.Database.inputs.GetSchedulingPolicySchedulingWindowsArgs;
 import com.pulumi.oci.Database.inputs.GetSchedulingPolicySchedulingWindowsPlainArgs;
+import com.pulumi.oci.Database.inputs.GetSystemVersionMinorVersionsArgs;
+import com.pulumi.oci.Database.inputs.GetSystemVersionMinorVersionsPlainArgs;
 import com.pulumi.oci.Database.inputs.GetSystemVersionsArgs;
 import com.pulumi.oci.Database.inputs.GetSystemVersionsPlainArgs;
 import com.pulumi.oci.Database.inputs.GetVmClusterArgs;
@@ -435,6 +437,7 @@ import com.pulumi.oci.Database.outputs.GetSchedulingPolicyRecommendedScheduledAc
 import com.pulumi.oci.Database.outputs.GetSchedulingPolicyResult;
 import com.pulumi.oci.Database.outputs.GetSchedulingPolicySchedulingWindowResult;
 import com.pulumi.oci.Database.outputs.GetSchedulingPolicySchedulingWindowsResult;
+import com.pulumi.oci.Database.outputs.GetSystemVersionMinorVersionsResult;
 import com.pulumi.oci.Database.outputs.GetSystemVersionsResult;
 import com.pulumi.oci.Database.outputs.GetVmClusterNetworkDownloadConfigFileResult;
 import com.pulumi.oci.Database.outputs.GetVmClusterNetworkResult;
@@ -18545,37 +18548,6 @@ public final class DatabaseFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import com.pulumi.oci.Database.inputs.GetDbSystemStoragePerformancesArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testDbSystemStoragePerformances = DatabaseFunctions.getDbSystemStoragePerformances(GetDbSystemStoragePerformancesArgs.builder()
-     *             .storageManagement(dbSystemStoragePerformanceStorageManagement)
-     *             .shapeType(dbSystemStoragePerformanceShapeType)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -18590,37 +18562,6 @@ public final class DatabaseFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import com.pulumi.oci.Database.inputs.GetDbSystemStoragePerformancesArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testDbSystemStoragePerformances = DatabaseFunctions.getDbSystemStoragePerformances(GetDbSystemStoragePerformancesArgs.builder()
-     *             .storageManagement(dbSystemStoragePerformanceStorageManagement)
-     *             .shapeType(dbSystemStoragePerformanceShapeType)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -18635,37 +18576,6 @@ public final class DatabaseFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import com.pulumi.oci.Database.inputs.GetDbSystemStoragePerformancesArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testDbSystemStoragePerformances = DatabaseFunctions.getDbSystemStoragePerformances(GetDbSystemStoragePerformancesArgs.builder()
-     *             .storageManagement(dbSystemStoragePerformanceStorageManagement)
-     *             .shapeType(dbSystemStoragePerformanceShapeType)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -18680,37 +18590,6 @@ public final class DatabaseFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import com.pulumi.oci.Database.inputs.GetDbSystemStoragePerformancesArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testDbSystemStoragePerformances = DatabaseFunctions.getDbSystemStoragePerformances(GetDbSystemStoragePerformancesArgs.builder()
-     *             .storageManagement(dbSystemStoragePerformanceStorageManagement)
-     *             .shapeType(dbSystemStoragePerformanceShapeType)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -18725,37 +18604,6 @@ public final class DatabaseFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import com.pulumi.oci.Database.inputs.GetDbSystemStoragePerformancesArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testDbSystemStoragePerformances = DatabaseFunctions.getDbSystemStoragePerformances(GetDbSystemStoragePerformancesArgs.builder()
-     *             .storageManagement(dbSystemStoragePerformanceStorageManagement)
-     *             .shapeType(dbSystemStoragePerformanceShapeType)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -25645,6 +25493,7 @@ public final class DatabaseFunctions {
      *         final var testGiVersions = DatabaseFunctions.getGiVersions(GetGiVersionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(giVersionAvailabilityDomain)
+     *             .resourceId(testResource.id())
      *             .shape(giVersionShape)
      *             .build());
      * 
@@ -25691,6 +25540,7 @@ public final class DatabaseFunctions {
      *         final var testGiVersions = DatabaseFunctions.getGiVersions(GetGiVersionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(giVersionAvailabilityDomain)
+     *             .resourceId(testResource.id())
      *             .shape(giVersionShape)
      *             .build());
      * 
@@ -25737,6 +25587,7 @@ public final class DatabaseFunctions {
      *         final var testGiVersions = DatabaseFunctions.getGiVersions(GetGiVersionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(giVersionAvailabilityDomain)
+     *             .resourceId(testResource.id())
      *             .shape(giVersionShape)
      *             .build());
      * 
@@ -25783,6 +25634,7 @@ public final class DatabaseFunctions {
      *         final var testGiVersions = DatabaseFunctions.getGiVersions(GetGiVersionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(giVersionAvailabilityDomain)
+     *             .resourceId(testResource.id())
      *             .shape(giVersionShape)
      *             .build());
      * 
@@ -25829,6 +25681,7 @@ public final class DatabaseFunctions {
      *         final var testGiVersions = DatabaseFunctions.getGiVersions(GetGiVersionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(giVersionAvailabilityDomain)
+     *             .resourceId(testResource.id())
      *             .shape(giVersionShape)
      *             .build());
      * 
@@ -30727,6 +30580,251 @@ public final class DatabaseFunctions {
         return Deployment.getInstance().invokeAsync("oci:Database/getSchedulingPolicySchedulingWindows:getSchedulingPolicySchedulingWindows", TypeShape.of(GetSchedulingPolicySchedulingWindowsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of System Version Minor Versions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Retrieves a list of supported minor versions for the specified Exadata System Software major version. You must provide either a `shape` or `resourceId` value.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSystemVersionMinorVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSystemVersionMinorVersions = DatabaseFunctions.getSystemVersionMinorVersions(GetSystemVersionMinorVersionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .giVersion(systemVersionMinorVersionGiVersion)
+     *             .majorVersion(systemVersionMinorVersionMajorVersion)
+     *             .isLatest(systemVersionMinorVersionIsLatest)
+     *             .resourceId(testResource.id())
+     *             .shape(systemVersionMinorVersionShape)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSystemVersionMinorVersionsResult> getSystemVersionMinorVersions(GetSystemVersionMinorVersionsArgs args) {
+        return getSystemVersionMinorVersions(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of System Version Minor Versions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Retrieves a list of supported minor versions for the specified Exadata System Software major version. You must provide either a `shape` or `resourceId` value.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSystemVersionMinorVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSystemVersionMinorVersions = DatabaseFunctions.getSystemVersionMinorVersions(GetSystemVersionMinorVersionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .giVersion(systemVersionMinorVersionGiVersion)
+     *             .majorVersion(systemVersionMinorVersionMajorVersion)
+     *             .isLatest(systemVersionMinorVersionIsLatest)
+     *             .resourceId(testResource.id())
+     *             .shape(systemVersionMinorVersionShape)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSystemVersionMinorVersionsResult> getSystemVersionMinorVersionsPlain(GetSystemVersionMinorVersionsPlainArgs args) {
+        return getSystemVersionMinorVersionsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of System Version Minor Versions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Retrieves a list of supported minor versions for the specified Exadata System Software major version. You must provide either a `shape` or `resourceId` value.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSystemVersionMinorVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSystemVersionMinorVersions = DatabaseFunctions.getSystemVersionMinorVersions(GetSystemVersionMinorVersionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .giVersion(systemVersionMinorVersionGiVersion)
+     *             .majorVersion(systemVersionMinorVersionMajorVersion)
+     *             .isLatest(systemVersionMinorVersionIsLatest)
+     *             .resourceId(testResource.id())
+     *             .shape(systemVersionMinorVersionShape)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSystemVersionMinorVersionsResult> getSystemVersionMinorVersions(GetSystemVersionMinorVersionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getSystemVersionMinorVersions:getSystemVersionMinorVersions", TypeShape.of(GetSystemVersionMinorVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of System Version Minor Versions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Retrieves a list of supported minor versions for the specified Exadata System Software major version. You must provide either a `shape` or `resourceId` value.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSystemVersionMinorVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSystemVersionMinorVersions = DatabaseFunctions.getSystemVersionMinorVersions(GetSystemVersionMinorVersionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .giVersion(systemVersionMinorVersionGiVersion)
+     *             .majorVersion(systemVersionMinorVersionMajorVersion)
+     *             .isLatest(systemVersionMinorVersionIsLatest)
+     *             .resourceId(testResource.id())
+     *             .shape(systemVersionMinorVersionShape)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSystemVersionMinorVersionsResult> getSystemVersionMinorVersions(GetSystemVersionMinorVersionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getSystemVersionMinorVersions:getSystemVersionMinorVersions", TypeShape.of(GetSystemVersionMinorVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of System Version Minor Versions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Retrieves a list of supported minor versions for the specified Exadata System Software major version. You must provide either a `shape` or `resourceId` value.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetSystemVersionMinorVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSystemVersionMinorVersions = DatabaseFunctions.getSystemVersionMinorVersions(GetSystemVersionMinorVersionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .giVersion(systemVersionMinorVersionGiVersion)
+     *             .majorVersion(systemVersionMinorVersionMajorVersion)
+     *             .isLatest(systemVersionMinorVersionIsLatest)
+     *             .resourceId(testResource.id())
+     *             .shape(systemVersionMinorVersionShape)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSystemVersionMinorVersionsResult> getSystemVersionMinorVersionsPlain(GetSystemVersionMinorVersionsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getSystemVersionMinorVersions:getSystemVersionMinorVersions", TypeShape.of(GetSystemVersionMinorVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of System Versions in Oracle Cloud Infrastructure Database service.
      * 
      * Gets a list of supported Exadata system versions for a given shape and GI version.
@@ -30759,6 +30857,8 @@ public final class DatabaseFunctions {
      *         final var testSystemVersions = DatabaseFunctions.getSystemVersions(GetSystemVersionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .giVersion(systemVersionGiVersion)
+     *             .isLatest(systemVersionIsLatest)
+     *             .resourceId(testResource.id())
      *             .shape(systemVersionShape)
      *             .build());
      * 
@@ -30805,6 +30905,8 @@ public final class DatabaseFunctions {
      *         final var testSystemVersions = DatabaseFunctions.getSystemVersions(GetSystemVersionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .giVersion(systemVersionGiVersion)
+     *             .isLatest(systemVersionIsLatest)
+     *             .resourceId(testResource.id())
      *             .shape(systemVersionShape)
      *             .build());
      * 
@@ -30851,6 +30953,8 @@ public final class DatabaseFunctions {
      *         final var testSystemVersions = DatabaseFunctions.getSystemVersions(GetSystemVersionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .giVersion(systemVersionGiVersion)
+     *             .isLatest(systemVersionIsLatest)
+     *             .resourceId(testResource.id())
      *             .shape(systemVersionShape)
      *             .build());
      * 
@@ -30897,6 +31001,8 @@ public final class DatabaseFunctions {
      *         final var testSystemVersions = DatabaseFunctions.getSystemVersions(GetSystemVersionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .giVersion(systemVersionGiVersion)
+     *             .isLatest(systemVersionIsLatest)
+     *             .resourceId(testResource.id())
      *             .shape(systemVersionShape)
      *             .build());
      * 
@@ -30943,6 +31049,8 @@ public final class DatabaseFunctions {
      *         final var testSystemVersions = DatabaseFunctions.getSystemVersions(GetSystemVersionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .giVersion(systemVersionGiVersion)
+     *             .isLatest(systemVersionIsLatest)
+     *             .resourceId(testResource.id())
      *             .shape(systemVersionShape)
      *             .build());
      * 

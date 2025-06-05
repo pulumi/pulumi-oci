@@ -154,6 +154,7 @@ class _ReplicaState:
                  is_delete_protected: Optional[pulumi.Input[builtins.bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[builtins.str]] = None,
                  mysql_version: Optional[pulumi.Input[builtins.str]] = None,
+                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  port: Optional[pulumi.Input[builtins.int]] = None,
                  port_x: Optional[pulumi.Input[builtins.int]] = None,
                  replica_overrides: Optional[pulumi.Input['ReplicaReplicaOverridesArgs']] = None,
@@ -177,6 +178,7 @@ class _ReplicaState:
         :param pulumi.Input[builtins.bool] is_delete_protected: (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
         :param pulumi.Input[builtins.str] lifecycle_details: A message describing the state of the read replica.
         :param pulumi.Input[builtins.str] mysql_version: The MySQL version to be used by the read replica.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] nsg_ids: Network Security Group OCIDs used for the VNIC attachment.
         :param pulumi.Input[builtins.int] port: The port the read replica is configured to listen on.
         :param pulumi.Input[builtins.int] port_x: The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
         :param pulumi.Input['ReplicaReplicaOverridesArgs'] replica_overrides: (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
@@ -212,6 +214,8 @@ class _ReplicaState:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if mysql_version is not None:
             pulumi.set(__self__, "mysql_version", mysql_version)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
         if port is not None:
             pulumi.set(__self__, "port", port)
         if port_x is not None:
@@ -386,6 +390,18 @@ class _ReplicaState:
         pulumi.set(self, "mysql_version", value)
 
     @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        Network Security Group OCIDs used for the VNIC attachment.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @nsg_ids.setter
+    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "nsg_ids", value)
+
+    @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[builtins.int]]:
         """
@@ -521,6 +537,7 @@ class Replica(pulumi.CustomResource):
             replica_overrides={
                 "configuration_id": test_mysql_configuration["id"],
                 "mysql_version": replica_replica_overrides_mysql_version,
+                "nsg_ids": replica_replica_overrides_nsg_ids,
                 "shape_name": test_shape["name"],
             })
         ```
@@ -574,6 +591,7 @@ class Replica(pulumi.CustomResource):
             replica_overrides={
                 "configuration_id": test_mysql_configuration["id"],
                 "mysql_version": replica_replica_overrides_mysql_version,
+                "nsg_ids": replica_replica_overrides_nsg_ids,
                 "shape_name": test_shape["name"],
             })
         ```
@@ -633,6 +651,7 @@ class Replica(pulumi.CustomResource):
             __props__.__dict__["ip_address"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["mysql_version"] = None
+            __props__.__dict__["nsg_ids"] = None
             __props__.__dict__["port"] = None
             __props__.__dict__["port_x"] = None
             __props__.__dict__["secure_connections"] = None
@@ -663,6 +682,7 @@ class Replica(pulumi.CustomResource):
             is_delete_protected: Optional[pulumi.Input[builtins.bool]] = None,
             lifecycle_details: Optional[pulumi.Input[builtins.str]] = None,
             mysql_version: Optional[pulumi.Input[builtins.str]] = None,
+            nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
             port: Optional[pulumi.Input[builtins.int]] = None,
             port_x: Optional[pulumi.Input[builtins.int]] = None,
             replica_overrides: Optional[pulumi.Input[Union['ReplicaReplicaOverridesArgs', 'ReplicaReplicaOverridesArgsDict']]] = None,
@@ -691,6 +711,7 @@ class Replica(pulumi.CustomResource):
         :param pulumi.Input[builtins.bool] is_delete_protected: (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
         :param pulumi.Input[builtins.str] lifecycle_details: A message describing the state of the read replica.
         :param pulumi.Input[builtins.str] mysql_version: The MySQL version to be used by the read replica.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] nsg_ids: Network Security Group OCIDs used for the VNIC attachment.
         :param pulumi.Input[builtins.int] port: The port the read replica is configured to listen on.
         :param pulumi.Input[builtins.int] port_x: The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
         :param pulumi.Input[Union['ReplicaReplicaOverridesArgs', 'ReplicaReplicaOverridesArgsDict']] replica_overrides: (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
@@ -717,6 +738,7 @@ class Replica(pulumi.CustomResource):
         __props__.__dict__["is_delete_protected"] = is_delete_protected
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["mysql_version"] = mysql_version
+        __props__.__dict__["nsg_ids"] = nsg_ids
         __props__.__dict__["port"] = port
         __props__.__dict__["port_x"] = port_x
         __props__.__dict__["replica_overrides"] = replica_overrides
@@ -830,6 +852,14 @@ class Replica(pulumi.CustomResource):
         The MySQL version to be used by the read replica.
         """
         return pulumi.get(self, "mysql_version")
+
+    @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> pulumi.Output[Sequence[builtins.str]]:
+        """
+        Network Security Group OCIDs used for the VNIC attachment.
+        """
+        return pulumi.get(self, "nsg_ids")
 
     @property
     @pulumi.getter

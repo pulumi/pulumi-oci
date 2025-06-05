@@ -91,7 +91,16 @@ public final class GetClusterResult {
      * 
      */
     private String name;
+    /**
+     * @return The cluster-specific OpenID Connect Discovery endpoint
+     * 
+     */
     private String openIdConnectDiscoveryEndpoint;
+    /**
+     * @return The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
+     * 
+     */
+    private String openIdConnectDiscoveryKey;
     /**
      * @return Optional attributes for the cluster.
      * 
@@ -216,8 +225,19 @@ public final class GetClusterResult {
     public String name() {
         return this.name;
     }
+    /**
+     * @return The cluster-specific OpenID Connect Discovery endpoint
+     * 
+     */
     public String openIdConnectDiscoveryEndpoint() {
         return this.openIdConnectDiscoveryEndpoint;
+    }
+    /**
+     * @return The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
+     * 
+     */
+    public String openIdConnectDiscoveryKey() {
+        return this.openIdConnectDiscoveryKey;
     }
     /**
      * @return Optional attributes for the cluster.
@@ -276,6 +296,7 @@ public final class GetClusterResult {
         private List<GetClusterMetadata> metadatas;
         private String name;
         private String openIdConnectDiscoveryEndpoint;
+        private String openIdConnectDiscoveryKey;
         private List<GetClusterOption> options;
         private @Nullable String shouldIncludeOidcConfigFile;
         private String state;
@@ -300,6 +321,7 @@ public final class GetClusterResult {
     	      this.metadatas = defaults.metadatas;
     	      this.name = defaults.name;
     	      this.openIdConnectDiscoveryEndpoint = defaults.openIdConnectDiscoveryEndpoint;
+    	      this.openIdConnectDiscoveryKey = defaults.openIdConnectDiscoveryKey;
     	      this.options = defaults.options;
     	      this.shouldIncludeOidcConfigFile = defaults.shouldIncludeOidcConfigFile;
     	      this.state = defaults.state;
@@ -454,6 +476,14 @@ public final class GetClusterResult {
             return this;
         }
         @CustomType.Setter
+        public Builder openIdConnectDiscoveryKey(String openIdConnectDiscoveryKey) {
+            if (openIdConnectDiscoveryKey == null) {
+              throw new MissingRequiredPropertyException("GetClusterResult", "openIdConnectDiscoveryKey");
+            }
+            this.openIdConnectDiscoveryKey = openIdConnectDiscoveryKey;
+            return this;
+        }
+        @CustomType.Setter
         public Builder options(List<GetClusterOption> options) {
             if (options == null) {
               throw new MissingRequiredPropertyException("GetClusterResult", "options");
@@ -512,6 +542,7 @@ public final class GetClusterResult {
             _resultValue.metadatas = metadatas;
             _resultValue.name = name;
             _resultValue.openIdConnectDiscoveryEndpoint = openIdConnectDiscoveryEndpoint;
+            _resultValue.openIdConnectDiscoveryKey = openIdConnectDiscoveryKey;
             _resultValue.options = options;
             _resultValue.shouldIncludeOidcConfigFile = shouldIncludeOidcConfigFile;
             _resultValue.state = state;

@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -29,6 +31,9 @@ import * as utilities from "../utilities";
  *     },
  *     ipv4address: networkFirewallIpv4address,
  *     ipv6address: networkFirewallIpv6address,
+ *     natConfiguration: {
+ *         mustEnablePrivateNat: networkFirewallNatConfigurationMustEnablePrivateNat,
+ *     },
  *     networkSecurityGroupIds: networkFirewallNetworkSecurityGroupIds,
  * });
  * ```
@@ -102,6 +107,10 @@ export class NetworkFirewall extends pulumi.CustomResource {
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
+     * (Updatable) Nat Configuration request to use Nat feature on firewall.
+     */
+    public readonly natConfiguration!: pulumi.Output<outputs.NetworkFirewall.NetworkFirewallNatConfiguration>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
      */
     public readonly networkFirewallPolicyId!: pulumi.Output<string>;
@@ -155,6 +164,7 @@ export class NetworkFirewall extends pulumi.CustomResource {
             resourceInputs["ipv4address"] = state ? state.ipv4address : undefined;
             resourceInputs["ipv6address"] = state ? state.ipv6address : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["natConfiguration"] = state ? state.natConfiguration : undefined;
             resourceInputs["networkFirewallPolicyId"] = state ? state.networkFirewallPolicyId : undefined;
             resourceInputs["networkSecurityGroupIds"] = state ? state.networkSecurityGroupIds : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
@@ -180,6 +190,7 @@ export class NetworkFirewall extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["ipv4address"] = args ? args.ipv4address : undefined;
             resourceInputs["ipv6address"] = args ? args.ipv6address : undefined;
+            resourceInputs["natConfiguration"] = args ? args.natConfiguration : undefined;
             resourceInputs["networkFirewallPolicyId"] = args ? args.networkFirewallPolicyId : undefined;
             resourceInputs["networkSecurityGroupIds"] = args ? args.networkSecurityGroupIds : undefined;
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
@@ -230,6 +241,10 @@ export interface NetworkFirewallState {
      * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'FAILED' state.
      */
     lifecycleDetails?: pulumi.Input<string>;
+    /**
+     * (Updatable) Nat Configuration request to use Nat feature on firewall.
+     */
+    natConfiguration?: pulumi.Input<inputs.NetworkFirewall.NetworkFirewallNatConfiguration>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
      */
@@ -296,6 +311,10 @@ export interface NetworkFirewallArgs {
      * IPv6 address for the Network Firewall.
      */
     ipv6address?: pulumi.Input<string>;
+    /**
+     * (Updatable) Nat Configuration request to use Nat feature on firewall.
+     */
+    natConfiguration?: pulumi.Input<inputs.NetworkFirewall.NetworkFirewallNatConfiguration>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
      */

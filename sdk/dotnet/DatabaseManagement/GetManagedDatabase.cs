@@ -167,7 +167,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public readonly string DatabaseVersion;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system that this Managed Database is part of.
         /// </summary>
         public readonly string DbSystemId;
         /// <summary>

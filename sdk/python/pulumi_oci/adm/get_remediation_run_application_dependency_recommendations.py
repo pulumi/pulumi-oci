@@ -82,7 +82,7 @@ class GetRemediationRunApplicationDependencyRecommendationsResult:
     @pulumi.getter
     def purl(self) -> Optional[builtins.str]:
         """
-        Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+        Package URL identifier, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
         """
         return pulumi.get(self, "purl")
 
@@ -129,7 +129,7 @@ def get_remediation_run_application_dependency_recommendations(filters: Optional
 
 
     :param builtins.str gav: A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
-    :param builtins.str purl: A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+    :param builtins.str purl: A filter to return only resources that match the entire purl given.
     :param builtins.str remediation_run_id: Unique Remediation Run identifier path parameter.
     """
     __args__ = dict()
@@ -170,7 +170,7 @@ def get_remediation_run_application_dependency_recommendations_output(filters: O
 
 
     :param builtins.str gav: A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
-    :param builtins.str purl: A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+    :param builtins.str purl: A filter to return only resources that match the entire purl given.
     :param builtins.str remediation_run_id: Unique Remediation Run identifier path parameter.
     """
     __args__ = dict()

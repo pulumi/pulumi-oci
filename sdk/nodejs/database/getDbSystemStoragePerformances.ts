@@ -10,22 +10,11 @@ import * as utilities from "../utilities";
  * This data source provides the list of Db System Storage Performances in Oracle Cloud Infrastructure Database service.
  *
  * Gets a list of possible expected storage performance parameters of a VMDB System based on Configuration.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testDbSystemStoragePerformances = oci.Database.getDbSystemStoragePerformances({
- *     storageManagement: dbSystemStoragePerformanceStorageManagement,
- *     shapeType: dbSystemStoragePerformanceShapeType,
- * });
- * ```
  */
 export function getDbSystemStoragePerformances(args: GetDbSystemStoragePerformancesArgs, opts?: pulumi.InvokeOptions): Promise<GetDbSystemStoragePerformancesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDbSystemStoragePerformances:getDbSystemStoragePerformances", {
+        "databaseEdition": args.databaseEdition,
         "filters": args.filters,
         "shapeType": args.shapeType,
         "storageManagement": args.storageManagement,
@@ -36,6 +25,15 @@ export function getDbSystemStoragePerformances(args: GetDbSystemStoragePerforman
  * A collection of arguments for invoking getDbSystemStoragePerformances.
  */
 export interface GetDbSystemStoragePerformancesArgs {
+    /**
+     * Optional. Filters the performance results by database edition. Valid values are:
+     * * STANDARD_EDITION
+     * * ENTERPRISE_EDITION
+     * * ENTERPRISE_EDITION_HIGH_PERFORMANCE
+     * * ENTERPRISE_EDITION_EXTREME
+     * * ENTERPRISE_EDITION_DEVELOPER
+     */
+    databaseEdition?: string;
     filters?: inputs.Database.GetDbSystemStoragePerformancesFilter[];
     /**
      * Optional. Filters the performance results by shape type.
@@ -53,6 +51,7 @@ export interface GetDbSystemStoragePerformancesArgs {
  * A collection of values returned by getDbSystemStoragePerformances.
  */
 export interface GetDbSystemStoragePerformancesResult {
+    readonly databaseEdition?: string;
     /**
      * The list of db_system_storage_performances.
      */
@@ -72,22 +71,11 @@ export interface GetDbSystemStoragePerformancesResult {
  * This data source provides the list of Db System Storage Performances in Oracle Cloud Infrastructure Database service.
  *
  * Gets a list of possible expected storage performance parameters of a VMDB System based on Configuration.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testDbSystemStoragePerformances = oci.Database.getDbSystemStoragePerformances({
- *     storageManagement: dbSystemStoragePerformanceStorageManagement,
- *     shapeType: dbSystemStoragePerformanceShapeType,
- * });
- * ```
  */
 export function getDbSystemStoragePerformancesOutput(args: GetDbSystemStoragePerformancesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDbSystemStoragePerformancesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getDbSystemStoragePerformances:getDbSystemStoragePerformances", {
+        "databaseEdition": args.databaseEdition,
         "filters": args.filters,
         "shapeType": args.shapeType,
         "storageManagement": args.storageManagement,
@@ -98,6 +86,15 @@ export function getDbSystemStoragePerformancesOutput(args: GetDbSystemStoragePer
  * A collection of arguments for invoking getDbSystemStoragePerformances.
  */
 export interface GetDbSystemStoragePerformancesOutputArgs {
+    /**
+     * Optional. Filters the performance results by database edition. Valid values are:
+     * * STANDARD_EDITION
+     * * ENTERPRISE_EDITION
+     * * ENTERPRISE_EDITION_HIGH_PERFORMANCE
+     * * ENTERPRISE_EDITION_EXTREME
+     * * ENTERPRISE_EDITION_DEVELOPER
+     */
+    databaseEdition?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Database.GetDbSystemStoragePerformancesFilterArgs>[]>;
     /**
      * Optional. Filters the performance results by shape type.

@@ -28,7 +28,7 @@ class GetMonitorResult:
     """
     A collection of values returned by getMonitor.
     """
-    def __init__(__self__, apm_domain_id=None, availability_configurations=None, batch_interval_in_seconds=None, configurations=None, created_by=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_ipv6=None, is_run_now=None, is_run_once=None, last_updated_by=None, maintenance_window_schedules=None, monitor_id=None, monitor_type=None, repeat_interval_in_seconds=None, scheduling_policy=None, script_id=None, script_name=None, script_parameters=None, status=None, target=None, time_created=None, time_updated=None, timeout_in_seconds=None, vantage_point_count=None, vantage_points=None):
+    def __init__(__self__, apm_domain_id=None, availability_configurations=None, batch_interval_in_seconds=None, configurations=None, content_type=None, created_by=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_ipv6=None, is_run_now=None, is_run_once=None, last_updated_by=None, maintenance_window_schedules=None, monitor_id=None, monitor_type=None, repeat_interval_in_seconds=None, scheduling_policy=None, script_id=None, script_name=None, script_parameters=None, status=None, target=None, time_created=None, time_updated=None, timeout_in_seconds=None, vantage_point_count=None, vantage_points=None):
         if apm_domain_id and not isinstance(apm_domain_id, str):
             raise TypeError("Expected argument 'apm_domain_id' to be a str")
         pulumi.set(__self__, "apm_domain_id", apm_domain_id)
@@ -41,6 +41,9 @@ class GetMonitorResult:
         if configurations and not isinstance(configurations, list):
             raise TypeError("Expected argument 'configurations' to be a list")
         pulumi.set(__self__, "configurations", configurations)
+        if content_type and not isinstance(content_type, str):
+            raise TypeError("Expected argument 'content_type' to be a str")
+        pulumi.set(__self__, "content_type", content_type)
         if created_by and not isinstance(created_by, str):
             raise TypeError("Expected argument 'created_by' to be a str")
         pulumi.set(__self__, "created_by", created_by)
@@ -142,6 +145,14 @@ class GetMonitorResult:
         Details of monitor configuration.
         """
         return pulumi.get(self, "configurations")
+
+    @property
+    @pulumi.getter(name="contentType")
+    def content_type(self) -> builtins.str:
+        """
+        Content type of the script.
+        """
+        return pulumi.get(self, "content_type")
 
     @property
     @pulumi.getter(name="createdBy")
@@ -343,6 +354,7 @@ class AwaitableGetMonitorResult(GetMonitorResult):
             availability_configurations=self.availability_configurations,
             batch_interval_in_seconds=self.batch_interval_in_seconds,
             configurations=self.configurations,
+            content_type=self.content_type,
             created_by=self.created_by,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
@@ -402,6 +414,7 @@ def get_monitor(apm_domain_id: Optional[builtins.str] = None,
         availability_configurations=pulumi.get(__ret__, 'availability_configurations'),
         batch_interval_in_seconds=pulumi.get(__ret__, 'batch_interval_in_seconds'),
         configurations=pulumi.get(__ret__, 'configurations'),
+        content_type=pulumi.get(__ret__, 'content_type'),
         created_by=pulumi.get(__ret__, 'created_by'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
@@ -458,6 +471,7 @@ def get_monitor_output(apm_domain_id: Optional[pulumi.Input[builtins.str]] = Non
         availability_configurations=pulumi.get(__response__, 'availability_configurations'),
         batch_interval_in_seconds=pulumi.get(__response__, 'batch_interval_in_seconds'),
         configurations=pulumi.get(__response__, 'configurations'),
+        content_type=pulumi.get(__response__, 'content_type'),
         created_by=pulumi.get(__response__, 'created_by'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         display_name=pulumi.get(__response__, 'display_name'),

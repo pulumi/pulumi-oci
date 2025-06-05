@@ -116,7 +116,7 @@ class _ManagedDatabaseState:
         :param pulumi.Input[builtins.str] database_sub_type: The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
         :param pulumi.Input[builtins.str] database_type: The type of Oracle Database installation.
         :param pulumi.Input[builtins.str] database_version: The Oracle Database version.
-        :param pulumi.Input[builtins.str] db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
+        :param pulumi.Input[builtins.str] db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system that this Managed Database is part of.
         :param pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigArgs']]] dbmgmt_feature_configs: The list of feature configurations
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[builtins.str] deployment_type: The infrastructure used to deploy the Oracle Database.
@@ -269,7 +269,7 @@ class _ManagedDatabaseState:
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system that this Managed Database is part of.
         """
         return pulumi.get(self, "db_system_id")
 
@@ -599,7 +599,7 @@ class ManagedDatabase(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] database_sub_type: The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
         :param pulumi.Input[builtins.str] database_type: The type of Oracle Database installation.
         :param pulumi.Input[builtins.str] database_version: The Oracle Database version.
-        :param pulumi.Input[builtins.str] db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
+        :param pulumi.Input[builtins.str] db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system that this Managed Database is part of.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedDatabaseDbmgmtFeatureConfigArgs', 'ManagedDatabaseDbmgmtFeatureConfigArgsDict']]]] dbmgmt_feature_configs: The list of feature configurations
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[builtins.str] deployment_type: The infrastructure used to deploy the Oracle Database.
@@ -707,7 +707,7 @@ class ManagedDatabase(pulumi.CustomResource):
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> pulumi.Output[builtins.str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system that this Managed Database is part of.
         """
         return pulumi.get(self, "db_system_id")
 

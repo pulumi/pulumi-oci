@@ -373,6 +373,7 @@ class _ConfigState:
                  availability_configuration: Optional[pulumi.Input['ConfigAvailabilityConfigurationArgs']] = None,
                  batch_interval_in_seconds: Optional[pulumi.Input[builtins.int]] = None,
                  configuration: Optional[pulumi.Input['ConfigConfigurationArgs']] = None,
+                 content_type: Optional[pulumi.Input[builtins.str]] = None,
                  created_by: Optional[pulumi.Input[builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
@@ -401,6 +402,7 @@ class _ConfigState:
         :param pulumi.Input['ConfigAvailabilityConfigurationArgs'] availability_configuration: (Updatable) Monitor availability configuration details.
         :param pulumi.Input[builtins.int] batch_interval_in_seconds: (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
         :param pulumi.Input['ConfigConfigurationArgs'] configuration: (Updatable) Details of monitor configuration.
+        :param pulumi.Input[builtins.str] content_type: Content type of the script.
         :param pulumi.Input[builtins.str] created_by: Name of the user that created the monitor.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[builtins.str] display_name: (Updatable) Unique name that can be edited. The name should not contain any confidential information.
@@ -436,6 +438,8 @@ class _ConfigState:
             pulumi.set(__self__, "batch_interval_in_seconds", batch_interval_in_seconds)
         if configuration is not None:
             pulumi.set(__self__, "configuration", configuration)
+        if content_type is not None:
+            pulumi.set(__self__, "content_type", content_type)
         if created_by is not None:
             pulumi.set(__self__, "created_by", created_by)
         if defined_tags is not None:
@@ -528,6 +532,18 @@ class _ConfigState:
     @configuration.setter
     def configuration(self, value: Optional[pulumi.Input['ConfigConfigurationArgs']]):
         pulumi.set(self, "configuration", value)
+
+    @property
+    @pulumi.getter(name="contentType")
+    def content_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Content type of the script.
+        """
+        return pulumi.get(self, "content_type")
+
+    @content_type.setter
+    def content_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "content_type", value)
 
     @property
     @pulumi.getter(name="createdBy")
@@ -1232,6 +1248,7 @@ class Config(pulumi.CustomResource):
             if vantage_points is None and not opts.urn:
                 raise TypeError("Missing required property 'vantage_points'")
             __props__.__dict__["vantage_points"] = vantage_points
+            __props__.__dict__["content_type"] = None
             __props__.__dict__["created_by"] = None
             __props__.__dict__["last_updated_by"] = None
             __props__.__dict__["time_created"] = None
@@ -1251,6 +1268,7 @@ class Config(pulumi.CustomResource):
             availability_configuration: Optional[pulumi.Input[Union['ConfigAvailabilityConfigurationArgs', 'ConfigAvailabilityConfigurationArgsDict']]] = None,
             batch_interval_in_seconds: Optional[pulumi.Input[builtins.int]] = None,
             configuration: Optional[pulumi.Input[Union['ConfigConfigurationArgs', 'ConfigConfigurationArgsDict']]] = None,
+            content_type: Optional[pulumi.Input[builtins.str]] = None,
             created_by: Optional[pulumi.Input[builtins.str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             display_name: Optional[pulumi.Input[builtins.str]] = None,
@@ -1284,6 +1302,7 @@ class Config(pulumi.CustomResource):
         :param pulumi.Input[Union['ConfigAvailabilityConfigurationArgs', 'ConfigAvailabilityConfigurationArgsDict']] availability_configuration: (Updatable) Monitor availability configuration details.
         :param pulumi.Input[builtins.int] batch_interval_in_seconds: (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
         :param pulumi.Input[Union['ConfigConfigurationArgs', 'ConfigConfigurationArgsDict']] configuration: (Updatable) Details of monitor configuration.
+        :param pulumi.Input[builtins.str] content_type: Content type of the script.
         :param pulumi.Input[builtins.str] created_by: Name of the user that created the monitor.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[builtins.str] display_name: (Updatable) Unique name that can be edited. The name should not contain any confidential information.
@@ -1319,6 +1338,7 @@ class Config(pulumi.CustomResource):
         __props__.__dict__["availability_configuration"] = availability_configuration
         __props__.__dict__["batch_interval_in_seconds"] = batch_interval_in_seconds
         __props__.__dict__["configuration"] = configuration
+        __props__.__dict__["content_type"] = content_type
         __props__.__dict__["created_by"] = created_by
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
@@ -1374,6 +1394,14 @@ class Config(pulumi.CustomResource):
         (Updatable) Details of monitor configuration.
         """
         return pulumi.get(self, "configuration")
+
+    @property
+    @pulumi.getter(name="contentType")
+    def content_type(self) -> pulumi.Output[builtins.str]:
+        """
+        Content type of the script.
+        """
+        return pulumi.get(self, "content_type")
 
     @property
     @pulumi.getter(name="createdBy")

@@ -49,6 +49,12 @@ public class PluggabledatabasePluggableDatabaseDbmFeaturesManagement extends com
     public Output<Boolean> enablePluggableDatabaseDbmFeature() {
         return this.enablePluggableDatabaseDbmFeature;
     }
+    @Export(name="feature", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> feature;
+
+    public Output<Optional<String>> feature() {
+        return Codegen.optional(this.feature);
+    }
     /**
      * The details required to enable the specified Database Management feature.
      * 

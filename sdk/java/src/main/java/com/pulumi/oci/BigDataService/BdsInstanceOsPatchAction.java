@@ -9,10 +9,12 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.BigDataService.BdsInstanceOsPatchActionArgs;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceOsPatchActionState;
-import com.pulumi.oci.BigDataService.outputs.BdsInstanceOsPatchActionPatchingConfig;
+import com.pulumi.oci.BigDataService.outputs.BdsInstanceOsPatchActionPatchingConfigs;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -32,7 +34,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.BigDataService.BdsInstanceOsPatchAction;
  * import com.pulumi.oci.BigDataService.BdsInstanceOsPatchActionArgs;
- * import com.pulumi.oci.BigDataService.inputs.BdsInstanceOsPatchActionPatchingConfigArgs;
+ * import com.pulumi.oci.BigDataService.inputs.BdsInstanceOsPatchActionPatchingConfigsArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -50,7 +52,8 @@ import javax.annotation.Nullable;
  *             .bdsInstanceId(testBdsInstance.id())
  *             .clusterAdminPassword(bdsInstanceOsPatchActionClusterAdminPassword)
  *             .osPatchVersion(bdsInstanceOsPatchActionOsPatchVersion)
- *             .patchingConfigs(BdsInstanceOsPatchActionPatchingConfigArgs.builder()
+ *             .isDryRun(isDryRun)
+ *             .patchingConfigs(BdsInstanceOsPatchActionPatchingConfigsArgs.builder()
  *                 .patchingConfigStrategy(bdsInstanceOsPatchActionPatchingConfigStrategy)
  *                 .batchSize(bdsInstanceOsPatchActionBatchSize)
  *                 .waitTimeBetweenBatchInSeconds(bdsInstanceOsPatchActionWaitTimeBetweenBatchInSeconds)
@@ -89,6 +92,7 @@ public class BdsInstanceOsPatchAction extends com.pulumi.resources.CustomResourc
     }
     /**
      * Base-64 encoded password for the cluster admin user.
+     * * `isDryRun` - (Optional) Perform dry run for the patch and stop without actually patching the cluster.
      * 
      */
     @Export(name="clusterAdminPassword", refs={String.class}, tree="[0]")
@@ -96,10 +100,17 @@ public class BdsInstanceOsPatchAction extends com.pulumi.resources.CustomResourc
 
     /**
      * @return Base-64 encoded password for the cluster admin user.
+     * * `isDryRun` - (Optional) Perform dry run for the patch and stop without actually patching the cluster.
      * 
      */
     public Output<String> clusterAdminPassword() {
         return this.clusterAdminPassword;
+    }
+    @Export(name="isDryRun", refs={Boolean.class}, tree="[0]")
+    private Output</* @Nullable */ Boolean> isDryRun;
+
+    public Output<Optional<Boolean>> isDryRun() {
+        return Codegen.optional(this.isDryRun);
     }
     /**
      * The version of the OS patch to be installed.
@@ -125,14 +136,14 @@ public class BdsInstanceOsPatchAction extends com.pulumi.resources.CustomResourc
      * Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
      * 
      */
-    @Export(name="patchingConfigs", refs={List.class,BdsInstanceOsPatchActionPatchingConfig.class}, tree="[0,1]")
-    private Output<List<BdsInstanceOsPatchActionPatchingConfig>> patchingConfigs;
+    @Export(name="patchingConfigs", refs={BdsInstanceOsPatchActionPatchingConfigs.class}, tree="[0]")
+    private Output<BdsInstanceOsPatchActionPatchingConfigs> patchingConfigs;
 
     /**
      * @return Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
      * 
      */
-    public Output<List<BdsInstanceOsPatchActionPatchingConfig>> patchingConfigs() {
+    public Output<BdsInstanceOsPatchActionPatchingConfigs> patchingConfigs() {
         return this.patchingConfigs;
     }
 

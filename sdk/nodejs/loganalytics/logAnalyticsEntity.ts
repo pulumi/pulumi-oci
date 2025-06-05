@@ -86,6 +86,10 @@ export class LogAnalyticsEntity extends pulumi.CustomResource {
      */
     public /*out*/ readonly areLogsCollected!: pulumi.Output<boolean>;
     /**
+     * The count of associated log sources for a given log analytics entity.
+     */
+    public /*out*/ readonly associatedSourcesCount!: pulumi.Output<number>;
+    /**
      * The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
      */
     public readonly cloudResourceId!: pulumi.Output<string>;
@@ -188,6 +192,7 @@ export class LogAnalyticsEntity extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as LogAnalyticsEntityState | undefined;
             resourceInputs["areLogsCollected"] = state ? state.areLogsCollected : undefined;
+            resourceInputs["associatedSourcesCount"] = state ? state.associatedSourcesCount : undefined;
             resourceInputs["cloudResourceId"] = state ? state.cloudResourceId : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
@@ -235,6 +240,7 @@ export class LogAnalyticsEntity extends pulumi.CustomResource {
             resourceInputs["timeLastDiscovered"] = args ? args.timeLastDiscovered : undefined;
             resourceInputs["timezoneRegion"] = args ? args.timezoneRegion : undefined;
             resourceInputs["areLogsCollected"] = undefined /*out*/;
+            resourceInputs["associatedSourcesCount"] = undefined /*out*/;
             resourceInputs["entityTypeInternalName"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["managementAgentCompartmentId"] = undefined /*out*/;
@@ -256,6 +262,10 @@ export interface LogAnalyticsEntityState {
      * The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
      */
     areLogsCollected?: pulumi.Input<boolean>;
+    /**
+     * The count of associated log sources for a given log analytics entity.
+     */
+    associatedSourcesCount?: pulumi.Input<number>;
     /**
      * The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
      */

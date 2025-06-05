@@ -65,6 +65,21 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentArgs extends com.
     }
 
     /**
+     * Indicates whether Diagnostics &amp; Management should be enabled for all the current pluggable databases in the container database.
+     * 
+     */
+    @Import(name="canEnableAllCurrentPdbs")
+    private @Nullable Output<Boolean> canEnableAllCurrentPdbs;
+
+    /**
+     * @return Indicates whether Diagnostics &amp; Management should be enabled for all the current pluggable databases in the container database.
+     * 
+     */
+    public Optional<Output<Boolean>> canEnableAllCurrentPdbs() {
+        return Optional.ofNullable(this.canEnableAllCurrentPdbs);
+    }
+
+    /**
      * The unique identifier of the Oracle cluster.
      * 
      */
@@ -432,6 +447,21 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentArgs extends com.
     }
 
     /**
+     * Indicates whether Diagnostics &amp; Management should be enabled automatically for all the pluggable databases in the container database.
+     * 
+     */
+    @Import(name="isAutoEnablePluggableDatabase")
+    private @Nullable Output<Boolean> isAutoEnablePluggableDatabase;
+
+    /**
+     * @return Indicates whether Diagnostics &amp; Management should be enabled automatically for all the pluggable databases in the container database.
+     * 
+     */
+    public Optional<Output<Boolean>> isAutoEnablePluggableDatabase() {
+        return Optional.ofNullable(this.isAutoEnablePluggableDatabase);
+    }
+
+    /**
      * Indicates whether the Oracle Database is part of a cluster.
      * 
      */
@@ -722,6 +752,7 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentArgs extends com.
         this.adrHomeDirectory = $.adrHomeDirectory;
         this.asmInstances = $.asmInstances;
         this.associatedComponents = $.associatedComponents;
+        this.canEnableAllCurrentPdbs = $.canEnableAllCurrentPdbs;
         this.clusterId = $.clusterId;
         this.clusterInstances = $.clusterInstances;
         this.compartmentId = $.compartmentId;
@@ -747,6 +778,7 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentArgs extends com.
         this.homeDirectory = $.homeDirectory;
         this.hostName = $.hostName;
         this.instanceName = $.instanceName;
+        this.isAutoEnablePluggableDatabase = $.isAutoEnablePluggableDatabase;
         this.isCluster = $.isCluster;
         this.isFlexCluster = $.isFlexCluster;
         this.isFlexEnabled = $.isFlexEnabled;
@@ -849,6 +881,27 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentArgs extends com.
          */
         public Builder associatedComponents(ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs... associatedComponents) {
             return associatedComponents(List.of(associatedComponents));
+        }
+
+        /**
+         * @param canEnableAllCurrentPdbs Indicates whether Diagnostics &amp; Management should be enabled for all the current pluggable databases in the container database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder canEnableAllCurrentPdbs(@Nullable Output<Boolean> canEnableAllCurrentPdbs) {
+            $.canEnableAllCurrentPdbs = canEnableAllCurrentPdbs;
+            return this;
+        }
+
+        /**
+         * @param canEnableAllCurrentPdbs Indicates whether Diagnostics &amp; Management should be enabled for all the current pluggable databases in the container database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder canEnableAllCurrentPdbs(Boolean canEnableAllCurrentPdbs) {
+            return canEnableAllCurrentPdbs(Output.of(canEnableAllCurrentPdbs));
         }
 
         /**
@@ -1386,6 +1439,27 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentArgs extends com.
          */
         public Builder instanceName(String instanceName) {
             return instanceName(Output.of(instanceName));
+        }
+
+        /**
+         * @param isAutoEnablePluggableDatabase Indicates whether Diagnostics &amp; Management should be enabled automatically for all the pluggable databases in the container database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAutoEnablePluggableDatabase(@Nullable Output<Boolean> isAutoEnablePluggableDatabase) {
+            $.isAutoEnablePluggableDatabase = isAutoEnablePluggableDatabase;
+            return this;
+        }
+
+        /**
+         * @param isAutoEnablePluggableDatabase Indicates whether Diagnostics &amp; Management should be enabled automatically for all the pluggable databases in the container database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAutoEnablePluggableDatabase(Boolean isAutoEnablePluggableDatabase) {
+            return isAutoEnablePluggableDatabase(Output.of(isAutoEnablePluggableDatabase));
         }
 
         /**

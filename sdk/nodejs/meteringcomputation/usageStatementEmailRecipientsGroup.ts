@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Usage Statement Email Recipients Group resource in Oracle Cloud Infrastructure Metering Computation service.
  *
- * Add a list of email recipients that can receive usage statements for the subscription.
+ * Creates a list of email recipients that can receive usage statements for the subscription.
  *
  * ## Example Usage
  *
@@ -71,15 +71,15 @@ export class UsageStatementEmailRecipientsGroup extends pulumi.CustomResource {
     public readonly compartmentId!: pulumi.Output<string>;
     public readonly emailRecipientsGroupId!: pulumi.Output<string>;
     /**
-     * (Updatable) The list of recipient will receive the usage statement email.
+     * (Updatable) The list of recipients that will receive usage statement emails.
      */
     public readonly recipientsLists!: pulumi.Output<outputs.MeteringComputation.UsageStatementEmailRecipientsGroupRecipientsList[]>;
     /**
-     * The email recipient group lifecycle state.
+     * The email recipients group lifecycle state.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
-     * The UsageStatement Subscription unique OCID.
+     * The usage statement subscription unique OCID.
      *
      *
      * ** IMPORTANT **
@@ -137,15 +137,15 @@ export interface UsageStatementEmailRecipientsGroupState {
     compartmentId?: pulumi.Input<string>;
     emailRecipientsGroupId?: pulumi.Input<string>;
     /**
-     * (Updatable) The list of recipient will receive the usage statement email.
+     * (Updatable) The list of recipients that will receive usage statement emails.
      */
     recipientsLists?: pulumi.Input<pulumi.Input<inputs.MeteringComputation.UsageStatementEmailRecipientsGroupRecipientsList>[]>;
     /**
-     * The email recipient group lifecycle state.
+     * The email recipients group lifecycle state.
      */
     state?: pulumi.Input<string>;
     /**
-     * The UsageStatement Subscription unique OCID.
+     * The usage statement subscription unique OCID.
      *
      *
      * ** IMPORTANT **
@@ -164,11 +164,11 @@ export interface UsageStatementEmailRecipientsGroupArgs {
     compartmentId: pulumi.Input<string>;
     emailRecipientsGroupId?: pulumi.Input<string>;
     /**
-     * (Updatable) The list of recipient will receive the usage statement email.
+     * (Updatable) The list of recipients that will receive usage statement emails.
      */
     recipientsLists: pulumi.Input<pulumi.Input<inputs.MeteringComputation.UsageStatementEmailRecipientsGroupRecipientsList>[]>;
     /**
-     * The UsageStatement Subscription unique OCID.
+     * The usage statement subscription unique OCID.
      *
      *
      * ** IMPORTANT **

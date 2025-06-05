@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -36,6 +36,7 @@ import (
 //				IsIncludePatterns: pulumi.BoolRef(namespaceEffectivePropertyIsIncludePatterns),
 //				Name:              pulumi.StringRef(namespaceEffectivePropertyName),
 //				PatternId:         pulumi.IntRef(testPattern.Id),
+//				PatternIdLong:     pulumi.StringRef(namespaceEffectivePropertyPatternIdLong),
 //				SourceName:        pulumi.StringRef(namespaceEffectivePropertySourceName),
 //			}, nil)
 //			if err != nil {
@@ -71,6 +72,8 @@ type GetNamespaceEffectivePropertiesArgs struct {
 	Namespace string `pulumi:"namespace"`
 	// The pattern id.
 	PatternId *int `pulumi:"patternId"`
+	// The pattern id (long).
+	PatternIdLong *string `pulumi:"patternIdLong"`
 	// The source name.
 	SourceName *string `pulumi:"sourceName"`
 }
@@ -86,10 +89,11 @@ type GetNamespaceEffectivePropertiesResult struct {
 	Id                string `pulumi:"id"`
 	IsIncludePatterns *bool  `pulumi:"isIncludePatterns"`
 	// The property name.
-	Name       *string `pulumi:"name"`
-	Namespace  string  `pulumi:"namespace"`
-	PatternId  *int    `pulumi:"patternId"`
-	SourceName *string `pulumi:"sourceName"`
+	Name          *string `pulumi:"name"`
+	Namespace     string  `pulumi:"namespace"`
+	PatternId     *int    `pulumi:"patternId"`
+	PatternIdLong *string `pulumi:"patternIdLong"`
+	SourceName    *string `pulumi:"sourceName"`
 }
 
 func GetNamespaceEffectivePropertiesOutput(ctx *pulumi.Context, args GetNamespaceEffectivePropertiesOutputArgs, opts ...pulumi.InvokeOption) GetNamespaceEffectivePropertiesResultOutput {
@@ -116,6 +120,8 @@ type GetNamespaceEffectivePropertiesOutputArgs struct {
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// The pattern id.
 	PatternId pulumi.IntPtrInput `pulumi:"patternId"`
+	// The pattern id (long).
+	PatternIdLong pulumi.StringPtrInput `pulumi:"patternIdLong"`
 	// The source name.
 	SourceName pulumi.StringPtrInput `pulumi:"sourceName"`
 }
@@ -180,6 +186,10 @@ func (o GetNamespaceEffectivePropertiesResultOutput) Namespace() pulumi.StringOu
 
 func (o GetNamespaceEffectivePropertiesResultOutput) PatternId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GetNamespaceEffectivePropertiesResult) *int { return v.PatternId }).(pulumi.IntPtrOutput)
+}
+
+func (o GetNamespaceEffectivePropertiesResultOutput) PatternIdLong() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceEffectivePropertiesResult) *string { return v.PatternIdLong }).(pulumi.StringPtrOutput)
 }
 
 func (o GetNamespaceEffectivePropertiesResultOutput) SourceName() pulumi.StringPtrOutput {

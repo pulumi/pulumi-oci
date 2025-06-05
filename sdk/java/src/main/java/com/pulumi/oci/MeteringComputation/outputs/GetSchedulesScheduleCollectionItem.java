@@ -40,7 +40,7 @@ public final class GetSchedulesScheduleCollectionItem {
      */
     private String id;
     /**
-     * @return Query parameter for filtering by name
+     * @return The query parameter for filtering by name.
      * 
      */
     private String name;
@@ -132,7 +132,7 @@ public final class GetSchedulesScheduleCollectionItem {
         return this.id;
     }
     /**
-     * @return Query parameter for filtering by name
+     * @return The query parameter for filtering by name.
      * 
      */
     public String name() {

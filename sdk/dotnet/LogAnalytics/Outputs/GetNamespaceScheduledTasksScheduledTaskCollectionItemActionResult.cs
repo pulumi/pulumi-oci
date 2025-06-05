@@ -39,6 +39,10 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// </summary>
         public readonly string SavedSearchId;
         /// <summary>
+        /// details for scheduled task using template
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailResult> TemplateDetails;
+        /// <summary>
         /// Schedule type discriminator.
         /// </summary>
         public readonly string Type;
@@ -59,6 +63,8 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
 
             string savedSearchId,
 
+            ImmutableArray<Outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailResult> templateDetails,
+
             string type)
         {
             CompartmentIdInSubtree = compartmentIdInSubtree;
@@ -68,6 +74,7 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
             PurgeDuration = purgeDuration;
             QueryString = queryString;
             SavedSearchId = savedSearchId;
+            TemplateDetails = templateDetails;
             Type = type;
         }
     }

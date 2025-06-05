@@ -25,10 +25,17 @@ __all__ = [
     'NamespaceIngestTimeRuleAction',
     'NamespaceIngestTimeRuleConditions',
     'NamespaceIngestTimeRuleConditionsAdditionalCondition',
+    'NamespaceLookupCategory',
+    'NamespaceLookupField',
+    'NamespaceLookupReferringSource',
+    'NamespaceLookupStatusSummary',
     'NamespaceScheduledTaskAction',
     'NamespaceScheduledTaskActionMetricExtraction',
+    'NamespaceScheduledTaskActionTemplateDetails',
+    'NamespaceScheduledTaskActionTemplateDetailsTemplateParam',
     'NamespaceScheduledTaskSchedules',
     'NamespaceScheduledTaskSchedulesSchedule',
+    'NamespaceStorageArchivalConfigArchivingConfiguration',
     'GetLogAnalyticsCategoriesListItemResult',
     'GetLogAnalyticsEntitiesFilterResult',
     'GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionResult',
@@ -37,6 +44,7 @@ __all__ = [
     'GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemMetadataItemResult',
     'GetLogAnalyticsEntityMetadataResult',
     'GetLogAnalyticsEntityMetadataItemResult',
+    'GetLogAnalyticsEntityTopologyFilterResult',
     'GetLogAnalyticsEntityTopologyItemResult',
     'GetLogAnalyticsEntityTopologyItemLinkResult',
     'GetLogAnalyticsEntityTopologyItemLinkItemResult',
@@ -57,12 +65,24 @@ __all__ = [
     'GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemResult',
     'GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternResult',
     'GetNamespaceEffectivePropertiesFilterResult',
+    'GetNamespaceFieldUsageDependentParserResult',
+    'GetNamespaceFieldUsageDependentParserDependencyResult',
+    'GetNamespaceFieldUsageDependentSourceResult',
+    'GetNamespaceFieldUsageDependentSourceDependencyResult',
+    'GetNamespaceFieldUsageDependentSourceEntityTypeResult',
     'GetNamespaceIngestTimeRuleActionResult',
     'GetNamespaceIngestTimeRuleConditionResult',
     'GetNamespaceIngestTimeRuleConditionAdditionalConditionResult',
     'GetNamespaceIngestTimeRulesFilterResult',
     'GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionResult',
     'GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemResult',
+    'GetNamespaceLookupCategoryResult',
+    'GetNamespaceLookupFieldResult',
+    'GetNamespaceLookupReferringSourceResult',
+    'GetNamespaceLookupStatusSummaryResult',
+    'GetNamespaceParserActionsFilterResult',
+    'GetNamespaceParserActionsParserActionSummaryCollectionResult',
+    'GetNamespaceParserActionsParserActionSummaryCollectionItemResult',
     'GetNamespacePropertiesMetadataFilterResult',
     'GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionResult',
     'GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemResult',
@@ -72,6 +92,8 @@ __all__ = [
     'GetNamespaceRulesRuleSummaryCollectionItemResult',
     'GetNamespaceScheduledTaskActionResult',
     'GetNamespaceScheduledTaskActionMetricExtractionResult',
+    'GetNamespaceScheduledTaskActionTemplateDetailResult',
+    'GetNamespaceScheduledTaskActionTemplateDetailTemplateParamResult',
     'GetNamespaceScheduledTaskScheduleResult',
     'GetNamespaceScheduledTaskScheduleScheduleResult',
     'GetNamespaceScheduledTasksFilterResult',
@@ -79,12 +101,20 @@ __all__ = [
     'GetNamespaceScheduledTasksScheduledTaskCollectionItemResult',
     'GetNamespaceScheduledTasksScheduledTaskCollectionItemActionResult',
     'GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionResult',
+    'GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailResult',
+    'GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamResult',
     'GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleResult',
     'GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleResult',
+    'GetNamespaceStorageArchivalConfigArchivingConfigurationResult',
     'GetNamespaceStorageEncryptionKeyInfoItemResult',
     'GetNamespaceStorageOverlappingRecallsFilterResult',
     'GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionResult',
     'GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemResult',
+    'GetNamespaceTemplateFacetResult',
+    'GetNamespaceTemplatesFilterResult',
+    'GetNamespaceTemplatesLogAnalyticsTemplateCollectionResult',
+    'GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemResult',
+    'GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetResult',
     'GetNamespacesFilterResult',
     'GetNamespacesNamespaceCollectionResult',
     'GetNamespacesNamespaceCollectionItemResult',
@@ -635,6 +665,346 @@ class NamespaceIngestTimeRuleConditionsAdditionalCondition(dict):
 
 
 @pulumi.output_type
+class NamespaceLookupCategory(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+        elif key == "isSystem":
+            suggest = "is_system"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NamespaceLookupCategory. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NamespaceLookupCategory.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NamespaceLookupCategory.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 description: Optional[builtins.str] = None,
+                 display_name: Optional[builtins.str] = None,
+                 is_system: Optional[builtins.bool] = None,
+                 name: Optional[builtins.str] = None,
+                 type: Optional[builtins.str] = None):
+        """
+        :param builtins.str description: (Updatable) The category description.
+        :param builtins.str display_name: (Updatable) The category display name.
+        :param builtins.bool is_system: (Updatable) The system flag. A value of false denotes a user-created category. A value of true denotes an Oracle-defined category.
+        :param builtins.str name: (Updatable) The unique name that identifies the category.
+        :param builtins.str type: (Updatable) The category type. Values include "PRODUCT", "TIER", "VENDOR" and "GENERIC".
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if is_system is not None:
+            pulumi.set(__self__, "is_system", is_system)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The category description.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The category display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="isSystem")
+    def is_system(self) -> Optional[builtins.bool]:
+        """
+        (Updatable) The system flag. A value of false denotes a user-created category. A value of true denotes an Oracle-defined category.
+        """
+        return pulumi.get(self, "is_system")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The unique name that identifies the category.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The category type. Values include "PRODUCT", "TIER", "VENDOR" and "GENERIC".
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class NamespaceLookupField(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "commonFieldName":
+            suggest = "common_field_name"
+        elif key == "defaultMatchValue":
+            suggest = "default_match_value"
+        elif key == "displayName":
+            suggest = "display_name"
+        elif key == "isCommonField":
+            suggest = "is_common_field"
+        elif key == "matchOperator":
+            suggest = "match_operator"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NamespaceLookupField. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NamespaceLookupField.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NamespaceLookupField.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 common_field_name: Optional[builtins.str] = None,
+                 default_match_value: Optional[builtins.str] = None,
+                 display_name: Optional[builtins.str] = None,
+                 is_common_field: Optional[builtins.bool] = None,
+                 match_operator: Optional[builtins.str] = None,
+                 name: Optional[builtins.str] = None,
+                 position: Optional[builtins.str] = None):
+        """
+        :param builtins.str common_field_name: (Updatable) The common field name.
+        :param builtins.str default_match_value: (Updatable) The default match value.
+        :param builtins.str display_name: (Updatable) The display name.
+        :param builtins.bool is_common_field: (Updatable) A flag indicating whether or not the field is a common field.
+        :param builtins.str match_operator: (Updatable) The match operator.
+        :param builtins.str name: (Updatable) The field name.
+        :param builtins.str position: (Updatable) The position.
+        """
+        if common_field_name is not None:
+            pulumi.set(__self__, "common_field_name", common_field_name)
+        if default_match_value is not None:
+            pulumi.set(__self__, "default_match_value", default_match_value)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if is_common_field is not None:
+            pulumi.set(__self__, "is_common_field", is_common_field)
+        if match_operator is not None:
+            pulumi.set(__self__, "match_operator", match_operator)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if position is not None:
+            pulumi.set(__self__, "position", position)
+
+    @property
+    @pulumi.getter(name="commonFieldName")
+    def common_field_name(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The common field name.
+        """
+        return pulumi.get(self, "common_field_name")
+
+    @property
+    @pulumi.getter(name="defaultMatchValue")
+    def default_match_value(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The default match value.
+        """
+        return pulumi.get(self, "default_match_value")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="isCommonField")
+    def is_common_field(self) -> Optional[builtins.bool]:
+        """
+        (Updatable) A flag indicating whether or not the field is a common field.
+        """
+        return pulumi.get(self, "is_common_field")
+
+    @property
+    @pulumi.getter(name="matchOperator")
+    def match_operator(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The match operator.
+        """
+        return pulumi.get(self, "match_operator")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The field name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def position(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The position.
+        """
+        return pulumi.get(self, "position")
+
+
+@pulumi.output_type
+class NamespaceLookupReferringSource(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "canonicalLink":
+            suggest = "canonical_link"
+        elif key == "totalCount":
+            suggest = "total_count"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NamespaceLookupReferringSource. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NamespaceLookupReferringSource.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NamespaceLookupReferringSource.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 canonical_link: Optional[builtins.str] = None,
+                 total_count: Optional[builtins.str] = None):
+        """
+        :param builtins.str canonical_link: The canonical link.
+        :param builtins.str total_count: The total count.
+        """
+        if canonical_link is not None:
+            pulumi.set(__self__, "canonical_link", canonical_link)
+        if total_count is not None:
+            pulumi.set(__self__, "total_count", total_count)
+
+    @property
+    @pulumi.getter(name="canonicalLink")
+    def canonical_link(self) -> Optional[builtins.str]:
+        """
+        The canonical link.
+        """
+        return pulumi.get(self, "canonical_link")
+
+    @property
+    @pulumi.getter(name="totalCount")
+    def total_count(self) -> Optional[builtins.str]:
+        """
+        The total count.
+        """
+        return pulumi.get(self, "total_count")
+
+
+@pulumi.output_type
+class NamespaceLookupStatusSummary(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "chunksProcessed":
+            suggest = "chunks_processed"
+        elif key == "failureDetails":
+            suggest = "failure_details"
+        elif key == "totalChunks":
+            suggest = "total_chunks"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NamespaceLookupStatusSummary. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NamespaceLookupStatusSummary.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NamespaceLookupStatusSummary.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 chunks_processed: Optional[builtins.str] = None,
+                 failure_details: Optional[builtins.str] = None,
+                 filename: Optional[builtins.str] = None,
+                 status: Optional[builtins.str] = None,
+                 total_chunks: Optional[builtins.str] = None):
+        """
+        :param builtins.str chunks_processed: The number of chunks processed.
+        :param builtins.str failure_details: The failure details, if any.
+        :param builtins.str filename: The filename.
+        :param builtins.str status: The status.
+        :param builtins.str total_chunks: The total number of chunks.
+        """
+        if chunks_processed is not None:
+            pulumi.set(__self__, "chunks_processed", chunks_processed)
+        if failure_details is not None:
+            pulumi.set(__self__, "failure_details", failure_details)
+        if filename is not None:
+            pulumi.set(__self__, "filename", filename)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if total_chunks is not None:
+            pulumi.set(__self__, "total_chunks", total_chunks)
+
+    @property
+    @pulumi.getter(name="chunksProcessed")
+    def chunks_processed(self) -> Optional[builtins.str]:
+        """
+        The number of chunks processed.
+        """
+        return pulumi.get(self, "chunks_processed")
+
+    @property
+    @pulumi.getter(name="failureDetails")
+    def failure_details(self) -> Optional[builtins.str]:
+        """
+        The failure details, if any.
+        """
+        return pulumi.get(self, "failure_details")
+
+    @property
+    @pulumi.getter
+    def filename(self) -> Optional[builtins.str]:
+        """
+        The filename.
+        """
+        return pulumi.get(self, "filename")
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[builtins.str]:
+        """
+        The status.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="totalChunks")
+    def total_chunks(self) -> Optional[builtins.str]:
+        """
+        The total number of chunks.
+        """
+        return pulumi.get(self, "total_chunks")
+
+
+@pulumi.output_type
 class NamespaceScheduledTaskAction(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -653,6 +1023,8 @@ class NamespaceScheduledTaskAction(dict):
             suggest = "query_string"
         elif key == "savedSearchId":
             suggest = "saved_search_id"
+        elif key == "templateDetails":
+            suggest = "template_details"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in NamespaceScheduledTaskAction. Access the value via the '{suggest}' property getter instead.")
@@ -673,7 +1045,8 @@ class NamespaceScheduledTaskAction(dict):
                  purge_compartment_id: Optional[builtins.str] = None,
                  purge_duration: Optional[builtins.str] = None,
                  query_string: Optional[builtins.str] = None,
-                 saved_search_id: Optional[builtins.str] = None):
+                 saved_search_id: Optional[builtins.str] = None,
+                 template_details: Optional['outputs.NamespaceScheduledTaskActionTemplateDetails'] = None):
         """
         :param builtins.str type: Action type discriminator.
         :param builtins.bool compartment_id_in_subtree: if true, purge child compartments data
@@ -682,7 +1055,8 @@ class NamespaceScheduledTaskAction(dict):
         :param builtins.str purge_compartment_id: the compartment OCID under which the data will be purged
         :param builtins.str purge_duration: The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
         :param builtins.str query_string: Purge query string.
-        :param builtins.str saved_search_id: The ManagementSavedSearch id [OCID] utilized in the action.
+        :param builtins.str saved_search_id: The ManagementSavedSearch id [OCID] utilized in the action.  Should not be provided when a template ID is present.
+        :param 'NamespaceScheduledTaskActionTemplateDetailsArgs' template_details: details for scheduled task using template
         """
         pulumi.set(__self__, "type", type)
         if compartment_id_in_subtree is not None:
@@ -699,6 +1073,8 @@ class NamespaceScheduledTaskAction(dict):
             pulumi.set(__self__, "query_string", query_string)
         if saved_search_id is not None:
             pulumi.set(__self__, "saved_search_id", saved_search_id)
+        if template_details is not None:
+            pulumi.set(__self__, "template_details", template_details)
 
     @property
     @pulumi.getter
@@ -760,9 +1136,17 @@ class NamespaceScheduledTaskAction(dict):
     @pulumi.getter(name="savedSearchId")
     def saved_search_id(self) -> Optional[builtins.str]:
         """
-        The ManagementSavedSearch id [OCID] utilized in the action.
+        The ManagementSavedSearch id [OCID] utilized in the action.  Should not be provided when a template ID is present.
         """
         return pulumi.get(self, "saved_search_id")
+
+    @property
+    @pulumi.getter(name="templateDetails")
+    def template_details(self) -> Optional['outputs.NamespaceScheduledTaskActionTemplateDetails']:
+        """
+        details for scheduled task using template
+        """
+        return pulumi.get(self, "template_details")
 
 
 @pulumi.output_type
@@ -839,6 +1223,106 @@ class NamespaceScheduledTaskActionMetricExtraction(dict):
         The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
         """
         return pulumi.get(self, "resource_group")
+
+
+@pulumi.output_type
+class NamespaceScheduledTaskActionTemplateDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "templateId":
+            suggest = "template_id"
+        elif key == "templateParams":
+            suggest = "template_params"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NamespaceScheduledTaskActionTemplateDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NamespaceScheduledTaskActionTemplateDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NamespaceScheduledTaskActionTemplateDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 template_id: Optional[builtins.str] = None,
+                 template_params: Optional[Sequence['outputs.NamespaceScheduledTaskActionTemplateDetailsTemplateParam']] = None):
+        """
+        :param builtins.str template_id: The template Id of a particular template.  Should not be provided when a saved search ID is present.
+        :param Sequence['NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgs'] template_params: To store macro params.
+        """
+        if template_id is not None:
+            pulumi.set(__self__, "template_id", template_id)
+        if template_params is not None:
+            pulumi.set(__self__, "template_params", template_params)
+
+    @property
+    @pulumi.getter(name="templateId")
+    def template_id(self) -> Optional[builtins.str]:
+        """
+        The template Id of a particular template.  Should not be provided when a saved search ID is present.
+        """
+        return pulumi.get(self, "template_id")
+
+    @property
+    @pulumi.getter(name="templateParams")
+    def template_params(self) -> Optional[Sequence['outputs.NamespaceScheduledTaskActionTemplateDetailsTemplateParam']]:
+        """
+        To store macro params.
+        """
+        return pulumi.get(self, "template_params")
+
+
+@pulumi.output_type
+class NamespaceScheduledTaskActionTemplateDetailsTemplateParam(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "keyField":
+            suggest = "key_field"
+        elif key == "valueField":
+            suggest = "value_field"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NamespaceScheduledTaskActionTemplateDetailsTemplateParam. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NamespaceScheduledTaskActionTemplateDetailsTemplateParam.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NamespaceScheduledTaskActionTemplateDetailsTemplateParam.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 key_field: Optional[builtins.str] = None,
+                 value_field: Optional[builtins.str] = None):
+        """
+        :param builtins.str key_field: Contains a template parameter's name.
+        :param builtins.str value_field: Contains the desired value for a given parameter.
+        """
+        if key_field is not None:
+            pulumi.set(__self__, "key_field", key_field)
+        if value_field is not None:
+            pulumi.set(__self__, "value_field", value_field)
+
+    @property
+    @pulumi.getter(name="keyField")
+    def key_field(self) -> Optional[builtins.str]:
+        """
+        Contains a template parameter's name.
+        """
+        return pulumi.get(self, "key_field")
+
+    @property
+    @pulumi.getter(name="valueField")
+    def value_field(self) -> Optional[builtins.str]:
+        """
+        Contains the desired value for a given parameter.
+        """
+        return pulumi.get(self, "value_field")
 
 
 @pulumi.output_type
@@ -952,6 +1436,56 @@ class NamespaceScheduledTaskSchedulesSchedule(dict):
         Time zone, by default UTC.
         """
         return pulumi.get(self, "time_zone")
+
+
+@pulumi.output_type
+class NamespaceStorageArchivalConfigArchivingConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "activeStorageDuration":
+            suggest = "active_storage_duration"
+        elif key == "archivalStorageDuration":
+            suggest = "archival_storage_duration"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NamespaceStorageArchivalConfigArchivingConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NamespaceStorageArchivalConfigArchivingConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NamespaceStorageArchivalConfigArchivingConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 active_storage_duration: Optional[builtins.str] = None,
+                 archival_storage_duration: Optional[builtins.str] = None):
+        """
+        :param builtins.str active_storage_duration: (Updatable) This is the duration data in active storage before data is archived, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+        :param builtins.str archival_storage_duration: (Updatable) This is the duration before archived data is deleted from object storage, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+        """
+        if active_storage_duration is not None:
+            pulumi.set(__self__, "active_storage_duration", active_storage_duration)
+        if archival_storage_duration is not None:
+            pulumi.set(__self__, "archival_storage_duration", archival_storage_duration)
+
+    @property
+    @pulumi.getter(name="activeStorageDuration")
+    def active_storage_duration(self) -> Optional[builtins.str]:
+        """
+        (Updatable) This is the duration data in active storage before data is archived, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+        """
+        return pulumi.get(self, "active_storage_duration")
+
+    @property
+    @pulumi.getter(name="archivalStorageDuration")
+    def archival_storage_duration(self) -> Optional[builtins.str]:
+        """
+        (Updatable) This is the duration before archived data is deleted from object storage, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+        """
+        return pulumi.get(self, "archival_storage_duration")
 
 
 @pulumi.output_type
@@ -1071,6 +1605,7 @@ class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionResult(dict):
 class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemResult(dict):
     def __init__(__self__, *,
                  are_logs_collected: builtins.bool,
+                 associated_sources_count: builtins.int,
                  cloud_resource_id: builtins.str,
                  compartment_id: builtins.str,
                  defined_tags: Mapping[str, builtins.str],
@@ -1095,6 +1630,7 @@ class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemResult(dict):
                  timezone_region: builtins.str):
         """
         :param builtins.bool are_logs_collected: The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
+        :param builtins.int associated_sources_count: The count of associated log sources for a given log analytics entity.
         :param builtins.str cloud_resource_id: A filter to return only log analytics entities whose cloudResourceId matches the cloudResourceId given.
         :param builtins.str compartment_id: The ID of the compartment in which to list resources.
         :param Mapping[str, builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -1119,6 +1655,7 @@ class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemResult(dict):
         :param builtins.str timezone_region: The timezone region of the log analytics entity.
         """
         pulumi.set(__self__, "are_logs_collected", are_logs_collected)
+        pulumi.set(__self__, "associated_sources_count", associated_sources_count)
         pulumi.set(__self__, "cloud_resource_id", cloud_resource_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -1149,6 +1686,14 @@ class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemResult(dict):
         The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
         """
         return pulumi.get(self, "are_logs_collected")
+
+    @property
+    @pulumi.getter(name="associatedSourcesCount")
+    def associated_sources_count(self) -> builtins.int:
+        """
+        The count of associated log sources for a given log analytics entity.
+        """
+        return pulumi.get(self, "associated_sources_count")
 
     @property
     @pulumi.getter(name="cloudResourceId")
@@ -1441,6 +1986,39 @@ class GetLogAnalyticsEntityMetadataItemResult(dict):
         The metadata value.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetLogAnalyticsEntityTopologyFilterResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        """
+        :param builtins.str name: Log analytics entity name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        Log analytics entity name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
 
 
 @pulumi.output_type
@@ -1956,6 +2534,7 @@ class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollec
                  id: builtins.str,
                  is_enabled: builtins.bool,
                  is_force_historic_collection: builtins.bool,
+                 last_collected_object: builtins.str,
                  lifecycle_details: builtins.str,
                  log_group_id: builtins.str,
                  log_set: builtins.str,
@@ -1972,6 +2551,9 @@ class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollec
                  poll_since: builtins.str,
                  poll_till: builtins.str,
                  state: builtins.str,
+                 stream_cursor_time: builtins.str,
+                 stream_cursor_type: builtins.str,
+                 stream_id: builtins.str,
                  time_created: builtins.str,
                  time_updated: builtins.str,
                  timezone: builtins.str):
@@ -1986,6 +2568,7 @@ class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollec
         :param builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
         :param builtins.bool is_enabled: Whether or not this rule is currently enabled.
         :param builtins.bool is_force_historic_collection: Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
+        :param builtins.str last_collected_object: Last Collected Object for the rule
         :param builtins.str lifecycle_details: A detailed status of the life cycle state.
         :param builtins.str log_group_id: Logging Analytics Log group OCID to associate the processed logs with.
         :param builtins.str log_set: The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
@@ -2002,6 +2585,9 @@ class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollec
         :param builtins.str poll_since: The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
         :param builtins.str poll_till: The oldest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollTill will result in error.
         :param builtins.str state: Lifecycle state filter.
+        :param builtins.str stream_cursor_time: The time from which to consume the objects, if streamCursorType is AT_TIME.
+        :param builtins.str stream_cursor_type: Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
+        :param builtins.str stream_id: A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
         :param builtins.str time_created: The time when this rule was created. An RFC3339 formatted datetime string.
         :param builtins.str time_updated: The time when this rule was last updated. An RFC3339 formatted datetime string.
         :param builtins.str timezone: Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
@@ -2016,6 +2602,7 @@ class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollec
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_enabled", is_enabled)
         pulumi.set(__self__, "is_force_historic_collection", is_force_historic_collection)
+        pulumi.set(__self__, "last_collected_object", last_collected_object)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "log_group_id", log_group_id)
         pulumi.set(__self__, "log_set", log_set)
@@ -2032,6 +2619,9 @@ class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollec
         pulumi.set(__self__, "poll_since", poll_since)
         pulumi.set(__self__, "poll_till", poll_till)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "stream_cursor_time", stream_cursor_time)
+        pulumi.set(__self__, "stream_cursor_type", stream_cursor_type)
+        pulumi.set(__self__, "stream_id", stream_id)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "timezone", timezone)
@@ -2115,6 +2705,14 @@ class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollec
         Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
         """
         return pulumi.get(self, "is_force_historic_collection")
+
+    @property
+    @pulumi.getter(name="lastCollectedObject")
+    def last_collected_object(self) -> builtins.str:
+        """
+        Last Collected Object for the rule
+        """
+        return pulumi.get(self, "last_collected_object")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -2243,6 +2841,30 @@ class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollec
         Lifecycle state filter.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="streamCursorTime")
+    def stream_cursor_time(self) -> builtins.str:
+        """
+        The time from which to consume the objects, if streamCursorType is AT_TIME.
+        """
+        return pulumi.get(self, "stream_cursor_time")
+
+    @property
+    @pulumi.getter(name="streamCursorType")
+    def stream_cursor_type(self) -> builtins.str:
+        """
+        Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
+        """
+        return pulumi.get(self, "stream_cursor_type")
+
+    @property
+    @pulumi.getter(name="streamId")
+    def stream_id(self) -> builtins.str:
+        """
+        A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+        """
+        return pulumi.get(self, "stream_id")
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -2397,17 +3019,23 @@ class GetLogAnalyticsResourceCategoriesListCategoryResult(dict):
 class GetLogAnalyticsResourceCategoriesListItemResult(dict):
     def __init__(__self__, *,
                  category_name: builtins.str,
+                 compartment_id: builtins.str,
                  is_system: builtins.bool,
+                 resource_display_name: builtins.str,
                  resource_id: builtins.str,
                  resource_type: builtins.str):
         """
         :param builtins.str category_name: The category name to which this resource belongs.
+        :param builtins.str compartment_id: The compartment id in which to list resources.
         :param builtins.bool is_system: The system flag. A value of false denotes a user-created category assignment. A value of true denotes an Oracle-defined category assignment.
+        :param builtins.str resource_display_name: The resource display name.
         :param builtins.str resource_id: The unique identifier of the resource, usually a name or ocid.
         :param builtins.str resource_type: The resource type.
         """
         pulumi.set(__self__, "category_name", category_name)
+        pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "is_system", is_system)
+        pulumi.set(__self__, "resource_display_name", resource_display_name)
         pulumi.set(__self__, "resource_id", resource_id)
         pulumi.set(__self__, "resource_type", resource_type)
 
@@ -2420,12 +3048,28 @@ class GetLogAnalyticsResourceCategoriesListItemResult(dict):
         return pulumi.get(self, "category_name")
 
     @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> builtins.str:
+        """
+        The compartment id in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
     @pulumi.getter(name="isSystem")
     def is_system(self) -> builtins.bool:
         """
         The system flag. A value of false denotes a user-created category assignment. A value of true denotes an Oracle-defined category assignment.
         """
         return pulumi.get(self, "is_system")
+
+    @property
+    @pulumi.getter(name="resourceDisplayName")
+    def resource_display_name(self) -> builtins.str:
+        """
+        The resource display name.
+        """
+        return pulumi.get(self, "resource_display_name")
 
     @property
     @pulumi.getter(name="resourceId")
@@ -2584,6 +3228,349 @@ class GetNamespaceEffectivePropertiesFilterResult(dict):
     @pulumi.getter
     def regex(self) -> Optional[builtins.bool]:
         return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetNamespaceFieldUsageDependentParserResult(dict):
+    def __init__(__self__, *,
+                 dependencies: Sequence['outputs.GetNamespaceFieldUsageDependentParserDependencyResult'],
+                 is_system: builtins.bool,
+                 parser_display_name: builtins.str,
+                 parser_id: builtins.str,
+                 parser_name: builtins.str,
+                 parser_type: builtins.str):
+        """
+        :param Sequence['GetNamespaceFieldUsageDependentParserDependencyArgs'] dependencies: The list of dependencies defined by the source.
+        :param builtins.bool is_system: The system flag.  A value of false denotes a custom, or user defined object.  A value of true denotes a built in object.
+        :param builtins.str parser_display_name: The parser display name.
+        :param builtins.str parser_id: The parser unique identifier.
+        :param builtins.str parser_name: The parser name.
+        :param builtins.str parser_type: The parser type
+        """
+        pulumi.set(__self__, "dependencies", dependencies)
+        pulumi.set(__self__, "is_system", is_system)
+        pulumi.set(__self__, "parser_display_name", parser_display_name)
+        pulumi.set(__self__, "parser_id", parser_id)
+        pulumi.set(__self__, "parser_name", parser_name)
+        pulumi.set(__self__, "parser_type", parser_type)
+
+    @property
+    @pulumi.getter
+    def dependencies(self) -> Sequence['outputs.GetNamespaceFieldUsageDependentParserDependencyResult']:
+        """
+        The list of dependencies defined by the source.
+        """
+        return pulumi.get(self, "dependencies")
+
+    @property
+    @pulumi.getter(name="isSystem")
+    def is_system(self) -> builtins.bool:
+        """
+        The system flag.  A value of false denotes a custom, or user defined object.  A value of true denotes a built in object.
+        """
+        return pulumi.get(self, "is_system")
+
+    @property
+    @pulumi.getter(name="parserDisplayName")
+    def parser_display_name(self) -> builtins.str:
+        """
+        The parser display name.
+        """
+        return pulumi.get(self, "parser_display_name")
+
+    @property
+    @pulumi.getter(name="parserId")
+    def parser_id(self) -> builtins.str:
+        """
+        The parser unique identifier.
+        """
+        return pulumi.get(self, "parser_id")
+
+    @property
+    @pulumi.getter(name="parserName")
+    def parser_name(self) -> builtins.str:
+        """
+        The parser name.
+        """
+        return pulumi.get(self, "parser_name")
+
+    @property
+    @pulumi.getter(name="parserType")
+    def parser_type(self) -> builtins.str:
+        """
+        The parser type
+        """
+        return pulumi.get(self, "parser_type")
+
+
+@pulumi.output_type
+class GetNamespaceFieldUsageDependentParserDependencyResult(dict):
+    def __init__(__self__, *,
+                 reference_display_name: builtins.str,
+                 reference_id: builtins.str,
+                 reference_name: builtins.str,
+                 reference_type: builtins.str,
+                 type: builtins.str):
+        """
+        :param builtins.str reference_display_name: The display name of the dependency object
+        :param builtins.str reference_id: The unique identifier of the reference, if available.
+        :param builtins.str reference_name: The name of the dependency object
+        :param builtins.str reference_type: The type of reference that defines the dependency.
+        :param builtins.str type: The dependency type.
+        """
+        pulumi.set(__self__, "reference_display_name", reference_display_name)
+        pulumi.set(__self__, "reference_id", reference_id)
+        pulumi.set(__self__, "reference_name", reference_name)
+        pulumi.set(__self__, "reference_type", reference_type)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="referenceDisplayName")
+    def reference_display_name(self) -> builtins.str:
+        """
+        The display name of the dependency object
+        """
+        return pulumi.get(self, "reference_display_name")
+
+    @property
+    @pulumi.getter(name="referenceId")
+    def reference_id(self) -> builtins.str:
+        """
+        The unique identifier of the reference, if available.
+        """
+        return pulumi.get(self, "reference_id")
+
+    @property
+    @pulumi.getter(name="referenceName")
+    def reference_name(self) -> builtins.str:
+        """
+        The name of the dependency object
+        """
+        return pulumi.get(self, "reference_name")
+
+    @property
+    @pulumi.getter(name="referenceType")
+    def reference_type(self) -> builtins.str:
+        """
+        The type of reference that defines the dependency.
+        """
+        return pulumi.get(self, "reference_type")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        The dependency type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetNamespaceFieldUsageDependentSourceResult(dict):
+    def __init__(__self__, *,
+                 dependencies: Sequence['outputs.GetNamespaceFieldUsageDependentSourceDependencyResult'],
+                 entity_types: Sequence['outputs.GetNamespaceFieldUsageDependentSourceEntityTypeResult'],
+                 is_auto_association_enabled: builtins.bool,
+                 is_system: builtins.bool,
+                 source_display_name: builtins.str,
+                 source_id: builtins.str,
+                 source_name: builtins.str,
+                 source_type: builtins.str):
+        """
+        :param Sequence['GetNamespaceFieldUsageDependentSourceDependencyArgs'] dependencies: The list of dependencies defined by the source.
+        :param Sequence['GetNamespaceFieldUsageDependentSourceEntityTypeArgs'] entity_types: The entity types.
+        :param builtins.bool is_auto_association_enabled: A flag indicating whether or not the source is marked for auto association.
+        :param builtins.bool is_system: The system flag.  A value of false denotes a custom, or user defined object.  A value of true denotes a built in object.
+        :param builtins.str source_display_name: The source display name.
+        :param builtins.str source_id: The source unique identifier.
+        :param builtins.str source_name: The source name.
+        :param builtins.str source_type: The source type.
+        """
+        pulumi.set(__self__, "dependencies", dependencies)
+        pulumi.set(__self__, "entity_types", entity_types)
+        pulumi.set(__self__, "is_auto_association_enabled", is_auto_association_enabled)
+        pulumi.set(__self__, "is_system", is_system)
+        pulumi.set(__self__, "source_display_name", source_display_name)
+        pulumi.set(__self__, "source_id", source_id)
+        pulumi.set(__self__, "source_name", source_name)
+        pulumi.set(__self__, "source_type", source_type)
+
+    @property
+    @pulumi.getter
+    def dependencies(self) -> Sequence['outputs.GetNamespaceFieldUsageDependentSourceDependencyResult']:
+        """
+        The list of dependencies defined by the source.
+        """
+        return pulumi.get(self, "dependencies")
+
+    @property
+    @pulumi.getter(name="entityTypes")
+    def entity_types(self) -> Sequence['outputs.GetNamespaceFieldUsageDependentSourceEntityTypeResult']:
+        """
+        The entity types.
+        """
+        return pulumi.get(self, "entity_types")
+
+    @property
+    @pulumi.getter(name="isAutoAssociationEnabled")
+    def is_auto_association_enabled(self) -> builtins.bool:
+        """
+        A flag indicating whether or not the source is marked for auto association.
+        """
+        return pulumi.get(self, "is_auto_association_enabled")
+
+    @property
+    @pulumi.getter(name="isSystem")
+    def is_system(self) -> builtins.bool:
+        """
+        The system flag.  A value of false denotes a custom, or user defined object.  A value of true denotes a built in object.
+        """
+        return pulumi.get(self, "is_system")
+
+    @property
+    @pulumi.getter(name="sourceDisplayName")
+    def source_display_name(self) -> builtins.str:
+        """
+        The source display name.
+        """
+        return pulumi.get(self, "source_display_name")
+
+    @property
+    @pulumi.getter(name="sourceId")
+    def source_id(self) -> builtins.str:
+        """
+        The source unique identifier.
+        """
+        return pulumi.get(self, "source_id")
+
+    @property
+    @pulumi.getter(name="sourceName")
+    def source_name(self) -> builtins.str:
+        """
+        The source name.
+        """
+        return pulumi.get(self, "source_name")
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> builtins.str:
+        """
+        The source type.
+        """
+        return pulumi.get(self, "source_type")
+
+
+@pulumi.output_type
+class GetNamespaceFieldUsageDependentSourceDependencyResult(dict):
+    def __init__(__self__, *,
+                 reference_display_name: builtins.str,
+                 reference_id: builtins.str,
+                 reference_name: builtins.str,
+                 reference_type: builtins.str,
+                 type: builtins.str):
+        """
+        :param builtins.str reference_display_name: The display name of the dependency object
+        :param builtins.str reference_id: The unique identifier of the reference, if available.
+        :param builtins.str reference_name: The name of the dependency object
+        :param builtins.str reference_type: The type of reference that defines the dependency.
+        :param builtins.str type: The dependency type.
+        """
+        pulumi.set(__self__, "reference_display_name", reference_display_name)
+        pulumi.set(__self__, "reference_id", reference_id)
+        pulumi.set(__self__, "reference_name", reference_name)
+        pulumi.set(__self__, "reference_type", reference_type)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="referenceDisplayName")
+    def reference_display_name(self) -> builtins.str:
+        """
+        The display name of the dependency object
+        """
+        return pulumi.get(self, "reference_display_name")
+
+    @property
+    @pulumi.getter(name="referenceId")
+    def reference_id(self) -> builtins.str:
+        """
+        The unique identifier of the reference, if available.
+        """
+        return pulumi.get(self, "reference_id")
+
+    @property
+    @pulumi.getter(name="referenceName")
+    def reference_name(self) -> builtins.str:
+        """
+        The name of the dependency object
+        """
+        return pulumi.get(self, "reference_name")
+
+    @property
+    @pulumi.getter(name="referenceType")
+    def reference_type(self) -> builtins.str:
+        """
+        The type of reference that defines the dependency.
+        """
+        return pulumi.get(self, "reference_type")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        The dependency type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetNamespaceFieldUsageDependentSourceEntityTypeResult(dict):
+    def __init__(__self__, *,
+                 entity_type: builtins.str,
+                 entity_type_category: builtins.str,
+                 entity_type_display_name: builtins.str,
+                 source_id: builtins.str):
+        """
+        :param builtins.str entity_type: The entity type.
+        :param builtins.str entity_type_category: The type category.
+        :param builtins.str entity_type_display_name: The entity type display name.
+        :param builtins.str source_id: The source unique identifier.
+        """
+        pulumi.set(__self__, "entity_type", entity_type)
+        pulumi.set(__self__, "entity_type_category", entity_type_category)
+        pulumi.set(__self__, "entity_type_display_name", entity_type_display_name)
+        pulumi.set(__self__, "source_id", source_id)
+
+    @property
+    @pulumi.getter(name="entityType")
+    def entity_type(self) -> builtins.str:
+        """
+        The entity type.
+        """
+        return pulumi.get(self, "entity_type")
+
+    @property
+    @pulumi.getter(name="entityTypeCategory")
+    def entity_type_category(self) -> builtins.str:
+        """
+        The type category.
+        """
+        return pulumi.get(self, "entity_type_category")
+
+    @property
+    @pulumi.getter(name="entityTypeDisplayName")
+    def entity_type_display_name(self) -> builtins.str:
+        """
+        The entity type display name.
+        """
+        return pulumi.get(self, "entity_type_display_name")
+
+    @property
+    @pulumi.getter(name="sourceId")
+    def source_id(self) -> builtins.str:
+        """
+        The source unique identifier.
+        """
+        return pulumi.get(self, "source_id")
 
 
 @pulumi.output_type
@@ -2951,6 +3938,334 @@ class GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemResult(dict)
 
 
 @pulumi.output_type
+class GetNamespaceLookupCategoryResult(dict):
+    def __init__(__self__, *,
+                 description: builtins.str,
+                 display_name: builtins.str,
+                 is_system: builtins.bool,
+                 name: builtins.str,
+                 type: builtins.str):
+        """
+        :param builtins.str description: The lookup description.
+        :param builtins.str display_name: The field display name.
+        :param builtins.bool is_system: The system flag. A value of false denotes a user-created category. A value of true denotes an Oracle-defined category.
+        :param builtins.str name: The field name.
+        :param builtins.str type: The lookup type. Valid values are Lookup, Dictionary or Module.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "is_system", is_system)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        The lookup description.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> builtins.str:
+        """
+        The field display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="isSystem")
+    def is_system(self) -> builtins.bool:
+        """
+        The system flag. A value of false denotes a user-created category. A value of true denotes an Oracle-defined category.
+        """
+        return pulumi.get(self, "is_system")
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        The field name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        The lookup type. Valid values are Lookup, Dictionary or Module.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetNamespaceLookupFieldResult(dict):
+    def __init__(__self__, *,
+                 common_field_name: builtins.str,
+                 default_match_value: builtins.str,
+                 display_name: builtins.str,
+                 is_common_field: builtins.bool,
+                 match_operator: builtins.str,
+                 name: builtins.str,
+                 position: builtins.str):
+        """
+        :param builtins.str common_field_name: The common field name.
+        :param builtins.str default_match_value: The default match value.
+        :param builtins.str display_name: The field display name.
+        :param builtins.bool is_common_field: A flag indicating whether or not the lookup field is a common field.
+        :param builtins.str match_operator: The match operator.
+        :param builtins.str name: The field name.
+        :param builtins.str position: THe field position.
+        """
+        pulumi.set(__self__, "common_field_name", common_field_name)
+        pulumi.set(__self__, "default_match_value", default_match_value)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "is_common_field", is_common_field)
+        pulumi.set(__self__, "match_operator", match_operator)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "position", position)
+
+    @property
+    @pulumi.getter(name="commonFieldName")
+    def common_field_name(self) -> builtins.str:
+        """
+        The common field name.
+        """
+        return pulumi.get(self, "common_field_name")
+
+    @property
+    @pulumi.getter(name="defaultMatchValue")
+    def default_match_value(self) -> builtins.str:
+        """
+        The default match value.
+        """
+        return pulumi.get(self, "default_match_value")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> builtins.str:
+        """
+        The field display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="isCommonField")
+    def is_common_field(self) -> builtins.bool:
+        """
+        A flag indicating whether or not the lookup field is a common field.
+        """
+        return pulumi.get(self, "is_common_field")
+
+    @property
+    @pulumi.getter(name="matchOperator")
+    def match_operator(self) -> builtins.str:
+        """
+        The match operator.
+        """
+        return pulumi.get(self, "match_operator")
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        The field name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def position(self) -> builtins.str:
+        """
+        THe field position.
+        """
+        return pulumi.get(self, "position")
+
+
+@pulumi.output_type
+class GetNamespaceLookupReferringSourceResult(dict):
+    def __init__(__self__, *,
+                 canonical_link: builtins.str,
+                 total_count: builtins.str):
+        """
+        :param builtins.str canonical_link: The canonical link.
+        :param builtins.str total_count: The total count.
+        """
+        pulumi.set(__self__, "canonical_link", canonical_link)
+        pulumi.set(__self__, "total_count", total_count)
+
+    @property
+    @pulumi.getter(name="canonicalLink")
+    def canonical_link(self) -> builtins.str:
+        """
+        The canonical link.
+        """
+        return pulumi.get(self, "canonical_link")
+
+    @property
+    @pulumi.getter(name="totalCount")
+    def total_count(self) -> builtins.str:
+        """
+        The total count.
+        """
+        return pulumi.get(self, "total_count")
+
+
+@pulumi.output_type
+class GetNamespaceLookupStatusSummaryResult(dict):
+    def __init__(__self__, *,
+                 chunks_processed: builtins.str,
+                 failure_details: builtins.str,
+                 filename: builtins.str,
+                 status: builtins.str,
+                 total_chunks: builtins.str):
+        """
+        :param builtins.str chunks_processed: The number of chunks processed.
+        :param builtins.str failure_details: The failure details, if any.
+        :param builtins.str filename: The filename.
+        :param builtins.str status: The status.
+        :param builtins.str total_chunks: The total number of chunks.
+        """
+        pulumi.set(__self__, "chunks_processed", chunks_processed)
+        pulumi.set(__self__, "failure_details", failure_details)
+        pulumi.set(__self__, "filename", filename)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "total_chunks", total_chunks)
+
+    @property
+    @pulumi.getter(name="chunksProcessed")
+    def chunks_processed(self) -> builtins.str:
+        """
+        The number of chunks processed.
+        """
+        return pulumi.get(self, "chunks_processed")
+
+    @property
+    @pulumi.getter(name="failureDetails")
+    def failure_details(self) -> builtins.str:
+        """
+        The failure details, if any.
+        """
+        return pulumi.get(self, "failure_details")
+
+    @property
+    @pulumi.getter
+    def filename(self) -> builtins.str:
+        """
+        The filename.
+        """
+        return pulumi.get(self, "filename")
+
+    @property
+    @pulumi.getter
+    def status(self) -> builtins.str:
+        """
+        The status.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="totalChunks")
+    def total_chunks(self) -> builtins.str:
+        """
+        The total number of chunks.
+        """
+        return pulumi.get(self, "total_chunks")
+
+
+@pulumi.output_type
+class GetNamespaceParserActionsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        """
+        :param builtins.str name: The parser action name used for filtering.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        The parser action name used for filtering.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetNamespaceParserActionsParserActionSummaryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetNamespaceParserActionsParserActionSummaryCollectionItemResult']):
+        """
+        :param Sequence['GetNamespaceParserActionsParserActionSummaryCollectionItemArgs'] items: An array of parser action summary objects.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetNamespaceParserActionsParserActionSummaryCollectionItemResult']:
+        """
+        An array of parser action summary objects.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetNamespaceParserActionsParserActionSummaryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 description: builtins.str,
+                 display_name: builtins.str,
+                 name: builtins.str):
+        """
+        :param builtins.str description: The parser action description.
+        :param builtins.str display_name: The parser action display name.
+        :param builtins.str name: The parser action name used for filtering.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        The parser action description.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> builtins.str:
+        """
+        The parser action display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        The parser action name used for filtering.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
 class GetNamespacePropertiesMetadataFilterResult(dict):
     def __init__(__self__, *,
                  name: builtins.str,
@@ -3308,6 +4623,7 @@ class GetNamespaceScheduledTaskActionResult(dict):
                  purge_duration: builtins.str,
                  query_string: builtins.str,
                  saved_search_id: builtins.str,
+                 template_details: Sequence['outputs.GetNamespaceScheduledTaskActionTemplateDetailResult'],
                  type: builtins.str):
         """
         :param builtins.bool compartment_id_in_subtree: if true, purge child compartments data
@@ -3317,6 +4633,7 @@ class GetNamespaceScheduledTaskActionResult(dict):
         :param builtins.str purge_duration: The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
         :param builtins.str query_string: Purge query string.
         :param builtins.str saved_search_id: The ManagementSavedSearch id [OCID] utilized in the action.
+        :param Sequence['GetNamespaceScheduledTaskActionTemplateDetailArgs'] template_details: details for scheduled task using template
         :param builtins.str type: Schedule type discriminator.
         """
         pulumi.set(__self__, "compartment_id_in_subtree", compartment_id_in_subtree)
@@ -3326,6 +4643,7 @@ class GetNamespaceScheduledTaskActionResult(dict):
         pulumi.set(__self__, "purge_duration", purge_duration)
         pulumi.set(__self__, "query_string", query_string)
         pulumi.set(__self__, "saved_search_id", saved_search_id)
+        pulumi.set(__self__, "template_details", template_details)
         pulumi.set(__self__, "type", type)
 
     @property
@@ -3385,6 +4703,14 @@ class GetNamespaceScheduledTaskActionResult(dict):
         return pulumi.get(self, "saved_search_id")
 
     @property
+    @pulumi.getter(name="templateDetails")
+    def template_details(self) -> Sequence['outputs.GetNamespaceScheduledTaskActionTemplateDetailResult']:
+        """
+        details for scheduled task using template
+        """
+        return pulumi.get(self, "template_details")
+
+    @property
     @pulumi.getter
     def type(self) -> builtins.str:
         """
@@ -3442,6 +4768,64 @@ class GetNamespaceScheduledTaskActionMetricExtractionResult(dict):
         The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
         """
         return pulumi.get(self, "resource_group")
+
+
+@pulumi.output_type
+class GetNamespaceScheduledTaskActionTemplateDetailResult(dict):
+    def __init__(__self__, *,
+                 template_id: builtins.str,
+                 template_params: Sequence['outputs.GetNamespaceScheduledTaskActionTemplateDetailTemplateParamResult']):
+        """
+        :param builtins.str template_id: The Config template Id of a particular template.
+        :param Sequence['GetNamespaceScheduledTaskActionTemplateDetailTemplateParamArgs'] template_params: To store macro params.
+        """
+        pulumi.set(__self__, "template_id", template_id)
+        pulumi.set(__self__, "template_params", template_params)
+
+    @property
+    @pulumi.getter(name="templateId")
+    def template_id(self) -> builtins.str:
+        """
+        The Config template Id of a particular template.
+        """
+        return pulumi.get(self, "template_id")
+
+    @property
+    @pulumi.getter(name="templateParams")
+    def template_params(self) -> Sequence['outputs.GetNamespaceScheduledTaskActionTemplateDetailTemplateParamResult']:
+        """
+        To store macro params.
+        """
+        return pulumi.get(self, "template_params")
+
+
+@pulumi.output_type
+class GetNamespaceScheduledTaskActionTemplateDetailTemplateParamResult(dict):
+    def __init__(__self__, *,
+                 key_field: builtins.str,
+                 value_field: builtins.str):
+        """
+        :param builtins.str key_field: Contains macro parameter's names.
+        :param builtins.str value_field: Contains macro parameter's value.
+        """
+        pulumi.set(__self__, "key_field", key_field)
+        pulumi.set(__self__, "value_field", value_field)
+
+    @property
+    @pulumi.getter(name="keyField")
+    def key_field(self) -> builtins.str:
+        """
+        Contains macro parameter's names.
+        """
+        return pulumi.get(self, "key_field")
+
+    @property
+    @pulumi.getter(name="valueField")
+    def value_field(self) -> builtins.str:
+        """
+        Contains macro parameter's value.
+        """
+        return pulumi.get(self, "value_field")
 
 
 @pulumi.output_type
@@ -3775,6 +5159,7 @@ class GetNamespaceScheduledTasksScheduledTaskCollectionItemActionResult(dict):
                  purge_duration: builtins.str,
                  query_string: builtins.str,
                  saved_search_id: builtins.str,
+                 template_details: Sequence['outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailResult'],
                  type: builtins.str):
         """
         :param builtins.bool compartment_id_in_subtree: if true, purge child compartments data
@@ -3783,6 +5168,7 @@ class GetNamespaceScheduledTasksScheduledTaskCollectionItemActionResult(dict):
         :param builtins.str purge_duration: The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
         :param builtins.str query_string: Purge query string.
         :param builtins.str saved_search_id: The ManagementSavedSearch id [OCID] utilized in the action.
+        :param Sequence['GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailArgs'] template_details: details for scheduled task using template
         :param builtins.str type: Schedule type discriminator.
         """
         pulumi.set(__self__, "compartment_id_in_subtree", compartment_id_in_subtree)
@@ -3792,6 +5178,7 @@ class GetNamespaceScheduledTasksScheduledTaskCollectionItemActionResult(dict):
         pulumi.set(__self__, "purge_duration", purge_duration)
         pulumi.set(__self__, "query_string", query_string)
         pulumi.set(__self__, "saved_search_id", saved_search_id)
+        pulumi.set(__self__, "template_details", template_details)
         pulumi.set(__self__, "type", type)
 
     @property
@@ -3848,6 +5235,14 @@ class GetNamespaceScheduledTasksScheduledTaskCollectionItemActionResult(dict):
         return pulumi.get(self, "saved_search_id")
 
     @property
+    @pulumi.getter(name="templateDetails")
+    def template_details(self) -> Sequence['outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailResult']:
+        """
+        details for scheduled task using template
+        """
+        return pulumi.get(self, "template_details")
+
+    @property
     @pulumi.getter
     def type(self) -> builtins.str:
         """
@@ -3897,6 +5292,64 @@ class GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractio
     @pulumi.getter(name="resourceGroup")
     def resource_group(self) -> builtins.str:
         return pulumi.get(self, "resource_group")
+
+
+@pulumi.output_type
+class GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailResult(dict):
+    def __init__(__self__, *,
+                 template_id: builtins.str,
+                 template_params: Sequence['outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamResult']):
+        """
+        :param builtins.str template_id: A filter to return only scheduled tasks whose stream action templateId matches the given id  exactly.
+        :param Sequence['GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamArgs'] template_params: To store macro params.
+        """
+        pulumi.set(__self__, "template_id", template_id)
+        pulumi.set(__self__, "template_params", template_params)
+
+    @property
+    @pulumi.getter(name="templateId")
+    def template_id(self) -> builtins.str:
+        """
+        A filter to return only scheduled tasks whose stream action templateId matches the given id  exactly.
+        """
+        return pulumi.get(self, "template_id")
+
+    @property
+    @pulumi.getter(name="templateParams")
+    def template_params(self) -> Sequence['outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamResult']:
+        """
+        To store macro params.
+        """
+        return pulumi.get(self, "template_params")
+
+
+@pulumi.output_type
+class GetNamespaceScheduledTasksScheduledTaskCollectionItemActionTemplateDetailTemplateParamResult(dict):
+    def __init__(__self__, *,
+                 key_field: builtins.str,
+                 value_field: builtins.str):
+        """
+        :param builtins.str key_field: Contains macro parameter's names.
+        :param builtins.str value_field: Contains macro parameter's value.
+        """
+        pulumi.set(__self__, "key_field", key_field)
+        pulumi.set(__self__, "value_field", value_field)
+
+    @property
+    @pulumi.getter(name="keyField")
+    def key_field(self) -> builtins.str:
+        """
+        Contains macro parameter's names.
+        """
+        return pulumi.get(self, "key_field")
+
+    @property
+    @pulumi.getter(name="valueField")
+    def value_field(self) -> builtins.str:
+        """
+        Contains macro parameter's value.
+        """
+        return pulumi.get(self, "value_field")
 
 
 @pulumi.output_type
@@ -3982,6 +5435,35 @@ class GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleResul
         Schedule type discriminator.
         """
         return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetNamespaceStorageArchivalConfigArchivingConfigurationResult(dict):
+    def __init__(__self__, *,
+                 active_storage_duration: builtins.str,
+                 archival_storage_duration: builtins.str):
+        """
+        :param builtins.str active_storage_duration: This is the duration data in active storage before data is archived, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+        :param builtins.str archival_storage_duration: This is the duration before archived data is deleted from object storage, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+        """
+        pulumi.set(__self__, "active_storage_duration", active_storage_duration)
+        pulumi.set(__self__, "archival_storage_duration", archival_storage_duration)
+
+    @property
+    @pulumi.getter(name="activeStorageDuration")
+    def active_storage_duration(self) -> builtins.str:
+        """
+        This is the duration data in active storage before data is archived, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+        """
+        return pulumi.get(self, "active_storage_duration")
+
+    @property
+    @pulumi.getter(name="archivalStorageDuration")
+    def archival_storage_duration(self) -> builtins.str:
+        """
+        This is the duration before archived data is deleted from object storage, as described in https://en.wikipedia.org/wiki/ISO_8601#Durations The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+        """
+        return pulumi.get(self, "archival_storage_duration")
 
 
 @pulumi.output_type
@@ -4187,6 +5669,303 @@ class GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemResult
 
 
 @pulumi.output_type
+class GetNamespaceTemplateFacetResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str name: The template name.
+        :param builtins.str value: The facet value.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        The template name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        The facet value.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetNamespaceTemplatesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        """
+        :param builtins.str name: The template name used for filtering.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        The template name used for filtering.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetNamespaceTemplatesLogAnalyticsTemplateCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: builtins.str,
+                 content: builtins.str,
+                 content_format: builtins.str,
+                 defined_tags: Mapping[str, builtins.str],
+                 description: builtins.str,
+                 facets: Sequence['outputs.GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetResult'],
+                 freeform_tags: Mapping[str, builtins.str],
+                 id: builtins.str,
+                 is_system: builtins.bool,
+                 name: builtins.str,
+                 parameters: builtins.str,
+                 parameters_format: builtins.str,
+                 parameters_metadata: builtins.str,
+                 state: builtins.str,
+                 time_created: builtins.str,
+                 time_updated: builtins.str,
+                 type: builtins.str):
+        """
+        :param builtins.str compartment_id: The ID of the compartment in which to list resources.
+        :param builtins.str content: Base64 encoded template content.
+        :param builtins.str content_format: Content format. For example - XML.
+        :param Mapping[str, builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param builtins.str description: Description for this resource.
+        :param Sequence['GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetArgs'] facets: Facets of the template
+        :param Mapping[str, builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param builtins.str id: The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
+        :param builtins.bool is_system: The system flag.  A value of false denotes a custom, or user defined object.  A value of true denotes a built in object.
+        :param builtins.str name: The template name used for filtering.
+        :param builtins.str parameters: Base64 encoded template parameters.
+        :param builtins.str parameters_format: Parameters format.  For example - NAME_VALUE_PAIR.
+        :param builtins.str parameters_metadata: Base64 encoded parameters metadata definition.
+        :param builtins.str state: The template lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
+        :param builtins.str time_created: The date and time the resource was created, in the format defined by RFC3339.
+        :param builtins.str time_updated: The date and time the resource was last updated, in the format defined by RFC3339.
+        :param builtins.str type: The template type used for filtering. Only templates of the specified type will be returned.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "content", content)
+        pulumi.set(__self__, "content_format", content_format)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "facets", facets)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_system", is_system)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "parameters", parameters)
+        pulumi.set(__self__, "parameters_format", parameters_format)
+        pulumi.set(__self__, "parameters_metadata", parameters_metadata)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> builtins.str:
+        """
+        The ID of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def content(self) -> builtins.str:
+        """
+        Base64 encoded template content.
+        """
+        return pulumi.get(self, "content")
+
+    @property
+    @pulumi.getter(name="contentFormat")
+    def content_format(self) -> builtins.str:
+        """
+        Content format. For example - XML.
+        """
+        return pulumi.get(self, "content_format")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        Description for this resource.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def facets(self) -> Sequence['outputs.GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetResult']:
+        """
+        Facets of the template
+        """
+        return pulumi.get(self, "facets")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> builtins.str:
+        """
+        The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isSystem")
+    def is_system(self) -> builtins.bool:
+        """
+        The system flag.  A value of false denotes a custom, or user defined object.  A value of true denotes a built in object.
+        """
+        return pulumi.get(self, "is_system")
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        The template name used for filtering.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def parameters(self) -> builtins.str:
+        """
+        Base64 encoded template parameters.
+        """
+        return pulumi.get(self, "parameters")
+
+    @property
+    @pulumi.getter(name="parametersFormat")
+    def parameters_format(self) -> builtins.str:
+        """
+        Parameters format.  For example - NAME_VALUE_PAIR.
+        """
+        return pulumi.get(self, "parameters_format")
+
+    @property
+    @pulumi.getter(name="parametersMetadata")
+    def parameters_metadata(self) -> builtins.str:
+        """
+        Base64 encoded parameters metadata definition.
+        """
+        return pulumi.get(self, "parameters_metadata")
+
+    @property
+    @pulumi.getter
+    def state(self) -> builtins.str:
+        """
+        The template lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> builtins.str:
+        """
+        The date and time the resource was created, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> builtins.str:
+        """
+        The date and time the resource was last updated, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        The template type used for filtering. Only templates of the specified type will be returned.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetNamespaceTemplatesLogAnalyticsTemplateCollectionItemFacetResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str name: The template name used for filtering.
+        :param builtins.str value: The facet value.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        The template name used for filtering.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        The facet value.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
 class GetNamespacesFilterResult(dict):
     def __init__(__self__, *,
                  name: builtins.str,
@@ -4229,14 +6008,23 @@ class GetNamespacesNamespaceCollectionResult(dict):
 class GetNamespacesNamespaceCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: builtins.str,
+                 is_archiving_enabled: builtins.bool,
+                 is_data_ever_ingested: builtins.bool,
+                 is_logset_enabled: builtins.bool,
                  is_onboarded: builtins.bool,
                  namespace: builtins.str):
         """
         :param builtins.str compartment_id: The ID of the compartment in which to list resources.
+        :param builtins.bool is_archiving_enabled: This indicates if old data can be archived for a tenancy
+        :param builtins.bool is_data_ever_ingested: This indicates if the tenancy is data ever ingested
         :param builtins.bool is_onboarded: This indicates if the tenancy is onboarded to Logging Analytics
         :param builtins.str namespace: This is the namespace name of a tenancy
+               * `is_logSet_enabled` - This indicates if the tenancy is logSet enable
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "is_archiving_enabled", is_archiving_enabled)
+        pulumi.set(__self__, "is_data_ever_ingested", is_data_ever_ingested)
+        pulumi.set(__self__, "is_logset_enabled", is_logset_enabled)
         pulumi.set(__self__, "is_onboarded", is_onboarded)
         pulumi.set(__self__, "namespace", namespace)
 
@@ -4247,6 +6035,27 @@ class GetNamespacesNamespaceCollectionItemResult(dict):
         The ID of the compartment in which to list resources.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="isArchivingEnabled")
+    def is_archiving_enabled(self) -> builtins.bool:
+        """
+        This indicates if old data can be archived for a tenancy
+        """
+        return pulumi.get(self, "is_archiving_enabled")
+
+    @property
+    @pulumi.getter(name="isDataEverIngested")
+    def is_data_ever_ingested(self) -> builtins.bool:
+        """
+        This indicates if the tenancy is data ever ingested
+        """
+        return pulumi.get(self, "is_data_ever_ingested")
+
+    @property
+    @pulumi.getter(name="isLogsetEnabled")
+    def is_logset_enabled(self) -> builtins.bool:
+        return pulumi.get(self, "is_logset_enabled")
 
     @property
     @pulumi.getter(name="isOnboarded")
@@ -4261,6 +6070,7 @@ class GetNamespacesNamespaceCollectionItemResult(dict):
     def namespace(self) -> builtins.str:
         """
         This is the namespace name of a tenancy
+        * `is_logSet_enabled` - This indicates if the tenancy is logSet enable
         """
         return pulumi.get(self, "namespace")
 

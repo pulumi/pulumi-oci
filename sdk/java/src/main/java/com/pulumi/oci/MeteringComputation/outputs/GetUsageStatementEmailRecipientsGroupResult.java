@@ -24,12 +24,12 @@ public final class GetUsageStatementEmailRecipientsGroupResult {
      */
     private String id;
     /**
-     * @return The list of recipient will receive the usage statement email.
+     * @return The list of recipients that will receive usage statement emails.
      * 
      */
     private List<GetUsageStatementEmailRecipientsGroupRecipientsList> recipientsLists;
     /**
-     * @return The email recipient group lifecycle state.
+     * @return The email recipients group lifecycle state.
      * 
      */
     private String state;
@@ -54,14 +54,14 @@ public final class GetUsageStatementEmailRecipientsGroupResult {
         return this.id;
     }
     /**
-     * @return The list of recipient will receive the usage statement email.
+     * @return The list of recipients that will receive usage statement emails.
      * 
      */
     public List<GetUsageStatementEmailRecipientsGroupRecipientsList> recipientsLists() {
         return this.recipientsLists;
     }
     /**
-     * @return The email recipient group lifecycle state.
+     * @return The email recipients group lifecycle state.
      * 
      */
     public String state() {

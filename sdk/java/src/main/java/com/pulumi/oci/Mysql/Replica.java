@@ -60,6 +60,7 @@ import javax.annotation.Nullable;
  *             .replicaOverrides(ReplicaReplicaOverridesArgs.builder()
  *                 .configurationId(testMysqlConfiguration.id())
  *                 .mysqlVersion(replicaReplicaOverridesMysqlVersion)
+ *                 .nsgIds(replicaReplicaOverridesNsgIds)
  *                 .shapeName(testShape.name())
  *                 .build())
  *             .build());
@@ -262,6 +263,20 @@ public class Replica extends com.pulumi.resources.CustomResource {
      */
     public Output<String> mysqlVersion() {
         return this.mysqlVersion;
+    }
+    /**
+     * Network Security Group OCIDs used for the VNIC attachment.
+     * 
+     */
+    @Export(name="nsgIds", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> nsgIds;
+
+    /**
+     * @return Network Security Group OCIDs used for the VNIC attachment.
+     * 
+     */
+    public Output<List<String>> nsgIds() {
+        return this.nsgIds;
     }
     /**
      * The port the read replica is configured to listen on.

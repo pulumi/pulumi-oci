@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -27074,6 +27074,308 @@ func (o GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMont
 	}).(GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthOutput)
 }
 
+type GetSystemVersionMinorVersionsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSystemVersionMinorVersionsFilterInput is an input type that accepts GetSystemVersionMinorVersionsFilterArgs and GetSystemVersionMinorVersionsFilterOutput values.
+// You can construct a concrete instance of `GetSystemVersionMinorVersionsFilterInput` via:
+//
+//	GetSystemVersionMinorVersionsFilterArgs{...}
+type GetSystemVersionMinorVersionsFilterInput interface {
+	pulumi.Input
+
+	ToGetSystemVersionMinorVersionsFilterOutput() GetSystemVersionMinorVersionsFilterOutput
+	ToGetSystemVersionMinorVersionsFilterOutputWithContext(context.Context) GetSystemVersionMinorVersionsFilterOutput
+}
+
+type GetSystemVersionMinorVersionsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSystemVersionMinorVersionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSystemVersionMinorVersionsFilter)(nil)).Elem()
+}
+
+func (i GetSystemVersionMinorVersionsFilterArgs) ToGetSystemVersionMinorVersionsFilterOutput() GetSystemVersionMinorVersionsFilterOutput {
+	return i.ToGetSystemVersionMinorVersionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSystemVersionMinorVersionsFilterArgs) ToGetSystemVersionMinorVersionsFilterOutputWithContext(ctx context.Context) GetSystemVersionMinorVersionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSystemVersionMinorVersionsFilterOutput)
+}
+
+// GetSystemVersionMinorVersionsFilterArrayInput is an input type that accepts GetSystemVersionMinorVersionsFilterArray and GetSystemVersionMinorVersionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSystemVersionMinorVersionsFilterArrayInput` via:
+//
+//	GetSystemVersionMinorVersionsFilterArray{ GetSystemVersionMinorVersionsFilterArgs{...} }
+type GetSystemVersionMinorVersionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSystemVersionMinorVersionsFilterArrayOutput() GetSystemVersionMinorVersionsFilterArrayOutput
+	ToGetSystemVersionMinorVersionsFilterArrayOutputWithContext(context.Context) GetSystemVersionMinorVersionsFilterArrayOutput
+}
+
+type GetSystemVersionMinorVersionsFilterArray []GetSystemVersionMinorVersionsFilterInput
+
+func (GetSystemVersionMinorVersionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSystemVersionMinorVersionsFilter)(nil)).Elem()
+}
+
+func (i GetSystemVersionMinorVersionsFilterArray) ToGetSystemVersionMinorVersionsFilterArrayOutput() GetSystemVersionMinorVersionsFilterArrayOutput {
+	return i.ToGetSystemVersionMinorVersionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSystemVersionMinorVersionsFilterArray) ToGetSystemVersionMinorVersionsFilterArrayOutputWithContext(ctx context.Context) GetSystemVersionMinorVersionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSystemVersionMinorVersionsFilterArrayOutput)
+}
+
+type GetSystemVersionMinorVersionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSystemVersionMinorVersionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSystemVersionMinorVersionsFilter)(nil)).Elem()
+}
+
+func (o GetSystemVersionMinorVersionsFilterOutput) ToGetSystemVersionMinorVersionsFilterOutput() GetSystemVersionMinorVersionsFilterOutput {
+	return o
+}
+
+func (o GetSystemVersionMinorVersionsFilterOutput) ToGetSystemVersionMinorVersionsFilterOutputWithContext(ctx context.Context) GetSystemVersionMinorVersionsFilterOutput {
+	return o
+}
+
+func (o GetSystemVersionMinorVersionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSystemVersionMinorVersionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSystemVersionMinorVersionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSystemVersionMinorVersionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSystemVersionMinorVersionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSystemVersionMinorVersionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSystemVersionMinorVersionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSystemVersionMinorVersionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSystemVersionMinorVersionsFilter)(nil)).Elem()
+}
+
+func (o GetSystemVersionMinorVersionsFilterArrayOutput) ToGetSystemVersionMinorVersionsFilterArrayOutput() GetSystemVersionMinorVersionsFilterArrayOutput {
+	return o
+}
+
+func (o GetSystemVersionMinorVersionsFilterArrayOutput) ToGetSystemVersionMinorVersionsFilterArrayOutputWithContext(ctx context.Context) GetSystemVersionMinorVersionsFilterArrayOutput {
+	return o
+}
+
+func (o GetSystemVersionMinorVersionsFilterArrayOutput) Index(i pulumi.IntInput) GetSystemVersionMinorVersionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSystemVersionMinorVersionsFilter {
+		return vs[0].([]GetSystemVersionMinorVersionsFilter)[vs[1].(int)]
+	}).(GetSystemVersionMinorVersionsFilterOutput)
+}
+
+type GetSystemVersionMinorVersionsSystemVersionMinorVersionCollection struct {
+	// List of System minor versions.
+	Items []GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItem `pulumi:"items"`
+}
+
+// GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionInput is an input type that accepts GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArgs and GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionOutput values.
+// You can construct a concrete instance of `GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionInput` via:
+//
+//	GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArgs{...}
+type GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionInput interface {
+	pulumi.Input
+
+	ToGetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionOutput() GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionOutput
+	ToGetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionOutputWithContext(context.Context) GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionOutput
+}
+
+type GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArgs struct {
+	// List of System minor versions.
+	Items GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSystemVersionMinorVersionsSystemVersionMinorVersionCollection)(nil)).Elem()
+}
+
+func (i GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArgs) ToGetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionOutput() GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionOutput {
+	return i.ToGetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArgs) ToGetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionOutputWithContext(ctx context.Context) GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionOutput)
+}
+
+// GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArrayInput is an input type that accepts GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArray and GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArrayInput` via:
+//
+//	GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArray{ GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArgs{...} }
+type GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArrayOutput() GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArrayOutput
+	ToGetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArrayOutputWithContext(context.Context) GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArrayOutput
+}
+
+type GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArray []GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionInput
+
+func (GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSystemVersionMinorVersionsSystemVersionMinorVersionCollection)(nil)).Elem()
+}
+
+func (i GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArray) ToGetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArrayOutput() GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArrayOutput {
+	return i.ToGetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArray) ToGetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArrayOutputWithContext(ctx context.Context) GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArrayOutput)
+}
+
+type GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSystemVersionMinorVersionsSystemVersionMinorVersionCollection)(nil)).Elem()
+}
+
+func (o GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionOutput) ToGetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionOutput() GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionOutput {
+	return o
+}
+
+func (o GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionOutput) ToGetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionOutputWithContext(ctx context.Context) GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionOutput {
+	return o
+}
+
+// List of System minor versions.
+func (o GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionOutput) Items() GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSystemVersionMinorVersionsSystemVersionMinorVersionCollection) []GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItem {
+		return v.Items
+	}).(GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArrayOutput)
+}
+
+type GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSystemVersionMinorVersionsSystemVersionMinorVersionCollection)(nil)).Elem()
+}
+
+func (o GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArrayOutput) ToGetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArrayOutput() GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArrayOutput {
+	return o
+}
+
+func (o GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArrayOutput) ToGetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArrayOutputWithContext(ctx context.Context) GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArrayOutput {
+	return o
+}
+
+func (o GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArrayOutput) Index(i pulumi.IntInput) GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSystemVersionMinorVersionsSystemVersionMinorVersionCollection {
+		return vs[0].([]GetSystemVersionMinorVersionsSystemVersionMinorVersionCollection)[vs[1].(int)]
+	}).(GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionOutput)
+}
+
+type GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItem struct {
+	// A valid system minor version.
+	Version string `pulumi:"version"`
+}
+
+// GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemInput is an input type that accepts GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArgs and GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemOutput values.
+// You can construct a concrete instance of `GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemInput` via:
+//
+//	GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArgs{...}
+type GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemOutput() GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemOutput
+	ToGetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemOutputWithContext(context.Context) GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemOutput
+}
+
+type GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArgs struct {
+	// A valid system minor version.
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItem)(nil)).Elem()
+}
+
+func (i GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArgs) ToGetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemOutput() GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemOutput {
+	return i.ToGetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArgs) ToGetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemOutputWithContext(ctx context.Context) GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemOutput)
+}
+
+// GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArrayInput is an input type that accepts GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArray and GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArrayInput` via:
+//
+//	GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArray{ GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArgs{...} }
+type GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArrayOutput() GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArrayOutput
+	ToGetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArrayOutputWithContext(context.Context) GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArrayOutput
+}
+
+type GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArray []GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemInput
+
+func (GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItem)(nil)).Elem()
+}
+
+func (i GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArray) ToGetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArrayOutput() GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArrayOutput {
+	return i.ToGetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArray) ToGetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArrayOutputWithContext(ctx context.Context) GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArrayOutput)
+}
+
+type GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItem)(nil)).Elem()
+}
+
+func (o GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemOutput) ToGetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemOutput() GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemOutput {
+	return o
+}
+
+func (o GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemOutput) ToGetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemOutputWithContext(ctx context.Context) GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemOutput {
+	return o
+}
+
+// A valid system minor version.
+func (o GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItem) string { return v.Version }).(pulumi.StringOutput)
+}
+
+type GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItem)(nil)).Elem()
+}
+
+func (o GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArrayOutput) ToGetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArrayOutput() GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArrayOutput) ToGetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArrayOutputWithContext(ctx context.Context) GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItem {
+		return vs[0].([]GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItem)[vs[1].(int)]
+	}).(GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemOutput)
+}
+
 type GetSystemVersionsFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -27282,7 +27584,7 @@ func (o GetSystemVersionsSystemVersionCollectionArrayOutput) Index(i pulumi.IntI
 type GetSystemVersionsSystemVersionCollectionItem struct {
 	// Specifies gi version query parameter.
 	GiVersion string `pulumi:"giVersion"`
-	// Specifies shape query parameter.
+	// If provided, filters the results for the given shape.
 	Shape string `pulumi:"shape"`
 	// Compatible Exadata system versions for a given shape and GI version.
 	SystemVersions []string `pulumi:"systemVersions"`
@@ -27302,7 +27604,7 @@ type GetSystemVersionsSystemVersionCollectionItemInput interface {
 type GetSystemVersionsSystemVersionCollectionItemArgs struct {
 	// Specifies gi version query parameter.
 	GiVersion pulumi.StringInput `pulumi:"giVersion"`
-	// Specifies shape query parameter.
+	// If provided, filters the results for the given shape.
 	Shape pulumi.StringInput `pulumi:"shape"`
 	// Compatible Exadata system versions for a given shape and GI version.
 	SystemVersions pulumi.StringArrayInput `pulumi:"systemVersions"`
@@ -27364,7 +27666,7 @@ func (o GetSystemVersionsSystemVersionCollectionItemOutput) GiVersion() pulumi.S
 	return o.ApplyT(func(v GetSystemVersionsSystemVersionCollectionItem) string { return v.GiVersion }).(pulumi.StringOutput)
 }
 
-// Specifies shape query parameter.
+// If provided, filters the results for the given shape.
 func (o GetSystemVersionsSystemVersionCollectionItemOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSystemVersionsSystemVersionCollectionItem) string { return v.Shape }).(pulumi.StringOutput)
 }
@@ -32588,6 +32890,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArrayInput)(nil)).Elem(), GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthInput)(nil)).Elem(), GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArrayInput)(nil)).Elem(), GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSystemVersionMinorVersionsFilterInput)(nil)).Elem(), GetSystemVersionMinorVersionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSystemVersionMinorVersionsFilterArrayInput)(nil)).Elem(), GetSystemVersionMinorVersionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionInput)(nil)).Elem(), GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArrayInput)(nil)).Elem(), GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemInput)(nil)).Elem(), GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArrayInput)(nil)).Elem(), GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSystemVersionsFilterInput)(nil)).Elem(), GetSystemVersionsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSystemVersionsFilterArrayInput)(nil)).Elem(), GetSystemVersionsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSystemVersionsSystemVersionCollectionInput)(nil)).Elem(), GetSystemVersionsSystemVersionCollectionArgs{})
@@ -33046,6 +33354,12 @@ func init() {
 	pulumi.RegisterOutputType(GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceDaysOfWeekArrayOutput{})
 	pulumi.RegisterOutputType(GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthOutput{})
 	pulumi.RegisterOutputType(GetSchedulingPolicySchedulingWindowsSchedulingWindowWindowPreferenceMonthArrayOutput{})
+	pulumi.RegisterOutputType(GetSystemVersionMinorVersionsFilterOutput{})
+	pulumi.RegisterOutputType(GetSystemVersionMinorVersionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionOutput{})
+	pulumi.RegisterOutputType(GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSystemVersionMinorVersionsSystemVersionMinorVersionCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetSystemVersionsFilterOutput{})
 	pulumi.RegisterOutputType(GetSystemVersionsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetSystemVersionsSystemVersionCollectionOutput{})

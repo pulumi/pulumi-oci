@@ -18,14 +18,14 @@ public final class GetSchedulesFilter extends com.pulumi.resources.InvokeArgs {
     public static final GetSchedulesFilter Empty = new GetSchedulesFilter();
 
     /**
-     * Query parameter for filtering by name
+     * The query parameter for filtering by name.
      * 
      */
     @Import(name="name", required=true)
     private String name;
 
     /**
-     * @return Query parameter for filtering by name
+     * @return The query parameter for filtering by name.
      * 
      */
     public String name() {
@@ -73,7 +73,7 @@ public final class GetSchedulesFilter extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param name Query parameter for filtering by name
+         * @param name The query parameter for filtering by name.
          * 
          * @return builder
          * 

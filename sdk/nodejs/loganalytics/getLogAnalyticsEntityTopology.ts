@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  * const testLogAnalyticsEntityTopology = oci.LogAnalytics.getLogAnalyticsEntityTopology({
  *     logAnalyticsEntityId: testLogAnalyticsEntity.id,
  *     namespace: logAnalyticsEntityTopologyNamespace,
+ *     context: logAnalyticsEntityTopologyContext,
  *     metadataEquals: logAnalyticsEntityTopologyMetadataEquals,
  *     state: logAnalyticsEntityTopologyState,
  * });
@@ -28,6 +29,8 @@ import * as utilities from "../utilities";
 export function getLogAnalyticsEntityTopology(args: GetLogAnalyticsEntityTopologyArgs, opts?: pulumi.InvokeOptions): Promise<GetLogAnalyticsEntityTopologyResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getLogAnalyticsEntityTopology:getLogAnalyticsEntityTopology", {
+        "context": args.context,
+        "filters": args.filters,
         "logAnalyticsEntityId": args.logAnalyticsEntityId,
         "metadataEquals": args.metadataEquals,
         "namespace": args.namespace,
@@ -39,6 +42,11 @@ export function getLogAnalyticsEntityTopology(args: GetLogAnalyticsEntityTopolog
  * A collection of arguments for invoking getLogAnalyticsEntityTopology.
  */
 export interface GetLogAnalyticsEntityTopologyArgs {
+    /**
+     * A filter to return log analytics entity toplogy whose context matches the specified string.
+     */
+    context?: string;
+    filters?: inputs.LogAnalytics.GetLogAnalyticsEntityTopologyFilter[];
     /**
      * The log analytics entity OCID.
      */
@@ -61,6 +69,8 @@ export interface GetLogAnalyticsEntityTopologyArgs {
  * A collection of values returned by getLogAnalyticsEntityTopology.
  */
 export interface GetLogAnalyticsEntityTopologyResult {
+    readonly context?: string;
+    readonly filters?: outputs.LogAnalytics.GetLogAnalyticsEntityTopologyFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
@@ -91,6 +101,7 @@ export interface GetLogAnalyticsEntityTopologyResult {
  * const testLogAnalyticsEntityTopology = oci.LogAnalytics.getLogAnalyticsEntityTopology({
  *     logAnalyticsEntityId: testLogAnalyticsEntity.id,
  *     namespace: logAnalyticsEntityTopologyNamespace,
+ *     context: logAnalyticsEntityTopologyContext,
  *     metadataEquals: logAnalyticsEntityTopologyMetadataEquals,
  *     state: logAnalyticsEntityTopologyState,
  * });
@@ -99,6 +110,8 @@ export interface GetLogAnalyticsEntityTopologyResult {
 export function getLogAnalyticsEntityTopologyOutput(args: GetLogAnalyticsEntityTopologyOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLogAnalyticsEntityTopologyResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:LogAnalytics/getLogAnalyticsEntityTopology:getLogAnalyticsEntityTopology", {
+        "context": args.context,
+        "filters": args.filters,
         "logAnalyticsEntityId": args.logAnalyticsEntityId,
         "metadataEquals": args.metadataEquals,
         "namespace": args.namespace,
@@ -110,6 +123,11 @@ export function getLogAnalyticsEntityTopologyOutput(args: GetLogAnalyticsEntityT
  * A collection of arguments for invoking getLogAnalyticsEntityTopology.
  */
 export interface GetLogAnalyticsEntityTopologyOutputArgs {
+    /**
+     * A filter to return log analytics entity toplogy whose context matches the specified string.
+     */
+    context?: pulumi.Input<string>;
+    filters?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.GetLogAnalyticsEntityTopologyFilterArgs>[]>;
     /**
      * The log analytics entity OCID.
      */

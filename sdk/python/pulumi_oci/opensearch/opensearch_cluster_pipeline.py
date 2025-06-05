@@ -31,6 +31,7 @@ class OpensearchClusterPipelineArgs:
                  pipeline_configuration_body: pulumi.Input[builtins.str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
+                 node_shape: Optional[pulumi.Input[builtins.str]] = None,
                  nsg_id: Optional[pulumi.Input[builtins.str]] = None,
                  opc_dry_run: Optional[pulumi.Input[builtins.bool]] = None,
                  reverse_connection_endpoints: Optional[pulumi.Input[Sequence[pulumi.Input['OpensearchClusterPipelineReverseConnectionEndpointArgs']]]] = None,
@@ -49,6 +50,7 @@ class OpensearchClusterPipelineArgs:
         :param pulumi.Input[builtins.str] pipeline_configuration_body: (Updatable) The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \\.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[builtins.str] node_shape: (Updatable) The pipeline node shape.
         :param pulumi.Input[builtins.str] nsg_id: (Updatable) The OCID of the NSG where the pipeline private endpoint vnic will be attached.
         :param pulumi.Input[builtins.bool] opc_dry_run: (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
         :param pulumi.Input[Sequence[pulumi.Input['OpensearchClusterPipelineReverseConnectionEndpointArgs']]] reverse_connection_endpoints: (Updatable) The customer IP and the corresponding fully qualified domain name that the pipeline will connect to.
@@ -72,6 +74,8 @@ class OpensearchClusterPipelineArgs:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if node_shape is not None:
+            pulumi.set(__self__, "node_shape", node_shape)
         if nsg_id is not None:
             pulumi.set(__self__, "nsg_id", nsg_id)
         if opc_dry_run is not None:
@@ -196,6 +200,18 @@ class OpensearchClusterPipelineArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="nodeShape")
+    def node_shape(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The pipeline node shape.
+        """
+        return pulumi.get(self, "node_shape")
+
+    @node_shape.setter
+    def node_shape(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "node_shape", value)
+
+    @property
     @pulumi.getter(name="nsgId")
     def nsg_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -294,6 +310,7 @@ class _OpensearchClusterPipelineState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  memory_gb: Optional[pulumi.Input[builtins.int]] = None,
                  node_count: Optional[pulumi.Input[builtins.int]] = None,
+                 node_shape: Optional[pulumi.Input[builtins.str]] = None,
                  nsg_id: Optional[pulumi.Input[builtins.str]] = None,
                  ocpu_count: Optional[pulumi.Input[builtins.int]] = None,
                  opc_dry_run: Optional[pulumi.Input[builtins.bool]] = None,
@@ -319,6 +336,7 @@ class _OpensearchClusterPipelineState:
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[builtins.int] memory_gb: (Updatable) The amount of memory in GB, for each pipeline node.
         :param pulumi.Input[builtins.int] node_count: (Updatable) The number of nodes configured for the pipeline.
+        :param pulumi.Input[builtins.str] node_shape: (Updatable) The pipeline node shape.
         :param pulumi.Input[builtins.str] nsg_id: (Updatable) The OCID of the NSG where the pipeline private endpoint vnic will be attached.
         :param pulumi.Input[builtins.int] ocpu_count: (Updatable) The number of OCPUs configured for each pipeline node.
         :param pulumi.Input[builtins.bool] opc_dry_run: (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
@@ -354,6 +372,8 @@ class _OpensearchClusterPipelineState:
             pulumi.set(__self__, "memory_gb", memory_gb)
         if node_count is not None:
             pulumi.set(__self__, "node_count", node_count)
+        if node_shape is not None:
+            pulumi.set(__self__, "node_shape", node_shape)
         if nsg_id is not None:
             pulumi.set(__self__, "nsg_id", nsg_id)
         if ocpu_count is not None:
@@ -470,6 +490,18 @@ class _OpensearchClusterPipelineState:
     @node_count.setter
     def node_count(self, value: Optional[pulumi.Input[builtins.int]]):
         pulumi.set(self, "node_count", value)
+
+    @property
+    @pulumi.getter(name="nodeShape")
+    def node_shape(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The pipeline node shape.
+        """
+        return pulumi.get(self, "node_shape")
+
+    @node_shape.setter
+    def node_shape(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "node_shape", value)
 
     @property
     @pulumi.getter(name="nsgId")
@@ -681,6 +713,7 @@ class OpensearchClusterPipeline(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  memory_gb: Optional[pulumi.Input[builtins.int]] = None,
                  node_count: Optional[pulumi.Input[builtins.int]] = None,
+                 node_shape: Optional[pulumi.Input[builtins.str]] = None,
                  nsg_id: Optional[pulumi.Input[builtins.str]] = None,
                  ocpu_count: Optional[pulumi.Input[builtins.int]] = None,
                  opc_dry_run: Optional[pulumi.Input[builtins.bool]] = None,
@@ -716,6 +749,7 @@ class OpensearchClusterPipeline(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
+            node_shape=opensearch_cluster_pipeline_node_shape,
             nsg_id=test_nsg["id"],
             opc_dry_run=opensearch_cluster_pipeline_opc_dry_run,
             reverse_connection_endpoints=[{
@@ -745,6 +779,7 @@ class OpensearchClusterPipeline(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[builtins.int] memory_gb: (Updatable) The amount of memory in GB, for each pipeline node.
         :param pulumi.Input[builtins.int] node_count: (Updatable) The number of nodes configured for the pipeline.
+        :param pulumi.Input[builtins.str] node_shape: (Updatable) The pipeline node shape.
         :param pulumi.Input[builtins.str] nsg_id: (Updatable) The OCID of the NSG where the pipeline private endpoint vnic will be attached.
         :param pulumi.Input[builtins.int] ocpu_count: (Updatable) The number of OCPUs configured for each pipeline node.
         :param pulumi.Input[builtins.bool] opc_dry_run: (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
@@ -790,6 +825,7 @@ class OpensearchClusterPipeline(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
+            node_shape=opensearch_cluster_pipeline_node_shape,
             nsg_id=test_nsg["id"],
             opc_dry_run=opensearch_cluster_pipeline_opc_dry_run,
             reverse_connection_endpoints=[{
@@ -832,6 +868,7 @@ class OpensearchClusterPipeline(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  memory_gb: Optional[pulumi.Input[builtins.int]] = None,
                  node_count: Optional[pulumi.Input[builtins.int]] = None,
+                 node_shape: Optional[pulumi.Input[builtins.str]] = None,
                  nsg_id: Optional[pulumi.Input[builtins.str]] = None,
                  ocpu_count: Optional[pulumi.Input[builtins.int]] = None,
                  opc_dry_run: Optional[pulumi.Input[builtins.bool]] = None,
@@ -867,6 +904,7 @@ class OpensearchClusterPipeline(pulumi.CustomResource):
             if node_count is None and not opts.urn:
                 raise TypeError("Missing required property 'node_count'")
             __props__.__dict__["node_count"] = node_count
+            __props__.__dict__["node_shape"] = node_shape
             __props__.__dict__["nsg_id"] = nsg_id
             if ocpu_count is None and not opts.urn:
                 raise TypeError("Missing required property 'ocpu_count'")
@@ -904,6 +942,7 @@ class OpensearchClusterPipeline(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             memory_gb: Optional[pulumi.Input[builtins.int]] = None,
             node_count: Optional[pulumi.Input[builtins.int]] = None,
+            node_shape: Optional[pulumi.Input[builtins.str]] = None,
             nsg_id: Optional[pulumi.Input[builtins.str]] = None,
             ocpu_count: Optional[pulumi.Input[builtins.int]] = None,
             opc_dry_run: Optional[pulumi.Input[builtins.bool]] = None,
@@ -934,6 +973,7 @@ class OpensearchClusterPipeline(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[builtins.int] memory_gb: (Updatable) The amount of memory in GB, for each pipeline node.
         :param pulumi.Input[builtins.int] node_count: (Updatable) The number of nodes configured for the pipeline.
+        :param pulumi.Input[builtins.str] node_shape: (Updatable) The pipeline node shape.
         :param pulumi.Input[builtins.str] nsg_id: (Updatable) The OCID of the NSG where the pipeline private endpoint vnic will be attached.
         :param pulumi.Input[builtins.int] ocpu_count: (Updatable) The number of OCPUs configured for each pipeline node.
         :param pulumi.Input[builtins.bool] opc_dry_run: (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
@@ -966,6 +1006,7 @@ class OpensearchClusterPipeline(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["memory_gb"] = memory_gb
         __props__.__dict__["node_count"] = node_count
+        __props__.__dict__["node_shape"] = node_shape
         __props__.__dict__["nsg_id"] = nsg_id
         __props__.__dict__["ocpu_count"] = ocpu_count
         __props__.__dict__["opc_dry_run"] = opc_dry_run
@@ -1039,6 +1080,14 @@ class OpensearchClusterPipeline(pulumi.CustomResource):
         (Updatable) The number of nodes configured for the pipeline.
         """
         return pulumi.get(self, "node_count")
+
+    @property
+    @pulumi.getter(name="nodeShape")
+    def node_shape(self) -> pulumi.Output[builtins.str]:
+        """
+        (Updatable) The pipeline node shape.
+        """
+        return pulumi.get(self, "node_shape")
 
     @property
     @pulumi.getter(name="nsgId")

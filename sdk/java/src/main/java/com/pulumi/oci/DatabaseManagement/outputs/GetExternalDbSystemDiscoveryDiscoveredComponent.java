@@ -34,6 +34,11 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponent {
      */
     private List<GetExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponent> associatedComponents;
     /**
+     * @return Indicates whether Diagnostics &amp; Management should be enabled for all the current pluggable databases in the container database.
+     * 
+     */
+    private Boolean canEnableAllCurrentPdbs;
+    /**
      * @return The unique identifier of the Oracle cluster.
      * 
      */
@@ -155,6 +160,11 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponent {
      */
     private String instanceName;
     /**
+     * @return Indicates whether Diagnostics &amp; Management should be enabled automatically for all the pluggable databases in the container database.
+     * 
+     */
+    private Boolean isAutoEnablePluggableDatabase;
+    /**
      * @return Indicates whether the Oracle Database is part of a cluster.
      * 
      */
@@ -267,6 +277,13 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponent {
      */
     public List<GetExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponent> associatedComponents() {
         return this.associatedComponents;
+    }
+    /**
+     * @return Indicates whether Diagnostics &amp; Management should be enabled for all the current pluggable databases in the container database.
+     * 
+     */
+    public Boolean canEnableAllCurrentPdbs() {
+        return this.canEnableAllCurrentPdbs;
     }
     /**
      * @return The unique identifier of the Oracle cluster.
@@ -440,6 +457,13 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponent {
         return this.instanceName;
     }
     /**
+     * @return Indicates whether Diagnostics &amp; Management should be enabled automatically for all the pluggable databases in the container database.
+     * 
+     */
+    public Boolean isAutoEnablePluggableDatabase() {
+        return this.isAutoEnablePluggableDatabase;
+    }
+    /**
      * @return Indicates whether the Oracle Database is part of a cluster.
      * 
      */
@@ -585,6 +609,7 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponent {
         private String adrHomeDirectory;
         private List<GetExternalDbSystemDiscoveryDiscoveredComponentAsmInstance> asmInstances;
         private List<GetExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponent> associatedComponents;
+        private Boolean canEnableAllCurrentPdbs;
         private String clusterId;
         private List<GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstance> clusterInstances;
         private String compartmentId;
@@ -610,6 +635,7 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponent {
         private String homeDirectory;
         private String hostName;
         private String instanceName;
+        private Boolean isAutoEnablePluggableDatabase;
         private Boolean isCluster;
         private Boolean isFlexCluster;
         private Boolean isFlexEnabled;
@@ -635,6 +661,7 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponent {
     	      this.adrHomeDirectory = defaults.adrHomeDirectory;
     	      this.asmInstances = defaults.asmInstances;
     	      this.associatedComponents = defaults.associatedComponents;
+    	      this.canEnableAllCurrentPdbs = defaults.canEnableAllCurrentPdbs;
     	      this.clusterId = defaults.clusterId;
     	      this.clusterInstances = defaults.clusterInstances;
     	      this.compartmentId = defaults.compartmentId;
@@ -660,6 +687,7 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponent {
     	      this.homeDirectory = defaults.homeDirectory;
     	      this.hostName = defaults.hostName;
     	      this.instanceName = defaults.instanceName;
+    	      this.isAutoEnablePluggableDatabase = defaults.isAutoEnablePluggableDatabase;
     	      this.isCluster = defaults.isCluster;
     	      this.isFlexCluster = defaults.isFlexCluster;
     	      this.isFlexEnabled = defaults.isFlexEnabled;
@@ -710,6 +738,14 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponent {
         }
         public Builder associatedComponents(GetExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponent... associatedComponents) {
             return associatedComponents(List.of(associatedComponents));
+        }
+        @CustomType.Setter
+        public Builder canEnableAllCurrentPdbs(Boolean canEnableAllCurrentPdbs) {
+            if (canEnableAllCurrentPdbs == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveryDiscoveredComponent", "canEnableAllCurrentPdbs");
+            }
+            this.canEnableAllCurrentPdbs = canEnableAllCurrentPdbs;
+            return this;
         }
         @CustomType.Setter
         public Builder clusterId(String clusterId) {
@@ -921,6 +957,14 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponent {
             return this;
         }
         @CustomType.Setter
+        public Builder isAutoEnablePluggableDatabase(Boolean isAutoEnablePluggableDatabase) {
+            if (isAutoEnablePluggableDatabase == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveryDiscoveredComponent", "isAutoEnablePluggableDatabase");
+            }
+            this.isAutoEnablePluggableDatabase = isAutoEnablePluggableDatabase;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isCluster(Boolean isCluster) {
             if (isCluster == null) {
               throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveryDiscoveredComponent", "isCluster");
@@ -1089,6 +1133,7 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponent {
             _resultValue.adrHomeDirectory = adrHomeDirectory;
             _resultValue.asmInstances = asmInstances;
             _resultValue.associatedComponents = associatedComponents;
+            _resultValue.canEnableAllCurrentPdbs = canEnableAllCurrentPdbs;
             _resultValue.clusterId = clusterId;
             _resultValue.clusterInstances = clusterInstances;
             _resultValue.compartmentId = compartmentId;
@@ -1114,6 +1159,7 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponent {
             _resultValue.homeDirectory = homeDirectory;
             _resultValue.hostName = hostName;
             _resultValue.instanceName = instanceName;
+            _resultValue.isAutoEnablePluggableDatabase = isAutoEnablePluggableDatabase;
             _resultValue.isCluster = isCluster;
             _resultValue.isFlexCluster = isFlexCluster;
             _resultValue.isFlexEnabled = isFlexEnabled;

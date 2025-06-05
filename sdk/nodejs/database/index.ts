@@ -955,6 +955,11 @@ export const getSchedulingPolicySchedulingWindows: typeof import("./getSchedulin
 export const getSchedulingPolicySchedulingWindowsOutput: typeof import("./getSchedulingPolicySchedulingWindows").getSchedulingPolicySchedulingWindowsOutput = null as any;
 utilities.lazyLoad(exports, ["getSchedulingPolicySchedulingWindows","getSchedulingPolicySchedulingWindowsOutput"], () => require("./getSchedulingPolicySchedulingWindows"));
 
+export { GetSystemVersionMinorVersionsArgs, GetSystemVersionMinorVersionsResult, GetSystemVersionMinorVersionsOutputArgs } from "./getSystemVersionMinorVersions";
+export const getSystemVersionMinorVersions: typeof import("./getSystemVersionMinorVersions").getSystemVersionMinorVersions = null as any;
+export const getSystemVersionMinorVersionsOutput: typeof import("./getSystemVersionMinorVersions").getSystemVersionMinorVersionsOutput = null as any;
+utilities.lazyLoad(exports, ["getSystemVersionMinorVersions","getSystemVersionMinorVersionsOutput"], () => require("./getSystemVersionMinorVersions"));
+
 export { GetSystemVersionsArgs, GetSystemVersionsResult, GetSystemVersionsOutputArgs } from "./getSystemVersions";
 export const getSystemVersions: typeof import("./getSystemVersions").getSystemVersions = null as any;
 export const getSystemVersionsOutput: typeof import("./getSystemVersions").getSystemVersionsOutput = null as any;

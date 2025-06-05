@@ -159,6 +159,10 @@ namespace Pulumi.Oci.NetworkFirewall
         /// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'FAILED' state.
         /// </summary>
         public readonly string LifecycleDetails;
+        /// <summary>
+        /// Nat Configuration response.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetNetworkFirewallNatConfigurationResult> NatConfigurations;
         public readonly string NetworkFirewallId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
@@ -209,6 +213,8 @@ namespace Pulumi.Oci.NetworkFirewall
 
             string lifecycleDetails,
 
+            ImmutableArray<Outputs.GetNetworkFirewallNatConfigurationResult> natConfigurations,
+
             string networkFirewallId,
 
             string networkFirewallPolicyId,
@@ -234,6 +240,7 @@ namespace Pulumi.Oci.NetworkFirewall
             Ipv4address = ipv4address;
             Ipv6address = ipv6address;
             LifecycleDetails = lifecycleDetails;
+            NatConfigurations = natConfigurations;
             NetworkFirewallId = networkFirewallId;
             NetworkFirewallPolicyId = networkFirewallPolicyId;
             NetworkSecurityGroupIds = networkSecurityGroupIds;

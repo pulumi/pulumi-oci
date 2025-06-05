@@ -14,7 +14,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// <summary>
         /// This data source provides the list of Scheduled Runs in Oracle Cloud Infrastructure Metering Computation service.
         /// 
-        /// Returns schedule history list.
+        /// Returns the schedule history list.
         /// 
         /// 
         /// ## Example Usage
@@ -41,7 +41,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// <summary>
         /// This data source provides the list of Scheduled Runs in Oracle Cloud Infrastructure Metering Computation service.
         /// 
-        /// Returns schedule history list.
+        /// Returns the schedule history list.
         /// 
         /// 
         /// ## Example Usage
@@ -68,7 +68,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// <summary>
         /// This data source provides the list of Scheduled Runs in Oracle Cloud Infrastructure Metering Computation service.
         /// 
-        /// Returns schedule history list.
+        /// Returns the schedule history list.
         /// 
         /// 
         /// ## Example Usage
@@ -105,7 +105,7 @@ namespace Pulumi.Oci.MeteringComputation
         }
 
         /// <summary>
-        /// The unique ID of a schedule.
+        /// The schedule unique ID.
         /// </summary>
         [Input("scheduleId", required: true)]
         public string ScheduleId { get; set; } = null!;
@@ -127,7 +127,7 @@ namespace Pulumi.Oci.MeteringComputation
         }
 
         /// <summary>
-        /// The unique ID of a schedule.
+        /// The schedule unique ID.
         /// </summary>
         [Input("scheduleId", required: true)]
         public Input<string> ScheduleId { get; set; } = null!;
@@ -148,7 +148,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The ocid representing unique shedule
+        /// The OCID representing a unique shedule.
         /// </summary>
         public readonly string ScheduleId;
         /// <summary>

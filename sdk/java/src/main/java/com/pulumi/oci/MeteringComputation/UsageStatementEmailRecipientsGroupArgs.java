@@ -41,14 +41,14 @@ public final class UsageStatementEmailRecipientsGroupArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) The list of recipient will receive the usage statement email.
+     * (Updatable) The list of recipients that will receive usage statement emails.
      * 
      */
     @Import(name="recipientsLists", required=true)
     private Output<List<UsageStatementEmailRecipientsGroupRecipientsListArgs>> recipientsLists;
 
     /**
-     * @return (Updatable) The list of recipient will receive the usage statement email.
+     * @return (Updatable) The list of recipients that will receive usage statement emails.
      * 
      */
     public Output<List<UsageStatementEmailRecipientsGroupRecipientsListArgs>> recipientsLists() {
@@ -56,7 +56,7 @@ public final class UsageStatementEmailRecipientsGroupArgs extends com.pulumi.res
     }
 
     /**
-     * The UsageStatement Subscription unique OCID.
+     * The usage statement subscription unique OCID.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -66,7 +66,7 @@ public final class UsageStatementEmailRecipientsGroupArgs extends com.pulumi.res
     private Output<String> subscriptionId;
 
     /**
-     * @return The UsageStatement Subscription unique OCID.
+     * @return The usage statement subscription unique OCID.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -134,7 +134,7 @@ public final class UsageStatementEmailRecipientsGroupArgs extends com.pulumi.res
         }
 
         /**
-         * @param recipientsLists (Updatable) The list of recipient will receive the usage statement email.
+         * @param recipientsLists (Updatable) The list of recipients that will receive usage statement emails.
          * 
          * @return builder
          * 
@@ -145,7 +145,7 @@ public final class UsageStatementEmailRecipientsGroupArgs extends com.pulumi.res
         }
 
         /**
-         * @param recipientsLists (Updatable) The list of recipient will receive the usage statement email.
+         * @param recipientsLists (Updatable) The list of recipients that will receive usage statement emails.
          * 
          * @return builder
          * 
@@ -155,7 +155,7 @@ public final class UsageStatementEmailRecipientsGroupArgs extends com.pulumi.res
         }
 
         /**
-         * @param recipientsLists (Updatable) The list of recipient will receive the usage statement email.
+         * @param recipientsLists (Updatable) The list of recipients that will receive usage statement emails.
          * 
          * @return builder
          * 
@@ -165,7 +165,7 @@ public final class UsageStatementEmailRecipientsGroupArgs extends com.pulumi.res
         }
 
         /**
-         * @param subscriptionId The UsageStatement Subscription unique OCID.
+         * @param subscriptionId The usage statement subscription unique OCID.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -179,7 +179,7 @@ public final class UsageStatementEmailRecipientsGroupArgs extends com.pulumi.res
         }
 
         /**
-         * @param subscriptionId The UsageStatement Subscription unique OCID.
+         * @param subscriptionId The usage statement subscription unique OCID.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

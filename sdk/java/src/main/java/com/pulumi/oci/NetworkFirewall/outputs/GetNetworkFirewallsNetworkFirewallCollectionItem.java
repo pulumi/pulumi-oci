@@ -5,6 +5,7 @@ package com.pulumi.oci.NetworkFirewall.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallsNetworkFirewallCollectionItemNatConfiguration;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -57,6 +58,11 @@ public final class GetNetworkFirewallsNetworkFirewallCollectionItem {
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return Nat Configuration response.
+     * 
+     */
+    private List<GetNetworkFirewallsNetworkFirewallCollectionItemNatConfiguration> natConfigurations;
     /**
      * @return A filter to return only resources that match the entire networkFirewallPolicyId given.
      * 
@@ -158,6 +164,13 @@ public final class GetNetworkFirewallsNetworkFirewallCollectionItem {
         return this.lifecycleDetails;
     }
     /**
+     * @return Nat Configuration response.
+     * 
+     */
+    public List<GetNetworkFirewallsNetworkFirewallCollectionItemNatConfiguration> natConfigurations() {
+        return this.natConfigurations;
+    }
+    /**
      * @return A filter to return only resources that match the entire networkFirewallPolicyId given.
      * 
      */
@@ -225,6 +238,7 @@ public final class GetNetworkFirewallsNetworkFirewallCollectionItem {
         private String ipv4address;
         private String ipv6address;
         private String lifecycleDetails;
+        private List<GetNetworkFirewallsNetworkFirewallCollectionItemNatConfiguration> natConfigurations;
         private String networkFirewallPolicyId;
         private List<String> networkSecurityGroupIds;
         private String state;
@@ -244,6 +258,7 @@ public final class GetNetworkFirewallsNetworkFirewallCollectionItem {
     	      this.ipv4address = defaults.ipv4address;
     	      this.ipv6address = defaults.ipv6address;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.natConfigurations = defaults.natConfigurations;
     	      this.networkFirewallPolicyId = defaults.networkFirewallPolicyId;
     	      this.networkSecurityGroupIds = defaults.networkSecurityGroupIds;
     	      this.state = defaults.state;
@@ -326,6 +341,17 @@ public final class GetNetworkFirewallsNetworkFirewallCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder natConfigurations(List<GetNetworkFirewallsNetworkFirewallCollectionItemNatConfiguration> natConfigurations) {
+            if (natConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallsNetworkFirewallCollectionItem", "natConfigurations");
+            }
+            this.natConfigurations = natConfigurations;
+            return this;
+        }
+        public Builder natConfigurations(GetNetworkFirewallsNetworkFirewallCollectionItemNatConfiguration... natConfigurations) {
+            return natConfigurations(List.of(natConfigurations));
+        }
+        @CustomType.Setter
         public Builder networkFirewallPolicyId(String networkFirewallPolicyId) {
             if (networkFirewallPolicyId == null) {
               throw new MissingRequiredPropertyException("GetNetworkFirewallsNetworkFirewallCollectionItem", "networkFirewallPolicyId");
@@ -395,6 +421,7 @@ public final class GetNetworkFirewallsNetworkFirewallCollectionItem {
             _resultValue.ipv4address = ipv4address;
             _resultValue.ipv6address = ipv6address;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.natConfigurations = natConfigurations;
             _resultValue.networkFirewallPolicyId = networkFirewallPolicyId;
             _resultValue.networkSecurityGroupIds = networkSecurityGroupIds;
             _resultValue.state = state;

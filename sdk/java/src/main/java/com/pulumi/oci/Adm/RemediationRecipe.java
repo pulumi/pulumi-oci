@@ -142,14 +142,14 @@ public class RemediationRecipe extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
+     * (Updatable) A configuration to define the constraints when detecting vulnerable dependencies and recommending remediations.
      * 
      */
     @Export(name="detectConfiguration", refs={RemediationRecipeDetectConfiguration.class}, tree="[0]")
     private Output<RemediationRecipeDetectConfiguration> detectConfiguration;
 
     /**
-     * @return (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
+     * @return (Updatable) A configuration to define the constraints when detecting vulnerable dependencies and recommending remediations.
      * 
      */
     public Output<RemediationRecipeDetectConfiguration> detectConfiguration() {
@@ -212,14 +212,14 @@ public class RemediationRecipe extends com.pulumi.resources.CustomResource {
         return this.knowledgeBaseId;
     }
     /**
-     * (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+     * (Updatable) A network configuration defines the required network characteristics for the remediation run of the recipe to access the source repository and/or verify build services.
      * 
      */
     @Export(name="networkConfiguration", refs={RemediationRecipeNetworkConfiguration.class}, tree="[0]")
     private Output<RemediationRecipeNetworkConfiguration> networkConfiguration;
 
     /**
-     * @return (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+     * @return (Updatable) A network configuration defines the required network characteristics for the remediation run of the recipe to access the source repository and/or verify build services.
      * 
      */
     public Output<RemediationRecipeNetworkConfiguration> networkConfiguration() {

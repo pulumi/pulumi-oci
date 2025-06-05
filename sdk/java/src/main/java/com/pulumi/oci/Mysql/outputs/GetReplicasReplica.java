@@ -87,6 +87,11 @@ public final class GetReplicasReplica {
      */
     private String mysqlVersion;
     /**
+     * @return Network Security Group OCIDs used for the VNIC attachment.
+     * 
+     */
+    private List<String> nsgIds;
+    /**
      * @return The port the read replica is configured to listen on.
      * 
      */
@@ -227,6 +232,13 @@ public final class GetReplicasReplica {
         return this.mysqlVersion;
     }
     /**
+     * @return Network Security Group OCIDs used for the VNIC attachment.
+     * 
+     */
+    public List<String> nsgIds() {
+        return this.nsgIds;
+    }
+    /**
      * @return The port the read replica is configured to listen on.
      * 
      */
@@ -306,6 +318,7 @@ public final class GetReplicasReplica {
         private Boolean isDeleteProtected;
         private String lifecycleDetails;
         private String mysqlVersion;
+        private List<String> nsgIds;
         private Integer port;
         private Integer portX;
         private List<GetReplicasReplicaReplicaOverride> replicaOverrides;
@@ -331,6 +344,7 @@ public final class GetReplicasReplica {
     	      this.isDeleteProtected = defaults.isDeleteProtected;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.mysqlVersion = defaults.mysqlVersion;
+    	      this.nsgIds = defaults.nsgIds;
     	      this.port = defaults.port;
     	      this.portX = defaults.portX;
     	      this.replicaOverrides = defaults.replicaOverrides;
@@ -454,6 +468,17 @@ public final class GetReplicasReplica {
             return this;
         }
         @CustomType.Setter
+        public Builder nsgIds(List<String> nsgIds) {
+            if (nsgIds == null) {
+              throw new MissingRequiredPropertyException("GetReplicasReplica", "nsgIds");
+            }
+            this.nsgIds = nsgIds;
+            return this;
+        }
+        public Builder nsgIds(String... nsgIds) {
+            return nsgIds(List.of(nsgIds));
+        }
+        @CustomType.Setter
         public Builder port(Integer port) {
             if (port == null) {
               throw new MissingRequiredPropertyException("GetReplicasReplica", "port");
@@ -539,6 +564,7 @@ public final class GetReplicasReplica {
             _resultValue.isDeleteProtected = isDeleteProtected;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.mysqlVersion = mysqlVersion;
+            _resultValue.nsgIds = nsgIds;
             _resultValue.port = port;
             _resultValue.portX = portX;
             _resultValue.replicaOverrides = replicaOverrides;

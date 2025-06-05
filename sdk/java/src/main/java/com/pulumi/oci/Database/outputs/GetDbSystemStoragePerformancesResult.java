@@ -15,6 +15,7 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDbSystemStoragePerformancesResult {
+    private @Nullable String databaseEdition;
     /**
      * @return The list of db_system_storage_performances.
      * 
@@ -34,6 +35,9 @@ public final class GetDbSystemStoragePerformancesResult {
     private String storageManagement;
 
     private GetDbSystemStoragePerformancesResult() {}
+    public Optional<String> databaseEdition() {
+        return Optional.ofNullable(this.databaseEdition);
+    }
     /**
      * @return The list of db_system_storage_performances.
      * 
@@ -71,6 +75,7 @@ public final class GetDbSystemStoragePerformancesResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String databaseEdition;
         private List<GetDbSystemStoragePerformancesDbSystemStoragePerformance> dbSystemStoragePerformances;
         private @Nullable List<GetDbSystemStoragePerformancesFilter> filters;
         private String id;
@@ -79,6 +84,7 @@ public final class GetDbSystemStoragePerformancesResult {
         public Builder() {}
         public Builder(GetDbSystemStoragePerformancesResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.databaseEdition = defaults.databaseEdition;
     	      this.dbSystemStoragePerformances = defaults.dbSystemStoragePerformances;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
@@ -86,6 +92,12 @@ public final class GetDbSystemStoragePerformancesResult {
     	      this.storageManagement = defaults.storageManagement;
         }
 
+        @CustomType.Setter
+        public Builder databaseEdition(@Nullable String databaseEdition) {
+
+            this.databaseEdition = databaseEdition;
+            return this;
+        }
         @CustomType.Setter
         public Builder dbSystemStoragePerformances(List<GetDbSystemStoragePerformancesDbSystemStoragePerformance> dbSystemStoragePerformances) {
             if (dbSystemStoragePerformances == null) {
@@ -130,6 +142,7 @@ public final class GetDbSystemStoragePerformancesResult {
         }
         public GetDbSystemStoragePerformancesResult build() {
             final var _resultValue = new GetDbSystemStoragePerformancesResult();
+            _resultValue.databaseEdition = databaseEdition;
             _resultValue.dbSystemStoragePerformances = dbSystemStoragePerformances;
             _resultValue.filters = filters;
             _resultValue.id = id;

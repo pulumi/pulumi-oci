@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Usage Carbon Emissions Queries in Oracle Cloud Infrastructure Metering Computation service.
  *
- * Returns the usage carbon emissions saved query list.
+ * Returns the carbon emissions usage saved query list.
  *
  * ## Example Usage
  *
@@ -62,7 +62,7 @@ export interface GetUsageCarbonEmissionsQueriesResult {
 /**
  * This data source provides the list of Usage Carbon Emissions Queries in Oracle Cloud Infrastructure Metering Computation service.
  *
- * Returns the usage carbon emissions saved query list.
+ * Returns the carbon emissions usage saved query list.
  *
  * ## Example Usage
  *

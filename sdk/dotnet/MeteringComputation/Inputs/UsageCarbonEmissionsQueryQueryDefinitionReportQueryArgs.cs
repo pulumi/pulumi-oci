@@ -19,10 +19,28 @@ namespace Pulumi.Oci.MeteringComputation.Inputs
         public Input<int>? CompartmentDepth { get; set; }
 
         /// <summary>
-        /// (Updatable) The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+        /// (Updatable) The user interface date range, for example, LAST_THREE_MONTHS. Overrides the timeUsageStarted and timeUsageEnded properties.
         /// </summary>
         [Input("dateRangeName")]
         public Input<string>? DateRangeName { get; set; }
+
+        /// <summary>
+        /// (Updatable) Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+        /// </summary>
+        [Input("emissionCalculationMethod")]
+        public Input<string>? EmissionCalculationMethod { get; set; }
+
+        /// <summary>
+        /// (Updatable) Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+        /// </summary>
+        [Input("emissionType")]
+        public Input<string>? EmissionType { get; set; }
+
+        /// <summary>
+        /// (Updatable) The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+        /// </summary>
+        [Input("granularity")]
+        public Input<string>? Granularity { get; set; }
 
         [Input("groupBies")]
         private InputList<string>? _groupBies;
@@ -49,7 +67,7 @@ namespace Pulumi.Oci.MeteringComputation.Inputs
         }
 
         /// <summary>
-        /// (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+        /// (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or costs over the query time period are summed.
         /// </summary>
         [Input("isAggregateByTime")]
         public Input<bool>? IsAggregateByTime { get; set; }

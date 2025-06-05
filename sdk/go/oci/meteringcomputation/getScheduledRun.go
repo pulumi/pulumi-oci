@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/meteringcomputation"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/meteringcomputation"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -52,7 +52,7 @@ func GetScheduledRun(ctx *pulumi.Context, args *GetScheduledRunArgs, opts ...pul
 
 // A collection of arguments for invoking getScheduledRun.
 type GetScheduledRunArgs struct {
-	// The scheduledRun unique OCID
+	// The scheduled run unique OCID.
 	ScheduledRunId string `pulumi:"scheduledRunId"`
 }
 
@@ -60,16 +60,16 @@ type GetScheduledRunArgs struct {
 type GetScheduledRunResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// Additional details about scheduled run failure
+	// Additional details about the scheduled run.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// The ocid representing unique shedule
+	// The OCID representing a unique shedule.
 	ScheduleId     string `pulumi:"scheduleId"`
 	ScheduledRunId string `pulumi:"scheduledRunId"`
-	// Specifies if the schedule job was run successfully or not.
+	// Specifies whether or not the schedule job was successfully run.
 	State string `pulumi:"state"`
-	// The time when schedule started executing
+	// The time the schedule started executing.
 	TimeCreated string `pulumi:"timeCreated"`
-	// The time when schedule finished executing
+	// The time the schedule finished executing.
 	TimeFinished string `pulumi:"timeFinished"`
 }
 
@@ -84,7 +84,7 @@ func GetScheduledRunOutput(ctx *pulumi.Context, args GetScheduledRunOutputArgs, 
 
 // A collection of arguments for invoking getScheduledRun.
 type GetScheduledRunOutputArgs struct {
-	// The scheduledRun unique OCID
+	// The scheduled run unique OCID.
 	ScheduledRunId pulumi.StringInput `pulumi:"scheduledRunId"`
 }
 
@@ -112,12 +112,12 @@ func (o GetScheduledRunResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScheduledRunResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Additional details about scheduled run failure
+// Additional details about the scheduled run.
 func (o GetScheduledRunResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScheduledRunResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// The ocid representing unique shedule
+// The OCID representing a unique shedule.
 func (o GetScheduledRunResultOutput) ScheduleId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScheduledRunResult) string { return v.ScheduleId }).(pulumi.StringOutput)
 }
@@ -126,17 +126,17 @@ func (o GetScheduledRunResultOutput) ScheduledRunId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScheduledRunResult) string { return v.ScheduledRunId }).(pulumi.StringOutput)
 }
 
-// Specifies if the schedule job was run successfully or not.
+// Specifies whether or not the schedule job was successfully run.
 func (o GetScheduledRunResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScheduledRunResult) string { return v.State }).(pulumi.StringOutput)
 }
 
-// The time when schedule started executing
+// The time the schedule started executing.
 func (o GetScheduledRunResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScheduledRunResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The time when schedule finished executing
+// The time the schedule finished executing.
 func (o GetScheduledRunResultOutput) TimeFinished() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScheduledRunResult) string { return v.TimeFinished }).(pulumi.StringOutput)
 }

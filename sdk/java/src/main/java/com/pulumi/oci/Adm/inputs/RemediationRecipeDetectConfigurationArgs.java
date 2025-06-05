@@ -33,14 +33,14 @@ public final class RemediationRecipeDetectConfigurationArgs extends com.pulumi.r
     }
 
     /**
-     * (Updatable) The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+     * (Updatable) The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. A vulnerability with a CVSS V2 score below this value is not considered for remediation.
      * 
      */
     @Import(name="maxPermissibleCvssV2score")
     private @Nullable Output<Double> maxPermissibleCvssV2score;
 
     /**
-     * @return (Updatable) The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+     * @return (Updatable) The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. A vulnerability with a CVSS V2 score below this value is not considered for remediation.
      * 
      */
     public Optional<Output<Double>> maxPermissibleCvssV2score() {
@@ -48,14 +48,14 @@ public final class RemediationRecipeDetectConfigurationArgs extends com.pulumi.r
     }
 
     /**
-     * (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+     * (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. A vulnerability with a CVSS V3 score below this value is not considered for patching.
      * 
      */
     @Import(name="maxPermissibleCvssV3score")
     private @Nullable Output<Double> maxPermissibleCvssV3score;
 
     /**
-     * @return (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+     * @return (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. A vulnerability with a CVSS V3 score below this value is not considered for patching.
      * 
      */
     public Optional<Output<Double>> maxPermissibleCvssV3score() {
@@ -63,14 +63,14 @@ public final class RemediationRecipeDetectConfigurationArgs extends com.pulumi.r
     }
 
     /**
-     * (Updatable) The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered for patching.
+     * (Updatable) The maximum ADM Severity. A vulnerability with an severity below this value is not considered for remediation.
      * 
      */
     @Import(name="maxPermissibleSeverity")
     private @Nullable Output<String> maxPermissibleSeverity;
 
     /**
-     * @return (Updatable) The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered for patching.
+     * @return (Updatable) The maximum ADM Severity. A vulnerability with an severity below this value is not considered for remediation.
      * 
      */
     public Optional<Output<String>> maxPermissibleSeverity() {
@@ -152,7 +152,7 @@ public final class RemediationRecipeDetectConfigurationArgs extends com.pulumi.r
         }
 
         /**
-         * @param maxPermissibleCvssV2score (Updatable) The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+         * @param maxPermissibleCvssV2score (Updatable) The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. A vulnerability with a CVSS V2 score below this value is not considered for remediation.
          * 
          * @return builder
          * 
@@ -163,7 +163,7 @@ public final class RemediationRecipeDetectConfigurationArgs extends com.pulumi.r
         }
 
         /**
-         * @param maxPermissibleCvssV2score (Updatable) The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+         * @param maxPermissibleCvssV2score (Updatable) The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. A vulnerability with a CVSS V2 score below this value is not considered for remediation.
          * 
          * @return builder
          * 
@@ -173,7 +173,7 @@ public final class RemediationRecipeDetectConfigurationArgs extends com.pulumi.r
         }
 
         /**
-         * @param maxPermissibleCvssV3score (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+         * @param maxPermissibleCvssV3score (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. A vulnerability with a CVSS V3 score below this value is not considered for patching.
          * 
          * @return builder
          * 
@@ -184,7 +184,7 @@ public final class RemediationRecipeDetectConfigurationArgs extends com.pulumi.r
         }
 
         /**
-         * @param maxPermissibleCvssV3score (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+         * @param maxPermissibleCvssV3score (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. A vulnerability with a CVSS V3 score below this value is not considered for patching.
          * 
          * @return builder
          * 
@@ -194,7 +194,7 @@ public final class RemediationRecipeDetectConfigurationArgs extends com.pulumi.r
         }
 
         /**
-         * @param maxPermissibleSeverity (Updatable) The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered for patching.
+         * @param maxPermissibleSeverity (Updatable) The maximum ADM Severity. A vulnerability with an severity below this value is not considered for remediation.
          * 
          * @return builder
          * 
@@ -205,7 +205,7 @@ public final class RemediationRecipeDetectConfigurationArgs extends com.pulumi.r
         }
 
         /**
-         * @param maxPermissibleSeverity (Updatable) The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered for patching.
+         * @param maxPermissibleSeverity (Updatable) The maximum ADM Severity. A vulnerability with an severity below this value is not considered for remediation.
          * 
          * @return builder
          * 

@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -18,13 +18,15 @@ import (
 type ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement struct {
 	pulumi.CustomResourceState
 
+	CanDisableAllPdbs pulumi.BoolPtrOutput `pulumi:"canDisableAllPdbs"`
 	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableExternalContainerDbmFeature pulumi.BoolOutput `pulumi:"enableExternalContainerDbmFeature"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external container database.
-	ExternalContainerDatabaseId pulumi.StringOutput `pulumi:"externalContainerDatabaseId"`
+	ExternalContainerDatabaseId pulumi.StringOutput    `pulumi:"externalContainerDatabaseId"`
+	Feature                     pulumi.StringPtrOutput `pulumi:"feature"`
 	// The details required to enable the specified Database Management feature.
 	FeatureDetails ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsOutput `pulumi:"featureDetails"`
 }
@@ -65,6 +67,7 @@ func GetExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(ctx *pul
 
 // Input properties used for looking up and filtering ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement resources.
 type externalcontainerdatabaseExternalContainerDbmFeaturesManagementState struct {
+	CanDisableAllPdbs *bool `pulumi:"canDisableAllPdbs"`
 	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 	//
 	// ** IMPORTANT **
@@ -72,11 +75,13 @@ type externalcontainerdatabaseExternalContainerDbmFeaturesManagementState struct
 	EnableExternalContainerDbmFeature *bool `pulumi:"enableExternalContainerDbmFeature"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external container database.
 	ExternalContainerDatabaseId *string `pulumi:"externalContainerDatabaseId"`
+	Feature                     *string `pulumi:"feature"`
 	// The details required to enable the specified Database Management feature.
 	FeatureDetails *ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetails `pulumi:"featureDetails"`
 }
 
 type ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementState struct {
+	CanDisableAllPdbs pulumi.BoolPtrInput
 	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 	//
 	// ** IMPORTANT **
@@ -84,6 +89,7 @@ type ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementState struct
 	EnableExternalContainerDbmFeature pulumi.BoolPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external container database.
 	ExternalContainerDatabaseId pulumi.StringPtrInput
+	Feature                     pulumi.StringPtrInput
 	// The details required to enable the specified Database Management feature.
 	FeatureDetails ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsPtrInput
 }
@@ -93,19 +99,22 @@ func (ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementState) Elem
 }
 
 type externalcontainerdatabaseExternalContainerDbmFeaturesManagementArgs struct {
+	CanDisableAllPdbs *bool `pulumi:"canDisableAllPdbs"`
 	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableExternalContainerDbmFeature bool `pulumi:"enableExternalContainerDbmFeature"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external container database.
-	ExternalContainerDatabaseId string `pulumi:"externalContainerDatabaseId"`
+	ExternalContainerDatabaseId string  `pulumi:"externalContainerDatabaseId"`
+	Feature                     *string `pulumi:"feature"`
 	// The details required to enable the specified Database Management feature.
 	FeatureDetails *ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetails `pulumi:"featureDetails"`
 }
 
 // The set of arguments for constructing a ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement resource.
 type ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementArgs struct {
+	CanDisableAllPdbs pulumi.BoolPtrInput
 	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 	//
 	// ** IMPORTANT **
@@ -113,6 +122,7 @@ type ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementArgs struct 
 	EnableExternalContainerDbmFeature pulumi.BoolInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external container database.
 	ExternalContainerDatabaseId pulumi.StringInput
+	Feature                     pulumi.StringPtrInput
 	// The details required to enable the specified Database Management feature.
 	FeatureDetails ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsPtrInput
 }
@@ -204,6 +214,12 @@ func (o ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementOutput) T
 	return o
 }
 
+func (o ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementOutput) CanDisableAllPdbs() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement) pulumi.BoolPtrOutput {
+		return v.CanDisableAllPdbs
+	}).(pulumi.BoolPtrOutput)
+}
+
 // (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 //
 // ** IMPORTANT **
@@ -219,6 +235,12 @@ func (o ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementOutput) E
 	return o.ApplyT(func(v *ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement) pulumi.StringOutput {
 		return v.ExternalContainerDatabaseId
 	}).(pulumi.StringOutput)
+}
+
+func (o ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementOutput) Feature() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement) pulumi.StringPtrOutput {
+		return v.Feature
+	}).(pulumi.StringPtrOutput)
 }
 
 // The details required to enable the specified Database Management feature.

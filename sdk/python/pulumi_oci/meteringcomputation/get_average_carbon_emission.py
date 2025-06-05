@@ -58,7 +58,7 @@ class GetAverageCarbonEmissionResult:
     @pulumi.getter(name="skuPartNumber")
     def sku_part_number(self) -> builtins.str:
         """
-        The sku part number.
+        The SKU part number.
         """
         return pulumi.get(self, "sku_part_number")
 

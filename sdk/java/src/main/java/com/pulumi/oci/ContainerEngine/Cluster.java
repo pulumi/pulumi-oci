@@ -344,6 +344,20 @@ public class Cluster extends com.pulumi.resources.CustomResource {
         return this.openIdConnectDiscoveryEndpoint;
     }
     /**
+     * The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
+     * 
+     */
+    @Export(name="openIdConnectDiscoveryKey", refs={String.class}, tree="[0]")
+    private Output<String> openIdConnectDiscoveryKey;
+
+    /**
+     * @return The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
+     * 
+     */
+    public Output<String> openIdConnectDiscoveryKey() {
+        return this.openIdConnectDiscoveryKey;
+    }
+    /**
      * (Updatable) Optional attributes for the cluster.
      * 
      */

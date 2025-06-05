@@ -5,6 +5,7 @@ package com.pulumi.oci.NetworkFirewall.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallNatConfigurationArgs;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -138,6 +139,21 @@ public final class NetworkFirewallState extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * (Updatable) Nat Configuration request to use Nat feature on firewall.
+     * 
+     */
+    @Import(name="natConfiguration")
+    private @Nullable Output<NetworkFirewallNatConfigurationArgs> natConfiguration;
+
+    /**
+     * @return (Updatable) Nat Configuration request to use Nat feature on firewall.
+     * 
+     */
+    public Optional<Output<NetworkFirewallNatConfigurationArgs>> natConfiguration() {
+        return Optional.ofNullable(this.natConfiguration);
+    }
+
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
      * 
      */
@@ -259,6 +275,7 @@ public final class NetworkFirewallState extends com.pulumi.resources.ResourceArg
         this.ipv4address = $.ipv4address;
         this.ipv6address = $.ipv6address;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.natConfiguration = $.natConfiguration;
         this.networkFirewallPolicyId = $.networkFirewallPolicyId;
         this.networkSecurityGroupIds = $.networkSecurityGroupIds;
         this.state = $.state;
@@ -452,6 +469,27 @@ public final class NetworkFirewallState extends com.pulumi.resources.ResourceArg
          */
         public Builder lifecycleDetails(String lifecycleDetails) {
             return lifecycleDetails(Output.of(lifecycleDetails));
+        }
+
+        /**
+         * @param natConfiguration (Updatable) Nat Configuration request to use Nat feature on firewall.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder natConfiguration(@Nullable Output<NetworkFirewallNatConfigurationArgs> natConfiguration) {
+            $.natConfiguration = natConfiguration;
+            return this;
+        }
+
+        /**
+         * @param natConfiguration (Updatable) Nat Configuration request to use Nat feature on firewall.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder natConfiguration(NetworkFirewallNatConfigurationArgs natConfiguration) {
+            return natConfiguration(Output.of(natConfiguration));
         }
 
         /**

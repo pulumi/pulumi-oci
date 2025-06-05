@@ -29,7 +29,7 @@ class GetNamespaceScheduledTasksResult:
     """
     A collection of values returned by getNamespaceScheduledTasks.
     """
-    def __init__(__self__, compartment_id=None, display_name=None, filters=None, id=None, namespace=None, scheduled_task_collections=None, target_service=None, task_type=None):
+    def __init__(__self__, compartment_id=None, display_name=None, filters=None, id=None, namespace=None, scheduled_task_collections=None, target_service=None, task_type=None, template_id=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -54,6 +54,9 @@ class GetNamespaceScheduledTasksResult:
         if task_type and not isinstance(task_type, str):
             raise TypeError("Expected argument 'task_type' to be a str")
         pulumi.set(__self__, "task_type", task_type)
+        if template_id and not isinstance(template_id, str):
+            raise TypeError("Expected argument 'template_id' to be a str")
+        pulumi.set(__self__, "template_id", template_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -110,6 +113,14 @@ class GetNamespaceScheduledTasksResult:
         """
         return pulumi.get(self, "task_type")
 
+    @property
+    @pulumi.getter(name="templateId")
+    def template_id(self) -> Optional[builtins.str]:
+        """
+        The Config template Id of a particular template.
+        """
+        return pulumi.get(self, "template_id")
+
 
 class AwaitableGetNamespaceScheduledTasksResult(GetNamespaceScheduledTasksResult):
     # pylint: disable=using-constant-test
@@ -124,7 +135,8 @@ class AwaitableGetNamespaceScheduledTasksResult(GetNamespaceScheduledTasksResult
             namespace=self.namespace,
             scheduled_task_collections=self.scheduled_task_collections,
             target_service=self.target_service,
-            task_type=self.task_type)
+            task_type=self.task_type,
+            template_id=self.template_id)
 
 
 def get_namespace_scheduled_tasks(compartment_id: Optional[builtins.str] = None,
@@ -133,6 +145,7 @@ def get_namespace_scheduled_tasks(compartment_id: Optional[builtins.str] = None,
                                   namespace: Optional[builtins.str] = None,
                                   target_service: Optional[builtins.str] = None,
                                   task_type: Optional[builtins.str] = None,
+                                  template_id: Optional[builtins.str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNamespaceScheduledTasksResult:
     """
     This data source provides the list of Namespace Scheduled Tasks in Oracle Cloud Infrastructure Log Analytics service.
@@ -149,7 +162,8 @@ def get_namespace_scheduled_tasks(compartment_id: Optional[builtins.str] = None,
         namespace=namespace_scheduled_task_namespace,
         display_name=namespace_scheduled_task_display_name,
         target_service=namespace_scheduled_task_target_service,
-        task_type=namespace_scheduled_task_task_type)
+        task_type=namespace_scheduled_task_task_type,
+        template_id=test_template["id"])
     ```
 
 
@@ -158,6 +172,7 @@ def get_namespace_scheduled_tasks(compartment_id: Optional[builtins.str] = None,
     :param builtins.str namespace: The Logging Analytics namespace used for the request.
     :param builtins.str target_service: The target service to use for filtering.
     :param builtins.str task_type: Required parameter to specify schedule task type.
+    :param builtins.str template_id: A filter to return only scheduled tasks whose stream action templateId matches the given id  exactly.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -166,6 +181,7 @@ def get_namespace_scheduled_tasks(compartment_id: Optional[builtins.str] = None,
     __args__['namespace'] = namespace
     __args__['targetService'] = target_service
     __args__['taskType'] = task_type
+    __args__['templateId'] = template_id
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:LogAnalytics/getNamespaceScheduledTasks:getNamespaceScheduledTasks', __args__, opts=opts, typ=GetNamespaceScheduledTasksResult).value
 
@@ -177,13 +193,15 @@ def get_namespace_scheduled_tasks(compartment_id: Optional[builtins.str] = None,
         namespace=pulumi.get(__ret__, 'namespace'),
         scheduled_task_collections=pulumi.get(__ret__, 'scheduled_task_collections'),
         target_service=pulumi.get(__ret__, 'target_service'),
-        task_type=pulumi.get(__ret__, 'task_type'))
+        task_type=pulumi.get(__ret__, 'task_type'),
+        template_id=pulumi.get(__ret__, 'template_id'))
 def get_namespace_scheduled_tasks_output(compartment_id: Optional[pulumi.Input[builtins.str]] = None,
                                          display_name: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNamespaceScheduledTasksFilterArgs', 'GetNamespaceScheduledTasksFilterArgsDict']]]]] = None,
                                          namespace: Optional[pulumi.Input[builtins.str]] = None,
                                          target_service: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                                          task_type: Optional[pulumi.Input[builtins.str]] = None,
+                                         template_id: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespaceScheduledTasksResult]:
     """
     This data source provides the list of Namespace Scheduled Tasks in Oracle Cloud Infrastructure Log Analytics service.
@@ -200,7 +218,8 @@ def get_namespace_scheduled_tasks_output(compartment_id: Optional[pulumi.Input[b
         namespace=namespace_scheduled_task_namespace,
         display_name=namespace_scheduled_task_display_name,
         target_service=namespace_scheduled_task_target_service,
-        task_type=namespace_scheduled_task_task_type)
+        task_type=namespace_scheduled_task_task_type,
+        template_id=test_template["id"])
     ```
 
 
@@ -209,6 +228,7 @@ def get_namespace_scheduled_tasks_output(compartment_id: Optional[pulumi.Input[b
     :param builtins.str namespace: The Logging Analytics namespace used for the request.
     :param builtins.str target_service: The target service to use for filtering.
     :param builtins.str task_type: Required parameter to specify schedule task type.
+    :param builtins.str template_id: A filter to return only scheduled tasks whose stream action templateId matches the given id  exactly.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -217,6 +237,7 @@ def get_namespace_scheduled_tasks_output(compartment_id: Optional[pulumi.Input[b
     __args__['namespace'] = namespace
     __args__['targetService'] = target_service
     __args__['taskType'] = task_type
+    __args__['templateId'] = template_id
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getNamespaceScheduledTasks:getNamespaceScheduledTasks', __args__, opts=opts, typ=GetNamespaceScheduledTasksResult)
     return __ret__.apply(lambda __response__: GetNamespaceScheduledTasksResult(
@@ -227,4 +248,5 @@ def get_namespace_scheduled_tasks_output(compartment_id: Optional[pulumi.Input[b
         namespace=pulumi.get(__response__, 'namespace'),
         scheduled_task_collections=pulumi.get(__response__, 'scheduled_task_collections'),
         target_service=pulumi.get(__response__, 'target_service'),
-        task_type=pulumi.get(__response__, 'task_type')))
+        task_type=pulumi.get(__response__, 'task_type'),
+        template_id=pulumi.get(__response__, 'template_id')))

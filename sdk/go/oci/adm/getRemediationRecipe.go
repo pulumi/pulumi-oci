@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/adm"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/adm"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -62,7 +62,7 @@ type LookupRemediationRecipeResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	// A configuration to define the constraints when detecting vulnerable dependencies.
+	// A configuration to define the constraints when detecting vulnerable dependencies and recommending remediations.
 	DetectConfigurations []GetRemediationRecipeDetectConfiguration `pulumi:"detectConfigurations"`
 	// The name of the Remediation Recipe.
 	DisplayName string `pulumi:"displayName"`
@@ -74,7 +74,7 @@ type LookupRemediationRecipeResult struct {
 	IsRunTriggeredOnKbChange bool `pulumi:"isRunTriggeredOnKbChange"`
 	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
 	KnowledgeBaseId string `pulumi:"knowledgeBaseId"`
-	// A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+	// A network configuration defines the required network characteristics for the remediation run of the recipe to access the source repository and/or verify build services.
 	NetworkConfigurations []GetRemediationRecipeNetworkConfiguration `pulumi:"networkConfigurations"`
 	RemediationRecipeId   string                                     `pulumi:"remediationRecipeId"`
 	// A configuration for the Source Code Management tool/platform used by a remediation recipe.
@@ -135,7 +135,7 @@ func (o LookupRemediationRecipeResultOutput) DefinedTags() pulumi.StringMapOutpu
 	return o.ApplyT(func(v LookupRemediationRecipeResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
-// A configuration to define the constraints when detecting vulnerable dependencies.
+// A configuration to define the constraints when detecting vulnerable dependencies and recommending remediations.
 func (o LookupRemediationRecipeResultOutput) DetectConfigurations() GetRemediationRecipeDetectConfigurationArrayOutput {
 	return o.ApplyT(func(v LookupRemediationRecipeResult) []GetRemediationRecipeDetectConfiguration {
 		return v.DetectConfigurations
@@ -167,7 +167,7 @@ func (o LookupRemediationRecipeResultOutput) KnowledgeBaseId() pulumi.StringOutp
 	return o.ApplyT(func(v LookupRemediationRecipeResult) string { return v.KnowledgeBaseId }).(pulumi.StringOutput)
 }
 
-// A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+// A network configuration defines the required network characteristics for the remediation run of the recipe to access the source repository and/or verify build services.
 func (o LookupRemediationRecipeResultOutput) NetworkConfigurations() GetRemediationRecipeNetworkConfigurationArrayOutput {
 	return o.ApplyT(func(v LookupRemediationRecipeResult) []GetRemediationRecipeNetworkConfiguration {
 		return v.NetworkConfigurations

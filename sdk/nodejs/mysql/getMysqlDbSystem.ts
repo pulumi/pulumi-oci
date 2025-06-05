@@ -170,11 +170,15 @@ export interface GetMysqlDbSystemResult {
      */
     readonly mysqlVersion: string;
     /**
+     * Network Security Group OCIDs used for the VNIC attachment.
+     */
+    readonly nsgIds: string[];
+    /**
      * Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
      */
     readonly pointInTimeRecoveryDetails: outputs.Mysql.GetMysqlDbSystemPointInTimeRecoveryDetail[];
     /**
-     * The port for primary endpoint of the DB System to listen on.
+     * The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
      */
     readonly port: number;
     /**
@@ -185,6 +189,10 @@ export interface GetMysqlDbSystemResult {
      * The read endpoint of a DB System.
      */
     readonly readEndpoints: outputs.Mysql.GetMysqlDbSystemReadEndpoint[];
+    /**
+     * REST configuration details.
+     */
+    readonly rests: outputs.Mysql.GetMysqlDbSystemRest[];
     /**
      * Secure connection configuration details.
      */

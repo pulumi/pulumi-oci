@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/core"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -75,6 +75,8 @@ type LookupDedicatedVmHostResult struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated VM host.
 	Id string `pulumi:"id"`
+	// Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+	PlacementConstraintDetails []GetDedicatedVmHostPlacementConstraintDetail `pulumi:"placementConstraintDetails"`
 	// The current available memory of the dedicated VM host, in GBs.
 	RemainingMemoryInGbs float64 `pulumi:"remainingMemoryInGbs"`
 	// The current available OCPUs of the dedicated VM host.
@@ -165,6 +167,13 @@ func (o LookupDedicatedVmHostResultOutput) FreeformTags() pulumi.StringMapOutput
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated VM host.
 func (o LookupDedicatedVmHostResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDedicatedVmHostResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+func (o LookupDedicatedVmHostResultOutput) PlacementConstraintDetails() GetDedicatedVmHostPlacementConstraintDetailArrayOutput {
+	return o.ApplyT(func(v LookupDedicatedVmHostResult) []GetDedicatedVmHostPlacementConstraintDetail {
+		return v.PlacementConstraintDetails
+	}).(GetDedicatedVmHostPlacementConstraintDetailArrayOutput)
 }
 
 // The current available memory of the dedicated VM host, in GBs.

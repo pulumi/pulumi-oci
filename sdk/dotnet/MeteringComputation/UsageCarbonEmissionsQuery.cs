@@ -12,7 +12,7 @@ namespace Pulumi.Oci.MeteringComputation
     /// <summary>
     /// This resource provides the Usage Carbon Emissions Query resource in Oracle Cloud Infrastructure Metering Computation service.
     /// 
-    /// Returns the created usage carbon emissions query.
+    /// Returns the created carbon emissions usage query.
     /// 
     /// ## Example Usage
     /// 
@@ -40,6 +40,9 @@ namespace Pulumi.Oci.MeteringComputation
     ///                 TenantId = testTenant.Id,
     ///                 CompartmentDepth = usageCarbonEmissionsQueryQueryDefinitionReportQueryCompartmentDepth,
     ///                 DateRangeName = usageCarbonEmissionsQueryQueryDefinitionReportQueryDateRangeName,
+    ///                 EmissionCalculationMethod = usageCarbonEmissionsQueryQueryDefinitionReportQueryEmissionCalculationMethod,
+    ///                 EmissionType = usageCarbonEmissionsQueryQueryDefinitionReportQueryEmissionType,
+    ///                 Granularity = usageCarbonEmissionsQueryQueryDefinitionReportQueryGranularity,
     ///                 GroupBies = usageCarbonEmissionsQueryQueryDefinitionReportQueryGroupBy,
     ///                 GroupByTags = new[]
     ///                 {

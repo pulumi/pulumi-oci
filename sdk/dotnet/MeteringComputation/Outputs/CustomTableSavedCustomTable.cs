@@ -14,7 +14,7 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
     public sealed class CustomTableSavedCustomTable
     {
         /// <summary>
-        /// (Updatable) The column groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+        /// (Updatable) The column groupBy key list. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
         /// </summary>
         public readonly ImmutableArray<string> ColumnGroupBies;
         /// <summary>
@@ -30,7 +30,7 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.CustomTableSavedCustomTableGroupByTag> GroupByTags;
         /// <summary>
-        /// (Updatable) The row groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+        /// (Updatable) The row groupBy key list. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
         /// </summary>
         public readonly ImmutableArray<string> RowGroupBies;
         /// <summary>

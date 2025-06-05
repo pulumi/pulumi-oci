@@ -25,7 +25,7 @@ namespace Pulumi.Oci.MeteringComputation.Inputs
         public Input<string> DisplayName { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The request of the generated usage carbon emissions report.
+        /// (Updatable) The request of the generated carbon emissions usage report.
         /// </summary>
         [Input("reportQuery", required: true)]
         public Input<Inputs.UsageCarbonEmissionsQueryQueryDefinitionReportQueryGetArgs> ReportQuery { get; set; } = null!;

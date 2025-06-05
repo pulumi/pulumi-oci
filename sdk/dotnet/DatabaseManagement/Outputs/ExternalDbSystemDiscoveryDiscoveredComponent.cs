@@ -23,6 +23,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponent> AssociatedComponents;
         /// <summary>
+        /// Indicates whether Diagnostics &amp; Management should be enabled for all the current pluggable databases in the container database.
+        /// </summary>
+        public readonly bool? CanEnableAllCurrentPdbs;
+        /// <summary>
         /// The unique identifier of the Oracle cluster.
         /// </summary>
         public readonly string? ClusterId;
@@ -120,6 +124,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string? InstanceName;
         /// <summary>
+        /// Indicates whether Diagnostics &amp; Management should be enabled automatically for all the pluggable databases in the container database.
+        /// </summary>
+        public readonly bool? IsAutoEnablePluggableDatabase;
+        /// <summary>
         /// Indicates whether the Oracle Database is part of a cluster.
         /// </summary>
         public readonly bool? IsCluster;
@@ -204,6 +212,8 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
             ImmutableArray<Outputs.ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponent> associatedComponents,
 
+            bool? canEnableAllCurrentPdbs,
+
             string? clusterId,
 
             ImmutableArray<Outputs.ExternalDbSystemDiscoveryDiscoveredComponentClusterInstance> clusterInstances,
@@ -254,6 +264,8 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
             string? instanceName,
 
+            bool? isAutoEnablePluggableDatabase,
+
             bool? isCluster,
 
             bool? isFlexCluster,
@@ -295,6 +307,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
             AdrHomeDirectory = adrHomeDirectory;
             AsmInstances = asmInstances;
             AssociatedComponents = associatedComponents;
+            CanEnableAllCurrentPdbs = canEnableAllCurrentPdbs;
             ClusterId = clusterId;
             ClusterInstances = clusterInstances;
             CompartmentId = compartmentId;
@@ -320,6 +333,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
             HomeDirectory = homeDirectory;
             HostName = hostName;
             InstanceName = instanceName;
+            IsAutoEnablePluggableDatabase = isAutoEnablePluggableDatabase;
             IsCluster = isCluster;
             IsFlexCluster = isFlexCluster;
             IsFlexEnabled = isFlexEnabled;

@@ -76,6 +76,10 @@ export interface GetOpensearchClusterPipelineResult {
      */
     readonly nodeCount: number;
     /**
+     * The pipeline node shape.
+     */
+    readonly nodeShape: string;
+    /**
      * The OCID of the NSG where the pipeline private endpoint vnic will be attached.
      */
     readonly nsgId: string;

@@ -62,7 +62,7 @@ class GetScheduledRunResult:
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> builtins.str:
         """
-        Additional details about scheduled run failure
+        Additional details about the scheduled run.
         """
         return pulumi.get(self, "lifecycle_details")
 
@@ -70,7 +70,7 @@ class GetScheduledRunResult:
     @pulumi.getter(name="scheduleId")
     def schedule_id(self) -> builtins.str:
         """
-        The ocid representing unique shedule
+        The OCID representing a unique shedule.
         """
         return pulumi.get(self, "schedule_id")
 
@@ -83,7 +83,7 @@ class GetScheduledRunResult:
     @pulumi.getter
     def state(self) -> builtins.str:
         """
-        Specifies if the schedule job was run successfully or not.
+        Specifies whether or not the schedule job was successfully run.
         """
         return pulumi.get(self, "state")
 
@@ -91,7 +91,7 @@ class GetScheduledRunResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> builtins.str:
         """
-        The time when schedule started executing
+        The time the schedule started executing.
         """
         return pulumi.get(self, "time_created")
 
@@ -99,7 +99,7 @@ class GetScheduledRunResult:
     @pulumi.getter(name="timeFinished")
     def time_finished(self) -> builtins.str:
         """
-        The time when schedule finished executing
+        The time the schedule finished executing.
         """
         return pulumi.get(self, "time_finished")
 
@@ -136,7 +136,7 @@ def get_scheduled_run(scheduled_run_id: Optional[builtins.str] = None,
     ```
 
 
-    :param builtins.str scheduled_run_id: The scheduledRun unique OCID
+    :param builtins.str scheduled_run_id: The scheduled run unique OCID.
     """
     __args__ = dict()
     __args__['scheduledRunId'] = scheduled_run_id
@@ -168,7 +168,7 @@ def get_scheduled_run_output(scheduled_run_id: Optional[pulumi.Input[builtins.st
     ```
 
 
-    :param builtins.str scheduled_run_id: The scheduledRun unique OCID
+    :param builtins.str scheduled_run_id: The scheduled run unique OCID.
     """
     __args__ = dict()
     __args__['scheduledRunId'] = scheduled_run_id

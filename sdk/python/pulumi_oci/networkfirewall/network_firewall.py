@@ -14,6 +14,8 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['NetworkFirewallArgs', 'NetworkFirewall']
 
@@ -29,6 +31,7 @@ class NetworkFirewallArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  ipv4address: Optional[pulumi.Input[builtins.str]] = None,
                  ipv6address: Optional[pulumi.Input[builtins.str]] = None,
+                 nat_configuration: Optional[pulumi.Input['NetworkFirewallNatConfigurationArgs']] = None,
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
         """
         The set of arguments for constructing a NetworkFirewall resource.
@@ -45,6 +48,7 @@ class NetworkFirewallArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[builtins.str] ipv4address: IPv4 address for the Network Firewall.
         :param pulumi.Input[builtins.str] ipv6address: IPv6 address for the Network Firewall.
+        :param pulumi.Input['NetworkFirewallNatConfigurationArgs'] nat_configuration: (Updatable) Nat Configuration request to use Nat feature on firewall.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] network_security_group_ids: (Updatable) An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -62,6 +66,8 @@ class NetworkFirewallArgs:
             pulumi.set(__self__, "ipv4address", ipv4address)
         if ipv6address is not None:
             pulumi.set(__self__, "ipv6address", ipv6address)
+        if nat_configuration is not None:
+            pulumi.set(__self__, "nat_configuration", nat_configuration)
         if network_security_group_ids is not None:
             pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
 
@@ -178,6 +184,18 @@ class NetworkFirewallArgs:
         pulumi.set(self, "ipv6address", value)
 
     @property
+    @pulumi.getter(name="natConfiguration")
+    def nat_configuration(self) -> Optional[pulumi.Input['NetworkFirewallNatConfigurationArgs']]:
+        """
+        (Updatable) Nat Configuration request to use Nat feature on firewall.
+        """
+        return pulumi.get(self, "nat_configuration")
+
+    @nat_configuration.setter
+    def nat_configuration(self, value: Optional[pulumi.Input['NetworkFirewallNatConfigurationArgs']]):
+        pulumi.set(self, "nat_configuration", value)
+
+    @property
     @pulumi.getter(name="networkSecurityGroupIds")
     def network_security_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
@@ -201,6 +219,7 @@ class _NetworkFirewallState:
                  ipv4address: Optional[pulumi.Input[builtins.str]] = None,
                  ipv6address: Optional[pulumi.Input[builtins.str]] = None,
                  lifecycle_details: Optional[pulumi.Input[builtins.str]] = None,
+                 nat_configuration: Optional[pulumi.Input['NetworkFirewallNatConfigurationArgs']] = None,
                  network_firewall_policy_id: Optional[pulumi.Input[builtins.str]] = None,
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  state: Optional[pulumi.Input[builtins.str]] = None,
@@ -218,6 +237,7 @@ class _NetworkFirewallState:
         :param pulumi.Input[builtins.str] ipv4address: IPv4 address for the Network Firewall.
         :param pulumi.Input[builtins.str] ipv6address: IPv6 address for the Network Firewall.
         :param pulumi.Input[builtins.str] lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'FAILED' state.
+        :param pulumi.Input['NetworkFirewallNatConfigurationArgs'] nat_configuration: (Updatable) Nat Configuration request to use Nat feature on firewall.
         :param pulumi.Input[builtins.str] network_firewall_policy_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] network_security_group_ids: (Updatable) An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
         :param pulumi.Input[builtins.str] state: The current state of the Network Firewall.
@@ -246,6 +266,8 @@ class _NetworkFirewallState:
             pulumi.set(__self__, "ipv6address", ipv6address)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if nat_configuration is not None:
+            pulumi.set(__self__, "nat_configuration", nat_configuration)
         if network_firewall_policy_id is not None:
             pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
         if network_security_group_ids is not None:
@@ -358,6 +380,18 @@ class _NetworkFirewallState:
         pulumi.set(self, "lifecycle_details", value)
 
     @property
+    @pulumi.getter(name="natConfiguration")
+    def nat_configuration(self) -> Optional[pulumi.Input['NetworkFirewallNatConfigurationArgs']]:
+        """
+        (Updatable) Nat Configuration request to use Nat feature on firewall.
+        """
+        return pulumi.get(self, "nat_configuration")
+
+    @nat_configuration.setter
+    def nat_configuration(self, value: Optional[pulumi.Input['NetworkFirewallNatConfigurationArgs']]):
+        pulumi.set(self, "nat_configuration", value)
+
+    @property
     @pulumi.getter(name="networkFirewallPolicyId")
     def network_firewall_policy_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -459,6 +493,7 @@ class NetworkFirewall(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  ipv4address: Optional[pulumi.Input[builtins.str]] = None,
                  ipv6address: Optional[pulumi.Input[builtins.str]] = None,
+                 nat_configuration: Optional[pulumi.Input[Union['NetworkFirewallNatConfigurationArgs', 'NetworkFirewallNatConfigurationArgsDict']]] = None,
                  network_firewall_policy_id: Optional[pulumi.Input[builtins.str]] = None,
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  subnet_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -488,6 +523,9 @@ class NetworkFirewall(pulumi.CustomResource):
             },
             ipv4address=network_firewall_ipv4address,
             ipv6address=network_firewall_ipv6address,
+            nat_configuration={
+                "must_enable_private_nat": network_firewall_nat_configuration_must_enable_private_nat,
+            },
             network_security_group_ids=network_firewall_network_security_group_ids)
         ```
 
@@ -508,6 +546,7 @@ class NetworkFirewall(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[builtins.str] ipv4address: IPv4 address for the Network Firewall.
         :param pulumi.Input[builtins.str] ipv6address: IPv6 address for the Network Firewall.
+        :param pulumi.Input[Union['NetworkFirewallNatConfigurationArgs', 'NetworkFirewallNatConfigurationArgsDict']] nat_configuration: (Updatable) Nat Configuration request to use Nat feature on firewall.
         :param pulumi.Input[builtins.str] network_firewall_policy_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] network_security_group_ids: (Updatable) An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
         :param pulumi.Input[builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Network Firewall.
@@ -547,6 +586,9 @@ class NetworkFirewall(pulumi.CustomResource):
             },
             ipv4address=network_firewall_ipv4address,
             ipv6address=network_firewall_ipv6address,
+            nat_configuration={
+                "must_enable_private_nat": network_firewall_nat_configuration_must_enable_private_nat,
+            },
             network_security_group_ids=network_firewall_network_security_group_ids)
         ```
 
@@ -580,6 +622,7 @@ class NetworkFirewall(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  ipv4address: Optional[pulumi.Input[builtins.str]] = None,
                  ipv6address: Optional[pulumi.Input[builtins.str]] = None,
+                 nat_configuration: Optional[pulumi.Input[Union['NetworkFirewallNatConfigurationArgs', 'NetworkFirewallNatConfigurationArgsDict']]] = None,
                  network_firewall_policy_id: Optional[pulumi.Input[builtins.str]] = None,
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  subnet_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -601,6 +644,7 @@ class NetworkFirewall(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["ipv4address"] = ipv4address
             __props__.__dict__["ipv6address"] = ipv6address
+            __props__.__dict__["nat_configuration"] = nat_configuration
             if network_firewall_policy_id is None and not opts.urn:
                 raise TypeError("Missing required property 'network_firewall_policy_id'")
             __props__.__dict__["network_firewall_policy_id"] = network_firewall_policy_id
@@ -631,6 +675,7 @@ class NetworkFirewall(pulumi.CustomResource):
             ipv4address: Optional[pulumi.Input[builtins.str]] = None,
             ipv6address: Optional[pulumi.Input[builtins.str]] = None,
             lifecycle_details: Optional[pulumi.Input[builtins.str]] = None,
+            nat_configuration: Optional[pulumi.Input[Union['NetworkFirewallNatConfigurationArgs', 'NetworkFirewallNatConfigurationArgsDict']]] = None,
             network_firewall_policy_id: Optional[pulumi.Input[builtins.str]] = None,
             network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
             state: Optional[pulumi.Input[builtins.str]] = None,
@@ -653,6 +698,7 @@ class NetworkFirewall(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] ipv4address: IPv4 address for the Network Firewall.
         :param pulumi.Input[builtins.str] ipv6address: IPv6 address for the Network Firewall.
         :param pulumi.Input[builtins.str] lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'FAILED' state.
+        :param pulumi.Input[Union['NetworkFirewallNatConfigurationArgs', 'NetworkFirewallNatConfigurationArgsDict']] nat_configuration: (Updatable) Nat Configuration request to use Nat feature on firewall.
         :param pulumi.Input[builtins.str] network_firewall_policy_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] network_security_group_ids: (Updatable) An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
         :param pulumi.Input[builtins.str] state: The current state of the Network Firewall.
@@ -677,6 +723,7 @@ class NetworkFirewall(pulumi.CustomResource):
         __props__.__dict__["ipv4address"] = ipv4address
         __props__.__dict__["ipv6address"] = ipv6address
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["nat_configuration"] = nat_configuration
         __props__.__dict__["network_firewall_policy_id"] = network_firewall_policy_id
         __props__.__dict__["network_security_group_ids"] = network_security_group_ids
         __props__.__dict__["state"] = state
@@ -749,6 +796,14 @@ class NetworkFirewall(pulumi.CustomResource):
         A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'FAILED' state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="natConfiguration")
+    def nat_configuration(self) -> pulumi.Output['outputs.NetworkFirewallNatConfiguration']:
+        """
+        (Updatable) Nat Configuration request to use Nat feature on firewall.
+        """
+        return pulumi.get(self, "nat_configuration")
 
     @property
     @pulumi.getter(name="networkFirewallPolicyId")

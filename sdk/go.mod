@@ -1,4 +1,4 @@
-module github.com/pulumi/pulumi-oci/sdk/v2
+module github.com/pulumi/pulumi-oci/sdk/v3
 
 go 1.23.0
 

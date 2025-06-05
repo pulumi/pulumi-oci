@@ -6,6 +6,7 @@ package com.pulumi.oci.NetworkFirewall;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallNatConfigurationArgs;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -124,6 +125,21 @@ public final class NetworkFirewallArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * (Updatable) Nat Configuration request to use Nat feature on firewall.
+     * 
+     */
+    @Import(name="natConfiguration")
+    private @Nullable Output<NetworkFirewallNatConfigurationArgs> natConfiguration;
+
+    /**
+     * @return (Updatable) Nat Configuration request to use Nat feature on firewall.
+     * 
+     */
+    public Optional<Output<NetworkFirewallNatConfigurationArgs>> natConfiguration() {
+        return Optional.ofNullable(this.natConfiguration);
+    }
+
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
      * 
      */
@@ -184,6 +200,7 @@ public final class NetworkFirewallArgs extends com.pulumi.resources.ResourceArgs
         this.freeformTags = $.freeformTags;
         this.ipv4address = $.ipv4address;
         this.ipv6address = $.ipv6address;
+        this.natConfiguration = $.natConfiguration;
         this.networkFirewallPolicyId = $.networkFirewallPolicyId;
         this.networkSecurityGroupIds = $.networkSecurityGroupIds;
         this.subnetId = $.subnetId;
@@ -352,6 +369,27 @@ public final class NetworkFirewallArgs extends com.pulumi.resources.ResourceArgs
          */
         public Builder ipv6address(String ipv6address) {
             return ipv6address(Output.of(ipv6address));
+        }
+
+        /**
+         * @param natConfiguration (Updatable) Nat Configuration request to use Nat feature on firewall.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder natConfiguration(@Nullable Output<NetworkFirewallNatConfigurationArgs> natConfiguration) {
+            $.natConfiguration = natConfiguration;
+            return this;
+        }
+
+        /**
+         * @param natConfiguration (Updatable) Nat Configuration request to use Nat feature on firewall.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder natConfiguration(NetworkFirewallNatConfigurationArgs natConfiguration) {
+            return natConfiguration(Output.of(natConfiguration));
         }
 
         /**

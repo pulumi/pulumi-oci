@@ -12,7 +12,7 @@ namespace Pulumi.Oci.MeteringComputation
     /// <summary>
     /// This resource provides the Usage Carbon Emission resource in Oracle Cloud Infrastructure Metering Computation service.
     /// 
-    /// Returns usage carbon emission for the given account.
+    /// Returns carbon emission usage for the given account.
     /// 
     /// ## Example Usage
     /// 
@@ -30,6 +30,9 @@ namespace Pulumi.Oci.MeteringComputation
     ///         TimeUsageEnded = usageCarbonEmissionTimeUsageEnded,
     ///         TimeUsageStarted = usageCarbonEmissionTimeUsageStarted,
     ///         CompartmentDepth = usageCarbonEmissionCompartmentDepth,
+    ///         EmissionCalculationMethod = usageCarbonEmissionEmissionCalculationMethod,
+    ///         EmissionType = usageCarbonEmissionEmissionType,
+    ///         Granularity = usageCarbonEmissionGranularity,
     ///         GroupBies = usageCarbonEmissionGroupBy,
     ///         GroupByTags = new[]
     ///         {
@@ -65,6 +68,24 @@ namespace Pulumi.Oci.MeteringComputation
         public Output<int> CompartmentDepth { get; private set; } = null!;
 
         /// <summary>
+        /// Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+        /// </summary>
+        [Output("emissionCalculationMethod")]
+        public Output<string> EmissionCalculationMethod { get; private set; } = null!;
+
+        /// <summary>
+        /// Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+        /// </summary>
+        [Output("emissionType")]
+        public Output<string> EmissionType { get; private set; } = null!;
+
+        /// <summary>
+        /// The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+        /// </summary>
+        [Output("granularity")]
+        public Output<string> Granularity { get; private set; } = null!;
+
+        /// <summary>
         /// Aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "resourceName", "tenantId", "tenantName", "subscriptionId"]`
         /// </summary>
         [Output("groupBies")]
@@ -77,13 +98,13 @@ namespace Pulumi.Oci.MeteringComputation
         public Output<ImmutableArray<Outputs.UsageCarbonEmissionGroupByTag>> GroupByTags { get; private set; } = null!;
 
         /// <summary>
-        /// Specifies whether aggregated by time. If isAggregateByTime is true, all usage carbon emissions over the query time period will be added up.
+        /// Specifies whether aggregated by time. If isAggregateByTime is true, all carbon emissions usage over the query time period are summed.
         /// </summary>
         [Output("isAggregateByTime")]
         public Output<bool> IsAggregateByTime { get; private set; } = null!;
 
         /// <summary>
-        /// A list of usage carbon emission items.
+        /// A list of carbon emission usage items.
         /// </summary>
         [Output("items")]
         public Output<ImmutableArray<Outputs.UsageCarbonEmissionItem>> Items { get; private set; } = null!;
@@ -168,6 +189,24 @@ namespace Pulumi.Oci.MeteringComputation
         [Input("compartmentDepth")]
         public Input<int>? CompartmentDepth { get; set; }
 
+        /// <summary>
+        /// Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+        /// </summary>
+        [Input("emissionCalculationMethod")]
+        public Input<string>? EmissionCalculationMethod { get; set; }
+
+        /// <summary>
+        /// Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+        /// </summary>
+        [Input("emissionType")]
+        public Input<string>? EmissionType { get; set; }
+
+        /// <summary>
+        /// The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+        /// </summary>
+        [Input("granularity")]
+        public Input<string>? Granularity { get; set; }
+
         [Input("groupBies")]
         private InputList<string>? _groupBies;
 
@@ -193,7 +232,7 @@ namespace Pulumi.Oci.MeteringComputation
         }
 
         /// <summary>
-        /// Specifies whether aggregated by time. If isAggregateByTime is true, all usage carbon emissions over the query time period will be added up.
+        /// Specifies whether aggregated by time. If isAggregateByTime is true, all carbon emissions usage over the query time period are summed.
         /// </summary>
         [Input("isAggregateByTime")]
         public Input<bool>? IsAggregateByTime { get; set; }
@@ -240,6 +279,24 @@ namespace Pulumi.Oci.MeteringComputation
         [Input("compartmentDepth")]
         public Input<int>? CompartmentDepth { get; set; }
 
+        /// <summary>
+        /// Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+        /// </summary>
+        [Input("emissionCalculationMethod")]
+        public Input<string>? EmissionCalculationMethod { get; set; }
+
+        /// <summary>
+        /// Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+        /// </summary>
+        [Input("emissionType")]
+        public Input<string>? EmissionType { get; set; }
+
+        /// <summary>
+        /// The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+        /// </summary>
+        [Input("granularity")]
+        public Input<string>? Granularity { get; set; }
+
         [Input("groupBies")]
         private InputList<string>? _groupBies;
 
@@ -265,7 +322,7 @@ namespace Pulumi.Oci.MeteringComputation
         }
 
         /// <summary>
-        /// Specifies whether aggregated by time. If isAggregateByTime is true, all usage carbon emissions over the query time period will be added up.
+        /// Specifies whether aggregated by time. If isAggregateByTime is true, all carbon emissions usage over the query time period are summed.
         /// </summary>
         [Input("isAggregateByTime")]
         public Input<bool>? IsAggregateByTime { get; set; }
@@ -274,7 +331,7 @@ namespace Pulumi.Oci.MeteringComputation
         private InputList<Inputs.UsageCarbonEmissionItemGetArgs>? _items;
 
         /// <summary>
-        /// A list of usage carbon emission items.
+        /// A list of carbon emission usage items.
         /// </summary>
         public InputList<Inputs.UsageCarbonEmissionItemGetArgs> Items
         {

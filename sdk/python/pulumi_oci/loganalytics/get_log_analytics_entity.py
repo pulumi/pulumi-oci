@@ -28,10 +28,13 @@ class GetLogAnalyticsEntityResult:
     """
     A collection of values returned by getLogAnalyticsEntity.
     """
-    def __init__(__self__, are_logs_collected=None, cloud_resource_id=None, compartment_id=None, defined_tags=None, entity_type_internal_name=None, entity_type_name=None, freeform_tags=None, hostname=None, id=None, lifecycle_details=None, log_analytics_entity_id=None, management_agent_compartment_id=None, management_agent_display_name=None, management_agent_id=None, metadatas=None, name=None, namespace=None, properties=None, source_id=None, state=None, time_created=None, time_last_discovered=None, time_updated=None, timezone_region=None):
+    def __init__(__self__, are_logs_collected=None, associated_sources_count=None, cloud_resource_id=None, compartment_id=None, defined_tags=None, entity_type_internal_name=None, entity_type_name=None, freeform_tags=None, hostname=None, id=None, is_show_associated_sources_count=None, lifecycle_details=None, log_analytics_entity_id=None, management_agent_compartment_id=None, management_agent_display_name=None, management_agent_id=None, metadatas=None, name=None, namespace=None, properties=None, source_id=None, state=None, time_created=None, time_last_discovered=None, time_updated=None, timezone_region=None):
         if are_logs_collected and not isinstance(are_logs_collected, bool):
             raise TypeError("Expected argument 'are_logs_collected' to be a bool")
         pulumi.set(__self__, "are_logs_collected", are_logs_collected)
+        if associated_sources_count and not isinstance(associated_sources_count, int):
+            raise TypeError("Expected argument 'associated_sources_count' to be a int")
+        pulumi.set(__self__, "associated_sources_count", associated_sources_count)
         if cloud_resource_id and not isinstance(cloud_resource_id, str):
             raise TypeError("Expected argument 'cloud_resource_id' to be a str")
         pulumi.set(__self__, "cloud_resource_id", cloud_resource_id)
@@ -56,6 +59,9 @@ class GetLogAnalyticsEntityResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_show_associated_sources_count and not isinstance(is_show_associated_sources_count, str):
+            raise TypeError("Expected argument 'is_show_associated_sources_count' to be a str")
+        pulumi.set(__self__, "is_show_associated_sources_count", is_show_associated_sources_count)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -109,6 +115,14 @@ class GetLogAnalyticsEntityResult:
         The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
         """
         return pulumi.get(self, "are_logs_collected")
+
+    @property
+    @pulumi.getter(name="associatedSourcesCount")
+    def associated_sources_count(self) -> builtins.int:
+        """
+        The count of associated log sources for a given log analytics entity.
+        """
+        return pulumi.get(self, "associated_sources_count")
 
     @property
     @pulumi.getter(name="cloudResourceId")
@@ -173,6 +187,11 @@ class GetLogAnalyticsEntityResult:
         The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isShowAssociatedSourcesCount")
+    def is_show_associated_sources_count(self) -> Optional[builtins.str]:
+        return pulumi.get(self, "is_show_associated_sources_count")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -296,6 +315,7 @@ class AwaitableGetLogAnalyticsEntityResult(GetLogAnalyticsEntityResult):
             yield self
         return GetLogAnalyticsEntityResult(
             are_logs_collected=self.are_logs_collected,
+            associated_sources_count=self.associated_sources_count,
             cloud_resource_id=self.cloud_resource_id,
             compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
@@ -304,6 +324,7 @@ class AwaitableGetLogAnalyticsEntityResult(GetLogAnalyticsEntityResult):
             freeform_tags=self.freeform_tags,
             hostname=self.hostname,
             id=self.id,
+            is_show_associated_sources_count=self.is_show_associated_sources_count,
             lifecycle_details=self.lifecycle_details,
             log_analytics_entity_id=self.log_analytics_entity_id,
             management_agent_compartment_id=self.management_agent_compartment_id,
@@ -321,7 +342,8 @@ class AwaitableGetLogAnalyticsEntityResult(GetLogAnalyticsEntityResult):
             timezone_region=self.timezone_region)
 
 
-def get_log_analytics_entity(log_analytics_entity_id: Optional[builtins.str] = None,
+def get_log_analytics_entity(is_show_associated_sources_count: Optional[builtins.str] = None,
+                             log_analytics_entity_id: Optional[builtins.str] = None,
                              namespace: Optional[builtins.str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLogAnalyticsEntityResult:
     """
@@ -336,14 +358,17 @@ def get_log_analytics_entity(log_analytics_entity_id: Optional[builtins.str] = N
     import pulumi_oci as oci
 
     test_log_analytics_entity = oci.LogAnalytics.get_log_analytics_entity(log_analytics_entity_id=test_log_analytics_entity_oci_log_analytics_log_analytics_entity["id"],
-        namespace=log_analytics_entity_namespace)
+        namespace=log_analytics_entity_namespace,
+        is_show_associated_sources_count=log_analytics_entity_is_show_associated_sources_count)
     ```
 
 
+    :param builtins.str is_show_associated_sources_count: Option to return count of associated log sources for log analytics entity(s).
     :param builtins.str log_analytics_entity_id: The log analytics entity OCID.
     :param builtins.str namespace: The Logging Analytics namespace used for the request.
     """
     __args__ = dict()
+    __args__['isShowAssociatedSourcesCount'] = is_show_associated_sources_count
     __args__['logAnalyticsEntityId'] = log_analytics_entity_id
     __args__['namespace'] = namespace
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -351,6 +376,7 @@ def get_log_analytics_entity(log_analytics_entity_id: Optional[builtins.str] = N
 
     return AwaitableGetLogAnalyticsEntityResult(
         are_logs_collected=pulumi.get(__ret__, 'are_logs_collected'),
+        associated_sources_count=pulumi.get(__ret__, 'associated_sources_count'),
         cloud_resource_id=pulumi.get(__ret__, 'cloud_resource_id'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
@@ -359,6 +385,7 @@ def get_log_analytics_entity(log_analytics_entity_id: Optional[builtins.str] = N
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         hostname=pulumi.get(__ret__, 'hostname'),
         id=pulumi.get(__ret__, 'id'),
+        is_show_associated_sources_count=pulumi.get(__ret__, 'is_show_associated_sources_count'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         log_analytics_entity_id=pulumi.get(__ret__, 'log_analytics_entity_id'),
         management_agent_compartment_id=pulumi.get(__ret__, 'management_agent_compartment_id'),
@@ -374,7 +401,8 @@ def get_log_analytics_entity(log_analytics_entity_id: Optional[builtins.str] = N
         time_last_discovered=pulumi.get(__ret__, 'time_last_discovered'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         timezone_region=pulumi.get(__ret__, 'timezone_region'))
-def get_log_analytics_entity_output(log_analytics_entity_id: Optional[pulumi.Input[builtins.str]] = None,
+def get_log_analytics_entity_output(is_show_associated_sources_count: Optional[pulumi.Input[Optional[builtins.str]]] = None,
+                                    log_analytics_entity_id: Optional[pulumi.Input[builtins.str]] = None,
                                     namespace: Optional[pulumi.Input[builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogAnalyticsEntityResult]:
     """
@@ -389,20 +417,24 @@ def get_log_analytics_entity_output(log_analytics_entity_id: Optional[pulumi.Inp
     import pulumi_oci as oci
 
     test_log_analytics_entity = oci.LogAnalytics.get_log_analytics_entity(log_analytics_entity_id=test_log_analytics_entity_oci_log_analytics_log_analytics_entity["id"],
-        namespace=log_analytics_entity_namespace)
+        namespace=log_analytics_entity_namespace,
+        is_show_associated_sources_count=log_analytics_entity_is_show_associated_sources_count)
     ```
 
 
+    :param builtins.str is_show_associated_sources_count: Option to return count of associated log sources for log analytics entity(s).
     :param builtins.str log_analytics_entity_id: The log analytics entity OCID.
     :param builtins.str namespace: The Logging Analytics namespace used for the request.
     """
     __args__ = dict()
+    __args__['isShowAssociatedSourcesCount'] = is_show_associated_sources_count
     __args__['logAnalyticsEntityId'] = log_analytics_entity_id
     __args__['namespace'] = namespace
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getLogAnalyticsEntity:getLogAnalyticsEntity', __args__, opts=opts, typ=GetLogAnalyticsEntityResult)
     return __ret__.apply(lambda __response__: GetLogAnalyticsEntityResult(
         are_logs_collected=pulumi.get(__response__, 'are_logs_collected'),
+        associated_sources_count=pulumi.get(__response__, 'associated_sources_count'),
         cloud_resource_id=pulumi.get(__response__, 'cloud_resource_id'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
@@ -411,6 +443,7 @@ def get_log_analytics_entity_output(log_analytics_entity_id: Optional[pulumi.Inp
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         hostname=pulumi.get(__response__, 'hostname'),
         id=pulumi.get(__response__, 'id'),
+        is_show_associated_sources_count=pulumi.get(__response__, 'is_show_associated_sources_count'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         log_analytics_entity_id=pulumi.get(__response__, 'log_analytics_entity_id'),
         management_agent_compartment_id=pulumi.get(__response__, 'management_agent_compartment_id'),

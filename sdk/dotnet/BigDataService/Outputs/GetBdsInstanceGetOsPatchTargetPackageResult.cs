@@ -18,6 +18,10 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// </summary>
         public readonly string PackageName;
         /// <summary>
+        /// Package type based on package installation manager.
+        /// </summary>
+        public readonly string PackageType;
+        /// <summary>
         /// Related CVEs of the package update.
         /// </summary>
         public readonly ImmutableArray<string> RelatedCvEs;
@@ -34,6 +38,8 @@ namespace Pulumi.Oci.BigDataService.Outputs
         private GetBdsInstanceGetOsPatchTargetPackageResult(
             string packageName,
 
+            string packageType,
+
             ImmutableArray<string> relatedCvEs,
 
             string targetVersion,
@@ -41,6 +47,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
             string updateType)
         {
             PackageName = packageName;
+            PackageType = packageType;
             RelatedCvEs = relatedCvEs;
             TargetVersion = targetVersion;
             UpdateType = updateType;

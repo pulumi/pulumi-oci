@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/database"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/database"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -32,6 +32,7 @@ import (
 //			_, err := database.GetGiVersions(ctx, &database.GetGiVersionsArgs{
 //				CompartmentId:      compartmentId,
 //				AvailabilityDomain: pulumi.StringRef(giVersionAvailabilityDomain),
+//				ResourceId:         pulumi.StringRef(testResource.Id),
 //				Shape:              pulumi.StringRef(giVersionShape),
 //			}, nil)
 //			if err != nil {
@@ -59,6 +60,8 @@ type GetGiVersionsArgs struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string                `pulumi:"compartmentId"`
 	Filters       []GetGiVersionsFilter `pulumi:"filters"`
+	// If provided, filters the results for the specified resource Id.
+	ResourceId *string `pulumi:"resourceId"`
 	// If provided, filters the results for the given shape.
 	Shape *string `pulumi:"shape"`
 }
@@ -71,8 +74,9 @@ type GetGiVersionsResult struct {
 	// The list of gi_versions.
 	GiVersions []GetGiVersionsGiVersion `pulumi:"giVersions"`
 	// The provider-assigned unique ID for this managed resource.
-	Id    string  `pulumi:"id"`
-	Shape *string `pulumi:"shape"`
+	Id         string  `pulumi:"id"`
+	ResourceId *string `pulumi:"resourceId"`
+	Shape      *string `pulumi:"shape"`
 }
 
 func GetGiVersionsOutput(ctx *pulumi.Context, args GetGiVersionsOutputArgs, opts ...pulumi.InvokeOption) GetGiVersionsResultOutput {
@@ -91,6 +95,8 @@ type GetGiVersionsOutputArgs struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput            `pulumi:"compartmentId"`
 	Filters       GetGiVersionsFilterArrayInput `pulumi:"filters"`
+	// If provided, filters the results for the specified resource Id.
+	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
 	// If provided, filters the results for the given shape.
 	Shape pulumi.StringPtrInput `pulumi:"shape"`
 }
@@ -134,6 +140,10 @@ func (o GetGiVersionsResultOutput) GiVersions() GetGiVersionsGiVersionArrayOutpu
 // The provider-assigned unique ID for this managed resource.
 func (o GetGiVersionsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGiVersionsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetGiVersionsResultOutput) ResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetGiVersionsResult) *string { return v.ResourceId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetGiVersionsResultOutput) Shape() pulumi.StringPtrOutput {

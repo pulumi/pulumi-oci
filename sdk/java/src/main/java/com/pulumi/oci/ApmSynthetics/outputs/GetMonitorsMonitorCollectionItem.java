@@ -40,6 +40,11 @@ public final class GetMonitorsMonitorCollectionItem {
      */
     private List<GetMonitorsMonitorCollectionItemConfiguration> configurations;
     /**
+     * @return Content type of the script.
+     * 
+     */
+    private String contentType;
+    /**
      * @return Name of the user that created the monitor.
      * 
      */
@@ -183,6 +188,13 @@ public final class GetMonitorsMonitorCollectionItem {
      */
     public List<GetMonitorsMonitorCollectionItemConfiguration> configurations() {
         return this.configurations;
+    }
+    /**
+     * @return Content type of the script.
+     * 
+     */
+    public String contentType() {
+        return this.contentType;
     }
     /**
      * @return Name of the user that created the monitor.
@@ -359,6 +371,7 @@ public final class GetMonitorsMonitorCollectionItem {
         private List<GetMonitorsMonitorCollectionItemAvailabilityConfiguration> availabilityConfigurations;
         private Integer batchIntervalInSeconds;
         private List<GetMonitorsMonitorCollectionItemConfiguration> configurations;
+        private String contentType;
         private String createdBy;
         private Map<String,String> definedTags;
         private String displayName;
@@ -389,6 +402,7 @@ public final class GetMonitorsMonitorCollectionItem {
     	      this.availabilityConfigurations = defaults.availabilityConfigurations;
     	      this.batchIntervalInSeconds = defaults.batchIntervalInSeconds;
     	      this.configurations = defaults.configurations;
+    	      this.contentType = defaults.contentType;
     	      this.createdBy = defaults.createdBy;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
@@ -451,6 +465,14 @@ public final class GetMonitorsMonitorCollectionItem {
         }
         public Builder configurations(GetMonitorsMonitorCollectionItemConfiguration... configurations) {
             return configurations(List.of(configurations));
+        }
+        @CustomType.Setter
+        public Builder contentType(String contentType) {
+            if (contentType == null) {
+              throw new MissingRequiredPropertyException("GetMonitorsMonitorCollectionItem", "contentType");
+            }
+            this.contentType = contentType;
+            return this;
         }
         @CustomType.Setter
         public Builder createdBy(String createdBy) {
@@ -651,6 +673,7 @@ public final class GetMonitorsMonitorCollectionItem {
             _resultValue.availabilityConfigurations = availabilityConfigurations;
             _resultValue.batchIntervalInSeconds = batchIntervalInSeconds;
             _resultValue.configurations = configurations;
+            _resultValue.contentType = contentType;
             _resultValue.createdBy = createdBy;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;

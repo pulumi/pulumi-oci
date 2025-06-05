@@ -63,14 +63,14 @@ public final class MysqlBackupDbSystemSnapshotEndpointArgs extends com.pulumi.re
     }
 
     /**
-     * The port for primary endpoint of the DB System to listen on.
+     * The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
      * 
      */
     @Import(name="port")
     private @Nullable Output<Integer> port;
 
     /**
-     * @return The port for primary endpoint of the DB System to listen on.
+     * @return The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
      * 
      */
     public Optional<Output<Integer>> port() {
@@ -258,7 +258,7 @@ public final class MysqlBackupDbSystemSnapshotEndpointArgs extends com.pulumi.re
         }
 
         /**
-         * @param port The port for primary endpoint of the DB System to listen on.
+         * @param port The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
          * 
          * @return builder
          * 
@@ -269,7 +269,7 @@ public final class MysqlBackupDbSystemSnapshotEndpointArgs extends com.pulumi.re
         }
 
         /**
-         * @param port The port for primary endpoint of the DB System to listen on.
+         * @param port The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
          * 
          * @return builder
          * 

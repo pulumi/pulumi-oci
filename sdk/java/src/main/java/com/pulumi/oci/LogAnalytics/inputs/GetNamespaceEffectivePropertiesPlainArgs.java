@@ -117,6 +117,21 @@ public final class GetNamespaceEffectivePropertiesPlainArgs extends com.pulumi.r
     }
 
     /**
+     * The pattern id (long).
+     * 
+     */
+    @Import(name="patternIdLong")
+    private @Nullable String patternIdLong;
+
+    /**
+     * @return The pattern id (long).
+     * 
+     */
+    public Optional<String> patternIdLong() {
+        return Optional.ofNullable(this.patternIdLong);
+    }
+
+    /**
      * The source name.
      * 
      */
@@ -141,6 +156,7 @@ public final class GetNamespaceEffectivePropertiesPlainArgs extends com.pulumi.r
         this.name = $.name;
         this.namespace = $.namespace;
         this.patternId = $.patternId;
+        this.patternIdLong = $.patternIdLong;
         this.sourceName = $.sourceName;
     }
 
@@ -234,6 +250,17 @@ public final class GetNamespaceEffectivePropertiesPlainArgs extends com.pulumi.r
          */
         public Builder patternId(@Nullable Integer patternId) {
             $.patternId = patternId;
+            return this;
+        }
+
+        /**
+         * @param patternIdLong The pattern id (long).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder patternIdLong(@Nullable String patternIdLong) {
+            $.patternIdLong = patternIdLong;
             return this;
         }
 

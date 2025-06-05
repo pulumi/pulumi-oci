@@ -7,10 +7,13 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsEntityMetadata;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLogAnalyticsEntityResult {
@@ -19,6 +22,11 @@ public final class GetLogAnalyticsEntityResult {
      * 
      */
     private Boolean areLogsCollected;
+    /**
+     * @return The count of associated log sources for a given log analytics entity.
+     * 
+     */
+    private Integer associatedSourcesCount;
     /**
      * @return The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
      * 
@@ -59,6 +67,7 @@ public final class GetLogAnalyticsEntityResult {
      * 
      */
     private String id;
+    private @Nullable String isShowAssociatedSourcesCount;
     /**
      * @return lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
      * 
@@ -136,6 +145,13 @@ public final class GetLogAnalyticsEntityResult {
         return this.areLogsCollected;
     }
     /**
+     * @return The count of associated log sources for a given log analytics entity.
+     * 
+     */
+    public Integer associatedSourcesCount() {
+        return this.associatedSourcesCount;
+    }
+    /**
      * @return The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
      * 
      */
@@ -190,6 +206,9 @@ public final class GetLogAnalyticsEntityResult {
      */
     public String id() {
         return this.id;
+    }
+    public Optional<String> isShowAssociatedSourcesCount() {
+        return Optional.ofNullable(this.isShowAssociatedSourcesCount);
     }
     /**
      * @return lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
@@ -299,6 +318,7 @@ public final class GetLogAnalyticsEntityResult {
     @CustomType.Builder
     public static final class Builder {
         private Boolean areLogsCollected;
+        private Integer associatedSourcesCount;
         private String cloudResourceId;
         private String compartmentId;
         private Map<String,String> definedTags;
@@ -307,6 +327,7 @@ public final class GetLogAnalyticsEntityResult {
         private Map<String,String> freeformTags;
         private String hostname;
         private String id;
+        private @Nullable String isShowAssociatedSourcesCount;
         private String lifecycleDetails;
         private String logAnalyticsEntityId;
         private String managementAgentCompartmentId;
@@ -326,6 +347,7 @@ public final class GetLogAnalyticsEntityResult {
         public Builder(GetLogAnalyticsEntityResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.areLogsCollected = defaults.areLogsCollected;
+    	      this.associatedSourcesCount = defaults.associatedSourcesCount;
     	      this.cloudResourceId = defaults.cloudResourceId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
@@ -334,6 +356,7 @@ public final class GetLogAnalyticsEntityResult {
     	      this.freeformTags = defaults.freeformTags;
     	      this.hostname = defaults.hostname;
     	      this.id = defaults.id;
+    	      this.isShowAssociatedSourcesCount = defaults.isShowAssociatedSourcesCount;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.logAnalyticsEntityId = defaults.logAnalyticsEntityId;
     	      this.managementAgentCompartmentId = defaults.managementAgentCompartmentId;
@@ -357,6 +380,14 @@ public final class GetLogAnalyticsEntityResult {
               throw new MissingRequiredPropertyException("GetLogAnalyticsEntityResult", "areLogsCollected");
             }
             this.areLogsCollected = areLogsCollected;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder associatedSourcesCount(Integer associatedSourcesCount) {
+            if (associatedSourcesCount == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntityResult", "associatedSourcesCount");
+            }
+            this.associatedSourcesCount = associatedSourcesCount;
             return this;
         }
         @CustomType.Setter
@@ -421,6 +452,12 @@ public final class GetLogAnalyticsEntityResult {
               throw new MissingRequiredPropertyException("GetLogAnalyticsEntityResult", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isShowAssociatedSourcesCount(@Nullable String isShowAssociatedSourcesCount) {
+
+            this.isShowAssociatedSourcesCount = isShowAssociatedSourcesCount;
             return this;
         }
         @CustomType.Setter
@@ -549,6 +586,7 @@ public final class GetLogAnalyticsEntityResult {
         public GetLogAnalyticsEntityResult build() {
             final var _resultValue = new GetLogAnalyticsEntityResult();
             _resultValue.areLogsCollected = areLogsCollected;
+            _resultValue.associatedSourcesCount = associatedSourcesCount;
             _resultValue.cloudResourceId = cloudResourceId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
@@ -557,6 +595,7 @@ public final class GetLogAnalyticsEntityResult {
             _resultValue.freeformTags = freeformTags;
             _resultValue.hostname = hostname;
             _resultValue.id = id;
+            _resultValue.isShowAssociatedSourcesCount = isShowAssociatedSourcesCount;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.logAnalyticsEntityId = logAnalyticsEntityId;
             _resultValue.managementAgentCompartmentId = managementAgentCompartmentId;

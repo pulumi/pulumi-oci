@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -74,6 +76,10 @@ export interface GetDedicatedVmHostResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated VM host.
      */
     readonly id: string;
+    /**
+     * Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+     */
+    readonly placementConstraintDetails: outputs.Core.GetDedicatedVmHostPlacementConstraintDetail[];
     /**
      * The current available memory of the dedicated VM host, in GBs.
      */

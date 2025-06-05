@@ -21,6 +21,7 @@ __all__ = [
     'ClusterOutboundClusterConfig',
     'ClusterOutboundClusterConfigOutboundCluster',
     'ClusterReverseConnectionEndpoint',
+    'ClusterSecuritySamlConfig',
     'OpensearchClusterPipelineReverseConnectionEndpoint',
     'GetOpensearchClusterMaintenanceDetailResult',
     'GetOpensearchClusterOutboundClusterConfigResult',
@@ -31,6 +32,7 @@ __all__ = [
     'GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemResult',
     'GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointResult',
     'GetOpensearchClusterReverseConnectionEndpointResult',
+    'GetOpensearchClusterSecuritySamlConfigResult',
     'GetOpensearchClustersFilterResult',
     'GetOpensearchClustersOpensearchClusterCollectionResult',
     'GetOpensearchClustersOpensearchClusterCollectionItemResult',
@@ -38,6 +40,7 @@ __all__ = [
     'GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigResult',
     'GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterResult',
     'GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointResult',
+    'GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigResult',
     'GetOpensearchVersionItemResult',
     'GetOpensearchVersionsFilterResult',
     'GetOpensearchVersionsOpensearchVersionsCollectionResult',
@@ -304,6 +307,123 @@ class ClusterReverseConnectionEndpoint(dict):
         The NAT IP addresses of the endpoint in service VCN
         """
         return pulumi.get(self, "nat_ip")
+
+
+@pulumi.output_type
+class ClusterSecuritySamlConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "idpEntityId":
+            suggest = "idp_entity_id"
+        elif key == "idpMetadataContent":
+            suggest = "idp_metadata_content"
+        elif key == "isEnabled":
+            suggest = "is_enabled"
+        elif key == "adminBackendRole":
+            suggest = "admin_backend_role"
+        elif key == "opendashboardUrl":
+            suggest = "opendashboard_url"
+        elif key == "rolesKey":
+            suggest = "roles_key"
+        elif key == "subjectKey":
+            suggest = "subject_key"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ClusterSecuritySamlConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ClusterSecuritySamlConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ClusterSecuritySamlConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 idp_entity_id: builtins.str,
+                 idp_metadata_content: builtins.str,
+                 is_enabled: builtins.bool,
+                 admin_backend_role: Optional[builtins.str] = None,
+                 opendashboard_url: Optional[builtins.str] = None,
+                 roles_key: Optional[builtins.str] = None,
+                 subject_key: Optional[builtins.str] = None):
+        """
+        :param builtins.str idp_entity_id: The unique name for a identity provider entity
+        :param builtins.str idp_metadata_content: The content of identity provider metadata
+        :param builtins.bool is_enabled: A flag determine whether SAML is enabled
+        :param builtins.str admin_backend_role: The backend role of admins who have all permissions like local master user
+        :param builtins.str opendashboard_url: The endpoint of opendashboard
+        :param builtins.str roles_key: The roles key is sued to get backend roles from SAML assertion
+        :param builtins.str subject_key: The subject key is used to get username from SAML assertion. By default, it is NameID
+        """
+        pulumi.set(__self__, "idp_entity_id", idp_entity_id)
+        pulumi.set(__self__, "idp_metadata_content", idp_metadata_content)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        if admin_backend_role is not None:
+            pulumi.set(__self__, "admin_backend_role", admin_backend_role)
+        if opendashboard_url is not None:
+            pulumi.set(__self__, "opendashboard_url", opendashboard_url)
+        if roles_key is not None:
+            pulumi.set(__self__, "roles_key", roles_key)
+        if subject_key is not None:
+            pulumi.set(__self__, "subject_key", subject_key)
+
+    @property
+    @pulumi.getter(name="idpEntityId")
+    def idp_entity_id(self) -> builtins.str:
+        """
+        The unique name for a identity provider entity
+        """
+        return pulumi.get(self, "idp_entity_id")
+
+    @property
+    @pulumi.getter(name="idpMetadataContent")
+    def idp_metadata_content(self) -> builtins.str:
+        """
+        The content of identity provider metadata
+        """
+        return pulumi.get(self, "idp_metadata_content")
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> builtins.bool:
+        """
+        A flag determine whether SAML is enabled
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @property
+    @pulumi.getter(name="adminBackendRole")
+    def admin_backend_role(self) -> Optional[builtins.str]:
+        """
+        The backend role of admins who have all permissions like local master user
+        """
+        return pulumi.get(self, "admin_backend_role")
+
+    @property
+    @pulumi.getter(name="opendashboardUrl")
+    def opendashboard_url(self) -> Optional[builtins.str]:
+        """
+        The endpoint of opendashboard
+        """
+        return pulumi.get(self, "opendashboard_url")
+
+    @property
+    @pulumi.getter(name="rolesKey")
+    def roles_key(self) -> Optional[builtins.str]:
+        """
+        The roles key is sued to get backend roles from SAML assertion
+        """
+        return pulumi.get(self, "roles_key")
+
+    @property
+    @pulumi.getter(name="subjectKey")
+    def subject_key(self) -> Optional[builtins.str]:
+        """
+        The subject key is used to get username from SAML assertion. By default, it is NameID
+        """
+        return pulumi.get(self, "subject_key")
 
 
 @pulumi.output_type
@@ -575,6 +695,7 @@ class GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemResult
                  id: builtins.str,
                  memory_gb: builtins.int,
                  node_count: builtins.int,
+                 node_shape: builtins.str,
                  nsg_id: builtins.str,
                  ocpu_count: builtins.int,
                  opc_dry_run: builtins.bool,
@@ -600,6 +721,7 @@ class GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemResult
         :param builtins.str id: unique OpensearchClusterPipeline identifier
         :param builtins.int memory_gb: The amount of memory in GB, for each pipeline node.
         :param builtins.int node_count: The number of nodes configured for the pipeline.
+        :param builtins.str node_shape: The pipeline node shape.
         :param builtins.str nsg_id: The OCID of the NSG where the pipeline private endpoint vnic will be attached.
         :param builtins.int ocpu_count: The number of OCPUs configured for each pipeline node.
         :param builtins.str opensearch_pipeline_fqdn: The fully qualified domain name (FQDN) for the cluster's API endpoint.
@@ -624,6 +746,7 @@ class GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemResult
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "memory_gb", memory_gb)
         pulumi.set(__self__, "node_count", node_count)
+        pulumi.set(__self__, "node_shape", node_shape)
         pulumi.set(__self__, "nsg_id", nsg_id)
         pulumi.set(__self__, "ocpu_count", ocpu_count)
         pulumi.set(__self__, "opc_dry_run", opc_dry_run)
@@ -704,6 +827,14 @@ class GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemResult
         The number of nodes configured for the pipeline.
         """
         return pulumi.get(self, "node_count")
+
+    @property
+    @pulumi.getter(name="nodeShape")
+    def node_shape(self) -> builtins.str:
+        """
+        The pipeline node shape.
+        """
+        return pulumi.get(self, "node_shape")
 
     @property
     @pulumi.getter(name="nsgId")
@@ -890,6 +1021,66 @@ class GetOpensearchClusterReverseConnectionEndpointResult(dict):
 
 
 @pulumi.output_type
+class GetOpensearchClusterSecuritySamlConfigResult(dict):
+    def __init__(__self__, *,
+                 admin_backend_role: builtins.str,
+                 idp_entity_id: builtins.str,
+                 idp_metadata_content: builtins.str,
+                 is_enabled: builtins.bool,
+                 opendashboard_url: builtins.str,
+                 roles_key: builtins.str,
+                 subject_key: builtins.str):
+        """
+        :param builtins.bool is_enabled: Flag to indicate whether outbound cluster configuration is enabled
+        """
+        pulumi.set(__self__, "admin_backend_role", admin_backend_role)
+        pulumi.set(__self__, "idp_entity_id", idp_entity_id)
+        pulumi.set(__self__, "idp_metadata_content", idp_metadata_content)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "opendashboard_url", opendashboard_url)
+        pulumi.set(__self__, "roles_key", roles_key)
+        pulumi.set(__self__, "subject_key", subject_key)
+
+    @property
+    @pulumi.getter(name="adminBackendRole")
+    def admin_backend_role(self) -> builtins.str:
+        return pulumi.get(self, "admin_backend_role")
+
+    @property
+    @pulumi.getter(name="idpEntityId")
+    def idp_entity_id(self) -> builtins.str:
+        return pulumi.get(self, "idp_entity_id")
+
+    @property
+    @pulumi.getter(name="idpMetadataContent")
+    def idp_metadata_content(self) -> builtins.str:
+        return pulumi.get(self, "idp_metadata_content")
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> builtins.bool:
+        """
+        Flag to indicate whether outbound cluster configuration is enabled
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @property
+    @pulumi.getter(name="opendashboardUrl")
+    def opendashboard_url(self) -> builtins.str:
+        return pulumi.get(self, "opendashboard_url")
+
+    @property
+    @pulumi.getter(name="rolesKey")
+    def roles_key(self) -> builtins.str:
+        return pulumi.get(self, "roles_key")
+
+    @property
+    @pulumi.getter(name="subjectKey")
+    def subject_key(self) -> builtins.str:
+        return pulumi.get(self, "subject_key")
+
+
+@pulumi.output_type
 class GetOpensearchClustersFilterResult(dict):
     def __init__(__self__, *,
                  name: builtins.str,
@@ -938,6 +1129,7 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
                  data_node_host_bare_metal_shape: builtins.str,
                  data_node_host_memory_gb: builtins.int,
                  data_node_host_ocpu_count: builtins.int,
+                 data_node_host_shape: builtins.str,
                  data_node_host_type: builtins.str,
                  data_node_storage_gb: builtins.int,
                  defined_tags: Mapping[str, builtins.str],
@@ -952,20 +1144,29 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
                  master_node_host_bare_metal_shape: builtins.str,
                  master_node_host_memory_gb: builtins.int,
                  master_node_host_ocpu_count: builtins.int,
+                 master_node_host_shape: builtins.str,
                  master_node_host_type: builtins.str,
                  opendashboard_fqdn: builtins.str,
                  opendashboard_node_count: builtins.int,
                  opendashboard_node_host_memory_gb: builtins.int,
                  opendashboard_node_host_ocpu_count: builtins.int,
+                 opendashboard_node_host_shape: builtins.str,
                  opendashboard_private_ip: builtins.str,
                  opensearch_fqdn: builtins.str,
                  opensearch_private_ip: builtins.str,
                  outbound_cluster_configs: Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigResult'],
                  reverse_connection_endpoint_customer_ips: Sequence[builtins.str],
                  reverse_connection_endpoints: Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointResult'],
+                 search_node_count: builtins.int,
+                 search_node_host_memory_gb: builtins.int,
+                 search_node_host_ocpu_count: builtins.int,
+                 search_node_host_shape: builtins.str,
+                 search_node_host_type: builtins.str,
+                 search_node_storage_gb: builtins.int,
                  security_master_user_name: builtins.str,
                  security_master_user_password_hash: builtins.str,
                  security_mode: builtins.str,
+                 security_saml_configs: Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigResult'],
                  software_version: builtins.str,
                  state: builtins.str,
                  subnet_compartment_id: builtins.str,
@@ -985,6 +1186,7 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         :param builtins.str data_node_host_bare_metal_shape: The bare metal shape for the cluster's data nodes.
         :param builtins.int data_node_host_memory_gb: The amount of memory in GB, for the cluster's data nodes.
         :param builtins.int data_node_host_ocpu_count: The number of OCPUs configured for the cluster's data nodes.
+        :param builtins.str data_node_host_shape: The node shape for the cluster's data nodes.
         :param builtins.str data_node_host_type: The instance type for the cluster's data nodes.
         :param builtins.int data_node_storage_gb: The amount of storage in GB, to configure per node for the cluster's data nodes.
         :param Mapping[str, builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -999,17 +1201,25 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         :param builtins.str master_node_host_bare_metal_shape: The bare metal shape for the cluster's master nodes.
         :param builtins.int master_node_host_memory_gb: The amount of memory in GB, for the cluster's master nodes.
         :param builtins.int master_node_host_ocpu_count: The number of OCPUs configured for cluster's master nodes.
+        :param builtins.str master_node_host_shape: The node shape for the cluster's master nodes.
         :param builtins.str master_node_host_type: The instance type for the cluster's master nodes.
         :param builtins.str opendashboard_fqdn: The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
         :param builtins.int opendashboard_node_count: The number of OpenSearch Dashboard nodes configured for the cluster.
         :param builtins.int opendashboard_node_host_memory_gb: The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
         :param builtins.int opendashboard_node_host_ocpu_count: The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
+        :param builtins.str opendashboard_node_host_shape: The node shape for the cluster's OpenSearch Dashboard nodes.
         :param builtins.str opendashboard_private_ip: The private IP address for the cluster's OpenSearch Dashboard.
         :param builtins.str opensearch_fqdn: The fully qualified domain name (FQDN) for the cluster's API endpoint.
         :param builtins.str opensearch_private_ip: The cluster's private IP address.
         :param Sequence['GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArgs'] outbound_cluster_configs: This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
         :param Sequence[builtins.str] reverse_connection_endpoint_customer_ips: The customer IP addresses of the endpoint in customer VCN
         :param Sequence['GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArgs'] reverse_connection_endpoints: The list of reverse connection endpoints.
+        :param builtins.int search_node_count: The number of search nodes configured for the cluster.
+        :param builtins.int search_node_host_memory_gb: The amount of memory in GB, for the cluster's search nodes.
+        :param builtins.int search_node_host_ocpu_count: The number of OCPUs configured for the cluster's search nodes.
+        :param builtins.str search_node_host_shape: The node shape for the cluster's search nodes.
+        :param builtins.str search_node_host_type: The instance type for the cluster's search nodes.
+        :param builtins.int search_node_storage_gb: The amount of storage in GB, to configure per node for the cluster's search nodes.
         :param builtins.str security_master_user_name: The name of the master user that are used to manage security config
         :param builtins.str security_master_user_password_hash: The password hash of the master user that are used to manage security config
         :param builtins.str security_mode: The security mode of the cluster.
@@ -1032,6 +1242,7 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         pulumi.set(__self__, "data_node_host_bare_metal_shape", data_node_host_bare_metal_shape)
         pulumi.set(__self__, "data_node_host_memory_gb", data_node_host_memory_gb)
         pulumi.set(__self__, "data_node_host_ocpu_count", data_node_host_ocpu_count)
+        pulumi.set(__self__, "data_node_host_shape", data_node_host_shape)
         pulumi.set(__self__, "data_node_host_type", data_node_host_type)
         pulumi.set(__self__, "data_node_storage_gb", data_node_storage_gb)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -1046,20 +1257,29 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         pulumi.set(__self__, "master_node_host_bare_metal_shape", master_node_host_bare_metal_shape)
         pulumi.set(__self__, "master_node_host_memory_gb", master_node_host_memory_gb)
         pulumi.set(__self__, "master_node_host_ocpu_count", master_node_host_ocpu_count)
+        pulumi.set(__self__, "master_node_host_shape", master_node_host_shape)
         pulumi.set(__self__, "master_node_host_type", master_node_host_type)
         pulumi.set(__self__, "opendashboard_fqdn", opendashboard_fqdn)
         pulumi.set(__self__, "opendashboard_node_count", opendashboard_node_count)
         pulumi.set(__self__, "opendashboard_node_host_memory_gb", opendashboard_node_host_memory_gb)
         pulumi.set(__self__, "opendashboard_node_host_ocpu_count", opendashboard_node_host_ocpu_count)
+        pulumi.set(__self__, "opendashboard_node_host_shape", opendashboard_node_host_shape)
         pulumi.set(__self__, "opendashboard_private_ip", opendashboard_private_ip)
         pulumi.set(__self__, "opensearch_fqdn", opensearch_fqdn)
         pulumi.set(__self__, "opensearch_private_ip", opensearch_private_ip)
         pulumi.set(__self__, "outbound_cluster_configs", outbound_cluster_configs)
         pulumi.set(__self__, "reverse_connection_endpoint_customer_ips", reverse_connection_endpoint_customer_ips)
         pulumi.set(__self__, "reverse_connection_endpoints", reverse_connection_endpoints)
+        pulumi.set(__self__, "search_node_count", search_node_count)
+        pulumi.set(__self__, "search_node_host_memory_gb", search_node_host_memory_gb)
+        pulumi.set(__self__, "search_node_host_ocpu_count", search_node_host_ocpu_count)
+        pulumi.set(__self__, "search_node_host_shape", search_node_host_shape)
+        pulumi.set(__self__, "search_node_host_type", search_node_host_type)
+        pulumi.set(__self__, "search_node_storage_gb", search_node_storage_gb)
         pulumi.set(__self__, "security_master_user_name", security_master_user_name)
         pulumi.set(__self__, "security_master_user_password_hash", security_master_user_password_hash)
         pulumi.set(__self__, "security_mode", security_mode)
+        pulumi.set(__self__, "security_saml_configs", security_saml_configs)
         pulumi.set(__self__, "software_version", software_version)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_compartment_id", subnet_compartment_id)
@@ -1125,6 +1345,14 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         The number of OCPUs configured for the cluster's data nodes.
         """
         return pulumi.get(self, "data_node_host_ocpu_count")
+
+    @property
+    @pulumi.getter(name="dataNodeHostShape")
+    def data_node_host_shape(self) -> builtins.str:
+        """
+        The node shape for the cluster's data nodes.
+        """
+        return pulumi.get(self, "data_node_host_shape")
 
     @property
     @pulumi.getter(name="dataNodeHostType")
@@ -1239,6 +1467,14 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         return pulumi.get(self, "master_node_host_ocpu_count")
 
     @property
+    @pulumi.getter(name="masterNodeHostShape")
+    def master_node_host_shape(self) -> builtins.str:
+        """
+        The node shape for the cluster's master nodes.
+        """
+        return pulumi.get(self, "master_node_host_shape")
+
+    @property
     @pulumi.getter(name="masterNodeHostType")
     def master_node_host_type(self) -> builtins.str:
         """
@@ -1277,6 +1513,14 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
         """
         return pulumi.get(self, "opendashboard_node_host_ocpu_count")
+
+    @property
+    @pulumi.getter(name="opendashboardNodeHostShape")
+    def opendashboard_node_host_shape(self) -> builtins.str:
+        """
+        The node shape for the cluster's OpenSearch Dashboard nodes.
+        """
+        return pulumi.get(self, "opendashboard_node_host_shape")
 
     @property
     @pulumi.getter(name="opendashboardPrivateIp")
@@ -1327,6 +1571,54 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         return pulumi.get(self, "reverse_connection_endpoints")
 
     @property
+    @pulumi.getter(name="searchNodeCount")
+    def search_node_count(self) -> builtins.int:
+        """
+        The number of search nodes configured for the cluster.
+        """
+        return pulumi.get(self, "search_node_count")
+
+    @property
+    @pulumi.getter(name="searchNodeHostMemoryGb")
+    def search_node_host_memory_gb(self) -> builtins.int:
+        """
+        The amount of memory in GB, for the cluster's search nodes.
+        """
+        return pulumi.get(self, "search_node_host_memory_gb")
+
+    @property
+    @pulumi.getter(name="searchNodeHostOcpuCount")
+    def search_node_host_ocpu_count(self) -> builtins.int:
+        """
+        The number of OCPUs configured for the cluster's search nodes.
+        """
+        return pulumi.get(self, "search_node_host_ocpu_count")
+
+    @property
+    @pulumi.getter(name="searchNodeHostShape")
+    def search_node_host_shape(self) -> builtins.str:
+        """
+        The node shape for the cluster's search nodes.
+        """
+        return pulumi.get(self, "search_node_host_shape")
+
+    @property
+    @pulumi.getter(name="searchNodeHostType")
+    def search_node_host_type(self) -> builtins.str:
+        """
+        The instance type for the cluster's search nodes.
+        """
+        return pulumi.get(self, "search_node_host_type")
+
+    @property
+    @pulumi.getter(name="searchNodeStorageGb")
+    def search_node_storage_gb(self) -> builtins.int:
+        """
+        The amount of storage in GB, to configure per node for the cluster's search nodes.
+        """
+        return pulumi.get(self, "search_node_storage_gb")
+
+    @property
     @pulumi.getter(name="securityMasterUserName")
     def security_master_user_name(self) -> builtins.str:
         """
@@ -1349,6 +1641,11 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         The security mode of the cluster.
         """
         return pulumi.get(self, "security_mode")
+
+    @property
+    @pulumi.getter(name="securitySamlConfigs")
+    def security_saml_configs(self) -> Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigResult']:
+        return pulumi.get(self, "security_saml_configs")
 
     @property
     @pulumi.getter(name="softwareVersion")
@@ -1613,6 +1910,66 @@ class GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpo
         The NAT IP addresses of the endpoint in service VCN
         """
         return pulumi.get(self, "nat_ip")
+
+
+@pulumi.output_type
+class GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigResult(dict):
+    def __init__(__self__, *,
+                 admin_backend_role: builtins.str,
+                 idp_entity_id: builtins.str,
+                 idp_metadata_content: builtins.str,
+                 is_enabled: builtins.bool,
+                 opendashboard_url: builtins.str,
+                 roles_key: builtins.str,
+                 subject_key: builtins.str):
+        """
+        :param builtins.bool is_enabled: Flag to indicate whether outbound cluster configuration is enabled
+        """
+        pulumi.set(__self__, "admin_backend_role", admin_backend_role)
+        pulumi.set(__self__, "idp_entity_id", idp_entity_id)
+        pulumi.set(__self__, "idp_metadata_content", idp_metadata_content)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "opendashboard_url", opendashboard_url)
+        pulumi.set(__self__, "roles_key", roles_key)
+        pulumi.set(__self__, "subject_key", subject_key)
+
+    @property
+    @pulumi.getter(name="adminBackendRole")
+    def admin_backend_role(self) -> builtins.str:
+        return pulumi.get(self, "admin_backend_role")
+
+    @property
+    @pulumi.getter(name="idpEntityId")
+    def idp_entity_id(self) -> builtins.str:
+        return pulumi.get(self, "idp_entity_id")
+
+    @property
+    @pulumi.getter(name="idpMetadataContent")
+    def idp_metadata_content(self) -> builtins.str:
+        return pulumi.get(self, "idp_metadata_content")
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> builtins.bool:
+        """
+        Flag to indicate whether outbound cluster configuration is enabled
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @property
+    @pulumi.getter(name="opendashboardUrl")
+    def opendashboard_url(self) -> builtins.str:
+        return pulumi.get(self, "opendashboard_url")
+
+    @property
+    @pulumi.getter(name="rolesKey")
+    def roles_key(self) -> builtins.str:
+        return pulumi.get(self, "roles_key")
+
+    @property
+    @pulumi.getter(name="subjectKey")
+    def subject_key(self) -> builtins.str:
+        return pulumi.get(self, "subject_key")
 
 
 @pulumi.output_type

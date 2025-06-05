@@ -24,6 +24,8 @@ class DatabaseDbmFeaturesManagementArgs:
     def __init__(__self__, *,
                  database_id: pulumi.Input[builtins.str],
                  enable_database_dbm_feature: pulumi.Input[builtins.bool],
+                 can_disable_all_pdbs: Optional[pulumi.Input[builtins.bool]] = None,
+                 feature: Optional[pulumi.Input[builtins.str]] = None,
                  feature_details: Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsArgs']] = None,
                  modify_database_dbm_feature: Optional[pulumi.Input[builtins.bool]] = None):
         """
@@ -38,6 +40,10 @@ class DatabaseDbmFeaturesManagementArgs:
         """
         pulumi.set(__self__, "database_id", database_id)
         pulumi.set(__self__, "enable_database_dbm_feature", enable_database_dbm_feature)
+        if can_disable_all_pdbs is not None:
+            pulumi.set(__self__, "can_disable_all_pdbs", can_disable_all_pdbs)
+        if feature is not None:
+            pulumi.set(__self__, "feature", feature)
         if feature_details is not None:
             pulumi.set(__self__, "feature_details", feature_details)
         if modify_database_dbm_feature is not None:
@@ -72,6 +78,24 @@ class DatabaseDbmFeaturesManagementArgs:
         pulumi.set(self, "enable_database_dbm_feature", value)
 
     @property
+    @pulumi.getter(name="canDisableAllPdbs")
+    def can_disable_all_pdbs(self) -> Optional[pulumi.Input[builtins.bool]]:
+        return pulumi.get(self, "can_disable_all_pdbs")
+
+    @can_disable_all_pdbs.setter
+    def can_disable_all_pdbs(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "can_disable_all_pdbs", value)
+
+    @property
+    @pulumi.getter
+    def feature(self) -> Optional[pulumi.Input[builtins.str]]:
+        return pulumi.get(self, "feature")
+
+    @feature.setter
+    def feature(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "feature", value)
+
+    @property
     @pulumi.getter(name="featureDetails")
     def feature_details(self) -> Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsArgs']]:
         """
@@ -96,8 +120,10 @@ class DatabaseDbmFeaturesManagementArgs:
 @pulumi.input_type
 class _DatabaseDbmFeaturesManagementState:
     def __init__(__self__, *,
+                 can_disable_all_pdbs: Optional[pulumi.Input[builtins.bool]] = None,
                  database_id: Optional[pulumi.Input[builtins.str]] = None,
                  enable_database_dbm_feature: Optional[pulumi.Input[builtins.bool]] = None,
+                 feature: Optional[pulumi.Input[builtins.str]] = None,
                  feature_details: Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsArgs']] = None,
                  modify_database_dbm_feature: Optional[pulumi.Input[builtins.bool]] = None):
         """
@@ -110,14 +136,27 @@ class _DatabaseDbmFeaturesManagementState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsArgs'] feature_details: The details required to enable the specified Database Management feature.
         """
+        if can_disable_all_pdbs is not None:
+            pulumi.set(__self__, "can_disable_all_pdbs", can_disable_all_pdbs)
         if database_id is not None:
             pulumi.set(__self__, "database_id", database_id)
         if enable_database_dbm_feature is not None:
             pulumi.set(__self__, "enable_database_dbm_feature", enable_database_dbm_feature)
+        if feature is not None:
+            pulumi.set(__self__, "feature", feature)
         if feature_details is not None:
             pulumi.set(__self__, "feature_details", feature_details)
         if modify_database_dbm_feature is not None:
             pulumi.set(__self__, "modify_database_dbm_feature", modify_database_dbm_feature)
+
+    @property
+    @pulumi.getter(name="canDisableAllPdbs")
+    def can_disable_all_pdbs(self) -> Optional[pulumi.Input[builtins.bool]]:
+        return pulumi.get(self, "can_disable_all_pdbs")
+
+    @can_disable_all_pdbs.setter
+    def can_disable_all_pdbs(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "can_disable_all_pdbs", value)
 
     @property
     @pulumi.getter(name="databaseId")
@@ -148,6 +187,15 @@ class _DatabaseDbmFeaturesManagementState:
         pulumi.set(self, "enable_database_dbm_feature", value)
 
     @property
+    @pulumi.getter
+    def feature(self) -> Optional[pulumi.Input[builtins.str]]:
+        return pulumi.get(self, "feature")
+
+    @feature.setter
+    def feature(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "feature", value)
+
+    @property
     @pulumi.getter(name="featureDetails")
     def feature_details(self) -> Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsArgs']]:
         """
@@ -175,8 +223,10 @@ class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 can_disable_all_pdbs: Optional[pulumi.Input[builtins.bool]] = None,
                  database_id: Optional[pulumi.Input[builtins.str]] = None,
                  enable_database_dbm_feature: Optional[pulumi.Input[builtins.bool]] = None,
+                 feature: Optional[pulumi.Input[builtins.str]] = None,
                  feature_details: Optional[pulumi.Input[Union['DatabaseDbmFeaturesManagementFeatureDetailsArgs', 'DatabaseDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
                  modify_database_dbm_feature: Optional[pulumi.Input[builtins.bool]] = None,
                  __props__=None):
@@ -221,8 +271,10 @@ class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 can_disable_all_pdbs: Optional[pulumi.Input[builtins.bool]] = None,
                  database_id: Optional[pulumi.Input[builtins.str]] = None,
                  enable_database_dbm_feature: Optional[pulumi.Input[builtins.bool]] = None,
+                 feature: Optional[pulumi.Input[builtins.str]] = None,
                  feature_details: Optional[pulumi.Input[Union['DatabaseDbmFeaturesManagementFeatureDetailsArgs', 'DatabaseDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
                  modify_database_dbm_feature: Optional[pulumi.Input[builtins.bool]] = None,
                  __props__=None):
@@ -234,12 +286,14 @@ class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = DatabaseDbmFeaturesManagementArgs.__new__(DatabaseDbmFeaturesManagementArgs)
 
+            __props__.__dict__["can_disable_all_pdbs"] = can_disable_all_pdbs
             if database_id is None and not opts.urn:
                 raise TypeError("Missing required property 'database_id'")
             __props__.__dict__["database_id"] = database_id
             if enable_database_dbm_feature is None and not opts.urn:
                 raise TypeError("Missing required property 'enable_database_dbm_feature'")
             __props__.__dict__["enable_database_dbm_feature"] = enable_database_dbm_feature
+            __props__.__dict__["feature"] = feature
             __props__.__dict__["feature_details"] = feature_details
             __props__.__dict__["modify_database_dbm_feature"] = modify_database_dbm_feature
         super(DatabaseDbmFeaturesManagement, __self__).__init__(
@@ -252,8 +306,10 @@ class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            can_disable_all_pdbs: Optional[pulumi.Input[builtins.bool]] = None,
             database_id: Optional[pulumi.Input[builtins.str]] = None,
             enable_database_dbm_feature: Optional[pulumi.Input[builtins.bool]] = None,
+            feature: Optional[pulumi.Input[builtins.str]] = None,
             feature_details: Optional[pulumi.Input[Union['DatabaseDbmFeaturesManagementFeatureDetailsArgs', 'DatabaseDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
             modify_database_dbm_feature: Optional[pulumi.Input[builtins.bool]] = None) -> 'DatabaseDbmFeaturesManagement':
         """
@@ -275,11 +331,18 @@ class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
 
         __props__ = _DatabaseDbmFeaturesManagementState.__new__(_DatabaseDbmFeaturesManagementState)
 
+        __props__.__dict__["can_disable_all_pdbs"] = can_disable_all_pdbs
         __props__.__dict__["database_id"] = database_id
         __props__.__dict__["enable_database_dbm_feature"] = enable_database_dbm_feature
+        __props__.__dict__["feature"] = feature
         __props__.__dict__["feature_details"] = feature_details
         __props__.__dict__["modify_database_dbm_feature"] = modify_database_dbm_feature
         return DatabaseDbmFeaturesManagement(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter(name="canDisableAllPdbs")
+    def can_disable_all_pdbs(self) -> pulumi.Output[Optional[builtins.bool]]:
+        return pulumi.get(self, "can_disable_all_pdbs")
 
     @property
     @pulumi.getter(name="databaseId")
@@ -300,6 +363,11 @@ class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "enable_database_dbm_feature")
+
+    @property
+    @pulumi.getter
+    def feature(self) -> pulumi.Output[Optional[builtins.str]]:
+        return pulumi.get(self, "feature")
 
     @property
     @pulumi.getter(name="featureDetails")

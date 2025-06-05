@@ -61,7 +61,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Output<string> ResourceId { get; private set; } = null!;
 
         /// <summary>
-        /// The resource type of the resource for which categories are managed. 
+        /// The resource type of the resource for which categories are managed.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -141,7 +141,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string> ResourceId { get; set; } = null!;
 
         /// <summary>
-        /// The resource type of the resource for which categories are managed. 
+        /// The resource type of the resource for which categories are managed.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -183,7 +183,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string>? ResourceId { get; set; }
 
         /// <summary>
-        /// The resource type of the resource for which categories are managed. 
+        /// The resource type of the resource for which categories are managed.
         /// 
         /// 
         /// ** IMPORTANT **

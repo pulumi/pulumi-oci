@@ -39,6 +39,7 @@ export class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement ext
         return obj['__pulumiType'] === ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement.__pulumiType;
     }
 
+    public readonly canDisableAllPdbs!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
      *
@@ -51,6 +52,7 @@ export class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement ext
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external container database.
      */
     public readonly externalContainerDatabaseId!: pulumi.Output<string>;
+    public readonly feature!: pulumi.Output<string | undefined>;
     /**
      * The details required to enable the specified Database Management feature.
      */
@@ -69,8 +71,10 @@ export class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement ext
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementState | undefined;
+            resourceInputs["canDisableAllPdbs"] = state ? state.canDisableAllPdbs : undefined;
             resourceInputs["enableExternalContainerDbmFeature"] = state ? state.enableExternalContainerDbmFeature : undefined;
             resourceInputs["externalContainerDatabaseId"] = state ? state.externalContainerDatabaseId : undefined;
+            resourceInputs["feature"] = state ? state.feature : undefined;
             resourceInputs["featureDetails"] = state ? state.featureDetails : undefined;
         } else {
             const args = argsOrState as ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementArgs | undefined;
@@ -80,8 +84,10 @@ export class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement ext
             if ((!args || args.externalContainerDatabaseId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'externalContainerDatabaseId'");
             }
+            resourceInputs["canDisableAllPdbs"] = args ? args.canDisableAllPdbs : undefined;
             resourceInputs["enableExternalContainerDbmFeature"] = args ? args.enableExternalContainerDbmFeature : undefined;
             resourceInputs["externalContainerDatabaseId"] = args ? args.externalContainerDatabaseId : undefined;
+            resourceInputs["feature"] = args ? args.feature : undefined;
             resourceInputs["featureDetails"] = args ? args.featureDetails : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -93,6 +99,7 @@ export class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement ext
  * Input properties used for looking up and filtering ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement resources.
  */
 export interface ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementState {
+    canDisableAllPdbs?: pulumi.Input<boolean>;
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
      *
@@ -105,6 +112,7 @@ export interface ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external container database.
      */
     externalContainerDatabaseId?: pulumi.Input<string>;
+    feature?: pulumi.Input<string>;
     /**
      * The details required to enable the specified Database Management feature.
      */
@@ -115,6 +123,7 @@ export interface ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement
  * The set of arguments for constructing a ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement resource.
  */
 export interface ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementArgs {
+    canDisableAllPdbs?: pulumi.Input<boolean>;
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
      *
@@ -127,6 +136,7 @@ export interface ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external container database.
      */
     externalContainerDatabaseId: pulumi.Input<string>;
+    feature?: pulumi.Input<string>;
     /**
      * The details required to enable the specified Database Management feature.
      */

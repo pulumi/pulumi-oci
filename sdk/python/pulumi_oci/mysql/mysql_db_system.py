@@ -48,9 +48,11 @@ class MysqlDbSystemArgs:
                  is_highly_available: Optional[pulumi.Input[builtins.bool]] = None,
                  maintenance: Optional[pulumi.Input['MysqlDbSystemMaintenanceArgs']] = None,
                  mysql_version: Optional[pulumi.Input[builtins.str]] = None,
+                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  port: Optional[pulumi.Input[builtins.int]] = None,
                  port_x: Optional[pulumi.Input[builtins.int]] = None,
                  read_endpoint: Optional[pulumi.Input['MysqlDbSystemReadEndpointArgs']] = None,
+                 rest: Optional[pulumi.Input['MysqlDbSystemRestArgs']] = None,
                  secure_connections: Optional[pulumi.Input['MysqlDbSystemSecureConnectionsArgs']] = None,
                  shutdown_type: Optional[pulumi.Input[builtins.str]] = None,
                  source: Optional[pulumi.Input['MysqlDbSystemSourceArgs']] = None,
@@ -102,9 +104,11 @@ class MysqlDbSystemArgs:
                When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
         :param pulumi.Input['MysqlDbSystemMaintenanceArgs'] maintenance: (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
         :param pulumi.Input[builtins.str] mysql_version: The specific MySQL version identifier.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] nsg_ids: (Updatable) Network Security Group OCIDs used for the VNIC attachment.
         :param pulumi.Input[builtins.int] port: The port for primary endpoint of the DB System to listen on.
         :param pulumi.Input[builtins.int] port_x: The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
         :param pulumi.Input['MysqlDbSystemReadEndpointArgs'] read_endpoint: (Updatable) Details required to create a Read Endpoint.
+        :param pulumi.Input['MysqlDbSystemRestArgs'] rest: (Updatable) Details required to configure REST while creating a DB System.
         :param pulumi.Input['MysqlDbSystemSecureConnectionsArgs'] secure_connections: (Updatable) Secure connection configuration details.
         :param pulumi.Input[builtins.str] shutdown_type: It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
                
@@ -161,12 +165,16 @@ class MysqlDbSystemArgs:
             pulumi.set(__self__, "maintenance", maintenance)
         if mysql_version is not None:
             pulumi.set(__self__, "mysql_version", mysql_version)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
         if port is not None:
             pulumi.set(__self__, "port", port)
         if port_x is not None:
             pulumi.set(__self__, "port_x", port_x)
         if read_endpoint is not None:
             pulumi.set(__self__, "read_endpoint", read_endpoint)
+        if rest is not None:
+            pulumi.set(__self__, "rest", rest)
         if secure_connections is not None:
             pulumi.set(__self__, "secure_connections", secure_connections)
         if shutdown_type is not None:
@@ -508,6 +516,18 @@ class MysqlDbSystemArgs:
         pulumi.set(self, "mysql_version", value)
 
     @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        (Updatable) Network Security Group OCIDs used for the VNIC attachment.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @nsg_ids.setter
+    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "nsg_ids", value)
+
+    @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[builtins.int]]:
         """
@@ -542,6 +562,18 @@ class MysqlDbSystemArgs:
     @read_endpoint.setter
     def read_endpoint(self, value: Optional[pulumi.Input['MysqlDbSystemReadEndpointArgs']]):
         pulumi.set(self, "read_endpoint", value)
+
+    @property
+    @pulumi.getter
+    def rest(self) -> Optional[pulumi.Input['MysqlDbSystemRestArgs']]:
+        """
+        (Updatable) Details required to configure REST while creating a DB System.
+        """
+        return pulumi.get(self, "rest")
+
+    @rest.setter
+    def rest(self, value: Optional[pulumi.Input['MysqlDbSystemRestArgs']]):
+        pulumi.set(self, "rest", value)
 
     @property
     @pulumi.getter(name="secureConnections")
@@ -628,10 +660,12 @@ class _MysqlDbSystemState:
                  lifecycle_details: Optional[pulumi.Input[builtins.str]] = None,
                  maintenance: Optional[pulumi.Input['MysqlDbSystemMaintenanceArgs']] = None,
                  mysql_version: Optional[pulumi.Input[builtins.str]] = None,
+                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  point_in_time_recovery_details: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemPointInTimeRecoveryDetailArgs']]]] = None,
                  port: Optional[pulumi.Input[builtins.int]] = None,
                  port_x: Optional[pulumi.Input[builtins.int]] = None,
                  read_endpoint: Optional[pulumi.Input['MysqlDbSystemReadEndpointArgs']] = None,
+                 rest: Optional[pulumi.Input['MysqlDbSystemRestArgs']] = None,
                  secure_connections: Optional[pulumi.Input['MysqlDbSystemSecureConnectionsArgs']] = None,
                  shape_name: Optional[pulumi.Input[builtins.str]] = None,
                  shutdown_type: Optional[pulumi.Input[builtins.str]] = None,
@@ -691,10 +725,12 @@ class _MysqlDbSystemState:
         :param pulumi.Input[builtins.str] lifecycle_details: Additional information about the current lifecycleState.
         :param pulumi.Input['MysqlDbSystemMaintenanceArgs'] maintenance: (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
         :param pulumi.Input[builtins.str] mysql_version: The specific MySQL version identifier.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] nsg_ids: (Updatable) Network Security Group OCIDs used for the VNIC attachment.
         :param pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemPointInTimeRecoveryDetailArgs']]] point_in_time_recovery_details: Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
         :param pulumi.Input[builtins.int] port: The port for primary endpoint of the DB System to listen on.
         :param pulumi.Input[builtins.int] port_x: The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
         :param pulumi.Input['MysqlDbSystemReadEndpointArgs'] read_endpoint: (Updatable) Details required to create a Read Endpoint.
+        :param pulumi.Input['MysqlDbSystemRestArgs'] rest: (Updatable) Details required to configure REST while creating a DB System.
         :param pulumi.Input['MysqlDbSystemSecureConnectionsArgs'] secure_connections: (Updatable) Secure connection configuration details.
         :param pulumi.Input[builtins.str] shape_name: (Updatable) The name of the shape. The shape determines the resources allocated
                * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
@@ -769,6 +805,8 @@ class _MysqlDbSystemState:
             pulumi.set(__self__, "maintenance", maintenance)
         if mysql_version is not None:
             pulumi.set(__self__, "mysql_version", mysql_version)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
         if point_in_time_recovery_details is not None:
             pulumi.set(__self__, "point_in_time_recovery_details", point_in_time_recovery_details)
         if port is not None:
@@ -777,6 +815,8 @@ class _MysqlDbSystemState:
             pulumi.set(__self__, "port_x", port_x)
         if read_endpoint is not None:
             pulumi.set(__self__, "read_endpoint", read_endpoint)
+        if rest is not None:
+            pulumi.set(__self__, "rest", rest)
         if secure_connections is not None:
             pulumi.set(__self__, "secure_connections", secure_connections)
         if shape_name is not None:
@@ -1175,6 +1215,18 @@ class _MysqlDbSystemState:
         pulumi.set(self, "mysql_version", value)
 
     @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        (Updatable) Network Security Group OCIDs used for the VNIC attachment.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @nsg_ids.setter
+    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "nsg_ids", value)
+
+    @property
     @pulumi.getter(name="pointInTimeRecoveryDetails")
     def point_in_time_recovery_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemPointInTimeRecoveryDetailArgs']]]]:
         """
@@ -1221,6 +1273,18 @@ class _MysqlDbSystemState:
     @read_endpoint.setter
     def read_endpoint(self, value: Optional[pulumi.Input['MysqlDbSystemReadEndpointArgs']]):
         pulumi.set(self, "read_endpoint", value)
+
+    @property
+    @pulumi.getter
+    def rest(self) -> Optional[pulumi.Input['MysqlDbSystemRestArgs']]:
+        """
+        (Updatable) Details required to configure REST while creating a DB System.
+        """
+        return pulumi.get(self, "rest")
+
+    @rest.setter
+    def rest(self, value: Optional[pulumi.Input['MysqlDbSystemRestArgs']]):
+        pulumi.set(self, "rest", value)
 
     @property
     @pulumi.getter(name="secureConnections")
@@ -1365,9 +1429,11 @@ class MysqlDbSystem(pulumi.CustomResource):
                  is_highly_available: Optional[pulumi.Input[builtins.bool]] = None,
                  maintenance: Optional[pulumi.Input[Union['MysqlDbSystemMaintenanceArgs', 'MysqlDbSystemMaintenanceArgsDict']]] = None,
                  mysql_version: Optional[pulumi.Input[builtins.str]] = None,
+                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  port: Optional[pulumi.Input[builtins.int]] = None,
                  port_x: Optional[pulumi.Input[builtins.int]] = None,
                  read_endpoint: Optional[pulumi.Input[Union['MysqlDbSystemReadEndpointArgs', 'MysqlDbSystemReadEndpointArgsDict']]] = None,
+                 rest: Optional[pulumi.Input[Union['MysqlDbSystemRestArgs', 'MysqlDbSystemRestArgsDict']]] = None,
                  secure_connections: Optional[pulumi.Input[Union['MysqlDbSystemSecureConnectionsArgs', 'MysqlDbSystemSecureConnectionsArgsDict']]] = None,
                  shape_name: Optional[pulumi.Input[builtins.str]] = None,
                  shutdown_type: Optional[pulumi.Input[builtins.str]] = None,
@@ -1444,6 +1510,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             maintenance={
                 "window_start_time": mysql_db_system_maintenance_window_start_time,
             },
+            nsg_ids=mysql_db_system_nsg_ids,
             port=mysql_db_system_port,
             port_x=mysql_db_system_port_x,
             read_endpoint={
@@ -1451,6 +1518,10 @@ class MysqlDbSystem(pulumi.CustomResource):
                 "is_enabled": mysql_db_system_read_endpoint_is_enabled,
                 "read_endpoint_hostname_label": mysql_db_system_read_endpoint_read_endpoint_hostname_label,
                 "read_endpoint_ip_address": mysql_db_system_read_endpoint_read_endpoint_ip_address,
+            },
+            rest={
+                "configuration": mysql_db_system_rest_configuration,
+                "port": mysql_db_system_rest_port,
             },
             secure_connections={
                 "certificate_generation_type": mysql_db_system_secure_connections_certificate_generation_type,
@@ -1514,9 +1585,11 @@ class MysqlDbSystem(pulumi.CustomResource):
                When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
         :param pulumi.Input[Union['MysqlDbSystemMaintenanceArgs', 'MysqlDbSystemMaintenanceArgsDict']] maintenance: (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
         :param pulumi.Input[builtins.str] mysql_version: The specific MySQL version identifier.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] nsg_ids: (Updatable) Network Security Group OCIDs used for the VNIC attachment.
         :param pulumi.Input[builtins.int] port: The port for primary endpoint of the DB System to listen on.
         :param pulumi.Input[builtins.int] port_x: The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
         :param pulumi.Input[Union['MysqlDbSystemReadEndpointArgs', 'MysqlDbSystemReadEndpointArgsDict']] read_endpoint: (Updatable) Details required to create a Read Endpoint.
+        :param pulumi.Input[Union['MysqlDbSystemRestArgs', 'MysqlDbSystemRestArgsDict']] rest: (Updatable) Details required to configure REST while creating a DB System.
         :param pulumi.Input[Union['MysqlDbSystemSecureConnectionsArgs', 'MysqlDbSystemSecureConnectionsArgsDict']] secure_connections: (Updatable) Secure connection configuration details.
         :param pulumi.Input[builtins.str] shape_name: (Updatable) The name of the shape. The shape determines the resources allocated
                * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
@@ -1603,6 +1676,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             maintenance={
                 "window_start_time": mysql_db_system_maintenance_window_start_time,
             },
+            nsg_ids=mysql_db_system_nsg_ids,
             port=mysql_db_system_port,
             port_x=mysql_db_system_port_x,
             read_endpoint={
@@ -1610,6 +1684,10 @@ class MysqlDbSystem(pulumi.CustomResource):
                 "is_enabled": mysql_db_system_read_endpoint_is_enabled,
                 "read_endpoint_hostname_label": mysql_db_system_read_endpoint_read_endpoint_hostname_label,
                 "read_endpoint_ip_address": mysql_db_system_read_endpoint_read_endpoint_ip_address,
+            },
+            rest={
+                "configuration": mysql_db_system_rest_configuration,
+                "port": mysql_db_system_rest_port,
             },
             secure_connections={
                 "certificate_generation_type": mysql_db_system_secure_connections_certificate_generation_type,
@@ -1668,9 +1746,11 @@ class MysqlDbSystem(pulumi.CustomResource):
                  is_highly_available: Optional[pulumi.Input[builtins.bool]] = None,
                  maintenance: Optional[pulumi.Input[Union['MysqlDbSystemMaintenanceArgs', 'MysqlDbSystemMaintenanceArgsDict']]] = None,
                  mysql_version: Optional[pulumi.Input[builtins.str]] = None,
+                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  port: Optional[pulumi.Input[builtins.int]] = None,
                  port_x: Optional[pulumi.Input[builtins.int]] = None,
                  read_endpoint: Optional[pulumi.Input[Union['MysqlDbSystemReadEndpointArgs', 'MysqlDbSystemReadEndpointArgsDict']]] = None,
+                 rest: Optional[pulumi.Input[Union['MysqlDbSystemRestArgs', 'MysqlDbSystemRestArgsDict']]] = None,
                  secure_connections: Optional[pulumi.Input[Union['MysqlDbSystemSecureConnectionsArgs', 'MysqlDbSystemSecureConnectionsArgsDict']]] = None,
                  shape_name: Optional[pulumi.Input[builtins.str]] = None,
                  shutdown_type: Optional[pulumi.Input[builtins.str]] = None,
@@ -1714,9 +1794,11 @@ class MysqlDbSystem(pulumi.CustomResource):
             __props__.__dict__["is_highly_available"] = is_highly_available
             __props__.__dict__["maintenance"] = maintenance
             __props__.__dict__["mysql_version"] = mysql_version
+            __props__.__dict__["nsg_ids"] = nsg_ids
             __props__.__dict__["port"] = port
             __props__.__dict__["port_x"] = port_x
             __props__.__dict__["read_endpoint"] = read_endpoint
+            __props__.__dict__["rest"] = rest
             __props__.__dict__["secure_connections"] = secure_connections
             if shape_name is None and not opts.urn:
                 raise TypeError("Missing required property 'shape_name'")
@@ -1779,10 +1861,12 @@ class MysqlDbSystem(pulumi.CustomResource):
             lifecycle_details: Optional[pulumi.Input[builtins.str]] = None,
             maintenance: Optional[pulumi.Input[Union['MysqlDbSystemMaintenanceArgs', 'MysqlDbSystemMaintenanceArgsDict']]] = None,
             mysql_version: Optional[pulumi.Input[builtins.str]] = None,
+            nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
             point_in_time_recovery_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemPointInTimeRecoveryDetailArgs', 'MysqlDbSystemPointInTimeRecoveryDetailArgsDict']]]]] = None,
             port: Optional[pulumi.Input[builtins.int]] = None,
             port_x: Optional[pulumi.Input[builtins.int]] = None,
             read_endpoint: Optional[pulumi.Input[Union['MysqlDbSystemReadEndpointArgs', 'MysqlDbSystemReadEndpointArgsDict']]] = None,
+            rest: Optional[pulumi.Input[Union['MysqlDbSystemRestArgs', 'MysqlDbSystemRestArgsDict']]] = None,
             secure_connections: Optional[pulumi.Input[Union['MysqlDbSystemSecureConnectionsArgs', 'MysqlDbSystemSecureConnectionsArgsDict']]] = None,
             shape_name: Optional[pulumi.Input[builtins.str]] = None,
             shutdown_type: Optional[pulumi.Input[builtins.str]] = None,
@@ -1847,10 +1931,12 @@ class MysqlDbSystem(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] lifecycle_details: Additional information about the current lifecycleState.
         :param pulumi.Input[Union['MysqlDbSystemMaintenanceArgs', 'MysqlDbSystemMaintenanceArgsDict']] maintenance: (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
         :param pulumi.Input[builtins.str] mysql_version: The specific MySQL version identifier.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] nsg_ids: (Updatable) Network Security Group OCIDs used for the VNIC attachment.
         :param pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemPointInTimeRecoveryDetailArgs', 'MysqlDbSystemPointInTimeRecoveryDetailArgsDict']]]] point_in_time_recovery_details: Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
         :param pulumi.Input[builtins.int] port: The port for primary endpoint of the DB System to listen on.
         :param pulumi.Input[builtins.int] port_x: The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
         :param pulumi.Input[Union['MysqlDbSystemReadEndpointArgs', 'MysqlDbSystemReadEndpointArgsDict']] read_endpoint: (Updatable) Details required to create a Read Endpoint.
+        :param pulumi.Input[Union['MysqlDbSystemRestArgs', 'MysqlDbSystemRestArgsDict']] rest: (Updatable) Details required to configure REST while creating a DB System.
         :param pulumi.Input[Union['MysqlDbSystemSecureConnectionsArgs', 'MysqlDbSystemSecureConnectionsArgsDict']] secure_connections: (Updatable) Secure connection configuration details.
         :param pulumi.Input[builtins.str] shape_name: (Updatable) The name of the shape. The shape determines the resources allocated
                * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
@@ -1899,10 +1985,12 @@ class MysqlDbSystem(pulumi.CustomResource):
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["maintenance"] = maintenance
         __props__.__dict__["mysql_version"] = mysql_version
+        __props__.__dict__["nsg_ids"] = nsg_ids
         __props__.__dict__["point_in_time_recovery_details"] = point_in_time_recovery_details
         __props__.__dict__["port"] = port
         __props__.__dict__["port_x"] = port_x
         __props__.__dict__["read_endpoint"] = read_endpoint
+        __props__.__dict__["rest"] = rest
         __props__.__dict__["secure_connections"] = secure_connections
         __props__.__dict__["shape_name"] = shape_name
         __props__.__dict__["shutdown_type"] = shutdown_type
@@ -2173,6 +2261,14 @@ class MysqlDbSystem(pulumi.CustomResource):
         return pulumi.get(self, "mysql_version")
 
     @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> pulumi.Output[Sequence[builtins.str]]:
+        """
+        (Updatable) Network Security Group OCIDs used for the VNIC attachment.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @property
     @pulumi.getter(name="pointInTimeRecoveryDetails")
     def point_in_time_recovery_details(self) -> pulumi.Output[Sequence['outputs.MysqlDbSystemPointInTimeRecoveryDetail']]:
         """
@@ -2203,6 +2299,14 @@ class MysqlDbSystem(pulumi.CustomResource):
         (Updatable) Details required to create a Read Endpoint.
         """
         return pulumi.get(self, "read_endpoint")
+
+    @property
+    @pulumi.getter
+    def rest(self) -> pulumi.Output['outputs.MysqlDbSystemRest']:
+        """
+        (Updatable) Details required to configure REST while creating a DB System.
+        """
+        return pulumi.get(self, "rest")
 
     @property
     @pulumi.getter(name="secureConnections")

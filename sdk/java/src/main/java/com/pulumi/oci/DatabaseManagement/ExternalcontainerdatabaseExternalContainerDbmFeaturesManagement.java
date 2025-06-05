@@ -13,6 +13,7 @@ import com.pulumi.oci.DatabaseManagement.outputs.ExternalcontainerdatabaseExtern
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -28,6 +29,12 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:DatabaseManagement/externalcontainerdatabaseExternalContainerDbmFeaturesManagement:ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement")
 public class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement extends com.pulumi.resources.CustomResource {
+    @Export(name="canDisableAllPdbs", refs={Boolean.class}, tree="[0]")
+    private Output</* @Nullable */ Boolean> canDisableAllPdbs;
+
+    public Output<Optional<Boolean>> canDisableAllPdbs() {
+        return Codegen.optional(this.canDisableAllPdbs);
+    }
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
      * 
@@ -61,6 +68,12 @@ public class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement ext
      */
     public Output<String> externalContainerDatabaseId() {
         return this.externalContainerDatabaseId;
+    }
+    @Export(name="feature", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> feature;
+
+    public Output<Optional<String>> feature() {
+        return Codegen.optional(this.feature);
     }
     /**
      * The details required to enable the specified Database Management feature.

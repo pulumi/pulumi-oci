@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -177,10 +177,10 @@ type Instance struct {
 	// You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
 	//
 	// The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-	//
-	// **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
 	Metadata pulumi.StringMapOutput `pulumi:"metadata"`
-	// (Updatable only for VM's) The platform configuration requested for the instance.
+	// Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+	PlacementConstraintDetails InstancePlacementConstraintDetailsOutput `pulumi:"placementConstraintDetails"`
+	// (Updatable) The platform configuration requested for the instance.
 	//
 	// If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
 	//
@@ -374,10 +374,10 @@ type instanceState struct {
 	// You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
 	//
 	// The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-	//
-	// **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
 	Metadata map[string]string `pulumi:"metadata"`
-	// (Updatable only for VM's) The platform configuration requested for the instance.
+	// Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+	PlacementConstraintDetails *InstancePlacementConstraintDetails `pulumi:"placementConstraintDetails"`
+	// (Updatable) The platform configuration requested for the instance.
 	//
 	// If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
 	//
@@ -536,10 +536,10 @@ type InstanceState struct {
 	// You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
 	//
 	// The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-	//
-	// **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
 	Metadata pulumi.StringMapInput
-	// (Updatable only for VM's) The platform configuration requested for the instance.
+	// Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+	PlacementConstraintDetails InstancePlacementConstraintDetailsPtrInput
+	// (Updatable) The platform configuration requested for the instance.
 	//
 	// If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
 	//
@@ -692,10 +692,10 @@ type instanceArgs struct {
 	// You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
 	//
 	// The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-	//
-	// **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
 	Metadata map[string]string `pulumi:"metadata"`
-	// (Updatable only for VM's) The platform configuration requested for the instance.
+	// Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+	PlacementConstraintDetails *InstancePlacementConstraintDetails `pulumi:"placementConstraintDetails"`
+	// (Updatable) The platform configuration requested for the instance.
 	//
 	// If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
 	//
@@ -831,10 +831,10 @@ type InstanceArgs struct {
 	// You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
 	//
 	// The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-	//
-	// **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
 	Metadata pulumi.StringMapInput
-	// (Updatable only for VM's) The platform configuration requested for the instance.
+	// Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+	PlacementConstraintDetails InstancePlacementConstraintDetailsPtrInput
+	// (Updatable) The platform configuration requested for the instance.
 	//
 	// If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
 	//
@@ -1146,13 +1146,16 @@ func (o InstanceOutput) LicensingConfigs() InstanceLicensingConfigsOutput {
 // You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
 //
 // The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-//
-// **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
 func (o InstanceOutput) Metadata() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringMapOutput { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
-// (Updatable only for VM's) The platform configuration requested for the instance.
+// Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+func (o InstanceOutput) PlacementConstraintDetails() InstancePlacementConstraintDetailsOutput {
+	return o.ApplyT(func(v *Instance) InstancePlacementConstraintDetailsOutput { return v.PlacementConstraintDetails }).(InstancePlacementConstraintDetailsOutput)
+}
+
+// (Updatable) The platform configuration requested for the instance.
 //
 // If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
 //

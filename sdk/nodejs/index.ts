@@ -94,7 +94,6 @@ import * as networkloadbalancer from "./networkloadbalancer";
 import * as nosql from "./nosql";
 import * as objectstorage from "./objectstorage";
 import * as oce from "./oce";
-import * as oci from "./oci";
 import * as ocvp from "./ocvp";
 import * as oda from "./oda";
 import * as onesubsription from "./onesubsription";
@@ -104,7 +103,6 @@ import * as opensearch from "./opensearch";
 import * as operatoraccesscontrol from "./operatoraccesscontrol";
 import * as opsi from "./opsi";
 import * as optimizer from "./optimizer";
-import * as osmanagement from "./osmanagement";
 import * as osmanagementhub from "./osmanagementhub";
 import * as ospgateway from "./ospgateway";
 import * as osubbillingschedule from "./osubbillingschedule";
@@ -122,7 +120,6 @@ import * as secrets from "./secrets";
 import * as securityattribute from "./securityattribute";
 import * as servicecatalog from "./servicecatalog";
 import * as servicemanagerproxy from "./servicemanagerproxy";
-import * as servicemesh from "./servicemesh";
 import * as stackmonitoring from "./stackmonitoring";
 import * as streaming from "./streaming";
 import * as tenantmanagercontrolplane from "./tenantmanagercontrolplane";
@@ -223,7 +220,6 @@ export {
     nosql,
     objectstorage,
     oce,
-    oci,
     ocvp,
     oda,
     onesubsription,
@@ -233,7 +229,6 @@ export {
     operatoraccesscontrol,
     opsi,
     optimizer,
-    osmanagement,
     osmanagementhub,
     ospgateway,
     osubbillingschedule,
@@ -251,7 +246,6 @@ export {
     securityattribute,
     servicecatalog,
     servicemanagerproxy,
-    servicemesh,
     stackmonitoring,
     streaming,
     tenantmanagercontrolplane,

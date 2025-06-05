@@ -13,19 +13,19 @@ namespace Pulumi.Oci.MeteringComputation.Inputs
     public sealed class UsageStatementEmailRecipientsGroupRecipientsListGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) the email of the recipient.
+        /// (Updatable) The recipient email address.
         /// </summary>
         [Input("emailId", required: true)]
         public Input<string> EmailId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) the first name of the recipient.
+        /// (Updatable) The recipient first name.
         /// </summary>
         [Input("firstName")]
         public Input<string>? FirstName { get; set; }
 
         /// <summary>
-        /// (Updatable) the last name of the recipient.
+        /// (Updatable) The recipient last name.
         /// </summary>
         [Input("lastName")]
         public Input<string>? LastName { get; set; }

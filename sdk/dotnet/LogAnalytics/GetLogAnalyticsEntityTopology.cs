@@ -30,6 +30,7 @@ namespace Pulumi.Oci.LogAnalytics
         ///     {
         ///         LogAnalyticsEntityId = testLogAnalyticsEntity.Id,
         ///         Namespace = logAnalyticsEntityTopologyNamespace,
+        ///         Context = logAnalyticsEntityTopologyContext,
         ///         MetadataEquals = logAnalyticsEntityTopologyMetadataEquals,
         ///         State = logAnalyticsEntityTopologyState,
         ///     });
@@ -59,6 +60,7 @@ namespace Pulumi.Oci.LogAnalytics
         ///     {
         ///         LogAnalyticsEntityId = testLogAnalyticsEntity.Id,
         ///         Namespace = logAnalyticsEntityTopologyNamespace,
+        ///         Context = logAnalyticsEntityTopologyContext,
         ///         MetadataEquals = logAnalyticsEntityTopologyMetadataEquals,
         ///         State = logAnalyticsEntityTopologyState,
         ///     });
@@ -88,6 +90,7 @@ namespace Pulumi.Oci.LogAnalytics
         ///     {
         ///         LogAnalyticsEntityId = testLogAnalyticsEntity.Id,
         ///         Namespace = logAnalyticsEntityTopologyNamespace,
+        ///         Context = logAnalyticsEntityTopologyContext,
         ///         MetadataEquals = logAnalyticsEntityTopologyMetadataEquals,
         ///         State = logAnalyticsEntityTopologyState,
         ///     });
@@ -102,6 +105,20 @@ namespace Pulumi.Oci.LogAnalytics
 
     public sealed class GetLogAnalyticsEntityTopologyArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// A filter to return log analytics entity toplogy whose context matches the specified string.
+        /// </summary>
+        [Input("context")]
+        public string? Context { get; set; }
+
+        [Input("filters")]
+        private List<Inputs.GetLogAnalyticsEntityTopologyFilterArgs>? _filters;
+        public List<Inputs.GetLogAnalyticsEntityTopologyFilterArgs> Filters
+        {
+            get => _filters ?? (_filters = new List<Inputs.GetLogAnalyticsEntityTopologyFilterArgs>());
+            set => _filters = value;
+        }
+
         /// <summary>
         /// The log analytics entity OCID.
         /// </summary>
@@ -140,6 +157,20 @@ namespace Pulumi.Oci.LogAnalytics
 
     public sealed class GetLogAnalyticsEntityTopologyInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// A filter to return log analytics entity toplogy whose context matches the specified string.
+        /// </summary>
+        [Input("context")]
+        public Input<string>? Context { get; set; }
+
+        [Input("filters")]
+        private InputList<Inputs.GetLogAnalyticsEntityTopologyFilterInputArgs>? _filters;
+        public InputList<Inputs.GetLogAnalyticsEntityTopologyFilterInputArgs> Filters
+        {
+            get => _filters ?? (_filters = new InputList<Inputs.GetLogAnalyticsEntityTopologyFilterInputArgs>());
+            set => _filters = value;
+        }
+
         /// <summary>
         /// The log analytics entity OCID.
         /// </summary>
@@ -180,6 +211,8 @@ namespace Pulumi.Oci.LogAnalytics
     [OutputType]
     public sealed class GetLogAnalyticsEntityTopologyResult
     {
+        public readonly string? Context;
+        public readonly ImmutableArray<Outputs.GetLogAnalyticsEntityTopologyFilterResult> Filters;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
@@ -198,6 +231,10 @@ namespace Pulumi.Oci.LogAnalytics
 
         [OutputConstructor]
         private GetLogAnalyticsEntityTopologyResult(
+            string? context,
+
+            ImmutableArray<Outputs.GetLogAnalyticsEntityTopologyFilterResult> filters,
+
             string id,
 
             ImmutableArray<Outputs.GetLogAnalyticsEntityTopologyItemResult> items,
@@ -210,6 +247,8 @@ namespace Pulumi.Oci.LogAnalytics
 
             string? state)
         {
+            Context = context;
+            Filters = filters;
             Id = id;
             Items = items;
             LogAnalyticsEntityId = logAnalyticsEntityId;

@@ -98,7 +98,7 @@ class GetRemediationRecipeResult:
     @pulumi.getter(name="detectConfigurations")
     def detect_configurations(self) -> Sequence['outputs.GetRemediationRecipeDetectConfigurationResult']:
         """
-        A configuration to define the constraints when detecting vulnerable dependencies.
+        A configuration to define the constraints when detecting vulnerable dependencies and recommending remediations.
         """
         return pulumi.get(self, "detect_configurations")
 
@@ -146,7 +146,7 @@ class GetRemediationRecipeResult:
     @pulumi.getter(name="networkConfigurations")
     def network_configurations(self) -> Sequence['outputs.GetRemediationRecipeNetworkConfigurationResult']:
         """
-        A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+        A network configuration defines the required network characteristics for the remediation run of the recipe to access the source repository and/or verify build services.
         """
         return pulumi.get(self, "network_configurations")
 

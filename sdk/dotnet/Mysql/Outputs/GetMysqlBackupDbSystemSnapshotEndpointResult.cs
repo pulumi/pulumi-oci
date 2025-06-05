@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly ImmutableArray<string> Modes;
         /// <summary>
-        /// The port for primary endpoint of the DB System to listen on.
+        /// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
         /// </summary>
         public readonly int Port;
         /// <summary>

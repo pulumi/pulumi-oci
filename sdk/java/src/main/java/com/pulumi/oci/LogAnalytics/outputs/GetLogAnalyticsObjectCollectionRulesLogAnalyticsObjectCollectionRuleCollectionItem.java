@@ -65,6 +65,11 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
      */
     private Boolean isForceHistoricCollection;
     /**
+     * @return Last Collected Object for the rule
+     * 
+     */
+    private String lastCollectedObject;
+    /**
      * @return A detailed status of the life cycle state.
      * 
      */
@@ -144,6 +149,21 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
      * 
      */
     private String state;
+    /**
+     * @return The time from which to consume the objects, if streamCursorType is AT_TIME.
+     * 
+     */
+    private String streamCursorTime;
+    /**
+     * @return Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
+     * 
+     */
+    private String streamCursorType;
+    /**
+     * @return A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+     * 
+     */
+    private String streamId;
     /**
      * @return The time when this rule was created. An RFC3339 formatted datetime string.
      * 
@@ -230,6 +250,13 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
      */
     public Boolean isForceHistoricCollection() {
         return this.isForceHistoricCollection;
+    }
+    /**
+     * @return Last Collected Object for the rule
+     * 
+     */
+    public String lastCollectedObject() {
+        return this.lastCollectedObject;
     }
     /**
      * @return A detailed status of the life cycle state.
@@ -344,6 +371,27 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
         return this.state;
     }
     /**
+     * @return The time from which to consume the objects, if streamCursorType is AT_TIME.
+     * 
+     */
+    public String streamCursorTime() {
+        return this.streamCursorTime;
+    }
+    /**
+     * @return Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
+     * 
+     */
+    public String streamCursorType() {
+        return this.streamCursorType;
+    }
+    /**
+     * @return A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+     * 
+     */
+    public String streamId() {
+        return this.streamId;
+    }
+    /**
      * @return The time when this rule was created. An RFC3339 formatted datetime string.
      * 
      */
@@ -384,6 +432,7 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
         private String id;
         private Boolean isEnabled;
         private Boolean isForceHistoricCollection;
+        private String lastCollectedObject;
         private String lifecycleDetails;
         private String logGroupId;
         private String logSet;
@@ -400,6 +449,9 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
         private String pollSince;
         private String pollTill;
         private String state;
+        private String streamCursorTime;
+        private String streamCursorType;
+        private String streamId;
         private String timeCreated;
         private String timeUpdated;
         private String timezone;
@@ -416,6 +468,7 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
     	      this.id = defaults.id;
     	      this.isEnabled = defaults.isEnabled;
     	      this.isForceHistoricCollection = defaults.isForceHistoricCollection;
+    	      this.lastCollectedObject = defaults.lastCollectedObject;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.logGroupId = defaults.logGroupId;
     	      this.logSet = defaults.logSet;
@@ -432,6 +485,9 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
     	      this.pollSince = defaults.pollSince;
     	      this.pollTill = defaults.pollTill;
     	      this.state = defaults.state;
+    	      this.streamCursorTime = defaults.streamCursorTime;
+    	      this.streamCursorType = defaults.streamCursorType;
+    	      this.streamId = defaults.streamId;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.timezone = defaults.timezone;
@@ -515,6 +571,14 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
               throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem", "isForceHistoricCollection");
             }
             this.isForceHistoricCollection = isForceHistoricCollection;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder lastCollectedObject(String lastCollectedObject) {
+            if (lastCollectedObject == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem", "lastCollectedObject");
+            }
+            this.lastCollectedObject = lastCollectedObject;
             return this;
         }
         @CustomType.Setter
@@ -652,6 +716,30 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
             return this;
         }
         @CustomType.Setter
+        public Builder streamCursorTime(String streamCursorTime) {
+            if (streamCursorTime == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem", "streamCursorTime");
+            }
+            this.streamCursorTime = streamCursorTime;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder streamCursorType(String streamCursorType) {
+            if (streamCursorType == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem", "streamCursorType");
+            }
+            this.streamCursorType = streamCursorType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder streamId(String streamId) {
+            if (streamId == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem", "streamId");
+            }
+            this.streamId = streamId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem", "timeCreated");
@@ -687,6 +775,7 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
             _resultValue.id = id;
             _resultValue.isEnabled = isEnabled;
             _resultValue.isForceHistoricCollection = isForceHistoricCollection;
+            _resultValue.lastCollectedObject = lastCollectedObject;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.logGroupId = logGroupId;
             _resultValue.logSet = logSet;
@@ -703,6 +792,9 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
             _resultValue.pollSince = pollSince;
             _resultValue.pollTill = pollTill;
             _resultValue.state = state;
+            _resultValue.streamCursorTime = streamCursorTime;
+            _resultValue.streamCursorType = streamCursorType;
+            _resultValue.streamId = streamId;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.timezone = timezone;

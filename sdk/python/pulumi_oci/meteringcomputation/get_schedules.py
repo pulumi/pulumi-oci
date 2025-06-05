@@ -122,7 +122,7 @@ def get_schedules(compartment_id: Optional[builtins.str] = None,
 
     :param builtins.str compartment_id: The compartment ID in which to list resources.
     :param Sequence[Union['GetSchedulesFilterArgs', 'GetSchedulesFilterArgsDict']] filters: The filter object for query usage.
-    :param builtins.str name: Query parameter for filtering by name
+    :param builtins.str name: The query parameter for filtering by name.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -159,7 +159,7 @@ def get_schedules_output(compartment_id: Optional[pulumi.Input[builtins.str]] = 
 
     :param builtins.str compartment_id: The compartment ID in which to list resources.
     :param Sequence[Union['GetSchedulesFilterArgs', 'GetSchedulesFilterArgsDict']] filters: The filter object for query usage.
-    :param builtins.str name: Query parameter for filtering by name
+    :param builtins.str name: The query parameter for filtering by name.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id

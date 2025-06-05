@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -23,7 +23,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/adm"
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/adm"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -99,7 +99,7 @@ type RemediationRecipe struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
-	// (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
+	// (Updatable) A configuration to define the constraints when detecting vulnerable dependencies and recommending remediations.
 	DetectConfiguration RemediationRecipeDetectConfigurationOutput `pulumi:"detectConfiguration"`
 	// (Updatable) The name of the remediation recipe.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
@@ -109,7 +109,7 @@ type RemediationRecipe struct {
 	IsRunTriggeredOnKbChange pulumi.BoolOutput `pulumi:"isRunTriggeredOnKbChange"`
 	// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
 	KnowledgeBaseId pulumi.StringOutput `pulumi:"knowledgeBaseId"`
-	// (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+	// (Updatable) A network configuration defines the required network characteristics for the remediation run of the recipe to access the source repository and/or verify build services.
 	NetworkConfiguration RemediationRecipeNetworkConfigurationOutput `pulumi:"networkConfiguration"`
 	// (Updatable) A configuration for the Source Code Management tool/platform used by a remediation recipe.
 	ScmConfiguration RemediationRecipeScmConfigurationOutput `pulumi:"scmConfiguration"`
@@ -183,7 +183,7 @@ type remediationRecipeState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	// (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
+	// (Updatable) A configuration to define the constraints when detecting vulnerable dependencies and recommending remediations.
 	DetectConfiguration *RemediationRecipeDetectConfiguration `pulumi:"detectConfiguration"`
 	// (Updatable) The name of the remediation recipe.
 	DisplayName *string `pulumi:"displayName"`
@@ -193,7 +193,7 @@ type remediationRecipeState struct {
 	IsRunTriggeredOnKbChange *bool `pulumi:"isRunTriggeredOnKbChange"`
 	// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
 	KnowledgeBaseId *string `pulumi:"knowledgeBaseId"`
-	// (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+	// (Updatable) A network configuration defines the required network characteristics for the remediation run of the recipe to access the source repository and/or verify build services.
 	NetworkConfiguration *RemediationRecipeNetworkConfiguration `pulumi:"networkConfiguration"`
 	// (Updatable) A configuration for the Source Code Management tool/platform used by a remediation recipe.
 	ScmConfiguration *RemediationRecipeScmConfiguration `pulumi:"scmConfiguration"`
@@ -217,7 +217,7 @@ type RemediationRecipeState struct {
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput
-	// (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
+	// (Updatable) A configuration to define the constraints when detecting vulnerable dependencies and recommending remediations.
 	DetectConfiguration RemediationRecipeDetectConfigurationPtrInput
 	// (Updatable) The name of the remediation recipe.
 	DisplayName pulumi.StringPtrInput
@@ -227,7 +227,7 @@ type RemediationRecipeState struct {
 	IsRunTriggeredOnKbChange pulumi.BoolPtrInput
 	// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
 	KnowledgeBaseId pulumi.StringPtrInput
-	// (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+	// (Updatable) A network configuration defines the required network characteristics for the remediation run of the recipe to access the source repository and/or verify build services.
 	NetworkConfiguration RemediationRecipeNetworkConfigurationPtrInput
 	// (Updatable) A configuration for the Source Code Management tool/platform used by a remediation recipe.
 	ScmConfiguration RemediationRecipeScmConfigurationPtrInput
@@ -255,7 +255,7 @@ type remediationRecipeArgs struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	// (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
+	// (Updatable) A configuration to define the constraints when detecting vulnerable dependencies and recommending remediations.
 	DetectConfiguration RemediationRecipeDetectConfiguration `pulumi:"detectConfiguration"`
 	// (Updatable) The name of the remediation recipe.
 	DisplayName *string `pulumi:"displayName"`
@@ -265,7 +265,7 @@ type remediationRecipeArgs struct {
 	IsRunTriggeredOnKbChange bool `pulumi:"isRunTriggeredOnKbChange"`
 	// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
 	KnowledgeBaseId string `pulumi:"knowledgeBaseId"`
-	// (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+	// (Updatable) A network configuration defines the required network characteristics for the remediation run of the recipe to access the source repository and/or verify build services.
 	NetworkConfiguration RemediationRecipeNetworkConfiguration `pulumi:"networkConfiguration"`
 	// (Updatable) A configuration for the Source Code Management tool/platform used by a remediation recipe.
 	ScmConfiguration RemediationRecipeScmConfiguration `pulumi:"scmConfiguration"`
@@ -284,7 +284,7 @@ type RemediationRecipeArgs struct {
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput
-	// (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
+	// (Updatable) A configuration to define the constraints when detecting vulnerable dependencies and recommending remediations.
 	DetectConfiguration RemediationRecipeDetectConfigurationInput
 	// (Updatable) The name of the remediation recipe.
 	DisplayName pulumi.StringPtrInput
@@ -294,7 +294,7 @@ type RemediationRecipeArgs struct {
 	IsRunTriggeredOnKbChange pulumi.BoolInput
 	// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
 	KnowledgeBaseId pulumi.StringInput
-	// (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+	// (Updatable) A network configuration defines the required network characteristics for the remediation run of the recipe to access the source repository and/or verify build services.
 	NetworkConfiguration RemediationRecipeNetworkConfigurationInput
 	// (Updatable) A configuration for the Source Code Management tool/platform used by a remediation recipe.
 	ScmConfiguration RemediationRecipeScmConfigurationInput
@@ -404,7 +404,7 @@ func (o RemediationRecipeOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *RemediationRecipe) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
-// (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
+// (Updatable) A configuration to define the constraints when detecting vulnerable dependencies and recommending remediations.
 func (o RemediationRecipeOutput) DetectConfiguration() RemediationRecipeDetectConfigurationOutput {
 	return o.ApplyT(func(v *RemediationRecipe) RemediationRecipeDetectConfigurationOutput { return v.DetectConfiguration }).(RemediationRecipeDetectConfigurationOutput)
 }
@@ -429,7 +429,7 @@ func (o RemediationRecipeOutput) KnowledgeBaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v *RemediationRecipe) pulumi.StringOutput { return v.KnowledgeBaseId }).(pulumi.StringOutput)
 }
 
-// (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+// (Updatable) A network configuration defines the required network characteristics for the remediation run of the recipe to access the source repository and/or verify build services.
 func (o RemediationRecipeOutput) NetworkConfiguration() RemediationRecipeNetworkConfigurationOutput {
 	return o.ApplyT(func(v *RemediationRecipe) RemediationRecipeNetworkConfigurationOutput { return v.NetworkConfiguration }).(RemediationRecipeNetworkConfigurationOutput)
 }

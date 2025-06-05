@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetSchedulesFilter {
     /**
-     * @return Query parameter for filtering by name
+     * @return The query parameter for filtering by name.
      * 
      */
     private String name;
@@ -24,7 +24,7 @@ public final class GetSchedulesFilter {
 
     private GetSchedulesFilter() {}
     /**
-     * @return Query parameter for filtering by name
+     * @return The query parameter for filtering by name.
      * 
      */
     public String name() {

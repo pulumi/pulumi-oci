@@ -202,7 +202,7 @@ if not MYPY:
         """
         is_active_mode: NotRequired[pulumi.Input[builtins.bool]]
         """
-        (Updatable) If enabled, Active mode will be used for the FTP connection.
+        (Updatable) If enabled, Active mode will be used for the FTP connection. Not supported for SFTP protocol.
         """
         is_certificate_validation_enabled: NotRequired[pulumi.Input[builtins.bool]]
         """
@@ -338,7 +338,7 @@ class ConfigConfigurationArgs:
         :param pulumi.Input['ConfigConfigurationFtpBasicAuthenticationDetailsArgs'] ftp_basic_authentication_details: (Updatable) Details for basic authentication.
         :param pulumi.Input[builtins.str] ftp_protocol: (Updatable) FTP protocol type.
         :param pulumi.Input[builtins.str] ftp_request_type: (Updatable) FTP monitor request type.
-        :param pulumi.Input[builtins.bool] is_active_mode: (Updatable) If enabled, Active mode will be used for the FTP connection.
+        :param pulumi.Input[builtins.bool] is_active_mode: (Updatable) If enabled, Active mode will be used for the FTP connection. Not supported for SFTP protocol.
         :param pulumi.Input[builtins.bool] is_certificate_validation_enabled: (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
         :param pulumi.Input[builtins.bool] is_default_snapshot_enabled: (Updatable) If disabled, auto snapshots are not collected.
         :param pulumi.Input[builtins.bool] is_failure_retried: (Updatable) If isFailureRetried is enabled, then a failed call will be retried.
@@ -589,7 +589,7 @@ class ConfigConfigurationArgs:
     @pulumi.getter(name="isActiveMode")
     def is_active_mode(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        (Updatable) If enabled, Active mode will be used for the FTP connection.
+        (Updatable) If enabled, Active mode will be used for the FTP connection. Not supported for SFTP protocol.
         """
         return pulumi.get(self, "is_active_mode")
 

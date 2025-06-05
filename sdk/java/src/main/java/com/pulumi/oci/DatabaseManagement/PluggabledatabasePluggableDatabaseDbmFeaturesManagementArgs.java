@@ -39,6 +39,13 @@ public final class PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs e
         return this.enablePluggableDatabaseDbmFeature;
     }
 
+    @Import(name="feature")
+    private @Nullable Output<String> feature;
+
+    public Optional<Output<String>> feature() {
+        return Optional.ofNullable(this.feature);
+    }
+
     /**
      * The details required to enable the specified Database Management feature.
      * 
@@ -80,6 +87,7 @@ public final class PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs e
 
     private PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs(PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs $) {
         this.enablePluggableDatabaseDbmFeature = $.enablePluggableDatabaseDbmFeature;
+        this.feature = $.feature;
         this.featureDetails = $.featureDetails;
         this.modifyPluggableDatabaseDbmFeature = $.modifyPluggableDatabaseDbmFeature;
         this.pluggableDatabaseId = $.pluggableDatabaseId;
@@ -128,6 +136,15 @@ public final class PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs e
          */
         public Builder enablePluggableDatabaseDbmFeature(Boolean enablePluggableDatabaseDbmFeature) {
             return enablePluggableDatabaseDbmFeature(Output.of(enablePluggableDatabaseDbmFeature));
+        }
+
+        public Builder feature(@Nullable Output<String> feature) {
+            $.feature = feature;
+            return this;
+        }
+
+        public Builder feature(String feature) {
+            return feature(Output.of(feature));
         }
 
         /**

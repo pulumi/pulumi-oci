@@ -37,16 +37,22 @@ namespace Pulumi.Oci.MeteringComputation.Inputs
         public Input<string>? CompartmentPath { get; set; }
 
         /// <summary>
-        /// The carbon emission in MTCO2 unit.
+        /// The carbon emission usage in MTCO2 units.
         /// </summary>
         [Input("computedCarbonEmission")]
         public Input<double>? ComputedCarbonEmission { get; set; }
 
         /// <summary>
-        /// The method used to calculate carbon emission.
+        /// Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
         /// </summary>
         [Input("emissionCalculationMethod")]
         public Input<string>? EmissionCalculationMethod { get; set; }
+
+        /// <summary>
+        /// Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+        /// </summary>
+        [Input("emissionType")]
+        public Input<string>? EmissionType { get; set; }
 
         /// <summary>
         /// Platform for the cost.

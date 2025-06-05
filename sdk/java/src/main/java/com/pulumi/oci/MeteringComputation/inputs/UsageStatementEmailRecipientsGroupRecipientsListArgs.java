@@ -17,14 +17,14 @@ public final class UsageStatementEmailRecipientsGroupRecipientsListArgs extends 
     public static final UsageStatementEmailRecipientsGroupRecipientsListArgs Empty = new UsageStatementEmailRecipientsGroupRecipientsListArgs();
 
     /**
-     * (Updatable) the email of the recipient.
+     * (Updatable) The recipient email address.
      * 
      */
     @Import(name="emailId", required=true)
     private Output<String> emailId;
 
     /**
-     * @return (Updatable) the email of the recipient.
+     * @return (Updatable) The recipient email address.
      * 
      */
     public Output<String> emailId() {
@@ -32,14 +32,14 @@ public final class UsageStatementEmailRecipientsGroupRecipientsListArgs extends 
     }
 
     /**
-     * (Updatable) the first name of the recipient.
+     * (Updatable) The recipient first name.
      * 
      */
     @Import(name="firstName")
     private @Nullable Output<String> firstName;
 
     /**
-     * @return (Updatable) the first name of the recipient.
+     * @return (Updatable) The recipient first name.
      * 
      */
     public Optional<Output<String>> firstName() {
@@ -47,14 +47,14 @@ public final class UsageStatementEmailRecipientsGroupRecipientsListArgs extends 
     }
 
     /**
-     * (Updatable) the last name of the recipient.
+     * (Updatable) The recipient last name.
      * 
      */
     @Import(name="lastName")
     private @Nullable Output<String> lastName;
 
     /**
-     * @return (Updatable) the last name of the recipient.
+     * @return (Updatable) The recipient last name.
      * 
      */
     public Optional<Output<String>> lastName() {
@@ -104,7 +104,7 @@ public final class UsageStatementEmailRecipientsGroupRecipientsListArgs extends 
         }
 
         /**
-         * @param emailId (Updatable) the email of the recipient.
+         * @param emailId (Updatable) The recipient email address.
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class UsageStatementEmailRecipientsGroupRecipientsListArgs extends 
         }
 
         /**
-         * @param emailId (Updatable) the email of the recipient.
+         * @param emailId (Updatable) The recipient email address.
          * 
          * @return builder
          * 
@@ -125,7 +125,7 @@ public final class UsageStatementEmailRecipientsGroupRecipientsListArgs extends 
         }
 
         /**
-         * @param firstName (Updatable) the first name of the recipient.
+         * @param firstName (Updatable) The recipient first name.
          * 
          * @return builder
          * 
@@ -136,7 +136,7 @@ public final class UsageStatementEmailRecipientsGroupRecipientsListArgs extends 
         }
 
         /**
-         * @param firstName (Updatable) the first name of the recipient.
+         * @param firstName (Updatable) The recipient first name.
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class UsageStatementEmailRecipientsGroupRecipientsListArgs extends 
         }
 
         /**
-         * @param lastName (Updatable) the last name of the recipient.
+         * @param lastName (Updatable) The recipient last name.
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class UsageStatementEmailRecipientsGroupRecipientsListArgs extends 
         }
 
         /**
-         * @param lastName (Updatable) the last name of the recipient.
+         * @param lastName (Updatable) The recipient last name.
          * 
          * @return builder
          * 

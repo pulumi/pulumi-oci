@@ -27,12 +27,15 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testOnboardingPolicies = Oci.FleetAppsManagement.GetOnboardingPolicies.Invoke();
+        ///     var testOnboardingPolicies = Oci.FleetAppsManagement.GetOnboardingPolicies.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///     });
         /// 
         /// });
         /// ```
         /// </summary>
-        public static Task<GetOnboardingPoliciesResult> InvokeAsync(GetOnboardingPoliciesArgs? args = null, InvokeOptions? options = null)
+        public static Task<GetOnboardingPoliciesResult> InvokeAsync(GetOnboardingPoliciesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetOnboardingPoliciesResult>("oci:FleetAppsManagement/getOnboardingPolicies:getOnboardingPolicies", args ?? new GetOnboardingPoliciesArgs(), options.WithDefaults());
 
         /// <summary>
@@ -51,12 +54,15 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testOnboardingPolicies = Oci.FleetAppsManagement.GetOnboardingPolicies.Invoke();
+        ///     var testOnboardingPolicies = Oci.FleetAppsManagement.GetOnboardingPolicies.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///     });
         /// 
         /// });
         /// ```
         /// </summary>
-        public static Output<GetOnboardingPoliciesResult> Invoke(GetOnboardingPoliciesInvokeArgs? args = null, InvokeOptions? options = null)
+        public static Output<GetOnboardingPoliciesResult> Invoke(GetOnboardingPoliciesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOnboardingPoliciesResult>("oci:FleetAppsManagement/getOnboardingPolicies:getOnboardingPolicies", args ?? new GetOnboardingPoliciesInvokeArgs(), options.WithDefaults());
 
         /// <summary>
@@ -75,7 +81,10 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testOnboardingPolicies = Oci.FleetAppsManagement.GetOnboardingPolicies.Invoke();
+        ///     var testOnboardingPolicies = Oci.FleetAppsManagement.GetOnboardingPolicies.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///     });
         /// 
         /// });
         /// ```
@@ -87,6 +96,12 @@ namespace Pulumi.Oci.FleetAppsManagement
 
     public sealed class GetOnboardingPoliciesArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The ID of the compartment in which to list resources.
+        /// </summary>
+        [Input("compartmentId", required: true)]
+        public string CompartmentId { get; set; } = null!;
+
         [Input("filters")]
         private List<Inputs.GetOnboardingPoliciesFilterArgs>? _filters;
         public List<Inputs.GetOnboardingPoliciesFilterArgs> Filters
@@ -103,6 +118,12 @@ namespace Pulumi.Oci.FleetAppsManagement
 
     public sealed class GetOnboardingPoliciesInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The ID of the compartment in which to list resources.
+        /// </summary>
+        [Input("compartmentId", required: true)]
+        public Input<string> CompartmentId { get; set; } = null!;
+
         [Input("filters")]
         private InputList<Inputs.GetOnboardingPoliciesFilterInputArgs>? _filters;
         public InputList<Inputs.GetOnboardingPoliciesFilterInputArgs> Filters
@@ -121,6 +142,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     [OutputType]
     public sealed class GetOnboardingPoliciesResult
     {
+        public readonly string CompartmentId;
         public readonly ImmutableArray<Outputs.GetOnboardingPoliciesFilterResult> Filters;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
@@ -133,12 +155,15 @@ namespace Pulumi.Oci.FleetAppsManagement
 
         [OutputConstructor]
         private GetOnboardingPoliciesResult(
+            string compartmentId,
+
             ImmutableArray<Outputs.GetOnboardingPoliciesFilterResult> filters,
 
             string id,
 
             ImmutableArray<Outputs.GetOnboardingPoliciesOnboardingPolicyCollectionResult> onboardingPolicyCollections)
         {
+            CompartmentId = compartmentId;
             Filters = filters;
             Id = id;
             OnboardingPolicyCollections = onboardingPolicyCollections;

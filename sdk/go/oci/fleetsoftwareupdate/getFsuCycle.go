@@ -62,7 +62,7 @@ type LookupFsuCycleResult struct {
 	ApplyActionSchedules []GetFsuCycleApplyActionSchedule `pulumi:"applyActionSchedules"`
 	// Batching strategy details to use during PRECHECK and APPLY Cycle Actions.
 	BatchingStrategies []GetFsuCycleBatchingStrategy `pulumi:"batchingStrategies"`
-	// Type of Collection this Exadata Fleet Update Cycle belongs to.
+	// Type of Exadata Fleet Update collection being upgraded.
 	CollectionType string `pulumi:"collectionType"`
 	// Compartment Identifier.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -83,9 +83,9 @@ type LookupFsuCycleResult struct {
 	GoalVersionDetails []GetFsuCycleGoalVersionDetail `pulumi:"goalVersionDetails"`
 	// OCID identifier for the Exadata Fleet Update Cycle.
 	Id string `pulumi:"id"`
-	// List of bug numbers to ignore.
+	// List of identifiers of patches to ignore.
 	IsIgnoreMissingPatches []string `pulumi:"isIgnoreMissingPatches"`
-	// Ignore all patches between the source and target homes during patching.
+	// Ignore patch conflicts or missing patches between the source and goal homes.
 	IsIgnorePatches bool `pulumi:"isIgnorePatches"`
 	// Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
 	IsKeepPlacement bool `pulumi:"isKeepPlacement"`
@@ -115,6 +115,8 @@ type LookupFsuCycleResult struct {
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// Type of Exadata Fleet Update Cycle.
 	Type string `pulumi:"type"`
+	// Details of supported upgrade options for DB or GI collection.
+	UpgradeDetails []GetFsuCycleUpgradeDetail `pulumi:"upgradeDetails"`
 }
 
 func LookupFsuCycleOutput(ctx *pulumi.Context, args LookupFsuCycleOutputArgs, opts ...pulumi.InvokeOption) LookupFsuCycleResultOutput {
@@ -161,7 +163,7 @@ func (o LookupFsuCycleResultOutput) BatchingStrategies() GetFsuCycleBatchingStra
 	return o.ApplyT(func(v LookupFsuCycleResult) []GetFsuCycleBatchingStrategy { return v.BatchingStrategies }).(GetFsuCycleBatchingStrategyArrayOutput)
 }
 
-// Type of Collection this Exadata Fleet Update Cycle belongs to.
+// Type of Exadata Fleet Update collection being upgraded.
 func (o LookupFsuCycleResultOutput) CollectionType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFsuCycleResult) string { return v.CollectionType }).(pulumi.StringOutput)
 }
@@ -215,12 +217,12 @@ func (o LookupFsuCycleResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFsuCycleResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// List of bug numbers to ignore.
+// List of identifiers of patches to ignore.
 func (o LookupFsuCycleResultOutput) IsIgnoreMissingPatches() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupFsuCycleResult) []string { return v.IsIgnoreMissingPatches }).(pulumi.StringArrayOutput)
 }
 
-// Ignore all patches between the source and target homes during patching.
+// Ignore patch conflicts or missing patches between the source and goal homes.
 func (o LookupFsuCycleResultOutput) IsIgnorePatches() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupFsuCycleResult) bool { return v.IsIgnorePatches }).(pulumi.BoolOutput)
 }
@@ -293,6 +295,11 @@ func (o LookupFsuCycleResultOutput) TimeUpdated() pulumi.StringOutput {
 // Type of Exadata Fleet Update Cycle.
 func (o LookupFsuCycleResultOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFsuCycleResult) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// Details of supported upgrade options for DB or GI collection.
+func (o LookupFsuCycleResultOutput) UpgradeDetails() GetFsuCycleUpgradeDetailArrayOutput {
+	return o.ApplyT(func(v LookupFsuCycleResult) []GetFsuCycleUpgradeDetail { return v.UpgradeDetails }).(GetFsuCycleUpgradeDetailArrayOutput)
 }
 
 func init() {

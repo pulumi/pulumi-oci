@@ -28,13 +28,19 @@ class GetDedicatedVmHostResult:
     """
     A collection of values returned by getDedicatedVmHost.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, dedicated_vm_host_id=None, dedicated_vm_host_shape=None, defined_tags=None, display_name=None, fault_domain=None, freeform_tags=None, id=None, placement_constraint_details=None, remaining_memory_in_gbs=None, remaining_ocpus=None, state=None, time_created=None, total_memory_in_gbs=None, total_ocpus=None):
+    def __init__(__self__, availability_domain=None, capacity_bins=None, compartment_id=None, compute_bare_metal_host_id=None, dedicated_vm_host_id=None, dedicated_vm_host_shape=None, defined_tags=None, display_name=None, fault_domain=None, freeform_tags=None, id=None, placement_constraint_details=None, remaining_memory_in_gbs=None, remaining_ocpus=None, state=None, time_created=None, total_memory_in_gbs=None, total_ocpus=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
+        if capacity_bins and not isinstance(capacity_bins, list):
+            raise TypeError("Expected argument 'capacity_bins' to be a list")
+        pulumi.set(__self__, "capacity_bins", capacity_bins)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if compute_bare_metal_host_id and not isinstance(compute_bare_metal_host_id, str):
+            raise TypeError("Expected argument 'compute_bare_metal_host_id' to be a str")
+        pulumi.set(__self__, "compute_bare_metal_host_id", compute_bare_metal_host_id)
         if dedicated_vm_host_id and not isinstance(dedicated_vm_host_id, str):
             raise TypeError("Expected argument 'dedicated_vm_host_id' to be a str")
         pulumi.set(__self__, "dedicated_vm_host_id", dedicated_vm_host_id)
@@ -87,12 +93,28 @@ class GetDedicatedVmHostResult:
         return pulumi.get(self, "availability_domain")
 
     @property
+    @pulumi.getter(name="capacityBins")
+    def capacity_bins(self) -> Sequence['outputs.GetDedicatedVmHostCapacityBinResult']:
+        """
+        A list of total and remaining CPU & memory per capacity bucket.
+        """
+        return pulumi.get(self, "capacity_bins")
+
+    @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> builtins.str:
         """
         The OCID of the compartment that contains the dedicated virtual machine host.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="computeBareMetalHostId")
+    def compute_bare_metal_host_id(self) -> builtins.str:
+        """
+        The OCID of the compute bare metal host.
+        """
+        return pulumi.get(self, "compute_bare_metal_host_id")
 
     @property
     @pulumi.getter(name="dedicatedVmHostId")
@@ -211,7 +233,9 @@ class AwaitableGetDedicatedVmHostResult(GetDedicatedVmHostResult):
             yield self
         return GetDedicatedVmHostResult(
             availability_domain=self.availability_domain,
+            capacity_bins=self.capacity_bins,
             compartment_id=self.compartment_id,
+            compute_bare_metal_host_id=self.compute_bare_metal_host_id,
             dedicated_vm_host_id=self.dedicated_vm_host_id,
             dedicated_vm_host_shape=self.dedicated_vm_host_shape,
             defined_tags=self.defined_tags,
@@ -254,7 +278,9 @@ def get_dedicated_vm_host(dedicated_vm_host_id: Optional[builtins.str] = None,
 
     return AwaitableGetDedicatedVmHostResult(
         availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        capacity_bins=pulumi.get(__ret__, 'capacity_bins'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compute_bare_metal_host_id=pulumi.get(__ret__, 'compute_bare_metal_host_id'),
         dedicated_vm_host_id=pulumi.get(__ret__, 'dedicated_vm_host_id'),
         dedicated_vm_host_shape=pulumi.get(__ret__, 'dedicated_vm_host_shape'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
@@ -294,7 +320,9 @@ def get_dedicated_vm_host_output(dedicated_vm_host_id: Optional[pulumi.Input[bui
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getDedicatedVmHost:getDedicatedVmHost', __args__, opts=opts, typ=GetDedicatedVmHostResult)
     return __ret__.apply(lambda __response__: GetDedicatedVmHostResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),
+        capacity_bins=pulumi.get(__response__, 'capacity_bins'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compute_bare_metal_host_id=pulumi.get(__response__, 'compute_bare_metal_host_id'),
         dedicated_vm_host_id=pulumi.get(__response__, 'dedicated_vm_host_id'),
         dedicated_vm_host_shape=pulumi.get(__response__, 'dedicated_vm_host_shape'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),

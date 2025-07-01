@@ -36,6 +36,18 @@ namespace Pulumi.Oci.DataFlow.Inputs
         [Input("networkType", required: true)]
         public Input<string> NetworkType { get; set; } = null!;
 
+        [Input("nsgIds")]
+        private InputList<string>? _nsgIds;
+
+        /// <summary>
+        /// The OCIDs of Network Security Groups (NSGs).
+        /// </summary>
+        public InputList<string> NsgIds
+        {
+            get => _nsgIds ?? (_nsgIds = new InputList<string>());
+            set => _nsgIds = value;
+        }
+
         /// <summary>
         /// Ip Address of private endpoint
         /// </summary>

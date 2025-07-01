@@ -25,6 +25,46 @@ export const getInternalOccHandoverResourceBlocks: typeof import("./getInternalO
 export const getInternalOccHandoverResourceBlocksOutput: typeof import("./getInternalOccHandoverResourceBlocks").getInternalOccHandoverResourceBlocksOutput = null as any;
 utilities.lazyLoad(exports, ["getInternalOccHandoverResourceBlocks","getInternalOccHandoverResourceBlocksOutput"], () => require("./getInternalOccHandoverResourceBlocks"));
 
+export { GetInternalOccmDemandSignalArgs, GetInternalOccmDemandSignalResult, GetInternalOccmDemandSignalOutputArgs } from "./getInternalOccmDemandSignal";
+export const getInternalOccmDemandSignal: typeof import("./getInternalOccmDemandSignal").getInternalOccmDemandSignal = null as any;
+export const getInternalOccmDemandSignalOutput: typeof import("./getInternalOccmDemandSignal").getInternalOccmDemandSignalOutput = null as any;
+utilities.lazyLoad(exports, ["getInternalOccmDemandSignal","getInternalOccmDemandSignalOutput"], () => require("./getInternalOccmDemandSignal"));
+
+export { GetInternalOccmDemandSignalCatalogArgs, GetInternalOccmDemandSignalCatalogResult, GetInternalOccmDemandSignalCatalogOutputArgs } from "./getInternalOccmDemandSignalCatalog";
+export const getInternalOccmDemandSignalCatalog: typeof import("./getInternalOccmDemandSignalCatalog").getInternalOccmDemandSignalCatalog = null as any;
+export const getInternalOccmDemandSignalCatalogOutput: typeof import("./getInternalOccmDemandSignalCatalog").getInternalOccmDemandSignalCatalogOutput = null as any;
+utilities.lazyLoad(exports, ["getInternalOccmDemandSignalCatalog","getInternalOccmDemandSignalCatalogOutput"], () => require("./getInternalOccmDemandSignalCatalog"));
+
+export { GetInternalOccmDemandSignalCatalogResourcesArgs, GetInternalOccmDemandSignalCatalogResourcesResult, GetInternalOccmDemandSignalCatalogResourcesOutputArgs } from "./getInternalOccmDemandSignalCatalogResources";
+export const getInternalOccmDemandSignalCatalogResources: typeof import("./getInternalOccmDemandSignalCatalogResources").getInternalOccmDemandSignalCatalogResources = null as any;
+export const getInternalOccmDemandSignalCatalogResourcesOutput: typeof import("./getInternalOccmDemandSignalCatalogResources").getInternalOccmDemandSignalCatalogResourcesOutput = null as any;
+utilities.lazyLoad(exports, ["getInternalOccmDemandSignalCatalogResources","getInternalOccmDemandSignalCatalogResourcesOutput"], () => require("./getInternalOccmDemandSignalCatalogResources"));
+
+export { GetInternalOccmDemandSignalCatalogsArgs, GetInternalOccmDemandSignalCatalogsResult, GetInternalOccmDemandSignalCatalogsOutputArgs } from "./getInternalOccmDemandSignalCatalogs";
+export const getInternalOccmDemandSignalCatalogs: typeof import("./getInternalOccmDemandSignalCatalogs").getInternalOccmDemandSignalCatalogs = null as any;
+export const getInternalOccmDemandSignalCatalogsOutput: typeof import("./getInternalOccmDemandSignalCatalogs").getInternalOccmDemandSignalCatalogsOutput = null as any;
+utilities.lazyLoad(exports, ["getInternalOccmDemandSignalCatalogs","getInternalOccmDemandSignalCatalogsOutput"], () => require("./getInternalOccmDemandSignalCatalogs"));
+
+export { GetInternalOccmDemandSignalDeliveriesArgs, GetInternalOccmDemandSignalDeliveriesResult, GetInternalOccmDemandSignalDeliveriesOutputArgs } from "./getInternalOccmDemandSignalDeliveries";
+export const getInternalOccmDemandSignalDeliveries: typeof import("./getInternalOccmDemandSignalDeliveries").getInternalOccmDemandSignalDeliveries = null as any;
+export const getInternalOccmDemandSignalDeliveriesOutput: typeof import("./getInternalOccmDemandSignalDeliveries").getInternalOccmDemandSignalDeliveriesOutput = null as any;
+utilities.lazyLoad(exports, ["getInternalOccmDemandSignalDeliveries","getInternalOccmDemandSignalDeliveriesOutput"], () => require("./getInternalOccmDemandSignalDeliveries"));
+
+export { GetInternalOccmDemandSignalDeliveryArgs, GetInternalOccmDemandSignalDeliveryResult, GetInternalOccmDemandSignalDeliveryOutputArgs } from "./getInternalOccmDemandSignalDelivery";
+export const getInternalOccmDemandSignalDelivery: typeof import("./getInternalOccmDemandSignalDelivery").getInternalOccmDemandSignalDelivery = null as any;
+export const getInternalOccmDemandSignalDeliveryOutput: typeof import("./getInternalOccmDemandSignalDelivery").getInternalOccmDemandSignalDeliveryOutput = null as any;
+utilities.lazyLoad(exports, ["getInternalOccmDemandSignalDelivery","getInternalOccmDemandSignalDeliveryOutput"], () => require("./getInternalOccmDemandSignalDelivery"));
+
+export { GetInternalOccmDemandSignalItemsArgs, GetInternalOccmDemandSignalItemsResult, GetInternalOccmDemandSignalItemsOutputArgs } from "./getInternalOccmDemandSignalItems";
+export const getInternalOccmDemandSignalItems: typeof import("./getInternalOccmDemandSignalItems").getInternalOccmDemandSignalItems = null as any;
+export const getInternalOccmDemandSignalItemsOutput: typeof import("./getInternalOccmDemandSignalItems").getInternalOccmDemandSignalItemsOutput = null as any;
+utilities.lazyLoad(exports, ["getInternalOccmDemandSignalItems","getInternalOccmDemandSignalItemsOutput"], () => require("./getInternalOccmDemandSignalItems"));
+
+export { GetInternalOccmDemandSignalsArgs, GetInternalOccmDemandSignalsResult, GetInternalOccmDemandSignalsOutputArgs } from "./getInternalOccmDemandSignals";
+export const getInternalOccmDemandSignals: typeof import("./getInternalOccmDemandSignals").getInternalOccmDemandSignals = null as any;
+export const getInternalOccmDemandSignalsOutput: typeof import("./getInternalOccmDemandSignals").getInternalOccmDemandSignalsOutput = null as any;
+utilities.lazyLoad(exports, ["getInternalOccmDemandSignals","getInternalOccmDemandSignalsOutput"], () => require("./getInternalOccmDemandSignals"));
+
 export { GetNamespaceOccOverviewsArgs, GetNamespaceOccOverviewsResult, GetNamespaceOccOverviewsOutputArgs } from "./getNamespaceOccOverviews";
 export const getNamespaceOccOverviews: typeof import("./getNamespaceOccOverviews").getNamespaceOccOverviews = null as any;
 export const getNamespaceOccOverviewsOutput: typeof import("./getNamespaceOccOverviews").getNamespaceOccOverviewsOutput = null as any;
@@ -80,6 +120,46 @@ export const getOccHandoverResourceBlocks: typeof import("./getOccHandoverResour
 export const getOccHandoverResourceBlocksOutput: typeof import("./getOccHandoverResourceBlocks").getOccHandoverResourceBlocksOutput = null as any;
 utilities.lazyLoad(exports, ["getOccHandoverResourceBlocks","getOccHandoverResourceBlocksOutput"], () => require("./getOccHandoverResourceBlocks"));
 
+export { GetOccmDemandSignalArgs, GetOccmDemandSignalResult, GetOccmDemandSignalOutputArgs } from "./getOccmDemandSignal";
+export const getOccmDemandSignal: typeof import("./getOccmDemandSignal").getOccmDemandSignal = null as any;
+export const getOccmDemandSignalOutput: typeof import("./getOccmDemandSignal").getOccmDemandSignalOutput = null as any;
+utilities.lazyLoad(exports, ["getOccmDemandSignal","getOccmDemandSignalOutput"], () => require("./getOccmDemandSignal"));
+
+export { GetOccmDemandSignalCatalogResourcesArgs, GetOccmDemandSignalCatalogResourcesResult, GetOccmDemandSignalCatalogResourcesOutputArgs } from "./getOccmDemandSignalCatalogResources";
+export const getOccmDemandSignalCatalogResources: typeof import("./getOccmDemandSignalCatalogResources").getOccmDemandSignalCatalogResources = null as any;
+export const getOccmDemandSignalCatalogResourcesOutput: typeof import("./getOccmDemandSignalCatalogResources").getOccmDemandSignalCatalogResourcesOutput = null as any;
+utilities.lazyLoad(exports, ["getOccmDemandSignalCatalogResources","getOccmDemandSignalCatalogResourcesOutput"], () => require("./getOccmDemandSignalCatalogResources"));
+
+export { GetOccmDemandSignalDeliveriesArgs, GetOccmDemandSignalDeliveriesResult, GetOccmDemandSignalDeliveriesOutputArgs } from "./getOccmDemandSignalDeliveries";
+export const getOccmDemandSignalDeliveries: typeof import("./getOccmDemandSignalDeliveries").getOccmDemandSignalDeliveries = null as any;
+export const getOccmDemandSignalDeliveriesOutput: typeof import("./getOccmDemandSignalDeliveries").getOccmDemandSignalDeliveriesOutput = null as any;
+utilities.lazyLoad(exports, ["getOccmDemandSignalDeliveries","getOccmDemandSignalDeliveriesOutput"], () => require("./getOccmDemandSignalDeliveries"));
+
+export { GetOccmDemandSignalItemArgs, GetOccmDemandSignalItemResult, GetOccmDemandSignalItemOutputArgs } from "./getOccmDemandSignalItem";
+export const getOccmDemandSignalItem: typeof import("./getOccmDemandSignalItem").getOccmDemandSignalItem = null as any;
+export const getOccmDemandSignalItemOutput: typeof import("./getOccmDemandSignalItem").getOccmDemandSignalItemOutput = null as any;
+utilities.lazyLoad(exports, ["getOccmDemandSignalItem","getOccmDemandSignalItemOutput"], () => require("./getOccmDemandSignalItem"));
+
+export { GetOccmDemandSignalItemsArgs, GetOccmDemandSignalItemsResult, GetOccmDemandSignalItemsOutputArgs } from "./getOccmDemandSignalItems";
+export const getOccmDemandSignalItems: typeof import("./getOccmDemandSignalItems").getOccmDemandSignalItems = null as any;
+export const getOccmDemandSignalItemsOutput: typeof import("./getOccmDemandSignalItems").getOccmDemandSignalItemsOutput = null as any;
+utilities.lazyLoad(exports, ["getOccmDemandSignalItems","getOccmDemandSignalItemsOutput"], () => require("./getOccmDemandSignalItems"));
+
+export { GetOccmDemandSignalsArgs, GetOccmDemandSignalsResult, GetOccmDemandSignalsOutputArgs } from "./getOccmDemandSignals";
+export const getOccmDemandSignals: typeof import("./getOccmDemandSignals").getOccmDemandSignals = null as any;
+export const getOccmDemandSignalsOutput: typeof import("./getOccmDemandSignals").getOccmDemandSignalsOutput = null as any;
+utilities.lazyLoad(exports, ["getOccmDemandSignals","getOccmDemandSignalsOutput"], () => require("./getOccmDemandSignals"));
+
+export { InternalOccmDemandSignalArgs, InternalOccmDemandSignalState } from "./internalOccmDemandSignal";
+export type InternalOccmDemandSignal = import("./internalOccmDemandSignal").InternalOccmDemandSignal;
+export const InternalOccmDemandSignal: typeof import("./internalOccmDemandSignal").InternalOccmDemandSignal = null as any;
+utilities.lazyLoad(exports, ["InternalOccmDemandSignal"], () => require("./internalOccmDemandSignal"));
+
+export { InternalOccmDemandSignalDeliveryArgs, InternalOccmDemandSignalDeliveryState } from "./internalOccmDemandSignalDelivery";
+export type InternalOccmDemandSignalDelivery = import("./internalOccmDemandSignalDelivery").InternalOccmDemandSignalDelivery;
+export const InternalOccmDemandSignalDelivery: typeof import("./internalOccmDemandSignalDelivery").InternalOccmDemandSignalDelivery = null as any;
+utilities.lazyLoad(exports, ["InternalOccmDemandSignalDelivery"], () => require("./internalOccmDemandSignalDelivery"));
+
 export { OccAvailabilityCatalogArgs, OccAvailabilityCatalogState } from "./occAvailabilityCatalog";
 export type OccAvailabilityCatalog = import("./occAvailabilityCatalog").OccAvailabilityCatalog;
 export const OccAvailabilityCatalog: typeof import("./occAvailabilityCatalog").OccAvailabilityCatalog = null as any;
@@ -100,11 +180,25 @@ export type OccCustomerGroupOccCustomer = import("./occCustomerGroupOccCustomer"
 export const OccCustomerGroupOccCustomer: typeof import("./occCustomerGroupOccCustomer").OccCustomerGroupOccCustomer = null as any;
 utilities.lazyLoad(exports, ["OccCustomerGroupOccCustomer"], () => require("./occCustomerGroupOccCustomer"));
 
+export { OccmDemandSignalArgs, OccmDemandSignalState } from "./occmDemandSignal";
+export type OccmDemandSignal = import("./occmDemandSignal").OccmDemandSignal;
+export const OccmDemandSignal: typeof import("./occmDemandSignal").OccmDemandSignal = null as any;
+utilities.lazyLoad(exports, ["OccmDemandSignal"], () => require("./occmDemandSignal"));
+
+export { OccmDemandSignalItemArgs, OccmDemandSignalItemState } from "./occmDemandSignalItem";
+export type OccmDemandSignalItem = import("./occmDemandSignalItem").OccmDemandSignalItem;
+export const OccmDemandSignalItem: typeof import("./occmDemandSignalItem").OccmDemandSignalItem = null as any;
+utilities.lazyLoad(exports, ["OccmDemandSignalItem"], () => require("./occmDemandSignalItem"));
+
 
 const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "oci:CapacityManagement/internalOccmDemandSignal:InternalOccmDemandSignal":
+                return new InternalOccmDemandSignal(name, <any>undefined, { urn })
+            case "oci:CapacityManagement/internalOccmDemandSignalDelivery:InternalOccmDemandSignalDelivery":
+                return new InternalOccmDemandSignalDelivery(name, <any>undefined, { urn })
             case "oci:CapacityManagement/occAvailabilityCatalog:OccAvailabilityCatalog":
                 return new OccAvailabilityCatalog(name, <any>undefined, { urn })
             case "oci:CapacityManagement/occCapacityRequest:OccCapacityRequest":
@@ -113,12 +207,20 @@ const _module = {
                 return new OccCustomerGroup(name, <any>undefined, { urn })
             case "oci:CapacityManagement/occCustomerGroupOccCustomer:OccCustomerGroupOccCustomer":
                 return new OccCustomerGroupOccCustomer(name, <any>undefined, { urn })
+            case "oci:CapacityManagement/occmDemandSignal:OccmDemandSignal":
+                return new OccmDemandSignal(name, <any>undefined, { urn })
+            case "oci:CapacityManagement/occmDemandSignalItem:OccmDemandSignalItem":
+                return new OccmDemandSignalItem(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
+pulumi.runtime.registerResourceModule("oci", "CapacityManagement/internalOccmDemandSignal", _module)
+pulumi.runtime.registerResourceModule("oci", "CapacityManagement/internalOccmDemandSignalDelivery", _module)
 pulumi.runtime.registerResourceModule("oci", "CapacityManagement/occAvailabilityCatalog", _module)
 pulumi.runtime.registerResourceModule("oci", "CapacityManagement/occCapacityRequest", _module)
 pulumi.runtime.registerResourceModule("oci", "CapacityManagement/occCustomerGroup", _module)
 pulumi.runtime.registerResourceModule("oci", "CapacityManagement/occCustomerGroupOccCustomer", _module)
+pulumi.runtime.registerResourceModule("oci", "CapacityManagement/occmDemandSignal", _module)
+pulumi.runtime.registerResourceModule("oci", "CapacityManagement/occmDemandSignalItem", _module)

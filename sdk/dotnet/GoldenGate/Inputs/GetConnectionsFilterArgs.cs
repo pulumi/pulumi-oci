@@ -13,7 +13,7 @@ namespace Pulumi.Oci.GoldenGate.Inputs
     public sealed class GetConnectionsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The name of the property entry.
+        /// The catalog name within Polaris where Iceberg tables are registered.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;

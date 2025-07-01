@@ -27,7 +27,7 @@ class GetCompliancePolicyResult:
     """
     A collection of values returned by getCompliancePolicy.
     """
-    def __init__(__self__, compartment_id=None, compliance_policy_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, product_id=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, compliance_policy_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, product_id=None, state=None, system_tags=None, time_created=None, time_updated=None, type=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -64,6 +64,9 @@ class GetCompliancePolicyResult:
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
+        if type and not isinstance(type, str):
+            raise TypeError("Expected argument 'type' to be a str")
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -158,6 +161,14 @@ class GetCompliancePolicyResult:
         """
         return pulumi.get(self, "time_updated")
 
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        The type of the Compliance Policy.
+        """
+        return pulumi.get(self, "type")
+
 
 class AwaitableGetCompliancePolicyResult(GetCompliancePolicyResult):
     # pylint: disable=using-constant-test
@@ -176,7 +187,8 @@ class AwaitableGetCompliancePolicyResult(GetCompliancePolicyResult):
             state=self.state,
             system_tags=self.system_tags,
             time_created=self.time_created,
-            time_updated=self.time_updated)
+            time_updated=self.time_updated,
+            type=self.type)
 
 
 def get_compliance_policy(compliance_policy_id: Optional[builtins.str] = None,
@@ -184,7 +196,7 @@ def get_compliance_policy(compliance_policy_id: Optional[builtins.str] = None,
     """
     This data source provides details about a specific Compliance Policy resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Gets information about a CompliancePolicy.
+    Gets information about a compliance policy.
 
     ## Example Usage
 
@@ -215,13 +227,14 @@ def get_compliance_policy(compliance_policy_id: Optional[builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
-        time_updated=pulumi.get(__ret__, 'time_updated'))
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        type=pulumi.get(__ret__, 'type'))
 def get_compliance_policy_output(compliance_policy_id: Optional[pulumi.Input[builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCompliancePolicyResult]:
     """
     This data source provides details about a specific Compliance Policy resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Gets information about a CompliancePolicy.
+    Gets information about a compliance policy.
 
     ## Example Usage
 
@@ -251,4 +264,5 @@ def get_compliance_policy_output(compliance_policy_id: Optional[pulumi.Input[bui
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
-        time_updated=pulumi.get(__response__, 'time_updated')))
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        type=pulumi.get(__response__, 'type')))

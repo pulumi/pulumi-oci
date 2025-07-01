@@ -687,14 +687,8 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
         """
         This resource provides the Autonomous Container Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
 
-        Create a new Autonomous Data Guard association. An Autonomous Data Guard association represents the replication relationship between the
-        specified Autonomous Container database and a peer Autonomous Container database. For more information, see [Using Oracle Data Guard](https://docs.cloud.oracle.com/iaas/Content/Database/Tasks/usingdataguard.htm).
-
-        All Oracle Cloud Infrastructure resources, including Data Guard associations, get an Oracle-assigned, unique ID
-        called an Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID in the response.
-        You can also retrieve a resource's OCID by using a List API operation on that resource type, or by viewing the
-        resource in the Console. For more information, see
-        [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        **Deprecated.** Use the [AddStandbyAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/AddStandbyAutonomousContainerDatabase) operation to create a new Autonomous Data Guard association. An Autonomous Data Guard association represents the replication relationship between the
+        specified Autonomous Container database and a peer Autonomous Container database. For more information, see [Using Oracle Data Guard](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbau/#articletitle.html).
 
         ## Example Usage
 
@@ -714,6 +708,8 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
                     "dbrs_policy_id": test_policy["id"],
                     "id": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_id,
                     "internet_proxy": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_internet_proxy,
+                    "is_remote": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_is_remote,
+                    "remote_region": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_remote_region,
                     "vpc_password": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_password,
                     "vpc_user": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_user,
                 }],
@@ -762,14 +758,8 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
         """
         This resource provides the Autonomous Container Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
 
-        Create a new Autonomous Data Guard association. An Autonomous Data Guard association represents the replication relationship between the
-        specified Autonomous Container database and a peer Autonomous Container database. For more information, see [Using Oracle Data Guard](https://docs.cloud.oracle.com/iaas/Content/Database/Tasks/usingdataguard.htm).
-
-        All Oracle Cloud Infrastructure resources, including Data Guard associations, get an Oracle-assigned, unique ID
-        called an Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID in the response.
-        You can also retrieve a resource's OCID by using a List API operation on that resource type, or by viewing the
-        resource in the Console. For more information, see
-        [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        **Deprecated.** Use the [AddStandbyAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/AddStandbyAutonomousContainerDatabase) operation to create a new Autonomous Data Guard association. An Autonomous Data Guard association represents the replication relationship between the
+        specified Autonomous Container database and a peer Autonomous Container database. For more information, see [Using Oracle Data Guard](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbau/#articletitle.html).
 
         ## Example Usage
 
@@ -789,6 +779,8 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
                     "dbrs_policy_id": test_policy["id"],
                     "id": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_id,
                     "internet_proxy": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_internet_proxy,
+                    "is_remote": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_is_remote,
+                    "remote_region": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_remote_region,
                     "vpc_password": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_password,
                     "vpc_user": autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_user,
                 }],

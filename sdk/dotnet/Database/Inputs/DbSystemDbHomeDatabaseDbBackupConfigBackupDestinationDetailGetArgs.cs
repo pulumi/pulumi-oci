@@ -25,6 +25,20 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<string>? Id { get; set; }
 
         /// <summary>
+        /// Indicates whether the backup destination is cross-region or local region.
+        /// </summary>
+        [Input("isRemote")]
+        public Input<bool>? IsRemote { get; set; }
+
+        /// <summary>
+        /// The name of the remote region where the remote automatic incremental backups will be stored.
+        /// 
+        /// For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        /// </summary>
+        [Input("remoteRegion")]
+        public Input<string>? RemoteRegion { get; set; }
+
+        /// <summary>
         /// Type of the database backup destination.
         /// </summary>
         [Input("type")]

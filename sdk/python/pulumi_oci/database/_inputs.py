@@ -446,6 +446,8 @@ __all__ = [
     'GetApplicationVipsFilterArgsDict',
     'GetAutonomousCharacterSetsFilterArgs',
     'GetAutonomousCharacterSetsFilterArgsDict',
+    'GetAutonomousContainerDatabaseBackupsFilterArgs',
+    'GetAutonomousContainerDatabaseBackupsFilterArgsDict',
     'GetAutonomousContainerDatabaseDataguardAssociationsFilterArgs',
     'GetAutonomousContainerDatabaseDataguardAssociationsFilterArgsDict',
     'GetAutonomousContainerDatabaseVersionsFilterArgs',
@@ -2345,6 +2347,16 @@ if not MYPY:
         """
         (Updatable) Proxy URL to connect to object store.
         """
+        is_remote: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        (Updatable) Indicates whether the backup destination is cross-region or local region.
+        """
+        remote_region: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) The name of the remote region where the remote automatic incremental backups will be stored.
+
+        For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        """
         vpc_password: NotRequired[pulumi.Input[builtins.str]]
         """
         (Updatable) For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
@@ -2362,12 +2374,18 @@ class AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs:
                  type: pulumi.Input[builtins.str],
                  id: Optional[pulumi.Input[builtins.str]] = None,
                  internet_proxy: Optional[pulumi.Input[builtins.str]] = None,
+                 is_remote: Optional[pulumi.Input[builtins.bool]] = None,
+                 remote_region: Optional[pulumi.Input[builtins.str]] = None,
                  vpc_password: Optional[pulumi.Input[builtins.str]] = None,
                  vpc_user: Optional[pulumi.Input[builtins.str]] = None):
         """
         :param pulumi.Input[builtins.str] type: (Updatable) Type of the database backup destination.
         :param pulumi.Input[builtins.str] id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
         :param pulumi.Input[builtins.str] internet_proxy: (Updatable) Proxy URL to connect to object store.
+        :param pulumi.Input[builtins.bool] is_remote: (Updatable) Indicates whether the backup destination is cross-region or local region.
+        :param pulumi.Input[builtins.str] remote_region: (Updatable) The name of the remote region where the remote automatic incremental backups will be stored.
+               
+               For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         :param pulumi.Input[builtins.str] vpc_password: (Updatable) For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
         :param pulumi.Input[builtins.str] vpc_user: (Updatable) For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
@@ -2376,6 +2394,10 @@ class AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs:
             pulumi.set(__self__, "id", id)
         if internet_proxy is not None:
             pulumi.set(__self__, "internet_proxy", internet_proxy)
+        if is_remote is not None:
+            pulumi.set(__self__, "is_remote", is_remote)
+        if remote_region is not None:
+            pulumi.set(__self__, "remote_region", remote_region)
         if vpc_password is not None:
             pulumi.set(__self__, "vpc_password", vpc_password)
         if vpc_user is not None:
@@ -2416,6 +2438,32 @@ class AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs:
     @internet_proxy.setter
     def internet_proxy(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "internet_proxy", value)
+
+    @property
+    @pulumi.getter(name="isRemote")
+    def is_remote(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        (Updatable) Indicates whether the backup destination is cross-region or local region.
+        """
+        return pulumi.get(self, "is_remote")
+
+    @is_remote.setter
+    def is_remote(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_remote", value)
+
+    @property
+    @pulumi.getter(name="remoteRegion")
+    def remote_region(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The name of the remote region where the remote automatic incremental backups will be stored.
+
+        For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        """
+        return pulumi.get(self, "remote_region")
+
+    @remote_region.setter
+    def remote_region(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "remote_region", value)
 
     @property
     @pulumi.getter(name="vpcPassword")
@@ -2936,6 +2984,16 @@ if not MYPY:
         """
         Proxy URL to connect to object store.
         """
+        is_remote: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Indicates whether the backup destination is cross-region or local region.
+        """
+        remote_region: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The name of the remote region where the remote automatic incremental backups will be stored.
+
+        For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        """
         vpc_password: NotRequired[pulumi.Input[builtins.str]]
         """
         For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
@@ -2954,6 +3012,8 @@ class AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerData
                  dbrs_policy_id: Optional[pulumi.Input[builtins.str]] = None,
                  id: Optional[pulumi.Input[builtins.str]] = None,
                  internet_proxy: Optional[pulumi.Input[builtins.str]] = None,
+                 is_remote: Optional[pulumi.Input[builtins.bool]] = None,
+                 remote_region: Optional[pulumi.Input[builtins.str]] = None,
                  vpc_password: Optional[pulumi.Input[builtins.str]] = None,
                  vpc_user: Optional[pulumi.Input[builtins.str]] = None):
         """
@@ -2961,6 +3021,10 @@ class AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerData
         :param pulumi.Input[builtins.str] dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param pulumi.Input[builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
         :param pulumi.Input[builtins.str] internet_proxy: Proxy URL to connect to object store.
+        :param pulumi.Input[builtins.bool] is_remote: Indicates whether the backup destination is cross-region or local region.
+        :param pulumi.Input[builtins.str] remote_region: The name of the remote region where the remote automatic incremental backups will be stored.
+               
+               For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         :param pulumi.Input[builtins.str] vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
         :param pulumi.Input[builtins.str] vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
@@ -2971,6 +3035,10 @@ class AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerData
             pulumi.set(__self__, "id", id)
         if internet_proxy is not None:
             pulumi.set(__self__, "internet_proxy", internet_proxy)
+        if is_remote is not None:
+            pulumi.set(__self__, "is_remote", is_remote)
+        if remote_region is not None:
+            pulumi.set(__self__, "remote_region", remote_region)
         if vpc_password is not None:
             pulumi.set(__self__, "vpc_password", vpc_password)
         if vpc_user is not None:
@@ -3023,6 +3091,32 @@ class AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerData
     @internet_proxy.setter
     def internet_proxy(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "internet_proxy", value)
+
+    @property
+    @pulumi.getter(name="isRemote")
+    def is_remote(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Indicates whether the backup destination is cross-region or local region.
+        """
+        return pulumi.get(self, "is_remote")
+
+    @is_remote.setter
+    def is_remote(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_remote", value)
+
+    @property
+    @pulumi.getter(name="remoteRegion")
+    def remote_region(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The name of the remote region where the remote automatic incremental backups will be stored.
+
+        For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        """
+        return pulumi.get(self, "remote_region")
+
+    @remote_region.setter
+    def remote_region(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "remote_region", value)
 
     @property
     @pulumi.getter(name="vpcPassword")
@@ -4161,6 +4255,16 @@ if not MYPY:
         """
         Proxy URL to connect to object store.
         """
+        is_remote: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Indicates whether the backup destination is cross-region or local region.
+        """
+        remote_region: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The name of the remote region where the remote automatic incremental backups will be stored.
+
+        For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        """
         vpc_password: NotRequired[pulumi.Input[builtins.str]]
         """
         For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
@@ -4178,12 +4282,18 @@ class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBack
                  type: pulumi.Input[builtins.str],
                  id: Optional[pulumi.Input[builtins.str]] = None,
                  internet_proxy: Optional[pulumi.Input[builtins.str]] = None,
+                 is_remote: Optional[pulumi.Input[builtins.bool]] = None,
+                 remote_region: Optional[pulumi.Input[builtins.str]] = None,
                  vpc_password: Optional[pulumi.Input[builtins.str]] = None,
                  vpc_user: Optional[pulumi.Input[builtins.str]] = None):
         """
         :param pulumi.Input[builtins.str] type: Type of the database backup destination.
         :param pulumi.Input[builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
         :param pulumi.Input[builtins.str] internet_proxy: Proxy URL to connect to object store.
+        :param pulumi.Input[builtins.bool] is_remote: Indicates whether the backup destination is cross-region or local region.
+        :param pulumi.Input[builtins.str] remote_region: The name of the remote region where the remote automatic incremental backups will be stored.
+               
+               For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         :param pulumi.Input[builtins.str] vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
         :param pulumi.Input[builtins.str] vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
@@ -4192,6 +4302,10 @@ class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBack
             pulumi.set(__self__, "id", id)
         if internet_proxy is not None:
             pulumi.set(__self__, "internet_proxy", internet_proxy)
+        if is_remote is not None:
+            pulumi.set(__self__, "is_remote", is_remote)
+        if remote_region is not None:
+            pulumi.set(__self__, "remote_region", remote_region)
         if vpc_password is not None:
             pulumi.set(__self__, "vpc_password", vpc_password)
         if vpc_user is not None:
@@ -4234,6 +4348,32 @@ class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBack
         pulumi.set(self, "internet_proxy", value)
 
     @property
+    @pulumi.getter(name="isRemote")
+    def is_remote(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Indicates whether the backup destination is cross-region or local region.
+        """
+        return pulumi.get(self, "is_remote")
+
+    @is_remote.setter
+    def is_remote(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_remote", value)
+
+    @property
+    @pulumi.getter(name="remoteRegion")
+    def remote_region(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The name of the remote region where the remote automatic incremental backups will be stored.
+
+        For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        """
+        return pulumi.get(self, "remote_region")
+
+    @remote_region.setter
+    def remote_region(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "remote_region", value)
+
+    @property
     @pulumi.getter(name="vpcPassword")
     def vpc_password(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -4271,7 +4411,6 @@ if not MYPY:
         time_recovery_appliance_details_updated: NotRequired[pulumi.Input[builtins.str]]
         """
         The time when the recovery appliance details are updated.
-        =======
         """
 elif False:
     AutonomousContainerDatabaseRecoveryApplianceDetailArgsDict: TypeAlias = Mapping[str, Any]
@@ -4286,7 +4425,6 @@ class AutonomousContainerDatabaseRecoveryApplianceDetailArgs:
         :param pulumi.Input[builtins.int] allocated_storage_size_in_gbs: The storage size of the backup destination allocated for an Autonomous Container Database to store backups on the recovery appliance, in GBs, rounded to the nearest integer.
         :param pulumi.Input[builtins.int] recovery_window_in_days: Number of days between the current and earliest point of recoverability covered by automatic backups.
         :param pulumi.Input[builtins.str] time_recovery_appliance_details_updated: The time when the recovery appliance details are updated.
-               =======
         """
         if allocated_storage_size_in_gbs is not None:
             pulumi.set(__self__, "allocated_storage_size_in_gbs", allocated_storage_size_in_gbs)
@@ -4324,7 +4462,6 @@ class AutonomousContainerDatabaseRecoveryApplianceDetailArgs:
     def time_recovery_appliance_details_updated(self) -> Optional[pulumi.Input[builtins.str]]:
         """
         The time when the recovery appliance details are updated.
-        =======
         """
         return pulumi.get(self, "time_recovery_appliance_details_updated")
 
@@ -4399,6 +4536,14 @@ if not MYPY:
         """
         Proxy URL to connect to object store.
         """
+        is_remote: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Indicates whether the backup destination is cross-region or local region.
+        """
+        remote_region: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The name of the remote region where the remote automatic incremental backups will be stored.
+        """
         vpc_password: NotRequired[pulumi.Input[builtins.str]]
         """
         For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
@@ -4416,12 +4561,16 @@ class AutonomousDatabaseBackupBackupDestinationDetailsArgs:
                  type: pulumi.Input[builtins.str],
                  id: Optional[pulumi.Input[builtins.str]] = None,
                  internet_proxy: Optional[pulumi.Input[builtins.str]] = None,
+                 is_remote: Optional[pulumi.Input[builtins.bool]] = None,
+                 remote_region: Optional[pulumi.Input[builtins.str]] = None,
                  vpc_password: Optional[pulumi.Input[builtins.str]] = None,
                  vpc_user: Optional[pulumi.Input[builtins.str]] = None):
         """
         :param pulumi.Input[builtins.str] type: The type of backup.
         :param pulumi.Input[builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
         :param pulumi.Input[builtins.str] internet_proxy: Proxy URL to connect to object store.
+        :param pulumi.Input[builtins.bool] is_remote: Indicates whether the backup destination is cross-region or local region.
+        :param pulumi.Input[builtins.str] remote_region: The name of the remote region where the remote automatic incremental backups will be stored.
         :param pulumi.Input[builtins.str] vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
         :param pulumi.Input[builtins.str] vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
@@ -4430,6 +4579,10 @@ class AutonomousDatabaseBackupBackupDestinationDetailsArgs:
             pulumi.set(__self__, "id", id)
         if internet_proxy is not None:
             pulumi.set(__self__, "internet_proxy", internet_proxy)
+        if is_remote is not None:
+            pulumi.set(__self__, "is_remote", is_remote)
+        if remote_region is not None:
+            pulumi.set(__self__, "remote_region", remote_region)
         if vpc_password is not None:
             pulumi.set(__self__, "vpc_password", vpc_password)
         if vpc_user is not None:
@@ -4470,6 +4623,30 @@ class AutonomousDatabaseBackupBackupDestinationDetailsArgs:
     @internet_proxy.setter
     def internet_proxy(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "internet_proxy", value)
+
+    @property
+    @pulumi.getter(name="isRemote")
+    def is_remote(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Indicates whether the backup destination is cross-region or local region.
+        """
+        return pulumi.get(self, "is_remote")
+
+    @is_remote.setter
+    def is_remote(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_remote", value)
+
+    @property
+    @pulumi.getter(name="remoteRegion")
+    def remote_region(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The name of the remote region where the remote automatic incremental backups will be stored.
+        """
+        return pulumi.get(self, "remote_region")
+
+    @remote_region.setter
+    def remote_region(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "remote_region", value)
 
     @property
     @pulumi.getter(name="vpcPassword")
@@ -10921,11 +11098,28 @@ if not MYPY:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
         """
+        is_remote: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Indicates whether the backup destination is cross-region or local region.
+        """
+        remote_region: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The name of the remote region where the remote automatic incremental backups will be stored.
+
+        For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        """
         type: NotRequired[pulumi.Input[builtins.str]]
         """
         Type of the database backup destination.
         """
+        vpc_password: NotRequired[pulumi.Input[builtins.str]]
+        """
+        For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+        """
         vpc_user: NotRequired[pulumi.Input[builtins.str]]
+        """
+        For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+        """
 elif False:
     DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgsDict: TypeAlias = Mapping[str, Any]
 
@@ -10934,19 +11128,34 @@ class DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs:
     def __init__(__self__, *,
                  dbrs_policy_id: Optional[pulumi.Input[builtins.str]] = None,
                  id: Optional[pulumi.Input[builtins.str]] = None,
+                 is_remote: Optional[pulumi.Input[builtins.bool]] = None,
+                 remote_region: Optional[pulumi.Input[builtins.str]] = None,
                  type: Optional[pulumi.Input[builtins.str]] = None,
+                 vpc_password: Optional[pulumi.Input[builtins.str]] = None,
                  vpc_user: Optional[pulumi.Input[builtins.str]] = None):
         """
         :param pulumi.Input[builtins.str] dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param pulumi.Input[builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+        :param pulumi.Input[builtins.bool] is_remote: Indicates whether the backup destination is cross-region or local region.
+        :param pulumi.Input[builtins.str] remote_region: The name of the remote region where the remote automatic incremental backups will be stored.
+               
+               For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         :param pulumi.Input[builtins.str] type: Type of the database backup destination.
+        :param pulumi.Input[builtins.str] vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+        :param pulumi.Input[builtins.str] vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
         if dbrs_policy_id is not None:
             pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         if id is not None:
             pulumi.set(__self__, "id", id)
+        if is_remote is not None:
+            pulumi.set(__self__, "is_remote", is_remote)
+        if remote_region is not None:
+            pulumi.set(__self__, "remote_region", remote_region)
         if type is not None:
             pulumi.set(__self__, "type", type)
+        if vpc_password is not None:
+            pulumi.set(__self__, "vpc_password", vpc_password)
         if vpc_user is not None:
             pulumi.set(__self__, "vpc_user", vpc_user)
 
@@ -10975,6 +11184,32 @@ class DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs:
         pulumi.set(self, "id", value)
 
     @property
+    @pulumi.getter(name="isRemote")
+    def is_remote(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Indicates whether the backup destination is cross-region or local region.
+        """
+        return pulumi.get(self, "is_remote")
+
+    @is_remote.setter
+    def is_remote(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_remote", value)
+
+    @property
+    @pulumi.getter(name="remoteRegion")
+    def remote_region(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The name of the remote region where the remote automatic incremental backups will be stored.
+
+        For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        """
+        return pulumi.get(self, "remote_region")
+
+    @remote_region.setter
+    def remote_region(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "remote_region", value)
+
+    @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -10987,8 +11222,23 @@ class DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs:
         pulumi.set(self, "type", value)
 
     @property
+    @pulumi.getter(name="vpcPassword")
+    def vpc_password(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+        """
+        return pulumi.get(self, "vpc_password")
+
+    @vpc_password.setter
+    def vpc_password(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "vpc_password", value)
+
+    @property
     @pulumi.getter(name="vpcUser")
     def vpc_user(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+        """
         return pulumi.get(self, "vpc_user")
 
     @vpc_user.setter
@@ -11330,11 +11580,26 @@ if not MYPY:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         """
+        is_remote: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Indicates whether the backup destination is cross-region or local region.
+        """
+        remote_region: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The name of the remote region where the remote automatic incremental backups will be stored.
+        """
         type: NotRequired[pulumi.Input[builtins.str]]
         """
         Type of the database backup destination.
         """
+        vpc_password: NotRequired[pulumi.Input[builtins.str]]
+        """
+        For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+        """
         vpc_user: NotRequired[pulumi.Input[builtins.str]]
+        """
+        For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+        """
 elif False:
     DatabaseDbBackupConfigBackupDestinationDetailArgsDict: TypeAlias = Mapping[str, Any]
 
@@ -11343,19 +11608,32 @@ class DatabaseDbBackupConfigBackupDestinationDetailArgs:
     def __init__(__self__, *,
                  dbrs_policy_id: Optional[pulumi.Input[builtins.str]] = None,
                  id: Optional[pulumi.Input[builtins.str]] = None,
+                 is_remote: Optional[pulumi.Input[builtins.bool]] = None,
+                 remote_region: Optional[pulumi.Input[builtins.str]] = None,
                  type: Optional[pulumi.Input[builtins.str]] = None,
+                 vpc_password: Optional[pulumi.Input[builtins.str]] = None,
                  vpc_user: Optional[pulumi.Input[builtins.str]] = None):
         """
         :param pulumi.Input[builtins.str] dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param pulumi.Input[builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+        :param pulumi.Input[builtins.bool] is_remote: Indicates whether the backup destination is cross-region or local region.
+        :param pulumi.Input[builtins.str] remote_region: The name of the remote region where the remote automatic incremental backups will be stored.
         :param pulumi.Input[builtins.str] type: Type of the database backup destination.
+        :param pulumi.Input[builtins.str] vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+        :param pulumi.Input[builtins.str] vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
         if dbrs_policy_id is not None:
             pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         if id is not None:
             pulumi.set(__self__, "id", id)
+        if is_remote is not None:
+            pulumi.set(__self__, "is_remote", is_remote)
+        if remote_region is not None:
+            pulumi.set(__self__, "remote_region", remote_region)
         if type is not None:
             pulumi.set(__self__, "type", type)
+        if vpc_password is not None:
+            pulumi.set(__self__, "vpc_password", vpc_password)
         if vpc_user is not None:
             pulumi.set(__self__, "vpc_user", vpc_user)
 
@@ -11384,6 +11662,30 @@ class DatabaseDbBackupConfigBackupDestinationDetailArgs:
         pulumi.set(self, "id", value)
 
     @property
+    @pulumi.getter(name="isRemote")
+    def is_remote(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Indicates whether the backup destination is cross-region or local region.
+        """
+        return pulumi.get(self, "is_remote")
+
+    @is_remote.setter
+    def is_remote(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_remote", value)
+
+    @property
+    @pulumi.getter(name="remoteRegion")
+    def remote_region(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The name of the remote region where the remote automatic incremental backups will be stored.
+        """
+        return pulumi.get(self, "remote_region")
+
+    @remote_region.setter
+    def remote_region(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "remote_region", value)
+
+    @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -11396,8 +11698,23 @@ class DatabaseDbBackupConfigBackupDestinationDetailArgs:
         pulumi.set(self, "type", value)
 
     @property
+    @pulumi.getter(name="vpcPassword")
+    def vpc_password(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+        """
+        return pulumi.get(self, "vpc_password")
+
+    @vpc_password.setter
+    def vpc_password(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "vpc_password", value)
+
+    @property
     @pulumi.getter(name="vpcUser")
     def vpc_user(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+        """
         return pulumi.get(self, "vpc_user")
 
     @vpc_user.setter
@@ -12032,6 +12349,14 @@ if not MYPY:
         """
         Proxy URL to connect to object store.
         """
+        is_remote: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Indicates whether the backup destination is cross-region or local region.
+        """
+        remote_region: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The name of the remote region where the remote automatic incremental backups will be stored.
+        """
         type: NotRequired[pulumi.Input[builtins.str]]
         """
         Type of the database backup destination.
@@ -12053,6 +12378,8 @@ class DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgs:
                  dbrs_policy_id: Optional[pulumi.Input[builtins.str]] = None,
                  id: Optional[pulumi.Input[builtins.str]] = None,
                  internet_proxy: Optional[pulumi.Input[builtins.str]] = None,
+                 is_remote: Optional[pulumi.Input[builtins.bool]] = None,
+                 remote_region: Optional[pulumi.Input[builtins.str]] = None,
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  vpc_password: Optional[pulumi.Input[builtins.str]] = None,
                  vpc_user: Optional[pulumi.Input[builtins.str]] = None):
@@ -12060,6 +12387,8 @@ class DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgs:
         :param pulumi.Input[builtins.str] dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param pulumi.Input[builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param pulumi.Input[builtins.str] internet_proxy: Proxy URL to connect to object store.
+        :param pulumi.Input[builtins.bool] is_remote: Indicates whether the backup destination is cross-region or local region.
+        :param pulumi.Input[builtins.str] remote_region: The name of the remote region where the remote automatic incremental backups will be stored.
         :param pulumi.Input[builtins.str] type: Type of the database backup destination.
         :param pulumi.Input[builtins.str] vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
         :param pulumi.Input[builtins.str] vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
@@ -12070,6 +12399,10 @@ class DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgs:
             pulumi.set(__self__, "id", id)
         if internet_proxy is not None:
             pulumi.set(__self__, "internet_proxy", internet_proxy)
+        if is_remote is not None:
+            pulumi.set(__self__, "is_remote", is_remote)
+        if remote_region is not None:
+            pulumi.set(__self__, "remote_region", remote_region)
         if type is not None:
             pulumi.set(__self__, "type", type)
         if vpc_password is not None:
@@ -12112,6 +12445,30 @@ class DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgs:
     @internet_proxy.setter
     def internet_proxy(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "internet_proxy", value)
+
+    @property
+    @pulumi.getter(name="isRemote")
+    def is_remote(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Indicates whether the backup destination is cross-region or local region.
+        """
+        return pulumi.get(self, "is_remote")
+
+    @is_remote.setter
+    def is_remote(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_remote", value)
+
+    @property
+    @pulumi.getter(name="remoteRegion")
+    def remote_region(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The name of the remote region where the remote automatic incremental backups will be stored.
+        """
+        return pulumi.get(self, "remote_region")
+
+    @remote_region.setter
+    def remote_region(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "remote_region", value)
 
     @property
     @pulumi.getter
@@ -12970,10 +13327,22 @@ if not MYPY:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
         """
+        is_remote: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Indicates whether the backup destination is cross-region or local region.
+        """
+        remote_region: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The name of the remote region where the remote automatic incremental backups will be stored.
+
+        For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        """
         type: NotRequired[pulumi.Input[builtins.str]]
         """
         Type of the database backup destination. Supported values: `NFS`.
         """
+        vpc_password: NotRequired[pulumi.Input[builtins.str]]
+        vpc_user: NotRequired[pulumi.Input[builtins.str]]
 elif False:
     DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgsDict: TypeAlias = Mapping[str, Any]
 
@@ -12982,18 +13351,34 @@ class DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs:
     def __init__(__self__, *,
                  dbrs_policy_id: Optional[pulumi.Input[builtins.str]] = None,
                  id: Optional[pulumi.Input[builtins.str]] = None,
-                 type: Optional[pulumi.Input[builtins.str]] = None):
+                 is_remote: Optional[pulumi.Input[builtins.bool]] = None,
+                 remote_region: Optional[pulumi.Input[builtins.str]] = None,
+                 type: Optional[pulumi.Input[builtins.str]] = None,
+                 vpc_password: Optional[pulumi.Input[builtins.str]] = None,
+                 vpc_user: Optional[pulumi.Input[builtins.str]] = None):
         """
         :param pulumi.Input[builtins.str] dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param pulumi.Input[builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+        :param pulumi.Input[builtins.bool] is_remote: Indicates whether the backup destination is cross-region or local region.
+        :param pulumi.Input[builtins.str] remote_region: The name of the remote region where the remote automatic incremental backups will be stored.
+               
+               For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         :param pulumi.Input[builtins.str] type: Type of the database backup destination. Supported values: `NFS`.
         """
         if dbrs_policy_id is not None:
             pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         if id is not None:
             pulumi.set(__self__, "id", id)
+        if is_remote is not None:
+            pulumi.set(__self__, "is_remote", is_remote)
+        if remote_region is not None:
+            pulumi.set(__self__, "remote_region", remote_region)
         if type is not None:
             pulumi.set(__self__, "type", type)
+        if vpc_password is not None:
+            pulumi.set(__self__, "vpc_password", vpc_password)
+        if vpc_user is not None:
+            pulumi.set(__self__, "vpc_user", vpc_user)
 
     @property
     @pulumi.getter(name="dbrsPolicyId")
@@ -13020,6 +13405,32 @@ class DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs:
         pulumi.set(self, "id", value)
 
     @property
+    @pulumi.getter(name="isRemote")
+    def is_remote(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Indicates whether the backup destination is cross-region or local region.
+        """
+        return pulumi.get(self, "is_remote")
+
+    @is_remote.setter
+    def is_remote(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_remote", value)
+
+    @property
+    @pulumi.getter(name="remoteRegion")
+    def remote_region(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The name of the remote region where the remote automatic incremental backups will be stored.
+
+        For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        """
+        return pulumi.get(self, "remote_region")
+
+    @remote_region.setter
+    def remote_region(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "remote_region", value)
+
+    @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -13030,6 +13441,24 @@ class DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs:
     @type.setter
     def type(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter(name="vpcPassword")
+    def vpc_password(self) -> Optional[pulumi.Input[builtins.str]]:
+        return pulumi.get(self, "vpc_password")
+
+    @vpc_password.setter
+    def vpc_password(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "vpc_password", value)
+
+    @property
+    @pulumi.getter(name="vpcUser")
+    def vpc_user(self) -> Optional[pulumi.Input[builtins.str]]:
+        return pulumi.get(self, "vpc_user")
+
+    @vpc_user.setter
+    def vpc_user(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "vpc_user", value)
 
 
 if not MYPY:
@@ -14210,6 +14639,16 @@ if not MYPY:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
         """
+        is_remote: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        Indicates whether the backup destination is cross-region or local region.
+        """
+        remote_region: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The name of the remote region where the remote automatic incremental backups will be stored.
+
+        For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        """
         type: NotRequired[pulumi.Input[builtins.str]]
         """
         Type of the database backup destination.
@@ -14222,16 +14661,26 @@ class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs:
     def __init__(__self__, *,
                  dbrs_policy_id: Optional[pulumi.Input[builtins.str]] = None,
                  id: Optional[pulumi.Input[builtins.str]] = None,
+                 is_remote: Optional[pulumi.Input[builtins.bool]] = None,
+                 remote_region: Optional[pulumi.Input[builtins.str]] = None,
                  type: Optional[pulumi.Input[builtins.str]] = None):
         """
         :param pulumi.Input[builtins.str] dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param pulumi.Input[builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+        :param pulumi.Input[builtins.bool] is_remote: Indicates whether the backup destination is cross-region or local region.
+        :param pulumi.Input[builtins.str] remote_region: The name of the remote region where the remote automatic incremental backups will be stored.
+               
+               For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         :param pulumi.Input[builtins.str] type: Type of the database backup destination.
         """
         if dbrs_policy_id is not None:
             pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         if id is not None:
             pulumi.set(__self__, "id", id)
+        if is_remote is not None:
+            pulumi.set(__self__, "is_remote", is_remote)
+        if remote_region is not None:
+            pulumi.set(__self__, "remote_region", remote_region)
         if type is not None:
             pulumi.set(__self__, "type", type)
 
@@ -14258,6 +14707,32 @@ class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs:
     @id.setter
     def id(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "id", value)
+
+    @property
+    @pulumi.getter(name="isRemote")
+    def is_remote(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Indicates whether the backup destination is cross-region or local region.
+        """
+        return pulumi.get(self, "is_remote")
+
+    @is_remote.setter
+    def is_remote(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_remote", value)
+
+    @property
+    @pulumi.getter(name="remoteRegion")
+    def remote_region(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The name of the remote region where the remote automatic incremental backups will be stored.
+
+        For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        """
+        return pulumi.get(self, "remote_region")
+
+    @remote_region.setter
+    def remote_region(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "remote_region", value)
 
     @property
     @pulumi.getter
@@ -21797,6 +22272,53 @@ class GetAutonomousCharacterSetsFilterArgs:
         """
         A valid Oracle character set.
         """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: builtins.str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetAutonomousContainerDatabaseBackupsFilterArgsDict(TypedDict):
+        name: builtins.str
+        values: Sequence[builtins.str]
+        regex: NotRequired[builtins.bool]
+elif False:
+    GetAutonomousContainerDatabaseBackupsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetAutonomousContainerDatabaseBackupsFilterArgs:
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
         return pulumi.get(self, "name")
 
     @name.setter

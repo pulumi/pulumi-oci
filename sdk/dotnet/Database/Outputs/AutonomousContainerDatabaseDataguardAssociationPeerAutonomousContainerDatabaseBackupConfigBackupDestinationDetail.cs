@@ -26,6 +26,16 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string? InternetProxy;
         /// <summary>
+        /// Indicates whether the backup destination is cross-region or local region.
+        /// </summary>
+        public readonly bool? IsRemote;
+        /// <summary>
+        /// The name of the remote region where the remote automatic incremental backups will be stored.
+        /// 
+        /// For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        /// </summary>
+        public readonly string? RemoteRegion;
+        /// <summary>
         /// Type of the database backup destination.
         /// </summary>
         public readonly string Type;
@@ -46,6 +56,10 @@ namespace Pulumi.Oci.Database.Outputs
 
             string? internetProxy,
 
+            bool? isRemote,
+
+            string? remoteRegion,
+
             string type,
 
             string? vpcPassword,
@@ -55,6 +69,8 @@ namespace Pulumi.Oci.Database.Outputs
             DbrsPolicyId = dbrsPolicyId;
             Id = id;
             InternetProxy = internetProxy;
+            IsRemote = isRemote;
+            RemoteRegion = remoteRegion;
             Type = type;
             VpcPassword = vpcPassword;
             VpcUser = vpcUser;

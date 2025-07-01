@@ -95,7 +95,9 @@ type LookupMysqlBackupResult struct {
 	// Number of days to retain this backup.
 	RetentionInDays int `pulumi:"retentionInDays"`
 	// The shape of the DB System instance used for backup.
-	ShapeName     string                       `pulumi:"shapeName"`
+	ShapeName string `pulumi:"shapeName"`
+	// Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+	SoftDelete    string                       `pulumi:"softDelete"`
 	SourceDetails []GetMysqlBackupSourceDetail `pulumi:"sourceDetails"`
 	// The state of the backup.
 	State string `pulumi:"state"`
@@ -241,6 +243,11 @@ func (o LookupMysqlBackupResultOutput) RetentionInDays() pulumi.IntOutput {
 // The shape of the DB System instance used for backup.
 func (o LookupMysqlBackupResultOutput) ShapeName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMysqlBackupResult) string { return v.ShapeName }).(pulumi.StringOutput)
+}
+
+// Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+func (o LookupMysqlBackupResultOutput) SoftDelete() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMysqlBackupResult) string { return v.SoftDelete }).(pulumi.StringOutput)
 }
 
 func (o LookupMysqlBackupResultOutput) SourceDetails() GetMysqlBackupSourceDetailArrayOutput {

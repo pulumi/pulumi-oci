@@ -50,6 +50,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly int? RetentionInDays;
         /// <summary>
+        /// (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+        /// </summary>
+        public readonly string? SoftDelete;
+        /// <summary>
         /// (Updatable) The start of a 30-minute window of time in which daily, automated backups occur.
         /// 
         /// This should be in the format of the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
@@ -72,6 +76,8 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             int? retentionInDays,
 
+            string? softDelete,
+
             string? windowStartTime)
         {
             CopyPolicies = copyPolicies;
@@ -80,6 +86,7 @@ namespace Pulumi.Oci.Mysql.Outputs
             IsEnabled = isEnabled;
             PitrPolicy = pitrPolicy;
             RetentionInDays = retentionInDays;
+            SoftDelete = softDelete;
             WindowStartTime = windowStartTime;
         }
     }

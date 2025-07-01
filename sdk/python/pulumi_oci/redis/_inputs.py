@@ -16,10 +16,18 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'OciCacheUserAuthenticationModeArgs',
+    'OciCacheUserAuthenticationModeArgsDict',
+    'OciCacheUserGetRedisClusterOciCacheClusterArgs',
+    'OciCacheUserGetRedisClusterOciCacheClusterArgsDict',
+    'RedisClusterGetOciCacheUserOciCacheUserArgs',
+    'RedisClusterGetOciCacheUserOciCacheUserArgsDict',
     'RedisClusterNodeCollectionArgs',
     'RedisClusterNodeCollectionArgsDict',
     'RedisClusterNodeCollectionItemArgs',
     'RedisClusterNodeCollectionItemArgsDict',
+    'GetOciCacheUsersFilterArgs',
+    'GetOciCacheUsersFilterArgsDict',
     'GetRedisClusterNodesFilterArgs',
     'GetRedisClusterNodesFilterArgsDict',
     'GetRedisClustersFilterArgs',
@@ -27,6 +35,121 @@ __all__ = [
 ]
 
 MYPY = False
+
+if not MYPY:
+    class OciCacheUserAuthenticationModeArgsDict(TypedDict):
+        authentication_type: pulumi.Input[builtins.str]
+        """
+        (Updatable) This is Authentication Type of Oracle Cloud Infrastructure cache user
+        """
+        hashed_passwords: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        (Updatable) SHA-256 hashed passwords for Oracle Cloud Infrastructure Cache user,required if authenticationType is set to PASSWORD.
+        """
+elif False:
+    OciCacheUserAuthenticationModeArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class OciCacheUserAuthenticationModeArgs:
+    def __init__(__self__, *,
+                 authentication_type: pulumi.Input[builtins.str],
+                 hashed_passwords: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
+        """
+        :param pulumi.Input[builtins.str] authentication_type: (Updatable) This is Authentication Type of Oracle Cloud Infrastructure cache user
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] hashed_passwords: (Updatable) SHA-256 hashed passwords for Oracle Cloud Infrastructure Cache user,required if authenticationType is set to PASSWORD.
+        """
+        pulumi.set(__self__, "authentication_type", authentication_type)
+        if hashed_passwords is not None:
+            pulumi.set(__self__, "hashed_passwords", hashed_passwords)
+
+    @property
+    @pulumi.getter(name="authenticationType")
+    def authentication_type(self) -> pulumi.Input[builtins.str]:
+        """
+        (Updatable) This is Authentication Type of Oracle Cloud Infrastructure cache user
+        """
+        return pulumi.get(self, "authentication_type")
+
+    @authentication_type.setter
+    def authentication_type(self, value: pulumi.Input[builtins.str]):
+        pulumi.set(self, "authentication_type", value)
+
+    @property
+    @pulumi.getter(name="hashedPasswords")
+    def hashed_passwords(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        (Updatable) SHA-256 hashed passwords for Oracle Cloud Infrastructure Cache user,required if authenticationType is set to PASSWORD.
+        """
+        return pulumi.get(self, "hashed_passwords")
+
+    @hashed_passwords.setter
+    def hashed_passwords(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "hashed_passwords", value)
+
+
+if not MYPY:
+    class OciCacheUserGetRedisClusterOciCacheClusterArgsDict(TypedDict):
+        oci_cache_cluster_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        OCID of the OciCacheCluster
+        """
+elif False:
+    OciCacheUserGetRedisClusterOciCacheClusterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class OciCacheUserGetRedisClusterOciCacheClusterArgs:
+    def __init__(__self__, *,
+                 oci_cache_cluster_id: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] oci_cache_cluster_id: OCID of the OciCacheCluster
+        """
+        if oci_cache_cluster_id is not None:
+            pulumi.set(__self__, "oci_cache_cluster_id", oci_cache_cluster_id)
+
+    @property
+    @pulumi.getter(name="ociCacheClusterId")
+    def oci_cache_cluster_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        OCID of the OciCacheCluster
+        """
+        return pulumi.get(self, "oci_cache_cluster_id")
+
+    @oci_cache_cluster_id.setter
+    def oci_cache_cluster_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "oci_cache_cluster_id", value)
+
+
+if not MYPY:
+    class RedisClusterGetOciCacheUserOciCacheUserArgsDict(TypedDict):
+        oci_cache_user_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        OCID of the OciCacheUser
+        """
+elif False:
+    RedisClusterGetOciCacheUserOciCacheUserArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class RedisClusterGetOciCacheUserOciCacheUserArgs:
+    def __init__(__self__, *,
+                 oci_cache_user_id: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] oci_cache_user_id: OCID of the OciCacheUser
+        """
+        if oci_cache_user_id is not None:
+            pulumi.set(__self__, "oci_cache_user_id", oci_cache_user_id)
+
+    @property
+    @pulumi.getter(name="ociCacheUserId")
+    def oci_cache_user_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        OCID of the OciCacheUser
+        """
+        return pulumi.get(self, "oci_cache_user_id")
+
+    @oci_cache_user_id.setter
+    def oci_cache_user_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "oci_cache_user_id", value)
+
 
 if not MYPY:
     class RedisClusterNodeCollectionArgsDict(TypedDict):
@@ -130,6 +253,62 @@ class RedisClusterNodeCollectionItemArgs:
     @private_endpoint_ip_address.setter
     def private_endpoint_ip_address(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "private_endpoint_ip_address", value)
+
+
+if not MYPY:
+    class GetOciCacheUsersFilterArgsDict(TypedDict):
+        name: builtins.str
+        """
+        A filter to return the resources that match with the given Oracle Cloud Infrastructure cache user name.
+        """
+        values: Sequence[builtins.str]
+        regex: NotRequired[builtins.bool]
+elif False:
+    GetOciCacheUsersFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetOciCacheUsersFilterArgs:
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        """
+        :param builtins.str name: A filter to return the resources that match with the given Oracle Cloud Infrastructure cache user name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        A filter to return the resources that match with the given Oracle Cloud Infrastructure cache user name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: builtins.str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[builtins.bool]):
+        pulumi.set(self, "regex", value)
 
 
 if not MYPY:

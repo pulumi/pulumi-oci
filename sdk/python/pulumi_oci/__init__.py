@@ -178,6 +178,8 @@ if typing.TYPE_CHECKING:
     objectstorage = __objectstorage
     import pulumi_oci.oce as __oce
     oce = __oce
+    import pulumi_oci.oci as __oci
+    oci = __oci
     import pulumi_oci.ocvp as __ocvp
     ocvp = __ocvp
     import pulumi_oci.oda as __oda
@@ -341,6 +343,7 @@ else:
     nosql = _utilities.lazy_import('pulumi_oci.nosql')
     objectstorage = _utilities.lazy_import('pulumi_oci.objectstorage')
     oce = _utilities.lazy_import('pulumi_oci.oce')
+    oci = _utilities.lazy_import('pulumi_oci.oci')
     ocvp = _utilities.lazy_import('pulumi_oci.ocvp')
     oda = _utilities.lazy_import('pulumi_oci.oda')
     onesubsription = _utilities.lazy_import('pulumi_oci.onesubsription')
@@ -882,6 +885,22 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "CapacityManagement/internalOccmDemandSignal",
+  "fqn": "pulumi_oci.capacitymanagement",
+  "classes": {
+   "oci:CapacityManagement/internalOccmDemandSignal:InternalOccmDemandSignal": "InternalOccmDemandSignal"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "CapacityManagement/internalOccmDemandSignalDelivery",
+  "fqn": "pulumi_oci.capacitymanagement",
+  "classes": {
+   "oci:CapacityManagement/internalOccmDemandSignalDelivery:InternalOccmDemandSignalDelivery": "InternalOccmDemandSignalDelivery"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "CapacityManagement/occAvailabilityCatalog",
   "fqn": "pulumi_oci.capacitymanagement",
   "classes": {
@@ -910,6 +929,22 @@ _utilities.register(
   "fqn": "pulumi_oci.capacitymanagement",
   "classes": {
    "oci:CapacityManagement/occCustomerGroupOccCustomer:OccCustomerGroupOccCustomer": "OccCustomerGroupOccCustomer"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "CapacityManagement/occmDemandSignal",
+  "fqn": "pulumi_oci.capacitymanagement",
+  "classes": {
+   "oci:CapacityManagement/occmDemandSignal:OccmDemandSignal": "OccmDemandSignal"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "CapacityManagement/occmDemandSignalItem",
+  "fqn": "pulumi_oci.capacitymanagement",
+  "classes": {
+   "oci:CapacityManagement/occmDemandSignalItem:OccmDemandSignalItem": "OccmDemandSignalItem"
   }
  },
  {
@@ -1326,6 +1361,22 @@ _utilities.register(
   "fqn": "pulumi_oci.core",
   "classes": {
    "oci:Core/computeGpuMemoryFabric:ComputeGpuMemoryFabric": "ComputeGpuMemoryFabric"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Core/computeHost",
+  "fqn": "pulumi_oci.core",
+  "classes": {
+   "oci:Core/computeHost:ComputeHost": "ComputeHost"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Core/computeHostGroup",
+  "fqn": "pulumi_oci.core",
+  "classes": {
+   "oci:Core/computeHostGroup:ComputeHostGroup": "ComputeHostGroup"
   }
  },
  {
@@ -3898,10 +3949,130 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "FleetAppsManagement/catalogItem",
+  "fqn": "pulumi_oci.fleetappsmanagement",
+  "classes": {
+   "oci:FleetAppsManagement/catalogItem:CatalogItem": "CatalogItem"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "FleetAppsManagement/compliancePolicyRule",
+  "fqn": "pulumi_oci.fleetappsmanagement",
+  "classes": {
+   "oci:FleetAppsManagement/compliancePolicyRule:CompliancePolicyRule": "CompliancePolicyRule"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "FleetAppsManagement/fleet",
+  "fqn": "pulumi_oci.fleetappsmanagement",
+  "classes": {
+   "oci:FleetAppsManagement/fleet:Fleet": "Fleet"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "FleetAppsManagement/fleetCredential",
+  "fqn": "pulumi_oci.fleetappsmanagement",
+  "classes": {
+   "oci:FleetAppsManagement/fleetCredential:FleetCredential": "FleetCredential"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "FleetAppsManagement/fleetProperty",
+  "fqn": "pulumi_oci.fleetappsmanagement",
+  "classes": {
+   "oci:FleetAppsManagement/fleetProperty:FleetProperty": "FleetProperty"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "FleetAppsManagement/fleetResource",
+  "fqn": "pulumi_oci.fleetappsmanagement",
+  "classes": {
+   "oci:FleetAppsManagement/fleetResource:FleetResource": "FleetResource"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "FleetAppsManagement/maintenanceWindow",
+  "fqn": "pulumi_oci.fleetappsmanagement",
+  "classes": {
+   "oci:FleetAppsManagement/maintenanceWindow:MaintenanceWindow": "MaintenanceWindow"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "FleetAppsManagement/onboarding",
+  "fqn": "pulumi_oci.fleetappsmanagement",
+  "classes": {
+   "oci:FleetAppsManagement/onboarding:Onboarding": "Onboarding"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "FleetAppsManagement/patch",
+  "fqn": "pulumi_oci.fleetappsmanagement",
+  "classes": {
+   "oci:FleetAppsManagement/patch:Patch": "Patch"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "FleetAppsManagement/platformConfiguration",
+  "fqn": "pulumi_oci.fleetappsmanagement",
+  "classes": {
+   "oci:FleetAppsManagement/platformConfiguration:PlatformConfiguration": "PlatformConfiguration"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "FleetAppsManagement/property",
   "fqn": "pulumi_oci.fleetappsmanagement",
   "classes": {
    "oci:FleetAppsManagement/property:Property": "Property"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "FleetAppsManagement/provision",
+  "fqn": "pulumi_oci.fleetappsmanagement",
+  "classes": {
+   "oci:FleetAppsManagement/provision:Provision": "Provision"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "FleetAppsManagement/runbook",
+  "fqn": "pulumi_oci.fleetappsmanagement",
+  "classes": {
+   "oci:FleetAppsManagement/runbook:Runbook": "Runbook"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "FleetAppsManagement/runbookVersion",
+  "fqn": "pulumi_oci.fleetappsmanagement",
+  "classes": {
+   "oci:FleetAppsManagement/runbookVersion:RunbookVersion": "RunbookVersion"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "FleetAppsManagement/schedulerDefinition",
+  "fqn": "pulumi_oci.fleetappsmanagement",
+  "classes": {
+   "oci:FleetAppsManagement/schedulerDefinition:SchedulerDefinition": "SchedulerDefinition"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "FleetAppsManagement/taskRecord",
+  "fqn": "pulumi_oci.fleetappsmanagement",
+  "classes": {
+   "oci:FleetAppsManagement/taskRecord:TaskRecord": "TaskRecord"
   }
  },
  {
@@ -4986,6 +5157,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "LogAnalytics/logAnalyticsEntityType",
+  "fqn": "pulumi_oci.loganalytics",
+  "classes": {
+   "oci:LogAnalytics/logAnalyticsEntityType:LogAnalyticsEntityType": "LogAnalyticsEntityType"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "LogAnalytics/logAnalyticsImportCustomContent",
   "fqn": "pulumi_oci.loganalytics",
   "classes": {
@@ -5526,6 +5705,14 @@ _utilities.register(
   "fqn": "pulumi_oci.networkloadbalancer",
   "classes": {
    "oci:NetworkLoadBalancer/networkLoadBalancersBackendSetsUnified:NetworkLoadBalancersBackendSetsUnified": "NetworkLoadBalancersBackendSetsUnified"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Nosql/configuration",
+  "fqn": "pulumi_oci.nosql",
+  "classes": {
+   "oci:Nosql/configuration:Configuration": "Configuration"
   }
  },
  {
@@ -6290,10 +6477,58 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Redis/ociCacheUser",
+  "fqn": "pulumi_oci.redis",
+  "classes": {
+   "oci:Redis/ociCacheUser:OciCacheUser": "OciCacheUser"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Redis/ociCacheUserGetRedisCluster",
+  "fqn": "pulumi_oci.redis",
+  "classes": {
+   "oci:Redis/ociCacheUserGetRedisCluster:OciCacheUserGetRedisCluster": "OciCacheUserGetRedisCluster"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Redis/redisCluster",
   "fqn": "pulumi_oci.redis",
   "classes": {
    "oci:Redis/redisCluster:RedisCluster": "RedisCluster"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Redis/redisClusterAttachOciCacheUser",
+  "fqn": "pulumi_oci.redis",
+  "classes": {
+   "oci:Redis/redisClusterAttachOciCacheUser:RedisClusterAttachOciCacheUser": "RedisClusterAttachOciCacheUser"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Redis/redisClusterCreateIdentityToken",
+  "fqn": "pulumi_oci.redis",
+  "classes": {
+   "oci:Redis/redisClusterCreateIdentityToken:RedisClusterCreateIdentityToken": "RedisClusterCreateIdentityToken"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Redis/redisClusterDetachOciCacheUser",
+  "fqn": "pulumi_oci.redis",
+  "classes": {
+   "oci:Redis/redisClusterDetachOciCacheUser:RedisClusterDetachOciCacheUser": "RedisClusterDetachOciCacheUser"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Redis/redisClusterGetOciCacheUser",
+  "fqn": "pulumi_oci.redis",
+  "classes": {
+   "oci:Redis/redisClusterGetOciCacheUser:RedisClusterGetOciCacheUser": "RedisClusterGetOciCacheUser"
   }
  },
  {
@@ -6742,6 +6977,22 @@ _utilities.register(
   "fqn": "pulumi_oci.zpr",
   "classes": {
    "oci:Zpr/zprPolicy:ZprPolicy": "ZprPolicy"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/apiaccesscontrolPrivilegedApiControl",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/apiaccesscontrolPrivilegedApiControl:ApiaccesscontrolPrivilegedApiControl": "ApiaccesscontrolPrivilegedApiControl"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/apiaccesscontrolPrivilegedApiRequest",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/apiaccesscontrolPrivilegedApiRequest:ApiaccesscontrolPrivilegedApiRequest": "ApiaccesscontrolPrivilegedApiRequest"
   }
  }
 ]

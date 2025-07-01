@@ -14,32 +14,6 @@ import (
 // This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Golden Gate service.
 //
 // Retrieves a Connection.
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/goldengate"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := goldengate.GetConnection(ctx, &goldengate.GetConnectionArgs{
-//				ConnectionId: testConnectionOciGoldenGateConnection.Id,
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 func LookupConnection(ctx *pulumi.Context, args *LookupConnectionArgs, opts ...pulumi.InvokeOption) (*LookupConnectionResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupConnectionResult
@@ -58,10 +32,10 @@ type LookupConnectionArgs struct {
 
 // A collection of values returned by getConnection.
 type LookupConnectionResult struct {
-	// Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+	// Access key ID to access the Amazon S3 bucket.
 	AccessKeyId string `pulumi:"accessKeyId"`
 	AccountKey  string `pulumi:"accountKey"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored. Note: When provided, 'accountKey' field must not be provided.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
 	AccountKeySecretId string `pulumi:"accountKeySecretId"`
 	// Sets the Azure storage account name.
 	AccountName string `pulumi:"accountName"`
@@ -80,6 +54,8 @@ type LookupConnectionResult struct {
 	AzureTenantId string `pulumi:"azureTenantId"`
 	// Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
 	BootstrapServers []GetConnectionBootstrapServer `pulumi:"bootstrapServers"`
+	// Represents the catalog of given type used in an Iceberg connection.
+	Catalogs []GetConnectionCatalog `pulumi:"catalogs"`
 	// Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
 	ClientId     string `pulumi:"clientId"`
 	ClientSecret string `pulumi:"clientSecret"`
@@ -103,7 +79,8 @@ type LookupConnectionResult struct {
 	ConnectionUrl string `pulumi:"connectionUrl"`
 	// The base64 encoded content of the consumer.properties file.
 	ConsumerProperties string `pulumi:"consumerProperties"`
-	CoreSiteXml        string `pulumi:"coreSiteXml"`
+	// The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+	CoreSiteXml string `pulumi:"coreSiteXml"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
 	DatabaseId string `pulumi:"databaseId"`
 	// The name of the database.
@@ -120,8 +97,9 @@ type LookupConnectionResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// Indicates that sensitive attributes are provided via Secrets.
 	DoesUseSecretIds bool `pulumi:"doesUseSecretIds"`
-	// Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
-	Endpoint    string `pulumi:"endpoint"`
+	// The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+	Endpoint string `pulumi:"endpoint"`
+	// Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
 	Fingerprint string `pulumi:"fingerprint"`
 	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
@@ -174,11 +152,12 @@ type LookupConnectionResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, 'privateKeyPassphrase' field must not be provided.
 	PrivateKeyPassphraseSecretId string `pulumi:"privateKeyPassphraseSecretId"`
 	// The base64 encoded content of the producer.properties file.
-	ProducerProperties   string `pulumi:"producerProperties"`
+	ProducerProperties string `pulumi:"producerProperties"`
+	// The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
 	PublicKeyFingerprint string `pulumi:"publicKeyFingerprint"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
 	RedisClusterId string `pulumi:"redisClusterId"`
-	// The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+	// The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
 	Region string `pulumi:"region"`
 	// Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
 	RoutingMethod string `pulumi:"routingMethod"`
@@ -186,17 +165,17 @@ type LookupConnectionResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be provided.
 	SasTokenSecretId string `pulumi:"sasTokenSecretId"`
 	SecretAccessKey  string `pulumi:"secretAccessKey"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field must not be provided.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
 	SecretAccessKeySecretId string `pulumi:"secretAccessKeySecretId"`
 	// Security Protocol to be provided for the following connection types:
-	// * ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
-	// * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
+	// * DB2, ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
+	// * JAVA_MESSAGE_SERVICE - If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
 	SecurityProtocol string `pulumi:"securityProtocol"`
 	// Comma separated list of server addresses, specified as host:port entries, where :port is optional. Example: `"server1.example.com:4000,server2.example.com:4000"`
 	// If port is not specified, a default value is set, in case of ELASTICSEARCH: 9200, for REDIS 6379.
 	Servers               string `pulumi:"servers"`
 	ServiceAccountKeyFile string `pulumi:"serviceAccountKeyFile"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
 	ServiceAccountKeyFileSecretId string `pulumi:"serviceAccountKeyFileSecretId"`
 	// The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
 	SessionMode string `pulumi:"sessionMode"`
@@ -206,8 +185,9 @@ type LookupConnectionResult struct {
 	ShouldUseResourcePrincipal bool `pulumi:"shouldUseResourcePrincipal"`
 	// If set to true, the driver validates the certificate that is sent by the database server.
 	ShouldValidateServerCertificate bool `pulumi:"shouldValidateServerCertificate"`
-	// Database Certificate - The base64 encoded content of a .pem or .crt file. containing the server public key (for 1-way SSL).
-	SslCa             string `pulumi:"sslCa"`
+	// Database Certificate - The base64 encoded content of a .pem or .crt file. containing the server public key (for 1-way SSL). The supported file formats are .pem and .crt. In case of MYSQL and POSTGRESQL connections it is not included in GET responses if the `view=COMPACT` query parameter is specified.
+	SslCa string `pulumi:"sslCa"`
+	// Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	SslCert           string `pulumi:"sslCert"`
 	SslClientKeystash string `pulumi:"sslClientKeystash"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
@@ -215,21 +195,25 @@ type LookupConnectionResult struct {
 	SslClientKeystoredb       string `pulumi:"sslClientKeystoredb"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
 	SslClientKeystoredbSecretId string `pulumi:"sslClientKeystoredbSecretId"`
-	SslCrl                      string `pulumi:"sslCrl"`
-	SslKey                      string `pulumi:"sslKey"`
-	SslKeyPassword              string `pulumi:"sslKeyPassword"`
+	// The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+	SslCrl         string `pulumi:"sslCrl"`
+	SslKey         string `pulumi:"sslKey"`
+	SslKeyPassword string `pulumi:"sslKeyPassword"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword' field must not be provided.
 	SslKeyPasswordSecretId string `pulumi:"sslKeyPasswordSecretId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
 	// * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be provided.
 	SslKeySecretId string `pulumi:"sslKeySecretId"`
 	// SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
-	SslMode              string `pulumi:"sslMode"`
+	SslMode string `pulumi:"sslMode"`
+	// The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	SslServerCertificate string `pulumi:"sslServerCertificate"`
 	// Possible lifecycle states for connection.
 	State string `pulumi:"state"`
 	// Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
 	StorageCredentialName string `pulumi:"storageCredentialName"`
+	// Represents the storage of given type used in an Iceberg connection.
+	Storages []GetConnectionStorage `pulumi:"storages"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
 	StreamPoolId string `pulumi:"streamPoolId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
@@ -245,7 +229,8 @@ type LookupConnectionResult struct {
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeUpdated                   string `pulumi:"timeUpdated"`
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	TlsCaFile                     string `pulumi:"tlsCaFile"`
 	TlsCertificateKeyFile         string `pulumi:"tlsCertificateKeyFile"`
 	TlsCertificateKeyFilePassword string `pulumi:"tlsCertificateKeyFilePassword"`
@@ -308,7 +293,7 @@ func (o LookupConnectionResultOutput) ToLookupConnectionResultOutputWithContext(
 	return o
 }
 
-// Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+// Access key ID to access the Amazon S3 bucket.
 func (o LookupConnectionResultOutput) AccessKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.AccessKeyId }).(pulumi.StringOutput)
 }
@@ -317,7 +302,7 @@ func (o LookupConnectionResultOutput) AccountKey() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.AccountKey }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored. Note: When provided, 'accountKey' field must not be provided.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
 func (o LookupConnectionResultOutput) AccountKeySecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.AccountKeySecretId }).(pulumi.StringOutput)
 }
@@ -355,6 +340,11 @@ func (o LookupConnectionResultOutput) AzureTenantId() pulumi.StringOutput {
 // Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
 func (o LookupConnectionResultOutput) BootstrapServers() GetConnectionBootstrapServerArrayOutput {
 	return o.ApplyT(func(v LookupConnectionResult) []GetConnectionBootstrapServer { return v.BootstrapServers }).(GetConnectionBootstrapServerArrayOutput)
+}
+
+// Represents the catalog of given type used in an Iceberg connection.
+func (o LookupConnectionResultOutput) Catalogs() GetConnectionCatalogArrayOutput {
+	return o.ApplyT(func(v LookupConnectionResult) []GetConnectionCatalog { return v.Catalogs }).(GetConnectionCatalogArrayOutput)
 }
 
 // Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
@@ -410,6 +400,7 @@ func (o LookupConnectionResultOutput) ConsumerProperties() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.ConsumerProperties }).(pulumi.StringOutput)
 }
 
+// The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 func (o LookupConnectionResultOutput) CoreSiteXml() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.CoreSiteXml }).(pulumi.StringOutput)
 }
@@ -454,11 +445,12 @@ func (o LookupConnectionResultOutput) DoesUseSecretIds() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupConnectionResult) bool { return v.DoesUseSecretIds }).(pulumi.BoolOutput)
 }
 
-// Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+// The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
 func (o LookupConnectionResultOutput) Endpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.Endpoint }).(pulumi.StringOutput)
 }
 
+// Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
 func (o LookupConnectionResultOutput) Fingerprint() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.Fingerprint }).(pulumi.StringOutput)
 }
@@ -599,6 +591,7 @@ func (o LookupConnectionResultOutput) ProducerProperties() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.ProducerProperties }).(pulumi.StringOutput)
 }
 
+// The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
 func (o LookupConnectionResultOutput) PublicKeyFingerprint() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.PublicKeyFingerprint }).(pulumi.StringOutput)
 }
@@ -608,7 +601,7 @@ func (o LookupConnectionResultOutput) RedisClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.RedisClusterId }).(pulumi.StringOutput)
 }
 
-// The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+// The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
 func (o LookupConnectionResultOutput) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.Region }).(pulumi.StringOutput)
 }
@@ -631,14 +624,14 @@ func (o LookupConnectionResultOutput) SecretAccessKey() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SecretAccessKey }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field must not be provided.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
 func (o LookupConnectionResultOutput) SecretAccessKeySecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SecretAccessKeySecretId }).(pulumi.StringOutput)
 }
 
 // Security Protocol to be provided for the following connection types:
-// * ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
-// * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
+// * DB2, ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
+// * JAVA_MESSAGE_SERVICE - If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
 func (o LookupConnectionResultOutput) SecurityProtocol() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SecurityProtocol }).(pulumi.StringOutput)
 }
@@ -653,7 +646,7 @@ func (o LookupConnectionResultOutput) ServiceAccountKeyFile() pulumi.StringOutpu
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.ServiceAccountKeyFile }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
 func (o LookupConnectionResultOutput) ServiceAccountKeyFileSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.ServiceAccountKeyFileSecretId }).(pulumi.StringOutput)
 }
@@ -678,11 +671,12 @@ func (o LookupConnectionResultOutput) ShouldValidateServerCertificate() pulumi.B
 	return o.ApplyT(func(v LookupConnectionResult) bool { return v.ShouldValidateServerCertificate }).(pulumi.BoolOutput)
 }
 
-// Database Certificate - The base64 encoded content of a .pem or .crt file. containing the server public key (for 1-way SSL).
+// Database Certificate - The base64 encoded content of a .pem or .crt file. containing the server public key (for 1-way SSL). The supported file formats are .pem and .crt. In case of MYSQL and POSTGRESQL connections it is not included in GET responses if the `view=COMPACT` query parameter is specified.
 func (o LookupConnectionResultOutput) SslCa() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SslCa }).(pulumi.StringOutput)
 }
 
+// Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 func (o LookupConnectionResultOutput) SslCert() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SslCert }).(pulumi.StringOutput)
 }
@@ -705,6 +699,7 @@ func (o LookupConnectionResultOutput) SslClientKeystoredbSecretId() pulumi.Strin
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SslClientKeystoredbSecretId }).(pulumi.StringOutput)
 }
 
+// The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 func (o LookupConnectionResultOutput) SslCrl() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SslCrl }).(pulumi.StringOutput)
 }
@@ -733,6 +728,7 @@ func (o LookupConnectionResultOutput) SslMode() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SslMode }).(pulumi.StringOutput)
 }
 
+// The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 func (o LookupConnectionResultOutput) SslServerCertificate() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SslServerCertificate }).(pulumi.StringOutput)
 }
@@ -745,6 +741,11 @@ func (o LookupConnectionResultOutput) State() pulumi.StringOutput {
 // Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
 func (o LookupConnectionResultOutput) StorageCredentialName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.StorageCredentialName }).(pulumi.StringOutput)
+}
+
+// Represents the storage of given type used in an Iceberg connection.
+func (o LookupConnectionResultOutput) Storages() GetConnectionStorageArrayOutput {
+	return o.ApplyT(func(v LookupConnectionResult) []GetConnectionStorage { return v.Storages }).(GetConnectionStorageArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
@@ -787,6 +788,7 @@ func (o LookupConnectionResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
+// Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 func (o LookupConnectionResultOutput) TlsCaFile() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.TlsCaFile }).(pulumi.StringOutput)
 }

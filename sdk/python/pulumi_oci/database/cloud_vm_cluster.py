@@ -63,7 +63,7 @@ class CloudVmClusterArgs:
         :param pulumi.Input[builtins.str] backup_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
         :param pulumi.Input[builtins.str] cloud_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
         :param pulumi.Input[builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[builtins.int] cpu_core_count: (Updatable) The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the specified shape:
+        :param pulumi.Input[builtins.int] cpu_core_count: (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster. 
                * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
                * Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
                * Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.
@@ -216,7 +216,7 @@ class CloudVmClusterArgs:
     @pulumi.getter(name="cpuCoreCount")
     def cpu_core_count(self) -> pulumi.Input[builtins.int]:
         """
-        (Updatable) The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the specified shape:
+        (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster. 
         * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
         * Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
         * Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.
@@ -691,7 +691,7 @@ class _CloudVmClusterState:
         :param pulumi.Input[builtins.str] cluster_name: The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
         :param pulumi.Input[builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[builtins.str] compute_model: The compute model of the cloud VM cluster.
-        :param pulumi.Input[builtins.int] cpu_core_count: (Updatable) The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the specified shape:
+        :param pulumi.Input[builtins.int] cpu_core_count: (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster. 
                * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
                * Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
                * Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.
@@ -968,7 +968,7 @@ class _CloudVmClusterState:
     @pulumi.getter(name="cpuCoreCount")
     def cpu_core_count(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        (Updatable) The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the specified shape:
+        (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster. 
         * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
         * Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
         * Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.
@@ -1682,7 +1682,7 @@ class CloudVmCluster(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] cloud_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
         :param pulumi.Input[builtins.str] cluster_name: The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
         :param pulumi.Input[builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[builtins.int] cpu_core_count: (Updatable) The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the specified shape:
+        :param pulumi.Input[builtins.int] cpu_core_count: (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster. 
                * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
                * Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
                * Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.
@@ -2026,7 +2026,7 @@ class CloudVmCluster(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] cluster_name: The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
         :param pulumi.Input[builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[builtins.str] compute_model: The compute model of the cloud VM cluster.
-        :param pulumi.Input[builtins.int] cpu_core_count: (Updatable) The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the specified shape:
+        :param pulumi.Input[builtins.int] cpu_core_count: (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster. 
                * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
                * Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
                * Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.
@@ -2220,7 +2220,7 @@ class CloudVmCluster(pulumi.CustomResource):
     @pulumi.getter(name="cpuCoreCount")
     def cpu_core_count(self) -> pulumi.Output[builtins.int]:
         """
-        (Updatable) The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the specified shape:
+        (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster. 
         * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
         * Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
         * Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.

@@ -135,7 +135,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFsuCycleBatchingStrategyResult> BatchingStrategies;
         /// <summary>
-        /// Type of Collection this Exadata Fleet Update Cycle belongs to.
+        /// Type of Exadata Fleet Update collection being upgraded.
         /// </summary>
         public readonly string CollectionType;
         /// <summary>
@@ -176,11 +176,11 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// List of bug numbers to ignore.
+        /// List of identifiers of patches to ignore.
         /// </summary>
         public readonly ImmutableArray<string> IsIgnoreMissingPatches;
         /// <summary>
-        /// Ignore all patches between the source and target homes during patching.
+        /// Ignore patch conflicts or missing patches between the source and goal homes.
         /// </summary>
         public readonly bool IsIgnorePatches;
         /// <summary>
@@ -239,6 +239,10 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         /// Type of Exadata Fleet Update Cycle.
         /// </summary>
         public readonly string Type;
+        /// <summary>
+        /// Details of supported upgrade options for DB or GI collection.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetFsuCycleUpgradeDetailResult> UpgradeDetails;
 
         [OutputConstructor]
         private GetFsuCycleResult(
@@ -298,7 +302,9 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
 
             string timeUpdated,
 
-            string type)
+            string type,
+
+            ImmutableArray<Outputs.GetFsuCycleUpgradeDetailResult> upgradeDetails)
         {
             ApplyActionSchedules = applyActionSchedules;
             BatchingStrategies = batchingStrategies;
@@ -329,6 +335,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
             TimeFinished = timeFinished;
             TimeUpdated = timeUpdated;
             Type = type;
+            UpgradeDetails = upgradeDetails;
         }
     }
 }

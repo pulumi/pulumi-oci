@@ -66,6 +66,7 @@ namespace Pulumi.Oci.LoadBalancer
     ///             { "Department", "Finance" },
     ///         },
     ///         IpMode = loadBalancerIpMode,
+    ///         Ipv6subnetCidr = loadBalancerIpv6subnetCidr,
     ///         IsDeleteProtectionEnabled = loadBalancerIsDeleteProtectionEnabled,
     ///         IsPrivate = loadBalancerIsPrivate,
     ///         IsRequestIdEnabled = loadBalancerIsRequestIdEnabled,
@@ -132,6 +133,7 @@ namespace Pulumi.Oci.LoadBalancer
 
         /// <summary>
         /// An array of IP addresses. Deprecated: use ip_address_details instead
+        /// *
         /// </summary>
         [Output("ipAddresses")]
         public Output<ImmutableArray<string>> IpAddresses { get; private set; } = null!;
@@ -147,6 +149,16 @@ namespace Pulumi.Oci.LoadBalancer
         /// </summary>
         [Output("ipMode")]
         public Output<string> IpMode { get; private set; } = null!;
+
+        /// <summary>
+        /// Applies to IPV6 LB creation only. 
+        /// 
+        /// Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
+        /// 
+        /// Example: "2002::1234:abcd:ffff:c0a8:101/64"
+        /// </summary>
+        [Output("ipv6subnetCidr")]
+        public Output<string> Ipv6subnetCidr { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Whether or not the load balancer has delete protection enabled.
@@ -365,6 +377,16 @@ namespace Pulumi.Oci.LoadBalancer
         public Input<string>? IpMode { get; set; }
 
         /// <summary>
+        /// Applies to IPV6 LB creation only. 
+        /// 
+        /// Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
+        /// 
+        /// Example: "2002::1234:abcd:ffff:c0a8:101/64"
+        /// </summary>
+        [Input("ipv6subnetCidr")]
+        public Input<string>? Ipv6subnetCidr { get; set; }
+
+        /// <summary>
         /// (Updatable) Whether or not the load balancer has delete protection enabled.
         /// 
         /// If "true", the loadbalancer will be protected against deletion if configured to accept traffic.
@@ -553,6 +575,7 @@ namespace Pulumi.Oci.LoadBalancer
 
         /// <summary>
         /// An array of IP addresses. Deprecated: use ip_address_details instead
+        /// *
         /// </summary>
         [Obsolete(@"The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead.")]
         public InputList<string> IpAddresses
@@ -572,6 +595,16 @@ namespace Pulumi.Oci.LoadBalancer
         /// </summary>
         [Input("ipMode")]
         public Input<string>? IpMode { get; set; }
+
+        /// <summary>
+        /// Applies to IPV6 LB creation only. 
+        /// 
+        /// Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
+        /// 
+        /// Example: "2002::1234:abcd:ffff:c0a8:101/64"
+        /// </summary>
+        [Input("ipv6subnetCidr")]
+        public Input<string>? Ipv6subnetCidr { get; set; }
 
         /// <summary>
         /// (Updatable) Whether or not the load balancer has delete protection enabled.

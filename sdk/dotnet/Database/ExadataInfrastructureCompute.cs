@@ -10,28 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
-    /// This data source provides details about a specific Exadata Infrastructure compute managed resource in Oracle Cloud Infrastructure Database service.
-    /// 
-    /// Gets information about the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
-    /// To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
-    /// 
     /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testExadataInfrastructure = Oci.Database.GetExadataInfrastructure.Invoke(new()
-    ///     {
-    ///         ExadataInfrastructureId = testExadataInfrastructureOciDatabaseExadataInfrastructure.Id,
-    ///     });
-    /// 
-    /// });
-    /// ```
     /// </summary>
     [OciResourceType("oci:Database/exadataInfrastructureCompute:ExadataInfrastructureCompute")]
     public partial class ExadataInfrastructureCompute : global::Pulumi.CustomResource
@@ -42,6 +21,9 @@ namespace Pulumi.Oci.Database
         [Output("activatedStorageCount")]
         public Output<int> ActivatedStorageCount { get; private set; } = null!;
 
+        /// <summary>
+        /// (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
+        /// </summary>
         [Output("activationFile")]
         public Output<string?> ActivationFile { get; private set; } = null!;
 
@@ -51,6 +33,9 @@ namespace Pulumi.Oci.Database
         [Output("additionalComputeCount")]
         public Output<int> AdditionalComputeCount { get; private set; } = null!;
 
+        /// <summary>
+        /// The requested number of additional compute servers for the Exadata infrastructure.
+        /// </summary>
         [Output("additionalComputeCountComputeManagedResource")]
         public Output<int?> AdditionalComputeCountComputeManagedResource { get; private set; } = null!;
 
@@ -60,6 +45,9 @@ namespace Pulumi.Oci.Database
         [Output("additionalComputeSystemModel")]
         public Output<string> AdditionalComputeSystemModel { get; private set; } = null!;
 
+        /// <summary>
+        /// The requested Oracle Exadata System Model specification for the additional compute servers. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+        /// </summary>
         [Output("additionalComputeSystemModelComputeManagedResource")]
         public Output<string?> AdditionalComputeSystemModelComputeManagedResource { get; private set; } = null!;
 
@@ -340,12 +328,21 @@ namespace Pulumi.Oci.Database
 
     public sealed class ExadataInfrastructureComputeArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
+        /// </summary>
         [Input("activationFile")]
         public Input<string>? ActivationFile { get; set; }
 
+        /// <summary>
+        /// The requested number of additional compute servers for the Exadata infrastructure.
+        /// </summary>
         [Input("additionalComputeCountComputeManagedResource")]
         public Input<int>? AdditionalComputeCountComputeManagedResource { get; set; }
 
+        /// <summary>
+        /// The requested Oracle Exadata System Model specification for the additional compute servers. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+        /// </summary>
         [Input("additionalComputeSystemModelComputeManagedResource")]
         public Input<string>? AdditionalComputeSystemModelComputeManagedResource { get; set; }
 
@@ -369,6 +366,9 @@ namespace Pulumi.Oci.Database
         [Input("activatedStorageCount")]
         public Input<int>? ActivatedStorageCount { get; set; }
 
+        /// <summary>
+        /// (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
+        /// </summary>
         [Input("activationFile")]
         public Input<string>? ActivationFile { get; set; }
 
@@ -378,6 +378,9 @@ namespace Pulumi.Oci.Database
         [Input("additionalComputeCount")]
         public Input<int>? AdditionalComputeCount { get; set; }
 
+        /// <summary>
+        /// The requested number of additional compute servers for the Exadata infrastructure.
+        /// </summary>
         [Input("additionalComputeCountComputeManagedResource")]
         public Input<int>? AdditionalComputeCountComputeManagedResource { get; set; }
 
@@ -387,6 +390,9 @@ namespace Pulumi.Oci.Database
         [Input("additionalComputeSystemModel")]
         public Input<string>? AdditionalComputeSystemModel { get; set; }
 
+        /// <summary>
+        /// The requested Oracle Exadata System Model specification for the additional compute servers. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+        /// </summary>
         [Input("additionalComputeSystemModelComputeManagedResource")]
         public Input<string>? AdditionalComputeSystemModelComputeManagedResource { get; set; }
 

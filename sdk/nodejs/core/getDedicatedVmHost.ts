@@ -48,9 +48,17 @@ export interface GetDedicatedVmHostResult {
      */
     readonly availabilityDomain: string;
     /**
+     * A list of total and remaining CPU & memory per capacity bucket.
+     */
+    readonly capacityBins: outputs.Core.GetDedicatedVmHostCapacityBin[];
+    /**
      * The OCID of the compartment that contains the dedicated virtual machine host.
      */
     readonly compartmentId: string;
+    /**
+     * The OCID of the compute bare metal host.
+     */
+    readonly computeBareMetalHostId: string;
     readonly dedicatedVmHostId: string;
     /**
      * The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VMs.

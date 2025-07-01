@@ -19,6 +19,7 @@ from . import outputs
 __all__ = [
     'LogAnalyticsEntityMetadata',
     'LogAnalyticsEntityMetadataItem',
+    'LogAnalyticsEntityTypeProperty',
     'LogAnalyticsImportCustomContentChangeList',
     'LogAnalyticsObjectCollectionRuleOverride',
     'LogAnalyticsPreferencesManagementItem',
@@ -50,6 +51,11 @@ __all__ = [
     'GetLogAnalyticsEntityTopologyItemLinkItemResult',
     'GetLogAnalyticsEntityTopologyItemNodeResult',
     'GetLogAnalyticsEntityTopologyItemNodeItemResult',
+    'GetLogAnalyticsEntityTypePropertyResult',
+    'GetLogAnalyticsEntityTypesFilterResult',
+    'GetLogAnalyticsEntityTypesLogAnalyticsEntityTypeCollectionResult',
+    'GetLogAnalyticsEntityTypesLogAnalyticsEntityTypeCollectionItemResult',
+    'GetLogAnalyticsEntityTypesLogAnalyticsEntityTypeCollectionItemPropertyResult',
     'GetLogAnalyticsLogGroupsFilterResult',
     'GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionResult',
     'GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemResult',
@@ -180,6 +186,44 @@ class LogAnalyticsEntityMetadataItem(dict):
         (Updatable) The metadata value.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class LogAnalyticsEntityTypeProperty(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 description: Optional[builtins.str] = None):
+        """
+        :param builtins.str name: Log analytics entity type property name. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param builtins.str description: Description for the log analytics entity type property.
+        """
+        pulumi.set(__self__, "name", name)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        Log analytics entity type property name. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[builtins.str]:
+        """
+        Description for the log analytics entity type property.
+        """
+        return pulumi.get(self, "description")
 
 
 @pulumi.output_type
@@ -2296,6 +2340,220 @@ class GetLogAnalyticsEntityTopologyItemNodeItemResult(dict):
         The timezone region of the log analytics entity.
         """
         return pulumi.get(self, "timezone_region")
+
+
+@pulumi.output_type
+class GetLogAnalyticsEntityTypePropertyResult(dict):
+    def __init__(__self__, *,
+                 description: builtins.str,
+                 name: builtins.str):
+        """
+        :param builtins.str description: Description for the log analytics entity type property.
+        :param builtins.str name: Log analytics entity type property name.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        Description for the log analytics entity type property.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        Log analytics entity type property name.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetLogAnalyticsEntityTypesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        """
+        :param builtins.str name: A filter to return only log analytics entity types whose name matches the entire name given. The match is case-insensitive.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        A filter to return only log analytics entity types whose name matches the entire name given. The match is case-insensitive.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetLogAnalyticsEntityTypesLogAnalyticsEntityTypeCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetLogAnalyticsEntityTypesLogAnalyticsEntityTypeCollectionItemResult']):
+        """
+        :param Sequence['GetLogAnalyticsEntityTypesLogAnalyticsEntityTypeCollectionItemArgs'] items: Array of log analytics entity type summary.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetLogAnalyticsEntityTypesLogAnalyticsEntityTypeCollectionItemResult']:
+        """
+        Array of log analytics entity type summary.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetLogAnalyticsEntityTypesLogAnalyticsEntityTypeCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 category: builtins.str,
+                 cloud_type: builtins.str,
+                 internal_name: builtins.str,
+                 management_agent_eligibility_status: builtins.str,
+                 name: builtins.str,
+                 namespace: builtins.str,
+                 properties: Sequence['outputs.GetLogAnalyticsEntityTypesLogAnalyticsEntityTypeCollectionItemPropertyResult'],
+                 state: builtins.str,
+                 time_created: builtins.str,
+                 time_updated: builtins.str):
+        """
+        :param builtins.str category: Log analytics entity type category. Category will be used for grouping and filtering.
+        :param builtins.str cloud_type: A filter to return CLOUD or NON_CLOUD entity types.
+        :param builtins.str internal_name: Internal name for the log analytics entity type.
+        :param builtins.str name: A filter to return only log analytics entity types whose name matches the entire name given. The match is case-insensitive.
+        :param builtins.str namespace: The Logging Analytics namespace used for the request.
+        :param builtins.str state: A filter to return only those log analytics entity types with the specified lifecycle state. The state value is case-insensitive.
+        :param builtins.str time_created: Time the log analytics entity type was created. An RFC3339 formatted datetime string.
+        :param builtins.str time_updated: Time the log analytics entity type was updated. An RFC3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "category", category)
+        pulumi.set(__self__, "cloud_type", cloud_type)
+        pulumi.set(__self__, "internal_name", internal_name)
+        pulumi.set(__self__, "management_agent_eligibility_status", management_agent_eligibility_status)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "properties", properties)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter
+    def category(self) -> builtins.str:
+        """
+        Log analytics entity type category. Category will be used for grouping and filtering.
+        """
+        return pulumi.get(self, "category")
+
+    @property
+    @pulumi.getter(name="cloudType")
+    def cloud_type(self) -> builtins.str:
+        """
+        A filter to return CLOUD or NON_CLOUD entity types.
+        """
+        return pulumi.get(self, "cloud_type")
+
+    @property
+    @pulumi.getter(name="internalName")
+    def internal_name(self) -> builtins.str:
+        """
+        Internal name for the log analytics entity type.
+        """
+        return pulumi.get(self, "internal_name")
+
+    @property
+    @pulumi.getter(name="managementAgentEligibilityStatus")
+    def management_agent_eligibility_status(self) -> builtins.str:
+        return pulumi.get(self, "management_agent_eligibility_status")
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        A filter to return only log analytics entity types whose name matches the entire name given. The match is case-insensitive.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> builtins.str:
+        """
+        The Logging Analytics namespace used for the request.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def properties(self) -> Sequence['outputs.GetLogAnalyticsEntityTypesLogAnalyticsEntityTypeCollectionItemPropertyResult']:
+        return pulumi.get(self, "properties")
+
+    @property
+    @pulumi.getter
+    def state(self) -> builtins.str:
+        """
+        A filter to return only those log analytics entity types with the specified lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> builtins.str:
+        """
+        Time the log analytics entity type was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> builtins.str:
+        """
+        Time the log analytics entity type was updated. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetLogAnalyticsEntityTypesLogAnalyticsEntityTypeCollectionItemPropertyResult(dict):
+    def __init__(__self__, *,
+                 description: builtins.str,
+                 name: builtins.str):
+        """
+        :param builtins.str name: A filter to return only log analytics entity types whose name matches the entire name given. The match is case-insensitive.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        A filter to return only log analytics entity types whose name matches the entire name given. The match is case-insensitive.
+        """
+        return pulumi.get(self, "name")
 
 
 @pulumi.output_type

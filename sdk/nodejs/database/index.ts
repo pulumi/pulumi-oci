@@ -310,6 +310,11 @@ export const getAutonomousContainerDatabase: typeof import("./getAutonomousConta
 export const getAutonomousContainerDatabaseOutput: typeof import("./getAutonomousContainerDatabase").getAutonomousContainerDatabaseOutput = null as any;
 utilities.lazyLoad(exports, ["getAutonomousContainerDatabase","getAutonomousContainerDatabaseOutput"], () => require("./getAutonomousContainerDatabase"));
 
+export { GetAutonomousContainerDatabaseBackupsArgs, GetAutonomousContainerDatabaseBackupsResult, GetAutonomousContainerDatabaseBackupsOutputArgs } from "./getAutonomousContainerDatabaseBackups";
+export const getAutonomousContainerDatabaseBackups: typeof import("./getAutonomousContainerDatabaseBackups").getAutonomousContainerDatabaseBackups = null as any;
+export const getAutonomousContainerDatabaseBackupsOutput: typeof import("./getAutonomousContainerDatabaseBackups").getAutonomousContainerDatabaseBackupsOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousContainerDatabaseBackups","getAutonomousContainerDatabaseBackupsOutput"], () => require("./getAutonomousContainerDatabaseBackups"));
+
 export { GetAutonomousContainerDatabaseDataguardAssociationArgs, GetAutonomousContainerDatabaseDataguardAssociationResult, GetAutonomousContainerDatabaseDataguardAssociationOutputArgs } from "./getAutonomousContainerDatabaseDataguardAssociation";
 export const getAutonomousContainerDatabaseDataguardAssociation: typeof import("./getAutonomousContainerDatabaseDataguardAssociation").getAutonomousContainerDatabaseDataguardAssociation = null as any;
 export const getAutonomousContainerDatabaseDataguardAssociationOutput: typeof import("./getAutonomousContainerDatabaseDataguardAssociation").getAutonomousContainerDatabaseDataguardAssociationOutput = null as any;

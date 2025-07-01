@@ -164,7 +164,9 @@ class DedicatedVmHostArgs:
 class _DedicatedVmHostState:
     def __init__(__self__, *,
                  availability_domain: Optional[pulumi.Input[builtins.str]] = None,
+                 capacity_bins: Optional[pulumi.Input[Sequence[pulumi.Input['DedicatedVmHostCapacityBinArgs']]]] = None,
                  compartment_id: Optional[pulumi.Input[builtins.str]] = None,
+                 compute_bare_metal_host_id: Optional[pulumi.Input[builtins.str]] = None,
                  dedicated_vm_host_shape: Optional[pulumi.Input[builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
@@ -180,7 +182,9 @@ class _DedicatedVmHostState:
         """
         Input properties used for looking up and filtering DedicatedVmHost resources.
         :param pulumi.Input[builtins.str] availability_domain: The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
+        :param pulumi.Input[Sequence[pulumi.Input['DedicatedVmHostCapacityBinArgs']]] capacity_bins: A list of total and remaining CPU & memory per capacity bucket.
         :param pulumi.Input[builtins.str] compartment_id: (Updatable) The OCID of the compartment.
+        :param pulumi.Input[builtins.str] compute_bare_metal_host_id: The OCID of the compute bare metal host.
         :param pulumi.Input[builtins.str] dedicated_vm_host_shape: The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VM instances launched on the dedicated virtual machine host.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -200,8 +204,12 @@ class _DedicatedVmHostState:
         """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
+        if capacity_bins is not None:
+            pulumi.set(__self__, "capacity_bins", capacity_bins)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if compute_bare_metal_host_id is not None:
+            pulumi.set(__self__, "compute_bare_metal_host_id", compute_bare_metal_host_id)
         if dedicated_vm_host_shape is not None:
             pulumi.set(__self__, "dedicated_vm_host_shape", dedicated_vm_host_shape)
         if defined_tags is not None:
@@ -240,6 +248,18 @@ class _DedicatedVmHostState:
         pulumi.set(self, "availability_domain", value)
 
     @property
+    @pulumi.getter(name="capacityBins")
+    def capacity_bins(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DedicatedVmHostCapacityBinArgs']]]]:
+        """
+        A list of total and remaining CPU & memory per capacity bucket.
+        """
+        return pulumi.get(self, "capacity_bins")
+
+    @capacity_bins.setter
+    def capacity_bins(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DedicatedVmHostCapacityBinArgs']]]]):
+        pulumi.set(self, "capacity_bins", value)
+
+    @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -250,6 +270,18 @@ class _DedicatedVmHostState:
     @compartment_id.setter
     def compartment_id(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="computeBareMetalHostId")
+    def compute_bare_metal_host_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The OCID of the compute bare metal host.
+        """
+        return pulumi.get(self, "compute_bare_metal_host_id")
+
+    @compute_bare_metal_host_id.setter
+    def compute_bare_metal_host_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "compute_bare_metal_host_id", value)
 
     @property
     @pulumi.getter(name="dedicatedVmHostShape")
@@ -562,6 +594,8 @@ class DedicatedVmHost(pulumi.CustomResource):
             __props__.__dict__["fault_domain"] = fault_domain
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["placement_constraint_details"] = placement_constraint_details
+            __props__.__dict__["capacity_bins"] = None
+            __props__.__dict__["compute_bare_metal_host_id"] = None
             __props__.__dict__["remaining_memory_in_gbs"] = None
             __props__.__dict__["remaining_ocpus"] = None
             __props__.__dict__["state"] = None
@@ -579,7 +613,9 @@ class DedicatedVmHost(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             availability_domain: Optional[pulumi.Input[builtins.str]] = None,
+            capacity_bins: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DedicatedVmHostCapacityBinArgs', 'DedicatedVmHostCapacityBinArgsDict']]]]] = None,
             compartment_id: Optional[pulumi.Input[builtins.str]] = None,
+            compute_bare_metal_host_id: Optional[pulumi.Input[builtins.str]] = None,
             dedicated_vm_host_shape: Optional[pulumi.Input[builtins.str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             display_name: Optional[pulumi.Input[builtins.str]] = None,
@@ -600,7 +636,9 @@ class DedicatedVmHost(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[builtins.str] availability_domain: The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DedicatedVmHostCapacityBinArgs', 'DedicatedVmHostCapacityBinArgsDict']]]] capacity_bins: A list of total and remaining CPU & memory per capacity bucket.
         :param pulumi.Input[builtins.str] compartment_id: (Updatable) The OCID of the compartment.
+        :param pulumi.Input[builtins.str] compute_bare_metal_host_id: The OCID of the compute bare metal host.
         :param pulumi.Input[builtins.str] dedicated_vm_host_shape: The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VM instances launched on the dedicated virtual machine host.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -623,7 +661,9 @@ class DedicatedVmHost(pulumi.CustomResource):
         __props__ = _DedicatedVmHostState.__new__(_DedicatedVmHostState)
 
         __props__.__dict__["availability_domain"] = availability_domain
+        __props__.__dict__["capacity_bins"] = capacity_bins
         __props__.__dict__["compartment_id"] = compartment_id
+        __props__.__dict__["compute_bare_metal_host_id"] = compute_bare_metal_host_id
         __props__.__dict__["dedicated_vm_host_shape"] = dedicated_vm_host_shape
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
@@ -647,12 +687,28 @@ class DedicatedVmHost(pulumi.CustomResource):
         return pulumi.get(self, "availability_domain")
 
     @property
+    @pulumi.getter(name="capacityBins")
+    def capacity_bins(self) -> pulumi.Output[Sequence['outputs.DedicatedVmHostCapacityBin']]:
+        """
+        A list of total and remaining CPU & memory per capacity bucket.
+        """
+        return pulumi.get(self, "capacity_bins")
+
+    @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[builtins.str]:
         """
         (Updatable) The OCID of the compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="computeBareMetalHostId")
+    def compute_bare_metal_host_id(self) -> pulumi.Output[builtins.str]:
+        """
+        The OCID of the compute bare metal host.
+        """
+        return pulumi.get(self, "compute_bare_metal_host_id")
 
     @property
     @pulumi.getter(name="dedicatedVmHostShape")

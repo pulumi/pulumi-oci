@@ -14,7 +14,8 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides the list of Properties in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// List properties and their values for a tenancy in Fleet Application Management.
+        /// Returns a list of all the Properties in the specified compartment.
+        /// The query parameter `compartmentId` is required unless the query parameter `id` is specified.
         /// 
         /// 
         /// ## Example Usage
@@ -34,6 +35,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         ///         Id = propertyId,
         ///         Scope = propertyScope,
         ///         State = propertyState,
+        ///         Type = propertyType,
         ///     });
         /// 
         /// });
@@ -45,7 +47,8 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides the list of Properties in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// List properties and their values for a tenancy in Fleet Application Management.
+        /// Returns a list of all the Properties in the specified compartment.
+        /// The query parameter `compartmentId` is required unless the query parameter `id` is specified.
         /// 
         /// 
         /// ## Example Usage
@@ -65,6 +68,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         ///         Id = propertyId,
         ///         Scope = propertyScope,
         ///         State = propertyState,
+        ///         Type = propertyType,
         ///     });
         /// 
         /// });
@@ -76,7 +80,8 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides the list of Properties in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// List properties and their values for a tenancy in Fleet Application Management.
+        /// Returns a list of all the Properties in the specified compartment.
+        /// The query parameter `compartmentId` is required unless the query parameter `id` is specified.
         /// 
         /// 
         /// ## Example Usage
@@ -96,6 +101,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         ///         Id = propertyId,
         ///         Scope = propertyScope,
         ///         State = propertyState,
+        ///         Type = propertyType,
         ///     });
         /// 
         /// });
@@ -109,7 +115,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     public sealed class GetPropertiesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
         /// </summary>
         [Input("compartmentId")]
         public string? CompartmentId { get; set; }
@@ -129,7 +135,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         }
 
         /// <summary>
-        /// A filter to return only resources whose Property identifier matches the given identifier.
+        /// Unique identifier or OCID for listing a single Property by id. Either compartmentId or id must be provided.
         /// </summary>
         [Input("id")]
         public string? Id { get; set; }
@@ -146,6 +152,12 @@ namespace Pulumi.Oci.FleetAppsManagement
         [Input("state")]
         public string? State { get; set; }
 
+        /// <summary>
+        /// A filter to return properties whose type matches the given type.
+        /// </summary>
+        [Input("type")]
+        public string? Type { get; set; }
+
         public GetPropertiesArgs()
         {
         }
@@ -155,7 +167,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     public sealed class GetPropertiesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -175,7 +187,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         }
 
         /// <summary>
-        /// A filter to return only resources whose Property identifier matches the given identifier.
+        /// Unique identifier or OCID for listing a single Property by id. Either compartmentId or id must be provided.
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
@@ -192,6 +204,12 @@ namespace Pulumi.Oci.FleetAppsManagement
         [Input("state")]
         public Input<string>? State { get; set; }
 
+        /// <summary>
+        /// A filter to return properties whose type matches the given type.
+        /// </summary>
+        [Input("type")]
+        public Input<string>? Type { get; set; }
+
         public GetPropertiesInvokeArgs()
         {
         }
@@ -203,7 +221,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     public sealed class GetPropertiesResult
     {
         /// <summary>
-        /// Tenancy OCID
+        /// Compartment OCID
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>
@@ -227,6 +245,10 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// The current state of the Property.
         /// </summary>
         public readonly string? State;
+        /// <summary>
+        /// The type of the property.
+        /// </summary>
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetPropertiesResult(
@@ -242,7 +264,9 @@ namespace Pulumi.Oci.FleetAppsManagement
 
             string? scope,
 
-            string? state)
+            string? state,
+
+            string? type)
         {
             CompartmentId = compartmentId;
             DisplayName = displayName;
@@ -251,6 +275,7 @@ namespace Pulumi.Oci.FleetAppsManagement
             PropertyCollections = propertyCollections;
             Scope = scope;
             State = state;
+            Type = type;
         }
     }
 }

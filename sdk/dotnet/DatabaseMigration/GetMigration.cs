@@ -184,6 +184,10 @@ namespace Pulumi.Oci.DatabaseMigration
         /// </summary>
         public readonly string SourceDatabaseConnectionId;
         /// <summary>
+        /// The OCID of the resource being referenced.
+        /// </summary>
+        public readonly string SourceStandbyDatabaseConnectionId;
+        /// <summary>
         /// The current state of the Migration resource.
         /// </summary>
         public readonly string State;
@@ -260,6 +264,8 @@ namespace Pulumi.Oci.DatabaseMigration
 
             string sourceDatabaseConnectionId,
 
+            string sourceStandbyDatabaseConnectionId,
+
             string state,
 
             ImmutableDictionary<string, string> systemTags,
@@ -297,6 +303,7 @@ namespace Pulumi.Oci.DatabaseMigration
             MigrationId = migrationId;
             SourceContainerDatabaseConnectionId = sourceContainerDatabaseConnectionId;
             SourceDatabaseConnectionId = sourceDatabaseConnectionId;
+            SourceStandbyDatabaseConnectionId = sourceStandbyDatabaseConnectionId;
             State = state;
             SystemTags = systemTags;
             TargetDatabaseConnectionId = targetDatabaseConnectionId;

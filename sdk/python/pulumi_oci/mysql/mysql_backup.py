@@ -31,6 +31,7 @@ class MysqlBackupArgs:
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  retention_in_days: Optional[pulumi.Input[builtins.int]] = None,
+                 soft_delete: Optional[pulumi.Input[builtins.str]] = None,
                  source_details: Optional[pulumi.Input['MysqlBackupSourceDetailsArgs']] = None):
         """
         The set of arguments for constructing a MysqlBackup resource.
@@ -42,6 +43,7 @@ class MysqlBackupArgs:
         :param pulumi.Input[builtins.str] display_name: (Updatable) A user-supplied display name for the backup.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[builtins.int] retention_in_days: (Updatable) Number of days to retain this backup.
+        :param pulumi.Input[builtins.str] soft_delete: (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
         :param pulumi.Input['MysqlBackupSourceDetailsArgs'] source_details: Details of backup source in the cloud.
         """
         if backup_type is not None:
@@ -62,6 +64,8 @@ class MysqlBackupArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if retention_in_days is not None:
             pulumi.set(__self__, "retention_in_days", retention_in_days)
+        if soft_delete is not None:
+            pulumi.set(__self__, "soft_delete", soft_delete)
         if source_details is not None:
             pulumi.set(__self__, "source_details", source_details)
 
@@ -171,6 +175,18 @@ class MysqlBackupArgs:
         pulumi.set(self, "retention_in_days", value)
 
     @property
+    @pulumi.getter(name="softDelete")
+    def soft_delete(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+        """
+        return pulumi.get(self, "soft_delete")
+
+    @soft_delete.setter
+    def soft_delete(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "soft_delete", value)
+
+    @property
     @pulumi.getter(name="sourceDetails")
     def source_details(self) -> Optional[pulumi.Input['MysqlBackupSourceDetailsArgs']]:
         """
@@ -204,6 +220,7 @@ class _MysqlBackupState:
                  original_source_backup_id: Optional[pulumi.Input[builtins.str]] = None,
                  retention_in_days: Optional[pulumi.Input[builtins.int]] = None,
                  shape_name: Optional[pulumi.Input[builtins.str]] = None,
+                 soft_delete: Optional[pulumi.Input[builtins.str]] = None,
                  source_details: Optional[pulumi.Input['MysqlBackupSourceDetailsArgs']] = None,
                  state: Optional[pulumi.Input[builtins.str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
@@ -229,6 +246,7 @@ class _MysqlBackupState:
         :param pulumi.Input[builtins.str] original_source_backup_id: The OCID of the original source DB system backup from which this DB system backup was copied.
         :param pulumi.Input[builtins.int] retention_in_days: (Updatable) Number of days to retain this backup.
         :param pulumi.Input[builtins.str] shape_name: The shape of the DB System instance used for backup.
+        :param pulumi.Input[builtins.str] soft_delete: (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
         :param pulumi.Input['MysqlBackupSourceDetailsArgs'] source_details: Details of backup source in the cloud.
         :param pulumi.Input[builtins.str] state: The state of the backup.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -272,6 +290,8 @@ class _MysqlBackupState:
             pulumi.set(__self__, "retention_in_days", retention_in_days)
         if shape_name is not None:
             pulumi.set(__self__, "shape_name", shape_name)
+        if soft_delete is not None:
+            pulumi.set(__self__, "soft_delete", soft_delete)
         if source_details is not None:
             pulumi.set(__self__, "source_details", source_details)
         if state is not None:
@@ -499,6 +519,18 @@ class _MysqlBackupState:
         pulumi.set(self, "shape_name", value)
 
     @property
+    @pulumi.getter(name="softDelete")
+    def soft_delete(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+        """
+        return pulumi.get(self, "soft_delete")
+
+    @soft_delete.setter
+    def soft_delete(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "soft_delete", value)
+
+    @property
     @pulumi.getter(name="sourceDetails")
     def source_details(self) -> Optional[pulumi.Input['MysqlBackupSourceDetailsArgs']]:
         """
@@ -586,6 +618,7 @@ class MysqlBackup(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  retention_in_days: Optional[pulumi.Input[builtins.int]] = None,
+                 soft_delete: Optional[pulumi.Input[builtins.str]] = None,
                  source_details: Optional[pulumi.Input[Union['MysqlBackupSourceDetailsArgs', 'MysqlBackupSourceDetailsArgsDict']]] = None,
                  __props__=None):
         """
@@ -610,7 +643,8 @@ class MysqlBackup(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            retention_in_days=mysql_backup_retention_in_days)
+            retention_in_days=mysql_backup_retention_in_days,
+            soft_delete=mysql_backup_soft_delete)
         ```
 
         ## Import
@@ -631,6 +665,7 @@ class MysqlBackup(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] display_name: (Updatable) A user-supplied display name for the backup.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[builtins.int] retention_in_days: (Updatable) Number of days to retain this backup.
+        :param pulumi.Input[builtins.str] soft_delete: (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
         :param pulumi.Input[Union['MysqlBackupSourceDetailsArgs', 'MysqlBackupSourceDetailsArgsDict']] source_details: Details of backup source in the cloud.
         """
         ...
@@ -661,7 +696,8 @@ class MysqlBackup(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            retention_in_days=mysql_backup_retention_in_days)
+            retention_in_days=mysql_backup_retention_in_days,
+            soft_delete=mysql_backup_soft_delete)
         ```
 
         ## Import
@@ -696,6 +732,7 @@ class MysqlBackup(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  retention_in_days: Optional[pulumi.Input[builtins.int]] = None,
+                 soft_delete: Optional[pulumi.Input[builtins.str]] = None,
                  source_details: Optional[pulumi.Input[Union['MysqlBackupSourceDetailsArgs', 'MysqlBackupSourceDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -715,6 +752,7 @@ class MysqlBackup(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["retention_in_days"] = retention_in_days
+            __props__.__dict__["soft_delete"] = soft_delete
             __props__.__dict__["source_details"] = source_details
             __props__.__dict__["backup_size_in_gbs"] = None
             __props__.__dict__["creation_type"] = None
@@ -758,6 +796,7 @@ class MysqlBackup(pulumi.CustomResource):
             original_source_backup_id: Optional[pulumi.Input[builtins.str]] = None,
             retention_in_days: Optional[pulumi.Input[builtins.int]] = None,
             shape_name: Optional[pulumi.Input[builtins.str]] = None,
+            soft_delete: Optional[pulumi.Input[builtins.str]] = None,
             source_details: Optional[pulumi.Input[Union['MysqlBackupSourceDetailsArgs', 'MysqlBackupSourceDetailsArgsDict']]] = None,
             state: Optional[pulumi.Input[builtins.str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
@@ -788,6 +827,7 @@ class MysqlBackup(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] original_source_backup_id: The OCID of the original source DB system backup from which this DB system backup was copied.
         :param pulumi.Input[builtins.int] retention_in_days: (Updatable) Number of days to retain this backup.
         :param pulumi.Input[builtins.str] shape_name: The shape of the DB System instance used for backup.
+        :param pulumi.Input[builtins.str] soft_delete: (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
         :param pulumi.Input[Union['MysqlBackupSourceDetailsArgs', 'MysqlBackupSourceDetailsArgsDict']] source_details: Details of backup source in the cloud.
         :param pulumi.Input[builtins.str] state: The state of the backup.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -817,6 +857,7 @@ class MysqlBackup(pulumi.CustomResource):
         __props__.__dict__["original_source_backup_id"] = original_source_backup_id
         __props__.__dict__["retention_in_days"] = retention_in_days
         __props__.__dict__["shape_name"] = shape_name
+        __props__.__dict__["soft_delete"] = soft_delete
         __props__.__dict__["source_details"] = source_details
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
@@ -965,6 +1006,14 @@ class MysqlBackup(pulumi.CustomResource):
         The shape of the DB System instance used for backup.
         """
         return pulumi.get(self, "shape_name")
+
+    @property
+    @pulumi.getter(name="softDelete")
+    def soft_delete(self) -> pulumi.Output[builtins.str]:
+        """
+        (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+        """
+        return pulumi.get(self, "soft_delete")
 
     @property
     @pulumi.getter(name="sourceDetails")

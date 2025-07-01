@@ -41,7 +41,11 @@ class BackendArgs:
                
                Example: `false`
         :param pulumi.Input[builtins.bool] drain: (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
-        :param pulumi.Input[builtins.int] max_connections: (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+        :param pulumi.Input[builtins.int] max_connections: (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.
+               
+               If setting maxConnections to some value other than 0 then that value must be greater or equal to 256.
+               
+               Example: `300`
         :param pulumi.Input[builtins.bool] offline: (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         :param pulumi.Input[builtins.int] weight: (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3` 
                
@@ -144,7 +148,11 @@ class BackendArgs:
     @pulumi.getter(name="maxConnections")
     def max_connections(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+        (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.
+
+        If setting maxConnections to some value other than 0 then that value must be greater or equal to 256.
+
+        Example: `300`
         """
         return pulumi.get(self, "max_connections")
 
@@ -206,7 +214,11 @@ class _BackendState:
         :param pulumi.Input[builtins.bool] drain: (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
         :param pulumi.Input[builtins.str] ip_address: The IP address of the backend server.  Example: `10.0.0.3`
         :param pulumi.Input[builtins.str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
-        :param pulumi.Input[builtins.int] max_connections: (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+        :param pulumi.Input[builtins.int] max_connections: (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.
+               
+               If setting maxConnections to some value other than 0 then that value must be greater or equal to 256.
+               
+               Example: `300`
         :param pulumi.Input[builtins.str] name: A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
         :param pulumi.Input[builtins.bool] offline: (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         :param pulumi.Input[builtins.int] port: The communication port for the backend server.  Example: `8080`
@@ -307,7 +319,11 @@ class _BackendState:
     @pulumi.getter(name="maxConnections")
     def max_connections(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+        (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.
+
+        If setting maxConnections to some value other than 0 then that value must be greater or equal to 256.
+
+        Example: `300`
         """
         return pulumi.get(self, "max_connections")
 
@@ -435,7 +451,11 @@ class Backend(pulumi.CustomResource):
         :param pulumi.Input[builtins.bool] drain: (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
         :param pulumi.Input[builtins.str] ip_address: The IP address of the backend server.  Example: `10.0.0.3`
         :param pulumi.Input[builtins.str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
-        :param pulumi.Input[builtins.int] max_connections: (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+        :param pulumi.Input[builtins.int] max_connections: (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.
+               
+               If setting maxConnections to some value other than 0 then that value must be greater or equal to 256.
+               
+               Example: `300`
         :param pulumi.Input[builtins.bool] offline: (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         :param pulumi.Input[builtins.int] port: The communication port for the backend server.  Example: `8080`
         :param pulumi.Input[builtins.int] weight: (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3` 
@@ -570,7 +590,11 @@ class Backend(pulumi.CustomResource):
         :param pulumi.Input[builtins.bool] drain: (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
         :param pulumi.Input[builtins.str] ip_address: The IP address of the backend server.  Example: `10.0.0.3`
         :param pulumi.Input[builtins.str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
-        :param pulumi.Input[builtins.int] max_connections: (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+        :param pulumi.Input[builtins.int] max_connections: (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.
+               
+               If setting maxConnections to some value other than 0 then that value must be greater or equal to 256.
+               
+               Example: `300`
         :param pulumi.Input[builtins.str] name: A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
         :param pulumi.Input[builtins.bool] offline: (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         :param pulumi.Input[builtins.int] port: The communication port for the backend server.  Example: `8080`
@@ -645,7 +669,11 @@ class Backend(pulumi.CustomResource):
     @pulumi.getter(name="maxConnections")
     def max_connections(self) -> pulumi.Output[builtins.int]:
         """
-        (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+        (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.
+
+        If setting maxConnections to some value other than 0 then that value must be greater or equal to 256.
+
+        Example: `300`
         """
         return pulumi.get(self, "max_connections")
 

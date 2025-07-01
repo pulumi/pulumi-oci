@@ -23,7 +23,6 @@ namespace Pulumi.Oci.Database.Outputs
         public readonly int? RecoveryWindowInDays;
         /// <summary>
         /// The time when the recovery appliance details are updated.
-        /// =======
         /// </summary>
         public readonly string? TimeRecoveryApplianceDetailsUpdated;
 

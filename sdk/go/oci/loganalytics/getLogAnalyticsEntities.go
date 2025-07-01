@@ -14,6 +14,49 @@ import (
 // This data source provides the list of Log Analytics Entities in Oracle Cloud Infrastructure Log Analytics service.
 //
 // Return a list of log analytics entities.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := loganalytics.GetLogAnalyticsEntities(ctx, &loganalytics.GetLogAnalyticsEntitiesArgs{
+//				CompartmentId:                compartmentId,
+//				Namespace:                    logAnalyticsEntityNamespace,
+//				CloudResourceId:              pulumi.StringRef(logAnalyticsEntityCloudResourceId),
+//				DefinedTagEquals:             logAnalyticsEntityDefinedTagEquals,
+//				DefinedTagExists:             logAnalyticsEntityDefinedTagExists,
+//				EntityTypeNames:              logAnalyticsEntityEntityTypeName,
+//				FreeformTagEquals:            logAnalyticsEntityFreeformTagEquals,
+//				FreeformTagExists:            logAnalyticsEntityFreeformTagExists,
+//				Hostname:                     pulumi.StringRef(logAnalyticsEntityHostname),
+//				HostnameContains:             pulumi.StringRef(logAnalyticsEntityHostnameContains),
+//				IsManagementAgentIdNull:      pulumi.StringRef(logAnalyticsEntityIsManagementAgentIdNull),
+//				IsShowAssociatedSourcesCount: pulumi.BoolRef(logAnalyticsEntityIsShowAssociatedSourcesCount),
+//				LifecycleDetailsContains:     pulumi.StringRef(logAnalyticsEntityLifecycleDetailsContains),
+//				MetadataEquals:               logAnalyticsEntityMetadataEquals,
+//				Name:                         pulumi.StringRef(logAnalyticsEntityName),
+//				NameContains:                 pulumi.StringRef(logAnalyticsEntityNameContains),
+//				SourceId:                     pulumi.StringRef(testSource.Id),
+//				State:                        pulumi.StringRef(logAnalyticsEntityState),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetLogAnalyticsEntities(ctx *pulumi.Context, args *GetLogAnalyticsEntitiesArgs, opts ...pulumi.InvokeOption) (*GetLogAnalyticsEntitiesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetLogAnalyticsEntitiesResult

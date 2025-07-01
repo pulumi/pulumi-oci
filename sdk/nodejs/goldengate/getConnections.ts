@@ -102,9 +102,6 @@ export interface GetConnectionsResult {
      * The connection type.
      */
     readonly connectionTypes?: string[];
-    /**
-     * An object's Display Name.
-     */
     readonly displayName?: string;
     readonly filters?: outputs.GoldenGate.GetConnectionsFilter[];
     /**

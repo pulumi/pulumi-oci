@@ -12,14 +12,8 @@ namespace Pulumi.Oci.Database
     /// <summary>
     /// This resource provides the Autonomous Container Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
     /// 
-    /// Create a new Autonomous Data Guard association. An Autonomous Data Guard association represents the replication relationship between the
-    /// specified Autonomous Container database and a peer Autonomous Container database. For more information, see [Using Oracle Data Guard](https://docs.cloud.oracle.com/iaas/Content/Database/Tasks/usingdataguard.htm).
-    /// 
-    /// All Oracle Cloud Infrastructure resources, including Data Guard associations, get an Oracle-assigned, unique ID
-    /// called an Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID in the response.
-    /// You can also retrieve a resource's OCID by using a List API operation on that resource type, or by viewing the
-    /// resource in the Console. For more information, see
-    /// [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    /// **Deprecated.** Use the [AddStandbyAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/AddStandbyAutonomousContainerDatabase) operation to create a new Autonomous Data Guard association. An Autonomous Data Guard association represents the replication relationship between the
+    /// specified Autonomous Container database and a peer Autonomous Container database. For more information, see [Using Oracle Data Guard](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbau/#articletitle.html).
     /// 
     /// ## Example Usage
     /// 
@@ -48,6 +42,8 @@ namespace Pulumi.Oci.Database
     ///                     DbrsPolicyId = testPolicy.Id,
     ///                     Id = autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsId,
     ///                     InternetProxy = autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsInternetProxy,
+    ///                     IsRemote = autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRemote,
+    ///                     RemoteRegion = autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsRemoteRegion,
     ///                     VpcPassword = autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcPassword,
     ///                     VpcUser = autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcUser,
     ///                 },

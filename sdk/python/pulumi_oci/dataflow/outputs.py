@@ -1038,6 +1038,8 @@ class SqlEndpointNetworkConfiguration(dict):
             suggest = "access_control_rules"
         elif key == "hostNamePrefix":
             suggest = "host_name_prefix"
+        elif key == "nsgIds":
+            suggest = "nsg_ids"
         elif key == "privateEndpointIp":
             suggest = "private_endpoint_ip"
         elif key == "publicEndpointIp":
@@ -1062,6 +1064,7 @@ class SqlEndpointNetworkConfiguration(dict):
                  network_type: builtins.str,
                  access_control_rules: Optional[Sequence['outputs.SqlEndpointNetworkConfigurationAccessControlRule']] = None,
                  host_name_prefix: Optional[builtins.str] = None,
+                 nsg_ids: Optional[Sequence[builtins.str]] = None,
                  private_endpoint_ip: Optional[builtins.str] = None,
                  public_endpoint_ip: Optional[builtins.str] = None,
                  subnet_id: Optional[builtins.str] = None,
@@ -1070,6 +1073,7 @@ class SqlEndpointNetworkConfiguration(dict):
         :param builtins.str network_type: The type of network configuration.
         :param Sequence['SqlEndpointNetworkConfigurationAccessControlRuleArgs'] access_control_rules: A list of SecureAccessControlRule's to which access is limited to
         :param builtins.str host_name_prefix: The host name prefix.
+        :param Sequence[builtins.str] nsg_ids: The OCIDs of Network Security Groups (NSGs).
         :param builtins.str private_endpoint_ip: Ip Address of private endpoint
         :param builtins.str public_endpoint_ip: Ip Address of public endpoint
         :param builtins.str subnet_id: The VCN Subnet OCID.
@@ -1080,6 +1084,8 @@ class SqlEndpointNetworkConfiguration(dict):
             pulumi.set(__self__, "access_control_rules", access_control_rules)
         if host_name_prefix is not None:
             pulumi.set(__self__, "host_name_prefix", host_name_prefix)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_endpoint_ip is not None:
             pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
         if public_endpoint_ip is not None:
@@ -1112,6 +1118,14 @@ class SqlEndpointNetworkConfiguration(dict):
         The host name prefix.
         """
         return pulumi.get(self, "host_name_prefix")
+
+    @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Optional[Sequence[builtins.str]]:
+        """
+        The OCIDs of Network Security Groups (NSGs).
+        """
+        return pulumi.get(self, "nsg_ids")
 
     @property
     @pulumi.getter(name="privateEndpointIp")
@@ -4048,6 +4062,7 @@ class GetSqlEndpointNetworkConfigurationResult(dict):
                  access_control_rules: Sequence['outputs.GetSqlEndpointNetworkConfigurationAccessControlRuleResult'],
                  host_name_prefix: builtins.str,
                  network_type: builtins.str,
+                 nsg_ids: Sequence[builtins.str],
                  private_endpoint_ip: builtins.str,
                  public_endpoint_ip: builtins.str,
                  subnet_id: builtins.str,
@@ -4056,6 +4071,7 @@ class GetSqlEndpointNetworkConfigurationResult(dict):
         :param Sequence['GetSqlEndpointNetworkConfigurationAccessControlRuleArgs'] access_control_rules: A list of SecureAccessControlRule's to which access is limited to
         :param builtins.str host_name_prefix: The host name prefix.
         :param builtins.str network_type: The type of network configuration.
+        :param Sequence[builtins.str] nsg_ids: The OCIDs of Network Security Groups (NSGs).
         :param builtins.str private_endpoint_ip: Ip Address of private endpoint
         :param builtins.str public_endpoint_ip: Ip Address of public endpoint
         :param builtins.str subnet_id: The VCN Subnet OCID.
@@ -4064,6 +4080,7 @@ class GetSqlEndpointNetworkConfigurationResult(dict):
         pulumi.set(__self__, "access_control_rules", access_control_rules)
         pulumi.set(__self__, "host_name_prefix", host_name_prefix)
         pulumi.set(__self__, "network_type", network_type)
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
         pulumi.set(__self__, "public_endpoint_ip", public_endpoint_ip)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -4092,6 +4109,14 @@ class GetSqlEndpointNetworkConfigurationResult(dict):
         The type of network configuration.
         """
         return pulumi.get(self, "network_type")
+
+    @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Sequence[builtins.str]:
+        """
+        The OCIDs of Network Security Groups (NSGs).
+        """
+        return pulumi.get(self, "nsg_ids")
 
     @property
     @pulumi.getter(name="privateEndpointIp")
@@ -4540,6 +4565,7 @@ class GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationResult(dict):
                  access_control_rules: Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleResult'],
                  host_name_prefix: builtins.str,
                  network_type: builtins.str,
+                 nsg_ids: Sequence[builtins.str],
                  private_endpoint_ip: builtins.str,
                  public_endpoint_ip: builtins.str,
                  subnet_id: builtins.str,
@@ -4548,6 +4574,7 @@ class GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationResult(dict):
         :param Sequence['GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArgs'] access_control_rules: A list of SecureAccessControlRule's to which access is limited to
         :param builtins.str host_name_prefix: The host name prefix.
         :param builtins.str network_type: The type of network configuration.
+        :param Sequence[builtins.str] nsg_ids: The OCIDs of Network Security Groups (NSGs).
         :param builtins.str private_endpoint_ip: Ip Address of private endpoint
         :param builtins.str public_endpoint_ip: Ip Address of public endpoint
         :param builtins.str subnet_id: The VCN Subnet OCID.
@@ -4556,6 +4583,7 @@ class GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationResult(dict):
         pulumi.set(__self__, "access_control_rules", access_control_rules)
         pulumi.set(__self__, "host_name_prefix", host_name_prefix)
         pulumi.set(__self__, "network_type", network_type)
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
         pulumi.set(__self__, "public_endpoint_ip", public_endpoint_ip)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -4584,6 +4612,14 @@ class GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationResult(dict):
         The type of network configuration.
         """
         return pulumi.get(self, "network_type")
+
+    @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Sequence[builtins.str]:
+        """
+        The OCIDs of Network Security Groups (NSGs).
+        """
+        return pulumi.get(self, "nsg_ids")
 
     @property
     @pulumi.getter(name="privateEndpointIp")

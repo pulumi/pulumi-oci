@@ -62,7 +62,7 @@ class GetFsuCyclesResult:
     @pulumi.getter(name="collectionType")
     def collection_type(self) -> Optional[builtins.str]:
         """
-        Type of Collection this Exadata Fleet Update Cycle belongs to.
+        Type of Exadata Fleet Update collection being upgraded.
         """
         return pulumi.get(self, "collection_type")
 

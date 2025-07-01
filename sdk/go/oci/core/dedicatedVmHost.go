@@ -71,8 +71,12 @@ type DedicatedVmHost struct {
 
 	// The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
+	// A list of total and remaining CPU & memory per capacity bucket.
+	CapacityBins DedicatedVmHostCapacityBinArrayOutput `pulumi:"capacityBins"`
 	// (Updatable) The OCID of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	// The OCID of the compute bare metal host.
+	ComputeBareMetalHostId pulumi.StringOutput `pulumi:"computeBareMetalHostId"`
 	// The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VM instances launched on the dedicated virtual machine host.
 	DedicatedVmHostShape pulumi.StringOutput `pulumi:"dedicatedVmHostShape"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -144,8 +148,12 @@ func GetDedicatedVmHost(ctx *pulumi.Context,
 type dedicatedVmHostState struct {
 	// The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
+	// A list of total and remaining CPU & memory per capacity bucket.
+	CapacityBins []DedicatedVmHostCapacityBin `pulumi:"capacityBins"`
 	// (Updatable) The OCID of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
+	// The OCID of the compute bare metal host.
+	ComputeBareMetalHostId *string `pulumi:"computeBareMetalHostId"`
 	// The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VM instances launched on the dedicated virtual machine host.
 	DedicatedVmHostShape *string `pulumi:"dedicatedVmHostShape"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -179,8 +187,12 @@ type dedicatedVmHostState struct {
 type DedicatedVmHostState struct {
 	// The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringPtrInput
+	// A list of total and remaining CPU & memory per capacity bucket.
+	CapacityBins DedicatedVmHostCapacityBinArrayInput
 	// (Updatable) The OCID of the compartment.
 	CompartmentId pulumi.StringPtrInput
+	// The OCID of the compute bare metal host.
+	ComputeBareMetalHostId pulumi.StringPtrInput
 	// The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VM instances launched on the dedicated virtual machine host.
 	DedicatedVmHostShape pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -354,9 +366,19 @@ func (o DedicatedVmHostOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v *DedicatedVmHost) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
+// A list of total and remaining CPU & memory per capacity bucket.
+func (o DedicatedVmHostOutput) CapacityBins() DedicatedVmHostCapacityBinArrayOutput {
+	return o.ApplyT(func(v *DedicatedVmHost) DedicatedVmHostCapacityBinArrayOutput { return v.CapacityBins }).(DedicatedVmHostCapacityBinArrayOutput)
+}
+
 // (Updatable) The OCID of the compartment.
 func (o DedicatedVmHostOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DedicatedVmHost) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The OCID of the compute bare metal host.
+func (o DedicatedVmHostOutput) ComputeBareMetalHostId() pulumi.StringOutput {
+	return o.ApplyT(func(v *DedicatedVmHost) pulumi.StringOutput { return v.ComputeBareMetalHostId }).(pulumi.StringOutput)
 }
 
 // The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VM instances launched on the dedicated virtual machine host.

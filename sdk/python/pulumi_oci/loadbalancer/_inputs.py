@@ -108,7 +108,11 @@ if not MYPY:
         """
         max_connections: NotRequired[pulumi.Input[builtins.int]]
         """
-        (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+        (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.
+
+        If setting maxConnections to some value other than 0 then that value must be greater or equal to 256.
+
+        Example: `300`
         """
         name: NotRequired[pulumi.Input[builtins.str]]
         """
@@ -149,7 +153,11 @@ class BackendSetBackendArgs:
                
                Example: `false`
         :param pulumi.Input[builtins.bool] drain: (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
-        :param pulumi.Input[builtins.int] max_connections: (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+        :param pulumi.Input[builtins.int] max_connections: (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.
+               
+               If setting maxConnections to some value other than 0 then that value must be greater or equal to 256.
+               
+               Example: `300`
         :param pulumi.Input[builtins.str] name: A friendly name for the backend set. It must be unique and it cannot be changed.
                
                Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
@@ -229,7 +237,11 @@ class BackendSetBackendArgs:
     @pulumi.getter(name="maxConnections")
     def max_connections(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+        (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.
+
+        If setting maxConnections to some value other than 0 then that value must be greater or equal to 256.
+
+        Example: `300`
         """
         return pulumi.get(self, "max_connections")
 
@@ -1555,7 +1567,9 @@ if not MYPY:
 
         Reserved IPs will not be deleted when the Load balancer is deleted. They will be unattached from the Load balancer.
 
-        Example: "ocid1.publicip.oc1.phx.unique_ID" Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `private_ip_id` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
+        Example: "ocid1.publicip.oc1.phx.unique_ID"
+
+        IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID" Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `private_ip_id` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
         """
 elif False:
     LoadBalancerReservedIpArgsDict: TypeAlias = Mapping[str, Any]
@@ -1573,7 +1587,9 @@ class LoadBalancerReservedIpArgs:
                
                Reserved IPs will not be deleted when the Load balancer is deleted. They will be unattached from the Load balancer.
                
-               Example: "ocid1.publicip.oc1.phx.unique_ID" Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `private_ip_id` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
+               Example: "ocid1.publicip.oc1.phx.unique_ID"
+               
+               IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID" Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `private_ip_id` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
         """
         if id is not None:
             pulumi.set(__self__, "id", id)
@@ -1590,7 +1606,9 @@ class LoadBalancerReservedIpArgs:
 
         Reserved IPs will not be deleted when the Load balancer is deleted. They will be unattached from the Load balancer.
 
-        Example: "ocid1.publicip.oc1.phx.unique_ID" Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `private_ip_id` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
+        Example: "ocid1.publicip.oc1.phx.unique_ID"
+
+        IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID" Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `private_ip_id` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
         """
         return pulumi.get(self, "id")
 

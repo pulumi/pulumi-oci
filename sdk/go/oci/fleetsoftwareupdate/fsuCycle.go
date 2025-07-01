@@ -69,6 +69,11 @@ import (
 //					TimeToStart: pulumi.Any(fsuCycleStageActionScheduleTimeToStart),
 //					Type:        pulumi.Any(fsuCycleStageActionScheduleType),
 //				},
+//				UpgradeDetails: &fleetsoftwareupdate.FsuCycleUpgradeDetailsArgs{
+//					CollectionType:            pulumi.Any(fsuCycleUpgradeDetailsCollectionType),
+//					IsRecompileInvalidObjects: pulumi.Any(fsuCycleUpgradeDetailsIsRecompileInvalidObjects),
+//					IsTimeZoneUpgrade:         pulumi.Any(fsuCycleUpgradeDetailsIsTimeZoneUpgrade),
+//				},
 //			})
 //			if err != nil {
 //				return err
@@ -93,7 +98,7 @@ type FsuCycle struct {
 	ApplyActionSchedule FsuCycleApplyActionScheduleOutput `pulumi:"applyActionSchedule"`
 	// (Updatable) Batching strategy details to use during PRECHECK and APPLY Cycle Actions.
 	BatchingStrategy FsuCycleBatchingStrategyOutput `pulumi:"batchingStrategy"`
-	// Type of Collection this Exadata Fleet Update Cycle belongs to.
+	// Type of Exadata Fleet Update collection being upgraded.
 	CollectionType pulumi.StringOutput `pulumi:"collectionType"`
 	// (Updatable) Compartment Identifier.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
@@ -142,10 +147,9 @@ type FsuCycle struct {
 	// The date and time the Exadata Fleet Update Cycle was updated, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// (Updatable) Type of Exadata Fleet Update Cycle.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringOutput `pulumi:"type"`
+	// (Updatable) Details of supported upgrade options for DB or GI collection.
+	UpgradeDetails FsuCycleUpgradeDetailsOutput `pulumi:"upgradeDetails"`
 }
 
 // NewFsuCycle registers a new resource with the given unique name, arguments, and options.
@@ -194,7 +198,7 @@ type fsuCycleState struct {
 	ApplyActionSchedule *FsuCycleApplyActionSchedule `pulumi:"applyActionSchedule"`
 	// (Updatable) Batching strategy details to use during PRECHECK and APPLY Cycle Actions.
 	BatchingStrategy *FsuCycleBatchingStrategy `pulumi:"batchingStrategy"`
-	// Type of Collection this Exadata Fleet Update Cycle belongs to.
+	// Type of Exadata Fleet Update collection being upgraded.
 	CollectionType *string `pulumi:"collectionType"`
 	// (Updatable) Compartment Identifier.
 	CompartmentId *string `pulumi:"compartmentId"`
@@ -243,10 +247,9 @@ type fsuCycleState struct {
 	// The date and time the Exadata Fleet Update Cycle was updated, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// (Updatable) Type of Exadata Fleet Update Cycle.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type *string `pulumi:"type"`
+	// (Updatable) Details of supported upgrade options for DB or GI collection.
+	UpgradeDetails *FsuCycleUpgradeDetails `pulumi:"upgradeDetails"`
 }
 
 type FsuCycleState struct {
@@ -254,7 +257,7 @@ type FsuCycleState struct {
 	ApplyActionSchedule FsuCycleApplyActionSchedulePtrInput
 	// (Updatable) Batching strategy details to use during PRECHECK and APPLY Cycle Actions.
 	BatchingStrategy FsuCycleBatchingStrategyPtrInput
-	// Type of Collection this Exadata Fleet Update Cycle belongs to.
+	// Type of Exadata Fleet Update collection being upgraded.
 	CollectionType pulumi.StringPtrInput
 	// (Updatable) Compartment Identifier.
 	CompartmentId pulumi.StringPtrInput
@@ -303,10 +306,9 @@ type FsuCycleState struct {
 	// The date and time the Exadata Fleet Update Cycle was updated, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
 	TimeUpdated pulumi.StringPtrInput
 	// (Updatable) Type of Exadata Fleet Update Cycle.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringPtrInput
+	// (Updatable) Details of supported upgrade options for DB or GI collection.
+	UpgradeDetails FsuCycleUpgradeDetailsPtrInput
 }
 
 func (FsuCycleState) ElementType() reflect.Type {
@@ -343,10 +345,9 @@ type fsuCycleArgs struct {
 	// Scheduling related details for the Exadata Fleet Update Action during create operations. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails for Stage and Apply Actions in Exadata Fleet Update Cycle creation would not create Actions. Null scheduleDetails for CreateAction would execute the Exadata Fleet Update Action as soon as possible.
 	StageActionSchedule *FsuCycleStageActionSchedule `pulumi:"stageActionSchedule"`
 	// (Updatable) Type of Exadata Fleet Update Cycle.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type string `pulumi:"type"`
+	// (Updatable) Details of supported upgrade options for DB or GI collection.
+	UpgradeDetails *FsuCycleUpgradeDetails `pulumi:"upgradeDetails"`
 }
 
 // The set of arguments for constructing a FsuCycle resource.
@@ -380,10 +381,9 @@ type FsuCycleArgs struct {
 	// Scheduling related details for the Exadata Fleet Update Action during create operations. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails for Stage and Apply Actions in Exadata Fleet Update Cycle creation would not create Actions. Null scheduleDetails for CreateAction would execute the Exadata Fleet Update Action as soon as possible.
 	StageActionSchedule FsuCycleStageActionSchedulePtrInput
 	// (Updatable) Type of Exadata Fleet Update Cycle.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringInput
+	// (Updatable) Details of supported upgrade options for DB or GI collection.
+	UpgradeDetails FsuCycleUpgradeDetailsPtrInput
 }
 
 func (FsuCycleArgs) ElementType() reflect.Type {
@@ -483,7 +483,7 @@ func (o FsuCycleOutput) BatchingStrategy() FsuCycleBatchingStrategyOutput {
 	return o.ApplyT(func(v *FsuCycle) FsuCycleBatchingStrategyOutput { return v.BatchingStrategy }).(FsuCycleBatchingStrategyOutput)
 }
 
-// Type of Collection this Exadata Fleet Update Cycle belongs to.
+// Type of Exadata Fleet Update collection being upgraded.
 func (o FsuCycleOutput) CollectionType() pulumi.StringOutput {
 	return o.ApplyT(func(v *FsuCycle) pulumi.StringOutput { return v.CollectionType }).(pulumi.StringOutput)
 }
@@ -604,11 +604,13 @@ func (o FsuCycleOutput) TimeUpdated() pulumi.StringOutput {
 }
 
 // (Updatable) Type of Exadata Fleet Update Cycle.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o FsuCycleOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *FsuCycle) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
+}
+
+// (Updatable) Details of supported upgrade options for DB or GI collection.
+func (o FsuCycleOutput) UpgradeDetails() FsuCycleUpgradeDetailsOutput {
+	return o.ApplyT(func(v *FsuCycle) FsuCycleUpgradeDetailsOutput { return v.UpgradeDetails }).(FsuCycleUpgradeDetailsOutput)
 }
 
 type FsuCycleArrayOutput struct{ *pulumi.OutputState }

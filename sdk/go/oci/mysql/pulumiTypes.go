@@ -1527,6 +1527,8 @@ type MysqlBackupDbSystemSnapshotBackupPolicy struct {
 	PitrPolicies []MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy `pulumi:"pitrPolicies"`
 	// (Updatable) Number of days to retain this backup.
 	RetentionInDays *int `pulumi:"retentionInDays"`
+	// (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+	SoftDelete *string `pulumi:"softDelete"`
 	// The start time of the maintenance window.
 	WindowStartTime *string `pulumi:"windowStartTime"`
 }
@@ -1555,6 +1557,8 @@ type MysqlBackupDbSystemSnapshotBackupPolicyArgs struct {
 	PitrPolicies MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput `pulumi:"pitrPolicies"`
 	// (Updatable) Number of days to retain this backup.
 	RetentionInDays pulumi.IntPtrInput `pulumi:"retentionInDays"`
+	// (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+	SoftDelete pulumi.StringPtrInput `pulumi:"softDelete"`
 	// The start time of the maintenance window.
 	WindowStartTime pulumi.StringPtrInput `pulumi:"windowStartTime"`
 }
@@ -1642,6 +1646,11 @@ func (o MysqlBackupDbSystemSnapshotBackupPolicyOutput) PitrPolicies() MysqlBacku
 // (Updatable) Number of days to retain this backup.
 func (o MysqlBackupDbSystemSnapshotBackupPolicyOutput) RetentionInDays() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotBackupPolicy) *int { return v.RetentionInDays }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+func (o MysqlBackupDbSystemSnapshotBackupPolicyOutput) SoftDelete() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotBackupPolicy) *string { return v.SoftDelete }).(pulumi.StringPtrOutput)
 }
 
 // The start time of the maintenance window.
@@ -6338,6 +6347,8 @@ type MysqlDbSystemBackupPolicy struct {
 	PitrPolicy *MysqlDbSystemBackupPolicyPitrPolicy `pulumi:"pitrPolicy"`
 	// (Updatable) Number of days to retain an automatic backup.
 	RetentionInDays *int `pulumi:"retentionInDays"`
+	// (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+	SoftDelete *string `pulumi:"softDelete"`
 	// (Updatable) The start of a 30-minute window of time in which daily, automated backups occur.
 	//
 	// This should be in the format of the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
@@ -6382,6 +6393,8 @@ type MysqlDbSystemBackupPolicyArgs struct {
 	PitrPolicy MysqlDbSystemBackupPolicyPitrPolicyPtrInput `pulumi:"pitrPolicy"`
 	// (Updatable) Number of days to retain an automatic backup.
 	RetentionInDays pulumi.IntPtrInput `pulumi:"retentionInDays"`
+	// (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+	SoftDelete pulumi.StringPtrInput `pulumi:"softDelete"`
 	// (Updatable) The start of a 30-minute window of time in which daily, automated backups occur.
 	//
 	// This should be in the format of the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
@@ -6509,6 +6522,11 @@ func (o MysqlDbSystemBackupPolicyOutput) RetentionInDays() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemBackupPolicy) *int { return v.RetentionInDays }).(pulumi.IntPtrOutput)
 }
 
+// (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+func (o MysqlDbSystemBackupPolicyOutput) SoftDelete() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemBackupPolicy) *string { return v.SoftDelete }).(pulumi.StringPtrOutput)
+}
+
 // (Updatable) The start of a 30-minute window of time in which daily, automated backups occur.
 //
 // This should be in the format of the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
@@ -6612,6 +6630,16 @@ func (o MysqlDbSystemBackupPolicyPtrOutput) RetentionInDays() pulumi.IntPtrOutpu
 		}
 		return v.RetentionInDays
 	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+func (o MysqlDbSystemBackupPolicyPtrOutput) SoftDelete() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemBackupPolicy) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SoftDelete
+	}).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The start of a 30-minute window of time in which daily, automated backups occur.
@@ -12061,6 +12089,8 @@ type GetMysqlBackupDbSystemSnapshotBackupPolicy struct {
 	PitrPolicies []GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy `pulumi:"pitrPolicies"`
 	// Number of days to retain this backup.
 	RetentionInDays int `pulumi:"retentionInDays"`
+	// Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+	SoftDelete string `pulumi:"softDelete"`
 	// The start time of the maintenance window.
 	WindowStartTime string `pulumi:"windowStartTime"`
 }
@@ -12089,6 +12119,8 @@ type GetMysqlBackupDbSystemSnapshotBackupPolicyArgs struct {
 	PitrPolicies GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput `pulumi:"pitrPolicies"`
 	// Number of days to retain this backup.
 	RetentionInDays pulumi.IntInput `pulumi:"retentionInDays"`
+	// Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+	SoftDelete pulumi.StringInput `pulumi:"softDelete"`
 	// The start time of the maintenance window.
 	WindowStartTime pulumi.StringInput `pulumi:"windowStartTime"`
 }
@@ -12176,6 +12208,11 @@ func (o GetMysqlBackupDbSystemSnapshotBackupPolicyOutput) PitrPolicies() GetMysq
 // Number of days to retain this backup.
 func (o GetMysqlBackupDbSystemSnapshotBackupPolicyOutput) RetentionInDays() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotBackupPolicy) int { return v.RetentionInDays }).(pulumi.IntOutput)
+}
+
+// Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+func (o GetMysqlBackupDbSystemSnapshotBackupPolicyOutput) SoftDelete() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotBackupPolicy) string { return v.SoftDelete }).(pulumi.StringOutput)
 }
 
 // The start time of the maintenance window.
@@ -13523,7 +13560,9 @@ type GetMysqlBackupsBackup struct {
 	// Number of days to retain this backup.
 	RetentionInDays int `pulumi:"retentionInDays"`
 	// The shape of the DB System instance used for backup.
-	ShapeName     string                              `pulumi:"shapeName"`
+	ShapeName string `pulumi:"shapeName"`
+	// Backup Soft Delete
+	SoftDelete    string                              `pulumi:"softDelete"`
 	SourceDetails []GetMysqlBackupsBackupSourceDetail `pulumi:"sourceDetails"`
 	// Backup Lifecycle State
 	State string `pulumi:"state"`
@@ -13585,7 +13624,9 @@ type GetMysqlBackupsBackupArgs struct {
 	// Number of days to retain this backup.
 	RetentionInDays pulumi.IntInput `pulumi:"retentionInDays"`
 	// The shape of the DB System instance used for backup.
-	ShapeName     pulumi.StringInput                          `pulumi:"shapeName"`
+	ShapeName pulumi.StringInput `pulumi:"shapeName"`
+	// Backup Soft Delete
+	SoftDelete    pulumi.StringInput                          `pulumi:"softDelete"`
 	SourceDetails GetMysqlBackupsBackupSourceDetailArrayInput `pulumi:"sourceDetails"`
 	// Backup Lifecycle State
 	State pulumi.StringInput `pulumi:"state"`
@@ -13744,6 +13785,11 @@ func (o GetMysqlBackupsBackupOutput) RetentionInDays() pulumi.IntOutput {
 // The shape of the DB System instance used for backup.
 func (o GetMysqlBackupsBackupOutput) ShapeName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlBackupsBackup) string { return v.ShapeName }).(pulumi.StringOutput)
+}
+
+// Backup Soft Delete
+func (o GetMysqlBackupsBackupOutput) SoftDelete() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackup) string { return v.SoftDelete }).(pulumi.StringOutput)
 }
 
 func (o GetMysqlBackupsBackupOutput) SourceDetails() GetMysqlBackupsBackupSourceDetailArrayOutput {
@@ -14191,6 +14237,8 @@ type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy struct {
 	PitrPolicies []GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy `pulumi:"pitrPolicies"`
 	// Number of days to retain this backup.
 	RetentionInDays int `pulumi:"retentionInDays"`
+	// Backup Soft Delete
+	SoftDelete string `pulumi:"softDelete"`
 	// The start time of the maintenance window.
 	WindowStartTime string `pulumi:"windowStartTime"`
 }
@@ -14219,6 +14267,8 @@ type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArgs struct {
 	PitrPolicies GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput `pulumi:"pitrPolicies"`
 	// Number of days to retain this backup.
 	RetentionInDays pulumi.IntInput `pulumi:"retentionInDays"`
+	// Backup Soft Delete
+	SoftDelete pulumi.StringInput `pulumi:"softDelete"`
 	// The start time of the maintenance window.
 	WindowStartTime pulumi.StringInput `pulumi:"windowStartTime"`
 }
@@ -14306,6 +14356,11 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) PitrPolicies() 
 // Number of days to retain this backup.
 func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) RetentionInDays() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy) int { return v.RetentionInDays }).(pulumi.IntOutput)
+}
+
+// Backup Soft Delete
+func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) SoftDelete() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy) string { return v.SoftDelete }).(pulumi.StringOutput)
 }
 
 // The start time of the maintenance window.
@@ -18688,6 +18743,8 @@ type GetMysqlDbSystemBackupPolicy struct {
 	PitrPolicies []GetMysqlDbSystemBackupPolicyPitrPolicy `pulumi:"pitrPolicies"`
 	// The number of days automated backups are retained.
 	RetentionInDays int `pulumi:"retentionInDays"`
+	// Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+	SoftDelete string `pulumi:"softDelete"`
 	// The start time of the maintenance window.
 	WindowStartTime string `pulumi:"windowStartTime"`
 }
@@ -18716,6 +18773,8 @@ type GetMysqlDbSystemBackupPolicyArgs struct {
 	PitrPolicies GetMysqlDbSystemBackupPolicyPitrPolicyArrayInput `pulumi:"pitrPolicies"`
 	// The number of days automated backups are retained.
 	RetentionInDays pulumi.IntInput `pulumi:"retentionInDays"`
+	// Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+	SoftDelete pulumi.StringInput `pulumi:"softDelete"`
 	// The start time of the maintenance window.
 	WindowStartTime pulumi.StringInput `pulumi:"windowStartTime"`
 }
@@ -18799,6 +18858,11 @@ func (o GetMysqlDbSystemBackupPolicyOutput) PitrPolicies() GetMysqlDbSystemBacku
 // The number of days automated backups are retained.
 func (o GetMysqlDbSystemBackupPolicyOutput) RetentionInDays() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemBackupPolicy) int { return v.RetentionInDays }).(pulumi.IntOutput)
+}
+
+// Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+func (o GetMysqlDbSystemBackupPolicyOutput) SoftDelete() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemBackupPolicy) string { return v.SoftDelete }).(pulumi.StringOutput)
 }
 
 // The start time of the maintenance window.
@@ -21839,6 +21903,8 @@ type GetMysqlDbSystemsDbSystemBackupPolicy struct {
 	PitrPolicies []GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy `pulumi:"pitrPolicies"`
 	// The number of days automated backups are retained.
 	RetentionInDays int `pulumi:"retentionInDays"`
+	// Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+	SoftDelete string `pulumi:"softDelete"`
 	// The start time of the maintenance window.
 	WindowStartTime string `pulumi:"windowStartTime"`
 }
@@ -21867,6 +21933,8 @@ type GetMysqlDbSystemsDbSystemBackupPolicyArgs struct {
 	PitrPolicies GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayInput `pulumi:"pitrPolicies"`
 	// The number of days automated backups are retained.
 	RetentionInDays pulumi.IntInput `pulumi:"retentionInDays"`
+	// Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+	SoftDelete pulumi.StringInput `pulumi:"softDelete"`
 	// The start time of the maintenance window.
 	WindowStartTime pulumi.StringInput `pulumi:"windowStartTime"`
 }
@@ -21954,6 +22022,11 @@ func (o GetMysqlDbSystemsDbSystemBackupPolicyOutput) PitrPolicies() GetMysqlDbSy
 // The number of days automated backups are retained.
 func (o GetMysqlDbSystemsDbSystemBackupPolicyOutput) RetentionInDays() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemBackupPolicy) int { return v.RetentionInDays }).(pulumi.IntOutput)
+}
+
+// Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+func (o GetMysqlDbSystemsDbSystemBackupPolicyOutput) SoftDelete() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemBackupPolicy) string { return v.SoftDelete }).(pulumi.StringOutput)
 }
 
 // The start time of the maintenance window.

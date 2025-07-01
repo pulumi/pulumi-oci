@@ -86,6 +86,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// The shape of the DB System instance used for backup.
         /// </summary>
         public readonly string ShapeName;
+        /// <summary>
+        /// Backup Soft Delete
+        /// </summary>
+        public readonly string SoftDelete;
         public readonly ImmutableArray<Outputs.GetMysqlBackupsBackupSourceDetailResult> SourceDetails;
         /// <summary>
         /// Backup Lifecycle State
@@ -148,6 +152,8 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             string shapeName,
 
+            string softDelete,
+
             ImmutableArray<Outputs.GetMysqlBackupsBackupSourceDetailResult> sourceDetails,
 
             string state,
@@ -179,6 +185,7 @@ namespace Pulumi.Oci.Mysql.Outputs
             OriginalSourceBackupId = originalSourceBackupId;
             RetentionInDays = retentionInDays;
             ShapeName = shapeName;
+            SoftDelete = softDelete;
             SourceDetails = sourceDetails;
             State = state;
             SystemTags = systemTags;

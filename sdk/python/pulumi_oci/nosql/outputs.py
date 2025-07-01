@@ -17,12 +17,14 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'ConfigurationKmsKey',
     'IndexKey',
     'TableReplica',
     'TableSchema',
     'TableSchemaColumn',
     'TableSchemaIdentity',
     'TableTableLimits',
+    'GetConfigurationKmsKeyResult',
     'GetIndexKeyResult',
     'GetIndexesFilterResult',
     'GetIndexesIndexCollectionResult',
@@ -40,6 +42,104 @@ __all__ = [
     'GetTablesTableCollectionSchemaIdentityResult',
     'GetTablesTableCollectionTableLimitResult',
 ]
+
+@pulumi.output_type
+class ConfigurationKmsKey(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "kmsKeyState":
+            suggest = "kms_key_state"
+        elif key == "kmsVaultId":
+            suggest = "kms_vault_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+        elif key == "timeUpdated":
+            suggest = "time_updated"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ConfigurationKmsKey. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ConfigurationKmsKey.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ConfigurationKmsKey.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 id: Optional[builtins.str] = None,
+                 kms_key_state: Optional[builtins.str] = None,
+                 kms_vault_id: Optional[builtins.str] = None,
+                 time_created: Optional[builtins.str] = None,
+                 time_updated: Optional[builtins.str] = None):
+        """
+        :param builtins.str id: (Updatable) The OCID of the KMS encryption key assigned to this Hosted Environment. If the Hosted Environment is using an Oracle-managed Key (i.e., not a CMEK), then the id will be a null string.
+        :param builtins.str kms_key_state: (Updatable) The current state of the encryption key assigned to this Hosted Environment. Oracle-managed keys will always report an ACTIVE state.
+        :param builtins.str kms_vault_id: (Updatable) The OCID of the vault containing the encryption key assigned to this Hosted Environment. If the Hosted Environment is using an Oracle-managed Key (i.e., not a CMEK), then the kmsVaultId will be a null string.
+        :param builtins.str time_created: (Updatable) The timestamp when encryption key was first enabled for this Hosted Environment. RFC3339 formatted.
+        :param builtins.str time_updated: (Updatable) The timestamp of the last update to the encryption key status. RFC3339 formatted. 
+               
+               
+               ** IMPORTANT **
+               The configuration cannot be deleted.
+        """
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if kms_key_state is not None:
+            pulumi.set(__self__, "kms_key_state", kms_key_state)
+        if kms_vault_id is not None:
+            pulumi.set(__self__, "kms_vault_id", kms_vault_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The OCID of the KMS encryption key assigned to this Hosted Environment. If the Hosted Environment is using an Oracle-managed Key (i.e., not a CMEK), then the id will be a null string.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="kmsKeyState")
+    def kms_key_state(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The current state of the encryption key assigned to this Hosted Environment. Oracle-managed keys will always report an ACTIVE state.
+        """
+        return pulumi.get(self, "kms_key_state")
+
+    @property
+    @pulumi.getter(name="kmsVaultId")
+    def kms_vault_id(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The OCID of the vault containing the encryption key assigned to this Hosted Environment. If the Hosted Environment is using an Oracle-managed Key (i.e., not a CMEK), then the kmsVaultId will be a null string.
+        """
+        return pulumi.get(self, "kms_vault_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The timestamp when encryption key was first enabled for this Hosted Environment. RFC3339 formatted.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The timestamp of the last update to the encryption key status. RFC3339 formatted. 
+
+
+        ** IMPORTANT **
+        The configuration cannot be deleted.
+        """
+        return pulumi.get(self, "time_updated")
+
 
 @pulumi.output_type
 class IndexKey(dict):
@@ -495,7 +595,7 @@ class TableTableLimits(dict):
                
                
                ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+               Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
         :param builtins.str capacity_mode: (Updatable) The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
         """
         pulumi.set(__self__, "max_read_units", max_read_units)
@@ -528,7 +628,7 @@ class TableTableLimits(dict):
 
 
         ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
         """
         return pulumi.get(self, "max_write_units")
 
@@ -539,6 +639,68 @@ class TableTableLimits(dict):
         (Updatable) The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
         """
         return pulumi.get(self, "capacity_mode")
+
+
+@pulumi.output_type
+class GetConfigurationKmsKeyResult(dict):
+    def __init__(__self__, *,
+                 id: builtins.str,
+                 kms_key_state: builtins.str,
+                 kms_vault_id: builtins.str,
+                 time_created: builtins.str,
+                 time_updated: builtins.str):
+        """
+        :param builtins.str id: The OCID of the KMS encryption key assigned to this Hosted Environment. If the Hosted Environment is using an Oracle-managed Key (i.e., not a CMEK), then the id will be a null string.
+        :param builtins.str kms_key_state: The current state of the encryption key assigned to this Hosted Environment. Oracle-managed keys will always report an ACTIVE state.
+        :param builtins.str kms_vault_id: The OCID of the vault containing the encryption key assigned to this Hosted Environment. If the Hosted Environment is using an Oracle-managed Key (i.e., not a CMEK), then the kmsVaultId will be a null string.
+        :param builtins.str time_created: The timestamp when encryption key was first enabled for this Hosted Environment. RFC3339 formatted.
+        :param builtins.str time_updated: The timestamp of the last update to the encryption key status. RFC3339 formatted.
+        """
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "kms_key_state", kms_key_state)
+        pulumi.set(__self__, "kms_vault_id", kms_vault_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter
+    def id(self) -> builtins.str:
+        """
+        The OCID of the KMS encryption key assigned to this Hosted Environment. If the Hosted Environment is using an Oracle-managed Key (i.e., not a CMEK), then the id will be a null string.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="kmsKeyState")
+    def kms_key_state(self) -> builtins.str:
+        """
+        The current state of the encryption key assigned to this Hosted Environment. Oracle-managed keys will always report an ACTIVE state.
+        """
+        return pulumi.get(self, "kms_key_state")
+
+    @property
+    @pulumi.getter(name="kmsVaultId")
+    def kms_vault_id(self) -> builtins.str:
+        """
+        The OCID of the vault containing the encryption key assigned to this Hosted Environment. If the Hosted Environment is using an Oracle-managed Key (i.e., not a CMEK), then the kmsVaultId will be a null string.
+        """
+        return pulumi.get(self, "kms_vault_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> builtins.str:
+        """
+        The timestamp when encryption key was first enabled for this Hosted Environment. RFC3339 formatted.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> builtins.str:
+        """
+        The timestamp of the last update to the encryption key status. RFC3339 formatted.
+        """
+        return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type

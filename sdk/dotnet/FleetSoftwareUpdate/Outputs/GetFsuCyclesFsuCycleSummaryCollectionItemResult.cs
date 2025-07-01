@@ -62,11 +62,11 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// List of bug numbers to ignore.
+        /// List of identifiers of patches to ignore.
         /// </summary>
         public readonly ImmutableArray<string> IsIgnoreMissingPatches;
         /// <summary>
-        /// Ignore all patches between the source and target homes during patching.
+        /// Ignore patch conflicts or missing patches between the source and goal homes.
         /// </summary>
         public readonly bool IsIgnorePatches;
         /// <summary>
@@ -125,6 +125,10 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Outputs
         /// Type of Exadata Fleet Update Cycle.
         /// </summary>
         public readonly string Type;
+        /// <summary>
+        /// Details of supported upgrade options for DB or GI collection.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailResult> UpgradeDetails;
 
         [OutputConstructor]
         private GetFsuCyclesFsuCycleSummaryCollectionItemResult(
@@ -182,7 +186,9 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Outputs
 
             string timeUpdated,
 
-            string type)
+            string type,
+
+            ImmutableArray<Outputs.GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailResult> upgradeDetails)
         {
             ApplyActionSchedules = applyActionSchedules;
             BatchingStrategies = batchingStrategies;
@@ -212,6 +218,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Outputs
             TimeFinished = timeFinished;
             TimeUpdated = timeUpdated;
             Type = type;
+            UpgradeDetails = upgradeDetails;
         }
     }
 }

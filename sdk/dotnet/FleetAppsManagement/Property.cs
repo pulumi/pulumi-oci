@@ -12,7 +12,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     /// <summary>
     /// This resource provides the Property resource in Oracle Cloud Infrastructure Fleet Apps Management service.
     /// 
-    /// Create a business-specific metadata property in Fleet Application Management and capture the business metadata classifications.
+    /// Create a business-specific metadata property in Fleet Application Management.
     /// 
     /// ## Example Usage
     /// 
@@ -27,9 +27,9 @@ namespace Pulumi.Oci.FleetAppsManagement
     ///     var testProperty = new Oci.FleetAppsManagement.Property("test_property", new()
     ///     {
     ///         CompartmentId = compartmentId,
+    ///         DisplayName = propertyDisplayName,
     ///         Selection = propertySelection,
     ///         ValueType = propertyValueType,
-    ///         DisplayName = propertyDisplayName,
     ///         Values = propertyValues,
     ///     });
     /// 
@@ -48,7 +48,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     public partial class Property : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Tenancy OCID
+        /// (Updatable) Compartment OCID
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -188,7 +188,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     public sealed class PropertyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Tenancy OCID
+        /// (Updatable) Compartment OCID
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -196,8 +196,8 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         /// </summary>
-        [Input("displayName")]
-        public Input<string>? DisplayName { get; set; }
+        [Input("displayName", required: true)]
+        public Input<string> DisplayName { get; set; } = null!;
 
         /// <summary>
         /// (Updatable) Text selection of the property.
@@ -236,7 +236,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     public sealed class PropertyState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Tenancy OCID
+        /// (Updatable) Compartment OCID
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }

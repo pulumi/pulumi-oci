@@ -21,6 +21,8 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "oci:Nosql/configuration:Configuration":
+		r = &Configuration{}
 	case "oci:Nosql/index:Index":
 		r = &Index{}
 	case "oci:Nosql/table:Table":
@@ -40,6 +42,11 @@ func init() {
 	if err != nil {
 		version = semver.Version{Major: 1}
 	}
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Nosql/configuration",
+		&module{version},
+	)
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Nosql/index",

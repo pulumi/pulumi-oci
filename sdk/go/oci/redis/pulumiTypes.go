@@ -13,6 +13,356 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type OciCacheUserAuthenticationMode struct {
+	// (Updatable) This is Authentication Type of Oracle Cloud Infrastructure cache user
+	AuthenticationType string `pulumi:"authenticationType"`
+	// (Updatable) SHA-256 hashed passwords for Oracle Cloud Infrastructure Cache user,required if authenticationType is set to PASSWORD.
+	HashedPasswords []string `pulumi:"hashedPasswords"`
+}
+
+// OciCacheUserAuthenticationModeInput is an input type that accepts OciCacheUserAuthenticationModeArgs and OciCacheUserAuthenticationModeOutput values.
+// You can construct a concrete instance of `OciCacheUserAuthenticationModeInput` via:
+//
+//	OciCacheUserAuthenticationModeArgs{...}
+type OciCacheUserAuthenticationModeInput interface {
+	pulumi.Input
+
+	ToOciCacheUserAuthenticationModeOutput() OciCacheUserAuthenticationModeOutput
+	ToOciCacheUserAuthenticationModeOutputWithContext(context.Context) OciCacheUserAuthenticationModeOutput
+}
+
+type OciCacheUserAuthenticationModeArgs struct {
+	// (Updatable) This is Authentication Type of Oracle Cloud Infrastructure cache user
+	AuthenticationType pulumi.StringInput `pulumi:"authenticationType"`
+	// (Updatable) SHA-256 hashed passwords for Oracle Cloud Infrastructure Cache user,required if authenticationType is set to PASSWORD.
+	HashedPasswords pulumi.StringArrayInput `pulumi:"hashedPasswords"`
+}
+
+func (OciCacheUserAuthenticationModeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OciCacheUserAuthenticationMode)(nil)).Elem()
+}
+
+func (i OciCacheUserAuthenticationModeArgs) ToOciCacheUserAuthenticationModeOutput() OciCacheUserAuthenticationModeOutput {
+	return i.ToOciCacheUserAuthenticationModeOutputWithContext(context.Background())
+}
+
+func (i OciCacheUserAuthenticationModeArgs) ToOciCacheUserAuthenticationModeOutputWithContext(ctx context.Context) OciCacheUserAuthenticationModeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OciCacheUserAuthenticationModeOutput)
+}
+
+func (i OciCacheUserAuthenticationModeArgs) ToOciCacheUserAuthenticationModePtrOutput() OciCacheUserAuthenticationModePtrOutput {
+	return i.ToOciCacheUserAuthenticationModePtrOutputWithContext(context.Background())
+}
+
+func (i OciCacheUserAuthenticationModeArgs) ToOciCacheUserAuthenticationModePtrOutputWithContext(ctx context.Context) OciCacheUserAuthenticationModePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OciCacheUserAuthenticationModeOutput).ToOciCacheUserAuthenticationModePtrOutputWithContext(ctx)
+}
+
+// OciCacheUserAuthenticationModePtrInput is an input type that accepts OciCacheUserAuthenticationModeArgs, OciCacheUserAuthenticationModePtr and OciCacheUserAuthenticationModePtrOutput values.
+// You can construct a concrete instance of `OciCacheUserAuthenticationModePtrInput` via:
+//
+//	        OciCacheUserAuthenticationModeArgs{...}
+//
+//	or:
+//
+//	        nil
+type OciCacheUserAuthenticationModePtrInput interface {
+	pulumi.Input
+
+	ToOciCacheUserAuthenticationModePtrOutput() OciCacheUserAuthenticationModePtrOutput
+	ToOciCacheUserAuthenticationModePtrOutputWithContext(context.Context) OciCacheUserAuthenticationModePtrOutput
+}
+
+type ociCacheUserAuthenticationModePtrType OciCacheUserAuthenticationModeArgs
+
+func OciCacheUserAuthenticationModePtr(v *OciCacheUserAuthenticationModeArgs) OciCacheUserAuthenticationModePtrInput {
+	return (*ociCacheUserAuthenticationModePtrType)(v)
+}
+
+func (*ociCacheUserAuthenticationModePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**OciCacheUserAuthenticationMode)(nil)).Elem()
+}
+
+func (i *ociCacheUserAuthenticationModePtrType) ToOciCacheUserAuthenticationModePtrOutput() OciCacheUserAuthenticationModePtrOutput {
+	return i.ToOciCacheUserAuthenticationModePtrOutputWithContext(context.Background())
+}
+
+func (i *ociCacheUserAuthenticationModePtrType) ToOciCacheUserAuthenticationModePtrOutputWithContext(ctx context.Context) OciCacheUserAuthenticationModePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OciCacheUserAuthenticationModePtrOutput)
+}
+
+type OciCacheUserAuthenticationModeOutput struct{ *pulumi.OutputState }
+
+func (OciCacheUserAuthenticationModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OciCacheUserAuthenticationMode)(nil)).Elem()
+}
+
+func (o OciCacheUserAuthenticationModeOutput) ToOciCacheUserAuthenticationModeOutput() OciCacheUserAuthenticationModeOutput {
+	return o
+}
+
+func (o OciCacheUserAuthenticationModeOutput) ToOciCacheUserAuthenticationModeOutputWithContext(ctx context.Context) OciCacheUserAuthenticationModeOutput {
+	return o
+}
+
+func (o OciCacheUserAuthenticationModeOutput) ToOciCacheUserAuthenticationModePtrOutput() OciCacheUserAuthenticationModePtrOutput {
+	return o.ToOciCacheUserAuthenticationModePtrOutputWithContext(context.Background())
+}
+
+func (o OciCacheUserAuthenticationModeOutput) ToOciCacheUserAuthenticationModePtrOutputWithContext(ctx context.Context) OciCacheUserAuthenticationModePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v OciCacheUserAuthenticationMode) *OciCacheUserAuthenticationMode {
+		return &v
+	}).(OciCacheUserAuthenticationModePtrOutput)
+}
+
+// (Updatable) This is Authentication Type of Oracle Cloud Infrastructure cache user
+func (o OciCacheUserAuthenticationModeOutput) AuthenticationType() pulumi.StringOutput {
+	return o.ApplyT(func(v OciCacheUserAuthenticationMode) string { return v.AuthenticationType }).(pulumi.StringOutput)
+}
+
+// (Updatable) SHA-256 hashed passwords for Oracle Cloud Infrastructure Cache user,required if authenticationType is set to PASSWORD.
+func (o OciCacheUserAuthenticationModeOutput) HashedPasswords() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v OciCacheUserAuthenticationMode) []string { return v.HashedPasswords }).(pulumi.StringArrayOutput)
+}
+
+type OciCacheUserAuthenticationModePtrOutput struct{ *pulumi.OutputState }
+
+func (OciCacheUserAuthenticationModePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**OciCacheUserAuthenticationMode)(nil)).Elem()
+}
+
+func (o OciCacheUserAuthenticationModePtrOutput) ToOciCacheUserAuthenticationModePtrOutput() OciCacheUserAuthenticationModePtrOutput {
+	return o
+}
+
+func (o OciCacheUserAuthenticationModePtrOutput) ToOciCacheUserAuthenticationModePtrOutputWithContext(ctx context.Context) OciCacheUserAuthenticationModePtrOutput {
+	return o
+}
+
+func (o OciCacheUserAuthenticationModePtrOutput) Elem() OciCacheUserAuthenticationModeOutput {
+	return o.ApplyT(func(v *OciCacheUserAuthenticationMode) OciCacheUserAuthenticationMode {
+		if v != nil {
+			return *v
+		}
+		var ret OciCacheUserAuthenticationMode
+		return ret
+	}).(OciCacheUserAuthenticationModeOutput)
+}
+
+// (Updatable) This is Authentication Type of Oracle Cloud Infrastructure cache user
+func (o OciCacheUserAuthenticationModePtrOutput) AuthenticationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OciCacheUserAuthenticationMode) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.AuthenticationType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) SHA-256 hashed passwords for Oracle Cloud Infrastructure Cache user,required if authenticationType is set to PASSWORD.
+func (o OciCacheUserAuthenticationModePtrOutput) HashedPasswords() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *OciCacheUserAuthenticationMode) []string {
+		if v == nil {
+			return nil
+		}
+		return v.HashedPasswords
+	}).(pulumi.StringArrayOutput)
+}
+
+type OciCacheUserGetRedisClusterOciCacheCluster struct {
+	// OCID of the OciCacheCluster
+	OciCacheClusterId *string `pulumi:"ociCacheClusterId"`
+}
+
+// OciCacheUserGetRedisClusterOciCacheClusterInput is an input type that accepts OciCacheUserGetRedisClusterOciCacheClusterArgs and OciCacheUserGetRedisClusterOciCacheClusterOutput values.
+// You can construct a concrete instance of `OciCacheUserGetRedisClusterOciCacheClusterInput` via:
+//
+//	OciCacheUserGetRedisClusterOciCacheClusterArgs{...}
+type OciCacheUserGetRedisClusterOciCacheClusterInput interface {
+	pulumi.Input
+
+	ToOciCacheUserGetRedisClusterOciCacheClusterOutput() OciCacheUserGetRedisClusterOciCacheClusterOutput
+	ToOciCacheUserGetRedisClusterOciCacheClusterOutputWithContext(context.Context) OciCacheUserGetRedisClusterOciCacheClusterOutput
+}
+
+type OciCacheUserGetRedisClusterOciCacheClusterArgs struct {
+	// OCID of the OciCacheCluster
+	OciCacheClusterId pulumi.StringPtrInput `pulumi:"ociCacheClusterId"`
+}
+
+func (OciCacheUserGetRedisClusterOciCacheClusterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OciCacheUserGetRedisClusterOciCacheCluster)(nil)).Elem()
+}
+
+func (i OciCacheUserGetRedisClusterOciCacheClusterArgs) ToOciCacheUserGetRedisClusterOciCacheClusterOutput() OciCacheUserGetRedisClusterOciCacheClusterOutput {
+	return i.ToOciCacheUserGetRedisClusterOciCacheClusterOutputWithContext(context.Background())
+}
+
+func (i OciCacheUserGetRedisClusterOciCacheClusterArgs) ToOciCacheUserGetRedisClusterOciCacheClusterOutputWithContext(ctx context.Context) OciCacheUserGetRedisClusterOciCacheClusterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OciCacheUserGetRedisClusterOciCacheClusterOutput)
+}
+
+// OciCacheUserGetRedisClusterOciCacheClusterArrayInput is an input type that accepts OciCacheUserGetRedisClusterOciCacheClusterArray and OciCacheUserGetRedisClusterOciCacheClusterArrayOutput values.
+// You can construct a concrete instance of `OciCacheUserGetRedisClusterOciCacheClusterArrayInput` via:
+//
+//	OciCacheUserGetRedisClusterOciCacheClusterArray{ OciCacheUserGetRedisClusterOciCacheClusterArgs{...} }
+type OciCacheUserGetRedisClusterOciCacheClusterArrayInput interface {
+	pulumi.Input
+
+	ToOciCacheUserGetRedisClusterOciCacheClusterArrayOutput() OciCacheUserGetRedisClusterOciCacheClusterArrayOutput
+	ToOciCacheUserGetRedisClusterOciCacheClusterArrayOutputWithContext(context.Context) OciCacheUserGetRedisClusterOciCacheClusterArrayOutput
+}
+
+type OciCacheUserGetRedisClusterOciCacheClusterArray []OciCacheUserGetRedisClusterOciCacheClusterInput
+
+func (OciCacheUserGetRedisClusterOciCacheClusterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OciCacheUserGetRedisClusterOciCacheCluster)(nil)).Elem()
+}
+
+func (i OciCacheUserGetRedisClusterOciCacheClusterArray) ToOciCacheUserGetRedisClusterOciCacheClusterArrayOutput() OciCacheUserGetRedisClusterOciCacheClusterArrayOutput {
+	return i.ToOciCacheUserGetRedisClusterOciCacheClusterArrayOutputWithContext(context.Background())
+}
+
+func (i OciCacheUserGetRedisClusterOciCacheClusterArray) ToOciCacheUserGetRedisClusterOciCacheClusterArrayOutputWithContext(ctx context.Context) OciCacheUserGetRedisClusterOciCacheClusterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OciCacheUserGetRedisClusterOciCacheClusterArrayOutput)
+}
+
+type OciCacheUserGetRedisClusterOciCacheClusterOutput struct{ *pulumi.OutputState }
+
+func (OciCacheUserGetRedisClusterOciCacheClusterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OciCacheUserGetRedisClusterOciCacheCluster)(nil)).Elem()
+}
+
+func (o OciCacheUserGetRedisClusterOciCacheClusterOutput) ToOciCacheUserGetRedisClusterOciCacheClusterOutput() OciCacheUserGetRedisClusterOciCacheClusterOutput {
+	return o
+}
+
+func (o OciCacheUserGetRedisClusterOciCacheClusterOutput) ToOciCacheUserGetRedisClusterOciCacheClusterOutputWithContext(ctx context.Context) OciCacheUserGetRedisClusterOciCacheClusterOutput {
+	return o
+}
+
+// OCID of the OciCacheCluster
+func (o OciCacheUserGetRedisClusterOciCacheClusterOutput) OciCacheClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OciCacheUserGetRedisClusterOciCacheCluster) *string { return v.OciCacheClusterId }).(pulumi.StringPtrOutput)
+}
+
+type OciCacheUserGetRedisClusterOciCacheClusterArrayOutput struct{ *pulumi.OutputState }
+
+func (OciCacheUserGetRedisClusterOciCacheClusterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OciCacheUserGetRedisClusterOciCacheCluster)(nil)).Elem()
+}
+
+func (o OciCacheUserGetRedisClusterOciCacheClusterArrayOutput) ToOciCacheUserGetRedisClusterOciCacheClusterArrayOutput() OciCacheUserGetRedisClusterOciCacheClusterArrayOutput {
+	return o
+}
+
+func (o OciCacheUserGetRedisClusterOciCacheClusterArrayOutput) ToOciCacheUserGetRedisClusterOciCacheClusterArrayOutputWithContext(ctx context.Context) OciCacheUserGetRedisClusterOciCacheClusterArrayOutput {
+	return o
+}
+
+func (o OciCacheUserGetRedisClusterOciCacheClusterArrayOutput) Index(i pulumi.IntInput) OciCacheUserGetRedisClusterOciCacheClusterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OciCacheUserGetRedisClusterOciCacheCluster {
+		return vs[0].([]OciCacheUserGetRedisClusterOciCacheCluster)[vs[1].(int)]
+	}).(OciCacheUserGetRedisClusterOciCacheClusterOutput)
+}
+
+type RedisClusterGetOciCacheUserOciCacheUser struct {
+	// OCID of the OciCacheUser
+	OciCacheUserId *string `pulumi:"ociCacheUserId"`
+}
+
+// RedisClusterGetOciCacheUserOciCacheUserInput is an input type that accepts RedisClusterGetOciCacheUserOciCacheUserArgs and RedisClusterGetOciCacheUserOciCacheUserOutput values.
+// You can construct a concrete instance of `RedisClusterGetOciCacheUserOciCacheUserInput` via:
+//
+//	RedisClusterGetOciCacheUserOciCacheUserArgs{...}
+type RedisClusterGetOciCacheUserOciCacheUserInput interface {
+	pulumi.Input
+
+	ToRedisClusterGetOciCacheUserOciCacheUserOutput() RedisClusterGetOciCacheUserOciCacheUserOutput
+	ToRedisClusterGetOciCacheUserOciCacheUserOutputWithContext(context.Context) RedisClusterGetOciCacheUserOciCacheUserOutput
+}
+
+type RedisClusterGetOciCacheUserOciCacheUserArgs struct {
+	// OCID of the OciCacheUser
+	OciCacheUserId pulumi.StringPtrInput `pulumi:"ociCacheUserId"`
+}
+
+func (RedisClusterGetOciCacheUserOciCacheUserArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RedisClusterGetOciCacheUserOciCacheUser)(nil)).Elem()
+}
+
+func (i RedisClusterGetOciCacheUserOciCacheUserArgs) ToRedisClusterGetOciCacheUserOciCacheUserOutput() RedisClusterGetOciCacheUserOciCacheUserOutput {
+	return i.ToRedisClusterGetOciCacheUserOciCacheUserOutputWithContext(context.Background())
+}
+
+func (i RedisClusterGetOciCacheUserOciCacheUserArgs) ToRedisClusterGetOciCacheUserOciCacheUserOutputWithContext(ctx context.Context) RedisClusterGetOciCacheUserOciCacheUserOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RedisClusterGetOciCacheUserOciCacheUserOutput)
+}
+
+// RedisClusterGetOciCacheUserOciCacheUserArrayInput is an input type that accepts RedisClusterGetOciCacheUserOciCacheUserArray and RedisClusterGetOciCacheUserOciCacheUserArrayOutput values.
+// You can construct a concrete instance of `RedisClusterGetOciCacheUserOciCacheUserArrayInput` via:
+//
+//	RedisClusterGetOciCacheUserOciCacheUserArray{ RedisClusterGetOciCacheUserOciCacheUserArgs{...} }
+type RedisClusterGetOciCacheUserOciCacheUserArrayInput interface {
+	pulumi.Input
+
+	ToRedisClusterGetOciCacheUserOciCacheUserArrayOutput() RedisClusterGetOciCacheUserOciCacheUserArrayOutput
+	ToRedisClusterGetOciCacheUserOciCacheUserArrayOutputWithContext(context.Context) RedisClusterGetOciCacheUserOciCacheUserArrayOutput
+}
+
+type RedisClusterGetOciCacheUserOciCacheUserArray []RedisClusterGetOciCacheUserOciCacheUserInput
+
+func (RedisClusterGetOciCacheUserOciCacheUserArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RedisClusterGetOciCacheUserOciCacheUser)(nil)).Elem()
+}
+
+func (i RedisClusterGetOciCacheUserOciCacheUserArray) ToRedisClusterGetOciCacheUserOciCacheUserArrayOutput() RedisClusterGetOciCacheUserOciCacheUserArrayOutput {
+	return i.ToRedisClusterGetOciCacheUserOciCacheUserArrayOutputWithContext(context.Background())
+}
+
+func (i RedisClusterGetOciCacheUserOciCacheUserArray) ToRedisClusterGetOciCacheUserOciCacheUserArrayOutputWithContext(ctx context.Context) RedisClusterGetOciCacheUserOciCacheUserArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RedisClusterGetOciCacheUserOciCacheUserArrayOutput)
+}
+
+type RedisClusterGetOciCacheUserOciCacheUserOutput struct{ *pulumi.OutputState }
+
+func (RedisClusterGetOciCacheUserOciCacheUserOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RedisClusterGetOciCacheUserOciCacheUser)(nil)).Elem()
+}
+
+func (o RedisClusterGetOciCacheUserOciCacheUserOutput) ToRedisClusterGetOciCacheUserOciCacheUserOutput() RedisClusterGetOciCacheUserOciCacheUserOutput {
+	return o
+}
+
+func (o RedisClusterGetOciCacheUserOciCacheUserOutput) ToRedisClusterGetOciCacheUserOciCacheUserOutputWithContext(ctx context.Context) RedisClusterGetOciCacheUserOciCacheUserOutput {
+	return o
+}
+
+// OCID of the OciCacheUser
+func (o RedisClusterGetOciCacheUserOciCacheUserOutput) OciCacheUserId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RedisClusterGetOciCacheUserOciCacheUser) *string { return v.OciCacheUserId }).(pulumi.StringPtrOutput)
+}
+
+type RedisClusterGetOciCacheUserOciCacheUserArrayOutput struct{ *pulumi.OutputState }
+
+func (RedisClusterGetOciCacheUserOciCacheUserArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RedisClusterGetOciCacheUserOciCacheUser)(nil)).Elem()
+}
+
+func (o RedisClusterGetOciCacheUserOciCacheUserArrayOutput) ToRedisClusterGetOciCacheUserOciCacheUserArrayOutput() RedisClusterGetOciCacheUserOciCacheUserArrayOutput {
+	return o
+}
+
+func (o RedisClusterGetOciCacheUserOciCacheUserArrayOutput) ToRedisClusterGetOciCacheUserOciCacheUserArrayOutputWithContext(ctx context.Context) RedisClusterGetOciCacheUserOciCacheUserArrayOutput {
+	return o
+}
+
+func (o RedisClusterGetOciCacheUserOciCacheUserArrayOutput) Index(i pulumi.IntInput) RedisClusterGetOciCacheUserOciCacheUserOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RedisClusterGetOciCacheUserOciCacheUser {
+		return vs[0].([]RedisClusterGetOciCacheUserOciCacheUser)[vs[1].(int)]
+	}).(RedisClusterGetOciCacheUserOciCacheUserOutput)
+}
+
 type RedisClusterNodeCollection struct {
 	// Collection of node objects.
 	Items []RedisClusterNodeCollectionItem `pulumi:"items"`
@@ -223,6 +573,504 @@ func (o RedisClusterNodeCollectionItemArrayOutput) Index(i pulumi.IntInput) Redi
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RedisClusterNodeCollectionItem {
 		return vs[0].([]RedisClusterNodeCollectionItem)[vs[1].(int)]
 	}).(RedisClusterNodeCollectionItemOutput)
+}
+
+type GetOciCacheUserAuthenticationMode struct {
+	// This is Authentication Type of Oracle Cloud Infrastructure cache user
+	AuthenticationType string `pulumi:"authenticationType"`
+	// SHA-256 hashed passwords for Oracle Cloud Infrastructure Cache user,required if authenticationType is set to PASSWORD.
+	HashedPasswords []string `pulumi:"hashedPasswords"`
+}
+
+// GetOciCacheUserAuthenticationModeInput is an input type that accepts GetOciCacheUserAuthenticationModeArgs and GetOciCacheUserAuthenticationModeOutput values.
+// You can construct a concrete instance of `GetOciCacheUserAuthenticationModeInput` via:
+//
+//	GetOciCacheUserAuthenticationModeArgs{...}
+type GetOciCacheUserAuthenticationModeInput interface {
+	pulumi.Input
+
+	ToGetOciCacheUserAuthenticationModeOutput() GetOciCacheUserAuthenticationModeOutput
+	ToGetOciCacheUserAuthenticationModeOutputWithContext(context.Context) GetOciCacheUserAuthenticationModeOutput
+}
+
+type GetOciCacheUserAuthenticationModeArgs struct {
+	// This is Authentication Type of Oracle Cloud Infrastructure cache user
+	AuthenticationType pulumi.StringInput `pulumi:"authenticationType"`
+	// SHA-256 hashed passwords for Oracle Cloud Infrastructure Cache user,required if authenticationType is set to PASSWORD.
+	HashedPasswords pulumi.StringArrayInput `pulumi:"hashedPasswords"`
+}
+
+func (GetOciCacheUserAuthenticationModeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheUserAuthenticationMode)(nil)).Elem()
+}
+
+func (i GetOciCacheUserAuthenticationModeArgs) ToGetOciCacheUserAuthenticationModeOutput() GetOciCacheUserAuthenticationModeOutput {
+	return i.ToGetOciCacheUserAuthenticationModeOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheUserAuthenticationModeArgs) ToGetOciCacheUserAuthenticationModeOutputWithContext(ctx context.Context) GetOciCacheUserAuthenticationModeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheUserAuthenticationModeOutput)
+}
+
+// GetOciCacheUserAuthenticationModeArrayInput is an input type that accepts GetOciCacheUserAuthenticationModeArray and GetOciCacheUserAuthenticationModeArrayOutput values.
+// You can construct a concrete instance of `GetOciCacheUserAuthenticationModeArrayInput` via:
+//
+//	GetOciCacheUserAuthenticationModeArray{ GetOciCacheUserAuthenticationModeArgs{...} }
+type GetOciCacheUserAuthenticationModeArrayInput interface {
+	pulumi.Input
+
+	ToGetOciCacheUserAuthenticationModeArrayOutput() GetOciCacheUserAuthenticationModeArrayOutput
+	ToGetOciCacheUserAuthenticationModeArrayOutputWithContext(context.Context) GetOciCacheUserAuthenticationModeArrayOutput
+}
+
+type GetOciCacheUserAuthenticationModeArray []GetOciCacheUserAuthenticationModeInput
+
+func (GetOciCacheUserAuthenticationModeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheUserAuthenticationMode)(nil)).Elem()
+}
+
+func (i GetOciCacheUserAuthenticationModeArray) ToGetOciCacheUserAuthenticationModeArrayOutput() GetOciCacheUserAuthenticationModeArrayOutput {
+	return i.ToGetOciCacheUserAuthenticationModeArrayOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheUserAuthenticationModeArray) ToGetOciCacheUserAuthenticationModeArrayOutputWithContext(ctx context.Context) GetOciCacheUserAuthenticationModeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheUserAuthenticationModeArrayOutput)
+}
+
+type GetOciCacheUserAuthenticationModeOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheUserAuthenticationModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheUserAuthenticationMode)(nil)).Elem()
+}
+
+func (o GetOciCacheUserAuthenticationModeOutput) ToGetOciCacheUserAuthenticationModeOutput() GetOciCacheUserAuthenticationModeOutput {
+	return o
+}
+
+func (o GetOciCacheUserAuthenticationModeOutput) ToGetOciCacheUserAuthenticationModeOutputWithContext(ctx context.Context) GetOciCacheUserAuthenticationModeOutput {
+	return o
+}
+
+// This is Authentication Type of Oracle Cloud Infrastructure cache user
+func (o GetOciCacheUserAuthenticationModeOutput) AuthenticationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheUserAuthenticationMode) string { return v.AuthenticationType }).(pulumi.StringOutput)
+}
+
+// SHA-256 hashed passwords for Oracle Cloud Infrastructure Cache user,required if authenticationType is set to PASSWORD.
+func (o GetOciCacheUserAuthenticationModeOutput) HashedPasswords() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOciCacheUserAuthenticationMode) []string { return v.HashedPasswords }).(pulumi.StringArrayOutput)
+}
+
+type GetOciCacheUserAuthenticationModeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheUserAuthenticationModeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheUserAuthenticationMode)(nil)).Elem()
+}
+
+func (o GetOciCacheUserAuthenticationModeArrayOutput) ToGetOciCacheUserAuthenticationModeArrayOutput() GetOciCacheUserAuthenticationModeArrayOutput {
+	return o
+}
+
+func (o GetOciCacheUserAuthenticationModeArrayOutput) ToGetOciCacheUserAuthenticationModeArrayOutputWithContext(ctx context.Context) GetOciCacheUserAuthenticationModeArrayOutput {
+	return o
+}
+
+func (o GetOciCacheUserAuthenticationModeArrayOutput) Index(i pulumi.IntInput) GetOciCacheUserAuthenticationModeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOciCacheUserAuthenticationMode {
+		return vs[0].([]GetOciCacheUserAuthenticationMode)[vs[1].(int)]
+	}).(GetOciCacheUserAuthenticationModeOutput)
+}
+
+type GetOciCacheUsersFilter struct {
+	// A filter to return the resources that match with the given Oracle Cloud Infrastructure cache user name.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetOciCacheUsersFilterInput is an input type that accepts GetOciCacheUsersFilterArgs and GetOciCacheUsersFilterOutput values.
+// You can construct a concrete instance of `GetOciCacheUsersFilterInput` via:
+//
+//	GetOciCacheUsersFilterArgs{...}
+type GetOciCacheUsersFilterInput interface {
+	pulumi.Input
+
+	ToGetOciCacheUsersFilterOutput() GetOciCacheUsersFilterOutput
+	ToGetOciCacheUsersFilterOutputWithContext(context.Context) GetOciCacheUsersFilterOutput
+}
+
+type GetOciCacheUsersFilterArgs struct {
+	// A filter to return the resources that match with the given Oracle Cloud Infrastructure cache user name.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetOciCacheUsersFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheUsersFilter)(nil)).Elem()
+}
+
+func (i GetOciCacheUsersFilterArgs) ToGetOciCacheUsersFilterOutput() GetOciCacheUsersFilterOutput {
+	return i.ToGetOciCacheUsersFilterOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheUsersFilterArgs) ToGetOciCacheUsersFilterOutputWithContext(ctx context.Context) GetOciCacheUsersFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheUsersFilterOutput)
+}
+
+// GetOciCacheUsersFilterArrayInput is an input type that accepts GetOciCacheUsersFilterArray and GetOciCacheUsersFilterArrayOutput values.
+// You can construct a concrete instance of `GetOciCacheUsersFilterArrayInput` via:
+//
+//	GetOciCacheUsersFilterArray{ GetOciCacheUsersFilterArgs{...} }
+type GetOciCacheUsersFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetOciCacheUsersFilterArrayOutput() GetOciCacheUsersFilterArrayOutput
+	ToGetOciCacheUsersFilterArrayOutputWithContext(context.Context) GetOciCacheUsersFilterArrayOutput
+}
+
+type GetOciCacheUsersFilterArray []GetOciCacheUsersFilterInput
+
+func (GetOciCacheUsersFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheUsersFilter)(nil)).Elem()
+}
+
+func (i GetOciCacheUsersFilterArray) ToGetOciCacheUsersFilterArrayOutput() GetOciCacheUsersFilterArrayOutput {
+	return i.ToGetOciCacheUsersFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheUsersFilterArray) ToGetOciCacheUsersFilterArrayOutputWithContext(ctx context.Context) GetOciCacheUsersFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheUsersFilterArrayOutput)
+}
+
+type GetOciCacheUsersFilterOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheUsersFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheUsersFilter)(nil)).Elem()
+}
+
+func (o GetOciCacheUsersFilterOutput) ToGetOciCacheUsersFilterOutput() GetOciCacheUsersFilterOutput {
+	return o
+}
+
+func (o GetOciCacheUsersFilterOutput) ToGetOciCacheUsersFilterOutputWithContext(ctx context.Context) GetOciCacheUsersFilterOutput {
+	return o
+}
+
+// A filter to return the resources that match with the given Oracle Cloud Infrastructure cache user name.
+func (o GetOciCacheUsersFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheUsersFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetOciCacheUsersFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetOciCacheUsersFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetOciCacheUsersFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOciCacheUsersFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetOciCacheUsersFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheUsersFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheUsersFilter)(nil)).Elem()
+}
+
+func (o GetOciCacheUsersFilterArrayOutput) ToGetOciCacheUsersFilterArrayOutput() GetOciCacheUsersFilterArrayOutput {
+	return o
+}
+
+func (o GetOciCacheUsersFilterArrayOutput) ToGetOciCacheUsersFilterArrayOutputWithContext(ctx context.Context) GetOciCacheUsersFilterArrayOutput {
+	return o
+}
+
+func (o GetOciCacheUsersFilterArrayOutput) Index(i pulumi.IntInput) GetOciCacheUsersFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOciCacheUsersFilter {
+		return vs[0].([]GetOciCacheUsersFilter)[vs[1].(int)]
+	}).(GetOciCacheUsersFilterOutput)
+}
+
+type GetOciCacheUsersOciCacheUserCollection struct {
+	Items []GetOciCacheUsersOciCacheUserCollectionItem `pulumi:"items"`
+}
+
+// GetOciCacheUsersOciCacheUserCollectionInput is an input type that accepts GetOciCacheUsersOciCacheUserCollectionArgs and GetOciCacheUsersOciCacheUserCollectionOutput values.
+// You can construct a concrete instance of `GetOciCacheUsersOciCacheUserCollectionInput` via:
+//
+//	GetOciCacheUsersOciCacheUserCollectionArgs{...}
+type GetOciCacheUsersOciCacheUserCollectionInput interface {
+	pulumi.Input
+
+	ToGetOciCacheUsersOciCacheUserCollectionOutput() GetOciCacheUsersOciCacheUserCollectionOutput
+	ToGetOciCacheUsersOciCacheUserCollectionOutputWithContext(context.Context) GetOciCacheUsersOciCacheUserCollectionOutput
+}
+
+type GetOciCacheUsersOciCacheUserCollectionArgs struct {
+	Items GetOciCacheUsersOciCacheUserCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetOciCacheUsersOciCacheUserCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheUsersOciCacheUserCollection)(nil)).Elem()
+}
+
+func (i GetOciCacheUsersOciCacheUserCollectionArgs) ToGetOciCacheUsersOciCacheUserCollectionOutput() GetOciCacheUsersOciCacheUserCollectionOutput {
+	return i.ToGetOciCacheUsersOciCacheUserCollectionOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheUsersOciCacheUserCollectionArgs) ToGetOciCacheUsersOciCacheUserCollectionOutputWithContext(ctx context.Context) GetOciCacheUsersOciCacheUserCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheUsersOciCacheUserCollectionOutput)
+}
+
+// GetOciCacheUsersOciCacheUserCollectionArrayInput is an input type that accepts GetOciCacheUsersOciCacheUserCollectionArray and GetOciCacheUsersOciCacheUserCollectionArrayOutput values.
+// You can construct a concrete instance of `GetOciCacheUsersOciCacheUserCollectionArrayInput` via:
+//
+//	GetOciCacheUsersOciCacheUserCollectionArray{ GetOciCacheUsersOciCacheUserCollectionArgs{...} }
+type GetOciCacheUsersOciCacheUserCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetOciCacheUsersOciCacheUserCollectionArrayOutput() GetOciCacheUsersOciCacheUserCollectionArrayOutput
+	ToGetOciCacheUsersOciCacheUserCollectionArrayOutputWithContext(context.Context) GetOciCacheUsersOciCacheUserCollectionArrayOutput
+}
+
+type GetOciCacheUsersOciCacheUserCollectionArray []GetOciCacheUsersOciCacheUserCollectionInput
+
+func (GetOciCacheUsersOciCacheUserCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheUsersOciCacheUserCollection)(nil)).Elem()
+}
+
+func (i GetOciCacheUsersOciCacheUserCollectionArray) ToGetOciCacheUsersOciCacheUserCollectionArrayOutput() GetOciCacheUsersOciCacheUserCollectionArrayOutput {
+	return i.ToGetOciCacheUsersOciCacheUserCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheUsersOciCacheUserCollectionArray) ToGetOciCacheUsersOciCacheUserCollectionArrayOutputWithContext(ctx context.Context) GetOciCacheUsersOciCacheUserCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheUsersOciCacheUserCollectionArrayOutput)
+}
+
+type GetOciCacheUsersOciCacheUserCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheUsersOciCacheUserCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheUsersOciCacheUserCollection)(nil)).Elem()
+}
+
+func (o GetOciCacheUsersOciCacheUserCollectionOutput) ToGetOciCacheUsersOciCacheUserCollectionOutput() GetOciCacheUsersOciCacheUserCollectionOutput {
+	return o
+}
+
+func (o GetOciCacheUsersOciCacheUserCollectionOutput) ToGetOciCacheUsersOciCacheUserCollectionOutputWithContext(ctx context.Context) GetOciCacheUsersOciCacheUserCollectionOutput {
+	return o
+}
+
+func (o GetOciCacheUsersOciCacheUserCollectionOutput) Items() GetOciCacheUsersOciCacheUserCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetOciCacheUsersOciCacheUserCollection) []GetOciCacheUsersOciCacheUserCollectionItem {
+		return v.Items
+	}).(GetOciCacheUsersOciCacheUserCollectionItemArrayOutput)
+}
+
+type GetOciCacheUsersOciCacheUserCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheUsersOciCacheUserCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheUsersOciCacheUserCollection)(nil)).Elem()
+}
+
+func (o GetOciCacheUsersOciCacheUserCollectionArrayOutput) ToGetOciCacheUsersOciCacheUserCollectionArrayOutput() GetOciCacheUsersOciCacheUserCollectionArrayOutput {
+	return o
+}
+
+func (o GetOciCacheUsersOciCacheUserCollectionArrayOutput) ToGetOciCacheUsersOciCacheUserCollectionArrayOutputWithContext(ctx context.Context) GetOciCacheUsersOciCacheUserCollectionArrayOutput {
+	return o
+}
+
+func (o GetOciCacheUsersOciCacheUserCollectionArrayOutput) Index(i pulumi.IntInput) GetOciCacheUsersOciCacheUserCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOciCacheUsersOciCacheUserCollection {
+		return vs[0].([]GetOciCacheUsersOciCacheUserCollection)[vs[1].(int)]
+	}).(GetOciCacheUsersOciCacheUserCollectionOutput)
+}
+
+type GetOciCacheUsersOciCacheUserCollectionItem struct {
+	// This is Authentication Type of Oracle Cloud Infrastructure cache user
+	AuthenticationType string `pulumi:"authenticationType"`
+	// The ID of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Description of Oracle Cloud Infrastructure cache user.
+	Description string `pulumi:"description"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Oracle Cloud Infrastructure Cache user unique ID.
+	Id string `pulumi:"id"`
+	// A filter to return the resources that match with the given Oracle Cloud Infrastructure cache user name.
+	Name string `pulumi:"name"`
+	// A filter to return the resources, whose lifecycleState matches with the given lifecycleState.
+	State string `pulumi:"state"`
+	// Oracle Cloud Infrastructure Cache user status. ON enables and OFF disables the Oracle Cloud Infrastructure cache user to login to the cluster.
+	Status string `pulumi:"status"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time, when the Oracle Cloud Infrastructure cache user was created.
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetOciCacheUsersOciCacheUserCollectionItemInput is an input type that accepts GetOciCacheUsersOciCacheUserCollectionItemArgs and GetOciCacheUsersOciCacheUserCollectionItemOutput values.
+// You can construct a concrete instance of `GetOciCacheUsersOciCacheUserCollectionItemInput` via:
+//
+//	GetOciCacheUsersOciCacheUserCollectionItemArgs{...}
+type GetOciCacheUsersOciCacheUserCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetOciCacheUsersOciCacheUserCollectionItemOutput() GetOciCacheUsersOciCacheUserCollectionItemOutput
+	ToGetOciCacheUsersOciCacheUserCollectionItemOutputWithContext(context.Context) GetOciCacheUsersOciCacheUserCollectionItemOutput
+}
+
+type GetOciCacheUsersOciCacheUserCollectionItemArgs struct {
+	// This is Authentication Type of Oracle Cloud Infrastructure cache user
+	AuthenticationType pulumi.StringInput `pulumi:"authenticationType"`
+	// The ID of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Description of Oracle Cloud Infrastructure cache user.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// Oracle Cloud Infrastructure Cache user unique ID.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A filter to return the resources that match with the given Oracle Cloud Infrastructure cache user name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// A filter to return the resources, whose lifecycleState matches with the given lifecycleState.
+	State pulumi.StringInput `pulumi:"state"`
+	// Oracle Cloud Infrastructure Cache user status. ON enables and OFF disables the Oracle Cloud Infrastructure cache user to login to the cluster.
+	Status pulumi.StringInput `pulumi:"status"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time, when the Oracle Cloud Infrastructure cache user was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetOciCacheUsersOciCacheUserCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheUsersOciCacheUserCollectionItem)(nil)).Elem()
+}
+
+func (i GetOciCacheUsersOciCacheUserCollectionItemArgs) ToGetOciCacheUsersOciCacheUserCollectionItemOutput() GetOciCacheUsersOciCacheUserCollectionItemOutput {
+	return i.ToGetOciCacheUsersOciCacheUserCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheUsersOciCacheUserCollectionItemArgs) ToGetOciCacheUsersOciCacheUserCollectionItemOutputWithContext(ctx context.Context) GetOciCacheUsersOciCacheUserCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheUsersOciCacheUserCollectionItemOutput)
+}
+
+// GetOciCacheUsersOciCacheUserCollectionItemArrayInput is an input type that accepts GetOciCacheUsersOciCacheUserCollectionItemArray and GetOciCacheUsersOciCacheUserCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetOciCacheUsersOciCacheUserCollectionItemArrayInput` via:
+//
+//	GetOciCacheUsersOciCacheUserCollectionItemArray{ GetOciCacheUsersOciCacheUserCollectionItemArgs{...} }
+type GetOciCacheUsersOciCacheUserCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetOciCacheUsersOciCacheUserCollectionItemArrayOutput() GetOciCacheUsersOciCacheUserCollectionItemArrayOutput
+	ToGetOciCacheUsersOciCacheUserCollectionItemArrayOutputWithContext(context.Context) GetOciCacheUsersOciCacheUserCollectionItemArrayOutput
+}
+
+type GetOciCacheUsersOciCacheUserCollectionItemArray []GetOciCacheUsersOciCacheUserCollectionItemInput
+
+func (GetOciCacheUsersOciCacheUserCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheUsersOciCacheUserCollectionItem)(nil)).Elem()
+}
+
+func (i GetOciCacheUsersOciCacheUserCollectionItemArray) ToGetOciCacheUsersOciCacheUserCollectionItemArrayOutput() GetOciCacheUsersOciCacheUserCollectionItemArrayOutput {
+	return i.ToGetOciCacheUsersOciCacheUserCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheUsersOciCacheUserCollectionItemArray) ToGetOciCacheUsersOciCacheUserCollectionItemArrayOutputWithContext(ctx context.Context) GetOciCacheUsersOciCacheUserCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheUsersOciCacheUserCollectionItemArrayOutput)
+}
+
+type GetOciCacheUsersOciCacheUserCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheUsersOciCacheUserCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheUsersOciCacheUserCollectionItem)(nil)).Elem()
+}
+
+func (o GetOciCacheUsersOciCacheUserCollectionItemOutput) ToGetOciCacheUsersOciCacheUserCollectionItemOutput() GetOciCacheUsersOciCacheUserCollectionItemOutput {
+	return o
+}
+
+func (o GetOciCacheUsersOciCacheUserCollectionItemOutput) ToGetOciCacheUsersOciCacheUserCollectionItemOutputWithContext(ctx context.Context) GetOciCacheUsersOciCacheUserCollectionItemOutput {
+	return o
+}
+
+// This is Authentication Type of Oracle Cloud Infrastructure cache user
+func (o GetOciCacheUsersOciCacheUserCollectionItemOutput) AuthenticationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheUsersOciCacheUserCollectionItem) string { return v.AuthenticationType }).(pulumi.StringOutput)
+}
+
+// The ID of the compartment in which to list resources.
+func (o GetOciCacheUsersOciCacheUserCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheUsersOciCacheUserCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetOciCacheUsersOciCacheUserCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOciCacheUsersOciCacheUserCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// Description of Oracle Cloud Infrastructure cache user.
+func (o GetOciCacheUsersOciCacheUserCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheUsersOciCacheUserCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetOciCacheUsersOciCacheUserCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOciCacheUsersOciCacheUserCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// Oracle Cloud Infrastructure Cache user unique ID.
+func (o GetOciCacheUsersOciCacheUserCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheUsersOciCacheUserCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A filter to return the resources that match with the given Oracle Cloud Infrastructure cache user name.
+func (o GetOciCacheUsersOciCacheUserCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheUsersOciCacheUserCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// A filter to return the resources, whose lifecycleState matches with the given lifecycleState.
+func (o GetOciCacheUsersOciCacheUserCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheUsersOciCacheUserCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Oracle Cloud Infrastructure Cache user status. ON enables and OFF disables the Oracle Cloud Infrastructure cache user to login to the cluster.
+func (o GetOciCacheUsersOciCacheUserCollectionItemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheUsersOciCacheUserCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetOciCacheUsersOciCacheUserCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOciCacheUsersOciCacheUserCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time, when the Oracle Cloud Infrastructure cache user was created.
+func (o GetOciCacheUsersOciCacheUserCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheUsersOciCacheUserCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetOciCacheUsersOciCacheUserCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheUsersOciCacheUserCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheUsersOciCacheUserCollectionItem)(nil)).Elem()
+}
+
+func (o GetOciCacheUsersOciCacheUserCollectionItemArrayOutput) ToGetOciCacheUsersOciCacheUserCollectionItemArrayOutput() GetOciCacheUsersOciCacheUserCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetOciCacheUsersOciCacheUserCollectionItemArrayOutput) ToGetOciCacheUsersOciCacheUserCollectionItemArrayOutputWithContext(ctx context.Context) GetOciCacheUsersOciCacheUserCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetOciCacheUsersOciCacheUserCollectionItemArrayOutput) Index(i pulumi.IntInput) GetOciCacheUsersOciCacheUserCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOciCacheUsersOciCacheUserCollectionItem {
+		return vs[0].([]GetOciCacheUsersOciCacheUserCollectionItem)[vs[1].(int)]
+	}).(GetOciCacheUsersOciCacheUserCollectionItemOutput)
 }
 
 type GetRedisClusterNodeCollection struct {
@@ -1487,10 +2335,24 @@ func (o GetRedisClustersRedisClusterCollectionItemNodeCollectionItemArrayOutput)
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*OciCacheUserAuthenticationModeInput)(nil)).Elem(), OciCacheUserAuthenticationModeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OciCacheUserAuthenticationModePtrInput)(nil)).Elem(), OciCacheUserAuthenticationModeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OciCacheUserGetRedisClusterOciCacheClusterInput)(nil)).Elem(), OciCacheUserGetRedisClusterOciCacheClusterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OciCacheUserGetRedisClusterOciCacheClusterArrayInput)(nil)).Elem(), OciCacheUserGetRedisClusterOciCacheClusterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RedisClusterGetOciCacheUserOciCacheUserInput)(nil)).Elem(), RedisClusterGetOciCacheUserOciCacheUserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RedisClusterGetOciCacheUserOciCacheUserArrayInput)(nil)).Elem(), RedisClusterGetOciCacheUserOciCacheUserArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RedisClusterNodeCollectionInput)(nil)).Elem(), RedisClusterNodeCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RedisClusterNodeCollectionArrayInput)(nil)).Elem(), RedisClusterNodeCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RedisClusterNodeCollectionItemInput)(nil)).Elem(), RedisClusterNodeCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RedisClusterNodeCollectionItemArrayInput)(nil)).Elem(), RedisClusterNodeCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheUserAuthenticationModeInput)(nil)).Elem(), GetOciCacheUserAuthenticationModeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheUserAuthenticationModeArrayInput)(nil)).Elem(), GetOciCacheUserAuthenticationModeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheUsersFilterInput)(nil)).Elem(), GetOciCacheUsersFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheUsersFilterArrayInput)(nil)).Elem(), GetOciCacheUsersFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheUsersOciCacheUserCollectionInput)(nil)).Elem(), GetOciCacheUsersOciCacheUserCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheUsersOciCacheUserCollectionArrayInput)(nil)).Elem(), GetOciCacheUsersOciCacheUserCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheUsersOciCacheUserCollectionItemInput)(nil)).Elem(), GetOciCacheUsersOciCacheUserCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheUsersOciCacheUserCollectionItemArrayInput)(nil)).Elem(), GetOciCacheUsersOciCacheUserCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClusterNodeCollectionInput)(nil)).Elem(), GetRedisClusterNodeCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClusterNodeCollectionArrayInput)(nil)).Elem(), GetRedisClusterNodeCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClusterNodeCollectionItemInput)(nil)).Elem(), GetRedisClusterNodeCollectionItemArgs{})
@@ -1511,10 +2373,24 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClustersRedisClusterCollectionItemNodeCollectionArrayInput)(nil)).Elem(), GetRedisClustersRedisClusterCollectionItemNodeCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClustersRedisClusterCollectionItemNodeCollectionItemInput)(nil)).Elem(), GetRedisClustersRedisClusterCollectionItemNodeCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClustersRedisClusterCollectionItemNodeCollectionItemArrayInput)(nil)).Elem(), GetRedisClustersRedisClusterCollectionItemNodeCollectionItemArray{})
+	pulumi.RegisterOutputType(OciCacheUserAuthenticationModeOutput{})
+	pulumi.RegisterOutputType(OciCacheUserAuthenticationModePtrOutput{})
+	pulumi.RegisterOutputType(OciCacheUserGetRedisClusterOciCacheClusterOutput{})
+	pulumi.RegisterOutputType(OciCacheUserGetRedisClusterOciCacheClusterArrayOutput{})
+	pulumi.RegisterOutputType(RedisClusterGetOciCacheUserOciCacheUserOutput{})
+	pulumi.RegisterOutputType(RedisClusterGetOciCacheUserOciCacheUserArrayOutput{})
 	pulumi.RegisterOutputType(RedisClusterNodeCollectionOutput{})
 	pulumi.RegisterOutputType(RedisClusterNodeCollectionArrayOutput{})
 	pulumi.RegisterOutputType(RedisClusterNodeCollectionItemOutput{})
 	pulumi.RegisterOutputType(RedisClusterNodeCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetOciCacheUserAuthenticationModeOutput{})
+	pulumi.RegisterOutputType(GetOciCacheUserAuthenticationModeArrayOutput{})
+	pulumi.RegisterOutputType(GetOciCacheUsersFilterOutput{})
+	pulumi.RegisterOutputType(GetOciCacheUsersFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetOciCacheUsersOciCacheUserCollectionOutput{})
+	pulumi.RegisterOutputType(GetOciCacheUsersOciCacheUserCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetOciCacheUsersOciCacheUserCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetOciCacheUsersOciCacheUserCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetRedisClusterNodeCollectionOutput{})
 	pulumi.RegisterOutputType(GetRedisClusterNodeCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetRedisClusterNodeCollectionItemOutput{})

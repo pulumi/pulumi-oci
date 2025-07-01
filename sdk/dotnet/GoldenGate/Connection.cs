@@ -54,6 +54,18 @@ namespace Pulumi.Oci.GoldenGate
     ///                 PrivateIp = connectionBootstrapServersPrivateIp,
     ///             },
     ///         },
+    ///         Catalog = new Oci.GoldenGate.Inputs.ConnectionCatalogArgs
+    ///         {
+    ///             CatalogType = connectionCatalogCatalogType,
+    ///             Branch = connectionCatalogBranch,
+    ///             ClientId = testClient.Id,
+    ///             ClientSecretSecretId = testSecret.Id,
+    ///             GlueId = testGlue.Id,
+    ///             Name = connectionCatalogName,
+    ///             PrincipalRole = connectionCatalogPrincipalRole,
+    ///             PropertiesSecretId = testSecret.Id,
+    ///             Uri = connectionCatalogUri,
+    ///         },
     ///         ClientId = testClient.Id,
     ///         ClientSecret = connectionClientSecret,
     ///         ClientSecretSecretId = testSecret.Id,
@@ -137,6 +149,21 @@ namespace Pulumi.Oci.GoldenGate
     ///         SslKeySecretId = testSecret.Id,
     ///         SslMode = connectionSslMode,
     ///         SslServerCertificate = connectionSslServerCertificate,
+    ///         Storage = new Oci.GoldenGate.Inputs.ConnectionStorageArgs
+    ///         {
+    ///             StorageType = connectionStorageStorageType,
+    ///             AccessKeyId = testKey.Id,
+    ///             AccountKeySecretId = testSecret.Id,
+    ///             AccountName = connectionStorageAccountName,
+    ///             Bucket = connectionStorageBucket,
+    ///             Container = connectionStorageContainer,
+    ///             Endpoint = connectionStorageEndpoint,
+    ///             ProjectId = testProject.Id,
+    ///             Region = connectionStorageRegion,
+    ///             SchemeType = connectionStorageSchemeType,
+    ///             SecretAccessKeySecretId = testSecret.Id,
+    ///             ServiceAccountKeyFileSecretId = testSecret.Id,
+    ///         },
     ///         StorageCredentialName = connectionStorageCredentialName,
     ///         StreamPoolId = testStreamPool.Id,
     ///         SubnetId = testSubnet.Id,
@@ -229,6 +256,12 @@ namespace Pulumi.Oci.GoldenGate
         public Output<ImmutableArray<Outputs.ConnectionBootstrapServer>> BootstrapServers { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) The information about a new catalog of given type used in an Iceberg connection.
+        /// </summary>
+        [Output("catalog")]
+        public Output<Outputs.ConnectionCatalog> Catalog { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
         /// </summary>
         [Output("clientId")]
@@ -283,7 +316,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> ConsumerProperties { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
+        /// (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         /// </summary>
         [Output("coreSiteXml")]
         public Output<string> CoreSiteXml { get; private set; } = null!;
@@ -337,7 +370,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<bool> DoesUseSecretIds { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable)Azure Storage service endpoint. e.g: https://test.blob.core.windows.net,  Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+        /// (Updatable) Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
         /// </summary>
         [Output("endpoint")]
         public Output<string> Endpoint { get; private set; } = null!;
@@ -577,7 +610,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string?> ServiceAccountKeyFile { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
         /// </summary>
         [Output("serviceAccountKeyFileSecretId")]
         public Output<string?> ServiceAccountKeyFileSecretId { get; private set; } = null!;
@@ -607,13 +640,13 @@ namespace Pulumi.Oci.GoldenGate
         public Output<bool> ShouldValidateServerCertificate { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
+        /// (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         /// </summary>
         [Output("sslCa")]
         public Output<string> SslCa { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
+        /// (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         /// </summary>
         [Output("sslCert")]
         public Output<string> SslCert { get; private set; } = null!;
@@ -643,7 +676,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string?> SslClientKeystoredbSecretId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
+        /// (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         /// </summary>
         [Output("sslCrl")]
         public Output<string> SslCrl { get; private set; } = null!;
@@ -680,7 +713,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> SslMode { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+        /// (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         /// </summary>
         [Output("sslServerCertificate")]
         public Output<string> SslServerCertificate { get; private set; } = null!;
@@ -690,6 +723,12 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The information about a new storage of given type used in an Iceberg connection.
+        /// </summary>
+        [Output("storage")]
+        public Output<Outputs.ConnectionStorage> Storage { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
@@ -746,7 +785,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+        /// (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         /// </summary>
         [Output("tlsCaFile")]
         public Output<string> TlsCaFile { get; private set; } = null!;
@@ -992,6 +1031,12 @@ namespace Pulumi.Oci.GoldenGate
         }
 
         /// <summary>
+        /// (Updatable) The information about a new catalog of given type used in an Iceberg connection.
+        /// </summary>
+        [Input("catalog")]
+        public Input<Inputs.ConnectionCatalogArgs>? Catalog { get; set; }
+
+        /// <summary>
         /// (Updatable) Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
         /// </summary>
         [Input("clientId")]
@@ -1056,7 +1101,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? ConsumerProperties { get; set; }
 
         /// <summary>
-        /// (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
+        /// (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         /// </summary>
         [Input("coreSiteXml")]
         public Input<string>? CoreSiteXml { get; set; }
@@ -1116,7 +1161,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<bool>? DoesUseSecretIds { get; set; }
 
         /// <summary>
-        /// (Updatable)Azure Storage service endpoint. e.g: https://test.blob.core.windows.net,  Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+        /// (Updatable) Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
         /// </summary>
         [Input("endpoint")]
         public Input<string>? Endpoint { get; set; }
@@ -1452,7 +1497,7 @@ namespace Pulumi.Oci.GoldenGate
         }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
         /// </summary>
         [Input("serviceAccountKeyFileSecretId")]
         public Input<string>? ServiceAccountKeyFileSecretId { get; set; }
@@ -1482,13 +1527,13 @@ namespace Pulumi.Oci.GoldenGate
         public Input<bool>? ShouldValidateServerCertificate { get; set; }
 
         /// <summary>
-        /// (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
+        /// (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         /// </summary>
         [Input("sslCa")]
         public Input<string>? SslCa { get; set; }
 
         /// <summary>
-        /// (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
+        /// (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         /// </summary>
         [Input("sslCert")]
         public Input<string>? SslCert { get; set; }
@@ -1538,7 +1583,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? SslClientKeystoredbSecretId { get; set; }
 
         /// <summary>
-        /// (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
+        /// (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         /// </summary>
         [Input("sslCrl")]
         public Input<string>? SslCrl { get; set; }
@@ -1595,10 +1640,16 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? SslMode { get; set; }
 
         /// <summary>
-        /// (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+        /// (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         /// </summary>
         [Input("sslServerCertificate")]
         public Input<string>? SslServerCertificate { get; set; }
+
+        /// <summary>
+        /// (Updatable) The information about a new storage of given type used in an Iceberg connection.
+        /// </summary>
+        [Input("storage")]
+        public Input<Inputs.ConnectionStorageArgs>? Storage { get; set; }
 
         /// <summary>
         /// (Updatable) Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
@@ -1637,7 +1688,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? TenantId { get; set; }
 
         /// <summary>
-        /// (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+        /// (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         /// </summary>
         [Input("tlsCaFile")]
         public Input<string>? TlsCaFile { get; set; }
@@ -1872,6 +1923,12 @@ namespace Pulumi.Oci.GoldenGate
         }
 
         /// <summary>
+        /// (Updatable) The information about a new catalog of given type used in an Iceberg connection.
+        /// </summary>
+        [Input("catalog")]
+        public Input<Inputs.ConnectionCatalogGetArgs>? Catalog { get; set; }
+
+        /// <summary>
         /// (Updatable) Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
         /// </summary>
         [Input("clientId")]
@@ -1936,7 +1993,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? ConsumerProperties { get; set; }
 
         /// <summary>
-        /// (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
+        /// (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         /// </summary>
         [Input("coreSiteXml")]
         public Input<string>? CoreSiteXml { get; set; }
@@ -1996,7 +2053,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<bool>? DoesUseSecretIds { get; set; }
 
         /// <summary>
-        /// (Updatable)Azure Storage service endpoint. e.g: https://test.blob.core.windows.net,  Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+        /// (Updatable) Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
         /// </summary>
         [Input("endpoint")]
         public Input<string>? Endpoint { get; set; }
@@ -2350,7 +2407,7 @@ namespace Pulumi.Oci.GoldenGate
         }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
         /// </summary>
         [Input("serviceAccountKeyFileSecretId")]
         public Input<string>? ServiceAccountKeyFileSecretId { get; set; }
@@ -2380,13 +2437,13 @@ namespace Pulumi.Oci.GoldenGate
         public Input<bool>? ShouldValidateServerCertificate { get; set; }
 
         /// <summary>
-        /// (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
+        /// (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         /// </summary>
         [Input("sslCa")]
         public Input<string>? SslCa { get; set; }
 
         /// <summary>
-        /// (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
+        /// (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         /// </summary>
         [Input("sslCert")]
         public Input<string>? SslCert { get; set; }
@@ -2436,7 +2493,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? SslClientKeystoredbSecretId { get; set; }
 
         /// <summary>
-        /// (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
+        /// (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         /// </summary>
         [Input("sslCrl")]
         public Input<string>? SslCrl { get; set; }
@@ -2493,7 +2550,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? SslMode { get; set; }
 
         /// <summary>
-        /// (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+        /// (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         /// </summary>
         [Input("sslServerCertificate")]
         public Input<string>? SslServerCertificate { get; set; }
@@ -2503,6 +2560,12 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        /// <summary>
+        /// (Updatable) The information about a new storage of given type used in an Iceberg connection.
+        /// </summary>
+        [Input("storage")]
+        public Input<Inputs.ConnectionStorageGetArgs>? Storage { get; set; }
 
         /// <summary>
         /// (Updatable) Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
@@ -2565,7 +2628,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+        /// (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         /// </summary>
         [Input("tlsCaFile")]
         public Input<string>? TlsCaFile { get; set; }

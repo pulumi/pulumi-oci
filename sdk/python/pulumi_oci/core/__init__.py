@@ -19,6 +19,8 @@ from .compute_capacity_topology import *
 from .compute_cluster import *
 from .compute_gpu_memory_cluster import *
 from .compute_gpu_memory_fabric import *
+from .compute_host import *
+from .compute_host_group import *
 from .compute_image_capability_schema import *
 from .console_history import *
 from .cpe import *
@@ -83,6 +85,8 @@ from .get_compute_gpu_memory_clusters import *
 from .get_compute_gpu_memory_fabric import *
 from .get_compute_gpu_memory_fabrics import *
 from .get_compute_host import *
+from .get_compute_host_group import *
+from .get_compute_host_groups import *
 from .get_compute_hosts import *
 from .get_compute_image_capability_schema import *
 from .get_compute_image_capability_schemas import *

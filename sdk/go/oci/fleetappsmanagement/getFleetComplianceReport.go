@@ -68,6 +68,8 @@ type GetFleetComplianceReportResult struct {
 	FleetId string `pulumi:"fleetId"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+	// The compliance percentage.
+	PercentCompliant float64 `pulumi:"percentCompliant"`
 	// Resources associated with the Fleet.
 	Resources []GetFleetComplianceReportResource `pulumi:"resources"`
 }
@@ -125,6 +127,11 @@ func (o GetFleetComplianceReportResultOutput) FleetId() pulumi.StringOutput {
 // The provider-assigned unique ID for this managed resource.
 func (o GetFleetComplianceReportResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFleetComplianceReportResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The compliance percentage.
+func (o GetFleetComplianceReportResultOutput) PercentCompliant() pulumi.Float64Output {
+	return o.ApplyT(func(v GetFleetComplianceReportResult) float64 { return v.PercentCompliant }).(pulumi.Float64Output)
 }
 
 // Resources associated with the Fleet.

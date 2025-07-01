@@ -31,6 +31,18 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<string>? InternetProxy { get; set; }
 
         /// <summary>
+        /// Indicates whether the backup destination is cross-region or local region.
+        /// </summary>
+        [Input("isRemote")]
+        public Input<bool>? IsRemote { get; set; }
+
+        /// <summary>
+        /// The name of the remote region where the remote automatic incremental backups will be stored.
+        /// </summary>
+        [Input("remoteRegion")]
+        public Input<string>? RemoteRegion { get; set; }
+
+        /// <summary>
         /// Type of the database backup destination.
         /// </summary>
         [Input("type")]

@@ -286,9 +286,6 @@ namespace Pulumi.Oci.GoldenGate
         /// The connection type.
         /// </summary>
         public readonly ImmutableArray<string> ConnectionTypes;
-        /// <summary>
-        /// An object's Display Name.
-        /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetConnectionsFilterResult> Filters;
         /// <summary>

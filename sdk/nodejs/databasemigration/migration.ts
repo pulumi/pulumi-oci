@@ -138,6 +138,7 @@ import * as utilities from "../utilities";
  *         },
  *     },
  *     sourceContainerDatabaseConnectionId: testConnection.id,
+ *     sourceStandbyDatabaseConnectionId: testConnection.id,
  * });
  * ```
  *
@@ -254,6 +255,10 @@ export class Migration extends pulumi.CustomResource {
      */
     public readonly sourceDatabaseConnectionId!: pulumi.Output<string>;
     /**
+     * (Updatable) The OCID of the resource being referenced.
+     */
+    public readonly sourceStandbyDatabaseConnectionId!: pulumi.Output<string | undefined>;
+    /**
      * The current state of the Migration resource.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
@@ -322,6 +327,7 @@ export class Migration extends pulumi.CustomResource {
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["sourceContainerDatabaseConnectionId"] = state ? state.sourceContainerDatabaseConnectionId : undefined;
             resourceInputs["sourceDatabaseConnectionId"] = state ? state.sourceDatabaseConnectionId : undefined;
+            resourceInputs["sourceStandbyDatabaseConnectionId"] = state ? state.sourceStandbyDatabaseConnectionId : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["targetDatabaseConnectionId"] = state ? state.targetDatabaseConnectionId : undefined;
@@ -364,6 +370,7 @@ export class Migration extends pulumi.CustomResource {
             resourceInputs["initialLoadSettings"] = args ? args.initialLoadSettings : undefined;
             resourceInputs["sourceContainerDatabaseConnectionId"] = args ? args.sourceContainerDatabaseConnectionId : undefined;
             resourceInputs["sourceDatabaseConnectionId"] = args ? args.sourceDatabaseConnectionId : undefined;
+            resourceInputs["sourceStandbyDatabaseConnectionId"] = args ? args.sourceStandbyDatabaseConnectionId : undefined;
             resourceInputs["targetDatabaseConnectionId"] = args ? args.targetDatabaseConnectionId : undefined;
             resourceInputs["type"] = args ? args.type : undefined;
             resourceInputs["executingJobId"] = undefined /*out*/;
@@ -460,6 +467,10 @@ export interface MigrationState {
      * (Updatable) The OCID of the resource being referenced.
      */
     sourceDatabaseConnectionId?: pulumi.Input<string>;
+    /**
+     * (Updatable) The OCID of the resource being referenced.
+     */
+    sourceStandbyDatabaseConnectionId?: pulumi.Input<string>;
     /**
      * The current state of the Migration resource.
      */
@@ -570,6 +581,10 @@ export interface MigrationArgs {
      * (Updatable) The OCID of the resource being referenced.
      */
     sourceDatabaseConnectionId: pulumi.Input<string>;
+    /**
+     * (Updatable) The OCID of the resource being referenced.
+     */
+    sourceStandbyDatabaseConnectionId?: pulumi.Input<string>;
     /**
      * (Updatable) The OCID of the resource being referenced.
      */

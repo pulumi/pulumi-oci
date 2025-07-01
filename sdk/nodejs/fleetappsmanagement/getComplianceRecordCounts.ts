@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Compliance Record Counts in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Retrieve  aggregated summary information of ComplianceRecords within a Tenancy.
+ * Retrieve  aggregated summary information of ComplianceRecords within a Compartment.
  *
  * ## Example Usage
  *
@@ -19,6 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testComplianceRecordCounts = oci.FleetAppsManagement.getComplianceRecordCounts({
  *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: complianceRecordCountCompartmentIdInSubtree,
  * });
  * ```
  */
@@ -27,6 +28,7 @@ export function getComplianceRecordCounts(args?: GetComplianceRecordCountsArgs, 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:FleetAppsManagement/getComplianceRecordCounts:getComplianceRecordCounts", {
         "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
         "filters": args.filters,
     }, opts);
 }
@@ -36,9 +38,13 @@ export function getComplianceRecordCounts(args?: GetComplianceRecordCountsArgs, 
  */
 export interface GetComplianceRecordCountsArgs {
     /**
-     * The ID of the compartment in which to list resources.
+     * The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      */
     compartmentId?: string;
+    /**
+     * If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
+     */
+    compartmentIdInSubtree?: boolean;
     filters?: inputs.FleetAppsManagement.GetComplianceRecordCountsFilter[];
 }
 
@@ -47,6 +53,7 @@ export interface GetComplianceRecordCountsArgs {
  */
 export interface GetComplianceRecordCountsResult {
     readonly compartmentId?: string;
+    readonly compartmentIdInSubtree?: boolean;
     /**
      * The list of compliance_record_aggregation_collection.
      */
@@ -60,7 +67,7 @@ export interface GetComplianceRecordCountsResult {
 /**
  * This data source provides the list of Compliance Record Counts in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Retrieve  aggregated summary information of ComplianceRecords within a Tenancy.
+ * Retrieve  aggregated summary information of ComplianceRecords within a Compartment.
  *
  * ## Example Usage
  *
@@ -70,6 +77,7 @@ export interface GetComplianceRecordCountsResult {
  *
  * const testComplianceRecordCounts = oci.FleetAppsManagement.getComplianceRecordCounts({
  *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: complianceRecordCountCompartmentIdInSubtree,
  * });
  * ```
  */
@@ -78,6 +86,7 @@ export function getComplianceRecordCountsOutput(args?: GetComplianceRecordCounts
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:FleetAppsManagement/getComplianceRecordCounts:getComplianceRecordCounts", {
         "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
         "filters": args.filters,
     }, opts);
 }
@@ -87,8 +96,12 @@ export function getComplianceRecordCountsOutput(args?: GetComplianceRecordCounts
  */
 export interface GetComplianceRecordCountsOutputArgs {
     /**
-     * The ID of the compartment in which to list resources.
+     * The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      */
     compartmentId?: pulumi.Input<string>;
+    /**
+     * If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
+     */
+    compartmentIdInSubtree?: pulumi.Input<boolean>;
     filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetComplianceRecordCountsFilterArgs>[]>;
 }

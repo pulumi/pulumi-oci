@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class GetCompliancePoliciesCompliancePolicyCollectionItemResult
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -30,7 +30,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
-        /// unique CompliancePolicy identifier.
+        /// Unique identifier or OCID for listing a single Compliance Policy by id. Either compartmentId or id must be provided.
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -57,6 +57,10 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// The date and time the CompliancePolicy was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeUpdated;
+        /// <summary>
+        /// A filter to return Platform Configurations whose type matches the given type.
+        /// </summary>
+        public readonly string Type;
 
         [OutputConstructor]
         private GetCompliancePoliciesCompliancePolicyCollectionItemResult(
@@ -80,7 +84,9 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
 
             string timeCreated,
 
-            string timeUpdated)
+            string timeUpdated,
+
+            string type)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
@@ -93,6 +99,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
             SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
+            Type = type;
         }
     }
 }

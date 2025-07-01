@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides the list of Scheduler Job Counts in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Retrieve aggregated summary information of Scheduler Jobs within a Tenancy.
+        /// Retrieve aggregated summary information of Scheduler Jobs within a Compartment.
         /// 
         /// 
         /// ## Example Usage
@@ -30,6 +30,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         ///     var testSchedulerJobCounts = Oci.FleetAppsManagement.GetSchedulerJobCounts.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = schedulerJobCountCompartmentIdInSubtree,
         ///     });
         /// 
         /// });
@@ -41,7 +42,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides the list of Scheduler Job Counts in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Retrieve aggregated summary information of Scheduler Jobs within a Tenancy.
+        /// Retrieve aggregated summary information of Scheduler Jobs within a Compartment.
         /// 
         /// 
         /// ## Example Usage
@@ -57,6 +58,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         ///     var testSchedulerJobCounts = Oci.FleetAppsManagement.GetSchedulerJobCounts.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = schedulerJobCountCompartmentIdInSubtree,
         ///     });
         /// 
         /// });
@@ -68,7 +70,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides the list of Scheduler Job Counts in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Retrieve aggregated summary information of Scheduler Jobs within a Tenancy.
+        /// Retrieve aggregated summary information of Scheduler Jobs within a Compartment.
         /// 
         /// 
         /// ## Example Usage
@@ -84,6 +86,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         ///     var testSchedulerJobCounts = Oci.FleetAppsManagement.GetSchedulerJobCounts.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = schedulerJobCountCompartmentIdInSubtree,
         ///     });
         /// 
         /// });
@@ -97,10 +100,16 @@ namespace Pulumi.Oci.FleetAppsManagement
     public sealed class GetSchedulerJobCountsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
         /// </summary>
         [Input("compartmentId")]
         public string? CompartmentId { get; set; }
+
+        /// <summary>
+        /// If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
+        /// </summary>
+        [Input("compartmentIdInSubtree")]
+        public bool? CompartmentIdInSubtree { get; set; }
 
         [Input("filters")]
         private List<Inputs.GetSchedulerJobCountsFilterArgs>? _filters;
@@ -119,10 +128,16 @@ namespace Pulumi.Oci.FleetAppsManagement
     public sealed class GetSchedulerJobCountsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
+
+        /// <summary>
+        /// If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
+        /// </summary>
+        [Input("compartmentIdInSubtree")]
+        public Input<bool>? CompartmentIdInSubtree { get; set; }
 
         [Input("filters")]
         private InputList<Inputs.GetSchedulerJobCountsFilterInputArgs>? _filters;
@@ -143,6 +158,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     public sealed class GetSchedulerJobCountsResult
     {
         public readonly string? CompartmentId;
+        public readonly bool? CompartmentIdInSubtree;
         public readonly ImmutableArray<Outputs.GetSchedulerJobCountsFilterResult> Filters;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
@@ -157,6 +173,8 @@ namespace Pulumi.Oci.FleetAppsManagement
         private GetSchedulerJobCountsResult(
             string? compartmentId,
 
+            bool? compartmentIdInSubtree,
+
             ImmutableArray<Outputs.GetSchedulerJobCountsFilterResult> filters,
 
             string id,
@@ -164,6 +182,7 @@ namespace Pulumi.Oci.FleetAppsManagement
             ImmutableArray<Outputs.GetSchedulerJobCountsSchedulerJobAggregationCollectionResult> schedulerJobAggregationCollections)
         {
             CompartmentId = compartmentId;
+            CompartmentIdInSubtree = compartmentIdInSubtree;
             Filters = filters;
             Id = id;
             SchedulerJobAggregationCollections = schedulerJobAggregationCollections;

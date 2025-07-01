@@ -64,6 +64,10 @@ export interface GetManagedMySqlDatabaseResult {
      */
     readonly heatWaveClusterDisplayName: string;
     /**
+     * The customer's selected type for HeatWave management.
+     */
+    readonly heatWaveManagementType: string;
+    /**
      * The total memory belonging to the HeatWave cluster in GBs.
      */
     readonly heatWaveMemorySize: number;

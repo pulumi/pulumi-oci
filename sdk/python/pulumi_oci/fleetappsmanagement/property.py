@@ -21,16 +21,16 @@ __all__ = ['PropertyArgs', 'Property']
 class PropertyArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[builtins.str],
+                 display_name: pulumi.Input[builtins.str],
                  selection: pulumi.Input[builtins.str],
                  value_type: pulumi.Input[builtins.str],
-                 display_name: Optional[pulumi.Input[builtins.str]] = None,
                  values: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
         """
         The set of arguments for constructing a Property resource.
-        :param pulumi.Input[builtins.str] compartment_id: Tenancy OCID
+        :param pulumi.Input[builtins.str] compartment_id: (Updatable) Compartment OCID
+        :param pulumi.Input[builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         :param pulumi.Input[builtins.str] selection: (Updatable) Text selection of the property.
         :param pulumi.Input[builtins.str] value_type: (Updatable) Format of the value.
-        :param pulumi.Input[builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] values: (Updatable) Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
                
                
@@ -38,10 +38,9 @@ class PropertyArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "selection", selection)
         pulumi.set(__self__, "value_type", value_type)
-        if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
         if values is not None:
             pulumi.set(__self__, "values", values)
 
@@ -49,13 +48,25 @@ class PropertyArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[builtins.str]:
         """
-        Tenancy OCID
+        (Updatable) Compartment OCID
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
     def compartment_id(self, value: pulumi.Input[builtins.str]):
         pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> pulumi.Input[builtins.str]:
+        """
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: pulumi.Input[builtins.str]):
+        pulumi.set(self, "display_name", value)
 
     @property
     @pulumi.getter
@@ -80,18 +91,6 @@ class PropertyArgs:
     @value_type.setter
     def value_type(self, value: pulumi.Input[builtins.str]):
         pulumi.set(self, "value_type", value)
-
-    @property
-    @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[builtins.str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        """
-        return pulumi.get(self, "display_name")
-
-    @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[builtins.str]]):
-        pulumi.set(self, "display_name", value)
 
     @property
     @pulumi.getter
@@ -130,7 +129,7 @@ class _PropertyState:
                  values: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering Property resources.
-        :param pulumi.Input[builtins.str] compartment_id: Tenancy OCID
+        :param pulumi.Input[builtins.str] compartment_id: (Updatable) Compartment OCID
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -185,7 +184,7 @@ class _PropertyState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Tenancy OCID
+        (Updatable) Compartment OCID
         """
         return pulumi.get(self, "compartment_id")
 
@@ -381,7 +380,7 @@ class Property(pulumi.CustomResource):
         """
         This resource provides the Property resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-        Create a business-specific metadata property in Fleet Application Management and capture the business metadata classifications.
+        Create a business-specific metadata property in Fleet Application Management.
 
         ## Example Usage
 
@@ -391,9 +390,9 @@ class Property(pulumi.CustomResource):
 
         test_property = oci.fleet_apps_management.Property("test_property",
             compartment_id=compartment_id,
+            display_name=property_display_name,
             selection=property_selection,
             value_type=property_value_type,
-            display_name=property_display_name,
             values=property_values)
         ```
 
@@ -407,7 +406,7 @@ class Property(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] compartment_id: Tenancy OCID
+        :param pulumi.Input[builtins.str] compartment_id: (Updatable) Compartment OCID
         :param pulumi.Input[builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         :param pulumi.Input[builtins.str] selection: (Updatable) Text selection of the property.
         :param pulumi.Input[builtins.str] value_type: (Updatable) Format of the value.
@@ -426,7 +425,7 @@ class Property(pulumi.CustomResource):
         """
         This resource provides the Property resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-        Create a business-specific metadata property in Fleet Application Management and capture the business metadata classifications.
+        Create a business-specific metadata property in Fleet Application Management.
 
         ## Example Usage
 
@@ -436,9 +435,9 @@ class Property(pulumi.CustomResource):
 
         test_property = oci.fleet_apps_management.Property("test_property",
             compartment_id=compartment_id,
+            display_name=property_display_name,
             selection=property_selection,
             value_type=property_value_type,
-            display_name=property_display_name,
             values=property_values)
         ```
 
@@ -482,6 +481,8 @@ class Property(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
+            if display_name is None and not opts.urn:
+                raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             if selection is None and not opts.urn:
                 raise TypeError("Missing required property 'selection'")
@@ -532,7 +533,7 @@ class Property(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] compartment_id: Tenancy OCID
+        :param pulumi.Input[builtins.str] compartment_id: (Updatable) Compartment OCID
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -577,7 +578,7 @@ class Property(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[builtins.str]:
         """
-        Tenancy OCID
+        (Updatable) Compartment OCID
         """
         return pulumi.get(self, "compartment_id")
 

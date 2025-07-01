@@ -21,6 +21,10 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "oci:CapacityManagement/internalOccmDemandSignal:InternalOccmDemandSignal":
+		r = &InternalOccmDemandSignal{}
+	case "oci:CapacityManagement/internalOccmDemandSignalDelivery:InternalOccmDemandSignalDelivery":
+		r = &InternalOccmDemandSignalDelivery{}
 	case "oci:CapacityManagement/occAvailabilityCatalog:OccAvailabilityCatalog":
 		r = &OccAvailabilityCatalog{}
 	case "oci:CapacityManagement/occCapacityRequest:OccCapacityRequest":
@@ -29,6 +33,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &OccCustomerGroup{}
 	case "oci:CapacityManagement/occCustomerGroupOccCustomer:OccCustomerGroupOccCustomer":
 		r = &OccCustomerGroupOccCustomer{}
+	case "oci:CapacityManagement/occmDemandSignal:OccmDemandSignal":
+		r = &OccmDemandSignal{}
+	case "oci:CapacityManagement/occmDemandSignalItem:OccmDemandSignalItem":
+		r = &OccmDemandSignalItem{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -42,6 +50,16 @@ func init() {
 	if err != nil {
 		version = semver.Version{Major: 1}
 	}
+	pulumi.RegisterResourceModule(
+		"oci",
+		"CapacityManagement/internalOccmDemandSignal",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"CapacityManagement/internalOccmDemandSignalDelivery",
+		&module{version},
+	)
 	pulumi.RegisterResourceModule(
 		"oci",
 		"CapacityManagement/occAvailabilityCatalog",
@@ -60,6 +78,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"CapacityManagement/occCustomerGroupOccCustomer",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"CapacityManagement/occmDemandSignal",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"CapacityManagement/occmDemandSignalItem",
 		&module{version},
 	)
 }

@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Db Nodes in Oracle Cloud Infrastructure Database service.
 //
-// Lists the database nodes in the specified compartment. A database node is a server running database software. In addition to the other required parameters, either '--db-system-id' or '--vm-cluster-id' also must be provided, depending on the service being accessed.
+// Lists the database nodes in the specified DB system and compartment. In addition to the other required parameters, either '--db-system-id' or '--vm-cluster-id' also must be provided, depending on the service being accessed.
 //
 // ## Example Usage
 //

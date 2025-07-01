@@ -39,6 +39,7 @@ namespace Pulumi.Oci.Mysql
     ///             { "bar-key", "value" },
     ///         },
     ///         RetentionInDays = mysqlBackupRetentionInDays,
+    ///         SoftDelete = mysqlBackupSoftDelete,
     ///     });
     /// 
     /// });
@@ -159,6 +160,12 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Output("shapeName")]
         public Output<string> ShapeName { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+        /// </summary>
+        [Output("softDelete")]
+        public Output<string> SoftDelete { get; private set; } = null!;
 
         /// <summary>
         /// Details of backup source in the cloud.
@@ -311,6 +318,12 @@ namespace Pulumi.Oci.Mysql
         public Input<int>? RetentionInDays { get; set; }
 
         /// <summary>
+        /// (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+        /// </summary>
+        [Input("softDelete")]
+        public Input<string>? SoftDelete { get; set; }
+
+        /// <summary>
         /// Details of backup source in the cloud.
         /// </summary>
         [Input("sourceDetails")]
@@ -451,6 +464,12 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Input("shapeName")]
         public Input<string>? ShapeName { get; set; }
+
+        /// <summary>
+        /// (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+        /// </summary>
+        [Input("softDelete")]
+        public Input<string>? SoftDelete { get; set; }
 
         /// <summary>
         /// Details of backup source in the cloud.

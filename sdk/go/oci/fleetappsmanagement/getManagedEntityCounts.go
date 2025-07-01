@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Managed Entity Counts in Oracle Cloud Infrastructure Fleet Apps Management service.
 //
-// Retrieve  aggregated summary information of Managed Entities within a Tenancy.
+// Retrieve  aggregated summary information of Managed entities within a Compartment.
 //
 // ## Example Usage
 //
@@ -30,7 +30,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := fleetappsmanagement.GetManagedEntityCounts(ctx, &fleetappsmanagement.GetManagedEntityCountsArgs{
-//				CompartmentId: pulumi.StringRef(compartmentId),
+//				CompartmentId:          pulumi.StringRef(compartmentId),
+//				CompartmentIdInSubtree: pulumi.BoolRef(managedEntityCountCompartmentIdInSubtree),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -52,15 +53,18 @@ func GetManagedEntityCounts(ctx *pulumi.Context, args *GetManagedEntityCountsArg
 
 // A collection of arguments for invoking getManagedEntityCounts.
 type GetManagedEntityCountsArgs struct {
-	// The ID of the compartment in which to list resources.
-	CompartmentId *string                        `pulumi:"compartmentId"`
-	Filters       []GetManagedEntityCountsFilter `pulumi:"filters"`
+	// The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
+	CompartmentId *string `pulumi:"compartmentId"`
+	// If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
+	CompartmentIdInSubtree *bool                          `pulumi:"compartmentIdInSubtree"`
+	Filters                []GetManagedEntityCountsFilter `pulumi:"filters"`
 }
 
 // A collection of values returned by getManagedEntityCounts.
 type GetManagedEntityCountsResult struct {
-	CompartmentId *string                        `pulumi:"compartmentId"`
-	Filters       []GetManagedEntityCountsFilter `pulumi:"filters"`
+	CompartmentId          *string                        `pulumi:"compartmentId"`
+	CompartmentIdInSubtree *bool                          `pulumi:"compartmentIdInSubtree"`
+	Filters                []GetManagedEntityCountsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// The list of managed_entity_aggregation_collection.
@@ -78,9 +82,11 @@ func GetManagedEntityCountsOutput(ctx *pulumi.Context, args GetManagedEntityCoun
 
 // A collection of arguments for invoking getManagedEntityCounts.
 type GetManagedEntityCountsOutputArgs struct {
-	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringPtrInput                  `pulumi:"compartmentId"`
-	Filters       GetManagedEntityCountsFilterArrayInput `pulumi:"filters"`
+	// The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
+	// If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
+	CompartmentIdInSubtree pulumi.BoolPtrInput                    `pulumi:"compartmentIdInSubtree"`
+	Filters                GetManagedEntityCountsFilterArrayInput `pulumi:"filters"`
 }
 
 func (GetManagedEntityCountsOutputArgs) ElementType() reflect.Type {
@@ -104,6 +110,10 @@ func (o GetManagedEntityCountsResultOutput) ToGetManagedEntityCountsResultOutput
 
 func (o GetManagedEntityCountsResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagedEntityCountsResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
+}
+
+func (o GetManagedEntityCountsResultOutput) CompartmentIdInSubtree() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedEntityCountsResult) *bool { return v.CompartmentIdInSubtree }).(pulumi.BoolPtrOutput)
 }
 
 func (o GetManagedEntityCountsResultOutput) Filters() GetManagedEntityCountsFilterArrayOutput {

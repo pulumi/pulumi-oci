@@ -7,21 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This data source provides details about a specific Exadata Infrastructure compute managed resource in Oracle Cloud Infrastructure Database service.
- *
- * Gets information about the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
- * To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
- *
  * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testExadataInfrastructure = oci.Database.getExadataInfrastructure({
- *     exadataInfrastructureId: testExadataInfrastructureOciDatabaseExadataInfrastructure.id,
- * });
- * ```
  */
 export class ExadataInfrastructureCompute extends pulumi.CustomResource {
     /**
@@ -55,16 +41,25 @@ export class ExadataInfrastructureCompute extends pulumi.CustomResource {
      * The requested number of additional storage servers activated for the Exadata infrastructure.
      */
     public /*out*/ readonly activatedStorageCount!: pulumi.Output<number>;
+    /**
+     * (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
+     */
     public readonly activationFile!: pulumi.Output<string | undefined>;
     /**
      * The number of additional compute servers for the Exadata infrastructure.
      */
     public /*out*/ readonly additionalComputeCount!: pulumi.Output<number>;
+    /**
+     * The requested number of additional compute servers for the Exadata infrastructure.
+     */
     public readonly additionalComputeCountComputeManagedResource!: pulumi.Output<number | undefined>;
     /**
      * Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
      */
     public /*out*/ readonly additionalComputeSystemModel!: pulumi.Output<string>;
+    /**
+     * The requested Oracle Exadata System Model specification for the additional compute servers. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+     */
     public readonly additionalComputeSystemModelComputeManagedResource!: pulumi.Output<string | undefined>;
     /**
      * The requested number of additional storage servers for the Exadata infrastructure.
@@ -342,16 +337,25 @@ export interface ExadataInfrastructureComputeState {
      * The requested number of additional storage servers activated for the Exadata infrastructure.
      */
     activatedStorageCount?: pulumi.Input<number>;
+    /**
+     * (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
+     */
     activationFile?: pulumi.Input<string>;
     /**
      * The number of additional compute servers for the Exadata infrastructure.
      */
     additionalComputeCount?: pulumi.Input<number>;
+    /**
+     * The requested number of additional compute servers for the Exadata infrastructure.
+     */
     additionalComputeCountComputeManagedResource?: pulumi.Input<number>;
     /**
      * Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
      */
     additionalComputeSystemModel?: pulumi.Input<string>;
+    /**
+     * The requested Oracle Exadata System Model specification for the additional compute servers. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+     */
     additionalComputeSystemModelComputeManagedResource?: pulumi.Input<string>;
     /**
      * The requested number of additional storage servers for the Exadata infrastructure.
@@ -512,8 +516,17 @@ export interface ExadataInfrastructureComputeState {
  * The set of arguments for constructing a ExadataInfrastructureCompute resource.
  */
 export interface ExadataInfrastructureComputeArgs {
+    /**
+     * (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
+     */
     activationFile?: pulumi.Input<string>;
+    /**
+     * The requested number of additional compute servers for the Exadata infrastructure.
+     */
     additionalComputeCountComputeManagedResource?: pulumi.Input<number>;
+    /**
+     * The requested Oracle Exadata System Model specification for the additional compute servers. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+     */
     additionalComputeSystemModelComputeManagedResource?: pulumi.Input<string>;
     /**
      * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

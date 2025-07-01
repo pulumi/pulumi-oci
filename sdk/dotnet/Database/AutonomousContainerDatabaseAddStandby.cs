@@ -12,9 +12,8 @@ namespace Pulumi.Oci.Database
     /// <summary>
     /// This resource provides the Autonomous Container Database Add Standby resource in Oracle Cloud Infrastructure Database service.
     /// 
-    /// Create Standby Autonomous Container Database.
-    /// For more information about changing Autonomous Container Databases Add Standby, see
-    /// [Create Standby Autonomous Container Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-D3B503F1-0032-4B0D-9F00-ACAE8151AB80) and [Convert Snapshot Standby to Physical Standby](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-E8D7E0EE-8244-467D-B33A-1BC6F969A0A4).
+    /// Add a standby Autonomous Container Database. For more information about Autonomous Data Guard,see
+    /// [Protect Critical Databases from Failures and Disasters Using Autonomous Data Guard](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbau/GUID-C57B9A6E-7471-4CDC-8F10-B8386538E31C).
     /// 
     /// ## Example Usage
     /// 
@@ -218,7 +217,7 @@ namespace Pulumi.Oci.Database
         public Output<bool> IsDstFileUpdateEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// Whether it is multiple standby Autonomous Dataguard
+        /// Indicates if it is multiple standby Autonomous Dataguard
         /// </summary>
         [Output("isMultipleStandby")]
         public Output<bool> IsMultipleStandby { get; private set; } = null!;
@@ -751,7 +750,7 @@ namespace Pulumi.Oci.Database
         public Input<bool>? IsDstFileUpdateEnabled { get; set; }
 
         /// <summary>
-        /// Whether it is multiple standby Autonomous Dataguard
+        /// Indicates if it is multiple standby Autonomous Dataguard
         /// </summary>
         [Input("isMultipleStandby")]
         public Input<bool>? IsMultipleStandby { get; set; }

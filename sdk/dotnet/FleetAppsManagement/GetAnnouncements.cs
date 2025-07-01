@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides the list of Announcements in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Return a list of AnnouncementSummary items.
+        /// Return a list of Announcement Summary items in a tenancy.
         /// 
         /// ## Example Usage
         /// 
@@ -28,6 +28,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// {
         ///     var testAnnouncements = Oci.FleetAppsManagement.GetAnnouncements.Invoke(new()
         ///     {
+        ///         CompartmentId = compartmentId,
         ///         DisplayName = announcementDisplayName,
         ///         SummaryContains = announcementSummaryContains,
         ///     });
@@ -35,13 +36,13 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// });
         /// ```
         /// </summary>
-        public static Task<GetAnnouncementsResult> InvokeAsync(GetAnnouncementsArgs? args = null, InvokeOptions? options = null)
+        public static Task<GetAnnouncementsResult> InvokeAsync(GetAnnouncementsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAnnouncementsResult>("oci:FleetAppsManagement/getAnnouncements:getAnnouncements", args ?? new GetAnnouncementsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Announcements in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Return a list of AnnouncementSummary items.
+        /// Return a list of Announcement Summary items in a tenancy.
         /// 
         /// ## Example Usage
         /// 
@@ -55,6 +56,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// {
         ///     var testAnnouncements = Oci.FleetAppsManagement.GetAnnouncements.Invoke(new()
         ///     {
+        ///         CompartmentId = compartmentId,
         ///         DisplayName = announcementDisplayName,
         ///         SummaryContains = announcementSummaryContains,
         ///     });
@@ -62,13 +64,13 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// });
         /// ```
         /// </summary>
-        public static Output<GetAnnouncementsResult> Invoke(GetAnnouncementsInvokeArgs? args = null, InvokeOptions? options = null)
+        public static Output<GetAnnouncementsResult> Invoke(GetAnnouncementsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAnnouncementsResult>("oci:FleetAppsManagement/getAnnouncements:getAnnouncements", args ?? new GetAnnouncementsInvokeArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Announcements in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Return a list of AnnouncementSummary items.
+        /// Return a list of Announcement Summary items in a tenancy.
         /// 
         /// ## Example Usage
         /// 
@@ -82,6 +84,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// {
         ///     var testAnnouncements = Oci.FleetAppsManagement.GetAnnouncements.Invoke(new()
         ///     {
+        ///         CompartmentId = compartmentId,
         ///         DisplayName = announcementDisplayName,
         ///         SummaryContains = announcementSummaryContains,
         ///     });
@@ -96,6 +99,12 @@ namespace Pulumi.Oci.FleetAppsManagement
 
     public sealed class GetAnnouncementsArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The ID of the compartment in which to list resources.
+        /// </summary>
+        [Input("compartmentId", required: true)]
+        public string CompartmentId { get; set; } = null!;
+
         /// <summary>
         /// A filter to return only resources that match the entire display name given.
         /// </summary>
@@ -124,6 +133,12 @@ namespace Pulumi.Oci.FleetAppsManagement
 
     public sealed class GetAnnouncementsInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The ID of the compartment in which to list resources.
+        /// </summary>
+        [Input("compartmentId", required: true)]
+        public Input<string> CompartmentId { get; set; } = null!;
+
         /// <summary>
         /// A filter to return only resources that match the entire display name given.
         /// </summary>
@@ -159,6 +174,10 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAnnouncementsAnnouncementCollectionResult> AnnouncementCollections;
         /// <summary>
+        /// Tenancy OCID
+        /// </summary>
+        public readonly string CompartmentId;
+        /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         /// </summary>
         public readonly string? DisplayName;
@@ -173,6 +192,8 @@ namespace Pulumi.Oci.FleetAppsManagement
         private GetAnnouncementsResult(
             ImmutableArray<Outputs.GetAnnouncementsAnnouncementCollectionResult> announcementCollections,
 
+            string compartmentId,
+
             string? displayName,
 
             ImmutableArray<Outputs.GetAnnouncementsFilterResult> filters,
@@ -182,6 +203,7 @@ namespace Pulumi.Oci.FleetAppsManagement
             string? summaryContains)
         {
             AnnouncementCollections = announcementCollections;
+            CompartmentId = compartmentId;
             DisplayName = displayName;
             Filters = filters;
             Id = id;

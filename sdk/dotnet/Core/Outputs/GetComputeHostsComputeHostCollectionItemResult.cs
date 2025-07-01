@@ -26,6 +26,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group.
+        /// </summary>
+        public readonly string ComputeHostGroupId;
+        /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
@@ -63,10 +67,6 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string InstanceId;
         /// <summary>
-        /// A free-form description detailing why the host is in its current state.
-        /// </summary>
-        public readonly ImmutableDictionary<string, string> LifecycleDetails;
-        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Local Block
         /// </summary>
         public readonly string LocalBlockId;
@@ -99,6 +99,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string compartmentId,
 
+            string computeHostGroupId,
+
             ImmutableDictionary<string, string> definedTags,
 
             string displayName,
@@ -119,8 +121,6 @@ namespace Pulumi.Oci.Core.Outputs
 
             string instanceId,
 
-            ImmutableDictionary<string, string> lifecycleDetails,
-
             string localBlockId,
 
             string networkBlockId,
@@ -136,6 +136,7 @@ namespace Pulumi.Oci.Core.Outputs
             AvailabilityDomain = availabilityDomain;
             CapacityReservationId = capacityReservationId;
             CompartmentId = compartmentId;
+            ComputeHostGroupId = computeHostGroupId;
             DefinedTags = definedTags;
             DisplayName = displayName;
             FaultDomain = faultDomain;
@@ -146,7 +147,6 @@ namespace Pulumi.Oci.Core.Outputs
             HpcIslandId = hpcIslandId;
             Id = id;
             InstanceId = instanceId;
-            LifecycleDetails = lifecycleDetails;
             LocalBlockId = localBlockId;
             NetworkBlockId = networkBlockId;
             Shape = shape;

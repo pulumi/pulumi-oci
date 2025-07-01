@@ -60,9 +60,13 @@ type LookupDedicatedVmHostArgs struct {
 type LookupDedicatedVmHostResult struct {
 	// The availability domain the dedicated virtual machine host is running in.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// A list of total and remaining CPU & memory per capacity bucket.
+	CapacityBins []GetDedicatedVmHostCapacityBin `pulumi:"capacityBins"`
 	// The OCID of the compartment that contains the dedicated virtual machine host.
-	CompartmentId     string `pulumi:"compartmentId"`
-	DedicatedVmHostId string `pulumi:"dedicatedVmHostId"`
+	CompartmentId string `pulumi:"compartmentId"`
+	// The OCID of the compute bare metal host.
+	ComputeBareMetalHostId string `pulumi:"computeBareMetalHostId"`
+	DedicatedVmHostId      string `pulumi:"dedicatedVmHostId"`
 	// The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VMs.
 	DedicatedVmHostShape string `pulumi:"dedicatedVmHostShape"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -130,9 +134,19 @@ func (o LookupDedicatedVmHostResultOutput) AvailabilityDomain() pulumi.StringOut
 	return o.ApplyT(func(v LookupDedicatedVmHostResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
+// A list of total and remaining CPU & memory per capacity bucket.
+func (o LookupDedicatedVmHostResultOutput) CapacityBins() GetDedicatedVmHostCapacityBinArrayOutput {
+	return o.ApplyT(func(v LookupDedicatedVmHostResult) []GetDedicatedVmHostCapacityBin { return v.CapacityBins }).(GetDedicatedVmHostCapacityBinArrayOutput)
+}
+
 // The OCID of the compartment that contains the dedicated virtual machine host.
 func (o LookupDedicatedVmHostResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDedicatedVmHostResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The OCID of the compute bare metal host.
+func (o LookupDedicatedVmHostResultOutput) ComputeBareMetalHostId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDedicatedVmHostResult) string { return v.ComputeBareMetalHostId }).(pulumi.StringOutput)
 }
 
 func (o LookupDedicatedVmHostResultOutput) DedicatedVmHostId() pulumi.StringOutput {

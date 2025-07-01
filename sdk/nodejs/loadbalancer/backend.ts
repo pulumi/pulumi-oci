@@ -89,7 +89,11 @@ export class Backend extends pulumi.CustomResource {
      */
     public readonly loadBalancerId!: pulumi.Output<string>;
     /**
-     * (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+     * (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.
+     *
+     * If setting maxConnections to some value other than 0 then that value must be greater or equal to 256.
+     *
+     * Example: `300`
      */
     public readonly maxConnections!: pulumi.Output<number>;
     /**
@@ -198,7 +202,11 @@ export interface BackendState {
      */
     loadBalancerId?: pulumi.Input<string>;
     /**
-     * (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+     * (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.
+     *
+     * If setting maxConnections to some value other than 0 then that value must be greater or equal to 256.
+     *
+     * Example: `300`
      */
     maxConnections?: pulumi.Input<number>;
     /**
@@ -253,7 +261,11 @@ export interface BackendArgs {
      */
     loadBalancerId: pulumi.Input<string>;
     /**
-     * (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+     * (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.
+     *
+     * If setting maxConnections to some value other than 0 then that value must be greater or equal to 256.
+     *
+     * Example: `300`
      */
     maxConnections?: pulumi.Input<number>;
     /**

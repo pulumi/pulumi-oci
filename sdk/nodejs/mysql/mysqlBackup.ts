@@ -29,6 +29,7 @@ import * as utilities from "../utilities";
  *         "bar-key": "value",
  *     },
  *     retentionInDays: mysqlBackupRetentionInDays,
+ *     softDelete: mysqlBackupSoftDelete,
  * });
  * ```
  *
@@ -138,6 +139,10 @@ export class MysqlBackup extends pulumi.CustomResource {
      */
     public /*out*/ readonly shapeName!: pulumi.Output<string>;
     /**
+     * (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+     */
+    public readonly softDelete!: pulumi.Output<string>;
+    /**
      * Details of backup source in the cloud.
      */
     public readonly sourceDetails!: pulumi.Output<outputs.Mysql.MysqlBackupSourceDetails | undefined>;
@@ -193,6 +198,7 @@ export class MysqlBackup extends pulumi.CustomResource {
             resourceInputs["originalSourceBackupId"] = state ? state.originalSourceBackupId : undefined;
             resourceInputs["retentionInDays"] = state ? state.retentionInDays : undefined;
             resourceInputs["shapeName"] = state ? state.shapeName : undefined;
+            resourceInputs["softDelete"] = state ? state.softDelete : undefined;
             resourceInputs["sourceDetails"] = state ? state.sourceDetails : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
@@ -210,6 +216,7 @@ export class MysqlBackup extends pulumi.CustomResource {
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["retentionInDays"] = args ? args.retentionInDays : undefined;
+            resourceInputs["softDelete"] = args ? args.softDelete : undefined;
             resourceInputs["sourceDetails"] = args ? args.sourceDetails : undefined;
             resourceInputs["backupSizeInGbs"] = undefined /*out*/;
             resourceInputs["creationType"] = undefined /*out*/;
@@ -305,6 +312,10 @@ export interface MysqlBackupState {
      */
     shapeName?: pulumi.Input<string>;
     /**
+     * (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+     */
+    softDelete?: pulumi.Input<string>;
+    /**
      * Details of backup source in the cloud.
      */
     sourceDetails?: pulumi.Input<inputs.Mysql.MysqlBackupSourceDetails>;
@@ -367,6 +378,10 @@ export interface MysqlBackupArgs {
      * (Updatable) Number of days to retain this backup.
      */
     retentionInDays?: pulumi.Input<number>;
+    /**
+     * (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+     */
+    softDelete?: pulumi.Input<string>;
     /**
      * Details of backup source in the cloud.
      */

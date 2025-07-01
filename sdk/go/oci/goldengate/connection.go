@@ -55,6 +55,17 @@ import (
 //						PrivateIp: pulumi.Any(connectionBootstrapServersPrivateIp),
 //					},
 //				},
+//				Catalog: &goldengate.ConnectionCatalogArgs{
+//					CatalogType:          pulumi.Any(connectionCatalogCatalogType),
+//					Branch:               pulumi.Any(connectionCatalogBranch),
+//					ClientId:             pulumi.Any(testClient.Id),
+//					ClientSecretSecretId: pulumi.Any(testSecret.Id),
+//					GlueId:               pulumi.Any(testGlue.Id),
+//					Name:                 pulumi.Any(connectionCatalogName),
+//					PrincipalRole:        pulumi.Any(connectionCatalogPrincipalRole),
+//					PropertiesSecretId:   pulumi.Any(testSecret.Id),
+//					Uri:                  pulumi.Any(connectionCatalogUri),
+//				},
 //				ClientId:             pulumi.Any(testClient.Id),
 //				ClientSecret:         pulumi.Any(connectionClientSecret),
 //				ClientSecretSecretId: pulumi.Any(testSecret.Id),
@@ -95,45 +106,59 @@ import (
 //						Message: pulumi.Any(connectionLocksMessage),
 //					},
 //				},
-//				NsgIds:                                pulumi.Any(connectionNsgIds),
-//				Password:                              pulumi.Any(connectionPassword),
-//				PasswordSecretId:                      pulumi.Any(testSecret.Id),
-//				Port:                                  pulumi.Any(connectionPort),
-//				PrivateIp:                             pulumi.Any(connectionPrivateIp),
-//				PrivateKeyFile:                        pulumi.Any(connectionPrivateKeyFile),
-//				PrivateKeyFileSecretId:                pulumi.Any(testSecret.Id),
-//				PrivateKeyPassphrase:                  pulumi.Any(connectionPrivateKeyPassphrase),
-//				PrivateKeyPassphraseSecretId:          pulumi.Any(testSecret.Id),
-//				ProducerProperties:                    pulumi.Any(connectionProducerProperties),
-//				PublicKeyFingerprint:                  pulumi.Any(connectionPublicKeyFingerprint),
-//				RedisClusterId:                        pulumi.Any(testRedisCluster.Id),
-//				Region:                                pulumi.Any(connectionRegion),
-//				RoutingMethod:                         pulumi.Any(connectionRoutingMethod),
-//				SasToken:                              pulumi.Any(connectionSasToken),
-//				SasTokenSecretId:                      pulumi.Any(testSecret.Id),
-//				SecretAccessKey:                       pulumi.Any(connectionSecretAccessKey),
-//				SecretAccessKeySecretId:               pulumi.Any(testSecret.Id),
-//				SecurityProtocol:                      pulumi.Any(connectionSecurityProtocol),
-//				Servers:                               pulumi.Any(connectionServers),
-//				ServiceAccountKeyFile:                 pulumi.Any(connectionServiceAccountKeyFile),
-//				ServiceAccountKeyFileSecretId:         pulumi.Any(testSecret.Id),
-//				SessionMode:                           pulumi.Any(connectionSessionMode),
-//				ShouldUseJndi:                         pulumi.Any(connectionShouldUseJndi),
-//				ShouldUseResourcePrincipal:            pulumi.Any(connectionShouldUseResourcePrincipal),
-//				ShouldValidateServerCertificate:       pulumi.Any(connectionShouldValidateServerCertificate),
-//				SslCa:                                 pulumi.Any(connectionSslCa),
-//				SslCert:                               pulumi.Any(connectionSslCert),
-//				SslClientKeystash:                     pulumi.Any(connectionSslClientKeystash),
-//				SslClientKeystashSecretId:             pulumi.Any(testSecret.Id),
-//				SslClientKeystoredb:                   pulumi.Any(connectionSslClientKeystoredb),
-//				SslClientKeystoredbSecretId:           pulumi.Any(testSecret.Id),
-//				SslCrl:                                pulumi.Any(connectionSslCrl),
-//				SslKey:                                pulumi.Any(connectionSslKey),
-//				SslKeyPassword:                        pulumi.Any(connectionSslKeyPassword),
-//				SslKeyPasswordSecretId:                pulumi.Any(testSecret.Id),
-//				SslKeySecretId:                        pulumi.Any(testSecret.Id),
-//				SslMode:                               pulumi.Any(connectionSslMode),
-//				SslServerCertificate:                  pulumi.Any(connectionSslServerCertificate),
+//				NsgIds:                          pulumi.Any(connectionNsgIds),
+//				Password:                        pulumi.Any(connectionPassword),
+//				PasswordSecretId:                pulumi.Any(testSecret.Id),
+//				Port:                            pulumi.Any(connectionPort),
+//				PrivateIp:                       pulumi.Any(connectionPrivateIp),
+//				PrivateKeyFile:                  pulumi.Any(connectionPrivateKeyFile),
+//				PrivateKeyFileSecretId:          pulumi.Any(testSecret.Id),
+//				PrivateKeyPassphrase:            pulumi.Any(connectionPrivateKeyPassphrase),
+//				PrivateKeyPassphraseSecretId:    pulumi.Any(testSecret.Id),
+//				ProducerProperties:              pulumi.Any(connectionProducerProperties),
+//				PublicKeyFingerprint:            pulumi.Any(connectionPublicKeyFingerprint),
+//				RedisClusterId:                  pulumi.Any(testRedisCluster.Id),
+//				Region:                          pulumi.Any(connectionRegion),
+//				RoutingMethod:                   pulumi.Any(connectionRoutingMethod),
+//				SasToken:                        pulumi.Any(connectionSasToken),
+//				SasTokenSecretId:                pulumi.Any(testSecret.Id),
+//				SecretAccessKey:                 pulumi.Any(connectionSecretAccessKey),
+//				SecretAccessKeySecretId:         pulumi.Any(testSecret.Id),
+//				SecurityProtocol:                pulumi.Any(connectionSecurityProtocol),
+//				Servers:                         pulumi.Any(connectionServers),
+//				ServiceAccountKeyFile:           pulumi.Any(connectionServiceAccountKeyFile),
+//				ServiceAccountKeyFileSecretId:   pulumi.Any(testSecret.Id),
+//				SessionMode:                     pulumi.Any(connectionSessionMode),
+//				ShouldUseJndi:                   pulumi.Any(connectionShouldUseJndi),
+//				ShouldUseResourcePrincipal:      pulumi.Any(connectionShouldUseResourcePrincipal),
+//				ShouldValidateServerCertificate: pulumi.Any(connectionShouldValidateServerCertificate),
+//				SslCa:                           pulumi.Any(connectionSslCa),
+//				SslCert:                         pulumi.Any(connectionSslCert),
+//				SslClientKeystash:               pulumi.Any(connectionSslClientKeystash),
+//				SslClientKeystashSecretId:       pulumi.Any(testSecret.Id),
+//				SslClientKeystoredb:             pulumi.Any(connectionSslClientKeystoredb),
+//				SslClientKeystoredbSecretId:     pulumi.Any(testSecret.Id),
+//				SslCrl:                          pulumi.Any(connectionSslCrl),
+//				SslKey:                          pulumi.Any(connectionSslKey),
+//				SslKeyPassword:                  pulumi.Any(connectionSslKeyPassword),
+//				SslKeyPasswordSecretId:          pulumi.Any(testSecret.Id),
+//				SslKeySecretId:                  pulumi.Any(testSecret.Id),
+//				SslMode:                         pulumi.Any(connectionSslMode),
+//				SslServerCertificate:            pulumi.Any(connectionSslServerCertificate),
+//				Storage: &goldengate.ConnectionStorageArgs{
+//					StorageType:                   pulumi.Any(connectionStorageStorageType),
+//					AccessKeyId:                   pulumi.Any(testKey.Id),
+//					AccountKeySecretId:            pulumi.Any(testSecret.Id),
+//					AccountName:                   pulumi.Any(connectionStorageAccountName),
+//					Bucket:                        pulumi.Any(connectionStorageBucket),
+//					Container:                     pulumi.Any(connectionStorageContainer),
+//					Endpoint:                      pulumi.Any(connectionStorageEndpoint),
+//					ProjectId:                     pulumi.Any(testProject.Id),
+//					Region:                        pulumi.Any(connectionStorageRegion),
+//					SchemeType:                    pulumi.Any(connectionStorageSchemeType),
+//					SecretAccessKeySecretId:       pulumi.Any(testSecret.Id),
+//					ServiceAccountKeyFileSecretId: pulumi.Any(testSecret.Id),
+//				},
 //				StorageCredentialName:                 pulumi.Any(connectionStorageCredentialName),
 //				StreamPoolId:                          pulumi.Any(testStreamPool.Id),
 //				SubnetId:                              pulumi.Any(testSubnet.Id),
@@ -193,6 +218,8 @@ type Connection struct {
 	AzureTenantId pulumi.StringOutput `pulumi:"azureTenantId"`
 	// (Updatable) Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
 	BootstrapServers ConnectionBootstrapServerArrayOutput `pulumi:"bootstrapServers"`
+	// (Updatable) The information about a new catalog of given type used in an Iceberg connection.
+	Catalog ConnectionCatalogOutput `pulumi:"catalog"`
 	// (Updatable) Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
 	ClientId pulumi.StringOutput `pulumi:"clientId"`
 	// (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
@@ -211,7 +238,7 @@ type Connection struct {
 	ConnectionUrl pulumi.StringOutput `pulumi:"connectionUrl"`
 	// (Updatable) The base64 encoded content of the consumer.properties file.
 	ConsumerProperties pulumi.StringOutput `pulumi:"consumerProperties"`
-	// (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
+	// (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	CoreSiteXml pulumi.StringOutput `pulumi:"coreSiteXml"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
 	DatabaseId pulumi.StringOutput `pulumi:"databaseId"`
@@ -229,7 +256,7 @@ type Connection struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Indicates that sensitive attributes are provided via Secrets.
 	DoesUseSecretIds pulumi.BoolOutput `pulumi:"doesUseSecretIds"`
-	// (Updatable)Azure Storage service endpoint. e.g: https://test.blob.core.windows.net,  Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+	// (Updatable) Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
 	Endpoint pulumi.StringOutput `pulumi:"endpoint"`
 	// (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
 	Fingerprint pulumi.StringOutput `pulumi:"fingerprint"`
@@ -311,7 +338,7 @@ type Connection struct {
 	Servers pulumi.StringOutput `pulumi:"servers"`
 	// (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
 	ServiceAccountKeyFile pulumi.StringPtrOutput `pulumi:"serviceAccountKeyFile"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
 	ServiceAccountKeyFileSecretId pulumi.StringPtrOutput `pulumi:"serviceAccountKeyFileSecretId"`
 	// (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
 	SessionMode pulumi.StringOutput `pulumi:"sessionMode"`
@@ -321,9 +348,9 @@ type Connection struct {
 	ShouldUseResourcePrincipal pulumi.BoolOutput `pulumi:"shouldUseResourcePrincipal"`
 	// (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
 	ShouldValidateServerCertificate pulumi.BoolOutput `pulumi:"shouldValidateServerCertificate"`
-	// (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
+	// (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	SslCa pulumi.StringOutput `pulumi:"sslCa"`
-	// (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
+	// (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	SslCert pulumi.StringOutput `pulumi:"sslCert"`
 	// (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
 	SslClientKeystash pulumi.StringPtrOutput `pulumi:"sslClientKeystash"`
@@ -333,7 +360,7 @@ type Connection struct {
 	SslClientKeystoredb pulumi.StringPtrOutput `pulumi:"sslClientKeystoredb"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
 	SslClientKeystoredbSecretId pulumi.StringPtrOutput `pulumi:"sslClientKeystoredbSecretId"`
-	// (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
+	// (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	SslCrl pulumi.StringOutput `pulumi:"sslCrl"`
 	// (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "sslKeySecretId". This field will be removed after February 15 2026.
 	SslKey pulumi.StringPtrOutput `pulumi:"sslKey"`
@@ -346,10 +373,12 @@ type Connection struct {
 	SslKeySecretId pulumi.StringPtrOutput `pulumi:"sslKeySecretId"`
 	// (Updatable) SSL modes for PostgreSQL.
 	SslMode pulumi.StringOutput `pulumi:"sslMode"`
-	// (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+	// (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	SslServerCertificate pulumi.StringOutput `pulumi:"sslServerCertificate"`
 	// Possible lifecycle states for connection.
 	State pulumi.StringOutput `pulumi:"state"`
+	// (Updatable) The information about a new storage of given type used in an Iceberg connection.
+	Storage ConnectionStorageOutput `pulumi:"storage"`
 	// (Updatable) Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
 	StorageCredentialName pulumi.StringOutput `pulumi:"storageCredentialName"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
@@ -368,7 +397,7 @@ type Connection struct {
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
-	// (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+	// (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	TlsCaFile pulumi.StringOutput `pulumi:"tlsCaFile"`
 	// (Updatable) Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFileSecretId". This field will be removed after February 15 2026.
 	TlsCertificateKeyFile pulumi.StringOutput `pulumi:"tlsCertificateKeyFile"`
@@ -549,6 +578,8 @@ type connectionState struct {
 	AzureTenantId *string `pulumi:"azureTenantId"`
 	// (Updatable) Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
 	BootstrapServers []ConnectionBootstrapServer `pulumi:"bootstrapServers"`
+	// (Updatable) The information about a new catalog of given type used in an Iceberg connection.
+	Catalog *ConnectionCatalog `pulumi:"catalog"`
 	// (Updatable) Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
 	ClientId *string `pulumi:"clientId"`
 	// (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
@@ -567,7 +598,7 @@ type connectionState struct {
 	ConnectionUrl *string `pulumi:"connectionUrl"`
 	// (Updatable) The base64 encoded content of the consumer.properties file.
 	ConsumerProperties *string `pulumi:"consumerProperties"`
-	// (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
+	// (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	CoreSiteXml *string `pulumi:"coreSiteXml"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
 	DatabaseId *string `pulumi:"databaseId"`
@@ -585,7 +616,7 @@ type connectionState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Indicates that sensitive attributes are provided via Secrets.
 	DoesUseSecretIds *bool `pulumi:"doesUseSecretIds"`
-	// (Updatable)Azure Storage service endpoint. e.g: https://test.blob.core.windows.net,  Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+	// (Updatable) Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
 	Endpoint *string `pulumi:"endpoint"`
 	// (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
 	Fingerprint *string `pulumi:"fingerprint"`
@@ -667,7 +698,7 @@ type connectionState struct {
 	Servers *string `pulumi:"servers"`
 	// (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
 	ServiceAccountKeyFile *string `pulumi:"serviceAccountKeyFile"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
 	ServiceAccountKeyFileSecretId *string `pulumi:"serviceAccountKeyFileSecretId"`
 	// (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
 	SessionMode *string `pulumi:"sessionMode"`
@@ -677,9 +708,9 @@ type connectionState struct {
 	ShouldUseResourcePrincipal *bool `pulumi:"shouldUseResourcePrincipal"`
 	// (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
 	ShouldValidateServerCertificate *bool `pulumi:"shouldValidateServerCertificate"`
-	// (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
+	// (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	SslCa *string `pulumi:"sslCa"`
-	// (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
+	// (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	SslCert *string `pulumi:"sslCert"`
 	// (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
 	SslClientKeystash *string `pulumi:"sslClientKeystash"`
@@ -689,7 +720,7 @@ type connectionState struct {
 	SslClientKeystoredb *string `pulumi:"sslClientKeystoredb"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
 	SslClientKeystoredbSecretId *string `pulumi:"sslClientKeystoredbSecretId"`
-	// (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
+	// (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	SslCrl *string `pulumi:"sslCrl"`
 	// (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "sslKeySecretId". This field will be removed after February 15 2026.
 	SslKey *string `pulumi:"sslKey"`
@@ -702,10 +733,12 @@ type connectionState struct {
 	SslKeySecretId *string `pulumi:"sslKeySecretId"`
 	// (Updatable) SSL modes for PostgreSQL.
 	SslMode *string `pulumi:"sslMode"`
-	// (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+	// (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	SslServerCertificate *string `pulumi:"sslServerCertificate"`
 	// Possible lifecycle states for connection.
 	State *string `pulumi:"state"`
+	// (Updatable) The information about a new storage of given type used in an Iceberg connection.
+	Storage *ConnectionStorage `pulumi:"storage"`
 	// (Updatable) Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
 	StorageCredentialName *string `pulumi:"storageCredentialName"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
@@ -724,7 +757,7 @@ type connectionState struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+	// (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	TlsCaFile *string `pulumi:"tlsCaFile"`
 	// (Updatable) Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFileSecretId". This field will be removed after February 15 2026.
 	TlsCertificateKeyFile *string `pulumi:"tlsCertificateKeyFile"`
@@ -781,6 +814,8 @@ type ConnectionState struct {
 	AzureTenantId pulumi.StringPtrInput
 	// (Updatable) Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
 	BootstrapServers ConnectionBootstrapServerArrayInput
+	// (Updatable) The information about a new catalog of given type used in an Iceberg connection.
+	Catalog ConnectionCatalogPtrInput
 	// (Updatable) Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
 	ClientId pulumi.StringPtrInput
 	// (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
@@ -799,7 +834,7 @@ type ConnectionState struct {
 	ConnectionUrl pulumi.StringPtrInput
 	// (Updatable) The base64 encoded content of the consumer.properties file.
 	ConsumerProperties pulumi.StringPtrInput
-	// (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
+	// (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	CoreSiteXml pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
 	DatabaseId pulumi.StringPtrInput
@@ -817,7 +852,7 @@ type ConnectionState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Indicates that sensitive attributes are provided via Secrets.
 	DoesUseSecretIds pulumi.BoolPtrInput
-	// (Updatable)Azure Storage service endpoint. e.g: https://test.blob.core.windows.net,  Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+	// (Updatable) Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
 	Endpoint pulumi.StringPtrInput
 	// (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
 	Fingerprint pulumi.StringPtrInput
@@ -899,7 +934,7 @@ type ConnectionState struct {
 	Servers pulumi.StringPtrInput
 	// (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
 	ServiceAccountKeyFile pulumi.StringPtrInput
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
 	ServiceAccountKeyFileSecretId pulumi.StringPtrInput
 	// (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
 	SessionMode pulumi.StringPtrInput
@@ -909,9 +944,9 @@ type ConnectionState struct {
 	ShouldUseResourcePrincipal pulumi.BoolPtrInput
 	// (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
 	ShouldValidateServerCertificate pulumi.BoolPtrInput
-	// (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
+	// (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	SslCa pulumi.StringPtrInput
-	// (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
+	// (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	SslCert pulumi.StringPtrInput
 	// (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
 	SslClientKeystash pulumi.StringPtrInput
@@ -921,7 +956,7 @@ type ConnectionState struct {
 	SslClientKeystoredb pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
 	SslClientKeystoredbSecretId pulumi.StringPtrInput
-	// (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
+	// (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	SslCrl pulumi.StringPtrInput
 	// (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "sslKeySecretId". This field will be removed after February 15 2026.
 	SslKey pulumi.StringPtrInput
@@ -934,10 +969,12 @@ type ConnectionState struct {
 	SslKeySecretId pulumi.StringPtrInput
 	// (Updatable) SSL modes for PostgreSQL.
 	SslMode pulumi.StringPtrInput
-	// (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+	// (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	SslServerCertificate pulumi.StringPtrInput
 	// Possible lifecycle states for connection.
 	State pulumi.StringPtrInput
+	// (Updatable) The information about a new storage of given type used in an Iceberg connection.
+	Storage ConnectionStoragePtrInput
 	// (Updatable) Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
 	StorageCredentialName pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
@@ -956,7 +993,7 @@ type ConnectionState struct {
 	TimeCreated pulumi.StringPtrInput
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeUpdated pulumi.StringPtrInput
-	// (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+	// (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	TlsCaFile pulumi.StringPtrInput
 	// (Updatable) Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFileSecretId". This field will be removed after February 15 2026.
 	TlsCertificateKeyFile pulumi.StringPtrInput
@@ -1017,6 +1054,8 @@ type connectionArgs struct {
 	AzureTenantId *string `pulumi:"azureTenantId"`
 	// (Updatable) Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
 	BootstrapServers []ConnectionBootstrapServer `pulumi:"bootstrapServers"`
+	// (Updatable) The information about a new catalog of given type used in an Iceberg connection.
+	Catalog *ConnectionCatalog `pulumi:"catalog"`
 	// (Updatable) Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
 	ClientId *string `pulumi:"clientId"`
 	// (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
@@ -1035,7 +1074,7 @@ type connectionArgs struct {
 	ConnectionUrl *string `pulumi:"connectionUrl"`
 	// (Updatable) The base64 encoded content of the consumer.properties file.
 	ConsumerProperties *string `pulumi:"consumerProperties"`
-	// (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
+	// (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	CoreSiteXml *string `pulumi:"coreSiteXml"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
 	DatabaseId *string `pulumi:"databaseId"`
@@ -1053,7 +1092,7 @@ type connectionArgs struct {
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Indicates that sensitive attributes are provided via Secrets.
 	DoesUseSecretIds *bool `pulumi:"doesUseSecretIds"`
-	// (Updatable)Azure Storage service endpoint. e.g: https://test.blob.core.windows.net,  Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+	// (Updatable) Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
 	Endpoint *string `pulumi:"endpoint"`
 	// (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
 	Fingerprint *string `pulumi:"fingerprint"`
@@ -1131,7 +1170,7 @@ type connectionArgs struct {
 	Servers *string `pulumi:"servers"`
 	// (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
 	ServiceAccountKeyFile *string `pulumi:"serviceAccountKeyFile"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
 	ServiceAccountKeyFileSecretId *string `pulumi:"serviceAccountKeyFileSecretId"`
 	// (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
 	SessionMode *string `pulumi:"sessionMode"`
@@ -1141,9 +1180,9 @@ type connectionArgs struct {
 	ShouldUseResourcePrincipal *bool `pulumi:"shouldUseResourcePrincipal"`
 	// (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
 	ShouldValidateServerCertificate *bool `pulumi:"shouldValidateServerCertificate"`
-	// (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
+	// (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	SslCa *string `pulumi:"sslCa"`
-	// (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
+	// (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	SslCert *string `pulumi:"sslCert"`
 	// (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
 	SslClientKeystash *string `pulumi:"sslClientKeystash"`
@@ -1153,7 +1192,7 @@ type connectionArgs struct {
 	SslClientKeystoredb *string `pulumi:"sslClientKeystoredb"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
 	SslClientKeystoredbSecretId *string `pulumi:"sslClientKeystoredbSecretId"`
-	// (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
+	// (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	SslCrl *string `pulumi:"sslCrl"`
 	// (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "sslKeySecretId". This field will be removed after February 15 2026.
 	SslKey *string `pulumi:"sslKey"`
@@ -1166,8 +1205,10 @@ type connectionArgs struct {
 	SslKeySecretId *string `pulumi:"sslKeySecretId"`
 	// (Updatable) SSL modes for PostgreSQL.
 	SslMode *string `pulumi:"sslMode"`
-	// (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+	// (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	SslServerCertificate *string `pulumi:"sslServerCertificate"`
+	// (Updatable) The information about a new storage of given type used in an Iceberg connection.
+	Storage *ConnectionStorage `pulumi:"storage"`
 	// (Updatable) Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
 	StorageCredentialName *string `pulumi:"storageCredentialName"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
@@ -1180,7 +1221,7 @@ type connectionArgs struct {
 	TenancyId *string `pulumi:"tenancyId"`
 	// (Updatable) Azure tenant ID of the application. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
 	TenantId *string `pulumi:"tenantId"`
-	// (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+	// (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	TlsCaFile *string `pulumi:"tlsCaFile"`
 	// (Updatable) Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFileSecretId". This field will be removed after February 15 2026.
 	TlsCertificateKeyFile *string `pulumi:"tlsCertificateKeyFile"`
@@ -1238,6 +1279,8 @@ type ConnectionArgs struct {
 	AzureTenantId pulumi.StringPtrInput
 	// (Updatable) Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
 	BootstrapServers ConnectionBootstrapServerArrayInput
+	// (Updatable) The information about a new catalog of given type used in an Iceberg connection.
+	Catalog ConnectionCatalogPtrInput
 	// (Updatable) Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
 	ClientId pulumi.StringPtrInput
 	// (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
@@ -1256,7 +1299,7 @@ type ConnectionArgs struct {
 	ConnectionUrl pulumi.StringPtrInput
 	// (Updatable) The base64 encoded content of the consumer.properties file.
 	ConsumerProperties pulumi.StringPtrInput
-	// (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
+	// (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	CoreSiteXml pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
 	DatabaseId pulumi.StringPtrInput
@@ -1274,7 +1317,7 @@ type ConnectionArgs struct {
 	DisplayName pulumi.StringInput
 	// (Updatable) Indicates that sensitive attributes are provided via Secrets.
 	DoesUseSecretIds pulumi.BoolPtrInput
-	// (Updatable)Azure Storage service endpoint. e.g: https://test.blob.core.windows.net,  Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+	// (Updatable) Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
 	Endpoint pulumi.StringPtrInput
 	// (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
 	Fingerprint pulumi.StringPtrInput
@@ -1352,7 +1395,7 @@ type ConnectionArgs struct {
 	Servers pulumi.StringPtrInput
 	// (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
 	ServiceAccountKeyFile pulumi.StringPtrInput
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
 	ServiceAccountKeyFileSecretId pulumi.StringPtrInput
 	// (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
 	SessionMode pulumi.StringPtrInput
@@ -1362,9 +1405,9 @@ type ConnectionArgs struct {
 	ShouldUseResourcePrincipal pulumi.BoolPtrInput
 	// (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
 	ShouldValidateServerCertificate pulumi.BoolPtrInput
-	// (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
+	// (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	SslCa pulumi.StringPtrInput
-	// (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
+	// (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	SslCert pulumi.StringPtrInput
 	// (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
 	SslClientKeystash pulumi.StringPtrInput
@@ -1374,7 +1417,7 @@ type ConnectionArgs struct {
 	SslClientKeystoredb pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
 	SslClientKeystoredbSecretId pulumi.StringPtrInput
-	// (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
+	// (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	SslCrl pulumi.StringPtrInput
 	// (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "sslKeySecretId". This field will be removed after February 15 2026.
 	SslKey pulumi.StringPtrInput
@@ -1387,8 +1430,10 @@ type ConnectionArgs struct {
 	SslKeySecretId pulumi.StringPtrInput
 	// (Updatable) SSL modes for PostgreSQL.
 	SslMode pulumi.StringPtrInput
-	// (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+	// (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	SslServerCertificate pulumi.StringPtrInput
+	// (Updatable) The information about a new storage of given type used in an Iceberg connection.
+	Storage ConnectionStoragePtrInput
 	// (Updatable) Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
 	StorageCredentialName pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
@@ -1401,7 +1446,7 @@ type ConnectionArgs struct {
 	TenancyId pulumi.StringPtrInput
 	// (Updatable) Azure tenant ID of the application. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
 	TenantId pulumi.StringPtrInput
-	// (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+	// (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	TlsCaFile pulumi.StringPtrInput
 	// (Updatable) Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFileSecretId". This field will be removed after February 15 2026.
 	TlsCertificateKeyFile pulumi.StringPtrInput
@@ -1571,6 +1616,11 @@ func (o ConnectionOutput) BootstrapServers() ConnectionBootstrapServerArrayOutpu
 	return o.ApplyT(func(v *Connection) ConnectionBootstrapServerArrayOutput { return v.BootstrapServers }).(ConnectionBootstrapServerArrayOutput)
 }
 
+// (Updatable) The information about a new catalog of given type used in an Iceberg connection.
+func (o ConnectionOutput) Catalog() ConnectionCatalogOutput {
+	return o.ApplyT(func(v *Connection) ConnectionCatalogOutput { return v.Catalog }).(ConnectionCatalogOutput)
+}
+
 // (Updatable) Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
 func (o ConnectionOutput) ClientId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.ClientId }).(pulumi.StringOutput)
@@ -1616,7 +1666,7 @@ func (o ConnectionOutput) ConsumerProperties() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.ConsumerProperties }).(pulumi.StringOutput)
 }
 
-// (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
+// (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 func (o ConnectionOutput) CoreSiteXml() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.CoreSiteXml }).(pulumi.StringOutput)
 }
@@ -1661,7 +1711,7 @@ func (o ConnectionOutput) DoesUseSecretIds() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Connection) pulumi.BoolOutput { return v.DoesUseSecretIds }).(pulumi.BoolOutput)
 }
 
-// (Updatable)Azure Storage service endpoint. e.g: https://test.blob.core.windows.net,  Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+// (Updatable) Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
 func (o ConnectionOutput) Endpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.Endpoint }).(pulumi.StringOutput)
 }
@@ -1863,7 +1913,7 @@ func (o ConnectionOutput) ServiceAccountKeyFile() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.ServiceAccountKeyFile }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
 func (o ConnectionOutput) ServiceAccountKeyFileSecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.ServiceAccountKeyFileSecretId }).(pulumi.StringPtrOutput)
 }
@@ -1888,12 +1938,12 @@ func (o ConnectionOutput) ShouldValidateServerCertificate() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Connection) pulumi.BoolOutput { return v.ShouldValidateServerCertificate }).(pulumi.BoolOutput)
 }
 
-// (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
+// (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 func (o ConnectionOutput) SslCa() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.SslCa }).(pulumi.StringOutput)
 }
 
-// (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
+// (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 func (o ConnectionOutput) SslCert() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.SslCert }).(pulumi.StringOutput)
 }
@@ -1918,7 +1968,7 @@ func (o ConnectionOutput) SslClientKeystoredbSecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.SslClientKeystoredbSecretId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
+// (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 func (o ConnectionOutput) SslCrl() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.SslCrl }).(pulumi.StringOutput)
 }
@@ -1949,7 +1999,7 @@ func (o ConnectionOutput) SslMode() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.SslMode }).(pulumi.StringOutput)
 }
 
-// (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+// (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 func (o ConnectionOutput) SslServerCertificate() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.SslServerCertificate }).(pulumi.StringOutput)
 }
@@ -1957,6 +2007,11 @@ func (o ConnectionOutput) SslServerCertificate() pulumi.StringOutput {
 // Possible lifecycle states for connection.
 func (o ConnectionOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+// (Updatable) The information about a new storage of given type used in an Iceberg connection.
+func (o ConnectionOutput) Storage() ConnectionStorageOutput {
+	return o.ApplyT(func(v *Connection) ConnectionStorageOutput { return v.Storage }).(ConnectionStorageOutput)
 }
 
 // (Updatable) Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
@@ -2004,7 +2059,7 @@ func (o ConnectionOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+// (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 func (o ConnectionOutput) TlsCaFile() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.TlsCaFile }).(pulumi.StringOutput)
 }

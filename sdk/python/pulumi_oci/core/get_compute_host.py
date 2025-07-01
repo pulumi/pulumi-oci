@@ -14,6 +14,7 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetComputeHostResult',
@@ -27,7 +28,7 @@ class GetComputeHostResult:
     """
     A collection of values returned by getComputeHost.
     """
-    def __init__(__self__, additional_data=None, availability_domain=None, capacity_reservation_id=None, compartment_id=None, compute_host_id=None, defined_tags=None, display_name=None, fault_domain=None, freeform_tags=None, gpu_memory_fabric_id=None, health=None, hpc_island_id=None, id=None, impacted_component_details=None, instance_id=None, lifecycle_details=None, local_block_id=None, network_block_id=None, shape=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, additional_data=None, availability_domain=None, capacity_reservation_id=None, compartment_id=None, compute_host_group_id=None, compute_host_id=None, configuration_datas=None, configuration_state=None, defined_tags=None, display_name=None, fault_domain=None, freeform_tags=None, gpu_memory_fabric_id=None, health=None, hpc_island_id=None, id=None, impacted_component_details=None, instance_id=None, lifecycle_details=None, local_block_id=None, network_block_id=None, recycle_details=None, shape=None, state=None, time_configuration_check=None, time_created=None, time_updated=None):
         if additional_data and not isinstance(additional_data, str):
             raise TypeError("Expected argument 'additional_data' to be a str")
         pulumi.set(__self__, "additional_data", additional_data)
@@ -40,9 +41,18 @@ class GetComputeHostResult:
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if compute_host_group_id and not isinstance(compute_host_group_id, str):
+            raise TypeError("Expected argument 'compute_host_group_id' to be a str")
+        pulumi.set(__self__, "compute_host_group_id", compute_host_group_id)
         if compute_host_id and not isinstance(compute_host_id, str):
             raise TypeError("Expected argument 'compute_host_id' to be a str")
         pulumi.set(__self__, "compute_host_id", compute_host_id)
+        if configuration_datas and not isinstance(configuration_datas, list):
+            raise TypeError("Expected argument 'configuration_datas' to be a list")
+        pulumi.set(__self__, "configuration_datas", configuration_datas)
+        if configuration_state and not isinstance(configuration_state, str):
+            raise TypeError("Expected argument 'configuration_state' to be a str")
+        pulumi.set(__self__, "configuration_state", configuration_state)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -82,12 +92,18 @@ class GetComputeHostResult:
         if network_block_id and not isinstance(network_block_id, str):
             raise TypeError("Expected argument 'network_block_id' to be a str")
         pulumi.set(__self__, "network_block_id", network_block_id)
+        if recycle_details and not isinstance(recycle_details, list):
+            raise TypeError("Expected argument 'recycle_details' to be a list")
+        pulumi.set(__self__, "recycle_details", recycle_details)
         if shape and not isinstance(shape, str):
             raise TypeError("Expected argument 'shape' to be a str")
         pulumi.set(__self__, "shape", shape)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if time_configuration_check and not isinstance(time_configuration_check, str):
+            raise TypeError("Expected argument 'time_configuration_check' to be a str")
+        pulumi.set(__self__, "time_configuration_check", time_configuration_check)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -128,9 +144,33 @@ class GetComputeHostResult:
         return pulumi.get(self, "compartment_id")
 
     @property
+    @pulumi.getter(name="computeHostGroupId")
+    def compute_host_group_id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group this host was attached to at the time of recycle.
+        """
+        return pulumi.get(self, "compute_host_group_id")
+
+    @property
     @pulumi.getter(name="computeHostId")
     def compute_host_id(self) -> builtins.str:
         return pulumi.get(self, "compute_host_id")
+
+    @property
+    @pulumi.getter(name="configurationDatas")
+    def configuration_datas(self) -> Sequence['outputs.GetComputeHostConfigurationDataResult']:
+        """
+        Compute Host Configuration Data
+        """
+        return pulumi.get(self, "configuration_datas")
+
+    @property
+    @pulumi.getter(name="configurationState")
+    def configuration_state(self) -> builtins.str:
+        """
+        Configuration state of the Compute Bare Metal Host.
+        """
+        return pulumi.get(self, "configuration_state")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -237,6 +277,14 @@ class GetComputeHostResult:
         return pulumi.get(self, "network_block_id")
 
     @property
+    @pulumi.getter(name="recycleDetails")
+    def recycle_details(self) -> Sequence['outputs.GetComputeHostRecycleDetailResult']:
+        """
+        Shows details about the last recycle performed on this host.
+        """
+        return pulumi.get(self, "recycle_details")
+
+    @property
     @pulumi.getter
     def shape(self) -> builtins.str:
         """
@@ -251,6 +299,14 @@ class GetComputeHostResult:
         The lifecycle state of the host
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeConfigurationCheck")
+    def time_configuration_check(self) -> builtins.str:
+        """
+        The date and time that the compute bare metal host configuration check was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_configuration_check")
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -279,7 +335,10 @@ class AwaitableGetComputeHostResult(GetComputeHostResult):
             availability_domain=self.availability_domain,
             capacity_reservation_id=self.capacity_reservation_id,
             compartment_id=self.compartment_id,
+            compute_host_group_id=self.compute_host_group_id,
             compute_host_id=self.compute_host_id,
+            configuration_datas=self.configuration_datas,
+            configuration_state=self.configuration_state,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
             fault_domain=self.fault_domain,
@@ -293,8 +352,10 @@ class AwaitableGetComputeHostResult(GetComputeHostResult):
             lifecycle_details=self.lifecycle_details,
             local_block_id=self.local_block_id,
             network_block_id=self.network_block_id,
+            recycle_details=self.recycle_details,
             shape=self.shape,
             state=self.state,
+            time_configuration_check=self.time_configuration_check,
             time_created=self.time_created,
             time_updated=self.time_updated)
 
@@ -328,7 +389,10 @@ def get_compute_host(compute_host_id: Optional[builtins.str] = None,
         availability_domain=pulumi.get(__ret__, 'availability_domain'),
         capacity_reservation_id=pulumi.get(__ret__, 'capacity_reservation_id'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compute_host_group_id=pulumi.get(__ret__, 'compute_host_group_id'),
         compute_host_id=pulumi.get(__ret__, 'compute_host_id'),
+        configuration_datas=pulumi.get(__ret__, 'configuration_datas'),
+        configuration_state=pulumi.get(__ret__, 'configuration_state'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
         fault_domain=pulumi.get(__ret__, 'fault_domain'),
@@ -342,8 +406,10 @@ def get_compute_host(compute_host_id: Optional[builtins.str] = None,
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         local_block_id=pulumi.get(__ret__, 'local_block_id'),
         network_block_id=pulumi.get(__ret__, 'network_block_id'),
+        recycle_details=pulumi.get(__ret__, 'recycle_details'),
         shape=pulumi.get(__ret__, 'shape'),
         state=pulumi.get(__ret__, 'state'),
+        time_configuration_check=pulumi.get(__ret__, 'time_configuration_check'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_compute_host_output(compute_host_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -374,7 +440,10 @@ def get_compute_host_output(compute_host_id: Optional[pulumi.Input[builtins.str]
         availability_domain=pulumi.get(__response__, 'availability_domain'),
         capacity_reservation_id=pulumi.get(__response__, 'capacity_reservation_id'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compute_host_group_id=pulumi.get(__response__, 'compute_host_group_id'),
         compute_host_id=pulumi.get(__response__, 'compute_host_id'),
+        configuration_datas=pulumi.get(__response__, 'configuration_datas'),
+        configuration_state=pulumi.get(__response__, 'configuration_state'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         display_name=pulumi.get(__response__, 'display_name'),
         fault_domain=pulumi.get(__response__, 'fault_domain'),
@@ -388,7 +457,9 @@ def get_compute_host_output(compute_host_id: Optional[pulumi.Input[builtins.str]
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         local_block_id=pulumi.get(__response__, 'local_block_id'),
         network_block_id=pulumi.get(__response__, 'network_block_id'),
+        recycle_details=pulumi.get(__response__, 'recycle_details'),
         shape=pulumi.get(__response__, 'shape'),
         state=pulumi.get(__response__, 'state'),
+        time_configuration_check=pulumi.get(__response__, 'time_configuration_check'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated')))

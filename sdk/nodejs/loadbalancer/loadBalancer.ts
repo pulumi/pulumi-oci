@@ -56,6 +56,7 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     ipMode: loadBalancerIpMode,
+ *     ipv6subnetCidr: loadBalancerIpv6subnetCidr,
  *     isDeleteProtectionEnabled: loadBalancerIsDeleteProtectionEnabled,
  *     isPrivate: loadBalancerIsPrivate,
  *     isRequestIdEnabled: loadBalancerIsRequestIdEnabled,
@@ -130,6 +131,7 @@ export class LoadBalancer extends pulumi.CustomResource {
     public /*out*/ readonly ipAddressDetails!: pulumi.Output<outputs.LoadBalancer.LoadBalancerIpAddressDetail[]>;
     /**
      * An array of IP addresses. Deprecated: use ipAddressDetails instead
+     * *
      *
      * @deprecated The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead.
      */
@@ -144,6 +146,14 @@ export class LoadBalancer extends pulumi.CustomResource {
      * Example: "ipMode":"IPV6"
      */
     public readonly ipMode!: pulumi.Output<string>;
+    /**
+     * Applies to IPV6 LB creation only. 
+     *
+     * Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
+     *
+     * Example: "2002::1234:abcd:ffff:c0a8:101/64"
+     */
+    public readonly ipv6subnetCidr!: pulumi.Output<string>;
     /**
      * (Updatable) Whether or not the load balancer has delete protection enabled.
      *
@@ -261,6 +271,7 @@ export class LoadBalancer extends pulumi.CustomResource {
             resourceInputs["ipAddressDetails"] = state ? state.ipAddressDetails : undefined;
             resourceInputs["ipAddresses"] = state ? state.ipAddresses : undefined;
             resourceInputs["ipMode"] = state ? state.ipMode : undefined;
+            resourceInputs["ipv6subnetCidr"] = state ? state.ipv6subnetCidr : undefined;
             resourceInputs["isDeleteProtectionEnabled"] = state ? state.isDeleteProtectionEnabled : undefined;
             resourceInputs["isPrivate"] = state ? state.isPrivate : undefined;
             resourceInputs["isRequestIdEnabled"] = state ? state.isRequestIdEnabled : undefined;
@@ -293,6 +304,7 @@ export class LoadBalancer extends pulumi.CustomResource {
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["ipMode"] = args ? args.ipMode : undefined;
+            resourceInputs["ipv6subnetCidr"] = args ? args.ipv6subnetCidr : undefined;
             resourceInputs["isDeleteProtectionEnabled"] = args ? args.isDeleteProtectionEnabled : undefined;
             resourceInputs["isPrivate"] = args ? args.isPrivate : undefined;
             resourceInputs["isRequestIdEnabled"] = args ? args.isRequestIdEnabled : undefined;
@@ -340,6 +352,7 @@ export interface LoadBalancerState {
     ipAddressDetails?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.LoadBalancerIpAddressDetail>[]>;
     /**
      * An array of IP addresses. Deprecated: use ipAddressDetails instead
+     * *
      *
      * @deprecated The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead.
      */
@@ -354,6 +367,14 @@ export interface LoadBalancerState {
      * Example: "ipMode":"IPV6"
      */
     ipMode?: pulumi.Input<string>;
+    /**
+     * Applies to IPV6 LB creation only. 
+     *
+     * Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
+     *
+     * Example: "2002::1234:abcd:ffff:c0a8:101/64"
+     */
+    ipv6subnetCidr?: pulumi.Input<string>;
     /**
      * (Updatable) Whether or not the load balancer has delete protection enabled.
      *
@@ -482,6 +503,14 @@ export interface LoadBalancerArgs {
      * Example: "ipMode":"IPV6"
      */
     ipMode?: pulumi.Input<string>;
+    /**
+     * Applies to IPV6 LB creation only. 
+     *
+     * Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
+     *
+     * Example: "2002::1234:abcd:ffff:c0a8:101/64"
+     */
+    ipv6subnetCidr?: pulumi.Input<string>;
     /**
      * (Updatable) Whether or not the load balancer has delete protection enabled.
      *

@@ -63,6 +63,10 @@ export interface GetFleetComplianceReportResult {
      */
     readonly id: string;
     /**
+     * The compliance percentage.
+     */
+    readonly percentCompliant: number;
+    /**
      * Resources associated with the Fleet.
      */
     readonly resources: outputs.FleetAppsManagement.GetFleetComplianceReportResource[];

@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Table Replica resource in Oracle Cloud Infrastructure NoSQL Database service.
  *
- * Add a replica for this table
+ * Add a replica for this table. The table's schema must be frozen prior to this operation.
  *
  * ## Example Usage
  *
@@ -81,7 +81,7 @@ export class TableReplica extends pulumi.CustomResource {
      *
      *
      * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
      */
     public readonly tableNameOrId!: pulumi.Output<string>;
 
@@ -147,7 +147,7 @@ export interface TableReplicaState {
      *
      *
      * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
      */
     tableNameOrId?: pulumi.Input<string>;
 }
@@ -177,7 +177,7 @@ export interface TableReplicaArgs {
      *
      *
      * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
      */
     tableNameOrId: pulumi.Input<string>;
 }

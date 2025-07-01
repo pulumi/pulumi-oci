@@ -9,7 +9,8 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Properties in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * List properties and their values for a tenancy in Fleet Application Management.
+ * Returns a list of all the Properties in the specified compartment.
+ * The query parameter `compartmentId` is required unless the query parameter `id` is specified.
  *
  * ## Example Usage
  *
@@ -23,6 +24,7 @@ import * as utilities from "../utilities";
  *     id: propertyId,
  *     scope: propertyScope,
  *     state: propertyState,
+ *     type: propertyType,
  * });
  * ```
  */
@@ -36,6 +38,7 @@ export function getProperties(args?: GetPropertiesArgs, opts?: pulumi.InvokeOpti
         "id": args.id,
         "scope": args.scope,
         "state": args.state,
+        "type": args.type,
     }, opts);
 }
 
@@ -44,7 +47,7 @@ export function getProperties(args?: GetPropertiesArgs, opts?: pulumi.InvokeOpti
  */
 export interface GetPropertiesArgs {
     /**
-     * The ID of the compartment in which to list resources.
+     * The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      */
     compartmentId?: string;
     /**
@@ -53,7 +56,7 @@ export interface GetPropertiesArgs {
     displayName?: string;
     filters?: inputs.FleetAppsManagement.GetPropertiesFilter[];
     /**
-     * A filter to return only resources whose Property identifier matches the given identifier.
+     * Unique identifier or OCID for listing a single Property by id. Either compartmentId or id must be provided.
      */
     id?: string;
     /**
@@ -64,6 +67,10 @@ export interface GetPropertiesArgs {
      * A filter to return only resources whose lifecycleState matches the given lifecycleState.
      */
     state?: string;
+    /**
+     * A filter to return properties whose type matches the given type.
+     */
+    type?: string;
 }
 
 /**
@@ -71,7 +78,7 @@ export interface GetPropertiesArgs {
  */
 export interface GetPropertiesResult {
     /**
-     * Tenancy OCID
+     * Compartment OCID
      */
     readonly compartmentId?: string;
     /**
@@ -95,11 +102,16 @@ export interface GetPropertiesResult {
      * The current state of the Property.
      */
     readonly state?: string;
+    /**
+     * The type of the property.
+     */
+    readonly type?: string;
 }
 /**
  * This data source provides the list of Properties in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * List properties and their values for a tenancy in Fleet Application Management.
+ * Returns a list of all the Properties in the specified compartment.
+ * The query parameter `compartmentId` is required unless the query parameter `id` is specified.
  *
  * ## Example Usage
  *
@@ -113,6 +125,7 @@ export interface GetPropertiesResult {
  *     id: propertyId,
  *     scope: propertyScope,
  *     state: propertyState,
+ *     type: propertyType,
  * });
  * ```
  */
@@ -126,6 +139,7 @@ export function getPropertiesOutput(args?: GetPropertiesOutputArgs, opts?: pulum
         "id": args.id,
         "scope": args.scope,
         "state": args.state,
+        "type": args.type,
     }, opts);
 }
 
@@ -134,7 +148,7 @@ export function getPropertiesOutput(args?: GetPropertiesOutputArgs, opts?: pulum
  */
 export interface GetPropertiesOutputArgs {
     /**
-     * The ID of the compartment in which to list resources.
+     * The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -143,7 +157,7 @@ export interface GetPropertiesOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetPropertiesFilterArgs>[]>;
     /**
-     * A filter to return only resources whose Property identifier matches the given identifier.
+     * Unique identifier or OCID for listing a single Property by id. Either compartmentId or id must be provided.
      */
     id?: pulumi.Input<string>;
     /**
@@ -154,4 +168,8 @@ export interface GetPropertiesOutputArgs {
      * A filter to return only resources whose lifecycleState matches the given lifecycleState.
      */
     state?: pulumi.Input<string>;
+    /**
+     * A filter to return properties whose type matches the given type.
+     */
+    type?: pulumi.Input<string>;
 }

@@ -17,10 +17,15 @@ namespace Pulumi.Oci.Core.Outputs
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
         /// </summary>
         public readonly string AvailabilityDomain;
+        public readonly ImmutableArray<Outputs.GetDedicatedVmHostsDedicatedVmHostCapacityBinResult> CapacityBins;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         public readonly string CompartmentId;
+        /// <summary>
+        /// The OCID of the compute bare metal host.
+        /// </summary>
+        public readonly string ComputeBareMetalHostId;
         /// <summary>
         /// The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VMs.
         /// </summary>
@@ -78,7 +83,11 @@ namespace Pulumi.Oci.Core.Outputs
         private GetDedicatedVmHostsDedicatedVmHostResult(
             string availabilityDomain,
 
+            ImmutableArray<Outputs.GetDedicatedVmHostsDedicatedVmHostCapacityBinResult> capacityBins,
+
             string compartmentId,
+
+            string computeBareMetalHostId,
 
             string dedicatedVmHostShape,
 
@@ -107,7 +116,9 @@ namespace Pulumi.Oci.Core.Outputs
             double totalOcpus)
         {
             AvailabilityDomain = availabilityDomain;
+            CapacityBins = capacityBins;
             CompartmentId = compartmentId;
+            ComputeBareMetalHostId = computeBareMetalHostId;
             DedicatedVmHostShape = dedicatedVmHostShape;
             DefinedTags = definedTags;
             DisplayName = displayName;

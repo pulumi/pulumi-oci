@@ -1311,9 +1311,6 @@ type FsuCycleNextActionToExecute struct {
 	// The date and time the Exadata Fleet Update Action is expected to start. [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
 	TimeToStart *string `pulumi:"timeToStart"`
 	// (Updatable) Type of Exadata Fleet Update Cycle.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type *string `pulumi:"type"`
 }
 
@@ -1332,9 +1329,6 @@ type FsuCycleNextActionToExecuteArgs struct {
 	// The date and time the Exadata Fleet Update Action is expected to start. [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
 	TimeToStart pulumi.StringPtrInput `pulumi:"timeToStart"`
 	// (Updatable) Type of Exadata Fleet Update Cycle.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -1395,9 +1389,6 @@ func (o FsuCycleNextActionToExecuteOutput) TimeToStart() pulumi.StringPtrOutput 
 }
 
 // (Updatable) Type of Exadata Fleet Update Cycle.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o FsuCycleNextActionToExecuteOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FsuCycleNextActionToExecute) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -1576,6 +1567,193 @@ func (o FsuCycleStageActionSchedulePtrOutput) Type() pulumi.StringPtrOutput {
 		}
 		return &v.Type
 	}).(pulumi.StringPtrOutput)
+}
+
+type FsuCycleUpgradeDetails struct {
+	// (Updatable) Type of Exadata Fleet Update collection being upgraded.
+	CollectionType string `pulumi:"collectionType"`
+	// (Updatable) Enables or disables the recompilation of invalid objects.
+	IsRecompileInvalidObjects *bool `pulumi:"isRecompileInvalidObjects"`
+	// (Updatable) Enables or disables time zone upgrade.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	IsTimeZoneUpgrade *bool `pulumi:"isTimeZoneUpgrade"`
+}
+
+// FsuCycleUpgradeDetailsInput is an input type that accepts FsuCycleUpgradeDetailsArgs and FsuCycleUpgradeDetailsOutput values.
+// You can construct a concrete instance of `FsuCycleUpgradeDetailsInput` via:
+//
+//	FsuCycleUpgradeDetailsArgs{...}
+type FsuCycleUpgradeDetailsInput interface {
+	pulumi.Input
+
+	ToFsuCycleUpgradeDetailsOutput() FsuCycleUpgradeDetailsOutput
+	ToFsuCycleUpgradeDetailsOutputWithContext(context.Context) FsuCycleUpgradeDetailsOutput
+}
+
+type FsuCycleUpgradeDetailsArgs struct {
+	// (Updatable) Type of Exadata Fleet Update collection being upgraded.
+	CollectionType pulumi.StringInput `pulumi:"collectionType"`
+	// (Updatable) Enables or disables the recompilation of invalid objects.
+	IsRecompileInvalidObjects pulumi.BoolPtrInput `pulumi:"isRecompileInvalidObjects"`
+	// (Updatable) Enables or disables time zone upgrade.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	IsTimeZoneUpgrade pulumi.BoolPtrInput `pulumi:"isTimeZoneUpgrade"`
+}
+
+func (FsuCycleUpgradeDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FsuCycleUpgradeDetails)(nil)).Elem()
+}
+
+func (i FsuCycleUpgradeDetailsArgs) ToFsuCycleUpgradeDetailsOutput() FsuCycleUpgradeDetailsOutput {
+	return i.ToFsuCycleUpgradeDetailsOutputWithContext(context.Background())
+}
+
+func (i FsuCycleUpgradeDetailsArgs) ToFsuCycleUpgradeDetailsOutputWithContext(ctx context.Context) FsuCycleUpgradeDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FsuCycleUpgradeDetailsOutput)
+}
+
+func (i FsuCycleUpgradeDetailsArgs) ToFsuCycleUpgradeDetailsPtrOutput() FsuCycleUpgradeDetailsPtrOutput {
+	return i.ToFsuCycleUpgradeDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i FsuCycleUpgradeDetailsArgs) ToFsuCycleUpgradeDetailsPtrOutputWithContext(ctx context.Context) FsuCycleUpgradeDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FsuCycleUpgradeDetailsOutput).ToFsuCycleUpgradeDetailsPtrOutputWithContext(ctx)
+}
+
+// FsuCycleUpgradeDetailsPtrInput is an input type that accepts FsuCycleUpgradeDetailsArgs, FsuCycleUpgradeDetailsPtr and FsuCycleUpgradeDetailsPtrOutput values.
+// You can construct a concrete instance of `FsuCycleUpgradeDetailsPtrInput` via:
+//
+//	        FsuCycleUpgradeDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type FsuCycleUpgradeDetailsPtrInput interface {
+	pulumi.Input
+
+	ToFsuCycleUpgradeDetailsPtrOutput() FsuCycleUpgradeDetailsPtrOutput
+	ToFsuCycleUpgradeDetailsPtrOutputWithContext(context.Context) FsuCycleUpgradeDetailsPtrOutput
+}
+
+type fsuCycleUpgradeDetailsPtrType FsuCycleUpgradeDetailsArgs
+
+func FsuCycleUpgradeDetailsPtr(v *FsuCycleUpgradeDetailsArgs) FsuCycleUpgradeDetailsPtrInput {
+	return (*fsuCycleUpgradeDetailsPtrType)(v)
+}
+
+func (*fsuCycleUpgradeDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**FsuCycleUpgradeDetails)(nil)).Elem()
+}
+
+func (i *fsuCycleUpgradeDetailsPtrType) ToFsuCycleUpgradeDetailsPtrOutput() FsuCycleUpgradeDetailsPtrOutput {
+	return i.ToFsuCycleUpgradeDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *fsuCycleUpgradeDetailsPtrType) ToFsuCycleUpgradeDetailsPtrOutputWithContext(ctx context.Context) FsuCycleUpgradeDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FsuCycleUpgradeDetailsPtrOutput)
+}
+
+type FsuCycleUpgradeDetailsOutput struct{ *pulumi.OutputState }
+
+func (FsuCycleUpgradeDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FsuCycleUpgradeDetails)(nil)).Elem()
+}
+
+func (o FsuCycleUpgradeDetailsOutput) ToFsuCycleUpgradeDetailsOutput() FsuCycleUpgradeDetailsOutput {
+	return o
+}
+
+func (o FsuCycleUpgradeDetailsOutput) ToFsuCycleUpgradeDetailsOutputWithContext(ctx context.Context) FsuCycleUpgradeDetailsOutput {
+	return o
+}
+
+func (o FsuCycleUpgradeDetailsOutput) ToFsuCycleUpgradeDetailsPtrOutput() FsuCycleUpgradeDetailsPtrOutput {
+	return o.ToFsuCycleUpgradeDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o FsuCycleUpgradeDetailsOutput) ToFsuCycleUpgradeDetailsPtrOutputWithContext(ctx context.Context) FsuCycleUpgradeDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v FsuCycleUpgradeDetails) *FsuCycleUpgradeDetails {
+		return &v
+	}).(FsuCycleUpgradeDetailsPtrOutput)
+}
+
+// (Updatable) Type of Exadata Fleet Update collection being upgraded.
+func (o FsuCycleUpgradeDetailsOutput) CollectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v FsuCycleUpgradeDetails) string { return v.CollectionType }).(pulumi.StringOutput)
+}
+
+// (Updatable) Enables or disables the recompilation of invalid objects.
+func (o FsuCycleUpgradeDetailsOutput) IsRecompileInvalidObjects() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v FsuCycleUpgradeDetails) *bool { return v.IsRecompileInvalidObjects }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Enables or disables time zone upgrade.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o FsuCycleUpgradeDetailsOutput) IsTimeZoneUpgrade() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v FsuCycleUpgradeDetails) *bool { return v.IsTimeZoneUpgrade }).(pulumi.BoolPtrOutput)
+}
+
+type FsuCycleUpgradeDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (FsuCycleUpgradeDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**FsuCycleUpgradeDetails)(nil)).Elem()
+}
+
+func (o FsuCycleUpgradeDetailsPtrOutput) ToFsuCycleUpgradeDetailsPtrOutput() FsuCycleUpgradeDetailsPtrOutput {
+	return o
+}
+
+func (o FsuCycleUpgradeDetailsPtrOutput) ToFsuCycleUpgradeDetailsPtrOutputWithContext(ctx context.Context) FsuCycleUpgradeDetailsPtrOutput {
+	return o
+}
+
+func (o FsuCycleUpgradeDetailsPtrOutput) Elem() FsuCycleUpgradeDetailsOutput {
+	return o.ApplyT(func(v *FsuCycleUpgradeDetails) FsuCycleUpgradeDetails {
+		if v != nil {
+			return *v
+		}
+		var ret FsuCycleUpgradeDetails
+		return ret
+	}).(FsuCycleUpgradeDetailsOutput)
+}
+
+// (Updatable) Type of Exadata Fleet Update collection being upgraded.
+func (o FsuCycleUpgradeDetailsPtrOutput) CollectionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FsuCycleUpgradeDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.CollectionType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Enables or disables the recompilation of invalid objects.
+func (o FsuCycleUpgradeDetailsPtrOutput) IsRecompileInvalidObjects() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *FsuCycleUpgradeDetails) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsRecompileInvalidObjects
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Enables or disables time zone upgrade.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o FsuCycleUpgradeDetailsPtrOutput) IsTimeZoneUpgrade() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *FsuCycleUpgradeDetails) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsTimeZoneUpgrade
+	}).(pulumi.BoolPtrOutput)
 }
 
 type GetFsuCollectionActiveFsuCycle struct {
@@ -3747,6 +3925,121 @@ func (o GetFsuCycleStageActionScheduleArrayOutput) Index(i pulumi.IntInput) GetF
 	}).(GetFsuCycleStageActionScheduleOutput)
 }
 
+type GetFsuCycleUpgradeDetail struct {
+	// Type of Exadata Fleet Update collection being upgraded.
+	CollectionType string `pulumi:"collectionType"`
+	// Enables or disables the recompilation of invalid objects.
+	IsRecompileInvalidObjects bool `pulumi:"isRecompileInvalidObjects"`
+	// Enables or disables time zone upgrade.
+	IsTimeZoneUpgrade bool `pulumi:"isTimeZoneUpgrade"`
+}
+
+// GetFsuCycleUpgradeDetailInput is an input type that accepts GetFsuCycleUpgradeDetailArgs and GetFsuCycleUpgradeDetailOutput values.
+// You can construct a concrete instance of `GetFsuCycleUpgradeDetailInput` via:
+//
+//	GetFsuCycleUpgradeDetailArgs{...}
+type GetFsuCycleUpgradeDetailInput interface {
+	pulumi.Input
+
+	ToGetFsuCycleUpgradeDetailOutput() GetFsuCycleUpgradeDetailOutput
+	ToGetFsuCycleUpgradeDetailOutputWithContext(context.Context) GetFsuCycleUpgradeDetailOutput
+}
+
+type GetFsuCycleUpgradeDetailArgs struct {
+	// Type of Exadata Fleet Update collection being upgraded.
+	CollectionType pulumi.StringInput `pulumi:"collectionType"`
+	// Enables or disables the recompilation of invalid objects.
+	IsRecompileInvalidObjects pulumi.BoolInput `pulumi:"isRecompileInvalidObjects"`
+	// Enables or disables time zone upgrade.
+	IsTimeZoneUpgrade pulumi.BoolInput `pulumi:"isTimeZoneUpgrade"`
+}
+
+func (GetFsuCycleUpgradeDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuCycleUpgradeDetail)(nil)).Elem()
+}
+
+func (i GetFsuCycleUpgradeDetailArgs) ToGetFsuCycleUpgradeDetailOutput() GetFsuCycleUpgradeDetailOutput {
+	return i.ToGetFsuCycleUpgradeDetailOutputWithContext(context.Background())
+}
+
+func (i GetFsuCycleUpgradeDetailArgs) ToGetFsuCycleUpgradeDetailOutputWithContext(ctx context.Context) GetFsuCycleUpgradeDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuCycleUpgradeDetailOutput)
+}
+
+// GetFsuCycleUpgradeDetailArrayInput is an input type that accepts GetFsuCycleUpgradeDetailArray and GetFsuCycleUpgradeDetailArrayOutput values.
+// You can construct a concrete instance of `GetFsuCycleUpgradeDetailArrayInput` via:
+//
+//	GetFsuCycleUpgradeDetailArray{ GetFsuCycleUpgradeDetailArgs{...} }
+type GetFsuCycleUpgradeDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetFsuCycleUpgradeDetailArrayOutput() GetFsuCycleUpgradeDetailArrayOutput
+	ToGetFsuCycleUpgradeDetailArrayOutputWithContext(context.Context) GetFsuCycleUpgradeDetailArrayOutput
+}
+
+type GetFsuCycleUpgradeDetailArray []GetFsuCycleUpgradeDetailInput
+
+func (GetFsuCycleUpgradeDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuCycleUpgradeDetail)(nil)).Elem()
+}
+
+func (i GetFsuCycleUpgradeDetailArray) ToGetFsuCycleUpgradeDetailArrayOutput() GetFsuCycleUpgradeDetailArrayOutput {
+	return i.ToGetFsuCycleUpgradeDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetFsuCycleUpgradeDetailArray) ToGetFsuCycleUpgradeDetailArrayOutputWithContext(ctx context.Context) GetFsuCycleUpgradeDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuCycleUpgradeDetailArrayOutput)
+}
+
+type GetFsuCycleUpgradeDetailOutput struct{ *pulumi.OutputState }
+
+func (GetFsuCycleUpgradeDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuCycleUpgradeDetail)(nil)).Elem()
+}
+
+func (o GetFsuCycleUpgradeDetailOutput) ToGetFsuCycleUpgradeDetailOutput() GetFsuCycleUpgradeDetailOutput {
+	return o
+}
+
+func (o GetFsuCycleUpgradeDetailOutput) ToGetFsuCycleUpgradeDetailOutputWithContext(ctx context.Context) GetFsuCycleUpgradeDetailOutput {
+	return o
+}
+
+// Type of Exadata Fleet Update collection being upgraded.
+func (o GetFsuCycleUpgradeDetailOutput) CollectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCycleUpgradeDetail) string { return v.CollectionType }).(pulumi.StringOutput)
+}
+
+// Enables or disables the recompilation of invalid objects.
+func (o GetFsuCycleUpgradeDetailOutput) IsRecompileInvalidObjects() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFsuCycleUpgradeDetail) bool { return v.IsRecompileInvalidObjects }).(pulumi.BoolOutput)
+}
+
+// Enables or disables time zone upgrade.
+func (o GetFsuCycleUpgradeDetailOutput) IsTimeZoneUpgrade() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFsuCycleUpgradeDetail) bool { return v.IsTimeZoneUpgrade }).(pulumi.BoolOutput)
+}
+
+type GetFsuCycleUpgradeDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFsuCycleUpgradeDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuCycleUpgradeDetail)(nil)).Elem()
+}
+
+func (o GetFsuCycleUpgradeDetailArrayOutput) ToGetFsuCycleUpgradeDetailArrayOutput() GetFsuCycleUpgradeDetailArrayOutput {
+	return o
+}
+
+func (o GetFsuCycleUpgradeDetailArrayOutput) ToGetFsuCycleUpgradeDetailArrayOutputWithContext(ctx context.Context) GetFsuCycleUpgradeDetailArrayOutput {
+	return o
+}
+
+func (o GetFsuCycleUpgradeDetailArrayOutput) Index(i pulumi.IntInput) GetFsuCycleUpgradeDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFsuCycleUpgradeDetail {
+		return vs[0].([]GetFsuCycleUpgradeDetail)[vs[1].(int)]
+	}).(GetFsuCycleUpgradeDetailOutput)
+}
+
 type GetFsuCyclesFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -3974,9 +4267,9 @@ type GetFsuCyclesFsuCycleSummaryCollectionItem struct {
 	GoalVersionDetails []GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetail `pulumi:"goalVersionDetails"`
 	// OCID identifier for the Exadata Fleet Update Cycle.
 	Id string `pulumi:"id"`
-	// List of bug numbers to ignore.
+	// List of identifiers of patches to ignore.
 	IsIgnoreMissingPatches []string `pulumi:"isIgnoreMissingPatches"`
-	// Ignore all patches between the source and target homes during patching.
+	// Ignore patch conflicts or missing patches between the source and goal homes.
 	IsIgnorePatches bool `pulumi:"isIgnorePatches"`
 	// Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
 	IsKeepPlacement bool `pulumi:"isKeepPlacement"`
@@ -4006,6 +4299,8 @@ type GetFsuCyclesFsuCycleSummaryCollectionItem struct {
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// Type of Exadata Fleet Update Cycle.
 	Type string `pulumi:"type"`
+	// Details of supported upgrade options for DB or GI collection.
+	UpgradeDetails []GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetail `pulumi:"upgradeDetails"`
 }
 
 // GetFsuCyclesFsuCycleSummaryCollectionItemInput is an input type that accepts GetFsuCyclesFsuCycleSummaryCollectionItemArgs and GetFsuCyclesFsuCycleSummaryCollectionItemOutput values.
@@ -4044,9 +4339,9 @@ type GetFsuCyclesFsuCycleSummaryCollectionItemArgs struct {
 	GoalVersionDetails GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailArrayInput `pulumi:"goalVersionDetails"`
 	// OCID identifier for the Exadata Fleet Update Cycle.
 	Id pulumi.StringInput `pulumi:"id"`
-	// List of bug numbers to ignore.
+	// List of identifiers of patches to ignore.
 	IsIgnoreMissingPatches pulumi.StringArrayInput `pulumi:"isIgnoreMissingPatches"`
-	// Ignore all patches between the source and target homes during patching.
+	// Ignore patch conflicts or missing patches between the source and goal homes.
 	IsIgnorePatches pulumi.BoolInput `pulumi:"isIgnorePatches"`
 	// Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
 	IsKeepPlacement pulumi.BoolInput `pulumi:"isKeepPlacement"`
@@ -4076,6 +4371,8 @@ type GetFsuCyclesFsuCycleSummaryCollectionItemArgs struct {
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 	// Type of Exadata Fleet Update Cycle.
 	Type pulumi.StringInput `pulumi:"type"`
+	// Details of supported upgrade options for DB or GI collection.
+	UpgradeDetails GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArrayInput `pulumi:"upgradeDetails"`
 }
 
 func (GetFsuCyclesFsuCycleSummaryCollectionItemArgs) ElementType() reflect.Type {
@@ -4197,12 +4494,12 @@ func (o GetFsuCyclesFsuCycleSummaryCollectionItemOutput) Id() pulumi.StringOutpu
 	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// List of bug numbers to ignore.
+// List of identifiers of patches to ignore.
 func (o GetFsuCyclesFsuCycleSummaryCollectionItemOutput) IsIgnoreMissingPatches() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItem) []string { return v.IsIgnoreMissingPatches }).(pulumi.StringArrayOutput)
 }
 
-// Ignore all patches between the source and target homes during patching.
+// Ignore patch conflicts or missing patches between the source and goal homes.
 func (o GetFsuCyclesFsuCycleSummaryCollectionItemOutput) IsIgnorePatches() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItem) bool { return v.IsIgnorePatches }).(pulumi.BoolOutput)
 }
@@ -4279,6 +4576,13 @@ func (o GetFsuCyclesFsuCycleSummaryCollectionItemOutput) TimeUpdated() pulumi.St
 // Type of Exadata Fleet Update Cycle.
 func (o GetFsuCyclesFsuCycleSummaryCollectionItemOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItem) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// Details of supported upgrade options for DB or GI collection.
+func (o GetFsuCyclesFsuCycleSummaryCollectionItemOutput) UpgradeDetails() GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArrayOutput {
+	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItem) []GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetail {
+		return v.UpgradeDetails
+	}).(GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArrayOutput)
 }
 
 type GetFsuCyclesFsuCycleSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -4975,6 +5279,123 @@ func (o GetFsuCyclesFsuCycleSummaryCollectionItemStageActionScheduleArrayOutput)
 	}).(GetFsuCyclesFsuCycleSummaryCollectionItemStageActionScheduleOutput)
 }
 
+type GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetail struct {
+	// A filter to return only resources whose Collection type matches the given type.
+	CollectionType string `pulumi:"collectionType"`
+	// Enables or disables the recompilation of invalid objects.
+	IsRecompileInvalidObjects bool `pulumi:"isRecompileInvalidObjects"`
+	// Enables or disables time zone upgrade.
+	IsTimeZoneUpgrade bool `pulumi:"isTimeZoneUpgrade"`
+}
+
+// GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailInput is an input type that accepts GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArgs and GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailOutput values.
+// You can construct a concrete instance of `GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailInput` via:
+//
+//	GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArgs{...}
+type GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailInput interface {
+	pulumi.Input
+
+	ToGetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailOutput() GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailOutput
+	ToGetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailOutputWithContext(context.Context) GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailOutput
+}
+
+type GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArgs struct {
+	// A filter to return only resources whose Collection type matches the given type.
+	CollectionType pulumi.StringInput `pulumi:"collectionType"`
+	// Enables or disables the recompilation of invalid objects.
+	IsRecompileInvalidObjects pulumi.BoolInput `pulumi:"isRecompileInvalidObjects"`
+	// Enables or disables time zone upgrade.
+	IsTimeZoneUpgrade pulumi.BoolInput `pulumi:"isTimeZoneUpgrade"`
+}
+
+func (GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetail)(nil)).Elem()
+}
+
+func (i GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArgs) ToGetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailOutput() GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailOutput {
+	return i.ToGetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailOutputWithContext(context.Background())
+}
+
+func (i GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArgs) ToGetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailOutputWithContext(ctx context.Context) GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailOutput)
+}
+
+// GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArrayInput is an input type that accepts GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArray and GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArrayOutput values.
+// You can construct a concrete instance of `GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArrayInput` via:
+//
+//	GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArray{ GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArgs{...} }
+type GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArrayOutput() GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArrayOutput
+	ToGetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArrayOutputWithContext(context.Context) GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArrayOutput
+}
+
+type GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArray []GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailInput
+
+func (GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetail)(nil)).Elem()
+}
+
+func (i GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArray) ToGetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArrayOutput() GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArrayOutput {
+	return i.ToGetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArray) ToGetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArrayOutputWithContext(ctx context.Context) GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArrayOutput)
+}
+
+type GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailOutput struct{ *pulumi.OutputState }
+
+func (GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetail)(nil)).Elem()
+}
+
+func (o GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailOutput) ToGetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailOutput() GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailOutput {
+	return o
+}
+
+func (o GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailOutput) ToGetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailOutputWithContext(ctx context.Context) GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailOutput {
+	return o
+}
+
+// A filter to return only resources whose Collection type matches the given type.
+func (o GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailOutput) CollectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetail) string { return v.CollectionType }).(pulumi.StringOutput)
+}
+
+// Enables or disables the recompilation of invalid objects.
+func (o GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailOutput) IsRecompileInvalidObjects() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetail) bool {
+		return v.IsRecompileInvalidObjects
+	}).(pulumi.BoolOutput)
+}
+
+// Enables or disables time zone upgrade.
+func (o GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailOutput) IsTimeZoneUpgrade() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetail) bool { return v.IsTimeZoneUpgrade }).(pulumi.BoolOutput)
+}
+
+type GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetail)(nil)).Elem()
+}
+
+func (o GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArrayOutput) ToGetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArrayOutput() GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArrayOutput {
+	return o
+}
+
+func (o GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArrayOutput) ToGetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArrayOutputWithContext(ctx context.Context) GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArrayOutput {
+	return o
+}
+
+func (o GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArrayOutput) Index(i pulumi.IntInput) GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetail {
+		return vs[0].([]GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetail)[vs[1].(int)]
+	}).(GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*FsuCollectionActiveFsuCycleInput)(nil)).Elem(), FsuCollectionActiveFsuCycleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FsuCollectionActiveFsuCycleArrayInput)(nil)).Elem(), FsuCollectionActiveFsuCycleArray{})
@@ -4996,6 +5417,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*FsuCycleNextActionToExecuteArrayInput)(nil)).Elem(), FsuCycleNextActionToExecuteArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FsuCycleStageActionScheduleInput)(nil)).Elem(), FsuCycleStageActionScheduleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FsuCycleStageActionSchedulePtrInput)(nil)).Elem(), FsuCycleStageActionScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FsuCycleUpgradeDetailsInput)(nil)).Elem(), FsuCycleUpgradeDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FsuCycleUpgradeDetailsPtrInput)(nil)).Elem(), FsuCycleUpgradeDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCollectionActiveFsuCycleInput)(nil)).Elem(), GetFsuCollectionActiveFsuCycleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCollectionActiveFsuCycleArrayInput)(nil)).Elem(), GetFsuCollectionActiveFsuCycleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCollectionFleetDiscoveryInput)(nil)).Elem(), GetFsuCollectionFleetDiscoveryArgs{})
@@ -5030,6 +5453,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCycleNextActionToExecuteArrayInput)(nil)).Elem(), GetFsuCycleNextActionToExecuteArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCycleStageActionScheduleInput)(nil)).Elem(), GetFsuCycleStageActionScheduleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCycleStageActionScheduleArrayInput)(nil)).Elem(), GetFsuCycleStageActionScheduleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCycleUpgradeDetailInput)(nil)).Elem(), GetFsuCycleUpgradeDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCycleUpgradeDetailArrayInput)(nil)).Elem(), GetFsuCycleUpgradeDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCyclesFilterInput)(nil)).Elem(), GetFsuCyclesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCyclesFilterArrayInput)(nil)).Elem(), GetFsuCyclesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCyclesFsuCycleSummaryCollectionInput)(nil)).Elem(), GetFsuCyclesFsuCycleSummaryCollectionArgs{})
@@ -5048,6 +5473,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCyclesFsuCycleSummaryCollectionItemNextActionToExecuteArrayInput)(nil)).Elem(), GetFsuCyclesFsuCycleSummaryCollectionItemNextActionToExecuteArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCyclesFsuCycleSummaryCollectionItemStageActionScheduleInput)(nil)).Elem(), GetFsuCyclesFsuCycleSummaryCollectionItemStageActionScheduleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCyclesFsuCycleSummaryCollectionItemStageActionScheduleArrayInput)(nil)).Elem(), GetFsuCyclesFsuCycleSummaryCollectionItemStageActionScheduleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailInput)(nil)).Elem(), GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArrayInput)(nil)).Elem(), GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArray{})
 	pulumi.RegisterOutputType(FsuCollectionActiveFsuCycleOutput{})
 	pulumi.RegisterOutputType(FsuCollectionActiveFsuCycleArrayOutput{})
 	pulumi.RegisterOutputType(FsuCollectionFleetDiscoveryOutput{})
@@ -5068,6 +5495,8 @@ func init() {
 	pulumi.RegisterOutputType(FsuCycleNextActionToExecuteArrayOutput{})
 	pulumi.RegisterOutputType(FsuCycleStageActionScheduleOutput{})
 	pulumi.RegisterOutputType(FsuCycleStageActionSchedulePtrOutput{})
+	pulumi.RegisterOutputType(FsuCycleUpgradeDetailsOutput{})
+	pulumi.RegisterOutputType(FsuCycleUpgradeDetailsPtrOutput{})
 	pulumi.RegisterOutputType(GetFsuCollectionActiveFsuCycleOutput{})
 	pulumi.RegisterOutputType(GetFsuCollectionActiveFsuCycleArrayOutput{})
 	pulumi.RegisterOutputType(GetFsuCollectionFleetDiscoveryOutput{})
@@ -5102,6 +5531,8 @@ func init() {
 	pulumi.RegisterOutputType(GetFsuCycleNextActionToExecuteArrayOutput{})
 	pulumi.RegisterOutputType(GetFsuCycleStageActionScheduleOutput{})
 	pulumi.RegisterOutputType(GetFsuCycleStageActionScheduleArrayOutput{})
+	pulumi.RegisterOutputType(GetFsuCycleUpgradeDetailOutput{})
+	pulumi.RegisterOutputType(GetFsuCycleUpgradeDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetFsuCyclesFilterOutput{})
 	pulumi.RegisterOutputType(GetFsuCyclesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetFsuCyclesFsuCycleSummaryCollectionOutput{})
@@ -5120,4 +5551,6 @@ func init() {
 	pulumi.RegisterOutputType(GetFsuCyclesFsuCycleSummaryCollectionItemNextActionToExecuteArrayOutput{})
 	pulumi.RegisterOutputType(GetFsuCyclesFsuCycleSummaryCollectionItemStageActionScheduleOutput{})
 	pulumi.RegisterOutputType(GetFsuCyclesFsuCycleSummaryCollectionItemStageActionScheduleArrayOutput{})
+	pulumi.RegisterOutputType(GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailOutput{})
+	pulumi.RegisterOutputType(GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArrayOutput{})
 }

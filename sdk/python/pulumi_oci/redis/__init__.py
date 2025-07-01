@@ -6,9 +6,17 @@ import builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .get_oci_cache_user import *
+from .get_oci_cache_users import *
 from .get_redis_cluster import *
 from .get_redis_cluster_nodes import *
 from .get_redis_clusters import *
+from .oci_cache_user import *
+from .oci_cache_user_get_redis_cluster import *
 from .redis_cluster import *
+from .redis_cluster_attach_oci_cache_user import *
+from .redis_cluster_create_identity_token import *
+from .redis_cluster_detach_oci_cache_user import *
+from .redis_cluster_get_oci_cache_user import *
 from ._inputs import *
 from . import outputs

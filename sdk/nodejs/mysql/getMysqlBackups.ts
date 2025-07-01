@@ -23,6 +23,7 @@ import * as utilities from "../utilities";
  *     creationType: mysqlBackupCreationType,
  *     dbSystemId: testDbSystem.id,
  *     displayName: mysqlBackupDisplayName,
+ *     softDelete: mysqlBackupSoftDelete,
  *     state: mysqlBackupState,
  * });
  * ```
@@ -36,6 +37,7 @@ export function getMysqlBackups(args: GetMysqlBackupsArgs, opts?: pulumi.InvokeO
         "dbSystemId": args.dbSystemId,
         "displayName": args.displayName,
         "filters": args.filters,
+        "softDelete": args.softDelete,
         "state": args.state,
     }, opts);
 }
@@ -65,6 +67,10 @@ export interface GetMysqlBackupsArgs {
      */
     displayName?: string;
     filters?: inputs.Mysql.GetMysqlBackupsFilter[];
+    /**
+     * Backup Soft Delete
+     */
+    softDelete?: string;
     /**
      * Backup Lifecycle State
      */
@@ -102,6 +108,10 @@ export interface GetMysqlBackupsResult {
      */
     readonly id: string;
     /**
+     * Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+     */
+    readonly softDelete?: string;
+    /**
      * The state of the backup.
      */
     readonly state?: string;
@@ -123,6 +133,7 @@ export interface GetMysqlBackupsResult {
  *     creationType: mysqlBackupCreationType,
  *     dbSystemId: testDbSystem.id,
  *     displayName: mysqlBackupDisplayName,
+ *     softDelete: mysqlBackupSoftDelete,
  *     state: mysqlBackupState,
  * });
  * ```
@@ -136,6 +147,7 @@ export function getMysqlBackupsOutput(args: GetMysqlBackupsOutputArgs, opts?: pu
         "dbSystemId": args.dbSystemId,
         "displayName": args.displayName,
         "filters": args.filters,
+        "softDelete": args.softDelete,
         "state": args.state,
     }, opts);
 }
@@ -165,6 +177,10 @@ export interface GetMysqlBackupsOutputArgs {
      */
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Mysql.GetMysqlBackupsFilterArgs>[]>;
+    /**
+     * Backup Soft Delete
+     */
+    softDelete?: pulumi.Input<string>;
     /**
      * Backup Lifecycle State
      */

@@ -218,7 +218,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
     public sealed class GetFsuCyclesResult
     {
         /// <summary>
-        /// Type of Collection this Exadata Fleet Update Cycle belongs to.
+        /// Type of Exadata Fleet Update collection being upgraded.
         /// </summary>
         public readonly string? CollectionType;
         /// <summary>

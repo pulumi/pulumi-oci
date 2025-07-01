@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class GetFleetTargetsFleetTargetCollectionItemResult
     {
         /// <summary>
-        /// Tenancy OCID
+        /// compartment OCID
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>

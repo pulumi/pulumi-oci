@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class GetComplianceRecordCountsComplianceRecordAggregationCollectionItemResult
     {
         /// <summary>
-        /// count of ComplianceRecord in a Tenancy.
+        /// Count of compliance records in a compartment.
         /// </summary>
         public readonly int ComplianceRecordCountCount;
         /// <summary>

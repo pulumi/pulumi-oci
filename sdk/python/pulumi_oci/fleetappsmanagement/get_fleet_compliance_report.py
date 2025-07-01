@@ -28,7 +28,7 @@ class GetFleetComplianceReportResult:
     """
     A collection of values returned by getFleetComplianceReport.
     """
-    def __init__(__self__, compliance_report_id=None, compliance_state=None, fleet_id=None, id=None, resources=None):
+    def __init__(__self__, compliance_report_id=None, compliance_state=None, fleet_id=None, id=None, percent_compliant=None, resources=None):
         if compliance_report_id and not isinstance(compliance_report_id, str):
             raise TypeError("Expected argument 'compliance_report_id' to be a str")
         pulumi.set(__self__, "compliance_report_id", compliance_report_id)
@@ -41,6 +41,9 @@ class GetFleetComplianceReportResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if percent_compliant and not isinstance(percent_compliant, float):
+            raise TypeError("Expected argument 'percent_compliant' to be a float")
+        pulumi.set(__self__, "percent_compliant", percent_compliant)
         if resources and not isinstance(resources, list):
             raise TypeError("Expected argument 'resources' to be a list")
         pulumi.set(__self__, "resources", resources)
@@ -75,6 +78,14 @@ class GetFleetComplianceReportResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="percentCompliant")
+    def percent_compliant(self) -> builtins.float:
+        """
+        The compliance percentage.
+        """
+        return pulumi.get(self, "percent_compliant")
+
+    @property
     @pulumi.getter
     def resources(self) -> Sequence['outputs.GetFleetComplianceReportResourceResult']:
         """
@@ -93,6 +104,7 @@ class AwaitableGetFleetComplianceReportResult(GetFleetComplianceReportResult):
             compliance_state=self.compliance_state,
             fleet_id=self.fleet_id,
             id=self.id,
+            percent_compliant=self.percent_compliant,
             resources=self.resources)
 
 
@@ -129,6 +141,7 @@ def get_fleet_compliance_report(compliance_report_id: Optional[builtins.str] = N
         compliance_state=pulumi.get(__ret__, 'compliance_state'),
         fleet_id=pulumi.get(__ret__, 'fleet_id'),
         id=pulumi.get(__ret__, 'id'),
+        percent_compliant=pulumi.get(__ret__, 'percent_compliant'),
         resources=pulumi.get(__ret__, 'resources'))
 def get_fleet_compliance_report_output(compliance_report_id: Optional[pulumi.Input[builtins.str]] = None,
                                        fleet_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -162,4 +175,5 @@ def get_fleet_compliance_report_output(compliance_report_id: Optional[pulumi.Inp
         compliance_state=pulumi.get(__response__, 'compliance_state'),
         fleet_id=pulumi.get(__response__, 'fleet_id'),
         id=pulumi.get(__response__, 'id'),
+        percent_compliant=pulumi.get(__response__, 'percent_compliant'),
         resources=pulumi.get(__response__, 'resources')))

@@ -197,6 +197,10 @@ namespace Pulumi.Oci.Mysql
         /// The shape of the DB System instance used for backup.
         /// </summary>
         public readonly string ShapeName;
+        /// <summary>
+        /// Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+        /// </summary>
+        public readonly string SoftDelete;
         public readonly ImmutableArray<Outputs.GetMysqlBackupSourceDetailResult> SourceDetails;
         /// <summary>
         /// The state of the backup.
@@ -261,6 +265,8 @@ namespace Pulumi.Oci.Mysql
 
             string shapeName,
 
+            string softDelete,
+
             ImmutableArray<Outputs.GetMysqlBackupSourceDetailResult> sourceDetails,
 
             string state,
@@ -293,6 +299,7 @@ namespace Pulumi.Oci.Mysql
             OriginalSourceBackupId = originalSourceBackupId;
             RetentionInDays = retentionInDays;
             ShapeName = shapeName;
+            SoftDelete = softDelete;
             SourceDetails = sourceDetails;
             State = state;
             SystemTags = systemTags;

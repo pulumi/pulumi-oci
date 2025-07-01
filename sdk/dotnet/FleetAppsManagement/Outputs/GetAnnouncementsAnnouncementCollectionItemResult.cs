@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class GetAnnouncementsAnnouncementCollectionItemResult
     {
         /// <summary>
-        /// Announcement end date
+        /// Announcement end date.
         /// </summary>
         public readonly string AnnouncementEnd;
         /// <summary>
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string AnnouncementStart;
         /// <summary>
-        /// Tenancy OCID
+        /// The ID of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// Announcement Details.
+        /// Announcement details.
         /// </summary>
         public readonly string Details;
         /// <summary>

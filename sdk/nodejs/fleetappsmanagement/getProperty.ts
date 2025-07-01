@@ -42,7 +42,7 @@ export interface GetPropertyArgs {
  */
 export interface GetPropertyResult {
     /**
-     * Tenancy OCID
+     * Compartment OCID
      */
     readonly compartmentId: string;
     /**

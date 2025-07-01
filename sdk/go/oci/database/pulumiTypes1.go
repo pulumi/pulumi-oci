@@ -13,6 +13,538 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetDbHomePatchHistoryEntriesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDbHomePatchHistoryEntriesFilterInput is an input type that accepts GetDbHomePatchHistoryEntriesFilterArgs and GetDbHomePatchHistoryEntriesFilterOutput values.
+// You can construct a concrete instance of `GetDbHomePatchHistoryEntriesFilterInput` via:
+//
+//	GetDbHomePatchHistoryEntriesFilterArgs{...}
+type GetDbHomePatchHistoryEntriesFilterInput interface {
+	pulumi.Input
+
+	ToGetDbHomePatchHistoryEntriesFilterOutput() GetDbHomePatchHistoryEntriesFilterOutput
+	ToGetDbHomePatchHistoryEntriesFilterOutputWithContext(context.Context) GetDbHomePatchHistoryEntriesFilterOutput
+}
+
+type GetDbHomePatchHistoryEntriesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDbHomePatchHistoryEntriesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbHomePatchHistoryEntriesFilter)(nil)).Elem()
+}
+
+func (i GetDbHomePatchHistoryEntriesFilterArgs) ToGetDbHomePatchHistoryEntriesFilterOutput() GetDbHomePatchHistoryEntriesFilterOutput {
+	return i.ToGetDbHomePatchHistoryEntriesFilterOutputWithContext(context.Background())
+}
+
+func (i GetDbHomePatchHistoryEntriesFilterArgs) ToGetDbHomePatchHistoryEntriesFilterOutputWithContext(ctx context.Context) GetDbHomePatchHistoryEntriesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbHomePatchHistoryEntriesFilterOutput)
+}
+
+// GetDbHomePatchHistoryEntriesFilterArrayInput is an input type that accepts GetDbHomePatchHistoryEntriesFilterArray and GetDbHomePatchHistoryEntriesFilterArrayOutput values.
+// You can construct a concrete instance of `GetDbHomePatchHistoryEntriesFilterArrayInput` via:
+//
+//	GetDbHomePatchHistoryEntriesFilterArray{ GetDbHomePatchHistoryEntriesFilterArgs{...} }
+type GetDbHomePatchHistoryEntriesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDbHomePatchHistoryEntriesFilterArrayOutput() GetDbHomePatchHistoryEntriesFilterArrayOutput
+	ToGetDbHomePatchHistoryEntriesFilterArrayOutputWithContext(context.Context) GetDbHomePatchHistoryEntriesFilterArrayOutput
+}
+
+type GetDbHomePatchHistoryEntriesFilterArray []GetDbHomePatchHistoryEntriesFilterInput
+
+func (GetDbHomePatchHistoryEntriesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbHomePatchHistoryEntriesFilter)(nil)).Elem()
+}
+
+func (i GetDbHomePatchHistoryEntriesFilterArray) ToGetDbHomePatchHistoryEntriesFilterArrayOutput() GetDbHomePatchHistoryEntriesFilterArrayOutput {
+	return i.ToGetDbHomePatchHistoryEntriesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbHomePatchHistoryEntriesFilterArray) ToGetDbHomePatchHistoryEntriesFilterArrayOutputWithContext(ctx context.Context) GetDbHomePatchHistoryEntriesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbHomePatchHistoryEntriesFilterArrayOutput)
+}
+
+type GetDbHomePatchHistoryEntriesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDbHomePatchHistoryEntriesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbHomePatchHistoryEntriesFilter)(nil)).Elem()
+}
+
+func (o GetDbHomePatchHistoryEntriesFilterOutput) ToGetDbHomePatchHistoryEntriesFilterOutput() GetDbHomePatchHistoryEntriesFilterOutput {
+	return o
+}
+
+func (o GetDbHomePatchHistoryEntriesFilterOutput) ToGetDbHomePatchHistoryEntriesFilterOutputWithContext(ctx context.Context) GetDbHomePatchHistoryEntriesFilterOutput {
+	return o
+}
+
+func (o GetDbHomePatchHistoryEntriesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomePatchHistoryEntriesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDbHomePatchHistoryEntriesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDbHomePatchHistoryEntriesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDbHomePatchHistoryEntriesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbHomePatchHistoryEntriesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDbHomePatchHistoryEntriesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbHomePatchHistoryEntriesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbHomePatchHistoryEntriesFilter)(nil)).Elem()
+}
+
+func (o GetDbHomePatchHistoryEntriesFilterArrayOutput) ToGetDbHomePatchHistoryEntriesFilterArrayOutput() GetDbHomePatchHistoryEntriesFilterArrayOutput {
+	return o
+}
+
+func (o GetDbHomePatchHistoryEntriesFilterArrayOutput) ToGetDbHomePatchHistoryEntriesFilterArrayOutputWithContext(ctx context.Context) GetDbHomePatchHistoryEntriesFilterArrayOutput {
+	return o
+}
+
+func (o GetDbHomePatchHistoryEntriesFilterArrayOutput) Index(i pulumi.IntInput) GetDbHomePatchHistoryEntriesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbHomePatchHistoryEntriesFilter {
+		return vs[0].([]GetDbHomePatchHistoryEntriesFilter)[vs[1].(int)]
+	}).(GetDbHomePatchHistoryEntriesFilterOutput)
+}
+
+type GetDbHomePatchHistoryEntriesPatchHistoryEntry struct {
+	// The action being performed or was completed.
+	Action string `pulumi:"action"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch history entry.
+	Id string `pulumi:"id"`
+	// A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
+	PatchId string `pulumi:"patchId"`
+	// The type of Patch operation.
+	PatchType string `pulumi:"patchType"`
+	// The current state of the action.
+	State string `pulumi:"state"`
+	// The date and time when the patch action completed
+	TimeEnded string `pulumi:"timeEnded"`
+	// The date and time when the patch action started.
+	TimeStarted string `pulumi:"timeStarted"`
+}
+
+// GetDbHomePatchHistoryEntriesPatchHistoryEntryInput is an input type that accepts GetDbHomePatchHistoryEntriesPatchHistoryEntryArgs and GetDbHomePatchHistoryEntriesPatchHistoryEntryOutput values.
+// You can construct a concrete instance of `GetDbHomePatchHistoryEntriesPatchHistoryEntryInput` via:
+//
+//	GetDbHomePatchHistoryEntriesPatchHistoryEntryArgs{...}
+type GetDbHomePatchHistoryEntriesPatchHistoryEntryInput interface {
+	pulumi.Input
+
+	ToGetDbHomePatchHistoryEntriesPatchHistoryEntryOutput() GetDbHomePatchHistoryEntriesPatchHistoryEntryOutput
+	ToGetDbHomePatchHistoryEntriesPatchHistoryEntryOutputWithContext(context.Context) GetDbHomePatchHistoryEntriesPatchHistoryEntryOutput
+}
+
+type GetDbHomePatchHistoryEntriesPatchHistoryEntryArgs struct {
+	// The action being performed or was completed.
+	Action pulumi.StringInput `pulumi:"action"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch history entry.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
+	PatchId pulumi.StringInput `pulumi:"patchId"`
+	// The type of Patch operation.
+	PatchType pulumi.StringInput `pulumi:"patchType"`
+	// The current state of the action.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time when the patch action completed
+	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
+	// The date and time when the patch action started.
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+}
+
+func (GetDbHomePatchHistoryEntriesPatchHistoryEntryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbHomePatchHistoryEntriesPatchHistoryEntry)(nil)).Elem()
+}
+
+func (i GetDbHomePatchHistoryEntriesPatchHistoryEntryArgs) ToGetDbHomePatchHistoryEntriesPatchHistoryEntryOutput() GetDbHomePatchHistoryEntriesPatchHistoryEntryOutput {
+	return i.ToGetDbHomePatchHistoryEntriesPatchHistoryEntryOutputWithContext(context.Background())
+}
+
+func (i GetDbHomePatchHistoryEntriesPatchHistoryEntryArgs) ToGetDbHomePatchHistoryEntriesPatchHistoryEntryOutputWithContext(ctx context.Context) GetDbHomePatchHistoryEntriesPatchHistoryEntryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbHomePatchHistoryEntriesPatchHistoryEntryOutput)
+}
+
+// GetDbHomePatchHistoryEntriesPatchHistoryEntryArrayInput is an input type that accepts GetDbHomePatchHistoryEntriesPatchHistoryEntryArray and GetDbHomePatchHistoryEntriesPatchHistoryEntryArrayOutput values.
+// You can construct a concrete instance of `GetDbHomePatchHistoryEntriesPatchHistoryEntryArrayInput` via:
+//
+//	GetDbHomePatchHistoryEntriesPatchHistoryEntryArray{ GetDbHomePatchHistoryEntriesPatchHistoryEntryArgs{...} }
+type GetDbHomePatchHistoryEntriesPatchHistoryEntryArrayInput interface {
+	pulumi.Input
+
+	ToGetDbHomePatchHistoryEntriesPatchHistoryEntryArrayOutput() GetDbHomePatchHistoryEntriesPatchHistoryEntryArrayOutput
+	ToGetDbHomePatchHistoryEntriesPatchHistoryEntryArrayOutputWithContext(context.Context) GetDbHomePatchHistoryEntriesPatchHistoryEntryArrayOutput
+}
+
+type GetDbHomePatchHistoryEntriesPatchHistoryEntryArray []GetDbHomePatchHistoryEntriesPatchHistoryEntryInput
+
+func (GetDbHomePatchHistoryEntriesPatchHistoryEntryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbHomePatchHistoryEntriesPatchHistoryEntry)(nil)).Elem()
+}
+
+func (i GetDbHomePatchHistoryEntriesPatchHistoryEntryArray) ToGetDbHomePatchHistoryEntriesPatchHistoryEntryArrayOutput() GetDbHomePatchHistoryEntriesPatchHistoryEntryArrayOutput {
+	return i.ToGetDbHomePatchHistoryEntriesPatchHistoryEntryArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbHomePatchHistoryEntriesPatchHistoryEntryArray) ToGetDbHomePatchHistoryEntriesPatchHistoryEntryArrayOutputWithContext(ctx context.Context) GetDbHomePatchHistoryEntriesPatchHistoryEntryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbHomePatchHistoryEntriesPatchHistoryEntryArrayOutput)
+}
+
+type GetDbHomePatchHistoryEntriesPatchHistoryEntryOutput struct{ *pulumi.OutputState }
+
+func (GetDbHomePatchHistoryEntriesPatchHistoryEntryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbHomePatchHistoryEntriesPatchHistoryEntry)(nil)).Elem()
+}
+
+func (o GetDbHomePatchHistoryEntriesPatchHistoryEntryOutput) ToGetDbHomePatchHistoryEntriesPatchHistoryEntryOutput() GetDbHomePatchHistoryEntriesPatchHistoryEntryOutput {
+	return o
+}
+
+func (o GetDbHomePatchHistoryEntriesPatchHistoryEntryOutput) ToGetDbHomePatchHistoryEntriesPatchHistoryEntryOutputWithContext(ctx context.Context) GetDbHomePatchHistoryEntriesPatchHistoryEntryOutput {
+	return o
+}
+
+// The action being performed or was completed.
+func (o GetDbHomePatchHistoryEntriesPatchHistoryEntryOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomePatchHistoryEntriesPatchHistoryEntry) string { return v.Action }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch history entry.
+func (o GetDbHomePatchHistoryEntriesPatchHistoryEntryOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomePatchHistoryEntriesPatchHistoryEntry) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
+func (o GetDbHomePatchHistoryEntriesPatchHistoryEntryOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomePatchHistoryEntriesPatchHistoryEntry) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
+func (o GetDbHomePatchHistoryEntriesPatchHistoryEntryOutput) PatchId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomePatchHistoryEntriesPatchHistoryEntry) string { return v.PatchId }).(pulumi.StringOutput)
+}
+
+// The type of Patch operation.
+func (o GetDbHomePatchHistoryEntriesPatchHistoryEntryOutput) PatchType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomePatchHistoryEntriesPatchHistoryEntry) string { return v.PatchType }).(pulumi.StringOutput)
+}
+
+// The current state of the action.
+func (o GetDbHomePatchHistoryEntriesPatchHistoryEntryOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomePatchHistoryEntriesPatchHistoryEntry) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time when the patch action completed
+func (o GetDbHomePatchHistoryEntriesPatchHistoryEntryOutput) TimeEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomePatchHistoryEntriesPatchHistoryEntry) string { return v.TimeEnded }).(pulumi.StringOutput)
+}
+
+// The date and time when the patch action started.
+func (o GetDbHomePatchHistoryEntriesPatchHistoryEntryOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomePatchHistoryEntriesPatchHistoryEntry) string { return v.TimeStarted }).(pulumi.StringOutput)
+}
+
+type GetDbHomePatchHistoryEntriesPatchHistoryEntryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbHomePatchHistoryEntriesPatchHistoryEntryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbHomePatchHistoryEntriesPatchHistoryEntry)(nil)).Elem()
+}
+
+func (o GetDbHomePatchHistoryEntriesPatchHistoryEntryArrayOutput) ToGetDbHomePatchHistoryEntriesPatchHistoryEntryArrayOutput() GetDbHomePatchHistoryEntriesPatchHistoryEntryArrayOutput {
+	return o
+}
+
+func (o GetDbHomePatchHistoryEntriesPatchHistoryEntryArrayOutput) ToGetDbHomePatchHistoryEntriesPatchHistoryEntryArrayOutputWithContext(ctx context.Context) GetDbHomePatchHistoryEntriesPatchHistoryEntryArrayOutput {
+	return o
+}
+
+func (o GetDbHomePatchHistoryEntriesPatchHistoryEntryArrayOutput) Index(i pulumi.IntInput) GetDbHomePatchHistoryEntriesPatchHistoryEntryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbHomePatchHistoryEntriesPatchHistoryEntry {
+		return vs[0].([]GetDbHomePatchHistoryEntriesPatchHistoryEntry)[vs[1].(int)]
+	}).(GetDbHomePatchHistoryEntriesPatchHistoryEntryOutput)
+}
+
+type GetDbHomePatchesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDbHomePatchesFilterInput is an input type that accepts GetDbHomePatchesFilterArgs and GetDbHomePatchesFilterOutput values.
+// You can construct a concrete instance of `GetDbHomePatchesFilterInput` via:
+//
+//	GetDbHomePatchesFilterArgs{...}
+type GetDbHomePatchesFilterInput interface {
+	pulumi.Input
+
+	ToGetDbHomePatchesFilterOutput() GetDbHomePatchesFilterOutput
+	ToGetDbHomePatchesFilterOutputWithContext(context.Context) GetDbHomePatchesFilterOutput
+}
+
+type GetDbHomePatchesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDbHomePatchesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbHomePatchesFilter)(nil)).Elem()
+}
+
+func (i GetDbHomePatchesFilterArgs) ToGetDbHomePatchesFilterOutput() GetDbHomePatchesFilterOutput {
+	return i.ToGetDbHomePatchesFilterOutputWithContext(context.Background())
+}
+
+func (i GetDbHomePatchesFilterArgs) ToGetDbHomePatchesFilterOutputWithContext(ctx context.Context) GetDbHomePatchesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbHomePatchesFilterOutput)
+}
+
+// GetDbHomePatchesFilterArrayInput is an input type that accepts GetDbHomePatchesFilterArray and GetDbHomePatchesFilterArrayOutput values.
+// You can construct a concrete instance of `GetDbHomePatchesFilterArrayInput` via:
+//
+//	GetDbHomePatchesFilterArray{ GetDbHomePatchesFilterArgs{...} }
+type GetDbHomePatchesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDbHomePatchesFilterArrayOutput() GetDbHomePatchesFilterArrayOutput
+	ToGetDbHomePatchesFilterArrayOutputWithContext(context.Context) GetDbHomePatchesFilterArrayOutput
+}
+
+type GetDbHomePatchesFilterArray []GetDbHomePatchesFilterInput
+
+func (GetDbHomePatchesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbHomePatchesFilter)(nil)).Elem()
+}
+
+func (i GetDbHomePatchesFilterArray) ToGetDbHomePatchesFilterArrayOutput() GetDbHomePatchesFilterArrayOutput {
+	return i.ToGetDbHomePatchesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbHomePatchesFilterArray) ToGetDbHomePatchesFilterArrayOutputWithContext(ctx context.Context) GetDbHomePatchesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbHomePatchesFilterArrayOutput)
+}
+
+type GetDbHomePatchesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDbHomePatchesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbHomePatchesFilter)(nil)).Elem()
+}
+
+func (o GetDbHomePatchesFilterOutput) ToGetDbHomePatchesFilterOutput() GetDbHomePatchesFilterOutput {
+	return o
+}
+
+func (o GetDbHomePatchesFilterOutput) ToGetDbHomePatchesFilterOutputWithContext(ctx context.Context) GetDbHomePatchesFilterOutput {
+	return o
+}
+
+func (o GetDbHomePatchesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomePatchesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDbHomePatchesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDbHomePatchesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDbHomePatchesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbHomePatchesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDbHomePatchesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbHomePatchesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbHomePatchesFilter)(nil)).Elem()
+}
+
+func (o GetDbHomePatchesFilterArrayOutput) ToGetDbHomePatchesFilterArrayOutput() GetDbHomePatchesFilterArrayOutput {
+	return o
+}
+
+func (o GetDbHomePatchesFilterArrayOutput) ToGetDbHomePatchesFilterArrayOutputWithContext(ctx context.Context) GetDbHomePatchesFilterArrayOutput {
+	return o
+}
+
+func (o GetDbHomePatchesFilterArrayOutput) Index(i pulumi.IntInput) GetDbHomePatchesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbHomePatchesFilter {
+		return vs[0].([]GetDbHomePatchesFilter)[vs[1].(int)]
+	}).(GetDbHomePatchesFilterOutput)
+}
+
+type GetDbHomePatchesPatch struct {
+	// Actions that can possibly be performed using this patch.
+	AvailableActions []string `pulumi:"availableActions"`
+	// The text describing this patch package.
+	Description string `pulumi:"description"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
+	Id string `pulumi:"id"`
+	// Action that is currently being performed or was completed last.
+	LastAction string `pulumi:"lastAction"`
+	// A descriptive text associated with the lifecycleState. Typically can contain additional displayable text.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The current state of the patch as a result of lastAction.
+	State string `pulumi:"state"`
+	// The date and time that the patch was released.
+	TimeReleased string `pulumi:"timeReleased"`
+	// The version of this patch package.
+	Version string `pulumi:"version"`
+}
+
+// GetDbHomePatchesPatchInput is an input type that accepts GetDbHomePatchesPatchArgs and GetDbHomePatchesPatchOutput values.
+// You can construct a concrete instance of `GetDbHomePatchesPatchInput` via:
+//
+//	GetDbHomePatchesPatchArgs{...}
+type GetDbHomePatchesPatchInput interface {
+	pulumi.Input
+
+	ToGetDbHomePatchesPatchOutput() GetDbHomePatchesPatchOutput
+	ToGetDbHomePatchesPatchOutputWithContext(context.Context) GetDbHomePatchesPatchOutput
+}
+
+type GetDbHomePatchesPatchArgs struct {
+	// Actions that can possibly be performed using this patch.
+	AvailableActions pulumi.StringArrayInput `pulumi:"availableActions"`
+	// The text describing this patch package.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Action that is currently being performed or was completed last.
+	LastAction pulumi.StringInput `pulumi:"lastAction"`
+	// A descriptive text associated with the lifecycleState. Typically can contain additional displayable text.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The current state of the patch as a result of lastAction.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time that the patch was released.
+	TimeReleased pulumi.StringInput `pulumi:"timeReleased"`
+	// The version of this patch package.
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetDbHomePatchesPatchArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbHomePatchesPatch)(nil)).Elem()
+}
+
+func (i GetDbHomePatchesPatchArgs) ToGetDbHomePatchesPatchOutput() GetDbHomePatchesPatchOutput {
+	return i.ToGetDbHomePatchesPatchOutputWithContext(context.Background())
+}
+
+func (i GetDbHomePatchesPatchArgs) ToGetDbHomePatchesPatchOutputWithContext(ctx context.Context) GetDbHomePatchesPatchOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbHomePatchesPatchOutput)
+}
+
+// GetDbHomePatchesPatchArrayInput is an input type that accepts GetDbHomePatchesPatchArray and GetDbHomePatchesPatchArrayOutput values.
+// You can construct a concrete instance of `GetDbHomePatchesPatchArrayInput` via:
+//
+//	GetDbHomePatchesPatchArray{ GetDbHomePatchesPatchArgs{...} }
+type GetDbHomePatchesPatchArrayInput interface {
+	pulumi.Input
+
+	ToGetDbHomePatchesPatchArrayOutput() GetDbHomePatchesPatchArrayOutput
+	ToGetDbHomePatchesPatchArrayOutputWithContext(context.Context) GetDbHomePatchesPatchArrayOutput
+}
+
+type GetDbHomePatchesPatchArray []GetDbHomePatchesPatchInput
+
+func (GetDbHomePatchesPatchArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbHomePatchesPatch)(nil)).Elem()
+}
+
+func (i GetDbHomePatchesPatchArray) ToGetDbHomePatchesPatchArrayOutput() GetDbHomePatchesPatchArrayOutput {
+	return i.ToGetDbHomePatchesPatchArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbHomePatchesPatchArray) ToGetDbHomePatchesPatchArrayOutputWithContext(ctx context.Context) GetDbHomePatchesPatchArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbHomePatchesPatchArrayOutput)
+}
+
+type GetDbHomePatchesPatchOutput struct{ *pulumi.OutputState }
+
+func (GetDbHomePatchesPatchOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbHomePatchesPatch)(nil)).Elem()
+}
+
+func (o GetDbHomePatchesPatchOutput) ToGetDbHomePatchesPatchOutput() GetDbHomePatchesPatchOutput {
+	return o
+}
+
+func (o GetDbHomePatchesPatchOutput) ToGetDbHomePatchesPatchOutputWithContext(ctx context.Context) GetDbHomePatchesPatchOutput {
+	return o
+}
+
+// Actions that can possibly be performed using this patch.
+func (o GetDbHomePatchesPatchOutput) AvailableActions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbHomePatchesPatch) []string { return v.AvailableActions }).(pulumi.StringArrayOutput)
+}
+
+// The text describing this patch package.
+func (o GetDbHomePatchesPatchOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomePatchesPatch) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
+func (o GetDbHomePatchesPatchOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomePatchesPatch) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Action that is currently being performed or was completed last.
+func (o GetDbHomePatchesPatchOutput) LastAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomePatchesPatch) string { return v.LastAction }).(pulumi.StringOutput)
+}
+
+// A descriptive text associated with the lifecycleState. Typically can contain additional displayable text.
+func (o GetDbHomePatchesPatchOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomePatchesPatch) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The current state of the patch as a result of lastAction.
+func (o GetDbHomePatchesPatchOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomePatchesPatch) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time that the patch was released.
+func (o GetDbHomePatchesPatchOutput) TimeReleased() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomePatchesPatch) string { return v.TimeReleased }).(pulumi.StringOutput)
+}
+
+// The version of this patch package.
+func (o GetDbHomePatchesPatchOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomePatchesPatch) string { return v.Version }).(pulumi.StringOutput)
+}
+
+type GetDbHomePatchesPatchArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbHomePatchesPatchArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbHomePatchesPatch)(nil)).Elem()
+}
+
+func (o GetDbHomePatchesPatchArrayOutput) ToGetDbHomePatchesPatchArrayOutput() GetDbHomePatchesPatchArrayOutput {
+	return o
+}
+
+func (o GetDbHomePatchesPatchArrayOutput) ToGetDbHomePatchesPatchArrayOutputWithContext(ctx context.Context) GetDbHomePatchesPatchArrayOutput {
+	return o
+}
+
+func (o GetDbHomePatchesPatchArrayOutput) Index(i pulumi.IntInput) GetDbHomePatchesPatchOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbHomePatchesPatch {
+		return vs[0].([]GetDbHomePatchesPatch)[vs[1].(int)]
+	}).(GetDbHomePatchesPatchOutput)
+}
+
 type GetDbHomesDbHome struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
@@ -824,8 +1356,12 @@ func (o GetDbHomesDbHomeDatabaseDbBackupConfigArrayOutput) Index(i pulumi.IntInp
 type GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail struct {
 	DbrsPolicyId string `pulumi:"dbrsPolicyId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-	Id   string `pulumi:"id"`
-	Type string `pulumi:"type"`
+	Id           string `pulumi:"id"`
+	IsRemote     bool   `pulumi:"isRemote"`
+	RemoteRegion string `pulumi:"remoteRegion"`
+	Type         string `pulumi:"type"`
+	VpcPassword  string `pulumi:"vpcPassword"`
+	VpcUser      string `pulumi:"vpcUser"`
 }
 
 // GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailInput is an input type that accepts GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs and GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput values.
@@ -842,8 +1378,12 @@ type GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailInput interfac
 type GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs struct {
 	DbrsPolicyId pulumi.StringInput `pulumi:"dbrsPolicyId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-	Id   pulumi.StringInput `pulumi:"id"`
-	Type pulumi.StringInput `pulumi:"type"`
+	Id           pulumi.StringInput `pulumi:"id"`
+	IsRemote     pulumi.BoolInput   `pulumi:"isRemote"`
+	RemoteRegion pulumi.StringInput `pulumi:"remoteRegion"`
+	Type         pulumi.StringInput `pulumi:"type"`
+	VpcPassword  pulumi.StringInput `pulumi:"vpcPassword"`
+	VpcUser      pulumi.StringInput `pulumi:"vpcUser"`
 }
 
 func (GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs) ElementType() reflect.Type {
@@ -906,8 +1446,24 @@ func (o GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) Id(
 	return o.ApplyT(func(v GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail) string { return v.Id }).(pulumi.StringOutput)
 }
 
+func (o GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) IsRemote() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail) bool { return v.IsRemote }).(pulumi.BoolOutput)
+}
+
+func (o GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) RemoteRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail) string { return v.RemoteRegion }).(pulumi.StringOutput)
+}
+
 func (o GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail) string { return v.Type }).(pulumi.StringOutput)
+}
+
+func (o GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) VpcPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail) string { return v.VpcPassword }).(pulumi.StringOutput)
+}
+
+func (o GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) VpcUser() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail) string { return v.VpcUser }).(pulumi.StringOutput)
 }
 
 type GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput struct{ *pulumi.OutputState }
@@ -6540,8 +7096,10 @@ func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArrayOutput) Index(i pul
 type GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail struct {
 	DbrsPolicyId string `pulumi:"dbrsPolicyId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-	Id   string `pulumi:"id"`
-	Type string `pulumi:"type"`
+	Id           string `pulumi:"id"`
+	IsRemote     bool   `pulumi:"isRemote"`
+	RemoteRegion string `pulumi:"remoteRegion"`
+	Type         string `pulumi:"type"`
 }
 
 // GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailInput is an input type that accepts GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs and GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput values.
@@ -6558,8 +7116,10 @@ type GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailInpu
 type GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs struct {
 	DbrsPolicyId pulumi.StringInput `pulumi:"dbrsPolicyId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-	Id   pulumi.StringInput `pulumi:"id"`
-	Type pulumi.StringInput `pulumi:"type"`
+	Id           pulumi.StringInput `pulumi:"id"`
+	IsRemote     pulumi.BoolInput   `pulumi:"isRemote"`
+	RemoteRegion pulumi.StringInput `pulumi:"remoteRegion"`
+	Type         pulumi.StringInput `pulumi:"type"`
 }
 
 func (GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs) ElementType() reflect.Type {
@@ -6622,6 +7182,18 @@ func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailO
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
 func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) IsRemote() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail) bool {
+		return v.IsRemote
+	}).(pulumi.BoolOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) RemoteRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail) string {
+		return v.RemoteRegion
+	}).(pulumi.StringOutput)
 }
 
 func (o GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailOutput) Type() pulumi.StringOutput {
@@ -32508,6 +33080,14 @@ func (o GetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput) Index(i 
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbHomePatchHistoryEntriesFilterInput)(nil)).Elem(), GetDbHomePatchHistoryEntriesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbHomePatchHistoryEntriesFilterArrayInput)(nil)).Elem(), GetDbHomePatchHistoryEntriesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbHomePatchHistoryEntriesPatchHistoryEntryInput)(nil)).Elem(), GetDbHomePatchHistoryEntriesPatchHistoryEntryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbHomePatchHistoryEntriesPatchHistoryEntryArrayInput)(nil)).Elem(), GetDbHomePatchHistoryEntriesPatchHistoryEntryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbHomePatchesFilterInput)(nil)).Elem(), GetDbHomePatchesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbHomePatchesFilterArrayInput)(nil)).Elem(), GetDbHomePatchesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbHomePatchesPatchInput)(nil)).Elem(), GetDbHomePatchesPatchArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbHomePatchesPatchArrayInput)(nil)).Elem(), GetDbHomePatchesPatchArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbHomesDbHomeInput)(nil)).Elem(), GetDbHomesDbHomeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbHomesDbHomeArrayInput)(nil)).Elem(), GetDbHomesDbHomeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbHomesDbHomeDatabaseInput)(nil)).Elem(), GetDbHomesDbHomeDatabaseArgs{})
@@ -32972,6 +33552,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetVmClustersVmClusterDataCollectionOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailArrayInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArray{})
+	pulumi.RegisterOutputType(GetDbHomePatchHistoryEntriesFilterOutput{})
+	pulumi.RegisterOutputType(GetDbHomePatchHistoryEntriesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDbHomePatchHistoryEntriesPatchHistoryEntryOutput{})
+	pulumi.RegisterOutputType(GetDbHomePatchHistoryEntriesPatchHistoryEntryArrayOutput{})
+	pulumi.RegisterOutputType(GetDbHomePatchesFilterOutput{})
+	pulumi.RegisterOutputType(GetDbHomePatchesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDbHomePatchesPatchOutput{})
+	pulumi.RegisterOutputType(GetDbHomePatchesPatchArrayOutput{})
 	pulumi.RegisterOutputType(GetDbHomesDbHomeOutput{})
 	pulumi.RegisterOutputType(GetDbHomesDbHomeArrayOutput{})
 	pulumi.RegisterOutputType(GetDbHomesDbHomeDatabaseOutput{})

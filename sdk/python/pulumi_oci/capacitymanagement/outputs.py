@@ -38,6 +38,26 @@ __all__ = [
     'GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemResult',
     'GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestResult',
     'GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailResult',
+    'GetInternalOccmDemandSignalCatalogResourcesFilterResult',
+    'GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionResult',
+    'GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResult',
+    'GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyResult',
+    'GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintResult',
+    'GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemResult',
+    'GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemResult',
+    'GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionResult',
+    'GetInternalOccmDemandSignalCatalogsFilterResult',
+    'GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionResult',
+    'GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemResult',
+    'GetInternalOccmDemandSignalDeliveriesFilterResult',
+    'GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionResult',
+    'GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemResult',
+    'GetInternalOccmDemandSignalItemsFilterResult',
+    'GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionResult',
+    'GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemResult',
+    'GetInternalOccmDemandSignalsFilterResult',
+    'GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionResult',
+    'GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemResult',
     'GetNamespaceOccOverviewsFilterResult',
     'GetNamespaceOccOverviewsOccOverviewCollectionResult',
     'GetNamespaceOccOverviewsOccOverviewCollectionItemResult',
@@ -73,6 +93,23 @@ __all__ = [
     'GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemResult',
     'GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestResult',
     'GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailResult',
+    'GetOccmDemandSignalCatalogResourcesFilterResult',
+    'GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionResult',
+    'GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResult',
+    'GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyResult',
+    'GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintResult',
+    'GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemResult',
+    'GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemResult',
+    'GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionResult',
+    'GetOccmDemandSignalDeliveriesFilterResult',
+    'GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionResult',
+    'GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemResult',
+    'GetOccmDemandSignalItemsFilterResult',
+    'GetOccmDemandSignalItemsOccmDemandSignalItemCollectionResult',
+    'GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemResult',
+    'GetOccmDemandSignalsFilterResult',
+    'GetOccmDemandSignalsOccmDemandSignalCollectionResult',
+    'GetOccmDemandSignalsOccmDemandSignalCollectionItemResult',
 ]
 
 @pulumi.output_type
@@ -1442,6 +1479,1242 @@ class GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItem
         The type of workload to which these resources were provisioned.
         """
         return pulumi.get(self, "workload_type")
+
+
+@pulumi.output_type
+class GetInternalOccmDemandSignalCatalogResourcesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        """
+        :param builtins.str name: A query parameter to filter the list of demand signal catalog resource based on the resource name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        A query parameter to filter the list of demand signal catalog resource based on the resource name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResult']):
+        """
+        :param Sequence['GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArgs'] items: An array of items containing detailed information about a resource's property dependecies.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResult']:
+        """
+        An array of items containing detailed information about a resource's property dependecies.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 availability_domain: builtins.str,
+                 compartment_id: builtins.str,
+                 defined_tags: Mapping[str, builtins.str],
+                 freeform_tags: Mapping[str, builtins.str],
+                 id: builtins.str,
+                 name: builtins.str,
+                 namespace: builtins.str,
+                 occ_customer_group_id: builtins.str,
+                 occm_demand_signal_catalog_id: builtins.str,
+                 region: builtins.str,
+                 resource_properties: Sequence['outputs.GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyResult'],
+                 resource_property_constraints: Sequence['outputs.GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintResult'],
+                 state: builtins.str,
+                 system_tags: Mapping[str, builtins.str],
+                 target_compartment_id: builtins.str,
+                 time_created: builtins.str,
+                 time_updated: builtins.str):
+        """
+        :param builtins.str availability_domain: The name of the availability domain for which you want to request the Oracle Cloud Infrastructure resource. This is an optional parameter.
+        :param builtins.str compartment_id: The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+        :param Mapping[str, builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param builtins.str id: The OCID of the demand signal catalog resource.
+        :param builtins.str name: A query parameter to filter the list of demand signal catalog resource based on the resource name.
+        :param builtins.str namespace: The name of the Oracle Cloud Infrastructure service in consideration for demand signal submission. For example: COMPUTE, NETWORK, GPU etc.
+        :param builtins.str occ_customer_group_id: The customer group ocid by which we would filter the list.
+        :param builtins.str occm_demand_signal_catalog_id: The ocid of demand signal catalog id.
+        :param builtins.str region: The name of region for which you want to request the Oracle Cloud Infrastructure resource. This is an optional parameter.
+        :param Sequence['GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArgs'] resource_properties: A list containing detailed information about a resource's properties.
+        :param Sequence['GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArgs'] resource_property_constraints: A list containing detailed information about a resource's property constraints.
+        :param builtins.str state: The current lifecycle state of the demand signal catalog resource.
+        :param Mapping[str, builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param builtins.str target_compartment_id: The OCID of the customer tenancy for which this resource will be available for the customer to order against.
+        :param builtins.str time_created: The time when the demand signal catalog resource was created.
+        :param builtins.str time_updated: The time when the demand signal catalog resource was last updated.
+        """
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "occ_customer_group_id", occ_customer_group_id)
+        pulumi.set(__self__, "occm_demand_signal_catalog_id", occm_demand_signal_catalog_id)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "resource_properties", resource_properties)
+        pulumi.set(__self__, "resource_property_constraints", resource_property_constraints)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "target_compartment_id", target_compartment_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> builtins.str:
+        """
+        The name of the availability domain for which you want to request the Oracle Cloud Infrastructure resource. This is an optional parameter.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> builtins.str:
+        """
+        The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> builtins.str:
+        """
+        The OCID of the demand signal catalog resource.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        A query parameter to filter the list of demand signal catalog resource based on the resource name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> builtins.str:
+        """
+        The name of the Oracle Cloud Infrastructure service in consideration for demand signal submission. For example: COMPUTE, NETWORK, GPU etc.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter(name="occCustomerGroupId")
+    def occ_customer_group_id(self) -> builtins.str:
+        """
+        The customer group ocid by which we would filter the list.
+        """
+        return pulumi.get(self, "occ_customer_group_id")
+
+    @property
+    @pulumi.getter(name="occmDemandSignalCatalogId")
+    def occm_demand_signal_catalog_id(self) -> builtins.str:
+        """
+        The ocid of demand signal catalog id.
+        """
+        return pulumi.get(self, "occm_demand_signal_catalog_id")
+
+    @property
+    @pulumi.getter
+    def region(self) -> builtins.str:
+        """
+        The name of region for which you want to request the Oracle Cloud Infrastructure resource. This is an optional parameter.
+        """
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter(name="resourceProperties")
+    def resource_properties(self) -> Sequence['outputs.GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyResult']:
+        """
+        A list containing detailed information about a resource's properties.
+        """
+        return pulumi.get(self, "resource_properties")
+
+    @property
+    @pulumi.getter(name="resourcePropertyConstraints")
+    def resource_property_constraints(self) -> Sequence['outputs.GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintResult']:
+        """
+        A list containing detailed information about a resource's property constraints.
+        """
+        return pulumi.get(self, "resource_property_constraints")
+
+    @property
+    @pulumi.getter
+    def state(self) -> builtins.str:
+        """
+        The current lifecycle state of the demand signal catalog resource.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="targetCompartmentId")
+    def target_compartment_id(self) -> builtins.str:
+        """
+        The OCID of the customer tenancy for which this resource will be available for the customer to order against.
+        """
+        return pulumi.get(self, "target_compartment_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> builtins.str:
+        """
+        The time when the demand signal catalog resource was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> builtins.str:
+        """
+        The time when the demand signal catalog resource was last updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemResult']):
+        """
+        :param Sequence['GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArgs'] items: An array of items containing detailed information about a resource's property dependecies.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemResult']:
+        """
+        An array of items containing detailed information about a resource's property dependecies.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemResult']):
+        """
+        :param Sequence['GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArgs'] items: An array of items containing detailed information about a resource's property dependecies.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemResult']:
+        """
+        An array of items containing detailed information about a resource's property dependecies.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemResult(dict):
+    def __init__(__self__, *,
+                 constraint_name: builtins.str,
+                 constraint_value: builtins.str):
+        """
+        :param builtins.str constraint_name: The name of demand signal resource's property constraint.
+        :param builtins.str constraint_value: The value of demand signal resource's property constraint.
+        """
+        pulumi.set(__self__, "constraint_name", constraint_name)
+        pulumi.set(__self__, "constraint_value", constraint_value)
+
+    @property
+    @pulumi.getter(name="constraintName")
+    def constraint_name(self) -> builtins.str:
+        """
+        The name of demand signal resource's property constraint.
+        """
+        return pulumi.get(self, "constraint_name")
+
+    @property
+    @pulumi.getter(name="constraintValue")
+    def constraint_value(self) -> builtins.str:
+        """
+        The value of demand signal resource's property constraint.
+        """
+        return pulumi.get(self, "constraint_value")
+
+
+@pulumi.output_type
+class GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemResult(dict):
+    def __init__(__self__, *,
+                 is_editable: builtins.bool,
+                 property_max_value: builtins.str,
+                 property_min_value: builtins.str,
+                 property_name: builtins.str,
+                 property_options: Sequence['outputs.GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionResult'],
+                 property_unit: builtins.str,
+                 property_value: builtins.str):
+        """
+        :param builtins.bool is_editable: This will indicate if demand signal resource's property is editable.
+        :param builtins.str property_max_value: The maximum value of demand signal resource's property. This is an optional parameter.
+        :param builtins.str property_min_value: The minimum value of demand signal resource's property. This is an optional parameter.
+        :param builtins.str property_name: The name of demand signal resource's property.
+        :param Sequence['GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArgs'] property_options: Predefined options for demand signal resource's property. This is an optional parameter.
+        :param builtins.str property_unit: Unit for demand signal resource's property.
+        :param builtins.str property_value: Default value of demand signal resource's property.
+        """
+        pulumi.set(__self__, "is_editable", is_editable)
+        pulumi.set(__self__, "property_max_value", property_max_value)
+        pulumi.set(__self__, "property_min_value", property_min_value)
+        pulumi.set(__self__, "property_name", property_name)
+        pulumi.set(__self__, "property_options", property_options)
+        pulumi.set(__self__, "property_unit", property_unit)
+        pulumi.set(__self__, "property_value", property_value)
+
+    @property
+    @pulumi.getter(name="isEditable")
+    def is_editable(self) -> builtins.bool:
+        """
+        This will indicate if demand signal resource's property is editable.
+        """
+        return pulumi.get(self, "is_editable")
+
+    @property
+    @pulumi.getter(name="propertyMaxValue")
+    def property_max_value(self) -> builtins.str:
+        """
+        The maximum value of demand signal resource's property. This is an optional parameter.
+        """
+        return pulumi.get(self, "property_max_value")
+
+    @property
+    @pulumi.getter(name="propertyMinValue")
+    def property_min_value(self) -> builtins.str:
+        """
+        The minimum value of demand signal resource's property. This is an optional parameter.
+        """
+        return pulumi.get(self, "property_min_value")
+
+    @property
+    @pulumi.getter(name="propertyName")
+    def property_name(self) -> builtins.str:
+        """
+        The name of demand signal resource's property.
+        """
+        return pulumi.get(self, "property_name")
+
+    @property
+    @pulumi.getter(name="propertyOptions")
+    def property_options(self) -> Sequence['outputs.GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionResult']:
+        """
+        Predefined options for demand signal resource's property. This is an optional parameter.
+        """
+        return pulumi.get(self, "property_options")
+
+    @property
+    @pulumi.getter(name="propertyUnit")
+    def property_unit(self) -> builtins.str:
+        """
+        Unit for demand signal resource's property.
+        """
+        return pulumi.get(self, "property_unit")
+
+    @property
+    @pulumi.getter(name="propertyValue")
+    def property_value(self) -> builtins.str:
+        """
+        Default value of demand signal resource's property.
+        """
+        return pulumi.get(self, "property_value")
+
+
+@pulumi.output_type
+class GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionResult(dict):
+    def __init__(__self__, *,
+                 option_key: builtins.str,
+                 option_value: builtins.str):
+        """
+        :param builtins.str option_key: key of a property option like memoryValue, ocpuValue.
+        :param builtins.str option_value: value of a property option like 64, 2 fastconnect etc.
+        """
+        pulumi.set(__self__, "option_key", option_key)
+        pulumi.set(__self__, "option_value", option_value)
+
+    @property
+    @pulumi.getter(name="optionKey")
+    def option_key(self) -> builtins.str:
+        """
+        key of a property option like memoryValue, ocpuValue.
+        """
+        return pulumi.get(self, "option_key")
+
+    @property
+    @pulumi.getter(name="optionValue")
+    def option_value(self) -> builtins.str:
+        """
+        value of a property option like 64, 2 fastconnect etc.
+        """
+        return pulumi.get(self, "option_value")
+
+
+@pulumi.output_type
+class GetInternalOccmDemandSignalCatalogsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: builtins.str,
+                 defined_tags: Mapping[str, builtins.str],
+                 description: builtins.str,
+                 display_name: builtins.str,
+                 freeform_tags: Mapping[str, builtins.str],
+                 id: builtins.str,
+                 occ_customer_group_id: builtins.str,
+                 state: builtins.str,
+                 system_tags: Mapping[str, builtins.str],
+                 time_created: builtins.str,
+                 time_updated: builtins.str):
+        """
+        :param builtins.str compartment_id: The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+        :param Mapping[str, builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param builtins.str description: description of demand signal catalog.
+        :param builtins.str display_name: A filter to return only the resources that match the entire display name. The match is not case sensitive.
+        :param Mapping[str, builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param builtins.str id: The ocid of demand signal catalog.
+        :param builtins.str occ_customer_group_id: The customer group ocid by which we would filter the list.
+        :param builtins.str state: The current lifecycle state of the resource.
+        :param Mapping[str, builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param builtins.str time_created: The time when the demand signal catalog was created.
+        :param builtins.str time_updated: The time when the demand signal catalog was last updated.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "occ_customer_group_id", occ_customer_group_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> builtins.str:
+        """
+        The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        description of demand signal catalog.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> builtins.str:
+        """
+        A filter to return only the resources that match the entire display name. The match is not case sensitive.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> builtins.str:
+        """
+        The ocid of demand signal catalog.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="occCustomerGroupId")
+    def occ_customer_group_id(self) -> builtins.str:
+        """
+        The customer group ocid by which we would filter the list.
+        """
+        return pulumi.get(self, "occ_customer_group_id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> builtins.str:
+        """
+        The current lifecycle state of the resource.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> builtins.str:
+        """
+        The time when the demand signal catalog was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> builtins.str:
+        """
+        The time when the demand signal catalog was last updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetInternalOccmDemandSignalDeliveriesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 accepted_quantity: builtins.str,
+                 compartment_id: builtins.str,
+                 defined_tags: Mapping[str, builtins.str],
+                 demand_signal_id: builtins.str,
+                 demand_signal_item_id: builtins.str,
+                 freeform_tags: Mapping[str, builtins.str],
+                 id: builtins.str,
+                 justification: builtins.str,
+                 lifecycle_details: builtins.str,
+                 notes: builtins.str,
+                 occ_customer_group_id: builtins.str,
+                 state: builtins.str,
+                 system_tags: Mapping[str, builtins.str],
+                 time_delivered: builtins.str):
+        """
+        :param builtins.str accepted_quantity: The quantity of the resource that Oracle Cloud Infrastructure will supply to the customer.
+        :param builtins.str compartment_id: The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+        :param Mapping[str, builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param builtins.str demand_signal_id: The OCID of the demand signal under which this delivery will be grouped.
+        :param builtins.str demand_signal_item_id: The OCID of the demand signal item corresponding to which this delivery is made.
+        :param Mapping[str, builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param builtins.str id: A query parameter to filter the list of demand signals based on it's OCID.
+        :param builtins.str justification: This field could be used by Oracle Cloud Infrastructure to communicate the reason for accepting or declining the request.
+        :param builtins.str lifecycle_details: The enum values corresponding to the various states associated with the delivery resource.
+        :param builtins.str notes: This field acts as a notes section for operators.
+        :param builtins.str occ_customer_group_id: The customer group ocid by which we would filter the list.
+        :param builtins.str state: The current lifecycle state of the resource.
+        :param Mapping[str, builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param builtins.str time_delivered: The date on which the Oracle Cloud Infrastructure delivered the resource to the customers. The default value for this will be the corresponding demand signal item resource's need by date.
+        """
+        pulumi.set(__self__, "accepted_quantity", accepted_quantity)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "demand_signal_id", demand_signal_id)
+        pulumi.set(__self__, "demand_signal_item_id", demand_signal_item_id)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "justification", justification)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "notes", notes)
+        pulumi.set(__self__, "occ_customer_group_id", occ_customer_group_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_delivered", time_delivered)
+
+    @property
+    @pulumi.getter(name="acceptedQuantity")
+    def accepted_quantity(self) -> builtins.str:
+        """
+        The quantity of the resource that Oracle Cloud Infrastructure will supply to the customer.
+        """
+        return pulumi.get(self, "accepted_quantity")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> builtins.str:
+        """
+        The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="demandSignalId")
+    def demand_signal_id(self) -> builtins.str:
+        """
+        The OCID of the demand signal under which this delivery will be grouped.
+        """
+        return pulumi.get(self, "demand_signal_id")
+
+    @property
+    @pulumi.getter(name="demandSignalItemId")
+    def demand_signal_item_id(self) -> builtins.str:
+        """
+        The OCID of the demand signal item corresponding to which this delivery is made.
+        """
+        return pulumi.get(self, "demand_signal_item_id")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> builtins.str:
+        """
+        A query parameter to filter the list of demand signals based on it's OCID.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def justification(self) -> builtins.str:
+        """
+        This field could be used by Oracle Cloud Infrastructure to communicate the reason for accepting or declining the request.
+        """
+        return pulumi.get(self, "justification")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> builtins.str:
+        """
+        The enum values corresponding to the various states associated with the delivery resource.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def notes(self) -> builtins.str:
+        """
+        This field acts as a notes section for operators.
+        """
+        return pulumi.get(self, "notes")
+
+    @property
+    @pulumi.getter(name="occCustomerGroupId")
+    def occ_customer_group_id(self) -> builtins.str:
+        """
+        The customer group ocid by which we would filter the list.
+        """
+        return pulumi.get(self, "occ_customer_group_id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> builtins.str:
+        """
+        The current lifecycle state of the resource.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeDelivered")
+    def time_delivered(self) -> builtins.str:
+        """
+        The date on which the Oracle Cloud Infrastructure delivered the resource to the customers. The default value for this will be the corresponding demand signal item resource's need by date.
+        """
+        return pulumi.get(self, "time_delivered")
+
+
+@pulumi.output_type
+class GetInternalOccmDemandSignalItemsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemResult']):
+        """
+        :param Sequence['GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArgs'] items: An array of items containing detailed information about different resource demanded as part of a demand signal.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemResult']:
+        """
+        An array of items containing detailed information about different resource demanded as part of a demand signal.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 availability_domain: builtins.str,
+                 compartment_id: builtins.str,
+                 defined_tags: Mapping[str, builtins.str],
+                 demand_signal_catalog_resource_id: builtins.str,
+                 demand_signal_id: builtins.str,
+                 demand_signal_namespace: builtins.str,
+                 freeform_tags: Mapping[str, builtins.str],
+                 id: builtins.str,
+                 notes: builtins.str,
+                 occ_customer_group_id: builtins.str,
+                 quantity: builtins.str,
+                 region: builtins.str,
+                 request_type: builtins.str,
+                 resource_name: builtins.str,
+                 resource_properties: Mapping[str, builtins.str],
+                 state: builtins.str,
+                 system_tags: Mapping[str, builtins.str],
+                 target_compartment_id: builtins.str,
+                 time_needed_before: builtins.str):
+        """
+        :param builtins.str availability_domain: The name of the availability domain for which you want to request the Oracle Cloud Infrastructure resource.
+        :param builtins.str compartment_id: The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+        :param Mapping[str, builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param builtins.str demand_signal_catalog_resource_id: The OCID of the corresponding demand signal catalog resource.
+        :param builtins.str demand_signal_id: The OCID of the demand signal under which this item will be grouped.
+        :param builtins.str demand_signal_namespace: A query parameter to filter the list of demand signal details based on the namespace.
+        :param Mapping[str, builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param builtins.str id: The OCID of the demand signal resource request.
+        :param builtins.str notes: This field will serve as notes section for you. You can use this section to convey a message to Oracle Cloud Infrastructure regarding your resource request.
+        :param builtins.str occ_customer_group_id: The customer group ocid by which we would filter the list.
+        :param builtins.str quantity: The quantity of the resource that you want to demand from Oracle Cloud Infrastructure or return to OCI.
+        :param builtins.str region: The name of region for which you want to request the Oracle Cloud Infrastructure resource.
+        :param builtins.str request_type: The type of request (DEMAND or RETURN) made against a particular demand signal item.
+        :param builtins.str resource_name: A query parameter to filter the list of demand signal details based on the resource name.
+        :param Mapping[str, builtins.str] resource_properties: A map of various properties associated with the Oracle Cloud Infrastructure resource.
+        :param builtins.str state: The current lifecycle state of the demand signal item.
+        :param Mapping[str, builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param builtins.str target_compartment_id: The ocid of the tenancy for which you want to request the Oracle Cloud Infrastructure resource for. This is an optional parameter.
+        :param builtins.str time_needed_before: the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you.
+        """
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "demand_signal_catalog_resource_id", demand_signal_catalog_resource_id)
+        pulumi.set(__self__, "demand_signal_id", demand_signal_id)
+        pulumi.set(__self__, "demand_signal_namespace", demand_signal_namespace)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "notes", notes)
+        pulumi.set(__self__, "occ_customer_group_id", occ_customer_group_id)
+        pulumi.set(__self__, "quantity", quantity)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "request_type", request_type)
+        pulumi.set(__self__, "resource_name", resource_name)
+        pulumi.set(__self__, "resource_properties", resource_properties)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "target_compartment_id", target_compartment_id)
+        pulumi.set(__self__, "time_needed_before", time_needed_before)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> builtins.str:
+        """
+        The name of the availability domain for which you want to request the Oracle Cloud Infrastructure resource.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> builtins.str:
+        """
+        The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="demandSignalCatalogResourceId")
+    def demand_signal_catalog_resource_id(self) -> builtins.str:
+        """
+        The OCID of the corresponding demand signal catalog resource.
+        """
+        return pulumi.get(self, "demand_signal_catalog_resource_id")
+
+    @property
+    @pulumi.getter(name="demandSignalId")
+    def demand_signal_id(self) -> builtins.str:
+        """
+        The OCID of the demand signal under which this item will be grouped.
+        """
+        return pulumi.get(self, "demand_signal_id")
+
+    @property
+    @pulumi.getter(name="demandSignalNamespace")
+    def demand_signal_namespace(self) -> builtins.str:
+        """
+        A query parameter to filter the list of demand signal details based on the namespace.
+        """
+        return pulumi.get(self, "demand_signal_namespace")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> builtins.str:
+        """
+        The OCID of the demand signal resource request.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def notes(self) -> builtins.str:
+        """
+        This field will serve as notes section for you. You can use this section to convey a message to Oracle Cloud Infrastructure regarding your resource request.
+        """
+        return pulumi.get(self, "notes")
+
+    @property
+    @pulumi.getter(name="occCustomerGroupId")
+    def occ_customer_group_id(self) -> builtins.str:
+        """
+        The customer group ocid by which we would filter the list.
+        """
+        return pulumi.get(self, "occ_customer_group_id")
+
+    @property
+    @pulumi.getter
+    def quantity(self) -> builtins.str:
+        """
+        The quantity of the resource that you want to demand from Oracle Cloud Infrastructure or return to OCI.
+        """
+        return pulumi.get(self, "quantity")
+
+    @property
+    @pulumi.getter
+    def region(self) -> builtins.str:
+        """
+        The name of region for which you want to request the Oracle Cloud Infrastructure resource.
+        """
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter(name="requestType")
+    def request_type(self) -> builtins.str:
+        """
+        The type of request (DEMAND or RETURN) made against a particular demand signal item.
+        """
+        return pulumi.get(self, "request_type")
+
+    @property
+    @pulumi.getter(name="resourceName")
+    def resource_name(self) -> builtins.str:
+        """
+        A query parameter to filter the list of demand signal details based on the resource name.
+        """
+        return pulumi.get(self, "resource_name")
+
+    @property
+    @pulumi.getter(name="resourceProperties")
+    def resource_properties(self) -> Mapping[str, builtins.str]:
+        """
+        A map of various properties associated with the Oracle Cloud Infrastructure resource.
+        """
+        return pulumi.get(self, "resource_properties")
+
+    @property
+    @pulumi.getter
+    def state(self) -> builtins.str:
+        """
+        The current lifecycle state of the demand signal item.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="targetCompartmentId")
+    def target_compartment_id(self) -> builtins.str:
+        """
+        The ocid of the tenancy for which you want to request the Oracle Cloud Infrastructure resource for. This is an optional parameter.
+        """
+        return pulumi.get(self, "target_compartment_id")
+
+    @property
+    @pulumi.getter(name="timeNeededBefore")
+    def time_needed_before(self) -> builtins.str:
+        """
+        the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you.
+        """
+        return pulumi.get(self, "time_needed_before")
+
+
+@pulumi.output_type
+class GetInternalOccmDemandSignalsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: builtins.str,
+                 defined_tags: Mapping[str, builtins.str],
+                 description: builtins.str,
+                 display_name: builtins.str,
+                 freeform_tags: Mapping[str, builtins.str],
+                 id: builtins.str,
+                 lifecycle_details: builtins.str,
+                 occ_customer_group_id: builtins.str,
+                 occm_demand_signal_id: builtins.str,
+                 state: builtins.str,
+                 system_tags: Mapping[str, builtins.str],
+                 time_created: builtins.str,
+                 time_updated: builtins.str):
+        """
+        :param builtins.str compartment_id: The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+        :param Mapping[str, builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param builtins.str description: A short description about the demand signal.
+        :param builtins.str display_name: A filter to return only the resources that match the entire display name. The match is not case sensitive.
+        :param Mapping[str, builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param builtins.str id: A query parameter to filter the list of demand signals based on it's OCID.
+        :param builtins.str lifecycle_details: A query parameter to filter the list of demand signals based on its state.
+        :param builtins.str occ_customer_group_id: The customer group ocid by which we would filter the list.
+        :param builtins.str state: The current lifecycle state of the demand signal.
+        :param Mapping[str, builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param builtins.str time_created: The time when the demand signal was created.
+        :param builtins.str time_updated: The time when the demand signal was last updated.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "occ_customer_group_id", occ_customer_group_id)
+        pulumi.set(__self__, "occm_demand_signal_id", occm_demand_signal_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> builtins.str:
+        """
+        The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        A short description about the demand signal.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> builtins.str:
+        """
+        A filter to return only the resources that match the entire display name. The match is not case sensitive.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> builtins.str:
+        """
+        A query parameter to filter the list of demand signals based on it's OCID.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> builtins.str:
+        """
+        A query parameter to filter the list of demand signals based on its state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="occCustomerGroupId")
+    def occ_customer_group_id(self) -> builtins.str:
+        """
+        The customer group ocid by which we would filter the list.
+        """
+        return pulumi.get(self, "occ_customer_group_id")
+
+    @property
+    @pulumi.getter(name="occmDemandSignalId")
+    def occm_demand_signal_id(self) -> builtins.str:
+        return pulumi.get(self, "occm_demand_signal_id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> builtins.str:
+        """
+        The current lifecycle state of the demand signal.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> builtins.str:
+        """
+        The time when the demand signal was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> builtins.str:
+        """
+        The time when the demand signal was last updated.
+        """
+        return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
@@ -3674,5 +4947,1001 @@ class GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacemen
         The type of workload to which these resources were provisioned.
         """
         return pulumi.get(self, "workload_type")
+
+
+@pulumi.output_type
+class GetOccmDemandSignalCatalogResourcesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        """
+        :param builtins.str name: A query parameter to filter the list of demand signal catalog resource based on the resource name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        A query parameter to filter the list of demand signal catalog resource based on the resource name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResult']):
+        """
+        :param Sequence['GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArgs'] items: An array of items containing detailed information about a resource's property dependecies.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResult']:
+        """
+        An array of items containing detailed information about a resource's property dependecies.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 availability_domain: builtins.str,
+                 compartment_id: builtins.str,
+                 defined_tags: Mapping[str, builtins.str],
+                 freeform_tags: Mapping[str, builtins.str],
+                 id: builtins.str,
+                 name: builtins.str,
+                 namespace: builtins.str,
+                 region: builtins.str,
+                 resource_properties: Sequence['outputs.GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyResult'],
+                 resource_property_constraints: Sequence['outputs.GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintResult'],
+                 state: builtins.str,
+                 system_tags: Mapping[str, builtins.str],
+                 target_compartment_id: builtins.str,
+                 time_created: builtins.str,
+                 time_updated: builtins.str):
+        """
+        :param builtins.str availability_domain: The name of the availability domain for which you want to request the Oracle Cloud Infrastructure resource. This is an optional parameter.
+        :param builtins.str compartment_id: The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+        :param Mapping[str, builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param builtins.str id: The OCID of the demand signal catalog resource.
+        :param builtins.str name: A query parameter to filter the list of demand signal catalog resource based on the resource name.
+        :param builtins.str namespace: The name of the Oracle Cloud Infrastructure service in consideration for demand signal submission. For example: COMPUTE, NETWORK, GPU etc.
+        :param builtins.str region: The name of region for which you want to request the Oracle Cloud Infrastructure resource. This is an optional parameter.
+        :param Sequence['GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArgs'] resource_properties: A list containing detailed information about a resource's properties.
+        :param Sequence['GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArgs'] resource_property_constraints: A list containing detailed information about a resource's property constraints.
+        :param builtins.str state: The current lifecycles state of the demand signal catalog resource.
+        :param Mapping[str, builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param builtins.str target_compartment_id: The OCID of the customer tenancy for which this resource will be available for the customer to order against.
+        :param builtins.str time_created: The time when the demand signal catalog resource was created.
+        :param builtins.str time_updated: The time when the demand signal catalog resource was last updated.
+        """
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "resource_properties", resource_properties)
+        pulumi.set(__self__, "resource_property_constraints", resource_property_constraints)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "target_compartment_id", target_compartment_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> builtins.str:
+        """
+        The name of the availability domain for which you want to request the Oracle Cloud Infrastructure resource. This is an optional parameter.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> builtins.str:
+        """
+        The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> builtins.str:
+        """
+        The OCID of the demand signal catalog resource.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        A query parameter to filter the list of demand signal catalog resource based on the resource name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> builtins.str:
+        """
+        The name of the Oracle Cloud Infrastructure service in consideration for demand signal submission. For example: COMPUTE, NETWORK, GPU etc.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def region(self) -> builtins.str:
+        """
+        The name of region for which you want to request the Oracle Cloud Infrastructure resource. This is an optional parameter.
+        """
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter(name="resourceProperties")
+    def resource_properties(self) -> Sequence['outputs.GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyResult']:
+        """
+        A list containing detailed information about a resource's properties.
+        """
+        return pulumi.get(self, "resource_properties")
+
+    @property
+    @pulumi.getter(name="resourcePropertyConstraints")
+    def resource_property_constraints(self) -> Sequence['outputs.GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintResult']:
+        """
+        A list containing detailed information about a resource's property constraints.
+        """
+        return pulumi.get(self, "resource_property_constraints")
+
+    @property
+    @pulumi.getter
+    def state(self) -> builtins.str:
+        """
+        The current lifecycles state of the demand signal catalog resource.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="targetCompartmentId")
+    def target_compartment_id(self) -> builtins.str:
+        """
+        The OCID of the customer tenancy for which this resource will be available for the customer to order against.
+        """
+        return pulumi.get(self, "target_compartment_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> builtins.str:
+        """
+        The time when the demand signal catalog resource was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> builtins.str:
+        """
+        The time when the demand signal catalog resource was last updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemResult']):
+        """
+        :param Sequence['GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArgs'] items: An array of items containing detailed information about a resource's property dependecies.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemResult']:
+        """
+        An array of items containing detailed information about a resource's property dependecies.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemResult']):
+        """
+        :param Sequence['GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArgs'] items: An array of items containing detailed information about a resource's property dependecies.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemResult']:
+        """
+        An array of items containing detailed information about a resource's property dependecies.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemResult(dict):
+    def __init__(__self__, *,
+                 constraint_name: builtins.str,
+                 constraint_value: builtins.str):
+        """
+        :param builtins.str constraint_name: The name of demand signal resource's property constraint.
+        :param builtins.str constraint_value: The value of demand signal resource's property constraint.
+        """
+        pulumi.set(__self__, "constraint_name", constraint_name)
+        pulumi.set(__self__, "constraint_value", constraint_value)
+
+    @property
+    @pulumi.getter(name="constraintName")
+    def constraint_name(self) -> builtins.str:
+        """
+        The name of demand signal resource's property constraint.
+        """
+        return pulumi.get(self, "constraint_name")
+
+    @property
+    @pulumi.getter(name="constraintValue")
+    def constraint_value(self) -> builtins.str:
+        """
+        The value of demand signal resource's property constraint.
+        """
+        return pulumi.get(self, "constraint_value")
+
+
+@pulumi.output_type
+class GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemResult(dict):
+    def __init__(__self__, *,
+                 is_editable: builtins.bool,
+                 property_max_value: builtins.str,
+                 property_min_value: builtins.str,
+                 property_name: builtins.str,
+                 property_options: Sequence['outputs.GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionResult'],
+                 property_unit: builtins.str,
+                 property_value: builtins.str):
+        """
+        :param builtins.bool is_editable: This will indicate if demand signal resource's property is editable.
+        :param builtins.str property_max_value: The maximum value of demand signal resource's property. This is an optional parameter.
+        :param builtins.str property_min_value: The minimum value of demand signal resource's property. This is an optional parameter.
+        :param builtins.str property_name: The name of demand signal resource's property.
+        :param Sequence['GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArgs'] property_options: Predefined options for demand signal resource's property. This is an optional parameter.
+        :param builtins.str property_unit: Unit for demand signal resource's property.
+        :param builtins.str property_value: Default value of demand signal resource's property.
+        """
+        pulumi.set(__self__, "is_editable", is_editable)
+        pulumi.set(__self__, "property_max_value", property_max_value)
+        pulumi.set(__self__, "property_min_value", property_min_value)
+        pulumi.set(__self__, "property_name", property_name)
+        pulumi.set(__self__, "property_options", property_options)
+        pulumi.set(__self__, "property_unit", property_unit)
+        pulumi.set(__self__, "property_value", property_value)
+
+    @property
+    @pulumi.getter(name="isEditable")
+    def is_editable(self) -> builtins.bool:
+        """
+        This will indicate if demand signal resource's property is editable.
+        """
+        return pulumi.get(self, "is_editable")
+
+    @property
+    @pulumi.getter(name="propertyMaxValue")
+    def property_max_value(self) -> builtins.str:
+        """
+        The maximum value of demand signal resource's property. This is an optional parameter.
+        """
+        return pulumi.get(self, "property_max_value")
+
+    @property
+    @pulumi.getter(name="propertyMinValue")
+    def property_min_value(self) -> builtins.str:
+        """
+        The minimum value of demand signal resource's property. This is an optional parameter.
+        """
+        return pulumi.get(self, "property_min_value")
+
+    @property
+    @pulumi.getter(name="propertyName")
+    def property_name(self) -> builtins.str:
+        """
+        The name of demand signal resource's property.
+        """
+        return pulumi.get(self, "property_name")
+
+    @property
+    @pulumi.getter(name="propertyOptions")
+    def property_options(self) -> Sequence['outputs.GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionResult']:
+        """
+        Predefined options for demand signal resource's property. This is an optional parameter.
+        """
+        return pulumi.get(self, "property_options")
+
+    @property
+    @pulumi.getter(name="propertyUnit")
+    def property_unit(self) -> builtins.str:
+        """
+        Unit for demand signal resource's property.
+        """
+        return pulumi.get(self, "property_unit")
+
+    @property
+    @pulumi.getter(name="propertyValue")
+    def property_value(self) -> builtins.str:
+        """
+        Default value of demand signal resource's property.
+        """
+        return pulumi.get(self, "property_value")
+
+
+@pulumi.output_type
+class GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionResult(dict):
+    def __init__(__self__, *,
+                 option_key: builtins.str,
+                 option_value: builtins.str):
+        """
+        :param builtins.str option_key: key of a property option like memoryValue, ocpuValue.
+        :param builtins.str option_value: value of a property option like 64, 2 fastconnect etc.
+        """
+        pulumi.set(__self__, "option_key", option_key)
+        pulumi.set(__self__, "option_value", option_value)
+
+    @property
+    @pulumi.getter(name="optionKey")
+    def option_key(self) -> builtins.str:
+        """
+        key of a property option like memoryValue, ocpuValue.
+        """
+        return pulumi.get(self, "option_key")
+
+    @property
+    @pulumi.getter(name="optionValue")
+    def option_value(self) -> builtins.str:
+        """
+        value of a property option like 64, 2 fastconnect etc.
+        """
+        return pulumi.get(self, "option_value")
+
+
+@pulumi.output_type
+class GetOccmDemandSignalDeliveriesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemResult']):
+        """
+        :param Sequence['GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArgs'] items: An array of items containing detailed information about demand signal delivery resources.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemResult']:
+        """
+        An array of items containing detailed information about demand signal delivery resources.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 accepted_quantity: builtins.str,
+                 compartment_id: builtins.str,
+                 defined_tags: Mapping[str, builtins.str],
+                 demand_signal_id: builtins.str,
+                 demand_signal_item_id: builtins.str,
+                 freeform_tags: Mapping[str, builtins.str],
+                 id: builtins.str,
+                 justification: builtins.str,
+                 lifecycle_details: builtins.str,
+                 state: builtins.str,
+                 system_tags: Mapping[str, builtins.str],
+                 time_delivered: builtins.str):
+        """
+        :param builtins.str accepted_quantity: The quantity of the resource that Oracle Cloud Infrastructure will supply to the customer.
+        :param builtins.str compartment_id: The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+        :param Mapping[str, builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param builtins.str demand_signal_id: The OCID of the demand signal under which this delivery will be grouped.
+        :param builtins.str demand_signal_item_id: The OCID of the demand signal item corresponding to which this delivery is made.
+        :param Mapping[str, builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param builtins.str id: A query parameter to filter the list of demand signals based on it's OCID.
+        :param builtins.str justification: This field could be used by Oracle Cloud Infrastructure to communicate the reason for accepting or declining the request.
+        :param builtins.str lifecycle_details: The enum values corresponding to the various states associated with the delivery resource.
+        :param builtins.str state: The current lifecycle state of the resource.
+        :param Mapping[str, builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param builtins.str time_delivered: The date on which the Oracle Cloud Infrastructure delivered the resource to the customers.
+        """
+        pulumi.set(__self__, "accepted_quantity", accepted_quantity)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "demand_signal_id", demand_signal_id)
+        pulumi.set(__self__, "demand_signal_item_id", demand_signal_item_id)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "justification", justification)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_delivered", time_delivered)
+
+    @property
+    @pulumi.getter(name="acceptedQuantity")
+    def accepted_quantity(self) -> builtins.str:
+        """
+        The quantity of the resource that Oracle Cloud Infrastructure will supply to the customer.
+        """
+        return pulumi.get(self, "accepted_quantity")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> builtins.str:
+        """
+        The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="demandSignalId")
+    def demand_signal_id(self) -> builtins.str:
+        """
+        The OCID of the demand signal under which this delivery will be grouped.
+        """
+        return pulumi.get(self, "demand_signal_id")
+
+    @property
+    @pulumi.getter(name="demandSignalItemId")
+    def demand_signal_item_id(self) -> builtins.str:
+        """
+        The OCID of the demand signal item corresponding to which this delivery is made.
+        """
+        return pulumi.get(self, "demand_signal_item_id")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> builtins.str:
+        """
+        A query parameter to filter the list of demand signals based on it's OCID.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def justification(self) -> builtins.str:
+        """
+        This field could be used by Oracle Cloud Infrastructure to communicate the reason for accepting or declining the request.
+        """
+        return pulumi.get(self, "justification")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> builtins.str:
+        """
+        The enum values corresponding to the various states associated with the delivery resource.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def state(self) -> builtins.str:
+        """
+        The current lifecycle state of the resource.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeDelivered")
+    def time_delivered(self) -> builtins.str:
+        """
+        The date on which the Oracle Cloud Infrastructure delivered the resource to the customers.
+        """
+        return pulumi.get(self, "time_delivered")
+
+
+@pulumi.output_type
+class GetOccmDemandSignalItemsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetOccmDemandSignalItemsOccmDemandSignalItemCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 availability_domain: builtins.str,
+                 compartment_id: builtins.str,
+                 defined_tags: Mapping[str, builtins.str],
+                 demand_quantity: builtins.str,
+                 demand_signal_catalog_resource_id: builtins.str,
+                 demand_signal_id: builtins.str,
+                 demand_signal_namespace: builtins.str,
+                 freeform_tags: Mapping[str, builtins.str],
+                 id: builtins.str,
+                 notes: builtins.str,
+                 region: builtins.str,
+                 request_type: builtins.str,
+                 resource_name: builtins.str,
+                 resource_properties: Mapping[str, builtins.str],
+                 state: builtins.str,
+                 system_tags: Mapping[str, builtins.str],
+                 target_compartment_id: builtins.str,
+                 time_needed_before: builtins.str):
+        """
+        :param builtins.str availability_domain: The name of the availability domain for which you want to request the Oracle Cloud Infrastructure resource.
+        :param builtins.str compartment_id: The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+        :param Mapping[str, builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param builtins.str demand_quantity: The quantity of the resource that you want to demand from OCI.
+        :param builtins.str demand_signal_catalog_resource_id: The OCID of the corresponding demand signal catalog resource.
+        :param builtins.str demand_signal_id: The OCID of the demand signal under which this item will be grouped.
+        :param builtins.str demand_signal_namespace: A query parameter to filter the list of demand signal details based on the namespace.
+        :param Mapping[str, builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param builtins.str id: The OCID of the demand signal item.
+        :param builtins.str notes: This field will serve as notes section for you. You can use this section to convey a message to Oracle Cloud Infrastructure regarding your resource request.
+        :param builtins.str region: The name of region for which you want to request the Oracle Cloud Infrastructure resource.
+        :param builtins.str request_type: The type of request (DEMAND or RETURN) made against a particular demand signal item.
+        :param builtins.str resource_name: A query parameter to filter the list of demand signal details based on the resource name.
+        :param Mapping[str, builtins.str] resource_properties: A map of various properties associated with the Oracle Cloud Infrastructure resource.
+        :param builtins.str state: The current lifecycle state of the resource.
+        :param Mapping[str, builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param builtins.str target_compartment_id: The OCID of the tenancy for which you want to request the Oracle Cloud Infrastructure resource for. This is an optional parameter.
+        :param builtins.str time_needed_before: the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you.
+        """
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "demand_quantity", demand_quantity)
+        pulumi.set(__self__, "demand_signal_catalog_resource_id", demand_signal_catalog_resource_id)
+        pulumi.set(__self__, "demand_signal_id", demand_signal_id)
+        pulumi.set(__self__, "demand_signal_namespace", demand_signal_namespace)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "notes", notes)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "request_type", request_type)
+        pulumi.set(__self__, "resource_name", resource_name)
+        pulumi.set(__self__, "resource_properties", resource_properties)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "target_compartment_id", target_compartment_id)
+        pulumi.set(__self__, "time_needed_before", time_needed_before)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> builtins.str:
+        """
+        The name of the availability domain for which you want to request the Oracle Cloud Infrastructure resource.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> builtins.str:
+        """
+        The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="demandQuantity")
+    def demand_quantity(self) -> builtins.str:
+        """
+        The quantity of the resource that you want to demand from OCI.
+        """
+        return pulumi.get(self, "demand_quantity")
+
+    @property
+    @pulumi.getter(name="demandSignalCatalogResourceId")
+    def demand_signal_catalog_resource_id(self) -> builtins.str:
+        """
+        The OCID of the corresponding demand signal catalog resource.
+        """
+        return pulumi.get(self, "demand_signal_catalog_resource_id")
+
+    @property
+    @pulumi.getter(name="demandSignalId")
+    def demand_signal_id(self) -> builtins.str:
+        """
+        The OCID of the demand signal under which this item will be grouped.
+        """
+        return pulumi.get(self, "demand_signal_id")
+
+    @property
+    @pulumi.getter(name="demandSignalNamespace")
+    def demand_signal_namespace(self) -> builtins.str:
+        """
+        A query parameter to filter the list of demand signal details based on the namespace.
+        """
+        return pulumi.get(self, "demand_signal_namespace")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> builtins.str:
+        """
+        The OCID of the demand signal item.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def notes(self) -> builtins.str:
+        """
+        This field will serve as notes section for you. You can use this section to convey a message to Oracle Cloud Infrastructure regarding your resource request.
+        """
+        return pulumi.get(self, "notes")
+
+    @property
+    @pulumi.getter
+    def region(self) -> builtins.str:
+        """
+        The name of region for which you want to request the Oracle Cloud Infrastructure resource.
+        """
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter(name="requestType")
+    def request_type(self) -> builtins.str:
+        """
+        The type of request (DEMAND or RETURN) made against a particular demand signal item.
+        """
+        return pulumi.get(self, "request_type")
+
+    @property
+    @pulumi.getter(name="resourceName")
+    def resource_name(self) -> builtins.str:
+        """
+        A query parameter to filter the list of demand signal details based on the resource name.
+        """
+        return pulumi.get(self, "resource_name")
+
+    @property
+    @pulumi.getter(name="resourceProperties")
+    def resource_properties(self) -> Mapping[str, builtins.str]:
+        """
+        A map of various properties associated with the Oracle Cloud Infrastructure resource.
+        """
+        return pulumi.get(self, "resource_properties")
+
+    @property
+    @pulumi.getter
+    def state(self) -> builtins.str:
+        """
+        The current lifecycle state of the resource.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="targetCompartmentId")
+    def target_compartment_id(self) -> builtins.str:
+        """
+        The OCID of the tenancy for which you want to request the Oracle Cloud Infrastructure resource for. This is an optional parameter.
+        """
+        return pulumi.get(self, "target_compartment_id")
+
+    @property
+    @pulumi.getter(name="timeNeededBefore")
+    def time_needed_before(self) -> builtins.str:
+        """
+        the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you.
+        """
+        return pulumi.get(self, "time_needed_before")
+
+
+@pulumi.output_type
+class GetOccmDemandSignalsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetOccmDemandSignalsOccmDemandSignalCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetOccmDemandSignalsOccmDemandSignalCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetOccmDemandSignalsOccmDemandSignalCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetOccmDemandSignalsOccmDemandSignalCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: builtins.str,
+                 defined_tags: Mapping[str, builtins.str],
+                 description: builtins.str,
+                 display_name: builtins.str,
+                 freeform_tags: Mapping[str, builtins.str],
+                 id: builtins.str,
+                 lifecycle_details: builtins.str,
+                 state: builtins.str,
+                 system_tags: Mapping[str, builtins.str],
+                 time_created: builtins.str,
+                 time_updated: builtins.str):
+        """
+        :param builtins.str compartment_id: The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+        :param Mapping[str, builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param builtins.str description: Meaningful text about the demand signal.
+        :param builtins.str display_name: A filter to return only the resources that match the entire display name. The match is not case sensitive.
+        :param Mapping[str, builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param builtins.str id: A query parameter to filter the list of demand signals based on it's OCID.
+        :param builtins.str lifecycle_details: A query parameter to filter the list of demand signals based on its state.
+        :param builtins.str state: The current lifecycle state of the resource.
+        :param Mapping[str, builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param builtins.str time_created: The time when the demand signal was created.
+        :param builtins.str time_updated: The time when the demand signal was last updated.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> builtins.str:
+        """
+        The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        Meaningful text about the demand signal.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> builtins.str:
+        """
+        A filter to return only the resources that match the entire display name. The match is not case sensitive.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> builtins.str:
+        """
+        A query parameter to filter the list of demand signals based on it's OCID.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> builtins.str:
+        """
+        A query parameter to filter the list of demand signals based on its state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def state(self) -> builtins.str:
+        """
+        The current lifecycle state of the resource.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> builtins.str:
+        """
+        The time when the demand signal was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> builtins.str:
+        """
+        The time when the demand signal was last updated.
+        """
+        return pulumi.get(self, "time_updated")
 
 

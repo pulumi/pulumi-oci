@@ -47,6 +47,7 @@ export interface GetAutonomousContainerDatabaseResult {
      * A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
      */
     readonly associatedBackupConfigurationDetails: outputs.Database.GetAutonomousContainerDatabaseAssociatedBackupConfigurationDetail[];
+    readonly autonomousContainerDatabaseBackupId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
      */
@@ -155,7 +156,7 @@ export interface GetAutonomousContainerDatabaseResult {
      */
     readonly isDstFileUpdateEnabled: boolean;
     /**
-     * Whether it is multiple standby Autonomous Dataguard
+     * Indicates if it is multiple standby Autonomous Dataguard
      */
     readonly isMultipleStandby: boolean;
     /**
@@ -260,6 +261,7 @@ export interface GetAutonomousContainerDatabaseResult {
      * The service level agreement type of the container database. The default is STANDARD.
      */
     readonly serviceLevelAgreementType: string;
+    readonly source: string;
     /**
      * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
      */

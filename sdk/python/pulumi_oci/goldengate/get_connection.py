@@ -28,7 +28,7 @@ class GetConnectionResult:
     """
     A collection of values returned by getConnection.
     """
-    def __init__(__self__, access_key_id=None, account_key=None, account_key_secret_id=None, account_name=None, additional_attributes=None, authentication_mode=None, authentication_type=None, azure_tenant_id=None, bootstrap_servers=None, client_id=None, client_secret=None, client_secret_secret_id=None, compartment_id=None, connection_factory=None, connection_id=None, connection_string=None, connection_type=None, connection_url=None, consumer_properties=None, core_site_xml=None, database_id=None, database_name=None, db_system_id=None, defined_tags=None, deployment_id=None, description=None, display_name=None, does_use_secret_ids=None, endpoint=None, fingerprint=None, freeform_tags=None, host=None, id=None, ingress_ips=None, is_lock_override=None, jndi_connection_factory=None, jndi_initial_context_factory=None, jndi_provider_url=None, jndi_security_credentials=None, jndi_security_credentials_secret_id=None, jndi_security_principal=None, key_id=None, key_store=None, key_store_password=None, key_store_password_secret_id=None, key_store_secret_id=None, lifecycle_details=None, locks=None, nsg_ids=None, password=None, password_secret_id=None, port=None, private_ip=None, private_key_file=None, private_key_file_secret_id=None, private_key_passphrase=None, private_key_passphrase_secret_id=None, producer_properties=None, public_key_fingerprint=None, redis_cluster_id=None, region=None, routing_method=None, sas_token=None, sas_token_secret_id=None, secret_access_key=None, secret_access_key_secret_id=None, security_protocol=None, servers=None, service_account_key_file=None, service_account_key_file_secret_id=None, session_mode=None, should_use_jndi=None, should_use_resource_principal=None, should_validate_server_certificate=None, ssl_ca=None, ssl_cert=None, ssl_client_keystash=None, ssl_client_keystash_secret_id=None, ssl_client_keystoredb=None, ssl_client_keystoredb_secret_id=None, ssl_crl=None, ssl_key=None, ssl_key_password=None, ssl_key_password_secret_id=None, ssl_key_secret_id=None, ssl_mode=None, ssl_server_certificate=None, state=None, storage_credential_name=None, stream_pool_id=None, subnet_id=None, system_tags=None, technology_type=None, tenancy_id=None, tenant_id=None, time_created=None, time_updated=None, tls_ca_file=None, tls_certificate_key_file=None, tls_certificate_key_file_password=None, tls_certificate_key_file_password_secret_id=None, tls_certificate_key_file_secret_id=None, trigger_refresh=None, trust_store=None, trust_store_password=None, trust_store_password_secret_id=None, trust_store_secret_id=None, url=None, user_id=None, username=None, vault_id=None, wallet=None, wallet_secret_id=None):
+    def __init__(__self__, access_key_id=None, account_key=None, account_key_secret_id=None, account_name=None, additional_attributes=None, authentication_mode=None, authentication_type=None, azure_tenant_id=None, bootstrap_servers=None, catalogs=None, client_id=None, client_secret=None, client_secret_secret_id=None, compartment_id=None, connection_factory=None, connection_id=None, connection_string=None, connection_type=None, connection_url=None, consumer_properties=None, core_site_xml=None, database_id=None, database_name=None, db_system_id=None, defined_tags=None, deployment_id=None, description=None, display_name=None, does_use_secret_ids=None, endpoint=None, fingerprint=None, freeform_tags=None, host=None, id=None, ingress_ips=None, is_lock_override=None, jndi_connection_factory=None, jndi_initial_context_factory=None, jndi_provider_url=None, jndi_security_credentials=None, jndi_security_credentials_secret_id=None, jndi_security_principal=None, key_id=None, key_store=None, key_store_password=None, key_store_password_secret_id=None, key_store_secret_id=None, lifecycle_details=None, locks=None, nsg_ids=None, password=None, password_secret_id=None, port=None, private_ip=None, private_key_file=None, private_key_file_secret_id=None, private_key_passphrase=None, private_key_passphrase_secret_id=None, producer_properties=None, public_key_fingerprint=None, redis_cluster_id=None, region=None, routing_method=None, sas_token=None, sas_token_secret_id=None, secret_access_key=None, secret_access_key_secret_id=None, security_protocol=None, servers=None, service_account_key_file=None, service_account_key_file_secret_id=None, session_mode=None, should_use_jndi=None, should_use_resource_principal=None, should_validate_server_certificate=None, ssl_ca=None, ssl_cert=None, ssl_client_keystash=None, ssl_client_keystash_secret_id=None, ssl_client_keystoredb=None, ssl_client_keystoredb_secret_id=None, ssl_crl=None, ssl_key=None, ssl_key_password=None, ssl_key_password_secret_id=None, ssl_key_secret_id=None, ssl_mode=None, ssl_server_certificate=None, state=None, storage_credential_name=None, storages=None, stream_pool_id=None, subnet_id=None, system_tags=None, technology_type=None, tenancy_id=None, tenant_id=None, time_created=None, time_updated=None, tls_ca_file=None, tls_certificate_key_file=None, tls_certificate_key_file_password=None, tls_certificate_key_file_password_secret_id=None, tls_certificate_key_file_secret_id=None, trigger_refresh=None, trust_store=None, trust_store_password=None, trust_store_password_secret_id=None, trust_store_secret_id=None, url=None, user_id=None, username=None, vault_id=None, wallet=None, wallet_secret_id=None):
         if access_key_id and not isinstance(access_key_id, str):
             raise TypeError("Expected argument 'access_key_id' to be a str")
         pulumi.set(__self__, "access_key_id", access_key_id)
@@ -56,6 +56,9 @@ class GetConnectionResult:
         if bootstrap_servers and not isinstance(bootstrap_servers, list):
             raise TypeError("Expected argument 'bootstrap_servers' to be a list")
         pulumi.set(__self__, "bootstrap_servers", bootstrap_servers)
+        if catalogs and not isinstance(catalogs, list):
+            raise TypeError("Expected argument 'catalogs' to be a list")
+        pulumi.set(__self__, "catalogs", catalogs)
         if client_id and not isinstance(client_id, str):
             raise TypeError("Expected argument 'client_id' to be a str")
         pulumi.set(__self__, "client_id", client_id)
@@ -296,6 +299,9 @@ class GetConnectionResult:
         if storage_credential_name and not isinstance(storage_credential_name, str):
             raise TypeError("Expected argument 'storage_credential_name' to be a str")
         pulumi.set(__self__, "storage_credential_name", storage_credential_name)
+        if storages and not isinstance(storages, list):
+            raise TypeError("Expected argument 'storages' to be a list")
+        pulumi.set(__self__, "storages", storages)
         if stream_pool_id and not isinstance(stream_pool_id, str):
             raise TypeError("Expected argument 'stream_pool_id' to be a str")
         pulumi.set(__self__, "stream_pool_id", stream_pool_id)
@@ -373,7 +379,7 @@ class GetConnectionResult:
     @pulumi.getter(name="accessKeyId")
     def access_key_id(self) -> builtins.str:
         """
-        Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+        Access key ID to access the Amazon S3 bucket.
         """
         return pulumi.get(self, "access_key_id")
 
@@ -386,7 +392,7 @@ class GetConnectionResult:
     @pulumi.getter(name="accountKeySecretId")
     def account_key_secret_id(self) -> builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored. Note: When provided, 'accountKey' field must not be provided.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
         """
         return pulumi.get(self, "account_key_secret_id")
 
@@ -442,6 +448,14 @@ class GetConnectionResult:
         Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
         """
         return pulumi.get(self, "bootstrap_servers")
+
+    @property
+    @pulumi.getter
+    def catalogs(self) -> Sequence['outputs.GetConnectionCatalogResult']:
+        """
+        Represents the catalog of given type used in an Iceberg connection.
+        """
+        return pulumi.get(self, "catalogs")
 
     @property
     @pulumi.getter(name="clientId")
@@ -525,6 +539,9 @@ class GetConnectionResult:
     @property
     @pulumi.getter(name="coreSiteXml")
     def core_site_xml(self) -> builtins.str:
+        """
+        The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+        """
         return pulumi.get(self, "core_site_xml")
 
     @property
@@ -595,13 +612,16 @@ class GetConnectionResult:
     @pulumi.getter
     def endpoint(self) -> builtins.str:
         """
-        Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+        The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
         """
         return pulumi.get(self, "endpoint")
 
     @property
     @pulumi.getter
     def fingerprint(self) -> builtins.str:
+        """
+        Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+        """
         return pulumi.get(self, "fingerprint")
 
     @property
@@ -813,6 +833,9 @@ class GetConnectionResult:
     @property
     @pulumi.getter(name="publicKeyFingerprint")
     def public_key_fingerprint(self) -> builtins.str:
+        """
+        The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        """
         return pulumi.get(self, "public_key_fingerprint")
 
     @property
@@ -827,7 +850,7 @@ class GetConnectionResult:
     @pulumi.getter
     def region(self) -> builtins.str:
         """
-        The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+        The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
         """
         return pulumi.get(self, "region")
 
@@ -861,7 +884,7 @@ class GetConnectionResult:
     @pulumi.getter(name="secretAccessKeySecretId")
     def secret_access_key_secret_id(self) -> builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field must not be provided.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
         """
         return pulumi.get(self, "secret_access_key_secret_id")
 
@@ -870,8 +893,8 @@ class GetConnectionResult:
     def security_protocol(self) -> builtins.str:
         """
         Security Protocol to be provided for the following connection types:
-        * ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
-        * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
+        * DB2, ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
+        * JAVA_MESSAGE_SERVICE - If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
         """
         return pulumi.get(self, "security_protocol")
 
@@ -893,7 +916,7 @@ class GetConnectionResult:
     @pulumi.getter(name="serviceAccountKeyFileSecretId")
     def service_account_key_file_secret_id(self) -> builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
         """
         return pulumi.get(self, "service_account_key_file_secret_id")
 
@@ -933,13 +956,16 @@ class GetConnectionResult:
     @pulumi.getter(name="sslCa")
     def ssl_ca(self) -> builtins.str:
         """
-        Database Certificate - The base64 encoded content of a .pem or .crt file. containing the server public key (for 1-way SSL).
+        Database Certificate - The base64 encoded content of a .pem or .crt file. containing the server public key (for 1-way SSL). The supported file formats are .pem and .crt. In case of MYSQL and POSTGRESQL connections it is not included in GET responses if the `view=COMPACT` query parameter is specified.
         """
         return pulumi.get(self, "ssl_ca")
 
     @property
     @pulumi.getter(name="sslCert")
     def ssl_cert(self) -> builtins.str:
+        """
+        Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+        """
         return pulumi.get(self, "ssl_cert")
 
     @property
@@ -971,6 +997,9 @@ class GetConnectionResult:
     @property
     @pulumi.getter(name="sslCrl")
     def ssl_crl(self) -> builtins.str:
+        """
+        The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+        """
         return pulumi.get(self, "ssl_crl")
 
     @property
@@ -1011,6 +1040,9 @@ class GetConnectionResult:
     @property
     @pulumi.getter(name="sslServerCertificate")
     def ssl_server_certificate(self) -> builtins.str:
+        """
+        The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+        """
         return pulumi.get(self, "ssl_server_certificate")
 
     @property
@@ -1028,6 +1060,14 @@ class GetConnectionResult:
         Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
         """
         return pulumi.get(self, "storage_credential_name")
+
+    @property
+    @pulumi.getter
+    def storages(self) -> Sequence['outputs.GetConnectionStorageResult']:
+        """
+        Represents the storage of given type used in an Iceberg connection.
+        """
+        return pulumi.get(self, "storages")
 
     @property
     @pulumi.getter(name="streamPoolId")
@@ -1096,6 +1136,9 @@ class GetConnectionResult:
     @property
     @pulumi.getter(name="tlsCaFile")
     def tls_ca_file(self) -> builtins.str:
+        """
+        Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+        """
         return pulumi.get(self, "tls_ca_file")
 
     @property
@@ -1217,6 +1260,7 @@ class AwaitableGetConnectionResult(GetConnectionResult):
             authentication_type=self.authentication_type,
             azure_tenant_id=self.azure_tenant_id,
             bootstrap_servers=self.bootstrap_servers,
+            catalogs=self.catalogs,
             client_id=self.client_id,
             client_secret=self.client_secret,
             client_secret_secret_id=self.client_secret_secret_id,
@@ -1297,6 +1341,7 @@ class AwaitableGetConnectionResult(GetConnectionResult):
             ssl_server_certificate=self.ssl_server_certificate,
             state=self.state,
             storage_credential_name=self.storage_credential_name,
+            storages=self.storages,
             stream_pool_id=self.stream_pool_id,
             subnet_id=self.subnet_id,
             system_tags=self.system_tags,
@@ -1330,15 +1375,6 @@ def get_connection(connection_id: Optional[builtins.str] = None,
 
     Retrieves a Connection.
 
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_connection = oci.GoldenGate.get_connection(connection_id=test_connection_oci_golden_gate_connection["id"])
-    ```
-
 
     :param builtins.str connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Connection.
     """
@@ -1357,6 +1393,7 @@ def get_connection(connection_id: Optional[builtins.str] = None,
         authentication_type=pulumi.get(__ret__, 'authentication_type'),
         azure_tenant_id=pulumi.get(__ret__, 'azure_tenant_id'),
         bootstrap_servers=pulumi.get(__ret__, 'bootstrap_servers'),
+        catalogs=pulumi.get(__ret__, 'catalogs'),
         client_id=pulumi.get(__ret__, 'client_id'),
         client_secret=pulumi.get(__ret__, 'client_secret'),
         client_secret_secret_id=pulumi.get(__ret__, 'client_secret_secret_id'),
@@ -1437,6 +1474,7 @@ def get_connection(connection_id: Optional[builtins.str] = None,
         ssl_server_certificate=pulumi.get(__ret__, 'ssl_server_certificate'),
         state=pulumi.get(__ret__, 'state'),
         storage_credential_name=pulumi.get(__ret__, 'storage_credential_name'),
+        storages=pulumi.get(__ret__, 'storages'),
         stream_pool_id=pulumi.get(__ret__, 'stream_pool_id'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
@@ -1468,15 +1506,6 @@ def get_connection_output(connection_id: Optional[pulumi.Input[builtins.str]] = 
 
     Retrieves a Connection.
 
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_connection = oci.GoldenGate.get_connection(connection_id=test_connection_oci_golden_gate_connection["id"])
-    ```
-
 
     :param builtins.str connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Connection.
     """
@@ -1494,6 +1523,7 @@ def get_connection_output(connection_id: Optional[pulumi.Input[builtins.str]] = 
         authentication_type=pulumi.get(__response__, 'authentication_type'),
         azure_tenant_id=pulumi.get(__response__, 'azure_tenant_id'),
         bootstrap_servers=pulumi.get(__response__, 'bootstrap_servers'),
+        catalogs=pulumi.get(__response__, 'catalogs'),
         client_id=pulumi.get(__response__, 'client_id'),
         client_secret=pulumi.get(__response__, 'client_secret'),
         client_secret_secret_id=pulumi.get(__response__, 'client_secret_secret_id'),
@@ -1574,6 +1604,7 @@ def get_connection_output(connection_id: Optional[pulumi.Input[builtins.str]] = 
         ssl_server_certificate=pulumi.get(__response__, 'ssl_server_certificate'),
         state=pulumi.get(__response__, 'state'),
         storage_credential_name=pulumi.get(__response__, 'storage_credential_name'),
+        storages=pulumi.get(__response__, 'storages'),
         stream_pool_id=pulumi.get(__response__, 'stream_pool_id'),
         subnet_id=pulumi.get(__response__, 'subnet_id'),
         system_tags=pulumi.get(__response__, 'system_tags'),

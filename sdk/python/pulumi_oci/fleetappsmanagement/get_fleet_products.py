@@ -156,7 +156,7 @@ def get_fleet_products(compartment_id: Optional[builtins.str] = None,
     ```
 
 
-    :param builtins.str compartment_id: The ID of the compartment in which to list resources.
+    :param builtins.str compartment_id: The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
     :param builtins.str display_name: A filter to return only resources that match the entire display name given.
     :param builtins.str fleet_id: Unique Fleet identifier.
     :param builtins.str resource_display_name: Resource Display Name.
@@ -207,7 +207,7 @@ def get_fleet_products_output(compartment_id: Optional[pulumi.Input[Optional[bui
     ```
 
 
-    :param builtins.str compartment_id: The ID of the compartment in which to list resources.
+    :param builtins.str compartment_id: The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
     :param builtins.str display_name: A filter to return only resources that match the entire display name given.
     :param builtins.str fleet_id: Unique Fleet identifier.
     :param builtins.str resource_display_name: Resource Display Name.

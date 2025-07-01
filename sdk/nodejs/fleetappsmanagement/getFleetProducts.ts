@@ -43,7 +43,7 @@ export function getFleetProducts(args: GetFleetProductsArgs, opts?: pulumi.Invok
  */
 export interface GetFleetProductsArgs {
     /**
-     * The ID of the compartment in which to list resources.
+     * The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      */
     compartmentId?: string;
     /**
@@ -133,7 +133,7 @@ export function getFleetProductsOutput(args: GetFleetProductsOutputArgs, opts?: 
  */
 export interface GetFleetProductsOutputArgs {
     /**
-     * The ID of the compartment in which to list resources.
+     * The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      */
     compartmentId?: pulumi.Input<string>;
     /**

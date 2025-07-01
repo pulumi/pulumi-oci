@@ -12,6 +12,8 @@ from .get_log_analytics_entities import *
 from .get_log_analytics_entities_summary import *
 from .get_log_analytics_entity import *
 from .get_log_analytics_entity_topology import *
+from .get_log_analytics_entity_type import *
+from .get_log_analytics_entity_types import *
 from .get_log_analytics_log_group import *
 from .get_log_analytics_log_groups import *
 from .get_log_analytics_log_groups_summary import *
@@ -42,6 +44,7 @@ from .get_namespace_template import *
 from .get_namespace_templates import *
 from .get_namespaces import *
 from .log_analytics_entity import *
+from .log_analytics_entity_type import *
 from .log_analytics_import_custom_content import *
 from .log_analytics_log_group import *
 from .log_analytics_object_collection_rule import *

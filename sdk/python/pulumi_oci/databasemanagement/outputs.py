@@ -427,7 +427,33 @@ __all__ = [
     'GetManagedMySqlDatabaseConfigurationDataFilterResult',
     'GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionResult',
     'GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemResult',
+    'GetManagedMySqlDatabaseDigestErrorsFilterResult',
+    'GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionResult',
+    'GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemResult',
+    'GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemErrorResult',
     'GetManagedMySqlDatabaseHeatWaveNodeResult',
+    'GetManagedMySqlDatabaseHighAvailabilityMembersFilterResult',
+    'GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionResult',
+    'GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionItemResult',
+    'GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryResult',
+    'GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyErrorResult',
+    'GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyErrorApplyErrorResult',
+    'GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyErrorApplyErrorWorkerErrorResult',
+    'GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelFetchErrorResult',
+    'GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelFetchErrorFetchErrorResult',
+    'GetManagedMySqlDatabaseInboundReplicationsFilterResult',
+    'GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionResult',
+    'GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemResult',
+    'GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplierFilterResult',
+    'GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplyErrorResult',
+    'GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplyErrorWorkerErrorResult',
+    'GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemFetchErrorResult',
+    'GetManagedMySqlDatabaseOutboundReplicationsFilterResult',
+    'GetManagedMySqlDatabaseOutboundReplicationsManagedMySqlDatabaseOutboundReplicationCollectionResult',
+    'GetManagedMySqlDatabaseOutboundReplicationsManagedMySqlDatabaseOutboundReplicationCollectionItemResult',
+    'GetManagedMySqlDatabaseQueryDetailQueryExplainPlanResult',
+    'GetManagedMySqlDatabaseQueryDetailQueryMessageResult',
+    'GetManagedMySqlDatabaseQueryDetailQuerySampleDetailResult',
     'GetManagedMySqlDatabaseSqlDataFilterResult',
     'GetManagedMySqlDatabaseSqlDataMySqlDataCollectionResult',
     'GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult',
@@ -30366,6 +30392,120 @@ class GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionIt
 
 
 @pulumi.output_type
+class GetManagedMySqlDatabaseDigestErrorsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemResult']):
+        """
+        :param Sequence['GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemArgs'] items: The unique set of errors for a given digest.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemResult']:
+        """
+        The unique set of errors for a given digest.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 errors: Sequence['outputs.GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemErrorResult'],
+                 occurrence_count: builtins.int):
+        """
+        :param Sequence['GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemErrorArgs'] errors: The MySQL error, warning or note raised when a query is run, if any.
+        :param builtins.int occurrence_count: The number of times a MySQL error is encountered.
+        """
+        pulumi.set(__self__, "errors", errors)
+        pulumi.set(__self__, "occurrence_count", occurrence_count)
+
+    @property
+    @pulumi.getter
+    def errors(self) -> Sequence['outputs.GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemErrorResult']:
+        """
+        The MySQL error, warning or note raised when a query is run, if any.
+        """
+        return pulumi.get(self, "errors")
+
+    @property
+    @pulumi.getter(name="occurrenceCount")
+    def occurrence_count(self) -> builtins.int:
+        """
+        The number of times a MySQL error is encountered.
+        """
+        return pulumi.get(self, "occurrence_count")
+
+
+@pulumi.output_type
+class GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemErrorResult(dict):
+    def __init__(__self__, *,
+                 code: builtins.int,
+                 level: builtins.str,
+                 message_text: builtins.str):
+        """
+        :param builtins.int code: The MySQL code of the raised error, warning or note.
+        :param builtins.str level: The level of severity of the MySQL message.
+        :param builtins.str message_text: The MySQL message text of the raised error, warning or note.
+        """
+        pulumi.set(__self__, "code", code)
+        pulumi.set(__self__, "level", level)
+        pulumi.set(__self__, "message_text", message_text)
+
+    @property
+    @pulumi.getter
+    def code(self) -> builtins.int:
+        """
+        The MySQL code of the raised error, warning or note.
+        """
+        return pulumi.get(self, "code")
+
+    @property
+    @pulumi.getter
+    def level(self) -> builtins.str:
+        """
+        The level of severity of the MySQL message.
+        """
+        return pulumi.get(self, "level")
+
+    @property
+    @pulumi.getter(name="messageText")
+    def message_text(self) -> builtins.str:
+        """
+        The MySQL message text of the raised error, warning or note.
+        """
+        return pulumi.get(self, "message_text")
+
+
+@pulumi.output_type
 class GetManagedMySqlDatabaseHeatWaveNodeResult(dict):
     def __init__(__self__, *,
                  id: builtins.str,
@@ -30403,6 +30543,1166 @@ class GetManagedMySqlDatabaseHeatWaveNodeResult(dict):
         The date and time the HeatWave node was created.
         """
         return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class GetManagedMySqlDatabaseHighAvailabilityMembersFilterResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionResult(dict):
+    def __init__(__self__, *,
+                 flow_control: builtins.str,
+                 group_auto_increment: builtins.int,
+                 group_name: builtins.str,
+                 items: Sequence['outputs.GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionItemResult'],
+                 member_role: builtins.str,
+                 member_state: builtins.str,
+                 single_primary_mode: builtins.str,
+                 status_summaries: Sequence['outputs.GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryResult'],
+                 transactions_in_gtid_executed: builtins.str,
+                 view_id: builtins.str):
+        """
+        :param builtins.str flow_control: The mode used for flow control.
+        :param builtins.int group_auto_increment: The interval between successive values for auto-incremented columns for transactions that execute on this server instance.
+        :param builtins.str group_name: The name of the group to which this server instance belongs.
+        :param Sequence['GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionItemArgs'] items: A list of MySqlHighAvailabilityMember records.
+        :param builtins.str member_role: The role of this server as a group replication member.
+        :param builtins.str member_state: The state of this server as a group replication member.
+        :param builtins.str single_primary_mode: Indicates if the replication group is running in single-primary mode.
+        :param Sequence['GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryArgs'] status_summaries: High availability status summary of a MySQL server.
+        :param builtins.str transactions_in_gtid_executed: Number of transactions that were replicated within the cluster.
+        :param builtins.str view_id: The current view identifier for this group.
+        """
+        pulumi.set(__self__, "flow_control", flow_control)
+        pulumi.set(__self__, "group_auto_increment", group_auto_increment)
+        pulumi.set(__self__, "group_name", group_name)
+        pulumi.set(__self__, "items", items)
+        pulumi.set(__self__, "member_role", member_role)
+        pulumi.set(__self__, "member_state", member_state)
+        pulumi.set(__self__, "single_primary_mode", single_primary_mode)
+        pulumi.set(__self__, "status_summaries", status_summaries)
+        pulumi.set(__self__, "transactions_in_gtid_executed", transactions_in_gtid_executed)
+        pulumi.set(__self__, "view_id", view_id)
+
+    @property
+    @pulumi.getter(name="flowControl")
+    def flow_control(self) -> builtins.str:
+        """
+        The mode used for flow control.
+        """
+        return pulumi.get(self, "flow_control")
+
+    @property
+    @pulumi.getter(name="groupAutoIncrement")
+    def group_auto_increment(self) -> builtins.int:
+        """
+        The interval between successive values for auto-incremented columns for transactions that execute on this server instance.
+        """
+        return pulumi.get(self, "group_auto_increment")
+
+    @property
+    @pulumi.getter(name="groupName")
+    def group_name(self) -> builtins.str:
+        """
+        The name of the group to which this server instance belongs.
+        """
+        return pulumi.get(self, "group_name")
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionItemResult']:
+        """
+        A list of MySqlHighAvailabilityMember records.
+        """
+        return pulumi.get(self, "items")
+
+    @property
+    @pulumi.getter(name="memberRole")
+    def member_role(self) -> builtins.str:
+        """
+        The role of this server as a group replication member.
+        """
+        return pulumi.get(self, "member_role")
+
+    @property
+    @pulumi.getter(name="memberState")
+    def member_state(self) -> builtins.str:
+        """
+        The state of this server as a group replication member.
+        """
+        return pulumi.get(self, "member_state")
+
+    @property
+    @pulumi.getter(name="singlePrimaryMode")
+    def single_primary_mode(self) -> builtins.str:
+        """
+        Indicates if the replication group is running in single-primary mode.
+        """
+        return pulumi.get(self, "single_primary_mode")
+
+    @property
+    @pulumi.getter(name="statusSummaries")
+    def status_summaries(self) -> Sequence['outputs.GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryResult']:
+        """
+        High availability status summary of a MySQL server.
+        """
+        return pulumi.get(self, "status_summaries")
+
+    @property
+    @pulumi.getter(name="transactionsInGtidExecuted")
+    def transactions_in_gtid_executed(self) -> builtins.str:
+        """
+        Number of transactions that were replicated within the cluster.
+        """
+        return pulumi.get(self, "transactions_in_gtid_executed")
+
+    @property
+    @pulumi.getter(name="viewId")
+    def view_id(self) -> builtins.str:
+        """
+        The current view identifier for this group.
+        """
+        return pulumi.get(self, "view_id")
+
+
+@pulumi.output_type
+class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 member_host: builtins.str,
+                 member_port: builtins.int,
+                 member_role: builtins.str,
+                 member_state: builtins.str,
+                 member_uuid: builtins.str):
+        """
+        :param builtins.str member_host: The host name of the group member which clients use to connect to it.
+        :param builtins.int member_port: The port number of the group member which clients to connect to it.
+        :param builtins.str member_role: The role of this server as a group replication member.
+        :param builtins.str member_state: The state of this server as a group replication member.
+        :param builtins.str member_uuid: The Universally Unique Identifier (UUID) of the member server.
+        """
+        pulumi.set(__self__, "member_host", member_host)
+        pulumi.set(__self__, "member_port", member_port)
+        pulumi.set(__self__, "member_role", member_role)
+        pulumi.set(__self__, "member_state", member_state)
+        pulumi.set(__self__, "member_uuid", member_uuid)
+
+    @property
+    @pulumi.getter(name="memberHost")
+    def member_host(self) -> builtins.str:
+        """
+        The host name of the group member which clients use to connect to it.
+        """
+        return pulumi.get(self, "member_host")
+
+    @property
+    @pulumi.getter(name="memberPort")
+    def member_port(self) -> builtins.int:
+        """
+        The port number of the group member which clients to connect to it.
+        """
+        return pulumi.get(self, "member_port")
+
+    @property
+    @pulumi.getter(name="memberRole")
+    def member_role(self) -> builtins.str:
+        """
+        The role of this server as a group replication member.
+        """
+        return pulumi.get(self, "member_role")
+
+    @property
+    @pulumi.getter(name="memberState")
+    def member_state(self) -> builtins.str:
+        """
+        The state of this server as a group replication member.
+        """
+        return pulumi.get(self, "member_state")
+
+    @property
+    @pulumi.getter(name="memberUuid")
+    def member_uuid(self) -> builtins.str:
+        """
+        The Universally Unique Identifier (UUID) of the member server.
+        """
+        return pulumi.get(self, "member_uuid")
+
+
+@pulumi.output_type
+class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryResult(dict):
+    def __init__(__self__, *,
+                 channel_apply_errors: Sequence['outputs.GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyErrorResult'],
+                 channel_fetch_errors: Sequence['outputs.GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelFetchErrorResult']):
+        """
+        :param Sequence['GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyErrorArgs'] channel_apply_errors: A list of MySqlChannelApplyError records.
+        :param Sequence['GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelFetchErrorArgs'] channel_fetch_errors: A list of MySqlChannelFetchError records.
+        """
+        pulumi.set(__self__, "channel_apply_errors", channel_apply_errors)
+        pulumi.set(__self__, "channel_fetch_errors", channel_fetch_errors)
+
+    @property
+    @pulumi.getter(name="channelApplyErrors")
+    def channel_apply_errors(self) -> Sequence['outputs.GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyErrorResult']:
+        """
+        A list of MySqlChannelApplyError records.
+        """
+        return pulumi.get(self, "channel_apply_errors")
+
+    @property
+    @pulumi.getter(name="channelFetchErrors")
+    def channel_fetch_errors(self) -> Sequence['outputs.GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelFetchErrorResult']:
+        """
+        A list of MySqlChannelFetchError records.
+        """
+        return pulumi.get(self, "channel_fetch_errors")
+
+
+@pulumi.output_type
+class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyErrorResult(dict):
+    def __init__(__self__, *,
+                 apply_errors: Sequence['outputs.GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyErrorApplyErrorResult'],
+                 channel_name: builtins.str):
+        """
+        :param Sequence['GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyErrorApplyErrorArgs'] apply_errors: Error from apply operation of a MySQL server replication channel.
+        :param builtins.str channel_name: The name of the replication channel
+        """
+        pulumi.set(__self__, "apply_errors", apply_errors)
+        pulumi.set(__self__, "channel_name", channel_name)
+
+    @property
+    @pulumi.getter(name="applyErrors")
+    def apply_errors(self) -> Sequence['outputs.GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyErrorApplyErrorResult']:
+        """
+        Error from apply operation of a MySQL server replication channel.
+        """
+        return pulumi.get(self, "apply_errors")
+
+    @property
+    @pulumi.getter(name="channelName")
+    def channel_name(self) -> builtins.str:
+        """
+        The name of the replication channel
+        """
+        return pulumi.get(self, "channel_name")
+
+
+@pulumi.output_type
+class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyErrorApplyErrorResult(dict):
+    def __init__(__self__, *,
+                 last_error_message: builtins.str,
+                 last_error_number: builtins.int,
+                 time_last_error: builtins.str,
+                 worker_errors: Sequence['outputs.GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyErrorApplyErrorWorkerErrorResult']):
+        """
+        :param builtins.str last_error_message: The error message of the most recent error that caused the I/O thread to stop.
+        :param builtins.int last_error_number: The error number of the most recent error that caused the I/O thread to stop.
+        :param builtins.str time_last_error: The timestamp when the most recent I/O error occurred.
+        :param Sequence['GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyErrorApplyErrorWorkerErrorArgs'] worker_errors: A list of MySqlApplyErrorWorker records.
+        """
+        pulumi.set(__self__, "last_error_message", last_error_message)
+        pulumi.set(__self__, "last_error_number", last_error_number)
+        pulumi.set(__self__, "time_last_error", time_last_error)
+        pulumi.set(__self__, "worker_errors", worker_errors)
+
+    @property
+    @pulumi.getter(name="lastErrorMessage")
+    def last_error_message(self) -> builtins.str:
+        """
+        The error message of the most recent error that caused the I/O thread to stop.
+        """
+        return pulumi.get(self, "last_error_message")
+
+    @property
+    @pulumi.getter(name="lastErrorNumber")
+    def last_error_number(self) -> builtins.int:
+        """
+        The error number of the most recent error that caused the I/O thread to stop.
+        """
+        return pulumi.get(self, "last_error_number")
+
+    @property
+    @pulumi.getter(name="timeLastError")
+    def time_last_error(self) -> builtins.str:
+        """
+        The timestamp when the most recent I/O error occurred.
+        """
+        return pulumi.get(self, "time_last_error")
+
+    @property
+    @pulumi.getter(name="workerErrors")
+    def worker_errors(self) -> Sequence['outputs.GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyErrorApplyErrorWorkerErrorResult']:
+        """
+        A list of MySqlApplyErrorWorker records.
+        """
+        return pulumi.get(self, "worker_errors")
+
+
+@pulumi.output_type
+class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyErrorApplyErrorWorkerErrorResult(dict):
+    def __init__(__self__, *,
+                 last_error_message: builtins.str,
+                 last_error_number: builtins.int,
+                 time_last_error: builtins.str):
+        """
+        :param builtins.str last_error_message: The error message of the most recent error that caused the I/O thread to stop.
+        :param builtins.int last_error_number: The error number of the most recent error that caused the I/O thread to stop.
+        :param builtins.str time_last_error: The timestamp when the most recent I/O error occurred.
+        """
+        pulumi.set(__self__, "last_error_message", last_error_message)
+        pulumi.set(__self__, "last_error_number", last_error_number)
+        pulumi.set(__self__, "time_last_error", time_last_error)
+
+    @property
+    @pulumi.getter(name="lastErrorMessage")
+    def last_error_message(self) -> builtins.str:
+        """
+        The error message of the most recent error that caused the I/O thread to stop.
+        """
+        return pulumi.get(self, "last_error_message")
+
+    @property
+    @pulumi.getter(name="lastErrorNumber")
+    def last_error_number(self) -> builtins.int:
+        """
+        The error number of the most recent error that caused the I/O thread to stop.
+        """
+        return pulumi.get(self, "last_error_number")
+
+    @property
+    @pulumi.getter(name="timeLastError")
+    def time_last_error(self) -> builtins.str:
+        """
+        The timestamp when the most recent I/O error occurred.
+        """
+        return pulumi.get(self, "time_last_error")
+
+
+@pulumi.output_type
+class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelFetchErrorResult(dict):
+    def __init__(__self__, *,
+                 channel_name: builtins.str,
+                 fetch_errors: Sequence['outputs.GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelFetchErrorFetchErrorResult']):
+        """
+        :param builtins.str channel_name: The name of the replication channel
+        :param Sequence['GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelFetchErrorFetchErrorArgs'] fetch_errors: Error from fetch operation of a MySQL server replication channel.
+        """
+        pulumi.set(__self__, "channel_name", channel_name)
+        pulumi.set(__self__, "fetch_errors", fetch_errors)
+
+    @property
+    @pulumi.getter(name="channelName")
+    def channel_name(self) -> builtins.str:
+        """
+        The name of the replication channel
+        """
+        return pulumi.get(self, "channel_name")
+
+    @property
+    @pulumi.getter(name="fetchErrors")
+    def fetch_errors(self) -> Sequence['outputs.GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelFetchErrorFetchErrorResult']:
+        """
+        Error from fetch operation of a MySQL server replication channel.
+        """
+        return pulumi.get(self, "fetch_errors")
+
+
+@pulumi.output_type
+class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelFetchErrorFetchErrorResult(dict):
+    def __init__(__self__, *,
+                 last_error_message: builtins.str,
+                 last_error_number: builtins.int,
+                 time_last_error: builtins.str):
+        """
+        :param builtins.str last_error_message: The error message of the most recent error that caused the I/O thread to stop.
+        :param builtins.int last_error_number: The error number of the most recent error that caused the I/O thread to stop.
+        :param builtins.str time_last_error: The timestamp when the most recent I/O error occurred.
+        """
+        pulumi.set(__self__, "last_error_message", last_error_message)
+        pulumi.set(__self__, "last_error_number", last_error_number)
+        pulumi.set(__self__, "time_last_error", time_last_error)
+
+    @property
+    @pulumi.getter(name="lastErrorMessage")
+    def last_error_message(self) -> builtins.str:
+        """
+        The error message of the most recent error that caused the I/O thread to stop.
+        """
+        return pulumi.get(self, "last_error_message")
+
+    @property
+    @pulumi.getter(name="lastErrorNumber")
+    def last_error_number(self) -> builtins.int:
+        """
+        The error number of the most recent error that caused the I/O thread to stop.
+        """
+        return pulumi.get(self, "last_error_number")
+
+    @property
+    @pulumi.getter(name="timeLastError")
+    def time_last_error(self) -> builtins.str:
+        """
+        The timestamp when the most recent I/O error occurred.
+        """
+        return pulumi.get(self, "time_last_error")
+
+
+@pulumi.output_type
+class GetManagedMySqlDatabaseInboundReplicationsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionResult(dict):
+    def __init__(__self__, *,
+                 inbound_replications_count: builtins.int,
+                 items: Sequence['outputs.GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemResult'],
+                 parallel_workers: builtins.int,
+                 preserve_commit_order: builtins.str,
+                 replica_server_id: builtins.str,
+                 replica_uuid: builtins.str):
+        """
+        :param builtins.int inbound_replications_count: The number of sources this server is replicating from.
+        :param Sequence['GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemArgs'] items: A list of ManagedMySqlDatabaseInboundReplicationSummary records.
+        :param builtins.int parallel_workers: The number of applier threads for executing replication transactions in parallel.
+        :param builtins.str preserve_commit_order: For multi-threaded replicas, indicates if transactions are executed and committed on the replica in the same order as they appear in the relay log.
+        :param builtins.str replica_server_id: The server ID value of this replica.
+        :param builtins.str replica_uuid: The Universally Unique Identifier (UUID) value of this replica server.
+        """
+        pulumi.set(__self__, "inbound_replications_count", inbound_replications_count)
+        pulumi.set(__self__, "items", items)
+        pulumi.set(__self__, "parallel_workers", parallel_workers)
+        pulumi.set(__self__, "preserve_commit_order", preserve_commit_order)
+        pulumi.set(__self__, "replica_server_id", replica_server_id)
+        pulumi.set(__self__, "replica_uuid", replica_uuid)
+
+    @property
+    @pulumi.getter(name="inboundReplicationsCount")
+    def inbound_replications_count(self) -> builtins.int:
+        """
+        The number of sources this server is replicating from.
+        """
+        return pulumi.get(self, "inbound_replications_count")
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemResult']:
+        """
+        A list of ManagedMySqlDatabaseInboundReplicationSummary records.
+        """
+        return pulumi.get(self, "items")
+
+    @property
+    @pulumi.getter(name="parallelWorkers")
+    def parallel_workers(self) -> builtins.int:
+        """
+        The number of applier threads for executing replication transactions in parallel.
+        """
+        return pulumi.get(self, "parallel_workers")
+
+    @property
+    @pulumi.getter(name="preserveCommitOrder")
+    def preserve_commit_order(self) -> builtins.str:
+        """
+        For multi-threaded replicas, indicates if transactions are executed and committed on the replica in the same order as they appear in the relay log.
+        """
+        return pulumi.get(self, "preserve_commit_order")
+
+    @property
+    @pulumi.getter(name="replicaServerId")
+    def replica_server_id(self) -> builtins.str:
+        """
+        The server ID value of this replica.
+        """
+        return pulumi.get(self, "replica_server_id")
+
+    @property
+    @pulumi.getter(name="replicaUuid")
+    def replica_uuid(self) -> builtins.str:
+        """
+        The Universally Unique Identifier (UUID) value of this replica server.
+        """
+        return pulumi.get(self, "replica_uuid")
+
+
+@pulumi.output_type
+class GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 applier_filters: Sequence['outputs.GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplierFilterResult'],
+                 apply_delay: builtins.float,
+                 apply_errors: Sequence['outputs.GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplyErrorResult'],
+                 apply_status: builtins.str,
+                 busy_workers: builtins.int,
+                 channel_name: builtins.str,
+                 desired_delay_seconds: builtins.str,
+                 fetch_errors: Sequence['outputs.GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemFetchErrorResult'],
+                 fetch_status: builtins.str,
+                 gtid_assignment: builtins.str,
+                 relay_log_storage_space_used: builtins.str,
+                 remaining_delay_seconds: builtins.str,
+                 retrieved_gtid_set: builtins.str,
+                 seconds_behind_source: builtins.str,
+                 source_host: builtins.str,
+                 source_port: builtins.int,
+                 source_server_id: builtins.str,
+                 source_uuid: builtins.str,
+                 transactions_received: builtins.str):
+        """
+        :param Sequence['GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplierFilterArgs'] applier_filters: A list of MySqlReplicationApplierFilter records.
+        :param builtins.float apply_delay: Time in seconds it took for the transaction that is currently being applied between being committed on the source and applied on the replica.
+        :param Sequence['GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplyErrorArgs'] apply_errors: Error from apply operation of a MySQL server replication channel.
+        :param builtins.str apply_status: The current status of apply operations.
+        :param builtins.int busy_workers: The number of workers currently busy applying transactions from the source server.
+        :param builtins.str channel_name: The name of the replication channel.
+        :param builtins.str desired_delay_seconds: The desired number of seconds that the replica must lag the source.
+        :param Sequence['GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemFetchErrorArgs'] fetch_errors: Error from fetch operation of a MySQL server replication channel.
+        :param builtins.str fetch_status: The current status of fetch operations.
+        :param builtins.str gtid_assignment: Whether the channel assigns global transaction identifiers (GTIDs) to anonymous replicated transactions. OFF means no GTIDs are assigned. LOCAL means a GTID is assigned that includes this replica's own universally unique identifier (UUID). A UUID as value indicates that a GTID is assigned which includes that manually set UUID value.
+        :param builtins.str relay_log_storage_space_used: The total size in bytes of all the existing relay log files pertaining to this channel.
+        :param builtins.str remaining_delay_seconds: If the replica is waiting for the desired delay seconds to pass since the source applied an event, this field contains the number of delay seconds remaining.
+        :param builtins.str retrieved_gtid_set: The set of global transaction IDs corresponding to all transactions received by this replica from the source server. Empty if GTIDs are not in use.
+        :param builtins.str seconds_behind_source: The number of seconds the replica is behind the source server.
+        :param builtins.str source_host: The host name or IP address of the source this replica is connected to.
+        :param builtins.int source_port: The port used to connect to the source.
+        :param builtins.str source_server_id: The server ID value from the source server.
+        :param builtins.str source_uuid: The Universally Unique Identifier (UUID) value from the source server.
+        :param builtins.str transactions_received: The number of transactions received by this replica from the source server.
+        """
+        pulumi.set(__self__, "applier_filters", applier_filters)
+        pulumi.set(__self__, "apply_delay", apply_delay)
+        pulumi.set(__self__, "apply_errors", apply_errors)
+        pulumi.set(__self__, "apply_status", apply_status)
+        pulumi.set(__self__, "busy_workers", busy_workers)
+        pulumi.set(__self__, "channel_name", channel_name)
+        pulumi.set(__self__, "desired_delay_seconds", desired_delay_seconds)
+        pulumi.set(__self__, "fetch_errors", fetch_errors)
+        pulumi.set(__self__, "fetch_status", fetch_status)
+        pulumi.set(__self__, "gtid_assignment", gtid_assignment)
+        pulumi.set(__self__, "relay_log_storage_space_used", relay_log_storage_space_used)
+        pulumi.set(__self__, "remaining_delay_seconds", remaining_delay_seconds)
+        pulumi.set(__self__, "retrieved_gtid_set", retrieved_gtid_set)
+        pulumi.set(__self__, "seconds_behind_source", seconds_behind_source)
+        pulumi.set(__self__, "source_host", source_host)
+        pulumi.set(__self__, "source_port", source_port)
+        pulumi.set(__self__, "source_server_id", source_server_id)
+        pulumi.set(__self__, "source_uuid", source_uuid)
+        pulumi.set(__self__, "transactions_received", transactions_received)
+
+    @property
+    @pulumi.getter(name="applierFilters")
+    def applier_filters(self) -> Sequence['outputs.GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplierFilterResult']:
+        """
+        A list of MySqlReplicationApplierFilter records.
+        """
+        return pulumi.get(self, "applier_filters")
+
+    @property
+    @pulumi.getter(name="applyDelay")
+    def apply_delay(self) -> builtins.float:
+        """
+        Time in seconds it took for the transaction that is currently being applied between being committed on the source and applied on the replica.
+        """
+        return pulumi.get(self, "apply_delay")
+
+    @property
+    @pulumi.getter(name="applyErrors")
+    def apply_errors(self) -> Sequence['outputs.GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplyErrorResult']:
+        """
+        Error from apply operation of a MySQL server replication channel.
+        """
+        return pulumi.get(self, "apply_errors")
+
+    @property
+    @pulumi.getter(name="applyStatus")
+    def apply_status(self) -> builtins.str:
+        """
+        The current status of apply operations.
+        """
+        return pulumi.get(self, "apply_status")
+
+    @property
+    @pulumi.getter(name="busyWorkers")
+    def busy_workers(self) -> builtins.int:
+        """
+        The number of workers currently busy applying transactions from the source server.
+        """
+        return pulumi.get(self, "busy_workers")
+
+    @property
+    @pulumi.getter(name="channelName")
+    def channel_name(self) -> builtins.str:
+        """
+        The name of the replication channel.
+        """
+        return pulumi.get(self, "channel_name")
+
+    @property
+    @pulumi.getter(name="desiredDelaySeconds")
+    def desired_delay_seconds(self) -> builtins.str:
+        """
+        The desired number of seconds that the replica must lag the source.
+        """
+        return pulumi.get(self, "desired_delay_seconds")
+
+    @property
+    @pulumi.getter(name="fetchErrors")
+    def fetch_errors(self) -> Sequence['outputs.GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemFetchErrorResult']:
+        """
+        Error from fetch operation of a MySQL server replication channel.
+        """
+        return pulumi.get(self, "fetch_errors")
+
+    @property
+    @pulumi.getter(name="fetchStatus")
+    def fetch_status(self) -> builtins.str:
+        """
+        The current status of fetch operations.
+        """
+        return pulumi.get(self, "fetch_status")
+
+    @property
+    @pulumi.getter(name="gtidAssignment")
+    def gtid_assignment(self) -> builtins.str:
+        """
+        Whether the channel assigns global transaction identifiers (GTIDs) to anonymous replicated transactions. OFF means no GTIDs are assigned. LOCAL means a GTID is assigned that includes this replica's own universally unique identifier (UUID). A UUID as value indicates that a GTID is assigned which includes that manually set UUID value.
+        """
+        return pulumi.get(self, "gtid_assignment")
+
+    @property
+    @pulumi.getter(name="relayLogStorageSpaceUsed")
+    def relay_log_storage_space_used(self) -> builtins.str:
+        """
+        The total size in bytes of all the existing relay log files pertaining to this channel.
+        """
+        return pulumi.get(self, "relay_log_storage_space_used")
+
+    @property
+    @pulumi.getter(name="remainingDelaySeconds")
+    def remaining_delay_seconds(self) -> builtins.str:
+        """
+        If the replica is waiting for the desired delay seconds to pass since the source applied an event, this field contains the number of delay seconds remaining.
+        """
+        return pulumi.get(self, "remaining_delay_seconds")
+
+    @property
+    @pulumi.getter(name="retrievedGtidSet")
+    def retrieved_gtid_set(self) -> builtins.str:
+        """
+        The set of global transaction IDs corresponding to all transactions received by this replica from the source server. Empty if GTIDs are not in use.
+        """
+        return pulumi.get(self, "retrieved_gtid_set")
+
+    @property
+    @pulumi.getter(name="secondsBehindSource")
+    def seconds_behind_source(self) -> builtins.str:
+        """
+        The number of seconds the replica is behind the source server.
+        """
+        return pulumi.get(self, "seconds_behind_source")
+
+    @property
+    @pulumi.getter(name="sourceHost")
+    def source_host(self) -> builtins.str:
+        """
+        The host name or IP address of the source this replica is connected to.
+        """
+        return pulumi.get(self, "source_host")
+
+    @property
+    @pulumi.getter(name="sourcePort")
+    def source_port(self) -> builtins.int:
+        """
+        The port used to connect to the source.
+        """
+        return pulumi.get(self, "source_port")
+
+    @property
+    @pulumi.getter(name="sourceServerId")
+    def source_server_id(self) -> builtins.str:
+        """
+        The server ID value from the source server.
+        """
+        return pulumi.get(self, "source_server_id")
+
+    @property
+    @pulumi.getter(name="sourceUuid")
+    def source_uuid(self) -> builtins.str:
+        """
+        The Universally Unique Identifier (UUID) value from the source server.
+        """
+        return pulumi.get(self, "source_uuid")
+
+    @property
+    @pulumi.getter(name="transactionsReceived")
+    def transactions_received(self) -> builtins.str:
+        """
+        The number of transactions received by this replica from the source server.
+        """
+        return pulumi.get(self, "transactions_received")
+
+
+@pulumi.output_type
+class GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplierFilterResult(dict):
+    def __init__(__self__, *,
+                 filter_name: builtins.str,
+                 filter_rule: builtins.str):
+        """
+        :param builtins.str filter_name: Type of replication filter that has been configured for the replication channel.
+        :param builtins.str filter_rule: The rules configured for the replication filter type.
+        """
+        pulumi.set(__self__, "filter_name", filter_name)
+        pulumi.set(__self__, "filter_rule", filter_rule)
+
+    @property
+    @pulumi.getter(name="filterName")
+    def filter_name(self) -> builtins.str:
+        """
+        Type of replication filter that has been configured for the replication channel.
+        """
+        return pulumi.get(self, "filter_name")
+
+    @property
+    @pulumi.getter(name="filterRule")
+    def filter_rule(self) -> builtins.str:
+        """
+        The rules configured for the replication filter type.
+        """
+        return pulumi.get(self, "filter_rule")
+
+
+@pulumi.output_type
+class GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplyErrorResult(dict):
+    def __init__(__self__, *,
+                 last_error_message: builtins.str,
+                 last_error_number: builtins.int,
+                 time_last_error: builtins.str,
+                 worker_errors: Sequence['outputs.GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplyErrorWorkerErrorResult']):
+        """
+        :param builtins.str last_error_message: The error message of the most recent error that caused the I/O thread to stop.
+        :param builtins.int last_error_number: The error number of the most recent error that caused the I/O thread to stop.
+        :param builtins.str time_last_error: The timestamp when the most recent I/O error occurred.
+        :param Sequence['GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplyErrorWorkerErrorArgs'] worker_errors: A list of MySqlApplyErrorWorker records.
+        """
+        pulumi.set(__self__, "last_error_message", last_error_message)
+        pulumi.set(__self__, "last_error_number", last_error_number)
+        pulumi.set(__self__, "time_last_error", time_last_error)
+        pulumi.set(__self__, "worker_errors", worker_errors)
+
+    @property
+    @pulumi.getter(name="lastErrorMessage")
+    def last_error_message(self) -> builtins.str:
+        """
+        The error message of the most recent error that caused the I/O thread to stop.
+        """
+        return pulumi.get(self, "last_error_message")
+
+    @property
+    @pulumi.getter(name="lastErrorNumber")
+    def last_error_number(self) -> builtins.int:
+        """
+        The error number of the most recent error that caused the I/O thread to stop.
+        """
+        return pulumi.get(self, "last_error_number")
+
+    @property
+    @pulumi.getter(name="timeLastError")
+    def time_last_error(self) -> builtins.str:
+        """
+        The timestamp when the most recent I/O error occurred.
+        """
+        return pulumi.get(self, "time_last_error")
+
+    @property
+    @pulumi.getter(name="workerErrors")
+    def worker_errors(self) -> Sequence['outputs.GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplyErrorWorkerErrorResult']:
+        """
+        A list of MySqlApplyErrorWorker records.
+        """
+        return pulumi.get(self, "worker_errors")
+
+
+@pulumi.output_type
+class GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplyErrorWorkerErrorResult(dict):
+    def __init__(__self__, *,
+                 last_error_message: builtins.str,
+                 last_error_number: builtins.int,
+                 time_last_error: builtins.str):
+        """
+        :param builtins.str last_error_message: The error message of the most recent error that caused the I/O thread to stop.
+        :param builtins.int last_error_number: The error number of the most recent error that caused the I/O thread to stop.
+        :param builtins.str time_last_error: The timestamp when the most recent I/O error occurred.
+        """
+        pulumi.set(__self__, "last_error_message", last_error_message)
+        pulumi.set(__self__, "last_error_number", last_error_number)
+        pulumi.set(__self__, "time_last_error", time_last_error)
+
+    @property
+    @pulumi.getter(name="lastErrorMessage")
+    def last_error_message(self) -> builtins.str:
+        """
+        The error message of the most recent error that caused the I/O thread to stop.
+        """
+        return pulumi.get(self, "last_error_message")
+
+    @property
+    @pulumi.getter(name="lastErrorNumber")
+    def last_error_number(self) -> builtins.int:
+        """
+        The error number of the most recent error that caused the I/O thread to stop.
+        """
+        return pulumi.get(self, "last_error_number")
+
+    @property
+    @pulumi.getter(name="timeLastError")
+    def time_last_error(self) -> builtins.str:
+        """
+        The timestamp when the most recent I/O error occurred.
+        """
+        return pulumi.get(self, "time_last_error")
+
+
+@pulumi.output_type
+class GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemFetchErrorResult(dict):
+    def __init__(__self__, *,
+                 last_error_message: builtins.str,
+                 last_error_number: builtins.int,
+                 time_last_error: builtins.str):
+        """
+        :param builtins.str last_error_message: The error message of the most recent error that caused the I/O thread to stop.
+        :param builtins.int last_error_number: The error number of the most recent error that caused the I/O thread to stop.
+        :param builtins.str time_last_error: The timestamp when the most recent I/O error occurred.
+        """
+        pulumi.set(__self__, "last_error_message", last_error_message)
+        pulumi.set(__self__, "last_error_number", last_error_number)
+        pulumi.set(__self__, "time_last_error", time_last_error)
+
+    @property
+    @pulumi.getter(name="lastErrorMessage")
+    def last_error_message(self) -> builtins.str:
+        """
+        The error message of the most recent error that caused the I/O thread to stop.
+        """
+        return pulumi.get(self, "last_error_message")
+
+    @property
+    @pulumi.getter(name="lastErrorNumber")
+    def last_error_number(self) -> builtins.int:
+        """
+        The error number of the most recent error that caused the I/O thread to stop.
+        """
+        return pulumi.get(self, "last_error_number")
+
+    @property
+    @pulumi.getter(name="timeLastError")
+    def time_last_error(self) -> builtins.str:
+        """
+        The timestamp when the most recent I/O error occurred.
+        """
+        return pulumi.get(self, "time_last_error")
+
+
+@pulumi.output_type
+class GetManagedMySqlDatabaseOutboundReplicationsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetManagedMySqlDatabaseOutboundReplicationsManagedMySqlDatabaseOutboundReplicationCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetManagedMySqlDatabaseOutboundReplicationsManagedMySqlDatabaseOutboundReplicationCollectionItemResult'],
+                 outbound_replications_count: builtins.int):
+        """
+        :param Sequence['GetManagedMySqlDatabaseOutboundReplicationsManagedMySqlDatabaseOutboundReplicationCollectionItemArgs'] items: The list of ManagedMySqlDatabaseOutboundReplicationSummary records.
+        :param builtins.int outbound_replications_count: The number of outbound replications from this server.
+        """
+        pulumi.set(__self__, "items", items)
+        pulumi.set(__self__, "outbound_replications_count", outbound_replications_count)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetManagedMySqlDatabaseOutboundReplicationsManagedMySqlDatabaseOutboundReplicationCollectionItemResult']:
+        """
+        The list of ManagedMySqlDatabaseOutboundReplicationSummary records.
+        """
+        return pulumi.get(self, "items")
+
+    @property
+    @pulumi.getter(name="outboundReplicationsCount")
+    def outbound_replications_count(self) -> builtins.int:
+        """
+        The number of outbound replications from this server.
+        """
+        return pulumi.get(self, "outbound_replications_count")
+
+
+@pulumi.output_type
+class GetManagedMySqlDatabaseOutboundReplicationsManagedMySqlDatabaseOutboundReplicationCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 replica_host: builtins.str,
+                 replica_port: builtins.int,
+                 replica_server_id: builtins.str,
+                 replica_uuid: builtins.str):
+        """
+        :param builtins.str replica_host: The host name of the replica server, as specified on the replica with the --report-host option. This can differ from the machine name as configured in the operating system.
+        :param builtins.int replica_port: The port on the replica server, as specified on the replica with the --report-port option. A zero in this column means that the replica port (--report-port) was not set.
+        :param builtins.str replica_server_id: The server ID value of the replica.
+        :param builtins.str replica_uuid: The Universally Unique Identifier (UUID) value of the replica server.
+        """
+        pulumi.set(__self__, "replica_host", replica_host)
+        pulumi.set(__self__, "replica_port", replica_port)
+        pulumi.set(__self__, "replica_server_id", replica_server_id)
+        pulumi.set(__self__, "replica_uuid", replica_uuid)
+
+    @property
+    @pulumi.getter(name="replicaHost")
+    def replica_host(self) -> builtins.str:
+        """
+        The host name of the replica server, as specified on the replica with the --report-host option. This can differ from the machine name as configured in the operating system.
+        """
+        return pulumi.get(self, "replica_host")
+
+    @property
+    @pulumi.getter(name="replicaPort")
+    def replica_port(self) -> builtins.int:
+        """
+        The port on the replica server, as specified on the replica with the --report-port option. A zero in this column means that the replica port (--report-port) was not set.
+        """
+        return pulumi.get(self, "replica_port")
+
+    @property
+    @pulumi.getter(name="replicaServerId")
+    def replica_server_id(self) -> builtins.str:
+        """
+        The server ID value of the replica.
+        """
+        return pulumi.get(self, "replica_server_id")
+
+    @property
+    @pulumi.getter(name="replicaUuid")
+    def replica_uuid(self) -> builtins.str:
+        """
+        The Universally Unique Identifier (UUID) value of the replica server.
+        """
+        return pulumi.get(self, "replica_uuid")
+
+
+@pulumi.output_type
+class GetManagedMySqlDatabaseQueryDetailQueryExplainPlanResult(dict):
+    def __init__(__self__, *,
+                 json_explain: builtins.str,
+                 json_explain_version: builtins.str):
+        """
+        :param builtins.str json_explain: The json format of the explain plan.
+        :param builtins.str json_explain_version: The version of the Json format of MySQL Explain.
+        """
+        pulumi.set(__self__, "json_explain", json_explain)
+        pulumi.set(__self__, "json_explain_version", json_explain_version)
+
+    @property
+    @pulumi.getter(name="jsonExplain")
+    def json_explain(self) -> builtins.str:
+        """
+        The json format of the explain plan.
+        """
+        return pulumi.get(self, "json_explain")
+
+    @property
+    @pulumi.getter(name="jsonExplainVersion")
+    def json_explain_version(self) -> builtins.str:
+        """
+        The version of the Json format of MySQL Explain.
+        """
+        return pulumi.get(self, "json_explain_version")
+
+
+@pulumi.output_type
+class GetManagedMySqlDatabaseQueryDetailQueryMessageResult(dict):
+    def __init__(__self__, *,
+                 code: builtins.int,
+                 level: builtins.str,
+                 message_text: builtins.str):
+        """
+        :param builtins.int code: The MySQL code of the raised error, warning or note.
+        :param builtins.str level: The level of severity of the MySQL message.
+        :param builtins.str message_text: The MySQL message text of the raised error, warning or note.
+        """
+        pulumi.set(__self__, "code", code)
+        pulumi.set(__self__, "level", level)
+        pulumi.set(__self__, "message_text", message_text)
+
+    @property
+    @pulumi.getter
+    def code(self) -> builtins.int:
+        """
+        The MySQL code of the raised error, warning or note.
+        """
+        return pulumi.get(self, "code")
+
+    @property
+    @pulumi.getter
+    def level(self) -> builtins.str:
+        """
+        The level of severity of the MySQL message.
+        """
+        return pulumi.get(self, "level")
+
+    @property
+    @pulumi.getter(name="messageText")
+    def message_text(self) -> builtins.str:
+        """
+        The MySQL message text of the raised error, warning or note.
+        """
+        return pulumi.get(self, "message_text")
+
+
+@pulumi.output_type
+class GetManagedMySqlDatabaseQueryDetailQuerySampleDetailResult(dict):
+    def __init__(__self__, *,
+                 execution_time: builtins.str,
+                 host: builtins.str,
+                 mysql_instance: builtins.str,
+                 query_sample_text: builtins.str,
+                 thread_id: builtins.int,
+                 time_query_sample_seen: builtins.str,
+                 user: builtins.str):
+        """
+        :param builtins.str execution_time: The total amount of time that has been spent executing the query sample.
+        :param builtins.str host: The host from which the query sample was run.
+        :param builtins.str mysql_instance: The MySQL instance against which the query sample was run.
+        :param builtins.str query_sample_text: The query sample mapped by MySQL to a given normalized query.
+        :param builtins.int thread_id: The thread id of the connection.
+        :param builtins.str time_query_sample_seen: The date and time the query sample was last seen.
+        :param builtins.str user: The user who ran the query sample.
+        """
+        pulumi.set(__self__, "execution_time", execution_time)
+        pulumi.set(__self__, "host", host)
+        pulumi.set(__self__, "mysql_instance", mysql_instance)
+        pulumi.set(__self__, "query_sample_text", query_sample_text)
+        pulumi.set(__self__, "thread_id", thread_id)
+        pulumi.set(__self__, "time_query_sample_seen", time_query_sample_seen)
+        pulumi.set(__self__, "user", user)
+
+    @property
+    @pulumi.getter(name="executionTime")
+    def execution_time(self) -> builtins.str:
+        """
+        The total amount of time that has been spent executing the query sample.
+        """
+        return pulumi.get(self, "execution_time")
+
+    @property
+    @pulumi.getter
+    def host(self) -> builtins.str:
+        """
+        The host from which the query sample was run.
+        """
+        return pulumi.get(self, "host")
+
+    @property
+    @pulumi.getter(name="mysqlInstance")
+    def mysql_instance(self) -> builtins.str:
+        """
+        The MySQL instance against which the query sample was run.
+        """
+        return pulumi.get(self, "mysql_instance")
+
+    @property
+    @pulumi.getter(name="querySampleText")
+    def query_sample_text(self) -> builtins.str:
+        """
+        The query sample mapped by MySQL to a given normalized query.
+        """
+        return pulumi.get(self, "query_sample_text")
+
+    @property
+    @pulumi.getter(name="threadId")
+    def thread_id(self) -> builtins.int:
+        """
+        The thread id of the connection.
+        """
+        return pulumi.get(self, "thread_id")
+
+    @property
+    @pulumi.getter(name="timeQuerySampleSeen")
+    def time_query_sample_seen(self) -> builtins.str:
+        """
+        The date and time the query sample was last seen.
+        """
+        return pulumi.get(self, "time_query_sample_seen")
+
+    @property
+    @pulumi.getter
+    def user(self) -> builtins.str:
+        """
+        The user who ran the query sample.
+        """
+        return pulumi.get(self, "user")
 
 
 @pulumi.output_type
@@ -30917,6 +32217,7 @@ class GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemResult(dict):
                  db_name: builtins.str,
                  db_version: builtins.str,
                  heat_wave_cluster_display_name: builtins.str,
+                 heat_wave_management_type: builtins.str,
                  heat_wave_memory_size: builtins.int,
                  heat_wave_node_shape: builtins.str,
                  heat_wave_nodes: Sequence['outputs.GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeResult'],
@@ -30936,6 +32237,7 @@ class GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemResult(dict):
         :param builtins.str db_name: The name of the MySQL Database.
         :param builtins.str db_version: The version of the MySQL Database.
         :param builtins.str heat_wave_cluster_display_name: The name of the HeatWave cluster.
+        :param builtins.str heat_wave_management_type: The customer's selected type for HeatWave management.
         :param builtins.int heat_wave_memory_size: The total memory belonging to the HeatWave cluster in GBs.
         :param builtins.str heat_wave_node_shape: Shape of the nodes in the HeatWave cluster.
         :param Sequence['GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArgs'] heat_wave_nodes: The information about an individual HeatWave nodes in the cluster.
@@ -30954,6 +32256,7 @@ class GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemResult(dict):
         pulumi.set(__self__, "db_name", db_name)
         pulumi.set(__self__, "db_version", db_version)
         pulumi.set(__self__, "heat_wave_cluster_display_name", heat_wave_cluster_display_name)
+        pulumi.set(__self__, "heat_wave_management_type", heat_wave_management_type)
         pulumi.set(__self__, "heat_wave_memory_size", heat_wave_memory_size)
         pulumi.set(__self__, "heat_wave_node_shape", heat_wave_node_shape)
         pulumi.set(__self__, "heat_wave_nodes", heat_wave_nodes)
@@ -31007,6 +32310,14 @@ class GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemResult(dict):
         The name of the HeatWave cluster.
         """
         return pulumi.get(self, "heat_wave_cluster_display_name")
+
+    @property
+    @pulumi.getter(name="heatWaveManagementType")
+    def heat_wave_management_type(self) -> builtins.str:
+        """
+        The customer's selected type for HeatWave management.
+        """
+        return pulumi.get(self, "heat_wave_management_type")
 
     @property
     @pulumi.getter(name="heatWaveMemorySize")

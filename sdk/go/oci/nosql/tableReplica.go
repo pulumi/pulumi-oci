@@ -14,7 +14,7 @@ import (
 
 // This resource provides the Table Replica resource in Oracle Cloud Infrastructure NoSQL Database service.
 //
-// # Add a replica for this table
+// Add a replica for this table. The table's schema must be frozen prior to this operation.
 //
 // ## Example Usage
 //
@@ -67,7 +67,7 @@ type TableReplica struct {
 	// A table name within the compartment, or a table OCID.
 	//
 	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
 	TableNameOrId pulumi.StringOutput `pulumi:"tableNameOrId"`
 }
 
@@ -118,7 +118,7 @@ type tableReplicaState struct {
 	// A table name within the compartment, or a table OCID.
 	//
 	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
 	TableNameOrId *string `pulumi:"tableNameOrId"`
 }
 
@@ -134,7 +134,7 @@ type TableReplicaState struct {
 	// A table name within the compartment, or a table OCID.
 	//
 	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
 	TableNameOrId pulumi.StringPtrInput
 }
 
@@ -154,7 +154,7 @@ type tableReplicaArgs struct {
 	// A table name within the compartment, or a table OCID.
 	//
 	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
 	TableNameOrId string `pulumi:"tableNameOrId"`
 }
 
@@ -171,7 +171,7 @@ type TableReplicaArgs struct {
 	// A table name within the compartment, or a table OCID.
 	//
 	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
 	TableNameOrId pulumi.StringInput
 }
 
@@ -285,7 +285,7 @@ func (o TableReplicaOutput) Region() pulumi.StringOutput {
 // A table name within the compartment, or a table OCID.
 //
 // ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
 func (o TableReplicaOutput) TableNameOrId() pulumi.StringOutput {
 	return o.ApplyT(func(v *TableReplica) pulumi.StringOutput { return v.TableNameOrId }).(pulumi.StringOutput)
 }

@@ -180,6 +180,7 @@ namespace Pulumi.Oci.DatabaseMigration
     ///             },
     ///         },
     ///         SourceContainerDatabaseConnectionId = testConnection.Id,
+    ///         SourceStandbyDatabaseConnectionId = testConnection.Id,
     ///     });
     /// 
     /// });
@@ -309,6 +310,12 @@ namespace Pulumi.Oci.DatabaseMigration
         /// </summary>
         [Output("sourceDatabaseConnectionId")]
         public Output<string> SourceDatabaseConnectionId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The OCID of the resource being referenced.
+        /// </summary>
+        [Output("sourceStandbyDatabaseConnectionId")]
+        public Output<string?> SourceStandbyDatabaseConnectionId { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the Migration resource.
@@ -543,6 +550,12 @@ namespace Pulumi.Oci.DatabaseMigration
         /// <summary>
         /// (Updatable) The OCID of the resource being referenced.
         /// </summary>
+        [Input("sourceStandbyDatabaseConnectionId")]
+        public Input<string>? SourceStandbyDatabaseConnectionId { get; set; }
+
+        /// <summary>
+        /// (Updatable) The OCID of the resource being referenced.
+        /// </summary>
         [Input("targetDatabaseConnectionId", required: true)]
         public Input<string> TargetDatabaseConnectionId { get; set; } = null!;
 
@@ -707,6 +720,12 @@ namespace Pulumi.Oci.DatabaseMigration
         /// </summary>
         [Input("sourceDatabaseConnectionId")]
         public Input<string>? SourceDatabaseConnectionId { get; set; }
+
+        /// <summary>
+        /// (Updatable) The OCID of the resource being referenced.
+        /// </summary>
+        [Input("sourceStandbyDatabaseConnectionId")]
+        public Input<string>? SourceStandbyDatabaseConnectionId { get; set; }
 
         /// <summary>
         /// The current state of the Migration resource.

@@ -159,6 +159,7 @@ import (
 //					},
 //				},
 //				SourceContainerDatabaseConnectionId: pulumi.Any(testConnection.Id),
+//				SourceStandbyDatabaseConnectionId:   pulumi.Any(testConnection.Id),
 //			})
 //			if err != nil {
 //				return err
@@ -217,6 +218,8 @@ type Migration struct {
 	SourceContainerDatabaseConnectionId pulumi.StringOutput `pulumi:"sourceContainerDatabaseConnectionId"`
 	// (Updatable) The OCID of the resource being referenced.
 	SourceDatabaseConnectionId pulumi.StringOutput `pulumi:"sourceDatabaseConnectionId"`
+	// (Updatable) The OCID of the resource being referenced.
+	SourceStandbyDatabaseConnectionId pulumi.StringPtrOutput `pulumi:"sourceStandbyDatabaseConnectionId"`
 	// The current state of the Migration resource.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -321,6 +324,8 @@ type migrationState struct {
 	SourceContainerDatabaseConnectionId *string `pulumi:"sourceContainerDatabaseConnectionId"`
 	// (Updatable) The OCID of the resource being referenced.
 	SourceDatabaseConnectionId *string `pulumi:"sourceDatabaseConnectionId"`
+	// (Updatable) The OCID of the resource being referenced.
+	SourceStandbyDatabaseConnectionId *string `pulumi:"sourceStandbyDatabaseConnectionId"`
 	// The current state of the Migration resource.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -381,6 +386,8 @@ type MigrationState struct {
 	SourceContainerDatabaseConnectionId pulumi.StringPtrInput
 	// (Updatable) The OCID of the resource being referenced.
 	SourceDatabaseConnectionId pulumi.StringPtrInput
+	// (Updatable) The OCID of the resource being referenced.
+	SourceStandbyDatabaseConnectionId pulumi.StringPtrInput
 	// The current state of the Migration resource.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -442,6 +449,8 @@ type migrationArgs struct {
 	// (Updatable) The OCID of the resource being referenced.
 	SourceDatabaseConnectionId string `pulumi:"sourceDatabaseConnectionId"`
 	// (Updatable) The OCID of the resource being referenced.
+	SourceStandbyDatabaseConnectionId *string `pulumi:"sourceStandbyDatabaseConnectionId"`
+	// (Updatable) The OCID of the resource being referenced.
 	TargetDatabaseConnectionId string `pulumi:"targetDatabaseConnectionId"`
 	// (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
 	//
@@ -486,6 +495,8 @@ type MigrationArgs struct {
 	SourceContainerDatabaseConnectionId pulumi.StringPtrInput
 	// (Updatable) The OCID of the resource being referenced.
 	SourceDatabaseConnectionId pulumi.StringInput
+	// (Updatable) The OCID of the resource being referenced.
+	SourceStandbyDatabaseConnectionId pulumi.StringPtrInput
 	// (Updatable) The OCID of the resource being referenced.
 	TargetDatabaseConnectionId pulumi.StringInput
 	// (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
@@ -675,6 +686,11 @@ func (o MigrationOutput) SourceContainerDatabaseConnectionId() pulumi.StringOutp
 // (Updatable) The OCID of the resource being referenced.
 func (o MigrationOutput) SourceDatabaseConnectionId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Migration) pulumi.StringOutput { return v.SourceDatabaseConnectionId }).(pulumi.StringOutput)
+}
+
+// (Updatable) The OCID of the resource being referenced.
+func (o MigrationOutput) SourceStandbyDatabaseConnectionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Migration) pulumi.StringPtrOutput { return v.SourceStandbyDatabaseConnectionId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the Migration resource.

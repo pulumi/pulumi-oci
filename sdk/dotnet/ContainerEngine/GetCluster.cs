@@ -106,7 +106,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// Boolean value to determine if the OpenIdConnectAuth configuration file should be displayed for the provided cluster.
         /// </summary>
         [Input("shouldIncludeOidcConfigFile")]
-        public string? ShouldIncludeOidcConfigFile { get; set; }
+        public bool? ShouldIncludeOidcConfigFile { get; set; }
 
         public GetClusterArgs()
         {
@@ -126,7 +126,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// Boolean value to determine if the OpenIdConnectAuth configuration file should be displayed for the provided cluster.
         /// </summary>
         [Input("shouldIncludeOidcConfigFile")]
-        public Input<string>? ShouldIncludeOidcConfigFile { get; set; }
+        public Input<bool>? ShouldIncludeOidcConfigFile { get; set; }
 
         public GetClusterInvokeArgs()
         {
@@ -207,7 +207,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// Optional attributes for the cluster.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetClusterOptionResult> Options;
-        public readonly string? ShouldIncludeOidcConfigFile;
+        public readonly bool? ShouldIncludeOidcConfigFile;
         /// <summary>
         /// The state of the cluster masters.
         /// </summary>
@@ -259,7 +259,7 @@ namespace Pulumi.Oci.ContainerEngine
 
             ImmutableArray<Outputs.GetClusterOptionResult> options,
 
-            string? shouldIncludeOidcConfigFile,
+            bool? shouldIncludeOidcConfigFile,
 
             string state,
 

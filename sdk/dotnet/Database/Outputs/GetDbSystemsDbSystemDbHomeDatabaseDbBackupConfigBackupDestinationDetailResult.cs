@@ -18,6 +18,8 @@ namespace Pulumi.Oci.Database.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         /// </summary>
         public readonly string Id;
+        public readonly bool IsRemote;
+        public readonly string RemoteRegion;
         public readonly string Type;
 
         [OutputConstructor]
@@ -26,10 +28,16 @@ namespace Pulumi.Oci.Database.Outputs
 
             string id,
 
+            bool isRemote,
+
+            string remoteRegion,
+
             string type)
         {
             DbrsPolicyId = dbrsPolicyId;
             Id = id;
+            IsRemote = isRemote;
+            RemoteRegion = remoteRegion;
             Type = type;
         }
     }

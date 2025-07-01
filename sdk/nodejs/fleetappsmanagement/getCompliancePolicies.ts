@@ -9,7 +9,8 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Compliance Policies in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Gets a list of compliancePolicies.
+ * Returns a list of all the Compliance Policies in the specified compartment.
+ * The query parameter `compartmentId` is required unless the query parameter `id` is specified.
  *
  * ## Example Usage
  *
@@ -22,6 +23,7 @@ import * as utilities from "../utilities";
  *     displayName: compliancePolicyDisplayName,
  *     id: compliancePolicyId,
  *     state: compliancePolicyState,
+ *     type: compliancePolicyType,
  * });
  * ```
  */
@@ -34,6 +36,7 @@ export function getCompliancePolicies(args?: GetCompliancePoliciesArgs, opts?: p
         "filters": args.filters,
         "id": args.id,
         "state": args.state,
+        "type": args.type,
     }, opts);
 }
 
@@ -42,7 +45,7 @@ export function getCompliancePolicies(args?: GetCompliancePoliciesArgs, opts?: p
  */
 export interface GetCompliancePoliciesArgs {
     /**
-     * The ID of the compartment in which to list resources.
+     * The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      */
     compartmentId?: string;
     /**
@@ -51,13 +54,17 @@ export interface GetCompliancePoliciesArgs {
     displayName?: string;
     filters?: inputs.FleetAppsManagement.GetCompliancePoliciesFilter[];
     /**
-     * unique CompliancePolicy identifier.
+     * Unique identifier or OCID for listing a single Compliance Policy by id. Either compartmentId or id must be provided.
      */
     id?: string;
     /**
      * A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
      */
     state?: string;
+    /**
+     * A filter to return Platform Configurations whose type matches the given type.
+     */
+    type?: string;
 }
 
 /**
@@ -85,11 +92,16 @@ export interface GetCompliancePoliciesResult {
      * The current state of the CompliancePolicy.
      */
     readonly state?: string;
+    /**
+     * The type of the Compliance Policy.
+     */
+    readonly type?: string;
 }
 /**
  * This data source provides the list of Compliance Policies in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Gets a list of compliancePolicies.
+ * Returns a list of all the Compliance Policies in the specified compartment.
+ * The query parameter `compartmentId` is required unless the query parameter `id` is specified.
  *
  * ## Example Usage
  *
@@ -102,6 +114,7 @@ export interface GetCompliancePoliciesResult {
  *     displayName: compliancePolicyDisplayName,
  *     id: compliancePolicyId,
  *     state: compliancePolicyState,
+ *     type: compliancePolicyType,
  * });
  * ```
  */
@@ -114,6 +127,7 @@ export function getCompliancePoliciesOutput(args?: GetCompliancePoliciesOutputAr
         "filters": args.filters,
         "id": args.id,
         "state": args.state,
+        "type": args.type,
     }, opts);
 }
 
@@ -122,7 +136,7 @@ export function getCompliancePoliciesOutput(args?: GetCompliancePoliciesOutputAr
  */
 export interface GetCompliancePoliciesOutputArgs {
     /**
-     * The ID of the compartment in which to list resources.
+     * The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -131,11 +145,15 @@ export interface GetCompliancePoliciesOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetCompliancePoliciesFilterArgs>[]>;
     /**
-     * unique CompliancePolicy identifier.
+     * Unique identifier or OCID for listing a single Compliance Policy by id. Either compartmentId or id must be provided.
      */
     id?: pulumi.Input<string>;
     /**
      * A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
      */
     state?: pulumi.Input<string>;
+    /**
+     * A filter to return Platform Configurations whose type matches the given type.
+     */
+    type?: pulumi.Input<string>;
 }

@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Announcements in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Return a list of AnnouncementSummary items.
+ * Return a list of Announcement Summary items in a tenancy.
  *
  * ## Example Usage
  *
@@ -18,15 +18,16 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAnnouncements = oci.FleetAppsManagement.getAnnouncements({
+ *     compartmentId: compartmentId,
  *     displayName: announcementDisplayName,
  *     summaryContains: announcementSummaryContains,
  * });
  * ```
  */
-export function getAnnouncements(args?: GetAnnouncementsArgs, opts?: pulumi.InvokeOptions): Promise<GetAnnouncementsResult> {
-    args = args || {};
+export function getAnnouncements(args: GetAnnouncementsArgs, opts?: pulumi.InvokeOptions): Promise<GetAnnouncementsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:FleetAppsManagement/getAnnouncements:getAnnouncements", {
+        "compartmentId": args.compartmentId,
         "displayName": args.displayName,
         "filters": args.filters,
         "summaryContains": args.summaryContains,
@@ -37,6 +38,10 @@ export function getAnnouncements(args?: GetAnnouncementsArgs, opts?: pulumi.Invo
  * A collection of arguments for invoking getAnnouncements.
  */
 export interface GetAnnouncementsArgs {
+    /**
+     * The ID of the compartment in which to list resources.
+     */
+    compartmentId: string;
     /**
      * A filter to return only resources that match the entire display name given.
      */
@@ -57,6 +62,10 @@ export interface GetAnnouncementsResult {
      */
     readonly announcementCollections: outputs.FleetAppsManagement.GetAnnouncementsAnnouncementCollection[];
     /**
+     * Tenancy OCID
+     */
+    readonly compartmentId: string;
+    /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
      */
     readonly displayName?: string;
@@ -70,7 +79,7 @@ export interface GetAnnouncementsResult {
 /**
  * This data source provides the list of Announcements in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Return a list of AnnouncementSummary items.
+ * Return a list of Announcement Summary items in a tenancy.
  *
  * ## Example Usage
  *
@@ -79,15 +88,16 @@ export interface GetAnnouncementsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAnnouncements = oci.FleetAppsManagement.getAnnouncements({
+ *     compartmentId: compartmentId,
  *     displayName: announcementDisplayName,
  *     summaryContains: announcementSummaryContains,
  * });
  * ```
  */
-export function getAnnouncementsOutput(args?: GetAnnouncementsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAnnouncementsResult> {
-    args = args || {};
+export function getAnnouncementsOutput(args: GetAnnouncementsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAnnouncementsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:FleetAppsManagement/getAnnouncements:getAnnouncements", {
+        "compartmentId": args.compartmentId,
         "displayName": args.displayName,
         "filters": args.filters,
         "summaryContains": args.summaryContains,
@@ -98,6 +108,10 @@ export function getAnnouncementsOutput(args?: GetAnnouncementsOutputArgs, opts?:
  * A collection of arguments for invoking getAnnouncements.
  */
 export interface GetAnnouncementsOutputArgs {
+    /**
+     * The ID of the compartment in which to list resources.
+     */
+    compartmentId: pulumi.Input<string>;
     /**
      * A filter to return only resources that match the entire display name given.
      */

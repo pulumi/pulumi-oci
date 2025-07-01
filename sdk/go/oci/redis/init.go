@@ -21,8 +21,20 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "oci:Redis/ociCacheUser:OciCacheUser":
+		r = &OciCacheUser{}
+	case "oci:Redis/ociCacheUserGetRedisCluster:OciCacheUserGetRedisCluster":
+		r = &OciCacheUserGetRedisCluster{}
 	case "oci:Redis/redisCluster:RedisCluster":
 		r = &RedisCluster{}
+	case "oci:Redis/redisClusterAttachOciCacheUser:RedisClusterAttachOciCacheUser":
+		r = &RedisClusterAttachOciCacheUser{}
+	case "oci:Redis/redisClusterCreateIdentityToken:RedisClusterCreateIdentityToken":
+		r = &RedisClusterCreateIdentityToken{}
+	case "oci:Redis/redisClusterDetachOciCacheUser:RedisClusterDetachOciCacheUser":
+		r = &RedisClusterDetachOciCacheUser{}
+	case "oci:Redis/redisClusterGetOciCacheUser:RedisClusterGetOciCacheUser":
+		r = &RedisClusterGetOciCacheUser{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -38,7 +50,37 @@ func init() {
 	}
 	pulumi.RegisterResourceModule(
 		"oci",
+		"Redis/ociCacheUser",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Redis/ociCacheUserGetRedisCluster",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"Redis/redisCluster",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Redis/redisClusterAttachOciCacheUser",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Redis/redisClusterCreateIdentityToken",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Redis/redisClusterDetachOciCacheUser",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Redis/redisClusterGetOciCacheUser",
 		&module{version},
 	)
 }

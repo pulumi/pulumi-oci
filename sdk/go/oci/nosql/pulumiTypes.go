@@ -13,6 +13,231 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type ConfigurationKmsKey struct {
+	// (Updatable) The OCID of the KMS encryption key assigned to this Hosted Environment. If the Hosted Environment is using an Oracle-managed Key (i.e., not a CMEK), then the id will be a null string.
+	Id *string `pulumi:"id"`
+	// (Updatable) The current state of the encryption key assigned to this Hosted Environment. Oracle-managed keys will always report an ACTIVE state.
+	KmsKeyState *string `pulumi:"kmsKeyState"`
+	// (Updatable) The OCID of the vault containing the encryption key assigned to this Hosted Environment. If the Hosted Environment is using an Oracle-managed Key (i.e., not a CMEK), then the kmsVaultId will be a null string.
+	KmsVaultId *string `pulumi:"kmsVaultId"`
+	// (Updatable) The timestamp when encryption key was first enabled for this Hosted Environment. RFC3339 formatted.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// (Updatable) The timestamp of the last update to the encryption key status. RFC3339 formatted.
+	//
+	// ** IMPORTANT **
+	// The configuration cannot be deleted.
+	TimeUpdated *string `pulumi:"timeUpdated"`
+}
+
+// ConfigurationKmsKeyInput is an input type that accepts ConfigurationKmsKeyArgs and ConfigurationKmsKeyOutput values.
+// You can construct a concrete instance of `ConfigurationKmsKeyInput` via:
+//
+//	ConfigurationKmsKeyArgs{...}
+type ConfigurationKmsKeyInput interface {
+	pulumi.Input
+
+	ToConfigurationKmsKeyOutput() ConfigurationKmsKeyOutput
+	ToConfigurationKmsKeyOutputWithContext(context.Context) ConfigurationKmsKeyOutput
+}
+
+type ConfigurationKmsKeyArgs struct {
+	// (Updatable) The OCID of the KMS encryption key assigned to this Hosted Environment. If the Hosted Environment is using an Oracle-managed Key (i.e., not a CMEK), then the id will be a null string.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// (Updatable) The current state of the encryption key assigned to this Hosted Environment. Oracle-managed keys will always report an ACTIVE state.
+	KmsKeyState pulumi.StringPtrInput `pulumi:"kmsKeyState"`
+	// (Updatable) The OCID of the vault containing the encryption key assigned to this Hosted Environment. If the Hosted Environment is using an Oracle-managed Key (i.e., not a CMEK), then the kmsVaultId will be a null string.
+	KmsVaultId pulumi.StringPtrInput `pulumi:"kmsVaultId"`
+	// (Updatable) The timestamp when encryption key was first enabled for this Hosted Environment. RFC3339 formatted.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// (Updatable) The timestamp of the last update to the encryption key status. RFC3339 formatted.
+	//
+	// ** IMPORTANT **
+	// The configuration cannot be deleted.
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
+}
+
+func (ConfigurationKmsKeyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigurationKmsKey)(nil)).Elem()
+}
+
+func (i ConfigurationKmsKeyArgs) ToConfigurationKmsKeyOutput() ConfigurationKmsKeyOutput {
+	return i.ToConfigurationKmsKeyOutputWithContext(context.Background())
+}
+
+func (i ConfigurationKmsKeyArgs) ToConfigurationKmsKeyOutputWithContext(ctx context.Context) ConfigurationKmsKeyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigurationKmsKeyOutput)
+}
+
+func (i ConfigurationKmsKeyArgs) ToConfigurationKmsKeyPtrOutput() ConfigurationKmsKeyPtrOutput {
+	return i.ToConfigurationKmsKeyPtrOutputWithContext(context.Background())
+}
+
+func (i ConfigurationKmsKeyArgs) ToConfigurationKmsKeyPtrOutputWithContext(ctx context.Context) ConfigurationKmsKeyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigurationKmsKeyOutput).ToConfigurationKmsKeyPtrOutputWithContext(ctx)
+}
+
+// ConfigurationKmsKeyPtrInput is an input type that accepts ConfigurationKmsKeyArgs, ConfigurationKmsKeyPtr and ConfigurationKmsKeyPtrOutput values.
+// You can construct a concrete instance of `ConfigurationKmsKeyPtrInput` via:
+//
+//	        ConfigurationKmsKeyArgs{...}
+//
+//	or:
+//
+//	        nil
+type ConfigurationKmsKeyPtrInput interface {
+	pulumi.Input
+
+	ToConfigurationKmsKeyPtrOutput() ConfigurationKmsKeyPtrOutput
+	ToConfigurationKmsKeyPtrOutputWithContext(context.Context) ConfigurationKmsKeyPtrOutput
+}
+
+type configurationKmsKeyPtrType ConfigurationKmsKeyArgs
+
+func ConfigurationKmsKeyPtr(v *ConfigurationKmsKeyArgs) ConfigurationKmsKeyPtrInput {
+	return (*configurationKmsKeyPtrType)(v)
+}
+
+func (*configurationKmsKeyPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConfigurationKmsKey)(nil)).Elem()
+}
+
+func (i *configurationKmsKeyPtrType) ToConfigurationKmsKeyPtrOutput() ConfigurationKmsKeyPtrOutput {
+	return i.ToConfigurationKmsKeyPtrOutputWithContext(context.Background())
+}
+
+func (i *configurationKmsKeyPtrType) ToConfigurationKmsKeyPtrOutputWithContext(ctx context.Context) ConfigurationKmsKeyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigurationKmsKeyPtrOutput)
+}
+
+type ConfigurationKmsKeyOutput struct{ *pulumi.OutputState }
+
+func (ConfigurationKmsKeyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigurationKmsKey)(nil)).Elem()
+}
+
+func (o ConfigurationKmsKeyOutput) ToConfigurationKmsKeyOutput() ConfigurationKmsKeyOutput {
+	return o
+}
+
+func (o ConfigurationKmsKeyOutput) ToConfigurationKmsKeyOutputWithContext(ctx context.Context) ConfigurationKmsKeyOutput {
+	return o
+}
+
+func (o ConfigurationKmsKeyOutput) ToConfigurationKmsKeyPtrOutput() ConfigurationKmsKeyPtrOutput {
+	return o.ToConfigurationKmsKeyPtrOutputWithContext(context.Background())
+}
+
+func (o ConfigurationKmsKeyOutput) ToConfigurationKmsKeyPtrOutputWithContext(ctx context.Context) ConfigurationKmsKeyPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ConfigurationKmsKey) *ConfigurationKmsKey {
+		return &v
+	}).(ConfigurationKmsKeyPtrOutput)
+}
+
+// (Updatable) The OCID of the KMS encryption key assigned to this Hosted Environment. If the Hosted Environment is using an Oracle-managed Key (i.e., not a CMEK), then the id will be a null string.
+func (o ConfigurationKmsKeyOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigurationKmsKey) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The current state of the encryption key assigned to this Hosted Environment. Oracle-managed keys will always report an ACTIVE state.
+func (o ConfigurationKmsKeyOutput) KmsKeyState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigurationKmsKey) *string { return v.KmsKeyState }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the vault containing the encryption key assigned to this Hosted Environment. If the Hosted Environment is using an Oracle-managed Key (i.e., not a CMEK), then the kmsVaultId will be a null string.
+func (o ConfigurationKmsKeyOutput) KmsVaultId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigurationKmsKey) *string { return v.KmsVaultId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The timestamp when encryption key was first enabled for this Hosted Environment. RFC3339 formatted.
+func (o ConfigurationKmsKeyOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigurationKmsKey) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The timestamp of the last update to the encryption key status. RFC3339 formatted.
+//
+// ** IMPORTANT **
+// The configuration cannot be deleted.
+func (o ConfigurationKmsKeyOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigurationKmsKey) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
+}
+
+type ConfigurationKmsKeyPtrOutput struct{ *pulumi.OutputState }
+
+func (ConfigurationKmsKeyPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConfigurationKmsKey)(nil)).Elem()
+}
+
+func (o ConfigurationKmsKeyPtrOutput) ToConfigurationKmsKeyPtrOutput() ConfigurationKmsKeyPtrOutput {
+	return o
+}
+
+func (o ConfigurationKmsKeyPtrOutput) ToConfigurationKmsKeyPtrOutputWithContext(ctx context.Context) ConfigurationKmsKeyPtrOutput {
+	return o
+}
+
+func (o ConfigurationKmsKeyPtrOutput) Elem() ConfigurationKmsKeyOutput {
+	return o.ApplyT(func(v *ConfigurationKmsKey) ConfigurationKmsKey {
+		if v != nil {
+			return *v
+		}
+		var ret ConfigurationKmsKey
+		return ret
+	}).(ConfigurationKmsKeyOutput)
+}
+
+// (Updatable) The OCID of the KMS encryption key assigned to this Hosted Environment. If the Hosted Environment is using an Oracle-managed Key (i.e., not a CMEK), then the id will be a null string.
+func (o ConfigurationKmsKeyPtrOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConfigurationKmsKey) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Id
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The current state of the encryption key assigned to this Hosted Environment. Oracle-managed keys will always report an ACTIVE state.
+func (o ConfigurationKmsKeyPtrOutput) KmsKeyState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConfigurationKmsKey) *string {
+		if v == nil {
+			return nil
+		}
+		return v.KmsKeyState
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the vault containing the encryption key assigned to this Hosted Environment. If the Hosted Environment is using an Oracle-managed Key (i.e., not a CMEK), then the kmsVaultId will be a null string.
+func (o ConfigurationKmsKeyPtrOutput) KmsVaultId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConfigurationKmsKey) *string {
+		if v == nil {
+			return nil
+		}
+		return v.KmsVaultId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The timestamp when encryption key was first enabled for this Hosted Environment. RFC3339 formatted.
+func (o ConfigurationKmsKeyPtrOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConfigurationKmsKey) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeCreated
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The timestamp of the last update to the encryption key status. RFC3339 formatted.
+//
+// ** IMPORTANT **
+// The configuration cannot be deleted.
+func (o ConfigurationKmsKeyPtrOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConfigurationKmsKey) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeUpdated
+	}).(pulumi.StringPtrOutput)
+}
+
 type IndexKey struct {
 	// The name of a column to be included as an index key.
 	ColumnName string `pulumi:"columnName"`
@@ -670,7 +895,7 @@ type TableTableLimits struct {
 	// (Updatable) Maximum sustained write throughput limit for the table.
 	//
 	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
 	MaxWriteUnits int `pulumi:"maxWriteUnits"`
 }
 
@@ -695,7 +920,7 @@ type TableTableLimitsArgs struct {
 	// (Updatable) Maximum sustained write throughput limit for the table.
 	//
 	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
 	MaxWriteUnits pulumi.IntInput `pulumi:"maxWriteUnits"`
 }
 
@@ -794,7 +1019,7 @@ func (o TableTableLimitsOutput) MaxStorageInGbs() pulumi.IntOutput {
 // (Updatable) Maximum sustained write throughput limit for the table.
 //
 // ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
 func (o TableTableLimitsOutput) MaxWriteUnits() pulumi.IntOutput {
 	return o.ApplyT(func(v TableTableLimits) int { return v.MaxWriteUnits }).(pulumi.IntOutput)
 }
@@ -856,7 +1081,7 @@ func (o TableTableLimitsPtrOutput) MaxStorageInGbs() pulumi.IntPtrOutput {
 // (Updatable) Maximum sustained write throughput limit for the table.
 //
 // ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
 func (o TableTableLimitsPtrOutput) MaxWriteUnits() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *TableTableLimits) *int {
 		if v == nil {
@@ -864,6 +1089,139 @@ func (o TableTableLimitsPtrOutput) MaxWriteUnits() pulumi.IntPtrOutput {
 		}
 		return &v.MaxWriteUnits
 	}).(pulumi.IntPtrOutput)
+}
+
+type GetConfigurationKmsKey struct {
+	// The OCID of the KMS encryption key assigned to this Hosted Environment. If the Hosted Environment is using an Oracle-managed Key (i.e., not a CMEK), then the id will be a null string.
+	Id string `pulumi:"id"`
+	// The current state of the encryption key assigned to this Hosted Environment. Oracle-managed keys will always report an ACTIVE state.
+	KmsKeyState string `pulumi:"kmsKeyState"`
+	// The OCID of the vault containing the encryption key assigned to this Hosted Environment. If the Hosted Environment is using an Oracle-managed Key (i.e., not a CMEK), then the kmsVaultId will be a null string.
+	KmsVaultId string `pulumi:"kmsVaultId"`
+	// The timestamp when encryption key was first enabled for this Hosted Environment. RFC3339 formatted.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The timestamp of the last update to the encryption key status. RFC3339 formatted.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetConfigurationKmsKeyInput is an input type that accepts GetConfigurationKmsKeyArgs and GetConfigurationKmsKeyOutput values.
+// You can construct a concrete instance of `GetConfigurationKmsKeyInput` via:
+//
+//	GetConfigurationKmsKeyArgs{...}
+type GetConfigurationKmsKeyInput interface {
+	pulumi.Input
+
+	ToGetConfigurationKmsKeyOutput() GetConfigurationKmsKeyOutput
+	ToGetConfigurationKmsKeyOutputWithContext(context.Context) GetConfigurationKmsKeyOutput
+}
+
+type GetConfigurationKmsKeyArgs struct {
+	// The OCID of the KMS encryption key assigned to this Hosted Environment. If the Hosted Environment is using an Oracle-managed Key (i.e., not a CMEK), then the id will be a null string.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The current state of the encryption key assigned to this Hosted Environment. Oracle-managed keys will always report an ACTIVE state.
+	KmsKeyState pulumi.StringInput `pulumi:"kmsKeyState"`
+	// The OCID of the vault containing the encryption key assigned to this Hosted Environment. If the Hosted Environment is using an Oracle-managed Key (i.e., not a CMEK), then the kmsVaultId will be a null string.
+	KmsVaultId pulumi.StringInput `pulumi:"kmsVaultId"`
+	// The timestamp when encryption key was first enabled for this Hosted Environment. RFC3339 formatted.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The timestamp of the last update to the encryption key status. RFC3339 formatted.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetConfigurationKmsKeyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigurationKmsKey)(nil)).Elem()
+}
+
+func (i GetConfigurationKmsKeyArgs) ToGetConfigurationKmsKeyOutput() GetConfigurationKmsKeyOutput {
+	return i.ToGetConfigurationKmsKeyOutputWithContext(context.Background())
+}
+
+func (i GetConfigurationKmsKeyArgs) ToGetConfigurationKmsKeyOutputWithContext(ctx context.Context) GetConfigurationKmsKeyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigurationKmsKeyOutput)
+}
+
+// GetConfigurationKmsKeyArrayInput is an input type that accepts GetConfigurationKmsKeyArray and GetConfigurationKmsKeyArrayOutput values.
+// You can construct a concrete instance of `GetConfigurationKmsKeyArrayInput` via:
+//
+//	GetConfigurationKmsKeyArray{ GetConfigurationKmsKeyArgs{...} }
+type GetConfigurationKmsKeyArrayInput interface {
+	pulumi.Input
+
+	ToGetConfigurationKmsKeyArrayOutput() GetConfigurationKmsKeyArrayOutput
+	ToGetConfigurationKmsKeyArrayOutputWithContext(context.Context) GetConfigurationKmsKeyArrayOutput
+}
+
+type GetConfigurationKmsKeyArray []GetConfigurationKmsKeyInput
+
+func (GetConfigurationKmsKeyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigurationKmsKey)(nil)).Elem()
+}
+
+func (i GetConfigurationKmsKeyArray) ToGetConfigurationKmsKeyArrayOutput() GetConfigurationKmsKeyArrayOutput {
+	return i.ToGetConfigurationKmsKeyArrayOutputWithContext(context.Background())
+}
+
+func (i GetConfigurationKmsKeyArray) ToGetConfigurationKmsKeyArrayOutputWithContext(ctx context.Context) GetConfigurationKmsKeyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigurationKmsKeyArrayOutput)
+}
+
+type GetConfigurationKmsKeyOutput struct{ *pulumi.OutputState }
+
+func (GetConfigurationKmsKeyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigurationKmsKey)(nil)).Elem()
+}
+
+func (o GetConfigurationKmsKeyOutput) ToGetConfigurationKmsKeyOutput() GetConfigurationKmsKeyOutput {
+	return o
+}
+
+func (o GetConfigurationKmsKeyOutput) ToGetConfigurationKmsKeyOutputWithContext(ctx context.Context) GetConfigurationKmsKeyOutput {
+	return o
+}
+
+// The OCID of the KMS encryption key assigned to this Hosted Environment. If the Hosted Environment is using an Oracle-managed Key (i.e., not a CMEK), then the id will be a null string.
+func (o GetConfigurationKmsKeyOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigurationKmsKey) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The current state of the encryption key assigned to this Hosted Environment. Oracle-managed keys will always report an ACTIVE state.
+func (o GetConfigurationKmsKeyOutput) KmsKeyState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigurationKmsKey) string { return v.KmsKeyState }).(pulumi.StringOutput)
+}
+
+// The OCID of the vault containing the encryption key assigned to this Hosted Environment. If the Hosted Environment is using an Oracle-managed Key (i.e., not a CMEK), then the kmsVaultId will be a null string.
+func (o GetConfigurationKmsKeyOutput) KmsVaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigurationKmsKey) string { return v.KmsVaultId }).(pulumi.StringOutput)
+}
+
+// The timestamp when encryption key was first enabled for this Hosted Environment. RFC3339 formatted.
+func (o GetConfigurationKmsKeyOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigurationKmsKey) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The timestamp of the last update to the encryption key status. RFC3339 formatted.
+func (o GetConfigurationKmsKeyOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigurationKmsKey) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetConfigurationKmsKeyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConfigurationKmsKeyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigurationKmsKey)(nil)).Elem()
+}
+
+func (o GetConfigurationKmsKeyArrayOutput) ToGetConfigurationKmsKeyArrayOutput() GetConfigurationKmsKeyArrayOutput {
+	return o
+}
+
+func (o GetConfigurationKmsKeyArrayOutput) ToGetConfigurationKmsKeyArrayOutputWithContext(ctx context.Context) GetConfigurationKmsKeyArrayOutput {
+	return o
+}
+
+func (o GetConfigurationKmsKeyArrayOutput) Index(i pulumi.IntInput) GetConfigurationKmsKeyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConfigurationKmsKey {
+		return vs[0].([]GetConfigurationKmsKey)[vs[1].(int)]
+	}).(GetConfigurationKmsKeyOutput)
 }
 
 type GetIndexKey struct {
@@ -3001,6 +3359,8 @@ func (o GetTablesTableCollectionTableLimitArrayOutput) Index(i pulumi.IntInput) 
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigurationKmsKeyInput)(nil)).Elem(), ConfigurationKmsKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigurationKmsKeyPtrInput)(nil)).Elem(), ConfigurationKmsKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IndexKeyInput)(nil)).Elem(), IndexKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IndexKeyArrayInput)(nil)).Elem(), IndexKeyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TableReplicaTypeInput)(nil)).Elem(), TableReplicaTypeArgs{})
@@ -3013,6 +3373,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*TableSchemaIdentityArrayInput)(nil)).Elem(), TableSchemaIdentityArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TableTableLimitsInput)(nil)).Elem(), TableTableLimitsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TableTableLimitsPtrInput)(nil)).Elem(), TableTableLimitsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigurationKmsKeyInput)(nil)).Elem(), GetConfigurationKmsKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigurationKmsKeyArrayInput)(nil)).Elem(), GetConfigurationKmsKeyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIndexKeyInput)(nil)).Elem(), GetIndexKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIndexKeyArrayInput)(nil)).Elem(), GetIndexKeyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIndexesFilterInput)(nil)).Elem(), GetIndexesFilterArgs{})
@@ -3045,6 +3407,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTablesTableCollectionSchemaIdentityArrayInput)(nil)).Elem(), GetTablesTableCollectionSchemaIdentityArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTablesTableCollectionTableLimitInput)(nil)).Elem(), GetTablesTableCollectionTableLimitArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTablesTableCollectionTableLimitArrayInput)(nil)).Elem(), GetTablesTableCollectionTableLimitArray{})
+	pulumi.RegisterOutputType(ConfigurationKmsKeyOutput{})
+	pulumi.RegisterOutputType(ConfigurationKmsKeyPtrOutput{})
 	pulumi.RegisterOutputType(IndexKeyOutput{})
 	pulumi.RegisterOutputType(IndexKeyArrayOutput{})
 	pulumi.RegisterOutputType(TableReplicaTypeOutput{})
@@ -3057,6 +3421,8 @@ func init() {
 	pulumi.RegisterOutputType(TableSchemaIdentityArrayOutput{})
 	pulumi.RegisterOutputType(TableTableLimitsOutput{})
 	pulumi.RegisterOutputType(TableTableLimitsPtrOutput{})
+	pulumi.RegisterOutputType(GetConfigurationKmsKeyOutput{})
+	pulumi.RegisterOutputType(GetConfigurationKmsKeyArrayOutput{})
 	pulumi.RegisterOutputType(GetIndexKeyOutput{})
 	pulumi.RegisterOutputType(GetIndexKeyArrayOutput{})
 	pulumi.RegisterOutputType(GetIndexesFilterOutput{})

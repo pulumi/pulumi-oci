@@ -26,6 +26,10 @@ namespace Pulumi.Oci.DataFlow.Outputs
         /// </summary>
         public readonly string NetworkType;
         /// <summary>
+        /// The OCIDs of Network Security Groups (NSGs).
+        /// </summary>
+        public readonly ImmutableArray<string> NsgIds;
+        /// <summary>
         /// Ip Address of private endpoint
         /// </summary>
         public readonly string PrivateEndpointIp;
@@ -50,6 +54,8 @@ namespace Pulumi.Oci.DataFlow.Outputs
 
             string networkType,
 
+            ImmutableArray<string> nsgIds,
+
             string privateEndpointIp,
 
             string publicEndpointIp,
@@ -61,6 +67,7 @@ namespace Pulumi.Oci.DataFlow.Outputs
             AccessControlRules = accessControlRules;
             HostNamePrefix = hostNamePrefix;
             NetworkType = networkType;
+            NsgIds = nsgIds;
             PrivateEndpointIp = privateEndpointIp;
             PublicEndpointIp = publicEndpointIp;
             SubnetId = subnetId;

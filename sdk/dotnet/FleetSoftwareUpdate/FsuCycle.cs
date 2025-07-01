@@ -71,6 +71,12 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
     ///             TimeToStart = fsuCycleStageActionScheduleTimeToStart,
     ///             Type = fsuCycleStageActionScheduleType,
     ///         },
+    ///         UpgradeDetails = new Oci.FleetSoftwareUpdate.Inputs.FsuCycleUpgradeDetailsArgs
+    ///         {
+    ///             CollectionType = fsuCycleUpgradeDetailsCollectionType,
+    ///             IsRecompileInvalidObjects = fsuCycleUpgradeDetailsIsRecompileInvalidObjects,
+    ///             IsTimeZoneUpgrade = fsuCycleUpgradeDetailsIsTimeZoneUpgrade,
+    ///         },
     ///     });
     /// 
     /// });
@@ -100,7 +106,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         public Output<Outputs.FsuCycleBatchingStrategy> BatchingStrategy { get; private set; } = null!;
 
         /// <summary>
-        /// Type of Collection this Exadata Fleet Update Cycle belongs to.
+        /// Type of Exadata Fleet Update collection being upgraded.
         /// </summary>
         [Output("collectionType")]
         public Output<string> CollectionType { get; private set; } = null!;
@@ -244,14 +250,16 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Type of Exadata Fleet Update Cycle. 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Type of Exadata Fleet Update Cycle.
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Details of supported upgrade options for DB or GI collection.
+        /// </summary>
+        [Output("upgradeDetails")]
+        public Output<Outputs.FsuCycleUpgradeDetails> UpgradeDetails { get; private set; } = null!;
 
 
         /// <summary>
@@ -402,14 +410,16 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         public Input<Inputs.FsuCycleStageActionScheduleArgs>? StageActionSchedule { get; set; }
 
         /// <summary>
-        /// (Updatable) Type of Exadata Fleet Update Cycle. 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Type of Exadata Fleet Update Cycle.
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Details of supported upgrade options for DB or GI collection.
+        /// </summary>
+        [Input("upgradeDetails")]
+        public Input<Inputs.FsuCycleUpgradeDetailsArgs>? UpgradeDetails { get; set; }
 
         public FsuCycleArgs()
         {
@@ -432,7 +442,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         public Input<Inputs.FsuCycleBatchingStrategyGetArgs>? BatchingStrategy { get; set; }
 
         /// <summary>
-        /// Type of Collection this Exadata Fleet Update Cycle belongs to.
+        /// Type of Exadata Fleet Update collection being upgraded.
         /// </summary>
         [Input("collectionType")]
         public Input<string>? CollectionType { get; set; }
@@ -606,14 +616,16 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// (Updatable) Type of Exadata Fleet Update Cycle. 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Type of Exadata Fleet Update Cycle.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
+
+        /// <summary>
+        /// (Updatable) Details of supported upgrade options for DB or GI collection.
+        /// </summary>
+        [Input("upgradeDetails")]
+        public Input<Inputs.FsuCycleUpgradeDetailsGetArgs>? UpgradeDetails { get; set; }
 
         public FsuCycleState()
         {

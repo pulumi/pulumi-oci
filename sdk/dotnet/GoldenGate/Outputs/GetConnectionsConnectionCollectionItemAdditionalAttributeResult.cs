@@ -14,7 +14,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
     public sealed class GetConnectionsConnectionCollectionItemAdditionalAttributeResult
     {
         /// <summary>
-        /// The name of the property entry.
+        /// The catalog name within Polaris where Iceberg tables are registered.
         /// </summary>
         public readonly string Name;
         /// <summary>

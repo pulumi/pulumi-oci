@@ -41,6 +41,7 @@ import (
 //					"bar-key": pulumi.String("value"),
 //				},
 //				RetentionInDays: pulumi.Any(mysqlBackupRetentionInDays),
+//				SoftDelete:      pulumi.Any(mysqlBackupSoftDelete),
 //			})
 //			if err != nil {
 //				return err
@@ -96,6 +97,8 @@ type MysqlBackup struct {
 	RetentionInDays pulumi.IntOutput `pulumi:"retentionInDays"`
 	// The shape of the DB System instance used for backup.
 	ShapeName pulumi.StringOutput `pulumi:"shapeName"`
+	// (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+	SoftDelete pulumi.StringOutput `pulumi:"softDelete"`
 	// Details of backup source in the cloud.
 	SourceDetails MysqlBackupSourceDetailsPtrOutput `pulumi:"sourceDetails"`
 	// The state of the backup.
@@ -175,6 +178,8 @@ type mysqlBackupState struct {
 	RetentionInDays *int `pulumi:"retentionInDays"`
 	// The shape of the DB System instance used for backup.
 	ShapeName *string `pulumi:"shapeName"`
+	// (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+	SoftDelete *string `pulumi:"softDelete"`
 	// Details of backup source in the cloud.
 	SourceDetails *MysqlBackupSourceDetails `pulumi:"sourceDetails"`
 	// The state of the backup.
@@ -225,6 +230,8 @@ type MysqlBackupState struct {
 	RetentionInDays pulumi.IntPtrInput
 	// The shape of the DB System instance used for backup.
 	ShapeName pulumi.StringPtrInput
+	// (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+	SoftDelete pulumi.StringPtrInput
 	// Details of backup source in the cloud.
 	SourceDetails MysqlBackupSourceDetailsPtrInput
 	// The state of the backup.
@@ -261,6 +268,8 @@ type mysqlBackupArgs struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Number of days to retain this backup.
 	RetentionInDays *int `pulumi:"retentionInDays"`
+	// (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+	SoftDelete *string `pulumi:"softDelete"`
 	// Details of backup source in the cloud.
 	SourceDetails *MysqlBackupSourceDetails `pulumi:"sourceDetails"`
 }
@@ -284,6 +293,8 @@ type MysqlBackupArgs struct {
 	FreeformTags pulumi.StringMapInput
 	// (Updatable) Number of days to retain this backup.
 	RetentionInDays pulumi.IntPtrInput
+	// (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+	SoftDelete pulumi.StringPtrInput
 	// Details of backup source in the cloud.
 	SourceDetails MysqlBackupSourceDetailsPtrInput
 }
@@ -462,6 +473,11 @@ func (o MysqlBackupOutput) RetentionInDays() pulumi.IntOutput {
 // The shape of the DB System instance used for backup.
 func (o MysqlBackupOutput) ShapeName() pulumi.StringOutput {
 	return o.ApplyT(func(v *MysqlBackup) pulumi.StringOutput { return v.ShapeName }).(pulumi.StringOutput)
+}
+
+// (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+func (o MysqlBackupOutput) SoftDelete() pulumi.StringOutput {
+	return o.ApplyT(func(v *MysqlBackup) pulumi.StringOutput { return v.SoftDelete }).(pulumi.StringOutput)
 }
 
 // Details of backup source in the cloud.

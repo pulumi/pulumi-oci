@@ -36,17 +36,14 @@ class FsuCycleArgs:
                  is_ignore_patches: Optional[pulumi.Input[builtins.bool]] = None,
                  is_keep_placement: Optional[pulumi.Input[builtins.bool]] = None,
                  max_drain_timeout_in_seconds: Optional[pulumi.Input[builtins.int]] = None,
-                 stage_action_schedule: Optional[pulumi.Input['FsuCycleStageActionScheduleArgs']] = None):
+                 stage_action_schedule: Optional[pulumi.Input['FsuCycleStageActionScheduleArgs']] = None,
+                 upgrade_details: Optional[pulumi.Input['FsuCycleUpgradeDetailsArgs']] = None):
         """
         The set of arguments for constructing a FsuCycle resource.
         :param pulumi.Input[builtins.str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[builtins.str] fsu_collection_id: OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to.
         :param pulumi.Input['FsuCycleGoalVersionDetailsArgs'] goal_version_details: (Updatable) Goal version or image details for the Exadata Fleet Update Cycle.
-        :param pulumi.Input[builtins.str] type: (Updatable) Type of Exadata Fleet Update Cycle. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[builtins.str] type: (Updatable) Type of Exadata Fleet Update Cycle.
         :param pulumi.Input['FsuCycleApplyActionScheduleArgs'] apply_action_schedule: Scheduling related details for the Exadata Fleet Update Action during create operations. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails for Stage and Apply Actions in Exadata Fleet Update Cycle creation would not create Actions. Null scheduleDetails for CreateAction would execute the Exadata Fleet Update Action as soon as possible.
         :param pulumi.Input['FsuCycleBatchingStrategyArgs'] batching_strategy: (Updatable) Batching strategy details to use during PRECHECK and APPLY Cycle Actions.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -58,6 +55,7 @@ class FsuCycleArgs:
         :param pulumi.Input[builtins.bool] is_keep_placement: (Updatable) Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
         :param pulumi.Input[builtins.int] max_drain_timeout_in_seconds: (Updatable) Service drain timeout specified in seconds.
         :param pulumi.Input['FsuCycleStageActionScheduleArgs'] stage_action_schedule: Scheduling related details for the Exadata Fleet Update Action during create operations. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails for Stage and Apply Actions in Exadata Fleet Update Cycle creation would not create Actions. Null scheduleDetails for CreateAction would execute the Exadata Fleet Update Action as soon as possible.
+        :param pulumi.Input['FsuCycleUpgradeDetailsArgs'] upgrade_details: (Updatable) Details of supported upgrade options for DB or GI collection.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "fsu_collection_id", fsu_collection_id)
@@ -85,6 +83,8 @@ class FsuCycleArgs:
             pulumi.set(__self__, "max_drain_timeout_in_seconds", max_drain_timeout_in_seconds)
         if stage_action_schedule is not None:
             pulumi.set(__self__, "stage_action_schedule", stage_action_schedule)
+        if upgrade_details is not None:
+            pulumi.set(__self__, "upgrade_details", upgrade_details)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -126,11 +126,7 @@ class FsuCycleArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[builtins.str]:
         """
-        (Updatable) Type of Exadata Fleet Update Cycle. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) Type of Exadata Fleet Update Cycle.
         """
         return pulumi.get(self, "type")
 
@@ -270,6 +266,18 @@ class FsuCycleArgs:
     def stage_action_schedule(self, value: Optional[pulumi.Input['FsuCycleStageActionScheduleArgs']]):
         pulumi.set(self, "stage_action_schedule", value)
 
+    @property
+    @pulumi.getter(name="upgradeDetails")
+    def upgrade_details(self) -> Optional[pulumi.Input['FsuCycleUpgradeDetailsArgs']]:
+        """
+        (Updatable) Details of supported upgrade options for DB or GI collection.
+        """
+        return pulumi.get(self, "upgrade_details")
+
+    @upgrade_details.setter
+    def upgrade_details(self, value: Optional[pulumi.Input['FsuCycleUpgradeDetailsArgs']]):
+        pulumi.set(self, "upgrade_details", value)
+
 
 @pulumi.input_type
 class _FsuCycleState:
@@ -300,12 +308,13 @@ class _FsuCycleState:
                  time_created: Optional[pulumi.Input[builtins.str]] = None,
                  time_finished: Optional[pulumi.Input[builtins.str]] = None,
                  time_updated: Optional[pulumi.Input[builtins.str]] = None,
-                 type: Optional[pulumi.Input[builtins.str]] = None):
+                 type: Optional[pulumi.Input[builtins.str]] = None,
+                 upgrade_details: Optional[pulumi.Input['FsuCycleUpgradeDetailsArgs']] = None):
         """
         Input properties used for looking up and filtering FsuCycle resources.
         :param pulumi.Input['FsuCycleApplyActionScheduleArgs'] apply_action_schedule: Scheduling related details for the Exadata Fleet Update Action during create operations. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails for Stage and Apply Actions in Exadata Fleet Update Cycle creation would not create Actions. Null scheduleDetails for CreateAction would execute the Exadata Fleet Update Action as soon as possible.
         :param pulumi.Input['FsuCycleBatchingStrategyArgs'] batching_strategy: (Updatable) Batching strategy details to use during PRECHECK and APPLY Cycle Actions.
-        :param pulumi.Input[builtins.str] collection_type: Type of Collection this Exadata Fleet Update Cycle belongs to.
+        :param pulumi.Input[builtins.str] collection_type: Type of Exadata Fleet Update collection being upgraded.
         :param pulumi.Input[builtins.str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input['FsuCycleDiagnosticsCollectionArgs'] diagnostics_collection: (Updatable) Details to configure diagnostics collection for targets affected by this Exadata Fleet Update Maintenance Cycle.
@@ -329,11 +338,8 @@ class _FsuCycleState:
         :param pulumi.Input[builtins.str] time_created: The date and time the Exadata Fleet Update Cycle was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         :param pulumi.Input[builtins.str] time_finished: The date and time the Exadata Fleet Update Cycle was finished, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[builtins.str] time_updated: The date and time the Exadata Fleet Update Cycle was updated, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        :param pulumi.Input[builtins.str] type: (Updatable) Type of Exadata Fleet Update Cycle. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[builtins.str] type: (Updatable) Type of Exadata Fleet Update Cycle.
+        :param pulumi.Input['FsuCycleUpgradeDetailsArgs'] upgrade_details: (Updatable) Details of supported upgrade options for DB or GI collection.
         """
         if apply_action_schedule is not None:
             pulumi.set(__self__, "apply_action_schedule", apply_action_schedule)
@@ -389,6 +395,8 @@ class _FsuCycleState:
             pulumi.set(__self__, "time_updated", time_updated)
         if type is not None:
             pulumi.set(__self__, "type", type)
+        if upgrade_details is not None:
+            pulumi.set(__self__, "upgrade_details", upgrade_details)
 
     @property
     @pulumi.getter(name="applyActionSchedule")
@@ -418,7 +426,7 @@ class _FsuCycleState:
     @pulumi.getter(name="collectionType")
     def collection_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Type of Collection this Exadata Fleet Update Cycle belongs to.
+        Type of Exadata Fleet Update collection being upgraded.
         """
         return pulumi.get(self, "collection_type")
 
@@ -706,17 +714,25 @@ class _FsuCycleState:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        (Updatable) Type of Exadata Fleet Update Cycle. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) Type of Exadata Fleet Update Cycle.
         """
         return pulumi.get(self, "type")
 
     @type.setter
     def type(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter(name="upgradeDetails")
+    def upgrade_details(self) -> Optional[pulumi.Input['FsuCycleUpgradeDetailsArgs']]:
+        """
+        (Updatable) Details of supported upgrade options for DB or GI collection.
+        """
+        return pulumi.get(self, "upgrade_details")
+
+    @upgrade_details.setter
+    def upgrade_details(self, value: Optional[pulumi.Input['FsuCycleUpgradeDetailsArgs']]):
+        pulumi.set(self, "upgrade_details", value)
 
 
 @pulumi.type_token("oci:FleetSoftwareUpdate/fsuCycle:FsuCycle")
@@ -740,6 +756,7 @@ class FsuCycle(pulumi.CustomResource):
                  max_drain_timeout_in_seconds: Optional[pulumi.Input[builtins.int]] = None,
                  stage_action_schedule: Optional[pulumi.Input[Union['FsuCycleStageActionScheduleArgs', 'FsuCycleStageActionScheduleArgsDict']]] = None,
                  type: Optional[pulumi.Input[builtins.str]] = None,
+                 upgrade_details: Optional[pulumi.Input[Union['FsuCycleUpgradeDetailsArgs', 'FsuCycleUpgradeDetailsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Fsu Cycle resource in Oracle Cloud Infrastructure Fleet Software Update service.
@@ -790,6 +807,11 @@ class FsuCycle(pulumi.CustomResource):
             stage_action_schedule={
                 "time_to_start": fsu_cycle_stage_action_schedule_time_to_start,
                 "type": fsu_cycle_stage_action_schedule_type,
+            },
+            upgrade_details={
+                "collection_type": fsu_cycle_upgrade_details_collection_type,
+                "is_recompile_invalid_objects": fsu_cycle_upgrade_details_is_recompile_invalid_objects,
+                "is_time_zone_upgrade": fsu_cycle_upgrade_details_is_time_zone_upgrade,
             })
         ```
 
@@ -817,11 +839,8 @@ class FsuCycle(pulumi.CustomResource):
         :param pulumi.Input[builtins.bool] is_keep_placement: (Updatable) Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
         :param pulumi.Input[builtins.int] max_drain_timeout_in_seconds: (Updatable) Service drain timeout specified in seconds.
         :param pulumi.Input[Union['FsuCycleStageActionScheduleArgs', 'FsuCycleStageActionScheduleArgsDict']] stage_action_schedule: Scheduling related details for the Exadata Fleet Update Action during create operations. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails for Stage and Apply Actions in Exadata Fleet Update Cycle creation would not create Actions. Null scheduleDetails for CreateAction would execute the Exadata Fleet Update Action as soon as possible.
-        :param pulumi.Input[builtins.str] type: (Updatable) Type of Exadata Fleet Update Cycle. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[builtins.str] type: (Updatable) Type of Exadata Fleet Update Cycle.
+        :param pulumi.Input[Union['FsuCycleUpgradeDetailsArgs', 'FsuCycleUpgradeDetailsArgsDict']] upgrade_details: (Updatable) Details of supported upgrade options for DB or GI collection.
         """
         ...
     @overload
@@ -878,6 +897,11 @@ class FsuCycle(pulumi.CustomResource):
             stage_action_schedule={
                 "time_to_start": fsu_cycle_stage_action_schedule_time_to_start,
                 "type": fsu_cycle_stage_action_schedule_type,
+            },
+            upgrade_details={
+                "collection_type": fsu_cycle_upgrade_details_collection_type,
+                "is_recompile_invalid_objects": fsu_cycle_upgrade_details_is_recompile_invalid_objects,
+                "is_time_zone_upgrade": fsu_cycle_upgrade_details_is_time_zone_upgrade,
             })
         ```
 
@@ -919,6 +943,7 @@ class FsuCycle(pulumi.CustomResource):
                  max_drain_timeout_in_seconds: Optional[pulumi.Input[builtins.int]] = None,
                  stage_action_schedule: Optional[pulumi.Input[Union['FsuCycleStageActionScheduleArgs', 'FsuCycleStageActionScheduleArgsDict']]] = None,
                  type: Optional[pulumi.Input[builtins.str]] = None,
+                 upgrade_details: Optional[pulumi.Input[Union['FsuCycleUpgradeDetailsArgs', 'FsuCycleUpgradeDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -951,6 +976,7 @@ class FsuCycle(pulumi.CustomResource):
             if type is None and not opts.urn:
                 raise TypeError("Missing required property 'type'")
             __props__.__dict__["type"] = type
+            __props__.__dict__["upgrade_details"] = upgrade_details
             __props__.__dict__["collection_type"] = None
             __props__.__dict__["executing_fsu_action_id"] = None
             __props__.__dict__["last_completed_action"] = None
@@ -999,7 +1025,8 @@ class FsuCycle(pulumi.CustomResource):
             time_created: Optional[pulumi.Input[builtins.str]] = None,
             time_finished: Optional[pulumi.Input[builtins.str]] = None,
             time_updated: Optional[pulumi.Input[builtins.str]] = None,
-            type: Optional[pulumi.Input[builtins.str]] = None) -> 'FsuCycle':
+            type: Optional[pulumi.Input[builtins.str]] = None,
+            upgrade_details: Optional[pulumi.Input[Union['FsuCycleUpgradeDetailsArgs', 'FsuCycleUpgradeDetailsArgsDict']]] = None) -> 'FsuCycle':
         """
         Get an existing FsuCycle resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1009,7 +1036,7 @@ class FsuCycle(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['FsuCycleApplyActionScheduleArgs', 'FsuCycleApplyActionScheduleArgsDict']] apply_action_schedule: Scheduling related details for the Exadata Fleet Update Action during create operations. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails for Stage and Apply Actions in Exadata Fleet Update Cycle creation would not create Actions. Null scheduleDetails for CreateAction would execute the Exadata Fleet Update Action as soon as possible.
         :param pulumi.Input[Union['FsuCycleBatchingStrategyArgs', 'FsuCycleBatchingStrategyArgsDict']] batching_strategy: (Updatable) Batching strategy details to use during PRECHECK and APPLY Cycle Actions.
-        :param pulumi.Input[builtins.str] collection_type: Type of Collection this Exadata Fleet Update Cycle belongs to.
+        :param pulumi.Input[builtins.str] collection_type: Type of Exadata Fleet Update collection being upgraded.
         :param pulumi.Input[builtins.str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Union['FsuCycleDiagnosticsCollectionArgs', 'FsuCycleDiagnosticsCollectionArgsDict']] diagnostics_collection: (Updatable) Details to configure diagnostics collection for targets affected by this Exadata Fleet Update Maintenance Cycle.
@@ -1033,11 +1060,8 @@ class FsuCycle(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] time_created: The date and time the Exadata Fleet Update Cycle was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         :param pulumi.Input[builtins.str] time_finished: The date and time the Exadata Fleet Update Cycle was finished, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[builtins.str] time_updated: The date and time the Exadata Fleet Update Cycle was updated, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        :param pulumi.Input[builtins.str] type: (Updatable) Type of Exadata Fleet Update Cycle. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[builtins.str] type: (Updatable) Type of Exadata Fleet Update Cycle.
+        :param pulumi.Input[Union['FsuCycleUpgradeDetailsArgs', 'FsuCycleUpgradeDetailsArgsDict']] upgrade_details: (Updatable) Details of supported upgrade options for DB or GI collection.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1070,6 +1094,7 @@ class FsuCycle(pulumi.CustomResource):
         __props__.__dict__["time_finished"] = time_finished
         __props__.__dict__["time_updated"] = time_updated
         __props__.__dict__["type"] = type
+        __props__.__dict__["upgrade_details"] = upgrade_details
         return FsuCycle(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -1092,7 +1117,7 @@ class FsuCycle(pulumi.CustomResource):
     @pulumi.getter(name="collectionType")
     def collection_type(self) -> pulumi.Output[builtins.str]:
         """
-        Type of Collection this Exadata Fleet Update Cycle belongs to.
+        Type of Exadata Fleet Update collection being upgraded.
         """
         return pulumi.get(self, "collection_type")
 
@@ -1284,11 +1309,15 @@ class FsuCycle(pulumi.CustomResource):
     @pulumi.getter
     def type(self) -> pulumi.Output[builtins.str]:
         """
-        (Updatable) Type of Exadata Fleet Update Cycle. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) Type of Exadata Fleet Update Cycle.
         """
         return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="upgradeDetails")
+    def upgrade_details(self) -> pulumi.Output['outputs.FsuCycleUpgradeDetails']:
+        """
+        (Updatable) Details of supported upgrade options for DB or GI collection.
+        """
+        return pulumi.get(self, "upgrade_details")
 

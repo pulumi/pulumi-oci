@@ -10,6 +10,34 @@ import * as utilities from "../utilities";
  * This data source provides the list of Log Analytics Entities in Oracle Cloud Infrastructure Log Analytics service.
  *
  * Return a list of log analytics entities.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testLogAnalyticsEntities = oci.LogAnalytics.getLogAnalyticsEntities({
+ *     compartmentId: compartmentId,
+ *     namespace: logAnalyticsEntityNamespace,
+ *     cloudResourceId: logAnalyticsEntityCloudResourceId,
+ *     definedTagEquals: logAnalyticsEntityDefinedTagEquals,
+ *     definedTagExists: logAnalyticsEntityDefinedTagExists,
+ *     entityTypeNames: logAnalyticsEntityEntityTypeName,
+ *     freeformTagEquals: logAnalyticsEntityFreeformTagEquals,
+ *     freeformTagExists: logAnalyticsEntityFreeformTagExists,
+ *     hostname: logAnalyticsEntityHostname,
+ *     hostnameContains: logAnalyticsEntityHostnameContains,
+ *     isManagementAgentIdNull: logAnalyticsEntityIsManagementAgentIdNull,
+ *     isShowAssociatedSourcesCount: logAnalyticsEntityIsShowAssociatedSourcesCount,
+ *     lifecycleDetailsContains: logAnalyticsEntityLifecycleDetailsContains,
+ *     metadataEquals: logAnalyticsEntityMetadataEquals,
+ *     name: logAnalyticsEntityName,
+ *     nameContains: logAnalyticsEntityNameContains,
+ *     sourceId: testSource.id,
+ *     state: logAnalyticsEntityState,
+ * });
+ * ```
  */
 export function getLogAnalyticsEntities(args: GetLogAnalyticsEntitiesArgs, opts?: pulumi.InvokeOptions): Promise<GetLogAnalyticsEntitiesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -172,6 +200,34 @@ export interface GetLogAnalyticsEntitiesResult {
  * This data source provides the list of Log Analytics Entities in Oracle Cloud Infrastructure Log Analytics service.
  *
  * Return a list of log analytics entities.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testLogAnalyticsEntities = oci.LogAnalytics.getLogAnalyticsEntities({
+ *     compartmentId: compartmentId,
+ *     namespace: logAnalyticsEntityNamespace,
+ *     cloudResourceId: logAnalyticsEntityCloudResourceId,
+ *     definedTagEquals: logAnalyticsEntityDefinedTagEquals,
+ *     definedTagExists: logAnalyticsEntityDefinedTagExists,
+ *     entityTypeNames: logAnalyticsEntityEntityTypeName,
+ *     freeformTagEquals: logAnalyticsEntityFreeformTagEquals,
+ *     freeformTagExists: logAnalyticsEntityFreeformTagExists,
+ *     hostname: logAnalyticsEntityHostname,
+ *     hostnameContains: logAnalyticsEntityHostnameContains,
+ *     isManagementAgentIdNull: logAnalyticsEntityIsManagementAgentIdNull,
+ *     isShowAssociatedSourcesCount: logAnalyticsEntityIsShowAssociatedSourcesCount,
+ *     lifecycleDetailsContains: logAnalyticsEntityLifecycleDetailsContains,
+ *     metadataEquals: logAnalyticsEntityMetadataEquals,
+ *     name: logAnalyticsEntityName,
+ *     nameContains: logAnalyticsEntityNameContains,
+ *     sourceId: testSource.id,
+ *     state: logAnalyticsEntityState,
+ * });
+ * ```
  */
 export function getLogAnalyticsEntitiesOutput(args: GetLogAnalyticsEntitiesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLogAnalyticsEntitiesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

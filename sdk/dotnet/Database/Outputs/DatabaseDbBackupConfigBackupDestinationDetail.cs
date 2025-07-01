@@ -22,9 +22,24 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string? Id;
         /// <summary>
+        /// Indicates whether the backup destination is cross-region or local region.
+        /// </summary>
+        public readonly bool? IsRemote;
+        /// <summary>
+        /// The name of the remote region where the remote automatic incremental backups will be stored.
+        /// </summary>
+        public readonly string? RemoteRegion;
+        /// <summary>
         /// Type of the database backup destination.
         /// </summary>
         public readonly string? Type;
+        /// <summary>
+        /// For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+        /// </summary>
+        public readonly string? VpcPassword;
+        /// <summary>
+        /// For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+        /// </summary>
         public readonly string? VpcUser;
 
         [OutputConstructor]
@@ -33,13 +48,22 @@ namespace Pulumi.Oci.Database.Outputs
 
             string? id,
 
+            bool? isRemote,
+
+            string? remoteRegion,
+
             string? type,
+
+            string? vpcPassword,
 
             string? vpcUser)
         {
             DbrsPolicyId = dbrsPolicyId;
             Id = id;
+            IsRemote = isRemote;
+            RemoteRegion = remoteRegion;
             Type = type;
+            VpcPassword = vpcPassword;
             VpcUser = vpcUser;
         }
     }

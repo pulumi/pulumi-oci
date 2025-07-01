@@ -34,6 +34,7 @@ namespace Pulumi.Oci.Mysql
         ///         CreationType = mysqlBackupCreationType,
         ///         DbSystemId = testDbSystem.Id,
         ///         DisplayName = mysqlBackupDisplayName,
+        ///         SoftDelete = mysqlBackupSoftDelete,
         ///         State = mysqlBackupState,
         ///     });
         /// 
@@ -66,6 +67,7 @@ namespace Pulumi.Oci.Mysql
         ///         CreationType = mysqlBackupCreationType,
         ///         DbSystemId = testDbSystem.Id,
         ///         DisplayName = mysqlBackupDisplayName,
+        ///         SoftDelete = mysqlBackupSoftDelete,
         ///         State = mysqlBackupState,
         ///     });
         /// 
@@ -98,6 +100,7 @@ namespace Pulumi.Oci.Mysql
         ///         CreationType = mysqlBackupCreationType,
         ///         DbSystemId = testDbSystem.Id,
         ///         DisplayName = mysqlBackupDisplayName,
+        ///         SoftDelete = mysqlBackupSoftDelete,
         ///         State = mysqlBackupState,
         ///     });
         /// 
@@ -148,6 +151,12 @@ namespace Pulumi.Oci.Mysql
             get => _filters ?? (_filters = new List<Inputs.GetMysqlBackupsFilterArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// Backup Soft Delete
+        /// </summary>
+        [Input("softDelete")]
+        public string? SoftDelete { get; set; }
 
         /// <summary>
         /// Backup Lifecycle State
@@ -202,6 +211,12 @@ namespace Pulumi.Oci.Mysql
         }
 
         /// <summary>
+        /// Backup Soft Delete
+        /// </summary>
+        [Input("softDelete")]
+        public Input<string>? SoftDelete { get; set; }
+
+        /// <summary>
         /// Backup Lifecycle State
         /// </summary>
         [Input("state")]
@@ -244,6 +259,10 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+        /// </summary>
+        public readonly string? SoftDelete;
+        /// <summary>
         /// The state of the backup.
         /// </summary>
         public readonly string? State;
@@ -266,6 +285,8 @@ namespace Pulumi.Oci.Mysql
 
             string id,
 
+            string? softDelete,
+
             string? state)
         {
             BackupId = backupId;
@@ -276,6 +297,7 @@ namespace Pulumi.Oci.Mysql
             DisplayName = displayName;
             Filters = filters;
             Id = id;
+            SoftDelete = softDelete;
             State = state;
         }
     }

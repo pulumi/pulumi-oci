@@ -76,7 +76,7 @@ export interface GetFsuCyclesArgs {
  */
 export interface GetFsuCyclesResult {
     /**
-     * Type of Collection this Exadata Fleet Update Cycle belongs to.
+     * Type of Exadata Fleet Update collection being upgraded.
      */
     readonly collectionType?: string;
     /**

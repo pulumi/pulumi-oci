@@ -29,7 +29,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := fleetappsmanagement.GetOnboardingPolicies(ctx, &fleetappsmanagement.GetOnboardingPoliciesArgs{}, nil)
+//			_, err := fleetappsmanagement.GetOnboardingPolicies(ctx, &fleetappsmanagement.GetOnboardingPoliciesArgs{
+//				CompartmentId: compartmentId,
+//			}, nil)
 //			if err != nil {
 //				return err
 //			}
@@ -50,12 +52,15 @@ func GetOnboardingPolicies(ctx *pulumi.Context, args *GetOnboardingPoliciesArgs,
 
 // A collection of arguments for invoking getOnboardingPolicies.
 type GetOnboardingPoliciesArgs struct {
-	Filters []GetOnboardingPoliciesFilter `pulumi:"filters"`
+	// The ID of the compartment in which to list resources.
+	CompartmentId string                        `pulumi:"compartmentId"`
+	Filters       []GetOnboardingPoliciesFilter `pulumi:"filters"`
 }
 
 // A collection of values returned by getOnboardingPolicies.
 type GetOnboardingPoliciesResult struct {
-	Filters []GetOnboardingPoliciesFilter `pulumi:"filters"`
+	CompartmentId string                        `pulumi:"compartmentId"`
+	Filters       []GetOnboardingPoliciesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// The list of onboarding_policy_collection.
@@ -73,7 +78,9 @@ func GetOnboardingPoliciesOutput(ctx *pulumi.Context, args GetOnboardingPolicies
 
 // A collection of arguments for invoking getOnboardingPolicies.
 type GetOnboardingPoliciesOutputArgs struct {
-	Filters GetOnboardingPoliciesFilterArrayInput `pulumi:"filters"`
+	// The ID of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput                    `pulumi:"compartmentId"`
+	Filters       GetOnboardingPoliciesFilterArrayInput `pulumi:"filters"`
 }
 
 func (GetOnboardingPoliciesOutputArgs) ElementType() reflect.Type {
@@ -93,6 +100,10 @@ func (o GetOnboardingPoliciesResultOutput) ToGetOnboardingPoliciesResultOutput()
 
 func (o GetOnboardingPoliciesResultOutput) ToGetOnboardingPoliciesResultOutputWithContext(ctx context.Context) GetOnboardingPoliciesResultOutput {
 	return o
+}
+
+func (o GetOnboardingPoliciesResultOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOnboardingPoliciesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 func (o GetOnboardingPoliciesResultOutput) Filters() GetOnboardingPoliciesFilterArrayOutput {

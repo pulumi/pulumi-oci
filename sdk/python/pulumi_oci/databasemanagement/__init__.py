@@ -131,7 +131,14 @@ from .get_managed_databases_user_proxy_users import *
 from .get_managed_databases_user_system_privilege import *
 from .get_managed_databases_user_system_privileges import *
 from .get_managed_my_sql_database import *
+from .get_managed_my_sql_database_binary_log_information import *
 from .get_managed_my_sql_database_configuration_data import *
+from .get_managed_my_sql_database_digest_errors import *
+from .get_managed_my_sql_database_general_replication_information import *
+from .get_managed_my_sql_database_high_availability_members import *
+from .get_managed_my_sql_database_inbound_replications import *
+from .get_managed_my_sql_database_outbound_replications import *
+from .get_managed_my_sql_database_query_detail import *
 from .get_managed_my_sql_database_sql_data import *
 from .get_managed_my_sql_databases import *
 from .get_named_credential import *

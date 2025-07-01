@@ -57,6 +57,7 @@ namespace Pulumi.Oci.Mysql
     ///                 IsEnabled = mysqlDbSystemBackupPolicyPitrPolicyIsEnabled,
     ///             },
     ///             RetentionInDays = mysqlDbSystemBackupPolicyRetentionInDays,
+    ///             SoftDelete = mysqlDbSystemBackupPolicySoftDelete,
     ///             WindowStartTime = mysqlDbSystemBackupPolicyWindowStartTime,
     ///         },
     ///         ConfigurationId = testConfiguration.Id,

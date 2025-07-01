@@ -27,6 +27,7 @@ __all__ = [
     'FsuCycleGoalVersionDetails',
     'FsuCycleNextActionToExecute',
     'FsuCycleStageActionSchedule',
+    'FsuCycleUpgradeDetails',
     'GetFsuCollectionActiveFsuCycleResult',
     'GetFsuCollectionFleetDiscoveryResult',
     'GetFsuCollectionFleetDiscoveryFilterResult',
@@ -44,6 +45,7 @@ __all__ = [
     'GetFsuCycleGoalVersionDetailResult',
     'GetFsuCycleNextActionToExecuteResult',
     'GetFsuCycleStageActionScheduleResult',
+    'GetFsuCycleUpgradeDetailResult',
     'GetFsuCyclesFilterResult',
     'GetFsuCyclesFsuCycleSummaryCollectionResult',
     'GetFsuCyclesFsuCycleSummaryCollectionItemResult',
@@ -53,6 +55,7 @@ __all__ = [
     'GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailResult',
     'GetFsuCyclesFsuCycleSummaryCollectionItemNextActionToExecuteResult',
     'GetFsuCyclesFsuCycleSummaryCollectionItemStageActionScheduleResult',
+    'GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailResult',
 ]
 
 @pulumi.output_type
@@ -613,11 +616,7 @@ class FsuCycleNextActionToExecute(dict):
                  type: Optional[builtins.str] = None):
         """
         :param builtins.str time_to_start: The date and time the Exadata Fleet Update Action is expected to start. [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        :param builtins.str type: (Updatable) Type of Exadata Fleet Update Cycle. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param builtins.str type: (Updatable) Type of Exadata Fleet Update Cycle.
         """
         if time_to_start is not None:
             pulumi.set(__self__, "time_to_start", time_to_start)
@@ -636,11 +635,7 @@ class FsuCycleNextActionToExecute(dict):
     @pulumi.getter
     def type(self) -> Optional[builtins.str]:
         """
-        (Updatable) Type of Exadata Fleet Update Cycle. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) Type of Exadata Fleet Update Cycle.
         """
         return pulumi.get(self, "type")
 
@@ -689,6 +684,77 @@ class FsuCycleStageActionSchedule(dict):
         Type of scheduling strategy to use for Fleet Patching Update Action execution.
         """
         return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class FsuCycleUpgradeDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "collectionType":
+            suggest = "collection_type"
+        elif key == "isRecompileInvalidObjects":
+            suggest = "is_recompile_invalid_objects"
+        elif key == "isTimeZoneUpgrade":
+            suggest = "is_time_zone_upgrade"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in FsuCycleUpgradeDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        FsuCycleUpgradeDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        FsuCycleUpgradeDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 collection_type: builtins.str,
+                 is_recompile_invalid_objects: Optional[builtins.bool] = None,
+                 is_time_zone_upgrade: Optional[builtins.bool] = None):
+        """
+        :param builtins.str collection_type: (Updatable) Type of Exadata Fleet Update collection being upgraded.
+        :param builtins.bool is_recompile_invalid_objects: (Updatable) Enables or disables the recompilation of invalid objects.
+        :param builtins.bool is_time_zone_upgrade: (Updatable) Enables or disables time zone upgrade. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "collection_type", collection_type)
+        if is_recompile_invalid_objects is not None:
+            pulumi.set(__self__, "is_recompile_invalid_objects", is_recompile_invalid_objects)
+        if is_time_zone_upgrade is not None:
+            pulumi.set(__self__, "is_time_zone_upgrade", is_time_zone_upgrade)
+
+    @property
+    @pulumi.getter(name="collectionType")
+    def collection_type(self) -> builtins.str:
+        """
+        (Updatable) Type of Exadata Fleet Update collection being upgraded.
+        """
+        return pulumi.get(self, "collection_type")
+
+    @property
+    @pulumi.getter(name="isRecompileInvalidObjects")
+    def is_recompile_invalid_objects(self) -> Optional[builtins.bool]:
+        """
+        (Updatable) Enables or disables the recompilation of invalid objects.
+        """
+        return pulumi.get(self, "is_recompile_invalid_objects")
+
+    @property
+    @pulumi.getter(name="isTimeZoneUpgrade")
+    def is_time_zone_upgrade(self) -> Optional[builtins.bool]:
+        """
+        (Updatable) Enables or disables time zone upgrade. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "is_time_zone_upgrade")
 
 
 @pulumi.output_type
@@ -1595,6 +1661,46 @@ class GetFsuCycleStageActionScheduleResult(dict):
 
 
 @pulumi.output_type
+class GetFsuCycleUpgradeDetailResult(dict):
+    def __init__(__self__, *,
+                 collection_type: builtins.str,
+                 is_recompile_invalid_objects: builtins.bool,
+                 is_time_zone_upgrade: builtins.bool):
+        """
+        :param builtins.str collection_type: Type of Exadata Fleet Update collection being upgraded.
+        :param builtins.bool is_recompile_invalid_objects: Enables or disables the recompilation of invalid objects.
+        :param builtins.bool is_time_zone_upgrade: Enables or disables time zone upgrade.
+        """
+        pulumi.set(__self__, "collection_type", collection_type)
+        pulumi.set(__self__, "is_recompile_invalid_objects", is_recompile_invalid_objects)
+        pulumi.set(__self__, "is_time_zone_upgrade", is_time_zone_upgrade)
+
+    @property
+    @pulumi.getter(name="collectionType")
+    def collection_type(self) -> builtins.str:
+        """
+        Type of Exadata Fleet Update collection being upgraded.
+        """
+        return pulumi.get(self, "collection_type")
+
+    @property
+    @pulumi.getter(name="isRecompileInvalidObjects")
+    def is_recompile_invalid_objects(self) -> builtins.bool:
+        """
+        Enables or disables the recompilation of invalid objects.
+        """
+        return pulumi.get(self, "is_recompile_invalid_objects")
+
+    @property
+    @pulumi.getter(name="isTimeZoneUpgrade")
+    def is_time_zone_upgrade(self) -> builtins.bool:
+        """
+        Enables or disables time zone upgrade.
+        """
+        return pulumi.get(self, "is_time_zone_upgrade")
+
+
+@pulumi.output_type
 class GetFsuCyclesFilterResult(dict):
     def __init__(__self__, *,
                  name: builtins.str,
@@ -1663,7 +1769,8 @@ class GetFsuCyclesFsuCycleSummaryCollectionItemResult(dict):
                  time_created: builtins.str,
                  time_finished: builtins.str,
                  time_updated: builtins.str,
-                 type: builtins.str):
+                 type: builtins.str,
+                 upgrade_details: Sequence['outputs.GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailResult']):
         """
         :param Sequence['GetFsuCyclesFsuCycleSummaryCollectionItemApplyActionScheduleArgs'] apply_action_schedules: Scheduling related details for the Exadata Fleet Update Action. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails would execute the Exadata Fleet Update Action as soon as possible.
         :param Sequence['GetFsuCyclesFsuCycleSummaryCollectionItemBatchingStrategyArgs'] batching_strategies: Batching strategy details to use during PRECHECK and APPLY Cycle Actions.
@@ -1677,8 +1784,8 @@ class GetFsuCyclesFsuCycleSummaryCollectionItemResult(dict):
         :param builtins.str fsu_collection_id: A filter to return only resources whose fsuCollectionId matches the given fsuCollectionId.
         :param Sequence['GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailArgs'] goal_version_details: Goal version or image details for the Exadata Fleet Update Cycle.
         :param builtins.str id: OCID identifier for the Exadata Fleet Update Cycle.
-        :param Sequence[builtins.str] is_ignore_missing_patches: List of bug numbers to ignore.
-        :param builtins.bool is_ignore_patches: Ignore all patches between the source and target homes during patching.
+        :param Sequence[builtins.str] is_ignore_missing_patches: List of identifiers of patches to ignore.
+        :param builtins.bool is_ignore_patches: Ignore patch conflicts or missing patches between the source and goal homes.
         :param builtins.bool is_keep_placement: Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
         :param builtins.str last_completed_action: The latest Action type that was completed in the Exadata Fleet Update Cycle. No value would indicate that the Cycle has not completed any Action yet.
         :param builtins.str last_completed_action_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the latest Action  in the Exadata Fleet Update Cycle.
@@ -1693,6 +1800,7 @@ class GetFsuCyclesFsuCycleSummaryCollectionItemResult(dict):
         :param builtins.str time_finished: The date and time the Exadata Fleet Update Cycle was finished, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param builtins.str time_updated: The date and time the Exadata Fleet Update Cycle was updated, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         :param builtins.str type: Type of Exadata Fleet Update Cycle.
+        :param Sequence['GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArgs'] upgrade_details: Details of supported upgrade options for DB or GI collection.
         """
         pulumi.set(__self__, "apply_action_schedules", apply_action_schedules)
         pulumi.set(__self__, "batching_strategies", batching_strategies)
@@ -1722,6 +1830,7 @@ class GetFsuCyclesFsuCycleSummaryCollectionItemResult(dict):
         pulumi.set(__self__, "time_finished", time_finished)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "upgrade_details", upgrade_details)
 
     @property
     @pulumi.getter(name="applyActionSchedules")
@@ -1823,7 +1932,7 @@ class GetFsuCyclesFsuCycleSummaryCollectionItemResult(dict):
     @pulumi.getter(name="isIgnoreMissingPatches")
     def is_ignore_missing_patches(self) -> Sequence[builtins.str]:
         """
-        List of bug numbers to ignore.
+        List of identifiers of patches to ignore.
         """
         return pulumi.get(self, "is_ignore_missing_patches")
 
@@ -1831,7 +1940,7 @@ class GetFsuCyclesFsuCycleSummaryCollectionItemResult(dict):
     @pulumi.getter(name="isIgnorePatches")
     def is_ignore_patches(self) -> builtins.bool:
         """
-        Ignore all patches between the source and target homes during patching.
+        Ignore patch conflicts or missing patches between the source and goal homes.
         """
         return pulumi.get(self, "is_ignore_patches")
 
@@ -1946,6 +2055,14 @@ class GetFsuCyclesFsuCycleSummaryCollectionItemResult(dict):
         Type of Exadata Fleet Update Cycle.
         """
         return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="upgradeDetails")
+    def upgrade_details(self) -> Sequence['outputs.GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailResult']:
+        """
+        Details of supported upgrade options for DB or GI collection.
+        """
+        return pulumi.get(self, "upgrade_details")
 
 
 @pulumi.output_type
@@ -2164,5 +2281,45 @@ class GetFsuCyclesFsuCycleSummaryCollectionItemStageActionScheduleResult(dict):
         Type of Exadata Fleet Update Cycle.
         """
         return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailResult(dict):
+    def __init__(__self__, *,
+                 collection_type: builtins.str,
+                 is_recompile_invalid_objects: builtins.bool,
+                 is_time_zone_upgrade: builtins.bool):
+        """
+        :param builtins.str collection_type: A filter to return only resources whose Collection type matches the given type.
+        :param builtins.bool is_recompile_invalid_objects: Enables or disables the recompilation of invalid objects.
+        :param builtins.bool is_time_zone_upgrade: Enables or disables time zone upgrade.
+        """
+        pulumi.set(__self__, "collection_type", collection_type)
+        pulumi.set(__self__, "is_recompile_invalid_objects", is_recompile_invalid_objects)
+        pulumi.set(__self__, "is_time_zone_upgrade", is_time_zone_upgrade)
+
+    @property
+    @pulumi.getter(name="collectionType")
+    def collection_type(self) -> builtins.str:
+        """
+        A filter to return only resources whose Collection type matches the given type.
+        """
+        return pulumi.get(self, "collection_type")
+
+    @property
+    @pulumi.getter(name="isRecompileInvalidObjects")
+    def is_recompile_invalid_objects(self) -> builtins.bool:
+        """
+        Enables or disables the recompilation of invalid objects.
+        """
+        return pulumi.get(self, "is_recompile_invalid_objects")
+
+    @property
+    @pulumi.getter(name="isTimeZoneUpgrade")
+    def is_time_zone_upgrade(self) -> builtins.bool:
+        """
+        Enables or disables time zone upgrade.
+        """
+        return pulumi.get(self, "is_time_zone_upgrade")
 
 

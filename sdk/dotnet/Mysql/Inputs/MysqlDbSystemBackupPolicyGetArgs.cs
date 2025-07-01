@@ -79,6 +79,12 @@ namespace Pulumi.Oci.Mysql.Inputs
         public Input<int>? RetentionInDays { get; set; }
 
         /// <summary>
+        /// (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+        /// </summary>
+        [Input("softDelete")]
+        public Input<string>? SoftDelete { get; set; }
+
+        /// <summary>
         /// (Updatable) The start of a 30-minute window of time in which daily, automated backups occur.
         /// 
         /// This should be in the format of the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.

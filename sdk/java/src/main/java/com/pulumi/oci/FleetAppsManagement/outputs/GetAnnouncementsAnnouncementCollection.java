@@ -12,14 +12,14 @@ import java.util.Objects;
 @CustomType
 public final class GetAnnouncementsAnnouncementCollection {
     /**
-     * @return List of AnnouncementSummary items
+     * @return List of AnnouncementSummary items.
      * 
      */
     private List<GetAnnouncementsAnnouncementCollectionItem> items;
 
     private GetAnnouncementsAnnouncementCollection() {}
     /**
-     * @return List of AnnouncementSummary items
+     * @return List of AnnouncementSummary items.
      * 
      */
     public List<GetAnnouncementsAnnouncementCollectionItem> items() {

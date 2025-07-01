@@ -5,7 +5,10 @@ package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Core.outputs.GetComputeHostConfigurationData;
+import com.pulumi.oci.Core.outputs.GetComputeHostRecycleDetail;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -31,7 +34,22 @@ public final class GetComputeHostResult {
      * 
      */
     private String compartmentId;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group this host was attached to at the time of recycle.
+     * 
+     */
+    private String computeHostGroupId;
     private String computeHostId;
+    /**
+     * @return Compute Host Configuration Data
+     * 
+     */
+    private List<GetComputeHostConfigurationData> configurationDatas;
+    /**
+     * @return Configuration state of the Compute Bare Metal Host.
+     * 
+     */
+    private String configurationState;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
@@ -98,6 +116,11 @@ public final class GetComputeHostResult {
      */
     private String networkBlockId;
     /**
+     * @return Shows details about the last recycle performed on this host.
+     * 
+     */
+    private List<GetComputeHostRecycleDetail> recycleDetails;
+    /**
      * @return The shape of host
      * 
      */
@@ -107,6 +130,11 @@ public final class GetComputeHostResult {
      * 
      */
     private String state;
+    /**
+     * @return The date and time that the compute bare metal host configuration check was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     * 
+     */
+    private String timeConfigurationCheck;
     /**
      * @return The date and time that the compute host record was created, in the format defined by [RFC3339](https://tools .ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
@@ -147,8 +175,29 @@ public final class GetComputeHostResult {
     public String compartmentId() {
         return this.compartmentId;
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group this host was attached to at the time of recycle.
+     * 
+     */
+    public String computeHostGroupId() {
+        return this.computeHostGroupId;
+    }
     public String computeHostId() {
         return this.computeHostId;
+    }
+    /**
+     * @return Compute Host Configuration Data
+     * 
+     */
+    public List<GetComputeHostConfigurationData> configurationDatas() {
+        return this.configurationDatas;
+    }
+    /**
+     * @return Configuration state of the Compute Bare Metal Host.
+     * 
+     */
+    public String configurationState() {
+        return this.configurationState;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
@@ -242,6 +291,13 @@ public final class GetComputeHostResult {
         return this.networkBlockId;
     }
     /**
+     * @return Shows details about the last recycle performed on this host.
+     * 
+     */
+    public List<GetComputeHostRecycleDetail> recycleDetails() {
+        return this.recycleDetails;
+    }
+    /**
      * @return The shape of host
      * 
      */
@@ -254,6 +310,13 @@ public final class GetComputeHostResult {
      */
     public String state() {
         return this.state;
+    }
+    /**
+     * @return The date and time that the compute bare metal host configuration check was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     * 
+     */
+    public String timeConfigurationCheck() {
+        return this.timeConfigurationCheck;
     }
     /**
      * @return The date and time that the compute host record was created, in the format defined by [RFC3339](https://tools .ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -283,7 +346,10 @@ public final class GetComputeHostResult {
         private String availabilityDomain;
         private String capacityReservationId;
         private String compartmentId;
+        private String computeHostGroupId;
         private String computeHostId;
+        private List<GetComputeHostConfigurationData> configurationDatas;
+        private String configurationState;
         private Map<String,String> definedTags;
         private String displayName;
         private String faultDomain;
@@ -297,8 +363,10 @@ public final class GetComputeHostResult {
         private Map<String,String> lifecycleDetails;
         private String localBlockId;
         private String networkBlockId;
+        private List<GetComputeHostRecycleDetail> recycleDetails;
         private String shape;
         private String state;
+        private String timeConfigurationCheck;
         private String timeCreated;
         private String timeUpdated;
         public Builder() {}
@@ -308,7 +376,10 @@ public final class GetComputeHostResult {
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.capacityReservationId = defaults.capacityReservationId;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.computeHostGroupId = defaults.computeHostGroupId;
     	      this.computeHostId = defaults.computeHostId;
+    	      this.configurationDatas = defaults.configurationDatas;
+    	      this.configurationState = defaults.configurationState;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.faultDomain = defaults.faultDomain;
@@ -322,8 +393,10 @@ public final class GetComputeHostResult {
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.localBlockId = defaults.localBlockId;
     	      this.networkBlockId = defaults.networkBlockId;
+    	      this.recycleDetails = defaults.recycleDetails;
     	      this.shape = defaults.shape;
     	      this.state = defaults.state;
+    	      this.timeConfigurationCheck = defaults.timeConfigurationCheck;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
         }
@@ -361,11 +434,38 @@ public final class GetComputeHostResult {
             return this;
         }
         @CustomType.Setter
+        public Builder computeHostGroupId(String computeHostGroupId) {
+            if (computeHostGroupId == null) {
+              throw new MissingRequiredPropertyException("GetComputeHostResult", "computeHostGroupId");
+            }
+            this.computeHostGroupId = computeHostGroupId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder computeHostId(String computeHostId) {
             if (computeHostId == null) {
               throw new MissingRequiredPropertyException("GetComputeHostResult", "computeHostId");
             }
             this.computeHostId = computeHostId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder configurationDatas(List<GetComputeHostConfigurationData> configurationDatas) {
+            if (configurationDatas == null) {
+              throw new MissingRequiredPropertyException("GetComputeHostResult", "configurationDatas");
+            }
+            this.configurationDatas = configurationDatas;
+            return this;
+        }
+        public Builder configurationDatas(GetComputeHostConfigurationData... configurationDatas) {
+            return configurationDatas(List.of(configurationDatas));
+        }
+        @CustomType.Setter
+        public Builder configurationState(String configurationState) {
+            if (configurationState == null) {
+              throw new MissingRequiredPropertyException("GetComputeHostResult", "configurationState");
+            }
+            this.configurationState = configurationState;
             return this;
         }
         @CustomType.Setter
@@ -473,6 +573,17 @@ public final class GetComputeHostResult {
             return this;
         }
         @CustomType.Setter
+        public Builder recycleDetails(List<GetComputeHostRecycleDetail> recycleDetails) {
+            if (recycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetComputeHostResult", "recycleDetails");
+            }
+            this.recycleDetails = recycleDetails;
+            return this;
+        }
+        public Builder recycleDetails(GetComputeHostRecycleDetail... recycleDetails) {
+            return recycleDetails(List.of(recycleDetails));
+        }
+        @CustomType.Setter
         public Builder shape(String shape) {
             if (shape == null) {
               throw new MissingRequiredPropertyException("GetComputeHostResult", "shape");
@@ -486,6 +597,14 @@ public final class GetComputeHostResult {
               throw new MissingRequiredPropertyException("GetComputeHostResult", "state");
             }
             this.state = state;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeConfigurationCheck(String timeConfigurationCheck) {
+            if (timeConfigurationCheck == null) {
+              throw new MissingRequiredPropertyException("GetComputeHostResult", "timeConfigurationCheck");
+            }
+            this.timeConfigurationCheck = timeConfigurationCheck;
             return this;
         }
         @CustomType.Setter
@@ -510,7 +629,10 @@ public final class GetComputeHostResult {
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.capacityReservationId = capacityReservationId;
             _resultValue.compartmentId = compartmentId;
+            _resultValue.computeHostGroupId = computeHostGroupId;
             _resultValue.computeHostId = computeHostId;
+            _resultValue.configurationDatas = configurationDatas;
+            _resultValue.configurationState = configurationState;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.faultDomain = faultDomain;
@@ -524,8 +646,10 @@ public final class GetComputeHostResult {
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.localBlockId = localBlockId;
             _resultValue.networkBlockId = networkBlockId;
+            _resultValue.recycleDetails = recycleDetails;
             _resultValue.shape = shape;
             _resultValue.state = state;
+            _resultValue.timeConfigurationCheck = timeConfigurationCheck;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             return _resultValue;

@@ -19,14 +19,14 @@ public final class GetConnectionsFilterArgs extends com.pulumi.resources.Resourc
     public static final GetConnectionsFilterArgs Empty = new GetConnectionsFilterArgs();
 
     /**
-     * The name of the property entry.
+     * The catalog name within Polaris where Iceberg tables are registered.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return The name of the property entry.
+     * @return The catalog name within Polaris where Iceberg tables are registered.
      * 
      */
     public Output<String> name() {
@@ -74,7 +74,7 @@ public final class GetConnectionsFilterArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param name The name of the property entry.
+         * @param name The catalog name within Polaris where Iceberg tables are registered.
          * 
          * @return builder
          * 
@@ -85,7 +85,7 @@ public final class GetConnectionsFilterArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param name The name of the property entry.
+         * @param name The catalog name within Polaris where Iceberg tables are registered.
          * 
          * @return builder
          * 

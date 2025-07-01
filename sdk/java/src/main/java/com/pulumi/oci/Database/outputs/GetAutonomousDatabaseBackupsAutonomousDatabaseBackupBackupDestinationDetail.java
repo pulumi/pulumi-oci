@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 
@@ -20,6 +21,16 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupBackupDes
      * 
      */
     private String internetProxy;
+    /**
+     * @return Indicates whether the backup destination is cross-region or local region.
+     * 
+     */
+    private Boolean isRemote;
+    /**
+     * @return The name of the remote region where the remote automatic incremental backups will be stored.
+     * 
+     */
+    private String remoteRegion;
     /**
      * @return A filter to return only backups that matches with the given type of Backup.
      * 
@@ -50,6 +61,20 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupBackupDes
      */
     public String internetProxy() {
         return this.internetProxy;
+    }
+    /**
+     * @return Indicates whether the backup destination is cross-region or local region.
+     * 
+     */
+    public Boolean isRemote() {
+        return this.isRemote;
+    }
+    /**
+     * @return The name of the remote region where the remote automatic incremental backups will be stored.
+     * 
+     */
+    public String remoteRegion() {
+        return this.remoteRegion;
     }
     /**
      * @return A filter to return only backups that matches with the given type of Backup.
@@ -84,6 +109,8 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupBackupDes
     public static final class Builder {
         private String id;
         private String internetProxy;
+        private Boolean isRemote;
+        private String remoteRegion;
         private String type;
         private String vpcPassword;
         private String vpcUser;
@@ -92,6 +119,8 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupBackupDes
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
     	      this.internetProxy = defaults.internetProxy;
+    	      this.isRemote = defaults.isRemote;
+    	      this.remoteRegion = defaults.remoteRegion;
     	      this.type = defaults.type;
     	      this.vpcPassword = defaults.vpcPassword;
     	      this.vpcUser = defaults.vpcUser;
@@ -111,6 +140,22 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupBackupDes
               throw new MissingRequiredPropertyException("GetAutonomousDatabaseBackupsAutonomousDatabaseBackupBackupDestinationDetail", "internetProxy");
             }
             this.internetProxy = internetProxy;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isRemote(Boolean isRemote) {
+            if (isRemote == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseBackupsAutonomousDatabaseBackupBackupDestinationDetail", "isRemote");
+            }
+            this.isRemote = isRemote;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder remoteRegion(String remoteRegion) {
+            if (remoteRegion == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseBackupsAutonomousDatabaseBackupBackupDestinationDetail", "remoteRegion");
+            }
+            this.remoteRegion = remoteRegion;
             return this;
         }
         @CustomType.Setter
@@ -141,6 +186,8 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupBackupDes
             final var _resultValue = new GetAutonomousDatabaseBackupsAutonomousDatabaseBackupBackupDestinationDetail();
             _resultValue.id = id;
             _resultValue.internetProxy = internetProxy;
+            _resultValue.isRemote = isRemote;
+            _resultValue.remoteRegion = remoteRegion;
             _resultValue.type = type;
             _resultValue.vpcPassword = vpcPassword;
             _resultValue.vpcUser = vpcUser;

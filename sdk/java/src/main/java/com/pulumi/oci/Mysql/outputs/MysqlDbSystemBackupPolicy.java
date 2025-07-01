@@ -60,6 +60,11 @@ public final class MysqlDbSystemBackupPolicy {
      */
     private @Nullable Integer retentionInDays;
     /**
+     * @return (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+     * 
+     */
+    private @Nullable String softDelete;
+    /**
      * @return (Updatable) The start of a 30-minute window of time in which daily, automated backups occur.
      * 
      * This should be in the format of the &#34;Time&#34; portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
@@ -125,6 +130,13 @@ public final class MysqlDbSystemBackupPolicy {
         return Optional.ofNullable(this.retentionInDays);
     }
     /**
+     * @return (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+     * 
+     */
+    public Optional<String> softDelete() {
+        return Optional.ofNullable(this.softDelete);
+    }
+    /**
      * @return (Updatable) The start of a 30-minute window of time in which daily, automated backups occur.
      * 
      * This should be in the format of the &#34;Time&#34; portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
@@ -151,6 +163,7 @@ public final class MysqlDbSystemBackupPolicy {
         private @Nullable Boolean isEnabled;
         private @Nullable MysqlDbSystemBackupPolicyPitrPolicy pitrPolicy;
         private @Nullable Integer retentionInDays;
+        private @Nullable String softDelete;
         private @Nullable String windowStartTime;
         public Builder() {}
         public Builder(MysqlDbSystemBackupPolicy defaults) {
@@ -161,6 +174,7 @@ public final class MysqlDbSystemBackupPolicy {
     	      this.isEnabled = defaults.isEnabled;
     	      this.pitrPolicy = defaults.pitrPolicy;
     	      this.retentionInDays = defaults.retentionInDays;
+    	      this.softDelete = defaults.softDelete;
     	      this.windowStartTime = defaults.windowStartTime;
         }
 
@@ -204,6 +218,12 @@ public final class MysqlDbSystemBackupPolicy {
             return this;
         }
         @CustomType.Setter
+        public Builder softDelete(@Nullable String softDelete) {
+
+            this.softDelete = softDelete;
+            return this;
+        }
+        @CustomType.Setter
         public Builder windowStartTime(@Nullable String windowStartTime) {
 
             this.windowStartTime = windowStartTime;
@@ -217,6 +237,7 @@ public final class MysqlDbSystemBackupPolicy {
             _resultValue.isEnabled = isEnabled;
             _resultValue.pitrPolicy = pitrPolicy;
             _resultValue.retentionInDays = retentionInDays;
+            _resultValue.softDelete = softDelete;
             _resultValue.windowStartTime = windowStartTime;
             return _resultValue;
         }

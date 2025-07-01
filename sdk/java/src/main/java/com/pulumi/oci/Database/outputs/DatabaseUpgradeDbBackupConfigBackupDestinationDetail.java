@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -26,6 +27,16 @@ public final class DatabaseUpgradeDbBackupConfigBackupDestinationDetail {
      * 
      */
     private @Nullable String internetProxy;
+    /**
+     * @return Indicates whether the backup destination is cross-region or local region.
+     * 
+     */
+    private @Nullable Boolean isRemote;
+    /**
+     * @return The name of the remote region where the remote automatic incremental backups will be stored.
+     * 
+     */
+    private @Nullable String remoteRegion;
     /**
      * @return Type of the database backup destination.
      * 
@@ -65,6 +76,20 @@ public final class DatabaseUpgradeDbBackupConfigBackupDestinationDetail {
         return Optional.ofNullable(this.internetProxy);
     }
     /**
+     * @return Indicates whether the backup destination is cross-region or local region.
+     * 
+     */
+    public Optional<Boolean> isRemote() {
+        return Optional.ofNullable(this.isRemote);
+    }
+    /**
+     * @return The name of the remote region where the remote automatic incremental backups will be stored.
+     * 
+     */
+    public Optional<String> remoteRegion() {
+        return Optional.ofNullable(this.remoteRegion);
+    }
+    /**
      * @return Type of the database backup destination.
      * 
      */
@@ -98,6 +123,8 @@ public final class DatabaseUpgradeDbBackupConfigBackupDestinationDetail {
         private @Nullable String dbrsPolicyId;
         private @Nullable String id;
         private @Nullable String internetProxy;
+        private @Nullable Boolean isRemote;
+        private @Nullable String remoteRegion;
         private @Nullable String type;
         private @Nullable String vpcPassword;
         private @Nullable String vpcUser;
@@ -107,6 +134,8 @@ public final class DatabaseUpgradeDbBackupConfigBackupDestinationDetail {
     	      this.dbrsPolicyId = defaults.dbrsPolicyId;
     	      this.id = defaults.id;
     	      this.internetProxy = defaults.internetProxy;
+    	      this.isRemote = defaults.isRemote;
+    	      this.remoteRegion = defaults.remoteRegion;
     	      this.type = defaults.type;
     	      this.vpcPassword = defaults.vpcPassword;
     	      this.vpcUser = defaults.vpcUser;
@@ -128,6 +157,18 @@ public final class DatabaseUpgradeDbBackupConfigBackupDestinationDetail {
         public Builder internetProxy(@Nullable String internetProxy) {
 
             this.internetProxy = internetProxy;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isRemote(@Nullable Boolean isRemote) {
+
+            this.isRemote = isRemote;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder remoteRegion(@Nullable String remoteRegion) {
+
+            this.remoteRegion = remoteRegion;
             return this;
         }
         @CustomType.Setter
@@ -153,6 +194,8 @@ public final class DatabaseUpgradeDbBackupConfigBackupDestinationDetail {
             _resultValue.dbrsPolicyId = dbrsPolicyId;
             _resultValue.id = id;
             _resultValue.internetProxy = internetProxy;
+            _resultValue.isRemote = isRemote;
+            _resultValue.remoteRegion = remoteRegion;
             _resultValue.type = type;
             _resultValue.vpcPassword = vpcPassword;
             _resultValue.vpcUser = vpcUser;

@@ -18,14 +18,14 @@ public final class GetPropertiesArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetPropertiesArgs Empty = new GetPropertiesArgs();
 
     /**
-     * The ID of the compartment in which to list resources.
+     * The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -55,14 +55,14 @@ public final class GetPropertiesArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * A filter to return only resources whose Property identifier matches the given identifier.
+     * Unique identifier or OCID for listing a single Property by id. Either compartmentId or id must be provided.
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return A filter to return only resources whose Property identifier matches the given identifier.
+     * @return Unique identifier or OCID for listing a single Property by id. Either compartmentId or id must be provided.
      * 
      */
     public Optional<Output<String>> id() {
@@ -99,6 +99,21 @@ public final class GetPropertiesArgs extends com.pulumi.resources.InvokeArgs {
         return Optional.ofNullable(this.state);
     }
 
+    /**
+     * A filter to return properties whose type matches the given type.
+     * 
+     */
+    @Import(name="type")
+    private @Nullable Output<String> type;
+
+    /**
+     * @return A filter to return properties whose type matches the given type.
+     * 
+     */
+    public Optional<Output<String>> type() {
+        return Optional.ofNullable(this.type);
+    }
+
     private GetPropertiesArgs() {}
 
     private GetPropertiesArgs(GetPropertiesArgs $) {
@@ -108,6 +123,7 @@ public final class GetPropertiesArgs extends com.pulumi.resources.InvokeArgs {
         this.id = $.id;
         this.scope = $.scope;
         this.state = $.state;
+        this.type = $.type;
     }
 
     public static Builder builder() {
@@ -129,7 +145,7 @@ public final class GetPropertiesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param compartmentId The ID of the compartment in which to list resources.
+         * @param compartmentId The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
          * 
          * @return builder
          * 
@@ -140,7 +156,7 @@ public final class GetPropertiesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param compartmentId The ID of the compartment in which to list resources.
+         * @param compartmentId The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
          * 
          * @return builder
          * 
@@ -184,7 +200,7 @@ public final class GetPropertiesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param id A filter to return only resources whose Property identifier matches the given identifier.
+         * @param id Unique identifier or OCID for listing a single Property by id. Either compartmentId or id must be provided.
          * 
          * @return builder
          * 
@@ -195,7 +211,7 @@ public final class GetPropertiesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param id A filter to return only resources whose Property identifier matches the given identifier.
+         * @param id Unique identifier or OCID for listing a single Property by id. Either compartmentId or id must be provided.
          * 
          * @return builder
          * 
@@ -244,6 +260,27 @@ public final class GetPropertiesArgs extends com.pulumi.resources.InvokeArgs {
          */
         public Builder state(String state) {
             return state(Output.of(state));
+        }
+
+        /**
+         * @param type A filter to return properties whose type matches the given type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder type(@Nullable Output<String> type) {
+            $.type = type;
+            return this;
+        }
+
+        /**
+         * @param type A filter to return properties whose type matches the given type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder type(String type) {
+            return type(Output.of(type));
         }
 
         public GetPropertiesArgs build() {

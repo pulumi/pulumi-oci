@@ -81,7 +81,7 @@ public final class TableReplicaArgs extends com.pulumi.resources.ResourceArgs {
      * A table name within the compartment, or a table OCID.
      * 
      * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * Any change to a property that is not identified as &#34;Updateable&#34; will force the destruction and recreation of the resource with the new property values.
      * 
      */
     @Import(name="tableNameOrId", required=true)
@@ -91,7 +91,7 @@ public final class TableReplicaArgs extends com.pulumi.resources.ResourceArgs {
      * @return A table name within the compartment, or a table OCID.
      * 
      * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * Any change to a property that is not identified as &#34;Updateable&#34; will force the destruction and recreation of the resource with the new property values.
      * 
      */
     public Output<String> tableNameOrId() {
@@ -214,7 +214,7 @@ public final class TableReplicaArgs extends com.pulumi.resources.ResourceArgs {
          * @param tableNameOrId A table name within the compartment, or a table OCID.
          * 
          * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * Any change to a property that is not identified as &#34;Updateable&#34; will force the destruction and recreation of the resource with the new property values.
          * 
          * @return builder
          * 
@@ -228,7 +228,7 @@ public final class TableReplicaArgs extends com.pulumi.resources.ResourceArgs {
          * @param tableNameOrId A table name within the compartment, or a table OCID.
          * 
          * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * Any change to a property that is not identified as &#34;Updateable&#34; will force the destruction and recreation of the resource with the new property values.
          * 
          * @return builder
          * 

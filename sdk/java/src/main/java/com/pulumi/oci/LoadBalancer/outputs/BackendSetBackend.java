@@ -34,7 +34,11 @@ public final class BackendSetBackend {
      */
     private String ipAddress;
     /**
-     * @return (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+     * @return (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.
+     * 
+     * If setting maxConnections to some value other than 0 then that value must be greater or equal to 256.
+     * 
+     * Example: `300`
      * 
      */
     private @Nullable Integer maxConnections;
@@ -90,7 +94,11 @@ public final class BackendSetBackend {
         return this.ipAddress;
     }
     /**
-     * @return (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+     * @return (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.
+     * 
+     * If setting maxConnections to some value other than 0 then that value must be greater or equal to 256.
+     * 
+     * Example: `300`
      * 
      */
     public Optional<Integer> maxConnections() {

@@ -21,6 +21,11 @@ public final class GetAnnouncementsResult {
      */
     private List<GetAnnouncementsAnnouncementCollection> announcementCollections;
     /**
+     * @return Tenancy OCID
+     * 
+     */
+    private String compartmentId;
+    /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.  Example: `My new resource`
      * 
      */
@@ -40,6 +45,13 @@ public final class GetAnnouncementsResult {
      */
     public List<GetAnnouncementsAnnouncementCollection> announcementCollections() {
         return this.announcementCollections;
+    }
+    /**
+     * @return Tenancy OCID
+     * 
+     */
+    public String compartmentId() {
+        return this.compartmentId;
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.  Example: `My new resource`
@@ -72,6 +84,7 @@ public final class GetAnnouncementsResult {
     @CustomType.Builder
     public static final class Builder {
         private List<GetAnnouncementsAnnouncementCollection> announcementCollections;
+        private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetAnnouncementsFilter> filters;
         private String id;
@@ -80,6 +93,7 @@ public final class GetAnnouncementsResult {
         public Builder(GetAnnouncementsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.announcementCollections = defaults.announcementCollections;
+    	      this.compartmentId = defaults.compartmentId;
     	      this.displayName = defaults.displayName;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
@@ -96,6 +110,14 @@ public final class GetAnnouncementsResult {
         }
         public Builder announcementCollections(GetAnnouncementsAnnouncementCollection... announcementCollections) {
             return announcementCollections(List.of(announcementCollections));
+        }
+        @CustomType.Setter
+        public Builder compartmentId(String compartmentId) {
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAnnouncementsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
+            return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
@@ -129,6 +151,7 @@ public final class GetAnnouncementsResult {
         public GetAnnouncementsResult build() {
             final var _resultValue = new GetAnnouncementsResult();
             _resultValue.announcementCollections = announcementCollections;
+            _resultValue.compartmentId = compartmentId;
             _resultValue.displayName = displayName;
             _resultValue.filters = filters;
             _resultValue.id = id;

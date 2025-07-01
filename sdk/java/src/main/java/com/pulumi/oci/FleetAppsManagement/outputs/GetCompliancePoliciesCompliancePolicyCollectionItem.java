@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetCompliancePoliciesCompliancePolicyCollectionItem {
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      * 
      */
     private String compartmentId;
@@ -32,7 +32,7 @@ public final class GetCompliancePoliciesCompliancePolicyCollectionItem {
      */
     private Map<String,String> freeformTags;
     /**
-     * @return unique CompliancePolicy identifier.
+     * @return Unique identifier or OCID for listing a single Compliance Policy by id. Either compartmentId or id must be provided.
      * 
      */
     private String id;
@@ -66,10 +66,15 @@ public final class GetCompliancePoliciesCompliancePolicyCollectionItem {
      * 
      */
     private String timeUpdated;
+    /**
+     * @return A filter to return Platform Configurations whose type matches the given type.
+     * 
+     */
+    private String type;
 
     private GetCompliancePoliciesCompliancePolicyCollectionItem() {}
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      * 
      */
     public String compartmentId() {
@@ -97,7 +102,7 @@ public final class GetCompliancePoliciesCompliancePolicyCollectionItem {
         return this.freeformTags;
     }
     /**
-     * @return unique CompliancePolicy identifier.
+     * @return Unique identifier or OCID for listing a single Compliance Policy by id. Either compartmentId or id must be provided.
      * 
      */
     public String id() {
@@ -145,6 +150,13 @@ public final class GetCompliancePoliciesCompliancePolicyCollectionItem {
     public String timeUpdated() {
         return this.timeUpdated;
     }
+    /**
+     * @return A filter to return Platform Configurations whose type matches the given type.
+     * 
+     */
+    public String type() {
+        return this.type;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -166,6 +178,7 @@ public final class GetCompliancePoliciesCompliancePolicyCollectionItem {
         private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
+        private String type;
         public Builder() {}
         public Builder(GetCompliancePoliciesCompliancePolicyCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -180,6 +193,7 @@ public final class GetCompliancePoliciesCompliancePolicyCollectionItem {
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
+    	      this.type = defaults.type;
         }
 
         @CustomType.Setter
@@ -270,6 +284,14 @@ public final class GetCompliancePoliciesCompliancePolicyCollectionItem {
             this.timeUpdated = timeUpdated;
             return this;
         }
+        @CustomType.Setter
+        public Builder type(String type) {
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetCompliancePoliciesCompliancePolicyCollectionItem", "type");
+            }
+            this.type = type;
+            return this;
+        }
         public GetCompliancePoliciesCompliancePolicyCollectionItem build() {
             final var _resultValue = new GetCompliancePoliciesCompliancePolicyCollectionItem();
             _resultValue.compartmentId = compartmentId;
@@ -283,6 +305,7 @@ public final class GetCompliancePoliciesCompliancePolicyCollectionItem {
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
+            _resultValue.type = type;
             return _resultValue;
         }
     }

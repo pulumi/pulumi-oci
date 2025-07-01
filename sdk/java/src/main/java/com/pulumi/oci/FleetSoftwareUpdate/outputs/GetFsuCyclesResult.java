@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetFsuCyclesResult {
     /**
-     * @return Type of Collection this Exadata Fleet Update Cycle belongs to.
+     * @return Type of Exadata Fleet Update collection being upgraded.
      * 
      */
     private @Nullable String collectionType;
@@ -55,7 +55,7 @@ public final class GetFsuCyclesResult {
 
     private GetFsuCyclesResult() {}
     /**
-     * @return Type of Collection this Exadata Fleet Update Cycle belongs to.
+     * @return Type of Exadata Fleet Update collection being upgraded.
      * 
      */
     public Optional<String> collectionType() {

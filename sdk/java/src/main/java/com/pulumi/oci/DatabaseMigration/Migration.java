@@ -21,6 +21,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -192,6 +193,7 @@ import javax.annotation.Nullable;
  *                     .build())
  *                 .build())
  *             .sourceContainerDatabaseConnectionId(testConnection.id())
+ *             .sourceStandbyDatabaseConnectionId(testConnection.id())
  *             .build());
  * 
  *     }
@@ -476,6 +478,20 @@ public class Migration extends com.pulumi.resources.CustomResource {
      */
     public Output<String> sourceDatabaseConnectionId() {
         return this.sourceDatabaseConnectionId;
+    }
+    /**
+     * (Updatable) The OCID of the resource being referenced.
+     * 
+     */
+    @Export(name="sourceStandbyDatabaseConnectionId", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> sourceStandbyDatabaseConnectionId;
+
+    /**
+     * @return (Updatable) The OCID of the resource being referenced.
+     * 
+     */
+    public Output<Optional<String>> sourceStandbyDatabaseConnectionId() {
+        return Codegen.optional(this.sourceStandbyDatabaseConnectionId);
     }
     /**
      * The current state of the Migration resource.

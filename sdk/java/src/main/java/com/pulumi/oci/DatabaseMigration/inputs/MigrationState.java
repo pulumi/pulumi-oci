@@ -311,6 +311,21 @@ public final class MigrationState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The OCID of the resource being referenced.
+     * 
+     */
+    @Import(name="sourceStandbyDatabaseConnectionId")
+    private @Nullable Output<String> sourceStandbyDatabaseConnectionId;
+
+    /**
+     * @return (Updatable) The OCID of the resource being referenced.
+     * 
+     */
+    public Optional<Output<String>> sourceStandbyDatabaseConnectionId() {
+        return Optional.ofNullable(this.sourceStandbyDatabaseConnectionId);
+    }
+
+    /**
      * The current state of the Migration resource.
      * 
      */
@@ -458,6 +473,7 @@ public final class MigrationState extends com.pulumi.resources.ResourceArgs {
         this.lifecycleDetails = $.lifecycleDetails;
         this.sourceContainerDatabaseConnectionId = $.sourceContainerDatabaseConnectionId;
         this.sourceDatabaseConnectionId = $.sourceDatabaseConnectionId;
+        this.sourceStandbyDatabaseConnectionId = $.sourceStandbyDatabaseConnectionId;
         this.state = $.state;
         this.systemTags = $.systemTags;
         this.targetDatabaseConnectionId = $.targetDatabaseConnectionId;
@@ -913,6 +929,27 @@ public final class MigrationState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder sourceDatabaseConnectionId(String sourceDatabaseConnectionId) {
             return sourceDatabaseConnectionId(Output.of(sourceDatabaseConnectionId));
+        }
+
+        /**
+         * @param sourceStandbyDatabaseConnectionId (Updatable) The OCID of the resource being referenced.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceStandbyDatabaseConnectionId(@Nullable Output<String> sourceStandbyDatabaseConnectionId) {
+            $.sourceStandbyDatabaseConnectionId = sourceStandbyDatabaseConnectionId;
+            return this;
+        }
+
+        /**
+         * @param sourceStandbyDatabaseConnectionId (Updatable) The OCID of the resource being referenced.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceStandbyDatabaseConnectionId(String sourceStandbyDatabaseConnectionId) {
+            return sourceStandbyDatabaseConnectionId(Output.of(sourceStandbyDatabaseConnectionId));
         }
 
         /**

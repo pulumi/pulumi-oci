@@ -11,6 +11,7 @@ import com.pulumi.oci.FleetSoftwareUpdate.inputs.FsuCycleBatchingStrategyArgs;
 import com.pulumi.oci.FleetSoftwareUpdate.inputs.FsuCycleDiagnosticsCollectionArgs;
 import com.pulumi.oci.FleetSoftwareUpdate.inputs.FsuCycleGoalVersionDetailsArgs;
 import com.pulumi.oci.FleetSoftwareUpdate.inputs.FsuCycleStageActionScheduleArgs;
+import com.pulumi.oci.FleetSoftwareUpdate.inputs.FsuCycleUpgradeDetailsArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -238,9 +239,6 @@ public final class FsuCycleArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) Type of Exadata Fleet Update Cycle.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
@@ -248,12 +246,24 @@ public final class FsuCycleArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return (Updatable) Type of Exadata Fleet Update Cycle.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     public Output<String> type() {
         return this.type;
+    }
+
+    /**
+     * (Updatable) Details of supported upgrade options for DB or GI collection.
+     * 
+     */
+    @Import(name="upgradeDetails")
+    private @Nullable Output<FsuCycleUpgradeDetailsArgs> upgradeDetails;
+
+    /**
+     * @return (Updatable) Details of supported upgrade options for DB or GI collection.
+     * 
+     */
+    public Optional<Output<FsuCycleUpgradeDetailsArgs>> upgradeDetails() {
+        return Optional.ofNullable(this.upgradeDetails);
     }
 
     private FsuCycleArgs() {}
@@ -274,6 +284,7 @@ public final class FsuCycleArgs extends com.pulumi.resources.ResourceArgs {
         this.maxDrainTimeoutInSeconds = $.maxDrainTimeoutInSeconds;
         this.stageActionSchedule = $.stageActionSchedule;
         this.type = $.type;
+        this.upgradeDetails = $.upgradeDetails;
     }
 
     public static Builder builder() {
@@ -601,9 +612,6 @@ public final class FsuCycleArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param type (Updatable) Type of Exadata Fleet Update Cycle.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -615,14 +623,32 @@ public final class FsuCycleArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param type (Updatable) Type of Exadata Fleet Update Cycle.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
         public Builder type(String type) {
             return type(Output.of(type));
+        }
+
+        /**
+         * @param upgradeDetails (Updatable) Details of supported upgrade options for DB or GI collection.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder upgradeDetails(@Nullable Output<FsuCycleUpgradeDetailsArgs> upgradeDetails) {
+            $.upgradeDetails = upgradeDetails;
+            return this;
+        }
+
+        /**
+         * @param upgradeDetails (Updatable) Details of supported upgrade options for DB or GI collection.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder upgradeDetails(FsuCycleUpgradeDetailsArgs upgradeDetails) {
+            return upgradeDetails(Output.of(upgradeDetails));
         }
 
         public FsuCycleArgs build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Core.outputs.GetDedicatedVmHostsDedicatedVmHostCapacityBin;
 import com.pulumi.oci.Core.outputs.GetDedicatedVmHostsDedicatedVmHostPlacementConstraintDetail;
 import java.lang.Double;
 import java.lang.String;
@@ -19,11 +20,17 @@ public final class GetDedicatedVmHostsDedicatedVmHost {
      * 
      */
     private String availabilityDomain;
+    private List<GetDedicatedVmHostsDedicatedVmHostCapacityBin> capacityBins;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
     private String compartmentId;
+    /**
+     * @return The OCID of the compute bare metal host.
+     * 
+     */
+    private String computeBareMetalHostId;
     /**
      * @return The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VMs.
      * 
@@ -98,12 +105,22 @@ public final class GetDedicatedVmHostsDedicatedVmHost {
     public String availabilityDomain() {
         return this.availabilityDomain;
     }
+    public List<GetDedicatedVmHostsDedicatedVmHostCapacityBin> capacityBins() {
+        return this.capacityBins;
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return The OCID of the compute bare metal host.
+     * 
+     */
+    public String computeBareMetalHostId() {
+        return this.computeBareMetalHostId;
     }
     /**
      * @return The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VMs.
@@ -207,7 +224,9 @@ public final class GetDedicatedVmHostsDedicatedVmHost {
     @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
+        private List<GetDedicatedVmHostsDedicatedVmHostCapacityBin> capacityBins;
         private String compartmentId;
+        private String computeBareMetalHostId;
         private String dedicatedVmHostShape;
         private Map<String,String> definedTags;
         private String displayName;
@@ -225,7 +244,9 @@ public final class GetDedicatedVmHostsDedicatedVmHost {
         public Builder(GetDedicatedVmHostsDedicatedVmHost defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
+    	      this.capacityBins = defaults.capacityBins;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.computeBareMetalHostId = defaults.computeBareMetalHostId;
     	      this.dedicatedVmHostShape = defaults.dedicatedVmHostShape;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
@@ -250,11 +271,30 @@ public final class GetDedicatedVmHostsDedicatedVmHost {
             return this;
         }
         @CustomType.Setter
+        public Builder capacityBins(List<GetDedicatedVmHostsDedicatedVmHostCapacityBin> capacityBins) {
+            if (capacityBins == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostsDedicatedVmHost", "capacityBins");
+            }
+            this.capacityBins = capacityBins;
+            return this;
+        }
+        public Builder capacityBins(GetDedicatedVmHostsDedicatedVmHostCapacityBin... capacityBins) {
+            return capacityBins(List.of(capacityBins));
+        }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             if (compartmentId == null) {
               throw new MissingRequiredPropertyException("GetDedicatedVmHostsDedicatedVmHost", "compartmentId");
             }
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder computeBareMetalHostId(String computeBareMetalHostId) {
+            if (computeBareMetalHostId == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostsDedicatedVmHost", "computeBareMetalHostId");
+            }
+            this.computeBareMetalHostId = computeBareMetalHostId;
             return this;
         }
         @CustomType.Setter
@@ -367,7 +407,9 @@ public final class GetDedicatedVmHostsDedicatedVmHost {
         public GetDedicatedVmHostsDedicatedVmHost build() {
             final var _resultValue = new GetDedicatedVmHostsDedicatedVmHost();
             _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.capacityBins = capacityBins;
             _resultValue.compartmentId = compartmentId;
+            _resultValue.computeBareMetalHostId = computeBareMetalHostId;
             _resultValue.dedicatedVmHostShape = dedicatedVmHostShape;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;

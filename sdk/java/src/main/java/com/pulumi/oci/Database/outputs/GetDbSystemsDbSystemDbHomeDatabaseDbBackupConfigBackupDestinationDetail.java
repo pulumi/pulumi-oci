@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 
@@ -16,6 +17,8 @@ public final class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestina
      * 
      */
     private String id;
+    private Boolean isRemote;
+    private String remoteRegion;
     private String type;
 
     private GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail() {}
@@ -28,6 +31,12 @@ public final class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestina
      */
     public String id() {
         return this.id;
+    }
+    public Boolean isRemote() {
+        return this.isRemote;
+    }
+    public String remoteRegion() {
+        return this.remoteRegion;
     }
     public String type() {
         return this.type;
@@ -44,12 +53,16 @@ public final class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestina
     public static final class Builder {
         private String dbrsPolicyId;
         private String id;
+        private Boolean isRemote;
+        private String remoteRegion;
         private String type;
         public Builder() {}
         public Builder(GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dbrsPolicyId = defaults.dbrsPolicyId;
     	      this.id = defaults.id;
+    	      this.isRemote = defaults.isRemote;
+    	      this.remoteRegion = defaults.remoteRegion;
     	      this.type = defaults.type;
         }
 
@@ -70,6 +83,22 @@ public final class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestina
             return this;
         }
         @CustomType.Setter
+        public Builder isRemote(Boolean isRemote) {
+            if (isRemote == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail", "isRemote");
+            }
+            this.isRemote = isRemote;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder remoteRegion(String remoteRegion) {
+            if (remoteRegion == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail", "remoteRegion");
+            }
+            this.remoteRegion = remoteRegion;
+            return this;
+        }
+        @CustomType.Setter
         public Builder type(String type) {
             if (type == null) {
               throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail", "type");
@@ -81,6 +110,8 @@ public final class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestina
             final var _resultValue = new GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail();
             _resultValue.dbrsPolicyId = dbrsPolicyId;
             _resultValue.id = id;
+            _resultValue.isRemote = isRemote;
+            _resultValue.remoteRegion = remoteRegion;
             _resultValue.type = type;
             return _resultValue;
         }

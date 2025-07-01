@@ -108,6 +108,11 @@ public final class GetMysqlBackupResult {
      * 
      */
     private String shapeName;
+    /**
+     * @return Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+     * 
+     */
+    private String softDelete;
     private List<GetMysqlBackupSourceDetail> sourceDetails;
     /**
      * @return The state of the backup.
@@ -268,6 +273,13 @@ public final class GetMysqlBackupResult {
     public String shapeName() {
         return this.shapeName;
     }
+    /**
+     * @return Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+     * 
+     */
+    public String softDelete() {
+        return this.softDelete;
+    }
     public List<GetMysqlBackupSourceDetail> sourceDetails() {
         return this.sourceDetails;
     }
@@ -336,6 +348,7 @@ public final class GetMysqlBackupResult {
         private String originalSourceBackupId;
         private Integer retentionInDays;
         private String shapeName;
+        private String softDelete;
         private List<GetMysqlBackupSourceDetail> sourceDetails;
         private String state;
         private Map<String,String> systemTags;
@@ -365,6 +378,7 @@ public final class GetMysqlBackupResult {
     	      this.originalSourceBackupId = defaults.originalSourceBackupId;
     	      this.retentionInDays = defaults.retentionInDays;
     	      this.shapeName = defaults.shapeName;
+    	      this.softDelete = defaults.softDelete;
     	      this.sourceDetails = defaults.sourceDetails;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
@@ -540,6 +554,14 @@ public final class GetMysqlBackupResult {
             return this;
         }
         @CustomType.Setter
+        public Builder softDelete(String softDelete) {
+            if (softDelete == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupResult", "softDelete");
+            }
+            this.softDelete = softDelete;
+            return this;
+        }
+        @CustomType.Setter
         public Builder sourceDetails(List<GetMysqlBackupSourceDetail> sourceDetails) {
             if (sourceDetails == null) {
               throw new MissingRequiredPropertyException("GetMysqlBackupResult", "sourceDetails");
@@ -612,6 +634,7 @@ public final class GetMysqlBackupResult {
             _resultValue.originalSourceBackupId = originalSourceBackupId;
             _resultValue.retentionInDays = retentionInDays;
             _resultValue.shapeName = shapeName;
+            _resultValue.softDelete = softDelete;
             _resultValue.sourceDetails = sourceDetails;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;

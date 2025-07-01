@@ -30,6 +30,7 @@ public final class GetAutonomousContainerDatabaseResult {
      * 
      */
     private List<GetAutonomousContainerDatabaseAssociatedBackupConfigurationDetail> associatedBackupConfigurationDetails;
+    private String autonomousContainerDatabaseBackupId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
      * 
@@ -164,7 +165,7 @@ public final class GetAutonomousContainerDatabaseResult {
      */
     private Boolean isDstFileUpdateEnabled;
     /**
-     * @return Whether it is multiple standby Autonomous Dataguard
+     * @return Indicates if it is multiple standby Autonomous Dataguard
      * 
      */
     private Boolean isMultipleStandby;
@@ -293,6 +294,7 @@ public final class GetAutonomousContainerDatabaseResult {
      * 
      */
     private String serviceLevelAgreementType;
+    private String source;
     /**
      * @return The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
      * 
@@ -347,6 +349,9 @@ public final class GetAutonomousContainerDatabaseResult {
      */
     public List<GetAutonomousContainerDatabaseAssociatedBackupConfigurationDetail> associatedBackupConfigurationDetails() {
         return this.associatedBackupConfigurationDetails;
+    }
+    public String autonomousContainerDatabaseBackupId() {
+        return this.autonomousContainerDatabaseBackupId;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
@@ -540,7 +545,7 @@ public final class GetAutonomousContainerDatabaseResult {
         return this.isDstFileUpdateEnabled;
     }
     /**
-     * @return Whether it is multiple standby Autonomous Dataguard
+     * @return Indicates if it is multiple standby Autonomous Dataguard
      * 
      */
     public Boolean isMultipleStandby() {
@@ -737,6 +742,9 @@ public final class GetAutonomousContainerDatabaseResult {
     public String serviceLevelAgreementType() {
         return this.serviceLevelAgreementType;
     }
+    public String source() {
+        return this.source;
+    }
     /**
      * @return The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
      * 
@@ -814,6 +822,7 @@ public final class GetAutonomousContainerDatabaseResult {
     @CustomType.Builder
     public static final class Builder {
         private List<GetAutonomousContainerDatabaseAssociatedBackupConfigurationDetail> associatedBackupConfigurationDetails;
+        private String autonomousContainerDatabaseBackupId;
         private String autonomousContainerDatabaseId;
         private String autonomousExadataInfrastructureId;
         private String autonomousVmClusterId;
@@ -877,6 +886,7 @@ public final class GetAutonomousContainerDatabaseResult {
         private String role;
         private Boolean rotateKeyTrigger;
         private String serviceLevelAgreementType;
+        private String source;
         private Integer standbyMaintenanceBufferInDays;
         private String state;
         private Integer switchoverTrigger;
@@ -891,6 +901,7 @@ public final class GetAutonomousContainerDatabaseResult {
         public Builder(GetAutonomousContainerDatabaseResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.associatedBackupConfigurationDetails = defaults.associatedBackupConfigurationDetails;
+    	      this.autonomousContainerDatabaseBackupId = defaults.autonomousContainerDatabaseBackupId;
     	      this.autonomousContainerDatabaseId = defaults.autonomousContainerDatabaseId;
     	      this.autonomousExadataInfrastructureId = defaults.autonomousExadataInfrastructureId;
     	      this.autonomousVmClusterId = defaults.autonomousVmClusterId;
@@ -954,6 +965,7 @@ public final class GetAutonomousContainerDatabaseResult {
     	      this.role = defaults.role;
     	      this.rotateKeyTrigger = defaults.rotateKeyTrigger;
     	      this.serviceLevelAgreementType = defaults.serviceLevelAgreementType;
+    	      this.source = defaults.source;
     	      this.standbyMaintenanceBufferInDays = defaults.standbyMaintenanceBufferInDays;
     	      this.state = defaults.state;
     	      this.switchoverTrigger = defaults.switchoverTrigger;
@@ -976,6 +988,14 @@ public final class GetAutonomousContainerDatabaseResult {
         }
         public Builder associatedBackupConfigurationDetails(GetAutonomousContainerDatabaseAssociatedBackupConfigurationDetail... associatedBackupConfigurationDetails) {
             return associatedBackupConfigurationDetails(List.of(associatedBackupConfigurationDetails));
+        }
+        @CustomType.Setter
+        public Builder autonomousContainerDatabaseBackupId(String autonomousContainerDatabaseBackupId) {
+            if (autonomousContainerDatabaseBackupId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResult", "autonomousContainerDatabaseBackupId");
+            }
+            this.autonomousContainerDatabaseBackupId = autonomousContainerDatabaseBackupId;
+            return this;
         }
         @CustomType.Setter
         public Builder autonomousContainerDatabaseId(String autonomousContainerDatabaseId) {
@@ -1515,6 +1535,14 @@ public final class GetAutonomousContainerDatabaseResult {
             return this;
         }
         @CustomType.Setter
+        public Builder source(String source) {
+            if (source == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResult", "source");
+            }
+            this.source = source;
+            return this;
+        }
+        @CustomType.Setter
         public Builder standbyMaintenanceBufferInDays(Integer standbyMaintenanceBufferInDays) {
             if (standbyMaintenanceBufferInDays == null) {
               throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResult", "standbyMaintenanceBufferInDays");
@@ -1597,6 +1625,7 @@ public final class GetAutonomousContainerDatabaseResult {
         public GetAutonomousContainerDatabaseResult build() {
             final var _resultValue = new GetAutonomousContainerDatabaseResult();
             _resultValue.associatedBackupConfigurationDetails = associatedBackupConfigurationDetails;
+            _resultValue.autonomousContainerDatabaseBackupId = autonomousContainerDatabaseBackupId;
             _resultValue.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
             _resultValue.autonomousExadataInfrastructureId = autonomousExadataInfrastructureId;
             _resultValue.autonomousVmClusterId = autonomousVmClusterId;
@@ -1660,6 +1689,7 @@ public final class GetAutonomousContainerDatabaseResult {
             _resultValue.role = role;
             _resultValue.rotateKeyTrigger = rotateKeyTrigger;
             _resultValue.serviceLevelAgreementType = serviceLevelAgreementType;
+            _resultValue.source = source;
             _resultValue.standbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
             _resultValue.state = state;
             _resultValue.switchoverTrigger = switchoverTrigger;

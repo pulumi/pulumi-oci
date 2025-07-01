@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -46,6 +47,40 @@ public final class DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs exten
     }
 
     /**
+     * Indicates whether the backup destination is cross-region or local region.
+     * 
+     */
+    @Import(name="isRemote")
+    private @Nullable Output<Boolean> isRemote;
+
+    /**
+     * @return Indicates whether the backup destination is cross-region or local region.
+     * 
+     */
+    public Optional<Output<Boolean>> isRemote() {
+        return Optional.ofNullable(this.isRemote);
+    }
+
+    /**
+     * The name of the remote region where the remote automatic incremental backups will be stored.
+     * 
+     * For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+     * 
+     */
+    @Import(name="remoteRegion")
+    private @Nullable Output<String> remoteRegion;
+
+    /**
+     * @return The name of the remote region where the remote automatic incremental backups will be stored.
+     * 
+     * For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+     * 
+     */
+    public Optional<Output<String>> remoteRegion() {
+        return Optional.ofNullable(this.remoteRegion);
+    }
+
+    /**
      * Type of the database backup destination. Supported values: `NFS`.
      * 
      */
@@ -60,12 +95,30 @@ public final class DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs exten
         return Optional.ofNullable(this.type);
     }
 
+    @Import(name="vpcPassword")
+    private @Nullable Output<String> vpcPassword;
+
+    public Optional<Output<String>> vpcPassword() {
+        return Optional.ofNullable(this.vpcPassword);
+    }
+
+    @Import(name="vpcUser")
+    private @Nullable Output<String> vpcUser;
+
+    public Optional<Output<String>> vpcUser() {
+        return Optional.ofNullable(this.vpcUser);
+    }
+
     private DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs() {}
 
     private DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs(DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs $) {
         this.dbrsPolicyId = $.dbrsPolicyId;
         this.id = $.id;
+        this.isRemote = $.isRemote;
+        this.remoteRegion = $.remoteRegion;
         this.type = $.type;
+        this.vpcPassword = $.vpcPassword;
+        this.vpcUser = $.vpcUser;
     }
 
     public static Builder builder() {
@@ -129,6 +182,52 @@ public final class DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs exten
         }
 
         /**
+         * @param isRemote Indicates whether the backup destination is cross-region or local region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isRemote(@Nullable Output<Boolean> isRemote) {
+            $.isRemote = isRemote;
+            return this;
+        }
+
+        /**
+         * @param isRemote Indicates whether the backup destination is cross-region or local region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isRemote(Boolean isRemote) {
+            return isRemote(Output.of(isRemote));
+        }
+
+        /**
+         * @param remoteRegion The name of the remote region where the remote automatic incremental backups will be stored.
+         * 
+         * For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder remoteRegion(@Nullable Output<String> remoteRegion) {
+            $.remoteRegion = remoteRegion;
+            return this;
+        }
+
+        /**
+         * @param remoteRegion The name of the remote region where the remote automatic incremental backups will be stored.
+         * 
+         * For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder remoteRegion(String remoteRegion) {
+            return remoteRegion(Output.of(remoteRegion));
+        }
+
+        /**
          * @param type Type of the database backup destination. Supported values: `NFS`.
          * 
          * @return builder
@@ -147,6 +246,24 @@ public final class DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs exten
          */
         public Builder type(String type) {
             return type(Output.of(type));
+        }
+
+        public Builder vpcPassword(@Nullable Output<String> vpcPassword) {
+            $.vpcPassword = vpcPassword;
+            return this;
+        }
+
+        public Builder vpcPassword(String vpcPassword) {
+            return vpcPassword(Output.of(vpcPassword));
+        }
+
+        public Builder vpcUser(@Nullable Output<String> vpcUser) {
+            $.vpcUser = vpcUser;
+            return this;
+        }
+
+        public Builder vpcUser(String vpcUser) {
+            return vpcUser(Output.of(vpcUser));
         }
 
         public DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs build() {

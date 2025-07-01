@@ -18,14 +18,14 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
     public static final PropertyState Empty = new PropertyState();
 
     /**
-     * Tenancy OCID
+     * (Updatable) Compartment OCID
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return Tenancy OCID
+     * @return (Updatable) Compartment OCID
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -287,7 +287,7 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId Tenancy OCID
+         * @param compartmentId (Updatable) Compartment OCID
          * 
          * @return builder
          * 
@@ -298,7 +298,7 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId Tenancy OCID
+         * @param compartmentId (Updatable) Compartment OCID
          * 
          * @return builder
          * 

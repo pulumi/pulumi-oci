@@ -28,6 +28,11 @@ public final class GetComputeHostsComputeHostCollectionItem {
      */
     private String compartmentId;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group.
+     * 
+     */
+    private String computeHostGroupId;
+    /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
@@ -73,11 +78,6 @@ public final class GetComputeHostsComputeHostCollectionItem {
      * 
      */
     private String instanceId;
-    /**
-     * @return A free-form description detailing why the host is in its current state.
-     * 
-     */
-    private Map<String,String> lifecycleDetails;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Local Block
      * 
@@ -130,6 +130,13 @@ public final class GetComputeHostsComputeHostCollectionItem {
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group.
+     * 
+     */
+    public String computeHostGroupId() {
+        return this.computeHostGroupId;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
@@ -198,13 +205,6 @@ public final class GetComputeHostsComputeHostCollectionItem {
         return this.instanceId;
     }
     /**
-     * @return A free-form description detailing why the host is in its current state.
-     * 
-     */
-    public Map<String,String> lifecycleDetails() {
-        return this.lifecycleDetails;
-    }
-    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Local Block
      * 
      */
@@ -259,6 +259,7 @@ public final class GetComputeHostsComputeHostCollectionItem {
         private String availabilityDomain;
         private String capacityReservationId;
         private String compartmentId;
+        private String computeHostGroupId;
         private Map<String,String> definedTags;
         private String displayName;
         private String faultDomain;
@@ -269,7 +270,6 @@ public final class GetComputeHostsComputeHostCollectionItem {
         private String hpcIslandId;
         private String id;
         private String instanceId;
-        private Map<String,String> lifecycleDetails;
         private String localBlockId;
         private String networkBlockId;
         private String shape;
@@ -282,6 +282,7 @@ public final class GetComputeHostsComputeHostCollectionItem {
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.capacityReservationId = defaults.capacityReservationId;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.computeHostGroupId = defaults.computeHostGroupId;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.faultDomain = defaults.faultDomain;
@@ -292,7 +293,6 @@ public final class GetComputeHostsComputeHostCollectionItem {
     	      this.hpcIslandId = defaults.hpcIslandId;
     	      this.id = defaults.id;
     	      this.instanceId = defaults.instanceId;
-    	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.localBlockId = defaults.localBlockId;
     	      this.networkBlockId = defaults.networkBlockId;
     	      this.shape = defaults.shape;
@@ -323,6 +323,14 @@ public final class GetComputeHostsComputeHostCollectionItem {
               throw new MissingRequiredPropertyException("GetComputeHostsComputeHostCollectionItem", "compartmentId");
             }
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder computeHostGroupId(String computeHostGroupId) {
+            if (computeHostGroupId == null) {
+              throw new MissingRequiredPropertyException("GetComputeHostsComputeHostCollectionItem", "computeHostGroupId");
+            }
+            this.computeHostGroupId = computeHostGroupId;
             return this;
         }
         @CustomType.Setter
@@ -406,14 +414,6 @@ public final class GetComputeHostsComputeHostCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(Map<String,String> lifecycleDetails) {
-            if (lifecycleDetails == null) {
-              throw new MissingRequiredPropertyException("GetComputeHostsComputeHostCollectionItem", "lifecycleDetails");
-            }
-            this.lifecycleDetails = lifecycleDetails;
-            return this;
-        }
-        @CustomType.Setter
         public Builder localBlockId(String localBlockId) {
             if (localBlockId == null) {
               throw new MissingRequiredPropertyException("GetComputeHostsComputeHostCollectionItem", "localBlockId");
@@ -466,6 +466,7 @@ public final class GetComputeHostsComputeHostCollectionItem {
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.capacityReservationId = capacityReservationId;
             _resultValue.compartmentId = compartmentId;
+            _resultValue.computeHostGroupId = computeHostGroupId;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.faultDomain = faultDomain;
@@ -476,7 +477,6 @@ public final class GetComputeHostsComputeHostCollectionItem {
             _resultValue.hpcIslandId = hpcIslandId;
             _resultValue.id = id;
             _resultValue.instanceId = instanceId;
-            _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.localBlockId = localBlockId;
             _resultValue.networkBlockId = networkBlockId;
             _resultValue.shape = shape;

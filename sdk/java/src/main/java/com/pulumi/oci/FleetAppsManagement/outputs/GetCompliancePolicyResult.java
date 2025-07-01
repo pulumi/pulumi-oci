@@ -67,6 +67,11 @@ public final class GetCompliancePolicyResult {
      * 
      */
     private String timeUpdated;
+    /**
+     * @return The type of the Compliance Policy.
+     * 
+     */
+    private String type;
 
     private GetCompliancePolicyResult() {}
     /**
@@ -149,6 +154,13 @@ public final class GetCompliancePolicyResult {
     public String timeUpdated() {
         return this.timeUpdated;
     }
+    /**
+     * @return The type of the Compliance Policy.
+     * 
+     */
+    public String type() {
+        return this.type;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -171,6 +183,7 @@ public final class GetCompliancePolicyResult {
         private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
+        private String type;
         public Builder() {}
         public Builder(GetCompliancePolicyResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -186,6 +199,7 @@ public final class GetCompliancePolicyResult {
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
+    	      this.type = defaults.type;
         }
 
         @CustomType.Setter
@@ -284,6 +298,14 @@ public final class GetCompliancePolicyResult {
             this.timeUpdated = timeUpdated;
             return this;
         }
+        @CustomType.Setter
+        public Builder type(String type) {
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetCompliancePolicyResult", "type");
+            }
+            this.type = type;
+            return this;
+        }
         public GetCompliancePolicyResult build() {
             final var _resultValue = new GetCompliancePolicyResult();
             _resultValue.compartmentId = compartmentId;
@@ -298,6 +320,7 @@ public final class GetCompliancePolicyResult {
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
+            _resultValue.type = type;
             return _resultValue;
         }
     }

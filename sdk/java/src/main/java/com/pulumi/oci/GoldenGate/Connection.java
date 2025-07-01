@@ -11,8 +11,10 @@ import com.pulumi.oci.GoldenGate.ConnectionArgs;
 import com.pulumi.oci.GoldenGate.inputs.ConnectionState;
 import com.pulumi.oci.GoldenGate.outputs.ConnectionAdditionalAttribute;
 import com.pulumi.oci.GoldenGate.outputs.ConnectionBootstrapServer;
+import com.pulumi.oci.GoldenGate.outputs.ConnectionCatalog;
 import com.pulumi.oci.GoldenGate.outputs.ConnectionIngressIp;
 import com.pulumi.oci.GoldenGate.outputs.ConnectionLock;
+import com.pulumi.oci.GoldenGate.outputs.ConnectionStorage;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -41,7 +43,9 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.GoldenGate.ConnectionArgs;
  * import com.pulumi.oci.GoldenGate.inputs.ConnectionAdditionalAttributeArgs;
  * import com.pulumi.oci.GoldenGate.inputs.ConnectionBootstrapServerArgs;
+ * import com.pulumi.oci.GoldenGate.inputs.ConnectionCatalogArgs;
  * import com.pulumi.oci.GoldenGate.inputs.ConnectionLockArgs;
+ * import com.pulumi.oci.GoldenGate.inputs.ConnectionStorageArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -75,6 +79,17 @@ import javax.annotation.Nullable;
  *                 .host(connectionBootstrapServersHost)
  *                 .port(connectionBootstrapServersPort)
  *                 .privateIp(connectionBootstrapServersPrivateIp)
+ *                 .build())
+ *             .catalog(ConnectionCatalogArgs.builder()
+ *                 .catalogType(connectionCatalogCatalogType)
+ *                 .branch(connectionCatalogBranch)
+ *                 .clientId(testClient.id())
+ *                 .clientSecretSecretId(testSecret.id())
+ *                 .glueId(testGlue.id())
+ *                 .name(connectionCatalogName)
+ *                 .principalRole(connectionCatalogPrincipalRole)
+ *                 .propertiesSecretId(testSecret.id())
+ *                 .uri(connectionCatalogUri)
  *                 .build())
  *             .clientId(testClient.id())
  *             .clientSecret(connectionClientSecret)
@@ -149,6 +164,20 @@ import javax.annotation.Nullable;
  *             .sslKeySecretId(testSecret.id())
  *             .sslMode(connectionSslMode)
  *             .sslServerCertificate(connectionSslServerCertificate)
+ *             .storage(ConnectionStorageArgs.builder()
+ *                 .storageType(connectionStorageStorageType)
+ *                 .accessKeyId(testKey.id())
+ *                 .accountKeySecretId(testSecret.id())
+ *                 .accountName(connectionStorageAccountName)
+ *                 .bucket(connectionStorageBucket)
+ *                 .container(connectionStorageContainer)
+ *                 .endpoint(connectionStorageEndpoint)
+ *                 .projectId(testProject.id())
+ *                 .region(connectionStorageRegion)
+ *                 .schemeType(connectionStorageSchemeType)
+ *                 .secretAccessKeySecretId(testSecret.id())
+ *                 .serviceAccountKeyFileSecretId(testSecret.id())
+ *                 .build())
  *             .storageCredentialName(connectionStorageCredentialName)
  *             .streamPoolId(testStreamPool.id())
  *             .subnetId(testSubnet.id())
@@ -316,6 +345,20 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.bootstrapServers;
     }
     /**
+     * (Updatable) The information about a new catalog of given type used in an Iceberg connection.
+     * 
+     */
+    @Export(name="catalog", refs={ConnectionCatalog.class}, tree="[0]")
+    private Output<ConnectionCatalog> catalog;
+
+    /**
+     * @return (Updatable) The information about a new catalog of given type used in an Iceberg connection.
+     * 
+     */
+    public Output<ConnectionCatalog> catalog() {
+        return this.catalog;
+    }
+    /**
      * (Updatable) Azure client ID of the application. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
      * 
      */
@@ -442,14 +485,14 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.consumerProperties;
     }
     /**
-     * (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
+     * (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     @Export(name="coreSiteXml", refs={String.class}, tree="[0]")
     private Output<String> coreSiteXml;
 
     /**
-     * @return (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
+     * @return (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     public Output<String> coreSiteXml() {
@@ -568,14 +611,14 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.doesUseSecretIds;
     }
     /**
-     * (Updatable)Azure Storage service endpoint. e.g: https://test.blob.core.windows.net,  Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+     * (Updatable) Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
      * 
      */
     @Export(name="endpoint", refs={String.class}, tree="[0]")
     private Output<String> endpoint;
 
     /**
-     * @return (Updatable)Azure Storage service endpoint. e.g: https://test.blob.core.windows.net,  Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+     * @return (Updatable) Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
      * 
      */
     public Output<String> endpoint() {
@@ -1126,14 +1169,14 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.serviceAccountKeyFile);
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, &#39;serviceAccountKeyFile&#39; field must not be provided.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage. Note: When provided, &#39;serviceAccountKeyFile&#39; field must not be provided.
      * 
      */
     @Export(name="serviceAccountKeyFileSecretId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> serviceAccountKeyFileSecretId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, &#39;serviceAccountKeyFile&#39; field must not be provided.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage. Note: When provided, &#39;serviceAccountKeyFile&#39; field must not be provided.
      * 
      */
     public Output<Optional<String>> serviceAccountKeyFileSecretId() {
@@ -1196,28 +1239,28 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.shouldValidateServerCertificate;
     }
     /**
-     * (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
+     * (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     @Export(name="sslCa", refs={String.class}, tree="[0]")
     private Output<String> sslCa;
 
     /**
-     * @return (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
+     * @return (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     public Output<String> sslCa() {
         return this.sslCa;
     }
     /**
-     * (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
+     * (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     @Export(name="sslCert", refs={String.class}, tree="[0]")
     private Output<String> sslCert;
 
     /**
-     * @return (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
+     * @return (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     public Output<String> sslCert() {
@@ -1280,14 +1323,14 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.sslClientKeystoredbSecretId);
     }
     /**
-     * (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
+     * (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     @Export(name="sslCrl", refs={String.class}, tree="[0]")
     private Output<String> sslCrl;
 
     /**
-     * @return (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
+     * @return (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     public Output<String> sslCrl() {
@@ -1366,14 +1409,14 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.sslMode;
     }
     /**
-     * (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+     * (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     @Export(name="sslServerCertificate", refs={String.class}, tree="[0]")
     private Output<String> sslServerCertificate;
 
     /**
-     * @return (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+     * @return (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     public Output<String> sslServerCertificate() {
@@ -1392,6 +1435,20 @@ public class Connection extends com.pulumi.resources.CustomResource {
      */
     public Output<String> state() {
         return this.state;
+    }
+    /**
+     * (Updatable) The information about a new storage of given type used in an Iceberg connection.
+     * 
+     */
+    @Export(name="storage", refs={ConnectionStorage.class}, tree="[0]")
+    private Output<ConnectionStorage> storage;
+
+    /**
+     * @return (Updatable) The information about a new storage of given type used in an Iceberg connection.
+     * 
+     */
+    public Output<ConnectionStorage> storage() {
+        return this.storage;
     }
     /**
      * (Updatable) Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
@@ -1520,14 +1577,14 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.timeUpdated;
     }
     /**
-     * (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+     * (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     @Export(name="tlsCaFile", refs={String.class}, tree="[0]")
     private Output<String> tlsCaFile;
 
     /**
-     * @return (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+     * @return (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     public Output<String> tlsCaFile() {

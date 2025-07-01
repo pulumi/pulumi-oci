@@ -48,7 +48,6 @@ public final class AutonomousContainerDatabaseRecoveryApplianceDetailArgs extend
 
     /**
      * The time when the recovery appliance details are updated.
-     * ===
      * 
      */
     @Import(name="timeRecoveryApplianceDetailsUpdated")
@@ -56,7 +55,6 @@ public final class AutonomousContainerDatabaseRecoveryApplianceDetailArgs extend
 
     /**
      * @return The time when the recovery appliance details are updated.
-     * ===
      * 
      */
     public Optional<Output<String>> timeRecoveryApplianceDetailsUpdated() {
@@ -133,7 +131,6 @@ public final class AutonomousContainerDatabaseRecoveryApplianceDetailArgs extend
 
         /**
          * @param timeRecoveryApplianceDetailsUpdated The time when the recovery appliance details are updated.
-         * ===
          * 
          * @return builder
          * 
@@ -145,7 +142,6 @@ public final class AutonomousContainerDatabaseRecoveryApplianceDetailArgs extend
 
         /**
          * @param timeRecoveryApplianceDetailsUpdated The time when the recovery appliance details are updated.
-         * ===
          * 
          * @return builder
          * 

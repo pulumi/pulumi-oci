@@ -92,6 +92,7 @@ import javax.annotation.Nullable;
  *                     .isEnabled(mysqlDbSystemBackupPolicyPitrPolicyIsEnabled)
  *                     .build())
  *                 .retentionInDays(mysqlDbSystemBackupPolicyRetentionInDays)
+ *                 .softDelete(mysqlDbSystemBackupPolicySoftDelete)
  *                 .windowStartTime(mysqlDbSystemBackupPolicyWindowStartTime)
  *                 .build())
  *             .configurationId(testConfiguration.id())

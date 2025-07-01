@@ -16,6 +16,22 @@ import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccHandoverResourceBl
 import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccHandoverResourceBlockDetailsPlainArgs;
 import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccHandoverResourceBlocksArgs;
 import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccHandoverResourceBlocksPlainArgs;
+import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalArgs;
+import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalCatalogArgs;
+import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalCatalogPlainArgs;
+import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalCatalogResourcesArgs;
+import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalCatalogResourcesPlainArgs;
+import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalCatalogsArgs;
+import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalCatalogsPlainArgs;
+import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalDeliveriesArgs;
+import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalDeliveriesPlainArgs;
+import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalDeliveryArgs;
+import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalDeliveryPlainArgs;
+import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalItemsArgs;
+import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalItemsPlainArgs;
+import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalPlainArgs;
+import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalsArgs;
+import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalsPlainArgs;
 import com.pulumi.oci.CapacityManagement.inputs.GetNamespaceOccOverviewsArgs;
 import com.pulumi.oci.CapacityManagement.inputs.GetNamespaceOccOverviewsPlainArgs;
 import com.pulumi.oci.CapacityManagement.inputs.GetOccAvailabilityCatalogArgs;
@@ -38,10 +54,30 @@ import com.pulumi.oci.CapacityManagement.inputs.GetOccHandoverResourceBlockDetai
 import com.pulumi.oci.CapacityManagement.inputs.GetOccHandoverResourceBlockDetailsPlainArgs;
 import com.pulumi.oci.CapacityManagement.inputs.GetOccHandoverResourceBlocksArgs;
 import com.pulumi.oci.CapacityManagement.inputs.GetOccHandoverResourceBlocksPlainArgs;
+import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalArgs;
+import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalCatalogResourcesArgs;
+import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalCatalogResourcesPlainArgs;
+import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalDeliveriesArgs;
+import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalDeliveriesPlainArgs;
+import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalItemArgs;
+import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalItemPlainArgs;
+import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalItemsArgs;
+import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalItemsPlainArgs;
+import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalPlainArgs;
+import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalsArgs;
+import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalsPlainArgs;
 import com.pulumi.oci.CapacityManagement.outputs.GetInternalNamespaceOccOverviewsResult;
 import com.pulumi.oci.CapacityManagement.outputs.GetInternalOccAvailabilityCatalogsResult;
 import com.pulumi.oci.CapacityManagement.outputs.GetInternalOccHandoverResourceBlockDetailsResult;
 import com.pulumi.oci.CapacityManagement.outputs.GetInternalOccHandoverResourceBlocksResult;
+import com.pulumi.oci.CapacityManagement.outputs.GetInternalOccmDemandSignalCatalogResourcesResult;
+import com.pulumi.oci.CapacityManagement.outputs.GetInternalOccmDemandSignalCatalogResult;
+import com.pulumi.oci.CapacityManagement.outputs.GetInternalOccmDemandSignalCatalogsResult;
+import com.pulumi.oci.CapacityManagement.outputs.GetInternalOccmDemandSignalDeliveriesResult;
+import com.pulumi.oci.CapacityManagement.outputs.GetInternalOccmDemandSignalDeliveryResult;
+import com.pulumi.oci.CapacityManagement.outputs.GetInternalOccmDemandSignalItemsResult;
+import com.pulumi.oci.CapacityManagement.outputs.GetInternalOccmDemandSignalResult;
+import com.pulumi.oci.CapacityManagement.outputs.GetInternalOccmDemandSignalsResult;
 import com.pulumi.oci.CapacityManagement.outputs.GetNamespaceOccOverviewsResult;
 import com.pulumi.oci.CapacityManagement.outputs.GetOccAvailabilityCatalogContentResult;
 import com.pulumi.oci.CapacityManagement.outputs.GetOccAvailabilityCatalogOccAvailabilitiesResult;
@@ -53,6 +89,12 @@ import com.pulumi.oci.CapacityManagement.outputs.GetOccCustomerGroupResult;
 import com.pulumi.oci.CapacityManagement.outputs.GetOccCustomerGroupsResult;
 import com.pulumi.oci.CapacityManagement.outputs.GetOccHandoverResourceBlockDetailsResult;
 import com.pulumi.oci.CapacityManagement.outputs.GetOccHandoverResourceBlocksResult;
+import com.pulumi.oci.CapacityManagement.outputs.GetOccmDemandSignalCatalogResourcesResult;
+import com.pulumi.oci.CapacityManagement.outputs.GetOccmDemandSignalDeliveriesResult;
+import com.pulumi.oci.CapacityManagement.outputs.GetOccmDemandSignalItemResult;
+import com.pulumi.oci.CapacityManagement.outputs.GetOccmDemandSignalItemsResult;
+import com.pulumi.oci.CapacityManagement.outputs.GetOccmDemandSignalResult;
+import com.pulumi.oci.CapacityManagement.outputs.GetOccmDemandSignalsResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
@@ -1021,6 +1063,1851 @@ public final class CapacityManagementFunctions {
      */
     public static CompletableFuture<GetInternalOccHandoverResourceBlocksResult> getInternalOccHandoverResourceBlocksPlain(GetInternalOccHandoverResourceBlocksPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:CapacityManagement/getInternalOccHandoverResourceBlocks:getInternalOccHandoverResourceBlocks", TypeShape.of(GetInternalOccHandoverResourceBlocksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Internal Occm Demand Signal resource in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This is an internal GET API which gets the detailed information about a specific demand signal.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignal = CapacityManagementFunctions.getInternalOccmDemandSignal(GetInternalOccmDemandSignalArgs.builder()
+     *             .occmDemandSignalId(testOccmDemandSignal.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInternalOccmDemandSignalResult> getInternalOccmDemandSignal(GetInternalOccmDemandSignalArgs args) {
+        return getInternalOccmDemandSignal(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Internal Occm Demand Signal resource in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This is an internal GET API which gets the detailed information about a specific demand signal.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignal = CapacityManagementFunctions.getInternalOccmDemandSignal(GetInternalOccmDemandSignalArgs.builder()
+     *             .occmDemandSignalId(testOccmDemandSignal.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetInternalOccmDemandSignalResult> getInternalOccmDemandSignalPlain(GetInternalOccmDemandSignalPlainArgs args) {
+        return getInternalOccmDemandSignalPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Internal Occm Demand Signal resource in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This is an internal GET API which gets the detailed information about a specific demand signal.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignal = CapacityManagementFunctions.getInternalOccmDemandSignal(GetInternalOccmDemandSignalArgs.builder()
+     *             .occmDemandSignalId(testOccmDemandSignal.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInternalOccmDemandSignalResult> getInternalOccmDemandSignal(GetInternalOccmDemandSignalArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getInternalOccmDemandSignal:getInternalOccmDemandSignal", TypeShape.of(GetInternalOccmDemandSignalResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Internal Occm Demand Signal resource in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This is an internal GET API which gets the detailed information about a specific demand signal.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignal = CapacityManagementFunctions.getInternalOccmDemandSignal(GetInternalOccmDemandSignalArgs.builder()
+     *             .occmDemandSignalId(testOccmDemandSignal.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInternalOccmDemandSignalResult> getInternalOccmDemandSignal(GetInternalOccmDemandSignalArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getInternalOccmDemandSignal:getInternalOccmDemandSignal", TypeShape.of(GetInternalOccmDemandSignalResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Internal Occm Demand Signal resource in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This is an internal GET API which gets the detailed information about a specific demand signal.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignal = CapacityManagementFunctions.getInternalOccmDemandSignal(GetInternalOccmDemandSignalArgs.builder()
+     *             .occmDemandSignalId(testOccmDemandSignal.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetInternalOccmDemandSignalResult> getInternalOccmDemandSignalPlain(GetInternalOccmDemandSignalPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:CapacityManagement/getInternalOccmDemandSignal:getInternalOccmDemandSignal", TypeShape.of(GetInternalOccmDemandSignalResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Internal Occm Demand Signal Catalog resource in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This API helps in getting the details about a specific occm demand signal catalog.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalCatalogArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignalCatalog = CapacityManagementFunctions.getInternalOccmDemandSignalCatalog(GetInternalOccmDemandSignalCatalogArgs.builder()
+     *             .occmDemandSignalCatalogId(testCatalog.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInternalOccmDemandSignalCatalogResult> getInternalOccmDemandSignalCatalog(GetInternalOccmDemandSignalCatalogArgs args) {
+        return getInternalOccmDemandSignalCatalog(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Internal Occm Demand Signal Catalog resource in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This API helps in getting the details about a specific occm demand signal catalog.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalCatalogArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignalCatalog = CapacityManagementFunctions.getInternalOccmDemandSignalCatalog(GetInternalOccmDemandSignalCatalogArgs.builder()
+     *             .occmDemandSignalCatalogId(testCatalog.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetInternalOccmDemandSignalCatalogResult> getInternalOccmDemandSignalCatalogPlain(GetInternalOccmDemandSignalCatalogPlainArgs args) {
+        return getInternalOccmDemandSignalCatalogPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Internal Occm Demand Signal Catalog resource in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This API helps in getting the details about a specific occm demand signal catalog.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalCatalogArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignalCatalog = CapacityManagementFunctions.getInternalOccmDemandSignalCatalog(GetInternalOccmDemandSignalCatalogArgs.builder()
+     *             .occmDemandSignalCatalogId(testCatalog.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInternalOccmDemandSignalCatalogResult> getInternalOccmDemandSignalCatalog(GetInternalOccmDemandSignalCatalogArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getInternalOccmDemandSignalCatalog:getInternalOccmDemandSignalCatalog", TypeShape.of(GetInternalOccmDemandSignalCatalogResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Internal Occm Demand Signal Catalog resource in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This API helps in getting the details about a specific occm demand signal catalog.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalCatalogArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignalCatalog = CapacityManagementFunctions.getInternalOccmDemandSignalCatalog(GetInternalOccmDemandSignalCatalogArgs.builder()
+     *             .occmDemandSignalCatalogId(testCatalog.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInternalOccmDemandSignalCatalogResult> getInternalOccmDemandSignalCatalog(GetInternalOccmDemandSignalCatalogArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getInternalOccmDemandSignalCatalog:getInternalOccmDemandSignalCatalog", TypeShape.of(GetInternalOccmDemandSignalCatalogResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Internal Occm Demand Signal Catalog resource in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This API helps in getting the details about a specific occm demand signal catalog.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalCatalogArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignalCatalog = CapacityManagementFunctions.getInternalOccmDemandSignalCatalog(GetInternalOccmDemandSignalCatalogArgs.builder()
+     *             .occmDemandSignalCatalogId(testCatalog.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetInternalOccmDemandSignalCatalogResult> getInternalOccmDemandSignalCatalogPlain(GetInternalOccmDemandSignalCatalogPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:CapacityManagement/getInternalOccmDemandSignalCatalog:getInternalOccmDemandSignalCatalog", TypeShape.of(GetInternalOccmDemandSignalCatalogResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Internal Occm Demand Signal Catalog Resources in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This API will list all the  resources across all demand signal catalogs for a given namespace and customer group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalCatalogResourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignalCatalogResources = CapacityManagementFunctions.getInternalOccmDemandSignalCatalogResources(GetInternalOccmDemandSignalCatalogResourcesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occmDemandSignalCatalogId(testCatalog.id())
+     *             .demandSignalNamespace(internalOccmDemandSignalCatalogResourceDemandSignalNamespace)
+     *             .name(internalOccmDemandSignalCatalogResourceName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInternalOccmDemandSignalCatalogResourcesResult> getInternalOccmDemandSignalCatalogResources(GetInternalOccmDemandSignalCatalogResourcesArgs args) {
+        return getInternalOccmDemandSignalCatalogResources(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Internal Occm Demand Signal Catalog Resources in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This API will list all the  resources across all demand signal catalogs for a given namespace and customer group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalCatalogResourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignalCatalogResources = CapacityManagementFunctions.getInternalOccmDemandSignalCatalogResources(GetInternalOccmDemandSignalCatalogResourcesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occmDemandSignalCatalogId(testCatalog.id())
+     *             .demandSignalNamespace(internalOccmDemandSignalCatalogResourceDemandSignalNamespace)
+     *             .name(internalOccmDemandSignalCatalogResourceName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetInternalOccmDemandSignalCatalogResourcesResult> getInternalOccmDemandSignalCatalogResourcesPlain(GetInternalOccmDemandSignalCatalogResourcesPlainArgs args) {
+        return getInternalOccmDemandSignalCatalogResourcesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Internal Occm Demand Signal Catalog Resources in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This API will list all the  resources across all demand signal catalogs for a given namespace and customer group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalCatalogResourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignalCatalogResources = CapacityManagementFunctions.getInternalOccmDemandSignalCatalogResources(GetInternalOccmDemandSignalCatalogResourcesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occmDemandSignalCatalogId(testCatalog.id())
+     *             .demandSignalNamespace(internalOccmDemandSignalCatalogResourceDemandSignalNamespace)
+     *             .name(internalOccmDemandSignalCatalogResourceName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInternalOccmDemandSignalCatalogResourcesResult> getInternalOccmDemandSignalCatalogResources(GetInternalOccmDemandSignalCatalogResourcesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getInternalOccmDemandSignalCatalogResources:getInternalOccmDemandSignalCatalogResources", TypeShape.of(GetInternalOccmDemandSignalCatalogResourcesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Internal Occm Demand Signal Catalog Resources in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This API will list all the  resources across all demand signal catalogs for a given namespace and customer group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalCatalogResourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignalCatalogResources = CapacityManagementFunctions.getInternalOccmDemandSignalCatalogResources(GetInternalOccmDemandSignalCatalogResourcesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occmDemandSignalCatalogId(testCatalog.id())
+     *             .demandSignalNamespace(internalOccmDemandSignalCatalogResourceDemandSignalNamespace)
+     *             .name(internalOccmDemandSignalCatalogResourceName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInternalOccmDemandSignalCatalogResourcesResult> getInternalOccmDemandSignalCatalogResources(GetInternalOccmDemandSignalCatalogResourcesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getInternalOccmDemandSignalCatalogResources:getInternalOccmDemandSignalCatalogResources", TypeShape.of(GetInternalOccmDemandSignalCatalogResourcesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Internal Occm Demand Signal Catalog Resources in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This API will list all the  resources across all demand signal catalogs for a given namespace and customer group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalCatalogResourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignalCatalogResources = CapacityManagementFunctions.getInternalOccmDemandSignalCatalogResources(GetInternalOccmDemandSignalCatalogResourcesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .occmDemandSignalCatalogId(testCatalog.id())
+     *             .demandSignalNamespace(internalOccmDemandSignalCatalogResourceDemandSignalNamespace)
+     *             .name(internalOccmDemandSignalCatalogResourceName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetInternalOccmDemandSignalCatalogResourcesResult> getInternalOccmDemandSignalCatalogResourcesPlain(GetInternalOccmDemandSignalCatalogResourcesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:CapacityManagement/getInternalOccmDemandSignalCatalogResources:getInternalOccmDemandSignalCatalogResources", TypeShape.of(GetInternalOccmDemandSignalCatalogResourcesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Internal Occm Demand Signal Catalogs in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This API will list demand signal catalogs for a given customer group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalCatalogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignalCatalogs = CapacityManagementFunctions.getInternalOccmDemandSignalCatalogs(GetInternalOccmDemandSignalCatalogsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .displayName(internalOccmDemandSignalCatalogDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInternalOccmDemandSignalCatalogsResult> getInternalOccmDemandSignalCatalogs(GetInternalOccmDemandSignalCatalogsArgs args) {
+        return getInternalOccmDemandSignalCatalogs(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Internal Occm Demand Signal Catalogs in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This API will list demand signal catalogs for a given customer group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalCatalogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignalCatalogs = CapacityManagementFunctions.getInternalOccmDemandSignalCatalogs(GetInternalOccmDemandSignalCatalogsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .displayName(internalOccmDemandSignalCatalogDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetInternalOccmDemandSignalCatalogsResult> getInternalOccmDemandSignalCatalogsPlain(GetInternalOccmDemandSignalCatalogsPlainArgs args) {
+        return getInternalOccmDemandSignalCatalogsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Internal Occm Demand Signal Catalogs in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This API will list demand signal catalogs for a given customer group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalCatalogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignalCatalogs = CapacityManagementFunctions.getInternalOccmDemandSignalCatalogs(GetInternalOccmDemandSignalCatalogsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .displayName(internalOccmDemandSignalCatalogDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInternalOccmDemandSignalCatalogsResult> getInternalOccmDemandSignalCatalogs(GetInternalOccmDemandSignalCatalogsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getInternalOccmDemandSignalCatalogs:getInternalOccmDemandSignalCatalogs", TypeShape.of(GetInternalOccmDemandSignalCatalogsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Internal Occm Demand Signal Catalogs in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This API will list demand signal catalogs for a given customer group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalCatalogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignalCatalogs = CapacityManagementFunctions.getInternalOccmDemandSignalCatalogs(GetInternalOccmDemandSignalCatalogsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .displayName(internalOccmDemandSignalCatalogDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInternalOccmDemandSignalCatalogsResult> getInternalOccmDemandSignalCatalogs(GetInternalOccmDemandSignalCatalogsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getInternalOccmDemandSignalCatalogs:getInternalOccmDemandSignalCatalogs", TypeShape.of(GetInternalOccmDemandSignalCatalogsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Internal Occm Demand Signal Catalogs in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This API will list demand signal catalogs for a given customer group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalCatalogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignalCatalogs = CapacityManagementFunctions.getInternalOccmDemandSignalCatalogs(GetInternalOccmDemandSignalCatalogsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .displayName(internalOccmDemandSignalCatalogDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetInternalOccmDemandSignalCatalogsResult> getInternalOccmDemandSignalCatalogsPlain(GetInternalOccmDemandSignalCatalogsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:CapacityManagement/getInternalOccmDemandSignalCatalogs:getInternalOccmDemandSignalCatalogs", TypeShape.of(GetInternalOccmDemandSignalCatalogsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Internal Occm Demand Signal Deliveries in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This GET call is used to list all demand signal delivery resources within the customer group passed as a query parameter.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalDeliveriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignalDeliveries = CapacityManagementFunctions.getInternalOccmDemandSignalDeliveries(GetInternalOccmDemandSignalDeliveriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .id(internalOccmDemandSignalDeliveryId)
+     *             .occmDemandSignalItemId(testOccmDemandSignalItem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInternalOccmDemandSignalDeliveriesResult> getInternalOccmDemandSignalDeliveries(GetInternalOccmDemandSignalDeliveriesArgs args) {
+        return getInternalOccmDemandSignalDeliveries(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Internal Occm Demand Signal Deliveries in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This GET call is used to list all demand signal delivery resources within the customer group passed as a query parameter.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalDeliveriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignalDeliveries = CapacityManagementFunctions.getInternalOccmDemandSignalDeliveries(GetInternalOccmDemandSignalDeliveriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .id(internalOccmDemandSignalDeliveryId)
+     *             .occmDemandSignalItemId(testOccmDemandSignalItem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetInternalOccmDemandSignalDeliveriesResult> getInternalOccmDemandSignalDeliveriesPlain(GetInternalOccmDemandSignalDeliveriesPlainArgs args) {
+        return getInternalOccmDemandSignalDeliveriesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Internal Occm Demand Signal Deliveries in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This GET call is used to list all demand signal delivery resources within the customer group passed as a query parameter.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalDeliveriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignalDeliveries = CapacityManagementFunctions.getInternalOccmDemandSignalDeliveries(GetInternalOccmDemandSignalDeliveriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .id(internalOccmDemandSignalDeliveryId)
+     *             .occmDemandSignalItemId(testOccmDemandSignalItem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInternalOccmDemandSignalDeliveriesResult> getInternalOccmDemandSignalDeliveries(GetInternalOccmDemandSignalDeliveriesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getInternalOccmDemandSignalDeliveries:getInternalOccmDemandSignalDeliveries", TypeShape.of(GetInternalOccmDemandSignalDeliveriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Internal Occm Demand Signal Deliveries in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This GET call is used to list all demand signal delivery resources within the customer group passed as a query parameter.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalDeliveriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignalDeliveries = CapacityManagementFunctions.getInternalOccmDemandSignalDeliveries(GetInternalOccmDemandSignalDeliveriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .id(internalOccmDemandSignalDeliveryId)
+     *             .occmDemandSignalItemId(testOccmDemandSignalItem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInternalOccmDemandSignalDeliveriesResult> getInternalOccmDemandSignalDeliveries(GetInternalOccmDemandSignalDeliveriesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getInternalOccmDemandSignalDeliveries:getInternalOccmDemandSignalDeliveries", TypeShape.of(GetInternalOccmDemandSignalDeliveriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Internal Occm Demand Signal Deliveries in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This GET call is used to list all demand signal delivery resources within the customer group passed as a query parameter.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalDeliveriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignalDeliveries = CapacityManagementFunctions.getInternalOccmDemandSignalDeliveries(GetInternalOccmDemandSignalDeliveriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .id(internalOccmDemandSignalDeliveryId)
+     *             .occmDemandSignalItemId(testOccmDemandSignalItem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetInternalOccmDemandSignalDeliveriesResult> getInternalOccmDemandSignalDeliveriesPlain(GetInternalOccmDemandSignalDeliveriesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:CapacityManagement/getInternalOccmDemandSignalDeliveries:getInternalOccmDemandSignalDeliveries", TypeShape.of(GetInternalOccmDemandSignalDeliveriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Internal Occm Demand Signal Delivery resource in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This is an internal GET API to get the details of a demand signal delivery resource corresponding to a demand signal item.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalDeliveryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignalDelivery = CapacityManagementFunctions.getInternalOccmDemandSignalDelivery(GetInternalOccmDemandSignalDeliveryArgs.builder()
+     *             .occmDemandSignalDeliveryId(testOccmDemandSignalDelivery.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInternalOccmDemandSignalDeliveryResult> getInternalOccmDemandSignalDelivery(GetInternalOccmDemandSignalDeliveryArgs args) {
+        return getInternalOccmDemandSignalDelivery(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Internal Occm Demand Signal Delivery resource in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This is an internal GET API to get the details of a demand signal delivery resource corresponding to a demand signal item.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalDeliveryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignalDelivery = CapacityManagementFunctions.getInternalOccmDemandSignalDelivery(GetInternalOccmDemandSignalDeliveryArgs.builder()
+     *             .occmDemandSignalDeliveryId(testOccmDemandSignalDelivery.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetInternalOccmDemandSignalDeliveryResult> getInternalOccmDemandSignalDeliveryPlain(GetInternalOccmDemandSignalDeliveryPlainArgs args) {
+        return getInternalOccmDemandSignalDeliveryPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Internal Occm Demand Signal Delivery resource in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This is an internal GET API to get the details of a demand signal delivery resource corresponding to a demand signal item.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalDeliveryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignalDelivery = CapacityManagementFunctions.getInternalOccmDemandSignalDelivery(GetInternalOccmDemandSignalDeliveryArgs.builder()
+     *             .occmDemandSignalDeliveryId(testOccmDemandSignalDelivery.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInternalOccmDemandSignalDeliveryResult> getInternalOccmDemandSignalDelivery(GetInternalOccmDemandSignalDeliveryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getInternalOccmDemandSignalDelivery:getInternalOccmDemandSignalDelivery", TypeShape.of(GetInternalOccmDemandSignalDeliveryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Internal Occm Demand Signal Delivery resource in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This is an internal GET API to get the details of a demand signal delivery resource corresponding to a demand signal item.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalDeliveryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignalDelivery = CapacityManagementFunctions.getInternalOccmDemandSignalDelivery(GetInternalOccmDemandSignalDeliveryArgs.builder()
+     *             .occmDemandSignalDeliveryId(testOccmDemandSignalDelivery.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInternalOccmDemandSignalDeliveryResult> getInternalOccmDemandSignalDelivery(GetInternalOccmDemandSignalDeliveryArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getInternalOccmDemandSignalDelivery:getInternalOccmDemandSignalDelivery", TypeShape.of(GetInternalOccmDemandSignalDeliveryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Internal Occm Demand Signal Delivery resource in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This is an internal GET API to get the details of a demand signal delivery resource corresponding to a demand signal item.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalDeliveryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignalDelivery = CapacityManagementFunctions.getInternalOccmDemandSignalDelivery(GetInternalOccmDemandSignalDeliveryArgs.builder()
+     *             .occmDemandSignalDeliveryId(testOccmDemandSignalDelivery.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetInternalOccmDemandSignalDeliveryResult> getInternalOccmDemandSignalDeliveryPlain(GetInternalOccmDemandSignalDeliveryPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:CapacityManagement/getInternalOccmDemandSignalDelivery:getInternalOccmDemandSignalDelivery", TypeShape.of(GetInternalOccmDemandSignalDeliveryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Internal Occm Demand Signal Items in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This internal API will list the detailed information about the resources demanded as part of the demand signal.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalItemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignalItems = CapacityManagementFunctions.getInternalOccmDemandSignalItems(GetInternalOccmDemandSignalItemsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .demandSignalNamespace(internalOccmDemandSignalItemDemandSignalNamespace)
+     *             .occmDemandSignalId(testOccmDemandSignal.id())
+     *             .resourceName(testResource.name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInternalOccmDemandSignalItemsResult> getInternalOccmDemandSignalItems(GetInternalOccmDemandSignalItemsArgs args) {
+        return getInternalOccmDemandSignalItems(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Internal Occm Demand Signal Items in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This internal API will list the detailed information about the resources demanded as part of the demand signal.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalItemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignalItems = CapacityManagementFunctions.getInternalOccmDemandSignalItems(GetInternalOccmDemandSignalItemsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .demandSignalNamespace(internalOccmDemandSignalItemDemandSignalNamespace)
+     *             .occmDemandSignalId(testOccmDemandSignal.id())
+     *             .resourceName(testResource.name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetInternalOccmDemandSignalItemsResult> getInternalOccmDemandSignalItemsPlain(GetInternalOccmDemandSignalItemsPlainArgs args) {
+        return getInternalOccmDemandSignalItemsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Internal Occm Demand Signal Items in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This internal API will list the detailed information about the resources demanded as part of the demand signal.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalItemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignalItems = CapacityManagementFunctions.getInternalOccmDemandSignalItems(GetInternalOccmDemandSignalItemsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .demandSignalNamespace(internalOccmDemandSignalItemDemandSignalNamespace)
+     *             .occmDemandSignalId(testOccmDemandSignal.id())
+     *             .resourceName(testResource.name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInternalOccmDemandSignalItemsResult> getInternalOccmDemandSignalItems(GetInternalOccmDemandSignalItemsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getInternalOccmDemandSignalItems:getInternalOccmDemandSignalItems", TypeShape.of(GetInternalOccmDemandSignalItemsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Internal Occm Demand Signal Items in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This internal API will list the detailed information about the resources demanded as part of the demand signal.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalItemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignalItems = CapacityManagementFunctions.getInternalOccmDemandSignalItems(GetInternalOccmDemandSignalItemsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .demandSignalNamespace(internalOccmDemandSignalItemDemandSignalNamespace)
+     *             .occmDemandSignalId(testOccmDemandSignal.id())
+     *             .resourceName(testResource.name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInternalOccmDemandSignalItemsResult> getInternalOccmDemandSignalItems(GetInternalOccmDemandSignalItemsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getInternalOccmDemandSignalItems:getInternalOccmDemandSignalItems", TypeShape.of(GetInternalOccmDemandSignalItemsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Internal Occm Demand Signal Items in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This internal API will list the detailed information about the resources demanded as part of the demand signal.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalItemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignalItems = CapacityManagementFunctions.getInternalOccmDemandSignalItems(GetInternalOccmDemandSignalItemsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .demandSignalNamespace(internalOccmDemandSignalItemDemandSignalNamespace)
+     *             .occmDemandSignalId(testOccmDemandSignal.id())
+     *             .resourceName(testResource.name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetInternalOccmDemandSignalItemsResult> getInternalOccmDemandSignalItemsPlain(GetInternalOccmDemandSignalItemsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:CapacityManagement/getInternalOccmDemandSignalItems:getInternalOccmDemandSignalItems", TypeShape.of(GetInternalOccmDemandSignalItemsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Internal Occm Demand Signals in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This is an internal GET call is used to list all demand signals within the compartment passed as a query parameter.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignals = CapacityManagementFunctions.getInternalOccmDemandSignals(GetInternalOccmDemandSignalsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .displayName(internalOccmDemandSignalDisplayName)
+     *             .id(internalOccmDemandSignalId)
+     *             .lifecycleDetails(internalOccmDemandSignalLifecycleDetails)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInternalOccmDemandSignalsResult> getInternalOccmDemandSignals(GetInternalOccmDemandSignalsArgs args) {
+        return getInternalOccmDemandSignals(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Internal Occm Demand Signals in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This is an internal GET call is used to list all demand signals within the compartment passed as a query parameter.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignals = CapacityManagementFunctions.getInternalOccmDemandSignals(GetInternalOccmDemandSignalsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .displayName(internalOccmDemandSignalDisplayName)
+     *             .id(internalOccmDemandSignalId)
+     *             .lifecycleDetails(internalOccmDemandSignalLifecycleDetails)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetInternalOccmDemandSignalsResult> getInternalOccmDemandSignalsPlain(GetInternalOccmDemandSignalsPlainArgs args) {
+        return getInternalOccmDemandSignalsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Internal Occm Demand Signals in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This is an internal GET call is used to list all demand signals within the compartment passed as a query parameter.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignals = CapacityManagementFunctions.getInternalOccmDemandSignals(GetInternalOccmDemandSignalsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .displayName(internalOccmDemandSignalDisplayName)
+     *             .id(internalOccmDemandSignalId)
+     *             .lifecycleDetails(internalOccmDemandSignalLifecycleDetails)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInternalOccmDemandSignalsResult> getInternalOccmDemandSignals(GetInternalOccmDemandSignalsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getInternalOccmDemandSignals:getInternalOccmDemandSignals", TypeShape.of(GetInternalOccmDemandSignalsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Internal Occm Demand Signals in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This is an internal GET call is used to list all demand signals within the compartment passed as a query parameter.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignals = CapacityManagementFunctions.getInternalOccmDemandSignals(GetInternalOccmDemandSignalsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .displayName(internalOccmDemandSignalDisplayName)
+     *             .id(internalOccmDemandSignalId)
+     *             .lifecycleDetails(internalOccmDemandSignalLifecycleDetails)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetInternalOccmDemandSignalsResult> getInternalOccmDemandSignals(GetInternalOccmDemandSignalsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getInternalOccmDemandSignals:getInternalOccmDemandSignals", TypeShape.of(GetInternalOccmDemandSignalsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Internal Occm Demand Signals in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This is an internal GET call is used to list all demand signals within the compartment passed as a query parameter.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetInternalOccmDemandSignalsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternalOccmDemandSignals = CapacityManagementFunctions.getInternalOccmDemandSignals(GetInternalOccmDemandSignalsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .occCustomerGroupId(testOccCustomerGroup.id())
+     *             .displayName(internalOccmDemandSignalDisplayName)
+     *             .id(internalOccmDemandSignalId)
+     *             .lifecycleDetails(internalOccmDemandSignalLifecycleDetails)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetInternalOccmDemandSignalsResult> getInternalOccmDemandSignalsPlain(GetInternalOccmDemandSignalsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:CapacityManagement/getInternalOccmDemandSignals:getInternalOccmDemandSignals", TypeShape.of(GetInternalOccmDemandSignalsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Namespace Occ Overviews in Oracle Cloud Infrastructure Capacity Management service.
@@ -3669,5 +5556,1375 @@ public final class CapacityManagementFunctions {
      */
     public static CompletableFuture<GetOccHandoverResourceBlocksResult> getOccHandoverResourceBlocksPlain(GetOccHandoverResourceBlocksPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:CapacityManagement/getOccHandoverResourceBlocks:getOccHandoverResourceBlocks", TypeShape.of(GetOccHandoverResourceBlocksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Occm Demand Signal resource in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This is a GET API which gets the detailed information about a specific demand signal.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccmDemandSignal = CapacityManagementFunctions.getOccmDemandSignal(GetOccmDemandSignalArgs.builder()
+     *             .occmDemandSignalId(testOccmDemandSignalOciCapacityManagementOccmDemandSignal.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOccmDemandSignalResult> getOccmDemandSignal(GetOccmDemandSignalArgs args) {
+        return getOccmDemandSignal(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Occm Demand Signal resource in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This is a GET API which gets the detailed information about a specific demand signal.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccmDemandSignal = CapacityManagementFunctions.getOccmDemandSignal(GetOccmDemandSignalArgs.builder()
+     *             .occmDemandSignalId(testOccmDemandSignalOciCapacityManagementOccmDemandSignal.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetOccmDemandSignalResult> getOccmDemandSignalPlain(GetOccmDemandSignalPlainArgs args) {
+        return getOccmDemandSignalPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Occm Demand Signal resource in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This is a GET API which gets the detailed information about a specific demand signal.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccmDemandSignal = CapacityManagementFunctions.getOccmDemandSignal(GetOccmDemandSignalArgs.builder()
+     *             .occmDemandSignalId(testOccmDemandSignalOciCapacityManagementOccmDemandSignal.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOccmDemandSignalResult> getOccmDemandSignal(GetOccmDemandSignalArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getOccmDemandSignal:getOccmDemandSignal", TypeShape.of(GetOccmDemandSignalResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Occm Demand Signal resource in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This is a GET API which gets the detailed information about a specific demand signal.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccmDemandSignal = CapacityManagementFunctions.getOccmDemandSignal(GetOccmDemandSignalArgs.builder()
+     *             .occmDemandSignalId(testOccmDemandSignalOciCapacityManagementOccmDemandSignal.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOccmDemandSignalResult> getOccmDemandSignal(GetOccmDemandSignalArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getOccmDemandSignal:getOccmDemandSignal", TypeShape.of(GetOccmDemandSignalResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Occm Demand Signal resource in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This is a GET API which gets the detailed information about a specific demand signal.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccmDemandSignal = CapacityManagementFunctions.getOccmDemandSignal(GetOccmDemandSignalArgs.builder()
+     *             .occmDemandSignalId(testOccmDemandSignalOciCapacityManagementOccmDemandSignal.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetOccmDemandSignalResult> getOccmDemandSignalPlain(GetOccmDemandSignalPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:CapacityManagement/getOccmDemandSignal:getOccmDemandSignal", TypeShape.of(GetOccmDemandSignalResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Occm Demand Signal Catalog Resources in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This API will list all the  resources across all demand signal catalogs for a given namespace and customer group containing the caller compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalCatalogResourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccmDemandSignalCatalogResources = CapacityManagementFunctions.getOccmDemandSignalCatalogResources(GetOccmDemandSignalCatalogResourcesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .demandSignalNamespace(occmDemandSignalCatalogResourceDemandSignalNamespace)
+     *             .name(occmDemandSignalCatalogResourceName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOccmDemandSignalCatalogResourcesResult> getOccmDemandSignalCatalogResources(GetOccmDemandSignalCatalogResourcesArgs args) {
+        return getOccmDemandSignalCatalogResources(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Occm Demand Signal Catalog Resources in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This API will list all the  resources across all demand signal catalogs for a given namespace and customer group containing the caller compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalCatalogResourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccmDemandSignalCatalogResources = CapacityManagementFunctions.getOccmDemandSignalCatalogResources(GetOccmDemandSignalCatalogResourcesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .demandSignalNamespace(occmDemandSignalCatalogResourceDemandSignalNamespace)
+     *             .name(occmDemandSignalCatalogResourceName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetOccmDemandSignalCatalogResourcesResult> getOccmDemandSignalCatalogResourcesPlain(GetOccmDemandSignalCatalogResourcesPlainArgs args) {
+        return getOccmDemandSignalCatalogResourcesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Occm Demand Signal Catalog Resources in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This API will list all the  resources across all demand signal catalogs for a given namespace and customer group containing the caller compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalCatalogResourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccmDemandSignalCatalogResources = CapacityManagementFunctions.getOccmDemandSignalCatalogResources(GetOccmDemandSignalCatalogResourcesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .demandSignalNamespace(occmDemandSignalCatalogResourceDemandSignalNamespace)
+     *             .name(occmDemandSignalCatalogResourceName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOccmDemandSignalCatalogResourcesResult> getOccmDemandSignalCatalogResources(GetOccmDemandSignalCatalogResourcesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getOccmDemandSignalCatalogResources:getOccmDemandSignalCatalogResources", TypeShape.of(GetOccmDemandSignalCatalogResourcesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Occm Demand Signal Catalog Resources in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This API will list all the  resources across all demand signal catalogs for a given namespace and customer group containing the caller compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalCatalogResourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccmDemandSignalCatalogResources = CapacityManagementFunctions.getOccmDemandSignalCatalogResources(GetOccmDemandSignalCatalogResourcesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .demandSignalNamespace(occmDemandSignalCatalogResourceDemandSignalNamespace)
+     *             .name(occmDemandSignalCatalogResourceName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOccmDemandSignalCatalogResourcesResult> getOccmDemandSignalCatalogResources(GetOccmDemandSignalCatalogResourcesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getOccmDemandSignalCatalogResources:getOccmDemandSignalCatalogResources", TypeShape.of(GetOccmDemandSignalCatalogResourcesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Occm Demand Signal Catalog Resources in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This API will list all the  resources across all demand signal catalogs for a given namespace and customer group containing the caller compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalCatalogResourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccmDemandSignalCatalogResources = CapacityManagementFunctions.getOccmDemandSignalCatalogResources(GetOccmDemandSignalCatalogResourcesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .demandSignalNamespace(occmDemandSignalCatalogResourceDemandSignalNamespace)
+     *             .name(occmDemandSignalCatalogResourceName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetOccmDemandSignalCatalogResourcesResult> getOccmDemandSignalCatalogResourcesPlain(GetOccmDemandSignalCatalogResourcesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:CapacityManagement/getOccmDemandSignalCatalogResources:getOccmDemandSignalCatalogResources", TypeShape.of(GetOccmDemandSignalCatalogResourcesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Occm Demand Signal Deliveries in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This GET call is used to list all demand signals delivery resources within the compartment passed as a query param.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalDeliveriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccmDemandSignalDeliveries = CapacityManagementFunctions.getOccmDemandSignalDeliveries(GetOccmDemandSignalDeliveriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .id(occmDemandSignalDeliveryId)
+     *             .occmDemandSignalItemId(testOccmDemandSignalItem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOccmDemandSignalDeliveriesResult> getOccmDemandSignalDeliveries(GetOccmDemandSignalDeliveriesArgs args) {
+        return getOccmDemandSignalDeliveries(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Occm Demand Signal Deliveries in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This GET call is used to list all demand signals delivery resources within the compartment passed as a query param.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalDeliveriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccmDemandSignalDeliveries = CapacityManagementFunctions.getOccmDemandSignalDeliveries(GetOccmDemandSignalDeliveriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .id(occmDemandSignalDeliveryId)
+     *             .occmDemandSignalItemId(testOccmDemandSignalItem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetOccmDemandSignalDeliveriesResult> getOccmDemandSignalDeliveriesPlain(GetOccmDemandSignalDeliveriesPlainArgs args) {
+        return getOccmDemandSignalDeliveriesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Occm Demand Signal Deliveries in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This GET call is used to list all demand signals delivery resources within the compartment passed as a query param.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalDeliveriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccmDemandSignalDeliveries = CapacityManagementFunctions.getOccmDemandSignalDeliveries(GetOccmDemandSignalDeliveriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .id(occmDemandSignalDeliveryId)
+     *             .occmDemandSignalItemId(testOccmDemandSignalItem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOccmDemandSignalDeliveriesResult> getOccmDemandSignalDeliveries(GetOccmDemandSignalDeliveriesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getOccmDemandSignalDeliveries:getOccmDemandSignalDeliveries", TypeShape.of(GetOccmDemandSignalDeliveriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Occm Demand Signal Deliveries in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This GET call is used to list all demand signals delivery resources within the compartment passed as a query param.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalDeliveriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccmDemandSignalDeliveries = CapacityManagementFunctions.getOccmDemandSignalDeliveries(GetOccmDemandSignalDeliveriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .id(occmDemandSignalDeliveryId)
+     *             .occmDemandSignalItemId(testOccmDemandSignalItem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOccmDemandSignalDeliveriesResult> getOccmDemandSignalDeliveries(GetOccmDemandSignalDeliveriesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getOccmDemandSignalDeliveries:getOccmDemandSignalDeliveries", TypeShape.of(GetOccmDemandSignalDeliveriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Occm Demand Signal Deliveries in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This GET call is used to list all demand signals delivery resources within the compartment passed as a query param.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalDeliveriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccmDemandSignalDeliveries = CapacityManagementFunctions.getOccmDemandSignalDeliveries(GetOccmDemandSignalDeliveriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .id(occmDemandSignalDeliveryId)
+     *             .occmDemandSignalItemId(testOccmDemandSignalItem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetOccmDemandSignalDeliveriesResult> getOccmDemandSignalDeliveriesPlain(GetOccmDemandSignalDeliveriesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:CapacityManagement/getOccmDemandSignalDeliveries:getOccmDemandSignalDeliveries", TypeShape.of(GetOccmDemandSignalDeliveriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Occm Demand Signal Item resource in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This is a GET API to get the details of a demand signal item resource representing the details of the resource demanded by you.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalItemArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccmDemandSignalItem = CapacityManagementFunctions.getOccmDemandSignalItem(GetOccmDemandSignalItemArgs.builder()
+     *             .occmDemandSignalItemId(testOccmDemandSignalItemOciCapacityManagementOccmDemandSignalItem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOccmDemandSignalItemResult> getOccmDemandSignalItem(GetOccmDemandSignalItemArgs args) {
+        return getOccmDemandSignalItem(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Occm Demand Signal Item resource in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This is a GET API to get the details of a demand signal item resource representing the details of the resource demanded by you.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalItemArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccmDemandSignalItem = CapacityManagementFunctions.getOccmDemandSignalItem(GetOccmDemandSignalItemArgs.builder()
+     *             .occmDemandSignalItemId(testOccmDemandSignalItemOciCapacityManagementOccmDemandSignalItem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetOccmDemandSignalItemResult> getOccmDemandSignalItemPlain(GetOccmDemandSignalItemPlainArgs args) {
+        return getOccmDemandSignalItemPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Occm Demand Signal Item resource in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This is a GET API to get the details of a demand signal item resource representing the details of the resource demanded by you.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalItemArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccmDemandSignalItem = CapacityManagementFunctions.getOccmDemandSignalItem(GetOccmDemandSignalItemArgs.builder()
+     *             .occmDemandSignalItemId(testOccmDemandSignalItemOciCapacityManagementOccmDemandSignalItem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOccmDemandSignalItemResult> getOccmDemandSignalItem(GetOccmDemandSignalItemArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getOccmDemandSignalItem:getOccmDemandSignalItem", TypeShape.of(GetOccmDemandSignalItemResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Occm Demand Signal Item resource in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This is a GET API to get the details of a demand signal item resource representing the details of the resource demanded by you.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalItemArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccmDemandSignalItem = CapacityManagementFunctions.getOccmDemandSignalItem(GetOccmDemandSignalItemArgs.builder()
+     *             .occmDemandSignalItemId(testOccmDemandSignalItemOciCapacityManagementOccmDemandSignalItem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOccmDemandSignalItemResult> getOccmDemandSignalItem(GetOccmDemandSignalItemArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getOccmDemandSignalItem:getOccmDemandSignalItem", TypeShape.of(GetOccmDemandSignalItemResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Occm Demand Signal Item resource in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This is a GET API to get the details of a demand signal item resource representing the details of the resource demanded by you.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalItemArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccmDemandSignalItem = CapacityManagementFunctions.getOccmDemandSignalItem(GetOccmDemandSignalItemArgs.builder()
+     *             .occmDemandSignalItemId(testOccmDemandSignalItemOciCapacityManagementOccmDemandSignalItem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetOccmDemandSignalItemResult> getOccmDemandSignalItemPlain(GetOccmDemandSignalItemPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:CapacityManagement/getOccmDemandSignalItem:getOccmDemandSignalItem", TypeShape.of(GetOccmDemandSignalItemResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Occm Demand Signal Items in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This API will list the detailed information about the resources demanded as part of the demand signal.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalItemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccmDemandSignalItems = CapacityManagementFunctions.getOccmDemandSignalItems(GetOccmDemandSignalItemsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .demandSignalNamespace(occmDemandSignalItemDemandSignalNamespace)
+     *             .occmDemandSignalId(testOccmDemandSignal.id())
+     *             .resourceName(testResource.name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOccmDemandSignalItemsResult> getOccmDemandSignalItems(GetOccmDemandSignalItemsArgs args) {
+        return getOccmDemandSignalItems(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Occm Demand Signal Items in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This API will list the detailed information about the resources demanded as part of the demand signal.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalItemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccmDemandSignalItems = CapacityManagementFunctions.getOccmDemandSignalItems(GetOccmDemandSignalItemsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .demandSignalNamespace(occmDemandSignalItemDemandSignalNamespace)
+     *             .occmDemandSignalId(testOccmDemandSignal.id())
+     *             .resourceName(testResource.name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetOccmDemandSignalItemsResult> getOccmDemandSignalItemsPlain(GetOccmDemandSignalItemsPlainArgs args) {
+        return getOccmDemandSignalItemsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Occm Demand Signal Items in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This API will list the detailed information about the resources demanded as part of the demand signal.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalItemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccmDemandSignalItems = CapacityManagementFunctions.getOccmDemandSignalItems(GetOccmDemandSignalItemsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .demandSignalNamespace(occmDemandSignalItemDemandSignalNamespace)
+     *             .occmDemandSignalId(testOccmDemandSignal.id())
+     *             .resourceName(testResource.name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOccmDemandSignalItemsResult> getOccmDemandSignalItems(GetOccmDemandSignalItemsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getOccmDemandSignalItems:getOccmDemandSignalItems", TypeShape.of(GetOccmDemandSignalItemsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Occm Demand Signal Items in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This API will list the detailed information about the resources demanded as part of the demand signal.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalItemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccmDemandSignalItems = CapacityManagementFunctions.getOccmDemandSignalItems(GetOccmDemandSignalItemsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .demandSignalNamespace(occmDemandSignalItemDemandSignalNamespace)
+     *             .occmDemandSignalId(testOccmDemandSignal.id())
+     *             .resourceName(testResource.name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOccmDemandSignalItemsResult> getOccmDemandSignalItems(GetOccmDemandSignalItemsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getOccmDemandSignalItems:getOccmDemandSignalItems", TypeShape.of(GetOccmDemandSignalItemsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Occm Demand Signal Items in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This API will list the detailed information about the resources demanded as part of the demand signal.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalItemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccmDemandSignalItems = CapacityManagementFunctions.getOccmDemandSignalItems(GetOccmDemandSignalItemsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .demandSignalNamespace(occmDemandSignalItemDemandSignalNamespace)
+     *             .occmDemandSignalId(testOccmDemandSignal.id())
+     *             .resourceName(testResource.name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetOccmDemandSignalItemsResult> getOccmDemandSignalItemsPlain(GetOccmDemandSignalItemsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:CapacityManagement/getOccmDemandSignalItems:getOccmDemandSignalItems", TypeShape.of(GetOccmDemandSignalItemsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Occm Demand Signals in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This GET call is used to list all demand signals within the compartment passed as a query parameter.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccmDemandSignals = CapacityManagementFunctions.getOccmDemandSignals(GetOccmDemandSignalsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(occmDemandSignalDisplayName)
+     *             .id(occmDemandSignalId)
+     *             .lifecycleDetails(occmDemandSignalLifecycleDetails)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOccmDemandSignalsResult> getOccmDemandSignals(GetOccmDemandSignalsArgs args) {
+        return getOccmDemandSignals(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Occm Demand Signals in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This GET call is used to list all demand signals within the compartment passed as a query parameter.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccmDemandSignals = CapacityManagementFunctions.getOccmDemandSignals(GetOccmDemandSignalsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(occmDemandSignalDisplayName)
+     *             .id(occmDemandSignalId)
+     *             .lifecycleDetails(occmDemandSignalLifecycleDetails)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetOccmDemandSignalsResult> getOccmDemandSignalsPlain(GetOccmDemandSignalsPlainArgs args) {
+        return getOccmDemandSignalsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Occm Demand Signals in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This GET call is used to list all demand signals within the compartment passed as a query parameter.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccmDemandSignals = CapacityManagementFunctions.getOccmDemandSignals(GetOccmDemandSignalsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(occmDemandSignalDisplayName)
+     *             .id(occmDemandSignalId)
+     *             .lifecycleDetails(occmDemandSignalLifecycleDetails)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOccmDemandSignalsResult> getOccmDemandSignals(GetOccmDemandSignalsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getOccmDemandSignals:getOccmDemandSignals", TypeShape.of(GetOccmDemandSignalsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Occm Demand Signals in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This GET call is used to list all demand signals within the compartment passed as a query parameter.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccmDemandSignals = CapacityManagementFunctions.getOccmDemandSignals(GetOccmDemandSignalsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(occmDemandSignalDisplayName)
+     *             .id(occmDemandSignalId)
+     *             .lifecycleDetails(occmDemandSignalLifecycleDetails)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOccmDemandSignalsResult> getOccmDemandSignals(GetOccmDemandSignalsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CapacityManagement/getOccmDemandSignals:getOccmDemandSignals", TypeShape.of(GetOccmDemandSignalsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Occm Demand Signals in Oracle Cloud Infrastructure Capacity Management service.
+     * 
+     * This GET call is used to list all demand signals within the compartment passed as a query parameter.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CapacityManagement.CapacityManagementFunctions;
+     * import com.pulumi.oci.CapacityManagement.inputs.GetOccmDemandSignalsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccmDemandSignals = CapacityManagementFunctions.getOccmDemandSignals(GetOccmDemandSignalsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(occmDemandSignalDisplayName)
+     *             .id(occmDemandSignalId)
+     *             .lifecycleDetails(occmDemandSignalLifecycleDetails)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetOccmDemandSignalsResult> getOccmDemandSignalsPlain(GetOccmDemandSignalsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:CapacityManagement/getOccmDemandSignals:getOccmDemandSignals", TypeShape.of(GetOccmDemandSignalsResult.class), args, Utilities.withVersion(options));
     }
 }

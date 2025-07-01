@@ -11,6 +11,7 @@ import com.pulumi.oci.FleetSoftwareUpdate.inputs.FsuCycleDiagnosticsCollectionAr
 import com.pulumi.oci.FleetSoftwareUpdate.inputs.FsuCycleGoalVersionDetailsArgs;
 import com.pulumi.oci.FleetSoftwareUpdate.inputs.FsuCycleNextActionToExecuteArgs;
 import com.pulumi.oci.FleetSoftwareUpdate.inputs.FsuCycleStageActionScheduleArgs;
+import com.pulumi.oci.FleetSoftwareUpdate.inputs.FsuCycleUpgradeDetailsArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -56,14 +57,14 @@ public final class FsuCycleState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Type of Collection this Exadata Fleet Update Cycle belongs to.
+     * Type of Exadata Fleet Update collection being upgraded.
      * 
      */
     @Import(name="collectionType")
     private @Nullable Output<String> collectionType;
 
     /**
-     * @return Type of Collection this Exadata Fleet Update Cycle belongs to.
+     * @return Type of Exadata Fleet Update collection being upgraded.
      * 
      */
     public Optional<Output<String>> collectionType() {
@@ -418,9 +419,6 @@ public final class FsuCycleState extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) Type of Exadata Fleet Update Cycle.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
@@ -428,12 +426,24 @@ public final class FsuCycleState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return (Updatable) Type of Exadata Fleet Update Cycle.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     public Optional<Output<String>> type() {
         return Optional.ofNullable(this.type);
+    }
+
+    /**
+     * (Updatable) Details of supported upgrade options for DB or GI collection.
+     * 
+     */
+    @Import(name="upgradeDetails")
+    private @Nullable Output<FsuCycleUpgradeDetailsArgs> upgradeDetails;
+
+    /**
+     * @return (Updatable) Details of supported upgrade options for DB or GI collection.
+     * 
+     */
+    public Optional<Output<FsuCycleUpgradeDetailsArgs>> upgradeDetails() {
+        return Optional.ofNullable(this.upgradeDetails);
     }
 
     private FsuCycleState() {}
@@ -466,6 +476,7 @@ public final class FsuCycleState extends com.pulumi.resources.ResourceArgs {
         this.timeFinished = $.timeFinished;
         this.timeUpdated = $.timeUpdated;
         this.type = $.type;
+        this.upgradeDetails = $.upgradeDetails;
     }
 
     public static Builder builder() {
@@ -529,7 +540,7 @@ public final class FsuCycleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param collectionType Type of Collection this Exadata Fleet Update Cycle belongs to.
+         * @param collectionType Type of Exadata Fleet Update collection being upgraded.
          * 
          * @return builder
          * 
@@ -540,7 +551,7 @@ public final class FsuCycleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param collectionType Type of Collection this Exadata Fleet Update Cycle belongs to.
+         * @param collectionType Type of Exadata Fleet Update collection being upgraded.
          * 
          * @return builder
          * 
@@ -1055,9 +1066,6 @@ public final class FsuCycleState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param type (Updatable) Type of Exadata Fleet Update Cycle.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -1069,14 +1077,32 @@ public final class FsuCycleState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param type (Updatable) Type of Exadata Fleet Update Cycle.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
         public Builder type(String type) {
             return type(Output.of(type));
+        }
+
+        /**
+         * @param upgradeDetails (Updatable) Details of supported upgrade options for DB or GI collection.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder upgradeDetails(@Nullable Output<FsuCycleUpgradeDetailsArgs> upgradeDetails) {
+            $.upgradeDetails = upgradeDetails;
+            return this;
+        }
+
+        /**
+         * @param upgradeDetails (Updatable) Details of supported upgrade options for DB or GI collection.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder upgradeDetails(FsuCycleUpgradeDetailsArgs upgradeDetails) {
+            return upgradeDetails(Output.of(upgradeDetails));
         }
 
         public FsuCycleState build() {

@@ -13,7 +13,7 @@ import java.util.Objects;
 @CustomType
 public final class GetPropertiesPropertyCollectionItem {
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      * 
      */
     private String compartmentId;
@@ -33,7 +33,7 @@ public final class GetPropertiesPropertyCollectionItem {
      */
     private Map<String,String> freeformTags;
     /**
-     * @return A filter to return only resources whose Property identifier matches the given identifier.
+     * @return Unique identifier or OCID for listing a single Property by id. Either compartmentId or id must be provided.
      * 
      */
     private String id;
@@ -78,7 +78,7 @@ public final class GetPropertiesPropertyCollectionItem {
      */
     private String timeUpdated;
     /**
-     * @return The type of the property.
+     * @return A filter to return properties whose type matches the given type.
      * 
      */
     private String type;
@@ -95,7 +95,7 @@ public final class GetPropertiesPropertyCollectionItem {
 
     private GetPropertiesPropertyCollectionItem() {}
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      * 
      */
     public String compartmentId() {
@@ -123,7 +123,7 @@ public final class GetPropertiesPropertyCollectionItem {
         return this.freeformTags;
     }
     /**
-     * @return A filter to return only resources whose Property identifier matches the given identifier.
+     * @return Unique identifier or OCID for listing a single Property by id. Either compartmentId or id must be provided.
      * 
      */
     public String id() {
@@ -186,7 +186,7 @@ public final class GetPropertiesPropertyCollectionItem {
         return this.timeUpdated;
     }
     /**
-     * @return The type of the property.
+     * @return A filter to return properties whose type matches the given type.
      * 
      */
     public String type() {

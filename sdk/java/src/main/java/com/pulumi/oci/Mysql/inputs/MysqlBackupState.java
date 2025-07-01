@@ -284,6 +284,21 @@ public final class MysqlBackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+     * 
+     */
+    @Import(name="softDelete")
+    private @Nullable Output<String> softDelete;
+
+    /**
+     * @return (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+     * 
+     */
+    public Optional<Output<String>> softDelete() {
+        return Optional.ofNullable(this.softDelete);
+    }
+
+    /**
      * Details of backup source in the cloud.
      * 
      */
@@ -394,6 +409,7 @@ public final class MysqlBackupState extends com.pulumi.resources.ResourceArgs {
         this.originalSourceBackupId = $.originalSourceBackupId;
         this.retentionInDays = $.retentionInDays;
         this.shapeName = $.shapeName;
+        this.softDelete = $.softDelete;
         this.sourceDetails = $.sourceDetails;
         this.state = $.state;
         this.systemTags = $.systemTags;
@@ -798,6 +814,27 @@ public final class MysqlBackupState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder shapeName(String shapeName) {
             return shapeName(Output.of(shapeName));
+        }
+
+        /**
+         * @param softDelete (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder softDelete(@Nullable Output<String> softDelete) {
+            $.softDelete = softDelete;
+            return this;
+        }
+
+        /**
+         * @param softDelete (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder softDelete(String softDelete) {
+            return softDelete(Output.of(softDelete));
         }
 
         /**

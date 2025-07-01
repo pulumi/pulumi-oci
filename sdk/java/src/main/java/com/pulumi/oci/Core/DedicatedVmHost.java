@@ -9,10 +9,12 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Core.DedicatedVmHostArgs;
 import com.pulumi.oci.Core.inputs.DedicatedVmHostState;
+import com.pulumi.oci.Core.outputs.DedicatedVmHostCapacityBin;
 import com.pulumi.oci.Core.outputs.DedicatedVmHostPlacementConstraintDetails;
 import com.pulumi.oci.Utilities;
 import java.lang.Double;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
@@ -96,6 +98,20 @@ public class DedicatedVmHost extends com.pulumi.resources.CustomResource {
         return this.availabilityDomain;
     }
     /**
+     * A list of total and remaining CPU &amp; memory per capacity bucket.
+     * 
+     */
+    @Export(name="capacityBins", refs={List.class,DedicatedVmHostCapacityBin.class}, tree="[0,1]")
+    private Output<List<DedicatedVmHostCapacityBin>> capacityBins;
+
+    /**
+     * @return A list of total and remaining CPU &amp; memory per capacity bucket.
+     * 
+     */
+    public Output<List<DedicatedVmHostCapacityBin>> capacityBins() {
+        return this.capacityBins;
+    }
+    /**
      * (Updatable) The OCID of the compartment.
      * 
      */
@@ -108,6 +124,20 @@ public class DedicatedVmHost extends com.pulumi.resources.CustomResource {
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * The OCID of the compute bare metal host.
+     * 
+     */
+    @Export(name="computeBareMetalHostId", refs={String.class}, tree="[0]")
+    private Output<String> computeBareMetalHostId;
+
+    /**
+     * @return The OCID of the compute bare metal host.
+     * 
+     */
+    public Output<String> computeBareMetalHostId() {
+        return this.computeBareMetalHostId;
     }
     /**
      * The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VM instances launched on the dedicated virtual machine host.

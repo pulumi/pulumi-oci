@@ -56,6 +56,7 @@ public final class GetLoadBalancersLoadBalancer {
     @Deprecated /* The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead. */
     private List<String> ipAddresses;
     private String ipMode;
+    private String ipv6subnetCidr;
     /**
      * @return Whether or not the load balancer has delete protection enabled.
      * 
@@ -175,6 +176,9 @@ public final class GetLoadBalancersLoadBalancer {
     public String ipMode() {
         return this.ipMode;
     }
+    public String ipv6subnetCidr() {
+        return this.ipv6subnetCidr;
+    }
     /**
      * @return Whether or not the load balancer has delete protection enabled.
      * 
@@ -280,6 +284,7 @@ public final class GetLoadBalancersLoadBalancer {
         private List<GetLoadBalancersLoadBalancerIpAddressDetail> ipAddressDetails;
         private List<String> ipAddresses;
         private String ipMode;
+        private String ipv6subnetCidr;
         private Boolean isDeleteProtectionEnabled;
         private Boolean isPrivate;
         private Boolean isRequestIdEnabled;
@@ -304,6 +309,7 @@ public final class GetLoadBalancersLoadBalancer {
     	      this.ipAddressDetails = defaults.ipAddressDetails;
     	      this.ipAddresses = defaults.ipAddresses;
     	      this.ipMode = defaults.ipMode;
+    	      this.ipv6subnetCidr = defaults.ipv6subnetCidr;
     	      this.isDeleteProtectionEnabled = defaults.isDeleteProtectionEnabled;
     	      this.isPrivate = defaults.isPrivate;
     	      this.isRequestIdEnabled = defaults.isRequestIdEnabled;
@@ -387,6 +393,14 @@ public final class GetLoadBalancersLoadBalancer {
               throw new MissingRequiredPropertyException("GetLoadBalancersLoadBalancer", "ipMode");
             }
             this.ipMode = ipMode;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder ipv6subnetCidr(String ipv6subnetCidr) {
+            if (ipv6subnetCidr == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancersLoadBalancer", "ipv6subnetCidr");
+            }
+            this.ipv6subnetCidr = ipv6subnetCidr;
             return this;
         }
         @CustomType.Setter
@@ -515,6 +529,7 @@ public final class GetLoadBalancersLoadBalancer {
             _resultValue.ipAddressDetails = ipAddressDetails;
             _resultValue.ipAddresses = ipAddresses;
             _resultValue.ipMode = ipMode;
+            _resultValue.ipv6subnetCidr = ipv6subnetCidr;
             _resultValue.isDeleteProtectionEnabled = isDeleteProtectionEnabled;
             _resultValue.isPrivate = isPrivate;
             _resultValue.isRequestIdEnabled = isRequestIdEnabled;

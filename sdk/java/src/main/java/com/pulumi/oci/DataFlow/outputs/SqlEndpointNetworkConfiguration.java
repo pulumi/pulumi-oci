@@ -30,6 +30,11 @@ public final class SqlEndpointNetworkConfiguration {
      */
     private String networkType;
     /**
+     * @return The OCIDs of Network Security Groups (NSGs).
+     * 
+     */
+    private @Nullable List<String> nsgIds;
+    /**
      * @return Ip Address of private endpoint
      * 
      */
@@ -73,6 +78,13 @@ public final class SqlEndpointNetworkConfiguration {
         return this.networkType;
     }
     /**
+     * @return The OCIDs of Network Security Groups (NSGs).
+     * 
+     */
+    public List<String> nsgIds() {
+        return this.nsgIds == null ? List.of() : this.nsgIds;
+    }
+    /**
      * @return Ip Address of private endpoint
      * 
      */
@@ -113,6 +125,7 @@ public final class SqlEndpointNetworkConfiguration {
         private @Nullable List<SqlEndpointNetworkConfigurationAccessControlRule> accessControlRules;
         private @Nullable String hostNamePrefix;
         private String networkType;
+        private @Nullable List<String> nsgIds;
         private @Nullable String privateEndpointIp;
         private @Nullable String publicEndpointIp;
         private @Nullable String subnetId;
@@ -123,6 +136,7 @@ public final class SqlEndpointNetworkConfiguration {
     	      this.accessControlRules = defaults.accessControlRules;
     	      this.hostNamePrefix = defaults.hostNamePrefix;
     	      this.networkType = defaults.networkType;
+    	      this.nsgIds = defaults.nsgIds;
     	      this.privateEndpointIp = defaults.privateEndpointIp;
     	      this.publicEndpointIp = defaults.publicEndpointIp;
     	      this.subnetId = defaults.subnetId;
@@ -153,6 +167,15 @@ public final class SqlEndpointNetworkConfiguration {
             return this;
         }
         @CustomType.Setter
+        public Builder nsgIds(@Nullable List<String> nsgIds) {
+
+            this.nsgIds = nsgIds;
+            return this;
+        }
+        public Builder nsgIds(String... nsgIds) {
+            return nsgIds(List.of(nsgIds));
+        }
+        @CustomType.Setter
         public Builder privateEndpointIp(@Nullable String privateEndpointIp) {
 
             this.privateEndpointIp = privateEndpointIp;
@@ -181,6 +204,7 @@ public final class SqlEndpointNetworkConfiguration {
             _resultValue.accessControlRules = accessControlRules;
             _resultValue.hostNamePrefix = hostNamePrefix;
             _resultValue.networkType = networkType;
+            _resultValue.nsgIds = nsgIds;
             _resultValue.privateEndpointIp = privateEndpointIp;
             _resultValue.publicEndpointIp = publicEndpointIp;
             _resultValue.subnetId = subnetId;

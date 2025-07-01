@@ -18,7 +18,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Property resource in Oracle Cloud Infrastructure Fleet Apps Management service.
  * 
- * Create a business-specific metadata property in Fleet Application Management and capture the business metadata classifications.
+ * Create a business-specific metadata property in Fleet Application Management.
  * 
  * ## Example Usage
  * 
@@ -47,9 +47,9 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testProperty = new Property("testProperty", PropertyArgs.builder()
  *             .compartmentId(compartmentId)
+ *             .displayName(propertyDisplayName)
  *             .selection(propertySelection)
  *             .valueType(propertyValueType)
- *             .displayName(propertyDisplayName)
  *             .values(propertyValues)
  *             .build());
  * 
@@ -71,14 +71,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:FleetAppsManagement/property:Property")
 public class Property extends com.pulumi.resources.CustomResource {
     /**
-     * Tenancy OCID
+     * (Updatable) Compartment OCID
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return Tenancy OCID
+     * @return (Updatable) Compartment OCID
      * 
      */
     public Output<String> compartmentId() {

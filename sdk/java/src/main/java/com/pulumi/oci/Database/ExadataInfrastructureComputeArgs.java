@@ -17,23 +17,47 @@ public final class ExadataInfrastructureComputeArgs extends com.pulumi.resources
 
     public static final ExadataInfrastructureComputeArgs Empty = new ExadataInfrastructureComputeArgs();
 
+    /**
+     * (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
+     * 
+     */
     @Import(name="activationFile")
     private @Nullable Output<String> activationFile;
 
+    /**
+     * @return (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
+     * 
+     */
     public Optional<Output<String>> activationFile() {
         return Optional.ofNullable(this.activationFile);
     }
 
+    /**
+     * The requested number of additional compute servers for the Exadata infrastructure.
+     * 
+     */
     @Import(name="additionalComputeCountComputeManagedResource")
     private @Nullable Output<Integer> additionalComputeCountComputeManagedResource;
 
+    /**
+     * @return The requested number of additional compute servers for the Exadata infrastructure.
+     * 
+     */
     public Optional<Output<Integer>> additionalComputeCountComputeManagedResource() {
         return Optional.ofNullable(this.additionalComputeCountComputeManagedResource);
     }
 
+    /**
+     * The requested Oracle Exadata System Model specification for the additional compute servers. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+     * 
+     */
     @Import(name="additionalComputeSystemModelComputeManagedResource")
     private @Nullable Output<String> additionalComputeSystemModelComputeManagedResource;
 
+    /**
+     * @return The requested Oracle Exadata System Model specification for the additional compute servers. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+     * 
+     */
     public Optional<Output<String>> additionalComputeSystemModelComputeManagedResource() {
         return Optional.ofNullable(this.additionalComputeSystemModelComputeManagedResource);
     }
@@ -80,29 +104,65 @@ public final class ExadataInfrastructureComputeArgs extends com.pulumi.resources
             $ = new ExadataInfrastructureComputeArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param activationFile (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
         public Builder activationFile(@Nullable Output<String> activationFile) {
             $.activationFile = activationFile;
             return this;
         }
 
+        /**
+         * @param activationFile (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
         public Builder activationFile(String activationFile) {
             return activationFile(Output.of(activationFile));
         }
 
+        /**
+         * @param additionalComputeCountComputeManagedResource The requested number of additional compute servers for the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
         public Builder additionalComputeCountComputeManagedResource(@Nullable Output<Integer> additionalComputeCountComputeManagedResource) {
             $.additionalComputeCountComputeManagedResource = additionalComputeCountComputeManagedResource;
             return this;
         }
 
+        /**
+         * @param additionalComputeCountComputeManagedResource The requested number of additional compute servers for the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
         public Builder additionalComputeCountComputeManagedResource(Integer additionalComputeCountComputeManagedResource) {
             return additionalComputeCountComputeManagedResource(Output.of(additionalComputeCountComputeManagedResource));
         }
 
+        /**
+         * @param additionalComputeSystemModelComputeManagedResource The requested Oracle Exadata System Model specification for the additional compute servers. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+         * 
+         * @return builder
+         * 
+         */
         public Builder additionalComputeSystemModelComputeManagedResource(@Nullable Output<String> additionalComputeSystemModelComputeManagedResource) {
             $.additionalComputeSystemModelComputeManagedResource = additionalComputeSystemModelComputeManagedResource;
             return this;
         }
 
+        /**
+         * @param additionalComputeSystemModelComputeManagedResource The requested Oracle Exadata System Model specification for the additional compute servers. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+         * 
+         * @return builder
+         * 
+         */
         public Builder additionalComputeSystemModelComputeManagedResource(String additionalComputeSystemModelComputeManagedResource) {
             return additionalComputeSystemModelComputeManagedResource(Output.of(additionalComputeSystemModelComputeManagedResource));
         }

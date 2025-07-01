@@ -102,14 +102,22 @@ public final class BackendArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+     * (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.
+     * 
+     * If setting maxConnections to some value other than 0 then that value must be greater or equal to 256.
+     * 
+     * Example: `300`
      * 
      */
     @Import(name="maxConnections")
     private @Nullable Output<Integer> maxConnections;
 
     /**
-     * @return (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+     * @return (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.
+     * 
+     * If setting maxConnections to some value other than 0 then that value must be greater or equal to 256.
+     * 
+     * Example: `300`
      * 
      */
     public Optional<Output<Integer>> maxConnections() {
@@ -313,7 +321,11 @@ public final class BackendArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maxConnections (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+         * @param maxConnections (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.
+         * 
+         * If setting maxConnections to some value other than 0 then that value must be greater or equal to 256.
+         * 
+         * Example: `300`
          * 
          * @return builder
          * 
@@ -324,7 +336,11 @@ public final class BackendArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maxConnections (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+         * @param maxConnections (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.
+         * 
+         * If setting maxConnections to some value other than 0 then that value must be greater or equal to 256.
+         * 
+         * Example: `300`
          * 
          * @return builder
          * 

@@ -64,6 +64,21 @@ public final class SqlEndpointNetworkConfigurationArgs extends com.pulumi.resour
     }
 
     /**
+     * The OCIDs of Network Security Groups (NSGs).
+     * 
+     */
+    @Import(name="nsgIds")
+    private @Nullable Output<List<String>> nsgIds;
+
+    /**
+     * @return The OCIDs of Network Security Groups (NSGs).
+     * 
+     */
+    public Optional<Output<List<String>>> nsgIds() {
+        return Optional.ofNullable(this.nsgIds);
+    }
+
+    /**
      * Ip Address of private endpoint
      * 
      */
@@ -129,6 +144,7 @@ public final class SqlEndpointNetworkConfigurationArgs extends com.pulumi.resour
         this.accessControlRules = $.accessControlRules;
         this.hostNamePrefix = $.hostNamePrefix;
         this.networkType = $.networkType;
+        this.nsgIds = $.nsgIds;
         this.privateEndpointIp = $.privateEndpointIp;
         this.publicEndpointIp = $.publicEndpointIp;
         this.subnetId = $.subnetId;
@@ -224,6 +240,37 @@ public final class SqlEndpointNetworkConfigurationArgs extends com.pulumi.resour
          */
         public Builder networkType(String networkType) {
             return networkType(Output.of(networkType));
+        }
+
+        /**
+         * @param nsgIds The OCIDs of Network Security Groups (NSGs).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nsgIds(@Nullable Output<List<String>> nsgIds) {
+            $.nsgIds = nsgIds;
+            return this;
+        }
+
+        /**
+         * @param nsgIds The OCIDs of Network Security Groups (NSGs).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nsgIds(List<String> nsgIds) {
+            return nsgIds(Output.of(nsgIds));
+        }
+
+        /**
+         * @param nsgIds The OCIDs of Network Security Groups (NSGs).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nsgIds(String... nsgIds) {
+            return nsgIds(List.of(nsgIds));
         }
 
         /**

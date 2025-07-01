@@ -20,6 +20,10 @@ import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityPlainArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTopologyArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTopologyPlainArgs;
+import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTypeArgs;
+import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTypePlainArgs;
+import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTypesArgs;
+import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTypesPlainArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsLogGroupArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsLogGroupPlainArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsLogGroupsArgs;
@@ -84,6 +88,8 @@ import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsEntitiesResult;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsEntitiesSummaryResult;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsEntityResult;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsEntityTopologyResult;
+import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsEntityTypeResult;
+import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsEntityTypesResult;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsLogGroupResult;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsLogGroupsResult;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsLogGroupsSummaryResult;
@@ -582,6 +588,58 @@ public final class LogAnalyticsFunctions {
      * 
      * Return a list of log analytics entities.
      * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntities = LogAnalyticsFunctions.getLogAnalyticsEntities(GetLogAnalyticsEntitiesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .namespace(logAnalyticsEntityNamespace)
+     *             .cloudResourceId(logAnalyticsEntityCloudResourceId)
+     *             .definedTagEquals(logAnalyticsEntityDefinedTagEquals)
+     *             .definedTagExists(logAnalyticsEntityDefinedTagExists)
+     *             .entityTypeNames(logAnalyticsEntityEntityTypeName)
+     *             .freeformTagEquals(logAnalyticsEntityFreeformTagEquals)
+     *             .freeformTagExists(logAnalyticsEntityFreeformTagExists)
+     *             .hostname(logAnalyticsEntityHostname)
+     *             .hostnameContains(logAnalyticsEntityHostnameContains)
+     *             .isManagementAgentIdNull(logAnalyticsEntityIsManagementAgentIdNull)
+     *             .isShowAssociatedSourcesCount(logAnalyticsEntityIsShowAssociatedSourcesCount)
+     *             .lifecycleDetailsContains(logAnalyticsEntityLifecycleDetailsContains)
+     *             .metadataEquals(logAnalyticsEntityMetadataEquals)
+     *             .name(logAnalyticsEntityName)
+     *             .nameContains(logAnalyticsEntityNameContains)
+     *             .sourceId(testSource.id())
+     *             .state(logAnalyticsEntityState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
      */
     public static Output<GetLogAnalyticsEntitiesResult> getLogAnalyticsEntities(GetLogAnalyticsEntitiesArgs args) {
         return getLogAnalyticsEntities(args, InvokeOptions.Empty);
@@ -590,6 +648,58 @@ public final class LogAnalyticsFunctions {
      * This data source provides the list of Log Analytics Entities in Oracle Cloud Infrastructure Log Analytics service.
      * 
      * Return a list of log analytics entities.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntities = LogAnalyticsFunctions.getLogAnalyticsEntities(GetLogAnalyticsEntitiesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .namespace(logAnalyticsEntityNamespace)
+     *             .cloudResourceId(logAnalyticsEntityCloudResourceId)
+     *             .definedTagEquals(logAnalyticsEntityDefinedTagEquals)
+     *             .definedTagExists(logAnalyticsEntityDefinedTagExists)
+     *             .entityTypeNames(logAnalyticsEntityEntityTypeName)
+     *             .freeformTagEquals(logAnalyticsEntityFreeformTagEquals)
+     *             .freeformTagExists(logAnalyticsEntityFreeformTagExists)
+     *             .hostname(logAnalyticsEntityHostname)
+     *             .hostnameContains(logAnalyticsEntityHostnameContains)
+     *             .isManagementAgentIdNull(logAnalyticsEntityIsManagementAgentIdNull)
+     *             .isShowAssociatedSourcesCount(logAnalyticsEntityIsShowAssociatedSourcesCount)
+     *             .lifecycleDetailsContains(logAnalyticsEntityLifecycleDetailsContains)
+     *             .metadataEquals(logAnalyticsEntityMetadataEquals)
+     *             .name(logAnalyticsEntityName)
+     *             .nameContains(logAnalyticsEntityNameContains)
+     *             .sourceId(testSource.id())
+     *             .state(logAnalyticsEntityState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogAnalyticsEntitiesResult> getLogAnalyticsEntitiesPlain(GetLogAnalyticsEntitiesPlainArgs args) {
@@ -600,6 +710,58 @@ public final class LogAnalyticsFunctions {
      * 
      * Return a list of log analytics entities.
      * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntities = LogAnalyticsFunctions.getLogAnalyticsEntities(GetLogAnalyticsEntitiesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .namespace(logAnalyticsEntityNamespace)
+     *             .cloudResourceId(logAnalyticsEntityCloudResourceId)
+     *             .definedTagEquals(logAnalyticsEntityDefinedTagEquals)
+     *             .definedTagExists(logAnalyticsEntityDefinedTagExists)
+     *             .entityTypeNames(logAnalyticsEntityEntityTypeName)
+     *             .freeformTagEquals(logAnalyticsEntityFreeformTagEquals)
+     *             .freeformTagExists(logAnalyticsEntityFreeformTagExists)
+     *             .hostname(logAnalyticsEntityHostname)
+     *             .hostnameContains(logAnalyticsEntityHostnameContains)
+     *             .isManagementAgentIdNull(logAnalyticsEntityIsManagementAgentIdNull)
+     *             .isShowAssociatedSourcesCount(logAnalyticsEntityIsShowAssociatedSourcesCount)
+     *             .lifecycleDetailsContains(logAnalyticsEntityLifecycleDetailsContains)
+     *             .metadataEquals(logAnalyticsEntityMetadataEquals)
+     *             .name(logAnalyticsEntityName)
+     *             .nameContains(logAnalyticsEntityNameContains)
+     *             .sourceId(testSource.id())
+     *             .state(logAnalyticsEntityState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
      */
     public static Output<GetLogAnalyticsEntitiesResult> getLogAnalyticsEntities(GetLogAnalyticsEntitiesArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:LogAnalytics/getLogAnalyticsEntities:getLogAnalyticsEntities", TypeShape.of(GetLogAnalyticsEntitiesResult.class), args, Utilities.withVersion(options));
@@ -609,6 +771,58 @@ public final class LogAnalyticsFunctions {
      * 
      * Return a list of log analytics entities.
      * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntities = LogAnalyticsFunctions.getLogAnalyticsEntities(GetLogAnalyticsEntitiesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .namespace(logAnalyticsEntityNamespace)
+     *             .cloudResourceId(logAnalyticsEntityCloudResourceId)
+     *             .definedTagEquals(logAnalyticsEntityDefinedTagEquals)
+     *             .definedTagExists(logAnalyticsEntityDefinedTagExists)
+     *             .entityTypeNames(logAnalyticsEntityEntityTypeName)
+     *             .freeformTagEquals(logAnalyticsEntityFreeformTagEquals)
+     *             .freeformTagExists(logAnalyticsEntityFreeformTagExists)
+     *             .hostname(logAnalyticsEntityHostname)
+     *             .hostnameContains(logAnalyticsEntityHostnameContains)
+     *             .isManagementAgentIdNull(logAnalyticsEntityIsManagementAgentIdNull)
+     *             .isShowAssociatedSourcesCount(logAnalyticsEntityIsShowAssociatedSourcesCount)
+     *             .lifecycleDetailsContains(logAnalyticsEntityLifecycleDetailsContains)
+     *             .metadataEquals(logAnalyticsEntityMetadataEquals)
+     *             .name(logAnalyticsEntityName)
+     *             .nameContains(logAnalyticsEntityNameContains)
+     *             .sourceId(testSource.id())
+     *             .state(logAnalyticsEntityState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
      */
     public static Output<GetLogAnalyticsEntitiesResult> getLogAnalyticsEntities(GetLogAnalyticsEntitiesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:LogAnalytics/getLogAnalyticsEntities:getLogAnalyticsEntities", TypeShape.of(GetLogAnalyticsEntitiesResult.class), args, Utilities.withVersion(options));
@@ -617,6 +831,58 @@ public final class LogAnalyticsFunctions {
      * This data source provides the list of Log Analytics Entities in Oracle Cloud Infrastructure Log Analytics service.
      * 
      * Return a list of log analytics entities.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntities = LogAnalyticsFunctions.getLogAnalyticsEntities(GetLogAnalyticsEntitiesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .namespace(logAnalyticsEntityNamespace)
+     *             .cloudResourceId(logAnalyticsEntityCloudResourceId)
+     *             .definedTagEquals(logAnalyticsEntityDefinedTagEquals)
+     *             .definedTagExists(logAnalyticsEntityDefinedTagExists)
+     *             .entityTypeNames(logAnalyticsEntityEntityTypeName)
+     *             .freeformTagEquals(logAnalyticsEntityFreeformTagEquals)
+     *             .freeformTagExists(logAnalyticsEntityFreeformTagExists)
+     *             .hostname(logAnalyticsEntityHostname)
+     *             .hostnameContains(logAnalyticsEntityHostnameContains)
+     *             .isManagementAgentIdNull(logAnalyticsEntityIsManagementAgentIdNull)
+     *             .isShowAssociatedSourcesCount(logAnalyticsEntityIsShowAssociatedSourcesCount)
+     *             .lifecycleDetailsContains(logAnalyticsEntityLifecycleDetailsContains)
+     *             .metadataEquals(logAnalyticsEntityMetadataEquals)
+     *             .name(logAnalyticsEntityName)
+     *             .nameContains(logAnalyticsEntityNameContains)
+     *             .sourceId(testSource.id())
+     *             .state(logAnalyticsEntityState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetLogAnalyticsEntitiesResult> getLogAnalyticsEntitiesPlain(GetLogAnalyticsEntitiesPlainArgs args, InvokeOptions options) {
@@ -1316,6 +1582,471 @@ public final class LogAnalyticsFunctions {
      */
     public static CompletableFuture<GetLogAnalyticsEntityTopologyResult> getLogAnalyticsEntityTopologyPlain(GetLogAnalyticsEntityTopologyPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:LogAnalytics/getLogAnalyticsEntityTopology:getLogAnalyticsEntityTopology", TypeShape.of(GetLogAnalyticsEntityTopologyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Log Analytics Entity Type resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Retrieve the log analytics entity type with the given name.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTypeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntityType = LogAnalyticsFunctions.getLogAnalyticsEntityType(GetLogAnalyticsEntityTypeArgs.builder()
+     *             .entityTypeName(logAnalyticsEntityTypeName)
+     *             .namespace(logAnalyticsEntityTypeNamespace)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetLogAnalyticsEntityTypeResult> getLogAnalyticsEntityType(GetLogAnalyticsEntityTypeArgs args) {
+        return getLogAnalyticsEntityType(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Log Analytics Entity Type resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Retrieve the log analytics entity type with the given name.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTypeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntityType = LogAnalyticsFunctions.getLogAnalyticsEntityType(GetLogAnalyticsEntityTypeArgs.builder()
+     *             .entityTypeName(logAnalyticsEntityTypeName)
+     *             .namespace(logAnalyticsEntityTypeNamespace)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetLogAnalyticsEntityTypeResult> getLogAnalyticsEntityTypePlain(GetLogAnalyticsEntityTypePlainArgs args) {
+        return getLogAnalyticsEntityTypePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Log Analytics Entity Type resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Retrieve the log analytics entity type with the given name.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTypeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntityType = LogAnalyticsFunctions.getLogAnalyticsEntityType(GetLogAnalyticsEntityTypeArgs.builder()
+     *             .entityTypeName(logAnalyticsEntityTypeName)
+     *             .namespace(logAnalyticsEntityTypeNamespace)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetLogAnalyticsEntityTypeResult> getLogAnalyticsEntityType(GetLogAnalyticsEntityTypeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getLogAnalyticsEntityType:getLogAnalyticsEntityType", TypeShape.of(GetLogAnalyticsEntityTypeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Log Analytics Entity Type resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Retrieve the log analytics entity type with the given name.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTypeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntityType = LogAnalyticsFunctions.getLogAnalyticsEntityType(GetLogAnalyticsEntityTypeArgs.builder()
+     *             .entityTypeName(logAnalyticsEntityTypeName)
+     *             .namespace(logAnalyticsEntityTypeNamespace)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetLogAnalyticsEntityTypeResult> getLogAnalyticsEntityType(GetLogAnalyticsEntityTypeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getLogAnalyticsEntityType:getLogAnalyticsEntityType", TypeShape.of(GetLogAnalyticsEntityTypeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Log Analytics Entity Type resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Retrieve the log analytics entity type with the given name.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTypeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntityType = LogAnalyticsFunctions.getLogAnalyticsEntityType(GetLogAnalyticsEntityTypeArgs.builder()
+     *             .entityTypeName(logAnalyticsEntityTypeName)
+     *             .namespace(logAnalyticsEntityTypeNamespace)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetLogAnalyticsEntityTypeResult> getLogAnalyticsEntityTypePlain(GetLogAnalyticsEntityTypePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:LogAnalytics/getLogAnalyticsEntityType:getLogAnalyticsEntityType", TypeShape.of(GetLogAnalyticsEntityTypeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Log Analytics Entity Types in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Return a list of log analytics entity types.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntityTypes = LogAnalyticsFunctions.getLogAnalyticsEntityTypes(GetLogAnalyticsEntityTypesArgs.builder()
+     *             .namespace(logAnalyticsEntityTypeNamespace)
+     *             .cloudType(logAnalyticsEntityTypeCloudType)
+     *             .name(logAnalyticsEntityTypeName)
+     *             .nameContains(logAnalyticsEntityTypeNameContains)
+     *             .state(logAnalyticsEntityTypeState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetLogAnalyticsEntityTypesResult> getLogAnalyticsEntityTypes(GetLogAnalyticsEntityTypesArgs args) {
+        return getLogAnalyticsEntityTypes(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Log Analytics Entity Types in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Return a list of log analytics entity types.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntityTypes = LogAnalyticsFunctions.getLogAnalyticsEntityTypes(GetLogAnalyticsEntityTypesArgs.builder()
+     *             .namespace(logAnalyticsEntityTypeNamespace)
+     *             .cloudType(logAnalyticsEntityTypeCloudType)
+     *             .name(logAnalyticsEntityTypeName)
+     *             .nameContains(logAnalyticsEntityTypeNameContains)
+     *             .state(logAnalyticsEntityTypeState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetLogAnalyticsEntityTypesResult> getLogAnalyticsEntityTypesPlain(GetLogAnalyticsEntityTypesPlainArgs args) {
+        return getLogAnalyticsEntityTypesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Log Analytics Entity Types in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Return a list of log analytics entity types.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntityTypes = LogAnalyticsFunctions.getLogAnalyticsEntityTypes(GetLogAnalyticsEntityTypesArgs.builder()
+     *             .namespace(logAnalyticsEntityTypeNamespace)
+     *             .cloudType(logAnalyticsEntityTypeCloudType)
+     *             .name(logAnalyticsEntityTypeName)
+     *             .nameContains(logAnalyticsEntityTypeNameContains)
+     *             .state(logAnalyticsEntityTypeState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetLogAnalyticsEntityTypesResult> getLogAnalyticsEntityTypes(GetLogAnalyticsEntityTypesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getLogAnalyticsEntityTypes:getLogAnalyticsEntityTypes", TypeShape.of(GetLogAnalyticsEntityTypesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Log Analytics Entity Types in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Return a list of log analytics entity types.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntityTypes = LogAnalyticsFunctions.getLogAnalyticsEntityTypes(GetLogAnalyticsEntityTypesArgs.builder()
+     *             .namespace(logAnalyticsEntityTypeNamespace)
+     *             .cloudType(logAnalyticsEntityTypeCloudType)
+     *             .name(logAnalyticsEntityTypeName)
+     *             .nameContains(logAnalyticsEntityTypeNameContains)
+     *             .state(logAnalyticsEntityTypeState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetLogAnalyticsEntityTypesResult> getLogAnalyticsEntityTypes(GetLogAnalyticsEntityTypesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getLogAnalyticsEntityTypes:getLogAnalyticsEntityTypes", TypeShape.of(GetLogAnalyticsEntityTypesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Log Analytics Entity Types in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Return a list of log analytics entity types.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntityTypes = LogAnalyticsFunctions.getLogAnalyticsEntityTypes(GetLogAnalyticsEntityTypesArgs.builder()
+     *             .namespace(logAnalyticsEntityTypeNamespace)
+     *             .cloudType(logAnalyticsEntityTypeCloudType)
+     *             .name(logAnalyticsEntityTypeName)
+     *             .nameContains(logAnalyticsEntityTypeNameContains)
+     *             .state(logAnalyticsEntityTypeState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetLogAnalyticsEntityTypesResult> getLogAnalyticsEntityTypesPlain(GetLogAnalyticsEntityTypesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:LogAnalytics/getLogAnalyticsEntityTypes:getLogAnalyticsEntityTypes", TypeShape.of(GetLogAnalyticsEntityTypesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Log Analytics Log Group resource in Oracle Cloud Infrastructure Log Analytics service.

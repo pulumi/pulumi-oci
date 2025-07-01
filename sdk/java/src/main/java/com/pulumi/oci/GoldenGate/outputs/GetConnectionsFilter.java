@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetConnectionsFilter {
     /**
-     * @return The name of the property entry.
+     * @return The catalog name within Polaris where Iceberg tables are registered.
      * 
      */
     private String name;
@@ -24,7 +24,7 @@ public final class GetConnectionsFilter {
 
     private GetConnectionsFilter() {}
     /**
-     * @return The name of the property entry.
+     * @return The catalog name within Polaris where Iceberg tables are registered.
      * 
      */
     public String name() {

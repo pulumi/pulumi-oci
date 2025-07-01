@@ -11,6 +11,7 @@ import com.pulumi.oci.FleetSoftwareUpdate.outputs.GetFsuCycleDiagnosticsCollecti
 import com.pulumi.oci.FleetSoftwareUpdate.outputs.GetFsuCycleGoalVersionDetail;
 import com.pulumi.oci.FleetSoftwareUpdate.outputs.GetFsuCycleNextActionToExecute;
 import com.pulumi.oci.FleetSoftwareUpdate.outputs.GetFsuCycleStageActionSchedule;
+import com.pulumi.oci.FleetSoftwareUpdate.outputs.GetFsuCycleUpgradeDetail;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -31,7 +32,7 @@ public final class GetFsuCycleResult {
      */
     private List<GetFsuCycleBatchingStrategy> batchingStrategies;
     /**
-     * @return Type of Collection this Exadata Fleet Update Cycle belongs to.
+     * @return Type of Exadata Fleet Update collection being upgraded.
      * 
      */
     private String collectionType;
@@ -82,12 +83,12 @@ public final class GetFsuCycleResult {
      */
     private String id;
     /**
-     * @return List of bug numbers to ignore.
+     * @return List of identifiers of patches to ignore.
      * 
      */
     private List<String> isIgnoreMissingPatches;
     /**
-     * @return Ignore all patches between the source and target homes during patching.
+     * @return Ignore patch conflicts or missing patches between the source and goal homes.
      * 
      */
     private Boolean isIgnorePatches;
@@ -161,6 +162,11 @@ public final class GetFsuCycleResult {
      * 
      */
     private String type;
+    /**
+     * @return Details of supported upgrade options for DB or GI collection.
+     * 
+     */
+    private List<GetFsuCycleUpgradeDetail> upgradeDetails;
 
     private GetFsuCycleResult() {}
     /**
@@ -178,7 +184,7 @@ public final class GetFsuCycleResult {
         return this.batchingStrategies;
     }
     /**
-     * @return Type of Collection this Exadata Fleet Update Cycle belongs to.
+     * @return Type of Exadata Fleet Update collection being upgraded.
      * 
      */
     public String collectionType() {
@@ -251,14 +257,14 @@ public final class GetFsuCycleResult {
         return this.id;
     }
     /**
-     * @return List of bug numbers to ignore.
+     * @return List of identifiers of patches to ignore.
      * 
      */
     public List<String> isIgnoreMissingPatches() {
         return this.isIgnoreMissingPatches;
     }
     /**
-     * @return Ignore all patches between the source and target homes during patching.
+     * @return Ignore patch conflicts or missing patches between the source and goal homes.
      * 
      */
     public Boolean isIgnorePatches() {
@@ -362,6 +368,13 @@ public final class GetFsuCycleResult {
     public String type() {
         return this.type;
     }
+    /**
+     * @return Details of supported upgrade options for DB or GI collection.
+     * 
+     */
+    public List<GetFsuCycleUpgradeDetail> upgradeDetails() {
+        return this.upgradeDetails;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -401,6 +414,7 @@ public final class GetFsuCycleResult {
         private String timeFinished;
         private String timeUpdated;
         private String type;
+        private List<GetFsuCycleUpgradeDetail> upgradeDetails;
         public Builder() {}
         public Builder(GetFsuCycleResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -433,6 +447,7 @@ public final class GetFsuCycleResult {
     	      this.timeFinished = defaults.timeFinished;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.type = defaults.type;
+    	      this.upgradeDetails = defaults.upgradeDetails;
         }
 
         @CustomType.Setter
@@ -688,6 +703,17 @@ public final class GetFsuCycleResult {
             this.type = type;
             return this;
         }
+        @CustomType.Setter
+        public Builder upgradeDetails(List<GetFsuCycleUpgradeDetail> upgradeDetails) {
+            if (upgradeDetails == null) {
+              throw new MissingRequiredPropertyException("GetFsuCycleResult", "upgradeDetails");
+            }
+            this.upgradeDetails = upgradeDetails;
+            return this;
+        }
+        public Builder upgradeDetails(GetFsuCycleUpgradeDetail... upgradeDetails) {
+            return upgradeDetails(List.of(upgradeDetails));
+        }
         public GetFsuCycleResult build() {
             final var _resultValue = new GetFsuCycleResult();
             _resultValue.applyActionSchedules = applyActionSchedules;
@@ -719,6 +745,7 @@ public final class GetFsuCycleResult {
             _resultValue.timeFinished = timeFinished;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.type = type;
+            _resultValue.upgradeDetails = upgradeDetails;
             return _resultValue;
         }
     }

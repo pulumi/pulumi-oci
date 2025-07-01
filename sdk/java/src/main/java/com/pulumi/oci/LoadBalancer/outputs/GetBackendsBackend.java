@@ -40,7 +40,7 @@ public final class GetBackendsBackend {
      */
     private String loadBalancerId;
     /**
-     * @return The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+     * @return The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
      * 
      */
     private Integer maxConnections;
@@ -103,7 +103,7 @@ public final class GetBackendsBackend {
         return this.loadBalancerId;
     }
     /**
-     * @return The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+     * @return The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
      * 
      */
     public Integer maxConnections() {

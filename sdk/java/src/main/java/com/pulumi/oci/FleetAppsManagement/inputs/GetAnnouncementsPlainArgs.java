@@ -4,6 +4,7 @@
 package com.pulumi.oci.FleetAppsManagement.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FleetAppsManagement.inputs.GetAnnouncementsFilter;
 import java.lang.String;
 import java.util.List;
@@ -15,6 +16,21 @@ import javax.annotation.Nullable;
 public final class GetAnnouncementsPlainArgs extends com.pulumi.resources.InvokeArgs {
 
     public static final GetAnnouncementsPlainArgs Empty = new GetAnnouncementsPlainArgs();
+
+    /**
+     * The ID of the compartment in which to list resources.
+     * 
+     */
+    @Import(name="compartmentId", required=true)
+    private String compartmentId;
+
+    /**
+     * @return The ID of the compartment in which to list resources.
+     * 
+     */
+    public String compartmentId() {
+        return this.compartmentId;
+    }
 
     /**
      * A filter to return only resources that match the entire display name given.
@@ -56,6 +72,7 @@ public final class GetAnnouncementsPlainArgs extends com.pulumi.resources.Invoke
     private GetAnnouncementsPlainArgs() {}
 
     private GetAnnouncementsPlainArgs(GetAnnouncementsPlainArgs $) {
+        this.compartmentId = $.compartmentId;
         this.displayName = $.displayName;
         this.filters = $.filters;
         this.summaryContains = $.summaryContains;
@@ -77,6 +94,17 @@ public final class GetAnnouncementsPlainArgs extends com.pulumi.resources.Invoke
 
         public Builder(GetAnnouncementsPlainArgs defaults) {
             $ = new GetAnnouncementsPlainArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param compartmentId The ID of the compartment in which to list resources.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentId(String compartmentId) {
+            $.compartmentId = compartmentId;
+            return this;
         }
 
         /**
@@ -111,6 +139,9 @@ public final class GetAnnouncementsPlainArgs extends com.pulumi.resources.Invoke
         }
 
         public GetAnnouncementsPlainArgs build() {
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetAnnouncementsPlainArgs", "compartmentId");
+            }
             return $;
         }
     }

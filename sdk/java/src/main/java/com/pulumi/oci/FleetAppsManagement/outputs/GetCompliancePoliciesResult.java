@@ -41,6 +41,11 @@ public final class GetCompliancePoliciesResult {
      * 
      */
     private @Nullable String state;
+    /**
+     * @return The type of the Compliance Policy.
+     * 
+     */
+    private @Nullable String type;
 
     private GetCompliancePoliciesResult() {}
     /**
@@ -81,6 +86,13 @@ public final class GetCompliancePoliciesResult {
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
+    /**
+     * @return The type of the Compliance Policy.
+     * 
+     */
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -97,6 +109,7 @@ public final class GetCompliancePoliciesResult {
         private @Nullable List<GetCompliancePoliciesFilter> filters;
         private @Nullable String id;
         private @Nullable String state;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetCompliancePoliciesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -106,6 +119,7 @@ public final class GetCompliancePoliciesResult {
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.state = defaults.state;
+    	      this.type = defaults.type;
         }
 
         @CustomType.Setter
@@ -152,6 +166,12 @@ public final class GetCompliancePoliciesResult {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
+        public Builder type(@Nullable String type) {
+
+            this.type = type;
+            return this;
+        }
         public GetCompliancePoliciesResult build() {
             final var _resultValue = new GetCompliancePoliciesResult();
             _resultValue.compartmentId = compartmentId;
@@ -160,6 +180,7 @@ public final class GetCompliancePoliciesResult {
             _resultValue.filters = filters;
             _resultValue.id = id;
             _resultValue.state = state;
+            _resultValue.type = type;
             return _resultValue;
         }
     }

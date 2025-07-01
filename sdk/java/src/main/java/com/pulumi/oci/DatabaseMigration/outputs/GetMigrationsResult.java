@@ -110,6 +110,11 @@ public final class GetMigrationsResult {
      */
     private String sourceDatabaseConnectionId;
     /**
+     * @return The OCID of the resource being referenced.
+     * 
+     */
+    private String sourceStandbyDatabaseConnectionId;
+    /**
      * @return The current state of the Migration resource.
      * 
      */
@@ -283,6 +288,13 @@ public final class GetMigrationsResult {
         return this.sourceDatabaseConnectionId;
     }
     /**
+     * @return The OCID of the resource being referenced.
+     * 
+     */
+    public String sourceStandbyDatabaseConnectionId() {
+        return this.sourceStandbyDatabaseConnectionId;
+    }
+    /**
      * @return The current state of the Migration resource.
      * 
      */
@@ -369,6 +381,7 @@ public final class GetMigrationsResult {
         private String migrationId;
         private String sourceContainerDatabaseConnectionId;
         private String sourceDatabaseConnectionId;
+        private String sourceStandbyDatabaseConnectionId;
         private String state;
         private Map<String,String> systemTags;
         private String targetDatabaseConnectionId;
@@ -401,6 +414,7 @@ public final class GetMigrationsResult {
     	      this.migrationId = defaults.migrationId;
     	      this.sourceContainerDatabaseConnectionId = defaults.sourceContainerDatabaseConnectionId;
     	      this.sourceDatabaseConnectionId = defaults.sourceDatabaseConnectionId;
+    	      this.sourceStandbyDatabaseConnectionId = defaults.sourceStandbyDatabaseConnectionId;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.targetDatabaseConnectionId = defaults.targetDatabaseConnectionId;
@@ -604,6 +618,14 @@ public final class GetMigrationsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder sourceStandbyDatabaseConnectionId(String sourceStandbyDatabaseConnectionId) {
+            if (sourceStandbyDatabaseConnectionId == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsResult", "sourceStandbyDatabaseConnectionId");
+            }
+            this.sourceStandbyDatabaseConnectionId = sourceStandbyDatabaseConnectionId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetMigrationsResult", "state");
@@ -690,6 +712,7 @@ public final class GetMigrationsResult {
             _resultValue.migrationId = migrationId;
             _resultValue.sourceContainerDatabaseConnectionId = sourceContainerDatabaseConnectionId;
             _resultValue.sourceDatabaseConnectionId = sourceDatabaseConnectionId;
+            _resultValue.sourceStandbyDatabaseConnectionId = sourceStandbyDatabaseConnectionId;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.targetDatabaseConnectionId = targetDatabaseConnectionId;

@@ -8,7 +8,9 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GoldenGate.inputs.ConnectionAdditionalAttributeArgs;
 import com.pulumi.oci.GoldenGate.inputs.ConnectionBootstrapServerArgs;
+import com.pulumi.oci.GoldenGate.inputs.ConnectionCatalogArgs;
 import com.pulumi.oci.GoldenGate.inputs.ConnectionLockArgs;
+import com.pulumi.oci.GoldenGate.inputs.ConnectionStorageArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -159,6 +161,21 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The information about a new catalog of given type used in an Iceberg connection.
+     * 
+     */
+    @Import(name="catalog")
+    private @Nullable Output<ConnectionCatalogArgs> catalog;
+
+    /**
+     * @return (Updatable) The information about a new catalog of given type used in an Iceberg connection.
+     * 
+     */
+    public Optional<Output<ConnectionCatalogArgs>> catalog() {
+        return Optional.ofNullable(this.catalog);
+    }
+
+    /**
      * (Updatable) Azure client ID of the application. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
      * 
      */
@@ -294,14 +311,14 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
+     * (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     @Import(name="coreSiteXml")
     private @Nullable Output<String> coreSiteXml;
 
     /**
-     * @return (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
+     * @return (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     public Optional<Output<String>> coreSiteXml() {
@@ -429,14 +446,14 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable)Azure Storage service endpoint. e.g: https://test.blob.core.windows.net,  Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+     * (Updatable) Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
      * 
      */
     @Import(name="endpoint")
     private @Nullable Output<String> endpoint;
 
     /**
-     * @return (Updatable)Azure Storage service endpoint. e.g: https://test.blob.core.windows.net,  Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+     * @return (Updatable) Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
      * 
      */
     public Optional<Output<String>> endpoint() {
@@ -997,14 +1014,14 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, &#39;serviceAccountKeyFile&#39; field must not be provided.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage. Note: When provided, &#39;serviceAccountKeyFile&#39; field must not be provided.
      * 
      */
     @Import(name="serviceAccountKeyFileSecretId")
     private @Nullable Output<String> serviceAccountKeyFileSecretId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, &#39;serviceAccountKeyFile&#39; field must not be provided.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage. Note: When provided, &#39;serviceAccountKeyFile&#39; field must not be provided.
      * 
      */
     public Optional<Output<String>> serviceAccountKeyFileSecretId() {
@@ -1072,14 +1089,14 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
+     * (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     @Import(name="sslCa")
     private @Nullable Output<String> sslCa;
 
     /**
-     * @return (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
+     * @return (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     public Optional<Output<String>> sslCa() {
@@ -1087,14 +1104,14 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
+     * (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     @Import(name="sslCert")
     private @Nullable Output<String> sslCert;
 
     /**
-     * @return (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
+     * @return (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     public Optional<Output<String>> sslCert() {
@@ -1162,14 +1179,14 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
+     * (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     @Import(name="sslCrl")
     private @Nullable Output<String> sslCrl;
 
     /**
-     * @return (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
+     * @return (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     public Optional<Output<String>> sslCrl() {
@@ -1254,18 +1271,33 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+     * (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     @Import(name="sslServerCertificate")
     private @Nullable Output<String> sslServerCertificate;
 
     /**
-     * @return (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+     * @return (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     public Optional<Output<String>> sslServerCertificate() {
         return Optional.ofNullable(this.sslServerCertificate);
+    }
+
+    /**
+     * (Updatable) The information about a new storage of given type used in an Iceberg connection.
+     * 
+     */
+    @Import(name="storage")
+    private @Nullable Output<ConnectionStorageArgs> storage;
+
+    /**
+     * @return (Updatable) The information about a new storage of given type used in an Iceberg connection.
+     * 
+     */
+    public Optional<Output<ConnectionStorageArgs>> storage() {
+        return Optional.ofNullable(this.storage);
     }
 
     /**
@@ -1359,14 +1391,14 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+     * (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     @Import(name="tlsCaFile")
     private @Nullable Output<String> tlsCaFile;
 
     /**
-     * @return (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+     * @return (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     public Optional<Output<String>> tlsCaFile() {
@@ -1618,6 +1650,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         this.authenticationType = $.authenticationType;
         this.azureTenantId = $.azureTenantId;
         this.bootstrapServers = $.bootstrapServers;
+        this.catalog = $.catalog;
         this.clientId = $.clientId;
         this.clientSecret = $.clientSecret;
         this.clientSecretSecretId = $.clientSecretSecretId;
@@ -1692,6 +1725,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         this.sslKeySecretId = $.sslKeySecretId;
         this.sslMode = $.sslMode;
         this.sslServerCertificate = $.sslServerCertificate;
+        this.storage = $.storage;
         this.storageCredentialName = $.storageCredentialName;
         this.streamPoolId = $.streamPoolId;
         this.subnetId = $.subnetId;
@@ -1944,6 +1978,27 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param catalog (Updatable) The information about a new catalog of given type used in an Iceberg connection.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder catalog(@Nullable Output<ConnectionCatalogArgs> catalog) {
+            $.catalog = catalog;
+            return this;
+        }
+
+        /**
+         * @param catalog (Updatable) The information about a new catalog of given type used in an Iceberg connection.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder catalog(ConnectionCatalogArgs catalog) {
+            return catalog(Output.of(catalog));
+        }
+
+        /**
          * @param clientId (Updatable) Azure client ID of the application. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
          * 
          * @return builder
@@ -2133,7 +2188,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param coreSiteXml (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
+         * @param coreSiteXml (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
          * 
          * @return builder
          * 
@@ -2144,7 +2199,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param coreSiteXml (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
+         * @param coreSiteXml (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
          * 
          * @return builder
          * 
@@ -2322,7 +2377,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endpoint (Updatable)Azure Storage service endpoint. e.g: https://test.blob.core.windows.net,  Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+         * @param endpoint (Updatable) Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
          * 
          * @return builder
          * 
@@ -2333,7 +2388,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endpoint (Updatable)Azure Storage service endpoint. e.g: https://test.blob.core.windows.net,  Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+         * @param endpoint (Updatable) Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
          * 
          * @return builder
          * 
@@ -3134,7 +3189,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serviceAccountKeyFileSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, &#39;serviceAccountKeyFile&#39; field must not be provided.
+         * @param serviceAccountKeyFileSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage. Note: When provided, &#39;serviceAccountKeyFile&#39; field must not be provided.
          * 
          * @return builder
          * 
@@ -3145,7 +3200,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serviceAccountKeyFileSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, &#39;serviceAccountKeyFile&#39; field must not be provided.
+         * @param serviceAccountKeyFileSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage. Note: When provided, &#39;serviceAccountKeyFile&#39; field must not be provided.
          * 
          * @return builder
          * 
@@ -3239,7 +3294,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslCa (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
+         * @param sslCa (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
          * 
          * @return builder
          * 
@@ -3250,7 +3305,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslCa (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
+         * @param sslCa (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
          * 
          * @return builder
          * 
@@ -3260,7 +3315,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslCert (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
+         * @param sslCert (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
          * 
          * @return builder
          * 
@@ -3271,7 +3326,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslCert (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
+         * @param sslCert (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
          * 
          * @return builder
          * 
@@ -3365,7 +3420,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslCrl (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
+         * @param sslCrl (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
          * 
          * @return builder
          * 
@@ -3376,7 +3431,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslCrl (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
+         * @param sslCrl (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
          * 
          * @return builder
          * 
@@ -3493,7 +3548,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslServerCertificate (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+         * @param sslServerCertificate (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
          * 
          * @return builder
          * 
@@ -3504,13 +3559,34 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslServerCertificate (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+         * @param sslServerCertificate (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
          * 
          * @return builder
          * 
          */
         public Builder sslServerCertificate(String sslServerCertificate) {
             return sslServerCertificate(Output.of(sslServerCertificate));
+        }
+
+        /**
+         * @param storage (Updatable) The information about a new storage of given type used in an Iceberg connection.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder storage(@Nullable Output<ConnectionStorageArgs> storage) {
+            $.storage = storage;
+            return this;
+        }
+
+        /**
+         * @param storage (Updatable) The information about a new storage of given type used in an Iceberg connection.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder storage(ConnectionStorageArgs storage) {
+            return storage(Output.of(storage));
         }
 
         /**
@@ -3640,7 +3716,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param tlsCaFile (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+         * @param tlsCaFile (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
          * 
          * @return builder
          * 
@@ -3651,7 +3727,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param tlsCaFile (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+         * @param tlsCaFile (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
          * 
          * @return builder
          * 

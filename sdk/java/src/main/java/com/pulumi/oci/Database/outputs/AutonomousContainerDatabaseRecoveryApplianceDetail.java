@@ -24,7 +24,6 @@ public final class AutonomousContainerDatabaseRecoveryApplianceDetail {
     private @Nullable Integer recoveryWindowInDays;
     /**
      * @return The time when the recovery appliance details are updated.
-     * ===
      * 
      */
     private @Nullable String timeRecoveryApplianceDetailsUpdated;
@@ -46,7 +45,6 @@ public final class AutonomousContainerDatabaseRecoveryApplianceDetail {
     }
     /**
      * @return The time when the recovery appliance details are updated.
-     * ===
      * 
      */
     public Optional<String> timeRecoveryApplianceDetailsUpdated() {

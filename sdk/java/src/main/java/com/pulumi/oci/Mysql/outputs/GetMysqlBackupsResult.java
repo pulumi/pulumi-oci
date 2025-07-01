@@ -48,6 +48,11 @@ public final class GetMysqlBackupsResult {
      */
     private String id;
     /**
+     * @return Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+     * 
+     */
+    private @Nullable String softDelete;
+    /**
      * @return The state of the backup.
      * 
      */
@@ -103,6 +108,13 @@ public final class GetMysqlBackupsResult {
         return this.id;
     }
     /**
+     * @return Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+     * 
+     */
+    public Optional<String> softDelete() {
+        return Optional.ofNullable(this.softDelete);
+    }
+    /**
      * @return The state of the backup.
      * 
      */
@@ -127,6 +139,7 @@ public final class GetMysqlBackupsResult {
         private @Nullable String displayName;
         private @Nullable List<GetMysqlBackupsFilter> filters;
         private String id;
+        private @Nullable String softDelete;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetMysqlBackupsResult defaults) {
@@ -139,6 +152,7 @@ public final class GetMysqlBackupsResult {
     	      this.displayName = defaults.displayName;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.softDelete = defaults.softDelete;
     	      this.state = defaults.state;
         }
 
@@ -203,6 +217,12 @@ public final class GetMysqlBackupsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder softDelete(@Nullable String softDelete) {
+
+            this.softDelete = softDelete;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
 
             this.state = state;
@@ -218,6 +238,7 @@ public final class GetMysqlBackupsResult {
             _resultValue.displayName = displayName;
             _resultValue.filters = filters;
             _resultValue.id = id;
+            _resultValue.softDelete = softDelete;
             _resultValue.state = state;
             return _resultValue;
         }

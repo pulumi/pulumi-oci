@@ -18,7 +18,7 @@ public final class GetSchedulerJobCountsSchedulerJobAggregationCollectionItem {
      */
     private List<GetSchedulerJobCountsSchedulerJobAggregationCollectionItemDimension> dimensions;
     /**
-     * @return Count of jobs in a Tenancy.
+     * @return Count of jobs in a Compartment.
      * 
      */
     private Integer schedulerJobCountCount;
@@ -32,7 +32,7 @@ public final class GetSchedulerJobCountsSchedulerJobAggregationCollectionItem {
         return this.dimensions;
     }
     /**
-     * @return Count of jobs in a Tenancy.
+     * @return Count of jobs in a Compartment.
      * 
      */
     public Integer schedulerJobCountCount() {

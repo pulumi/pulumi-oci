@@ -40,6 +40,11 @@ public final class GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem {
      */
     private String heatWaveClusterDisplayName;
     /**
+     * @return The customer&#39;s selected type for HeatWave management.
+     * 
+     */
+    private String heatWaveManagementType;
+    /**
      * @return The total memory belonging to the HeatWave cluster in GBs.
      * 
      */
@@ -136,6 +141,13 @@ public final class GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem {
      */
     public String heatWaveClusterDisplayName() {
         return this.heatWaveClusterDisplayName;
+    }
+    /**
+     * @return The customer&#39;s selected type for HeatWave management.
+     * 
+     */
+    public String heatWaveManagementType() {
+        return this.heatWaveManagementType;
     }
     /**
      * @return The total memory belonging to the HeatWave cluster in GBs.
@@ -239,6 +251,7 @@ public final class GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem {
         private String dbName;
         private String dbVersion;
         private String heatWaveClusterDisplayName;
+        private String heatWaveManagementType;
         private Integer heatWaveMemorySize;
         private String heatWaveNodeShape;
         private List<GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNode> heatWaveNodes;
@@ -260,6 +273,7 @@ public final class GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem {
     	      this.dbName = defaults.dbName;
     	      this.dbVersion = defaults.dbVersion;
     	      this.heatWaveClusterDisplayName = defaults.heatWaveClusterDisplayName;
+    	      this.heatWaveManagementType = defaults.heatWaveManagementType;
     	      this.heatWaveMemorySize = defaults.heatWaveMemorySize;
     	      this.heatWaveNodeShape = defaults.heatWaveNodeShape;
     	      this.heatWaveNodes = defaults.heatWaveNodes;
@@ -313,6 +327,14 @@ public final class GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem {
               throw new MissingRequiredPropertyException("GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem", "heatWaveClusterDisplayName");
             }
             this.heatWaveClusterDisplayName = heatWaveClusterDisplayName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder heatWaveManagementType(String heatWaveManagementType) {
+            if (heatWaveManagementType == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem", "heatWaveManagementType");
+            }
+            this.heatWaveManagementType = heatWaveManagementType;
             return this;
         }
         @CustomType.Setter
@@ -429,6 +451,7 @@ public final class GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem {
             _resultValue.dbName = dbName;
             _resultValue.dbVersion = dbVersion;
             _resultValue.heatWaveClusterDisplayName = heatWaveClusterDisplayName;
+            _resultValue.heatWaveManagementType = heatWaveManagementType;
             _resultValue.heatWaveMemorySize = heatWaveMemorySize;
             _resultValue.heatWaveNodeShape = heatWaveNodeShape;
             _resultValue.heatWaveNodes = heatWaveNodes;

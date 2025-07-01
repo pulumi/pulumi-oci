@@ -49,6 +49,21 @@ public final class GetComputeHostsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group.
+     * 
+     */
+    @Import(name="computeHostGroupId")
+    private @Nullable Output<String> computeHostGroupId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group.
+     * 
+     */
+    public Optional<Output<String>> computeHostGroupId() {
+        return Optional.ofNullable(this.computeHostGroupId);
+    }
+
+    /**
      * A filter to return only ComputeHostSummary resources that match the given Compute Host health State OCID exactly.
      * 
      */
@@ -126,6 +141,7 @@ public final class GetComputeHostsArgs extends com.pulumi.resources.InvokeArgs {
     private GetComputeHostsArgs(GetComputeHostsArgs $) {
         this.availabilityDomain = $.availabilityDomain;
         this.compartmentId = $.compartmentId;
+        this.computeHostGroupId = $.computeHostGroupId;
         this.computeHostHealth = $.computeHostHealth;
         this.computeHostLifecycleState = $.computeHostLifecycleState;
         this.displayName = $.displayName;
@@ -191,6 +207,27 @@ public final class GetComputeHostsArgs extends com.pulumi.resources.InvokeArgs {
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param computeHostGroupId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeHostGroupId(@Nullable Output<String> computeHostGroupId) {
+            $.computeHostGroupId = computeHostGroupId;
+            return this;
+        }
+
+        /**
+         * @param computeHostGroupId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeHostGroupId(String computeHostGroupId) {
+            return computeHostGroupId(Output.of(computeHostGroupId));
         }
 
         /**

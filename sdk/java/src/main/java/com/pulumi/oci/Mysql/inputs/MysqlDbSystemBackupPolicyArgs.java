@@ -136,6 +136,21 @@ public final class MysqlDbSystemBackupPolicyArgs extends com.pulumi.resources.Re
     }
 
     /**
+     * (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+     * 
+     */
+    @Import(name="softDelete")
+    private @Nullable Output<String> softDelete;
+
+    /**
+     * @return (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+     * 
+     */
+    public Optional<Output<String>> softDelete() {
+        return Optional.ofNullable(this.softDelete);
+    }
+
+    /**
      * (Updatable) The start of a 30-minute window of time in which daily, automated backups occur.
      * 
      * This should be in the format of the &#34;Time&#34; portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
@@ -167,6 +182,7 @@ public final class MysqlDbSystemBackupPolicyArgs extends com.pulumi.resources.Re
         this.isEnabled = $.isEnabled;
         this.pitrPolicy = $.pitrPolicy;
         this.retentionInDays = $.retentionInDays;
+        this.softDelete = $.softDelete;
         this.windowStartTime = $.windowStartTime;
     }
 
@@ -350,6 +366,27 @@ public final class MysqlDbSystemBackupPolicyArgs extends com.pulumi.resources.Re
          */
         public Builder retentionInDays(Integer retentionInDays) {
             return retentionInDays(Output.of(retentionInDays));
+        }
+
+        /**
+         * @param softDelete (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder softDelete(@Nullable Output<String> softDelete) {
+            $.softDelete = softDelete;
+            return this;
+        }
+
+        /**
+         * @param softDelete (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder softDelete(String softDelete) {
+            return softDelete(Output.of(softDelete));
         }
 
         /**

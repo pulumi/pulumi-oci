@@ -33,10 +33,6 @@ public final class GetConnectionsResult {
      * 
      */
     private @Nullable List<String> connectionTypes;
-    /**
-     * @return An object&#39;s Display Name.
-     * 
-     */
     private @Nullable String displayName;
     private @Nullable List<GetConnectionsFilter> filters;
     /**
@@ -86,10 +82,6 @@ public final class GetConnectionsResult {
     public List<String> connectionTypes() {
         return this.connectionTypes == null ? List.of() : this.connectionTypes;
     }
-    /**
-     * @return An object&#39;s Display Name.
-     * 
-     */
     public Optional<String> displayName() {
         return Optional.ofNullable(this.displayName);
     }

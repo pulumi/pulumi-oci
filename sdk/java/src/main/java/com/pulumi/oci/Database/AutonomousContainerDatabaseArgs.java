@@ -22,6 +22,13 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
 
     public static final AutonomousContainerDatabaseArgs Empty = new AutonomousContainerDatabaseArgs();
 
+    @Import(name="autonomousContainerDatabaseBackupId")
+    private @Nullable Output<String> autonomousContainerDatabaseBackupId;
+
+    public Optional<Output<String>> autonomousContainerDatabaseBackupId() {
+        return Optional.ofNullable(this.autonomousContainerDatabaseBackupId);
+    }
+
     /**
      * **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
      * 
@@ -530,6 +537,21 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
     }
 
     /**
+     * The source of the database: Use `NONE` for creating a new Autonomous Container Database. Use `BACKUP_FROM_ID` for creating a new Autonomous Container Database from a specified backup.
+     * 
+     */
+    @Import(name="source")
+    private @Nullable Output<String> source;
+
+    /**
+     * @return The source of the database: Use `NONE` for creating a new Autonomous Container Database. Use `BACKUP_FROM_ID` for creating a new Autonomous Container Database from a specified backup.
+     * 
+     */
+    public Optional<Output<String>> source() {
+        return Optional.ofNullable(this.source);
+    }
+
+    /**
      * (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
      * 
      */
@@ -607,6 +629,7 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
     private AutonomousContainerDatabaseArgs() {}
 
     private AutonomousContainerDatabaseArgs(AutonomousContainerDatabaseArgs $) {
+        this.autonomousContainerDatabaseBackupId = $.autonomousContainerDatabaseBackupId;
         this.autonomousExadataInfrastructureId = $.autonomousExadataInfrastructureId;
         this.autonomousVmClusterId = $.autonomousVmClusterId;
         this.backupConfig = $.backupConfig;
@@ -642,6 +665,7 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         this.reinstateTrigger = $.reinstateTrigger;
         this.rotateKeyTrigger = $.rotateKeyTrigger;
         this.serviceLevelAgreementType = $.serviceLevelAgreementType;
+        this.source = $.source;
         this.standbyMaintenanceBufferInDays = $.standbyMaintenanceBufferInDays;
         this.switchoverTrigger = $.switchoverTrigger;
         this.vaultId = $.vaultId;
@@ -665,6 +689,15 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
 
         public Builder(AutonomousContainerDatabaseArgs defaults) {
             $ = new AutonomousContainerDatabaseArgs(Objects.requireNonNull(defaults));
+        }
+
+        public Builder autonomousContainerDatabaseBackupId(@Nullable Output<String> autonomousContainerDatabaseBackupId) {
+            $.autonomousContainerDatabaseBackupId = autonomousContainerDatabaseBackupId;
+            return this;
+        }
+
+        public Builder autonomousContainerDatabaseBackupId(String autonomousContainerDatabaseBackupId) {
+            return autonomousContainerDatabaseBackupId(Output.of(autonomousContainerDatabaseBackupId));
         }
 
         /**
@@ -1370,6 +1403,27 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
          */
         public Builder serviceLevelAgreementType(String serviceLevelAgreementType) {
             return serviceLevelAgreementType(Output.of(serviceLevelAgreementType));
+        }
+
+        /**
+         * @param source The source of the database: Use `NONE` for creating a new Autonomous Container Database. Use `BACKUP_FROM_ID` for creating a new Autonomous Container Database from a specified backup.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder source(@Nullable Output<String> source) {
+            $.source = source;
+            return this;
+        }
+
+        /**
+         * @param source The source of the database: Use `NONE` for creating a new Autonomous Container Database. Use `BACKUP_FROM_ID` for creating a new Autonomous Container Database from a specified backup.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder source(String source) {
+            return source(Output.of(source));
         }
 
         /**

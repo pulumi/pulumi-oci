@@ -15,6 +15,8 @@ import com.pulumi.oci.Database.inputs.GetApplicationVipsPlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousCharacterSetsArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousCharacterSetsPlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseArgs;
+import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseBackupsArgs;
+import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseBackupsPlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseDataguardAssociationArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseDataguardAssociationPlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseDataguardAssociationsArgs;
@@ -307,6 +309,7 @@ import com.pulumi.oci.Database.inputs.GetVmClustersPlainArgs;
 import com.pulumi.oci.Database.outputs.GetApplicationVipResult;
 import com.pulumi.oci.Database.outputs.GetApplicationVipsResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousCharacterSetsResult;
+import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseBackupsResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseDataguardAssociationResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseDataguardAssociationsResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseResourceUsageResult;
@@ -1451,9 +1454,352 @@ public final class DatabaseFunctions {
         return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousContainerDatabase:getAutonomousContainerDatabase", TypeShape.of(GetAutonomousContainerDatabaseResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Autonomous Container Database Backups in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of Autonomous Container Database backups by using either the &#39;autonomousDatabaseId&#39; or &#39;compartmentId&#39; as your query parameter.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabaseBackups = DatabaseFunctions.getAutonomousContainerDatabaseBackups(GetAutonomousContainerDatabaseBackupsArgs.builder()
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(autonomousContainerDatabaseBackupDisplayName)
+     *             .infrastructureType(autonomousContainerDatabaseBackupInfrastructureType)
+     *             .isRemote(autonomousContainerDatabaseBackupIsRemote)
+     *             .state(autonomousContainerDatabaseBackupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAutonomousContainerDatabaseBackupsResult> getAutonomousContainerDatabaseBackups() {
+        return getAutonomousContainerDatabaseBackups(GetAutonomousContainerDatabaseBackupsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Autonomous Container Database Backups in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of Autonomous Container Database backups by using either the &#39;autonomousDatabaseId&#39; or &#39;compartmentId&#39; as your query parameter.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabaseBackups = DatabaseFunctions.getAutonomousContainerDatabaseBackups(GetAutonomousContainerDatabaseBackupsArgs.builder()
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(autonomousContainerDatabaseBackupDisplayName)
+     *             .infrastructureType(autonomousContainerDatabaseBackupInfrastructureType)
+     *             .isRemote(autonomousContainerDatabaseBackupIsRemote)
+     *             .state(autonomousContainerDatabaseBackupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAutonomousContainerDatabaseBackupsResult> getAutonomousContainerDatabaseBackupsPlain() {
+        return getAutonomousContainerDatabaseBackupsPlain(GetAutonomousContainerDatabaseBackupsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Autonomous Container Database Backups in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of Autonomous Container Database backups by using either the &#39;autonomousDatabaseId&#39; or &#39;compartmentId&#39; as your query parameter.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabaseBackups = DatabaseFunctions.getAutonomousContainerDatabaseBackups(GetAutonomousContainerDatabaseBackupsArgs.builder()
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(autonomousContainerDatabaseBackupDisplayName)
+     *             .infrastructureType(autonomousContainerDatabaseBackupInfrastructureType)
+     *             .isRemote(autonomousContainerDatabaseBackupIsRemote)
+     *             .state(autonomousContainerDatabaseBackupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAutonomousContainerDatabaseBackupsResult> getAutonomousContainerDatabaseBackups(GetAutonomousContainerDatabaseBackupsArgs args) {
+        return getAutonomousContainerDatabaseBackups(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Autonomous Container Database Backups in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of Autonomous Container Database backups by using either the &#39;autonomousDatabaseId&#39; or &#39;compartmentId&#39; as your query parameter.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabaseBackups = DatabaseFunctions.getAutonomousContainerDatabaseBackups(GetAutonomousContainerDatabaseBackupsArgs.builder()
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(autonomousContainerDatabaseBackupDisplayName)
+     *             .infrastructureType(autonomousContainerDatabaseBackupInfrastructureType)
+     *             .isRemote(autonomousContainerDatabaseBackupIsRemote)
+     *             .state(autonomousContainerDatabaseBackupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAutonomousContainerDatabaseBackupsResult> getAutonomousContainerDatabaseBackupsPlain(GetAutonomousContainerDatabaseBackupsPlainArgs args) {
+        return getAutonomousContainerDatabaseBackupsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Autonomous Container Database Backups in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of Autonomous Container Database backups by using either the &#39;autonomousDatabaseId&#39; or &#39;compartmentId&#39; as your query parameter.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabaseBackups = DatabaseFunctions.getAutonomousContainerDatabaseBackups(GetAutonomousContainerDatabaseBackupsArgs.builder()
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(autonomousContainerDatabaseBackupDisplayName)
+     *             .infrastructureType(autonomousContainerDatabaseBackupInfrastructureType)
+     *             .isRemote(autonomousContainerDatabaseBackupIsRemote)
+     *             .state(autonomousContainerDatabaseBackupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAutonomousContainerDatabaseBackupsResult> getAutonomousContainerDatabaseBackups(GetAutonomousContainerDatabaseBackupsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousContainerDatabaseBackups:getAutonomousContainerDatabaseBackups", TypeShape.of(GetAutonomousContainerDatabaseBackupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Container Database Backups in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of Autonomous Container Database backups by using either the &#39;autonomousDatabaseId&#39; or &#39;compartmentId&#39; as your query parameter.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabaseBackups = DatabaseFunctions.getAutonomousContainerDatabaseBackups(GetAutonomousContainerDatabaseBackupsArgs.builder()
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(autonomousContainerDatabaseBackupDisplayName)
+     *             .infrastructureType(autonomousContainerDatabaseBackupInfrastructureType)
+     *             .isRemote(autonomousContainerDatabaseBackupIsRemote)
+     *             .state(autonomousContainerDatabaseBackupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAutonomousContainerDatabaseBackupsResult> getAutonomousContainerDatabaseBackups(GetAutonomousContainerDatabaseBackupsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousContainerDatabaseBackups:getAutonomousContainerDatabaseBackups", TypeShape.of(GetAutonomousContainerDatabaseBackupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Container Database Backups in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of Autonomous Container Database backups by using either the &#39;autonomousDatabaseId&#39; or &#39;compartmentId&#39; as your query parameter.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabaseBackups = DatabaseFunctions.getAutonomousContainerDatabaseBackups(GetAutonomousContainerDatabaseBackupsArgs.builder()
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(autonomousContainerDatabaseBackupDisplayName)
+     *             .infrastructureType(autonomousContainerDatabaseBackupInfrastructureType)
+     *             .isRemote(autonomousContainerDatabaseBackupIsRemote)
+     *             .state(autonomousContainerDatabaseBackupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAutonomousContainerDatabaseBackupsResult> getAutonomousContainerDatabaseBackupsPlain(GetAutonomousContainerDatabaseBackupsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousContainerDatabaseBackups:getAutonomousContainerDatabaseBackups", TypeShape.of(GetAutonomousContainerDatabaseBackupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides details about a specific Autonomous Container Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets an Autonomous Container Database enabled with Autonomous Data Guard associated with the specified Autonomous Container Database.
+     * **Deprecated.** Use the [GetAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/GetAutonomousContainerDatabase) operation to get the details of an Autonomous Container Database (ACD) enabled with Autonomous Data Guard associated with the specified ACD.
      * 
      * ## Example Usage
      * 
@@ -1498,7 +1844,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides details about a specific Autonomous Container Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets an Autonomous Container Database enabled with Autonomous Data Guard associated with the specified Autonomous Container Database.
+     * **Deprecated.** Use the [GetAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/GetAutonomousContainerDatabase) operation to get the details of an Autonomous Container Database (ACD) enabled with Autonomous Data Guard associated with the specified ACD.
      * 
      * ## Example Usage
      * 
@@ -1543,7 +1889,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides details about a specific Autonomous Container Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets an Autonomous Container Database enabled with Autonomous Data Guard associated with the specified Autonomous Container Database.
+     * **Deprecated.** Use the [GetAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/GetAutonomousContainerDatabase) operation to get the details of an Autonomous Container Database (ACD) enabled with Autonomous Data Guard associated with the specified ACD.
      * 
      * ## Example Usage
      * 
@@ -1588,7 +1934,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides details about a specific Autonomous Container Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets an Autonomous Container Database enabled with Autonomous Data Guard associated with the specified Autonomous Container Database.
+     * **Deprecated.** Use the [GetAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/GetAutonomousContainerDatabase) operation to get the details of an Autonomous Container Database (ACD) enabled with Autonomous Data Guard associated with the specified ACD.
      * 
      * ## Example Usage
      * 
@@ -1633,7 +1979,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides details about a specific Autonomous Container Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets an Autonomous Container Database enabled with Autonomous Data Guard associated with the specified Autonomous Container Database.
+     * **Deprecated.** Use the [GetAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/GetAutonomousContainerDatabase) operation to get the details of an Autonomous Container Database (ACD) enabled with Autonomous Data Guard associated with the specified ACD.
      * 
      * ## Example Usage
      * 
@@ -1678,7 +2024,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Container Database Dataguard Associations in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of the Autonomous Container Databases with Autonomous Data Guard-enabled associated with the specified Autonomous Container Database.
+     * **Deprecated.** Use the [ListAutonomousContainerDatabases](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/ListAutonomousContainerDatabases) operation to get a list of the Autonomous Container Databases (ACDs)with Autonomous Data Guard-enabled associated with the specified ACD.
      * 
      * ## Example Usage
      * 
@@ -1722,7 +2068,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Container Database Dataguard Associations in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of the Autonomous Container Databases with Autonomous Data Guard-enabled associated with the specified Autonomous Container Database.
+     * **Deprecated.** Use the [ListAutonomousContainerDatabases](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/ListAutonomousContainerDatabases) operation to get a list of the Autonomous Container Databases (ACDs)with Autonomous Data Guard-enabled associated with the specified ACD.
      * 
      * ## Example Usage
      * 
@@ -1766,7 +2112,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Container Database Dataguard Associations in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of the Autonomous Container Databases with Autonomous Data Guard-enabled associated with the specified Autonomous Container Database.
+     * **Deprecated.** Use the [ListAutonomousContainerDatabases](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/ListAutonomousContainerDatabases) operation to get a list of the Autonomous Container Databases (ACDs)with Autonomous Data Guard-enabled associated with the specified ACD.
      * 
      * ## Example Usage
      * 
@@ -1810,7 +2156,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Container Database Dataguard Associations in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of the Autonomous Container Databases with Autonomous Data Guard-enabled associated with the specified Autonomous Container Database.
+     * **Deprecated.** Use the [ListAutonomousContainerDatabases](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/ListAutonomousContainerDatabases) operation to get a list of the Autonomous Container Databases (ACDs)with Autonomous Data Guard-enabled associated with the specified ACD.
      * 
      * ## Example Usage
      * 
@@ -1854,7 +2200,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Container Database Dataguard Associations in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of the Autonomous Container Databases with Autonomous Data Guard-enabled associated with the specified Autonomous Container Database.
+     * **Deprecated.** Use the [ListAutonomousContainerDatabases](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/ListAutonomousContainerDatabases) operation to get a list of the Autonomous Container Databases (ACDs)with Autonomous Data Guard-enabled associated with the specified ACD.
      * 
      * ## Example Usage
      * 
@@ -3834,7 +4180,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Database Dataguard Associations in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous Database.
+     * *Deprecated.* Use the [GetAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/GetAutonomousContainerDatabase) operation to get a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous Database.
      * 
      * ## Example Usage
      * 
@@ -3878,7 +4224,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Database Dataguard Associations in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous Database.
+     * *Deprecated.* Use the [GetAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/GetAutonomousContainerDatabase) operation to get a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous Database.
      * 
      * ## Example Usage
      * 
@@ -3922,7 +4268,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Database Dataguard Associations in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous Database.
+     * *Deprecated.* Use the [GetAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/GetAutonomousContainerDatabase) operation to get a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous Database.
      * 
      * ## Example Usage
      * 
@@ -3966,7 +4312,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Database Dataguard Associations in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous Database.
+     * *Deprecated.* Use the [GetAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/GetAutonomousContainerDatabase) operation to get a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous Database.
      * 
      * ## Example Usage
      * 
@@ -4010,7 +4356,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Autonomous Database Dataguard Associations in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous Database.
+     * *Deprecated.* Use the [GetAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/GetAutonomousContainerDatabase) operation to get a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous Database.
      * 
      * ## Example Usage
      * 
@@ -16870,7 +17216,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Db Nodes in Oracle Cloud Infrastructure Database service.
      * 
-     * Lists the database nodes in the specified compartment. A database node is a server running database software. In addition to the other required parameters, either &#39;--db-system-id&#39; or &#39;--vm-cluster-id&#39; also must be provided, depending on the service being accessed.
+     * Lists the database nodes in the specified DB system and compartment. In addition to the other required parameters, either &#39;--db-system-id&#39; or &#39;--vm-cluster-id&#39; also must be provided, depending on the service being accessed.
      * 
      * ## Example Usage
      * 
@@ -16918,7 +17264,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Db Nodes in Oracle Cloud Infrastructure Database service.
      * 
-     * Lists the database nodes in the specified compartment. A database node is a server running database software. In addition to the other required parameters, either &#39;--db-system-id&#39; or &#39;--vm-cluster-id&#39; also must be provided, depending on the service being accessed.
+     * Lists the database nodes in the specified DB system and compartment. In addition to the other required parameters, either &#39;--db-system-id&#39; or &#39;--vm-cluster-id&#39; also must be provided, depending on the service being accessed.
      * 
      * ## Example Usage
      * 
@@ -16966,7 +17312,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Db Nodes in Oracle Cloud Infrastructure Database service.
      * 
-     * Lists the database nodes in the specified compartment. A database node is a server running database software. In addition to the other required parameters, either &#39;--db-system-id&#39; or &#39;--vm-cluster-id&#39; also must be provided, depending on the service being accessed.
+     * Lists the database nodes in the specified DB system and compartment. In addition to the other required parameters, either &#39;--db-system-id&#39; or &#39;--vm-cluster-id&#39; also must be provided, depending on the service being accessed.
      * 
      * ## Example Usage
      * 
@@ -17014,7 +17360,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Db Nodes in Oracle Cloud Infrastructure Database service.
      * 
-     * Lists the database nodes in the specified compartment. A database node is a server running database software. In addition to the other required parameters, either &#39;--db-system-id&#39; or &#39;--vm-cluster-id&#39; also must be provided, depending on the service being accessed.
+     * Lists the database nodes in the specified DB system and compartment. In addition to the other required parameters, either &#39;--db-system-id&#39; or &#39;--vm-cluster-id&#39; also must be provided, depending on the service being accessed.
      * 
      * ## Example Usage
      * 
@@ -17062,7 +17408,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Db Nodes in Oracle Cloud Infrastructure Database service.
      * 
-     * Lists the database nodes in the specified compartment. A database node is a server running database software. In addition to the other required parameters, either &#39;--db-system-id&#39; or &#39;--vm-cluster-id&#39; also must be provided, depending on the service being accessed.
+     * Lists the database nodes in the specified DB system and compartment. In addition to the other required parameters, either &#39;--db-system-id&#39; or &#39;--vm-cluster-id&#39; also must be provided, depending on the service being accessed.
      * 
      * ## Example Usage
      * 

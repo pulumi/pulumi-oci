@@ -11,6 +11,7 @@ import com.pulumi.oci.ContainerEngine.outputs.GetClusterEndpointConfig;
 import com.pulumi.oci.ContainerEngine.outputs.GetClusterImagePolicyConfig;
 import com.pulumi.oci.ContainerEngine.outputs.GetClusterMetadata;
 import com.pulumi.oci.ContainerEngine.outputs.GetClusterOption;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -106,7 +107,7 @@ public final class GetClusterResult {
      * 
      */
     private List<GetClusterOption> options;
-    private @Nullable String shouldIncludeOidcConfigFile;
+    private @Nullable Boolean shouldIncludeOidcConfigFile;
     /**
      * @return The state of the cluster masters.
      * 
@@ -246,7 +247,7 @@ public final class GetClusterResult {
     public List<GetClusterOption> options() {
         return this.options;
     }
-    public Optional<String> shouldIncludeOidcConfigFile() {
+    public Optional<Boolean> shouldIncludeOidcConfigFile() {
         return Optional.ofNullable(this.shouldIncludeOidcConfigFile);
     }
     /**
@@ -298,7 +299,7 @@ public final class GetClusterResult {
         private String openIdConnectDiscoveryEndpoint;
         private String openIdConnectDiscoveryKey;
         private List<GetClusterOption> options;
-        private @Nullable String shouldIncludeOidcConfigFile;
+        private @Nullable Boolean shouldIncludeOidcConfigFile;
         private String state;
         private String type;
         private String vcnId;
@@ -495,7 +496,7 @@ public final class GetClusterResult {
             return options(List.of(options));
         }
         @CustomType.Setter
-        public Builder shouldIncludeOidcConfigFile(@Nullable String shouldIncludeOidcConfigFile) {
+        public Builder shouldIncludeOidcConfigFile(@Nullable Boolean shouldIncludeOidcConfigFile) {
 
             this.shouldIncludeOidcConfigFile = shouldIncludeOidcConfigFile;
             return this;

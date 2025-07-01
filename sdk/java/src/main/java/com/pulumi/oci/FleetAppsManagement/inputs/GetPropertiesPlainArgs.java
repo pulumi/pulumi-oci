@@ -17,14 +17,14 @@ public final class GetPropertiesPlainArgs extends com.pulumi.resources.InvokeArg
     public static final GetPropertiesPlainArgs Empty = new GetPropertiesPlainArgs();
 
     /**
-     * The ID of the compartment in which to list resources.
+     * The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable String compartmentId;
 
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      * 
      */
     public Optional<String> compartmentId() {
@@ -54,14 +54,14 @@ public final class GetPropertiesPlainArgs extends com.pulumi.resources.InvokeArg
     }
 
     /**
-     * A filter to return only resources whose Property identifier matches the given identifier.
+     * Unique identifier or OCID for listing a single Property by id. Either compartmentId or id must be provided.
      * 
      */
     @Import(name="id")
     private @Nullable String id;
 
     /**
-     * @return A filter to return only resources whose Property identifier matches the given identifier.
+     * @return Unique identifier or OCID for listing a single Property by id. Either compartmentId or id must be provided.
      * 
      */
     public Optional<String> id() {
@@ -98,6 +98,21 @@ public final class GetPropertiesPlainArgs extends com.pulumi.resources.InvokeArg
         return Optional.ofNullable(this.state);
     }
 
+    /**
+     * A filter to return properties whose type matches the given type.
+     * 
+     */
+    @Import(name="type")
+    private @Nullable String type;
+
+    /**
+     * @return A filter to return properties whose type matches the given type.
+     * 
+     */
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
+    }
+
     private GetPropertiesPlainArgs() {}
 
     private GetPropertiesPlainArgs(GetPropertiesPlainArgs $) {
@@ -107,6 +122,7 @@ public final class GetPropertiesPlainArgs extends com.pulumi.resources.InvokeArg
         this.id = $.id;
         this.scope = $.scope;
         this.state = $.state;
+        this.type = $.type;
     }
 
     public static Builder builder() {
@@ -128,7 +144,7 @@ public final class GetPropertiesPlainArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param compartmentId The ID of the compartment in which to list resources.
+         * @param compartmentId The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
          * 
          * @return builder
          * 
@@ -159,7 +175,7 @@ public final class GetPropertiesPlainArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param id A filter to return only resources whose Property identifier matches the given identifier.
+         * @param id Unique identifier or OCID for listing a single Property by id. Either compartmentId or id must be provided.
          * 
          * @return builder
          * 
@@ -188,6 +204,17 @@ public final class GetPropertiesPlainArgs extends com.pulumi.resources.InvokeArg
          */
         public Builder state(@Nullable String state) {
             $.state = state;
+            return this;
+        }
+
+        /**
+         * @param type A filter to return properties whose type matches the given type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder type(@Nullable String type) {
+            $.type = type;
             return this;
         }
 

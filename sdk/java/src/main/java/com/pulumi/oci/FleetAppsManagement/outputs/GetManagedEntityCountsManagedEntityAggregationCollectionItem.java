@@ -18,7 +18,7 @@ public final class GetManagedEntityCountsManagedEntityAggregationCollectionItem 
      */
     private List<GetManagedEntityCountsManagedEntityAggregationCollectionItemDimension> dimensions;
     /**
-     * @return count of Managed Entities in a Tenancy.
+     * @return Count of managed entities in a compartment.
      * 
      */
     private Integer managedEntityCountCount;
@@ -32,7 +32,7 @@ public final class GetManagedEntityCountsManagedEntityAggregationCollectionItem 
         return this.dimensions;
     }
     /**
-     * @return count of Managed Entities in a Tenancy.
+     * @return Count of managed entities in a compartment.
      * 
      */
     public Integer managedEntityCountCount() {

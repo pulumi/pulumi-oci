@@ -5,6 +5,7 @@ package com.pulumi.oci.ContainerEngine.inputs;
 
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -35,13 +36,13 @@ public final class GetClusterPlainArgs extends com.pulumi.resources.InvokeArgs {
      * 
      */
     @Import(name="shouldIncludeOidcConfigFile")
-    private @Nullable String shouldIncludeOidcConfigFile;
+    private @Nullable Boolean shouldIncludeOidcConfigFile;
 
     /**
      * @return Boolean value to determine if the OpenIdConnectAuth configuration file should be displayed for the provided cluster.
      * 
      */
-    public Optional<String> shouldIncludeOidcConfigFile() {
+    public Optional<Boolean> shouldIncludeOidcConfigFile() {
         return Optional.ofNullable(this.shouldIncludeOidcConfigFile);
     }
 
@@ -87,7 +88,7 @@ public final class GetClusterPlainArgs extends com.pulumi.resources.InvokeArgs {
          * @return builder
          * 
          */
-        public Builder shouldIncludeOidcConfigFile(@Nullable String shouldIncludeOidcConfigFile) {
+        public Builder shouldIncludeOidcConfigFile(@Nullable Boolean shouldIncludeOidcConfigFile) {
             $.shouldIncludeOidcConfigFile = shouldIncludeOidcConfigFile;
             return this;
         }
